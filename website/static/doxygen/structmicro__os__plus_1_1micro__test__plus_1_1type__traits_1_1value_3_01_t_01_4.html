@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -151,10 +151,10 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8c7aed20f0bf92c317623cdcfea3eed2" id="r_a8c7aed20f0bf92c317623cdcfea3eed2"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a8c7aed20f0bf92c317623cdcfea3eed2">value</a> (const T &amp;_value, const T precision) noexcept</td></tr>
-<tr class="memdesc:a8c7aed20f0bf92c317623cdcfea3eed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a floating-point value with a specified precision.  <br /></td></tr>
-<tr class="memitem:a2fa50f7d37b9fe77af3c0cc64e9dba4c" id="r_a2fa50f7d37b9fe77af3c0cc64e9dba4c"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a2fa50f7d37b9fe77af3c0cc64e9dba4c">value</a> (const T &amp;val)</td></tr>
-<tr class="memdesc:a2fa50f7d37b9fe77af3c0cc64e9dba4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a floating point value with default precision.  <br /></td></tr>
+<tr class="memitem:a69374f408449c08c756896dd26d2d437" id="r_a69374f408449c08c756896dd26d2d437"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a69374f408449c08c756896dd26d2d437">value</a> (const T &amp;_value, const T precision) noexcept</td></tr>
+<tr class="memdesc:a69374f408449c08c756896dd26d2d437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a floating-point value with a specified precision.  <br /></td></tr>
+<tr class="memitem:a453e9c54cb194c672ca8739c98d3cc68" id="r_a453e9c54cb194c672ca8739c98d3cc68"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a453e9c54cb194c672ca8739c98d3cc68">value</a> (const T &amp;val)</td></tr>
+<tr class="memdesc:a453e9c54cb194c672ca8739c98d3cc68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a floating point value with default precision.  <br /></td></tr>
 <tr class="memitem:aedc41334c71b7711435aee0cb8f44fb3" id="r_aedc41334c71b7711435aee0cb8f44fb3"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#aedc41334c71b7711435aee0cb8f44fb3">get</a> (void) const noexcept</td></tr>
 <tr class="memdesc:aedc41334c71b7711435aee0cb8f44fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the stored value.  <br /></td></tr>
 <tr class="memitem:aedc41334c71b7711435aee0cb8f44fb3" id="r_aedc41334c71b7711435aee0cb8f44fb3"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#aedc41334c71b7711435aee0cb8f44fb3">get</a> (void) const noexcept</td></tr>
@@ -186,7 +186,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</div><dl cl
 <p>The <span class="tt"><a class="el" href="#a434b222ff19bdb4970ad56fce11d5176" title="The epsilon value used for floating-point comparisons.">epsilon</a></span> member defines the precision used for floating point comparisons and can be set explicitly or computed as a default based on the number of decimal digits in the value.</p>
 <p>This specialisation is intended for use cases where floating point values require controlled precision, supporting advanced template metaprogramming and type-safe comparisons within the framework. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00741">741</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00744">744</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a4a819c9151d37da6e8a76f4629c7cc4d" name="a4a819c9151d37da6e8a76f4629c7cc4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a819c9151d37da6e8a76f4629c7cc4d">&#9670;&#160;</a></span>value_type <span class="overload">[1/2]</span></h2>
@@ -231,14 +231,13 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8c7aed20f0bf92c317623cdcfea3eed2" name="a8c7aed20f0bf92c317623cdcfea3eed2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c7aed20f0bf92c317623cdcfea3eed2">&#9670;&#160;</a></span>value() <span class="overload">[1/2]</span></h2>
+<a id="a69374f408449c08c756896dd26d2d437" name="a69374f408449c08c756896dd26d2d437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69374f408449c08c756896dd26d2d437">&#9670;&#160;</a></span>value() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; <br />
-requires is_floating_point&lt;T&gt;</div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -256,7 +255,7 @@ requires is_floating_point&lt;T&gt;</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -269,27 +268,26 @@ requires is_floating_point&lt;T&gt;</div>
 </dl>
 <p>Delegates to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base_</a>&lt;T&gt;{ _value }</span> and stores the supplied precision in <span class="tt"><a class="el" href="#a434b222ff19bdb4970ad56fce11d5176" title="The epsilon value used for floating-point comparisons.">epsilon</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00193">193</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  194</span>        : <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">value_base_&lt;T&gt;</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">_value</a> }, <a class="code hl_variable" href="#a434b222ff19bdb4970ad56fce11d5176">epsilon</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">precision</a> }</div>
-<div class="line"><span class="lineno">  195</span>    {</div>
-<div class="line"><span class="lineno">  196</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_html_a434b222ff19bdb4970ad56fce11d5176"><div class="ttname"><a href="#a434b222ff19bdb4970ad56fce11d5176">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::epsilon</a></div><div class="ttdeci">T epsilon</div><div class="ttdoc">The epsilon value used for floating-point comparisons.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00753">type-traits.h:753</a></div></div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00777">777</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  778</span>          : <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">value_base_&lt;T&gt;</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">_value</a> }, <a class="code hl_variable" href="#a434b222ff19bdb4970ad56fce11d5176">epsilon</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">precision</a> }</div>
+<div class="line"><span class="lineno">  779</span>      {</div>
+<div class="line"><span class="lineno">  780</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_html_a434b222ff19bdb4970ad56fce11d5176"><div class="ttname"><a href="#a434b222ff19bdb4970ad56fce11d5176">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::epsilon</a></div><div class="ttdeci">T epsilon</div><div class="ttdoc">The epsilon value used for floating-point comparisons.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00756">type-traits.h:756</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">micro_os_plus::micro_test_plus::type_traits::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00707">type-traits.h:708</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="type-traits-inlines_8h_source.html#l00073">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_base_()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="literals-inlines_8h_source.html#l00594">micro_os_plus::micro_test_plus::_t&lt; T &gt;::_t()</a>, and <a class="el" href="literals-inlines_8h_source.html#l00604">micro_os_plus::micro_test_plus::to_t&lt; T &gt;::to_t()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="literals-inlines_8h_source.html#l00594">micro_os_plus::micro_test_plus::_t&lt; T &gt;::_t()</a>, <a class="el" href="literals-inlines_8h_source.html#l00604">micro_os_plus::micro_test_plus::to_t&lt; T &gt;::to_t()</a>, and <a class="el" href="type-traits_8h_source.html#l00791">value()</a>.</p>
 
 </div>
 </div>
-<a id="a2fa50f7d37b9fe77af3c0cc64e9dba4c" name="a2fa50f7d37b9fe77af3c0cc64e9dba4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fa50f7d37b9fe77af3c0cc64e9dba4c">&#9670;&#160;</a></span>value() <span class="overload">[2/2]</span></h2>
+<a id="a453e9c54cb194c672ca8739c98d3cc68" name="a453e9c54cb194c672ca8739c98d3cc68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453e9c54cb194c672ca8739c98d3cc68">&#9670;&#160;</a></span>value() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; <br />
-requires is_floating_point&lt;T&gt;</div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -303,7 +301,7 @@ requires is_floating_point&lt;T&gt;</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -313,15 +311,19 @@ requires is_floating_point&lt;T&gt;</div>
   </table>
   </dd>
 </dl>
-<p>Delegates to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base_</a>&lt;T&gt;{ _value }</span> to initialise the base.</p>
 <p>The epsilon is computed as 1 divided by 10 raised to the number of decimal digits in the value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00179">179</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  180</span>        : <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">value_base_&lt;T&gt;</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">_value</a> }</div>
-<div class="line"><span class="lineno">  181</span>    {</div>
-<div class="line"><span class="lineno">  182</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00791">791</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  792</span>          : <a class="code hl_function" href="#a69374f408449c08c756896dd26d2d437">value</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">val</a>,</div>
+<div class="line"><span class="lineno">  793</span>                   <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">T</a> (1)</div>
+<div class="line"><span class="lineno">  794</span>                       / <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a81a10f59f83a29f4ade9c710e833eced">math::pow</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">T</a> (10),</div>
+<div class="line"><span class="lineno">  795</span>                                    <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">math::den_size&lt;unsigned long long&gt;</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">val</a>)) }</div>
+<div class="line"><span class="lineno">  796</span>      {</div>
+<div class="line"><span class="lineno">  797</span>      }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1math_html_a81a10f59f83a29f4ade9c710e833eced"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a81a10f59f83a29f4ade9c710e833eced">micro_os_plus::micro_test_plus::math::pow</a></div><div class="ttdeci">constexpr auto pow(const T base, const Exp_T exp) noexcept -&gt; T</div><div class="ttdoc">Generic exponentiation function to compute the power of a base raised to an exponent.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00139">math-inlines.h:139</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_html_a69374f408449c08c756896dd26d2d437"><div class="ttname"><a href="#a69374f408449c08c756896dd26d2d437">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</a></div><div class="ttdeci">constexpr value(const T &amp;_value, const T precision) noexcept</div><div class="ttdoc">Constructs a floating-point value with a specified precision.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00777">type-traits.h:777</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="type-traits-inlines_8h_source.html#l00073">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_base_()</a>.</p>
+<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00777">value()</a>.</p>
 
 </div>
 </div>
@@ -395,7 +397,7 @@ template&lt;class T&gt; </div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="type-traits_8h_source.html#l00544">value_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00229">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00230">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -483,8 +485,8 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>This instance member defines the precision for comparisons. It is set via the constructor, either explicitly or computed as a default based on the number of decimal digits in the value. Each instance carries its own epsilon, so two <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;T&gt;</span> objects with different precisions do not interfere with each other. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00753">753</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  753</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00756">756</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  756</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>

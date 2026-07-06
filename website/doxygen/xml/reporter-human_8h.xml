@@ -8,90 +8,90 @@
     <includedby refid="reporter-human_8cpp" local="yes">reporter-human.cpp</includedby>
     <includedby refid="runner_8cpp" local="yes">runner.cpp</includedby>
     <incdepgraph>
-      <node id="16">
+      <node id="11">
         <label>detail.h</label>
         <link refid="detail_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>expression-formatter.h</label>
+        <link refid="expression-formatter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="20">
-        <label>expression-formatter.h</label>
-        <link refid="expression-formatter_8h"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
+      <node id="16">
         <label>inlines/detail-inlines.h</label>
         <link refid="detail-inlines_8h"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>inlines/expression-formatter-inlines.h</label>
-        <link refid="expression-formatter-inlines_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="13">
-        <label>inlines/math-inlines.h</label>
-        <link refid="math-inlines_8h"/>
+      <node id="19">
+        <label>inlines/expression-formatter-inlines.h</label>
+        <link refid="expression-formatter-inlines_8h"/>
         <childnode refid="14" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
-      <node id="18">
+      <node id="6">
+        <label>inlines/math-inlines.h</label>
+        <link refid="math-inlines_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
         <label>inlines/reflection-inlines.h</label>
         <link refid="reflection-inlines_8h"/>
-        <childnode refid="14" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
       <node id="22">
         <label>inlines/reporter-inlines.h</label>
         <link refid="reporter-inlines_8h"/>
-        <childnode refid="3" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="10">
         <label>inlines/type-traits-inlines.h</label>
         <link refid="type-traits-inlines_8h"/>
       </node>
-      <node id="11">
+      <node id="4">
         <label>math.h</label>
         <link refid="math_8h"/>
-        <childnode refid="12" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="12">
         <label>reflection.h</label>
         <link refid="reflection_8h"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -99,7 +99,7 @@
         <link refid="reporter-human_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -107,67 +107,67 @@
         <link refid="reporter_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="3">
         <label>type-traits.h</label>
         <link refid="type-traits_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
       </node>
-      <node id="12">
+      <node id="5">
         <label>array</label>
       </node>
-      <node id="8">
+      <node id="17">
         <label>charconv</label>
       </node>
-      <node id="14">
+      <node id="7">
         <label>cstdint</label>
       </node>
-      <node id="3">
+      <node id="14">
         <label>cstdio</label>
       </node>
       <node id="23">
         <label>cstring</label>
       </node>
-      <node id="6">
+      <node id="20">
         <label>memory</label>
       </node>
-      <node id="5">
+      <node id="15">
         <label>string</label>
       </node>
-      <node id="4">
+      <node id="8">
         <label>string_view</label>
       </node>
-      <node id="10">
+      <node id="9">
         <label>type_traits</label>
       </node>
-      <node id="7">
+      <node id="21">
         <label>vector</label>
       </node>
     </incdepgraph>

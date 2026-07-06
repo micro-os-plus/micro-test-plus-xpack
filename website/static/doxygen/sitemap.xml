@@ -308,6 +308,9 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-c-api.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-cli.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-runners.html</loc>
   </url>
   <url>
@@ -345,9 +348,6 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-test-suites.html</loc>
-  </url>
-  <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-cli.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemicro__os__plus.html</loc>

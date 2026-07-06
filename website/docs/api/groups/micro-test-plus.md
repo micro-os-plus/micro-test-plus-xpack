@@ -17,7 +17,7 @@ keywords:
 
 # µTest++
 
-<p>Topics related to the µTest++ testing framework. <a href="#details">More...</a></p>
+<p>Topics related to the µTest++ Testing Framework. <a href="#details">More...</a></p>
 
 ## Topics Index
 
@@ -69,7 +69,7 @@ keywords:
 
 ## Description {#details}
 
-<p>Topics related to the µTest++ testing framework.</p>
+<p>Topics related to the µTest++ Testing Framework.</p>
 
 
 <p>The <b>µTest++</b> project is a <b>modern C++</b> library designed to provide a <b>lightweight and efficient</b>, <b>macro free</b>, <b>TAP based</b> testing framework, purpose-built for embedded systems development.</p>

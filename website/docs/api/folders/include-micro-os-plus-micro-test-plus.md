@@ -311,7 +311,10 @@ keywords:
 <p>By consolidating public API definitions in this folder, the project maintains a clear separation from implementation details (located in the <span class="doxyComputerOutput">src</span> folder), thereby promoting modularity, maintainability, and straightforward integration.</p>
 
 
-<p>To access the full capabilities of the µTest++ framework, include the relevant headers from this folder in user projects.</p>
+<p>The contents of this folder are intended solely for internal use within the framework and should not be included directly by user code.</p>
+
+
+<p>To access the full capabilities of the µTest++ framework, include only the top <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a></span> in user projects.</p>
 
 
 <hr/>

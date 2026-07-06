@@ -2884,14 +2884,14 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6195961d9ece2c2c91e8946d47d84a79">594</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#ga6195961d9ece2c2c91e8946d47d84a79">_t&lt;T&gt;::_t</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) : <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a>::<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a8c7aed20f0bf92c317623cdcfea3eed2">value</a>&lt;T&gt;{ t }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6195961d9ece2c2c91e8946d47d84a79">594</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#ga6195961d9ece2c2c91e8946d47d84a79">_t&lt;T&gt;::_t</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) : <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a>::<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a69374f408449c08c756896dd26d2d437">value</a>&lt;T&gt;{ t }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">595</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">596</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a8c7aed20f0bf92c317623cdcfea3eed2">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a69374f408449c08c756896dd26d2d437">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</a>.</p>
 
 </div>
 </div>
@@ -2943,14 +2943,14 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaad9720f2d1e443d77cdfd1eb1151e924">604</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#gaad9720f2d1e443d77cdfd1eb1151e924">to_t&lt;T&gt;::to_t</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) : <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a>::<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a8c7aed20f0bf92c317623cdcfea3eed2">value</a>&lt;T&gt;{ t }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaad9720f2d1e443d77cdfd1eb1151e924">604</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#gaad9720f2d1e443d77cdfd1eb1151e924">to_t&lt;T&gt;::to_t</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) : <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a>::<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a69374f408449c08c756896dd26d2d437">value</a>&lt;T&gt;{ t }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">605</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">606</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a8c7aed20f0bf92c317623cdcfea3eed2">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a69374f408449c08c756896dd26d2d437">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</a>.</p>
 
 </div>
 </div>

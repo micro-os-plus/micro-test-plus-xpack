@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -198,14 +198,14 @@ template&lt;class T&gt; </div>
 </dl>
 <p>Evaluates the logical negation <span class="tt">not static_cast&lt;bool&gt;(t)</span> and passes the result to the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html" title="Common base struct template for unary comparators.">unary_op_</a></span> base class constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00511">511</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  512</span>        : <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#a9458699958135918f1a616bdbd50f0ed">unary_op_&lt;T&gt;</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">t</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">not</a> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">t</a>) }</div>
-<div class="line"><span class="lineno">  513</span>    {</div>
-<div class="line"><span class="lineno">  514</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00512">512</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  513</span>        : <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#a9458699958135918f1a616bdbd50f0ed">unary_op_&lt;T&gt;</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">t</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">not</a> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">t</a>) }</div>
+<div class="line"><span class="lineno">  514</span>    {</div>
+<div class="line"><span class="lineno">  515</span>    }</div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">micro_os_plus::micro_test_plus::detail::not_</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00566">detail.h:567</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___html_a9458699958135918f1a616bdbd50f0ed"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_::unary_op_</a></div><div class="ttdeci">constexpr unary_op_(const T &amp;t, bool value)</div><div class="ttdoc">Constructs a unary comparator with the given operand and pre-computed result.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00097">detail-inlines.h:97</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___html_a9458699958135918f1a616bdbd50f0ed"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_::unary_op_</a></div><div class="ttdeci">constexpr unary_op_(const T &amp;t, bool value)</div><div class="ttdoc">Constructs a unary comparator with the given operand and pre-computed result.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00098">detail-inlines.h:98</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00097">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00098">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_()</a>.</p>
 
 </div>
 </div>
@@ -238,16 +238,16 @@ template&lt;class T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The extracted operand value.</dd></dl>
 <p>Returns the wrapped operand, applying the generic getter to ensure correct extraction for both custom and standard types. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00121">121</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  122</span>    {</div>
-<div class="line"><span class="lineno">  123</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#a21b7e5959bd3e3c18152549aaf4ee9d5">t_</a>);</div>
-<div class="line"><span class="lineno">  124</span>    }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_ac627271520bf2fe8a4c4774bcd9bf343"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a></div><div class="ttdeci">constexpr auto get(const T &amp;t)</div><div class="ttdoc">Generic getter function template for value retrieval.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00081">detail-inlines.h:81</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00122">122</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#a21b7e5959bd3e3c18152549aaf4ee9d5">t_</a>);</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_ac627271520bf2fe8a4c4774bcd9bf343"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a></div><div class="ttdeci">constexpr auto get(const T &amp;t)</div><div class="ttdoc">Generic getter function template for value retrieval.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00082">detail-inlines.h:82</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___html_a21b7e5959bd3e3c18152549aaf4ee9d5"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#a21b7e5959bd3e3c18152549aaf4ee9d5">micro_os_plus::micro_test_plus::detail::unary_op_::t_</a></div><div class="ttdeci">const T t_</div><div class="ttdoc">Stores the operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00196">detail.h:196</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00081">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l00196">t_</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00082">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l00196">t_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00431">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00432">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -279,13 +279,13 @@ template&lt;class T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The result of the operation.</dd></dl>
 <p>Returns the pre-computed boolean result stored by the derived comparator's constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00108">108</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>    {</div>
-<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#ac226d3ad3c5e0ce7eddaf225803aa998">value_</a>;</div>
-<div class="line"><span class="lineno">  112</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00109">109</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>    {</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#ac226d3ad3c5e0ce7eddaf225803aa998">value_</a>;</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___html_ac226d3ad3c5e0ce7eddaf225803aa998"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html#ac226d3ad3c5e0ce7eddaf225803aa998">micro_os_plus::micro_test_plus::detail::unary_op_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the operation.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00201">detail.h:201</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00097">unary_op_()</a>, and <a class="el" href="detail_8h_source.html#l00201">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00098">unary_op_()</a>, and <a class="el" href="detail_8h_source.html#l00201">value_</a>.</p>
 
 </div>
 </div>
@@ -315,7 +315,7 @@ template&lt;class T&gt; </div>
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00196">196</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  196</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00097">unary_op_()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00121">operand()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00098">unary_op_()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00122">operand()</a>.</p>
 
 </div>
 </div>
@@ -344,7 +344,7 @@ template&lt;class T&gt; </div>
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00201">201</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  201</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00097">unary_op_()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00109">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00098">unary_op_()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00110">operator bool()</a>.</p>
 
 </div>
 </div>

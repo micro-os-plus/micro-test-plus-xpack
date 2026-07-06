@@ -865,7 +865,7 @@ Constructs an <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="648" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="594" bodyend="596"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a8c7aed20f0bf92c317623cdcfea3eed2" compoundref="type-traits-inlines_8h" startline="193" endline="196">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="777" endline="780">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -895,7 +895,7 @@ Constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="884" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="604" bodyend="606"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a8c7aed20f0bf92c317623cdcfea3eed2" compoundref="type-traits-inlines_8h" startline="193" endline="196">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="777" endline="780">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>

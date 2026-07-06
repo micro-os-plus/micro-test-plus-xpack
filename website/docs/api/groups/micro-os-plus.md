@@ -30,7 +30,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Topics related to the µTest++ testing framework. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus/#details">More...</a></p>
+<p>Topics related to the µTest++ Testing Framework. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">

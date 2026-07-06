@@ -63,9 +63,7 @@ Constructs and returns a <computeroutput>deferred_reporter&lt;Expr_T&gt;</comput
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="653" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="345" bodyend="349"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad2169093aee09bc28ae7f70467569a23" compoundref="reporter-inlines_8h" startline="106" endline="109">micro_os_plus::micro_test_plus::reporter::expression</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" compoundref="test_8cpp" startline="187" endline="190">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="653" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="346" bodyend="350"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1ad3eb4bb11f1c6fc4631bae8a7215a95e">micro_os_plus::micro_test_plus::subtest::operator=</referencedby>
       </memberdef>
     </sectiondef>

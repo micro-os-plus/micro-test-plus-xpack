@@ -36,7 +36,7 @@ Topics related to the µOS++ framework
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus">µTest++</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Topics related to the µTest++ testing framework
+Topics related to the µTest++ Testing Framework
 </td>
 </tr>
 

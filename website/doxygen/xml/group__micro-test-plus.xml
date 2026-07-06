@@ -7,7 +7,7 @@
     <innergroup refid="group__micro-test-plus-c-api">C API</innergroup>
     <innergroup refid="group__micro-test-plus-cli">Command Line Options</innergroup>
     <briefdescription>
-<para>Topics related to the µTest++ testing framework. </para>
+<para>Topics related to the µTest++ Testing Framework. </para>
     </briefdescription>
     <detaileddescription>
 <para>The <bold>µTest++</bold> project is a <bold>modern C++</bold> library designed to provide a <bold>lightweight and efficient</bold>, <bold>macro free</bold>, <bold>TAP based</bold> testing framework, purpose-built for embedded systems development.</para>

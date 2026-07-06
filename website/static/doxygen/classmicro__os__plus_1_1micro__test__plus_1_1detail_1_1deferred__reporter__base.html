@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -212,13 +212,13 @@ Protected Attributes</h2></td></tr>
 </dl>
 <p>Stores the evaluated Boolean <code class="param">value</code>, the <code class="param">location</code> identifying the source line of the assertion, and a reference to the owning <code class="param">subtest</code>. The subtest's check index counter is incremented immediately so that the first check is reported as check #1. </p>
 
-<p class="definition">Definition at line <a class="el" href="deferred-reporter_8cpp_source.html#l00075">75</a> of file <a class="el" href="deferred-reporter_8cpp_source.html">deferred-reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>        : <a class="code hl_variable" href="#af633053afa944173b47482786f9d9a7e">value_</a>{ <a class="code hl_function" href="#a0c0b059add8cbddb96e8f2fef8cba431">value</a> }, <a class="code hl_variable" href="#a025498d9b9376056c56042cc98ed7afd">location_</a>{ location }, <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>{ subtest }</div>
-<div class="line"><span class="lineno">   79</span>    {</div>
-<div class="line"><span class="lineno">   80</span>      <span class="comment">// The index starts at 0, must be incremented before the first check is</span></div>
-<div class="line"><span class="lineno">   81</span>      <span class="comment">// reported, to ensure that the first check is reported as check #1.</span></div>
-<div class="line"><span class="lineno">   82</span>      <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.increment_subtest_index ();</div>
-<div class="line"><span class="lineno">   83</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deferred-reporter_8cpp_source.html#l00083">83</a> of file <a class="el" href="deferred-reporter_8cpp_source.html">deferred-reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>        : <a class="code hl_variable" href="#af633053afa944173b47482786f9d9a7e">value_</a>{ <a class="code hl_function" href="#a0c0b059add8cbddb96e8f2fef8cba431">value</a> }, <a class="code hl_variable" href="#a025498d9b9376056c56042cc98ed7afd">location_</a>{ location }, <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>{ subtest }</div>
+<div class="line"><span class="lineno">   87</span>    {</div>
+<div class="line"><span class="lineno">   88</span>      <span class="comment">// The index starts at 0, must be incremented before the first check is</span></div>
+<div class="line"><span class="lineno">   89</span>      <span class="comment">// reported, to ensure that the first check is reported as check #1.</span></div>
+<div class="line"><span class="lineno">   90</span>      <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.increment_subtest_index ();</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_a025498d9b9376056c56042cc98ed7afd"><div class="ttname"><a href="#a025498d9b9376056c56042cc98ed7afd">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::location_</a></div><div class="ttdeci">const reflection::source_location location_</div><div class="ttdoc">Stores the source location associated with the report.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00187">deferred-reporter.h:187</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_a0c0b059add8cbddb96e8f2fef8cba431"><div class="ttname"><a href="#a0c0b059add8cbddb96e8f2fef8cba431">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value</a></div><div class="ttdeci">bool value() const</div><div class="ttdoc">Retrieves the result value.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter-inlines_8h_source.html#l00087">deferred-reporter-inlines.h:87</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_aae23103bf1232549780c69911239b781"><div class="ttname"><a href="#aae23103bf1232549780c69911239b781">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::subtest_</a></div><div class="ttdeci">subtest &amp; subtest_</div><div class="ttdoc">Reference to the test case invoking this report.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00198">deferred-reporter.h:198</a></div></div>
@@ -253,7 +253,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="deferred-reporter_8cpp_source.html#l00075">deferred_reporter_base()</a>.</p>
+<p class="reference">References <a class="el" href="deferred-reporter_8cpp_source.html#l00083">deferred_reporter_base()</a>.</p>
 
 </div>
 </div>
@@ -280,7 +280,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="deferred-reporter_8cpp_source.html#l00075">deferred_reporter_base()</a>.</p>
+<p class="reference">References <a class="el" href="deferred-reporter_8cpp_source.html#l00083">deferred_reporter_base()</a>.</p>
 
 </div>
 </div>
@@ -302,35 +302,35 @@ Protected Attributes</h2></td></tr>
 <p>This mechanism ensures that all relevant information about the test outcome is captured and reported accurately when the deferred reporter goes out of scope.</p>
 <p>The destructor ensures that if an abort condition is set and the test expression has failed, the test output is flushed and the process is terminated. This mechanism guarantees immediate feedback and halts further execution upon critical test failures, aiding in rapid identification and resolution of issues during test runs. </p>
 
-<p class="definition">Definition at line <a class="el" href="deferred-reporter_8cpp_source.html#l00103">103</a> of file <a class="el" href="deferred-reporter_8cpp_source.html">deferred-reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  104</span>    {</div>
-<div class="line"><span class="lineno">  105</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE) \</span></div>
-<div class="line"><span class="lineno">  106</span><span class="preprocessor">    &amp;&amp; defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)</span></div>
-<div class="line"><span class="lineno">  107</span>      trace::printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
-<div class="line"><span class="lineno">  108</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS</span></div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>      <span class="keyword">auto</span>&amp; expression_str = <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().expression ().str ();</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#af633053afa944173b47482786f9d9a7e">value_</a>) [[likely]]</div>
-<div class="line"><span class="lineno">  113</span>        {</div>
-<div class="line"><span class="lineno">  114</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().pass (<a class="code hl_variable" href="#a0d4853e08c3106a270e951e56d876840">deferred_output_</a>, expression_str,</div>
-<div class="line"><span class="lineno">  115</span>                                     <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>);</div>
-<div class="line"><span class="lineno">  116</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.totals ().increment_successful_checks ();</div>
-<div class="line"><span class="lineno">  117</span>        }</div>
-<div class="line"><span class="lineno">  118</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  119</span>        {</div>
-<div class="line"><span class="lineno">  120</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().fail (<a class="code hl_variable" href="#aa36fd4c36a94b04430599303e38a48bd">abort_</a>, <a class="code hl_variable" href="#a0d4853e08c3106a270e951e56d876840">deferred_output_</a>, expression_str,</div>
-<div class="line"><span class="lineno">  121</span>                                     <a class="code hl_variable" href="#aa22fa7a9c9f3f456d971728083dbcc6e">has_expression_</a>, <a class="code hl_variable" href="#a025498d9b9376056c56042cc98ed7afd">location_</a>, <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>);</div>
-<div class="line"><span class="lineno">  122</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.totals ().increment_failed_checks ();</div>
-<div class="line"><span class="lineno">  123</span>        }</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa36fd4c36a94b04430599303e38a48bd">abort_</a> &amp;&amp; !<a class="code hl_variable" href="#af633053afa944173b47482786f9d9a7e">value_</a>) [[unlikely]]</div>
-<div class="line"><span class="lineno">  126</span>        {</div>
-<div class="line"><span class="lineno">  127</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().write_buffer_to_stdout ();</div>
-<div class="line"><span class="lineno">  128</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().flush ();</div>
-<div class="line"><span class="lineno">  129</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.abort (<a class="code hl_variable" href="#a025498d9b9376056c56042cc98ed7afd">location_</a>);</div>
-<div class="line"><span class="lineno">  130</span>        }</div>
-<div class="line"><span class="lineno">  131</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deferred-reporter_8cpp_source.html#l00111">111</a> of file <a class="el" href="deferred-reporter_8cpp_source.html">deferred-reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>    {</div>
+<div class="line"><span class="lineno">  113</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE) \</span></div>
+<div class="line"><span class="lineno">  114</span><span class="preprocessor">    &amp;&amp; defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></div>
+<div class="line"><span class="lineno">  115</span>      trace::printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
+<div class="line"><span class="lineno">  116</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>      <span class="keyword">auto</span>&amp; expression_str = <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().expression ().str ();</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#af633053afa944173b47482786f9d9a7e">value_</a>) [[likely]]</div>
+<div class="line"><span class="lineno">  121</span>        {</div>
+<div class="line"><span class="lineno">  122</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().pass (<a class="code hl_variable" href="#a0d4853e08c3106a270e951e56d876840">deferred_output_</a>, expression_str,</div>
+<div class="line"><span class="lineno">  123</span>                                     <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>);</div>
+<div class="line"><span class="lineno">  124</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.totals ().increment_successful_checks ();</div>
+<div class="line"><span class="lineno">  125</span>        }</div>
+<div class="line"><span class="lineno">  126</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  127</span>        {</div>
+<div class="line"><span class="lineno">  128</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().fail (<a class="code hl_variable" href="#aa36fd4c36a94b04430599303e38a48bd">abort_</a>, <a class="code hl_variable" href="#a0d4853e08c3106a270e951e56d876840">deferred_output_</a>, expression_str,</div>
+<div class="line"><span class="lineno">  129</span>                                     <a class="code hl_variable" href="#aa22fa7a9c9f3f456d971728083dbcc6e">has_expression_</a>, <a class="code hl_variable" href="#a025498d9b9376056c56042cc98ed7afd">location_</a>, <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>);</div>
+<div class="line"><span class="lineno">  130</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.totals ().increment_failed_checks ();</div>
+<div class="line"><span class="lineno">  131</span>        }</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa36fd4c36a94b04430599303e38a48bd">abort_</a> &amp;&amp; !<a class="code hl_variable" href="#af633053afa944173b47482786f9d9a7e">value_</a>) [[unlikely]]</div>
+<div class="line"><span class="lineno">  134</span>        {</div>
+<div class="line"><span class="lineno">  135</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().write_buffer_to_stdout ();</div>
+<div class="line"><span class="lineno">  136</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.reporter ().flush ();</div>
+<div class="line"><span class="lineno">  137</span>          <a class="code hl_variable" href="#aae23103bf1232549780c69911239b781">subtest_</a>.abort (<a class="code hl_variable" href="#a025498d9b9376056c56042cc98ed7afd">location_</a>);</div>
+<div class="line"><span class="lineno">  138</span>        }</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_a0d4853e08c3106a270e951e56d876840"><div class="ttname"><a href="#a0d4853e08c3106a270e951e56d876840">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_output_</a></div><div class="ttdeci">std::string deferred_output_</div><div class="ttdoc">String to collect the expectation message passed via operator&lt;&lt;().</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00193">deferred-reporter.h:193</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_aa22fa7a9c9f3f456d971728083dbcc6e"><div class="ttname"><a href="#aa22fa7a9c9f3f456d971728083dbcc6e">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::has_expression_</a></div><div class="ttdeci">bool has_expression_</div><div class="ttdoc">Indicates whether the reporter has an associated expression.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00182">deferred-reporter.h:182</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_aa36fd4c36a94b04430599303e38a48bd"><div class="ttname"><a href="#aa36fd4c36a94b04430599303e38a48bd">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::abort_</a></div><div class="ttdeci">bool abort_</div><div class="ttdoc">Indicates whether the reporting should abort further processing.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00177">deferred-reporter.h:177</a></div></div>
@@ -435,7 +435,7 @@ requires type_traits::printable&lt;T&gt;</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="deferred-reporter_8cpp_source.html#l00075">deferred_reporter_base()</a>.</p>
+<p class="reference">References <a class="el" href="deferred-reporter_8cpp_source.html#l00083">deferred_reporter_base()</a>.</p>
 
 </div>
 </div>
@@ -462,7 +462,7 @@ requires type_traits::printable&lt;T&gt;</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="deferred-reporter_8cpp_source.html#l00075">deferred_reporter_base()</a>.</p>
+<p class="reference">References <a class="el" href="deferred-reporter_8cpp_source.html#l00083">deferred_reporter_base()</a>.</p>
 
 </div>
 </div>
@@ -505,7 +505,7 @@ requires type_traits::printable&lt;T&gt;</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="deferred-reporter_8h_source.html#l00171">value_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00075">deferred_reporter_base()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00083">deferred_reporter_base()</a>.</p>
 
 </div>
 </div>
@@ -532,7 +532,7 @@ requires type_traits::printable&lt;T&gt;</div>
 
 <p class="definition">Definition at line <a class="el" href="deferred-reporter_8h_source.html#l00177">177</a> of file <a class="el" href="deferred-reporter_8h_source.html">deferred-reporter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deferred-reporter-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::detail::deferred_reporter::deferred_reporter()</a>, and <a class="el" href="deferred-reporter_8cpp_source.html#l00103">~deferred_reporter_base()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deferred-reporter-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::detail::deferred_reporter::deferred_reporter()</a>, and <a class="el" href="deferred-reporter_8cpp_source.html#l00111">~deferred_reporter_base()</a>.</p>
 
 </div>
 </div>
@@ -559,7 +559,7 @@ requires type_traits::printable&lt;T&gt;</div>
 <p class="definition">Definition at line <a class="el" href="deferred-reporter_8h_source.html#l00193">193</a> of file <a class="el" href="deferred-reporter_8h_source.html">deferred-reporter.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  193</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00103">~deferred_reporter_base()</a>, and <a class="el" href="deferred-reporter-inlines_8h_source.html#l00108">operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00111">~deferred_reporter_base()</a>, and <a class="el" href="deferred-reporter-inlines_8h_source.html#l00108">operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -585,7 +585,7 @@ requires type_traits::printable&lt;T&gt;</div>
 
 <p class="definition">Definition at line <a class="el" href="deferred-reporter_8h_source.html#l00182">182</a> of file <a class="el" href="deferred-reporter_8h_source.html">deferred-reporter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deferred-reporter-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::detail::deferred_reporter::deferred_reporter()</a>, and <a class="el" href="deferred-reporter_8cpp_source.html#l00103">~deferred_reporter_base()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deferred-reporter-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::detail::deferred_reporter::deferred_reporter()</a>, and <a class="el" href="deferred-reporter_8cpp_source.html#l00111">~deferred_reporter_base()</a>.</p>
 
 </div>
 </div>
@@ -612,7 +612,7 @@ requires type_traits::printable&lt;T&gt;</div>
 <p class="definition">Definition at line <a class="el" href="deferred-reporter_8h_source.html#l00187">187</a> of file <a class="el" href="deferred-reporter_8h_source.html">deferred-reporter.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  187</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00075">deferred_reporter_base()</a>, and <a class="el" href="deferred-reporter_8cpp_source.html#l00103">~deferred_reporter_base()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00083">deferred_reporter_base()</a>, and <a class="el" href="deferred-reporter_8cpp_source.html#l00111">~deferred_reporter_base()</a>.</p>
 
 </div>
 </div>
@@ -638,7 +638,7 @@ requires type_traits::printable&lt;T&gt;</div>
 
 <p class="definition">Definition at line <a class="el" href="deferred-reporter_8h_source.html#l00198">198</a> of file <a class="el" href="deferred-reporter_8h_source.html">deferred-reporter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00075">deferred_reporter_base()</a>, and <a class="el" href="deferred-reporter_8cpp_source.html#l00103">~deferred_reporter_base()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00083">deferred_reporter_base()</a>, and <a class="el" href="deferred-reporter_8cpp_source.html#l00111">~deferred_reporter_base()</a>.</p>
 
 </div>
 </div>
@@ -665,7 +665,7 @@ requires type_traits::printable&lt;T&gt;</div>
 <p class="definition">Definition at line <a class="el" href="deferred-reporter_8h_source.html#l00171">171</a> of file <a class="el" href="deferred-reporter_8h_source.html">deferred-reporter.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  171</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00075">deferred_reporter_base()</a>, <a class="el" href="deferred-reporter_8cpp_source.html#l00103">~deferred_reporter_base()</a>, and <a class="el" href="deferred-reporter-inlines_8h_source.html#l00087">value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deferred-reporter_8cpp_source.html#l00083">deferred_reporter_base()</a>, <a class="el" href="deferred-reporter_8cpp_source.html#l00111">~deferred_reporter_base()</a>, and <a class="el" href="deferred-reporter-inlines_8h_source.html#l00087">value()</a>.</p>
 
 </div>
 </div>

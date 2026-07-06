@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -203,29 +203,29 @@ Protected Attributes</h2></td></tr>
 </dl>
 <p>Stores the supplied <code class="param">name</code> pointer, which is expected to point to a string with a lifetime exceeding that of this instance. If tracing is enabled, the name is output for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8cpp_source.html#l00084">84</a> of file <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                                          : <a class="code hl_variable" href="#a61ac0275108c9f9b2348c1c5fc8af104">name_</a>{ <a class="code hl_function" href="#a1565ede2ab1141b2e3db2ea5513002a1">name</a> }</div>
-<div class="line"><span class="lineno">   85</span>    {</div>
-<div class="line"><span class="lineno">   86</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE) \</span></div>
-<div class="line"><span class="lineno">   87</span><span class="preprocessor">    &amp;&amp; defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)</span></div>
-<div class="line"><span class="lineno">   88</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">   89</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">   90</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">   91</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
-<div class="line"><span class="lineno">   92</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   94</span>      trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39;\n&quot;</span>, __PRETTY_FUNCTION__, <a class="code hl_function" href="#a1565ede2ab1141b2e3db2ea5513002a1">name</a>);</div>
-<div class="line"><span class="lineno">   95</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">   96</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">   97</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   98</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS</span></div>
-<div class="line"><span class="lineno">   99</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_html_a1565ede2ab1141b2e3db2ea5513002a1"><div class="ttname"><a href="#a1565ede2ab1141b2e3db2ea5513002a1">micro_os_plus::micro_test_plus::detail::test_node::name</a></div><div class="ttdeci">const char * name(void) const noexcept</div><div class="ttdoc">Gets the node name.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00091">test-inlines.h:91</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test_8cpp_source.html#l00093">93</a> of file <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>                                          : <a class="code hl_variable" href="#a61ac0275108c9f9b2348c1c5fc8af104">name_</a>{ <a class="code hl_function" href="#a1565ede2ab1141b2e3db2ea5513002a1">name</a> }</div>
+<div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE) \</span></div>
+<div class="line"><span class="lineno">   96</span><span class="preprocessor">    &amp;&amp; defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></div>
+<div class="line"><span class="lineno">   97</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">   98</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">   99</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  100</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  103</span>      trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39;\n&quot;</span>, __PRETTY_FUNCTION__, <a class="code hl_function" href="#a1565ede2ab1141b2e3db2ea5513002a1">name</a>);</div>
+<div class="line"><span class="lineno">  104</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  105</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">  106</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  107</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_html_a1565ede2ab1141b2e3db2ea5513002a1"><div class="ttname"><a href="#a1565ede2ab1141b2e3db2ea5513002a1">micro_os_plus::micro_test_plus::detail::test_node::name</a></div><div class="ttdeci">const char * name(void) const noexcept</div><div class="ttdoc">Gets the node name.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00092">test-inlines.h:92</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_html_a61ac0275108c9f9b2348c1c5fc8af104"><div class="ttname"><a href="#a61ac0275108c9f9b2348c1c5fc8af104">micro_os_plus::micro_test_plus::detail::test_node::name_</a></div><div class="ttdeci">const char * name_</div><div class="ttdoc">The test node name.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00224">test.h:224</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00091">name()</a>, and <a class="el" href="test_8h_source.html#l00224">name_</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00092">name()</a>, and <a class="el" href="test_8h_source.html#l00224">name_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00136">micro_os_plus::micro_test_plus::detail::runnable_base::runnable_base()</a>, <a class="el" href="runner_8cpp_source.html#l00130">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="runner_8cpp_source.html#l00107">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="#abd7ec90f6df6b466037483fa53b2929e">test_node()</a>, <a class="el" href="#a39d0a5423098d96f0e5ff5149b531334">test_node()</a>, <a class="el" href="#adacaa997efca9fda463602be39640766">operator=()</a>, and <a class="el" href="#aa4f1beeb7b4b88ffc5e15eb705a2644e">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00145">micro_os_plus::micro_test_plus::detail::runnable_base::runnable_base()</a>, <a class="el" href="runner_8cpp_source.html#l00139">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="runner_8cpp_source.html#l00116">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="#abd7ec90f6df6b466037483fa53b2929e">test_node()</a>, <a class="el" href="#a39d0a5423098d96f0e5ff5149b531334">test_node()</a>, <a class="el" href="#adacaa997efca9fda463602be39640766">operator=()</a>, and <a class="el" href="#aa4f1beeb7b4b88ffc5e15eb705a2644e">operator=()</a>.</p>
 
 </div>
 </div>
@@ -252,7 +252,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="test_8cpp_source.html#l00084">test_node()</a>.</p>
+<p class="reference">References <a class="el" href="test_8cpp_source.html#l00093">test_node()</a>.</p>
 
 </div>
 </div>
@@ -279,7 +279,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="test_8cpp_source.html#l00084">test_node()</a>.</p>
+<p class="reference">References <a class="el" href="test_8cpp_source.html#l00093">test_node()</a>.</p>
 
 </div>
 </div>
@@ -307,22 +307,22 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>No resources are owned by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html" title="Base class for runners and runable tests.">test_node</a></span>; the destructor performs no explicit clean-up. If tracing is enabled, the node name is output for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8cpp_source.html#l00107">107</a> of file <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>    {</div>
-<div class="line"><span class="lineno">  109</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE) \</span></div>
-<div class="line"><span class="lineno">  110</span><span class="preprocessor">    &amp;&amp; defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)</span></div>
-<div class="line"><span class="lineno">  111</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  112</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  113</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  114</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
-<div class="line"><span class="lineno">  115</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  116</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  117</span>      trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39;\n&quot;</span>, __PRETTY_FUNCTION__, <a class="code hl_variable" href="#a61ac0275108c9f9b2348c1c5fc8af104">name_</a>);</div>
-<div class="line"><span class="lineno">  118</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  119</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  120</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  121</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS</span></div>
-<div class="line"><span class="lineno">  122</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test_8cpp_source.html#l00116">116</a> of file <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>    {</div>
+<div class="line"><span class="lineno">  118</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE) \</span></div>
+<div class="line"><span class="lineno">  119</span><span class="preprocessor">    &amp;&amp; defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></div>
+<div class="line"><span class="lineno">  120</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  121</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">  122</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  123</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
+<div class="line"><span class="lineno">  124</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  125</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  126</span>      trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39;\n&quot;</span>, __PRETTY_FUNCTION__, <a class="code hl_variable" href="#a61ac0275108c9f9b2348c1c5fc8af104">name_</a>);</div>
+<div class="line"><span class="lineno">  127</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  128</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">  129</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  130</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
+<div class="line"><span class="lineno">  131</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="test_8h_source.html#l00224">name_</a>.</p>
 
@@ -355,14 +355,14 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the null-terminated test node name.</dd></dl>
 <p>Returns a pointer to the null-terminated name stored in <span class="tt"><a class="el" href="#a61ac0275108c9f9b2348c1c5fc8af104" title="The test node name.">name_</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00091">91</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>    {</div>
-<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a61ac0275108c9f9b2348c1c5fc8af104">name_</a>;</div>
-<div class="line"><span class="lineno">   94</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00092">92</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>    {</div>
+<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a61ac0275108c9f9b2348c1c5fc8af104">name_</a>;</div>
+<div class="line"><span class="lineno">   95</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="test_8h_source.html#l00224">name_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00191">micro_os_plus::micro_test_plus::detail::runnable&lt; Self_T &gt;::runnable()</a>, <a class="el" href="test_8cpp_source.html#l00136">micro_os_plus::micro_test_plus::detail::runnable_base::runnable_base()</a>, <a class="el" href="runner_8cpp_source.html#l00130">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="runner_8cpp_source.html#l00107">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="runner_8cpp_source.html#l00506">micro_os_plus::micro_test_plus::static_runner::static_runner()</a>, <a class="el" href="runner_8cpp_source.html#l00483">micro_os_plus::micro_test_plus::static_runner::static_runner()</a>, <a class="el" href="test_8cpp_source.html#l00084">test_node()</a>, <a class="el" href="test_8cpp_source.html#l00215">micro_os_plus::micro_test_plus::detail::runnable_base::after_subtest_create_()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00489">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00464">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00296">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00271">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00561">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00531">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00352">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00328">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aa34a0418d54c633630a089eb2b5a61ee">micro_os_plus::micro_test_plus::runner::operator=()</a>, and <a class="el" href="runner-inlines_8h_source.html#l00112">micro_os_plus::micro_test_plus::runner::suite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00192">micro_os_plus::micro_test_plus::detail::runnable&lt; Self_T &gt;::runnable()</a>, <a class="el" href="test_8cpp_source.html#l00145">micro_os_plus::micro_test_plus::detail::runnable_base::runnable_base()</a>, <a class="el" href="runner_8cpp_source.html#l00139">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="runner_8cpp_source.html#l00116">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="runner_8cpp_source.html#l00515">micro_os_plus::micro_test_plus::static_runner::static_runner()</a>, <a class="el" href="runner_8cpp_source.html#l00492">micro_os_plus::micro_test_plus::static_runner::static_runner()</a>, <a class="el" href="test_8cpp_source.html#l00093">test_node()</a>, <a class="el" href="test_8cpp_source.html#l00224">micro_os_plus::micro_test_plus::detail::runnable_base::after_subtest_create_()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00497">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00472">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00304">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00279">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00569">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00539">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00360">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00336">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aa34a0418d54c633630a089eb2b5a61ee">micro_os_plus::micro_test_plus::runner::operator=()</a>, and <a class="el" href="runner-inlines_8h_source.html#l00113">micro_os_plus::micro_test_plus::runner::suite()</a>.</p>
 
 </div>
 </div>
@@ -389,7 +389,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="test_8cpp_source.html#l00084">test_node()</a>.</p>
+<p class="reference">References <a class="el" href="test_8cpp_source.html#l00093">test_node()</a>.</p>
 
 </div>
 </div>
@@ -416,7 +416,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="test_8cpp_source.html#l00084">test_node()</a>, and <a class="el" href="test-inlines_8h_source.html#l00101">totals()</a>.</p>
+<p class="reference">References <a class="el" href="test_8cpp_source.html#l00093">test_node()</a>, and <a class="el" href="test-inlines_8h_source.html#l00102">totals()</a>.</p>
 
 </div>
 </div>
@@ -446,10 +446,10 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A const reference to the <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html" title="Aggregated pass/fail/subtest counters for a node in the test tree.">runner_totals</a> instance.</dd></dl>
 <p>Returns a const reference to the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html" title="Aggregated pass/fail/subtest counters for a node in the test tree.">runner_totals</a></span> member. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00111">111</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span>    {</div>
-<div class="line"><span class="lineno">  113</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a1af301da2bcb0659c40a472589edc194">totals_</a>;</div>
-<div class="line"><span class="lineno">  114</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00112">112</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a1af301da2bcb0659c40a472589edc194">totals_</a>;</div>
+<div class="line"><span class="lineno">  115</span>    }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_html_a1af301da2bcb0659c40a472589edc194"><div class="ttname"><a href="#a1af301da2bcb0659c40a472589edc194">micro_os_plus::micro_test_plus::detail::test_node::totals_</a></div><div class="ttdeci">runner_totals totals_</div><div class="ttdoc">Totals for the test node, including nested cases.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00229">test.h:229</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="test_8h_source.html#l00229">totals_</a>.</p>
@@ -482,14 +482,14 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html" title="Aggregated pass/fail/subtest counters for a node in the test tree.">runner_totals</a> instance.</dd></dl>
 <p>Returns a reference to the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html" title="Aggregated pass/fail/subtest counters for a node in the test tree.">runner_totals</a></span> member. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00101">101</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>    {</div>
-<div class="line"><span class="lineno">  103</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a1af301da2bcb0659c40a472589edc194">totals_</a>;</div>
-<div class="line"><span class="lineno">  104</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00102">102</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>    {</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a1af301da2bcb0659c40a472589edc194">totals_</a>;</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="test_8h_source.html#l00229">totals_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00215">micro_os_plus::micro_test_plus::detail::runnable_base::after_subtest_create_()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00202">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00180">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00561">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00531">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00352">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00328">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#aa4f1beeb7b4b88ffc5e15eb705a2644e">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00224">micro_os_plus::micro_test_plus::detail::runnable_base::after_subtest_create_()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00210">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00188">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00569">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00539">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00360">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00336">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#aa4f1beeb7b4b88ffc5e15eb705a2644e">operator=()</a>.</p>
 
 </div>
 </div>
@@ -517,7 +517,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00224">224</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00084">test_node()</a>, <a class="el" href="test-inlines_8h_source.html#l00234">micro_os_plus::micro_test_plus::detail::runnable&lt; Self_T &gt;::~runnable()</a>, <a class="el" href="test_8cpp_source.html#l00162">micro_os_plus::micro_test_plus::detail::runnable_base::~runnable_base()</a>, <a class="el" href="test_8cpp_source.html#l00107">~test_node()</a>, and <a class="el" href="test-inlines_8h_source.html#l00091">name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00093">test_node()</a>, <a class="el" href="test-inlines_8h_source.html#l00235">micro_os_plus::micro_test_plus::detail::runnable&lt; Self_T &gt;::~runnable()</a>, <a class="el" href="test_8cpp_source.html#l00171">micro_os_plus::micro_test_plus::detail::runnable_base::~runnable_base()</a>, <a class="el" href="test_8cpp_source.html#l00116">~test_node()</a>, and <a class="el" href="test-inlines_8h_source.html#l00092">name()</a>.</p>
 
 </div>
 </div>
@@ -543,7 +543,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00229">229</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00384">micro_os_plus::micro_test_plus::runner::exit_code()</a>, <a class="el" href="runner_8cpp_source.html#l00337">micro_os_plus::micro_test_plus::runner::run_suites_()</a>, <a class="el" href="runner_8cpp_source.html#l00582">micro_os_plus::micro_test_plus::static_runner::run_suites_()</a>, <a class="el" href="test-inlines_8h_source.html#l00111">totals()</a>, and <a class="el" href="test-inlines_8h_source.html#l00101">totals()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00393">micro_os_plus::micro_test_plus::runner::exit_code()</a>, <a class="el" href="runner_8cpp_source.html#l00346">micro_os_plus::micro_test_plus::runner::run_suites_()</a>, <a class="el" href="runner_8cpp_source.html#l00591">micro_os_plus::micro_test_plus::static_runner::run_suites_()</a>, <a class="el" href="test-inlines_8h_source.html#l00112">totals()</a>, and <a class="el" href="test-inlines_8h_source.html#l00102">totals()</a>.</p>
 
 </div>
 </div>

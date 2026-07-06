@@ -24,7 +24,7 @@ keywords:
 <p>Project specific Doxygen topics definitions.</p>
 
 
-<p>This file organises the principal Doxygen groups and documentation topics for the µTest++ testing framework, which forms part of the µOS++ project.</p>
+<p>This file organises the principal Doxygen groups and documentation topics for the µTest++ Testing Framework, which forms part of the µOS++ project.</p>
 
 
 <p>Although named as a header, this file is not included in the build process; it is intended exclusively as a documentation resource for Doxygen. Due to Doxygen processing requirements, it cannot be provided as a Markdown file or as a <span class="doxyComputerOutput">.doxyfile</span>.</p>

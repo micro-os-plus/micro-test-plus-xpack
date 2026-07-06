@@ -28,7 +28,8 @@
 <para>This folder provides the primary public headers that define the core functionality of the µTest++ Testing Framework.</para>
 <para>It includes declarations for essential framework components, including test suite and test case management, test runner and reporter classes, function comparators, overloaded operators, user-defined literals, mathematical utilities, type traits, reflection utilities, and supporting internal mechanisms.</para>
 <para>By consolidating public API definitions in this folder, the project maintains a clear separation from implementation details (located in the <computeroutput>src</computeroutput> folder), thereby promoting modularity, maintainability, and straightforward integration.</para>
-<para>To access the full capabilities of the µTest++ framework, include the relevant headers from this folder in user projects.  </para>
+<para>The contents of this folder are intended solely for internal use within the framework and should not be included directly by user code.</para>
+<para>To access the full capabilities of the µTest++ framework, include only the top <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput> in user projects.  </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/"/>
   </compounddef>

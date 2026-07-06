@@ -732,8 +732,8 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a434b222ff19bdb4970ad56fce11d5176" kind="variable"><name>epsilon</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a8c7aed20f0bf92c317623cdcfea3eed2" kind="function"><name>value</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a2fa50f7d37b9fe77af3c0cc64e9dba4c" kind="function"><name>value</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" kind="function"><name>value</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a453e9c54cb194c672ca8739c98d3cc68" kind="function"><name>value</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" kind="function"><name>operator T</name></member>
@@ -1229,6 +1229,8 @@
   </compound>
   <compound refid="group__micro-test-plus-c-api" kind="group"><name>micro-test-plus-c-api</name>
   </compound>
+  <compound refid="group__micro-test-plus-cli" kind="group"><name>micro-test-plus-cli</name>
+  </compound>
   <compound refid="group__micro-test-plus-runners" kind="group"><name>micro-test-plus-runners</name>
   </compound>
   <compound refid="group__micro-test-plus-test-case" kind="group"><name>micro-test-plus-test-case</name>
@@ -1362,8 +1364,6 @@
     <member refid="group__micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" kind="function"><name>split</name></member>
   </compound>
   <compound refid="group__micro-test-plus-test-suites" kind="group"><name>micro-test-plus-test-suites</name>
-  </compound>
-  <compound refid="group__micro-test-plus-cli" kind="group"><name>micro-test-plus-cli</name>
   </compound>
   <compound refid="deprecated" kind="page"><name>deprecated</name>
   </compound>

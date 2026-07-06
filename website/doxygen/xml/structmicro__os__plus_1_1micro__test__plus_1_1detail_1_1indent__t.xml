@@ -18,8 +18,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="139" column="14" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="139" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a95dcf787668c7897d5c92ecce99dc6d5" compoundref="reporter-human_8cpp" startline="134" endline="138">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a4225a7fb05cb67bf2f881e97fc012ebb" compoundref="reporter-tap_8cpp" startline="111" endline="115">micro_os_plus::micro_test_plus::reporter_tap::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a95dcf787668c7897d5c92ecce99dc6d5" compoundref="reporter-human_8cpp" startline="142" endline="146">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a4225a7fb05cb67bf2f881e97fc012ebb" compoundref="reporter-tap_8cpp" startline="119" endline="123">micro_os_plus::micro_test_plus::reporter_tap::operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
