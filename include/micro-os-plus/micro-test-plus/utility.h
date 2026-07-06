@@ -125,7 +125,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // __cplusplus
 
 // ============================================================================
-// Templates & constexpr implementations.
+// Templates, inlines & constexpr implementations.
 
 #include "inlines/utility-inlines.h"
 
