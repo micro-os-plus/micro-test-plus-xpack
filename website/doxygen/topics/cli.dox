@@ -1,6 +1,5 @@
 @defgroup micro-test-plus-cli Command Line Options
 @brief Options for controlling test output verbosity at run-time.
-@ingroup micro-test-plus
 
 @details
 

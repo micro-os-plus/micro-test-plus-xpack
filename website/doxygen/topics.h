@@ -17,19 +17,25 @@
 
 @include{doc} pages/mainpage.dox
 
-@include{doc} files-and-folders/topics-h.dox
+@include{doc} files/topics-h.dox
 
-@include{doc} files-and-folders/include-micro-os-plus-micro-test-plus.dox
-@include{doc} files-and-folders/include-micro-os-plus-micro-test-plus-inlines.dox
+@include{doc} folders/include-micro-os-plus-micro-test-plus.dox
+@include{doc} folders/include-micro-os-plus-micro-test-plus-inlines.dox
 
-@include{doc} files-and-folders/src.dox
+@include{doc} folders/src.dox
 
-@include{doc} topics/micro-test-plus.dox
+@addtogroup micro-os-plus
+@{
+  @include{doc} topics/micro-test-plus.dox
+@}
 
-@include{doc} topics/cpp-api.dox
-@include{doc} topics/c-api.dox
+@addtogroup micro-test-plus
+@{
+  @include{doc} topics/cpp-api.dox
+  @include{doc} topics/c-api.dox
 
-@include{doc} topics/cli.dox
+  @include{doc} topics/cli.dox
+@}
 
 @addtogroup micro-test-plus-cpp-api
 @{

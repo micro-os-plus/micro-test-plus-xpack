@@ -16,5 +16,8 @@ maintains a clear separation from implementation details (located in the
 `src` folder), thereby promoting modularity, maintainability, and
 straightforward integration.
 
-To access the full capabilities of the µTest++ framework, include the
-relevant headers from this folder in user projects.
+The contents of this folder are intended solely for internal use within
+the framework and should not be included directly by user code.
+
+To access the full capabilities of the µTest++ framework, include only the
+top `micro-os-plus/micro-test-plus.h` in user projects.

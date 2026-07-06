@@ -1,5 +1,4 @@
 @defgroup micro-test-plus-cpp-api C++ API
-@ingroup micro-test-plus
 @brief Topics related to the µTest++ C++ API.
 
 @details
