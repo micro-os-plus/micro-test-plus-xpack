@@ -609,31 +609,31 @@ class micro_os_plus::micro_test_plus::subtest { ... }
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] name</td>
+<td class="doxyParamItemName">name</td>
 <td class="doxyParamItemDescription"><p>The subtest name or description, used in reports.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] runner</td>
+<td class="doxyParamItemName">runner</td>
 <td class="doxyParamItemDescription"><p>The test runner managing this subtest.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] parent_suite</td>
+<td class="doxyParamItemName">parent_suite</td>
 <td class="doxyParamItemDescription"><p>The suite that owns this subtest.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] own_index</td>
+<td class="doxyParamItemName">own_index</td>
 <td class="doxyParamItemDescription"><p>The one-based positional index within the parent.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] nesting_depth</td>
+<td class="doxyParamItemName">nesting_depth</td>
 <td class="doxyParamItemDescription"><p>The depth of nesting; 1 for top-level subtests.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] callable</td>
+<td class="doxyParamItemName">callable</td>
 <td class="doxyParamItemDescription"><p>A generic callable object, usually a lambda, invoked when the subtest executes.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] arguments</td>
+<td class="doxyParamItemName">arguments</td>
 <td class="doxyParamItemDescription"><p>A possibly empty list of arguments forwarded to the callable after the leading <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a>&amp;</span> reference.</p></td>
 </tr>
 </table>
@@ -1638,15 +1638,15 @@ class micro_os_plus::micro_test_plus::subtest { ... }
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] name</td>
+<td class="doxyParamItemName">name</td>
 <td class="doxyParamItemDescription"><p>The test case name or description, used in reports.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] callable</td>
+<td class="doxyParamItemName">callable</td>
 <td class="doxyParamItemDescription"><p>A generic callable object, usually a lambda, invoked to perform the test.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] arguments</td>
+<td class="doxyParamItemName">arguments</td>
 <td class="doxyParamItemDescription"><p>A possibly empty list of arguments to be passed to the callable.</p></td>
 </tr>
 </table>
@@ -2312,6 +2312,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.1 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

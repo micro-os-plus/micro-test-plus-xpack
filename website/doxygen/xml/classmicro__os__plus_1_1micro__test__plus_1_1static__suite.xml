@@ -214,7 +214,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">name</parametername>
+<parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test suite name or description, used in reports. </para>
@@ -222,7 +222,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">runner</parametername>
+<parametername>runner</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The static test runner managing this suite. </para>
@@ -230,7 +230,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">callable</parametername>
+<parametername>callable</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A generic callable object, usually a lambda or function, invoked to perform the test suite. </para>
@@ -238,7 +238,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">arguments</parametername>
+<parametername>arguments</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A possibly empty list of arguments to be passed to the callable.</para>
@@ -667,7 +667,7 @@ Returns a reference to the owning test runner. </para>
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">name</parametername>
+<parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test case name or description, used in reports. </para>
@@ -675,7 +675,7 @@ Returns a reference to the owning test runner. </para>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">callable</parametername>
+<parametername>callable</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A generic callable object, usually a lambda, invoked to perform the test. </para>
@@ -683,7 +683,7 @@ Returns a reference to the owning test runner. </para>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">arguments</parametername>
+<parametername>arguments</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A possibly empty list of arguments to be passed to the callable.</para>

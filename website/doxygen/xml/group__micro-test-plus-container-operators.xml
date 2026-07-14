@@ -52,7 +52,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The left hand side container operand. </para>
@@ -60,7 +60,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The right hand side container operand. </para>
@@ -123,7 +123,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The left hand side container operand. </para>
@@ -131,7 +131,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The right hand side container operand. </para>

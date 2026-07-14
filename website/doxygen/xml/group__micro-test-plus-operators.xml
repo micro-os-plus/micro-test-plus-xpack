@@ -51,7 +51,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -59,7 +59,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -106,7 +106,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">t</parametername>
+<parametername>t</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Operand to be logically negated. </para>
@@ -168,7 +168,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -176,7 +176,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -238,7 +238,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -246,7 +246,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -308,7 +308,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -316,7 +316,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -378,7 +378,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -386,7 +386,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -448,7 +448,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -456,7 +456,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -518,7 +518,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -526,7 +526,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -588,7 +588,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -596,7 +596,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>

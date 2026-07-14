@@ -20,7 +20,7 @@
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">path</parametername>
+<parametername>path</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A null-terminated file path string. </para>
@@ -63,7 +63,7 @@ The <computeroutput><ref refid="group__micro-test-plus-utility-functions_1ga791f
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">input</parametername>
+<parametername>input</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The string view to be checked. </para>
@@ -71,7 +71,7 @@ The <computeroutput><ref refid="group__micro-test-plus-utility-functions_1ga791f
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">pattern</parametername>
+<parametername>pattern</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The string view containing the pattern to match. </para>
@@ -127,7 +127,7 @@ This function enables pattern-based string comparison for tests, supporting both
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">t</parametername>
+<parametername>t</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The object from which to remove const qualification. </para>
@@ -197,7 +197,7 @@ The <computeroutput><ref refid="group__micro-test-plus-utility-functions_1ga00ea
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">input</parametername>
+<parametername>input</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Input string to split. </para>
@@ -205,7 +205,7 @@ The <computeroutput><ref refid="group__micro-test-plus-utility-functions_1ga00ea
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">delim</parametername>
+<parametername>delim</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Delimiter string. </para>

@@ -1221,6 +1221,11 @@
         },
         {
           "type": "doc",
+          "label": "Typedefs",
+          "id": "api/indices/files/typedefs"
+        },
+        {
+          "type": "doc",
           "label": "Enums",
           "id": "api/indices/files/enums"
         },

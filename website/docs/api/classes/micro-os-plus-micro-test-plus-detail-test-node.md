@@ -295,7 +295,7 @@ class micro_os_plus::micro_test_plus::detail::test_node { ... }
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] name</td>
+<td class="doxyParamItemName">name</td>
 <td class="doxyParamItemDescription"><p>The test node name.</p></td>
 </tr>
 </table>
@@ -843,6 +843,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.1 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

@@ -199,7 +199,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">name</parametername>
+<parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The suite name or description, used in reports. </para>
@@ -207,7 +207,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">runner</parametername>
+<parametername>runner</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test runner managing this suite. </para>
@@ -215,7 +215,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">callable</parametername>
+<parametername>callable</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A generic callable object, usually a lambda, invoked when the suite executes. Its first parameter must be <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>&amp;</computeroutput>. </para>
@@ -223,7 +223,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">arguments</parametername>
+<parametername>arguments</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A possibly empty list of arguments forwarded to the callable after the leading <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>&amp;</computeroutput> reference.</para>
@@ -650,7 +650,7 @@ Returns a reference to the owning test runner. </para>
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">name</parametername>
+<parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test case name or description, used in reports. </para>
@@ -658,7 +658,7 @@ Returns a reference to the owning test runner. </para>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">callable</parametername>
+<parametername>callable</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A generic callable object, usually a lambda, invoked to perform the test. </para>
@@ -666,7 +666,7 @@ Returns a reference to the owning test runner. </para>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">arguments</parametername>
+<parametername>arguments</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A possibly empty list of arguments to be passed to the callable.</para>

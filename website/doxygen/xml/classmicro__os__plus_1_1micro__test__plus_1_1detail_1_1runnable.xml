@@ -203,7 +203,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">name</parametername>
+<parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test name, used in reports. </para>
@@ -211,7 +211,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">runner</parametername>
+<parametername>runner</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test runner managing this test. </para>
@@ -219,7 +219,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">own_index</parametername>
+<parametername>own_index</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test index within the runner. </para>
@@ -227,7 +227,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">callable</parametername>
+<parametername>callable</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The callable invoked when the test runs. </para>
@@ -235,7 +235,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">arguments</parametername>
+<parametername>arguments</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Additional arguments forwarded to the callable after the leading <computeroutput>Self_T&amp;</computeroutput> reference.</para>
