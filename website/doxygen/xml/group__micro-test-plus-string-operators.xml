@@ -25,7 +25,7 @@
 <para>Constructs an <computeroutput>ne_</computeroutput> comparator object from the two <computeroutput>string_view</computeroutput> operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the string views are not equal.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The left hand side <computeroutput>std::string_view</computeroutput> operand. </para>
@@ -33,7 +33,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The right hand side <computeroutput>std::string_view</computeroutput> operand. </para>
@@ -69,7 +69,7 @@
 <para>Constructs an <computeroutput>eq_</computeroutput> comparator object from the two <computeroutput>string_view</computeroutput> operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the string views are equal.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The left hand side <computeroutput>std::string_view</computeroutput> operand. </para>
@@ -77,7 +77,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The right hand side <computeroutput>std::string_view</computeroutput> operand. </para>

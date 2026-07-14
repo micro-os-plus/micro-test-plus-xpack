@@ -221,7 +221,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">name</parametername>
+<parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The subtest name or description, used in reports. </para>
@@ -229,7 +229,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">runner</parametername>
+<parametername>runner</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test runner managing this subtest. </para>
@@ -237,7 +237,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">parent_suite</parametername>
+<parametername>parent_suite</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The suite that owns this subtest. </para>
@@ -245,7 +245,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">own_index</parametername>
+<parametername>own_index</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The one-based positional index within the parent. </para>
@@ -253,7 +253,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">nesting_depth</parametername>
+<parametername>nesting_depth</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The depth of nesting; 1 for top-level subtests. </para>
@@ -261,7 +261,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">callable</parametername>
+<parametername>callable</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A generic callable object, usually a lambda, invoked when the subtest executes. </para>
@@ -269,7 +269,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">arguments</parametername>
+<parametername>arguments</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A possibly empty list of arguments forwarded to the callable after the leading <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref>&amp;</computeroutput> reference.</para>
@@ -745,7 +745,7 @@ Returns a reference to the owning test runner. </para>
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">name</parametername>
+<parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test case name or description, used in reports. </para>
@@ -753,7 +753,7 @@ Returns a reference to the owning test runner. </para>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">callable</parametername>
+<parametername>callable</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A generic callable object, usually a lambda, invoked to perform the test. </para>
@@ -761,7 +761,7 @@ Returns a reference to the owning test runner. </para>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">arguments</parametername>
+<parametername>arguments</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A possibly empty list of arguments to be passed to the callable.</para>

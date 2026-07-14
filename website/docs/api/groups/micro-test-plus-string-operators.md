@@ -126,11 +126,11 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] lhs</td>
+<td class="doxyParamItemName">lhs</td>
 <td class="doxyParamItemDescription"><p>The left hand side <span class="doxyComputerOutput">std::string_view</span> operand.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] rhs</td>
+<td class="doxyParamItemName">rhs</td>
 <td class="doxyParamItemDescription"><p>The right hand side <span class="doxyComputerOutput">std::string_view</span> operand.</p></td>
 </tr>
 </table>
@@ -193,11 +193,11 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] lhs</td>
+<td class="doxyParamItemName">lhs</td>
 <td class="doxyParamItemDescription"><p>The left hand side <span class="doxyComputerOutput">std::string_view</span> operand.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] rhs</td>
+<td class="doxyParamItemName">rhs</td>
 <td class="doxyParamItemDescription"><p>The right hand side <span class="doxyComputerOutput">std::string_view</span> operand.</p></td>
 </tr>
 </table>

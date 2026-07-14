@@ -2,7 +2,6 @@
 @brief Options for controlling test output verbosity at run-time.
 
 @details
-
 The µTest++ framework offers flexible control over test-output verbosity,
 allowing users to tailor the level of detail to their specific
 requirements and workflow.

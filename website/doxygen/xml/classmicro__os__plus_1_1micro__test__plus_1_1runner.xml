@@ -158,7 +158,7 @@
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">top_suite_name</parametername>
+<parametername>top_suite_name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The name given to the implicit top suite. Defaults to an empty string.</para>
@@ -555,7 +555,7 @@ Returns a reference to the reporter object stored in the unique pointer. </para>
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">name</parametername>
+<parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test suite name or description, used in reports. </para>
@@ -563,7 +563,7 @@ Returns a reference to the reporter object stored in the unique pointer. </para>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">callable</parametername>
+<parametername>callable</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A generic callable object, usually a lambda, invoked to perform the test suite. </para>
@@ -571,7 +571,7 @@ Returns a reference to the reporter object stored in the unique pointer. </para>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">arguments</parametername>
+<parametername>arguments</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A possibly empty list of arguments to be passed to the callable. </para>
@@ -760,7 +760,7 @@ Returns a reference to the <computeroutput><ref refid="classmicro__os__plus_1_1m
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">suite</parametername>
+<parametername>suite</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Owning pointer to the test suite to register. </para>

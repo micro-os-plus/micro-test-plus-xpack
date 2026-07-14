@@ -186,7 +186,7 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] func</td>
+<td class="doxyParamItemName">func</td>
 <td class="doxyParamItemDescription"><p>The callable object to check for exception safety.</p></td>
 </tr>
 </table>
@@ -265,7 +265,7 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] func</td>
+<td class="doxyParamItemName">func</td>
 <td class="doxyParamItemDescription"><p>The callable object to check for exception throwing behaviour.</p></td>
 </tr>
 </table>
@@ -348,7 +348,7 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] func</td>
+<td class="doxyParamItemName">func</td>
 <td class="doxyParamItemDescription"><p>The callable object to check for exception throwing behaviour.</p></td>
 </tr>
 </table>

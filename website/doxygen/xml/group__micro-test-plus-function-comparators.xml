@@ -49,7 +49,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -57,7 +57,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -117,7 +117,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side pointer operand. </para>
@@ -125,7 +125,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side pointer operand. </para>
@@ -185,7 +185,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -193,7 +193,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -253,7 +253,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga3
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side pointer operand. </para>
@@ -261,7 +261,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga3
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side pointer operand. </para>
@@ -321,7 +321,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga3
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -329,7 +329,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga3
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -389,7 +389,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side pointer operand. </para>
@@ -397,7 +397,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side pointer operand. </para>
@@ -457,7 +457,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -465,7 +465,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -525,7 +525,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga2
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side pointer operand. </para>
@@ -533,7 +533,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga2
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side pointer operand. </para>
@@ -593,7 +593,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga2
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -601,7 +601,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga2
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -661,7 +661,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gac
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side pointer operand. </para>
@@ -669,7 +669,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gac
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side pointer operand. </para>
@@ -729,7 +729,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gac
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -737,7 +737,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gac
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -797,7 +797,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga5
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side pointer operand. </para>
@@ -805,7 +805,7 @@ The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga5
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side pointer operand. </para>
