@@ -1,5 +1,5 @@
 # Running: sample-test one two --output-file sample-test-noexcept.tap
-# Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
+# Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: Sample
     # Subtest: Check various conditions

@@ -55,9 +55,7 @@
 #include <micro-os-plus/micro-test-plus-defines.h>
 #endif // __has_include(<micro-os-plus/micro-test-plus-defines.h>)
 
-#if defined(MICRO_OS_PLUS_TRACE)
 #include <micro-os-plus/diag/trace.h>
-#endif // MICRO_OS_PLUS_TRACE
 
 #include "micro-os-plus/micro-test-plus/test.h"
 #include "micro-os-plus/micro-test-plus/runner.h"
@@ -92,8 +90,7 @@ namespace micro_os_plus::micro_test_plus
      */
     test_node::test_node (const char* name) : name_{ name }
     {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -115,8 +112,7 @@ namespace micro_os_plus::micro_test_plus
      */
     test_node::~test_node ()
     {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -146,8 +142,7 @@ namespace micro_os_plus::micro_test_plus
                                   size_t own_index)
         : test_node{ name }, runner_{ runner }, own_index_{ own_index }
     {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -170,8 +165,7 @@ namespace micro_os_plus::micro_test_plus
      */
     runnable_base::~runnable_base ()
     {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -232,8 +226,7 @@ namespace micro_os_plus::micro_test_plus
       subtest.run ();
 
       // This test executed one more subtest.
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -250,8 +243,7 @@ namespace micro_os_plus::micro_test_plus
       // Do not accumulate the totals from the child test into the current test
       // totals, each subtest shows only its counters.
 
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -283,8 +275,7 @@ namespace micro_os_plus::micro_test_plus
    */
   subtest::~subtest ()
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -306,8 +297,7 @@ namespace micro_os_plus::micro_test_plus
   void
   subtest::run (void)
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -344,8 +334,7 @@ namespace micro_os_plus::micro_test_plus
    */
   suite::~suite ()
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -367,8 +356,7 @@ namespace micro_os_plus::micro_test_plus
   void
   suite::run (void)
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -406,8 +394,7 @@ namespace micro_os_plus::micro_test_plus
   top_suite::top_suite (const char* name, class runner& runner)
       : suite{ name, runner, [] (suite&) noexcept {} }
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -431,8 +418,7 @@ namespace micro_os_plus::micro_test_plus
    */
   top_suite::~top_suite ()
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -456,8 +442,7 @@ namespace micro_os_plus::micro_test_plus
    */
   static_suite::~static_suite ()
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -481,8 +466,7 @@ namespace micro_os_plus::micro_test_plus
   void
   static_suite::run (void)
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)

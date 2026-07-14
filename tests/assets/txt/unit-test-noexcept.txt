@@ -1,5 +1,5 @@
 Running: unit-test --reporter human one two --output-file unit-test-noexcept.txt
-Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
+Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Static top suite
     • assume

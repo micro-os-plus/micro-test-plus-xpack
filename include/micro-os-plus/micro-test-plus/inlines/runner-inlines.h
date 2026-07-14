@@ -45,9 +45,7 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(MICRO_OS_PLUS_TRACE)
 #include <micro-os-plus/diag/trace.h>
-#endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
 
@@ -113,8 +111,7 @@ namespace micro_os_plus::micro_test_plus
   runner::suite (const char* name, Callable_T&& callable,
                  Args_T&&... arguments)
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)

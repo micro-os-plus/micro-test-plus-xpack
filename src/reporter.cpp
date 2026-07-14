@@ -52,9 +52,7 @@
 #include <micro-os-plus/micro-test-plus-defines.h>
 #endif // __has_include(<micro-os-plus/micro-test-plus-defines.h>)
 
-#if defined(MICRO_OS_PLUS_TRACE)
 #include <micro-os-plus/diag/trace.h>
-#endif // MICRO_OS_PLUS_TRACE
 
 #include "micro-os-plus/micro-test-plus/reporter.h"
 
@@ -86,8 +84,7 @@ namespace micro_os_plus::micro_test_plus
    */
   reporter::reporter (std::unique_ptr<std::vector<std::string_view>> argvs)
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
@@ -174,8 +171,7 @@ namespace micro_os_plus::micro_test_plus
    */
   reporter::~reporter ()
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
@@ -301,7 +297,8 @@ namespace micro_os_plus::micro_test_plus
         if (output_file_ != nullptr)
           fprintf (output_file_, "%s", line.c_str ());
 
-#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
+#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) \
+      && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
         if (verbosity_ == verbosity::normal
             || verbosity_ == verbosity::verbose)
           printf ("%s", line.c_str ());
@@ -344,8 +341,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_DEBUG)
       line.append (", with MICRO_OS_PLUS_DEBUG");
 #endif
-#if defined(MICRO_OS_PLUS_TRACE)
-      line.append (", with MICRO_OS_PLUS_TRACE");
+#if defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
+      line.append (", with MICRO_OS_PLUS_DIAG_TRACE_ENABLED");
 #endif
 
       if (output_file_ != nullptr)
@@ -353,7 +350,8 @@ namespace micro_os_plus::micro_test_plus
           fprintf (output_file_, "%s\n", line.c_str ());
         }
 
-#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
+#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) \
+      && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
       if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
         {
           printf ("%s\n", line.c_str ());

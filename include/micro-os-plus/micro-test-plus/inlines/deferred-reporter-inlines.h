@@ -54,9 +54,7 @@
 #include <charconv>
 #include <cstdio>
 
-#if defined(MICRO_OS_PLUS_TRACE)
 #include <micro-os-plus/diag/trace.h>
-#endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
 
@@ -161,8 +159,7 @@ namespace micro_os_plus::micro_test_plus
         : deferred_reporter_base{ static_cast<bool> (expr), location, subtest }
 
     {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
       abort_ = abort;

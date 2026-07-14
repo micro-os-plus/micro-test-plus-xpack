@@ -1,5 +1,5 @@
 # Running: minimal-test one two --reporter tap --output-file minimal-test.tap
-# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: minimal-test
     # Subtest: Check various conditions
