@@ -276,7 +276,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="123" column="30" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="123" bodyend="127"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a391d670afb552fe8fc03011d37a517fd" compoundref="reporter-human_8cpp" startline="92" endline="107">micro_os_plus::micro_test_plus::reporter_human::reporter_human</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a391d670afb552fe8fc03011d37a517fd" compoundref="reporter-human_8cpp" startline="90" endline="104">micro_os_plus::micro_test_plus::reporter_human::reporter_human</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

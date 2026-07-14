@@ -954,9 +954,6 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>Reference <a href="#ac621973713cc6e574f7aa70566a4e960">begin_time_</a>.</p>
 
-
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#ad8302d2dc629b643d34b3cfeafe44b3b">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::abort</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite/#a4ab3277887dfc4cd8ae84bb4101eae60">micro_os_plus::micro_test_plus::static_suite::run</a>.</p>
-
 </div>
 </div>
 
@@ -1089,9 +1086,6 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>Reference <a href="#a85749791b2161ff48e9a1de82c532017">end_time_</a>.</p>
 
-
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#ad8302d2dc629b643d34b3cfeafe44b3b">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::abort</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite/#a4ab3277887dfc4cd8ae84bb4101eae60">micro_os_plus::micro_test_plus::static_suite::run</a>.</p>
-
 </div>
 </div>
 
@@ -1195,6 +1189,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.1 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

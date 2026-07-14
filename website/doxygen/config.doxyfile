@@ -47,7 +47,7 @@ PROJECT_NAME = micro-test-plus
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER = 4.1.1
+PROJECT_NUMBER = 5.0.0
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -61,28 +61,6 @@ PROJECT_BRIEF = "µTest++ Testing Framework"
 # the logo to the output directory.
 
 PROJECT_LOGO = assets/wall-e-icon-64.png
-
-# The STRIP_FROM_PATH tag can be used to strip a user-defined part of the path.
-# Stripping is only done if one of the specified strings matches the left-hand
-# part of the path. The tag can be used to show relative paths in the file list.
-# If left blank the directory from which doxygen is run is used as the path to
-# strip.
-#
-# Note that you can specify absolute paths here, but also relative paths, which
-# will be relative from the directory where doxygen is started.
-# This tag requires that the tag FULL_PATH_NAMES is set to YES.
-
-# Doxygen is run from the website folder, so the project is one step up.
-# STRIP_FROM_PATH        =
-
-# The STRIP_FROM_INC_PATH tag can be used to strip a user-defined part of the
-# path mentioned in the documentation of a class, which tells the reader which
-# header file to include in order to use a class. If left blank only the name of
-# the header file containing the class definition is used. Otherwise one should
-# specify the list of include paths that are normally passed to the compiler
-# using the -I flag.
-
-# STRIP_FROM_INC_PATH    =
 
 #---------------------------------------------------------------------------
 
@@ -129,41 +107,6 @@ topics.h \
 
 # Exclude README files.
 EXCLUDE_PATTERNS += */README*
-
-# If the USE_MDFILE_AS_MAINPAGE tag refers to the name of a markdown file that
-# is part of the input, its contents will be placed on the main page
-# (index.html). This can be useful if you have a project on for instance GitHub
-# and want to reuse the introduction page also for the doxygen output.
-
-# USE_MDFILE_AS_MAINPAGE = pages/home.md
-
-# The INPUT_FILTER tag can be used to specify a program that doxygen should
-# invoke to filter for each input file. Doxygen will invoke the filter program
-# by executing (via popen()) the command:
-#
-# <filter> <input-file>
-#
-# where <filter> is the value of the INPUT_FILTER tag, and <input-file> is the
-# name of an input file. Doxygen will then use the output that the filter
-# program writes to standard output. If FILTER_PATTERNS is specified, this tag
-# will be ignored.
-#
-# Note that the filter must not add or remove lines; it is applied before the
-# code is scanned, but not when the output code is generated. If lines are added
-# or removed, the anchors will not be placed correctly.
-#
-# Note that doxygen will use the data processed and written to standard output
-# for further processing, therefore nothing else, like debug statements or used
-# commands (so in case of a Windows batch file always use @echo OFF), should be
-# written to standard output.
-#
-# Note that for custom extensions or not directly supported extensions you also
-# need to set EXTENSION_MAPPING for the extension otherwise the files are not
-# properly processed by doxygen.
-
-# Special precautions to avoid removing it in documentation, where it is
-# expected to be quoted, or generally not be preceded by spaces.
-INPUT_FILTER = "sed -e 's|^__attribute__\s*[(]\s*[(].*[)]\s*[)]||g' -e 's|\(\s+\)__attribute__\s*[(]\s*[(].*[)]\s*[)]|\1|g'"
 
 # The IMAGE_PATH tag can be used to specify one or more files or directories
 # that contain images that are to be included in the documentation (see the
@@ -217,6 +160,7 @@ HTML_OUTPUT            = ../static/doxygen
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
 PREDEFINED = \
+__attribute__(x)= \
 __DOXYGEN__ \
 __cplusplus \
 __cpp_exceptions \
