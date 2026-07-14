@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -174,15 +174,15 @@ requires type_traits::checkable&lt;Expr_T&gt;</div>
 <dl class="section return"><dt>Returns</dt><dd>An output stream to write optional messages.</dd></dl>
 <p>Constructs and returns a <span class="tt">deferred_reporter&lt;Expr_T&gt;</span> with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ad8302d2dc629b643d34b3cfeafe44b3b">abort</a> = false</span>. The reporter evaluates the condition and records a pass or fail when it is destroyed at the end of the expression statement. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00331">331</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  332</span>  {</div>
-<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">return</span> detail::deferred_reporter{ expr, <span class="keyword">false</span>, sl, *<span class="keyword">this</span>,</div>
-<div class="line"><span class="lineno">  334</span>                                      <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad120bac9a056a4684d866d974a09b6b">reporter</a> ().<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#ad2169093aee09bc28ae7f70467569a23">expression</a> () };</div>
-<div class="line"><span class="lineno">  335</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_aad120bac9a056a4684d866d974a09b6b"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad120bac9a056a4684d866d974a09b6b">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter</a></div><div class="ttdeci">class reporter &amp; reporter(void) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00359">test.cpp:196</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00325">325</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  326</span>  {</div>
+<div class="line"><span class="lineno">  327</span>    <span class="keywordflow">return</span> detail::deferred_reporter{ expr, <span class="keyword">false</span>, sl, *<span class="keyword">this</span>,</div>
+<div class="line"><span class="lineno">  328</span>                                      <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad120bac9a056a4684d866d974a09b6b">reporter</a> ().<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#ad2169093aee09bc28ae7f70467569a23">expression</a> () };</div>
+<div class="line"><span class="lineno">  329</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_aad120bac9a056a4684d866d974a09b6b"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad120bac9a056a4684d866d974a09b6b">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter</a></div><div class="ttdeci">class reporter &amp; reporter(void) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00359">test.cpp:190</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_ad2169093aee09bc28ae7f70467569a23"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#ad2169093aee09bc28ae7f70467569a23">micro_os_plus::micro_test_plus::reporter::expression</a></div><div class="ttdeci">detail::expression_formatter &amp; expression()</div><div class="ttdoc">Provides access to the expression formatter for this reporter.</div><div class="ttdef"><b>Definition</b> <a href="reporter-inlines_8h_source.html#l00107">reporter-inlines.h:107</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter-inlines_8h_source.html#l00107">micro_os_plus::micro_test_plus::reporter::expression()</a>, and <a class="el" href="test_8cpp_source.html#l00196">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter()</a>.</p>
+<p class="reference">References <a class="el" href="reporter-inlines_8h_source.html#l00107">micro_os_plus::micro_test_plus::reporter::expression()</a>, and <a class="el" href="test_8cpp_source.html#l00190">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1subtest.html#ad3eb4bb11f1c6fc4631bae8a7215a95e">operator=()</a>.</p>
 

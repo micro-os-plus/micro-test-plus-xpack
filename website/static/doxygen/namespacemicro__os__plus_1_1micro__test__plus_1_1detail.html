@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.1.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -585,15 +585,15 @@ template&lt;typename Lhs_T, typename Rhs_T&gt; </div>
 </dl>
 <p>Performs static-suite registration where <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html" title="A runner variant that also manages statically-registered test suites.">static_runner</a></span> is complete, allowing header-only template code to avoid direct dependence on <span class="tt"><a class="el" href="runner_8h.html" title="C++ header file with declarations for the µTest++ test runner.">runner.h</a></span> include order. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner_8cpp_source.html#l00102">102</a> of file <a class="el" href="runner_8cpp_source.html">runner.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  104</span>  {</div>
-<div class="line"><span class="lineno">  105</span>    <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#a6984a307a2f487cea3eeeb36c1422020">static_runner::register_static_suite</a> (static_runner_ref, static_suite_ref);</div>
-<div class="line"><span class="lineno">  106</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1static__runner_html_a6984a307a2f487cea3eeeb36c1422020"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#a6984a307a2f487cea3eeeb36c1422020">micro_os_plus::micro_test_plus::static_runner::register_static_suite</a></div><div class="ttdeci">static void register_static_suite(static_runner &amp;runner, static_suite &amp;suite)</div><div class="ttdoc">Registers a static test suite with the runner.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00646">runner.cpp:646</a></div></div>
+<p class="definition">Definition at line <a class="el" href="runner_8cpp_source.html#l00100">100</a> of file <a class="el" href="runner_8cpp_source.html">runner.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>  {</div>
+<div class="line"><span class="lineno">  103</span>    <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#a6984a307a2f487cea3eeeb36c1422020">static_runner::register_static_suite</a> (static_runner_ref, static_suite_ref);</div>
+<div class="line"><span class="lineno">  104</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1static__runner_html_a6984a307a2f487cea3eeeb36c1422020"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#a6984a307a2f487cea3eeeb36c1422020">micro_os_plus::micro_test_plus::static_runner::register_static_suite</a></div><div class="ttdeci">static void register_static_suite(static_runner &amp;runner, static_suite &amp;suite)</div><div class="ttdoc">Registers a static test suite with the runner.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00633">runner.cpp:633</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner_8cpp_source.html#l00646">micro_os_plus::micro_test_plus::static_runner::register_static_suite()</a>.</p>
+<p class="reference">References <a class="el" href="runner_8cpp_source.html#l00633">micro_os_plus::micro_test_plus::static_runner::register_static_suite()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00507">micro_os_plus::micro_test_plus::static_suite::static_suite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00499">micro_os_plus::micro_test_plus::static_suite::static_suite()</a>.</p>
 
 </div>
 </div>
@@ -629,10 +629,10 @@ template&lt;typename Lhs_T, typename Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The same object viewed as its <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span> base.</dd></dl>
 <p>Performs the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html" title="A runner variant that also manages statically-registered test suites.">static_runner</a></span> to <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span> upcast where both types are complete, allowing headers with only forward declarations to request this conversion safely. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner_8cpp_source.html#l00090">90</a> of file <a class="el" href="runner_8cpp_source.html">runner.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>  {</div>
-<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html">runner</a>&amp;<span class="keyword">&gt;</span> (static_runner_ref);</div>
-<div class="line"><span class="lineno">   93</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="runner_8cpp_source.html#l00088">88</a> of file <a class="el" href="runner_8cpp_source.html">runner.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>  {</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html">runner</a>&amp;<span class="keyword">&gt;</span> (static_runner_ref);</div>
+<div class="line"><span class="lineno">   91</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html">micro_os_plus::micro_test_plus::runner</a></div><div class="ttdoc">The test runner for the µTest++ framework.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l00110">runner.h:111</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -670,7 +670,7 @@ template&lt;typename Lhs_T, typename Rhs_T&gt; </div>
 <div class="line"><span class="lineno">  126</span>      <span class="stringliteral">&quot;\033[31m&quot;</span> </div>
 <div class="line"><span class="lineno">  127</span>    };</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00092">micro_os_plus::micro_test_plus::reporter_human::reporter_human()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00090">micro_os_plus::micro_test_plus::reporter_human::reporter_human()</a>.</p>
 
 </div>
 </div>

@@ -48,7 +48,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="123" column="30" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="123" bodyend="127"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a391d670afb552fe8fc03011d37a517fd" compoundref="reporter-human_8cpp" startline="92" endline="107">micro_os_plus::micro_test_plus::reporter_human::reporter_human</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a391d670afb552fe8fc03011d37a517fd" compoundref="reporter-human_8cpp" startline="90" endline="104">micro_os_plus::micro_test_plus::reporter_human::reporter_human</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -471,9 +471,9 @@ Performs static-suite registration where <computeroutput><ref refid="classmicro_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="122" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="102" bodyend="106" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="122" declcolumn="5"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a6984a307a2f487cea3eeeb36c1422020" compoundref="runner_8cpp" startline="646" endline="673">micro_os_plus::micro_test_plus::static_runner::register_static_suite</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" compoundref="test-inlines_8h" startline="507" endline="539">micro_os_plus::micro_test_plus::static_suite::static_suite</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="122" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="100" bodyend="104" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="122" declcolumn="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a6984a307a2f487cea3eeeb36c1422020" compoundref="runner_8cpp" startline="633" endline="658">micro_os_plus::micro_test_plus::static_runner::register_static_suite</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" compoundref="test-inlines_8h" startline="499" endline="530">micro_os_plus::micro_test_plus::static_suite::static_suite</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a9179be566c21dc8241d8e9f99f69e2bc" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref> &amp;</type>
@@ -505,7 +505,7 @@ Performs the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__pl
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="109" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="90" bodyend="93" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="109" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="109" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="88" bodyend="91" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="109" declcolumn="5"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

@@ -16,23 +16,23 @@
     <includedby refid="runner_8h" local="yes">runner.h</includedby>
     <includedby refid="test_8cpp" local="yes">test.cpp</includedby>
     <incdepgraph>
-      <node id="24">
+      <node id="25">
         <label>micro-os-plus/micro-test-plus/deferred-reporter.h</label>
         <link refid="deferred-reporter_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="27">
         <label>detail.h</label>
         <link refid="detail_8h"/>
         <childnode refid="5" relation="include">
@@ -41,44 +41,46 @@
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
         <childnode refid="28" relation="include">
         </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
       </node>
-      <node id="25">
+      <node id="26">
         <label>expression-formatter.h</label>
         <link refid="expression-formatter_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>inlines/deferred-reporter-inlines.h</label>
+        <link refid="deferred-reporter-inlines_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>inlines/detail-inlines.h</label>
+        <link refid="detail-inlines_8h"/>
         <childnode refid="30" relation="include">
         </childnode>
       </node>
       <node id="31">
-        <label>inlines/deferred-reporter-inlines.h</label>
-        <link refid="deferred-reporter-inlines_8h"/>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>inlines/detail-inlines.h</label>
-        <link refid="detail-inlines_8h"/>
-        <childnode refid="29" relation="include">
-        </childnode>
-      </node>
-      <node id="30">
         <label>inlines/expression-formatter-inlines.h</label>
         <link refid="expression-formatter-inlines_8h"/>
         <childnode refid="22" relation="include">
@@ -98,7 +100,7 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="34">
+      <node id="35">
         <label>inlines/reporter-inlines.h</label>
         <link refid="reporter-inlines_8h"/>
         <childnode refid="22" relation="include">
@@ -119,7 +121,9 @@
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
         </childnode>
       </node>
       <node id="16">
@@ -146,14 +150,14 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="32">
+      <node id="33">
         <label>micro-os-plus/micro-test-plus/reporter.h</label>
         <link refid="reporter_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
@@ -161,15 +165,15 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
         <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -225,7 +229,7 @@
       <node id="7">
         <label>array</label>
       </node>
-      <node id="29">
+      <node id="30">
         <label>charconv</label>
       </node>
       <node id="3">
@@ -249,10 +253,13 @@
       <node id="20">
         <label>memory</label>
       </node>
+      <node id="24">
+        <label>micro-os-plus/diag/trace.h</label>
+      </node>
       <node id="14">
         <label>optional</label>
       </node>
-      <node id="27">
+      <node id="28">
         <label>string</label>
       </node>
       <node id="10">
@@ -261,7 +268,7 @@
       <node id="11">
         <label>type_traits</label>
       </node>
-      <node id="33">
+      <node id="34">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -372,9 +379,9 @@ Performs static-suite registration where <computeroutput><ref refid="classmicro_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="122" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="102" bodyend="106" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="122" declcolumn="5"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a6984a307a2f487cea3eeeb36c1422020" compoundref="runner_8cpp" startline="646" endline="673">micro_os_plus::micro_test_plus::static_runner::register_static_suite</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" compoundref="test-inlines_8h" startline="507" endline="539">micro_os_plus::micro_test_plus::static_suite::static_suite</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="122" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="100" bodyend="104" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="122" declcolumn="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a6984a307a2f487cea3eeeb36c1422020" compoundref="runner_8cpp" startline="633" endline="658">micro_os_plus::micro_test_plus::static_runner::register_static_suite</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" compoundref="test-inlines_8h" startline="499" endline="530">micro_os_plus::micro_test_plus::static_suite::static_suite</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a9179be566c21dc8241d8e9f99f69e2bc" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>runner &amp;</type>
@@ -406,7 +413,7 @@ Performs the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__pl
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="109" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="90" bodyend="93" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="109" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="109" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="88" bodyend="91" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="109" declcolumn="5"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

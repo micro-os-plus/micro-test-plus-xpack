@@ -45,17 +45,17 @@
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="38" relation="include">
         </childnode>
         <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
-        <childnode refid="48" relation="include">
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
         </childnode>
       </node>
       <node id="32">
@@ -125,6 +125,8 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
       </node>
       <node id="15">
         <label>inlines/detail-inlines.h</label>
@@ -180,27 +182,31 @@
         <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="49">
+      <node id="50">
         <label>inlines/runner-inlines.h</label>
         <link refid="runner-inlines_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
       </node>
-      <node id="36">
+      <node id="37">
         <label>inlines/runner-totals-inlines.h</label>
         <link refid="runner-totals-inlines_8h"/>
       </node>
-      <node id="47">
+      <node id="48">
         <label>inlines/test-inlines.h</label>
         <link refid="test-inlines_8h"/>
         <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
         <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
       </node>
-      <node id="45">
+      <node id="46">
         <label>inlines/timings-inlines.h</label>
         <link refid="timings-inlines_8h"/>
       </node>
@@ -208,7 +214,7 @@
         <label>inlines/type-traits-inlines.h</label>
         <link refid="type-traits-inlines_8h"/>
       </node>
-      <node id="40">
+      <node id="41">
         <label>inlines/utility-inlines.h</label>
         <link refid="utility-inlines_8h"/>
       </node>
@@ -250,7 +256,7 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="37">
+      <node id="38">
         <label>micro-test-plus/reporter-human.h</label>
         <link refid="reporter-human_8h"/>
         <childnode refid="27" relation="include">
@@ -258,7 +264,7 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="38">
+      <node id="39">
         <label>micro-test-plus/reporter-tap.h</label>
         <link refid="reporter-tap_8h"/>
         <childnode refid="27" relation="include">
@@ -292,60 +298,60 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="34">
+      <node id="35">
         <label>micro-test-plus/runner-totals.h</label>
         <link refid="runner-totals_8h"/>
-        <childnode refid="35" relation="include">
-        </childnode>
         <childnode refid="36" relation="include">
         </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
       </node>
-      <node id="48">
+      <node id="49">
         <label>micro-test-plus/runner.h</label>
         <link refid="runner_8h"/>
-        <childnode refid="42" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="46" relation="include">
+        <childnode refid="47" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="49" relation="include">
-        </childnode>
-      </node>
-      <node id="41">
-        <label>micro-test-plus/test.h</label>
-        <link refid="test_8h"/>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="46" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="47" relation="include">
+        <childnode refid="50" relation="include">
         </childnode>
       </node>
       <node id="42">
+        <label>micro-test-plus/test.h</label>
+        <link refid="test_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
         <label>timings.h</label>
         <link refid="timings_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
-        </childnode>
         <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -360,14 +366,14 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="39">
+      <node id="40">
         <label>micro-test-plus/utility.h</label>
         <link refid="utility_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -376,7 +382,7 @@
       <node id="16">
         <label>charconv</label>
       </node>
-      <node id="35">
+      <node id="36">
         <label>cstddef</label>
       </node>
       <node id="5">
@@ -388,16 +394,19 @@
       <node id="31">
         <label>cstring</label>
       </node>
-      <node id="44">
+      <node id="45">
         <label>ctime</label>
       </node>
-      <node id="46">
+      <node id="47">
         <label>functional</label>
       </node>
       <node id="28">
         <label>memory</label>
       </node>
-      <node id="43">
+      <node id="34">
+        <label>micro-os-plus/diag/trace.h</label>
+      </node>
+      <node id="44">
         <label>optional</label>
       </node>
       <node id="14">
