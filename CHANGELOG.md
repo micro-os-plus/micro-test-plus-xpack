@@ -6,10 +6,132 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-07-14
+
+* b22e2984 re-generate website commons
+* fa8ef5d5 re-generate tests commons
+* 48e26241 re-generate top commons
+* aff164ca re-format
+* 8e7fa600 no longer use MICRO_OS_PLUS_TRACE
+
+## 2026-07-07
+
+* a5ed67ad re-generate website
+
+## 2026-07-06
+
+* v5.0.0 prepared
+* 7bff519f re-generate website
+* 00f2d3a7 xcdl-package.jsonc update descriptions
+* 05d6e10d re-generate website
+* 5478853b doxygen updates (addtogroup)
+* a1d7be60 move @details to declaration
+* 5a9f6e9a clang-format.sh update
+* d282fcd5 tests sources updates
+* 6902b821 tests cmake updates
+* 22cea2d8 tests headers updates (trace-defines.h)
+* c840212b .h files cosmetics
+
+## 2026-07-02
+
+* 36eb7e71 re-generate tests commons
+* c0f86f8e tests: add clear-build-folder
+* d44fd188 ignore -Wunknown-warning-option
+
+## 2026-07-01
+
+* 1d81e483 re-generate tests commons
+* 2abf2b3f re-generate top commons
+* c8a0c64a tests/package.json: update ci & selected
+* 497f8339 tests: add preliminary xcdl-project.jsonc
+* 7aae1f48 tests: shorten source folders
+* ab3aeaf4 tests/package.json split long properties
+
+## 2026-06-20
+
+* 78e76f28 CMakeLists.txt cosmetics
+* 1acf4540 tests/sources fix .static-library
+* d05fc4a9 templates cosmetics
+* 640d2dff micro-test-plus.h fix c+=20 test
+
+## 2026-06-17
+
+* cae250fe re-generate cmake & meson
+
+## 2026-06-15
+
+* f9bc2c56 re-generate tests
+* 2e0745d4 CMakeLists.txt update
+* 40c140d3 re-generate top commons
+* 1325d4ad re-format jsonc
+* ef0401bd re-format cmake
+* 747c1bb2 re-generate tests cmake
+
+## 2026-06-14
+
+* 632f5a12 tr-generate tests commons
+* 5507d67d tests update for xcdl-export
+* b05a20ba tests/platforms updates
+* b66909b4 re-gnerate top commons
+
+## 2026-06-12
+
+* 08449aca update *-defines.h
+* 68ab8944 cmake re-format
+* 2bcd7b08 scripts update
+* bccc2038 xcdl-package.jsonc update descrptions
+* 155eb62e package.json cleanup redundant script
+* 6fc6eb34 rename MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE*_ENABLED
+* f5e3a08e rename project-config.h, leave config.h around
+* b1496374 clang-format tests/sources
+* b11df203 #include reorder
+
+## 2026-06-11
+
+* 34740b27 prefer project-config.h
+* 6b893b5b re-generate top cmake
+* 2c0699b4 rename xcdl-package.jsonc
+* 86a377a7 re-generate top commons
+
+## 2026-06-06
+
+* 891e9c4d use __has_include(<micro-os-plus/config.h>)
+
+## 2026-05-27
+
+* 68c54ac5 re-generate make & meson via xcdl export
+* 5b640305 package.json: add xcdl-export
+* e746532c move xcdl-library.json to the top
+* d6617496 re-generate top commons for xcdl-export.sh
+
+## 2026-05-25
+
+* 49581cbc re-generate tests commons
+* 0f489502 use xcdl-export
+* 182ab3a8 rename config/xcdl-library.json
+* bf8fb63f add scripts/xcdl-export.sh
+
+## 2026-05-22
+
+* 016e2cca re-generate top commons
+* f8746ee2 make static library standalone
+* 6e6be9b3 add_qemu_test(0 and add_compare_files_test()
+* 05751bc4 add static library to cmake
+* 64f961b0 re-generate top commons
+
+## 2026-05-17
+
+* 0336eebe re-format tests cmake
+* 149faa68 re-generate top commons
+* 3a94ba3d config/*.json updates
+
 ## 2026-05-12
 
-* v4.1.1 published on npmjs.com
-* v4.1.1 prepared
+* fc954949 re-generate tests commons (short-win-paths-properties)
+* b77ea4d3 website update
+* d6965e62 4.1.1
+* f82c7015 CHANGELOG: publish npm v4.1.1
+* f45e0684 prepare v4.1.1
 * 2442265 Revert "fix clang16 linux build"
 * dac3a9e fix clang16 linux build
 
