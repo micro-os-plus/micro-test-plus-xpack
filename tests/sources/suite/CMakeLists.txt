@@ -32,18 +32,23 @@ message (VERBOSE "Processing 'sources/suite'...")
 # against it.
 add_library (tests-suite-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (tests-suite-interface INTERFACE "include")
+target_include_directories (
+  tests-suite-interface 
+  INTERFACE "include"
+)
 
-target_sources (tests-suite-interface INTERFACE "src/main.cpp" "src/suite.cpp")
+target_sources (
+  tests-suite-interface
+  INTERFACE "src/main.cpp"
+            "src/suite.cpp"
+)
 
 target_link_libraries (
-  tests-suite-interface
+  tests-suite-interface 
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
-if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (tests-suite-interface)
-endif ()
+xpack_display_target_lists (tests-suite-interface)
 
 # -----------------------------------------------------------------------------
 # Alias.

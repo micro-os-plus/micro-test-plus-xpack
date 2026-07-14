@@ -63,9 +63,7 @@ target_link_options (
   ${xpack_global_common_options} $<$<CONFIG:Debug>:-v>
 )
 
-if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (micro-os-plus-common-options-interface)
-endif ()
+xpack_display_target_lists (micro-os-plus-common-options-interface)
 
 # -----------------------------------------------------------------------------
 

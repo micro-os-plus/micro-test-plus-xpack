@@ -43,9 +43,6 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
   endif
   _local_compile_definitions += [ '-DMICRO_OS_PLUS_INCLUDE_CONFIG_H' ]
 
-  # DO NOT define it globally, one test does not need it!
-  # _local_compile_definitions += ['-DMICRO_OS_PLUS_TRACE']
-
   # Options for both compilers and linkers. When using `-flto`, all options
   # must also be passed to the linker.
 
