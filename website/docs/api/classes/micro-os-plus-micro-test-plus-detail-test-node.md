@@ -295,7 +295,7 @@ class micro_os_plus::micro_test_plus::detail::test_node { ... }
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] name</td>
+<td class="doxyParamItemName">name</td>
 <td class="doxyParamItemDescription"><p>The test node name.</p></td>
 </tr>
 </table>

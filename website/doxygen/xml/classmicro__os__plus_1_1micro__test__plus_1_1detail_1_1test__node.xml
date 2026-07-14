@@ -67,7 +67,7 @@
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">name</parametername>
+<parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The test node name.</para>

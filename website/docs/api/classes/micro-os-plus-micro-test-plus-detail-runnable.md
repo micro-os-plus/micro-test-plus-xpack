@@ -592,23 +592,23 @@ class micro_os_plus::micro_test_plus::detail::runnable&lt;Self_T&gt; { ... }
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] name</td>
+<td class="doxyParamItemName">name</td>
 <td class="doxyParamItemDescription"><p>The test name, used in reports.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] runner</td>
+<td class="doxyParamItemName">runner</td>
 <td class="doxyParamItemDescription"><p>The test runner managing this test.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] own_index</td>
+<td class="doxyParamItemName">own_index</td>
 <td class="doxyParamItemDescription"><p>The test index within the runner.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] callable</td>
+<td class="doxyParamItemName">callable</td>
 <td class="doxyParamItemDescription"><p>The callable invoked when the test runs.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] arguments</td>
+<td class="doxyParamItemName">arguments</td>
 <td class="doxyParamItemDescription"><p>Additional arguments forwarded to the callable after the leading <span class="doxyComputerOutput">Self_T&amp;</span> reference.</p></td>
 </tr>
 </table>

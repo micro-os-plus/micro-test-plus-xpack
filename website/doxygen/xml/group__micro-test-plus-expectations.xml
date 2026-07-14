@@ -42,7 +42,7 @@
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">expr</parametername>
+<parametername>expr</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Logical expression to evaluate. </para>
@@ -50,7 +50,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">sl</parametername>
+<parametername>sl</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Optional source location, defaulting to the current line. </para>

@@ -2,12 +2,6 @@
 
 ### Test Details
 
-#### minimal-test
-
-The [minimal-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/minimal-test.cpp)
-file is a concise application that illustrates
-how to construct the simplest possible test for verifying a condition.
-
 ```console
 > xpm run test --config native-cmake-sys-release
 > cd build/native-cmake-sys-release && ctest -V
@@ -21,6 +15,15 @@ Added 0 tests to meet fixture requirements
 Checking test dependency graph...
 Checking test dependency graph end
 ...
+```
+
+#### minimal-test
+
+The [minimal/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/minimal/src/main.cpp)
+file is a concise application that illustrates
+how to construct the simplest possible test for verifying a condition.
+
+```console
 test 13
       Start 13: minimal-test-reporter-tap-verbose
 
@@ -120,7 +123,7 @@ All verbosity modes are exercised: default, `--verbose`, `--quiet`, and `--silen
 
 #### sample-test
 
-The [sample-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/sample-test.cpp)
+The [sample/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/sample/src/main.cpp)
 file is a representative application that demonstrates how to use the principal
 primitives provided by the library to construct a practical test.
 
@@ -279,7 +282,7 @@ All possible verbosity modes are exercised: default, `--verbose`, `--quiet`, and
 
 #### unit-test
 
-The [unit-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/unit-test.cpp)
+The [unit/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/unit/src/main.cpp)
 file constitutes the comprehensive test suite, designed to verify that all
 library functions behave as intended. Some checks are deliberately expected
 to fail, in order to validate the failure-reporting paths.

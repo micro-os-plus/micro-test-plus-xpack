@@ -49,7 +49,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -57,7 +57,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>
@@ -103,7 +103,7 @@ The <computeroutput><ref refid="group__micro-test-plus-logical-functions_1ga8b43
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">expr</parametername>
+<parametername>expr</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Logical expression to be negated. </para>
@@ -164,7 +164,7 @@ The <computeroutput><ref refid="group__micro-test-plus-logical-functions_1gad9ad
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">lhs</parametername>
+<parametername>lhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Left hand side operand. </para>
@@ -172,7 +172,7 @@ The <computeroutput><ref refid="group__micro-test-plus-logical-functions_1gad9ad
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">rhs</parametername>
+<parametername>rhs</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Right hand side operand. </para>

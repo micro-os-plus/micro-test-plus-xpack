@@ -102,11 +102,11 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] expr</td>
+<td class="doxyParamItemName">expr</td>
 <td class="doxyParamItemDescription"><p>Logical expression to evaluate.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] sl</td>
+<td class="doxyParamItemName">sl</td>
 <td class="doxyParamItemDescription"><p>Optional source location, defaulting to the current line.</p></td>
 </tr>
 </table>

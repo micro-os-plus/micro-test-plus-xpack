@@ -34,7 +34,7 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">func</parametername>
+<parametername>func</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The callable object to check for exception safety. </para>
@@ -80,7 +80,7 @@ The <computeroutput><ref refid="group__micro-test-plus-exceptions_1ga798bd28001c
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">func</parametername>
+<parametername>func</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The callable object to check for exception throwing behaviour. </para>
@@ -137,7 +137,7 @@ The <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f401
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">func</parametername>
+<parametername>func</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The callable object to check for exception throwing behaviour. </para>

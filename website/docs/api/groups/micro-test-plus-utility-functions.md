@@ -131,7 +131,7 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] path</td>
+<td class="doxyParamItemName">path</td>
 <td class="doxyParamItemDescription"><p>A null-terminated file path string.</p></td>
 </tr>
 </table>
@@ -220,11 +220,11 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] input</td>
+<td class="doxyParamItemName">input</td>
 <td class="doxyParamItemDescription"><p>The string view to be checked.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] pattern</td>
+<td class="doxyParamItemName">pattern</td>
 <td class="doxyParamItemDescription"><p>The string view containing the pattern to match.</p></td>
 </tr>
 </table>
@@ -358,7 +358,7 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] t</td>
+<td class="doxyParamItemName">t</td>
 <td class="doxyParamItemDescription"><p>The object from which to remove const qualification.</p></td>
 </tr>
 </table>
@@ -457,11 +457,11 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] input</td>
+<td class="doxyParamItemName">input</td>
 <td class="doxyParamItemDescription"><p>Input string to split.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] delim</td>
+<td class="doxyParamItemName">delim</td>
 <td class="doxyParamItemDescription"><p>Delimiter string.</p></td>
 </tr>
 </table>
