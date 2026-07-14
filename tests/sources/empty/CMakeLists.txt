@@ -32,13 +32,10 @@ message (VERBOSE "Processing 'sources/empty'...")
 # against it.
 add_library (tests-empty-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (
-  tests-empty-interface
-  INTERFACE "src/main.cpp"
-)
+target_sources (tests-empty-interface INTERFACE "src/main.cpp")
 
 target_link_libraries (
-  tests-empty-interface 
+  tests-empty-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 

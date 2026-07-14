@@ -32,10 +32,7 @@ message (VERBOSE "Processing 'sources/unit'...")
 # against it.
 add_library (tests-unit-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (
-  tests-unit-interface 
-  INTERFACE "include"
-)
+target_include_directories (tests-unit-interface INTERFACE "include")
 
 target_sources (
   tests-unit-interface
@@ -55,7 +52,7 @@ target_sources (
 )
 
 target_link_libraries (
-  tests-unit-interface 
+  tests-unit-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
