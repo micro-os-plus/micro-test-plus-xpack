@@ -710,7 +710,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs a value object with the specified value.
        *
        * @param _value The value to be stored.
-       * 
+       *
        * @details
        * Delegates to `value_base_<T>{ _value }` to initialise the base.
        */

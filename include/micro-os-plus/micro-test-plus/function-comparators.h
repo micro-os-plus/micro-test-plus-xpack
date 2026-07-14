@@ -79,8 +79,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
    * @return A comparator object that evaluates to true if the operands are
    * equal.
    */
@@ -94,8 +94,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
-   * @param [in] lhs Left hand side pointer operand.
-   * @param [in] rhs Right hand side pointer operand.
+   * @param lhs Left hand side pointer operand.
+   * @param rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the pointers are
    * equal.
    */
@@ -109,8 +109,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
    * @return A comparator object that evaluates to true if the operands are not
    * equal.
    */
@@ -124,8 +124,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
-   * @param [in] lhs Left hand side pointer operand.
-   * @param [in] rhs Right hand side pointer operand.
+   * @param lhs Left hand side pointer operand.
+   * @param rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the pointers are not
    * equal.
    *
@@ -140,8 +140,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is greater
    * than `rhs`.
    */
@@ -155,8 +155,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
-   * @param [in] lhs Left hand side pointer operand.
-   * @param [in] rhs Right hand side pointer operand.
+   * @param lhs Left hand side pointer operand.
+   * @param rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is greater than the right hand side pointer.
    */
@@ -171,8 +171,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is greater
    * than or equal to `rhs`.
    */
@@ -187,8 +187,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
    *
-   * @param [in] lhs Left hand side pointer operand.
-   * @param [in] rhs Right hand side pointer operand.
+   * @param lhs Left hand side pointer operand.
+   * @param rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is greater than or equal to the right hand side pointer.
    */
@@ -203,8 +203,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is less than
    * `rhs`.
    */
@@ -219,8 +219,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
    *
-   * @param [in] lhs Left hand side pointer operand.
-   * @param [in] rhs Right hand side pointer operand.
+   * @param lhs Left hand side pointer operand.
+   * @param rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is less than the right hand side pointer.
    */
@@ -235,8 +235,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is less than
    * or equal to `rhs`.
    */
@@ -251,8 +251,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
    *
-   * @param [in] lhs Left hand side pointer operand.
-   * @param [in] rhs Right hand side pointer operand.
+   * @param lhs Left hand side pointer operand.
+   * @param rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is less than or equal to the right hand side pointer.
    */
@@ -266,7 +266,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Expr_T Type of the operand.
    *
-   * @param [in] expr Logical expression to be negated.
+   * @param expr Logical expression to be negated.
    * @return An object that evaluates to true if the operand is false.
    */
   template <class Expr_T>
@@ -280,8 +280,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
    * @return An object that evaluates to true if both operand expressions are
    * true.
    */
@@ -296,8 +296,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
    * @return An object that evaluates to true if at least one of the operand
    * expressions is true.
    */
@@ -311,7 +311,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam T The type of the input object.
    *
-   * @param [in] t The object from which to remove const qualification.
+   * @param t The object from which to remove const qualification.
    * @return A non-const reference to the input object.
    */
   template <class T>

@@ -148,7 +148,7 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a test node.
        *
-       * @param [in] name The test node name.
+       * @param name The test node name.
        */
       test_node (const char* name);
 
@@ -449,11 +449,11 @@ namespace micro_os_plus::micro_test_plus
        * @tparam Callable_T The callable type.
        * @tparam Args_T The additional argument types.
        *
-       * @param [in] name The test name, used in reports.
-       * @param [in] runner The test runner managing this test.
-       * @param [in] own_index The test index within the runner.
-       * @param [in] callable The callable invoked when the test runs.
-       * @param [in] arguments Additional arguments forwarded to the callable
+       * @param name The test name, used in reports.
+       * @param runner The test runner managing this test.
+       * @param own_index The test index within the runner.
+       * @param callable The callable invoked when the test runs.
+       * @param arguments Additional arguments forwarded to the callable
        * after the leading `Self_T&` reference.
        */
       template <typename Callable_T, typename... Args_T>
@@ -548,15 +548,15 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param [in] name The subtest name or description, used in reports.
-     * @param [in] runner The test runner managing this subtest.
-     * @param [in] parent_suite The suite that owns this subtest.
-     * @param [in] own_index The one-based positional index within the parent.
-     * @param [in] nesting_depth The depth of nesting; 1 for top-level
+     * @param name The subtest name or description, used in reports.
+     * @param runner The test runner managing this subtest.
+     * @param parent_suite The suite that owns this subtest.
+     * @param own_index The one-based positional index within the parent.
+     * @param nesting_depth The depth of nesting; 1 for top-level
      * subtests.
-     * @param [in] callable A generic callable object, usually a lambda,
+     * @param callable A generic callable object, usually a lambda,
      * invoked when the subtest executes.
-     * @param [in] arguments A possibly empty list of arguments forwarded to
+     * @param arguments A possibly empty list of arguments forwarded to
      * the callable after the leading `subtest&` reference.
      */
     template <typename Callable_T, typename... Args_T>
@@ -601,10 +601,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param [in] name The test case name or description, used in reports.
-     * @param [in] callable A generic callable object, usually a lambda,
+     * @param name The test case name or description, used in reports.
+     * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test.
-     * @param [in] arguments A possibly empty list of arguments to be passed to
+     * @param arguments A possibly empty list of arguments to be passed to
      * the callable.
      */
     template <typename Callable_T, typename... Args_T>
@@ -623,8 +623,8 @@ namespace micro_os_plus::micro_test_plus
      * Enabled only if `Expr_T` is derived from `detail::op` or
      * is convertible to `bool` (enforced via a C++20 `requires` clause).
      *
-     * @param [in] expr Logical expression to evaluate.
-     * @param [in] sl Optional source location, defaulting to the current line.
+     * @param expr Logical expression to evaluate.
+     * @param sl Optional source location, defaulting to the current line.
      * @return An output stream to write optional messages.
      */
     template <class Expr_T>
@@ -643,8 +643,8 @@ namespace micro_os_plus::micro_test_plus
      * Enabled only if `Expr_T` is derived from `detail::op` or
      * is convertible to `bool` (enforced via a C++20 `requires` clause).
      *
-     * @param [in] expr Logical expression to evaluate.
-     * @param [in] sl Optional source location, defaulting to the current line.
+     * @param expr Logical expression to evaluate.
+     * @param sl Optional source location, defaulting to the current line.
      * @return An output stream to write optional messages.
      */
     template <class Expr_T>
@@ -719,12 +719,12 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of the callable object.
      * @tparam Args_T The types of any additional callable arguments.
      *
-     * @param [in] name The suite name or description, used in reports.
-     * @param [in] runner The test runner managing this suite.
-     * @param [in] callable A generic callable object, usually a lambda,
+     * @param name The suite name or description, used in reports.
+     * @param runner The test runner managing this suite.
+     * @param callable A generic callable object, usually a lambda,
      * invoked when the suite executes. Its first parameter must be
      * `suite&`.
-     * @param [in] arguments A possibly empty list of arguments forwarded to
+     * @param arguments A possibly empty list of arguments forwarded to
      * the callable after the leading `suite&` reference.
      */
     template <typename Callable_T, typename... Args_T>
@@ -768,10 +768,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param [in] name The test case name or description, used in reports.
-     * @param [in] callable A generic callable object, usually a lambda,
+     * @param name The test case name or description, used in reports.
+     * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test.
-     * @param [in] arguments A possibly empty list of arguments to be passed to
+     * @param arguments A possibly empty list of arguments to be passed to
      * the callable.
      */
     template <typename Callable_T, typename... Args_T>
@@ -883,7 +883,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Sets the name of the top-level suite.
      *
-     * @param [in] new_name The new name for the top-level suite.
+     * @param new_name The new name for the top-level suite.
      */
     void
     name (const char* new_name) noexcept;
@@ -929,11 +929,11 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param [in] name The test suite name or description, used in reports.
-     * @param [in] runner The static test runner managing this suite.
-     * @param [in] callable A generic callable object, usually a lambda or
+     * @param name The test suite name or description, used in reports.
+     * @param runner The static test runner managing this suite.
+     * @param callable A generic callable object, usually a lambda or
      * function, invoked to perform the test suite.
-     * @param [in] arguments A possibly empty list of arguments to be passed to
+     * @param arguments A possibly empty list of arguments to be passed to
      * the callable.
      */
     template <typename Callable_T, typename... Args_T>

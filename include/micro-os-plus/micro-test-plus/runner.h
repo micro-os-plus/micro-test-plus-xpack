@@ -121,7 +121,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Deprecated constructor for the runner class.
      *
-     * @param [in] top_suite_name The name given to the implicit top suite.
+     * @param top_suite_name The name given to the implicit top suite.
      * Defaults to an empty string.
      *
      * @deprecated Use the anonymous constructor.
@@ -185,10 +185,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param [in] name The test suite name or description, used in reports.
-     * @param [in] callable A generic callable object, usually a lambda,
+     * @param name The test suite name or description, used in reports.
+     * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test suite.
-     * @param [in] arguments A possibly empty list of arguments to be passed to
+     * @param arguments A possibly empty list of arguments to be passed to
      * the callable.
      * @par Returns
      *   Nothing.
@@ -276,7 +276,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Registers a test suite with the runner.
      *
-     * @param [in] suite Owning pointer to the test suite to register.
+     * @param suite Owning pointer to the test suite to register.
      * @par Returns
      *   Nothing.
      */
@@ -396,8 +396,8 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Registers a static test suite with the runner.
      *
-     * @param [in] runner The static runner instance.
-     * @param [in] suite The static test suite to register.
+     * @param runner The static runner instance.
+     * @param suite The static test suite to register.
      */
     static void
     register_static_suite (static_runner& runner, static_suite& suite);
