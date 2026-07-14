@@ -18,7 +18,7 @@ keywords:
 
 The Doxygen contributed pages are:
 
-- [Deprecated List](/micro-test-plus-xpack-webpreview/docs/api/pages/deprecated)
+- [Deprecated List](/micro-test-plus-xpack/docs/api/pages/deprecated)
 
 <hr/>
 

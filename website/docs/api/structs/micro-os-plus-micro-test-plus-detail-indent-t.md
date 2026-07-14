@@ -27,7 +27,7 @@ struct micro_os_plus::micro_test_plus::detail::indent_t { ... }
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>&gt;
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>&gt;
 </div>
 
 ## Public Member Attributes Index
@@ -55,10 +55,10 @@ struct micro_os_plus::micro_test_plus::detail::indent_t { ... }
 <p>Parameterised stream manipulator for outputting indentation.</p>
 
 
-<p>Holds the indentation level; used with <span class="doxyComputerOutput">operator&lt;&lt;</span> on <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> so that <span class="doxyComputerOutput">*this &lt;&lt; indent(n) &lt;&lt; "text"</span> works naturally in chains.</p>
+<p>Holds the indentation level; used with <span class="doxyComputerOutput">operator&lt;&lt;</span> on <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> so that <span class="doxyComputerOutput">*this &lt;&lt; indent(n) &lt;&lt; "text"</span> works naturally in chains.</p>
 
 
-<p>Definition at line 137 of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line 137 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -85,7 +85,7 @@ struct micro_os_plus::micro_test_plus::detail::indent_t { ... }
 
 <p>Number of four-space indentation levels.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -95,7 +95,7 @@ struct micro_os_plus::micro_test_plus::detail::indent_t { ... }
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a95dcf787668c7897d5c92ecce99dc6d5">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a4225a7fb05cb67bf2f881e97fc012ebb">micro_os_plus::micro_test_plus::reporter_tap::operator&lt;&lt;</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a95dcf787668c7897d5c92ecce99dc6d5">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a4225a7fb05cb67bf2f881e97fc012ebb">micro_os_plus::micro_test_plus::reporter_tap::operator&lt;&lt;</a>.</p>
 
 </div>
 </div>
@@ -107,7 +107,7 @@ struct micro_os_plus::micro_test_plus::detail::indent_t { ... }
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a></li>
 </ul>
 
 <hr/>

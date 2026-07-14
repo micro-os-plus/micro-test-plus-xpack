@@ -23,7 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos">micro_os_plus::micro_test_plus::type_traits::has_npos</a> =  requires { T::npos; }
+concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos">micro_os_plus::micro_test_plus::type_traits::has_npos</a> =  requires { T::npos; }
 </div>
 
 ## Description {#details}
@@ -46,7 +46,7 @@ concept <a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-pl
 <p>The <span class="doxyComputerOutput">has_npos</span> concept is satisfied when <span class="doxyComputerOutput">T</span> exposes a static <span class="doxyComputerOutput">npos</span> member, as provided by <span class="doxyComputerOutput">std::string_view</span> and similar types. It is used to detect string-like types for specialised comparison and reporting within the framework.</p>
 
 
-<p>Definition at line 380 of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 380 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">

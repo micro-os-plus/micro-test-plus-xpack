@@ -23,7 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">micro_os_plus::micro_test_plus::type_traits::is_op</a> =  std::is_base_of_v&lt;<a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type_traits::op</a>, T&gt;
+concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">micro_os_plus::micro_test_plus::type_traits::is_op</a> =  std::is_base_of_v&lt;<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type_traits::op</a>, T&gt;
 </div>
 
 ## Description {#details}
@@ -46,7 +46,7 @@ concept <a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-pl
 <p>The <span class="doxyComputerOutput">is_op</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is derived from the <span class="doxyComputerOutput">type_traits::op</span> base struct. It is the primary definition used throughout the framework; <span class="doxyComputerOutput">is_op_v</span> is derived from it for use in <span class="doxyComputerOutput">if constexpr</span> and boolean contexts.</p>
 
 
-<p>Definition at line 437 of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 437 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">

@@ -23,7 +23,7 @@ keywords:
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-os-plus">µOS++ Topics</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus">µOS++ Topics</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Topics related to the µOS++ framework
@@ -33,7 +33,7 @@ Topics related to the µOS++ framework
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus">µTest++</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus">µTest++</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Topics related to the µTest++ Testing Framework
@@ -43,7 +43,7 @@ Topics related to the µTest++ Testing Framework
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-cpp-api">C++ API</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-cpp-api">C++ API</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Topics related to the µTest++ C++ API
@@ -53,7 +53,7 @@ Topics related to the µTest++ C++ API
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-runners">Test Runners</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-runners">Test Runners</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Classes for initialising the framework and returning an exit code
@@ -63,7 +63,7 @@ Classes for initialising the framework and returning an exit code
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-test-case">Test Cases</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-test-case">Test Cases</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Test cases are named sequences of checks
@@ -73,7 +73,7 @@ Test cases are named sequences of checks
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-expectations">Expectations</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations">Expectations</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Expectations are checks whose outcomes are counted and reported
@@ -83,7 +83,7 @@ Expectations are checks whose outcomes are counted and reported
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-assumptions">Assumptions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-assumptions">Assumptions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Assumptions are conditions that must be satisfied for a test to proceed
@@ -93,7 +93,7 @@ Assumptions are conditions that must be satisfied for a test to proceed
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-function-comparators">Function Comparators</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators">Function Comparators</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Functions for comparing actual and expected values in tests
@@ -103,7 +103,7 @@ Functions for comparing actual and expected values in tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-logical-functions">Logical Functions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-logical-functions">Logical Functions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Functions used to compose logical expressions in tests
@@ -113,7 +113,7 @@ Functions used to compose logical expressions in tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-exceptions">Checking Exceptions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions">Checking Exceptions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Functions for verifying exceptions in test cases
@@ -123,7 +123,7 @@ Functions for verifying exceptions in test cases
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-operators">Operators</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators">Operators</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Overloaded operators for expressive test comparisons
@@ -133,7 +133,7 @@ Overloaded operators for expressive test comparisons
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-string-operators">String Operators</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators">String Operators</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Overloaded operators for string comparison
@@ -143,7 +143,7 @@ Overloaded operators for string comparison
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-container-operators">Container Operators</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators">Container Operators</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Overloaded operators for container comparison
@@ -153,7 +153,7 @@ Overloaded operators for container comparison
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals">Literals and Wrappers</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals">Literals and Wrappers</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Literal operators and wrappers for typed operands
@@ -163,7 +163,7 @@ Literal operators and wrappers for typed operands
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-utility-functions">Utility Functions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-utility-functions">Utility Functions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Utility functions for advanced string handling in tests
@@ -173,7 +173,7 @@ Utility functions for advanced string handling in tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-test-suites">Test Suites</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-test-suites">Test Suites</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Test suites are named groups of related test cases
@@ -183,7 +183,7 @@ Test suites are named groups of related test cases
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-c-api">C API</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-c-api">C API</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Topics related to the µTest++ C API
@@ -193,7 +193,7 @@ Topics related to the µTest++ C API
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-cli">Command Line Options</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-cli">Command Line Options</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Options for controlling test output verbosity at run-time

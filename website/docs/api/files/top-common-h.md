@@ -25,12 +25,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The primary namespace for the µOS++ framework. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/#details">More...</a></p>
+<p>The primary namespace for the µOS++ framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -53,7 +53,7 @@ keywords:
 <p>The file introduces the main documentation group for the µOS++ framework, outlining the overall project structure, which consists of multiple modular source libraries maintained as separate repositories within the <a href="https://github.com/micro-os-plus">micro-os-plus</a> group on GitHub.</p>
 
 
-<p>Additionally, it documents the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus">micro_os_plus</a></span> namespace, which acts as the primary scope for all classes, functions, variables, enumerations, type definitions, and related entities within the framework. The namespace is further organised into nested namespaces to promote modularity, reduce redundancy, and enhance maintainability.</p>
+<p>Additionally, it documents the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></span> namespace, which acts as the primary scope for all classes, functions, variables, enumerations, type definitions, and related entities within the framework. The namespace is further organised into nested namespaces to promote modularity, reduce redundancy, and enhance maintainability.</p>
 
 
 <p>All definitions and documentation topics in this file are maintained in the <span class="doxyComputerOutput">website/doxygen</span> folder to ensure a consistent and modular structure throughout the project's documentation.</p>

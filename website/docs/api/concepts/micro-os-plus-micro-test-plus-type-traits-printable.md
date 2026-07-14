@@ -23,7 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/printable">micro_os_plus::micro_test_plus::type_traits::printable</a> =  std::is_arithmetic_v&lt;T&gt;<br/>
+concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/printable">micro_os_plus::micro_test_plus::type_traits::printable</a> =  std::is_arithmetic_v&lt;T&gt;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or std::is_convertible_v&lt;T, std::string_view&gt;
 </div>
 
@@ -47,7 +47,7 @@ concept <a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-pl
 <p>The <span class="doxyComputerOutput">printable</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is an arithmetic type or is implicitly convertible to <span class="doxyComputerOutput">std::string_view</span>. It constrains the <span class="doxyComputerOutput">operator&lt;&lt;</span> overload of <span class="doxyComputerOutput">deferred_reporter_base</span>, ensuring that only types that can be meaningfully appended to the output message are accepted.</p>
 
 
-<p>Definition at line 486 of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 486 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
