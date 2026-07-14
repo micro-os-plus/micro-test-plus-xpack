@@ -25,12 +25,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The primary namespace for the µOS++ framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/#details">More...</a></p>
+<p>The primary namespace for the µOS++ framework. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -39,12 +39,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Primary namespace for the µTest++ testing framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#details">More...</a></p>
+<p>Primary namespace for the µTest++ testing framework. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -53,12 +53,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">detail</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">detail</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Internal implementation details for the µTest++ framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#details">More...</a></p>
+<p>Internal implementation details for the µTest++ framework. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -72,10 +72,10 @@ keywords:
 <p>C++ header file with inline implementations for the µTest++ timing utilities.</p>
 
 
-<p>This header provides the inline method bodies for the <span class="doxyComputerOutput">timestamp</span> and <span class="doxyComputerOutput">timestamps</span> classes, separated from the class declarations in <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a></span> to enforce the project convention that declarations reside in headers and implementations reside in inline files.</p>
+<p>This header provides the inline method bodies for the <span class="doxyComputerOutput">timestamp</span> and <span class="doxyComputerOutput">timestamps</span> classes, separated from the class declarations in <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a></span> to enforce the project convention that declarations reside in headers and implementations reside in inline files.</p>
 
 
-<p>All definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
+<p>All definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 
 
 ## File Listing
@@ -117,38 +117,38 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00046"></a>46</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00047"></a>47</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ============================================================================</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00048"></a>48</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00049"></a>49</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00049"></a>49</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00050"></a>50</span><span class="doxyLineContent"><span class="doxyHighlight">{</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00051"></a>51</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// ==========================================================================</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00052"></a>52</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00057"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5877a6dda459f5dc695f0e4569175a82">57</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a3021a3477870bda369e22bdf085bf7a7">timestamp::timestamp</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) noexcept : <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a62c9539975cee7a03be62eb0a903bbf3">value_</a>{ ts }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00057"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5877a6dda459f5dc695f0e4569175a82">57</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a3021a3477870bda369e22bdf085bf7a7">timestamp::timestamp</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) noexcept : <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a62c9539975cee7a03be62eb0a903bbf3">value_</a>{ ts }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00058"></a>58</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00059"></a>59</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00060"></a>60</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00065"></a>65</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> timespec&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00066"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a3d67310c280413bdd857d975daa84eac">66</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a3d67310c280413bdd857d975daa84eac">timestamp::value</a> () noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00066"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a3d67310c280413bdd857d975daa84eac">66</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a3d67310c280413bdd857d975daa84eac">timestamp::value</a> () noexcept</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00067"></a>67</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00068"></a>68</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00068"></a>68</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00069"></a>69</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00070"></a>70</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00075"></a>75</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00076"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a557741d17d1edd54c30a9fb689d27275">76</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a3d67310c280413bdd857d975daa84eac">timestamp::value</a> () const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00076"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a557741d17d1edd54c30a9fb689d27275">76</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a3d67310c280413bdd857d975daa84eac">timestamp::value</a> () const noexcept</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00077"></a>77</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00078"></a>78</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00078"></a>78</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00079"></a>79</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00080"></a>80</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00081"></a>81</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// ==========================================================================</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00082"></a>82</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00088"></a>88</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00089"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#aa0947e2e891064a6b0c36e55dcfc900b">89</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#aa0947e2e891064a6b0c36e55dcfc900b">timestamps::has_begin</a> () const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00089"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#aa0947e2e891064a6b0c36e55dcfc900b">89</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#aa0947e2e891064a6b0c36e55dcfc900b">timestamps::has_begin</a> () const noexcept</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00090"></a>90</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00091"></a>91</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#ac621973713cc6e574f7aa70566a4e960">begin_time_</a>.has_value ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00091"></a>91</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#ac621973713cc6e574f7aa70566a4e960">begin_time_</a>.has_value ();</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00092"></a>92</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00093"></a>93</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00099"></a>99</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00100"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#a66eaffb91df2a7b6b70b8c8005791954">100</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#a66eaffb91df2a7b6b70b8c8005791954">timestamps::has_end</a> () const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00100"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#a66eaffb91df2a7b6b70b8c8005791954">100</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#a66eaffb91df2a7b6b70b8c8005791954">timestamps::has_end</a> () const noexcept</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00101"></a>101</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00102"></a>102</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#a85749791b2161ff48e9a1de82c532017">end_time_</a>.has_value ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00102"></a>102</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps/#a85749791b2161ff48e9a1de82c532017">end_time_</a>.has_value ();</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00103"></a>103</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00104"></a>104</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00105"></a>105</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// --------------------------------------------------------------------------</span></span></div>

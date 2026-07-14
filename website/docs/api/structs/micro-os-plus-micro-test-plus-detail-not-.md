@@ -28,7 +28,7 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
 </div>
 
 ## Base struct
@@ -37,12 +37,12 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-">unary_op_&lt;T&gt;</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-">unary_op_&lt;T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Common base struct template for unary comparators. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#details">More...</a></p>
+<p>Common base struct template for unary comparators. <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -83,12 +83,12 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ad8463c48db311b2246fa3a860afb5e5d">operator bool</a> () const</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ad8463c48db311b2246fa3a860afb5e5d">operator bool</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Conversion operator to boolean. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ad8463c48db311b2246fa3a860afb5e5d">More...</a></p>
+<p>Conversion operator to boolean. <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ad8463c48db311b2246fa3a860afb5e5d">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -106,12 +106,12 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">operand</a> () const</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">operand</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Retrieves the wrapped operand expression. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">More...</a></p>
+<p>Retrieves the wrapped operand expression. <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -129,12 +129,12 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">const T</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">t_</a> {}</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">t_</a> {}</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Stores the operand. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">More...</a></p>
+<p>Stores the operand. <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -146,12 +146,12 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">const bool</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">value_</a> {}</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">value_</a> {}</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Stores the result of the operation. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">More...</a></p>
+<p>Stores the result of the operation. <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -165,7 +165,7 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 <p>Logical NOT comparator struct template.</p>
 
 
-<p>Derived from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-">unary_op_</a></span>, this struct negates a single sub-expression, enabling test writers to assert that a condition does not hold. The negation result is computed at construction time, ensuring consistent reporting throughout the assertion framework.</p>
+<p>Derived from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-">unary_op_</a></span>, this struct negates a single sub-expression, enabling test writers to assert that a condition does not hold. The negation result is computed at construction time, ensuring consistent reporting throughout the assertion framework.</p>
 
 
 <dl class="doxyParamsList">
@@ -180,7 +180,7 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 </dd>
 </dl>
 
-<p>Definition at line 566 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line 566 of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -227,23 +227,23 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 </dd>
 </dl>
 
-<p>Evaluates the logical negation <span class="doxyComputerOutput">not static_cast&lt;bool&gt;(t)</span> and passes the result to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-">unary_op_</a></span> base class constructor.</p>
+<p>Evaluates the logical negation <span class="doxyComputerOutput">not static_cast&lt;bool&gt;(t)</span> and passes the result to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-">unary_op_</a></span> base class constructor.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00573">573</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h/#l00512">512</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00573">573</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h/#l00512">512</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae04b89bc6cdf306487499875a635d301">512</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#ae04b89bc6cdf306487499875a635d301">not_&lt;T&gt;::not_</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">513</span><span class="doxyLineContent"><span class="doxyHighlight">        : <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">unary_op_</a>&lt;T&gt;{ t, not </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (t) }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">513</span><span class="doxyLineContent"><span class="doxyHighlight">        : <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">unary_op_</a>&lt;T&gt;{ t, not </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (t) }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">514</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">515</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</a>.</p>
 
 </div>
 </div>
@@ -297,20 +297,20 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 <p>Returns the pre-computed boolean result stored by the derived comparator's constructor.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00180">180</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h/#l00110">110</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00180">180</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h/#l00110">110</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">110</span><span class="doxyLineContent"><span class="doxyHighlight">    operator bool ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">111</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">    </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">112</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">112</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">value_</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">113</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>References <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::value_</a>.</p>
+<p>References <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::value_</a>.</p>
 
 </div>
 </div>
@@ -364,23 +364,23 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 <p>Returns the wrapped operand, applying the generic getter to ensure correct extraction for both custom and standard types.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00190">190</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h/#l00122">122</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00190">190</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h/#l00122">122</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">122</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">unary_op_&lt;T&gt;::operand</a> ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">122</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">unary_op_&lt;T&gt;::operand</a> ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">123</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">    </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">124</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">t_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">124</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">t_</a>);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">125</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::t_</a>.</p>
+<p>References <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::t_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a18779725af09a98f96a5e392688123b5">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a18779725af09a98f96a5e392688123b5">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</a>.</p>
 
 </div>
 </div>
@@ -412,17 +412,17 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 
 <p>Stores the operand.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00196">196</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00196">196</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">196</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">t_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">196</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a21b7e5959bd3e3c18152549aaf4ee9d5">t_</a>{};</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operand</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operand</a>.</p>
 
 </div>
 </div>
@@ -448,17 +448,17 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 
 <p>Stores the result of the operation.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00201">201</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00201">201</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">201</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">value_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">201</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ac226d3ad3c5e0ce7eddaf225803aa998">value_</a>{};</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ad8463c48db311b2246fa3a860afb5e5d">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operator bool</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a9458699958135918f1a616bdbd50f0ed">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#ad8463c48db311b2246fa3a860afb5e5d">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operator bool</a>.</p>
 
 </div>
 </div>
@@ -470,8 +470,8 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt; { ... }
 The documentation for this struct was generated from the following files:
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></li>
+<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a></li>
 </ul>
 
 <hr/>

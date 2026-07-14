@@ -155,7 +155,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 <p>Mathematical utilities for the µTest++ testing framework.</p>
 
 
-<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</a></span> namespace offers a suite of constexpr mathematical function templates and utilities for use within the µTest++ framework.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</a></span> namespace offers a suite of constexpr mathematical function templates and utilities for use within the µTest++ framework.</p>
 
 
 <p>These functions include generic implementations for absolute value, minimum value, exponentiation, and compile-time parsing of numeric values from character arrays. The utilities are designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</p>
@@ -236,7 +236,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00097">97</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00097">97</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -249,7 +249,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a6119b4adca8baf81aad4e2543b8902bc">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a6119b4adca8baf81aad4e2543b8902bc">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_</a>.</p>
 
 </div>
 </div>
@@ -318,7 +318,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00203">203</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00203">203</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -347,7 +347,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 <p>Reference <a href="#a81a10f59f83a29f4ade9c710e833eced">pow</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>.</p>
 
 </div>
 </div>
@@ -423,7 +423,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00276">276</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00276">276</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -524,7 +524,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00238">238</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00238">238</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -552,7 +552,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>.</p>
 
 </div>
 </div>
@@ -629,7 +629,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00118">118</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00118">118</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -642,7 +642,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a6119b4adca8baf81aad4e2543b8902bc">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a6119b4adca8baf81aad4e2543b8902bc">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_</a>.</p>
 
 </div>
 </div>
@@ -711,7 +711,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00163">163</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00163">163</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -740,7 +740,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gae521cebfd48332f44d01e4f880b4aafa">micro_os_plus::micro_test_plus::literals::operator""_c</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga366a0d47aec3241e659816067c94fcdf">micro_os_plus::micro_test_plus::literals::operator""_i</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gabce6e838737bf25be6e7527f69e75590">micro_os_plus::micro_test_plus::literals::operator""_i16</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga6a192d3dfff5a4a98aa7532d36d1b1bd">micro_os_plus::micro_test_plus::literals::operator""_i32</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gab0bb5d1e37cbe8de6477c11ecd60956d">micro_os_plus::micro_test_plus::literals::operator""_i64</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9ca6fecc72b6da90acee52977eb077d7">micro_os_plus::micro_test_plus::literals::operator""_i8</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga96e891b439024e116cb845bc65bc9c4f">micro_os_plus::micro_test_plus::literals::operator""_l</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaf5ab66b00c9486ade5d49f34a83783f5">micro_os_plus::micro_test_plus::literals::operator""_ll</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga812816a2e9b23de1f8d8b2d86553d96d">micro_os_plus::micro_test_plus::literals::operator""_s</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga57d27f1a76de2d2b2a067134cbe61457">micro_os_plus::micro_test_plus::literals::operator""_sc</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaf45bf641153a462a1ba7c12b908e667f">micro_os_plus::micro_test_plus::literals::operator""_u</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga96d12d563093f297a73a8b984ae7a3a5">micro_os_plus::micro_test_plus::literals::operator""_u16</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga3171e605b5c2e1d9a0e55ae34e904674">micro_os_plus::micro_test_plus::literals::operator""_u32</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga622b4808b7ebfc26ddf9db9128533f28">micro_os_plus::micro_test_plus::literals::operator""_u64</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga80f43260f6a1afd8260355136858df48">micro_os_plus::micro_test_plus::literals::operator""_u8</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga6c1b46d4b967bdbc573e3192c2d9f98a">micro_os_plus::micro_test_plus::literals::operator""_uc</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaef96b19b140b5007ec33a944c3b72cae">micro_os_plus::micro_test_plus::literals::operator""_ul</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga01adcd3866da43c393b7fba8a5e72bb2">micro_os_plus::micro_test_plus::literals::operator""_ull</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9017debdc1eafd64e3c53c80157ad6f5">micro_os_plus::micro_test_plus::literals::operator""_us</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gae521cebfd48332f44d01e4f880b4aafa">micro_os_plus::micro_test_plus::literals::operator""_c</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga366a0d47aec3241e659816067c94fcdf">micro_os_plus::micro_test_plus::literals::operator""_i</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gabce6e838737bf25be6e7527f69e75590">micro_os_plus::micro_test_plus::literals::operator""_i16</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga6a192d3dfff5a4a98aa7532d36d1b1bd">micro_os_plus::micro_test_plus::literals::operator""_i32</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gab0bb5d1e37cbe8de6477c11ecd60956d">micro_os_plus::micro_test_plus::literals::operator""_i64</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9ca6fecc72b6da90acee52977eb077d7">micro_os_plus::micro_test_plus::literals::operator""_i8</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga96e891b439024e116cb845bc65bc9c4f">micro_os_plus::micro_test_plus::literals::operator""_l</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaf5ab66b00c9486ade5d49f34a83783f5">micro_os_plus::micro_test_plus::literals::operator""_ll</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga812816a2e9b23de1f8d8b2d86553d96d">micro_os_plus::micro_test_plus::literals::operator""_s</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga57d27f1a76de2d2b2a067134cbe61457">micro_os_plus::micro_test_plus::literals::operator""_sc</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaf45bf641153a462a1ba7c12b908e667f">micro_os_plus::micro_test_plus::literals::operator""_u</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga96d12d563093f297a73a8b984ae7a3a5">micro_os_plus::micro_test_plus::literals::operator""_u16</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga3171e605b5c2e1d9a0e55ae34e904674">micro_os_plus::micro_test_plus::literals::operator""_u32</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga622b4808b7ebfc26ddf9db9128533f28">micro_os_plus::micro_test_plus::literals::operator""_u64</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga80f43260f6a1afd8260355136858df48">micro_os_plus::micro_test_plus::literals::operator""_u8</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga6c1b46d4b967bdbc573e3192c2d9f98a">micro_os_plus::micro_test_plus::literals::operator""_uc</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaef96b19b140b5007ec33a944c3b72cae">micro_os_plus::micro_test_plus::literals::operator""_ul</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga01adcd3866da43c393b7fba8a5e72bb2">micro_os_plus::micro_test_plus::literals::operator""_ull</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9017debdc1eafd64e3c53c80157ad6f5">micro_os_plus::micro_test_plus::literals::operator""_us</a>.</p>
 
 </div>
 </div>
@@ -821,7 +821,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -849,7 +849,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 The documentation for this namespace was generated from the following file:
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a></li>
 </ul>
 
 <hr/>

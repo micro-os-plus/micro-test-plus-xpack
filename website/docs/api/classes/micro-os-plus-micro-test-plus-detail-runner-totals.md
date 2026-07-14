@@ -27,7 +27,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
 </div>
 
 ## Public Constructors Index
@@ -297,7 +297,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Aggregated pass/fail/subtest counters for a node in the test tree.</p>
 
 
-<p><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runner-totals">runner_totals</a></span> records three counters that are maintained throughout a test session:</p>
+<p><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/runner-totals">runner_totals</a></span> records three counters that are maintained throughout a test session:</p>
 
 
 <ul class="doxyList ">
@@ -306,13 +306,13 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <li>the number of subtests that were executed (<span class="doxyComputerOutput"><a href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a></span>).</li>
 </ul>
 
-<p>Every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/test-node">test_node</a></span>-derived object (<span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a></span>) owns a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runner-totals">runner_totals</a></span> member and accumulates its counts in place. At the end of each suite or session the operator <span class="doxyComputerOutput">+=</span> propagates the child totals up to the parent node.</p>
+<p>Every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/test-node">test_node</a></span>-derived object (<span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a></span>) owns a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/runner-totals">runner_totals</a></span> member and accumulates its counts in place. At the end of each suite or session the operator <span class="doxyComputerOutput">+=</span> propagates the child totals up to the parent node.</p>
 
 
 <p>The class is non-copyable and non-movable to prevent accidental duplication of live counters.</p>
 
 
-<p>Definition at line 88 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
+<p>Definition at line 88 of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -344,7 +344,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 
 <p>Default constructor. All counters are zero-initialised.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00094">94</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00094">94</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
 
 
 <p>Referenced by <a href="#a4240a9cae8d1a8ee0d420027d63850f8">runner_totals</a>, <a href="#a602415787ce8bef15e9ca69caaf2555b">runner_totals</a>, <a href="#a40cd40df768c78cd4b2a9bd5d42105dd">operator+=</a>, <a href="#af5799b1c0a21b55400dc9c2e2631e863">operator=</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
@@ -377,7 +377,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 
 <p>Deleted copy constructor to prevent copying.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00099">99</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00099">99</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
 
 
 <p>Reference <a href="#af2d4424203237e5f158cdbc1f31abbdf">runner_totals</a>.</p>
@@ -410,7 +410,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 
 <p>Deleted move constructor to prevent moving.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00104">104</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00104">104</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
 
 
 <p>Reference <a href="#af2d4424203237e5f158cdbc1f31abbdf">runner_totals</a>.</p>
@@ -471,7 +471,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Adds the successful check count, failed check count, and executed subtest count of <span class="doxyComputerOutput">other</span> to the corresponding members of this instance. Returns a reference to <span class="doxyComputerOutput">*this</span> to support chaining. When tracing is enabled, the updated totals are output for diagnostic purposes.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00127">127</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-totals-cpp/#l00078">78</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-totals-cpp">runner-totals.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00127">127</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/runner-totals-cpp/#l00078">78</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/runner-totals-cpp">runner-totals.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -532,7 +532,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 
 <p>Deleted copy assignment operator to prevent copying.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00110">110</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00110">110</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
 
 
 <p>Reference <a href="#af2d4424203237e5f158cdbc1f31abbdf">runner_totals</a>.</p>
@@ -565,7 +565,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 
 <p>Deleted move assignment operator to prevent moving.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00117">117</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00117">117</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
 
 
 <p>References <a href="#af2d4424203237e5f158cdbc1f31abbdf">runner_totals</a>, <a href="#afff854fdb78b39ad075042c6cd861d5f">executed_checks</a>, <a href="#a3da8e6781da2c97e8d68fee2d9102b9d">executed_subtests</a>, <a href="#ad1301b9a6a0e67131c9a98bb8f07e4e4">failed_checks</a>, <a href="#aa011c23894cae22c2d8496e36f4cca01">increment_executed_subtests</a>, <a href="#ac3f450f8e0d89e57b642a6e941b5a716">increment_failed_checks</a>, <a href="#a6a00aea94a2db661d294909e2e66fdf4">successful_checks</a> and <a href="#a9ccf52635c60eed8109ea7691ae49644">was_successful</a>.</p>
@@ -622,7 +622,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Returns the sum of <span class="doxyComputerOutput"><a href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a></span> and <span class="doxyComputerOutput"><a href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00187">187</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00111">111</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00187">187</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00111">111</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -638,7 +638,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>References <a href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a> and <a href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
 
 </div>
 </div>
@@ -686,7 +686,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00197">197</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00121">121</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00197">197</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00121">121</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -702,7 +702,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Reference <a href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
 
 </div>
 </div>
@@ -750,7 +750,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00177">177</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00101">101</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00177">177</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00101">101</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -766,7 +766,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Reference <a href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a052138e5f517b578df99204c8d88213e">micro_os_plus::micro_test_plus::reporter_human::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a052138e5f517b578df99204c8d88213e">micro_os_plus::micro_test_plus::reporter_human::end_subtest</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
 
 </div>
 </div>
@@ -819,7 +819,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00157">157</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00081">81</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00157">157</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00081">81</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -835,7 +835,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Reference <a href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#a60ea42dbf8ecbe8b4c5fcfedb52e857c">micro_os_plus::micro_test_plus::detail::runnable_base::after_subtest_create_</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#a60ea42dbf8ecbe8b4c5fcfedb52e857c">micro_os_plus::micro_test_plus::detail::runnable_base::after_subtest_create_</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
 
 </div>
 </div>
@@ -888,7 +888,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00147">147</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00071">71</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00147">147</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00071">71</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -957,7 +957,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00137">137</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00061">61</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00137">137</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00061">61</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1018,7 +1018,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00167">167</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00091">91</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00167">167</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00091">91</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1034,7 +1034,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Reference <a href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a052138e5f517b578df99204c8d88213e">micro_os_plus::micro_test_plus::reporter_human::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a052138e5f517b578df99204c8d88213e">micro_os_plus::micro_test_plus::reporter_human::end_subtest</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
 
 </div>
 </div>
@@ -1092,7 +1092,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>A runner with no checks at all is considered successful, as it did not fail any check.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00208">208</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00132">132</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00208">208</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h/#l00132">132</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1108,7 +1108,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 <p>Reference <a href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a052138e5f517b578df99204c8d88213e">micro_os_plus::micro_test_plus::reporter_human::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a052138e5f517b578df99204c8d88213e">micro_os_plus::micro_test_plus::reporter_human::end_subtest</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a> and <a href="#a6b46f0e65eea7f513f4194babe570c24">operator=</a>.</p>
 
 </div>
 </div>
@@ -1144,7 +1144,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 
 <p>Total number of tests executed.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00224">224</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00224">224</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1184,7 +1184,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 
 <p>Total number of failed checks.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00219">219</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00219">219</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1224,7 +1224,7 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 
 <p>Total number of successful checks.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00214">214</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h/#l00214">214</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1246,9 +1246,9 @@ class micro_os_plus::micro_test_plus::detail::runner_totals { ... }
 The documentation for this class was generated from the following files:
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/files/src/runner-totals-cpp">runner-totals.cpp</a></li>
+<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h">runner-totals-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/runner-totals-h">runner-totals.h</a></li>
+<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/runner-totals-cpp">runner-totals.cpp</a></li>
 </ul>
 
 <hr/>

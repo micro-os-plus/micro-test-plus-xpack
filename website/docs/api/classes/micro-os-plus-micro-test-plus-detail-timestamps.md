@@ -27,7 +27,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
 </div>
 
 ## Public Constructors Index
@@ -255,7 +255,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">std::optional&lt; <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a> &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::optional&lt; <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a> &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac621973713cc6e574f7aa70566a4e960">begin_time_</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -269,7 +269,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">std::optional&lt; <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a> &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::optional&lt; <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a> &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a85749791b2161ff48e9a1de82c532017">end_time_</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -289,7 +289,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 <p>A begin/end timestamp pair used to measure elapsed time.</p>
 
 
-<p><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps">timestamps</a></span> stores an optional begin <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> and an optional end <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span>. When both are available, <span class="doxyComputerOutput"><a href="#a7e7ade6bb02af23d65e5ceaa958052dd">compute_elapsed_time()</a></span> derives the elapsed interval in milliseconds and microseconds.</p>
+<p><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps">timestamps</a></span> stores an optional begin <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> and an optional end <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span>. When both are available, <span class="doxyComputerOutput"><a href="#a7e7ade6bb02af23d65e5ceaa958052dd">compute_elapsed_time()</a></span> derives the elapsed interval in milliseconds and microseconds.</p>
 
 
 <p>Typical usage in the framework:</p>
@@ -307,7 +307,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 <p>The class is non-copyable and non-movable to prevent accidental sharing of live timing state.</p>
 
 
-<p>Definition at line 204 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
+<p>Definition at line 204 of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -339,7 +339,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>Default constructor. Both timestamps are uninitialised.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00210">210</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00210">210</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
 
 
 <p>Referenced by <a href="#ad9bb8bdb44def63c7ace6e25efa6150e">timestamps</a>, <a href="#aed7caa5ea1c202dd12403ae9a5b38167">timestamps</a>, <a href="#aa003cc61308004bc8e22ce2097e4564b">operator=</a> and <a href="#afe37704a6659bbaeb5a21372b5b53b60">operator=</a>.</p>
@@ -372,7 +372,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>Deleted copy constructor to prevent copying.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00215">215</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00215">215</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
 
 
 <p>Reference <a href="#a28411e9d980b53accf2a8c5221a1861f">timestamps</a>.</p>
@@ -405,7 +405,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>Deleted move constructor to prevent moving.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00220">220</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00220">220</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
 
 
 <p>Reference <a href="#a28411e9d980b53accf2a8c5221a1861f">timestamps</a>.</p>
@@ -444,7 +444,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>Defaulted destructor.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00239">239</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00239">239</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
 
 
 <p>References <a href="#a7e7ade6bb02af23d65e5ceaa958052dd">compute_elapsed_time</a>, <a href="#a66eaffb91df2a7b6b70b8c8005791954">has_end</a> and <a href="#a125c87d852257c18749074be3b698ed1">has_timestamps</a>.</p>
@@ -483,7 +483,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>Deleted copy assignment operator to prevent copying.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00226">226</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00226">226</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
 
 
 <p>Reference <a href="#a28411e9d980b53accf2a8c5221a1861f">timestamps</a>.</p>
@@ -516,7 +516,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>Deleted move assignment operator to prevent moving.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00233">233</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00233">233</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
 
 
 <p>Reference <a href="#a28411e9d980b53accf2a8c5221a1861f">timestamps</a>.</p>
@@ -570,7 +570,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 <p>Subtracts the begin timestamp from the end timestamp in nanoseconds. If the nanosecond difference is negative, one second is borrowed from the seconds delta to normalise the result. The total elapsed duration in microseconds is then split into whole milliseconds (written to <span class="doxyComputerOutput">milliseconds</span>) and the remainder microseconds (written to <span class="doxyComputerOutput">microseconds</span>). Requires <span class="doxyComputerOutput"><a href="#a125c87d852257c18749074be3b698ed1">has_timestamps()</a></span> to be <span class="doxyComputerOutput">true</span>; behaviour is undefined otherwise.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00326">326</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00192">192</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00326">326</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp/#l00192">192</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -604,7 +604,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 <p>References <a href="#ac621973713cc6e574f7aa70566a4e960">begin_time_</a>, <a href="#a85749791b2161ff48e9a1de82c532017">end_time_</a> and <a href="#a125c87d852257c18749074be3b698ed1">has_timestamps</a>.</p>
 
 
-<p>Referenced by <a href="#a29791422e99ae1b77c0d0cefa97bbd88">~timestamps</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a>.</p>
+<p>Referenced by <a href="#a29791422e99ae1b77c0d0cefa97bbd88">~timestamps</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a>.</p>
 
 </div>
 </div>
@@ -661,7 +661,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 <p>Returns <span class="doxyComputerOutput">true</span> when <span class="doxyComputerOutput"><a href="#ac621973713cc6e574f7aa70566a4e960">begin_time_</a></span> holds a value, i.e. when <span class="doxyComputerOutput"><a href="#a1b2077718469ade9fda2e257a0d06293">timestamp_begin()</a></span> has previously been called.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00292">292</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h/#l00089">89</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h">timings-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00292">292</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h/#l00089">89</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h">timings-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -731,7 +731,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 <p>Returns <span class="doxyComputerOutput">true</span> when <span class="doxyComputerOutput"><a href="#a85749791b2161ff48e9a1de82c532017">end_time_</a></span> holds a value, i.e. when <span class="doxyComputerOutput"><a href="#aeb4873587b5be066c69c0ef26d64640b">timestamp_end()</a></span> has previously been called.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00303">303</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h/#l00100">100</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h">timings-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00303">303</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h/#l00100">100</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h">timings-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -800,10 +800,10 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 </dd>
 </dl>
 
-<p>Returns <span class="doxyComputerOutput">true</span> only when both the begin and end optional timestamps are engaged and each contains a valid (non-zero) clock reading, as determined by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#ae5494fb57bcc3b577c914a0cc95ff667">timestamp::has_clock()</a></span>.</p>
+<p>Returns <span class="doxyComputerOutput">true</span> only when both the begin and end optional timestamps are engaged and each contains a valid (non-zero) clock reading, as determined by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#ae5494fb57bcc3b577c914a0cc95ff667">timestamp::has_clock()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00316">316</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00175">175</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00316">316</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp/#l00175">175</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -820,7 +820,7 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 <p>References <a href="#ac621973713cc6e574f7aa70566a4e960">begin_time_</a> and <a href="#a85749791b2161ff48e9a1de82c532017">end_time_</a>.</p>
 
 
-<p>Referenced by <a href="#a29791422e99ae1b77c0d0cefa97bbd88">~timestamps</a>, <a href="#a7e7ade6bb02af23d65e5ceaa958052dd">compute_elapsed_time</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a>.</p>
+<p>Referenced by <a href="#a29791422e99ae1b77c0d0cefa97bbd88">~timestamps</a>, <a href="#a7e7ade6bb02af23d65e5ceaa958052dd">compute_elapsed_time</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a>.</p>
 
 </div>
 </div>
@@ -869,10 +869,10 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 </dl>
 
 
-<p>If the begin timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> is constructed in-place from the supplied <span class="doxyComputerOutput">timespec</span> value. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
+<p>If the begin timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> is constructed in-place from the supplied <span class="doxyComputerOutput">timespec</span> value. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00260">260</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00126">126</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00260">260</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp/#l00126">126</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -932,10 +932,10 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 </dl>
 
 
-<p>If the begin timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> is constructed in-place using the default constructor, which captures the current monotonic time. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
+<p>If the begin timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> is constructed in-place using the default constructor, which captures the current monotonic time. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00250">250</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00110">110</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00250">250</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp/#l00110">110</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1001,10 +1001,10 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 </dl>
 
 
-<p>If the end timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> is constructed in-place from the supplied <span class="doxyComputerOutput">timespec</span> value. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
+<p>If the end timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> is constructed in-place from the supplied <span class="doxyComputerOutput">timespec</span> value. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00281">281</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00159">159</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00281">281</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp/#l00159">159</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1064,10 +1064,10 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 </dl>
 
 
-<p>If the end timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> is constructed in-place using the default constructor, which captures the current monotonic time. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
+<p>If the end timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> is constructed in-place using the default constructor, which captures the current monotonic time. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00271">271</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00143">143</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00271">271</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp/#l00143">143</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1120,12 +1120,12 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>The timestamp recorded at the beginning of the test suite.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00333">333</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00333">333</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac621973713cc6e574f7aa70566a4e960">333</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::optional&lt;<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a>&gt; <a href="#ac621973713cc6e574f7aa70566a4e960">begin_time_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac621973713cc6e574f7aa70566a4e960">333</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::optional&lt;<a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a>&gt; <a href="#ac621973713cc6e574f7aa70566a4e960">begin_time_</a>;</span></span></div>
 
 </div>
 
@@ -1160,12 +1160,12 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 
 <p>The timestamp recorded at the end of the test suite.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00338">338</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00338">338</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a85749791b2161ff48e9a1de82c532017">338</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::optional&lt;<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a>&gt; <a href="#a85749791b2161ff48e9a1de82c532017">end_time_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a85749791b2161ff48e9a1de82c532017">338</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::optional&lt;<a href="/micro-test-plus-xpack-webpreview/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a>&gt; <a href="#a85749791b2161ff48e9a1de82c532017">end_time_</a>;</span></span></div>
 
 </div>
 
@@ -1182,9 +1182,9 @@ class micro_os_plus::micro_test_plus::detail::timestamps { ... }
 The documentation for this class was generated from the following files:
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h">timings-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a></li>
+<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h">timings-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a></li>
+<li><a href="/micro-test-plus-xpack-webpreview/docs/api/files/src/timings-cpp">timings.cpp</a></li>
 </ul>
 
 <hr/>

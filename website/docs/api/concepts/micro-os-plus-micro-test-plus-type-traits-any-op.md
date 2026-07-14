@@ -23,7 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class Lhs_T, class Rhs_T&gt;<br/>
-concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/any-op">micro_os_plus::micro_test_plus::type_traits::any_op</a> =  is_op&lt;Lhs_T&gt; or is_op&lt;Rhs_T&gt;
+concept <a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/any-op">micro_os_plus::micro_test_plus::type_traits::any_op</a> =  is_op&lt;Lhs_T&gt; or is_op&lt;Rhs_T&gt;
 </div>
 
 ## Description {#details}
@@ -50,7 +50,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">any_op</span> concept is satisfied when <span class="doxyComputerOutput">Lhs_T</span> or <span class="doxyComputerOutput">Rhs_T</span> (or both) are derived from the <span class="doxyComputerOutput">type_traits::op</span> base struct. It is used to constrain binary operator overloads in the <span class="doxyComputerOutput">operators</span> namespace so that they are enabled only when at least one operand is a framework type, avoiding unintended conflicts with user-defined operators.</p>
 
 
-<p>Definition at line 454 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 454 of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">

@@ -25,7 +25,7 @@ The C++20 concepts used by this project are:
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus">micro_os_plus</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 The primary namespace for the µOS++ framework
@@ -37,7 +37,7 @@ The primary namespace for the µOS++ framework
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Primary namespace for the µTest++ testing framework
@@ -49,7 +49,7 @@ Primary namespace for the µTest++ testing framework
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
-<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Type trait utilities and metaprogramming support for the µTest++ testing framework
@@ -60,7 +60,7 @@ Type trait utilities and metaprogramming support for the µTest++ testing framew
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/any-op">any_op</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/any-op">any_op</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when at least one of two types derives from <span class="doxyComputerOutput">op</span>
@@ -70,7 +70,7 @@ C++20 concept satisfied when at least one of two types derives from <span class=
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/checkable">checkable</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/checkable">checkable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when a type can be used as a test expression in <span class="doxyComputerOutput">expect()</span> or <span class="doxyComputerOutput">assume()</span>
@@ -80,7 +80,7 @@ C++20 concept satisfied when a type can be used as a test expression in <span cl
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/container-like">container_like</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/container-like">container_like</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides both <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> member functions
@@ -90,7 +90,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides 
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-epsilon">has_epsilon</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-epsilon">has_epsilon</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides an <span class="doxyComputerOutput">epsilon</span> member
@@ -100,7 +100,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides 
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos">has_npos</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos">has_npos</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides a <span class="doxyComputerOutput">npos</span> member
@@ -110,7 +110,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides 
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">has_value</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">has_value</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides a <span class="doxyComputerOutput">value</span> member
@@ -120,7 +120,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides 
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">is_floating_point</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">is_floating_point</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a standard floating point type
@@ -130,7 +130,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a stan
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">is_op</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">is_op</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when a type derives from <span class="doxyComputerOutput">op</span>
@@ -140,7 +140,7 @@ C++20 concept satisfied when a type derives from <span class="doxyComputerOutput
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/printable">printable</a>
+<a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/printable">printable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when a type can be appended to the deferred reporter's output via <span class="doxyComputerOutput">operator&lt;&lt;</span>

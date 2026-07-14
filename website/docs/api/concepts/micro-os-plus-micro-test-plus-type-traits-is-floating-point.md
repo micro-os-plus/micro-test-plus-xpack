@@ -23,7 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">micro_os_plus::micro_test_plus::type_traits::is_floating_point</a> =  std::is_floating_point_v&lt;T&gt;
+concept <a href="/micro-test-plus-xpack-webpreview/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">micro_os_plus::micro_test_plus::type_traits::is_floating_point</a> =  std::is_floating_point_v&lt;T&gt;
 </div>
 
 ## Description {#details}
@@ -46,7 +46,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">is_floating_point</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is one of the standard floating point types (<span class="doxyComputerOutput">float</span>, <span class="doxyComputerOutput">double</span>, or <span class="doxyComputerOutput">long double</span>). It is the primary definition; <span class="doxyComputerOutput">is_floating_point_v</span> is derived from it for use in <span class="doxyComputerOutput">if constexpr</span> and non-concept contexts.</p>
 
 
-<p>Definition at line 423 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 423 of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">

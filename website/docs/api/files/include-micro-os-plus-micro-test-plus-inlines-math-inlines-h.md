@@ -30,12 +30,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The primary namespace for the µOS++ framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/#details">More...</a></p>
+<p>The primary namespace for the µOS++ framework. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -44,12 +44,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Primary namespace for the µTest++ testing framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#details">More...</a></p>
+<p>Primary namespace for the µTest++ testing framework. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -58,12 +58,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Mathematical utilities for the µTest++ testing framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#details">More...</a></p>
+<p>Mathematical utilities for the µTest++ testing framework. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -81,12 +81,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr T</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">abs</a> (const T t) noexcept</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">abs</a> (const T t) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Computes the absolute value of a given comparable value. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">More...</a></p>
+<p>Computes the absolute value of a given comparable value. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -98,12 +98,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">T</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">den</a> (void)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">den</a> (void)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Computes the decimal part of a number represented as an array of characters. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">More...</a></p>
+<p>Computes the decimal part of a number represented as an array of characters. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -115,12 +115,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr T</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98">den_size</a> (Value_T value)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98">den_size</a> (Value_T value)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Computes the number of decimal places of a value, up to 7 digits. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98">More...</a></p>
+<p>Computes the number of decimal places of a value, up to 7 digits. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -132,12 +132,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">T</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (void)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (void)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Computes the number of decimal places in a number represented as an array of characters. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">More...</a></p>
+<p>Computes the number of decimal places in a number represented as an array of characters. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -149,12 +149,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr const T &amp;</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">min_value</a> (const T &amp;lhs, const T &amp;rhs) noexcept</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">min_value</a> (const T &amp;lhs, const T &amp;rhs) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Computes the minimum of two comparable values. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">More...</a></p>
+<p>Computes the minimum of two comparable values. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -166,12 +166,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">T</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">num</a> (void)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">num</a> (void)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Computes the integral value of a number represented as an array of characters. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">More...</a></p>
+<p>Computes the integral value of a number represented as an array of characters. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -183,12 +183,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr T</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (const T base, const Exp_T exp) noexcept</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (const T base, const Exp_T exp) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Generic exponentiation function to compute the power of a base raised to an exponent. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">More...</a></p>
+<p>Generic exponentiation function to compute the power of a base raised to an exponent. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -208,7 +208,7 @@ keywords:
 <p>These utilities are designed to be lightweight and suitable for embedded environments, supporting both integral and floating-point types, and enabling expressive, type-safe, and efficient compile-time computations. Special attention is given to constexpr compatibility and minimal reliance on the standard library, ensuring portability and performance.</p>
 
 
-<p>All definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math">micro_os_plus::micro_test_plus::math</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
+<p>All definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math">micro_os_plus::micro_test_plus::math</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 
 
 <p>The header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
@@ -289,12 +289,12 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="#l00097">97</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="#l00097">97</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">97</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">abs</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T t) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">97</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">abs</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T t) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">98</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">99</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> t &lt; T{} ? -t : t;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">100</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
@@ -302,7 +302,7 @@ keywords:
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a6119b4adca8baf81aad4e2543b8902bc">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a6119b4adca8baf81aad4e2543b8902bc">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_</a>.</p>
 
 </div>
 </div>
@@ -371,12 +371,12 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="#l00203">203</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="#l00203">203</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">203</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">den</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">203</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">den</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">204</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">205</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static_assert</span><span class="doxyHighlight"> ((... || (Cs == </span><span class="doxyHighlightCharLiteral">'.'</span><span class="doxyHighlight">)),</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">206</span><span class="doxyLineContent"><span class="doxyHighlight">                     </span><span class="doxyHighlightStringLiteral">"den(): no decimal point in literal"</span><span class="doxyHighlight">);</span></span></div>
@@ -389,7 +389,7 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyLineNumber">213</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">214</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> j = i; j &lt; </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">...(Cs); ++j)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">215</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">216</span><span class="doxyLineContent"><span class="doxyHighlight">          result += <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (T (10), </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">...(Cs) - j) * T (cs[j] - </span><span class="doxyHighlightCharLiteral">'0'</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">216</span><span class="doxyLineContent"><span class="doxyHighlight">          result += <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (T (10), </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">...(Cs) - j) * T (cs[j] - </span><span class="doxyHighlightCharLiteral">'0'</span><span class="doxyHighlight">);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">217</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">218</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> result;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">219</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
@@ -397,10 +397,10 @@ keywords:
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">micro_os_plus::micro_test_plus::math::pow</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">micro_os_plus::micro_test_plus::math::pow</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>.</p>
 
 </div>
 </div>
@@ -476,12 +476,12 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="#l00276">276</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="#l00276">276</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98">276</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (Value_T value) -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98">276</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (Value_T value) -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">277</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">278</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> precision = Value_T (1e-7);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">279</span><span class="doxyLineContent"><span class="doxyHighlight">      T result{};</span></span></div>
@@ -577,12 +577,12 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="#l00238">238</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="#l00238">238</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">238</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">238</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">239</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">240</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static_assert</span><span class="doxyHighlight"> ((... || (Cs == </span><span class="doxyHighlightCharLiteral">'.'</span><span class="doxyHighlight">)),</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">241</span><span class="doxyLineContent"><span class="doxyHighlight">                     </span><span class="doxyHighlightStringLiteral">"den_size(): no decimal point in literal"</span><span class="doxyHighlight">);</span></span></div>
@@ -605,7 +605,7 @@ keywords:
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>.</p>
 
 </div>
 </div>
@@ -682,12 +682,12 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="#l00118">118</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="#l00118">118</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">118</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">min_value</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; rhs) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">118</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">min_value</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; rhs) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">119</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">120</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (rhs &lt; lhs) ? rhs : lhs;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">121</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
@@ -695,7 +695,7 @@ keywords:
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a6119b4adca8baf81aad4e2543b8902bc">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a6119b4adca8baf81aad4e2543b8902bc">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_</a>.</p>
 
 </div>
 </div>
@@ -764,12 +764,12 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="#l00163">163</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="#l00163">163</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">163</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">num</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">163</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">num</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">165</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Assume all are digits or dot or apostrophe.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">166</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static_assert</span><span class="doxyHighlight"> (</span></span></div>
@@ -793,7 +793,7 @@ keywords:
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gae521cebfd48332f44d01e4f880b4aafa">micro_os_plus::micro_test_plus::literals::operator""_c</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga366a0d47aec3241e659816067c94fcdf">micro_os_plus::micro_test_plus::literals::operator""_i</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gabce6e838737bf25be6e7527f69e75590">micro_os_plus::micro_test_plus::literals::operator""_i16</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga6a192d3dfff5a4a98aa7532d36d1b1bd">micro_os_plus::micro_test_plus::literals::operator""_i32</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gab0bb5d1e37cbe8de6477c11ecd60956d">micro_os_plus::micro_test_plus::literals::operator""_i64</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9ca6fecc72b6da90acee52977eb077d7">micro_os_plus::micro_test_plus::literals::operator""_i8</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga96e891b439024e116cb845bc65bc9c4f">micro_os_plus::micro_test_plus::literals::operator""_l</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaf5ab66b00c9486ade5d49f34a83783f5">micro_os_plus::micro_test_plus::literals::operator""_ll</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga812816a2e9b23de1f8d8b2d86553d96d">micro_os_plus::micro_test_plus::literals::operator""_s</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga57d27f1a76de2d2b2a067134cbe61457">micro_os_plus::micro_test_plus::literals::operator""_sc</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaf45bf641153a462a1ba7c12b908e667f">micro_os_plus::micro_test_plus::literals::operator""_u</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga96d12d563093f297a73a8b984ae7a3a5">micro_os_plus::micro_test_plus::literals::operator""_u16</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga3171e605b5c2e1d9a0e55ae34e904674">micro_os_plus::micro_test_plus::literals::operator""_u32</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga622b4808b7ebfc26ddf9db9128533f28">micro_os_plus::micro_test_plus::literals::operator""_u64</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga80f43260f6a1afd8260355136858df48">micro_os_plus::micro_test_plus::literals::operator""_u8</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga6c1b46d4b967bdbc573e3192c2d9f98a">micro_os_plus::micro_test_plus::literals::operator""_uc</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaef96b19b140b5007ec33a944c3b72cae">micro_os_plus::micro_test_plus::literals::operator""_ul</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga01adcd3866da43c393b7fba8a5e72bb2">micro_os_plus::micro_test_plus::literals::operator""_ull</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga9017debdc1eafd64e3c53c80157ad6f5">micro_os_plus::micro_test_plus::literals::operator""_us</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gae521cebfd48332f44d01e4f880b4aafa">micro_os_plus::micro_test_plus::literals::operator""_c</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator""_d</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator""_f</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga366a0d47aec3241e659816067c94fcdf">micro_os_plus::micro_test_plus::literals::operator""_i</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gabce6e838737bf25be6e7527f69e75590">micro_os_plus::micro_test_plus::literals::operator""_i16</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga6a192d3dfff5a4a98aa7532d36d1b1bd">micro_os_plus::micro_test_plus::literals::operator""_i32</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gab0bb5d1e37cbe8de6477c11ecd60956d">micro_os_plus::micro_test_plus::literals::operator""_i64</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9ca6fecc72b6da90acee52977eb077d7">micro_os_plus::micro_test_plus::literals::operator""_i8</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga96e891b439024e116cb845bc65bc9c4f">micro_os_plus::micro_test_plus::literals::operator""_l</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator""_ld</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaf5ab66b00c9486ade5d49f34a83783f5">micro_os_plus::micro_test_plus::literals::operator""_ll</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga812816a2e9b23de1f8d8b2d86553d96d">micro_os_plus::micro_test_plus::literals::operator""_s</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga57d27f1a76de2d2b2a067134cbe61457">micro_os_plus::micro_test_plus::literals::operator""_sc</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaf45bf641153a462a1ba7c12b908e667f">micro_os_plus::micro_test_plus::literals::operator""_u</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga96d12d563093f297a73a8b984ae7a3a5">micro_os_plus::micro_test_plus::literals::operator""_u16</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga3171e605b5c2e1d9a0e55ae34e904674">micro_os_plus::micro_test_plus::literals::operator""_u32</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga622b4808b7ebfc26ddf9db9128533f28">micro_os_plus::micro_test_plus::literals::operator""_u64</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga80f43260f6a1afd8260355136858df48">micro_os_plus::micro_test_plus::literals::operator""_u8</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga6c1b46d4b967bdbc573e3192c2d9f98a">micro_os_plus::micro_test_plus::literals::operator""_uc</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#gaef96b19b140b5007ec33a944c3b72cae">micro_os_plus::micro_test_plus::literals::operator""_ul</a>, <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga01adcd3866da43c393b7fba8a5e72bb2">micro_os_plus::micro_test_plus::literals::operator""_ull</a> and <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-literals/#ga9017debdc1eafd64e3c53c80157ad6f5">micro_os_plus::micro_test_plus::literals::operator""_us</a>.</p>
 
 </div>
 </div>
@@ -874,12 +874,12 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
+<p>Definition at line <a href="#l00139">139</a> of file <a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">math-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T base, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Exp_T exp) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T base, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Exp_T exp) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">      T result{ 1 };</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">142</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (Exp_T i{}; i &lt; exp; ++i)</span></span></div>
@@ -890,7 +890,7 @@ keywords:
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">micro_os_plus::micro_test_plus::math::den</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">micro_os_plus::micro_test_plus::math::den</a>.</p>
 
 </div>
 </div>
@@ -946,30 +946,30 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00070"></a>70</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00071"></a>71</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ============================================================================</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00072"></a>72</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00073"></a>73</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00073"></a>73</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00074"></a>74</span><span class="doxyLineContent"><span class="doxyHighlight">{</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00075"></a>75</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// --------------------------------------------------------------------------</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00076"></a>76</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00077"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math">77</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00077"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math">77</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</a></span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00078"></a>78</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00079"></a>79</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00095"></a>95</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00096"></a>96</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00097"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">97</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">abs</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T t) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00097"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">97</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85">abs</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T t) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00098"></a>98</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00099"></a>99</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> t &lt; T{} ? -t : t;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00100"></a>100</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00101"></a>101</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00116"></a>116</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00117"></a>117</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00118"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">118</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">min_value</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; rhs) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00118"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">118</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4">min_value</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; rhs) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00119"></a>119</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00120"></a>120</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (rhs &lt; lhs) ? rhs : lhs;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00121"></a>121</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00122"></a>122</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00137"></a>137</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T, </span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> Exp_T&gt;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00138"></a>138</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00139"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T base, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Exp_T exp) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00139"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T base, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Exp_T exp) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00140"></a>140</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00141"></a>141</span><span class="doxyLineContent"><span class="doxyHighlight">      T result{ 1 };</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00142"></a>142</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (Exp_T i{}; i &lt; exp; ++i)</span></span></div>
@@ -979,7 +979,7 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00146"></a>146</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00161"></a>161</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">T, </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">... Cs&gt;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00162"></a>162</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">consteval</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00163"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">163</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">num</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00163"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">163</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">num</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00164"></a>164</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00165"></a>165</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Assume all are digits or dot or apostrophe.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00166"></a>166</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static_assert</span><span class="doxyHighlight"> (</span></span></div>
@@ -1002,7 +1002,7 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00183"></a>183</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00201"></a>201</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">T, </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">... Cs&gt;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00202"></a>202</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">consteval</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00203"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">203</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">den</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00203"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">203</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">den</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00204"></a>204</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00205"></a>205</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static_assert</span><span class="doxyHighlight"> ((... || (Cs == </span><span class="doxyHighlightCharLiteral">'.'</span><span class="doxyHighlight">)),</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00206"></a>206</span><span class="doxyLineContent"><span class="doxyHighlight">                     </span><span class="doxyHighlightStringLiteral">"den(): no decimal point in literal"</span><span class="doxyHighlight">);</span></span></div>
@@ -1015,14 +1015,14 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00213"></a>213</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00214"></a>214</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> j = i; j &lt; </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">...(Cs); ++j)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00215"></a>215</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00216"></a>216</span><span class="doxyLineContent"><span class="doxyHighlight">          result += <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (T (10), </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">...(Cs) - j) * T (cs[j] - </span><span class="doxyHighlightCharLiteral">'0'</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00216"></a>216</span><span class="doxyLineContent"><span class="doxyHighlight">          result += <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced">pow</a> (T (10), </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">...(Cs) - j) * T (cs[j] - </span><span class="doxyHighlightCharLiteral">'0'</span><span class="doxyHighlight">);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00217"></a>217</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00218"></a>218</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> result;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00219"></a>219</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00220"></a>220</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00236"></a>236</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">T, </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">... Cs&gt;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00237"></a>237</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">consteval</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00238"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">238</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00238"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">238</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00239"></a>239</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00240"></a>240</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static_assert</span><span class="doxyHighlight"> ((... || (Cs == </span><span class="doxyHighlightCharLiteral">'.'</span><span class="doxyHighlight">)),</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00241"></a>241</span><span class="doxyLineContent"><span class="doxyHighlight">                     </span><span class="doxyHighlightStringLiteral">"den_size(): no decimal point in literal"</span><span class="doxyHighlight">);</span></span></div>
@@ -1044,7 +1044,7 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00257"></a>257</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00274"></a>274</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T, </span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> Value_T&gt;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00275"></a>275</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00276"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98">276</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (Value_T value) -&gt; T</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00276"></a><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98">276</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">den_size</a> (Value_T value) -&gt; T</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00277"></a>277</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00278"></a>278</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> precision = Value_T (1e-7);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00279"></a>279</span><span class="doxyLineContent"><span class="doxyHighlight">      T result{};</span></span></div>

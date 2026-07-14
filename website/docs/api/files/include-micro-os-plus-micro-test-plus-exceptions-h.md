@@ -21,7 +21,7 @@ keywords:
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/exceptions-inline-h">inlines/exceptions-inline.h</a>"
+<div class="doxyIncludesList">#include "<a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/exceptions-inline-h">inlines/exceptions-inline.h</a>"
 </div>
 
 ## Namespaces Index
@@ -30,12 +30,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The primary namespace for the µOS++ framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/#details">More...</a></p>
+<p>The primary namespace for the µOS++ framework. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -44,12 +44,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Primary namespace for the µTest++ testing framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#details">More...</a></p>
+<p>Primary namespace for the µTest++ testing framework. <a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -67,12 +67,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a> (const Callable_T &amp;func)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a> (const Callable_T &amp;func)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Check if a callable does not throw an exception. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">More...</a></p>
+<p>Check if a callable does not throw an exception. <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -84,12 +84,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#ga8bf54756e4122c6a0bd123b4621e60e2">throws</a> (const Callable_T &amp;func)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-exceptions/#ga8bf54756e4122c6a0bd123b4621e60e2">throws</a> (const Callable_T &amp;func)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Check if a callable throws an exception (any exception). <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#ga8bf54756e4122c6a0bd123b4621e60e2">More...</a></p>
+<p>Check if a callable throws an exception (any exception). <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-exceptions/#ga8bf54756e4122c6a0bd123b4621e60e2">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -101,12 +101,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a> (const Callable_T &amp;func)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a> (const Callable_T &amp;func)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Check if a callable throws a specific exception. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">More...</a></p>
+<p>Check if a callable throws a specific exception. <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -123,10 +123,10 @@ keywords:
 <p>This header provides the declarations for the exception-checking facilities of the µTest++ framework. It exposes three function templates — <span class="doxyComputerOutput">throws&lt;Exception_T&gt;()</span>, <span class="doxyComputerOutput">throws()</span>, and <span class="doxyComputerOutput">nothrow()</span> — which allow test cases to verify that a callable throws a specific exception, throws any exception, or throws no exception, respectively.</p>
 
 
-<p>All declarations are conditionally compiled under <span class="doxyComputerOutput">__cpp_exceptions</span> and reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
+<p>All declarations are conditionally compiled under <span class="doxyComputerOutput">__cpp_exceptions</span> and reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 
 
-<p>This header is located in the top-level <span class="doxyComputerOutput">include/micro-os-plus</span> folder. Users should include <span class="doxyComputerOutput">&lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;</span> rather than this header directly.</p>
+<p>This header is located in the top-level <span class="doxyComputerOutput">include/micro-os-plus</span> folder. Users should include <span class="doxyComputerOutput">&lt;<a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;</span> rather than this header directly.</p>
 
 
 ## File Listing
@@ -172,7 +172,7 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00055"></a>55</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00056"></a>56</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ============================================================================</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00057"></a>57</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00058"></a>58</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00058"></a>58</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack-webpreview/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00059"></a>59</span><span class="doxyLineContent"><span class="doxyHighlight">{</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00060"></a>60</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// --------------------------------------------------------------------------</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00061"></a>61</span></div>
@@ -188,7 +188,7 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00090"></a>90</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00099"></a>99</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> Callable_T&gt;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00100"></a>100</span><span class="doxyLineContent"><span class="doxyHighlight">  [[nodiscard]] </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00101"></a>101</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00101"></a>101</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack-webpreview/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00102"></a>102</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00103"></a>103</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00104"></a>104</span></div>
@@ -206,7 +206,7 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00116"></a>116</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ============================================================================</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00117"></a>117</span><span class="doxyLineContent"><span class="doxyHighlightComment">// Templates, inlines &amp; constexpr implementations.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00118"></a>118</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00119"></a>119</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/exceptions-inline-h">inlines/exceptions-inline.h</a>"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00119"></a>119</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/micro-test-plus-xpack-webpreview/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/exceptions-inline-h">inlines/exceptions-inline.h</a>"</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00120"></a>120</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00121"></a>121</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00122"></a>122</span></div>
