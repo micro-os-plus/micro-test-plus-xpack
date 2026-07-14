@@ -32,16 +32,17 @@ message (VERBOSE "Processing 'sources/minimal'...")
 # against it.
 add_library (tests-minimal-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (tests-minimal-interface INTERFACE "src/main.cpp")
+target_sources (
+  tests-minimal-interface
+  INTERFACE "src/main.cpp"
+)
 
 target_link_libraries (
-  tests-minimal-interface
+  tests-minimal-interface 
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
-if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (tests-minimal-interface)
-endif ()
+xpack_display_target_lists (tests-minimal-interface)
 
 # -----------------------------------------------------------------------------
 # Alias.

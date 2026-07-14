@@ -25,7 +25,7 @@ message('Including tests/platforms/' + xpack_platform_name + '/meson/dependencie
 xpack_dependencies_folders = [
 
   'xpacks/@micro-os-plus/diag-trace', # -
-  # 'xpacks/@micro-os-plus/micro-test-plus', # -
+  
 
   # (architecture) -
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-synthetic-posix',

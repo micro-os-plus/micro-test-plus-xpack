@@ -1,4 +1,5 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from build-helper/templates.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -29,7 +30,7 @@ function (target_link_native_test_libraries name test_library_name)
             # TODO: remove it after updating architecture dependencies.
             micro-os-plus::diag-trace
             # Platform dependency.
-            micro-os-plus::platform
+            micro-os-plus::platform # bring device & architecture too
   )
 endfunction ()
 
