@@ -135,7 +135,9 @@ get_property (
 # with the separate dependency compilation in each executable. Consumers of this
 # OBJECT library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library (micro-os-plus-micro-test-plus-objects-library OBJECT)
+add_library (
+  micro-os-plus-micro-test-plus-objects-library OBJECT EXCLUDE_FROM_ALL
+)
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
 # library's own sources and for consumers of the library.
@@ -219,7 +221,9 @@ message (
 # with the separate dependency compilation in each executable. Consumers of this
 # STATIC library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library (micro-os-plus-micro-test-plus-static-library STATIC)
+add_library (
+  micro-os-plus-micro-test-plus-static-library STATIC EXCLUDE_FROM_ALL
+)
 
 set_target_properties (
   micro-os-plus-micro-test-plus-static-library PROPERTIES OUTPUT_NAME

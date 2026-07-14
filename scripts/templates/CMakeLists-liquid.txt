@@ -182,7 +182,7 @@ get_property (
 # with the separate dependency compilation in each executable. Consumers of this
 # OBJECT library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library ({{nameDash}}-{{objectsSuffix}} OBJECT)
+add_library ({{nameDash}}-{{objectsSuffix}} OBJECT EXCLUDE_FROM_ALL)
 {%- if component.publicIncludeFolders and component.publicIncludeFolders.size > 0 %}
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
@@ -292,7 +292,7 @@ message (
 # with the separate dependency compilation in each executable. Consumers of this
 # STATIC library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library ({{nameDash}}-{{staticSuffix}} STATIC)
+add_library ({{nameDash}}-{{staticSuffix}} STATIC EXCLUDE_FROM_ALL)
 
 set_target_properties (
   {{nameDash}}-{{staticSuffix}}
