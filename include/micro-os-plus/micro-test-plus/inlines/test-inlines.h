@@ -55,9 +55,7 @@
 #include <cstdio>
 #include <cstring>
 
-#if defined(MICRO_OS_PLUS_TRACE)
 #include <micro-os-plus/diag/trace.h>
-#endif // MICRO_OS_PLUS_TRACE
 
 #include "micro-os-plus/micro-test-plus/deferred-reporter.h"
 #include "micro-os-plus/micro-test-plus/reporter.h"
@@ -210,8 +208,7 @@ namespace micro_os_plus::micro_test_plus
                                  std::forward<Args_T> (arguments)...);
         }
 
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -234,8 +231,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename Self_T>
     runnable<Self_T>::~runnable ()
     {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -269,8 +265,7 @@ namespace micro_os_plus::micro_test_plus
                            std::forward<Args_T> (arguments)... },
         parent_suite_{ parent_suite }, nesting_depth_{ nesting_depth }
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -296,8 +291,7 @@ namespace micro_os_plus::micro_test_plus
   subtest::test (const char* name, Callable_T&& callable,
                  Args_T&&... arguments)
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -374,8 +368,7 @@ namespace micro_os_plus::micro_test_plus
       : runnable<suite>{ name, runner, 0, std::forward<Callable_T> (callable),
                          std::forward<Args_T> (arguments)... }
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -437,8 +430,7 @@ namespace micro_os_plus::micro_test_plus
   void
   suite::test (const char* name, Callable_T&& callable, Args_T&&... arguments)
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -521,8 +513,7 @@ namespace micro_os_plus::micro_test_plus
                                       std::forward<Args_T> (arguments)...);
       }
 
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
