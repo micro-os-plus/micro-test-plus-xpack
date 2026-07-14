@@ -76,7 +76,7 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-test-plus-utility-functions
      * @brief Extracts the file name component from a full path.
      *
-     * @param [in] path A null-terminated file path string.
+     * @param path A null-terminated file path string.
      * @return A pointer to the first character of the file name within
      * `path`, or `path` itself if no directory separator is found.
      */
@@ -87,8 +87,8 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-test-plus-utility-functions
      * @brief Check if a string matches a pattern.
      *
-     * @param [in] input The string view to be checked.
-     * @param [in] pattern The string view containing the pattern to match.
+     * @param input The string view to be checked.
+     * @param pattern The string view containing the pattern to match.
      * @return `true` if the input string matches the pattern; otherwise,
      * `false`.
      */
@@ -102,8 +102,8 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T Type of the input string.
      * @tparam Delim_T Type of the delimiter.
      *
-     * @param [in] input Input string to split.
-     * @param [in] delim Delimiter string.
+     * @param input Input string to split.
+     * @param delim Delimiter string.
      * @return A vector containing the resulting sub-strings.
      */
     template <class T, class Delim_T>

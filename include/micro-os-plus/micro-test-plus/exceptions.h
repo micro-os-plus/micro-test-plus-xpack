@@ -67,7 +67,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Exception_T The type of the exception expected to be thrown.
    * @tparam Callable_T The type of the callable object to be invoked.
-   * @param [in] func The callable object to check for exception throwing
+   * @param func The callable object to check for exception throwing
    * behaviour.
    * @return An output stream to write optional messages.
    */
@@ -80,7 +80,7 @@ namespace micro_os_plus::micro_test_plus
    * @brief Check if a callable throws an exception (any exception).
    *
    * @tparam Callable_T The type of the callable object to be invoked.
-   * @param [in] func The callable object to check for exception throwing
+   * @param func The callable object to check for exception throwing
    * behaviour.
    * @return An output stream to write optional messages.
    */
@@ -93,7 +93,7 @@ namespace micro_os_plus::micro_test_plus
    * @brief Check if a callable does not throw an exception.
    *
    * @tparam Callable_T The type of the callable object to be invoked.
-   * @param [in] func The callable object to check for exception safety.
+   * @param func The callable object to check for exception safety.
    * @return An output stream to write optional messages.
    */
   template <class Callable_T>
