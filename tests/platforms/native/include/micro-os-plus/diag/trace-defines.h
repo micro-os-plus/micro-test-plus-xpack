@@ -21,6 +21,17 @@
 #define MICRO_OS_PLUS_DIAG_TRACE_PRINTF_BUFFER_ARRAY_SIZE_INTEGER (512)
 #endif // MICRO_OS_PLUS_DIAG_TRACE_PRINTF_BUFFER_ARRAY_SIZE_INTEGER
 
+// The synthetic POSIX architecture is an environment that allows to run µOS++
+// applications on a POSIX host, using the POSIX API.
+#if !defined(MICRO_OS_PLUS_DIAG_TRACE_POSIX_ENABLED)
+#define MICRO_OS_PLUS_DIAG_TRACE_POSIX_ENABLED
+#endif // !defined(MICRO_OS_PLUS_DIAG_TRACE_POSIX_ENABLED)
+
+// The diag trace channel is implemented over the POSIX standard output.
+#if !defined(MICRO_OS_PLUS_DIAG_TRACE_POSIX_STDOUT_ENABLED)
+#define MICRO_OS_PLUS_DIAG_TRACE_POSIX_STDOUT_ENABLED
+#endif // !defined(MICRO_OS_PLUS_DIAG_TRACE_POSIX_STDOUT_ENABLED)
+
 #endif // defined(MICRO_OS_PLUS_TRACE)
 
 // ----------------------------------------------------------------------------
