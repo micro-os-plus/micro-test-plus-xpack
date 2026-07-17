@@ -16,29 +16,22 @@
 #
 # `add_subdirectory("xpacks/@micro-os-plus/micro-test-plus")`
 #
-# This creates several libraries that can be linked to a target with one of:
+# This creates libraries that can be linked to a target with:
 #
 # ~~~
 # target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus)
-#
 # target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus-static-library)
-#
 # target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus-objects-library)
 # ~~~
-#
-# Weak symbols in static libraries are not always resolved reliably by the
-# linker. Object libraries are provided as a safer alternative, although they
-# have their own quirks.
 
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required (VERSION 3.20)
-
-# µTest++, a lightweight testing framework for embedded platforms.
 project (
   micro-os-plus-micro-test-plus
-  DESCRIPTION "µTest++ Testing Framework"
+  DESCRIPTION
+    "A source code library with µTest++, a lightweight testing framework for embedded platforms"
   LANGUAGES CXX
 )
 
@@ -57,10 +50,18 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-# The interface library is the main target of this package, which consumers
-# (like embedded applications) link against. It defines the public API and
-# properties of the library; sources are propagated to and compiled by each
-# consumer.
+# Interface libraries are the main targets, which consumers (like embedded
+# applications) link against. It defines the public API and properties of the
+# library; sources are propagated to and compiled by each consumer.
+
+# They are aliased using namespaced syntax (Project::Target). This is the
+# canonical pattern for consumption via target_link_libraries(), whether the
+# dependency is added via add_subdirectory(), FetchContent, or an installed
+# package via find_package(). Using "::" lets CMake detect an invalid or
+# misspelled target name at configure time, rather than silently passing it
+# through to the linker as a plain string or flag. Note: alias targets are
+# read-only; properties must be set on the underlying target, not on the alias
+# itself.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
@@ -97,14 +98,6 @@ endif ()
 # -----------------------------------------------------------------------------
 # Alias.
 
-# Export an alias target using namespaced syntax (Project::Target). This is the
-# canonical pattern for consumption via target_link_libraries(), whether the
-# dependency is added via add_subdirectory(), FetchContent, or an installed
-# package via find_package(). Using "::" lets CMake detect an invalid or
-# misspelled target name at configure time, rather than silently passing it
-# through to the linker as a plain string or flag. Note: alias targets are
-# read-only; properties must be set on the underlying target, not on the alias
-# itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
   micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-interface
@@ -196,9 +189,6 @@ endif ()
 # -----------------------------------------------------------------------------
 # Alias.
 
-# Namespaced alias for downstream consumption (find_package- and
-# add_subdirectory-compatible). "::" ensures CMake validates the target name at
-# configure time. Aliases are read-only.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
   micro-os-plus::micro-test-plus-objects-library ALIAS
@@ -277,9 +267,6 @@ endif ()
 # -----------------------------------------------------------------------------
 # Alias.
 
-# Namespaced alias for downstream consumption (find_package- and
-# add_subdirectory-compatible). "::" ensures CMake validates the target name at
-# configure time. Aliases are read-only.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
   micro-os-plus::micro-test-plus-static-library ALIAS

@@ -17,7 +17,7 @@
 #
 # `subdir('xpacks/@micro-os-plus/micro-test-plus')`
 #
-# This creates a dependency that can be linked to a target with:
+# This creates dependencies that can be linked to a target with:
 #
 # `dependencies: [micro_os_plus_micro_test_plus_dependency],`
 
@@ -26,7 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
-# µTest++, a lightweight testing framework for embedded platforms.
+# A source code library with µTest++, a lightweight testing framework for embedded platforms.
 message('Processing xPack @micro-os-plus/micro-test-plus...')
 
 # -----------------------------------------------------------------------------
