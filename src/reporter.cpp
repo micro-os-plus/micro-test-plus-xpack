@@ -297,12 +297,12 @@ namespace micro_os_plus::micro_test_plus
         if (output_file_ != nullptr)
           fprintf (output_file_, "%s", line.c_str ());
 
-#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) \
+#if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
       && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
         if (verbosity_ == verbosity::normal
             || verbosity_ == verbosity::verbose)
           printf ("%s", line.c_str ());
-#endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+#endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
       }
 
     {
@@ -350,13 +350,13 @@ namespace micro_os_plus::micro_test_plus
           fprintf (output_file_, "%s\n", line.c_str ());
         }
 
-#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) \
+#if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
       && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
       if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
         {
           printf ("%s\n", line.c_str ());
         }
-#endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+#endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
     }
   }
 

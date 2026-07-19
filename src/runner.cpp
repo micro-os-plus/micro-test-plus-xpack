@@ -189,7 +189,7 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) \
+#if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
       && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
 #if defined(MICRO_OS_PLUS_DEBUG)
     trace::printf ("argv[");
@@ -203,7 +203,7 @@ namespace micro_os_plus::micro_test_plus
       }
     trace::puts ("]");
 #endif // defined(MICRO_OS_PLUS_DEBUG)
-#endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+#endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
 
     if (strlen (top_suite_name) > 0)
       {
