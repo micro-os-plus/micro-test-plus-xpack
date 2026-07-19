@@ -28,10 +28,10 @@
         "micro-os-plus.diag.trace"
       ],
       "generatedFile": {
-        "type": "header",
+        "type": "c-header",
         "filePath": "{{buildFolderPath}}/generated/include/micro-os-plus/micro-test-plus-defines.h"
       },
-      // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED",
+      // "defaultDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED",
       "cdlOptions": [
         {
           "id": "trace",
@@ -39,14 +39,14 @@
           "description": "Display trace messages in the µTest++ Testing Framework when TRACE is enabled",
           "requires": "isEnabled('micro-os-plus.diag.trace')",
           "defaultValue": false
-          // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED"
+          // "defaultDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED"
         },
         {
           "id": "trace-constructors",
           "display": "Enable trace in constructors and destructors in µTest++",
           "description": "Display trace messages in constructors and destructors in the µTest++ Testing Framework when TRACE is enabled",
           "requires": "isEnabled('trace')"
-          // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED"
+          // "defaultDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED"
         }
       ],
       "cdlArtefacts": [
