@@ -14,9 +14,7 @@
 
 // ----------------------------------------------------------------------------
 
-#define MICRO_OS_PLUS_INCLUDE_STARTUP
-#define MICRO_OS_PLUS_INCLUDE_SBRK
-#define MICRO_OS_PLUS_INCLUDE_EXIT
+// ...
 
 // ----------------------------------------------------------------------------
 
