@@ -21,6 +21,22 @@
 #define MICRO_OS_PLUS_DIAG_TRACE_PRINTF_BUFFER_ARRAY_SIZE_INTEGER (512)
 #endif // MICRO_OS_PLUS_DIAG_TRACE_PRINTF_BUFFER_ARRAY_SIZE_INTEGER
 
+// The semihosting trace::printf() implementation.
+#if !defined(MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_ENABLED)
+#define MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_ENABLED
+#endif // MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_ENABLED
+
+// A diag trace channel implemented over the semihosting SYS_WRITE call on
+// STDOUT.
+#if !defined(MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_STDOUT_ENABLED)
+#define MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_STDOUT_ENABLED
+#endif // MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_STDOUT_ENABLED
+
+// A diag trace channel implemented over the semihosting SYS_WRITE0 call
+// #if !defined(MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_DEBUG_ENABLED)
+// #define MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_DEBUG_ENABLED
+// #endif // MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_DEBUG_ENABLED
+
 #endif // defined(MICRO_OS_PLUS_TRACE)
 
 // ----------------------------------------------------------------------------
