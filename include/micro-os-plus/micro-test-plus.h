@@ -77,6 +77,8 @@
 #include <micro-os-plus/micro-test-plus-defines.h>
 #endif // __has_include(<micro-os-plus/micro-test-plus-defines.h>)
 
+// ----------------------------------------------------------------------------
+
 // No deps.
 #include "micro-test-plus/math.h"
 
