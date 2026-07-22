@@ -32,7 +32,7 @@ project (
   micro-os-plus-micro-test-plus
   DESCRIPTION
     "A source code library with µTest++, a lightweight testing framework for embedded platforms"
-  LANGUAGES CXX
+  LANGUAGES C CXX ASM
 )
 
 # To access the optional functions, include the
