@@ -31,7 +31,7 @@ target_compile_definitions (
             # remove DEBUG
             $<$<CONFIG:Debug>:DEBUG>
             $<$<CONFIG:Debug>:MICRO_OS_PLUS_DEBUG_ENABLED>
-            $<$<CONFIG:Debug>:MICRO_OS_PLUS_TRACE>
+            # $<$<CONFIG:Debug>:MICRO_OS_PLUS_TRACE>
             # MICRO_OS_PLUS_INCLUDE_CONFIG_H
 )
 

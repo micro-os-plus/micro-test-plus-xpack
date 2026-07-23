@@ -17,28 +17,27 @@
 
 # -----------------------------------------------------------------------------
 
-# The base folder is `tests`. The order is significant.
+# The base folder is `tests`.
 xpack_dependencies_folders = [
 
-  'xpacks/@micro-os-plus/diag-trace', # -
-  
+  # Order matters: dependencies must precede their dependants.
 
-  # -
-  # 'xpacks/@micro-os-plus/version',
+  # Dependencies: none.
+  'xpacks/@micro-os-plus/diag-trace',
 
-  # -
-  # xpack_build_folder_relative_path + '/xpacks/@xpack-3rd-party/arm-cmsis-core',
-  # (architecture) -
+  # Dependencies: none.
+  # Hidden dependency: semihosting.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-aarch64',
 
-  # +(diag_trace, architecture) >semihosting
+  # Dependencies: architecture, diag.trace.
+  # Hidden dependency: semihosting.
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-aarch64',
+
+  # Dependencies: diag.trace, architecture.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/semihosting',
 
-  # -
+  # Dependencies: architecture, diag.trace, semihosting.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/startup',
-
-  # +(arm_cmsis_core_m, devices_cortexa, startup) >devices_qemu_aarch64
-  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-aarch64',
 ]
 
 # -----------------------------------------------------------------------------

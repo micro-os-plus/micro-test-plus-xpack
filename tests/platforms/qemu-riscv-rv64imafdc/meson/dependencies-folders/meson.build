@@ -17,26 +17,29 @@
 
 # -----------------------------------------------------------------------------
 
-# The base folder is `tests`. The order is significant.
+# The base folder is `tests`.
 xpack_dependencies_folders = [
 
-  'xpacks/@micro-os-plus/diag-trace', # -
-  
+  # Order matters: dependencies must precede their dependants.
 
-  # -
+  # Dependencies: none.
+  'xpacks/@micro-os-plus/diag-trace',
+  
+  # Dependencies: none.
   # 'xpacks/@micro-os-plus/version',
 
-  # (architecture) -
+  # Dependencies: none.
+  # Hidden dependency: semihosting.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-riscv',
 
-  # +(diag_trace, architecture) >semihosting
+  # Dependencies: none.
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-riscv',
+
+  # Dependencies: diag.trace, architecture.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/semihosting',
 
-  # -
+  # Dependencies: architecture, diag.trace, semihosting.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/startup',
-
-  # -
-  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-riscv',
 ]
 
 # -----------------------------------------------------------------------------
