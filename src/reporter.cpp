@@ -338,8 +338,8 @@ namespace micro_os_plus::micro_test_plus
 #else
       line.append (", no exceptions");
 #endif
-#if defined(MICRO_OS_PLUS_DEBUG)
-      line.append (", with MICRO_OS_PLUS_DEBUG");
+#if defined(MICRO_OS_PLUS_DEBUG_ENABLED)
+      line.append (", with MICRO_OS_PLUS_DEBUG_ENABLED");
 #endif
 #if defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
       line.append (", with MICRO_OS_PLUS_DIAG_TRACE_ENABLED");

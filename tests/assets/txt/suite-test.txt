@@ -1,5 +1,5 @@
 Running: suite-test one two --reporter human --output-file suite-test.txt
-Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Static top suite
     • Check various conditions 2.1
