@@ -24,9 +24,6 @@ xpack_dependencies_folders = [
 
   # Dependencies: none.
   'xpacks/@micro-os-plus/diag-trace',
-  
-  # Dependencies: none.
-  # 'xpacks/@micro-os-plus/version',
 
   # Dependencies: none.
   # Hidden dependency: semihosting.

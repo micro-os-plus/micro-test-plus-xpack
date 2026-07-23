@@ -41,7 +41,6 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
   if get_option('buildtype') == 'release'
     _local_compile_definitions += [ '-DNDEBUG' ]
   endif
-  # _local_compile_definitions += [ '-DMICRO_OS_PLUS_INCLUDE_CONFIG_H' ]
 
   # Options for both compilers and linkers. When using `-flto`, all options
   # must also be passed to the linker.
