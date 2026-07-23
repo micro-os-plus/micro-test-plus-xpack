@@ -9,6 +9,8 @@
  * obtained from https://opensource.org/licenses/mit.
  */
 
+// ----------------------------------------------------------------------------
+
 #ifndef MICRO_OS_PLUS_PROJECT_CONFIG_H_
 #define MICRO_OS_PLUS_PROJECT_CONFIG_H_
 
@@ -21,6 +23,6 @@
 
 // ----------------------------------------------------------------------------
 
-#endif /* MICRO_OS_PLUS_PROJECT_CONFIG_H_ */
+#endif // MICRO_OS_PLUS_PROJECT_CONFIG_H_
 
 // ----------------------------------------------------------------------------
