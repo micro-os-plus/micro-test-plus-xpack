@@ -16,5 +16,6 @@
     "suite",
     "sample",
     "unit"
-  ]
+  ],
+  "useStaticLibrary": true
 }
