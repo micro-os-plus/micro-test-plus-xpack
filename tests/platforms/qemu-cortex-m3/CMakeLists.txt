@@ -17,17 +17,17 @@
 
 message (VERBOSE "Processing 'tests/platforms/qemu-cortex-m3'...")
 
-# The libraries are compiled before the platform library, so they need to get
-# the same compile options.
-add_compile_common_private_options (
-  micro-os-plus-micro-test-plus-static-library
-)
-
 # -----------------------------------------------------------------------------
 
 set (XPACK_QEMU_BINARY "qemu-system-arm")
 set (XPACK_QEMU_MACHINE_ARGS --machine mps2-an385 --cpu cortex-m3)
 set (XPACK_QEMU_EXTRA_ARGS --nographic -d unimp,guest_errors)
+
+# The libraries are compiled before the platform library, so they need to get
+# the same compile options.
+add_compile_common_private_options (
+  micro-os-plus-micro-test-plus-static-library
+)
 
 # -----------------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_compare_files_test (
     NAME "empty-test-compare"
     DEPENDS "empty-test"
-    FILES "empty-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
 endif ()
@@ -65,7 +65,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   add_compare_files_test (
     NAME "minimal-test-compare"
     DEPENDS "minimal-test"
-    FILES "minimal-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
   )
 endif ()
@@ -85,7 +85,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_compare_files_test (
     NAME "suite-test-compare"
     DEPENDS "suite-test"
-    FILES "suite-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
 endif ()
@@ -106,7 +106,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_compare_files_test (
     NAME "sample-test-compare"
     DEPENDS "sample-test"
-    FILES "sample-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
 endif ()
@@ -121,24 +121,23 @@ if (XPACK_ENABLE_UNIT_TEST)
   message (VERBOSE "A> unit-test")
 
   add_qemu_test (
-    NAME "unit-test-quiet" COMMAND unit-test --quiet one two --output-file
-                                   unit-test.tap
+    NAME "unit-test" COMMAND unit-test one two --output-file unit-test.tap
   )
   add_compare_files_test (
-    NAME "unit-test-quiet-compare"
-    DEPENDS "unit-test-quiet"
-    FILES "unit-test.tap"
+    NAME "unit-test-compare"
+    DEPENDS "unit-test"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
   )
 
   add_qemu_test (
-    NAME "unit-test-reporter-human" COMMAND unit-test --reporter human one two
+    NAME "unit-test-reporter-human" COMMAND unit-test one two --reporter human
                                             --output-file unit-test.txt
   )
   add_compare_files_test (
     NAME "unit-test-reporter-human-compare"
     DEPENDS "unit-test-reporter-human"
-    FILES "unit-test.txt"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.txt"
           "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
   )
 endif ()

@@ -17,12 +17,6 @@
 
 message (VERBOSE "Processing 'tests/platforms/qemu-riscv-rv64imafdc'...")
 
-# The libraries are compiled before the platform library, so they need to get
-# the same compile options.
-add_compile_common_private_options (
-  micro-os-plus-micro-test-plus-static-library
-)
-
 # -----------------------------------------------------------------------------
 
 # NOTE: Exceptions are disabled.
@@ -42,6 +36,12 @@ set (
   unimp,guest_errors
 )
 
+# The libraries are compiled before the platform library, so they need to get
+# the same compile options.
+add_compile_common_private_options (
+  micro-os-plus-micro-test-plus-static-library
+)
+
 # -----------------------------------------------------------------------------
 
 if (XPACK_ENABLE_EMPTY_TEST)
@@ -52,13 +52,14 @@ if (XPACK_ENABLE_EMPTY_TEST)
   message (VERBOSE "A> empty-test")
 
   add_qemu_test (
-    NAME "empty-test" COMMAND empty-test one two --output-file empty-test.tap
+    NAME "empty-test" COMMAND empty-test one two --output-file
+                              empty-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "empty-test-compare"
     DEPENDS "empty-test"
-    FILES "empty-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test-noexcept.tap"
   )
 endif ()
 
@@ -73,13 +74,14 @@ if (XPACK_ENABLE_MINIMAL_TEST)
 
   add_qemu_test (
     NAME "minimal-test" COMMAND minimal-test one two --output-file
-                                minimal-test.tap
+                                minimal-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "minimal-test-compare"
     DEPENDS "minimal-test"
-    FILES "minimal-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test-noexcept.tap"
   )
 endif ()
 
@@ -93,13 +95,14 @@ if (XPACK_ENABLE_SUITE_TEST)
   message (VERBOSE "A> suite-test")
 
   add_qemu_test (
-    NAME "suite-test" COMMAND suite-test one two --output-file suite-test.tap
+    NAME "suite-test" COMMAND suite-test one two --output-file
+                              suite-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "suite-test-compare"
     DEPENDS "suite-test"
-    FILES "suite-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test-noexcept.tap"
   )
 endif ()
 
@@ -120,7 +123,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-compare"
     DEPENDS "sample-test"
     FILES
-      "sample-test-noexcept.tap"
+      "${CMAKE_CURRENT_BINARY_DIR}/sample-test-noexcept.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test-noexcept.tap"
   )
 endif ()
@@ -135,25 +138,25 @@ if (XPACK_ENABLE_UNIT_TEST)
   message (VERBOSE "A> unit-test")
 
   add_qemu_test (
-    NAME "unit-test-quiet" COMMAND unit-test --quiet one two --output-file
-                                   unit-test-noexcept.tap
+    NAME "unit-test" COMMAND unit-test one two --output-file
+                             unit-test-noexcept.tap
   )
   add_compare_files_test (
-    NAME "unit-test-quiet-compare"
-    DEPENDS "unit-test-quiet"
-    FILES "unit-test-noexcept.tap"
+    NAME "unit-test-compare"
+    DEPENDS "unit-test"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test-noexcept.tap"
   )
 
   add_qemu_test (
     NAME "unit-test-reporter-human"
-    COMMAND unit-test --reporter human one two --output-file
+    COMMAND unit-test one two --reporter human --output-file
             unit-test-noexcept.txt
   )
   add_compare_files_test (
     NAME "unit-test-reporter-human-compare"
     DEPENDS "unit-test-reporter-human"
-    FILES "unit-test-noexcept.txt"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.txt"
           "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test-noexcept.txt"
   )
 endif ()
