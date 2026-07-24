@@ -8,8 +8,6 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(MICRO_OS_PLUS_TRACE)
-
 // The portable trace::printf() code.
 #if !defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
 #define MICRO_OS_PLUS_DIAG_TRACE_ENABLED
@@ -36,8 +34,6 @@
 // #if !defined(MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_DEBUG_ENABLED)
 // #define MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_DEBUG_ENABLED
 // #endif // !defined(MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_DEBUG_ENABLED)
-
-#endif // defined(MICRO_OS_PLUS_TRACE)
 
 // ----------------------------------------------------------------------------
 
