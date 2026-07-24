@@ -31,7 +31,6 @@ set (
   #
   # Portable dependencies.
   "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
-
   # Platform specific dependencies.
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-synthetic-posix"
 )

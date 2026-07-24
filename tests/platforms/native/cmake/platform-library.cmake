@@ -162,8 +162,7 @@ if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
 endif ()
 
 target_link_libraries (
-  platform-native-interface
-  INTERFACE micro-os-plus::architecture
+  platform-native-interface INTERFACE micro-os-plus::architecture
 )
 
 xpack_display_target_lists (platform-native-interface)
