@@ -1,0 +1,66 @@
+Running: unit-test one two --reporter human --output-file unit-test-silent.txt --silent
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+    • assume
+    • Initial counters
+    • expect(true)
+    • expect(false)
+    • reflection::type_name()
+    • Splits
+    • to_* modern wrappers
+    • reflection::short_name()
+    • Nested subtests
+        • inner subtest
+    • check in dynamic suite
+    • Combinatorial floats
+    • Combinatorial doubles
+    • Combinatorial integrals with signed long long
+    • Combinatorial integrals unsigned long long
+    • Combinatorial integrals with signed int
+    • Combinatorial integrals with unsigned int
+    • Combinatorial integrals with signed short
+    • Combinatorial integrals with unsigned short
+    • Combinatorial integrals with signed char
+    • Combinatorial integrals with unsigned char
+    • Integer comparisons
+    • Failed integer comparisons
+    • Float comparisons
+    • Failed float comparisons
+    • String comparisons
+    • Failed string comparisons
+    • Pointer comparisons
+    • Failed pointer comparisons
+    • Null pointer comparisons
+    • Failed null pointer comparisons
+    • Logical operations
+    • thrown exceptions
+    • Failed thrown exceptions
+    • Not thrown exceptions
+    • Failed not thrown exceptions
+    • Combinatorial floats
+    • Combinatorial doubles
+    • Combinatorial integrals with signed long long
+    • Combinatorial integrals unsigned long long
+    • Combinatorial integrals with signed int
+    • Combinatorial integrals with unsigned int
+    • Combinatorial integrals with signed short
+    • Combinatorial integrals with unsigned short
+    • Combinatorial integrals with signed short
+    • Combinatorial integrals with unsigned short
+    • Combinatorial integrals with signed char
+    • Combinatorial integrals with unsigned char
+    • Arrays
+    • Arrays bad
+    • Vectors
+    • Vectors bad
+    • Operators
+    • String view operators
+    • timestamp::has_clock()
+    • timestamp copy semantics
+    • timestamps::has_timestamps() state
+    • timestamps::timestamp_begin() idempotency
+    • timestamps::timestamp_end() idempotency
+    • timestamps::compute_elapsed_time()
+    • utility::extract_file_name()
+    • utility::is_match() — passing
+    • utility::is_match() — failing

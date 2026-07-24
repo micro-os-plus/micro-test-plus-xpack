@@ -1,0 +1,22 @@
+Running: sample-test one two --reporter human --output-file sample-test-quiet.txt --quiet
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+    • Check various conditions
+    • Check various conditions with operators
+    • Check strings
+    • Check strings with operators
+    • Check compound conditions
+    • Check compound conditions with operators
+    • Check multiple function invocations
+    • Check args
+    • Check complex logic
+    • Check if exceptions are thrown
+    • Check if exceptions are not thrown
+    • Check containers
+    • Check containers with operators
+    • args
+    • Check one
+    • Check two
+    • Check one
+    • Check two
+✓ Total: 40 checks passed, 0 failed, in 18 test cases, 4 test suites, time: 0.328 ms

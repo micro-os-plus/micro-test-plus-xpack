@@ -1,0 +1,8 @@
+Running: suite-test one two --reporter human --output-file suite-test-quiet.txt --quiet
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+    • Check various conditions 2.1
+    • Check various conditions 2.2
+    • Check various conditions in suite
+    • Check various conditions
+✓ Total: 8 checks passed, 0 failed, in 4 test cases, 3 test suites, time: 0.150 ms

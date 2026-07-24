@@ -1,0 +1,4 @@
+Running: minimal-test one two --reporter human --output-file minimal-test-silent.txt --silent
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+    • Check various conditions
