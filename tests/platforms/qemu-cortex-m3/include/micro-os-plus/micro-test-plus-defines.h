@@ -13,7 +13,7 @@
 #define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED
 #endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
 
-// Display trace messages in the µTest++ testing framework when TRACE is
+// Display trace messages in the µTest++ Testing Framework when TRACE is
 // enabled.
 // #if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 // #define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED

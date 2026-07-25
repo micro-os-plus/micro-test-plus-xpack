@@ -8,10 +8,14 @@
 
 // ----------------------------------------------------------------------------
 
+// Hack used until xcdl will generate different files for debug configurations.
+// For now tie the diag trace to the debug configuration.
+#if defined(MICRO_OS_PLUS_DEBUG_ENABLED)
 // The portable trace::printf() code.
 #if !defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
 #define MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 #endif // !defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
+#endif // defined(MICRO_OS_PLUS_DEBUG_ENABLED)
 
 // The size in bytes of the stack buffer used by vsnprintf() to store the
 // diagnostics line.
