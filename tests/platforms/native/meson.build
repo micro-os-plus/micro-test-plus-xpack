@@ -1,4 +1,6 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! 
+# Automatically generated from build-helper/templates.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -24,29 +26,16 @@ xpack_environment = environment()
 xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
-# Define the tests executables.
+
+# Define the tests commands.
 
 if xpack_enable_empty_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
-    'empty-test --verbose',
-    empty_test,
-    args: [
-      'one',
-      'two',
-      '--verbose'
-    ],
-    env: xpack_environment
-  )
-
-  test(
     'empty-test',
     empty_test,
-    args: [
-      'one',
-      'two'
-    ],
+    args: [ 'one', 'two' ],
     env: xpack_environment
   )
 
@@ -58,45 +47,9 @@ if xpack_enable_minimal_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
-    'minimal-test --verbose',
-    minimal_test,
-    args: [
-      'one',
-      'two',
-      '--verbose'
-    ],
-    env: xpack_environment
-  )
-
-  test(
     'minimal-test',
     minimal_test,
-    args: [
-      'one',
-      'two'
-    ],
-    env: xpack_environment
-  )
-
-  test(
-    'minimal-test --quiet',
-    minimal_test,
-    args: [
-      'one',
-      'two',
-      '--quiet'
-    ],
-    env: xpack_environment
-  )
-
-  test(
-    'minimal-test --silent',
-    minimal_test,
-    args: [
-      'one',
-      'two',
-      '--silent'
-    ],
+    args: [ 'one', 'two' ],
     env: xpack_environment
   )
 
@@ -108,45 +61,9 @@ if xpack_enable_suite_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
-    'suite-test --verbose',
-    suite_test,
-    args: [
-      'one',
-      'two',
-      '--verbose'
-    ],
-    env: xpack_environment
-  )
-
-  test(
     'suite-test',
     suite_test,
-    args: [
-      'one',
-      'two'
-    ],
-    env: xpack_environment
-  )
-
-  test(
-    'suite-test --quiet',
-    suite_test,
-    args: [
-      'one',
-      'two',
-      '--quiet'
-    ],
-    env: xpack_environment
-  )
-
-  test(
-    'suite-test --silent',
-    suite_test,
-    args: [
-      'one',
-      'two',
-      '--silent'
-    ],
+    args: [ 'one', 'two' ],
     env: xpack_environment
   )
 
@@ -160,45 +77,10 @@ if xpack_enable_sample_test
   test(
     'sample-test',
     sample_test,
-    args: [
-      'one',
-      'two',
-      '--verbose'
-    ],
+    args: [ 'one', 'two' ],
     env: xpack_environment
   )
 
-  test(
-    'sample-test',
-    sample_test,
-    args: [
-      'one',
-      'two'
-    ],
-    env: xpack_environment
-  )
-
-  test(
-    'sample-test',
-    sample_test,
-    args: [
-      'one',
-      'two',
-      '--quiet'
-    ],
-    env: xpack_environment
-  )
-
-  test(
-    'sample-test',
-    sample_test,
-    args: [
-      'one',
-      'two',
-      '--silent'
-    ],
-    env: xpack_environment
-  )
 endif
 
 # -----------------------------------------------------------------------------
@@ -209,30 +91,10 @@ if xpack_enable_unit_test
   test(
     'unit-test',
     unit_test,
-    args: ['--verbose', '--reporter', 'human'],
+    args: [ 'one', 'two' ],
     env: xpack_environment
   )
 
-  test(
-    'unit-test',
-    unit_test,
-    args: ['--reporter', 'human'],
-    env: xpack_environment
-  )
-
-  test(
-    'unit-test',
-    unit_test,
-    args: ['--quiet', '--reporter', 'human'],
-    env: xpack_environment
-  )
-
-  test(
-    'unit-test',
-    unit_test,
-    args: ['--silent', '--reporter', 'human'],
-    env: xpack_environment
-  )
 endif
 
 # -----------------------------------------------------------------------------

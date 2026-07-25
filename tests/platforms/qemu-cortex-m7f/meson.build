@@ -1,4 +1,6 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! 
+# Automatically generated from build-helper/templates.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -20,28 +22,30 @@ message('Processing tests/platforms/qemu-cortex-m7f...')
 # -----------------------------------------------------------------------------
 
 qemu = find_program('qemu-system-arm')
+qemu_machine_args = [ '--machine', 'mps2-an500', '--cpu', 'cortex-m7' ]
+qemu_extra_args = [ '--nographic', '-d', 'unimp,guest_errors' ]
+
+# -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
 xpack_environment = environment()
 xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
-# Define the tests executables.
 
-if xpack_enable_empty_test
+# Define the tests commands.
+
+if (xpack_enable_empty_test)
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
     'empty-test',
     qemu,
-    args: [
-      '--machine', 'mps2-an500',
-      '--cpu', 'cortex-m7',
-      '--kernel', empty_test,
-      '--nographic',
-      '-d', 'unimp,guest_errors',
-      '--semihosting-config', 'enable=on,target=native,arg=empty-test,arg=one,arg=two',
-    ],
+    args: qemu_machine_args + 
+      [ '--kernel', empty_test ] + 
+      qemu_extra_args + 
+      [ '--semihosting-config', 
+      'enable=on,target=native,arg=empty-test,arg=one,arg=two' ],
     env: xpack_environment
   )
 
@@ -49,20 +53,53 @@ endif
 
 # -----------------------------------------------------------------------------
 
-if xpack_enable_sample_test
+if (xpack_enable_minimal_test)
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'minimal-test',
+    qemu,
+    args: qemu_machine_args + 
+      [ '--kernel', minimal_test ] + 
+      qemu_extra_args + 
+      [ '--semihosting-config', 
+      'enable=on,target=native,arg=minimal-test,arg=one,arg=two' ],
+    env: xpack_environment
+  )
+
+endif
+
+# -----------------------------------------------------------------------------
+
+if (xpack_enable_suite_test)
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'suite-test',
+    qemu,
+    args: qemu_machine_args + 
+      [ '--kernel', suite_test ] + 
+      qemu_extra_args + 
+      [ '--semihosting-config', 
+      'enable=on,target=native,arg=suite-test,arg=one,arg=two' ],
+    env: xpack_environment
+  )
+
+endif
+
+# -----------------------------------------------------------------------------
+
+if (xpack_enable_sample_test)
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
     'sample-test',
     qemu,
-    args: [
-      '--machine', 'mps2-an500',
-      '--cpu', 'cortex-m7',
-      '--kernel', sample_test,
-      '--nographic',
-      '-d', 'unimp,guest_errors',
-      '--semihosting-config', 'enable=on,target=native,arg=sample-test,arg=one,arg=two',
-    ],
+    args: qemu_machine_args + 
+      [ '--kernel', sample_test ] + 
+      qemu_extra_args + 
+      [ '--semihosting-config', 
+      'enable=on,target=native,arg=sample-test,arg=one,arg=two' ],
     env: xpack_environment
   )
 
@@ -70,23 +107,21 @@ endif
 
 # -----------------------------------------------------------------------------
 
-if xpack_enable_unit_test
+if (xpack_enable_unit_test)
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
     'unit-test',
     qemu,
-    args: [
-      '--machine', 'mps2-an500',
-      '--cpu', 'cortex-m7',
-      '--kernel', unit_test,
-      '--nographic',
-      '-d', 'unimp,guest_errors',
-      '--semihosting-config', 'enable=on,target=native,arg=unit-test,arg=--reporter,arg=human',
-    ],
+    args: qemu_machine_args + 
+      [ '--kernel', unit_test ] + 
+      qemu_extra_args + 
+      [ '--semihosting-config', 
+      'enable=on,target=native,arg=unit-test,arg=one,arg=two' ],
     env: xpack_environment
   )
 
 endif
 
 # -----------------------------------------------------------------------------
+
