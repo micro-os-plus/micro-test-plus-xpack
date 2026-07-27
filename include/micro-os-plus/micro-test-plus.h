@@ -50,8 +50,8 @@
  * µTest++ framework.
  */
 
-#ifndef MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_
-#define MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_H_
 
 // ----------------------------------------------------------------------------
 
@@ -65,17 +65,13 @@
 #endif
 #endif // defined(__cplusplus)
 
-#if __has_include(<micro-os-plus/project-config.h>)
-#include <micro-os-plus/project-config.h>
-#elif __has_include(<micro-os-plus/config.h>)
-#pragma message \
-    "micro-os-plus/config.h is deprecated, rename to micro-os-plus/project-config.h and include it instead of micro-os-plus/config.h"
-#include <micro-os-plus/config.h>
-#endif // __has_include(<micro-os-plus/project-config.h>)
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
 
-#if __has_include(<micro-os-plus/micro-test-plus-defines.h>)
-#include <micro-os-plus/micro-test-plus-defines.h>
-#endif // __has_include(<micro-os-plus/micro-test-plus-defines.h>)
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 // ----------------------------------------------------------------------------
 
@@ -164,6 +160,6 @@
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_H_
 
 // ----------------------------------------------------------------------------

@@ -45,14 +45,22 @@
  * be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_TYPE_TRAITS_H_
-#define MICRO_TEST_PLUS_TYPE_TRAITS_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_TYPE_TRAITS_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TYPE_TRAITS_H_
 
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
 
 // ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include "math.h"
 
@@ -117,7 +125,7 @@ namespace micro_os_plus::micro_test_plus
      * other metaprogramming utilities to facilitate advanced type
      * manipulations and compile-time computations.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class... Types>
     struct list
@@ -143,7 +151,7 @@ namespace micro_os_plus::micro_test_plus
      * concept constraints are required, as it allows the type to be carried
      * through template specialisations without modification.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T, class... Extra>
     struct identity
@@ -179,7 +187,7 @@ namespace micro_os_plus::micro_test_plus
      * return types of arbitrary callables, supporting advanced template
      * metaprogramming and flexible test case registration.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
     struct function_traits : function_traits<decltype (&T::operator())>
@@ -204,7 +212,7 @@ namespace micro_os_plus::micro_test_plus
      * The `result_type` member defines the return type of the function, while
      * the `args` member is a type list containing all argument types.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class R, class... Args_T>
     struct function_traits<R (*) (Args_T...)>
@@ -237,7 +245,7 @@ namespace micro_os_plus::micro_test_plus
      * The `result_type` member defines the return type of the function, while
      * the `args` member is a type list containing all argument types.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class R, class... Args_T>
     struct function_traits<R (Args_T...)>
@@ -271,7 +279,7 @@ namespace micro_os_plus::micro_test_plus
      * The `result_type` member defines the return type of the member function,
      * while the `args` member is a type list containing all argument types.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class R, class T, class... Args_T>
     struct function_traits<R (T::*) (Args_T...)>
@@ -306,7 +314,7 @@ namespace micro_os_plus::micro_test_plus
      * function, while the `args` member is a type list containing all argument
      * types.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class R, class T, class... Args_T>
     struct function_traits<R (T::*) (Args_T...) const>
@@ -338,7 +346,7 @@ namespace micro_os_plus::micro_test_plus
      * constants, floating point constants, and other value wrappers,
      * supporting advanced template metaprogramming and type introspection.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     struct op
     {
@@ -503,7 +511,7 @@ namespace micro_os_plus::micro_test_plus
      * It inherits from `op` so that all derived types satisfy the `is_op`
      * concept without each struct needing to inherit from `op` directly.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
     struct value_base_ : op
@@ -560,7 +568,7 @@ namespace micro_os_plus::micro_test_plus
      * unary minus operator to obtain the negative value as a new
      * `integral_constant` instance.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <auto N>
     struct integral_constant : value_base_<decltype (N)>
@@ -610,7 +618,7 @@ namespace micro_os_plus::micro_test_plus
      * minus operator is provided to obtain the negative value as a new
      * `floating_point_constant` instance.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T, auto N, auto D, auto Size, auto P = 1>
     struct floating_point_constant : op
@@ -677,7 +685,7 @@ namespace micro_os_plus::micro_test_plus
      * integral value. The stored value, explicit conversion operator, and
      * getter are provided by the `value_base_` base.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
     struct genuine_integral_value : value_base_<T>
@@ -701,7 +709,7 @@ namespace micro_os_plus::micro_test_plus
      * stored value, explicit conversion operator, and getter are provided
      * by the `value_base_` base.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
     struct value : value_base_<T>
@@ -737,7 +745,7 @@ namespace micro_os_plus::micro_test_plus
      * values require controlled precision, supporting advanced template
      * metaprogramming and type-safe comparisons within the framework.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
       requires is_floating_point<T>
@@ -818,6 +826,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_TYPE_TRAITS_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TYPE_TRAITS_H_
 
 // ----------------------------------------------------------------------------

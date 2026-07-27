@@ -47,12 +47,22 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_FUNCTION_COMPARATORS_H_
-#define MICRO_TEST_PLUS_FUNCTION_COMPARATORS_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_FUNCTION_COMPARATORS_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_FUNCTION_COMPARATORS_H_
 
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
+
+// ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 // ----------------------------------------------------------------------------
 
@@ -336,6 +346,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_FUNCTION_COMPARATORS_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_FUNCTION_COMPARATORS_H_
 
 // ----------------------------------------------------------------------------

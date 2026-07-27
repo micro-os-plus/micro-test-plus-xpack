@@ -42,14 +42,22 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_TIMINGS_H_
-#define MICRO_TEST_PLUS_TIMINGS_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_TIMINGS_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TIMINGS_H_
 
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
 
 // ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include <cstdint>
 #include <optional>
@@ -88,7 +96,7 @@ namespace micro_os_plus::micro_test_plus
      * real-time clock is available on the target platform before relying on
      * the stored value.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     class timestamp
     {
@@ -199,7 +207,7 @@ namespace micro_os_plus::micro_test_plus
      * The class is non-copyable and non-movable to prevent accidental sharing
      * of live timing state.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     class timestamps
     {
@@ -358,6 +366,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_TIMINGS_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TIMINGS_H_
 
 // ----------------------------------------------------------------------------

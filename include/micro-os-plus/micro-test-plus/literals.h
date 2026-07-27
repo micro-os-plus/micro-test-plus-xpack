@@ -50,14 +50,22 @@
  * be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_LITERALS_H_
-#define MICRO_TEST_PLUS_LITERALS_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_LITERALS_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_LITERALS_H_
 
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
 
 // ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include "type-traits.h"
 #include "math.h"
@@ -635,7 +643,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use `to_t` (since 3.2.0).
    *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   template <class T>
   struct _t : type_traits::value<T>
@@ -871,7 +879,7 @@ namespace micro_os_plus::micro_test_plus
    * This file is intended solely for internal use within the framework and
    * should not be included directly by user code.
    *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   template <class T>
   struct to_t : type_traits::value<T>
@@ -902,6 +910,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_LITERALS_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_LITERALS_H_
 
 // ----------------------------------------------------------------------------

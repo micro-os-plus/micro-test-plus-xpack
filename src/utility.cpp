@@ -34,18 +34,6 @@
 
 // ----------------------------------------------------------------------------
 
-#if __has_include(<micro-os-plus/project-config.h>)
-#include <micro-os-plus/project-config.h>
-#elif __has_include(<micro-os-plus/config.h>)
-#pragma message \
-    "micro-os-plus/config.h is deprecated, rename to micro-os-plus/project-config.h and include it instead of micro-os-plus/config.h"
-#include <micro-os-plus/config.h>
-#endif // __has_include(<micro-os-plus/project-config.h>)
-
-#if __has_include(<micro-os-plus/micro-test-plus-defines.h>)
-#include <micro-os-plus/micro-test-plus-defines.h>
-#endif // __has_include(<micro-os-plus/micro-test-plus-defines.h>)
-
 #include "micro-os-plus/micro-test-plus/utility.h"
 
 // ----------------------------------------------------------------------------

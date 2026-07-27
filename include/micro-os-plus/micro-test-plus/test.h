@@ -45,14 +45,22 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_TEST_H_
-#define MICRO_TEST_PLUS_TEST_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_TEST_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TEST_H_
 
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
 
 // ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include "runner-totals.h"
 #include "type-traits.h"
@@ -140,7 +148,7 @@ namespace micro_os_plus::micro_test_plus
      * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation
      * from user code and minimising the risk of naming conflicts.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     class test_node
     {
@@ -248,7 +256,7 @@ namespace micro_os_plus::micro_test_plus
      * The class is non-copyable and non-movable to preserve unique ownership
      * and consistent state throughout the test session.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     class runnable_base : public test_node
     {
@@ -437,7 +445,7 @@ namespace micro_os_plus::micro_test_plus
      * stored callable receives a `Self_T&` reference when the test is
      * executed.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <typename Self_T>
     class runnable : public detail::runnable_base
@@ -536,7 +544,7 @@ namespace micro_os_plus::micro_test_plus
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
    *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   class subtest : public detail::runnable<subtest>
   {
@@ -708,7 +716,7 @@ namespace micro_os_plus::micro_test_plus
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
    *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   class suite : public detail::runnable<suite>
   {
@@ -833,7 +841,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * Users do not normally construct `top_suite` directly.
    *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   class top_suite : public suite
   {
@@ -918,7 +926,7 @@ namespace micro_os_plus::micro_test_plus
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
    *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   class static_suite : public suite
   {
@@ -1008,6 +1016,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_TEST_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TEST_H_
 
 // ----------------------------------------------------------------------------

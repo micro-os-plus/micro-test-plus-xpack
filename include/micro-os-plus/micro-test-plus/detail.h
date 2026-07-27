@@ -39,14 +39,22 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_DETAIL_H_
-#define MICRO_TEST_PLUS_DETAIL_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_DETAIL_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_DETAIL_H_
 
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
 
 // ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include "type-traits.h"
 #include "reflection.h"
@@ -111,7 +119,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Expr_T The type of the expression being asserted.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Expr_T>
     struct assertion
@@ -155,7 +163,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type of the operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
     struct unary_op_ : type_traits::op
@@ -217,7 +225,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
     struct binary_op_ : type_traits::op
@@ -299,7 +307,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
     struct eq_ : binary_op_<Lhs_T, Rhs_T>
@@ -331,7 +339,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
     struct ne_ : binary_op_<Lhs_T, Rhs_T>
@@ -363,7 +371,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
     struct gt_ : binary_op_<Lhs_T, Rhs_T>
@@ -396,7 +404,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
     struct ge_ : binary_op_<Lhs_T, Rhs_T>
@@ -429,7 +437,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
     struct lt_ : binary_op_<Lhs_T, Rhs_T>
@@ -462,7 +470,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
     struct le_ : binary_op_<Lhs_T, Rhs_T>
@@ -496,7 +504,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
     struct and_ : binary_op_<Lhs_T, Rhs_T>
@@ -529,7 +537,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
     struct or_ : binary_op_<Lhs_T, Rhs_T>
@@ -560,7 +568,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type of the operand.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
     struct not_ : unary_op_<T>
@@ -592,7 +600,7 @@ namespace micro_os_plus::micro_test_plus
      * invocation, enabling consistent reporting and composition of
      * exception-checking assertions.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     struct callable_op_ : type_traits::op
     {
@@ -638,7 +646,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Exception_T The type of the exception to check for (defaults to
      * `void` for any exception).
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Callable_T, class Exception_T = void>
     struct throws_ : callable_op_
@@ -667,7 +675,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Callable_T The type of the callable object to be invoked.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Callable_T>
     struct throws_<Callable_T, void> : callable_op_
@@ -695,7 +703,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Callable_T The type of the callable object to be invoked.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Callable_T>
     struct nothrow_ : callable_op_
@@ -750,6 +758,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_DETAIL_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_DETAIL_H_
 
 // ----------------------------------------------------------------------------

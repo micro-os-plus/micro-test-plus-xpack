@@ -41,8 +41,8 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_INLINES_EXPRESSION_FORMATTER_INLINES_H_
-#define MICRO_TEST_PLUS_INLINES_EXPRESSION_FORMATTER_INLINES_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_EXPRESSION_FORMATTER_INLINES_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_EXPRESSION_FORMATTER_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -50,9 +50,9 @@
 
 // ----------------------------------------------------------------------------
 
-#include <cstdio>
-
 #include "micro-os-plus/micro-test-plus/reflection.h"
+
+#include <cstdio>
 
 // ----------------------------------------------------------------------------
 
@@ -506,6 +506,6 @@ namespace micro_os_plus::micro_test_plus::detail
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_INLINES_EXPRESSION_FORMATTER_INLINES_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_EXPRESSION_FORMATTER_INLINES_H_
 
 // ----------------------------------------------------------------------------

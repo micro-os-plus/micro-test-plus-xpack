@@ -31,8 +31,8 @@
  * the risk of naming conflicts.
  */
 
-#ifndef MICRO_TEST_PLUS_INLINES_RUNNER_TOTALS_INLINES_H_
-#define MICRO_TEST_PLUS_INLINES_RUNNER_TOTALS_INLINES_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_RUNNER_TOTALS_INLINES_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_RUNNER_TOTALS_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -147,6 +147,6 @@ namespace micro_os_plus::micro_test_plus::detail
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_INLINES_RUNNER_TOTALS_INLINES_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_RUNNER_TOTALS_INLINES_H_
 
 // ----------------------------------------------------------------------------

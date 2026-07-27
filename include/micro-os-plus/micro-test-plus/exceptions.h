@@ -32,16 +32,26 @@
  * clear separation from user code and minimising the risk of naming conflicts.
  *
  * This header is located in the top-level `include/micro-os-plus` folder.
- * Users should include `<micro-os-plus/micro-test-plus.h>` rather than this
+ * Users should include `"micro-os-plus/micro-test-plus.h"` rather than this
  * header directly.
  */
 
-#ifndef MICRO_TEST_PLUS_EXCEPTIONS_H_
-#define MICRO_TEST_PLUS_EXCEPTIONS_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_EXCEPTIONS_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_EXCEPTIONS_H_
 
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
+
+// ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 // ----------------------------------------------------------------------------
 
@@ -120,6 +130,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_EXCEPTIONS_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_EXCEPTIONS_H_
 
 // ----------------------------------------------------------------------------

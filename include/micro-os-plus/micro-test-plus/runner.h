@@ -42,14 +42,22 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_TEST_RUNNER_H_
-#define MICRO_TEST_PLUS_TEST_RUNNER_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_TEST_RUNNER_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TEST_RUNNER_H_
 
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
 
 // ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include "timings.h"
 #include "test.h"
@@ -105,7 +113,7 @@ namespace micro_os_plus::micro_test_plus
    * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
    * user code and minimising the risk of naming conflicts.
    *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   class runner : public detail::test_node
   {
@@ -339,7 +347,7 @@ namespace micro_os_plus::micro_test_plus
    * dynamically registered suites (base class behaviour) and then iterates
    * over the statically registered suites.
    *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   class static_runner final : public runner
   {
@@ -467,6 +475,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_TEST_RUNNER_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TEST_RUNNER_H_
 
 // ----------------------------------------------------------------------------

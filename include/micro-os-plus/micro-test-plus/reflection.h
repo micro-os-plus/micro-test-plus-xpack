@@ -45,14 +45,22 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_REFLECTION_H_
-#define MICRO_TEST_PLUS_REFLECTION_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_REFLECTION_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_REFLECTION_H_
 
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
 
 // ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include <string_view>
 
@@ -132,7 +140,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @since 3.0.0
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     class source_location
     {
@@ -232,6 +240,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_REFLECTION_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_REFLECTION_H_
 
 // ----------------------------------------------------------------------------
