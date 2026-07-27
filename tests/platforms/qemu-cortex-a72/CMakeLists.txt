@@ -1,5 +1,6 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from build-helper/templates/.
+# DO NOT EDIT! Automatically generated from template file:
+# build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-a72/CMakeLists-liquid.txt
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -44,7 +45,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   message (VERBOSE "A> empty-test")
 
   add_qemu_test (
-    NAME "empty-test" COMMAND empty-test one two --output-file empty-test-noexcept.tap
+    NAME "empty-test" COMMAND empty-test one two --output-file
+                              empty-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "empty-test-compare"
@@ -64,13 +66,15 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   message (VERBOSE "A> minimal-test")
 
   add_qemu_test (
-    NAME "minimal-test" COMMAND minimal-test one two --output-file minimal-test-noexcept.tap
+    NAME "minimal-test" COMMAND minimal-test one two --output-file
+                                minimal-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "minimal-test-compare"
     DEPENDS "minimal-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test-noexcept.tap"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test-noexcept.tap"
   )
 endif ()
 
@@ -84,7 +88,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   message (VERBOSE "A> suite-test")
 
   add_qemu_test (
-    NAME "suite-test" COMMAND suite-test one two --output-file suite-test-noexcept.tap
+    NAME "suite-test" COMMAND suite-test one two --output-file
+                              suite-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "suite-test-compare"
@@ -104,13 +109,15 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   message (VERBOSE "A> sample-test")
 
   add_qemu_test (
-    NAME "sample-test" COMMAND sample-test one two --output-file sample-test-noexcept.tap
+    NAME "sample-test" COMMAND sample-test one two --output-file
+                               sample-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "sample-test-compare"
     DEPENDS "sample-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test-noexcept.tap"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/sample-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test-noexcept.tap"
   )
 endif ()
 
@@ -124,7 +131,8 @@ if (XPACK_ENABLE_UNIT_TEST)
   message (VERBOSE "A> unit-test")
 
   add_qemu_test (
-    NAME "unit-test" COMMAND unit-test one two --output-file unit-test-noexcept.tap
+    NAME "unit-test" COMMAND unit-test one two --output-file
+                             unit-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-test-compare"
@@ -134,7 +142,9 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   add_qemu_test (
-    NAME "unit-test-reporter-human" COMMAND unit-test one two --reporter human --output-file unit-test-noexcept.txt
+    NAME "unit-test-reporter-human"
+    COMMAND unit-test one two --reporter human --output-file
+            unit-test-noexcept.txt
   )
   add_compare_files_test (
     NAME "unit-test-reporter-human-compare"
@@ -145,4 +155,3 @@ if (XPACK_ENABLE_UNIT_TEST)
 endif ()
 
 # -----------------------------------------------------------------------------
-
