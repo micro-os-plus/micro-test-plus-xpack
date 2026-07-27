@@ -9,8 +9,8 @@
  * obtained from https://opensource.org/licenses/mit.
  */
 
-#ifndef MICRO_TEST_PLUS_SUITE_H_
-#define MICRO_TEST_PLUS_SUITE_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_SUITE_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_SUITE_H_
 
 // ----------------------------------------------------------------------------
 
@@ -41,4 +41,4 @@ extern micro_os_plus::micro_test_plus::static_runner sr;
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_SUITE_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_SUITE_H_

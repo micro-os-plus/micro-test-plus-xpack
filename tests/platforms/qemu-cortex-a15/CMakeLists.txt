@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from build-helper/templates/*.
+# DO NOT EDIT! Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -60,8 +60,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   message (VERBOSE "A> minimal-test")
 
   add_qemu_test (
-    NAME "minimal-test" COMMAND minimal-test one two --output-file
-                                minimal-test.tap
+    NAME "minimal-test" COMMAND minimal-test one two --output-file minimal-test.tap
   )
   add_compare_files_test (
     NAME "minimal-test-compare"
@@ -101,8 +100,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   message (VERBOSE "A> sample-test")
 
   add_qemu_test (
-    NAME "sample-test" COMMAND sample-test one two --output-file
-                               sample-test.tap
+    NAME "sample-test" COMMAND sample-test one two --output-file sample-test.tap
   )
   add_compare_files_test (
     NAME "sample-test-compare"
@@ -132,8 +130,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   add_qemu_test (
-    NAME "unit-test-reporter-human" COMMAND unit-test one two --reporter human
-                                            --output-file unit-test.txt
+    NAME "unit-test-reporter-human" COMMAND unit-test one two --reporter human --output-file unit-test.txt
   )
   add_compare_files_test (
     NAME "unit-test-reporter-human-compare"
@@ -144,3 +141,4 @@ if (XPACK_ENABLE_UNIT_TEST)
 endif ()
 
 # -----------------------------------------------------------------------------
+

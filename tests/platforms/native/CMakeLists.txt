@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from build-helper/templates/*.
+# DO NOT EDIT! Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -52,8 +52,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   # TAP reporter
 
   # --verbose
-  add_test (NAME "empty-test-verbose" COMMAND empty-test one two --output-file
-                                              empty-test-verbose.tap --verbose
+  add_test (
+    NAME "empty-test-verbose" COMMAND empty-test one two --output-file empty-test-verbose.tap --verbose
   )
 
   add_compare_files_test (
@@ -64,8 +64,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
 
   # default
-  add_test (NAME "empty-test" COMMAND empty-test one two --output-file
-                                      empty-test.tap
+  add_test (
+    NAME "empty-test" COMMAND empty-test one two --output-file empty-test.tap
   )
   add_compare_files_test (
     NAME "empty-test-compare"
@@ -75,8 +75,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
 
   # --quiet
-  add_test (NAME "empty-test-quiet" COMMAND empty-test one two --output-file
-                                            empty-test-quiet.tap --quiet
+  add_test (NAME "empty-test-quiet"
+            COMMAND empty-test one two --output-file empty-test-quiet.tap --quiet
   )
   add_compare_files_test (
     NAME "empty-test-quiet-compare"
@@ -86,8 +86,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
 
   # --silent
-  add_test (NAME "empty-test-silent" COMMAND empty-test one two --output-file
-                                             empty-test-silent.tap --silent
+  add_test (NAME "empty-test-silent"
+            COMMAND empty-test one two --output-file empty-test-silent.tap --silent
   )
   add_compare_files_test (
     NAME "empty-test-silent-compare"
@@ -100,9 +100,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   # Human reporter
 
   # --verbose
-  add_test (NAME "empty-test-reporter-human-verbose"
-            COMMAND empty-test one two --reporter human --output-file
-                    empty-test-verbose.txt --verbose
+  add_test (
+    NAME "empty-test-reporter-human-verbose" COMMAND empty-test one two --reporter human --output-file empty-test-verbose.txt --verbose
   )
   add_compare_files_test (
     NAME "empty-test-reporter-human-verbose-compare"
@@ -112,9 +111,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
 
   # default
-  add_test (NAME "empty-test-reporter-human"
-            COMMAND empty-test one two --reporter human --output-file
-                    empty-test.txt
+  add_test (
+    NAME "empty-test-reporter-human" COMMAND empty-test one two --reporter human --output-file empty-test.txt
   )
   add_compare_files_test (
     NAME "empty-test-reporter-human-compare"
@@ -124,9 +122,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
 
   # --quiet
-  add_test (NAME "empty-test-reporter-human-quiet"
-            COMMAND empty-test one two --reporter human --output-file
-                    empty-test-quiet.txt --quiet
+  add_test (
+    NAME "empty-test-reporter-human-quiet" COMMAND empty-test one two --reporter human --output-file empty-test-quiet.txt --quiet
   )
   add_compare_files_test (
     NAME "empty-test-reporter-human-quiet-compare"
@@ -136,9 +133,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
 
   # --silent
-  add_test (NAME "empty-test-reporter-human-silent"
-            COMMAND empty-test one two --reporter human --output-file
-                    empty-test-silent.txt --silent
+  add_test (
+    NAME "empty-test-reporter-human-silent" COMMAND empty-test one two --reporter human --output-file empty-test-silent.txt --silent
   )
   add_compare_files_test (
     NAME "empty-test-reporter-human-silent-compare"
@@ -170,9 +166,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   # TAP reporter
 
   # --verbose
-  add_test (NAME "minimal-test-verbose"
-            COMMAND minimal-test one two --output-file minimal-test-verbose.tap
-                    --verbose
+  add_test (
+    NAME "minimal-test-verbose" COMMAND minimal-test one two --output-file minimal-test-verbose.tap --verbose
   )
 
   add_compare_files_test (
@@ -183,8 +178,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   )
 
   # default
-  add_test (NAME "minimal-test" COMMAND minimal-test one two --output-file
-                                        minimal-test.tap
+  add_test (
+    NAME "minimal-test" COMMAND minimal-test one two --output-file minimal-test.tap
   )
   add_compare_files_test (
     NAME "minimal-test-compare"
@@ -195,8 +190,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
 
   # --quiet
   add_test (NAME "minimal-test-quiet"
-            COMMAND minimal-test one two --output-file minimal-test-quiet.tap
-                    --quiet
+            COMMAND minimal-test one two --output-file minimal-test-quiet.tap --quiet
   )
   add_compare_files_test (
     NAME "minimal-test-quiet-compare"
@@ -207,8 +201,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
 
   # --silent
   add_test (NAME "minimal-test-silent"
-            COMMAND minimal-test one two --output-file minimal-test-silent.tap
-                    --silent
+            COMMAND minimal-test one two --output-file minimal-test-silent.tap --silent
   )
   add_compare_files_test (
     NAME "minimal-test-silent-compare"
@@ -221,9 +214,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   # Human reporter
 
   # --verbose
-  add_test (NAME "minimal-test-reporter-human-verbose"
-            COMMAND minimal-test one two --reporter human --output-file
-                    minimal-test-verbose.txt --verbose
+  add_test (
+    NAME "minimal-test-reporter-human-verbose" COMMAND minimal-test one two --reporter human --output-file minimal-test-verbose.txt --verbose
   )
   add_compare_files_test (
     NAME "minimal-test-reporter-human-verbose-compare"
@@ -233,9 +225,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   )
 
   # default
-  add_test (NAME "minimal-test-reporter-human"
-            COMMAND minimal-test one two --reporter human --output-file
-                    minimal-test.txt
+  add_test (
+    NAME "minimal-test-reporter-human" COMMAND minimal-test one two --reporter human --output-file minimal-test.txt
   )
   add_compare_files_test (
     NAME "minimal-test-reporter-human-compare"
@@ -245,9 +236,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   )
 
   # --quiet
-  add_test (NAME "minimal-test-reporter-human-quiet"
-            COMMAND minimal-test one two --reporter human --output-file
-                    minimal-test-quiet.txt --quiet
+  add_test (
+    NAME "minimal-test-reporter-human-quiet" COMMAND minimal-test one two --reporter human --output-file minimal-test-quiet.txt --quiet
   )
   add_compare_files_test (
     NAME "minimal-test-reporter-human-quiet-compare"
@@ -257,9 +247,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   )
 
   # --silent
-  add_test (NAME "minimal-test-reporter-human-silent"
-            COMMAND minimal-test one two --reporter human --output-file
-                    minimal-test-silent.txt --silent
+  add_test (
+    NAME "minimal-test-reporter-human-silent" COMMAND minimal-test one two --reporter human --output-file minimal-test-silent.txt --silent
   )
   add_compare_files_test (
     NAME "minimal-test-reporter-human-silent-compare"
@@ -283,8 +272,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   # TAP reporter
 
   # --verbose
-  add_test (NAME "suite-test-verbose" COMMAND suite-test one two --output-file
-                                              suite-test-verbose.tap --verbose
+  add_test (
+    NAME "suite-test-verbose" COMMAND suite-test one two --output-file suite-test-verbose.tap --verbose
   )
 
   add_compare_files_test (
@@ -295,8 +284,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # default
-  add_test (NAME "suite-test" COMMAND suite-test one two --output-file
-                                      suite-test.tap
+  add_test (
+    NAME "suite-test" COMMAND suite-test one two --output-file suite-test.tap
   )
   add_compare_files_test (
     NAME "suite-test-compare"
@@ -306,8 +295,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # --quiet
-  add_test (NAME "suite-test-quiet" COMMAND suite-test one two --output-file
-                                            suite-test-quiet.tap --quiet
+  add_test (NAME "suite-test-quiet"
+            COMMAND suite-test one two --output-file suite-test-quiet.tap --quiet
   )
   add_compare_files_test (
     NAME "suite-test-quiet-compare"
@@ -317,8 +306,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # --silent
-  add_test (NAME "suite-test-silent" COMMAND suite-test one two --output-file
-                                             suite-test-silent.tap --silent
+  add_test (NAME "suite-test-silent"
+            COMMAND suite-test one two --output-file suite-test-silent.tap --silent
   )
   add_compare_files_test (
     NAME "suite-test-silent-compare"
@@ -331,9 +320,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   # Human reporter
 
   # --verbose
-  add_test (NAME "suite-test-reporter-human-verbose"
-            COMMAND suite-test one two --reporter human --output-file
-                    suite-test-verbose.txt --verbose
+  add_test (
+    NAME "suite-test-reporter-human-verbose" COMMAND suite-test one two --reporter human --output-file suite-test-verbose.txt --verbose
   )
   add_compare_files_test (
     NAME "suite-test-reporter-human-verbose-compare"
@@ -343,9 +331,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # default
-  add_test (NAME "suite-test-reporter-human"
-            COMMAND suite-test one two --reporter human --output-file
-                    suite-test.txt
+  add_test (
+    NAME "suite-test-reporter-human" COMMAND suite-test one two --reporter human --output-file suite-test.txt
   )
   add_compare_files_test (
     NAME "suite-test-reporter-human-compare"
@@ -355,9 +342,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # --quiet
-  add_test (NAME "suite-test-reporter-human-quiet"
-            COMMAND suite-test one two --reporter human --output-file
-                    suite-test-quiet.txt --quiet
+  add_test (
+    NAME "suite-test-reporter-human-quiet" COMMAND suite-test one two --reporter human --output-file suite-test-quiet.txt --quiet
   )
   add_compare_files_test (
     NAME "suite-test-reporter-human-quiet-compare"
@@ -367,9 +353,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # --silent
-  add_test (NAME "suite-test-reporter-human-silent"
-            COMMAND suite-test one two --reporter human --output-file
-                    suite-test-silent.txt --silent
+  add_test (
+    NAME "suite-test-reporter-human-silent" COMMAND suite-test one two --reporter human --output-file suite-test-silent.txt --silent
   )
   add_compare_files_test (
     NAME "suite-test-reporter-human-silent-compare"
@@ -393,9 +378,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   # TAP reporter
 
   # --verbose
-  add_test (NAME "sample-test-verbose"
-            COMMAND sample-test one two --output-file sample-test-verbose.tap
-                    --verbose
+  add_test (
+    NAME "sample-test-verbose" COMMAND sample-test one two --output-file sample-test-verbose.tap --verbose
   )
 
   add_compare_files_test (
@@ -406,8 +390,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 
   # default
-  add_test (NAME "sample-test" COMMAND sample-test one two --output-file
-                                       sample-test.tap
+  add_test (
+    NAME "sample-test" COMMAND sample-test one two --output-file sample-test.tap
   )
   add_compare_files_test (
     NAME "sample-test-compare"
@@ -417,8 +401,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 
   # --quiet
-  add_test (NAME "sample-test-quiet" COMMAND sample-test one two --output-file
-                                             sample-test-quiet.tap --quiet
+  add_test (NAME "sample-test-quiet"
+            COMMAND sample-test one two --output-file sample-test-quiet.tap --quiet
   )
   add_compare_files_test (
     NAME "sample-test-quiet-compare"
@@ -428,8 +412,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 
   # --silent
-  add_test (NAME "sample-test-silent" COMMAND sample-test one two --output-file
-                                              sample-test-silent.tap --silent
+  add_test (NAME "sample-test-silent"
+            COMMAND sample-test one two --output-file sample-test-silent.tap --silent
   )
   add_compare_files_test (
     NAME "sample-test-silent-compare"
@@ -442,9 +426,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   # Human reporter
 
   # --verbose
-  add_test (NAME "sample-test-reporter-human-verbose"
-            COMMAND sample-test one two --reporter human --output-file
-                    sample-test-verbose.txt --verbose
+  add_test (
+    NAME "sample-test-reporter-human-verbose" COMMAND sample-test one two --reporter human --output-file sample-test-verbose.txt --verbose
   )
   add_compare_files_test (
     NAME "sample-test-reporter-human-verbose-compare"
@@ -454,9 +437,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 
   # default
-  add_test (NAME "sample-test-reporter-human"
-            COMMAND sample-test one two --reporter human --output-file
-                    sample-test.txt
+  add_test (
+    NAME "sample-test-reporter-human" COMMAND sample-test one two --reporter human --output-file sample-test.txt
   )
   add_compare_files_test (
     NAME "sample-test-reporter-human-compare"
@@ -466,9 +448,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 
   # --quiet
-  add_test (NAME "sample-test-reporter-human-quiet"
-            COMMAND sample-test one two --reporter human --output-file
-                    sample-test-quiet.txt --quiet
+  add_test (
+    NAME "sample-test-reporter-human-quiet" COMMAND sample-test one two --reporter human --output-file sample-test-quiet.txt --quiet
   )
   add_compare_files_test (
     NAME "sample-test-reporter-human-quiet-compare"
@@ -478,9 +459,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 
   # --silent
-  add_test (NAME "sample-test-reporter-human-silent"
-            COMMAND sample-test one two --reporter human --output-file
-                    sample-test-silent.txt --silent
+  add_test (
+    NAME "sample-test-reporter-human-silent" COMMAND sample-test one two --reporter human --output-file sample-test-silent.txt --silent
   )
   add_compare_files_test (
     NAME "sample-test-reporter-human-silent-compare"
@@ -509,14 +489,15 @@ if (XPACK_ENABLE_UNIT_TEST)
   # TAP reporter
 
   # --verbose
-  add_test (NAME "unit-test-verbose" COMMAND unit-test one two --output-file
-                                             unit-test-verbose.tap --verbose
+  add_test (
+    NAME "unit-test-verbose" COMMAND unit-test one two --output-file unit-test-verbose.tap --verbose
   )
 
   if (XPACK_ENABLE_COVERAGE)
     set_tests_properties (
       "unit-test-verbose"
-      PROPERTIES ENVIRONMENT "LLVM_PROFILE_FILE=unit-test-verbose.profraw"
+      PROPERTIES ENVIRONMENT
+                 "LLVM_PROFILE_FILE=unit-test-verbose.profraw"
     )
 
     add_test (
@@ -525,7 +506,8 @@ if (XPACK_ENABLE_UNIT_TEST)
               unit-test unit-test-verbose
     )
     set_tests_properties (
-      "unit-test-verbose-coverage" PROPERTIES DEPENDS "unit-test-verbose"
+      "unit-test-verbose-coverage"
+      PROPERTIES DEPENDS "unit-test-verbose"
     )
   endif ()
 
@@ -537,8 +519,8 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   # default
-  add_test (NAME "unit-test" COMMAND unit-test one two --output-file
-                                     unit-test.tap
+  add_test (
+    NAME "unit-test" COMMAND unit-test one two --output-file unit-test.tap
   )
   add_compare_files_test (
     NAME "unit-test-compare"
@@ -548,8 +530,8 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   # --quiet
-  add_test (NAME "unit-test-quiet" COMMAND unit-test one two --output-file
-                                           unit-test-quiet.tap --quiet
+  add_test (NAME "unit-test-quiet"
+            COMMAND unit-test one two --output-file unit-test-quiet.tap --quiet
   )
   add_compare_files_test (
     NAME "unit-test-quiet-compare"
@@ -559,8 +541,8 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   # --silent
-  add_test (NAME "unit-test-silent" COMMAND unit-test one two --output-file
-                                            unit-test-silent.tap --silent
+  add_test (NAME "unit-test-silent"
+            COMMAND unit-test one two --output-file unit-test-silent.tap --silent
   )
   add_compare_files_test (
     NAME "unit-test-silent-compare"
@@ -573,9 +555,8 @@ if (XPACK_ENABLE_UNIT_TEST)
   # Human reporter
 
   # --verbose
-  add_test (NAME "unit-test-reporter-human-verbose"
-            COMMAND unit-test one two --reporter human --output-file
-                    unit-test-verbose.txt --verbose
+  add_test (
+    NAME "unit-test-reporter-human-verbose" COMMAND unit-test one two --reporter human --output-file unit-test-verbose.txt --verbose
   )
   add_compare_files_test (
     NAME "unit-test-reporter-human-verbose-compare"
@@ -585,9 +566,8 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   # default
-  add_test (NAME "unit-test-reporter-human"
-            COMMAND unit-test one two --reporter human --output-file
-                    unit-test.txt
+  add_test (
+    NAME "unit-test-reporter-human" COMMAND unit-test one two --reporter human --output-file unit-test.txt
   )
   add_compare_files_test (
     NAME "unit-test-reporter-human-compare"
@@ -597,9 +577,8 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   # --quiet
-  add_test (NAME "unit-test-reporter-human-quiet"
-            COMMAND unit-test one two --reporter human --output-file
-                    unit-test-quiet.txt --quiet
+  add_test (
+    NAME "unit-test-reporter-human-quiet" COMMAND unit-test one two --reporter human --output-file unit-test-quiet.txt --quiet
   )
   add_compare_files_test (
     NAME "unit-test-reporter-human-quiet-compare"
@@ -609,9 +588,8 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   # --silent
-  add_test (NAME "unit-test-reporter-human-silent"
-            COMMAND unit-test one two --reporter human --output-file
-                    unit-test-silent.txt --silent
+  add_test (
+    NAME "unit-test-reporter-human-silent" COMMAND unit-test one two --reporter human --output-file unit-test-silent.txt --silent
   )
   add_compare_files_test (
     NAME "unit-test-reporter-human-silent-compare"

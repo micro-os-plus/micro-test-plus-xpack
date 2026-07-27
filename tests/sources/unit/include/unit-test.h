@@ -9,8 +9,8 @@
  * obtained from https://opensource.org/licenses/mit.
  */
 
-#ifndef MICRO_TEST_PLUS_UNIT_TEST_H_
-#define MICRO_TEST_PLUS_UNIT_TEST_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_UNIT_TEST_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_UNIT_TEST_H_
 
 // ----------------------------------------------------------------------------
 
@@ -133,4 +133,4 @@ extern local_counts_t local_counts;
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_UNIT_TEST_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_UNIT_TEST_H_
