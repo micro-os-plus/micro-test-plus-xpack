@@ -18,7 +18,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include <micro-os-plus/platform.h>
+#include "micro-os-plus/platform.h"
 #include <micro-os-plus/micro-test-plus.h>
 
 // ----------------------------------------------------------------------------
