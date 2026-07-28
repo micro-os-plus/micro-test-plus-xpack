@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op" kindref="compound">micro_os_plus::micro_test_plus::type_traits::is_op</ref> =  std::is_base_of_v&lt;<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">type_traits::op</ref>, T&gt;</initializer>
     <conceptparts>
-      <codepart line="437">    <programlisting>
+      <codepart line="445">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">is_op<sp/>=<sp/>std::is_base_of_v&lt;type_traits::op,<sp/>T&gt;</highlight></codeline>
     </programlisting>
@@ -32,6 +32,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>is_op</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> is derived from the <computeroutput>type_traits::op</computeroutput> base struct. It is the primary definition used throughout the framework; <computeroutput>is_op_v</computeroutput> is derived from it for use in <computeroutput>if constexpr</computeroutput> and boolean contexts. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="437" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="445" column="5"/>
   </compounddef>
 </doxygen>

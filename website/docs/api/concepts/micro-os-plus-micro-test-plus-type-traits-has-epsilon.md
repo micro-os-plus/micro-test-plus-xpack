@@ -46,7 +46,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">has_epsilon</span> concept is satisfied when an instance of <span class="doxyComputerOutput">T</span> exposes an <span class="doxyComputerOutput">epsilon</span> member. It is used to detect floating point value-wrapper types such as <span class="doxyComputerOutput">floating_point_constant</span> and the floating point specialisation of <span class="doxyComputerOutput">value&lt;T&gt;</span>, enabling precision-aware comparisons.</p>
 
 
-<p>Definition at line 408 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 416 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">

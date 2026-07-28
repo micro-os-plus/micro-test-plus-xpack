@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structmicro__o
 <p>Struct template representing a generic floating point constant with custom size and precision.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="micro-test-plus_8h_source.html">micro-os-plus/micro-test-plus.h</a>&gt;</code></p>
+<p><code>#include &quot;<a class="el" href="micro-test-plus_8h_source.html">micro-os-plus/micro-test-plus.h</a>&quot;</code></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -173,7 +173,7 @@ struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; 
 <p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for all operator types.">op</a></span> directly rather than from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base_</a>&lt;T&gt;</span>, which avoids introducing a user-provided constructor into the type and keeps it trivially default-constructible. This prevents the GCC ARM PSABI note about parameter-passing ABI changes that is emitted for non-trivially-constructible types under C++17.</p>
 <p>The <span class="tt"><a class="el" href="#a3538821b6929e9b13f6a3ea763e1627e" title="The type of the stored value.">value_type</a></span> alias, explicit conversion operator, and <span class="tt"><a class="el" href="#a9e42c82de949aa6640b3964bd67c4732" title="Getter for the compile-time constant value.">get()</a></span> accessor are provided directly by this struct. The compile-time <span class="tt"><a class="el" href="#a5cab8e85fbee4a9314fc8a3e09e59eef" title="The epsilon value used for floating point comparisons.">epsilon</a></span> and <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a></span> static constants are retained, and a unary minus operator is provided to obtain the negative value as a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00616">616</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00624">624</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a3538821b6929e9b13f6a3ea763e1627e" name="a3538821b6929e9b13f6a3ea763e1627e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3538821b6929e9b13f6a3ea763e1627e">&#9670;&#160;</a></span>value_type</h2>
@@ -189,7 +189,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00624">624</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00632">632</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>
@@ -226,9 +226,9 @@ template&lt;class T, auto N, auto D, auto Size, auto P&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  143</span>    {</div>
 <div class="line"><span class="lineno">  144</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab0e05de518c208a6a762c7377d2f2332">value</a>;</div>
 <div class="line"><span class="lineno">  145</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html_ab0e05de518c208a6a762c7377d2f2332"><div class="ttname"><a href="#ab0e05de518c208a6a762c7377d2f2332">micro_os_plus::micro_test_plus::type_traits::floating_point_constant::value</a></div><div class="ttdeci">static constexpr auto value</div><div class="ttdoc">The compile-time constant value.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00640">type-traits.h:641</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html_ab0e05de518c208a6a762c7377d2f2332"><div class="ttname"><a href="#ab0e05de518c208a6a762c7377d2f2332">micro_os_plus::micro_test_plus::type_traits::floating_point_constant::value</a></div><div class="ttdeci">static constexpr auto value</div><div class="ttdoc">The compile-time constant value.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00648">type-traits.h:649</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00641">value</a>.</p>
+<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00649">value</a>.</p>
 
 </div>
 </div>
@@ -264,7 +264,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P&gt; </div>
 <div class="line"><span class="lineno">  133</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab0e05de518c208a6a762c7377d2f2332">value</a>;</div>
 <div class="line"><span class="lineno">  134</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00641">value</a>.</p>
+<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00649">value</a>.</p>
 
 </div>
 </div>
@@ -299,7 +299,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  155</span>    {</div>
 <div class="line"><span class="lineno">  156</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">floating_point_constant</a>&lt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">T</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">N</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">D</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">Size</a>, -<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">P</a>&gt;{};</div>
 <div class="line"><span class="lineno">  157</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a></div><div class="ttdoc">Struct template representing a generic floating point constant with custom size and precision.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00616">type-traits.h:617</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a></div><div class="ttdoc">Struct template representing a generic floating point constant with custom size and precision.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00624">type-traits.h:625</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -327,7 +327,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
 </div><div class="memdoc">
 <p>Calculated as 1 divided by 10 raised to the power of (Size - 1). </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00632">632</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00640">640</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>
@@ -354,7 +354,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
 </div><div class="memdoc">
 <p>Computed as <span class="tt">P * (N + D / 10^Size)</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00640">640</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00648">648</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="type-traits-inlines_8h_source.html#l00142">get()</a>, and <a class="el" href="type-traits-inlines_8h_source.html#l00131">operator T()</a>.</p>
 

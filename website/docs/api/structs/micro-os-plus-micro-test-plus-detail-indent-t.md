@@ -58,7 +58,7 @@ struct micro_os_plus::micro_test_plus::detail::indent_t { ... }
 <p>Holds the indentation level; used with <span class="doxyComputerOutput">operator&lt;&lt;</span> on <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> so that <span class="doxyComputerOutput">*this &lt;&lt; indent(n) &lt;&lt; "text"</span> works naturally in chains.</p>
 
 
-<p>Definition at line 137 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line 145 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -85,12 +85,12 @@ struct micro_os_plus::micro_test_plus::detail::indent_t { ... }
 
 <p>Number of four-space indentation levels.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00147">147</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4dbec859ec9af8667e9bf244131a0df9">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a4dbec859ec9af8667e9bf244131a0df9">level</a>; </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4dbec859ec9af8667e9bf244131a0df9">147</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a4dbec859ec9af8667e9bf244131a0df9">level</a>; </span></span></div>
 
 </div>
 

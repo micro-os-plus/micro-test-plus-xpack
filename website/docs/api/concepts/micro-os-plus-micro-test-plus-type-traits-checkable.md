@@ -46,7 +46,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">checkable</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is either a framework operator type (derived from <span class="doxyComputerOutput">op</span>) or is implicitly convertible to <span class="doxyComputerOutput">bool</span>. It is used to constrain the <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">assume()</span> function templates, ensuring that only sensible expression types are accepted.</p>
 
 
-<p>Definition at line 470 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 478 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">

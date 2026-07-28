@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point" kindref="compound">micro_os_plus::micro_test_plus::type_traits::is_floating_point</ref> =  std::is_floating_point_v&lt;T&gt;</initializer>
     <conceptparts>
-      <codepart line="423">    <programlisting>
+      <codepart line="431">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">is_floating_point<sp/>=<sp/>std::is_floating_point_v&lt;T&gt;</highlight></codeline>
     </programlisting>
@@ -32,6 +32,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>is_floating_point</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> is one of the standard floating point types (<computeroutput>float</computeroutput>, <computeroutput>double</computeroutput>, or <computeroutput>long double</computeroutput>). It is the primary definition; <computeroutput>is_floating_point_v</computeroutput> is derived from it for use in <computeroutput>if constexpr</computeroutput> and non-concept contexts. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="423" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="431" column="5"/>
   </compounddef>
 </doxygen>

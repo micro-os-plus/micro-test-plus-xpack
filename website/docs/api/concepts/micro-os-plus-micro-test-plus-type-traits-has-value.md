@@ -46,7 +46,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">has_value</span> concept is satisfied when an instance of <span class="doxyComputerOutput">T</span> exposes a <span class="doxyComputerOutput">value</span> member. It is used to detect framework value-wrapper types such as <span class="doxyComputerOutput">integral_constant</span>, <span class="doxyComputerOutput">floating_point_constant</span>, and <span class="doxyComputerOutput">value&lt;T&gt;</span>, enabling specialised comparison and reporting.</p>
 
 
-<p>Definition at line 394 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 402 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">

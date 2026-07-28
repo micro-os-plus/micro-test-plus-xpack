@@ -198,6 +198,7 @@
   <option  id='EXCLUDE_SYMLINKS' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXCLUDE_PATTERNS' default='no' type='stringlist'>
     <value><![CDATA[*/README*]]></value>
+    <value><![CDATA[*/README*]]></value>
   </option>
   <option  id='EXCLUDE_SYMBOLS' default='yes' type='stringlist'>
   </option>
