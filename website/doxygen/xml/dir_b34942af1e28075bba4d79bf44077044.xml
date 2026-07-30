@@ -22,9 +22,9 @@
 <para>Folder with C++ header files containing inline µTest++ implementations. </para>
     </briefdescription>
     <detaileddescription>
-<para>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core framework components, including the deferred reporter, function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, test suites, and utility functions.</para>
+<para>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core library components, including the deferred reporter, function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, test suites, and utility functions.</para>
 <para>By separating inline implementations from their corresponding declarations, this structure promotes modularity, clarity, and maintainability within the codebase. All inline definitions are designed to be lightweight and efficient, supporting both embedded and general C++ development.</para>
-<para>The contents of this folder are intended solely for internal use within the framework and should not be included directly by user code.  </para>
+<para>The contents of this folder are intended solely for internal use within the library and should not be included directly by user code.  </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/"/>
   </compounddef>

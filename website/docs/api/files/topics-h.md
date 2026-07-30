@@ -24,19 +24,19 @@ keywords:
 <p>Project specific Doxygen topics definitions.</p>
 
 
-<p>This file organises the principal Doxygen groups and documentation topics for the µTest++ Testing Framework, which forms part of the µOS++ project.</p>
+<p>This file organises the principal Doxygen groups and documentation topics for the µTest++ Testing Framework library, which is part of the µOS++ project.</p>
 
 
 <p>Although named as a header, this file is not included in the build process; it is intended exclusively as a documentation resource for Doxygen. Due to Doxygen processing requirements, it cannot be provided as a Markdown file or as a <span class="doxyComputerOutput">.doxyfile</span>.</p>
 
 
-<p>It introduces and organises the main documentation groups for the framework, covering the C++ API, command-line options, expectations, assumptions, comparators, operators, literals, utility functions, and test suite management.</p>
+<p>It introduces and organises the main documentation groups for the library, covering the C++ API, command-line options, expectations, assumptions, comparators, operators, literals, utility functions, and test suite management.</p>
 
 
-<p>The documentation is structured to provide a comprehensive overview of the framework's features, usage patterns, and configuration options. It includes detailed explanations, usage examples, and descriptions of the available verbosity modes, along with representative output for various scenarios.</p>
+<p>The documentation is structured to provide a comprehensive overview of the library's features, usage patterns, and configuration options. It includes detailed explanations, usage examples, and descriptions of the available verbosity modes, along with representative output for various scenarios.</p>
 
 
-<p>All documentation topics and group definitions are maintained in this file to ensure a consistent and modular structure. The file is located in the <span class="doxyComputerOutput">website/doxygen</span> folder to facilitate integration with the Doxygen system.</p>
+<p>All documentation topics and group definitions are maintained in this file to ensure a consistent and modular structure. The file is located in the <span class="doxyComputerOutput">website/doxygen/files</span> folder to facilitate integration with the Doxygen system.</p>
 
 
 ## File Listing
@@ -66,6 +66,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.1 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

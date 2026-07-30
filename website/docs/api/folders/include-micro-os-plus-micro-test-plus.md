@@ -302,23 +302,20 @@ keywords:
 <p>Folder with C++ header files for the µTest++ Testing Framework.</p>
 
 
-<p>This folder provides the primary public headers that define the core functionality of the µTest++ Testing Framework.</p>
+<p>This folder provides the primary public header that defines the core functionality of the µTest++ Testing Framework.</p>
 
 
-<p>It includes declarations for essential framework components, including test suite and test case management, test runner and reporter classes, function comparators, overloaded operators, user-defined literals, mathematical utilities, type traits, reflection utilities, and supporting internal mechanisms.</p>
+<p>It includes declarations for essential library components, including test suite and test case management, test runner and reporter classes, function comparators, overloaded operators, user-defined literals, mathematical utilities, type traits, reflection utilities, and supporting internal mechanisms.</p>
 
 
 <p>By consolidating public API definitions in this folder, the project maintains a clear separation from implementation details (located in the <span class="doxyComputerOutput">src</span> folder), thereby promoting modularity, maintainability, and straightforward integration.</p>
 
 
-<p>The contents of this folder are intended solely for internal use within the framework and should not be included directly by user code.</p>
-
-
-<p>To access the full capabilities of the µTest++ framework, include only the top <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a></span> in user projects.</p>
+<p>To access the full capabilities of the µTest++ Testing Framework, include only the top <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a></span> in user projects.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.1 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

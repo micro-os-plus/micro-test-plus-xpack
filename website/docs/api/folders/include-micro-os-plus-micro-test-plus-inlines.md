@@ -254,17 +254,17 @@ keywords:
 <p>Folder with C++ header files containing inline µTest++ implementations.</p>
 
 
-<p>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core framework components, including the deferred reporter, function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, test suites, and utility functions.</p>
+<p>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core library components, including the deferred reporter, function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, test suites, and utility functions.</p>
 
 
 <p>By separating inline implementations from their corresponding declarations, this structure promotes modularity, clarity, and maintainability within the codebase. All inline definitions are designed to be lightweight and efficient, supporting both embedded and general C++ development.</p>
 
 
-<p>The contents of this folder are intended solely for internal use within the framework and should not be included directly by user code.</p>
+<p>The contents of this folder are intended solely for internal use within the library and should not be included directly by user code.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.1 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

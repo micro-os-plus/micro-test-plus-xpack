@@ -209,7 +209,7 @@ Options for controlling test output verbosity at run-time
 <p>The <b>µTest++</b> project is a <b>lightweight</b>, <b>macro-free</b>, <b>modern C++</b> testing framework <b>with TAP output</b>, purpose-built for embedded systems development.</p>
 
 
-<p>With its clean and expressive C++ API, µTest++ enables developers to write, organise, and execute unit tests with minimal overhead. The framework includes advanced features such as <b>test suites</b>, <b>test cases</b>, and detailed reporting, all tailored to meet the specific needs of embedded environments.</p>
+<p>With its clean and expressive C++ API, µTest++ enables developers to write, organise, and execute unit tests with minimal overhead. The library includes advanced features such as <b>test suites</b>, <b>test cases</b>, and detailed reporting, all tailored to meet the specific needs of embedded environments.</p>
 
 
 <p>Test results are reported in the <a href="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</a> (<b>Test Anything Protocol</b>) format by default, ensuring compatibility with a wide range of continuous integration systems and TAP-aware test harnesses. A human-readable reporter is also available for interactive use.</p>
@@ -227,6 +227,6 @@ For comparison, the original Doxygen html pages continue to be available via the
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.1 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>
