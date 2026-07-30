@@ -11,10 +11,6 @@
 
 // ----------------------------------------------------------------------------
 
-#if __has_include("micro-os-plus/project-config.h")
-#include "micro-os-plus/project-config.h"
-#endif // __has_include("micro-os-plus/project-config.h")
-
 #include "micro-os-plus/platform.h"
 #include "micro-os-plus/micro-test-plus.h"
 
