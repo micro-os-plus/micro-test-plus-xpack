@@ -83,6 +83,30 @@
 
 // ============================================================================
 
+/**
+ * @namespace micro_os_plus::micro_test_plus
+ * @brief Primary namespace for the µTest++ testing framework.
+ *
+ * @details
+ * The `micro_os_plus::micro_test_plus` namespace encapsulates all core
+ * components, types, and utilities of the µTest++ testing framework, providing
+ * a dedicated scope for its public API.
+ *
+ * This namespace is structured into several nested namespaces, each
+ * responsible for a specific aspect of the framework, such as mathematical
+ * utilities, type traits, literals, test suite and test case management, test
+ * runners, test reporters, internal details, operators, and utility functions.
+ *
+ * By grouping all definitions within this namespace and its sub-namespaces,
+ * the framework achieves clear code organisation, minimises naming conflicts,
+ * and enhances maintainability. This modular structure supports robust,
+ * scalable, and professional test development for both embedded and general
+ * C++ projects.
+ *
+ * All public API definitions are implemented in the `include/micro-os-plus`
+ * folder, ensuring a clear separation from user code and facilitating
+ * straightforward integration with the wider µOS++ ecosystem.
+ */
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
