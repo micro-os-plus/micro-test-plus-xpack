@@ -55,6 +55,7 @@
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Wredundant-tags"
 #pragma GCC diagnostic ignored "-Wsuggest-final-types"
@@ -83,16 +84,7 @@ namespace micro_os_plus::micro_test_plus
     test_node::test_node (const char* name) : name_{ name }
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
       trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
     }
 
@@ -105,16 +97,7 @@ namespace micro_os_plus::micro_test_plus
     test_node::~test_node ()
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
       trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
     }
 
@@ -135,16 +118,7 @@ namespace micro_os_plus::micro_test_plus
         : test_node{ name }, runner_{ runner }, own_index_{ own_index }
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
       trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
     }
 
@@ -158,16 +132,7 @@ namespace micro_os_plus::micro_test_plus
     runnable_base::~runnable_base ()
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
       trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
       // children_subtests_ holds unique_ptrs; destroyed automatically.
@@ -219,34 +184,16 @@ namespace micro_os_plus::micro_test_plus
 
       // This test executed one more subtest.
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
       trace::printf ("%s subtest '%s' executed one more subtest\n",
                      __PRETTY_FUNCTION__, name ());
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
       totals ().increment_executed_subtests ();
       // Do not accumulate the totals from the child test into the current test
       // totals, each subtest shows only its counters.
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
       trace::printf ("%s suite '%s' totals\n", __PRETTY_FUNCTION__,
                      suite.name ());
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
       // Accumulate the totals from the child test into the suite totals.
@@ -268,16 +215,7 @@ namespace micro_os_plus::micro_test_plus
   subtest::~subtest ()
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -290,16 +228,7 @@ namespace micro_os_plus::micro_test_plus
   subtest::run (void)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     class reporter& reporter = this->reporter ();
@@ -327,16 +256,7 @@ namespace micro_os_plus::micro_test_plus
   suite::~suite ()
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -349,16 +269,7 @@ namespace micro_os_plus::micro_test_plus
   suite::run (void)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     class reporter& reporter = this->reporter ();
@@ -387,16 +298,7 @@ namespace micro_os_plus::micro_test_plus
       : suite{ name, runner, [] (suite&) noexcept {} }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
     own_index (1);
@@ -411,16 +313,7 @@ namespace micro_os_plus::micro_test_plus
   top_suite::~top_suite ()
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -435,16 +328,7 @@ namespace micro_os_plus::micro_test_plus
   static_suite::~static_suite ()
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -459,16 +343,7 @@ namespace micro_os_plus::micro_test_plus
   static_suite::run (void)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     class reporter& reporter = this->reporter ();

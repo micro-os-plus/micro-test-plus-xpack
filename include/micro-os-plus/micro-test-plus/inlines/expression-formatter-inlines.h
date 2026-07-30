@@ -180,18 +180,22 @@ namespace micro_os_plus::micro_test_plus::detail
         buffer_.append ("0x0");
         return *this;
       }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
     char buff[20];
     snprintf (buff, sizeof (buff), "%p", reinterpret_cast<void*> (v));
     buffer_.append (buff);
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
+
     return *this;
   }
 

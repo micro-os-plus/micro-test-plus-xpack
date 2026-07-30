@@ -209,6 +209,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -240,6 +241,7 @@ namespace micro_os_plus::micro_test_plus
             // either call the type get() or return the value.
             return get (lhs) == get (rhs);
           }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
@@ -275,6 +277,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -298,6 +301,7 @@ namespace micro_os_plus::micro_test_plus
           {
             return get (lhs) != get (rhs);
           }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
@@ -330,6 +334,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -339,6 +344,7 @@ namespace micro_os_plus::micro_test_plus
           {
             return get (lhs) > get (rhs);
           }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
@@ -371,6 +377,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -380,6 +387,7 @@ namespace micro_os_plus::micro_test_plus
           {
             return get (lhs) >= get (rhs);
           }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
@@ -412,6 +420,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -421,6 +430,7 @@ namespace micro_os_plus::micro_test_plus
           {
             return get (lhs) < get (rhs);
           }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
@@ -453,6 +463,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -462,6 +473,7 @@ namespace micro_os_plus::micro_test_plus
           {
             return get (lhs) <= get (rhs);
           }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)

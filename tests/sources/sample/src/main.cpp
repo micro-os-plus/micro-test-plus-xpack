@@ -56,17 +56,21 @@ compute_ultimate_answer (void)
   // reliable, plus that the compiler will coalesce strings and test
   // results will not be accurate.
   static char str[10];
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
   strcpy (str, "forty");
   strcat (str, "two");
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
+
   return str;
 }
 

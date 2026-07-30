@@ -42,14 +42,17 @@ compute_abc (void)
   // not done via strcmp(), since the compiler will coalesce strings
   // and use the same address.
   static char str[10];
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
   strcpy (str, "ab");
   strcat (str, "c");
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)

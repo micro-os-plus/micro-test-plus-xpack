@@ -52,6 +52,7 @@
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
@@ -131,18 +132,9 @@ namespace micro_os_plus::micro_test_plus
         output_file_ = fopen (output_file_sv.data (), "w");
         if (output_file_ == nullptr)
           {
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
             fprintf (stderr, "error: Failed to open output file '%.*s'\n",
                      static_cast<int> (output_file_sv.size ()),
                      output_file_sv.data ());
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
             exit (1);
           }
         // The original string is zero terminated, so we can safely use .data()
@@ -172,16 +164,7 @@ namespace micro_os_plus::micro_test_plus
         fflush (output_file_);
         fclose (output_file_);
 
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
         printf ("Test output written to '%s'.\n", output_file_path_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 
         output_file_ = nullptr;
         output_file_path_ = nullptr;
