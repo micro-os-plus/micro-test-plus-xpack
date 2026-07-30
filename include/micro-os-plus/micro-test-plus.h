@@ -84,6 +84,10 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
+
+// ----------------------------------------------------------------------------
+
 // No deps.
 #include "micro-test-plus/math.h"
 
@@ -135,6 +139,10 @@
 
 // Requires timings.h, test.h (detail::test_node, top_suite), reflection.h.
 #include "micro-test-plus/runner.h"
+
+// ----------------------------------------------------------------------------
+
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
 
 // ----------------------------------------------------------------------------
 
