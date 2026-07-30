@@ -4,7 +4,7 @@ testing framework **with TAP output**, purpose-built for embedded systems
 development.
 
 With its clean and expressive C++ API, µTest++ enables developers to write,
-organise, and execute unit tests with minimal overhead. The framework
+organise, and execute unit tests with minimal overhead. The library
 includes advanced features such as **test suites**, **test cases**, and detailed
 reporting, all tailored to meet the specific needs of embedded environments.
 
