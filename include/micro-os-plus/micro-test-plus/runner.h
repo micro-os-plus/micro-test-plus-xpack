@@ -94,7 +94,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-test-plus-runners
+   * @ingroup micro-os-plus-micro-test-plus-runners
    * @brief The test runner for the µTest++ framework.
    *
    * @details
@@ -327,7 +327,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-test-plus-runners
+   * @ingroup micro-os-plus-micro-test-plus-runners
    * @brief A `runner` variant that also manages statically-registered test
    * suites.
    *

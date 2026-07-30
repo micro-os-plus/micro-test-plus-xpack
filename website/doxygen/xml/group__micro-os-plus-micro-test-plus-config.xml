@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-micro-test-plus-config" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-config</compoundname>
+    <title>Configuration</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__micro-os-plus-micro-test-plus-config_1ga3dd1e70998580fe7d7f410e5cd83879b" prot="public" static="no">
+        <name>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</name>
+        <briefdescription>
+<para>Enables the µTest++ Testing Framework. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>...  </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="79" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__micro-os-plus-micro-test-plus-config_1ga27bb1b9066b162d868e0b1c557b91e0d" prot="public" static="no">
+        <name>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</name>
+        <briefdescription>
+<para>Enable trace in constructors and destructors in µTest++. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Display trace messages in constructors and destructors in the µTest++ Testing Framework when MICRO_OS_PLUS_DIAG_TRACE_ENABLED is present.   </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="81" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__micro-os-plus-micro-test-plus-config_1ga039219e6edfdcaa8a5e07badd7f4830d" prot="public" static="no">
+        <name>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</name>
+        <briefdescription>
+<para>Enable trace in class methods in µTest++. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Display trace messages in the µTest++ Testing Framework when MICRO_OS_PLUS_DIAG_TRACE_ENABLED is present.  </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="80" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration macros. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The µTest++ Testing Framework library uses several preprocessor macros to enable it and to configure various options.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

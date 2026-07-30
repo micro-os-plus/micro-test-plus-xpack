@@ -3,7 +3,7 @@
   <compounddef id="group__micro-os-plus" kind="group">
     <compoundname>micro-os-plus</compoundname>
     <title>µOS++ Topics</title>
-    <innergroup refid="group__micro-test-plus">µTest++</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus">µTest++</innergroup>
     <briefdescription>
 <para>Topics related to the µOS++ framework. </para>
     </briefdescription>

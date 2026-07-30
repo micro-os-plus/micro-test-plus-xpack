@@ -10,7 +10,7 @@
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <member refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" kind="function"><name>to_t</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" kind="function"><name>to_t</name></member>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>T</type>
         <definition>T micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::get</definition>
@@ -122,7 +122,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to
 <para>This wrapper inherits from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">type_traits::value</ref>&lt;T&gt;</computeroutput>, ensuring that the encapsulated value is treated as the specified type within the framework. It is particularly useful for enhancing type safety and clarity in test expressions, especially when working with user-defined or less common types.</para>
 <para><bold>Example</bold></para>
 <para><programlisting><codeline><highlight class="normal">MyType<sp/>obj;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" kindref="member">to_t&lt;MyType&gt;</ref>{obj};<sp/></highlight><highlight class="comment">//<sp/>Explicitly<sp/>treat<sp/>obj<sp/>as<sp/>MyType<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" kindref="member">to_t&lt;MyType&gt;</ref>{obj};<sp/></highlight><highlight class="comment">//<sp/>Explicitly<sp/>treat<sp/>obj<sp/>as<sp/>MyType<sp/>for</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">test<sp/>comparison</highlight></codeline>
 </programlisting></para>
 <para>This file is intended solely for internal use within the framework and should not be included directly by user code. </para>
@@ -184,7 +184,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a434b222ff19bdb4970ad56fce11d5176" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::to_t</scope><name>epsilon</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::to_t</scope><name>get</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::to_t</scope><name>operator T</name></member>
-      <member refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::to_t</scope><name>to_t</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::to_t</scope><name>to_t</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::to_t</scope><name>value</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a453e9c54cb194c672ca8739c98d3cc68" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::to_t</scope><name>value</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::to_t</scope><name>value_</name></member>

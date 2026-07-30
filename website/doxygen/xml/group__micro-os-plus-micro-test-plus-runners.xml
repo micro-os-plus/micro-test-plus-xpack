@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
-  <compounddef id="group__micro-test-plus-runners" kind="group">
-    <compoundname>micro-test-plus-runners</compoundname>
+  <compounddef id="group__micro-os-plus-micro-test-plus-runners" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-runners</compoundname>
     <title>Test Runners</title>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" prot="public">micro_os_plus::micro_test_plus::runner</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" prot="public">micro_os_plus::micro_test_plus::static_runner</innerclass>

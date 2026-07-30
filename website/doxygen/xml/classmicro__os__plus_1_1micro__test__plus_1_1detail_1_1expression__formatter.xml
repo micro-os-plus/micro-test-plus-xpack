@@ -924,7 +924,7 @@ This operator overload enhances readability and clarity by formatting the output
           <declname>op</declname>
         </param>
         <briefdescription>
-<para>Formats a nothrow expression as <computeroutput><ref refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput>. </para>
+<para>Formats a nothrow expression as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -948,7 +948,7 @@ This operator overload enhances readability and clarity by formatting the output
 <simplesect kind="return"><para>Reference to this instance.</para>
 </simplesect>
 This operator overload formats output for expressions that do not throw exceptions. It applies colour styling for clarity and ensures a structured and concise representation of exception safety within test reports.</para>
-<para>The output highlights the <computeroutput><ref refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput> qualifier, making it immediately apparent when an expression is guaranteed not to throw, thereby improving the readability and professionalism of the test output. </para>
+<para>The output highlights the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput> qualifier, making it immediately apparent when an expression is guaranteed not to throw, thereby improving the readability and professionalism of the test output. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1038,7 +1038,7 @@ This operator overload enables the <computeroutput><ref refid="classmicro__os__p
           <declname>op</declname>
         </param>
         <briefdescription>
-<para>Formats a typed throws expression as <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref>&lt;TypeName&gt;</computeroutput>. </para>
+<para>Formats a typed throws expression as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref>&lt;TypeName&gt;</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -1070,7 +1070,7 @@ This operator overload enables the <computeroutput><ref refid="classmicro__os__p
 <simplesect kind="return"><para>Reference to this instance.</para>
 </simplesect>
 This operator overload provides structured output for expressions that may throw exceptions. It applies colour styling for clarity and includes the exception type name for precise identification.</para>
-<para>When invoked, the output highlights the <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> qualifier along with the specific exception type, making it immediately apparent which exception is expected. This enhances the readability and professionalism of test reports, and assists in the precise identification and debugging of exception-related test cases. </para>
+<para>When invoked, the output highlights the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> qualifier along with the specific exception type, making it immediately apparent which exception is expected. This enhances the readability and professionalism of test reports, and assists in the precise identification and debugging of exception-related test cases. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1096,7 +1096,7 @@ This operator overload provides structured output for expressions that may throw
           <declname>op</declname>
         </param>
         <briefdescription>
-<para>Formats an untyped throws expression as <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput>. </para>
+<para>Formats an untyped throws expression as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -1120,7 +1120,7 @@ This operator overload provides structured output for expressions that may throw
 <simplesect kind="return"><para>Reference to this instance.</para>
 </simplesect>
 This operator overload formats output for expressions that may throw exceptions. It applies colour styling for clarity and ensures a structured representation of the exception handling mechanism.</para>
-<para>When invoked, the output highlights the <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> qualifier, making it immediately apparent when an expression is expected to throw, thereby improving the readability and professionalism of the test output. </para>
+<para>When invoked, the output highlights the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> qualifier, making it immediately apparent when an expression is expected to throw, thereby improving the readability and professionalism of the test output. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

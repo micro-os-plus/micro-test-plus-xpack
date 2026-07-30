@@ -75,6 +75,15 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(__DOXYGEN__)
+// Present here for the sole use of Doxygen, to document the macros.
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
+#endif // defined(__DOXYGEN__)
+
+// ----------------------------------------------------------------------------
+
 // No deps.
 #include "micro-test-plus/math.h"
 

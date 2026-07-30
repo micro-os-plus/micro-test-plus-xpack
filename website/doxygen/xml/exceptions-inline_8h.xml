@@ -24,9 +24,9 @@
     <innernamespace refid="namespacemicro__os__plus">micro_os_plus</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
     <sectiondef kind="func">
-      <member refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-      <member refid="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-      <member refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
     </sectiondef>
     <briefdescription>
 <para>C++ header file with inline implementations for the µTest++ exceptions comparators. </para>
@@ -86,21 +86,21 @@
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Exception_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80" refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="80" refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func)</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__" kindref="compound">detail::throws_&lt;Callable_T, Exception_T&gt;</ref>{<sp/>func<sp/>};</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="97" refid="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="97" refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func)</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__" kindref="compound">detail::throws_&lt;Callable_T&gt;</ref>{<sp/>func<sp/>};</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="115" refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="115" refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func)</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__" kindref="compound">detail::nothrow_&lt;Callable_T&gt;</ref>{<sp/>func<sp/>};</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/>}</highlight></codeline>

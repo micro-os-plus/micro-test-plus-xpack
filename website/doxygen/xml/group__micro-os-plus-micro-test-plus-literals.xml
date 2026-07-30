@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
-  <compounddef id="group__micro-test-plus-literals" kind="group">
-    <compoundname>micro-test-plus-literals</compoundname>
+  <compounddef id="group__micro-os-plus-micro-test-plus-literals" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-literals</compoundname>
     <title>Literals and Wrappers</title>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1__t" prot="public">micro_os_plus::micro_test_plus::_t</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" prot="public">micro_os_plus::micro_test_plus::to_t</innerclass>
@@ -9,12 +9,12 @@
       <header>Deprecated Type Wrappers</header>
       <description><para>Strongly-typed wrappers for explicit type conversion.</para>
 <para>These type aliases provide wrappers for converting values and expressions to specific types for use with µTest++ comparators and test expressions.</para>
-<para>The <computeroutput><ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>, etc. forms are now deprecated as of version 3.2.0. Please use the preferred <computeroutput>to_*</computeroutput> type wrappers for new code, as they offer improved clarity and consistency.</para>
+<para>The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>, etc. forms are now deprecated as of version 3.2.0. Please use the preferred <computeroutput>to_*</computeroutput> type wrappers for new code, as they offer improved clarity and consistency.</para>
 <para><simplesect kind="par"><title>Deprecated</title><para>Use the corresponding <computeroutput>to_*</computeroutput> type wrappers instead (since 3.2.0). </para>
 </simplesect>
 </para>
 </description>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" prot="public" static="no">
         <type>type_traits::value&lt; bool &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_b = type_traits::value&lt;bool&gt;</definition>
         <argsstring></argsstring>
@@ -24,14 +24,14 @@
 <para>Strongly-typed wrapper for <computeroutput>bool</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga6bdfe5c187140ee99d0bcabd5bb65156" kindref="member">to_b</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6bdfe5c187140ee99d0bcabd5bb65156" kindref="member">to_b</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="478" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="478" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" prot="public" static="no">
         <type>type_traits::value&lt; char &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_c = type_traits::value&lt;char&gt;</definition>
         <argsstring></argsstring>
@@ -41,14 +41,14 @@
 <para>Strongly-typed wrapper for <computeroutput>char</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga5d14217f53925b323f4236298e3dcc90" kindref="member">to_c</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d14217f53925b323f4236298e3dcc90" kindref="member">to_c</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="485" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="485" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" prot="public" static="no">
         <type>type_traits::value&lt; signed char &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_sc = type_traits::value&lt;signed char&gt;</definition>
         <argsstring></argsstring>
@@ -58,14 +58,14 @@
 <para>Strongly-typed wrapper for <computeroutput>signed char</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000003"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gadb22be8fe019b5cd1ad56cfadea5f4ec" kindref="member">to_sc</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000003"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gadb22be8fe019b5cd1ad56cfadea5f4ec" kindref="member">to_sc</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="492" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="492" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" prot="public" static="no">
         <type>type_traits::value&lt; short &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_s = type_traits::value&lt;short&gt;</definition>
         <argsstring></argsstring>
@@ -75,14 +75,14 @@
 <para>Strongly-typed wrapper for <computeroutput>short</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000004"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga1b39571aeebcb8091bd410a9b247a571" kindref="member">to_s</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000004"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1b39571aeebcb8091bd410a9b247a571" kindref="member">to_s</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="499" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="499" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" prot="public" static="no">
         <type>type_traits::value&lt; int &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_i = type_traits::value&lt;int&gt;</definition>
         <argsstring></argsstring>
@@ -92,14 +92,14 @@
 <para>Strongly-typed wrapper for <computeroutput>int</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000005"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000005"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="506" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="506" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" prot="public" static="no">
         <type>type_traits::value&lt; long &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_l = type_traits::value&lt;long&gt;</definition>
         <argsstring></argsstring>
@@ -109,14 +109,14 @@
 <para>Strongly-typed wrapper for <computeroutput>long</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000006"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gaaf580ebebfba7cbe84a89db8574a6aa7" kindref="member">to_l</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000006"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaaf580ebebfba7cbe84a89db8574a6aa7" kindref="member">to_l</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="513" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="513" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" prot="public" static="no">
         <type>type_traits::value&lt; long long &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_ll = type_traits::value&lt;long long&gt;</definition>
         <argsstring></argsstring>
@@ -126,14 +126,14 @@
 <para>Strongly-typed wrapper for <computeroutput>long long</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000007"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gab9d11644d3b22e2a9932e64853b5a59d" kindref="member">to_ll</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000007"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gab9d11644d3b22e2a9932e64853b5a59d" kindref="member">to_ll</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="520" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="520" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" prot="public" static="no">
         <type>type_traits::value&lt; unsigned &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_u = type_traits::value&lt;unsigned&gt;</definition>
         <argsstring></argsstring>
@@ -143,14 +143,14 @@
 <para>Strongly-typed wrapper for <computeroutput>unsigned</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000008"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gac8586b75498097cb06b404399c307960" kindref="member">to_u</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000008"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gac8586b75498097cb06b404399c307960" kindref="member">to_u</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="527" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="527" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" prot="public" static="no">
         <type>type_traits::value&lt; unsigned char &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_uc = type_traits::value&lt;unsigned char&gt;</definition>
         <argsstring></argsstring>
@@ -160,14 +160,14 @@
 <para>Strongly-typed wrapper for <computeroutput>unsigned char</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000009"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga9b60956f6c874e5597cdea6c0323fff1" kindref="member">to_uc</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000009"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9b60956f6c874e5597cdea6c0323fff1" kindref="member">to_uc</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="534" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="534" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" prot="public" static="no">
         <type>type_traits::value&lt; unsigned short &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_us = type_traits::value&lt;unsigned short&gt;</definition>
         <argsstring></argsstring>
@@ -177,14 +177,14 @@
 <para>Strongly-typed wrapper for <computeroutput>unsigned short</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000010"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" kindref="member">to_us</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000010"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" kindref="member">to_us</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="541" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="541" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" prot="public" static="no">
         <type>type_traits::value&lt; unsigned long &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_ul = type_traits::value&lt;unsigned long&gt;</definition>
         <argsstring></argsstring>
@@ -194,14 +194,14 @@
 <para>Strongly-typed wrapper for <computeroutput>unsigned long</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000011"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga9f6f56950ba8bce6cc49037af83e443b" kindref="member">to_ul</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000011"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9f6f56950ba8bce6cc49037af83e443b" kindref="member">to_ul</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="548" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="548" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" prot="public" static="no">
         <type>type_traits::value&lt; unsigned long long &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_ull = type_traits::value&lt;unsigned long long&gt;</definition>
         <argsstring></argsstring>
@@ -211,14 +211,14 @@
 <para>Strongly-typed wrapper for <computeroutput>unsigned long long</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000012"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga595258f3c1b293284f79a88b2872d43d" kindref="member">to_ull</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000012"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga595258f3c1b293284f79a88b2872d43d" kindref="member">to_ull</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="555" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="555" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" prot="public" static="no">
         <type>type_traits::value&lt; std::int8_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_i8 = type_traits::value&lt;std::int8_t&gt;</definition>
         <argsstring></argsstring>
@@ -228,14 +228,14 @@
 <para>Strongly-typed wrapper for <computeroutput>std::int8_t</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gaa61c255757e915cb05132602baea088b" kindref="member">to_i8</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaa61c255757e915cb05132602baea088b" kindref="member">to_i8</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="562" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="562" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" prot="public" static="no">
         <type>type_traits::value&lt; std::int16_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_i16 = type_traits::value&lt;std::int16_t&gt;</definition>
         <argsstring></argsstring>
@@ -245,14 +245,14 @@
 <para>Strongly-typed wrapper for <computeroutput>std::int16_t</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gaf22a7774a4b05de9779d9084ed41a02a" kindref="member">to_i16</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf22a7774a4b05de9779d9084ed41a02a" kindref="member">to_i16</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="569" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="569" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" prot="public" static="no">
         <type>type_traits::value&lt; std::int32_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_i32 = type_traits::value&lt;std::int32_t&gt;</definition>
         <argsstring></argsstring>
@@ -262,14 +262,14 @@
 <para>Strongly-typed wrapper for <computeroutput>std::int32_t</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga9ca96b6c6d79560f8186c6206ac4f613" kindref="member">to_i32</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca96b6c6d79560f8186c6206ac4f613" kindref="member">to_i32</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="576" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="576" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" prot="public" static="no">
         <type>type_traits::value&lt; std::int64_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_i64 = type_traits::value&lt;std::int64_t&gt;</definition>
         <argsstring></argsstring>
@@ -279,14 +279,14 @@
 <para>Strongly-typed wrapper for <computeroutput>std::int64_t</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000016"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga240591501696d181e105529c1f52b56c" kindref="member">to_i64</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000016"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga240591501696d181e105529c1f52b56c" kindref="member">to_i64</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="583" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="583" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" prot="public" static="no">
         <type>type_traits::value&lt; std::uint8_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_u8 = type_traits::value&lt;std::uint8_t&gt;</definition>
         <argsstring></argsstring>
@@ -296,14 +296,14 @@
 <para>Strongly-typed wrapper for <computeroutput>std::uint8_t</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga8b683d809d600f5c5210bb16546a832e" kindref="member">to_u8</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8b683d809d600f5c5210bb16546a832e" kindref="member">to_u8</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="590" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="590" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" prot="public" static="no">
         <type>type_traits::value&lt; std::uint16_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_u16 = type_traits::value&lt;std::uint16_t&gt;</definition>
         <argsstring></argsstring>
@@ -313,14 +313,14 @@
 <para>Strongly-typed wrapper for <computeroutput>std::uint16_t</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gaa60006a01aa94a5fd755aebddd8ceec3" kindref="member">to_u16</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaa60006a01aa94a5fd755aebddd8ceec3" kindref="member">to_u16</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="597" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="597" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" prot="public" static="no">
         <type>type_traits::value&lt; std::uint32_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_u32 = type_traits::value&lt;std::uint32_t&gt;</definition>
         <argsstring></argsstring>
@@ -330,14 +330,14 @@
 <para>Strongly-typed wrapper for <computeroutput>std::uint32_t</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000019"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga3bf9f9c946f16b5e02f9f2c45739df42" kindref="member">to_u32</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000019"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3bf9f9c946f16b5e02f9f2c45739df42" kindref="member">to_u32</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="604" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="604" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" prot="public" static="no">
         <type>type_traits::value&lt; std::uint64_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_u64 = type_traits::value&lt;std::uint64_t&gt;</definition>
         <argsstring></argsstring>
@@ -347,14 +347,14 @@
 <para>Strongly-typed wrapper for <computeroutput>std::uint64_t</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga5fba6fbb12941113aeff430609839ba4" kindref="member">to_u64</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5fba6fbb12941113aeff430609839ba4" kindref="member">to_u64</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="611" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="611" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" prot="public" static="no">
         <type>type_traits::value&lt; float &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_f = type_traits::value&lt;float&gt;</definition>
         <argsstring></argsstring>
@@ -364,14 +364,14 @@
 <para>Strongly-typed wrapper for <computeroutput>float</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000021"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" kindref="member">to_f</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000021"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" kindref="member">to_f</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="617" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="617" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga6ab8b464d71f15f55bd047dbfca50899" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga6ab8b464d71f15f55bd047dbfca50899" prot="public" static="no">
         <type>type_traits::value&lt; double &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_d = type_traits::value&lt;double&gt;</definition>
         <argsstring></argsstring>
@@ -381,14 +381,14 @@
 <para>Strongly-typed wrapper for <computeroutput>double</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000022"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" kindref="member">to_d</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000022"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" kindref="member">to_d</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="623" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="623" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga79572e6e73076a155927ff0c3888ce76" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga79572e6e73076a155927ff0c3888ce76" prot="public" static="no">
         <type>type_traits::value&lt; long double &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::_ld = type_traits::value&lt;long double&gt;</definition>
         <argsstring></argsstring>
@@ -398,7 +398,7 @@
 <para>Strongly-typed wrapper for <computeroutput>long double</computeroutput> values. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000023"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga33a096960b5dddee322e36c689ecbf47" kindref="member">to_ld</ref></computeroutput> (since 3.2.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000023"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga33a096960b5dddee322e36c689ecbf47" kindref="member">to_ld</ref></computeroutput> (since 3.2.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -410,18 +410,18 @@
       <header>Type Wrappers</header>
       <description><para>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</para>
 <para>These type aliases provide a modern, type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">type_traits::value</ref>&lt;T&gt;</computeroutput>, ensuring that the value is treated as the specified type within the framework.</para>
-<para>The <computeroutput>to_*</computeroutput> forms are the preferred approach since version 3.2.0, superseding the older <computeroutput><ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>, etc. aliases, which are now deprecated.</para>
+<para>The <computeroutput>to_*</computeroutput> forms are the preferred approach since version 3.2.0, superseding the older <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>, etc. aliases, which are now deprecated.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>42;</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Explicitly<sp/>treat<sp/>x<sp/>as<sp/>an<sp/>int<sp/>for<sp/>test<sp/>comparison.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref>{x};</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-os-plus-micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref>{x};</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
 </para>
 </description>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga6bdfe5c187140ee99d0bcabd5bb65156" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga6bdfe5c187140ee99d0bcabd5bb65156" prot="public" static="no">
         <type>type_traits::value&lt; bool &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_b = type_traits::value&lt;bool&gt;</definition>
         <argsstring></argsstring>
@@ -439,7 +439,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="694" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="694" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga5d14217f53925b323f4236298e3dcc90" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga5d14217f53925b323f4236298e3dcc90" prot="public" static="no">
         <type>type_traits::value&lt; char &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_c = type_traits::value&lt;char&gt;</definition>
         <argsstring></argsstring>
@@ -457,7 +457,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="701" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="701" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gadb22be8fe019b5cd1ad56cfadea5f4ec" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gadb22be8fe019b5cd1ad56cfadea5f4ec" prot="public" static="no">
         <type>type_traits::value&lt; signed char &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_sc = type_traits::value&lt;signed char&gt;</definition>
         <argsstring></argsstring>
@@ -475,7 +475,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="708" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="708" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga1b39571aeebcb8091bd410a9b247a571" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga1b39571aeebcb8091bd410a9b247a571" prot="public" static="no">
         <type>type_traits::value&lt; short &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_s = type_traits::value&lt;short&gt;</definition>
         <argsstring></argsstring>
@@ -493,7 +493,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="715" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="715" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" prot="public" static="no">
         <type>type_traits::value&lt; int &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_i = type_traits::value&lt;int&gt;</definition>
         <argsstring></argsstring>
@@ -511,7 +511,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="722" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="722" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gaaf580ebebfba7cbe84a89db8574a6aa7" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaaf580ebebfba7cbe84a89db8574a6aa7" prot="public" static="no">
         <type>type_traits::value&lt; long &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_l = type_traits::value&lt;long&gt;</definition>
         <argsstring></argsstring>
@@ -529,7 +529,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="729" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="729" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gab9d11644d3b22e2a9932e64853b5a59d" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gab9d11644d3b22e2a9932e64853b5a59d" prot="public" static="no">
         <type>type_traits::value&lt; long long &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_ll = type_traits::value&lt;long long&gt;</definition>
         <argsstring></argsstring>
@@ -547,7 +547,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="736" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="736" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gac8586b75498097cb06b404399c307960" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gac8586b75498097cb06b404399c307960" prot="public" static="no">
         <type>type_traits::value&lt; unsigned &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_u = type_traits::value&lt;unsigned&gt;</definition>
         <argsstring></argsstring>
@@ -565,7 +565,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="743" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="743" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga9b60956f6c874e5597cdea6c0323fff1" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga9b60956f6c874e5597cdea6c0323fff1" prot="public" static="no">
         <type>type_traits::value&lt; unsigned char &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_uc = type_traits::value&lt;unsigned char&gt;</definition>
         <argsstring></argsstring>
@@ -583,7 +583,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="750" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="750" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" prot="public" static="no">
         <type>type_traits::value&lt; unsigned short &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_us = type_traits::value&lt;unsigned short&gt;</definition>
         <argsstring></argsstring>
@@ -601,7 +601,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="757" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="757" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga9f6f56950ba8bce6cc49037af83e443b" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga9f6f56950ba8bce6cc49037af83e443b" prot="public" static="no">
         <type>type_traits::value&lt; unsigned long &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_ul = type_traits::value&lt;unsigned long&gt;</definition>
         <argsstring></argsstring>
@@ -619,7 +619,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="764" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="764" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga595258f3c1b293284f79a88b2872d43d" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga595258f3c1b293284f79a88b2872d43d" prot="public" static="no">
         <type>type_traits::value&lt; unsigned long long &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_ull = type_traits::value&lt;unsigned long long&gt;</definition>
         <argsstring></argsstring>
@@ -637,7 +637,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="771" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="771" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gaa61c255757e915cb05132602baea088b" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaa61c255757e915cb05132602baea088b" prot="public" static="no">
         <type>type_traits::value&lt; std::int8_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_i8 = type_traits::value&lt;std::int8_t&gt;</definition>
         <argsstring></argsstring>
@@ -655,7 +655,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="778" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="778" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gaf22a7774a4b05de9779d9084ed41a02a" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaf22a7774a4b05de9779d9084ed41a02a" prot="public" static="no">
         <type>type_traits::value&lt; std::int16_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_i16 = type_traits::value&lt;std::int16_t&gt;</definition>
         <argsstring></argsstring>
@@ -673,7 +673,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="785" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="785" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga9ca96b6c6d79560f8186c6206ac4f613" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga9ca96b6c6d79560f8186c6206ac4f613" prot="public" static="no">
         <type>type_traits::value&lt; std::int32_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_i32 = type_traits::value&lt;std::int32_t&gt;</definition>
         <argsstring></argsstring>
@@ -691,7 +691,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="792" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="792" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga240591501696d181e105529c1f52b56c" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga240591501696d181e105529c1f52b56c" prot="public" static="no">
         <type>type_traits::value&lt; std::int64_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_i64 = type_traits::value&lt;std::int64_t&gt;</definition>
         <argsstring></argsstring>
@@ -709,7 +709,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="799" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="799" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga8b683d809d600f5c5210bb16546a832e" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga8b683d809d600f5c5210bb16546a832e" prot="public" static="no">
         <type>type_traits::value&lt; std::uint8_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_u8 = type_traits::value&lt;std::uint8_t&gt;</definition>
         <argsstring></argsstring>
@@ -727,7 +727,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="806" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="806" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1gaa60006a01aa94a5fd755aebddd8ceec3" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaa60006a01aa94a5fd755aebddd8ceec3" prot="public" static="no">
         <type>type_traits::value&lt; std::uint16_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_u16 = type_traits::value&lt;std::uint16_t&gt;</definition>
         <argsstring></argsstring>
@@ -745,7 +745,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="813" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="813" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga3bf9f9c946f16b5e02f9f2c45739df42" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga3bf9f9c946f16b5e02f9f2c45739df42" prot="public" static="no">
         <type>type_traits::value&lt; std::uint32_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_u32 = type_traits::value&lt;std::uint32_t&gt;</definition>
         <argsstring></argsstring>
@@ -763,7 +763,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="820" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="820" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga5fba6fbb12941113aeff430609839ba4" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga5fba6fbb12941113aeff430609839ba4" prot="public" static="no">
         <type>type_traits::value&lt; std::uint64_t &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_u64 = type_traits::value&lt;std::uint64_t&gt;</definition>
         <argsstring></argsstring>
@@ -781,7 +781,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="827" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="827" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" prot="public" static="no">
         <type>type_traits::value&lt; float &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_f = type_traits::value&lt;float&gt;</definition>
         <argsstring></argsstring>
@@ -799,7 +799,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="834" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="834" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" prot="public" static="no">
         <type>type_traits::value&lt; double &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_d = type_traits::value&lt;double&gt;</definition>
         <argsstring></argsstring>
@@ -817,7 +817,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="841" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="841" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__micro-test-plus-literals_1ga33a096960b5dddee322e36c689ecbf47" prot="public" static="no">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga33a096960b5dddee322e36c689ecbf47" prot="public" static="no">
         <type>type_traits::value&lt; long double &gt;</type>
         <definition>using micro_os_plus::micro_test_plus::to_ld = type_traits::value&lt;long double&gt;</definition>
         <argsstring></argsstring>
@@ -837,7 +837,7 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type>constexpr</type>
         <definition>micro_os_plus::micro_test_plus::_t&lt; T &gt;::_t</definition>
         <argsstring>(const T &amp;t)</argsstring>
@@ -867,7 +867,7 @@ Constructs an <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="656" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="594" bodyend="596"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="785" endline="788">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type>constexpr</type>
         <definition>micro_os_plus::micro_test_plus::to_t&lt; T &gt;::to_t</definition>
         <argsstring>(const T &amp;t)</argsstring>
@@ -897,7 +897,7 @@ Constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="892" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="604" bodyend="606"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="785" endline="788">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_b</definition>
         <argsstring>(const char *name, decltype(sizeof(&quot;&quot;)) size)</argsstring>
@@ -916,7 +916,7 @@ Constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed boolean constants from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing string literals to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">_b</ref></computeroutput> (for example, <computeroutput>"feature_enabled"<ref refid="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">_b</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing string literals to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">_b</ref></computeroutput> (for example, <computeroutput>"feature_enabled"<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">_b</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para>The returned type is a lightweight wrapper that behaves as a <computeroutput>bool</computeroutput> and supports equality comparison with both other named instances and boolean values. This operator is intended to facilitate expressive and type-safe test conditions.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -958,7 +958,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="516" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="516" bodyend="581" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="437" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -976,7 +976,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>char</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" kindref="member">_c</ref></computeroutput> (for example, <computeroutput>&apos;A&apos;<ref refid="group__micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" kindref="member">_c</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" kindref="member">_c</ref></computeroutput> (for example, <computeroutput>&apos;A&apos;<ref refid="group__micro-os-plus-micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" kindref="member">_c</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -995,7 +995,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="130" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="130" bodyend="133" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="159" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1013,7 +1013,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed floating-point constants of type <computeroutput>double</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga6ab8b464d71f15f55bd047dbfca50899" kindref="member">_d</ref></computeroutput> (for example, <computeroutput>2.718_d</computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ab8b464d71f15f55bd047dbfca50899" kindref="member">_d</ref></computeroutput> (for example, <computeroutput>2.718_d</computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1034,7 +1034,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" compoundref="math-inlines_8h" startline="238" endline="256">micro_os_plus::micro_test_plus::math::den_size</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1052,7 +1052,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed floating-point constants of type <computeroutput>float</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kindref="member">_f</ref></computeroutput> (for example, <computeroutput>3.14_f</computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kindref="member">_f</ref></computeroutput> (for example, <computeroutput>3.14_f</computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1073,7 +1073,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" compoundref="math-inlines_8h" startline="238" endline="256">micro_os_plus::micro_test_plus::math::den_size</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1091,7 +1091,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>int</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput> (for example, <computeroutput>42<ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput> (for example, <computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1110,7 +1110,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="94" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="94" bodyend="97" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="131" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1128,7 +1128,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>int16_t</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" kindref="member">_i16</ref></computeroutput> (for example, <computeroutput>32767<ref refid="group__micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" kindref="member">_i16</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" kindref="member">_i16</ref></computeroutput> (for example, <computeroutput>32767<ref refid="group__micro-os-plus-micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" kindref="member">_i16</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1147,7 +1147,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="316" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="316" bodyend="320" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="299" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1165,7 +1165,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>int32_t</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" kindref="member">_i32</ref></computeroutput> (for example, <computeroutput>2147483647<ref refid="group__micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" kindref="member">_i32</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" kindref="member">_i32</ref></computeroutput> (for example, <computeroutput>2147483647<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" kindref="member">_i32</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1184,7 +1184,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="335" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="335" bodyend="339" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="313" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1202,7 +1202,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>int64_t</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" kindref="member">_i64</ref></computeroutput> (for example, <computeroutput>9223372036854775807<ref refid="group__micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" kindref="member">_i64</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" kindref="member">_i64</ref></computeroutput> (for example, <computeroutput>9223372036854775807<ref refid="group__micro-os-plus-micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" kindref="member">_i64</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1221,7 +1221,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="354" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="354" bodyend="358" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="327" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1239,7 +1239,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>int8_t</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" kindref="member">_i8</ref></computeroutput> (for example, <computeroutput>127<ref refid="group__micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" kindref="member">_i8</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" kindref="member">_i8</ref></computeroutput> (for example, <computeroutput>127<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" kindref="member">_i8</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1258,7 +1258,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="297" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="297" bodyend="301" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="285" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1276,7 +1276,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>long</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" kindref="member">_l</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" kindref="member">_l</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" kindref="member">_l</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" kindref="member">_l</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1295,7 +1295,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="167" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="167" bodyend="170" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="187" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1313,7 +1313,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed floating-point constants of type <computeroutput>long double</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga79572e6e73076a155927ff0c3888ce76" kindref="member">_ld</ref></computeroutput> (for example, <computeroutput>1.618_ld</computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga79572e6e73076a155927ff0c3888ce76" kindref="member">_ld</ref></computeroutput> (for example, <computeroutput>1.618_ld</computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1334,7 +1334,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" compoundref="math-inlines_8h" startline="238" endline="256">micro_os_plus::micro_test_plus::math::den_size</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1352,7 +1352,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>long long</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" kindref="member">_ll</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" kindref="member">_ll</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" kindref="member">_ll</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" kindref="member">_ll</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1371,7 +1371,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="185" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="185" bodyend="188" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="201" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1389,7 +1389,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>short</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" kindref="member">_s</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" kindref="member">_s</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" kindref="member">_s</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" kindref="member">_s</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1408,7 +1408,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="112" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="112" bodyend="115" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="145" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1426,7 +1426,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>signed char</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" kindref="member">_sc</ref></computeroutput> (for example, <computeroutput>65<ref refid="group__micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" kindref="member">_sc</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" kindref="member">_sc</ref></computeroutput> (for example, <computeroutput>65<ref refid="group__micro-os-plus-micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" kindref="member">_sc</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1445,7 +1445,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="148" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="148" bodyend="152" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="173" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1463,7 +1463,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>unsigned</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" kindref="member">_u</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" kindref="member">_u</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" kindref="member">_u</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" kindref="member">_u</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1482,7 +1482,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="203" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="203" bodyend="206" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="215" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1500,7 +1500,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>uint16_t</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" kindref="member">_u16</ref></computeroutput> (for example, <computeroutput>65535<ref refid="group__micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" kindref="member">_u16</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" kindref="member">_u16</ref></computeroutput> (for example, <computeroutput>65535<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" kindref="member">_u16</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1519,7 +1519,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="392" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="392" bodyend="396" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="355" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1537,7 +1537,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>uint32_t</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" kindref="member">_u32</ref></computeroutput> (for example, <computeroutput>4294967295<ref refid="group__micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" kindref="member">_u32</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" kindref="member">_u32</ref></computeroutput> (for example, <computeroutput>4294967295<ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" kindref="member">_u32</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1556,7 +1556,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="411" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="411" bodyend="415" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="369" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1574,7 +1574,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>uint64_t</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" kindref="member">_u64</ref></computeroutput> (for example, <computeroutput>18446744073709551615<ref refid="group__micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" kindref="member">_u64</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" kindref="member">_u64</ref></computeroutput> (for example, <computeroutput>18446744073709551615<ref refid="group__micro-os-plus-micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" kindref="member">_u64</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1593,7 +1593,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="430" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="430" bodyend="434" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="383" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1611,7 +1611,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>uint8_t</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput> (for example, <computeroutput>255<ref refid="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput> (for example, <computeroutput>255<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1630,7 +1630,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="373" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="373" bodyend="377" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="341" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1648,7 +1648,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>unsigned char</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" kindref="member">_uc</ref></computeroutput> (for example, <computeroutput>65<ref refid="group__micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" kindref="member">_uc</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" kindref="member">_uc</ref></computeroutput> (for example, <computeroutput>65<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" kindref="member">_uc</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1667,7 +1667,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="221" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="221" bodyend="225" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="229" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1685,7 +1685,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>unsigned long</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" kindref="member">_ul</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" kindref="member">_ul</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" kindref="member">_ul</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" kindref="member">_ul</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1704,7 +1704,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="259" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="259" bodyend="263" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="257" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1722,7 +1722,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>unsigned long long</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" kindref="member">_ull</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" kindref="member">_ull</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" kindref="member">_ull</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" kindref="member">_ull</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1741,7 +1741,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="278" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="278" bodyend="282" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="271" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>char...</type>
@@ -1759,7 +1759,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed integral constants of type <computeroutput>unsigned short</computeroutput> from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" kindref="member">_us</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" kindref="member">_us</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing constants to be suffixed with <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" kindref="member">_us</ref></computeroutput> (for example, <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" kindref="member">_us</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Cs</parametername>
@@ -1783,7 +1783,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
 <para>Literal operators and wrappers for typed operands. </para>
     </briefdescription>
     <detaileddescription>
-<para>Within test expressions, literals such as <computeroutput>1<ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput> and <computeroutput>42<ref refid="group__micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kindref="member">_f</ref></computeroutput> create strongly typed operands, whilst wrappers like <computeroutput>mt::to_i{expression}</computeroutput> convert dynamic values. These mechanisms enable clear, type-safe comparisons, improving readability and correctness in test cases.</para>
+<para>Within test expressions, literals such as <computeroutput>1<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput> and <computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kindref="member">_f</ref></computeroutput> create strongly typed operands, whilst wrappers like <computeroutput>mt::to_i{expression}</computeroutput> convert dynamic values. These mechanisms enable clear, type-safe comparisons, improving readability and correctness in test cases.</para>
 <para>Literal operators, available in the dedicated <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace, allow constants to be expressed with explicit types, such as integers and floating-point values. For dynamic values, wrappers convert operands into recognised comparison types at run-time.</para>
 <para>This approach ensures that both compile-time constants and run-time values can be compared accurately and expressively, supporting robust, maintainable test code.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
@@ -1792,8 +1792,8 @@ Returns the value of the boolean operand, allowing the named literal to be compa
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">micro_test_plus::operators</ref>;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">micro_test_plus::literals</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::to_i<sp/>{answer}<sp/>==<sp/>42<ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref>);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::to_f<sp/>{expression}<sp/>==<sp/>42<ref refid="group__micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kindref="member">_f</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::to_i<sp/>{answer}<sp/>==<sp/>42<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::to_f<sp/>{expression}<sp/>==<sp/>42<ref refid="group__micro-os-plus-micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kindref="member">_f</ref>);</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting>  </para>
     </detaileddescription>

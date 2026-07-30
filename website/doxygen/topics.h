@@ -29,15 +29,15 @@
   @include{doc} topics/micro-test-plus.dox
 @}
 
-@addtogroup micro-test-plus
+@addtogroup micro-os-plus-micro-test-plus
 @{
   @include{doc} topics/cpp-api.dox
   @include{doc} topics/c-api.dox
-
+  @include{doc} topics/config.dox
   @include{doc} topics/cli.dox
 @}
 
-@addtogroup micro-test-plus-cpp-api
+@addtogroup micro-os-plus-micro-test-plus-cpp-api
 @{
     @include{doc} topics/cpp-api/inits.dox
     @include{doc} topics/cpp-api/test-case.dox
@@ -52,6 +52,13 @@
     @include{doc} topics/cpp-api/literals.dox
     @include{doc} topics/cpp-api/utility-functions.dox
     @include{doc} topics/cpp-api/test-suites.dox
+@}
+
+@addtogroup micro-os-plus-micro-test-plus-config
+@{
+  @include{doc} macros/micro-os-plus-micro-test-plus-enabled.dox
+  @include{doc} macros/micro-os-plus-micro-test-plus-trace-enabled.dox
+  @include{doc} macros/micro-os-plus-micro-test-plus-trace-constructors-enabled.dox
 @}
 
 */

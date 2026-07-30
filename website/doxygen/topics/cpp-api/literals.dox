@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-literals Literals and Wrappers
+@defgroup micro-os-plus-micro-test-plus-literals Literals and Wrappers
 @brief Literal operators and wrappers for typed operands.
 
 @details

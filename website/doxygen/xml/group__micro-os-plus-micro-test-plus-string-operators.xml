@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
-  <compounddef id="group__micro-test-plus-string-operators" kind="group">
-    <compoundname>micro-test-plus-string-operators</compoundname>
+  <compounddef id="group__micro-os-plus-micro-test-plus-string-operators" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-string-operators</compoundname>
     <title>String Operators</title>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-test-plus-string-operators_1ga179e971d5e37795c036ad66aa35f1654" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-string-operators_1ga179e971d5e37795c036ad66aa35f1654" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator!=</definition>
         <argsstring>(std::string_view lhs, std::string_view rhs)</argsstring>
@@ -48,7 +48,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="88" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="88" bodyend="91" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="140" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-string-operators_1gaabe34a842bf38ea2913a4164d2b0a9cb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-string-operators_1gaabe34a842bf38ea2913a4164d2b0a9cb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator==</definition>
         <argsstring>(std::string_view lhs, std::string_view rhs)</argsstring>

@@ -84,7 +84,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Generic equality comparator for non-pointer types.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
   eq (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Pointer equality comparator for any pointer types.
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
@@ -114,7 +114,7 @@ namespace micro_os_plus::micro_test_plus
   eq (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Generic non-equality comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -129,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
   ne (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Pointer non-equality comparator.
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
@@ -145,7 +145,7 @@ namespace micro_os_plus::micro_test_plus
   ne (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Generic greater than comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -160,7 +160,7 @@ namespace micro_os_plus::micro_test_plus
   gt (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Pointer greater than comparator.
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
@@ -175,7 +175,7 @@ namespace micro_os_plus::micro_test_plus
   gt (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Generic greater than or equal comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -191,7 +191,7 @@ namespace micro_os_plus::micro_test_plus
   ge (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Pointer greater than or equal comparator.
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
@@ -207,7 +207,7 @@ namespace micro_os_plus::micro_test_plus
   ge (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Generic less than comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -223,7 +223,7 @@ namespace micro_os_plus::micro_test_plus
   lt (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Pointer less than comparator.
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
@@ -239,7 +239,7 @@ namespace micro_os_plus::micro_test_plus
   lt (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Generic less than or equal comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -255,7 +255,7 @@ namespace micro_os_plus::micro_test_plus
   le (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
-   * @ingroup micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Pointer less than or equal comparator.
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
@@ -271,7 +271,7 @@ namespace micro_os_plus::micro_test_plus
   le (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
-   * @ingroup micro-test-plus-logical-functions
+   * @ingroup micro-os-plus-micro-test-plus-logical-functions
    * @brief Generic logical **not** operation.
    *
    * @tparam Expr_T Type of the operand.
@@ -284,7 +284,7 @@ namespace micro_os_plus::micro_test_plus
   _not (const Expr_T& expr);
 
   /**
-   * @ingroup micro-test-plus-logical-functions
+   * @ingroup micro-os-plus-micro-test-plus-logical-functions
    * @brief Generic logical **and** operation.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -300,7 +300,7 @@ namespace micro_os_plus::micro_test_plus
   _and (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
-   * @ingroup micro-test-plus-logical-functions
+   * @ingroup micro-os-plus-micro-test-plus-logical-functions
    * @brief Generic logical **or** operation.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -316,7 +316,7 @@ namespace micro_os_plus::micro_test_plus
   _or (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
-   * @ingroup micro-test-plus-utility-functions
+   * @ingroup micro-os-plus-micro-test-plus-utility-functions
    * @brief Generic mutator to remove const qualification from any type.
    *
    * @tparam T The type of the input object.

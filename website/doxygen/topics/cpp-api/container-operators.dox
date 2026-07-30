@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-container-operators Container Operators
+@defgroup micro-os-plus-micro-test-plus-container-operators Container Operators
 @brief Overloaded operators for container comparison.
 
 @details

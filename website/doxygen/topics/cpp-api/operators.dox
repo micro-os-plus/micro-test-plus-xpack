@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-operators Operators
+@defgroup micro-os-plus-micro-test-plus-operators Operators
 @brief Overloaded operators for expressive test comparisons.
 
 @details

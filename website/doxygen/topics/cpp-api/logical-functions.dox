@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-logical-functions Logical Functions
+@defgroup micro-os-plus-micro-test-plus-logical-functions Logical Functions
 @brief Functions used to compose logical expressions in tests.
 
 @details

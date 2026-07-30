@@ -117,7 +117,7 @@ namespace micro_os_plus::micro_test_plus
   namespace literals
   {
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `int`.
      *
      * @tparam Cs The character pack representing the digits of the integer
@@ -131,7 +131,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_i ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `short`.
      *
      * @tparam Cs The character pack representing the digits of the integer
@@ -145,7 +145,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_s ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `char`.
      *
      * @tparam Cs The character pack representing the digits of the character
@@ -159,7 +159,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_c ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `signed char`.
      *
      * @tparam Cs The character pack representing the digits of the signed
@@ -173,7 +173,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_sc ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `long`.
      *
      * @tparam Cs The character pack representing the digits of the long
@@ -187,7 +187,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_l ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `long long`.
      *
      * @tparam Cs The character pack representing the digits of the long long
@@ -201,7 +201,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_ll ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `unsigned`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
@@ -215,7 +215,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_u ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `unsigned char`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
@@ -229,7 +229,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_uc ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `unsigned short`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
@@ -243,7 +243,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_us ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `unsigned long`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
@@ -257,7 +257,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_ul ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `unsigned long long`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
@@ -271,7 +271,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_ull ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `int8_t`.
      *
      * @tparam Cs The character pack representing the digits of the `int8_t`
@@ -285,7 +285,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_i8 ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `int16_t`.
      *
      * @tparam Cs The character pack representing the digits of the `int16_t`
@@ -299,7 +299,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_i16 ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `int32_t`.
      *
      * @tparam Cs The character pack representing the digits of the `int32_t`
@@ -313,7 +313,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_i32 ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `int64_t`.
      *
      * @tparam Cs The character pack representing the digits of the `int64_t`
@@ -327,7 +327,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_i64 ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `uint8_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint8_t`
@@ -341,7 +341,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_u8 ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `uint16_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint16_t`
@@ -355,7 +355,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_u16 ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `uint32_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint32_t`
@@ -369,7 +369,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_u32 ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `uint64_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint64_t`
@@ -383,7 +383,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_u64 ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `float`.
      *
      * @tparam Cs The character pack representing the digits of the
@@ -397,7 +397,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_f ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `double`.
      *
      * @tparam Cs The character pack representing the digits of the
@@ -411,7 +411,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_d ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `long double`.
      *
      * @tparam Cs The character pack representing the digits of the
@@ -425,7 +425,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_ld ();
 
     /**
-     * @ingroup micro-test-plus-literals
+     * @ingroup micro-os-plus-micro-test-plus-literals
      * @brief User-defined literal operator to convert to `bool`.
      *
      * @param name Pointer to the character sequence representing the literal.
@@ -449,7 +449,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
   /**
-   * @addtogroup micro-test-plus-literals
+   * @addtogroup micro-os-plus-micro-test-plus-literals
    * @{
    */
 
@@ -852,7 +852,7 @@ namespace micro_os_plus::micro_test_plus
    */
 
   /**
-   * @ingroup micro-test-plus-literals
+   * @ingroup micro-os-plus-micro-test-plus-literals
    * @brief Generic strongly-typed wrapper for explicit type conversion.
    *
    * @since 3.2.0

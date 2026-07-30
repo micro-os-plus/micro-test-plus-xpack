@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-expectations Expectations
+@defgroup micro-os-plus-micro-test-plus-expectations Expectations
 @brief Expectations are checks whose outcomes are counted and reported.
 
 @details

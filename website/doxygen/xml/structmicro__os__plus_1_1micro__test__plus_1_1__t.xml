@@ -10,7 +10,7 @@
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <member refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" kind="function"><name>_t</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" kind="function"><name>_t</name></member>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>T</type>
         <definition>T micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::get</definition>
@@ -175,7 +175,7 @@ Allows explicit conversion to the encapsulated value. </para>
     </collaborationgraph>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="649" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="650" bodyend="657"/>
     <listofallmembers>
-      <member refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::_t</scope><name>_t</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::_t</scope><name>_t</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a434b222ff19bdb4970ad56fce11d5176" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::_t</scope><name>epsilon</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::_t</scope><name>get</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::_t</scope><name>operator T</name></member>

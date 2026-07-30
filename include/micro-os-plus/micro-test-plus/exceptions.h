@@ -72,7 +72,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__cpp_exceptions)
 
   /**
-   * @ingroup micro-test-plus-exceptions
+   * @ingroup micro-os-plus-micro-test-plus-exceptions
    * @brief Check if a callable throws a specific exception.
    *
    * @tparam Exception_T The type of the exception expected to be thrown.
@@ -86,7 +86,7 @@ namespace micro_os_plus::micro_test_plus
   throws (const Callable_T& func);
 
   /**
-   * @ingroup micro-test-plus-exceptions
+   * @ingroup micro-os-plus-micro-test-plus-exceptions
    * @brief Check if a callable throws an exception (any exception).
    *
    * @tparam Callable_T The type of the callable object to be invoked.
@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
   throws (const Callable_T& func);
 
   /**
-   * @ingroup micro-test-plus-exceptions
+   * @ingroup micro-os-plus-micro-test-plus-exceptions
    * @brief Check if a callable does not throw an exception.
    *
    * @tparam Callable_T The type of the callable object to be invoked.

@@ -1,0 +1,5 @@
+@def MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED
+@brief Enables the µTest++ Testing Framework.
+
+@details
+...

@@ -1,4 +1,4 @@
-@defgroup micro-test-plus µTest++
+@defgroup micro-os-plus-micro-test-plus µTest++
 @brief Topics related to the µTest++ Testing Framework.
 
 @details
@@ -13,10 +13,10 @@ assumptions, and collecting results. Utility types such as
 strongly-typed literals, function comparators, and operator overloads
 complement the core API to enable expressive, type-safe assertions
 with no macro dependencies. The API is documented in the
-@ref micro-test-plus-cpp-api group.
+@ref micro-os-plus-micro-test-plus-cpp-api group.
 
 The **command-line interface (CLI)** allows test executables to be
 configured at run time without recompilation. Arguments are passed to
 `runner::initialise()` and control aspects such as the verbosity level
 and the output reporter format. The available options are documented in
-the @ref micro-test-plus-cli group.
+the @ref micro-os-plus-micro-test-plus-cli group.

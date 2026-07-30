@@ -7,77 +7,77 @@
     </briefdescription>
     <detaileddescription>
 <para><variablelist>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">micro_os_plus::micro_test_plus::_b</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000001"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga6bdfe5c187140ee99d0bcabd5bb65156" kindref="member">to_b</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">micro_os_plus::micro_test_plus::_b</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000001"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6bdfe5c187140ee99d0bcabd5bb65156" kindref="member">to_b</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" kindref="member">micro_os_plus::micro_test_plus::_c</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000002"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga5d14217f53925b323f4236298e3dcc90" kindref="member">to_c</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" kindref="member">micro_os_plus::micro_test_plus::_c</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000002"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d14217f53925b323f4236298e3dcc90" kindref="member">to_c</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga6ab8b464d71f15f55bd047dbfca50899" kindref="member">micro_os_plus::micro_test_plus::_d</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000022"/> Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" kindref="member">to_d</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ab8b464d71f15f55bd047dbfca50899" kindref="member">micro_os_plus::micro_test_plus::_d</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000022"/> Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" kindref="member">to_d</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kindref="member">micro_os_plus::micro_test_plus::_f</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000021"/> Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" kindref="member">to_f</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kindref="member">micro_os_plus::micro_test_plus::_f</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000021"/> Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" kindref="member">to_f</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">micro_os_plus::micro_test_plus::_i</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000005"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">micro_os_plus::micro_test_plus::_i</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000005"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" kindref="member">micro_os_plus::micro_test_plus::_i16</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000014"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gaf22a7774a4b05de9779d9084ed41a02a" kindref="member">to_i16</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" kindref="member">micro_os_plus::micro_test_plus::_i16</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000014"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf22a7774a4b05de9779d9084ed41a02a" kindref="member">to_i16</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" kindref="member">micro_os_plus::micro_test_plus::_i32</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000015"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga9ca96b6c6d79560f8186c6206ac4f613" kindref="member">to_i32</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" kindref="member">micro_os_plus::micro_test_plus::_i32</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000015"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca96b6c6d79560f8186c6206ac4f613" kindref="member">to_i32</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" kindref="member">micro_os_plus::micro_test_plus::_i64</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000016"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga240591501696d181e105529c1f52b56c" kindref="member">to_i64</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" kindref="member">micro_os_plus::micro_test_plus::_i64</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000016"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga240591501696d181e105529c1f52b56c" kindref="member">to_i64</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" kindref="member">micro_os_plus::micro_test_plus::_i8</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000013"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gaa61c255757e915cb05132602baea088b" kindref="member">to_i8</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" kindref="member">micro_os_plus::micro_test_plus::_i8</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000013"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaa61c255757e915cb05132602baea088b" kindref="member">to_i8</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" kindref="member">micro_os_plus::micro_test_plus::_l</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000006"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gaaf580ebebfba7cbe84a89db8574a6aa7" kindref="member">to_l</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" kindref="member">micro_os_plus::micro_test_plus::_l</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000006"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaaf580ebebfba7cbe84a89db8574a6aa7" kindref="member">to_l</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga79572e6e73076a155927ff0c3888ce76" kindref="member">micro_os_plus::micro_test_plus::_ld</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000023"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga33a096960b5dddee322e36c689ecbf47" kindref="member">to_ld</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga79572e6e73076a155927ff0c3888ce76" kindref="member">micro_os_plus::micro_test_plus::_ld</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000023"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga33a096960b5dddee322e36c689ecbf47" kindref="member">to_ld</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" kindref="member">micro_os_plus::micro_test_plus::_ll</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000007"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gab9d11644d3b22e2a9932e64853b5a59d" kindref="member">to_ll</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" kindref="member">micro_os_plus::micro_test_plus::_ll</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000007"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gab9d11644d3b22e2a9932e64853b5a59d" kindref="member">to_ll</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" kindref="member">micro_os_plus::micro_test_plus::_s</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000004"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga1b39571aeebcb8091bd410a9b247a571" kindref="member">to_s</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" kindref="member">micro_os_plus::micro_test_plus::_s</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000004"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1b39571aeebcb8091bd410a9b247a571" kindref="member">to_s</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" kindref="member">micro_os_plus::micro_test_plus::_sc</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000003"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gadb22be8fe019b5cd1ad56cfadea5f4ec" kindref="member">to_sc</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" kindref="member">micro_os_plus::micro_test_plus::_sc</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000003"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gadb22be8fe019b5cd1ad56cfadea5f4ec" kindref="member">to_sc</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1__t" kindref="compound">micro_os_plus::micro_test_plus::_t&lt; T &gt;</ref>  </term></varlistentry>
 <listitem><para><anchor id="deprecated_1_deprecated000024"/>Use <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref></computeroutput> (since 3.2.0). </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" kindref="member">micro_os_plus::micro_test_plus::_u</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000008"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gac8586b75498097cb06b404399c307960" kindref="member">to_u</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" kindref="member">micro_os_plus::micro_test_plus::_u</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000008"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gac8586b75498097cb06b404399c307960" kindref="member">to_u</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" kindref="member">micro_os_plus::micro_test_plus::_u16</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000018"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gaa60006a01aa94a5fd755aebddd8ceec3" kindref="member">to_u16</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" kindref="member">micro_os_plus::micro_test_plus::_u16</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000018"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaa60006a01aa94a5fd755aebddd8ceec3" kindref="member">to_u16</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" kindref="member">micro_os_plus::micro_test_plus::_u32</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000019"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga3bf9f9c946f16b5e02f9f2c45739df42" kindref="member">to_u32</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" kindref="member">micro_os_plus::micro_test_plus::_u32</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000019"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3bf9f9c946f16b5e02f9f2c45739df42" kindref="member">to_u32</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" kindref="member">micro_os_plus::micro_test_plus::_u64</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000020"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga5fba6fbb12941113aeff430609839ba4" kindref="member">to_u64</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" kindref="member">micro_os_plus::micro_test_plus::_u64</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000020"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5fba6fbb12941113aeff430609839ba4" kindref="member">to_u64</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">micro_os_plus::micro_test_plus::_u8</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000017"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga8b683d809d600f5c5210bb16546a832e" kindref="member">to_u8</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">micro_os_plus::micro_test_plus::_u8</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000017"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8b683d809d600f5c5210bb16546a832e" kindref="member">to_u8</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" kindref="member">micro_os_plus::micro_test_plus::_uc</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000009"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga9b60956f6c874e5597cdea6c0323fff1" kindref="member">to_uc</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" kindref="member">micro_os_plus::micro_test_plus::_uc</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000009"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9b60956f6c874e5597cdea6c0323fff1" kindref="member">to_uc</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" kindref="member">micro_os_plus::micro_test_plus::_ul</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000011"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga9f6f56950ba8bce6cc49037af83e443b" kindref="member">to_ul</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" kindref="member">micro_os_plus::micro_test_plus::_ul</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000011"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9f6f56950ba8bce6cc49037af83e443b" kindref="member">to_ul</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" kindref="member">micro_os_plus::micro_test_plus::_ull</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000012"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga595258f3c1b293284f79a88b2872d43d" kindref="member">to_ull</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" kindref="member">micro_os_plus::micro_test_plus::_ull</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000012"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga595258f3c1b293284f79a88b2872d43d" kindref="member">to_ull</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" kindref="member">micro_os_plus::micro_test_plus::_us</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000010"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" kindref="member">to_us</ref></computeroutput> (since 3.2.0).  </para>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" kindref="member">micro_os_plus::micro_test_plus::_us</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000010"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" kindref="member">to_us</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a10788baa079e19676a8cdbaa253285dc" kindref="member">micro_os_plus::micro_test_plus::runner::runner</ref>  (const char *top_suite_name)</term></varlistentry>
 <listitem><para><anchor id="deprecated_1_deprecated000025"/>Use the anonymous constructor.  </para>

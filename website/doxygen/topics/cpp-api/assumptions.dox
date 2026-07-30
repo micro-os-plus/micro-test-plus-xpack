@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-assumptions Assumptions
+@defgroup micro-os-plus-micro-test-plus-assumptions Assumptions
 @brief Assumptions are conditions that must be satisfied for a test to proceed.
 
 @details

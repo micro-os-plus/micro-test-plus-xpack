@@ -304,7 +304,7 @@ Binds the callable and its arguments into the stored <computeroutput><ref refid=
 <para>Virtual destructor. </para>
         </briefdescription>
         <detaileddescription>
-<para>No-op in production builds. When tracing is enabled via <computeroutput>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</computeroutput>, emits a trace message identifying the instance being destroyed. </para>
+<para>No-op in production builds. When tracing is enabled via <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-config_1ga27bb1b9066b162d868e0b1c557b91e0d" kindref="member">MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</ref></computeroutput>, emits a trace message identifying the instance being destroyed. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

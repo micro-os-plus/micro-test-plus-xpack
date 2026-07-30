@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-function-comparators Function Comparators
+@defgroup micro-os-plus-micro-test-plus-function-comparators Function Comparators
 @brief Functions for comparing actual and expected values in tests.
 
 @details

@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-string-operators String Operators
+@defgroup micro-os-plus-micro-test-plus-string-operators String Operators
 @brief Overloaded operators for string comparison.
 
 @details

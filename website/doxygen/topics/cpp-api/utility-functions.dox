@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-utility-functions Utility Functions
+@defgroup micro-os-plus-micro-test-plus-utility-functions Utility Functions
 @brief Utility functions for advanced string handling in tests.
 
 @details

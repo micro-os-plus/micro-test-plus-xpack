@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
-  <compounddef id="group__micro-test-plus-c-api" kind="group">
-    <compoundname>micro-test-plus-c-api</compoundname>
+  <compounddef id="group__micro-os-plus-micro-test-plus-c-api" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-c-api</compoundname>
     <title>C API</title>
     <briefdescription>
 <para>Topics related to the µTest++ C API. </para>

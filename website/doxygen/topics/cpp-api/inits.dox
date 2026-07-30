@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-runners Test Runners
+@defgroup micro-os-plus-micro-test-plus-runners Test Runners
 @brief Classes for initialising the framework and returning an
 exit code.
 

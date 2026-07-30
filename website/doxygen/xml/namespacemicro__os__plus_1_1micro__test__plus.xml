@@ -24,73 +24,73 @@
       <header>Deprecated Type Wrappers</header>
       <description><para>Strongly-typed wrappers for explicit type conversion.</para>
 <para>These type aliases provide wrappers for converting values and expressions to specific types for use with µTest++ comparators and test expressions.</para>
-<para>The <computeroutput><ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>, etc. forms are now deprecated as of version 3.2.0. Please use the preferred <computeroutput>to_*</computeroutput> type wrappers for new code, as they offer improved clarity and consistency.</para>
+<para>The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>, etc. forms are now deprecated as of version 3.2.0. Please use the preferred <computeroutput>to_*</computeroutput> type wrappers for new code, as they offer improved clarity and consistency.</para>
 <para><simplesect kind="par"><title>Deprecated</title><para>Use the corresponding <computeroutput>to_*</computeroutput> type wrappers instead (since 3.2.0). </para>
 </simplesect>
 </para>
 </description>
-      <member refid="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kind="typedef"><name>_b</name></member>
-      <member refid="group__micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" kind="typedef"><name>_c</name></member>
-      <member refid="group__micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" kind="typedef"><name>_sc</name></member>
-      <member refid="group__micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" kind="typedef"><name>_s</name></member>
-      <member refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kind="typedef"><name>_i</name></member>
-      <member refid="group__micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" kind="typedef"><name>_l</name></member>
-      <member refid="group__micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" kind="typedef"><name>_ll</name></member>
-      <member refid="group__micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" kind="typedef"><name>_u</name></member>
-      <member refid="group__micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" kind="typedef"><name>_uc</name></member>
-      <member refid="group__micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" kind="typedef"><name>_us</name></member>
-      <member refid="group__micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" kind="typedef"><name>_ul</name></member>
-      <member refid="group__micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" kind="typedef"><name>_ull</name></member>
-      <member refid="group__micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" kind="typedef"><name>_i8</name></member>
-      <member refid="group__micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" kind="typedef"><name>_i16</name></member>
-      <member refid="group__micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" kind="typedef"><name>_i32</name></member>
-      <member refid="group__micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" kind="typedef"><name>_i64</name></member>
-      <member refid="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kind="typedef"><name>_u8</name></member>
-      <member refid="group__micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" kind="typedef"><name>_u16</name></member>
-      <member refid="group__micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" kind="typedef"><name>_u32</name></member>
-      <member refid="group__micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" kind="typedef"><name>_u64</name></member>
-      <member refid="group__micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kind="typedef"><name>_f</name></member>
-      <member refid="group__micro-test-plus-literals_1ga6ab8b464d71f15f55bd047dbfca50899" kind="typedef"><name>_d</name></member>
-      <member refid="group__micro-test-plus-literals_1ga79572e6e73076a155927ff0c3888ce76" kind="typedef"><name>_ld</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kind="typedef"><name>_b</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gabd2f8b7401162835cb4735e4a7532c36" kind="typedef"><name>_c</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gacf10cd5dca8066e1df77e668b68f3272" kind="typedef"><name>_sc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga102b1f7c41452481e6be2bd8da63e4a0" kind="typedef"><name>_s</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kind="typedef"><name>_i</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaaebf2b13e1742a894179deedf8ad82cc" kind="typedef"><name>_l</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6b000cfa2a8a4c8b04cf6d6f142a76a6" kind="typedef"><name>_ll</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga74b4ecee40263c6b4ac8a60fc6480fac" kind="typedef"><name>_u</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga1ef97880cc5f2e13eea8b4ebb888886a" kind="typedef"><name>_uc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" kind="typedef"><name>_us</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9cb69b5dc7c394a57e1b09c919b0f6ab" kind="typedef"><name>_ul</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0b9d74a6595fe7fdefca21255ab59dc8" kind="typedef"><name>_ull</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga3cb44c2b09802fbee17f324cbdf3f31e" kind="typedef"><name>_i8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaec10ef24cb02dd0fb7f5e44227562d51" kind="typedef"><name>_i16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5d6deb61637f1d7350a69f62d2971bc3" kind="typedef"><name>_i32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gae98aa89157544638f775d2a90a3ec774" kind="typedef"><name>_i64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kind="typedef"><name>_u8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" kind="typedef"><name>_u16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf66382b299dcf814298ae56b75b541d7" kind="typedef"><name>_u32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gac654508c2894db262cbd0335f76b02bf" kind="typedef"><name>_u64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kind="typedef"><name>_f</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6ab8b464d71f15f55bd047dbfca50899" kind="typedef"><name>_d</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga79572e6e73076a155927ff0c3888ce76" kind="typedef"><name>_ld</name></member>
     </sectiondef>
     <sectiondef kind="user-defined">
       <header>Type Wrappers</header>
       <description><para>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</para>
 <para>These type aliases provide a modern, type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">type_traits::value</ref>&lt;T&gt;</computeroutput>, ensuring that the value is treated as the specified type within the framework.</para>
-<para>The <computeroutput>to_*</computeroutput> forms are the preferred approach since version 3.2.0, superseding the older <computeroutput><ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>, etc. aliases, which are now deprecated.</para>
+<para>The <computeroutput>to_*</computeroutput> forms are the preferred approach since version 3.2.0, superseding the older <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>, etc. aliases, which are now deprecated.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>42;</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Explicitly<sp/>treat<sp/>x<sp/>as<sp/>an<sp/>int<sp/>for<sp/>test<sp/>comparison.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref>{x};</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-os-plus-micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref>{x};</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
 </para>
 </description>
-      <member refid="group__micro-test-plus-literals_1ga6bdfe5c187140ee99d0bcabd5bb65156" kind="typedef"><name>to_b</name></member>
-      <member refid="group__micro-test-plus-literals_1ga5d14217f53925b323f4236298e3dcc90" kind="typedef"><name>to_c</name></member>
-      <member refid="group__micro-test-plus-literals_1gadb22be8fe019b5cd1ad56cfadea5f4ec" kind="typedef"><name>to_sc</name></member>
-      <member refid="group__micro-test-plus-literals_1ga1b39571aeebcb8091bd410a9b247a571" kind="typedef"><name>to_s</name></member>
-      <member refid="group__micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kind="typedef"><name>to_i</name></member>
-      <member refid="group__micro-test-plus-literals_1gaaf580ebebfba7cbe84a89db8574a6aa7" kind="typedef"><name>to_l</name></member>
-      <member refid="group__micro-test-plus-literals_1gab9d11644d3b22e2a9932e64853b5a59d" kind="typedef"><name>to_ll</name></member>
-      <member refid="group__micro-test-plus-literals_1gac8586b75498097cb06b404399c307960" kind="typedef"><name>to_u</name></member>
-      <member refid="group__micro-test-plus-literals_1ga9b60956f6c874e5597cdea6c0323fff1" kind="typedef"><name>to_uc</name></member>
-      <member refid="group__micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" kind="typedef"><name>to_us</name></member>
-      <member refid="group__micro-test-plus-literals_1ga9f6f56950ba8bce6cc49037af83e443b" kind="typedef"><name>to_ul</name></member>
-      <member refid="group__micro-test-plus-literals_1ga595258f3c1b293284f79a88b2872d43d" kind="typedef"><name>to_ull</name></member>
-      <member refid="group__micro-test-plus-literals_1gaa61c255757e915cb05132602baea088b" kind="typedef"><name>to_i8</name></member>
-      <member refid="group__micro-test-plus-literals_1gaf22a7774a4b05de9779d9084ed41a02a" kind="typedef"><name>to_i16</name></member>
-      <member refid="group__micro-test-plus-literals_1ga9ca96b6c6d79560f8186c6206ac4f613" kind="typedef"><name>to_i32</name></member>
-      <member refid="group__micro-test-plus-literals_1ga240591501696d181e105529c1f52b56c" kind="typedef"><name>to_i64</name></member>
-      <member refid="group__micro-test-plus-literals_1ga8b683d809d600f5c5210bb16546a832e" kind="typedef"><name>to_u8</name></member>
-      <member refid="group__micro-test-plus-literals_1gaa60006a01aa94a5fd755aebddd8ceec3" kind="typedef"><name>to_u16</name></member>
-      <member refid="group__micro-test-plus-literals_1ga3bf9f9c946f16b5e02f9f2c45739df42" kind="typedef"><name>to_u32</name></member>
-      <member refid="group__micro-test-plus-literals_1ga5fba6fbb12941113aeff430609839ba4" kind="typedef"><name>to_u64</name></member>
-      <member refid="group__micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" kind="typedef"><name>to_f</name></member>
-      <member refid="group__micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" kind="typedef"><name>to_d</name></member>
-      <member refid="group__micro-test-plus-literals_1ga33a096960b5dddee322e36c689ecbf47" kind="typedef"><name>to_ld</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6bdfe5c187140ee99d0bcabd5bb65156" kind="typedef"><name>to_b</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5d14217f53925b323f4236298e3dcc90" kind="typedef"><name>to_c</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gadb22be8fe019b5cd1ad56cfadea5f4ec" kind="typedef"><name>to_sc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga1b39571aeebcb8091bd410a9b247a571" kind="typedef"><name>to_s</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kind="typedef"><name>to_i</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaaf580ebebfba7cbe84a89db8574a6aa7" kind="typedef"><name>to_l</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gab9d11644d3b22e2a9932e64853b5a59d" kind="typedef"><name>to_ll</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gac8586b75498097cb06b404399c307960" kind="typedef"><name>to_u</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9b60956f6c874e5597cdea6c0323fff1" kind="typedef"><name>to_uc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" kind="typedef"><name>to_us</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9f6f56950ba8bce6cc49037af83e443b" kind="typedef"><name>to_ul</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga595258f3c1b293284f79a88b2872d43d" kind="typedef"><name>to_ull</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa61c255757e915cb05132602baea088b" kind="typedef"><name>to_i8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf22a7774a4b05de9779d9084ed41a02a" kind="typedef"><name>to_i16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca96b6c6d79560f8186c6206ac4f613" kind="typedef"><name>to_i32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga240591501696d181e105529c1f52b56c" kind="typedef"><name>to_i64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8b683d809d600f5c5210bb16546a832e" kind="typedef"><name>to_u8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa60006a01aa94a5fd755aebddd8ceec3" kind="typedef"><name>to_u16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga3bf9f9c946f16b5e02f9f2c45739df42" kind="typedef"><name>to_u32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5fba6fbb12941113aeff430609839ba4" kind="typedef"><name>to_u64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" kind="typedef"><name>to_f</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" kind="typedef"><name>to_d</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga33a096960b5dddee322e36c689ecbf47" kind="typedef"><name>to_ld</name></member>
     </sectiondef>
     <sectiondef kind="enum">
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" prot="public" static="no" strong="yes">
@@ -173,9 +173,9 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
-      <member refid="group__micro-test-plus-logical-functions_1ga8b43b7658b43fb76daf5efbb2e03d236" kind="function"><name>_and</name></member>
-      <member refid="group__micro-test-plus-logical-functions_1gad9ad936174faf965cffe4493e2b64cf0" kind="function"><name>_not</name></member>
-      <member refid="group__micro-test-plus-logical-functions_1gad32b40e4b0022b276fa3b357b98a33c5" kind="function"><name>_or</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8b43b7658b43fb76daf5efbb2e03d236" kind="function"><name>_and</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gad9ad936174faf965cffe4493e2b64cf0" kind="function"><name>_not</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gad32b40e4b0022b276fa3b357b98a33c5" kind="function"><name>_or</name></member>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1accd8ecc7473b09af578daa31bb8780eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::endl</definition>
@@ -213,12 +213,12 @@ The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac5713ce51eb50a6841879b1c7d00c234" compoundref="reporter-human_8cpp" startline="720" endline="725">micro_os_plus::micro_test_plus::reporter_human::output_pass_suffix_</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ac46a89737874c4f864a98b91d8c57ecd" compoundref="reporter-tap_8cpp" startline="681" endline="686">micro_os_plus::micro_test_plus::reporter_tap::output_pass_suffix_</referencedby>
       </memberdef>
-      <member refid="group__micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kind="function"><name>eq</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1gabdb021d3d6a5759cd2a5f502b2514dea" kind="function"><name>eq</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" kind="function"><name>ge</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1ga3957927d25a61348b639fe01aab11258" kind="function"><name>ge</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" kind="function"><name>gt</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1gae8a4dcd7ebf01cdfa7e46540cd6522fa" kind="function"><name>gt</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kind="function"><name>eq</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gabdb021d3d6a5759cd2a5f502b2514dea" kind="function"><name>eq</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" kind="function"><name>ge</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga3957927d25a61348b639fe01aab11258" kind="function"><name>ge</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" kind="function"><name>gt</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae8a4dcd7ebf01cdfa7e46540cd6522fa" kind="function"><name>gt</name></member>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1a7d5ad50c71915516060558e8f7f22bf9" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1indent__t" kindref="compound">detail::indent_t</ref></type>
         <definition>detail::indent_t micro_os_plus::micro_test_plus::indent</definition>
@@ -261,16 +261,16 @@ The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ae831c47658d21e0e77bf7df79b8fc58f" compoundref="reporter-human_8cpp" startline="699" endline="709">micro_os_plus::micro_test_plus::reporter_human::output_pass_prefix_</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1abb4353e534969b0452aa63cee7652a29" compoundref="reporter-tap_8cpp" startline="661" endline="670">micro_os_plus::micro_test_plus::reporter_tap::output_pass_prefix_</referencedby>
       </memberdef>
-      <member refid="group__micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" kind="function"><name>le</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1gaf8716c55446af28b090eb49acd8cf131" kind="function"><name>le</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" kind="function"><name>lt</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1ga047738c301c4c6b6c7fdb535aecfe097" kind="function"><name>lt</name></member>
-      <member refid="group__micro-test-plus-utility-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kind="function"><name>ne</name></member>
-      <member refid="group__micro-test-plus-function-comparators_1ga172f305bbeaf8b965681f76c16a39516" kind="function"><name>ne</name></member>
-      <member refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-      <member refid="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-      <member refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" kind="function"><name>le</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaf8716c55446af28b090eb49acd8cf131" kind="function"><name>le</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" kind="function"><name>lt</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga047738c301c4c6b6c7fdb535aecfe097" kind="function"><name>lt</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kind="function"><name>ne</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga172f305bbeaf8b965681f76c16a39516" kind="function"><name>ne</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
     </sectiondef>
     <briefdescription>
 <para>Primary namespace for the µTest++ testing framework. </para>
@@ -281,6 +281,6 @@ The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a
 <para>By grouping all definitions within this namespace and its sub-namespaces, the framework achieves clear code organisation, minimises naming conflicts, and enhances maintainability. This modular structure supports robust, scalable, and professional test development for both embedded and general C++ projects.</para>
 <para>All public API definitions are implemented in the <computeroutput>include/micro-os-plus</computeroutput> folder, ensuring a clear separation from user code and facilitating straightforward integration with the wider µOS++ ecosystem. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="133" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="141" column="1"/>
   </compounddef>
 </doxygen>

@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-test-case Test Cases
+@defgroup micro-os-plus-micro-test-plus-test-case Test Cases
 @brief Test cases are named sequences of checks.
 
 @details

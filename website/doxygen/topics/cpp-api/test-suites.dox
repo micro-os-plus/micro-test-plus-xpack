@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-test-suites Test Suites
+@defgroup micro-os-plus-micro-test-plus-test-suites Test Suites
 @brief Test suites are named groups of related test cases.
 
 @details

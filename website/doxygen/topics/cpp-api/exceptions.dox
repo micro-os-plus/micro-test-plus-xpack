@@ -1,4 +1,4 @@
-@defgroup micro-test-plus-exceptions Checking Exceptions
+@defgroup micro-os-plus-micro-test-plus-exceptions Checking Exceptions
 @brief Functions for verifying exceptions in test cases.
 
 @details

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
-  <compounddef id="group__micro-test-plus-cli" kind="group">
-    <compoundname>micro-test-plus-cli</compoundname>
+  <compounddef id="group__micro-os-plus-micro-test-plus-cli" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-cli</compoundname>
     <title>Command Line Options</title>
     <briefdescription>
 <para>Options for controlling test output verbosity at run-time. </para>
@@ -26,7 +26,7 @@
 <codeline><highlight class="normal">1..1</highlight></codeline>
 <codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
-<sect1 id="group__micro-test-plus-cli_1cli-reporter">
+<sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-reporter">
 <title>Reporter</title><para>By default, the µTest++ output follows the <ulink url="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</ulink> rules.</para>
 <para>For compatibility reasons, the proprietary format implemented by the initial releases will also be retained, but it is not recommended for new projects.</para>
 <para>If needed, more reporting formats (like JUnit, JSON, etc.) can be added.</para>
@@ -37,7 +37,7 @@
 </listitem></itemizedlist>
 </para>
 </sect1>
-<sect1 id="group__micro-test-plus-cli_1cli-verbosity">
+<sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-verbosity">
 <title>Verbosity</title><para>By default, µTest++ displays a summary line for each passing test case and full expectation details for each failing one.</para>
 <para>To adjust the verbosity, the following command-line options are available:</para>
 <para><itemizedlist>
@@ -49,7 +49,7 @@
 <para>These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.</para>
 <para>The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.</para>
 <para>The source code for this example is in <computeroutput>tests/sources/minimal-test/src/main.cpp</computeroutput>.</para>
-<sect2 id="group__micro-test-plus-cli_1cli-verbosity-verbose">
+<sect2 id="group__micro-os-plus-micro-test-plus-cli_1cli-verbosity-verbose">
 <title>Verbose mode</title><para>In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
@@ -71,7 +71,7 @@
 <codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="group__micro-test-plus-cli_1cli-verbosity-quiet">
+<sect2 id="group__micro-os-plus-micro-test-plus-cli_1cli-verbosity-quiet">
 <title>Quiet mode</title><para>In quiet mode, the µTest++ reporter displays only the overall session totals.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
@@ -83,7 +83,7 @@
 <codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="group__micro-test-plus-cli_1cli-verbosity-silent">
+<sect2 id="group__micro-os-plus-micro-test-plus-cli_1cli-verbosity-silent">
 <title>Silent mode</title><para>In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.   </para>
 </sect2>
 </sect1>

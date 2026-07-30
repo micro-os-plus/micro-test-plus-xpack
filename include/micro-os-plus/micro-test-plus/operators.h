@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
   namespace operators
   {
     /**
-     * @ingroup micro-test-plus-string-operators
+     * @ingroup micro-os-plus-micro-test-plus-string-operators
      * @brief Equality operator for `string_view` objects.
      *
      * @param lhs The left hand side `std::string_view` operand.
@@ -128,7 +128,7 @@ namespace micro_os_plus::micro_test_plus
     operator== (std::string_view lhs, std::string_view rhs);
 
     /**
-     * @ingroup micro-test-plus-string-operators
+     * @ingroup micro-os-plus-micro-test-plus-string-operators
      * @brief Non-equality operator for `string_view` objects.
      *
      * @param lhs The left hand side `std::string_view` operand.
@@ -140,7 +140,7 @@ namespace micro_os_plus::micro_test_plus
     operator!= (std::string_view lhs, std::string_view rhs);
 
     /**
-     * @ingroup micro-test-plus-container-operators
+     * @ingroup micro-os-plus-micro-test-plus-container-operators
      * @brief Equality operator for containers.
      *
      * @tparam Lhs_T The left-hand container type, constrained to recognised
@@ -160,7 +160,7 @@ namespace micro_os_plus::micro_test_plus
     operator== (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-container-operators
+     * @ingroup micro-os-plus-micro-test-plus-container-operators
      * @brief Non-equality operator for containers.
      *
      * @tparam Lhs_T The left-hand container type, constrained to recognised
@@ -180,7 +180,7 @@ namespace micro_os_plus::micro_test_plus
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-operators
+     * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Equality operator for custom types. Matches only if at least one
      * operand is of local type.
      *
@@ -198,7 +198,7 @@ namespace micro_os_plus::micro_test_plus
     operator== (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-operators
+     * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Non-equality operator for custom types. Matches only if at least
      * one operand is of local type.
      *
@@ -216,7 +216,7 @@ namespace micro_os_plus::micro_test_plus
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-operators
+     * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Greater than operator. Matches only if at least one operand is of
      * local type (derived from local `op`).
      *
@@ -234,7 +234,7 @@ namespace micro_os_plus::micro_test_plus
     operator> (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-operators
+     * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Greater than or equal operator. Matches only if at least one
      * operand is of local type (derived from local `op`).
      *
@@ -252,7 +252,7 @@ namespace micro_os_plus::micro_test_plus
     operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-operators
+     * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Less than operator. Matches only if at least one operand is of
      * local type (derived from local `op`).
      *
@@ -270,7 +270,7 @@ namespace micro_os_plus::micro_test_plus
     operator< (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-operators
+     * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Less than or equal operator. Matches only if at least one operand
      * is of local type (derived from local `op`).
      *
@@ -288,7 +288,7 @@ namespace micro_os_plus::micro_test_plus
     operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-operators
+     * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Logical `&&` (and) operator. Matches only if at least one operand
      * is of local type (derived from local `op`).
      *
@@ -306,7 +306,7 @@ namespace micro_os_plus::micro_test_plus
     operator and (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-operators
+     * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Logical `||` (or) operator. Matches only if at least one operand
      * is of local type (derived from local `op`).
      *
@@ -324,7 +324,7 @@ namespace micro_os_plus::micro_test_plus
     operator or (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
-     * @ingroup micro-test-plus-operators
+     * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Logical `!` (not) operator. Matches only if the operand is of
      * local type (derived from local `op`).
      *

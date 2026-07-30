@@ -526,7 +526,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-test-plus-test-case
+   * @ingroup micro-os-plus-micro-test-plus-test-case
    * @brief A named, runnable test case that lives inside a `suite`.
    *
    * @details
@@ -622,7 +622,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @ingroup micro-test-plus-expectations
+     * @ingroup micro-os-plus-micro-test-plus-expectations
      * @brief Evaluate a generic condition and report the results.
      *
      * @tparam Expr_T The type of the custom expression.
@@ -642,7 +642,7 @@ namespace micro_os_plus::micro_test_plus
                                 = reflection::source_location::current ());
 
     /**
-     * @ingroup micro-test-plus-assumptions
+     * @ingroup micro-os-plus-micro-test-plus-assumptions
      * @brief Check a condition and, if false, abort test execution.
      *
      * @tparam Expr_T The type of the custom expression.
@@ -699,7 +699,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-test-plus-test-suites
+   * @ingroup micro-os-plus-micro-test-plus-test-suites
    * @brief A named, runnable test suite registered with the test runner.
    *
    * @details
@@ -900,7 +900,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-test-plus-test-suites
+   * @ingroup micro-os-plus-micro-test-plus-test-suites
    * @brief A test suite designed for static (namespace-scope) registration
    * with a `static_runner`.
    *
