@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['c_20api_0',['C API',['../group__micro-test-plus-c-api.html',1,'C API'],['../group__micro-test-plus-cpp-api.html',1,'C++ API']]],
+  ['c_20api_0',['C API',['../group__micro-os-plus-micro-test-plus-c-api.html',1,'C API'],['../group__micro-os-plus-micro-test-plus-cpp-api.html',1,'C++ API']]],
   ['c_5fstr_1',['c_str',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html#a364c261933561156704213bbb05a53c5',1,'micro_os_plus::micro_test_plus::detail::expression_formatter']]],
   ['callable_5f_2',['callable_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable.html#a19263e27d0e82dd1a49c31ecead4b454',1,'micro_os_plus::micro_test_plus::detail::runnable']]],
   ['callable_5fop_5f_3',['callable_op_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html',1,'micro_os_plus::micro_test_plus::detail::callable_op_'],['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a271baf62ae8e74f4801dc3da24b575ea',1,'micro_os_plus::micro_test_plus::detail::callable_op_::callable_op_()']]],
-  ['cases_4',['Test Cases',['../group__micro-test-plus-test-case.html',1,'']]],
+  ['cases_4',['Test Cases',['../group__micro-os-plus-micro-test-plus-test-case.html',1,'']]],
   ['checkable_5',['checkable',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1checkable.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
-  ['checking_20exceptions_6',['Checking Exceptions',['../group__micro-test-plus-exceptions.html',1,'']]],
+  ['checking_20exceptions_6',['Checking Exceptions',['../group__micro-os-plus-micro-test-plus-exceptions.html',1,'']]],
   ['children_5fsubtests_5f_7',['children_subtests_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#adf8b37f3ebe6808be456fa35409f9175',1,'micro_os_plus::micro_test_plus::detail::runnable_base']]],
   ['children_5fsubtests_5fcount_8',['children_subtests_count',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aaf838b03cddfb039d1295611be8a5e32',1,'micro_os_plus::micro_test_plus::detail::runnable_base']]],
   ['children_5fsuites_5f_9',['children_suites_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#abacf53ab658e289ae89051531c0cddad',1,'micro_os_plus::micro_test_plus::runner']]],
@@ -15,12 +15,13 @@ var searchData=
   ['colours_12',['colours',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html',1,'micro_os_plus::micro_test_plus::detail']]],
   ['colours_5f_13',['colours_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html#ae4fe1389ad411399cf776f2ed7a7cd11',1,'micro_os_plus::micro_test_plus::detail::expression_formatter::colours_'],['../classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#adb47f38a4be48757fb7f8658132998fe',1,'micro_os_plus::micro_test_plus::reporter::colours_']]],
   ['colours_5fred_5fgreen_14',['colours_red_green',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ad59e204218aa41581652a072be0e8a8a',1,'micro_os_plus::micro_test_plus::detail']]],
-  ['command_20line_20options_15',['Command Line Options',['../group__micro-test-plus-cli.html',1,'']]],
-  ['comparators_16',['Function Comparators',['../group__micro-test-plus-function-comparators.html',1,'']]],
+  ['command_20line_20options_15',['Command Line Options',['../group__micro-os-plus-micro-test-plus-cli.html',1,'']]],
+  ['comparators_16',['Function Comparators',['../group__micro-os-plus-micro-test-plus-function-comparators.html',1,'']]],
   ['compute_5felapsed_5ftime_17',['compute_elapsed_time',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps.html#a7e7ade6bb02af23d65e5ceaa958052dd',1,'micro_os_plus::micro_test_plus::detail::timestamps']]],
-  ['container_20operators_18',['Container Operators',['../group__micro-test-plus-container-operators.html',1,'']]],
-  ['container_5flike_19',['container_like',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1container__like.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
-  ['current_20',['current',['../classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327',1,'micro_os_plus::micro_test_plus::reflection::source_location']]],
-  ['current_5fsubtest_5findex_21',['current_subtest_index',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0c634fb75a3f9c34b9c605dea8b3c7b4',1,'micro_os_plus::micro_test_plus::detail::runnable_base']]],
-  ['current_5fsubtest_5findex_5f_22',['current_subtest_index_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aa94f14daef092618c30a3c6134f24522',1,'micro_os_plus::micro_test_plus::detail::runnable_base']]]
+  ['configuration_18',['Configuration',['../group__micro-os-plus-micro-test-plus-config.html',1,'']]],
+  ['container_20operators_19',['Container Operators',['../group__micro-os-plus-micro-test-plus-container-operators.html',1,'']]],
+  ['container_5flike_20',['container_like',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1container__like.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
+  ['current_21',['current',['../classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327',1,'micro_os_plus::micro_test_plus::reflection::source_location']]],
+  ['current_5fsubtest_5findex_22',['current_subtest_index',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0c634fb75a3f9c34b9c605dea8b3c7b4',1,'micro_os_plus::micro_test_plus::detail::runnable_base']]],
+  ['current_5fsubtest_5findex_5f_23',['current_subtest_index_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aa94f14daef092618c30a3c6134f24522',1,'micro_os_plus::micro_test_plus::detail::runnable_base']]]
 ];

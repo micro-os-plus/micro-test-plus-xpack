@@ -5,7 +5,7 @@ var searchData=
   ['reflection_2eh_2',['reflection.h',['../reflection_8h.html',1,'']]],
   ['register_5fstatic_5fsuite_3',['register_static_suite',['../classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#a6984a307a2f487cea3eeeb36c1422020',1,'micro_os_plus::micro_test_plus::static_runner::register_static_suite()'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ace6dc3e539bce5fdcce2741856b16b16',1,'micro_os_plus::micro_test_plus::detail::register_static_suite()']]],
   ['register_5fsuite_5f_4',['register_suite_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#abc9182d5e12609158d936f312a83f53c',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['reporter_5',['Reporter',['../group__micro-test-plus-cli.html#cli-reporter',1,'']]],
+  ['reporter_5',['Reporter',['../group__micro-os-plus-micro-test-plus-cli.html#cli-reporter',1,'']]],
   ['reporter_6',['reporter',['../classmicro__os__plus_1_1micro__test__plus_1_1reporter.html',1,'micro_os_plus::micro_test_plus::reporter'],['../classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#a0643dcab9f46bc3090939c2a17f829e4',1,'micro_os_plus::micro_test_plus::reporter::reporter()'],['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a28e8cf878d98f6cba575a58189c39a56',1,'micro_os_plus::micro_test_plus::runner::reporter()'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad120bac9a056a4684d866d974a09b6b',1,'micro_os_plus::micro_test_plus::detail::runnable_base::reporter()']]],
   ['reporter_2dhuman_2ecpp_7',['reporter-human.cpp',['../reporter-human_8cpp.html',1,'']]],
   ['reporter_2dhuman_2eh_8',['reporter-human.h',['../reporter-human_8h.html',1,'']]],
@@ -36,5 +36,5 @@ var searchData=
   ['runner_2eh_33',['runner.h',['../runner_8h.html',1,'']]],
   ['runner_5f_34',['runner_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ac9f933b7e072bfdd7732783c12c98298',1,'micro_os_plus::micro_test_plus::detail::runnable_base']]],
   ['runner_5ftotals_35',['runner_totals',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html',1,'micro_os_plus::micro_test_plus::detail::runner_totals'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html#af2d4424203237e5f158cdbc1f31abbdf',1,'micro_os_plus::micro_test_plus::detail::runner_totals::runner_totals()=default'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html#a4240a9cae8d1a8ee0d420027d63850f8',1,'micro_os_plus::micro_test_plus::detail::runner_totals::runner_totals(const runner_totals &amp;)=delete'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html#a602415787ce8bef15e9ca69caaf2555b',1,'micro_os_plus::micro_test_plus::detail::runner_totals::runner_totals(runner_totals &amp;&amp;)=delete']]],
-  ['runners_36',['Test Runners',['../group__micro-test-plus-runners.html',1,'']]]
+  ['runners_36',['Test Runners',['../group__micro-os-plus-micro-test-plus-runners.html',1,'']]]
 ];

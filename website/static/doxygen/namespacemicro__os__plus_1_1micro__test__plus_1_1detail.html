@@ -288,41 +288,43 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </ul>
 <p>For all other numeric types, <span class="tt">std::to_chars</span> is called directly, providing locale-independent, allocation-free formatting. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00654">654</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  655</span>    {</div>
-<div class="line"><span class="lineno">  656</span>      <span class="keywordtype">char</span> buf[32];</div>
-<div class="line"><span class="lineno">  657</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, long double&gt;)</div>
-<div class="line"><span class="lineno">  658</span>        {</div>
-<div class="line"><span class="lineno">  659</span><span class="preprocessor">#if defined(_WIN32) \</span></div>
-<div class="line"><span class="lineno">  660</span><span class="preprocessor">    || (defined(__SIZEOF_LONG_DOUBLE__) \</span></div>
-<div class="line"><span class="lineno">  661</span><span class="preprocessor">        &amp;&amp; __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)</span></div>
-<div class="line"><span class="lineno">  662</span>          <span class="comment">// On Windows (all toolchains: MinGW, Clang, MSVC), the C runtime</span></div>
-<div class="line"><span class="lineno">  663</span>          <span class="comment">// does not handle the %Lg printf specifier correctly for 80-bit</span></div>
-<div class="line"><span class="lineno">  664</span>          <span class="comment">// long double, producing garbage output. On platforms where long</span></div>
-<div class="line"><span class="lineno">  665</span>          <span class="comment">// double has the same width as double (ARM, RISC-V), the cast is</span></div>
-<div class="line"><span class="lineno">  666</span>          <span class="comment">// lossless. In both cases, cast to double and use std::to_chars.</span></div>
-<div class="line"><span class="lineno">  667</span>          <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf),</div>
-<div class="line"><span class="lineno">  668</span>                                                <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span> (v));</div>
-<div class="line"><span class="lineno">  669</span>          <span class="keywordflow">if</span> (ec == std::errc{})</div>
-<div class="line"><span class="lineno">  670</span>            buffer.append (buf, ptr);</div>
-<div class="line"><span class="lineno">  671</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  672</span>          <span class="comment">// On x86-64 Linux/macOS with 80-bit extended-precision long double,</span></div>
-<div class="line"><span class="lineno">  673</span>          <span class="comment">// std::to_chars for long double may be unavailable (e.g., with lld).</span></div>
-<div class="line"><span class="lineno">  674</span>          <span class="comment">// Use snprintf as a portable fallback; %Lg is supported correctly</span></div>
-<div class="line"><span class="lineno">  675</span>          <span class="comment">// by glibc and libc++ on these platforms.</span></div>
-<div class="line"><span class="lineno">  676</span>          snprintf (buf, <span class="keyword">sizeof</span> (buf), <span class="stringliteral">&quot;%Lg&quot;</span>, v);</div>
-<div class="line"><span class="lineno">  677</span>          buffer.append (buf);</div>
-<div class="line"><span class="lineno">  678</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  679</span>        }</div>
-<div class="line"><span class="lineno">  680</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  681</span>        {</div>
-<div class="line"><span class="lineno">  682</span>          <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf), v);</div>
-<div class="line"><span class="lineno">  683</span>          <span class="keywordflow">if</span> (ec == std::errc{})</div>
-<div class="line"><span class="lineno">  684</span>            buffer.append (buf, ptr);</div>
-<div class="line"><span class="lineno">  685</span>        }</div>
-<div class="line"><span class="lineno">  686</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00666">666</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  667</span>    {</div>
+<div class="line"><span class="lineno">  668</span>      <span class="keywordtype">char</span> buf[32];</div>
+<div class="line"><span class="lineno">  669</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, long double&gt;)</div>
+<div class="line"><span class="lineno">  670</span>        {</div>
+<div class="line"><span class="lineno">  671</span><span class="preprocessor">#if defined(_WIN32) \</span></div>
+<div class="line"><span class="lineno">  672</span><span class="preprocessor">    || (defined(__SIZEOF_LONG_DOUBLE__) \</span></div>
+<div class="line"><span class="lineno">  673</span><span class="preprocessor">        &amp;&amp; __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)</span></div>
+<div class="line"><span class="lineno">  674</span>          <span class="comment">// On Windows (all toolchains: MinGW, Clang, MSVC), the C runtime</span></div>
+<div class="line"><span class="lineno">  675</span>          <span class="comment">// does not handle the %Lg printf specifier correctly for 80-bit</span></div>
+<div class="line"><span class="lineno">  676</span>          <span class="comment">// long double, producing garbage output. On platforms where long</span></div>
+<div class="line"><span class="lineno">  677</span>          <span class="comment">// double has the same width as double (ARM, RISC-V), the cast is</span></div>
+<div class="line"><span class="lineno">  678</span>          <span class="comment">// lossless. In both cases, cast to double and use std::to_chars.</span></div>
+<div class="line"><span class="lineno">  679</span>          <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf),</div>
+<div class="line"><span class="lineno">  680</span>                                                <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span> (v));</div>
+<div class="line"><span class="lineno">  681</span>          <span class="keywordflow">if</span> (ec == std::errc{})</div>
+<div class="line"><span class="lineno">  682</span>            buffer.append (buf, ptr);</div>
+<div class="line"><span class="lineno">  683</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  684</span>          <span class="comment">// On x86-64 Linux/macOS with 80-bit extended-precision long double,</span></div>
+<div class="line"><span class="lineno">  685</span>          <span class="comment">// std::to_chars for long double may be unavailable (e.g., with lld).</span></div>
+<div class="line"><span class="lineno">  686</span>          <span class="comment">// Use snprintf as a portable fallback; %Lg is supported correctly</span></div>
+<div class="line"><span class="lineno">  687</span>          <span class="comment">// by glibc and libc++ on these platforms.</span></div>
+<div class="line"><span class="lineno">  688</span>          snprintf (buf, <span class="keyword">sizeof</span> (buf), <span class="stringliteral">&quot;%Lg&quot;</span>, v);</div>
+<div class="line"><span class="lineno">  689</span>          buffer.append (buf);</div>
+<div class="line"><span class="lineno">  690</span><span class="preprocessor">#endif </span><span class="comment">// defined(_WIN32) || (defined(__SIZEOF_LONG_DOUBLE__) &amp;&amp; __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)</span></div>
+<div class="line"><span class="lineno">  691</span>        }</div>
+<div class="line"><span class="lineno">  692</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  693</span>        {</div>
+<div class="line"><span class="lineno">  694</span>          <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf), v);</div>
+<div class="line"><span class="lineno">  695</span>          <span class="keywordflow">if</span> (ec == std::errc{})</div>
+<div class="line"><span class="lineno">  696</span>            buffer.append (buf, ptr);</div>
+<div class="line"><span class="lineno">  697</span>        }</div>
+<div class="line"><span class="lineno">  698</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00230">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00263">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00250">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00275">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00121">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00173">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00224">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00198">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00147">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00134">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00185">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00237">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00211">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00160">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00185">micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00666">append_number_()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00666">append_number_()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00224">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00267">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00279">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00125">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00177">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00228">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00202">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00151">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00138">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00189">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00241">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00215">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00164">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00188">micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -419,7 +421,7 @@ template&lt;class T&gt; </div>
 <div class="line"><span class="lineno">   87</span>        <span class="keywordflow">return</span> t;</div>
 <div class="line"><span class="lineno">   88</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00190">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00359">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::ge_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00318">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::gt_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00441">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::le_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00400">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::lt_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00260">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00162">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00122">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operand()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00217">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00190">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::eq_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00365">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::ge_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00322">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::gt_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00451">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::le_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00408">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::lt_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00262">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::ne_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00162">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00122">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operand()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00211">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>.</p>
 
 </div>
 </div>
@@ -585,15 +587,15 @@ template&lt;typename Lhs_T, typename Rhs_T&gt; </div>
 </dl>
 <p>Performs static-suite registration where <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html" title="A runner variant that also manages statically-registered test suites.">static_runner</a></span> is complete, allowing header-only template code to avoid direct dependence on <span class="tt"><a class="el" href="runner_8h.html" title="C++ header file with declarations for the µTest++ test runner.">runner.h</a></span> include order. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner_8cpp_source.html#l00088">88</a> of file <a class="el" href="runner_8cpp_source.html">runner.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>  {</div>
-<div class="line"><span class="lineno">   91</span>    <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#a6984a307a2f487cea3eeeb36c1422020">static_runner::register_static_suite</a> (static_runner_ref, static_suite_ref);</div>
-<div class="line"><span class="lineno">   92</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1static__runner_html_a6984a307a2f487cea3eeeb36c1422020"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#a6984a307a2f487cea3eeeb36c1422020">micro_os_plus::micro_test_plus::static_runner::register_static_suite</a></div><div class="ttdeci">static void register_static_suite(static_runner &amp;runner, static_suite &amp;suite)</div><div class="ttdoc">Registers a static test suite with the runner.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00621">runner.cpp:621</a></div></div>
+<p class="definition">Definition at line <a class="el" href="runner_8cpp_source.html#l00093">93</a> of file <a class="el" href="runner_8cpp_source.html">runner.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>  {</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#a6984a307a2f487cea3eeeb36c1422020">static_runner::register_static_suite</a> (static_runner_ref, static_suite_ref);</div>
+<div class="line"><span class="lineno">   97</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1static__runner_html_a6984a307a2f487cea3eeeb36c1422020"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#a6984a307a2f487cea3eeeb36c1422020">micro_os_plus::micro_test_plus::static_runner::register_static_suite</a></div><div class="ttdeci">static void register_static_suite(static_runner &amp;runner, static_suite &amp;suite)</div><div class="ttdoc">Registers a static test suite with the runner.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00560">runner.cpp:560</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner_8cpp_source.html#l00621">micro_os_plus::micro_test_plus::static_runner::register_static_suite()</a>.</p>
+<p class="reference">References <a class="el" href="runner_8cpp_source.html#l00560">micro_os_plus::micro_test_plus::static_runner::register_static_suite()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00499">micro_os_plus::micro_test_plus::static_suite::static_suite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00444">micro_os_plus::micro_test_plus::static_suite::static_suite()</a>.</p>
 
 </div>
 </div>
@@ -629,11 +631,11 @@ template&lt;typename Lhs_T, typename Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The same object viewed as its <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span> base.</dd></dl>
 <p>Performs the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html" title="A runner variant that also manages statically-registered test suites.">static_runner</a></span> to <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span> upcast where both types are complete, allowing headers with only forward declarations to request this conversion safely. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner_8cpp_source.html#l00076">76</a> of file <a class="el" href="runner_8cpp_source.html">runner.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>  {</div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html">runner</a>&amp;<span class="keyword">&gt;</span> (static_runner_ref);</div>
-<div class="line"><span class="lineno">   79</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html">micro_os_plus::micro_test_plus::runner</a></div><div class="ttdoc">The test runner for the µTest++ framework.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l00118">runner.h:119</a></div></div>
+<p class="definition">Definition at line <a class="el" href="runner_8cpp_source.html#l00081">81</a> of file <a class="el" href="runner_8cpp_source.html">runner.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>  {</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html">runner</a>&amp;<span class="keyword">&gt;</span> (static_runner_ref);</div>
+<div class="line"><span class="lineno">   84</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html">micro_os_plus::micro_test_plus::runner</a></div><div class="ttdoc">The test runner for the µTest++ framework.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l00142">runner.h:143</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -670,7 +672,7 @@ template&lt;typename Lhs_T, typename Rhs_T&gt; </div>
 <div class="line"><span class="lineno">  134</span>      <span class="stringliteral">&quot;\033[31m&quot;</span> </div>
 <div class="line"><span class="lineno">  135</span>    };</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00078">micro_os_plus::micro_test_plus::reporter_human::reporter_human()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00083">micro_os_plus::micro_test_plus::reporter_human::reporter_human()</a>.</p>
 
 </div>
 </div>

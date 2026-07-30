@@ -21,7 +21,7 @@
           "label": "µTest++",
           "link": {
             "type": "doc",
-            "id": "api/groups/micro-test-plus"
+            "id": "api/groups/micro-os-plus-micro-test-plus"
           },
           "collapsed": true,
           "items": [
@@ -30,86 +30,91 @@
               "label": "C++ API",
               "link": {
                 "type": "doc",
-                "id": "api/groups/micro-test-plus-cpp-api"
+                "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api"
               },
               "collapsed": true,
               "items": [
                 {
                   "type": "doc",
                   "label": "Test Runners",
-                  "id": "api/groups/micro-test-plus-runners"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-runners"
                 },
                 {
                   "type": "doc",
                   "label": "Test Cases",
-                  "id": "api/groups/micro-test-plus-test-case"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-test-case"
                 },
                 {
                   "type": "doc",
                   "label": "Expectations",
-                  "id": "api/groups/micro-test-plus-expectations"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-expectations"
                 },
                 {
                   "type": "doc",
                   "label": "Assumptions",
-                  "id": "api/groups/micro-test-plus-assumptions"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-assumptions"
                 },
                 {
                   "type": "doc",
                   "label": "Function Comparators",
-                  "id": "api/groups/micro-test-plus-function-comparators"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-function-comparators"
                 },
                 {
                   "type": "doc",
                   "label": "Logical Functions",
-                  "id": "api/groups/micro-test-plus-logical-functions"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-logical-functions"
                 },
                 {
                   "type": "doc",
                   "label": "Checking Exceptions",
-                  "id": "api/groups/micro-test-plus-exceptions"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-exceptions"
                 },
                 {
                   "type": "doc",
                   "label": "Operators",
-                  "id": "api/groups/micro-test-plus-operators"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-operators"
                 },
                 {
                   "type": "doc",
                   "label": "String Operators",
-                  "id": "api/groups/micro-test-plus-string-operators"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-string-operators"
                 },
                 {
                   "type": "doc",
                   "label": "Container Operators",
-                  "id": "api/groups/micro-test-plus-container-operators"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-container-operators"
                 },
                 {
                   "type": "doc",
                   "label": "Literals and Wrappers",
-                  "id": "api/groups/micro-test-plus-literals"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-literals"
                 },
                 {
                   "type": "doc",
                   "label": "Utility Functions",
-                  "id": "api/groups/micro-test-plus-utility-functions"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-utility-functions"
                 },
                 {
                   "type": "doc",
                   "label": "Test Suites",
-                  "id": "api/groups/micro-test-plus-test-suites"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-test-suites"
                 }
               ]
             },
             {
               "type": "doc",
               "label": "C API",
-              "id": "api/groups/micro-test-plus-c-api"
+              "id": "api/groups/micro-os-plus-micro-test-plus-c-api"
+            },
+            {
+              "type": "doc",
+              "label": "Configuration",
+              "id": "api/groups/micro-os-plus-micro-test-plus-config"
             },
             {
               "type": "doc",
               "label": "Command Line Options",
-              "id": "api/groups/micro-test-plus-cli"
+              "id": "api/groups/micro-os-plus-micro-test-plus-cli"
             }
           ]
         }
@@ -1233,6 +1238,11 @@
           "type": "doc",
           "label": "Enum Values",
           "id": "api/indices/files/enumvalues"
+        },
+        {
+          "type": "doc",
+          "label": "Macro Definitions",
+          "id": "api/indices/files/defines"
         }
       ]
     },

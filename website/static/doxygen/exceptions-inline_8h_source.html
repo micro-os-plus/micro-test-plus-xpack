@@ -154,8 +154,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('exceptions-inl
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#if defined(__clang__)</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wc++98-compat&quot;</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wc++98-compat-pedantic&quot;</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('exceptions-inl
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Exception_T, <span class="keyword">class</span> Callable_T&gt;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span></div>
 <div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="group__micro-test-plus-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5">   80</a></span>  <span class="keywordflow">throws</span> (<span class="keyword">const</span> Callable_T&amp; func)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="group__micro-os-plus-micro-test-plus-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5">   80</a></span>  <span class="keywordflow">throws</span> (<span class="keyword">const</span> Callable_T&amp; func)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  {</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T, Exception_T&gt;</a>{ func };</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('exceptions-inl
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Callable_T&gt;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span></div>
 <div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="group__micro-test-plus-exceptions.html#ga8bf54756e4122c6a0bd123b4621e60e2">   97</a></span>  <span class="keywordflow">throws</span> (<span class="keyword">const</span> Callable_T&amp; func)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="group__micro-os-plus-micro-test-plus-exceptions.html#ga8bf54756e4122c6a0bd123b4621e60e2">   97</a></span>  <span class="keywordflow">throws</span> (<span class="keyword">const</span> Callable_T&amp; func)</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  {</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T&gt;</a>{ func };</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('exceptions-inl
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Callable_T&gt;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span></div>
 <div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="group__micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148">  115</a></span>  <a class="code hl_function" href="group__micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148">nothrow</a> (<span class="keyword">const</span> Callable_T&amp; func)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="group__micro-os-plus-micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148">  115</a></span>  <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148">nothrow</a> (<span class="keyword">const</span> Callable_T&amp; func)</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  {</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">detail::nothrow_&lt;Callable_T&gt;</a>{ func };</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('exceptions-inl
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
@@ -211,8 +211,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('exceptions-inl
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_EXCEPTIONS_INLINES_H_</span></div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
-<div class="ttc" id="agroup__micro-test-plus-exceptions_html_ga798bd28001c3938784073e60dd904148"><div class="ttname"><a href="group__micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148">micro_os_plus::micro_test_plus::nothrow</a></div><div class="ttdeci">constexpr auto nothrow(const Callable_T &amp;func)</div><div class="ttdoc">Check if a callable does not throw an exception.</div><div class="ttdef"><b>Definition</b> <a href="#l00115">exceptions-inline.h:115</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-exceptions_html_ga798bd28001c3938784073e60dd904148"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148">micro_os_plus::micro_test_plus::nothrow</a></div><div class="ttdeci">constexpr auto nothrow(const Callable_T &amp;func)</div><div class="ttdoc">Check if a callable does not throw an exception.</div><div class="ttdef"><b>Definition</b> <a href="#l00115">exceptions-inline.h:115</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00080">deferred-reporter.h:81</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">micro_os_plus::micro_test_plus::detail::nothrow_</a></div><div class="ttdoc">Operator struct template to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00709">detail.h:710</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">micro_os_plus::micro_test_plus::detail::throws_</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00652">detail.h:653</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

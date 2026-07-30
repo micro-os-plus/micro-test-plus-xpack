@@ -5,8 +5,8 @@
   "position": "left",
   "items": [
     {
-      "label": "µOS++ Topics",
-      "to": "/docs/api/groups/micro-os-plus/"
+      "label": "Topics",
+      "to": "/docs/api/groups/"
     },
     {
       "label": "Namespaces",

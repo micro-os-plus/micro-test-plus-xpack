@@ -7,5 +7,5 @@ var searchData=
   ['indent_4',['indent',['../namespacemicro__os__plus_1_1micro__test__plus.html#a7d5ad50c71915516060558e8f7f22bf9',1,'micro_os_plus::micro_test_plus']]],
   ['initialise_5',['initialise',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acfabd0e10d233ad305b6f4fc125a97f2',1,'micro_os_plus::micro_test_plus::runner']]],
   ['integral_5fconstant_6',['integral_constant',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#aa9f1e68b760d80aea085d684b2dccc4f',1,'micro_os_plus::micro_test_plus::type_traits::integral_constant']]],
-  ['is_5fmatch_7',['is_match',['../group__micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731',1,'micro_os_plus::micro_test_plus::utility']]]
+  ['is_5fmatch_7',['is_match',['../group__micro-os-plus-micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731',1,'micro_os_plus::micro_test_plus::utility']]]
 ];

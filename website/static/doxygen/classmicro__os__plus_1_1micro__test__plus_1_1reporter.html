@@ -257,85 +257,76 @@ Protected Attributes</h2></td></tr>
 </dl>
 <p>Moves the supplied argument vector into <span class="tt"><a class="el" href="#a123948993e8c24962071a32d8274c4f6" title="Owns the command-line arguments passed to the test runner.">argvs_</a></span> and scans it for the <span class="tt">--verbose</span>, <span class="tt">--quiet</span>, <span class="tt">--silent</span>, and <span class="tt">--output-file=</span> options, adjusting <span class="tt"><a class="el" href="#aea922774c24ce8337d734fa457896595" title="The verbosity level for test reporting.">verbosity_</a></span> and optionally opening the output file. If the output file path is specified but the file cannot be opened, the process exits with a diagnostic error message. The internal string buffer is pre-allocated to reduce dynamic allocation overhead. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00073">73</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>  {</div>
-<div class="line"><span class="lineno">   75</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></div>
-<div class="line"><span class="lineno">   76</span>    trace::printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
-<div class="line"><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>    std::string_view output_file_sv{};</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a> = std::move (argvs);</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view output_file_prefix{ <span class="stringliteral">&quot;--output-file=&quot;</span> };</div>
-<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>)</div>
-<div class="line"><span class="lineno">   85</span>      {</div>
-<div class="line"><span class="lineno">   86</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; args = *<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>;</div>
-<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; args.size (); ++i)</div>
-<div class="line"><span class="lineno">   88</span>          {</div>
-<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">if</span> (args[i] == <span class="stringliteral">&quot;--verbose&quot;</span>)</div>
-<div class="line"><span class="lineno">   90</span>              {</div>
-<div class="line"><span class="lineno">   91</span>                <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>;</div>
-<div class="line"><span class="lineno">   92</span>              }</div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args[i] == <span class="stringliteral">&quot;--quiet&quot;</span>)</div>
-<div class="line"><span class="lineno">   94</span>              {</div>
-<div class="line"><span class="lineno">   95</span>                <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">verbosity::quiet</a>;</div>
-<div class="line"><span class="lineno">   96</span>              }</div>
-<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args[i] == <span class="stringliteral">&quot;--silent&quot;</span>)</div>
-<div class="line"><span class="lineno">   98</span>              {</div>
-<div class="line"><span class="lineno">   99</span>                <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">verbosity::silent</a>;</div>
-<div class="line"><span class="lineno">  100</span>              }</div>
-<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args[i].starts_with (output_file_prefix))</div>
-<div class="line"><span class="lineno">  102</span>              {</div>
-<div class="line"><span class="lineno">  103</span>                output_file_sv = args[i].substr (output_file_prefix.size ());</div>
-<div class="line"><span class="lineno">  104</span>              }</div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args[i]</div>
-<div class="line"><span class="lineno">  106</span>                     == output_file_prefix.substr (</div>
-<div class="line"><span class="lineno">  107</span>                         0, output_file_prefix.size () - 1))</div>
-<div class="line"><span class="lineno">  108</span>              {</div>
-<div class="line"><span class="lineno">  109</span>                <span class="keywordflow">if</span> (i + 1 &lt; args.size ())</div>
-<div class="line"><span class="lineno">  110</span>                  {</div>
-<div class="line"><span class="lineno">  111</span>                    output_file_sv = args[++i];</div>
-<div class="line"><span class="lineno">  112</span>                  }</div>
-<div class="line"><span class="lineno">  113</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  114</span>                  {</div>
-<div class="line"><span class="lineno">  115</span>                    fprintf (stderr, <span class="stringliteral">&quot;error: --output-file option requires a &quot;</span></div>
-<div class="line"><span class="lineno">  116</span>                                     <span class="stringliteral">&quot;file path argument\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  117</span>                    exit (1);</div>
-<div class="line"><span class="lineno">  118</span>                  }</div>
-<div class="line"><span class="lineno">  119</span>              }</div>
-<div class="line"><span class="lineno">  120</span>          }</div>
-<div class="line"><span class="lineno">  121</span>      }</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">if</span> (!output_file_sv.empty ())</div>
-<div class="line"><span class="lineno">  124</span>      {</div>
-<div class="line"><span class="lineno">  125</span>        <span class="comment">// .data() is safe: all string_views are views into argv[]</span></div>
-<div class="line"><span class="lineno">  126</span>        <span class="comment">// entries, which are null-terminated C strings.</span></div>
-<div class="line"><span class="lineno">  127</span>        <a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> = fopen (output_file_sv.data (), <span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  129</span>          {</div>
-<div class="line"><span class="lineno">  130</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  131</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  132</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  133</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
-<div class="line"><span class="lineno">  134</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  135</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  136</span>            fprintf (stderr, <span class="stringliteral">&quot;error: Failed to open output file &#39;%.*s&#39;\n&quot;</span>,</div>
-<div class="line"><span class="lineno">  137</span>                     <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span> (output_file_sv.size ()),</div>
-<div class="line"><span class="lineno">  138</span>                     output_file_sv.data ());</div>
-<div class="line"><span class="lineno">  139</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  140</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  141</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  142</span>            exit (1);</div>
-<div class="line"><span class="lineno">  143</span>          }</div>
-<div class="line"><span class="lineno">  144</span>        <span class="comment">// The original string is zero terminated, so we can safely use .data()</span></div>
-<div class="line"><span class="lineno">  145</span>        <span class="comment">// here.</span></div>
-<div class="line"><span class="lineno">  146</span>        <a class="code hl_variable" href="#abb92804e6eaee977fdc1e48f29c632f2">output_file_path_</a> = output_file_sv.data ();</div>
-<div class="line"><span class="lineno">  147</span>      }</div>
-<div class="line"><span class="lineno">  148</span> </div>
-<div class="line"><span class="lineno">  149</span>    <span class="comment">// Pre-allocate buffer to reduce dynamic allocations.</span></div>
-<div class="line"><span class="lineno">  150</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.reserve (128);</div>
-<div class="line"><span class="lineno">  151</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00078">78</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>  {</div>
+<div class="line"><span class="lineno">   80</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></div>
+<div class="line"><span class="lineno">   81</span>    trace::printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
+<div class="line"><span class="lineno">   82</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    std::string_view output_file_sv{};</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a> = std::move (argvs);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view output_file_prefix{ <span class="stringliteral">&quot;--output-file=&quot;</span> };</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>)</div>
+<div class="line"><span class="lineno">   90</span>      {</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; args = *<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>;</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; args.size (); ++i)</div>
+<div class="line"><span class="lineno">   93</span>          {</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">if</span> (args[i] == <span class="stringliteral">&quot;--verbose&quot;</span>)</div>
+<div class="line"><span class="lineno">   95</span>              {</div>
+<div class="line"><span class="lineno">   96</span>                <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>;</div>
+<div class="line"><span class="lineno">   97</span>              }</div>
+<div class="line"><span class="lineno">   98</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args[i] == <span class="stringliteral">&quot;--quiet&quot;</span>)</div>
+<div class="line"><span class="lineno">   99</span>              {</div>
+<div class="line"><span class="lineno">  100</span>                <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">verbosity::quiet</a>;</div>
+<div class="line"><span class="lineno">  101</span>              }</div>
+<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args[i] == <span class="stringliteral">&quot;--silent&quot;</span>)</div>
+<div class="line"><span class="lineno">  103</span>              {</div>
+<div class="line"><span class="lineno">  104</span>                <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">verbosity::silent</a>;</div>
+<div class="line"><span class="lineno">  105</span>              }</div>
+<div class="line"><span class="lineno">  106</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args[i].starts_with (output_file_prefix))</div>
+<div class="line"><span class="lineno">  107</span>              {</div>
+<div class="line"><span class="lineno">  108</span>                output_file_sv = args[i].substr (output_file_prefix.size ());</div>
+<div class="line"><span class="lineno">  109</span>              }</div>
+<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args[i]</div>
+<div class="line"><span class="lineno">  111</span>                     == output_file_prefix.substr (</div>
+<div class="line"><span class="lineno">  112</span>                         0, output_file_prefix.size () - 1))</div>
+<div class="line"><span class="lineno">  113</span>              {</div>
+<div class="line"><span class="lineno">  114</span>                <span class="keywordflow">if</span> (i + 1 &lt; args.size ())</div>
+<div class="line"><span class="lineno">  115</span>                  {</div>
+<div class="line"><span class="lineno">  116</span>                    output_file_sv = args[++i];</div>
+<div class="line"><span class="lineno">  117</span>                  }</div>
+<div class="line"><span class="lineno">  118</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  119</span>                  {</div>
+<div class="line"><span class="lineno">  120</span>                    fprintf (stderr, <span class="stringliteral">&quot;error: --output-file option requires a &quot;</span></div>
+<div class="line"><span class="lineno">  121</span>                                     <span class="stringliteral">&quot;file path argument\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  122</span>                    exit (1);</div>
+<div class="line"><span class="lineno">  123</span>                  }</div>
+<div class="line"><span class="lineno">  124</span>              }</div>
+<div class="line"><span class="lineno">  125</span>          }</div>
+<div class="line"><span class="lineno">  126</span>      }</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">if</span> (!output_file_sv.empty ())</div>
+<div class="line"><span class="lineno">  129</span>      {</div>
+<div class="line"><span class="lineno">  130</span>        <span class="comment">// .data() is safe: all string_views are views into argv[]</span></div>
+<div class="line"><span class="lineno">  131</span>        <span class="comment">// entries, which are null-terminated C strings.</span></div>
+<div class="line"><span class="lineno">  132</span>        <a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> = fopen (output_file_sv.data (), <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  134</span>          {</div>
+<div class="line"><span class="lineno">  135</span>            fprintf (stderr, <span class="stringliteral">&quot;error: Failed to open output file &#39;%.*s&#39;\n&quot;</span>,</div>
+<div class="line"><span class="lineno">  136</span>                     <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span> (output_file_sv.size ()),</div>
+<div class="line"><span class="lineno">  137</span>                     output_file_sv.data ());</div>
+<div class="line"><span class="lineno">  138</span>            exit (1);</div>
+<div class="line"><span class="lineno">  139</span>          }</div>
+<div class="line"><span class="lineno">  140</span>        <span class="comment">// The original string is zero terminated, so we can safely use .data()</span></div>
+<div class="line"><span class="lineno">  141</span>        <span class="comment">// here.</span></div>
+<div class="line"><span class="lineno">  142</span>        <a class="code hl_variable" href="#abb92804e6eaee977fdc1e48f29c632f2">output_file_path_</a> = output_file_sv.data ();</div>
+<div class="line"><span class="lineno">  143</span>      }</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>    <span class="comment">// Pre-allocate buffer to reduce dynamic allocations.</span></div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.reserve (128);</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_a123948993e8c24962071a32d8274c4f6"><div class="ttname"><a href="#a123948993e8c24962071a32d8274c4f6">micro_os_plus::micro_test_plus::reporter::argvs_</a></div><div class="ttdeci">std::unique_ptr&lt; std::vector&lt; std::string_view &gt; &gt; argvs_</div><div class="ttdoc">Owns the command-line arguments passed to the test runner.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00604">reporter.h:604</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_a1d95688325caf323a4d77272dcf50b86"><div class="ttname"><a href="#a1d95688325caf323a4d77272dcf50b86">micro_os_plus::micro_test_plus::reporter::output_file_</a></div><div class="ttdeci">FILE * output_file_</div><div class="ttdoc">Optional output file for redirecting test report output.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00599">reporter.h:599</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_a6eed4eaebea91b3377b89a118eb1c323"><div class="ttname"><a href="#a6eed4eaebea91b3377b89a118eb1c323">micro_os_plus::micro_test_plus::reporter::buffer_</a></div><div class="ttdeci">std::string buffer_</div><div class="ttdoc">Output accumulation buffer.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00560">reporter.h:560</a></div></div>
@@ -347,7 +338,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reporter_8h_source.html#l00604">argvs_</a>, <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>, <a class="el" href="reporter_8h_source.html#l00599">output_file_</a>, <a class="el" href="reporter_8h_source.html#l00589">output_file_path_</a>, <a class="el" href="reporter_8h_source.html#l00112">micro_os_plus::micro_test_plus::quiet</a>, <a class="el" href="reporter_8h_source.html#l00111">micro_os_plus::micro_test_plus::silent</a>, <a class="el" href="reporter_8h_source.html#l00114">micro_os_plus::micro_test_plus::verbose</a>, and <a class="el" href="reporter_8h_source.html#l00545">verbosity_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00078">micro_os_plus::micro_test_plus::reporter_human::reporter_human()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00069">micro_os_plus::micro_test_plus::reporter_tap::reporter_tap()</a>, <a class="el" href="#a0a288fd4578c4879872ecdfc3349bf2d">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00410">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00425">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00380">operator&lt;&lt;()</a>, <a class="el" href="#a0699f03871f8c5f906a07bf32505cbd7">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00396">operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00145">operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00185">operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00083">micro_os_plus::micro_test_plus::reporter_human::reporter_human()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00074">micro_os_plus::micro_test_plus::reporter_tap::reporter_tap()</a>, <a class="el" href="#a0a288fd4578c4879872ecdfc3349bf2d">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00397">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00412">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00367">operator&lt;&lt;()</a>, <a class="el" href="#a0699f03871f8c5f906a07bf32505cbd7">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00383">operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00145">operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00188">operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -375,32 +366,23 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>If an output file was opened, it is flushed and closed, and a confirmation message naming the output file is written to <span class="tt">stdout</span>. If tracing is enabled, the function signature is output for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00160">160</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  161</span>  {</div>
-<div class="line"><span class="lineno">  162</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></div>
-<div class="line"><span class="lineno">  163</span>    trace::printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
-<div class="line"><span class="lineno">  164</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  167</span>      {</div>
-<div class="line"><span class="lineno">  168</span>        fflush (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>);</div>
-<div class="line"><span class="lineno">  169</span>        fclose (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>);</div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  172</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  173</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  174</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
-<div class="line"><span class="lineno">  175</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  176</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  177</span>        printf (<span class="stringliteral">&quot;Test output written to &#39;%s&#39;.\n&quot;</span>, <a class="code hl_variable" href="#abb92804e6eaee977fdc1e48f29c632f2">output_file_path_</a>);</div>
-<div class="line"><span class="lineno">  178</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  179</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  180</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  181</span> </div>
-<div class="line"><span class="lineno">  182</span>        <a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  183</span>        <a class="code hl_variable" href="#abb92804e6eaee977fdc1e48f29c632f2">output_file_path_</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  184</span>      }</div>
-<div class="line"><span class="lineno">  185</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00156">156</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>  {</div>
+<div class="line"><span class="lineno">  158</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></div>
+<div class="line"><span class="lineno">  159</span>    trace::printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
+<div class="line"><span class="lineno">  160</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  163</span>      {</div>
+<div class="line"><span class="lineno">  164</span>        fflush (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>);</div>
+<div class="line"><span class="lineno">  165</span>        fclose (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>);</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>        printf (<span class="stringliteral">&quot;Test output written to &#39;%s&#39;.\n&quot;</span>, <a class="code hl_variable" href="#abb92804e6eaee977fdc1e48f29c632f2">output_file_path_</a>);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>        <a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  170</span>        <a class="code hl_variable" href="#abb92804e6eaee977fdc1e48f29c632f2">output_file_path_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  171</span>      }</div>
+<div class="line"><span class="lineno">  172</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reporter_8h_source.html#l00599">output_file_</a>, and <a class="el" href="reporter_8h_source.html#l00589">output_file_path_</a>.</p>
 
@@ -473,7 +455,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html#a59da3337bb7a2d1bc89406f548131d00">micro_os_plus::micro_test_plus::reporter_human</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap.html#a27a5c6eca6a4beb82466448bfe5c44e9">micro_os_plus::micro_test_plus::reporter_tap</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::subtest::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00228">micro_os_plus::micro_test_plus::subtest::run()</a>.</p>
 
 </div>
 </div>
@@ -509,7 +491,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html#a172a7a10a5aa2bd47dc6e7dde903cbbd">micro_os_plus::micro_test_plus::reporter_human</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap.html#ae118be849ab3ff75ab88ff4f54f54be0">micro_os_plus::micro_test_plus::reporter_tap</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00455">micro_os_plus::micro_test_plus::static_suite::run()</a>, and <a class="el" href="test_8cpp_source.html#l00345">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00343">micro_os_plus::micro_test_plus::static_suite::run()</a>, and <a class="el" href="test_8cpp_source.html#l00269">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
 
 </div>
 </div>
@@ -656,7 +638,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap.html#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00455">micro_os_plus::micro_test_plus::static_suite::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00343">micro_os_plus::micro_test_plus::static_suite::run()</a>, and <a class="el" href="test_8cpp_source.html#l00269">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
 
 </div>
 </div>
@@ -678,14 +660,16 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>This method appends a newline character to the internal output buffer of the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html" title="Reporter to display test results, including operand values and types for failures.">reporter</a></span> and immediately flushes the stream. This ensures that each line of test output is clearly separated and promptly displayed, enhancing the readability and organisation of test results across all test cases and folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00213">213</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  214</span>  {</div>
-<div class="line"><span class="lineno">  215</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  216</span>    <a class="code hl_function" href="#ae7f404f29f265c5db6038f1e03f854b2">flush</a> ();</div>
-<div class="line"><span class="lineno">  217</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_ae7f404f29f265c5db6038f1e03f854b2"><div class="ttname"><a href="#ae7f404f29f265c5db6038f1e03f854b2">micro_os_plus::micro_test_plus::reporter::flush</a></div><div class="ttdeci">void flush(void)</div><div class="ttdoc">Flush the current buffered content.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00359">reporter.cpp:359</a></div></div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00200">200</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>  {</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_function" href="#ae7f404f29f265c5db6038f1e03f854b2">flush</a> ();</div>
+<div class="line"><span class="lineno">  204</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_ae7f404f29f265c5db6038f1e03f854b2"><div class="ttname"><a href="#ae7f404f29f265c5db6038f1e03f854b2">micro_os_plus::micro_test_plus::reporter::flush</a></div><div class="ttdeci">void flush(void)</div><div class="ttdoc">Flush the current buffered content.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00346">reporter.cpp:346</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00198">micro_os_plus::micro_test_plus::endl()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>, and <a class="el" href="reporter_8cpp_source.html#l00346">flush()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00185">micro_os_plus::micro_test_plus::endl()</a>.</p>
 
 </div>
 </div>
@@ -723,7 +707,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reporter_8h_source.html#l00571">expression_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00340">micro_os_plus::micro_test_plus::subtest::assume()</a>, <a class="el" href="reporter_8cpp_source.html#l00457">fail()</a>, <a class="el" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix()</a>, <a class="el" href="#a0699f03871f8c5f906a07bf32505cbd7">operator&lt;&lt;()</a>, <a class="el" href="test-inlines_8h_source.html#l00132">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::own_index()</a>, and <a class="el" href="reporter_8cpp_source.html#l00438">pass()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00305">micro_os_plus::micro_test_plus::subtest::assume()</a>, <a class="el" href="test-inlines_8h_source.html#l00290">micro_os_plus::micro_test_plus::subtest::expect()</a>, <a class="el" href="reporter_8cpp_source.html#l00444">fail()</a>, <a class="el" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix()</a>, <a class="el" href="#a0699f03871f8c5f906a07bf32505cbd7">operator&lt;&lt;()</a>, and <a class="el" href="reporter_8cpp_source.html#l00425">pass()</a>.</p>
 
 </div>
 </div>
@@ -779,17 +763,17 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Reports a test failure, formatting the output with source location and, when <span class="tt">has_expression</span> is true, the pre-formatted expression string. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00457">457</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  461</span>  {</div>
-<div class="line"><span class="lineno">  462</span>    <a class="code hl_function" href="#a4192b8554e00783a61e5bebe6d9545cc">output_fail_prefix_</a> (message, has_expression, location, subtest);</div>
-<div class="line"><span class="lineno">  463</span> </div>
-<div class="line"><span class="lineno">  464</span>    <span class="keywordflow">if</span> (has_expression)</div>
-<div class="line"><span class="lineno">  465</span>      {</div>
-<div class="line"><span class="lineno">  466</span>        *<span class="keyword">this</span> &lt;&lt; <a class="code hl_function" href="#ad2169093aee09bc28ae7f70467569a23">expression</a>;</div>
-<div class="line"><span class="lineno">  467</span>      }</div>
-<div class="line"><span class="lineno">  468</span> </div>
-<div class="line"><span class="lineno">  469</span>    <a class="code hl_function" href="#af103dba717208ba08d44285066a7b326">output_fail_suffix_</a> (location, abort, subtest);</div>
-<div class="line"><span class="lineno">  470</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00444">444</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  448</span>  {</div>
+<div class="line"><span class="lineno">  449</span>    <a class="code hl_function" href="#a4192b8554e00783a61e5bebe6d9545cc">output_fail_prefix_</a> (message, has_expression, location, subtest);</div>
+<div class="line"><span class="lineno">  450</span> </div>
+<div class="line"><span class="lineno">  451</span>    <span class="keywordflow">if</span> (has_expression)</div>
+<div class="line"><span class="lineno">  452</span>      {</div>
+<div class="line"><span class="lineno">  453</span>        *<span class="keyword">this</span> &lt;&lt; <a class="code hl_function" href="#ad2169093aee09bc28ae7f70467569a23">expression</a>;</div>
+<div class="line"><span class="lineno">  454</span>      }</div>
+<div class="line"><span class="lineno">  455</span> </div>
+<div class="line"><span class="lineno">  456</span>    <a class="code hl_function" href="#af103dba717208ba08d44285066a7b326">output_fail_suffix_</a> (location, abort, subtest);</div>
+<div class="line"><span class="lineno">  457</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_a4192b8554e00783a61e5bebe6d9545cc"><div class="ttname"><a href="#a4192b8554e00783a61e5bebe6d9545cc">micro_os_plus::micro_test_plus::reporter::output_fail_prefix_</a></div><div class="ttdeci">virtual void output_fail_prefix_(std::string &amp;message, const bool has_expression, const reflection::source_location &amp;location, subtest &amp;subtest)=0</div><div class="ttdoc">Outputs the prefix for a failing condition.</div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_ad2169093aee09bc28ae7f70467569a23"><div class="ttname"><a href="#ad2169093aee09bc28ae7f70467569a23">micro_os_plus::micro_test_plus::reporter::expression</a></div><div class="ttdeci">detail::expression_formatter &amp; expression()</div><div class="ttdoc">Provides access to the expression formatter for this reporter.</div><div class="ttdef"><b>Definition</b> <a href="reporter-inlines_8h_source.html#l00107">reporter-inlines.h:107</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_af103dba717208ba08d44285066a7b326"><div class="ttname"><a href="#af103dba717208ba08d44285066a7b326">micro_os_plus::micro_test_plus::reporter::output_fail_suffix_</a></div><div class="ttdeci">virtual void output_fail_suffix_(const reflection::source_location &amp;location, bool abort, subtest &amp;subtest)=0</div><div class="ttdoc">Outputs the suffix for a failing condition.</div></div>
@@ -816,18 +800,18 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>This method flushes the output buffer of the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html" title="Reporter to display test results, including operand values and types for failures.">reporter</a></span> by synchronising it with the standard output stream. This guarantees that all pending test output is immediately written and visible, ensuring prompt and reliable reporting of test results across all test cases and folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00359">359</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  360</span>  {</div>
-<div class="line"><span class="lineno">  361</span>    fflush (stdout);</div>
-<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  363</span>      {</div>
-<div class="line"><span class="lineno">  364</span>        fflush (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>);</div>
-<div class="line"><span class="lineno">  365</span>      }</div>
-<div class="line"><span class="lineno">  366</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00346">346</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>  {</div>
+<div class="line"><span class="lineno">  348</span>    fflush (stdout);</div>
+<div class="line"><span class="lineno">  349</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  350</span>      {</div>
+<div class="line"><span class="lineno">  351</span>        fflush (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>);</div>
+<div class="line"><span class="lineno">  352</span>      }</div>
+<div class="line"><span class="lineno">  353</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reporter_8h_source.html#l00599">output_file_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00143">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00121">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00477">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00261">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00171">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00548">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00317">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00785">micro_os_plus::micro_test_plus::reporter_human::output_fail_suffix_()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00730">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00720">micro_os_plus::micro_test_plus::reporter_human::output_pass_suffix_()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00681">micro_os_plus::micro_test_plus::reporter_tap::output_pass_suffix_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00148">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00126">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00424">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00269">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00244">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00165">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, <a class="el" href="reporter_8cpp_source.html#l00200">endline()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00688">micro_os_plus::micro_test_plus::reporter_human::output_fail_suffix_()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00648">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00627">micro_os_plus::micro_test_plus::reporter_human::output_pass_suffix_()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00599">micro_os_plus::micro_test_plus::reporter_tap::output_pass_suffix_()</a>.</p>
 
 </div>
 </div>
@@ -858,9 +842,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html#ad15b45e4c2b282029391958ead26ab82">micro_os_plus::micro_test_plus::reporter_human</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap.html#ab566ba1cdb8710d4fefdfbef77b80bff">micro_os_plus::micro_test_plus::reporter_tap</a>.</p>
 
-<p class="reference">References <a class="el" href="reporter-inlines_8h_source.html#l00118">colour_()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00107">expression()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00092">verbosity()</a>, <a class="el" href="reporter_8cpp_source.html#l00242">write_buffer_to_file_()</a>, and <a class="el" href="reporter_8cpp_source.html#l00262">write_info_()</a>.</p>
+<p class="reference">References <a class="el" href="reporter-inlines_8h_source.html#l00118">colour_()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00107">expression()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00092">verbosity()</a>, <a class="el" href="reporter_8cpp_source.html#l00229">write_buffer_to_file_()</a>, and <a class="el" href="reporter_8cpp_source.html#l00249">write_info_()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00262">write_info_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00249">write_info_()</a>.</p>
 
 </div>
 </div>
@@ -886,7 +870,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the current reporter instance. </dd></dl>
 
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>.</p>
 
 </div>
 </div>
@@ -913,13 +897,13 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the current reporter instance.</dd></dl>
 <p>This operator overload appends the specified character to the internal output buffer of the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html" title="Reporter to display test results, including operand values and types for failures.">reporter</a></span>. It enables efficient streaming of individual characters into the reporter, supporting precise and flexible formatting of test output across all test cases and folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00409">409</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  411</span>  {</div>
-<div class="line"><span class="lineno">  412</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (1, c);</div>
-<div class="line"><span class="lineno">  413</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  414</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00396">396</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  398</span>  {</div>
+<div class="line"><span class="lineno">  399</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (1, c);</div>
+<div class="line"><span class="lineno">  400</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  401</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
 
 </div>
 </div>
@@ -946,13 +930,13 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the current reporter instance.</dd></dl>
 <p>This operator overload appends the contents of the provided C-style string to the internal output buffer of the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html" title="Reporter to display test results, including operand values and types for failures.">reporter</a></span>. It enables efficient streaming of string literals and character arrays into the reporter, supporting clear and flexible formatting of test output across all test cases and folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00424">424</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  426</span>  {</div>
-<div class="line"><span class="lineno">  427</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (s);</div>
-<div class="line"><span class="lineno">  428</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  429</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00411">411</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  413</span>  {</div>
+<div class="line"><span class="lineno">  414</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (s);</div>
+<div class="line"><span class="lineno">  415</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  416</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
 
 </div>
 </div>
@@ -979,14 +963,14 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the current reporter instance.</dd></dl>
 <p>This operator overload enables manipulators, such as <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html#accd8ecc7473b09af578daa31bb8780eb" title="Output stream manipulator for ending a line in test reports.">endl</a></span>, to be used with the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html" title="Reporter to display test results, including operand values and types for failures.">reporter</a></span> stream in a manner similar to standard C++ streams. When a manipulator function is passed, it is invoked with the current <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html" title="Reporter to display test results, including operand values and types for failures.">reporter</a></span> instance, allowing for seamless integration of stream operations and improved readability of test output across all test cases and folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00379">379</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  381</span>  {</div>
-<div class="line"><span class="lineno">  382</span>    <span class="comment">// Call the endl function.</span></div>
-<div class="line"><span class="lineno">  383</span>    (*func) (*this);</div>
-<div class="line"><span class="lineno">  384</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  385</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00366">366</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  368</span>  {</div>
+<div class="line"><span class="lineno">  369</span>    <span class="comment">// Call the endl function.</span></div>
+<div class="line"><span class="lineno">  370</span>    (*func) (*this);</div>
+<div class="line"><span class="lineno">  371</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  372</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>.</p>
 
 </div>
 </div>
@@ -1006,7 +990,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Reference to the current reporter instance. </dd></dl>
 
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00107">expression()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00107">expression()</a>.</p>
 
 </div>
 </div>
@@ -1033,13 +1017,13 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the current reporter instance.</dd></dl>
 <p>This operator overload appends the contents of the provided <span class="tt">std::string_view</span> to the internal output buffer of the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html" title="Reporter to display test results, including operand values and types for failures.">reporter</a></span>. It enables seamless streaming of string data into the reporter, supporting clear and efficient formatting of test output across all test cases and folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00395">395</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  397</span>  {</div>
-<div class="line"><span class="lineno">  398</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (sv);</div>
-<div class="line"><span class="lineno">  399</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  400</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00382">382</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  384</span>  {</div>
+<div class="line"><span class="lineno">  385</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (sv);</div>
+<div class="line"><span class="lineno">  386</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  387</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
 
 </div>
 </div>
@@ -1086,23 +1070,26 @@ template&lt;typename T&gt; </div>
 <div class="line"><span class="lineno">  151</span>        <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (<span class="stringliteral">&quot;0x0&quot;</span>);</div>
 <div class="line"><span class="lineno">  152</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  153</span>      }</div>
-<div class="line"><span class="lineno">  154</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  155</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  156</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  157</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
-<div class="line"><span class="lineno">  158</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  159</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  160</span>    <span class="keywordtype">char</span> buff[20];</div>
-<div class="line"><span class="lineno">  161</span>    snprintf (buff, <span class="keyword">sizeof</span> (buff), <span class="stringliteral">&quot;%p&quot;</span>, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span> (v));</div>
-<div class="line"><span class="lineno">  162</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (buff);</div>
-<div class="line"><span class="lineno">  163</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  164</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  165</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  166</span> </div>
-<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  168</span>  }</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  156</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">  157</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  158</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
+<div class="line"><span class="lineno">  159</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  160</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordtype">char</span> buff[20];</div>
+<div class="line"><span class="lineno">  163</span>    snprintf (buff, <span class="keyword">sizeof</span> (buff), <span class="stringliteral">&quot;%p&quot;</span>, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span> (v));</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.append (buff);</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  167</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">  168</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  171</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
 
 </div>
 </div>
@@ -1138,14 +1125,14 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the current reporter instance.</dd></dl>
 <p>This template operator overload allows the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html" title="Reporter to display test results, including operand values and types for failures.">reporter</a></span> to output values of any arithmetic type (integral or floating-point) in a consistent and readable format. The value is formatted using the <span class="tt">append_number_</span> helper function, which handles the conversion to a string representation with appropriate type suffixes where applicable (e.g., "f" for float, "l" for long double). This enables numeric values to be included in test reports and diagnostics in a clear and unambiguous manner, supporting the verification of test cases that involve arithmetic expressions and comparisons. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter-inlines_8h_source.html#l00184">184</a> of file <a class="el" href="reporter-inlines_8h_source.html">reporter-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  186</span>  {</div>
-<div class="line"><span class="lineno">  187</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aa3885b7b361bc6af9e7a52fa6dcc78a1">detail::append_number_</a> (<a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>, v);</div>
-<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  189</span>  }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_aa3885b7b361bc6af9e7a52fa6dcc78a1"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aa3885b7b361bc6af9e7a52fa6dcc78a1">micro_os_plus::micro_test_plus::detail::append_number_</a></div><div class="ttdeci">void append_number_(std::string &amp;buffer, T v)</div><div class="ttdoc">Appends the string representation of a numeric value to a buffer, using std::to_chars for allocation-...</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00654">detail-inlines.h:654</a></div></div>
+<p class="definition">Definition at line <a class="el" href="reporter-inlines_8h_source.html#l00187">187</a> of file <a class="el" href="reporter-inlines_8h_source.html">reporter-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>  {</div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aa3885b7b361bc6af9e7a52fa6dcc78a1">detail::append_number_</a> (<a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>, v);</div>
+<div class="line"><span class="lineno">  191</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  192</span>  }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_aa3885b7b361bc6af9e7a52fa6dcc78a1"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aa3885b7b361bc6af9e7a52fa6dcc78a1">micro_os_plus::micro_test_plus::detail::append_number_</a></div><div class="ttdeci">void append_number_(std::string &amp;buffer, T v)</div><div class="ttdoc">Appends the string representation of a numeric value to a buffer, using std::to_chars for allocation-...</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00666">detail-inlines.h:666</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, <a class="el" href="detail-inlines_8h_source.html#l00654">micro_os_plus::micro_test_plus::detail::append_number_()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, <a class="el" href="detail-inlines_8h_source.html#l00666">micro_os_plus::micro_test_plus::detail::append_number_()</a>, and <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
 
 </div>
 </div>
@@ -1200,7 +1187,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 
 <p class="reference">References <a class="el" href="#a4192b8554e00783a61e5bebe6d9545cc">output_fail_prefix_()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00457">fail()</a>, and <a class="el" href="#a4192b8554e00783a61e5bebe6d9545cc">output_fail_prefix_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00444">fail()</a>, and <a class="el" href="#a4192b8554e00783a61e5bebe6d9545cc">output_fail_prefix_()</a>.</p>
 
 </div>
 </div>
@@ -1249,7 +1236,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 
 <p class="reference">References <a class="el" href="#af103dba717208ba08d44285066a7b326">output_fail_suffix_()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00457">fail()</a>, and <a class="el" href="#af103dba717208ba08d44285066a7b326">output_fail_suffix_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00444">fail()</a>, and <a class="el" href="#af103dba717208ba08d44285066a7b326">output_fail_suffix_()</a>.</p>
 
 </div>
 </div>
@@ -1292,7 +1279,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 
 <p class="reference">References <a class="el" href="#aa78041c4993a5a84f0eba4c278071c9f">output_pass_prefix_()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#aa78041c4993a5a84f0eba4c278071c9f">output_pass_prefix_()</a>, and <a class="el" href="reporter_8cpp_source.html#l00438">pass()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#aa78041c4993a5a84f0eba4c278071c9f">output_pass_prefix_()</a>, and <a class="el" href="reporter_8cpp_source.html#l00425">pass()</a>.</p>
 
 </div>
 </div>
@@ -1330,7 +1317,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 
 <p class="reference">References <a class="el" href="#a18e488b545a2dfa190f9f003b4f7ef57">output_pass_suffix_()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a18e488b545a2dfa190f9f003b4f7ef57">output_pass_suffix_()</a>, and <a class="el" href="reporter_8cpp_source.html#l00438">pass()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a18e488b545a2dfa190f9f003b4f7ef57">output_pass_suffix_()</a>, and <a class="el" href="reporter_8cpp_source.html#l00425">pass()</a>.</p>
 
 </div>
 </div>
@@ -1368,17 +1355,17 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Outputs a pass prefix, followed by either the provided message or, if the message is empty, the evaluated expression string itself. A pass suffix is then appended to complete the output. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00438">438</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  440</span>  {</div>
-<div class="line"><span class="lineno">  441</span>    <a class="code hl_function" href="#aa78041c4993a5a84f0eba4c278071c9f">output_pass_prefix_</a> (message, subtest);</div>
-<div class="line"><span class="lineno">  442</span> </div>
-<div class="line"><span class="lineno">  443</span>    <span class="keywordflow">if</span> (message.empty ())</div>
-<div class="line"><span class="lineno">  444</span>      {</div>
-<div class="line"><span class="lineno">  445</span>        *<span class="keyword">this</span> &lt;&lt; <a class="code hl_function" href="#ad2169093aee09bc28ae7f70467569a23">expression</a>;</div>
-<div class="line"><span class="lineno">  446</span>      }</div>
-<div class="line"><span class="lineno">  447</span> </div>
-<div class="line"><span class="lineno">  448</span>    <a class="code hl_function" href="#a18e488b545a2dfa190f9f003b4f7ef57">output_pass_suffix_</a> (subtest);</div>
-<div class="line"><span class="lineno">  449</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00425">425</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  427</span>  {</div>
+<div class="line"><span class="lineno">  428</span>    <a class="code hl_function" href="#aa78041c4993a5a84f0eba4c278071c9f">output_pass_prefix_</a> (message, subtest);</div>
+<div class="line"><span class="lineno">  429</span> </div>
+<div class="line"><span class="lineno">  430</span>    <span class="keywordflow">if</span> (message.empty ())</div>
+<div class="line"><span class="lineno">  431</span>      {</div>
+<div class="line"><span class="lineno">  432</span>        *<span class="keyword">this</span> &lt;&lt; <a class="code hl_function" href="#ad2169093aee09bc28ae7f70467569a23">expression</a>;</div>
+<div class="line"><span class="lineno">  433</span>      }</div>
+<div class="line"><span class="lineno">  434</span> </div>
+<div class="line"><span class="lineno">  435</span>    <a class="code hl_function" href="#a18e488b545a2dfa190f9f003b4f7ef57">output_pass_suffix_</a> (subtest);</div>
+<div class="line"><span class="lineno">  436</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_a18e488b545a2dfa190f9f003b4f7ef57"><div class="ttname"><a href="#a18e488b545a2dfa190f9f003b4f7ef57">micro_os_plus::micro_test_plus::reporter::output_pass_suffix_</a></div><div class="ttdeci">virtual void output_pass_suffix_(subtest &amp;subtest)=0</div><div class="ttdoc">Outputs the suffix for a passing condition.</div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_aa78041c4993a5a84f0eba4c278071c9f"><div class="ttname"><a href="#aa78041c4993a5a84f0eba4c278071c9f">micro_os_plus::micro_test_plus::reporter::output_pass_prefix_</a></div><div class="ttdeci">virtual void output_pass_prefix_(std::string &amp;message, subtest &amp;subtest)=0</div><div class="ttdoc">Outputs the prefix for a passing condition.</div></div>
 </div><!-- fragment -->
@@ -1447,18 +1434,18 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Writes the contents of <span class="tt"><a class="el" href="#a6eed4eaebea91b3377b89a118eb1c323" title="Output accumulation buffer.">buffer_</a></span> to <span class="tt"><a class="el" href="#a1d95688325caf323a4d77272dcf50b86" title="Optional output file for redirecting test report output.">output_file_</a></span> using <span class="tt">fprintf</span> without appending a newline. If <span class="tt"><a class="el" href="#a1d95688325caf323a4d77272dcf50b86" title="Optional output file for redirecting test report output.">output_file_</a></span> is null, the call is a no-op. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00242">242</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  243</span>  {</div>
-<div class="line"><span class="lineno">  244</span>    <span class="comment">// Pass only the string, do not add an `\n` here.</span></div>
-<div class="line"><span class="lineno">  245</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  246</span>      {</div>
-<div class="line"><span class="lineno">  247</span>        fprintf (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>, <span class="stringliteral">&quot;%s&quot;</span>, <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.c_str ());</div>
-<div class="line"><span class="lineno">  248</span>      }</div>
-<div class="line"><span class="lineno">  249</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00229">229</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  230</span>  {</div>
+<div class="line"><span class="lineno">  231</span>    <span class="comment">// Pass only the string, do not add an `\n` here.</span></div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  233</span>      {</div>
+<div class="line"><span class="lineno">  234</span>        fprintf (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>, <span class="stringliteral">&quot;%s&quot;</span>, <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.c_str ());</div>
+<div class="line"><span class="lineno">  235</span>      }</div>
+<div class="line"><span class="lineno">  236</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>, and <a class="el" href="reporter_8h_source.html#l00599">output_file_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l00599">output_file_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00548">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00317">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix()</a>.</p>
 
 </div>
 </div>
@@ -1481,15 +1468,15 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>This method writes the contents of the internal output buffer to the standard output stream without appending a newline character. After outputting the buffer, it is cleared to prepare for subsequent output. This approach ensures that test results are presented promptly and efficiently, supporting clear and organised reporting across all test cases and folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00229">229</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  230</span>  {</div>
-<div class="line"><span class="lineno">  231</span>    <span class="comment">// Pass only the string, do not add an `\n` here.</span></div>
-<div class="line"><span class="lineno">  232</span>    printf (<span class="stringliteral">&quot;%s&quot;</span>, <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.c_str ());</div>
-<div class="line"><span class="lineno">  233</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00216">216</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  217</span>  {</div>
+<div class="line"><span class="lineno">  218</span>    <span class="comment">// Pass only the string, do not add an `\n` here.</span></div>
+<div class="line"><span class="lineno">  219</span>    printf (<span class="stringliteral">&quot;%s&quot;</span>, <a class="code hl_variable" href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>.c_str ());</div>
+<div class="line"><span class="lineno">  220</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reporter_8h_source.html#l00560">buffer_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00548">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00317">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-tap_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>.</p>
 
 </div>
 </div>
@@ -1519,100 +1506,100 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Constructs and emits two informational lines: the first lists the programme name and any command-line arguments; the second identifies the compiler (Clang, GCC, or MSVC) together with the version string, floating-point availability on bare-metal targets, exception support, and any active debug or trace macros. Both lines are written to the output file when one is open, and to <span class="tt">stdout</span> unless verbosity is set to <span class="tt">silent</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00262">262</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  263</span>  {</div>
-<div class="line"><span class="lineno">  264</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a> &amp;&amp; !<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>-&gt;empty ())</div>
-<div class="line"><span class="lineno">  265</span>      {</div>
-<div class="line"><span class="lineno">  266</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; args = *<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>;</div>
-<div class="line"><span class="lineno">  267</span>        std::string line;</div>
-<div class="line"><span class="lineno">  268</span>        line.reserve (256);</div>
-<div class="line"><span class="lineno">  269</span>        line.append (<a class="code hl_function" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix</a> ());</div>
-<div class="line"><span class="lineno">  270</span>        line.append (<span class="stringliteral">&quot;Running: &quot;</span>);</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00249">249</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>  {</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a> &amp;&amp; !<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>-&gt;empty ())</div>
+<div class="line"><span class="lineno">  252</span>      {</div>
+<div class="line"><span class="lineno">  253</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; args = *<a class="code hl_variable" href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>;</div>
+<div class="line"><span class="lineno">  254</span>        std::string line;</div>
+<div class="line"><span class="lineno">  255</span>        line.reserve (256);</div>
+<div class="line"><span class="lineno">  256</span>        line.append (<a class="code hl_function" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix</a> ());</div>
+<div class="line"><span class="lineno">  257</span>        line.append (<span class="stringliteral">&quot;Running: &quot;</span>);</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>        <span class="comment">// Append only the file name part of argv[0].</span></div>
+<div class="line"><span class="lineno">  260</span>        <span class="keyword">const</span> std::string_view arg0 = args[0];</div>
+<div class="line"><span class="lineno">  261</span>        <span class="keyword">const</span> <span class="keyword">auto</span> sep = arg0.rfind (<span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><span class="lineno">  262</span>        line.append ((sep != std::string_view::npos) ? arg0.substr (sep + 1)</div>
+<div class="line"><span class="lineno">  263</span>                                                     : arg0);</div>
+<div class="line"><span class="lineno">  264</span> </div>
+<div class="line"><span class="lineno">  265</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; args.size (); ++i)</div>
+<div class="line"><span class="lineno">  266</span>          {</div>
+<div class="line"><span class="lineno">  267</span>            line.append (<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><span class="lineno">  268</span>            line.append (args[i]);</div>
+<div class="line"><span class="lineno">  269</span>          }</div>
+<div class="line"><span class="lineno">  270</span>        line.append (<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><span class="lineno">  271</span> </div>
-<div class="line"><span class="lineno">  272</span>        <span class="comment">// Append only the file name part of argv[0].</span></div>
-<div class="line"><span class="lineno">  273</span>        <span class="keyword">const</span> std::string_view arg0 = args[0];</div>
-<div class="line"><span class="lineno">  274</span>        <span class="keyword">const</span> <span class="keyword">auto</span> sep = arg0.rfind (<span class="charliteral">&#39;/&#39;</span>);</div>
-<div class="line"><span class="lineno">  275</span>        line.append ((sep != std::string_view::npos) ? arg0.substr (sep + 1)</div>
-<div class="line"><span class="lineno">  276</span>                                                     : arg0);</div>
-<div class="line"><span class="lineno">  277</span> </div>
-<div class="line"><span class="lineno">  278</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; args.size (); ++i)</div>
-<div class="line"><span class="lineno">  279</span>          {</div>
-<div class="line"><span class="lineno">  280</span>            line.append (<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><span class="lineno">  281</span>            line.append (args[i]);</div>
-<div class="line"><span class="lineno">  282</span>          }</div>
-<div class="line"><span class="lineno">  283</span>        line.append (<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  284</span> </div>
-<div class="line"><span class="lineno">  285</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  286</span>          fprintf (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>, <span class="stringliteral">&quot;%s&quot;</span>, line.c_str ());</div>
-<div class="line"><span class="lineno">  287</span> </div>
-<div class="line"><span class="lineno">  288</span><span class="preprocessor">#if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \</span></div>
-<div class="line"><span class="lineno">  289</span><span class="preprocessor">      &amp;&amp; defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))</span></div>
-<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a></div>
-<div class="line"><span class="lineno">  291</span>            || <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</div>
-<div class="line"><span class="lineno">  292</span>          printf (<span class="stringliteral">&quot;%s&quot;</span>, line.c_str ());</div>
-<div class="line"><span class="lineno">  293</span><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_STARTUP_ENABLED)</span></div>
-<div class="line"><span class="lineno">  294</span>      }</div>
-<div class="line"><span class="lineno">  295</span> </div>
-<div class="line"><span class="lineno">  296</span>    {</div>
-<div class="line"><span class="lineno">  297</span>      <span class="comment">// Build the &quot;Built with ...&quot; line. For the output file the compiler</span></div>
-<div class="line"><span class="lineno">  298</span>      <span class="comment">// version is omitted; for stdout it is appended via __VERSION__.</span></div>
-<div class="line"><span class="lineno">  299</span>      std::string line;</div>
-<div class="line"><span class="lineno">  300</span>      line.reserve (256);</div>
-<div class="line"><span class="lineno">  301</span>      line.append (<a class="code hl_function" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix</a> ());</div>
-<div class="line"><span class="lineno">  302</span>      line.append (<span class="stringliteral">&quot;Built with &quot;</span>);</div>
-<div class="line"><span class="lineno">  303</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  304</span>      line.append (<span class="stringliteral">&quot;clang &quot;</span> __VERSION__);</div>
-<div class="line"><span class="lineno">  305</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  306</span>      line.append (<span class="stringliteral">&quot;GCC &quot;</span> __VERSION__);</div>
-<div class="line"><span class="lineno">  307</span><span class="preprocessor">#elif defined(_MSC_VER)</span></div>
-<div class="line"><span class="lineno">  308</span>      line.append (<span class="stringliteral">&quot;MSVC&quot;</span>);</div>
-<div class="line"><span class="lineno">  309</span>      <span class="keywordtype">char</span> msvc_ver[16];</div>
-<div class="line"><span class="lineno">  310</span>      snprintf (msvc_ver, <span class="keyword">sizeof</span> (msvc_ver), <span class="stringliteral">&quot; - %d&quot;</span>, _MSC_VER);</div>
-<div class="line"><span class="lineno">  311</span>      line.append (msvc_ver);</div>
-<div class="line"><span class="lineno">  312</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  313</span>      line.append (<span class="stringliteral">&quot;an unknown compiler&quot;</span>);</div>
-<div class="line"><span class="lineno">  314</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  315</span><span class="preprocessor">#if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \</span></div>
-<div class="line"><span class="lineno">  316</span><span class="preprocessor">      || defined(WIN32))</span></div>
-<div class="line"><span class="lineno">  317</span>      <span class="comment">// This is relevant only on bare-metal.</span></div>
-<div class="line"><span class="lineno">  318</span><span class="preprocessor">#if defined(__ARM_PCS_VFP) || defined(__ARM_FP)</span></div>
-<div class="line"><span class="lineno">  319</span>      line.append (<span class="stringliteral">&quot;, with FP&quot;</span>);</div>
-<div class="line"><span class="lineno">  320</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  321</span>      line.append (<span class="stringliteral">&quot;, no FP&quot;</span>);</div>
-<div class="line"><span class="lineno">  322</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  323</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  324</span><span class="preprocessor">#if defined(__EXCEPTIONS)</span></div>
-<div class="line"><span class="lineno">  325</span>      line.append (<span class="stringliteral">&quot;, with exceptions&quot;</span>);</div>
-<div class="line"><span class="lineno">  326</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  327</span>      line.append (<span class="stringliteral">&quot;, no exceptions&quot;</span>);</div>
-<div class="line"><span class="lineno">  328</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  329</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_DEBUG_ENABLED)</span></div>
-<div class="line"><span class="lineno">  330</span>      line.append (<span class="stringliteral">&quot;, with MICRO_OS_PLUS_DEBUG_ENABLED&quot;</span>);</div>
-<div class="line"><span class="lineno">  331</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  332</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)</span></div>
-<div class="line"><span class="lineno">  333</span>      line.append (<span class="stringliteral">&quot;, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED&quot;</span>);</div>
-<div class="line"><span class="lineno">  334</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  335</span> </div>
-<div class="line"><span class="lineno">  336</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  337</span>        {</div>
-<div class="line"><span class="lineno">  338</span>          fprintf (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>, <span class="stringliteral">&quot;%s\n&quot;</span>, line.c_str ());</div>
-<div class="line"><span class="lineno">  339</span>        }</div>
-<div class="line"><span class="lineno">  340</span> </div>
-<div class="line"><span class="lineno">  341</span><span class="preprocessor">#if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \</span></div>
-<div class="line"><span class="lineno">  342</span><span class="preprocessor">      &amp;&amp; defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))</span></div>
-<div class="line"><span class="lineno">  343</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> || <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</div>
-<div class="line"><span class="lineno">  344</span>        {</div>
-<div class="line"><span class="lineno">  345</span>          printf (<span class="stringliteral">&quot;%s\n&quot;</span>, line.c_str ());</div>
-<div class="line"><span class="lineno">  346</span>        }</div>
-<div class="line"><span class="lineno">  347</span><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_STARTUP_ENABLED)</span></div>
-<div class="line"><span class="lineno">  348</span>    }</div>
-<div class="line"><span class="lineno">  349</span>  }</div>
+<div class="line"><span class="lineno">  272</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  273</span>          fprintf (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>, <span class="stringliteral">&quot;%s&quot;</span>, line.c_str ());</div>
+<div class="line"><span class="lineno">  274</span> </div>
+<div class="line"><span class="lineno">  275</span><span class="preprocessor">#if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \</span></div>
+<div class="line"><span class="lineno">  276</span><span class="preprocessor">      &amp;&amp; defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))</span></div>
+<div class="line"><span class="lineno">  277</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a></div>
+<div class="line"><span class="lineno">  278</span>            || <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</div>
+<div class="line"><span class="lineno">  279</span>          printf (<span class="stringliteral">&quot;%s&quot;</span>, line.c_str ());</div>
+<div class="line"><span class="lineno">  280</span><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_STARTUP_ENABLED)</span></div>
+<div class="line"><span class="lineno">  281</span>      }</div>
+<div class="line"><span class="lineno">  282</span> </div>
+<div class="line"><span class="lineno">  283</span>    {</div>
+<div class="line"><span class="lineno">  284</span>      <span class="comment">// Build the &quot;Built with ...&quot; line. For the output file the compiler</span></div>
+<div class="line"><span class="lineno">  285</span>      <span class="comment">// version is omitted; for stdout it is appended via __VERSION__.</span></div>
+<div class="line"><span class="lineno">  286</span>      std::string line;</div>
+<div class="line"><span class="lineno">  287</span>      line.reserve (256);</div>
+<div class="line"><span class="lineno">  288</span>      line.append (<a class="code hl_function" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix</a> ());</div>
+<div class="line"><span class="lineno">  289</span>      line.append (<span class="stringliteral">&quot;Built with &quot;</span>);</div>
+<div class="line"><span class="lineno">  290</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  291</span>      line.append (<span class="stringliteral">&quot;clang &quot;</span> __VERSION__);</div>
+<div class="line"><span class="lineno">  292</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  293</span>      line.append (<span class="stringliteral">&quot;GCC &quot;</span> __VERSION__);</div>
+<div class="line"><span class="lineno">  294</span><span class="preprocessor">#elif defined(_MSC_VER)</span></div>
+<div class="line"><span class="lineno">  295</span>      line.append (<span class="stringliteral">&quot;MSVC&quot;</span>);</div>
+<div class="line"><span class="lineno">  296</span>      <span class="keywordtype">char</span> msvc_ver[16];</div>
+<div class="line"><span class="lineno">  297</span>      snprintf (msvc_ver, <span class="keyword">sizeof</span> (msvc_ver), <span class="stringliteral">&quot; - %d&quot;</span>, _MSC_VER);</div>
+<div class="line"><span class="lineno">  298</span>      line.append (msvc_ver);</div>
+<div class="line"><span class="lineno">  299</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  300</span>      line.append (<span class="stringliteral">&quot;an unknown compiler&quot;</span>);</div>
+<div class="line"><span class="lineno">  301</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  302</span><span class="preprocessor">#if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \</span></div>
+<div class="line"><span class="lineno">  303</span><span class="preprocessor">      || defined(WIN32))</span></div>
+<div class="line"><span class="lineno">  304</span>      <span class="comment">// This is relevant only on bare-metal.</span></div>
+<div class="line"><span class="lineno">  305</span><span class="preprocessor">#if defined(__ARM_PCS_VFP) || defined(__ARM_FP)</span></div>
+<div class="line"><span class="lineno">  306</span>      line.append (<span class="stringliteral">&quot;, with FP&quot;</span>);</div>
+<div class="line"><span class="lineno">  307</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  308</span>      line.append (<span class="stringliteral">&quot;, no FP&quot;</span>);</div>
+<div class="line"><span class="lineno">  309</span><span class="preprocessor">#endif </span><span class="comment">// defined(__ARM_PCS_VFP) || defined(__ARM_FP)</span></div>
+<div class="line"><span class="lineno">  310</span><span class="preprocessor">#endif </span><span class="comment">// !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) || defined(WIN32))</span></div>
+<div class="line"><span class="lineno">  311</span><span class="preprocessor">#if defined(__EXCEPTIONS)</span></div>
+<div class="line"><span class="lineno">  312</span>      line.append (<span class="stringliteral">&quot;, with exceptions&quot;</span>);</div>
+<div class="line"><span class="lineno">  313</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  314</span>      line.append (<span class="stringliteral">&quot;, no exceptions&quot;</span>);</div>
+<div class="line"><span class="lineno">  315</span><span class="preprocessor">#endif </span><span class="comment">// defined(__EXCEPTIONS)</span></div>
+<div class="line"><span class="lineno">  316</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_DEBUG_ENABLED)</span></div>
+<div class="line"><span class="lineno">  317</span>      line.append (<span class="stringliteral">&quot;, with MICRO_OS_PLUS_DEBUG_ENABLED&quot;</span>);</div>
+<div class="line"><span class="lineno">  318</span><span class="preprocessor">#endif </span><span class="comment">// defined(MICRO_OS_PLUS_DEBUG_ENABLED)</span></div>
+<div class="line"><span class="lineno">  319</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)</span></div>
+<div class="line"><span class="lineno">  320</span>      line.append (<span class="stringliteral">&quot;, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED&quot;</span>);</div>
+<div class="line"><span class="lineno">  321</span><span class="preprocessor">#endif </span><span class="comment">// defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)</span></div>
+<div class="line"><span class="lineno">  322</span> </div>
+<div class="line"><span class="lineno">  323</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  324</span>        {</div>
+<div class="line"><span class="lineno">  325</span>          fprintf (<a class="code hl_variable" href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>, <span class="stringliteral">&quot;%s\n&quot;</span>, line.c_str ());</div>
+<div class="line"><span class="lineno">  326</span>        }</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span><span class="preprocessor">#if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \</span></div>
+<div class="line"><span class="lineno">  329</span><span class="preprocessor">      &amp;&amp; defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))</span></div>
+<div class="line"><span class="lineno">  330</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> || <a class="code hl_variable" href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</div>
+<div class="line"><span class="lineno">  331</span>        {</div>
+<div class="line"><span class="lineno">  332</span>          printf (<span class="stringliteral">&quot;%s\n&quot;</span>, line.c_str ());</div>
+<div class="line"><span class="lineno">  333</span>        }</div>
+<div class="line"><span class="lineno">  334</span><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_STARTUP_ENABLED)</span></div>
+<div class="line"><span class="lineno">  335</span>    }</div>
+<div class="line"><span class="lineno">  336</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_a9cafc8992d508b5ffa0b6a64226202bd"><div class="ttname"><a href="#a9cafc8992d508b5ffa0b6a64226202bd">micro_os_plus::micro_test_plus::reporter::get_comment_prefix</a></div><div class="ttdeci">virtual const char * get_comment_prefix(void)=0</div><div class="ttdoc">Returns the comment-prefix string used by this reporter format.</div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_os_plus::micro_test_plus::verbosity::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00113">reporter.h:113</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l00604">argvs_</a>, and <a class="el" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l00604">argvs_</a>, <a class="el" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix()</a>, <a class="el" href="reporter_8h_source.html#l00113">micro_os_plus::micro_test_plus::normal</a>, <a class="el" href="reporter_8h_source.html#l00599">output_file_</a>, <a class="el" href="reporter_8h_source.html#l00114">micro_os_plus::micro_test_plus::verbose</a>, and <a class="el" href="reporter_8h_source.html#l00545">verbosity_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00143">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00121">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, and <a class="el" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00148">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00126">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, and <a class="el" href="#a9cafc8992d508b5ffa0b6a64226202bd">get_comment_prefix()</a>.</p>
 
 </div>
 </div>
@@ -1641,7 +1628,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00580">580</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  580</span>{ <span class="keyword">true</span> };</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00143">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00121">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00477">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00261">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00171">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00548">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00317">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00148">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00126">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00424">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00269">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00244">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00165">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>.</p>
 
 </div>
 </div>
@@ -1668,7 +1655,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00604">604</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  604</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, and <a class="el" href="reporter_8cpp_source.html#l00262">write_info_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, and <a class="el" href="reporter_8cpp_source.html#l00249">write_info_()</a>.</p>
 
 </div>
 </div>
@@ -1696,7 +1683,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00560">560</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  560</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00477">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00548">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00317">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, <a class="el" href="reporter_8cpp_source.html#l00410">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00425">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00396">operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00145">operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00185">operator&lt;&lt;()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00126">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00396">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00103">micro_os_plus::micro_test_plus::reporter_tap::operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00242">write_buffer_to_file_()</a>, and <a class="el" href="reporter_8cpp_source.html#l00229">write_buffer_to_stdout()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00424">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, <a class="el" href="reporter_8cpp_source.html#l00200">endline()</a>, <a class="el" href="reporter_8cpp_source.html#l00397">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00412">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00383">operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00145">operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00188">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00412">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00131">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00108">micro_os_plus::micro_test_plus::reporter_tap::operator&lt;&lt;()</a>, and <a class="el" href="reporter_8cpp_source.html#l00216">write_buffer_to_stdout()</a>.</p>
 
 </div>
 </div>
@@ -1723,7 +1710,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00550">550</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  550</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00078">micro_os_plus::micro_test_plus::reporter_human::reporter_human()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00118">colour_()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00548">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00739">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_()</a>, and <a class="el" href="reporter-human_8cpp_source.html#l00699">micro_os_plus::micro_test_plus::reporter_human::output_pass_prefix_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00083">micro_os_plus::micro_test_plus::reporter_human::reporter_human()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00118">colour_()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00646">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_()</a>, and <a class="el" href="reporter-human_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::reporter_human::output_pass_prefix_()</a>.</p>
 
 </div>
 </div>
@@ -1779,7 +1766,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00599">599</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  599</span>{ <span class="keyword">nullptr</span> };</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, <a class="el" href="reporter_8cpp_source.html#l00160">~reporter()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00143">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00121">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00477">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00261">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00171">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00548">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00317">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, <a class="el" href="reporter_8cpp_source.html#l00359">flush()</a>, and <a class="el" href="reporter_8cpp_source.html#l00242">write_buffer_to_file_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, <a class="el" href="reporter_8cpp_source.html#l00156">~reporter()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00148">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00126">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00424">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00269">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00244">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00165">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, <a class="el" href="reporter_8cpp_source.html#l00346">flush()</a>, <a class="el" href="reporter_8cpp_source.html#l00412">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00367">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00229">write_buffer_to_file_()</a>, and <a class="el" href="reporter_8cpp_source.html#l00249">write_info_()</a>.</p>
 
 </div>
 </div>
@@ -1807,7 +1794,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00589">589</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  589</span>{ <span class="keyword">nullptr</span> };</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, and <a class="el" href="reporter_8cpp_source.html#l00160">~reporter()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, and <a class="el" href="reporter_8cpp_source.html#l00156">~reporter()</a>.</p>
 
 </div>
 </div>
@@ -1833,7 +1820,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 
 <p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00545">545</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00073">reporter()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00143">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00121">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00477">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00261">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00171">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00548">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00317">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00092">verbosity()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00078">reporter()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00148">micro_os_plus::micro_test_plus::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00126">micro_os_plus::micro_test_plus::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00424">micro_os_plus::micro_test_plus::reporter_human::begin_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00269">micro_os_plus::micro_test_plus::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00244">micro_os_plus::micro_test_plus::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00165">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, <a class="el" href="reporter_8cpp_source.html#l00367">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00092">verbosity()</a>, and <a class="el" href="reporter_8cpp_source.html#l00249">write_info_()</a>.</p>
 
 </div>
 </div>

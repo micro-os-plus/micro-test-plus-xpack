@@ -13,7 +13,10 @@ var searchData=
   ['micro_5fos_5fplus_3a_3amicro_5ftest_5fplus_3a_3areflection_10',['reflection',['../namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html',1,'micro_os_plus::micro_test_plus']]],
   ['micro_5fos_5fplus_3a_3amicro_5ftest_5fplus_3a_3atype_5ftraits_11',['type_traits',['../namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html',1,'micro_os_plus::micro_test_plus']]],
   ['micro_5fos_5fplus_3a_3amicro_5ftest_5fplus_3a_3autility_12',['utility',['../namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html',1,'micro_os_plus::micro_test_plus']]],
-  ['min_5fvalue_13',['min_value',['../namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a2d07ed276b3f0d461e5b856ec24afcb4',1,'micro_os_plus::micro_test_plus::math']]],
-  ['mode_14',['mode',['../group__micro-test-plus-cli.html#cli-verbosity-quiet',1,'Quiet mode'],['../group__micro-test-plus-cli.html#cli-verbosity-silent',1,'Silent mode'],['../group__micro-test-plus-cli.html#cli-verbosity-verbose',1,'Verbose mode']]],
-  ['mut_15',['mut',['../group__micro-test-plus-utility-functions.html#ga00ea8f3dfb7cb0ef39919065321cf62f',1,'micro_os_plus::micro_test_plus']]]
+  ['micro_5fos_5fplus_5fmicro_5ftest_5fplus_5fenabled_13',['MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED',['../group__micro-os-plus-micro-test-plus-config.html#ga3dd1e70998580fe7d7f410e5cd83879b',1,'micro-test-plus.h']]],
+  ['micro_5fos_5fplus_5fmicro_5ftest_5fplus_5ftrace_5fconstructors_5fenabled_14',['MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED',['../group__micro-os-plus-micro-test-plus-config.html#ga27bb1b9066b162d868e0b1c557b91e0d',1,'micro-test-plus.h']]],
+  ['micro_5fos_5fplus_5fmicro_5ftest_5fplus_5ftrace_5fenabled_15',['MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED',['../group__micro-os-plus-micro-test-plus-config.html#ga039219e6edfdcaa8a5e07badd7f4830d',1,'micro-test-plus.h']]],
+  ['min_5fvalue_16',['min_value',['../namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a2d07ed276b3f0d461e5b856ec24afcb4',1,'micro_os_plus::micro_test_plus::math']]],
+  ['mode_17',['mode',['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-quiet',1,'Quiet mode'],['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-silent',1,'Silent mode'],['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-verbose',1,'Verbose mode']]],
+  ['mut_18',['mut',['../group__micro-os-plus-micro-test-plus-utility-functions.html#ga00ea8f3dfb7cb0ef39919065321cf62f',1,'micro_os_plus::micro_test_plus']]]
 ];

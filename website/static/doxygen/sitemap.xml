@@ -299,55 +299,58 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-cpp-api.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-c-api.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-c-api.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-cli.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-config.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-runners.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cli.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-test-case.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-runners.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-expectations.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-test-case.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-assumptions.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-expectations.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-function-comparators.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-assumptions.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-logical-functions.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-function-comparators.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-exceptions.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-logical-functions.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-operators.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-exceptions.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-string-operators.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-operators.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-container-operators.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-string-operators.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-literals.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-container-operators.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-utility-functions.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-literals.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-test-plus-test-suites.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-utility-functions.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-test-suites.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemicro__os__plus.html</loc>
@@ -1041,5 +1044,11 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/files.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/globals.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/globals_defs.html</loc>
   </url>
 </urlset>

@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('reflection_8h_
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#if defined(__cpp_lib_source_location)</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#include &lt;source_location&gt;</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif </span><span class="comment">// defined(__cpp_lib_source_location)</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
@@ -170,8 +170,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('reflection_8h_
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Waggregate-return&quot;</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#if defined(__clang__)</span></div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wc++98-compat&quot;</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">// =============================================================================</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('reflection_8h_
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>          <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#aab9d006004611ac0526852a09f675c66">line</a> = __builtin_LINE ()</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>#<span class="keywordflow">else</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>          <span class="keyword">const</span> <span class="keywordtype">char</span>* file = <span class="stringliteral">&quot;unknown&quot;</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#aab9d006004611ac0526852a09f675c66">line</a> = {}</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif </span><span class="comment">// (__has_builtin(__builtin_FILE) and __has_builtin(__builtin_LINE))</span></div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>              ) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      [[nodiscard]] <span class="keyword">constexpr</span> <span class="keyword">auto</span></div>
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('reflection_8h_
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    };</div>
 </div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="preprocessor">#endif </span><span class="comment">// defined(__cpp_lib_source_location)</span></div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span></div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html#afc93799846770e521c4721d0de0a81cc">short_name</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* name) <span class="keyword">noexcept</span>;</div>
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('reflection_8h_
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
@@ -254,8 +254,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('reflection_8h_
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html_af2ee3ac5db96f13680291736d58fe327"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">micro_os_plus::micro_test_plus::reflection::source_location::current</a></div><div class="ttdeci">static constexpr source_location current(const char *file=&quot;unknown&quot;, unsigned int line={}) noexcept</div><div class="ttdoc">Obtain the current source location.</div><div class="ttdef"><b>Definition</b> <a href="reflection-inlines_8h_source.html#l00091">reflection-inlines.h:91</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1reflection_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html">micro_os_plus::micro_test_plus::reflection</a></div><div class="ttdoc">Reflection utilities for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="reflection-inlines_8h_source.html#l00076">reflection-inlines.h:77</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1reflection_html_a6580ad54ad22a1d3ab43a1d9d49d1f26"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html#a6580ad54ad22a1d3ab43a1d9d49d1f26">micro_os_plus::micro_test_plus::reflection::type_name</a></div><div class="ttdeci">constexpr auto type_name(void) -&gt; std::string_view</div><div class="ttdoc">Extract the type name from the __PRETTY_FUNCTION__ macro.</div><div class="ttdef"><b>Definition</b> <a href="reflection-inlines_8h_source.html#l00145">reflection-inlines.h:145</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1reflection_html_afc93799846770e521c4721d0de0a81cc"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html#afc93799846770e521c4721d0de0a81cc">micro_os_plus::micro_test_plus::reflection::short_name</a></div><div class="ttdeci">const char * short_name(const char *name) noexcept</div><div class="ttdoc">Extract a short type or function name from a fully qualified name.</div><div class="ttdef"><b>Definition</b> <a href="reflection_8cpp_source.html#l00070">reflection.cpp:70</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1reflection_html_afc93799846770e521c4721d0de0a81cc"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html#afc93799846770e521c4721d0de0a81cc">micro_os_plus::micro_test_plus::reflection::short_name</a></div><div class="ttdeci">const char * short_name(const char *name) noexcept</div><div class="ttdoc">Extract a short type or function name from a fully qualified name.</div><div class="ttdef"><b>Definition</b> <a href="reflection_8cpp_source.html#l00074">reflection.cpp:74</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00080">deferred-reporter.h:81</a></div></div>
 <div class="ttc" id="areflection-inlines_8h_html"><div class="ttname"><a href="reflection-inlines_8h.html">reflection-inlines.h</a></div><div class="ttdoc">C++ header file with inline implementations for the µTest++ reflection utilities.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -19,9 +19,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="184" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" bodystart="184" bodyend="184"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="67" endline="74">timestamp</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="71" endline="78">timestamp</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5877a6dda459f5dc695f0e4569175a82" compoundref="timings-inlines_8h" startline="57" endline="59">timestamp</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" compoundref="timings_8cpp" startline="83" endline="86">has_clock</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" compoundref="timings_8cpp" startline="87" endline="90">has_clock</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a557741d17d1edd54c30a9fb689d27275" compoundref="timings-inlines_8h" startline="76" endline="79">value</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3d67310c280413bdd857d975daa84eac" compoundref="timings-inlines_8h" startline="66" endline="69">value</referencedby>
       </memberdef>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="107" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/timings.cpp" bodystart="67" bodyend="74"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="107" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/timings.cpp" bodystart="71" bodyend="78"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="timings_8h" startline="184" endline="184">value_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a25cc87189f5ec1dbdef3302de6408d62">timestamp</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a78ec32dd29a858de635f6be2a4fd3f8f">timestamp</referencedby>
@@ -95,7 +95,7 @@ Stores the supplied <computeroutput>timespec</computeroutput> value in the <comp
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="123" column="7"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="67" endline="74">timestamp</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="71" endline="78">timestamp</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a78ec32dd29a858de635f6be2a4fd3f8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -114,7 +114,7 @@ Stores the supplied <computeroutput>timespec</computeroutput> value in the <comp
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="128" column="7"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="67" endline="74">timestamp</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="71" endline="78">timestamp</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1edc35b9931f3fdb714daf9cae3da73e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -168,7 +168,7 @@ Returns <computeroutput>true</computeroutput> if at least one of the <computerou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="158" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/timings.cpp" bodystart="83" bodyend="86"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="158" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/timings.cpp" bodystart="87" bodyend="90"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="timings_8h" startline="184" endline="184">value_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a91c4b65a10407ab3c2a65343b924902b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -188,7 +188,7 @@ Returns <computeroutput>true</computeroutput> if at least one of the <computerou
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="134" column="7"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="67" endline="74">timestamp</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="71" endline="78">timestamp</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a790a0f4322a690f7ab6591ada80222a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" kindref="member">timestamp</ref> &amp;</type>
@@ -207,7 +207,7 @@ Returns <computeroutput>true</computeroutput> if at least one of the <computerou
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="141" column="7"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="67" endline="74">timestamp</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" compoundref="timings_8cpp" startline="71" endline="78">timestamp</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a557741d17d1edd54c30a9fb689d27275" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const timespec &amp;</type>

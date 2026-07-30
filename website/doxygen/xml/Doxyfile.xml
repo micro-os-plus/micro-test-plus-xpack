@@ -198,7 +198,6 @@
   <option  id='EXCLUDE_SYMLINKS' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXCLUDE_PATTERNS' default='no' type='stringlist'>
     <value><![CDATA[*/README*]]></value>
-    <value><![CDATA[*/README*]]></value>
   </option>
   <option  id='EXCLUDE_SYMBOLS' default='yes' type='stringlist'>
   </option>
@@ -368,6 +367,9 @@
     <value><![CDATA[__DOXYGEN__]]></value>
     <value><![CDATA[__cplusplus]]></value>
     <value><![CDATA[__cpp_exceptions]]></value>
+    <value><![CDATA[MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED]]></value>
+    <value><![CDATA[MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED]]></value>
+    <value><![CDATA[MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED]]></value>
   </option>
   <option  id='EXPAND_AS_DEFINED' default='yes' type='stringlist'>
   </option>

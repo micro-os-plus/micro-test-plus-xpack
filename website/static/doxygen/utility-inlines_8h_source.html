@@ -153,8 +153,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility-inline
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Waggregate-return&quot;</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#if defined(__clang__)</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wc++98-compat&quot;</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility-inline
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T = std::<span class="keywordtype">string</span>_view, <span class="keyword">class</span> Delim_T&gt;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    [[nodiscard]] <span class="keyword">auto</span></div>
 <div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="group__micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">   88</a></span>    <a class="code hl_function" href="group__micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">split</a> (T input, Delim_T delim) -&gt; std::vector&lt;T&gt;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">   88</a></span>    <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">split</a> (T input, Delim_T delim) -&gt; std::vector&lt;T&gt;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      std::vector&lt;T&gt; output{};</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      std::size_t first{};</div>
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility-inline
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
@@ -208,9 +208,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility-inline
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_UTILITY_INLINES_H_</span></div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
-<div class="ttc" id="agroup__micro-test-plus-utility-functions_html_ga1b860aa64be17658d1664de447e6e125"><div class="ttname"><a href="group__micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">micro_os_plus::micro_test_plus::utility::split</a></div><div class="ttdeci">auto split(T input, Delim_T delim) -&gt; std::vector&lt; T &gt;</div><div class="ttdoc">Split a string into a vector of sub-strings.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">utility-inlines.h:88</a></div></div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-utility-functions_html_ga1b860aa64be17658d1664de447e6e125"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">micro_os_plus::micro_test_plus::utility::split</a></div><div class="ttdeci">auto split(T input, Delim_T delim) -&gt; std::vector&lt; T &gt;</div><div class="ttdoc">Split a string into a vector of sub-strings.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">utility-inlines.h:88</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1utility_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html">micro_os_plus::micro_test_plus::utility</a></div><div class="ttdoc">Utility functions for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="#l00063">utility-inlines.h:64</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00080">deferred-reporter.h:81</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
