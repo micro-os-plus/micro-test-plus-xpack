@@ -44,8 +44,8 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 

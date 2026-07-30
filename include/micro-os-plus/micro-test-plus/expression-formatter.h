@@ -78,8 +78,8 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 
@@ -562,7 +562,7 @@ namespace micro_os_plus::micro_test_plus
       template <class Callable_T>
       expression_formatter&
       operator<< (const detail::nothrow_<Callable_T>& op);
-#endif
+#endif // defined(__cpp_exceptions)
 
       // ----------------------------------------------------------------------
       // Buffer accessors.
@@ -659,7 +659,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

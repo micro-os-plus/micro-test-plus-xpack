@@ -25,8 +25,8 @@ using namespace std::literals;
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 
@@ -46,13 +46,13 @@ compute_abc (void)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
   strcpy (str, "ab");
   strcat (str, "c");
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
   return str;
 }

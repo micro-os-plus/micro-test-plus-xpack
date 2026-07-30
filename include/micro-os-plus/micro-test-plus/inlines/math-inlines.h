@@ -65,8 +65,8 @@
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #pragma clang diagnostic ignored "-Wc++20-compat"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 
@@ -244,11 +244,11 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wconversion"
-#endif
+#endif // defined(__GNUC__)
       while (cs[i++] != '.')
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
         {
         }
 
@@ -287,12 +287,12 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Warith-conversion"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
           tmp = value - T (value);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
           ++result;
         }
       while (tmp > precision);
@@ -308,7 +308,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

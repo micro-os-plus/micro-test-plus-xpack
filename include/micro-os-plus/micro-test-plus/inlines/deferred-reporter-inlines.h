@@ -64,8 +64,8 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 
@@ -117,8 +117,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
           char buf[64];
           // 64 bytes is sufficient for the longest decimal representation
           // of any standard arithmetic type (long double ~45 chars).
@@ -129,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
             deferred_output_.append (buf, ptr);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
         }
       else
         {
@@ -178,7 +178,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

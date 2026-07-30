@@ -31,8 +31,8 @@ using namespace micro_os_plus::micro_test_plus;
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 
@@ -63,7 +63,7 @@ main (int argc, char* argv[])
 #if 0
       t.assume(false) << "Check assume()";
       local_counts.failed_checks++;
-#endif
+#endif // 0-1
       local_counts.executed_subtest++;
     });
 
@@ -149,7 +149,7 @@ main (int argc, char* argv[])
 #if 0
     std::string_view sv = reflection::type_name<void> ();
     printf ("|%*.s|\n", sv.length (), sv.data ());
-#endif
+#endif // 0-1
 
       t.expect (eq (reflection::type_name<void> (), "void"sv));
       local_counts.successful_checks++;

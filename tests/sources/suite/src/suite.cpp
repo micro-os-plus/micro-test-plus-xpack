@@ -20,6 +20,7 @@ using namespace std::literals;
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -28,7 +29,8 @@ using namespace std::literals;
 #pragma clang diagnostic ignored "-Wglobal-constructors"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Wshadow"
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

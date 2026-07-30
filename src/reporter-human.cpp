@@ -48,7 +48,7 @@
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
 // For isatty() to detect if stdout is a terminal, enabling colour output.
 #include <unistd.h>
-#endif
+#endif // defined(__APPLE__) || defined(__linux__) || defined(__unix__)
 
 // ----------------------------------------------------------------------------
 
@@ -58,8 +58,8 @@
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 
@@ -92,7 +92,7 @@ namespace micro_os_plus::micro_test_plus
       {
         colours_ = detail::colours_red_green;
       }
-#endif
+#endif // defined(__APPLE__) || defined(__linux__) || defined(__unix__)
   }
 
   /**
@@ -154,8 +154,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     if (verbosity_ != verbosity::silent)
       {
@@ -181,7 +181,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   /**
@@ -204,8 +204,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     if (verbosity_ != verbosity::silent)
       {
@@ -271,7 +271,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   // --------------------------------------------------------------------------
@@ -290,20 +290,24 @@ namespace micro_os_plus::micro_test_plus
   reporter_human::begin_suite (suite& suite)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
@@ -326,7 +330,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   /**
@@ -349,20 +353,20 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
@@ -461,7 +465,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   // --------------------------------------------------------------------------
@@ -485,20 +489,20 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     if (!buffer_.empty ())
       {
@@ -533,7 +537,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   /**
@@ -556,21 +560,21 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     trace::printf ("%s '%s' i%zu\n", __PRETTY_FUNCTION__, subtest.name (),
                    subtest.nesting_depth ());
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     // At this point, the buffer may contain output from the subtest, which
     // should be displayed.
@@ -671,7 +675,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   // --------------------------------------------------------------------------
@@ -751,8 +755,8 @@ namespace micro_os_plus::micro_test_plus
 #elif defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Wnarrowing"
 #pragma GCC diagnostic ignored "-Wsign-conversion"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     size_t level = subtest.nesting_depth ();
 
@@ -773,7 +777,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   /**

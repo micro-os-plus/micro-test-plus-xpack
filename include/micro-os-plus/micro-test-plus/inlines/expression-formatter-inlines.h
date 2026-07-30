@@ -63,8 +63,8 @@
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 
@@ -164,16 +164,6 @@ namespace micro_os_plus::micro_test_plus::detail
 
   // --------------------------------------------------------------------------
 
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
-
-  // --------------------------------------------------------------------------
-
   /**
    * @details
    * Null pointers are rendered as `"0x0"` to avoid platform-specific
@@ -194,14 +184,14 @@ namespace micro_os_plus::micro_test_plus::detail
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     char buff[20];
     snprintf (buff, sizeof (buff), "%p", reinterpret_cast<void*> (v));
     buffer_.append (buff);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
     return *this;
   }
 
@@ -491,14 +481,14 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     return (*this << colour_ (op) << "nothrow" << colours_.none);
   }
-#endif
+#endif // defined(__cpp_exceptions)
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus::detail
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

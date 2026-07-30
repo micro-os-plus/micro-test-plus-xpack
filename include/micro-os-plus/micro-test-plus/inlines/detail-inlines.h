@@ -59,8 +59,8 @@
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 
@@ -207,8 +207,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
 #pragma clang diagnostic ignored "-Wpedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -242,7 +242,7 @@ namespace micro_os_plus::micro_test_plus
           }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
       }() }
     {
     }
@@ -273,8 +273,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
 #pragma clang diagnostic ignored "-Wpedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -300,7 +300,7 @@ namespace micro_os_plus::micro_test_plus
           }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
       }() }
     {
     }
@@ -328,8 +328,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
 #pragma clang diagnostic ignored "-Wpedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -341,7 +341,7 @@ namespace micro_os_plus::micro_test_plus
           }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
       }() }
     {
     }
@@ -369,8 +369,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
 #pragma clang diagnostic ignored "-Wpedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -382,7 +382,7 @@ namespace micro_os_plus::micro_test_plus
           }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
       }() }
     {
     }
@@ -410,8 +410,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
 #pragma clang diagnostic ignored "-Wpedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -423,7 +423,7 @@ namespace micro_os_plus::micro_test_plus
           }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
       }() }
     {
     }
@@ -451,8 +451,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
 #pragma clang diagnostic ignored "-Wpedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
@@ -464,7 +464,7 @@ namespace micro_os_plus::micro_test_plus
           }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
       }() }
     {
     }
@@ -631,8 +631,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     /**
      * @details
@@ -675,7 +675,7 @@ namespace micro_os_plus::micro_test_plus
           // by glibc and libc++ on these platforms.
           snprintf (buf, sizeof (buf), "%Lg", v);
           buffer.append (buf);
-#endif
+#endif // defined(_WIN32) || (defined(__SIZEOF_LONG_DOUBLE__) && __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)
         }
       else
         {
@@ -687,7 +687,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
     // ------------------------------------------------------------------------
 
@@ -699,7 +699,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

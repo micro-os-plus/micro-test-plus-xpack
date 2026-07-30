@@ -47,8 +47,8 @@
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 
@@ -74,7 +74,7 @@ namespace micro_os_plus::micro_test_plus::detail
     timespec_get (&value_, TIME_UTC);
 #elif defined(CLOCK_MONOTONIC)
     clock_gettime (CLOCK_MONOTONIC, &value_);
-#endif
+#endif // defined(_WIN32) || defined(CLOCK_MONOTONIC)
   }
 
   /**

@@ -51,8 +51,8 @@
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // =============================================================================
 
@@ -132,8 +132,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     if (verbosity_ != verbosity::silent)
       {
@@ -159,7 +159,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   /**
@@ -182,8 +182,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     size_t total_suites_count = runner.total_suites_count ();
 
@@ -248,7 +248,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   // --------------------------------------------------------------------------
@@ -265,20 +265,24 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::begin_suite (suite& suite)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     char message_subtest[120];
     snprintf (message_subtest, sizeof (message_subtest), "# Subtest: %s",
@@ -305,7 +309,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   /**
@@ -321,26 +325,29 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::end_suite (suite& suite)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     trace::printf (
         "%s '%s' +%zu -%zu in xc%zu, xs%zu | cs%zu\n", __PRETTY_FUNCTION__,
         suite.name (), suite.totals ().successful_checks (),
         suite.totals ().failed_checks (), suite.totals ().executed_checks (),
         suite.totals ().executed_subtests (),
         suite.children_subtests_count ());
-
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
@@ -439,7 +446,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   // --------------------------------------------------------------------------
@@ -456,20 +463,24 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::begin_subtest (subtest& subtest)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     if (!buffer_.empty ())
       {
@@ -506,7 +517,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   /**
@@ -522,10 +533,12 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::end_subtest (subtest& subtest)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     trace::printf ("%s '%s' i%zu +%zu -%zu in xc%zu, xs%zu | cs%zu\n",
                    __PRETTY_FUNCTION__, subtest.name (),
                    subtest.nesting_depth (),
@@ -534,15 +547,17 @@ namespace micro_os_plus::micro_test_plus
                    subtest.totals ().executed_checks (),
                    subtest.totals ().executed_subtests (),
                    subtest.children_subtests_count ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
     std::string indent (indent_size * subtest.nesting_depth (), ' ');
     std::string indent2 (indent_size * (subtest.nesting_depth () + 1), ' ');
@@ -632,7 +647,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   }
 
   // --------------------------------------------------------------------------

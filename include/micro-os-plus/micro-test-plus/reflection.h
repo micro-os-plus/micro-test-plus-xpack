@@ -66,7 +66,7 @@
 
 #if defined(__cpp_lib_source_location)
 #include <source_location>
-#endif
+#endif // defined(__cpp_lib_source_location)
 
 // ----------------------------------------------------------------------------
 
@@ -76,8 +76,8 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // =============================================================================
 
@@ -159,7 +159,7 @@ namespace micro_os_plus::micro_test_plus
           unsigned int line = __builtin_LINE ()
 #else
           const char* file = "unknown", unsigned int line = {}
-#endif
+#endif // (__has_builtin(__builtin_FILE) and __has_builtin(__builtin_LINE))
               ) noexcept;
 
       /**
@@ -194,7 +194,7 @@ namespace micro_os_plus::micro_test_plus
       unsigned int line_{};
     };
 
-#endif
+#endif // defined(__cpp_lib_source_location)
 
     /**
      * @brief Extract a short type or function name from a fully qualified
@@ -227,7 +227,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

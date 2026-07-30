@@ -64,8 +64,8 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 
@@ -118,7 +118,7 @@ namespace micro_os_plus::micro_test_plus
       return line_;
     }
 
-#endif
+#endif // !defined(__cpp_lib_source_location)
 
     /**
      * @details
@@ -163,7 +163,7 @@ namespace micro_os_plus::micro_test_plus
 // Note: MSVC uses __FUNCSIG__ instead of __PRETTY_FUNCTION__.
 // MSVC is not a supported target for this framework.
 #error "Unsupported compiler"
-#endif
+#endif // defined(__clang__) || defined(__GNUC__)
       return sv.substr (start, end - start);
     }
 
@@ -175,7 +175,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

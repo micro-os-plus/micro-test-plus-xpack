@@ -52,8 +52,8 @@
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // =============================================================================
 
@@ -135,14 +135,14 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
             fprintf (stderr, "error: Failed to open output file '%.*s'\n",
                      static_cast<int> (output_file_sv.size ()),
                      output_file_sv.data ());
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
             exit (1);
           }
         // The original string is zero terminated, so we can safely use .data()
@@ -176,12 +176,12 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
         printf ("Test output written to '%s'.\n", output_file_path_);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
         output_file_ = nullptr;
         output_file_path_ = nullptr;
@@ -315,7 +315,7 @@ namespace micro_os_plus::micro_test_plus
       line.append (msvc_ver);
 #else
       line.append ("an unknown compiler");
-#endif
+#endif // defined(__clang__)
 #if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \
       || defined(WIN32))
       // This is relevant only on bare-metal.
@@ -323,19 +323,19 @@ namespace micro_os_plus::micro_test_plus
       line.append (", with FP");
 #else
       line.append (", no FP");
-#endif
-#endif
+#endif // defined(__ARM_PCS_VFP) || defined(__ARM_FP)
+#endif // !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) || defined(WIN32))
 #if defined(__EXCEPTIONS)
       line.append (", with exceptions");
 #else
       line.append (", no exceptions");
-#endif
+#endif // defined(__EXCEPTIONS)
 #if defined(MICRO_OS_PLUS_DEBUG_ENABLED)
       line.append (", with MICRO_OS_PLUS_DEBUG_ENABLED");
-#endif
+#endif // defined(MICRO_OS_PLUS_DEBUG_ENABLED)
 #if defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
       line.append (", with MICRO_OS_PLUS_DIAG_TRACE_ENABLED");
-#endif
+#endif // defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
 
       if (output_file_ != nullptr)
         {

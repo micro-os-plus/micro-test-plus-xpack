@@ -22,8 +22,8 @@
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 void __attribute__ ((noreturn))
 local_test_assert (const char* failedexpr, const char* file, int line)
 {
@@ -38,6 +38,6 @@ local_test_assert (const char* failedexpr, const char* file, int line)
 }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------

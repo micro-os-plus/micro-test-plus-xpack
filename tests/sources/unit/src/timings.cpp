@@ -26,8 +26,8 @@ using namespace micro_os_plus::micro_test_plus;
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 // Helper subclass of timestamp that allows zeroing the stored value, enabling
@@ -85,7 +85,7 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
         // On platforms without a real clock, set a non-zero time to make
         // has_clock() true.
         detail::timestamp ts_real{ { 1, 2 } };
-#endif
+#endif // defined(_WIN32) || defined(CLOCK_MONOTONIC)
         t.expect (ts_real.has_clock ()) << "default ctor -> has_clock true";
         local_counts.successful_checks++;
 
@@ -120,7 +120,7 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
         detail::timestamp t1{};
 #else
         detail::timestamp t1{ { 1, 2 } };
-#endif
+#endif // defined(_WIN32) || defined(CLOCK_MONOTONIC)
 
         // Copy constructor produces an identical timespec.
         detail::timestamp t2{ t1 };

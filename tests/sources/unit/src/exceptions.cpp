@@ -28,8 +28,8 @@ using namespace micro_os_plus::micro_test_plus;
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 
@@ -63,14 +63,14 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
         t.expect (throws<std::runtime_error> ([]
           { throw std::runtime_error{ "" }; }))
             << "std::runtime_error thrown";
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
         local_counts.successful_checks++;
 
@@ -96,14 +96,14 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
         t.expect (throws<std::runtime_error> ([] ()
           { throw std::invalid_argument{ "" }; }))
             << "std::runtime_error thrown";
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
         local_counts.failed_checks++;
 

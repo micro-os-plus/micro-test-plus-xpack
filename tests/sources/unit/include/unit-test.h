@@ -27,8 +27,8 @@
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 
@@ -57,8 +57,8 @@ my_actual_integral_more (void)
 }
 
 #if defined(__GNUC__)
-#pragma GCC diagnostic push
-#endif
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 template <typename T>
 T

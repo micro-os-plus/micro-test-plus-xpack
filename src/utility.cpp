@@ -42,8 +42,8 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ============================================================================
 
@@ -61,8 +61,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wdocumentation"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
     /**
      * @details
      * The `extract_file_name` function extracts the file name from a given
@@ -119,7 +119,7 @@ namespace micro_os_plus::micro_test_plus
  */
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
     [[nodiscard]] bool
     is_match (std::string_view input, std::string_view pattern)
     {

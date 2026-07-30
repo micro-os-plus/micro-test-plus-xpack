@@ -29,6 +29,7 @@ using namespace std::literals;
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -37,7 +38,8 @@ using namespace std::literals;
 #pragma clang diagnostic ignored "-Wglobal-constructors"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Wshadow"
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 
@@ -62,13 +64,13 @@ compute_ultimate_answer (void)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
   strcpy (str, "forty");
   strcat (str, "two");
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
   return str;
 }
 
@@ -217,8 +219,8 @@ main (int argc, char* argv[])
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
   ts.test ("Check args", [] (auto& t, int _argc, char* _argv[])
     {
       t.expect (mt::ge (_argc, 2)) << "argc >= 2";
@@ -241,7 +243,7 @@ main (int argc, char* argv[])
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
   // --------------------------------------------------------------------------
 
@@ -274,14 +276,14 @@ main (int argc, char* argv[])
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
       t.expect (mt::throws<std::runtime_error> ([]
         { throw std::runtime_error{ "" }; }))
           << "std::runtime_error thrown";
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
     });
 
   ts.test ("Check if exceptions are not thrown", [] (auto& t)
@@ -376,6 +378,6 @@ static int* ip2 = &in46;
 static mt::static_suite ts_args
     = { "Args suite", tr, test_suite_with_args, 42, in, ir, &in45, ip2 };
 
-#endif
+#endif // 0-1
 
 // ----------------------------------------------------------------------------
