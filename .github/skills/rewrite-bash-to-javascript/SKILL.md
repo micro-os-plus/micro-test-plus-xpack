@@ -32,6 +32,8 @@ Follow the style already established by
   scripts.
 - **Script location**: replace `$0` / `dirname "$0"` with
   `fileURLToPath(import.meta.url)` and `path.dirname(...)`.
+- **Template processing**: if the script renders Liquid templates, use the
+  `liquidjs` package rather than hand-rolled string substitution.
 - **File discovery**: replace `find` invocations with the `glob` package
   (`globSync`), using the same ignore patterns already used elsewhere in
   this project (`**/node_modules/**`, `**/xpacks/**`, `**/build/**`,
@@ -43,6 +45,11 @@ Follow the style already established by
   read-only, preserve permissions with `statSync`/`chmodSync` around the
   read/write, as done in `jsonc-format.mjs`.
 - **Output**: use `console.log`/`console.error` instead of `echo`.
+- **Functions**: use arrow functions rather than the `function` keyword.
+- **Synchronous APIs**: prefer synchronous calls (e.g. `readFileSync`,
+  `execFileSync`) over their async/callback or Promise-based equivalents
+  when both are available, matching the script's non-interactive, linear
+  execution style.
 - **Running external tools**: replace the bash `run_verbose` helper (which
   echoes the command and runs it) with Node's `child_process`
   (`execFileSync` or `spawnSync`), passing `stdio: 'inherit'` so the
