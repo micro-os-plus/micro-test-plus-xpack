@@ -47,7 +47,7 @@
     "webpackbar": "7.0.0"
   },
   "scripts": {
-    "generate-website-commons": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-website-commons.sh --micro-os-plus",
+    "generate-website-commons": "node node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-website-commons.mjs --micro-os-plus",
     "npm-outdated": "npm outdated",
     "npm-install": "npm install",
     "npm-link-helpers": "npm link @xpack/docusaurus-template-liquid @xpack/npm-packages-helper",
@@ -70,10 +70,10 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "import-website-releases": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/import-releases.sh --micro-os-plus",
-    "generate-website-releases-from-tags": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-releases-for-tags.sh --micro-os-plus",
-    "generate-website-blog-post": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-blog-post.sh --micro-os-plus",
-    "generate-dependencies-details": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-dependencies-details.sh --micro-os-plus",
+    "import-website-releases": "node node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/import-releases.mjs --micro-os-plus",
+    "generate-website-releases-from-tags": "node node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-releases-for-tags.mjs --micro-os-plus",
+    "generate-website-blog-post": "node node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-blog-post.mjs --micro-os-plus",
+    "generate-dependencies-details": "node node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-dependencies-details.mjs --micro-os-plus",
     "clean": "del-cli .docusaurus build"
   },
   "browserslist": {
