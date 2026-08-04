@@ -6,6 +6,22 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-08-04
+
+* cd9c11a8 tests/package*.json update
+* 3e136f14 use tests/scripts/xcdl-export.mjs
+* 92e44f39 website/package*.json
+
+## 2026-08-03
+
+* 253f655d re-generate website commons for .mjs
+* 227ceb54 re-generate tests commons
+* 62cd0b22 use generate-t.*-commons.mjs
+* 49f06f1f re-generate top commons for skills
+* ec1985ca re-generate top commons for .mjs
+* 9e57ff3f update skills
+* d091aca9 migrate to clang-format.mjs
+
 ## 2026-07-30
 
 * 4e60eea9 website update
