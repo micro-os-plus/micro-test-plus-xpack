@@ -60,6 +60,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -241,8 +242,10 @@ namespace micro_os_plus::micro_test_plus
                      "den_size(): no decimal point in literal");
       constexpr const std::array cs{ Cs... };
       T i{};
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Wconversion"
 #endif // defined(__GNUC__)
       while (cs[i++] != '.')
@@ -281,15 +284,19 @@ namespace micro_os_plus::micro_test_plus
       do
         {
           value *= 10;
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Warith-conversion"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
           tmp = value - T (value);
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)

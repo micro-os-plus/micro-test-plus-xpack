@@ -51,6 +51,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunknown-warning-option"

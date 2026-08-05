@@ -649,6 +649,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wsign-conversion"
 #elif defined(__GNUC__)
@@ -674,6 +675,10 @@ namespace micro_os_plus::micro_test_plus
         *this << ", ";
       }
   }
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
   /**
    * @details

@@ -42,6 +42,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif // defined(__clang__)
@@ -136,6 +137,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus::detail
+
+// ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

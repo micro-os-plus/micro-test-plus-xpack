@@ -69,6 +69,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Wconversion"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"

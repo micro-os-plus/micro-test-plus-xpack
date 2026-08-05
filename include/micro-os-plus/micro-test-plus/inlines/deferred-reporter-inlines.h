@@ -60,6 +60,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -115,10 +116,12 @@ namespace micro_os_plus::micro_test_plus
           // using a fixed-size buffer and std::to_chars.
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
           char buf[64];
           // 64 bytes is sufficient for the longest decimal representation
           // of any standard arithmetic type (long double ~45 chars).
@@ -127,6 +130,7 @@ namespace micro_os_plus::micro_test_plus
           auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), msg);
           if (ec == std::errc{})
             deferred_output_.append (buf, ptr);
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)

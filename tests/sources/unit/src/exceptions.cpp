@@ -61,13 +61,16 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
         t.expect (throws<std::runtime_error> ([]
           { throw std::runtime_error{ "" }; }))
             << "std::runtime_error thrown";
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
@@ -94,13 +97,16 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
         t.expect (throws<std::runtime_error> ([] ()
           { throw std::invalid_argument{ "" }; }))
             << "std::runtime_error thrown";
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)

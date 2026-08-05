@@ -59,6 +59,7 @@ compute_ultimate_answer (void)
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif // defined(__clang__)
@@ -210,17 +211,20 @@ main (int argc, char* argv[])
       t.expect (mt::eq (add (3), 43)) << "lambda returns 43";
     });
 
-// --------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
 
-// Test case with arguments.
-// The lambdas are special functions, which may be passed arguments
-// or may automatically capture variables from their local scope.
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
+  // Test case with arguments.
+  // The lambdas are special functions, which may be passed arguments
+  // or may automatically capture variables from their local scope.
+
   ts.test ("Check args", [] (auto& t, int _argc, char* _argv[])
     {
       t.expect (mt::ge (_argc, 2)) << "argc >= 2";
@@ -274,13 +278,16 @@ main (int argc, char* argv[])
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
       t.expect (mt::throws<std::runtime_error> ([]
         { throw std::runtime_error{ "" }; }))
           << "std::runtime_error thrown";
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)

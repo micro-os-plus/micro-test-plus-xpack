@@ -64,6 +64,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
@@ -340,10 +341,12 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wdocumentation"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
   /**
    * @details
    * The `test` function template registers and executes a test case
@@ -467,6 +470,13 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
+
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

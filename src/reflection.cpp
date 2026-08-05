@@ -75,15 +75,18 @@ namespace micro_os_plus::micro_test_plus
     {
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
+
       const char* p = strrchr (name, '/');
       if (p != nullptr)
         return p + 1;
       else
         return name;
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
