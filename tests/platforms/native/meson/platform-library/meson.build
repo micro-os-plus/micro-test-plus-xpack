@@ -143,7 +143,8 @@ endif
 
 if c_compiler.get_id().contains('clang')
   _local_link_args += [
-    '-rtlib=compiler-rt'
+    '-rtlib=compiler-rt',
+    '-stdlib=libc++',
   ]
   if build_machine.system() == 'linux'
     _local_link_args += [

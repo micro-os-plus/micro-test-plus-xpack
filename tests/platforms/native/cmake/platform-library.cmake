@@ -142,7 +142,7 @@ target_link_options (
   # When `-flto` is used, the compile options must be passed to the linker too.
   ${xpack_platform_common_args}
   #
-  # -v
+  $<$<CONFIG:Debug>:-v>
   #
   # On Windows configuring the path to access the compiler DLLs is tedious, it
   # is much easier to build everything static.
