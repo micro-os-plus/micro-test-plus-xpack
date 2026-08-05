@@ -78,13 +78,16 @@ set (
   $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-unknown-warning-option>
   $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-documentation>
   $<$<PLATFORM_ID:Darwin>:-Wno-missing-include-dirs>
-  $<$<CONFIG:Debug>:-fsanitize=address,undefined>
-  $<$<CONFIG:Debug>:-fno-sanitize-recover=all>
 )
 
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
   list (APPEND xpack_platform_common_args
         $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-used-but-marked-unused>
+  )
+else () # Linux, macOS
+  list (APPEND xpack_platform_common_args
+        $<$<CONFIG:Debug>:-fsanitize=address,undefined>
+        $<$<CONFIG:Debug>:-fno-sanitize-recover=all>
   )
 endif ()
 
