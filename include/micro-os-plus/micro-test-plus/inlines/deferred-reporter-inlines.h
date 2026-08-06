@@ -51,7 +51,9 @@
 
 // ----------------------------------------------------------------------------
 
+#if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
+#endif // __has_include("micro-os-plus/diag/trace.h")
 
 #include <charconv>
 #include <cstdio>

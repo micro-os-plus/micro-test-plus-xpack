@@ -38,7 +38,9 @@
 #include "micro-os-plus/micro-test-plus/runner.h"
 #include "micro-os-plus/micro-test-plus/test.h"
 
+#if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
+#endif // __has_include("micro-os-plus/diag/trace.h")
 
 // For the PRIu32 macro used in snprintf() formatting of uint32_t values.
 #include <cinttypes>

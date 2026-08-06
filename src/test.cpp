@@ -46,7 +46,9 @@
 #include "micro-os-plus/micro-test-plus/test.h"
 #include "micro-os-plus/micro-test-plus/runner.h"
 
+#if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
+#endif // __has_include("micro-os-plus/diag/trace.h")
 
 // ----------------------------------------------------------------------------
 
