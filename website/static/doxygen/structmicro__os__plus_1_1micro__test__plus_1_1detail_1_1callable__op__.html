@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -156,7 +156,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This base struct provides common functionality for operators that wrap callable invocations, particularly for exception-checking operations. Derived structs (such as <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html" title="Operator struct template to check if an expression throws a specific exception.">throws_</a></span> and <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html" title="Operator struct template to check if an expression does not throw any exception.">nothrow_</a></span>) use this base to store and manage the pre-computed boolean result of a callable invocation, enabling consistent reporting and composition of exception-checking assertions. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00605">605</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00606">606</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a271baf62ae8e74f4801dc3da24b575ea" name="a271baf62ae8e74f4801dc3da24b575ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a271baf62ae8e74f4801dc3da24b575ea">&#9670;&#160;</a></span>callable_op_()</h2>
@@ -188,15 +188,15 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>Stores the pre-computed boolean result in the private <span class="tt"><a class="el" href="#a8b7760bde30950164a3c97632b468361" title="Stores the result of the callable invocation.">value_</a></span> member. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00538">538</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  538</span>                                                    : <a class="code hl_variable" href="#a8b7760bde30950164a3c97632b468361">value_</a>{ value }</div>
-<div class="line"><span class="lineno">  539</span>    {</div>
-<div class="line"><span class="lineno">  540</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___html_a8b7760bde30950164a3c97632b468361"><div class="ttname"><a href="#a8b7760bde30950164a3c97632b468361">micro_os_plus::micro_test_plus::detail::callable_op_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the callable invocation.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00629">detail.h:629</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00545">545</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  545</span>                                                    : <a class="code hl_variable" href="#a8b7760bde30950164a3c97632b468361">value_</a>{ value }</div>
+<div class="line"><span class="lineno">  546</span>    {</div>
+<div class="line"><span class="lineno">  547</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___html_a8b7760bde30950164a3c97632b468361"><div class="ttname"><a href="#a8b7760bde30950164a3c97632b468361">micro_os_plus::micro_test_plus::detail::callable_op_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the callable invocation.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00630">detail.h:630</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l00629">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l00630">value_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00621">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::nothrow_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00564">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::throws_()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00595">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, void &gt;::throws_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00628">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::nothrow_()</a>, <a class="el" href="detail-inlines_8h_source.html#l00571">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::throws_()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00602">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, void &gt;::throws_()</a>.</p>
 
 </div>
 </div>
@@ -227,12 +227,12 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The result of the callable invocation.</dd></dl>
 <p>Returns the pre-computed boolean result stored by the derived operator's constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00547">547</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  549</span>    {</div>
-<div class="line"><span class="lineno">  550</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a8b7760bde30950164a3c97632b468361">value_</a>;</div>
-<div class="line"><span class="lineno">  551</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00554">554</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  556</span>    {</div>
+<div class="line"><span class="lineno">  557</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a8b7760bde30950164a3c97632b468361">value_</a>;</div>
+<div class="line"><span class="lineno">  558</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l00629">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l00630">value_</a>.</p>
 
 </div>
 </div>
@@ -257,10 +257,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00629">629</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  629</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00630">630</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  630</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00538">callable_op_()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00548">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00545">callable_op_()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00555">operator bool()</a>.</p>
 
 </div>
 </div>

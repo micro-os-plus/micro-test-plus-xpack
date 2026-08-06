@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -176,7 +176,7 @@ Protected Attributes</h2></td></tr>
 <p>Every <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html" title="Base class for runners and runable tests.">test_node</a></span>-derived object (<span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span>, <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html" title="A named, runnable test suite registered with the test runner.">suite</a></span>, <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1subtest.html" title="A named, runnable test case that lives inside a suite.">subtest</a></span>) owns a <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html" title="Aggregated pass/fail/subtest counters for a node in the test tree.">runner_totals</a></span> member and accumulates its counts in place. At the end of each suite or session the operator <span class="tt">+=</span> propagates the child totals up to the parent node.</p>
 <p>The class is non-copyable and non-movable to prevent accidental duplication of live counters. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals_8h_source.html#l00096">96</a> of file <a class="el" href="runner-totals_8h_source.html">runner-totals.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-totals_8h_source.html#l00097">97</a> of file <a class="el" href="runner-totals_8h_source.html">runner-totals.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af2d4424203237e5f158cdbc1f31abbdf" name="af2d4424203237e5f158cdbc1f31abbdf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2d4424203237e5f158cdbc1f31abbdf">&#9670;&#160;</a></span>runner_totals() <span class="overload">[1/3]</span></h2>
@@ -201,7 +201,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#a4240a9cae8d1a8ee0d420027d63850f8">runner_totals()</a>, <a class="el" href="#a602415787ce8bef15e9ca69caaf2555b">runner_totals()</a>, <a class="el" href="runner-totals_8cpp_source.html#l00071">operator+=()</a>, <a class="el" href="#af5799b1c0a21b55400dc9c2e2631e863">operator=()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a4240a9cae8d1a8ee0d420027d63850f8">runner_totals()</a>, <a class="el" href="#a602415787ce8bef15e9ca69caaf2555b">runner_totals()</a>, <a class="el" href="runner-totals_8cpp_source.html#l00073">operator+=()</a>, <a class="el" href="#af5799b1c0a21b55400dc9c2e2631e863">operator=()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
 
 </div>
 </div>
@@ -286,16 +286,16 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The sum of successful and failed checks.</dd></dl>
 <p>Returns the sum of <span class="tt"><a class="el" href="#a12fec04d649e0569fed757bcf05d0b06" title="Total number of successful checks.">successful_checks_</a></span> and <span class="tt"><a class="el" href="#aab1ec6d23bf91782122a60bc3ed95eba" title="Total number of failed checks.">failed_checks_</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00111">111</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span>  {</div>
-<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a> + <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a>;</div>
-<div class="line"><span class="lineno">  114</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals_html_a12fec04d649e0569fed757bcf05d0b06"><div class="ttname"><a href="#a12fec04d649e0569fed757bcf05d0b06">micro_os_plus::micro_test_plus::detail::runner_totals::successful_checks_</a></div><div class="ttdeci">size_t successful_checks_</div><div class="ttdoc">Total number of successful checks.</div><div class="ttdef"><b>Definition</b> <a href="runner-totals_8h_source.html#l00222">runner-totals.h:222</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals_html_aab1ec6d23bf91782122a60bc3ed95eba"><div class="ttname"><a href="#aab1ec6d23bf91782122a60bc3ed95eba">micro_os_plus::micro_test_plus::detail::runner_totals::failed_checks_</a></div><div class="ttdeci">size_t failed_checks_</div><div class="ttdoc">Total number of failed checks.</div><div class="ttdef"><b>Definition</b> <a href="runner-totals_8h_source.html#l00227">runner-totals.h:227</a></div></div>
+<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00112">112</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>  {</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a> + <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a>;</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals_html_a12fec04d649e0569fed757bcf05d0b06"><div class="ttname"><a href="#a12fec04d649e0569fed757bcf05d0b06">micro_os_plus::micro_test_plus::detail::runner_totals::successful_checks_</a></div><div class="ttdeci">size_t successful_checks_</div><div class="ttdoc">Total number of successful checks.</div><div class="ttdef"><b>Definition</b> <a href="runner-totals_8h_source.html#l00223">runner-totals.h:223</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals_html_aab1ec6d23bf91782122a60bc3ed95eba"><div class="ttname"><a href="#aab1ec6d23bf91782122a60bc3ed95eba">micro_os_plus::micro_test_plus::detail::runner_totals::failed_checks_</a></div><div class="ttdeci">size_t failed_checks_</div><div class="ttdoc">Total number of failed checks.</div><div class="ttdef"><b>Definition</b> <a href="runner-totals_8h_source.html#l00228">runner-totals.h:228</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00227">failed_checks_</a>, and <a class="el" href="runner-totals_8h_source.html#l00222">successful_checks_</a>.</p>
+<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00228">failed_checks_</a>, and <a class="el" href="runner-totals_8h_source.html#l00223">successful_checks_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-tap_8cpp_source.html#l00454">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
 
 </div>
 </div>
@@ -325,15 +325,15 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The cumulative count of executed subtests.</dd></dl>
 <p>Returns the value of the <span class="tt"><a class="el" href="#abdb736bd79bdeb3324a469d21ce6ca8b" title="Total number of tests executed.">executed_subtests_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00121">121</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  122</span>  {</div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a>;</div>
-<div class="line"><span class="lineno">  124</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals_html_abdb736bd79bdeb3324a469d21ce6ca8b"><div class="ttname"><a href="#abdb736bd79bdeb3324a469d21ce6ca8b">micro_os_plus::micro_test_plus::detail::runner_totals::executed_subtests_</a></div><div class="ttdeci">size_t executed_subtests_</div><div class="ttdoc">Total number of tests executed.</div><div class="ttdef"><b>Definition</b> <a href="runner-totals_8h_source.html#l00232">runner-totals.h:232</a></div></div>
+<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00122">122</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>  {</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a>;</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals_html_abdb736bd79bdeb3324a469d21ce6ca8b"><div class="ttname"><a href="#abdb736bd79bdeb3324a469d21ce6ca8b">micro_os_plus::micro_test_plus::detail::runner_totals::executed_subtests_</a></div><div class="ttdeci">size_t executed_subtests_</div><div class="ttdoc">Total number of tests executed.</div><div class="ttdef"><b>Definition</b> <a href="runner-totals_8h_source.html#l00233">runner-totals.h:233</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00232">executed_subtests_</a>.</p>
+<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00233">executed_subtests_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00165">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00189">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00167">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00454">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00310">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
 
 </div>
 </div>
@@ -363,14 +363,14 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The cumulative count of failed checks.</dd></dl>
 <p>Returns the value of the <span class="tt"><a class="el" href="#aab1ec6d23bf91782122a60bc3ed95eba" title="Total number of failed checks.">failed_checks_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00101">101</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>  {</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a>;</div>
-<div class="line"><span class="lineno">  104</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00102">102</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>  {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a>;</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00227">failed_checks_</a>.</p>
+<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00228">failed_checks_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00165">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00189">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00167">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00477">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00454">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00310">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
 
 </div>
 </div>
@@ -405,14 +405,14 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Adds <span class="tt">count</span> to the <span class="tt"><a class="el" href="#abdb736bd79bdeb3324a469d21ce6ca8b" title="Total number of tests executed.">executed_subtests_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00081">81</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>  {</div>
-<div class="line"><span class="lineno">   83</span>    <a class="code hl_variable" href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a> += count;</div>
-<div class="line"><span class="lineno">   84</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00082">82</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_variable" href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a> += count;</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00232">executed_subtests_</a>.</p>
+<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00233">executed_subtests_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00175">micro_os_plus::micro_test_plus::detail::runnable_base::after_subtest_create_()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00177">micro_os_plus::micro_test_plus::detail::runnable_base::after_subtest_create_()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
 
 </div>
 </div>
@@ -447,12 +447,12 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Adds <span class="tt">count</span> to the <span class="tt"><a class="el" href="#aab1ec6d23bf91782122a60bc3ed95eba" title="Total number of failed checks.">failed_checks_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00071">71</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>  {</div>
-<div class="line"><span class="lineno">   73</span>    <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a> += count;</div>
-<div class="line"><span class="lineno">   74</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00072">72</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>  {</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a> += count;</div>
+<div class="line"><span class="lineno">   75</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00227">failed_checks_</a>.</p>
+<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00228">failed_checks_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
 
@@ -489,12 +489,12 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Adds <span class="tt">count</span> to the <span class="tt"><a class="el" href="#a12fec04d649e0569fed757bcf05d0b06" title="Total number of successful checks.">successful_checks_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00061">61</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>  {</div>
-<div class="line"><span class="lineno">   63</span>    <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a> += count;</div>
-<div class="line"><span class="lineno">   64</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00062">62</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>  {</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a> += count;</div>
+<div class="line"><span class="lineno">   65</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00222">successful_checks_</a>.</p>
+<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00223">successful_checks_</a>.</p>
 
 </div>
 </div>
@@ -529,21 +529,21 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Reference to this instance.</dd></dl>
 <p>Adds the successful check count, failed check count, and executed subtest count of <code class="param">other</code> to the corresponding members of this instance. Returns a reference to <span class="tt">*this</span> to support chaining. When tracing is enabled, the updated totals are output for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals_8cpp_source.html#l00071">71</a> of file <a class="el" href="runner-totals_8cpp_source.html">runner-totals.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>  {</div>
-<div class="line"><span class="lineno">   73</span>    <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a> += other.successful_checks ();</div>
-<div class="line"><span class="lineno">   74</span>    <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a> += other.failed_checks ();</div>
-<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a> += other.executed_subtests ();</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</span></div>
-<div class="line"><span class="lineno">   78</span>    trace::printf (<span class="stringliteral">&quot;%s -&gt; +%zu -%zu in xs%zu\n&quot;</span>, __PRETTY_FUNCTION__,</div>
-<div class="line"><span class="lineno">   79</span>                   <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a>, <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a>, <a class="code hl_variable" href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a>);</div>
-<div class="line"><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</span></div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   83</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="runner-totals_8cpp_source.html#l00073">73</a> of file <a class="el" href="runner-totals_8cpp_source.html">runner-totals.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>  {</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a> += other.successful_checks ();</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a> += other.failed_checks ();</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_variable" href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a> += other.executed_subtests ();</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</span></div>
+<div class="line"><span class="lineno">   80</span>    trace::printf (<span class="stringliteral">&quot;%s -&gt; +%zu -%zu in xs%zu\n&quot;</span>, __PRETTY_FUNCTION__,</div>
+<div class="line"><span class="lineno">   81</span>                   <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a>, <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a>, <a class="code hl_variable" href="#abdb736bd79bdeb3324a469d21ce6ca8b">executed_subtests_</a>);</div>
+<div class="line"><span class="lineno">   82</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</span></div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="#af2d4424203237e5f158cdbc1f31abbdf">runner_totals()</a>, <a class="el" href="runner-totals_8h_source.html#l00232">executed_subtests_</a>, <a class="el" href="runner-totals_8h_source.html#l00227">failed_checks_</a>, and <a class="el" href="runner-totals_8h_source.html#l00222">successful_checks_</a>.</p>
+<p class="reference">References <a class="el" href="#af2d4424203237e5f158cdbc1f31abbdf">runner_totals()</a>, <a class="el" href="runner-totals_8h_source.html#l00233">executed_subtests_</a>, <a class="el" href="runner-totals_8h_source.html#l00228">failed_checks_</a>, and <a class="el" href="runner-totals_8h_source.html#l00223">successful_checks_</a>.</p>
 
 </div>
 </div>
@@ -597,7 +597,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="#af2d4424203237e5f158cdbc1f31abbdf">runner_totals()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00111">executed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00121">executed_subtests()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00101">failed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00081">increment_executed_subtests()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00071">increment_failed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00091">successful_checks()</a>, and <a class="el" href="runner-totals-inlines_8h_source.html#l00132">was_successful()</a>.</p>
+<p class="reference">References <a class="el" href="#af2d4424203237e5f158cdbc1f31abbdf">runner_totals()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00112">executed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00122">executed_subtests()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00102">failed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00082">increment_executed_subtests()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00072">increment_failed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00092">successful_checks()</a>, and <a class="el" href="runner-totals-inlines_8h_source.html#l00133">was_successful()</a>.</p>
 
 </div>
 </div>
@@ -627,14 +627,14 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The cumulative count of successful checks.</dd></dl>
 <p>Returns the value of the <span class="tt"><a class="el" href="#a12fec04d649e0569fed757bcf05d0b06" title="Total number of successful checks.">successful_checks_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00091">91</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>  {</div>
-<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a>;</div>
-<div class="line"><span class="lineno">   94</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00092">92</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>  {</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a12fec04d649e0569fed757bcf05d0b06">successful_checks_</a>;</div>
+<div class="line"><span class="lineno">   95</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00222">successful_checks_</a>.</p>
+<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00223">successful_checks_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00165">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00189">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00167">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00477">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00454">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00310">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
 
 </div>
 </div>
@@ -670,14 +670,14 @@ Protected Attributes</h2></td></tr>
 </dl>
 <p>A runner with no checks at all is considered successful, as it did not fail any check. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00132">132</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  133</span>  {</div>
-<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a> == 0;</div>
-<div class="line"><span class="lineno">  135</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="runner-totals-inlines_8h_source.html#l00133">133</a> of file <a class="el" href="runner-totals-inlines_8h_source.html">runner-totals-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>  {</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aab1ec6d23bf91782122a60bc3ed95eba">failed_checks_</a> == 0;</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00227">failed_checks_</a>.</p>
+<p class="reference">References <a class="el" href="runner-totals_8h_source.html#l00228">failed_checks_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00475">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00308">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00189">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00477">micro_os_plus::micro_test_plus::reporter_human::end_subtest()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00454">micro_os_plus::micro_test_plus::reporter_tap::end_subtest()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00310">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>, and <a class="el" href="#a6b46f0e65eea7f513f4194babe570c24">operator=()</a>.</p>
 
 </div>
 </div>
@@ -702,9 +702,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="runner-totals_8h_source.html#l00232">232</a> of file <a class="el" href="runner-totals_8h_source.html">runner-totals.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-totals_8h_source.html#l00233">233</a> of file <a class="el" href="runner-totals_8h_source.html">runner-totals.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner-totals-inlines_8h_source.html#l00121">executed_subtests()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00081">increment_executed_subtests()</a>, and <a class="el" href="runner-totals_8cpp_source.html#l00071">operator+=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner-totals-inlines_8h_source.html#l00122">executed_subtests()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00082">increment_executed_subtests()</a>, and <a class="el" href="runner-totals_8cpp_source.html#l00073">operator+=()</a>.</p>
 
 </div>
 </div>
@@ -728,9 +728,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="runner-totals_8h_source.html#l00227">227</a> of file <a class="el" href="runner-totals_8h_source.html">runner-totals.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-totals_8h_source.html#l00228">228</a> of file <a class="el" href="runner-totals_8h_source.html">runner-totals.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner-totals-inlines_8h_source.html#l00111">executed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00101">failed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00071">increment_failed_checks()</a>, <a class="el" href="runner-totals_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="runner-totals-inlines_8h_source.html#l00132">was_successful()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner-totals-inlines_8h_source.html#l00112">executed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00102">failed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00072">increment_failed_checks()</a>, <a class="el" href="runner-totals_8cpp_source.html#l00073">operator+=()</a>, and <a class="el" href="runner-totals-inlines_8h_source.html#l00133">was_successful()</a>.</p>
 
 </div>
 </div>
@@ -754,9 +754,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="runner-totals_8h_source.html#l00222">222</a> of file <a class="el" href="runner-totals_8h_source.html">runner-totals.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-totals_8h_source.html#l00223">223</a> of file <a class="el" href="runner-totals_8h_source.html">runner-totals.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner-totals-inlines_8h_source.html#l00111">executed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00061">increment_successful_checks()</a>, <a class="el" href="runner-totals_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="runner-totals-inlines_8h_source.html#l00091">successful_checks()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner-totals-inlines_8h_source.html#l00112">executed_checks()</a>, <a class="el" href="runner-totals-inlines_8h_source.html#l00062">increment_successful_checks()</a>, <a class="el" href="runner-totals_8cpp_source.html#l00073">operator+=()</a>, and <a class="el" href="runner-totals-inlines_8h_source.html#l00092">successful_checks()</a>.</p>
 
 </div>
 </div>

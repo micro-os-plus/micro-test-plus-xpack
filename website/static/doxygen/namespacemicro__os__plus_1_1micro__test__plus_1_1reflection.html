@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -178,21 +178,24 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   75</span>    {</div>
 <div class="line"><span class="lineno">   76</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
 <div class="line"><span class="lineno">   77</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">   78</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">   79</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage&quot;</span></div>
-<div class="line"><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
-<div class="line"><span class="lineno">   81</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">   82</span>      <span class="keyword">const</span> <span class="keywordtype">char</span>* p = strrchr (name, <span class="charliteral">&#39;/&#39;</span>);</div>
-<div class="line"><span class="lineno">   83</span>      <span class="keywordflow">if</span> (p != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> p + 1;</div>
-<div class="line"><span class="lineno">   85</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">return</span> name;</div>
-<div class="line"><span class="lineno">   87</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">   88</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">   89</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">   90</span>    }</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">   80</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage&quot;</span></div>
+<div class="line"><span class="lineno">   81</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><span class="lineno">   82</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>      <span class="keyword">const</span> <span class="keywordtype">char</span>* p = strrchr (name, <span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><span class="lineno">   85</span>      <span class="keywordflow">if</span> (p != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">return</span> p + 1;</div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">return</span> name;</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">   91</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">   92</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">   93</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::runner::abort()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00646">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00648">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00394">micro_os_plus::micro_test_plus::runner::abort()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00648">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00650">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_()</a>.</p>
 
 </div>
 </div>
@@ -236,32 +239,32 @@ template&lt;class T&gt; </div>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt">std::string_view</span> containing the extracted type name. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="reflection-inlines_8h_source.html#l00145">145</a> of file <a class="el" href="reflection-inlines_8h_source.html">reflection-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
-<div class="line"><span class="lineno">  147</span>      <span class="keyword">const</span> std::string_view sv = __PRETTY_FUNCTION__;</div>
-<div class="line"><span class="lineno">  148</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  149</span>      <span class="comment">// Clang: &quot;... [T = &lt;typename&gt;]&quot;</span></div>
-<div class="line"><span class="lineno">  150</span>      <span class="comment">// rfind(&#39;[&#39;) locates the opening bracket of &quot;[T = ...]&quot;.</span></div>
-<div class="line"><span class="lineno">  151</span>      <span class="keyword">const</span> <span class="keyword">auto</span> start = sv.rfind (<span class="charliteral">&#39;[&#39;</span>) + 5; <span class="comment">// skip &quot;[T = &quot;</span></div>
-<div class="line"><span class="lineno">  152</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end = sv.rfind (<span class="charliteral">&#39;]&#39;</span>);</div>
-<div class="line"><span class="lineno">  153</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  154</span>      <span class="comment">// GCC: &quot;... [with T = &lt;typename&gt;]&quot; or, on some versions,</span></div>
-<div class="line"><span class="lineno">  155</span>      <span class="comment">//      &quot;... [with T = &lt;typename&gt;; std::string_view = ...]&quot;</span></div>
-<div class="line"><span class="lineno">  156</span>      <span class="comment">// Search for &quot;T = &quot; explicitly to avoid landing on a later &#39;=&#39;.</span></div>
-<div class="line"><span class="lineno">  157</span>      <span class="keyword">const</span> <span class="keyword">auto</span> t_eq = sv.find (<span class="stringliteral">&quot;T = &quot;</span>);</div>
-<div class="line"><span class="lineno">  158</span>      <span class="keyword">const</span> <span class="keyword">auto</span> start = t_eq + 4; <span class="comment">// skip &quot;T = &quot;</span></div>
-<div class="line"><span class="lineno">  159</span>      <span class="keyword">const</span> <span class="keyword">auto</span> semi = sv.find (<span class="charliteral">&#39;;&#39;</span>, start);</div>
-<div class="line"><span class="lineno">  160</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end</div>
-<div class="line"><span class="lineno">  161</span>          = (semi != std::string_view::npos) ? semi : sv.rfind (<span class="stringliteral">&#39;]&#39;</span>);</div>
-<div class="line"><span class="lineno">  162</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  163</span><span class="comment">// Note: MSVC uses __FUNCSIG__ instead of __PRETTY_FUNCTION__.</span></div>
-<div class="line"><span class="lineno">  164</span><span class="comment">// MSVC is not a supported target for this framework.</span></div>
-<div class="line"><span class="lineno">  165</span><span class="preprocessor">#error &quot;Unsupported compiler&quot;</span></div>
-<div class="line"><span class="lineno">  166</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__) || defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  167</span>      <span class="keywordflow">return</span> sv.substr (start, end - start);</div>
-<div class="line"><span class="lineno">  168</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="reflection-inlines_8h_source.html#l00146">146</a> of file <a class="el" href="reflection-inlines_8h_source.html">reflection-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>    {</div>
+<div class="line"><span class="lineno">  148</span>      <span class="keyword">const</span> std::string_view sv = __PRETTY_FUNCTION__;</div>
+<div class="line"><span class="lineno">  149</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  150</span>      <span class="comment">// Clang: &quot;... [T = &lt;typename&gt;]&quot;</span></div>
+<div class="line"><span class="lineno">  151</span>      <span class="comment">// rfind(&#39;[&#39;) locates the opening bracket of &quot;[T = ...]&quot;.</span></div>
+<div class="line"><span class="lineno">  152</span>      <span class="keyword">const</span> <span class="keyword">auto</span> start = sv.rfind (<span class="charliteral">&#39;[&#39;</span>) + 5; <span class="comment">// skip &quot;[T = &quot;</span></div>
+<div class="line"><span class="lineno">  153</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end = sv.rfind (<span class="charliteral">&#39;]&#39;</span>);</div>
+<div class="line"><span class="lineno">  154</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  155</span>      <span class="comment">// GCC: &quot;... [with T = &lt;typename&gt;]&quot; or, on some versions,</span></div>
+<div class="line"><span class="lineno">  156</span>      <span class="comment">//      &quot;... [with T = &lt;typename&gt;; std::string_view = ...]&quot;</span></div>
+<div class="line"><span class="lineno">  157</span>      <span class="comment">// Search for &quot;T = &quot; explicitly to avoid landing on a later &#39;=&#39;.</span></div>
+<div class="line"><span class="lineno">  158</span>      <span class="keyword">const</span> <span class="keyword">auto</span> t_eq = sv.find (<span class="stringliteral">&quot;T = &quot;</span>);</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keyword">const</span> <span class="keyword">auto</span> start = t_eq + 4; <span class="comment">// skip &quot;T = &quot;</span></div>
+<div class="line"><span class="lineno">  160</span>      <span class="keyword">const</span> <span class="keyword">auto</span> semi = sv.find (<span class="charliteral">&#39;;&#39;</span>, start);</div>
+<div class="line"><span class="lineno">  161</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end</div>
+<div class="line"><span class="lineno">  162</span>          = (semi != std::string_view::npos) ? semi : sv.rfind (<span class="stringliteral">&#39;]&#39;</span>);</div>
+<div class="line"><span class="lineno">  163</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  164</span><span class="comment">// Note: MSVC uses __FUNCSIG__ instead of __PRETTY_FUNCTION__.</span></div>
+<div class="line"><span class="lineno">  165</span><span class="comment">// MSVC is not a supported target for this framework.</span></div>
+<div class="line"><span class="lineno">  166</span><span class="preprocessor">#error &quot;Unsupported compiler&quot;</span></div>
+<div class="line"><span class="lineno">  167</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__) || defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">return</span> sv.substr (start, end - start);</div>
+<div class="line"><span class="lineno">  169</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00446">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00448">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>

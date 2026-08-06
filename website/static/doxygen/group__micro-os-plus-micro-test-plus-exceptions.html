@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -212,11 +212,11 @@ template&lt;class Callable_T&gt; </div>
 <p>The <span class="tt"><a class="el" href="#ga798bd28001c3938784073e60dd904148" title="Check if a callable does not throw an exception.">nothrow</a></span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.</p>
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inline_8h_source.html#l00115">115</a> of file <a class="el" href="exceptions-inline_8h_source.html">exceptions-inline.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  116</span>  {</div>
-<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">detail::nothrow_&lt;Callable_T&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">  118</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">micro_os_plus::micro_test_plus::detail::nothrow_</a></div><div class="ttdoc">Operator struct template to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00709">detail.h:710</a></div></div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inline_8h_source.html#l00116">116</a> of file <a class="el" href="exceptions-inline_8h_source.html">exceptions-inline.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>  {</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">detail::nothrow_&lt;Callable_T&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">  119</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">micro_os_plus::micro_test_plus::detail::nothrow_</a></div><div class="ttdoc">Operator struct template to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00710">detail.h:711</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,11 +260,11 @@ template&lt;class Callable_T&gt; </div>
 <p>The <span class="tt"><a class="el" href="#gaf8f7602f40119da514be2a0bfc4b70f5" title="Check if a callable throws a specific exception.">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.</p>
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inline_8h_source.html#l00097">97</a> of file <a class="el" href="exceptions-inline_8h_source.html">exceptions-inline.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>  {</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">  100</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">micro_os_plus::micro_test_plus::detail::throws_</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00652">detail.h:653</a></div></div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inline_8h_source.html#l00098">98</a> of file <a class="el" href="exceptions-inline_8h_source.html">exceptions-inline.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>  {</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">  101</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">micro_os_plus::micro_test_plus::detail::throws_</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00653">detail.h:654</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -309,10 +309,10 @@ template&lt;class Exception_T, class Callable_T&gt; </div>
 <p>The <span class="tt"><a class="el" href="#gaf8f7602f40119da514be2a0bfc4b70f5" title="Check if a callable throws a specific exception.">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.</p>
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inline_8h_source.html#l00080">80</a> of file <a class="el" href="exceptions-inline_8h_source.html">exceptions-inline.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>  {</div>
-<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T, Exception_T&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">   83</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inline_8h_source.html#l00081">81</a> of file <a class="el" href="exceptions-inline_8h_source.html">exceptions-inline.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>  {</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T, Exception_T&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">   84</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

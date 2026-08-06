@@ -12,7 +12,7 @@
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1printable" kindref="compound">micro_os_plus::micro_test_plus::type_traits::printable</ref> =  std::is_arithmetic_v&lt;T&gt;
                         or std::is_convertible_v&lt;T, std::string_view&gt;</initializer>
     <conceptparts>
-      <codepart line="494">    <programlisting>
+      <codepart line="495">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">printable<sp/>=<sp/>std::is_arithmetic_v&lt;T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>std::is_convertible_v&lt;T,<sp/>std::string_view&gt;</highlight></codeline>
@@ -34,6 +34,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>printable</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> is an arithmetic type or is implicitly convertible to <computeroutput>std::string_view</computeroutput>. It constrains the <computeroutput>operator&lt;&lt;</computeroutput> overload of <computeroutput>deferred_reporter_base</computeroutput>, ensuring that only types that can be meaningfully appended to the output message are accepted. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="494" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="495" column="5"/>
   </compounddef>
 </doxygen>

@@ -4,7 +4,6 @@
     <compoundname>test.cpp</compoundname>
     <includes refid="test_8h" local="yes">micro-os-plus/micro-test-plus/test.h</includes>
     <includes refid="runner_8h" local="yes">micro-os-plus/micro-test-plus/runner.h</includes>
-    <includes local="yes">micro-os-plus/diag/trace.h</includes>
     <incdepgraph>
       <node id="23">
         <label>micro-os-plus/micro-test-plus/deferred-reporter.h</label>
@@ -57,8 +56,6 @@
       <node id="31">
         <label>inlines/deferred-reporter-inlines.h</label>
         <link refid="deferred-reporter-inlines_8h"/>
-        <childnode refid="32" relation="include">
-        </childnode>
         <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
@@ -90,19 +87,17 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="35">
+      <node id="34">
         <label>inlines/reporter-inlines.h</label>
         <link refid="reporter-inlines_8h"/>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
-      <node id="38">
+      <node id="37">
         <label>inlines/runner-inlines.h</label>
         <link refid="runner-inlines_8h"/>
-        <childnode refid="32" relation="include">
-        </childnode>
       </node>
       <node id="5">
         <label>inlines/runner-totals-inlines.h</label>
@@ -113,13 +108,11 @@
         <link refid="test-inlines_8h"/>
         <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
         <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
       <node id="17">
@@ -146,7 +139,7 @@
         <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="33">
+      <node id="32">
         <label>micro-os-plus/micro-test-plus/reporter.h</label>
         <link refid="reporter_8h"/>
         <childnode refid="6" relation="include">
@@ -165,11 +158,11 @@
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -180,7 +173,7 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="37">
+      <node id="36">
         <label>micro-os-plus/micro-test-plus/runner.h</label>
         <link refid="runner_8h"/>
         <childnode refid="14" relation="include">
@@ -195,7 +188,7 @@
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -245,9 +238,7 @@
         <link refid="test_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
       <node id="8">
@@ -265,7 +256,7 @@
       <node id="26">
         <label>cstdio</label>
       </node>
-      <node id="36">
+      <node id="35">
         <label>cstring</label>
       </node>
       <node id="16">
@@ -276,9 +267,6 @@
       </node>
       <node id="21">
         <label>memory</label>
-      </node>
-      <node id="32">
-        <label>micro-os-plus/diag/trace.h</label>
       </node>
       <node id="15">
         <label>optional</label>
@@ -292,7 +280,7 @@
       <node id="12">
         <label>type_traits</label>
       </node>
-      <node id="34">
+      <node id="33">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -332,224 +320,226 @@
 <codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="test_8h" kindref="compound">micro-os-plus/micro-test-plus/test.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="runner_8h" kindref="compound">micro-os-plus/micro-test-plus/runner.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro-os-plus/diag/trace.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__has_include(&quot;micro-os-plus/diag/trace.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro-os-plus/diag/trace.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__has_include(&quot;micro-os-plus/diag/trace.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wunknown-warning-option&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat-pedantic&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wunsafe-buffer-usage-in-libc-call&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//<sp/>GCC<sp/>only</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wredundant-tags&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wsuggest-final-types&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wsuggest-final-methods&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wunknown-warning-option&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat-pedantic&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wunsafe-buffer-usage-in-libc-call&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">//<sp/>GCC<sp/>only</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wredundant-tags&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wsuggest-final-types&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wsuggest-final-methods&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></highlight></codeline>
-<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>========================================================================</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1f293a9e44f60ee340c18d9e7efa0390" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1f293a9e44f60ee340c18d9e7efa0390" kindref="member">test_node::test_node</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref>)<sp/>:<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref><sp/>}</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref>);</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1a2ee48056523ceead142c95209cd57d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1a2ee48056523ceead142c95209cd57d" kindref="member">test_node::~test_node</ref><sp/>()</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1f293a9e44f60ee340c18d9e7efa0390" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1f293a9e44f60ee340c18d9e7efa0390" kindref="member">test_node::test_node</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref>)<sp/>:<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1a2ee48056523ceead142c95209cd57d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1a2ee48056523ceead142c95209cd57d" kindref="member">test_node::~test_node</ref><sp/>()</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a16fe4a8c3110e27cfd89e8c57bcfd6ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a16fe4a8c3110e27cfd89e8c57bcfd6ea" kindref="member">runnable_base::runnable_base</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a04d5de8396df2b2fc03d67a9789bad44" kindref="member">runner</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a04d5de8396df2b2fc03d67a9789bad44" kindref="member">runner</ref>,</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa18d3d1260a0c286eee9beed2ff0dbdd" kindref="member">own_index</ref>)</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1f293a9e44f60ee340c18d9e7efa0390" kindref="member">test_node</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref><sp/>},<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ac9f933b7e072bfdd7732783c12c98298" kindref="member">runner_</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a04d5de8396df2b2fc03d67a9789bad44" kindref="member">runner</ref><sp/>},<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a69687627342981d42471b17f1d83311f" kindref="member">own_index_</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa18d3d1260a0c286eee9beed2ff0dbdd" kindref="member">own_index</ref><sp/>}</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;<sp/>%zu\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a69687627342981d42471b17f1d83311f" kindref="member">own_index_</ref>);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aceb40214c40edbd44ffcde673624e389" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aceb40214c40edbd44ffcde673624e389" kindref="member">runnable_base::~runnable_base</ref><sp/>()</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>children_subtests_<sp/>holds<sp/>unique_ptrs;<sp/>destroyed<sp/>automatically.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref>&amp;</highlight></codeline>
-<codeline lineno="147" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">runnable_base::reporter</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ac9f933b7e072bfdd7732783c12c98298" kindref="member">runner_</ref>.reporter<sp/>();</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>[[noreturn]]<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="159" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad8302d2dc629b643d34b3cfeafe44b3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad8302d2dc629b643d34b3cfeafe44b3b" kindref="member">runnable_base::abort</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref>&amp;<sp/>sl)</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ac9f933b7e072bfdd7732783c12c98298" kindref="member">runner_</ref>.abort<sp/>(sl);</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="175" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a60ea42dbf8ecbe8b4c5fcfedb52e857c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a60ea42dbf8ecbe8b4c5fcfedb52e857c" kindref="member">runnable_base::after_subtest_create_</ref><sp/>(</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;class<sp/>subtest&gt;<sp/>child_test,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>)</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Transfer<sp/>ownership<sp/>into<sp/>the<sp/>vector.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1adf8b37f3ebe6808be456fa35409f9175" kindref="member">children_subtests_</ref>.push_back<sp/>(std::move<sp/>(child_test));</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Run<sp/>the<sp/>child<sp/>test<sp/>case<sp/>immediately.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref><sp/>=<sp/>*<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1adf8b37f3ebe6808be456fa35409f9175" kindref="member">children_subtests_</ref>.back<sp/>();</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" kindref="member">run</ref><sp/>();</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"></highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>test<sp/>executed<sp/>one<sp/>more<sp/>subtest.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>subtest<sp/>&apos;%s&apos;<sp/>executed<sp/>one<sp/>more<sp/>subtest\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref><sp/>());</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1e053f72527192d324e4d0130b7017d3" kindref="member">totals</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals_1aa011c23894cae22c2d8496e36f4cca01" kindref="member">increment_executed_subtests</ref><sp/>();</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>accumulate<sp/>the<sp/>totals<sp/>from<sp/>the<sp/>child<sp/>test<sp/>into<sp/>the<sp/>current<sp/>test</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>totals,<sp/>each<sp/>subtest<sp/>shows<sp/>only<sp/>its<sp/>counters.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"></highlight></codeline>
-<codeline lineno="194"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>suite<sp/>&apos;%s&apos;<sp/>totals\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref><sp/>());</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Accumulate<sp/>the<sp/>totals<sp/>from<sp/>the<sp/>child<sp/>test<sp/>into<sp/>the<sp/>suite<sp/>totals.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1e053f72527192d324e4d0130b7017d3" kindref="member">totals</ref><sp/>()<sp/>+=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1e053f72527192d324e4d0130b7017d3" kindref="member">totals</ref><sp/>();</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>detail</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="203"><highlight class="normal"></highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a16fe4a8c3110e27cfd89e8c57bcfd6ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a16fe4a8c3110e27cfd89e8c57bcfd6ea" kindref="member">runnable_base::runnable_base</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a04d5de8396df2b2fc03d67a9789bad44" kindref="member">runner</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a04d5de8396df2b2fc03d67a9789bad44" kindref="member">runner</ref>,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa18d3d1260a0c286eee9beed2ff0dbdd" kindref="member">own_index</ref>)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1f293a9e44f60ee340c18d9e7efa0390" kindref="member">test_node</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref><sp/>},<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ac9f933b7e072bfdd7732783c12c98298" kindref="member">runner_</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a04d5de8396df2b2fc03d67a9789bad44" kindref="member">runner</ref><sp/>},<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a69687627342981d42471b17f1d83311f" kindref="member">own_index_</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa18d3d1260a0c286eee9beed2ff0dbdd" kindref="member">own_index</ref><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;<sp/>%zu\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a69687627342981d42471b17f1d83311f" kindref="member">own_index_</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aceb40214c40edbd44ffcde673624e389" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aceb40214c40edbd44ffcde673624e389" kindref="member">runnable_base::~runnable_base</ref><sp/>()</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>children_subtests_<sp/>holds<sp/>unique_ptrs;<sp/>destroyed<sp/>automatically.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref>&amp;</highlight></codeline>
+<codeline lineno="149" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">runnable_base::reporter</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ac9f933b7e072bfdd7732783c12c98298" kindref="member">runner_</ref>.reporter<sp/>();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>[[noreturn]]<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad8302d2dc629b643d34b3cfeafe44b3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad8302d2dc629b643d34b3cfeafe44b3b" kindref="member">runnable_base::abort</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref>&amp;<sp/>sl)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ac9f933b7e072bfdd7732783c12c98298" kindref="member">runner_</ref>.abort<sp/>(sl);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a60ea42dbf8ecbe8b4c5fcfedb52e857c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a60ea42dbf8ecbe8b4c5fcfedb52e857c" kindref="member">runnable_base::after_subtest_create_</ref><sp/>(</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;class<sp/>subtest&gt;<sp/>child_test,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Transfer<sp/>ownership<sp/>into<sp/>the<sp/>vector.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1adf8b37f3ebe6808be456fa35409f9175" kindref="member">children_subtests_</ref>.push_back<sp/>(std::move<sp/>(child_test));</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Run<sp/>the<sp/>child<sp/>test<sp/>case<sp/>immediately.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref><sp/>=<sp/>*<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1adf8b37f3ebe6808be456fa35409f9175" kindref="member">children_subtests_</ref>.back<sp/>();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" kindref="member">run</ref><sp/>();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>test<sp/>executed<sp/>one<sp/>more<sp/>subtest.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>subtest<sp/>&apos;%s&apos;<sp/>executed<sp/>one<sp/>more<sp/>subtest\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref><sp/>());</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1e053f72527192d324e4d0130b7017d3" kindref="member">totals</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals_1aa011c23894cae22c2d8496e36f4cca01" kindref="member">increment_executed_subtests</ref><sp/>();</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>accumulate<sp/>the<sp/>totals<sp/>from<sp/>the<sp/>child<sp/>test<sp/>into<sp/>the<sp/>current<sp/>test</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>totals,<sp/>each<sp/>subtest<sp/>shows<sp/>only<sp/>its<sp/>counters.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>suite<sp/>&apos;%s&apos;<sp/>totals\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1565ede2ab1141b2e3db2ea5513002a1" kindref="member">name</ref><sp/>());</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Accumulate<sp/>the<sp/>totals<sp/>from<sp/>the<sp/>child<sp/>test<sp/>into<sp/>the<sp/>suite<sp/>totals.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1e053f72527192d324e4d0130b7017d3" kindref="member">totals</ref><sp/>()<sp/>+=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a1e053f72527192d324e4d0130b7017d3" kindref="member">totals</ref><sp/>();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>detail</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="205"><highlight class="normal"></highlight></codeline>
-<codeline lineno="215" refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1a83b83ec1680698bb5860d3272fbfe50d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1a83b83ec1680698bb5860d3272fbfe50d" kindref="member">subtest::~subtest</ref><sp/>()</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"></highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="228" refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" kindref="member">subtest::run</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="233"><highlight class="normal"></highlight></codeline>
-<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>=<sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1a83b83ec1680698bb5860d3272fbfe50d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1a83b83ec1680698bb5860d3272fbfe50d" kindref="member">subtest::~subtest</ref><sp/>()</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" kindref="member">subtest::run</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight></codeline>
-<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>now,<sp/>subtests<sp/>do<sp/>not<sp/>record<sp/>the<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this-&gt;timings.timestamp_begin<sp/>();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a36390a428ba987aa91229d933a15ef27" kindref="member">begin_subtest</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"></highlight></codeline>
-<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Invoke<sp/>the<sp/>callable,<sp/>passing<sp/>the<sp/>self<sp/>reference<sp/>followed<sp/>by<sp/>the<sp/>variadic</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>arguments.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable_1a19263e27d0e82dd1a49c31ecead4b454" kindref="member">callable_</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"></highlight></codeline>
-<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this-&gt;timings.timestamp_end<sp/>();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref>.end_subtest<sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="247"><highlight class="normal"></highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>=<sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>();</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>now,<sp/>subtests<sp/>do<sp/>not<sp/>record<sp/>the<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this-&gt;timings.timestamp_begin<sp/>();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a36390a428ba987aa91229d933a15ef27" kindref="member">begin_subtest</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Invoke<sp/>the<sp/>callable,<sp/>passing<sp/>the<sp/>self<sp/>reference<sp/>followed<sp/>by<sp/>the<sp/>variadic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>arguments.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable_1a19263e27d0e82dd1a49c31ecead4b454" kindref="member">callable_</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this-&gt;timings.timestamp_end<sp/>();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref>.end_subtest<sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="249"><highlight class="normal"></highlight></codeline>
-<codeline lineno="256" refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1aa25d7d2a11b7c893d9260d562beb96fb" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1aa25d7d2a11b7c893d9260d562beb96fb" kindref="member">suite::~suite</ref><sp/>()</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="258"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
-<codeline lineno="260"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="262"><highlight class="normal"></highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="269" refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" kindref="member">suite::run</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="274"><highlight class="normal"></highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>=<sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>();</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258" refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1aa25d7d2a11b7c893d9260d562beb96fb" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1aa25d7d2a11b7c893d9260d562beb96fb" kindref="member">suite::~suite</ref><sp/>()</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271" refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" kindref="member">suite::run</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="276"><highlight class="normal"></highlight></codeline>
-<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a835d1906eee4d0a59f839b4c277027d8" kindref="member">timings</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a1b2077718469ade9fda2e257a0d06293" kindref="member">timestamp_begin</ref><sp/>();</highlight></codeline>
-<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a89624dfaadce9810f0f5ae1577ca1080" kindref="member">begin_suite</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="279"><highlight class="normal"></highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Invoke<sp/>the<sp/>callable,<sp/>passing<sp/>the<sp/>self<sp/>reference<sp/>followed<sp/>by<sp/>the<sp/>variadic</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>arguments.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable_1a19263e27d0e82dd1a49c31ecead4b454" kindref="member">callable_</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"></highlight></codeline>
-<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a835d1906eee4d0a59f839b4c277027d8" kindref="member">timings</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1aeb4873587b5be066c69c0ef26d64640b" kindref="member">timestamp_end</ref><sp/>();</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aa70c60884405e172bce6c8b8bab0e636" kindref="member">end_suite</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="287"><highlight class="normal"></highlight></codeline>
-<codeline lineno="288"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>=<sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>();</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a835d1906eee4d0a59f839b4c277027d8" kindref="member">timings</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a1b2077718469ade9fda2e257a0d06293" kindref="member">timestamp_begin</ref><sp/>();</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a89624dfaadce9810f0f5ae1577ca1080" kindref="member">begin_suite</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Invoke<sp/>the<sp/>callable,<sp/>passing<sp/>the<sp/>self<sp/>reference<sp/>followed<sp/>by<sp/>the<sp/>variadic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>arguments.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable_1a19263e27d0e82dd1a49c31ecead4b454" kindref="member">callable_</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a835d1906eee4d0a59f839b4c277027d8" kindref="member">timings</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1aeb4873587b5be066c69c0ef26d64640b" kindref="member">timestamp_end</ref><sp/>();</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aa70c60884405e172bce6c8b8bab0e636" kindref="member">end_suite</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="289"><highlight class="normal"></highlight></codeline>
-<codeline lineno="297" refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a944643243d81c498970aa7b448a5ff56" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a944643243d81c498970aa7b448a5ff56" kindref="member">top_suite::top_suite</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a8fb619cf9fa2cddb1cf6fd4d749ae173" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref>)</highlight></codeline>
-<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a4040488588c8aa900b6d8f82fc72c1d4" kindref="member">suite</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a8fb619cf9fa2cddb1cf6fd4d749ae173" kindref="member">name</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref>,<sp/>[]<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a4040488588c8aa900b6d8f82fc72c1d4" kindref="member">suite</ref>&amp;)<sp/>noexcept<sp/>{}<sp/>}</highlight></codeline>
-<codeline lineno="299"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="300"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a8fb619cf9fa2cddb1cf6fd4d749ae173" kindref="member">name</ref>);</highlight></codeline>
-<codeline lineno="302"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="303"><highlight class="normal"></highlight></codeline>
-<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa18d3d1260a0c286eee9beed2ff0dbdd" kindref="member">own_index</ref><sp/>(1);</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="306"><highlight class="normal"></highlight></codeline>
-<codeline lineno="313" refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1aae4ef52e5ceaa29d20cf7e3be848c528" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1aae4ef52e5ceaa29d20cf7e3be848c528" kindref="member">top_suite::~top_suite</ref><sp/>()</highlight></codeline>
-<codeline lineno="314"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="315"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
-<codeline lineno="317"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="318"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"></highlight></codeline>
-<codeline lineno="320"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299" refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a944643243d81c498970aa7b448a5ff56" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a944643243d81c498970aa7b448a5ff56" kindref="member">top_suite::top_suite</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a8fb619cf9fa2cddb1cf6fd4d749ae173" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref>)</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a4040488588c8aa900b6d8f82fc72c1d4" kindref="member">suite</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a8fb619cf9fa2cddb1cf6fd4d749ae173" kindref="member">name</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref>,<sp/>[]<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a4040488588c8aa900b6d8f82fc72c1d4" kindref="member">suite</ref>&amp;)<sp/>noexcept<sp/>{}<sp/>}</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a8fb619cf9fa2cddb1cf6fd4d749ae173" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa18d3d1260a0c286eee9beed2ff0dbdd" kindref="member">own_index</ref><sp/>(1);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1aae4ef52e5ceaa29d20cf7e3be848c528" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1aae4ef52e5ceaa29d20cf7e3be848c528" kindref="member">top_suite::~top_suite</ref><sp/>()</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="321"><highlight class="normal"></highlight></codeline>
-<codeline lineno="328" refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a88ca9975daf7b7b1e509114944151675" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a88ca9975daf7b7b1e509114944151675" kindref="member">static_suite::~static_suite</ref><sp/>()</highlight></codeline>
-<codeline lineno="329"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="330"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
-<codeline lineno="332"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"></highlight></codeline>
-<codeline lineno="342"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="343" refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a4ab3277887dfc4cd8ae84bb4101eae60" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a4ab3277887dfc4cd8ae84bb4101eae60" kindref="member">static_suite::run</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="344"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="345"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
-<codeline lineno="347"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="348"><highlight class="normal"></highlight></codeline>
-<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref><sp/>=<sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>();</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330" refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a88ca9975daf7b7b1e509114944151675" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a88ca9975daf7b7b1e509114944151675" kindref="member">static_suite::~static_suite</ref><sp/>()</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345" refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a4ab3277887dfc4cd8ae84bb4101eae60" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a4ab3277887dfc4cd8ae84bb4101eae60" kindref="member">static_suite::run</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>trace::printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node_1a61ac0275108c9f9b2348c1c5fc8af104" kindref="member">name_</ref>);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="350"><highlight class="normal"></highlight></codeline>
-<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a835d1906eee4d0a59f839b4c277027d8" kindref="member">timings</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a1b2077718469ade9fda2e257a0d06293" kindref="member">timestamp_begin</ref><sp/>();</highlight></codeline>
-<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a89624dfaadce9810f0f5ae1577ca1080" kindref="member">begin_suite</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="353"><highlight class="normal"></highlight></codeline>
-<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a1341277c6af9353b1555711817523983" kindref="member">static_callable_</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref>&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref><sp/>=<sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" kindref="member">reporter</ref><sp/>();</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a835d1906eee4d0a59f839b4c277027d8" kindref="member">timings</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a1b2077718469ade9fda2e257a0d06293" kindref="member">timestamp_begin</ref><sp/>();</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a89624dfaadce9810f0f5ae1577ca1080" kindref="member">begin_suite</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="355"><highlight class="normal"></highlight></codeline>
-<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a835d1906eee4d0a59f839b4c277027d8" kindref="member">timings</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1aeb4873587b5be066c69c0ef26d64640b" kindref="member">timestamp_end</ref><sp/>();</highlight></codeline>
-<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aa70c60884405e172bce6c8b8bab0e636" kindref="member">end_suite</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="358"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="359"><highlight class="normal"></highlight></codeline>
-<codeline lineno="360"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="361"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="362"><highlight class="normal"></highlight></codeline>
-<codeline lineno="363"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a1341277c6af9353b1555711817523983" kindref="member">static_callable_</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a835d1906eee4d0a59f839b4c277027d8" kindref="member">timings</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1aeb4873587b5be066c69c0ef26d64640b" kindref="member">timestamp_end</ref><sp/>();</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>reporter.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aa70c60884405e172bce6c8b8bab0e636" kindref="member">end_suite</ref><sp/>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="364"><highlight class="normal"></highlight></codeline>
-<codeline lineno="365"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="366"><highlight class="normal"></highlight></codeline>
-<codeline lineno="367" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" refkind="member"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="368" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test.cpp"/>
   </compounddef>

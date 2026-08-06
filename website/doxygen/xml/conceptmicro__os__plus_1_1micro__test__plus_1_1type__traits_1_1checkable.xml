@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1checkable" kindref="compound">micro_os_plus::micro_test_plus::type_traits::checkable</ref> =  is_op&lt;T&gt; or std::convertible_to&lt;T, bool&gt;</initializer>
     <conceptparts>
-      <codepart line="478">    <programlisting>
+      <codepart line="479">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">checkable<sp/>=<sp/>is_op&lt;T&gt;<sp/>or<sp/>std::convertible_to&lt;T,<sp/>bool&gt;</highlight></codeline>
     </programlisting>
@@ -32,6 +32,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>checkable</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> is either a framework operator type (derived from <computeroutput>op</computeroutput>) or is implicitly convertible to <computeroutput>bool</computeroutput>. It is used to constrain the <computeroutput>expect()</computeroutput> and <computeroutput>assume()</computeroutput> function templates, ensuring that only sensible expression types are accepted. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="478" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="479" column="5"/>
   </compounddef>
 </doxygen>

@@ -33,6 +33,6 @@
 <para>These utilities facilitate advanced template programming, type deduction, and compile-time introspection, supporting the flexible and type-safe design of the framework.</para>
 <para>All definitions within this namespace are implemented in the <computeroutput>include/micro-os-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/type-traits-inlines.h" line="64" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/type-traits-inlines.h" line="65" column="3"/>
   </compounddef>
 </doxygen>

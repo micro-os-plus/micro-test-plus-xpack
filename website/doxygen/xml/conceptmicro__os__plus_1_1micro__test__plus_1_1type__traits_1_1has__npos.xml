@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos" kindref="compound">micro_os_plus::micro_test_plus::type_traits::has_npos</ref> =  requires { T::npos; }</initializer>
     <conceptparts>
-      <codepart line="388">    <programlisting>
+      <codepart line="389">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">has_npos<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>{<sp/>T::npos;<sp/>}</highlight></codeline>
     </programlisting>
@@ -32,6 +32,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>has_npos</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> exposes a static <computeroutput>npos</computeroutput> member, as provided by <computeroutput>std::string_view</computeroutput> and similar types. It is used to detect string-like types for specialised comparison and reporting within the framework. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="388" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="389" column="5"/>
   </compounddef>
 </doxygen>

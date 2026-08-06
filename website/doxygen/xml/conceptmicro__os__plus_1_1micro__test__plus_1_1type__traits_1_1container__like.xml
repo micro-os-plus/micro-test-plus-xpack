@@ -14,7 +14,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
       t.end ();
     }</initializer>
     <conceptparts>
-      <codepart line="371">    <programlisting>
+      <codepart line="372">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">container_like<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>t.begin<sp/>();</highlight></codeline>
@@ -38,6 +38,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>container_like</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> exposes both a <computeroutput>begin()</computeroutput> and an <computeroutput>end()</computeroutput> member function, as required by standard range-based iteration. It is used to detect container types for specialised comparison and reporting within the framework. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="371" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="372" column="5"/>
   </compounddef>
 </doxygen>

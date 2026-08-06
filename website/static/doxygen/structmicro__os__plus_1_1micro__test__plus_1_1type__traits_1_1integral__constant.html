@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -175,7 +175,7 @@ struct micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;
 <p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base_</a>&lt;decltype(N)&gt;</span>, which supplies the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a4a819c9151d37da6e8a76f4629c7cc4d">value_type</a></span> alias, the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a8f1747b0fb288001d51754dfb8c53b0e">value_</a></span> runtime member, the explicit conversion operator, and the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#aedc41334c71b7711435aee0cb8f44fb3">get()</a></span> accessor.</p>
 <p>This struct retains the compile-time <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a></span> constant and provides a unary minus operator to obtain the negative value as a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00574">574</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00575">575</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a4a819c9151d37da6e8a76f4629c7cc4d" name="a4a819c9151d37da6e8a76f4629c7cc4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a819c9151d37da6e8a76f4629c7cc4d">&#9670;&#160;</a></span>value_type</h2>
@@ -197,7 +197,7 @@ struct micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00522">522</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00523">523</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>
@@ -228,16 +228,16 @@ template&lt;auto N&gt; </div>
 </div><div class="memdoc">
 <p>Delegates to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base_</a>&lt;decltype(N)&gt;{ N }</span> to initialise the base. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00106">106</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  107</span>        : <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#ab9b0e45988e4291e63d6b016c55231f7">value_base_</a>&lt;<span class="keyword">decltype</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>)&gt;{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a> }</div>
-<div class="line"><span class="lineno">  108</span>    {</div>
-<div class="line"><span class="lineno">  109</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a></div><div class="ttdoc">Struct template representing a generic integral constant.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00574">type-traits.h:575</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___html_ab9b0e45988e4291e63d6b016c55231f7"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#ab9b0e45988e4291e63d6b016c55231f7">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;::value_base_</a></div><div class="ttdeci">constexpr value_base_(const decltype(N) &amp;v) noexcept</div><div class="ttdef"><b>Definition</b> <a href="type-traits-inlines_8h_source.html#l00529">type-traits-inlines.h:73</a></div></div>
+<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00107">107</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>        : <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#ab9b0e45988e4291e63d6b016c55231f7">value_base_</a>&lt;<span class="keyword">decltype</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>)&gt;{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a> }</div>
+<div class="line"><span class="lineno">  109</span>    {</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a></div><div class="ttdoc">Struct template representing a generic integral constant.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00575">type-traits.h:576</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___html_ab9b0e45988e4291e63d6b016c55231f7"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#ab9b0e45988e4291e63d6b016c55231f7">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;::value_base_</a></div><div class="ttdeci">constexpr value_base_(const decltype(N) &amp;v) noexcept</div><div class="ttdef"><b>Definition</b> <a href="type-traits-inlines_8h_source.html#l00530">type-traits-inlines.h:74</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="type-traits-inlines_8h_source.html#l00073">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;::value_base_()</a>.</p>
+<p class="reference">References <a class="el" href="type-traits-inlines_8h_source.html#l00074">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;::value_base_()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="type-traits-inlines_8h_source.html#l00118">operator-()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="type-traits-inlines_8h_source.html#l00119">operator-()</a>.</p>
 
 </div>
 </div>
@@ -268,11 +268,11 @@ template&lt;auto N&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The stored value.</dd></dl>
 <p>Returns the stored value by value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00547">547</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>    {</div>
-<div class="line"><span class="lineno">   96</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">value_</a>;</div>
-<div class="line"><span class="lineno">   97</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a></div><div class="ttdoc">Base struct template providing common storage and accessors for runtime value-wrapper types.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00517">type-traits.h:518</a></div></div>
+<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00548">548</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>    {</div>
+<div class="line"><span class="lineno">   97</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">value_</a>;</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a></div><div class="ttdoc">Base struct template providing common storage and accessors for runtime value-wrapper types.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00518">type-traits.h:519</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -301,10 +301,10 @@ template&lt;auto N&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The stored value as type <span class="tt">T</span>.</dd></dl>
 <p>Allows explicit conversion to the encapsulated value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00537">537</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>    {</div>
-<div class="line"><span class="lineno">   85</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">value_</a>;</div>
-<div class="line"><span class="lineno">   86</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00538">538</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">value_</a>;</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -335,13 +335,13 @@ template&lt;auto N&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>An <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> with value <span class="tt">-N</span>.</dd></dl>
 <p>Returns a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> instance representing the negative of the current value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00118">118</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>    {</div>
-<div class="line"><span class="lineno">  120</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="#aa9f1e68b760d80aea085d684b2dccc4f">integral_constant</a>&lt;-<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>&gt;{};</div>
-<div class="line"><span class="lineno">  121</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_html_aa9f1e68b760d80aea085d684b2dccc4f"><div class="ttname"><a href="#aa9f1e68b760d80aea085d684b2dccc4f">micro_os_plus::micro_test_plus::type_traits::integral_constant::integral_constant</a></div><div class="ttdeci">constexpr integral_constant() noexcept</div><div class="ttdoc">Default constructor. Initialises the base with N.</div><div class="ttdef"><b>Definition</b> <a href="type-traits-inlines_8h_source.html#l00106">type-traits-inlines.h:106</a></div></div>
+<p class="definition">Definition at line <a class="el" href="type-traits-inlines_8h_source.html#l00119">119</a> of file <a class="el" href="type-traits-inlines_8h_source.html">type-traits-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="#aa9f1e68b760d80aea085d684b2dccc4f">integral_constant</a>&lt;-<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>&gt;{};</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_html_aa9f1e68b760d80aea085d684b2dccc4f"><div class="ttname"><a href="#aa9f1e68b760d80aea085d684b2dccc4f">micro_os_plus::micro_test_plus::type_traits::integral_constant::integral_constant</a></div><div class="ttdeci">constexpr integral_constant() noexcept</div><div class="ttdoc">Default constructor. Initialises the base with N.</div><div class="ttdef"><b>Definition</b> <a href="type-traits-inlines_8h_source.html#l00107">type-traits-inlines.h:107</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="type-traits-inlines_8h_source.html#l00106">integral_constant()</a>.</p>
+<p class="reference">References <a class="el" href="type-traits-inlines_8h_source.html#l00107">integral_constant()</a>.</p>
 
 </div>
 </div>
@@ -368,7 +368,7 @@ template&lt;auto N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00579">579</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00580">580</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>
@@ -392,8 +392,8 @@ template&lt;auto N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00552">552</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  552</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00553">553</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  553</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>

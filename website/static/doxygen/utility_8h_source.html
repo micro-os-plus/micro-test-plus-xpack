@@ -32,7 +32,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -163,58 +163,61 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8h_sou
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wc++98-compat&quot;</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="comment">// --------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html">utility</a></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    [[nodiscard]] <span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">extract_file_name</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* path) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    [[nodiscard]] <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731">is_match</a> (std::string_view input, std::string_view pattern);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Delim_T&gt;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    [[nodiscard]] <span class="keyword">auto</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">split</a> (T input, Delim_T delim) -&gt; std::vector&lt;T&gt;;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">// ------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  } <span class="comment">// namespace utility</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="comment">// --------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>} <span class="comment">// namespace micro_os_plus::micro_test_plus</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#endif </span><span class="comment">// defined(__cplusplus)</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">// Templates, inlines &amp; constexpr implementations.</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wc++98-compat&quot;</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="comment">// --------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html">utility</a></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    [[nodiscard]] <span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">extract_file_name</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* path) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    [[nodiscard]] <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731">is_match</a> (std::string_view input, std::string_view pattern);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Delim_T&gt;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    [[nodiscard]] <span class="keyword">auto</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">split</a> (T input, Delim_T delim) -&gt; std::vector&lt;T&gt;;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// ------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  } <span class="comment">// namespace utility</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="comment">// --------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>} <span class="comment">// namespace micro_os_plus::micro_test_plus</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif </span><span class="comment">// defined(__cplusplus)</span></div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#include &quot;<a class="code" href="utility-inlines_8h.html">inlines/utility-inlines.h</a>&quot;</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_UTILITY_H_</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-utility-functions_html_ga1b860aa64be17658d1664de447e6e125"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">micro_os_plus::micro_test_plus::utility::split</a></div><div class="ttdeci">auto split(T input, Delim_T delim) -&gt; std::vector&lt; T &gt;</div><div class="ttdoc">Split a string into a vector of sub-strings.</div><div class="ttdef"><b>Definition</b> <a href="utility-inlines_8h_source.html#l00088">utility-inlines.h:88</a></div></div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-utility-functions_html_ga791f22f0c85b6436c9016821907b0653"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">micro_os_plus::micro_test_plus::utility::extract_file_name</a></div><div class="ttdeci">const char * extract_file_name(const char *path) noexcept</div><div class="ttdoc">Extracts the file name component from a full path.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00085">utility.cpp:85</a></div></div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-utility-functions_html_gaa2f0f4cff320a783ad2347c9ff3fc731"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731">micro_os_plus::micro_test_plus::utility::is_match</a></div><div class="ttdeci">bool is_match(std::string_view input, std::string_view pattern)</div><div class="ttdoc">Check if a string matches a pattern.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00124">utility.cpp:124</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1utility_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html">micro_os_plus::micro_test_plus::utility</a></div><div class="ttdoc">Utility functions for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="utility-inlines_8h_source.html#l00063">utility-inlines.h:64</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00080">deferred-reporter.h:81</a></div></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">// Templates, inlines &amp; constexpr implementations.</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">#include &quot;<a class="code" href="utility-inlines_8h.html">inlines/utility-inlines.h</a>&quot;</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_UTILITY_H_</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-utility-functions_html_ga1b860aa64be17658d1664de447e6e125"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">micro_os_plus::micro_test_plus::utility::split</a></div><div class="ttdeci">auto split(T input, Delim_T delim) -&gt; std::vector&lt; T &gt;</div><div class="ttdoc">Split a string into a vector of sub-strings.</div><div class="ttdef"><b>Definition</b> <a href="utility-inlines_8h_source.html#l00089">utility-inlines.h:89</a></div></div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-utility-functions_html_ga791f22f0c85b6436c9016821907b0653"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">micro_os_plus::micro_test_plus::utility::extract_file_name</a></div><div class="ttdeci">const char * extract_file_name(const char *path) noexcept</div><div class="ttdoc">Extracts the file name component from a full path.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00087">utility.cpp:87</a></div></div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-utility-functions_html_gaa2f0f4cff320a783ad2347c9ff3fc731"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731">micro_os_plus::micro_test_plus::utility::is_match</a></div><div class="ttdeci">bool is_match(std::string_view input, std::string_view pattern)</div><div class="ttdoc">Check if a string matches a pattern.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00127">utility.cpp:127</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1utility_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html">micro_os_plus::micro_test_plus::utility</a></div><div class="ttdoc">Utility functions for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="utility-inlines_8h_source.html#l00064">utility-inlines.h:65</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="deferred-reporter_8h_source.html#l00081">deferred-reporter.h:82</a></div></div>
 <div class="ttc" id="autility-inlines_8h_html"><div class="ttname"><a href="utility-inlines_8h.html">utility-inlines.h</a></div><div class="ttdoc">C++ header file with inline implementations for the µTest++ utility functions.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

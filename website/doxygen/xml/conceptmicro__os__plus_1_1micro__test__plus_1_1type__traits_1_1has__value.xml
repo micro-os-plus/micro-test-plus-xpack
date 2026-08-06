@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kindref="compound">micro_os_plus::micro_test_plus::type_traits::has_value</ref> =  requires (const T&amp; t) { t.value; }</initializer>
     <conceptparts>
-      <codepart line="402">    <programlisting>
+      <codepart line="403">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">has_value<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>{<sp/>t.value;<sp/>}</highlight></codeline>
     </programlisting>
@@ -32,6 +32,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>has_value</computeroutput> concept is satisfied when an instance of <computeroutput>T</computeroutput> exposes a <computeroutput>value</computeroutput> member. It is used to detect framework value-wrapper types such as <computeroutput>integral_constant</computeroutput>, <computeroutput>floating_point_constant</computeroutput>, and <computeroutput>value&lt;T&gt;</computeroutput>, enabling specialised comparison and reporting. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="402" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="403" column="5"/>
   </compounddef>
 </doxygen>

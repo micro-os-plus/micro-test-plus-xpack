@@ -28,6 +28,6 @@
 To minimise conflicts with application-defined operators, these overloads are enabled only for specific types recognised by the framework, such as those derived from the local <computeroutput>op</computeroutput> base type or identified as containers or string views. Constants typically require a literal suffix (e.g., <computeroutput>1<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>), while dynamic values should be wrapped using the provided casting utilities (e.g., <computeroutput>mt::to_i{...}</computeroutput>).</para>
 <para>All definitions within this namespace are implemented in the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder, ensuring a modular and maintainable codebase. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="65" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="66" column="3"/>
   </compounddef>
 </doxygen>

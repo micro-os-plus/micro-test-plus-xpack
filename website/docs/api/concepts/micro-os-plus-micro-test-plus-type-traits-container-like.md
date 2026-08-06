@@ -49,7 +49,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">container_like</span> concept is satisfied when <span class="doxyComputerOutput">T</span> exposes both a <span class="doxyComputerOutput">begin()</span> and an <span class="doxyComputerOutput">end()</span> member function, as required by standard range-based iteration. It is used to detect container types for specialised comparison and reporting within the framework.</p>
 
 
-<p>Definition at line 371 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 372 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">

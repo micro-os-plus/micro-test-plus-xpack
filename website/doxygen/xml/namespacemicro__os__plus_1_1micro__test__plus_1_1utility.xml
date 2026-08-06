@@ -15,6 +15,6 @@
 <para>These utilities include functions for pattern matching—such as verifying whether a string matches a specified pattern—and for splitting strings into sub-strings based on delimiters. The implementations are efficient and suitable for both embedded and general C++ projects.</para>
 <para>By encapsulating these helper functions within a dedicated namespace, the framework maintains clear code organisation and minimises naming conflicts. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="63" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="64" column="3"/>
   </compounddef>
 </doxygen>
