@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT!
-# Automatically generated from npm-packages-helper/templates/*.
+# DO NOT EDIT! Automatically generated from template file:
+# npm-packages-helper/templates/common/.github/workflows/_micro-os-plus/test-all-liquid.yml
 #
 # This file is part of the µOS++ project (http://micro-os-plus.github.io).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -59,13 +59,13 @@ jobs:
     steps:
       - name: Checkout
         # https://github.com/actions/checkout/
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 3
 
       - name: Setup Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
         # https://github.com/actions/setup-node
-        uses: actions/setup-node@v6.3.0
+        uses: actions/setup-node@v7.0.0
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -83,7 +83,9 @@ jobs:
 
       - name: Satisfy project dependencies on ${{ matrix.os }}
         run: |
+          npm ci
           npm --prefix tests ci
+          xpm install -C tests
           xpm run install-all -C tests
 
       - name: Clean xPack cache Linux

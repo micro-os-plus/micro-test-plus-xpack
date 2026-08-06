@@ -17,5 +17,6 @@
   ],
   "hasObjectLibrary": true,
   "useDoxygen": true,
+  "hasTestAll": true,
   "useSelfHostedRunners": false
 }
