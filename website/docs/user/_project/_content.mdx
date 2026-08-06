@@ -326,7 +326,7 @@ To return the test result as the process exit code, the runner provides the `exi
 return tr.exit_code ();
 ```
 
-Refer to the [Test Runners](/docs/api/groups/micro-test-plus-runners/) reference page.
+Refer to the [Test Runners](/docs/api/groups/micro-os-plus-micro-test-plus-runners/) reference page.
 
 ### Test cases
 
@@ -339,7 +339,7 @@ template <typename Callable_T, typename... Args_T>
 void test (const char* name, Callable_T&& func, Args_T&&... arguments);
 ```
 
-Refer to the [Test Cases](/docs/api/groups/micro-test-plus-test-case/) reference page.
+Refer to the [Test Cases](/docs/api/groups/micro-os-plus-micro-test-plus-test-case/) reference page.
 
 ### Expectations and assumptions
 
@@ -356,8 +356,8 @@ template <class Expr_T, type_traits::requires_t<....>>
 bool assume(const Expr_T& expr);
 ```
 
-Refer to the [Expectations](/docs/api/groups/micro-test-plus-expectations/)
-and [Assumptions](/docs/api/groups/micro-test-plus-assumptions/) reference pages.
+Refer to the [Expectations](/docs/api/groups/micro-os-plus-micro-test-plus-expectations/)
+and [Assumptions](/docs/api/groups/micro-os-plus-micro-test-plus-assumptions/) reference pages.
 
 ### Subtests
 
@@ -389,7 +389,7 @@ template <class Lhs_T, class Rhs_T>
 auto ge(const Lhs_T& lhs, const Rhs_T& rhs);
 ```
 
-Refer to the [Function Comparators](/docs/api/groups/micro-test-plus-function-comparators/) reference page.
+Refer to the [Function Comparators](/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/) reference page.
 
 ### Logical functions
 
@@ -407,7 +407,7 @@ template <class Expr_T>
 auto _not (const Expr_T& expr);
 ```
 
-Refer to the [Logical Functions](/docs/api/groups/micro-test-plus-logical-functions/) reference page.
+Refer to the [Logical Functions](/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/) reference page.
 
 ### Checking exceptions
 
@@ -427,7 +427,7 @@ template <class Callable_T>
 auto nothrow (const Callable_T& expr);
 ```
 
-Refer to the [Checking Exceptions](/docs/api/groups/micro-test-plus-exceptions/) reference page.
+Refer to the [Checking Exceptions](/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/) reference page.
 
 ### Operators
 
@@ -465,7 +465,7 @@ namespace operators {
 }
 ```
 
-Refer to the [Operators](/docs/api/groups/micro-test-plus-operators/) reference page.
+Refer to the [Operators](/docs/api/groups/micro-os-plus-micro-test-plus-operators/) reference page.
 
 ### String operators
 
@@ -479,7 +479,7 @@ namespace operators {
 }
 ```
 
-Refer to the [String Operators](/docs/api/groups/micro-test-plus-string-operators/) reference page.
+Refer to the [String Operators](/docs/api/groups/micro-os-plus-micro-test-plus-string-operators/) reference page.
 
 ### Container operators
 
@@ -495,7 +495,7 @@ namespace operators {
 }
 ```
 
-Refer to the [Container Operators](/docs/api/groups/micro-test-plus-container-operators/) reference page.
+Refer to the [Container Operators](/docs/api/groups/micro-os-plus-micro-test-plus-container-operators/) reference page.
 
 ### Literals and wrappers
 
@@ -568,7 +568,7 @@ recognised types:
   };
 ```
 
-Refer to the [Literals and Wrappers](/docs/api/groups/micro-test-plus-literals/) reference page.
+Refer to the [Literals and Wrappers](/docs/api/groups/micro-os-plus-micro-test-plus-literals/) reference page.
 
 ### Functions vs. Operators and Literals
 
@@ -595,7 +595,7 @@ namespace utility {
 }
 ```
 
-Refer to the [Utility Functions](/docs/api/groups/micro-test-plus-utility-functions/) reference page.
+Refer to the [Utility Functions](/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/) reference page.
 
 ### Custom Types
 
@@ -771,7 +771,7 @@ static mt::static_suite ts_double_list_links
         check_double_list_links<os::utils::double_list_links> };
 ```
 
-Refer to the [Test Suites](/docs/api/groups/micro-test-plus-test-suites/) reference page.
+Refer to the [Test Suites](/docs/api/groups/micro-os-plus-micro-test-plus-test-suites/) reference page.
 
 ### Explicit Namespaces
 
@@ -883,7 +883,7 @@ To adjust the verbosity, one of the following command-line options may be specif
 - `--quiet` – display only the **runner totals**
 - `--silent` – suppress all output and return **solely the exit code**
 
-Refer to the [Command Line Options](/docs/api/groups/micro-test-plus-cli/) reference page.
+Refer to the [Command Line Options](/docs/api/groups/micro-os-plus-micro-test-plus-cli/) reference page.
 
 ### The _human_ reporter
 
