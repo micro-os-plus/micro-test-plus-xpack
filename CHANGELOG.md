@@ -8,6 +8,7 @@ and close existing issues and pull requests.
 
 ## 2026-08-06
 
+* v5.0.0 published on npmjs.com
 * v5.0.0
 * 265b70bf cosmetics
 * c7dab306 #if __has_include("micro-os-plus/diag/trace.h")
