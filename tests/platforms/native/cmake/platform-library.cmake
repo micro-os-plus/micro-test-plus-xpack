@@ -160,7 +160,9 @@ target_link_options (
 )
 
 if (NOT "${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
-  list (APPEND xpack_platform_common_args ${rpath_options_list})
+  target_link_options (
+    platform-native-interface INTERFACE ${rpath_options_list}
+  )
 endif ()
 
 if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
