@@ -35,7 +35,7 @@ import CommonDownloadAnalytics from './_common/_download-analytics.mdx';
 
 TODO: select one summary
 
-Version **5.0.1** is a maintenance release, updating for the latest test configurations.
+Version **5.0.1** is a maintenance release, removing the hard dependency on `diag-trace` and updating to the latest test configurations.
 
 <!-- truncate -->
 
@@ -71,7 +71,8 @@ Comprehensive instructions are available in the [Install Guide](/docs/install/).
 
 ## Enhancements
 
-- None.
+- Removed the hard dependency on `diag-trace`; `"micro-os-plus/diag/trace.h"` is included only if available.
+- Updated to the latest test configurations, most of them being automatically generated from templates.
 
 ## Known issues
 
