@@ -28,7 +28,7 @@ on:
 
 # Allow one concurrent run.
 concurrency:
-  group: 'test'
+  group: 'test-all'
   cancel-in-progress: true
 
 jobs:
