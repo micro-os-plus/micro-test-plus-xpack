@@ -6,8 +6,37 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-08-06
+
+* v5.0.0
+* 265b70bf cosmetics
+* c7dab306 #if __has_include("micro-os-plus/diag/trace.h")
+* 389ab6ce re-generate top commons for test-all
+* 48088dc9 re-generate tests commons with get-libraries-paths.mjs
+* 4997cc10 restore test-ci.yml
+* c649f29f re-generate tests commons
+* 0db77691 re-generate tests commons native cmake
+* 6a805a73 re-generate tests commons native cmake
+
+## 2026-08-05
+
+* 59b4456c try without mac arm
+* 911b582f restore test-ci.yml
+* fafd8f3c native do not sanitize on windows
+* e7878131 re-generate tests commons for meson libc++
+* 036de50b try without mac arm
+* a609fab9 run bash get-libraries-paths in meson
+* c60d0291 restore test-ci.yml
+* 6b6f6225 re-generate tests commons for bash get-libraries-paths.sh
+* bad6d4a8 try without mac arm
+* 49175180 try without mac arm
+* 00732870 re-generate tests commons
+* 8b517bd5 #pragma ... push cosmetics
+* 1ff90957 tests/package-local.json update
+
 ## 2026-08-04
 
+* 5811f73a CHANGELOG update
 * cd9c11a8 tests/package*.json update
 * 3e136f14 use tests/scripts/xcdl-export.mjs
 * 92e44f39 website/package*.json
