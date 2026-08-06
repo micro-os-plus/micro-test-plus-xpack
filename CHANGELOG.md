@@ -8,8 +8,8 @@ and close existing issues and pull requests.
 
 ## 2026-08-06
 
-* v5.0.0 published on npmjs.com
-* v5.0.0
+* v5.0.1 published on npmjs.com
+* v5.0.1
 * 265b70bf cosmetics
 * c7dab306 #if __has_include("micro-os-plus/diag/trace.h")
 * 389ab6ce re-generate top commons for test-all
