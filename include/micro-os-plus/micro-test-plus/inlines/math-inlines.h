@@ -248,12 +248,14 @@ namespace micro_os_plus::micro_test_plus
 
 #pragma GCC diagnostic ignored "-Wconversion"
 #endif // defined(__GNUC__)
+
       while (cs[i++] != '.')
+        {
+        }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
-        {
-        }
 
       return T (sizeof...(Cs)) - i + T (1);
     }

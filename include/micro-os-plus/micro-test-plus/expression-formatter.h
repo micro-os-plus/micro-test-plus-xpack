@@ -529,6 +529,7 @@ namespace micro_os_plus::micro_test_plus
       operator<< (const detail::not_<T>& op);
 
 #if defined(__cpp_exceptions)
+
       /**
        * @brief Formats a typed throws expression as
        * `throws<TypeName>`.
@@ -563,6 +564,7 @@ namespace micro_os_plus::micro_test_plus
       template <class Callable_T>
       expression_formatter&
       operator<< (const detail::nothrow_<Callable_T>& op);
+
 #endif // defined(__cpp_exceptions)
 
       // ----------------------------------------------------------------------

@@ -108,6 +108,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
 #if defined(__cpp_lib_source_location)
+
     /**
      * @brief Alias for source location information.
      *
@@ -122,7 +123,9 @@ namespace micro_os_plus::micro_test_plus
      * professional diagnostics across all files and folders.
      */
     using source_location = std::source_location;
+
 #else
+
     /**
      * @brief Local implementation of source location information for
      * diagnostics.
