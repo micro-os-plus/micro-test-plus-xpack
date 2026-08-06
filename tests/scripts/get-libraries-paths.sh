@@ -75,7 +75,7 @@ function pyrealpath()
     exit 1
   fi
 
-  python -c 'import os, sys; print(os.path.realpath(os.path.abspath(sys.argv[1])))' "${path}"
+  python3 -c 'import os, sys; print(os.path.realpath(os.path.abspath(sys.argv[1])))' "${path}"
 }
 
 # set -x
