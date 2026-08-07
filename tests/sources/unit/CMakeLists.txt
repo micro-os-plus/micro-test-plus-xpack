@@ -24,7 +24,7 @@
 # -----------------------------------------------------------------------------
 
 # The source code for a unit test to exercise the whole test framework.
-message (VERBOSE "Processing 'sources/unit'...")
+message (VERBOSE "Processing 'sources/unit/'...")
 
 # -----------------------------------------------------------------------------
 

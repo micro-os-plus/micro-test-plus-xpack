@@ -51,12 +51,12 @@ if (!fs.existsSync(xcdlJsoncPath)) {
 // ----------------------------------------------------------------------------
 
 console.log()
-console.log(`Processing ${xcdlJsoncPath}...`)
+console.log(`Processing '${xcdlJsoncPath}'...`)
 
 const xcdlJson = json5.parse(fs.readFileSync(xcdlJsoncPath, 'utf8'))
 
 if (!Array.isArray(xcdlJson.cdlComponents)) {
-  console.error(`missing or invalid cdlComponents in ${xcdlJsoncPath}...`)
+  console.error(`missing or invalid cdlComponents in '${xcdlJsoncPath}'...`)
   process.exit(1)
 }
 
@@ -66,9 +66,7 @@ if (!Array.isArray(xcdlJson.cdlComponents)) {
 const flattenComponents = (components, parentId) => {
   const result = []
   for (const component of components) {
-    const qualifiedId = parentId
-      ? `${parentId}.${component.id}`
-      : component.id
+    const qualifiedId = parentId ? `${parentId}.${component.id}` : component.id
     // Separately extract the options, and no longer put it back.
     const { cdlComponents: children, cdlOptions: options, ...rest } = component
     if (Array.isArray(children) && children.length > 0) {
@@ -192,7 +190,10 @@ const liquidSubstitute = (fromFilePath, toFilePath) => {
   const toRelativeFilePath = path.relative(process.cwd(), toFilePath)
   console.log(`liquidjs ${fromRelativeFilePath} -> ${toRelativeFilePath}`)
   const templateContent = fs.readFileSync(fromFilePath, 'utf8')
-  const renderedResult = liquidEngine.parseAndRenderSync(templateContent, context)
+  const renderedResult = liquidEngine.parseAndRenderSync(
+    templateContent,
+    context
+  )
   fs.writeFileSync(toFilePath, renderedResult)
 }
 

@@ -27,7 +27,7 @@
 # -----------------------------------------------------------------------------
 
 # A source code library with µTest++, a lightweight testing framework for embedded platforms.
-message('Processing xPack @micro-os-plus/micro-test-plus...')
+message('Processing xpm package @micro-os-plus/micro-test-plus...')
 
 # -----------------------------------------------------------------------------
 

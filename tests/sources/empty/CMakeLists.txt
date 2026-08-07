@@ -24,7 +24,7 @@
 # -----------------------------------------------------------------------------
 
 # The source code for a test to exercise empty suites.
-message (VERBOSE "Processing 'sources/empty'...")
+message (VERBOSE "Processing 'sources/empty/'...")
 
 # -----------------------------------------------------------------------------
 

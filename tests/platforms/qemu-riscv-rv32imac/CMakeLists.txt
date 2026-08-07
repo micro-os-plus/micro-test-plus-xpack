@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT! Automatically generated from template file:
-# build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-riscv-rv32imac/CMakeLists-liquid.txt
+# build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-riscv-rv32imac/cmake/platform-library-liquid.cmake
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -13,154 +13,118 @@
 #
 # -----------------------------------------------------------------------------
 
-# Create the platform specific test executables.
+# Create the platform specific library.
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'tests/platforms/qemu-riscv-rv32imac'...")
+message (VERBOSE "Processing tests/platforms/${PLATFORM_NAME}...")
 
 # -----------------------------------------------------------------------------
 
-# NOTE: Exceptions are disabled.
+# Define the platform library.
+add_library (platform-qemu-riscv-rv32imac-interface INTERFACE EXCLUDE_FROM_ALL)
 
-# -----------------------------------------------------------------------------
+target_include_directories (
+  platform-qemu-riscv-rv32imac-interface
+  # The files are included from the tests folder.
+  INTERFACE "include"
+)
 
-set (XPACK_QEMU_BINARY "qemu-system-riscv32")
-set (XPACK_QEMU_MACHINE_ARGS --machine virt --cpu rv32)
+target_sources (platform-qemu-riscv-rv32imac-interface INTERFACE)
+
+target_compile_definitions (
+  platform-qemu-riscv-rv32imac-interface
+  INTERFACE
+    # Full POSIX conformance:
+    # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
+    _POSIX_C_SOURCE=200809L
+    # For S_IREAD
+    _GNU_SOURCE
+)
+
 set (
-  XPACK_QEMU_EXTRA_ARGS
-  -smp
-  1
-  -bios
-  none
-  --nographic
-  -d
-  unimp,guest_errors
+  xpack_platform_common_args
+  # https://gcc.gnu.org/onlinedocs/gcc/RISC-V-Options.html
+  # The compiler matches rv32gc, but better use the explicit string.
+  -march=rv32imac_zicsr
+  -mabi=ilp32
+  -mcmodel=medany
+  -msmall-data-limit=8
+  # -mno-save-restore
+  -fno-exceptions # it fails at run-time.
+  #
+  # -fno-move-loop-invariants
+  #
+  # Embedded builds must be warning free.
+  -Werror
+  # (.text._write_r+0x14): undefined reference to `_write'
+  # (.text._write_r+0x14): relocation truncated to fit: R_RISCV_GPREL_I against
+  # undefined symbol `_write' $<$<CONFIG:Release>:-flto>
+  # $<$<CONFIG:MinSizeRel>:-flto>
+  $<$<CONFIG:Debug>:-fno-omit-frame-pointer>
+  # ... libs-c/src/stdlib/exit.c:132:46
+  # $<$<CXX_COMPILER_ID:GNU>:-Wno-missing-attributes>
+  # $<$<COMPILE_LANGUAGE:C>:-fxxx>
+  # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html?highlight=compile_language#genex:COMPILE_LANGUAGE
+  # $<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>
+  # $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
+  # $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
+  $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
 )
 
-# The libraries are compiled before the platform library, so they need to get
-# the same compile options.
-add_compile_common_private_options (
-  micro-os-plus-micro-test-plus-static-library
+target_compile_options (
+  platform-qemu-riscv-rv32imac-interface
+  INTERFACE ${xpack_platform_common_args}
 )
 
-# -----------------------------------------------------------------------------
+# When `-flto` is used, the compile options must be passed to the linker too.
+target_link_options (
+  platform-qemu-riscv-rv32imac-interface
+  INTERFACE
+  #
+  # -v
+  #
+  -nostartfiles
+  #
+  # Force the linker to keep the interrupt vectors which otherwise are not
+  # referred from anywhere.
+  #
+  # -u_interrupt_vectors
+  #
+  # nano has no exceptions.
+  #
+  # -specs=nano.specs
+  -Wl,--gc-sections
+  # Including files from other packages is not very nice, but functional. Prefer
+  # absolute paths over paths relative to the build folder.
+  -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-qemu-riscv/linker-scripts/mem-virt-rv32.ld
+  # -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-riscv/linker-scripts/sections-flash.ld
+  -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-riscv/linker-scripts/sections-ram.ld
+)
 
-if (XPACK_ENABLE_EMPTY_TEST)
-  add_cross_test_executable (empty-test)
-  target_link_cross_test_libraries (empty-test tests::empty)
-
-  xpack_display_target_lists (empty-test)
-  message (VERBOSE "A> empty-test")
-
-  add_qemu_test (
-    NAME "empty-test" COMMAND empty-test one two --output-file
-                              empty-test-noexcept.tap
-  )
-  add_compare_files_test (
-    NAME "empty-test-compare"
-    DEPENDS "empty-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test-noexcept.tap"
-  )
-endif ()
-
-# -----------------------------------------------------------------------------
-
-if (XPACK_ENABLE_MINIMAL_TEST)
-  add_cross_test_executable (minimal-test)
-  target_link_cross_test_libraries (minimal-test tests::minimal)
-
-  xpack_display_target_lists (minimal-test)
-  message (VERBOSE "A> minimal-test")
-
-  add_qemu_test (
-    NAME "minimal-test" COMMAND minimal-test one two --output-file
-                                minimal-test-noexcept.tap
-  )
-  add_compare_files_test (
-    NAME "minimal-test-compare"
-    DEPENDS "minimal-test"
-    FILES
-      "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-noexcept.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test-noexcept.tap"
+if ("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")
+  target_link_options (
+    platform-qemu-riscv-rv32imac-interface INTERFACE
+    # .elf has a LOAD segment with RWX permissions (GCC 12)
+    -Wl,--no-warn-rwx-segment
   )
 endif ()
 
-# -----------------------------------------------------------------------------
+target_link_libraries (
+  platform-qemu-riscv-rv32imac-interface
+  INTERFACE micro-os-plus::devices-qemu-riscv micro-os-plus::startup
+)
 
-if (XPACK_ENABLE_SUITE_TEST)
-  add_cross_test_executable (suite-test)
-  target_link_cross_test_libraries (suite-test tests::suite)
-
-  xpack_display_target_lists (suite-test)
-  message (VERBOSE "A> suite-test")
-
-  add_qemu_test (
-    NAME "suite-test" COMMAND suite-test one two --output-file
-                              suite-test-noexcept.tap
-  )
-  add_compare_files_test (
-    NAME "suite-test-compare"
-    DEPENDS "suite-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test-noexcept.tap"
-  )
-endif ()
+xpack_display_target_lists (platform-qemu-riscv-rv32imac-interface)
 
 # -----------------------------------------------------------------------------
 
-if (XPACK_ENABLE_SAMPLE_TEST)
-  add_cross_test_executable (sample-test)
-  target_link_cross_test_libraries (sample-test tests::sample)
-
-  xpack_display_target_lists (sample-test)
-  message (VERBOSE "A> sample-test")
-
-  add_qemu_test (
-    NAME "sample-test" COMMAND sample-test one two --output-file
-                               sample-test-noexcept.tap
-  )
-  add_compare_files_test (
-    NAME "sample-test-compare"
-    DEPENDS "sample-test"
-    FILES
-      "${CMAKE_CURRENT_BINARY_DIR}/sample-test-noexcept.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test-noexcept.tap"
-  )
-endif ()
-
-# -----------------------------------------------------------------------------
-
-if (XPACK_ENABLE_UNIT_TEST)
-  add_cross_test_executable (unit-test)
-  target_link_cross_test_libraries (unit-test tests::unit)
-
-  xpack_display_target_lists (unit-test)
-  message (VERBOSE "A> unit-test")
-
-  add_qemu_test (
-    NAME "unit-test" COMMAND unit-test one two --output-file
-                             unit-test-noexcept.tap
-  )
-  add_compare_files_test (
-    NAME "unit-test-compare"
-    DEPENDS "unit-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test-noexcept.tap"
-  )
-
-  add_qemu_test (
-    NAME "unit-test-reporter-human"
-    COMMAND unit-test one two --reporter human --output-file
-            unit-test-noexcept.txt
-  )
-  add_compare_files_test (
-    NAME "unit-test-reporter-human-compare"
-    DEPENDS "unit-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test-noexcept.txt"
-  )
-endif ()
+# Aliases.
+add_library (
+  micro-os-plus::platform ALIAS platform-qemu-riscv-rv32imac-interface
+)
+message (VERBOSE
+         "> micro-os-plus::platform -> platform-qemu-riscv-rv32imac-interface"
+)
 
 # -----------------------------------------------------------------------------

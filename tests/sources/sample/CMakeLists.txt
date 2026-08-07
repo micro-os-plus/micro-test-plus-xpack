@@ -24,7 +24,7 @@
 # -----------------------------------------------------------------------------
 
 # The source code for a sample test.
-message (VERBOSE "Processing 'sources/sample'...")
+message (VERBOSE "Processing 'sources/sample/'...")
 
 # -----------------------------------------------------------------------------
 

@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT! Automatically generated from template file:
-# build-helper/templates/common/_micro-os-plus/tests/platforms/native/CMakeLists-liquid.txt
+# build-helper/templates/common/_micro-os-plus/tests/platforms/native/cmake/platform-library-liquid.cmake
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -13,614 +13,171 @@
 #
 # -----------------------------------------------------------------------------
 
-# Create the platform specific test executables.
+# Create the platform specific library.
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'tests/platforms/native'...")
+message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/'...")
 
 # -----------------------------------------------------------------------------
 
-if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_CXX_COMPILER_ID STREQUAL
-                                          "AppleClang"
-)
-  # Enable it temporarily to check the coverage on macOS.
-  set (XPACK_ENABLE_COVERAGE false)
-endif ()
-
-# The libraries are compiled before the platform library, so they need to get
-# the same compile options.
-add_compile_common_private_options (
-  micro-os-plus-micro-test-plus-static-library
-)
-
-if (XPACK_ENABLE_COVERAGE)
-  add_compile_coverage_private_options (
-    micro-os-plus-micro-test-plus-static-library
-  )
-endif ()
-
-# -----------------------------------------------------------------------------
-
-if (XPACK_ENABLE_EMPTY_TEST)
-  add_native_test_executable (empty-test)
-  target_link_native_test_libraries (empty-test tests::empty)
-
-  xpack_display_target_lists (empty-test)
-  message (VERBOSE "A> empty-test")
-
-  # ---------------------------------------------------------------------------
-  # TAP reporter
-
-  # --verbose
-  add_test (NAME "empty-test-verbose" COMMAND empty-test one two --output-file
-                                              empty-test-verbose.tap --verbose
-  )
-
-  add_compare_files_test (
-    NAME "empty-test-verbose-compare"
-    DEPENDS "empty-test-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
-  )
-
-  # default
-  add_test (NAME "empty-test" COMMAND empty-test one two --output-file
-                                      empty-test.tap
-  )
-  add_compare_files_test (
-    NAME "empty-test-compare"
-    DEPENDS "empty-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
-  )
-
-  # --quiet
-  add_test (NAME "empty-test-quiet" COMMAND empty-test one two --output-file
-                                            empty-test-quiet.tap --quiet
-  )
-  add_compare_files_test (
-    NAME "empty-test-quiet-compare"
-    DEPENDS "empty-test-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
-  )
-
-  # --silent
-  add_test (NAME "empty-test-silent" COMMAND empty-test one two --output-file
-                                             empty-test-silent.tap --silent
-  )
-  add_compare_files_test (
-    NAME "empty-test-silent-compare"
-    DEPENDS "empty-test-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
-  )
-
-  # ---------------------------------------------------------------------------
-  # Human reporter
-
-  # --verbose
-  add_test (NAME "empty-test-reporter-human-verbose"
-            COMMAND empty-test one two --reporter human --output-file
-                    empty-test-verbose.txt --verbose
-  )
-  add_compare_files_test (
-    NAME "empty-test-reporter-human-verbose-compare"
-    DEPENDS "empty-test-reporter-human-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/empty-test.txt"
-  )
-
-  # default
-  add_test (NAME "empty-test-reporter-human"
-            COMMAND empty-test one two --reporter human --output-file
-                    empty-test.txt
-  )
-  add_compare_files_test (
-    NAME "empty-test-reporter-human-compare"
-    DEPENDS "empty-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/empty-test.txt"
-  )
-
-  # --quiet
-  add_test (NAME "empty-test-reporter-human-quiet"
-            COMMAND empty-test one two --reporter human --output-file
-                    empty-test-quiet.txt --quiet
-  )
-  add_compare_files_test (
-    NAME "empty-test-reporter-human-quiet-compare"
-    DEPENDS "empty-test-reporter-human-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/empty-test-quiet.txt"
-  )
-
-  # --silent
-  add_test (NAME "empty-test-reporter-human-silent"
-            COMMAND empty-test one two --reporter human --output-file
-                    empty-test-silent.txt --silent
-  )
-  add_compare_files_test (
-    NAME "empty-test-reporter-human-silent-compare"
-    DEPENDS "empty-test-reporter-human-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/empty-test-silent.txt"
-  )
-
-endif ()
-
-# -----------------------------------------------------------------------------
-
-if (XPACK_ENABLE_MINIMAL_TEST)
-  add_native_test_executable (minimal-test)
-  target_link_native_test_libraries (minimal-test tests::minimal)
-
-  # Only for this test, always define the trace macros, to check if the tracing
-  # support compiles  correctly.
-  target_compile_definitions (
-    minimal-test
-    PRIVATE MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-            MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
-  )
-
-  xpack_display_target_lists (minimal-test)
-  message (VERBOSE "A> minimal-test")
-
-  # ---------------------------------------------------------------------------
-  # TAP reporter
-
-  # --verbose
-  add_test (NAME "minimal-test-verbose"
-            COMMAND minimal-test one two --output-file minimal-test-verbose.tap
-                    --verbose
-  )
-
-  add_compare_files_test (
-    NAME "minimal-test-verbose-compare"
-    DEPENDS "minimal-test-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
-  )
-
-  # default
-  add_test (NAME "minimal-test" COMMAND minimal-test one two --output-file
-                                        minimal-test.tap
-  )
-  add_compare_files_test (
-    NAME "minimal-test-compare"
-    DEPENDS "minimal-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
-  )
-
-  # --quiet
-  add_test (NAME "minimal-test-quiet"
-            COMMAND minimal-test one two --output-file minimal-test-quiet.tap
-                    --quiet
-  )
-  add_compare_files_test (
-    NAME "minimal-test-quiet-compare"
-    DEPENDS "minimal-test-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
-  )
-
-  # --silent
-  add_test (NAME "minimal-test-silent"
-            COMMAND minimal-test one two --output-file minimal-test-silent.tap
-                    --silent
-  )
-  add_compare_files_test (
-    NAME "minimal-test-silent-compare"
-    DEPENDS "minimal-test-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
-  )
-
-  # ---------------------------------------------------------------------------
-  # Human reporter
-
-  # --verbose
-  add_test (NAME "minimal-test-reporter-human-verbose"
-            COMMAND minimal-test one two --reporter human --output-file
-                    minimal-test-verbose.txt --verbose
-  )
-  add_compare_files_test (
-    NAME "minimal-test-reporter-human-verbose-compare"
-    DEPENDS "minimal-test-reporter-human-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/minimal-test.txt"
-  )
-
-  # default
-  add_test (NAME "minimal-test-reporter-human"
-            COMMAND minimal-test one two --reporter human --output-file
-                    minimal-test.txt
-  )
-  add_compare_files_test (
-    NAME "minimal-test-reporter-human-compare"
-    DEPENDS "minimal-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/minimal-test.txt"
-  )
-
-  # --quiet
-  add_test (NAME "minimal-test-reporter-human-quiet"
-            COMMAND minimal-test one two --reporter human --output-file
-                    minimal-test-quiet.txt --quiet
-  )
-  add_compare_files_test (
-    NAME "minimal-test-reporter-human-quiet-compare"
-    DEPENDS "minimal-test-reporter-human-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/minimal-test-quiet.txt"
-  )
-
-  # --silent
-  add_test (NAME "minimal-test-reporter-human-silent"
-            COMMAND minimal-test one two --reporter human --output-file
-                    minimal-test-silent.txt --silent
-  )
-  add_compare_files_test (
-    NAME "minimal-test-reporter-human-silent-compare"
-    DEPENDS "minimal-test-reporter-human-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/minimal-test-silent.txt"
-  )
-
-endif ()
-
-# -----------------------------------------------------------------------------
-
-if (XPACK_ENABLE_SUITE_TEST)
-  add_native_test_executable (suite-test)
-  target_link_native_test_libraries (suite-test tests::suite)
-
-  xpack_display_target_lists (suite-test)
-  message (VERBOSE "A> suite-test")
-
-  # ---------------------------------------------------------------------------
-  # TAP reporter
-
-  # --verbose
-  add_test (NAME "suite-test-verbose" COMMAND suite-test one two --output-file
-                                              suite-test-verbose.tap --verbose
-  )
-
-  add_compare_files_test (
-    NAME "suite-test-verbose-compare"
-    DEPENDS "suite-test-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
-  )
-
-  # default
-  add_test (NAME "suite-test" COMMAND suite-test one two --output-file
-                                      suite-test.tap
-  )
-  add_compare_files_test (
-    NAME "suite-test-compare"
-    DEPENDS "suite-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
-  )
-
-  # --quiet
-  add_test (NAME "suite-test-quiet" COMMAND suite-test one two --output-file
-                                            suite-test-quiet.tap --quiet
-  )
-  add_compare_files_test (
-    NAME "suite-test-quiet-compare"
-    DEPENDS "suite-test-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
-  )
-
-  # --silent
-  add_test (NAME "suite-test-silent" COMMAND suite-test one two --output-file
-                                             suite-test-silent.tap --silent
-  )
-  add_compare_files_test (
-    NAME "suite-test-silent-compare"
-    DEPENDS "suite-test-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
-  )
-
-  # ---------------------------------------------------------------------------
-  # Human reporter
-
-  # --verbose
-  add_test (NAME "suite-test-reporter-human-verbose"
-            COMMAND suite-test one two --reporter human --output-file
-                    suite-test-verbose.txt --verbose
-  )
-  add_compare_files_test (
-    NAME "suite-test-reporter-human-verbose-compare"
-    DEPENDS "suite-test-reporter-human-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/suite-test.txt"
-  )
-
-  # default
-  add_test (NAME "suite-test-reporter-human"
-            COMMAND suite-test one two --reporter human --output-file
-                    suite-test.txt
-  )
-  add_compare_files_test (
-    NAME "suite-test-reporter-human-compare"
-    DEPENDS "suite-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/suite-test.txt"
-  )
-
-  # --quiet
-  add_test (NAME "suite-test-reporter-human-quiet"
-            COMMAND suite-test one two --reporter human --output-file
-                    suite-test-quiet.txt --quiet
-  )
-  add_compare_files_test (
-    NAME "suite-test-reporter-human-quiet-compare"
-    DEPENDS "suite-test-reporter-human-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/suite-test-quiet.txt"
-  )
-
-  # --silent
-  add_test (NAME "suite-test-reporter-human-silent"
-            COMMAND suite-test one two --reporter human --output-file
-                    suite-test-silent.txt --silent
-  )
-  add_compare_files_test (
-    NAME "suite-test-reporter-human-silent-compare"
-    DEPENDS "suite-test-reporter-human-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/suite-test-silent.txt"
-  )
-
-endif ()
-
-# -----------------------------------------------------------------------------
-
-if (XPACK_ENABLE_SAMPLE_TEST)
-  add_native_test_executable (sample-test)
-  target_link_native_test_libraries (sample-test tests::sample)
-
-  xpack_display_target_lists (sample-test)
-  message (VERBOSE "A> sample-test")
-
-  # ---------------------------------------------------------------------------
-  # TAP reporter
-
-  # --verbose
-  add_test (NAME "sample-test-verbose"
-            COMMAND sample-test one two --output-file sample-test-verbose.tap
-                    --verbose
-  )
-
-  add_compare_files_test (
-    NAME "sample-test-verbose-compare"
-    DEPENDS "sample-test-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
-  )
-
-  # default
-  add_test (NAME "sample-test" COMMAND sample-test one two --output-file
-                                       sample-test.tap
-  )
-  add_compare_files_test (
-    NAME "sample-test-compare"
-    DEPENDS "sample-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
-  )
-
-  # --quiet
-  add_test (NAME "sample-test-quiet" COMMAND sample-test one two --output-file
-                                             sample-test-quiet.tap --quiet
-  )
-  add_compare_files_test (
-    NAME "sample-test-quiet-compare"
-    DEPENDS "sample-test-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
-  )
-
-  # --silent
-  add_test (NAME "sample-test-silent" COMMAND sample-test one two --output-file
-                                              sample-test-silent.tap --silent
-  )
-  add_compare_files_test (
-    NAME "sample-test-silent-compare"
-    DEPENDS "sample-test-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
-  )
-
-  # ---------------------------------------------------------------------------
-  # Human reporter
-
-  # --verbose
-  add_test (NAME "sample-test-reporter-human-verbose"
-            COMMAND sample-test one two --reporter human --output-file
-                    sample-test-verbose.txt --verbose
-  )
-  add_compare_files_test (
-    NAME "sample-test-reporter-human-verbose-compare"
-    DEPENDS "sample-test-reporter-human-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/sample-test.txt"
-  )
-
-  # default
-  add_test (NAME "sample-test-reporter-human"
-            COMMAND sample-test one two --reporter human --output-file
-                    sample-test.txt
-  )
-  add_compare_files_test (
-    NAME "sample-test-reporter-human-compare"
-    DEPENDS "sample-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/sample-test.txt"
-  )
-
-  # --quiet
-  add_test (NAME "sample-test-reporter-human-quiet"
-            COMMAND sample-test one two --reporter human --output-file
-                    sample-test-quiet.txt --quiet
-  )
-  add_compare_files_test (
-    NAME "sample-test-reporter-human-quiet-compare"
-    DEPENDS "sample-test-reporter-human-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/sample-test-quiet.txt"
-  )
-
-  # --silent
-  add_test (NAME "sample-test-reporter-human-silent"
-            COMMAND sample-test one two --reporter human --output-file
-                    sample-test-silent.txt --silent
-  )
-  add_compare_files_test (
-    NAME "sample-test-reporter-human-silent-compare"
-    DEPENDS "sample-test-reporter-human-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/sample-test-silent.txt"
-  )
-
-endif ()
-
-# -----------------------------------------------------------------------------
-
-if (XPACK_ENABLE_UNIT_TEST)
-  add_native_test_executable (unit-test)
-  target_link_native_test_libraries (unit-test tests::unit)
-
-  if (XPACK_ENABLE_COVERAGE)
-    add_compile_coverage_private_options (unit-test)
-    add_link_coverage_private_options (unit-test)
+# Compute RPATH; return result in `rpath_options_list`.
+if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+  # On non-Windows, get the actual libraries paths by asking the compiler.
+  execute_process (
+    COMMAND node "${CMAKE_SOURCE_DIR}/scripts/get-libraries-paths.mjs"
+            ${CMAKE_CXX_COMPILER}
+    OUTPUT_VARIABLE cxx_library_path
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+
+  set (rpath_options_list)
+
+  if (NOT "${cxx_library_path}" STREQUAL "")
+    string (REPLACE ":" ";" cxx_library_path_list ${cxx_library_path})
+
+    cmake_path (GET CMAKE_CXX_COMPILER FILENAME cxx_filename)
+    message (STATUS "${cxx_filename} RPATH_LIST: ${cxx_library_path}")
+
+    foreach (RPATH IN LISTS cxx_library_path_list)
+      cmake_path (SET normalized_path NORMALIZE ${RPATH})
+      list (APPEND rpath_options_list "-Wl,-rpath,${normalized_path}")
+      list (APPEND rpath_options_list "-L${normalized_path}")
+    endforeach ()
   endif ()
-
-  xpack_display_target_lists (unit-test)
-  message (VERBOSE "A> unit-test")
-
-  # ---------------------------------------------------------------------------
-  # TAP reporter
-
-  # --verbose
-  add_test (NAME "unit-test-verbose" COMMAND unit-test one two --output-file
-                                             unit-test-verbose.tap --verbose
-  )
-
-  if (XPACK_ENABLE_COVERAGE)
-    set_tests_properties (
-      "unit-test-verbose"
-      PROPERTIES ENVIRONMENT "LLVM_PROFILE_FILE=unit-test-verbose.profraw"
-    )
-
-    add_test (
-      NAME "unit-test-verbose-coverage"
-      COMMAND bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/show-coverage.sh"
-              unit-test unit-test-verbose
-    )
-    set_tests_properties (
-      "unit-test-verbose-coverage" PROPERTIES DEPENDS "unit-test-verbose"
-    )
-  endif ()
-
-  add_compare_files_test (
-    NAME "unit-test-verbose-compare"
-    DEPENDS "unit-test-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
-  )
-
-  # default
-  add_test (NAME "unit-test" COMMAND unit-test one two --output-file
-                                     unit-test.tap
-  )
-  add_compare_files_test (
-    NAME "unit-test-compare"
-    DEPENDS "unit-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
-  )
-
-  # --quiet
-  add_test (NAME "unit-test-quiet" COMMAND unit-test one two --output-file
-                                           unit-test-quiet.tap --quiet
-  )
-  add_compare_files_test (
-    NAME "unit-test-quiet-compare"
-    DEPENDS "unit-test-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
-  )
-
-  # --silent
-  add_test (NAME "unit-test-silent" COMMAND unit-test one two --output-file
-                                            unit-test-silent.tap --silent
-  )
-  add_compare_files_test (
-    NAME "unit-test-silent-compare"
-    DEPENDS "unit-test-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
-  )
-
-  # ---------------------------------------------------------------------------
-  # Human reporter
-
-  # --verbose
-  add_test (NAME "unit-test-reporter-human-verbose"
-            COMMAND unit-test one two --reporter human --output-file
-                    unit-test-verbose.txt --verbose
-  )
-  add_compare_files_test (
-    NAME "unit-test-reporter-human-verbose-compare"
-    DEPENDS "unit-test-reporter-human-verbose"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
-  )
-
-  # default
-  add_test (NAME "unit-test-reporter-human"
-            COMMAND unit-test one two --reporter human --output-file
-                    unit-test.txt
-  )
-  add_compare_files_test (
-    NAME "unit-test-reporter-human-compare"
-    DEPENDS "unit-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
-  )
-
-  # --quiet
-  add_test (NAME "unit-test-reporter-human-quiet"
-            COMMAND unit-test one two --reporter human --output-file
-                    unit-test-quiet.txt --quiet
-  )
-  add_compare_files_test (
-    NAME "unit-test-reporter-human-quiet-compare"
-    DEPENDS "unit-test-reporter-human-quiet"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test-quiet.txt"
-  )
-
-  # --silent
-  add_test (NAME "unit-test-reporter-human-silent"
-            COMMAND unit-test one two --reporter human --output-file
-                    unit-test-silent.txt --silent
-  )
-  add_compare_files_test (
-    NAME "unit-test-reporter-human-silent-compare"
-    DEPENDS "unit-test-reporter-human-silent"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test-silent.txt"
-  )
-
 endif ()
+
+# -----------------------------------------------------------------------------
+
+# Define the platform library.
+add_library (platform-native-interface INTERFACE EXCLUDE_FROM_ALL)
+
+target_include_directories (platform-native-interface INTERFACE "include")
+
+target_sources (platform-native-interface INTERFACE)
+
+target_compile_definitions (
+  platform-native-interface
+  INTERFACE
+    # Full POSIX conformance:
+    # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
+    _POSIX_C_SOURCE=200809L
+)
+
+set (
+  xpack_platform_common_args
+  -Werror
+  # Apple clang 13 does not support -Wunused-but-set-variable
+  # $<$<PLATFORM_ID:Darwin>:-Wno-unknown-warning-option>
+  $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-unknown-warning-option>
+  $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-documentation>
+  $<$<PLATFORM_ID:Darwin>:-Wno-missing-include-dirs>
+)
+
+if (CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+  list (APPEND xpack_platform_common_args
+        $<$<CONFIG:Debug>:-fsanitize=address,undefined>
+        $<$<CONFIG:Debug>:-fno-sanitize-recover=all>
+  )
+endif ()
+
+if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+  list (APPEND xpack_platform_common_args
+        $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-used-but-marked-unused>
+  )
+endif ()
+
+# https://cmake.org/cmake/help/v3.20/variable/CMAKE_LANG_COMPILER_ID.html
+# message("${CMAKE_C_COMPILER_ID} ${CMAKE_SYSTEM_NAME}
+# ${CMAKE_SYSTEM_PROCESSOR}") Unfortunatelly in a container it shows aarch64
+# instead of armv7l.
+
+# -flto seems ok now with clang too, but on Linux it requires -fuse-ld=lld
+list (APPEND xpack_platform_common_args $<$<CONFIG:Release,MinSizeRel>:-flto>)
+
+# Possible workaround for the bug in recent CLT for Ventura 13.6. However it is
+# preferable to downgrade to CLT 14.3.1.
+# https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_14.3.1/Command_Line_Tools_for_Xcode_14.3.1.dmg
+
+# 0  0x104d87f43  __assert_rtn + 64 1  0x104c89f43
+# ld::AtomPlacement::findAtom(unsigned char, unsigned long long,
+# ld::AtomPlacement::AtomLoc const*&, long long&) const + 1411 2  0x104ca6431
+# ld::InputFiles::SliceParser::parseObjectFile(mach_o::Header const*) const +
+# 19745 3  0x104cb6b71  ld::InputFiles::parseAllFiles(void (ld::AtomFile const*)
+# block_pointer)::$_7::operator()(unsigned long, ld::FileInfo const&) const +
+# 657 4  0x7ff806725066  _dispatch_client_callout2 + 8 5  0x7ff806736e09
+# _dispatch_apply_invoke + 213 6  0x7ff806725033  _dispatch_client_callout + 8 7
+# 0x7ff8067350f6  _dispatch_root_queue_drain + 683 8  0x7ff806735768
+# _dispatch_worker_thread2 + 170 9  0x7ff8068c2c0f  _pthread_wqthread + 257 ld:
+# Assertion failed: (resultIndex < sectData.atoms.size()), function findAtom,
+# file Relocations.cpp, line 1336. collect2: error: ld returned 1 exit status
+list (APPEND xpack_platform_common_args
+      $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-no-pie>
+)
+
+if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
+  # https://libcxx.llvm.org/UsingLibcxx.html
+  list (APPEND xpack_platform_common_args
+        $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
+  )
+endif ()
+
+# With clang 12 & CLT 14.3.1:
+# /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdlib:144:9:
+# error: no member named 'at_quick_exit' in the global namespace using
+# ::at_quick_exit _LIBCPP_USING_IF_EXISTS; ~~^
+# /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdlib:145:9:
+# error: no member named 'quick_exit' in the global namespace using ::quick_exit
+# _LIBCPP_USING_IF_EXISTS; ~~^ 2 errors generated.
+target_compile_options (
+  platform-native-interface INTERFACE ${xpack_platform_common_args}
+)
+
+# On macOS, GCC 11 gets confused. dyld[72401]: Symbol not found:
+# (__ZNKSt3_V214error_category10_M_messageB5cxx11Ei)
+target_link_options (
+  platform-native-interface
+  INTERFACE
+  # When `-flto` is used, the compile options must be passed to the linker too.
+  ${xpack_platform_common_args}
+  #
+  $<$<CONFIG:Debug>:-v>
+  #
+  # On Windows configuring the path to access the compiler DLLs is tedious, it
+  # is much easier to build everything static.
+  $<$<PLATFORM_ID:Windows>:-static>
+  # Once -rpath is configured properly, there is no need for statics.
+  # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libgcc>
+  # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libstdc++>
+  $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
+  $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
+)
+
+if (NOT "${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+  target_link_options (
+    platform-native-interface INTERFACE ${rpath_options_list}
+  )
+endif ()
+
+if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
+  # https://clang.llvm.org/docs/Toolchain.html#compiler-runtime
+  target_link_options (
+    platform-native-interface INTERFACE -rtlib=compiler-rt
+    $<$<PLATFORM_ID:Linux>:-lunwind>
+    $<$<PLATFORM_ID:Linux,Darwin>:-fuse-ld=lld>
+  )
+endif ()
+
+target_link_libraries (
+  platform-native-interface INTERFACE micro-os-plus::architecture
+)
+
+xpack_display_target_lists (platform-native-interface)
+
+# -----------------------------------------------------------------------------
+
+# Aliases.
+add_library (micro-os-plus::platform ALIAS platform-native-interface)
+message (VERBOSE "> micro-os-plus::platform -> platform-native-interface")
 
 # -----------------------------------------------------------------------------

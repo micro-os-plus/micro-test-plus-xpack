@@ -24,7 +24,7 @@
 # -----------------------------------------------------------------------------
 
 # The source code for a test to exercise separate suites.
-message (VERBOSE "Processing 'sources/suite'...")
+message (VERBOSE "Processing 'sources/suite/'...")
 
 # -----------------------------------------------------------------------------
 

@@ -24,7 +24,7 @@
 # -----------------------------------------------------------------------------
 
 # The source code for a minimal test.
-message (VERBOSE "Processing 'sources/minimal'...")
+message (VERBOSE "Processing 'sources/minimal/'...")
 
 # -----------------------------------------------------------------------------
 
