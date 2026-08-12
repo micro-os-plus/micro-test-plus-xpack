@@ -38,6 +38,8 @@ jobs:
     runs-on:  ${{ matrix.os }}
 
     strategy:
+      # Do not cancel the other matrix jobs if one of them fails.
+      fail-fast: false
       matrix:
         # https://github.com/actions/runner-images
         os: 

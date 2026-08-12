@@ -58,6 +58,8 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     strategy:
+      # Do not cancel the other matrix jobs if one of them fails.
+      fail-fast: false
       matrix:
         # https://github.com/actions/runner-images
         os: [ 'ubuntu-24.04', 'ubuntu-24.04-arm', 'macos-15-intel', 'macos-15', 'windows-2025' ]
