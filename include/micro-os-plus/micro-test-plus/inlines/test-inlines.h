@@ -59,6 +59,19 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
+// Portable printf() length modifier for size_t values used in trace
+// messages. Clang's format checker on Windows (the "ms_printf" archetype)
+// rejects the standard 'z' modifier, even though the UCRT printf()
+// implementation supports it at run time, so the Microsoft-specific 'I'
+// modifier is used there instead.
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if defined(_WIN32) && defined(__clang__) && !defined(__MINGW32__)
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "Iu"
+#else
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "zu"
+#endif // defined(_WIN32) && defined(__clang__) && !defined(__MINGW32__)
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+
 #include <cstdio>
 #include <cstring>
 
@@ -68,6 +81,8 @@
 #pragma GCC diagnostic push
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
+#pragma GCC diagnostic ignored "-Wformat"
+#pragma GCC diagnostic ignored "-Wformat-extra-args"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -213,7 +228,8 @@ namespace micro_os_plus::micro_test_plus
         }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-      trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
+      trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                     __PRETTY_FUNCTION__, name, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
     }
 
@@ -252,8 +268,9 @@ namespace micro_os_plus::micro_test_plus
         parent_suite_{ parent_suite }, nesting_depth_{ nesting_depth }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-    trace::printf ("%s '%s' %zu %zu\n", __PRETTY_FUNCTION__, name, own_index_,
-                   nesting_depth_);
+    trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                   " %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                   __PRETTY_FUNCTION__, name, own_index_, nesting_depth_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -337,7 +354,8 @@ namespace micro_os_plus::micro_test_plus
                          std::forward<Args_T> (arguments)... }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-    trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
+    trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                   __PRETTY_FUNCTION__, name, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -464,7 +482,8 @@ namespace micro_os_plus::micro_test_plus
       }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-    trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
+    trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                   __PRETTY_FUNCTION__, name, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
     detail::register_static_suite (runner, *this);
