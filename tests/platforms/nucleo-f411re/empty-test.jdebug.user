@@ -1,0 +1,30 @@
+
+
+Breakpoint=/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/nucleo-f411re-cmake-gcc-debug/xpacks/@micro-os-plus/startup/src/startup.cpp:416, State=BP_STATE_ON
+Breakpoint=/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/nucleo-f411re-cmake-gcc-debug/xpacks/@micro-os-plus/startup/src/startup.cpp:427, State=BP_STATE_ON
+Breakpoint=/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/nucleo-f411re/device/src/exception-handlers.cpp:115:12, State=BP_STATE_DISABLED
+OpenDocument="reset-handler.c", FilePath="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/nucleo-f411re/device/src/reset-handler.c", Line=39
+OpenDocument="trace-semihosting.cpp", FilePath="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/nucleo-f411re-cmake-gcc-debug/xpacks/@micro-os-plus/semihosting/src/diag/trace-semihosting.cpp", Line=37
+OpenDocument="trace-cpp-api.h", FilePath="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/xpacks/@micro-os-plus/diag-trace/include/micro-os-plus/diag/trace-cpp-api.h", Line=413
+OpenDocument="trace-cpp-api-inlines.h", FilePath="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/xpacks/@micro-os-plus/diag-trace/include/micro-os-plus/diag/inlines/trace-cpp-api-inlines.h", Line=76
+OpenDocument="startup.cpp", FilePath="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/nucleo-f411re-cmake-gcc-debug/xpacks/@micro-os-plus/startup/src/startup.cpp", Line=406
+OpenDocument="exception-handlers.cpp", FilePath="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/nucleo-f411re/device/src/exception-handlers.cpp", Line=350
+OpenDocument="empty-test.jdebug", FilePath="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/nucleo-f411re/empty-test.jdebug", Line=0
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=1, w=743, h=188, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=743, h=194, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=743, h=181, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=0, w=528, h=312, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=254
+OpenWindow="Memory 1", DockArea=BOTTOM, x=0, y=0, w=407, h=337, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, EditorAddress=0x1EB888A8
+OpenWindow="Functions", DockArea=LEFT, x=0, y=1, w=528, h=252, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Terminal", DockArea=BOTTOM, x=2, y=0, w=646, h=337, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Console", DockArea=BOTTOM, x=1, y=0, w=1002, h=337, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
+TableHeader="Vector Catches", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Vector Catch";"Description"], ColWidths=[50;300;500]
+TableHeader="Break & Tracepoints", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Type";"Location";"Extras"], ColWidths=[100;100;210;118]
+TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Class";"Source"], ColWidths=[930;100;100;100;536;230]
+TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source";"PC";"Return Address";"Stack Used"], ColWidths=[259;105;1310;100;147;100]
+TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[194;175;686]
+TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[200;100;100;343]
