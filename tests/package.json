@@ -595,6 +595,14 @@
           "{% assign config = 'qemu-riscv-' | append: matrix.qemu-riscv-variant | append: '-' | append: matrix.builder | append: '-gcc' | append: matrix.riscv-none-elf-gcc-version %}{{ properties.actions-setup-build-test-for-config }}"
         ]
       },
+      "test-nucleo-f411re-cmake-gcc": [
+        "xpm run setup --config nucleo-f411re-cmake-gcc-debug",
+        "xpm run build --config nucleo-f411re-cmake-gcc-debug",
+        "xpm run test --config nucleo-f411re-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f411re-cmake-gcc-release",
+        "xpm run build --config nucleo-f411re-cmake-gcc-release",
+        "xpm run test --config nucleo-f411re-cmake-gcc-release"
+      ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
@@ -1621,6 +1629,37 @@
             "buildType": "minsize",
             "shortConfigurationName": "q{{ matrix.qemu-riscv-variant | slice: 0, 4 }}mg{{ matrix.riscv-none-elf-gcc-version }}r"
           }
+        }
+      },
+      "nucleo-f411re-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "cortexm-actions",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "devDependencies": {
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}"
+        },
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "nucleo-f411re",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "nucleo-f411re-cmake-gcc-release": {
+        "inherits": [
+          "nucleo-f411re-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
         }
       }
     }
