@@ -101,5 +101,6 @@
     "**/.github": true,
     "**/.idea": true,
     "**/.vscode-test": true
-  }
+  },
+  "cortex-debug.variableUseNaturalFormat": false
 }
