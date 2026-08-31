@@ -607,6 +607,18 @@
         "xpm run build --config nucleo-f411re-cmake-gcc-release",
         "xpm run test --config nucleo-f411re-cmake-gcc-release"
       ],
+      "install-nucleo-f767zi-cmake-gcc": [
+        "xpm install --config nucleo-f767zi-cmake-gcc-debug",
+        "xpm install --config nucleo-f767zi-cmake-gcc-release"
+      ],
+      "test-nucleo-f767zi-cmake-gcc": [
+        "xpm run setup --config nucleo-f767zi-cmake-gcc-debug",
+        "xpm run build --config nucleo-f767zi-cmake-gcc-debug",
+        "xpm run test --config nucleo-f767zi-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f767zi-cmake-gcc-release",
+        "xpm run build --config nucleo-f767zi-cmake-gcc-release",
+        "xpm run test --config nucleo-f767zi-cmake-gcc-release"
+      ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
@@ -1661,6 +1673,37 @@
       "nucleo-f411re-cmake-gcc-release": {
         "inherits": [
           "nucleo-f411re-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
+      "nucleo-f767zi-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "cortexm-actions",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "devDependencies": {
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}"
+        },
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "nucleo-f767zi",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "nucleo-f767zi-cmake-gcc-release": {
+        "inherits": [
+          "nucleo-f767zi-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel"
