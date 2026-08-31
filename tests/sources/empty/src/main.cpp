@@ -46,7 +46,8 @@ using namespace std::literals;
 #define test_assert(EX) \
   (void)((EX) || (local_test_assert (#EX, __FILE__, __LINE__), 0))
 
-static void __attribute__ ((noreturn))
+[[noreturn]]
+static void
 local_test_assert (const char* failedexpr, const char* file, int line)
 {
   fprintf (stderr, "\nassertion \"%s\" failed\n", failedexpr);
