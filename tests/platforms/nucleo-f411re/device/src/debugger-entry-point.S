@@ -11,12 +11,15 @@
 
 // ----------------------------------------------------------------------------
 
-.type _debugger_entry_point,%function
+.equ VTOR, 0xE000ED08
+
+.section .debugger_entry_point, "ax", %progbits
+.type _debugger_entry_point, %function
 .thumb_func
 .global _debugger_entry_point
 
 _debugger_entry_point:
-    ldr r1, =0xE000ED08 // VTOR
+    ldr r1, =VTOR
     str r0, [r1]
     ldmia r0!, {r1, r2}
     msr msp, r1

@@ -31,7 +31,7 @@ add_compile_common_private_options (
 
 # -----------------------------------------------------------------------------
 
-set (XPACK_OPENOCD_INTERFACE "stlink-dap.cfg")
+set (XPACK_OPENOCD_INTERFACE "stlink.cfg")
 set (XPACK_OPENOCD_TARGET "stm32f4x.cfg")
 
 function (add_openocd_test)
@@ -52,7 +52,7 @@ function (add_openocd_test)
       openocd${extension}
       # -d3
       -c "gdb port disabled" -c "tcl port disabled" -c "telnet port disabled"
-      -f "interface/${XPACK_OPENOCD_INTERFACE}" -f
+      -f "interface/${XPACK_OPENOCD_INTERFACE}" -c "transport select swd" -f
       "target/${XPACK_OPENOCD_TARGET}" -c "program ${name}.elf verify" -c
       "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset"
   )

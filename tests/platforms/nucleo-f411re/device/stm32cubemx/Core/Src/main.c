@@ -61,6 +61,8 @@ void SystemClock_Config(void);
 int cubemx_main(void);
 #define main cubemx_main
 
+// ----------------------------------------------------------------------------
+
 void
 micro_os_plus_startup_initialise_hardware (void);
 

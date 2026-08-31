@@ -44,22 +44,6 @@ Reset_Handler (void);
 void
 Reset_Handler (void)
 {
-  // For just in case, when started via a debugger.
-  __asm__ (" MSR msp, %0 " : : "r"(&__stack) :);
-  // cortexm_architecture_set_msp(&__stack);
-
-  // SCB
-  // https://developer.arm.com/documentation/dui0552/a/cortex-m3-peripherals/system-control-block
-
-  // SCB->VTOR
-  // https://developer.arm.com/documentation/dui0552/a/cortex-m3-peripherals/system-control-block/vector-table-offset-register
-  // Mandatory when running from RAM. Not available on Cortex-M0.
-#if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__) \
-    || defined(__ARM_ARCH_8M_MAIN__) || defined(__ARM_ARCH_8M_BASE__)
-  // *((uint32_t*)0xE000ED08)
-  SCB->VTOR = ((uint32_t)_interrupt_vectors & (uint32_t)(~0x3F));
-#endif // defined(__ARM_ARCH_7M__) ...
-
   // Floating point instructions can be used early in the startup sequence
   // as a result of compiler optimisations, therefore enable the FPU before
   // calling any functions. (`SystemInit()` happens too late).

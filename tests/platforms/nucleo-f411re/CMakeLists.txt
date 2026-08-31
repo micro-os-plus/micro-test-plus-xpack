@@ -52,6 +52,7 @@ set (
   $<$<CONFIG:Debug>:-Og>
   -mcpu=cortex-m4
   -mthumb
+  -mfpu=fpv4-sp-d16
   # -mfloat-abi=soft
   -mfloat-abi=hard
   # -fno-move-loop-invariants Embedded builds must be warning free.
@@ -67,6 +68,8 @@ set (
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
+
+  -fstack-usage
 )
 
 target_compile_options (
@@ -93,6 +96,8 @@ target_link_options (
   #
   # -specs=nano.specs
   -Wl,--gc-sections
+
+  -Wl,--print-memory-usage
 )
 
 if ("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")

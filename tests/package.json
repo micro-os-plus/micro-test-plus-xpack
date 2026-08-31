@@ -595,6 +595,10 @@
           "{% assign config = 'qemu-riscv-' | append: matrix.qemu-riscv-variant | append: '-' | append: matrix.builder | append: '-gcc' | append: matrix.riscv-none-elf-gcc-version %}{{ properties.actions-setup-build-test-for-config }}"
         ]
       },
+      "install-nucleo-f411re-cmake-gcc": [
+        "xpm install --config nucleo-f411re-cmake-gcc-debug",
+        "xpm install --config nucleo-f411re-cmake-gcc-release"
+      ],
       "test-nucleo-f411re-cmake-gcc": [
         "xpm run setup --config nucleo-f411re-cmake-gcc-debug",
         "xpm run build --config nucleo-f411re-cmake-gcc-debug",
