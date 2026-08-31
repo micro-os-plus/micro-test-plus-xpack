@@ -28,7 +28,8 @@ target_include_directories (device-stm32f411xe-interface INTERFACE "include")
 target_sources (
   device-stm32f411xe-interface
   INTERFACE "src/vectors_stm32f411xe.c" "src/exception-handlers.cpp"
-            "src/reset-handler.c" "src/system-cortexm.c" "src/debugger-entry-point.S"
+            "src/reset-handler.c" "src/system-cortexm.c"
+            "src/debugger-entry-point.S"
 )
 
 # target_compile_definitions ( device-stm32f411xe-interface INTERFACE
