@@ -18,11 +18,10 @@ import { execFileSync } from 'child_process'
 import { globSync } from 'glob'
 
 const files = [
-  ...globSync('src/**/*.{cpp,c,h}'),
-  ...globSync('include/**/*.h'),
-  ...globSync('tests/sources/**/*.{cpp,c,h}'),
-  ...globSync('tests/includes/**/*.{cpp,c,h}'),
-  ...globSync('tests/platforms/**/*.{cpp,c,h}'),
+  ...globSync('{include,src}/**/*.{cpp,c,h}'),
+  ...globSync('tests/sources/{include,src}/*.{cpp,c,h}'),
+  ...globSync('tests/platforms/*/{include,src}/**/*.{cpp,c,h}'),
+  ...globSync('tests/platforms/*/device/{include,src}/**/*.{cpp,c,h}'),
 ]
 
 const args = ['--style=file:config/.clang-format', '-i', '--verbose', ...files]
