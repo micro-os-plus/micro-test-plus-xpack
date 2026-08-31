@@ -39,8 +39,7 @@ function (add_native_test_executable name)
   # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html
   # The link options were defined in `platform-native-interface`.
   target_link_options (
-    ${name} PRIVATE
-    $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,platform-bin/${name}-map.txt>
+    ${name} PRIVATE $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,${name}-map.txt>
   )
 
   # TODO use add_custom_target()
@@ -72,8 +71,7 @@ function (add_cross_test_executable name)
 
   set_target_properties (${name} PROPERTIES OUTPUT_NAME "${name}")
 
-  target_link_options (
-    ${name} PRIVATE -Wl,-Map,platform-bin/${name}-map.txt # -v
+  target_link_options (${name} PRIVATE -Wl,-Map,${name}-map.txt # -v
   )
 
   # TODO use add_custom_target()
