@@ -25,9 +25,11 @@ message (VERBOSE
 
 # The libraries are compiled before the platform library, so they need to get
 # the same compile options.
-add_compile_common_private_options (
+prepend_compile_common_private_options (
   micro-os-plus-micro-test-plus-static-library
 )
+
+prepend_compile_common_private_options (stm32cubemx-drivers-objects-library)
 
 # -----------------------------------------------------------------------------
 
@@ -63,7 +65,9 @@ endfunction ()
 
 if (XPACK_ENABLE_EMPTY_TEST)
   add_cross_test_executable (empty-test)
-  target_link_cross_test_libraries (empty-test tests::empty)
+  target_link_cross_test_libraries (
+    empty-test tests::empty micro-os-plus::stm32cubemx-drivers-objects-library
+  )
 
   xpack_display_target_lists (empty-test)
   message (VERBOSE "A> empty-test")
@@ -91,7 +95,10 @@ endif ()
 
 if (XPACK_ENABLE_MINIMAL_TEST)
   add_cross_test_executable (minimal-test)
-  target_link_cross_test_libraries (minimal-test tests::minimal)
+  target_link_cross_test_libraries (
+    minimal-test tests::minimal
+    micro-os-plus::stm32cubemx-drivers-objects-library
+  )
 
   xpack_display_target_lists (minimal-test)
   message (VERBOSE "A> minimal-test")
@@ -119,7 +126,9 @@ endif ()
 
 if (XPACK_ENABLE_SUITE_TEST)
   add_cross_test_executable (suite-test)
-  target_link_cross_test_libraries (suite-test tests::suite)
+  target_link_cross_test_libraries (
+    suite-test tests::suite micro-os-plus::stm32cubemx-drivers-objects-library
+  )
 
   xpack_display_target_lists (suite-test)
   message (VERBOSE "A> suite-test")
@@ -147,7 +156,10 @@ endif ()
 
 if (XPACK_ENABLE_SAMPLE_TEST)
   add_cross_test_executable (sample-test)
-  target_link_cross_test_libraries (sample-test tests::sample)
+  target_link_cross_test_libraries (
+    sample-test tests::sample
+    micro-os-plus::stm32cubemx-drivers-objects-library
+  )
 
   xpack_display_target_lists (sample-test)
   message (VERBOSE "A> sample-test")
@@ -176,7 +188,9 @@ endif ()
 # if (XPACK_ENABLE_UNIT_TEST AND NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
 if (XPACK_ENABLE_UNIT_TEST)
   add_cross_test_executable (unit-test)
-  target_link_cross_test_libraries (unit-test tests::unit)
+  target_link_cross_test_libraries (
+    unit-test tests::unit micro-os-plus::stm32cubemx-drivers-objects-library
+  )
 
   xpack_display_target_lists (unit-test)
   message (VERBOSE "A> unit-test")

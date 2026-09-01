@@ -49,9 +49,7 @@ target_link_libraries (
   device-stm32f411xe-interface INTERFACE micro-os-plus::stm32cubemx
 )
 
-if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (device-stm32f411xe-interface)
-endif ()
+xpack_display_target_lists (device-stm32f411xe-interface)
 
 # -----------------------------------------------------------------------------
 # Aliases.

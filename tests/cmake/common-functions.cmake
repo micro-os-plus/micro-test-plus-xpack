@@ -123,25 +123,78 @@ endfunction ()
 
 # -----------------------------------------------------------------------------
 
-function (add_compile_common_private_options target)
+function (prepend_compile_common_private_options target)
+  # Preserve whatever is already on the target's INCLUDE_DIRECTORIES so it can
+  # be re-appended after common-options/platform instead of staying in front.
+  get_target_property (
+    existing_include_directories ${target} INCLUDE_DIRECTORIES
+  )
+  if (existing_include_directories STREQUAL
+      "existing_include_directories-NOTFOUND"
+  )
+    set (existing_include_directories "")
+  endif ()
+
+  set_target_properties (${target} PROPERTIES INCLUDE_DIRECTORIES "")
+
   target_include_directories (
     ${target}
     PRIVATE
       $<TARGET_PROPERTY:micro-os-plus::common-options,INTERFACE_INCLUDE_DIRECTORIES>
       $<TARGET_PROPERTY:micro-os-plus::platform,INTERFACE_INCLUDE_DIRECTORIES>
   )
+
+  if (existing_include_directories)
+    target_include_directories (
+      ${target} PRIVATE ${existing_include_directories}
+    )
+  endif ()
+
+  # Preserve whatever is already on the target's COMPILE_DEFINITIONS so it can
+  # be re-appended after common-options/platform instead of staying in front.
+  get_target_property (
+    existing_compile_definitions ${target} COMPILE_DEFINITIONS
+  )
+  if (existing_compile_definitions STREQUAL
+      "existing_compile_definitions-NOTFOUND"
+  )
+    set (existing_compile_definitions "")
+  endif ()
+
+  set_target_properties (${target} PROPERTIES COMPILE_DEFINITIONS "")
+
   target_compile_definitions (
     ${target}
     PRIVATE
       $<TARGET_PROPERTY:micro-os-plus::common-options,INTERFACE_COMPILE_DEFINITIONS>
       $<TARGET_PROPERTY:micro-os-plus::platform,INTERFACE_COMPILE_DEFINITIONS>
   )
+
+  if (existing_compile_definitions)
+    target_compile_definitions (
+      ${target} PRIVATE ${existing_compile_definitions}
+    )
+  endif ()
+
+  # Preserve whatever is already on the target's COMPILE_OPTIONS so it can be
+  # re-appended after common-options/platform instead of staying in front.
+  get_target_property (existing_compile_options ${target} COMPILE_OPTIONS)
+  if (existing_compile_options STREQUAL "existing_compile_options-NOTFOUND")
+    set (existing_compile_options "")
+  endif ()
+
+  set_target_properties (${target} PROPERTIES COMPILE_OPTIONS "")
+
   target_compile_options (
     ${target}
     PRIVATE
       $<TARGET_PROPERTY:micro-os-plus::common-options,INTERFACE_COMPILE_OPTIONS>
       $<TARGET_PROPERTY:micro-os-plus::platform,INTERFACE_COMPILE_OPTIONS>
   )
+
+  if (existing_compile_options)
+    target_compile_options (${target} PRIVATE ${existing_compile_options})
+  endif ()
 endfunction ()
 
 # -----------------------------------------------------------------------------

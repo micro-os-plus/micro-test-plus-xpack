@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT! Automatically generated from template file:
-# build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-a15/CMakeLists-liquid.txt
+# build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-m3/CMakeLists-liquid.txt
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -24,8 +24,8 @@ message (VERBOSE
 # -----------------------------------------------------------------------------
 
 set (XPACK_QEMU_BINARY "qemu-system-arm")
-set (XPACK_QEMU_MACHINE_ARGS --machine virt --cpu cortex-a15)
-set (XPACK_QEMU_EXTRA_ARGS --nographic -smp 1 -d unimp,guest_errors)
+set (XPACK_QEMU_MACHINE_ARGS --machine mps2-an505 --cpu cortex-m33)
+set (XPACK_QEMU_EXTRA_ARGS --nographic -d unimp,guest_errors)
 
 # The libraries are compiled before the platform library, so they need to get
 # the same compile options.
