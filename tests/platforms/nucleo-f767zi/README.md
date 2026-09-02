@@ -1,8 +1,8 @@
-# platforms/nucleo-f411re
+# platforms/nucleo-f767zi
 
 Note: It cannot be a library, since it makes extensive use of `weak` symbols.
 
-DO NOT include `startup_stm32f411xe.s`.
+DO NOT include `startup_stm32f7xx.s`.
 
 ## OpenOCD invocation
 
@@ -15,7 +15,7 @@ openocd \
       -c "telnet port disabled" \
       -f interface/stlink-dap.cfg \
       -c "adapter speed 5000" \
-      -f target/stm32f4x.cfg \
+      -f target/stm32f7x.cfg \
       -c "program test.elf verify" \
       -c "arm semihosting enable" \
       -c "arm semihosting_cmdline test one two" \

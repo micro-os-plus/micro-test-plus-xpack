@@ -24,17 +24,14 @@ add_library (stm32cubemx-interface INTERFACE EXCLUDE_FROM_ALL)
 # -----------------------------------------------------------------------------
 target_include_directories (
   stm32cubemx-interface
-  INTERFACE "Core/Inc" 
-            "Drivers/STM32F7xx_HAL_Driver/Inc"
+  INTERFACE "Core/Inc" "Drivers/STM32F7xx_HAL_Driver/Inc"
             "Drivers/STM32F7xx_HAL_Driver/Inc/Legacy"
-            "Drivers/CMSIS/Device/ST/STM32F7xx/Include"
-            "Drivers/CMSIS/Include"
+            "Drivers/CMSIS/Device/ST/STM32F7xx/Include" "Drivers/CMSIS/Include"
 )
 
 target_sources (
   stm32cubemx-interface
-  INTERFACE 
-            "Core/Src/main.c"
+  INTERFACE "Core/Src/main.c"
             "Core/Src/gpio.c"
             "Core/Src/stm32f7xx_it.c"
             "Core/Src/stm32f7xx_hal_msp.c"
@@ -61,12 +58,9 @@ target_compile_options (
             $<$<COMPILE_LANGUAGE:C>:-Wno-nested-externs>
             -Wno-padded
             -Wno-redundant-decls
-            # -Wno-conversion
-            # -Wno-duplicated-branches
-            # -Wno-switch-enum
+            # -Wno-conversion -Wno-duplicated-branches -Wno-switch-enum
             -Wno-unused-parameter
-            # -Wno-switch-default
-            # -Wno-cast-align
+            # -Wno-switch-default -Wno-cast-align
 )
 
 target_link_options (stm32cubemx-interface INTERFACE)
@@ -88,30 +82,27 @@ add_library (stm32cubemx-drivers-objects-library OBJECT EXCLUDE_FROM_ALL)
 # -----------------------------------------------------------------------------
 target_include_directories (
   stm32cubemx-drivers-objects-library
-  PUBLIC "Core/Inc" 
-            "Drivers/STM32F7xx_HAL_Driver/Inc"
-            "Drivers/STM32F7xx_HAL_Driver/Inc/Legacy"
-            "Drivers/CMSIS/Device/ST/STM32F7xx/Include"
-            "Drivers/CMSIS/Include"
+  PUBLIC "Core/Inc" "Drivers/STM32F7xx_HAL_Driver/Inc"
+         "Drivers/STM32F7xx_HAL_Driver/Inc/Legacy"
+         "Drivers/CMSIS/Device/ST/STM32F7xx/Include" "Drivers/CMSIS/Include"
 )
 
 target_sources (
   stm32cubemx-drivers-objects-library
-  PRIVATE             "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c"
-            "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.c"
-
+  PRIVATE "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c"
+          "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.c"
 )
 
 target_compile_definitions (
@@ -151,4 +142,3 @@ message (
 )
 
 # -----------------------------------------------------------------------------
-

@@ -20,25 +20,24 @@ add_subdirectory ("stm32cubemx")
 # -----------------------------------------------------------------------------
 
 # Define the device library.
-add_library (device-stm32f411xe-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (device-stm32f7xx-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
-target_include_directories (device-stm32f411xe-interface INTERFACE "include")
+target_include_directories (device-stm32f7xx-interface INTERFACE "include")
 
 target_sources (
-  device-stm32f411xe-interface
+  device-stm32f7xx-interface
   INTERFACE "src/vectors-stm32f767xx.c" "src/exception-handlers.cpp"
-            "src/reset-handler.c"
-            "src/debugger-entry-point.S"
+            "src/reset-handler.c" "src/debugger-entry-point.S"
 )
 
-# target_compile_definitions ( device-stm32f411xe-interface INTERFACE
+# target_compile_definitions ( device-stm32f7xx-interface INTERFACE
 # "${xpack_device_compile_definition}" )
 
-target_compile_options (device-stm32f411xe-interface INTERFACE)
+target_compile_options (device-stm32f7xx-interface INTERFACE)
 
 target_link_options (
-  device-stm32f411xe-interface
+  device-stm32f7xx-interface
   INTERFACE
   # Prefer absolute paths over paths relative to the build folder.
   -T${CMAKE_CURRENT_SOURCE_DIR}/linker-scripts/mem.ld
@@ -46,14 +45,14 @@ target_link_options (
 )
 
 target_link_libraries (
-  device-stm32f411xe-interface INTERFACE micro-os-plus::stm32cubemx
+  device-stm32f7xx-interface INTERFACE micro-os-plus::stm32cubemx
 )
 
-xpack_display_target_lists (device-stm32f411xe-interface)
+xpack_display_target_lists (device-stm32f7xx-interface)
 
 # -----------------------------------------------------------------------------
 # Aliases.
-add_library (micro-os-plus::device ALIAS device-stm32f411xe-interface)
-message (VERBOSE "> micro-os-plus::device -> device-stm32f411xe-interface")
+add_library (micro-os-plus::device ALIAS device-stm32f7xx-interface)
+message (VERBOSE "> micro-os-plus::device -> device-stm32f7xx-interface")
 
 # -----------------------------------------------------------------------------

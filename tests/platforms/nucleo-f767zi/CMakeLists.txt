@@ -19,7 +19,7 @@ message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/'...")
 
 # -----------------------------------------------------------------------------
 
-# TODO: possibly update to separate device-stm32f4-extras, when ready.
+# TODO: possibly update to separate device-stm32f7-extras, when ready.
 add_subdirectory ("device")
 
 # -----------------------------------------------------------------------------
@@ -46,7 +46,7 @@ target_compile_definitions (
 
 set (
   xpack_platform_common_args
-  -mcpu=cortex-m7 
+  -mcpu=cortex-m7
   -mthumb
   -mfpu=fpv5-d16
   # -mfloat-abi=soft
@@ -64,7 +64,6 @@ set (
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
-
   -fstack-usage
 )
 
@@ -92,7 +91,6 @@ target_link_options (
   #
   # -specs=nano.specs
   -Wl,--gc-sections
-
   -Wl,--print-memory-usage
 )
 

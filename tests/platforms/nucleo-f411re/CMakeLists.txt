@@ -68,7 +68,6 @@ set (
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
-
   -fstack-usage
 )
 
@@ -96,7 +95,6 @@ target_link_options (
   #
   # -specs=nano.specs
   -Wl,--gc-sections
-
   -Wl,--print-memory-usage
 )
 
