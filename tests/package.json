@@ -607,6 +607,10 @@
         "xpm run build --config nucleo-f411re-cmake-gcc-release",
         "xpm run test --config nucleo-f411re-cmake-gcc-release"
       ],
+      "clean-nucleo-f411re-cmake-gcc": [
+        "xpm run clean --config nucleo-f411re-cmake-gcc-debug --ignore-errors",
+        "xpm run clean --config nucleo-f411re-cmake-gcc-release --ignore-errors"
+      ],
       "install-nucleo-f767zi-cmake-gcc": [
         "xpm install --config nucleo-f767zi-cmake-gcc-debug",
         "xpm install --config nucleo-f767zi-cmake-gcc-release"
@@ -618,6 +622,10 @@
         "xpm run setup --config nucleo-f767zi-cmake-gcc-release",
         "xpm run build --config nucleo-f767zi-cmake-gcc-release",
         "xpm run test --config nucleo-f767zi-cmake-gcc-release"
+      ],
+      "clean-nucleo-f767zi-cmake-gcc": [
+        "xpm run clean --config nucleo-f767zi-cmake-gcc-debug --ignore-errors",
+        "xpm run clean --config nucleo-f767zi-cmake-gcc-release --ignore-errors"
       ],
       "install-nucleo-h533re-cmake-gcc": [
         "xpm install --config nucleo-h533re-cmake-gcc-debug",
