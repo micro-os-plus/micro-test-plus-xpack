@@ -281,7 +281,7 @@
       "actions-setup-build-test-for-config": "{% for build-type in properties.build-types %}{% for test-action in properties.test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
       "actions-test-for-configs": "{% for config in configs %}{{ properties.action-test-for-config }}{{ os.EOL }}{% endfor %}",
       "action-test-for-config": "xpm run test-{{ config }}",
-      "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}"
+      "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}"
     },
     "actions": {
       "xcdl-export": [
