@@ -619,6 +619,22 @@
         "xpm run build --config nucleo-f767zi-cmake-gcc-release",
         "xpm run test --config nucleo-f767zi-cmake-gcc-release"
       ],
+      "install-nucleo-h533re-cmake-gcc": [
+        "xpm install --config nucleo-h533re-cmake-gcc-debug",
+        "xpm install --config nucleo-h533re-cmake-gcc-release"
+      ],
+      "test-nucleo-h533re-cmake-gcc": [
+        "xpm run setup --config nucleo-h533re-cmake-gcc-debug",
+        "xpm run build --config nucleo-h533re-cmake-gcc-debug",
+        "xpm run test --config nucleo-h533re-cmake-gcc-debug",
+        "xpm run setup --config nucleo-h533re-cmake-gcc-release",
+        "xpm run build --config nucleo-h533re-cmake-gcc-release",
+        "xpm run test --config nucleo-h533re-cmake-gcc-release"
+      ],
+      "clean-nucleo-h533re-cmake-gcc": [
+        "xpm run clean --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
+        "xpm run clean --config nucleo-h533re-cmake-gcc-release --ignore-errors"
+      ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
@@ -1704,6 +1720,70 @@
       "nucleo-f767zi-cmake-gcc-release": {
         "inherits": [
           "nucleo-f767zi-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
+      "nucleo-h533re-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "cortexm-actions",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "devDependencies": {
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}"
+        },
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "nucleo-h533re",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "nucleo-h533re-cmake-gcc-release": {
+        "inherits": [
+          "nucleo-h533re-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
+      "raspberry-pi-pico-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "cortexm-actions",
+          "arm-cmsis-core-dependencies",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "raspberry-pi-pico",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "devDependencies": {
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "github:xpack-3rd-party/raspberrypi-pico-sdk-xpack#v1.5.1-1"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/startup --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "raspberry-pi-pico-cmake-gcc-release": {
+        "inherits": [
+          "raspberry-pi-pico-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel"
