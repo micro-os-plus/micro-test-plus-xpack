@@ -158,7 +158,7 @@ typedef void
  * and relies on the linker script to place it at the correct location
  * in memory, usually at the very beginning of the flash bank.
  */
-handler_ptr_t _interrupt_vectors[] 
+handler_ptr_t _interrupt_vectors[]
 __attribute__ ((section(".interrupt_vectors"),used)) =
   {
     // Cortex-M Core Handlers
@@ -170,7 +170,7 @@ __attribute__ ((section(".interrupt_vectors"),used)) =
     MemManage_Handler,                 // The MPU fault handler
     BusFault_Handler,                  // The Bus Fault handler
     UsageFault_Handler,                // The Usage Fault handler
-    0,                                 // Reserved
+    SecureFault_Handler,               // The Secure Fault handler
     0,                                 // Reserved
     0,                                 // Reserved
     0,                                 // Reserved
