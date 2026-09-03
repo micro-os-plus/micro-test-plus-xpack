@@ -27,7 +27,7 @@ target_include_directories (device-stm32h5xx-interface INTERFACE "include")
 
 target_sources (
   device-stm32h5xx-interface
-  INTERFACE "src/vectors-stm32h5xx.c" "src/exception-handlers.cpp"
+  INTERFACE "src/vectors-stm32h533xx.c" "src/exception-handlers.cpp"
             "src/reset-handler.c" "src/debugger-entry-point.S"
 )
 
