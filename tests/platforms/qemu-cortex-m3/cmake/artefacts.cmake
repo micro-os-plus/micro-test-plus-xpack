@@ -25,7 +25,7 @@ message (VERBOSE
 
 set (XPACK_QEMU_BINARY "qemu-system-arm")
 set (XPACK_QEMU_MACHINE_ARGS --machine mps2-an385 --cpu cortex-m3)
-set (XPACK_QEMU_EXTRA_ARGS --nographic -d unimp,guest_errors)
+set (XPACK_QEMU_EXTRA_ARGS --nographic -d unimp,guest_errors,cpu_reset)
 
 # The libraries are compiled before the platform library, so they need to get
 # the same compile options.
