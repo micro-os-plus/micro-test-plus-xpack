@@ -218,7 +218,8 @@
         "m0",
         "m3",
         "m4f",
-        "m7f"
+        "m7f",
+        "m33"
       ],
       "qemu-aarch32-variants": [
         "a15"
