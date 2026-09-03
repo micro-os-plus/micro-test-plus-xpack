@@ -343,6 +343,31 @@ usage_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
 
 #endif // defined(__ARM_ARCH_7M__) ...
 
+// ----------------------------------------------------------------------------
+
+#if defined(__ARM_ARCH_8M_MAIN__) || defined(__ARM_ARCH_8M_BASE__)
+
+void __attribute__ ((section (".after_vectors"), weak))
+SecureFault_Handler (void)
+{
+
+#if defined(MICRO_OS_PLUS_DEBUG_ENABLED)
+  if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
+    {
+      cortexm::architecture::bkpt ();
+    }
+#endif // defined(MICRO_OS_PLUS_DEBUG_ENABLED)
+
+  while (1)
+    {
+      cortexm::architecture::wfi ();
+    }
+}
+
+#endif // defined(__ARM_ARCH_8M_MAIN__) || defined(__ARM_ARCH_8M_BASE__)
+
+// ----------------------------------------------------------------------------
+
 void __attribute__ ((section (".after_vectors"), weak))
 SVC_Handler (void)
 {
@@ -353,6 +378,8 @@ SVC_Handler (void)
       cortexm::architecture::wfi ();
     }
 }
+
+// ----------------------------------------------------------------------------
 
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__) \
     || defined(__ARM_ARCH_8M_MAIN__) || defined(__ARM_ARCH_8M_BASE__)
@@ -369,6 +396,8 @@ DebugMon_Handler (void)
 
 #endif // defined(__ARM_ARCH_7M__) ...
 
+// ----------------------------------------------------------------------------
+
 void __attribute__ ((section (".after_vectors"), weak))
 PendSV_Handler (void)
 {
@@ -378,6 +407,8 @@ PendSV_Handler (void)
       cortexm::architecture::wfi ();
     }
 }
+
+// ----------------------------------------------------------------------------
 
 void __attribute__ ((section (".after_vectors"), weak))
 SysTick_Handler (void)
