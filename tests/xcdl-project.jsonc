@@ -101,6 +101,30 @@
         "buildType": "release"
       },
       //
+      "qemu-cortex-m33-debug": {
+        "includeCDLs": [
+          "platforms/qemu-cortex-m33/xcdl-artefacts.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/startup/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@xpack-3rd-party/arm-cmsis-core/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.semihosting.syscalls": true,
+          "micro-os-plus.semihosting.startup": true,
+          "micro-os-plus.startup": true,
+          "micro-os-plus.startup.sbrk": true,
+          "micro-os-plus.startup.exit": true,
+          "micro-os-plus.semihosting.trace.stdout": true
+        }
+      },
+      "qemu-cortex-m33-release": {
+        "inherits": "qemu-cortex-m33-debug",
+        "buildType": "release"
+      },
+      //
       "qemu-cortex-m4f-debug": {
         "includeCDLs": [
           "platforms/qemu-cortex-m4f/xcdl-artefacts.jsonc",
