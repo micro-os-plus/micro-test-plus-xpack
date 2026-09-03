@@ -32,15 +32,15 @@
     "json5": "https://www.npmjs.com/package/json5",
     "jsonc-parser": "https://www.npmjs.com/package/jsonc-parser"
   },
-  "dependencies": {},
   "devDependencies": {
     "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "del-cli": "^7.0.0",
-    "json": "^11.0.0",
-    "liquidjs": "^10.25.0",
     "glob": "^13.0.6",
+    "json": "^11.0.0",
     "json5": "^2.2.3",
-    "jsonc-parser": "^3.3.1"
+    "jsonc-parser": "^3.3.1",
+    "liquidjs": "^10.25.0",
+    "prettier": "^3.9.6"
   },
   "scripts": {
     "generate-top-commons": "node node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.mjs --micro-os-plus",
@@ -64,7 +64,8 @@
       "clang-format": "node scripts/clang-format.mjs",
       "cmake-format": "node scripts/cmake-format.mjs",
       "jsonc-format": "node scripts/jsonc-format.mjs",
-      "xcdl-export": "node scripts/xcdl-export.mjs xcdl-package.json*"
+      "xcdl-export": "node scripts/xcdl-export.mjs xcdl-package.json*",
+      "prettier": "prettier scripts tests/scripts --write --config config/.prettierrc.json --ignore-path config/.prettierignore"
     }
   },
   "engines": {
