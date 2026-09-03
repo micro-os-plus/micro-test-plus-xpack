@@ -100,7 +100,7 @@ _local_link_args += [
 
   # Paths must be relative to the build folder or absolute.
   '-Txpacks/@micro-os-plus/devices-qemu-aarch32/linker-scripts/mem-cortex-a15.ld',
-  # '-Txpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-flash.ld',
+  # '-Txpacks/@micro-os-plus/startup/linker-scripts/sections.ld',
   '-Txpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-ram.ld',
 ]
 

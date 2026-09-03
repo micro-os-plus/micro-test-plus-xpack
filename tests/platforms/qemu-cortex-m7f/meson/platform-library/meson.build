@@ -105,8 +105,7 @@ _local_link_args += [
 
   # Path are relative to the build folder.
   '-Txpacks/@micro-os-plus/devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld',
-  '-Txpacks/@micro-os-plus/architecture-cortexm/linker-scripts/sections-flash.ld',
-  # '-Txpacks/@micro-os-plus/architecture-cortexm/linker-scripts/sections-ram.ld',
+  '-Txpacks/@micro-os-plus/startup/linker-scripts/sections.ld',
 ]
 
 if c_compiler.version().version_compare('>=12.0.0')
