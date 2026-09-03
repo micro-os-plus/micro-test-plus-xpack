@@ -24,11 +24,20 @@ The source files to be added to user projects are:
 
 - none
 
+## Memory map
+
+The `virt` machine defines:
+
+- pflash0/1, 0x2000_0000, 2 × 32 MiB, CFI parallel NOR flash
+- RAM region 0x80000000 (1 GiB), with the actual value as given by `-m`, 128 MiB if mising.
+
 ## Memory range
 
-The applications are built for the following memory range:
+The applications are built for the following memory ranges:
 
-- RAM: 0x8000_0000-0x87FF_FFFF (128 MB)
+- FLASH: 0x2000_0000 - 0x2400_0000 (64M)
+- RAM: 0x8000_0000 - 0x87FF_FFFF (128 MB)
+- stack: 0x8800_0000
 
 ## QEMU invocation
 

@@ -1,7 +1,7 @@
 # platforms/qemu-cortex-a15
 
 > DO NOT EDIT! Automatically generated from template file:
-> build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-a15/README-liquid.md
+> build-helper/templates/common/\_micro-os-plus/tests/platforms/qemu-cortex-a15/README-liquid.md
 
 Support files for building application to run on the QEMU "virt"
 emulated board with "cortex-a15" CPU.
@@ -24,16 +24,21 @@ The source files to be added to user projects are:
 
 - none
 
+## Memory map
+
+The `virt` machine defines:
+
+- virtual flash 0x00000000, 64 MiB, usable only as `-bios`
+- the RAM region 0x40000000 (1 GiB), with the actual value as given by 
+`-m`, 128 MiB if mising.
+
 ## Memory range
 
 The applications are built for the following memory range:
 
-- RAM: 0x4000_0000-0x43FF_FFFF (64 MB)
-- HEAP: 0x4400_0000-0x47FF_FFFF (64 MB)
+- RAM: 0x4000_0000 - 0x43FF_FFFF (64 MB)
+- HEAP: 0x4400_0000 - 0x47FF_FFFF (64 MB)
 - stack: 0x4800_0000
-
-The heap and stack are set automatically in `_startup()` to the values
-returned by `SEMIHOSTING_SYS_HEAPINFO`.
 
 ## QEMU invocation
 

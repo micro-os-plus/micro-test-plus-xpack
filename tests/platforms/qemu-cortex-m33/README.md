@@ -1,4 +1,4 @@
-# platforms/qemu-cortex-m3
+# platforms/qemu-cortex-m33
 
 > DO NOT EDIT! Automatically generated from template file:
 > build-helper/templates/common/\_micro-os-plus/tests/platforms/qemu-cortex-m33/README-liquid.md
@@ -24,17 +24,21 @@ The source files to be added to user projects are:
 
 - none
 
+## Memory map
+
+The `mps2-an505` machine defines:
+
+- SSRAM-0, 0x0000_0000 – 0x003F_FFFF, 4 MiB, Primary execution memory. This is where the CPU vector table lives at reset
+- SSRAM 2&3, 0x2800_0000 – 0x283F_FFFF, 2+2 MiB, Additional on-chip SRAM
+- System RAM, 0x8000_0000 - 0x80FF_FFFF, 16 MB, The largest contiguous block of RAM
+
 ## Memory range
 
-The applications are built for the following memory range:
+The applications are built for the following memory ranges:
 
-- FLASH: 0x1000_0000-0x100F_FFFF (1 MB)
-- RAM: 0x1010_0000-0x103F_FFFF (3 MB)
-- HEAP: TBD
+- FLASH: 0x1000_0000-0x101F_FFFF (2 MB)
+- RAM: 0x1020_0000-0x103F_FFFF (2 MB)
 - stack: 0x1040_0000
-
-The heap and stack are set automatically in `_startup()` to the values
-returned by `SEMIHOSTING_SYS_HEAPINFO`.
 
 ## QEMU invocation
 

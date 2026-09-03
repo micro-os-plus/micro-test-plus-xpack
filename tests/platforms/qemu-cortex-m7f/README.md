@@ -1,7 +1,7 @@
 # platforms/qemu-cortex-m7f
 
 > DO NOT EDIT! Automatically generated from template file:
-> build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-m7f/README-liquid.md
+> build-helper/templates/common/\_micro-os-plus/tests/platforms/qemu-cortex-m7f/README-liquid.md
 
 Support files for building application to run on the QEMU "mps2-an500"
 emulated board.
@@ -24,17 +24,21 @@ The source files to be added to user projects are:
 
 - none
 
+## Memory map
+
+The `mps2-an500` machine defines:
+
+- ZBT SSRAM 1, 0x0000_0000 – 0x003F_FFFF, 4 MiB, Primary execution memory. This is where the Cortex-M7 vector table lives at reset
+- ZBT SSRAM 2&3, 0x2000_0000 – 0x203F_FFFF, 2+2 MiB, Real RAM
+- PSRAM, 0x6000_0000 - 0x60FF_FFFF, 16 MB, External PSRAM (slow, but large)
+
 ## Memory range
 
-The applications are built for the following memory range:
+The applications are built for the following memory ranges:
 
-- FLASH: 0x0000_0000-0x007F_FFFF (8 MB)
-- RAM: 0x2000_0000-0x207F_FFFF (8 MB)
-- HEAP: 0x6000_0000-0x60FF_FFFF (16 MB)
-- stack: 0x6100_0000
-
-The heap and stack are set automatically in `_startup()` to the values
-returned by `SEMIHOSTING_SYS_HEAPINFO`.
+- FLASH: 0x0000_0000 - 0x003F_FFFF (4 MB)
+- RAM: 0x2000_0000 - 0x203F_FFFF (4 MB)
+- stack: 0x2040_0000
 
 ## QEMU invocation
 
