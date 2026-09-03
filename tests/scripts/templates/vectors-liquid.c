@@ -56,7 +56,7 @@ typedef void
  * and relies on the linker script to place it at the correct location
  * in memory, usually at the very beginning of the flash bank.
  */
-handler_ptr_t _interrupt_vectors[] 
+handler_ptr_t _interrupt_vectors[]
 __attribute__ ((section(".interrupt_vectors"),used)) =
   {
     // Cortex-M Core Handlers
@@ -74,7 +74,11 @@ __attribute__ ((section(".interrupt_vectors"),used)) =
     BusFault_Handler,                  // The Bus Fault handler
     UsageFault_Handler,                // The Usage Fault handler
 {%- endif %}
+{%- if isArmArch8m %}
+    SecureFault_Handler,               // The Secure Fault handler
+{%- else %}
     0,                                 // Reserved
+{%- endif %}
     0,                                 // Reserved
     0,                                 // Reserved
     0,                                 // Reserved

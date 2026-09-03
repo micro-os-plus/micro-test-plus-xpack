@@ -126,7 +126,7 @@ const parseVectorTable = (lines) => {
     console.error(`no '.word' entries found after 'g_pfnVectors:'...`)
     process.exit(1)
   }
-
+  // console.error(entries)
   return entries
 }
 
@@ -155,9 +155,10 @@ const liquidEngine = new Liquid({
  * @param {{ symbol: string, comment: string | null }[]} handlers
  * @param {string} libraryFilePath
  * @param {boolean} isArmArch6m
+ * @param {boolean} isArmArch8m
  * @returns {string} The rendered C source.
  */
-const renderVectorsTemplate = (handlers, libraryFilePath, isArmArch6m) => {
+const renderVectorsTemplate = (handlers, libraryFilePath, isArmArch6m, isArmArch8m) => {
   const templateFilePath = path.resolve(
     scriptFolderPath,
     'templates',
@@ -170,10 +171,13 @@ const renderVectorsTemplate = (handlers, libraryFilePath, isArmArch6m) => {
   }
 
   const templateContent = fs.readFileSync(templateFilePath, 'utf8')
+  // console.error(isArmArch6m)
+  // console.error(isArmArch8m)
   return liquidEngine.parseAndRenderSync(templateContent, {
     handlers,
     libraryFilePath,
     isArmArch6m,
+    isArmArch8m
   })
 }
 
@@ -201,6 +205,11 @@ if (outputFilePath !== null) {
 // there is therefore a reliable signal that this is an ARMv6-M part.
 const isArmArch6m = vectorTable.length > 4 && vectorTable[4].symbol === '0'
 
+// `vectorTable[7]` (the `SecureFault_Handler` slot) is used only
+// on ARMv8-M cores, but is populated on ARMv7-M cores. A non-`0`
+// there is therefore a reliable signal that this is an ARMv8-M part.
+const isArmArch8m = vectorTable.length > 7 && vectorTable[7].symbol != '0'
+
 // The first 16 entries of any Cortex-M vector table are fixed by the
 // architecture (initial SP, `Reset_Handler`, and the 14 core exception
 // vectors, including reserved slots) and are not device-specific IRQ
@@ -212,7 +221,8 @@ const libraryFilePath = path.relative(process.cwd(), inputFilePath)
 const resultText = renderVectorsTemplate(
   irqEntries,
   libraryFilePath,
-  isArmArch6m
+  isArmArch6m,
+  isArmArch8m
 )
 
 if (outputFilePath !== null) {
