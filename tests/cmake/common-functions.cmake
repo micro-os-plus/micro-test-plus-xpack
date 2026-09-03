@@ -250,7 +250,7 @@ function (add_qemu_test)
     COMMAND
       ${XPACK_QEMU_BINARY}${extension} ${XPACK_QEMU_MACHINE_ARGS} --kernel
       "${elf_name}.elf" ${XPACK_QEMU_EXTRA_ARGS} --semihosting-config
-      "${semihosting_config}"
+      "${semihosting_config}" -D ${arg_NAME}-qemu.log
   )
 
 endfunction ()
