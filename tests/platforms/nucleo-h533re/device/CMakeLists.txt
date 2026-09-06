@@ -26,9 +26,7 @@ add_library (device-stm32h5xx-interface INTERFACE EXCLUDE_FROM_ALL)
 target_include_directories (device-stm32h5xx-interface INTERFACE "include")
 
 target_sources (
-  device-stm32h5xx-interface
-  INTERFACE "src/vectors-stm32h533xx.c" "src/exception-handlers.cpp"
-            "src/reset-handler.c" "src/debugger-entry-point.S"
+  device-stm32h5xx-interface INTERFACE "src/vectors-stm32h533xx.c"
 )
 
 # target_compile_definitions ( device-stm32h5xx-interface INTERFACE
