@@ -86,7 +86,7 @@ const parseArgs = (argv) => {
  *   slots), each with its trailing comment, if any.
  */
 const parseVectorTable = (lines) => {
-  const labelRe = /^g_pfnVectors\s*:/
+  const labelRe = /^(?:g_pfnVectors|IRQ_Vectors)\s*:/
   const wordRe =
     /^\.word\s+(\S+)(?:\s+(?:@\s*(.*)|\/\/\s*(.*)|\/\*\s*(.*?)\s*\*\/\s*))?$/
 
