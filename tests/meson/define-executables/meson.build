@@ -132,6 +132,8 @@ foreach test : tests
     _local_dependencies += [ micro_os_plus_semihosting_dependency ]
   endif
 
+  _local_dependencies += xpack_dependencies_libraries
+
   # ---------------------------------------------------------------------------
 
   # https://mesonbuild.com/Reference-manual.html#executable

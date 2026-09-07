@@ -22,7 +22,7 @@ message('Processing tests/platforms/qemu-cortex-m3...')
 # -----------------------------------------------------------------------------
 
 qemu = find_program('qemu-system-arm')
-qemu_machine_args = [ '--machine', 'mps2-an385', '--cpu', 'cortex-m3' ]
+qemu_machine_args = [ '--machine', 'mps2-an505', '--cpu', 'cortex-m33' ]
 qemu_extra_args = [ '--nographic', '-d', 'unimp,guest_errors' ]
 
 # -----------------------------------------------------------------------------

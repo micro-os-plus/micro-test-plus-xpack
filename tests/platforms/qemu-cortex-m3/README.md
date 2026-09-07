@@ -6,6 +6,9 @@
 Support files for building Cortex-M3 application to run on the
 QEMU "mps2-an385" emulated board (which is a Cortex-M3 board).
 
+- [Application Note AN385](https://documentation-service.arm.com/static/5ed107a5ca06a95ce53f89e3)
+- [DAI0385C.PDF](https://developer.arm.com/documentation/dai0385/c/DAI0385C_cortex_m3_on_v2m_mps2.pdf)
+
 ## Include folders
 
 The following folders should be passed to the compiler during the build:

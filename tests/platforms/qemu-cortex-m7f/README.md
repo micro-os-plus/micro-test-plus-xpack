@@ -6,6 +6,8 @@
 Support files for building application to run on the QEMU "mps2-an500"
 emulated board.
 
+- [Application Note AN500](https://documentation-service.arm.com/static/5ed112fcca06a95ce53f8eb3)
+
 ## Include folders
 
 The following folders should be passed to the compiler during the build:

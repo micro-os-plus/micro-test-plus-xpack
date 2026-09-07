@@ -28,6 +28,7 @@ function (target_link_native_test_libraries name)
             micro-os-plus::common-options
             # Library with the current test.
             ${ARGN}
+            ${xpack_dependencies_libraries}
             # TODO: remove it after updating architecture dependencies.
             micro-os-plus::diag-trace
             # Platform dependency.
@@ -50,6 +51,7 @@ function (target_link_cross_test_libraries name)
             micro-os-plus::common-options
             # Library with the current test.
             ${ARGN}
+            ${xpack_dependencies_libraries}
             # TODO: remove it after updating architecture dependencies.
             micro-os-plus::diag-trace
             # Platform specific dependencies.

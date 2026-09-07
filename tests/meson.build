@@ -115,6 +115,9 @@ endforeach
 
 # -----------------------------------------------------------------------------
 
+# Set `xpack_dependencies_libraries` with the platform specific dependencies.
+subdir('platforms/'+ xpack_platform_name + '/meson/dependencies-libraries')
+
 xpack_tested_library_dependency = micro_os_plus_micro_test_plus_dependency
 xpack_tested_library_dependency_compile_c_args = micro_os_plus_micro_test_plus_dependency_compile_c_args
 xpack_tested_library_dependency_compile_cpp_args = micro_os_plus_micro_test_plus_dependency_compile_cpp_args

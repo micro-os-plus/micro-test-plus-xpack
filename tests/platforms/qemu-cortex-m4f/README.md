@@ -6,6 +6,9 @@
 Support files for building application to run on the QEMU "mps2-an386"
 emulated board.
 
+- [AN386 — ARM Cortex-M4 SMM on V2M-MPS2](https://developer.arm.com/documentation/dai0386/latest/)
+- [DAI0386C PDF](https://pack-content.cmsis.io/Keil/V2M-MPS2_CMx_BSP/1.8.2/Boards/ARM/V2M-MPS2/Documents/DAI0386C_cortex_m4_on_v2m_mps2.pdf)
+
 ## Include folders
 
 The following folders should be passed to the compiler during the build:

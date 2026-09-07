@@ -95,7 +95,7 @@ target_link_options (
   # absolute paths over paths relative to the build folder.
   -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-qemu-aarch32/linker-scripts/mem-cortex-a15.ld
   # -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/sections.ld
- -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-ram.ld
+  -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-ram.ld
 )
 
 if ("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")

@@ -53,7 +53,7 @@
       "@xpack-dev-tools/ninja-build": "1.13.1-1.1"
     },
     "properties": {
-      "buildVerbose": "false",
+      "buildVerbose": "true",
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
       "commandClearBuildFolder": "node scripts/clear-build-folder.mjs {{ properties.buildFolderRelativePathPosix }}",
@@ -205,7 +205,7 @@
         "@micro-os-plus/architecture-aarch64": "^4.0.0",
         "@micro-os-plus/devices-qemu-aarch64": "^5.0.0",
         "@micro-os-plus/semihosting": "^9.0.0",
-        "@micro-os-plus/startup": "^6.0.0",
+        "@micro-os-plus/startup": "^6.1.0",
         "@xpack-3rd-party/arm-cmsis-core": "5.4.0-7",
         "@xpack-dev-tools/qemu-arm": "9.2.4-1.1",
         "@xpack-dev-tools/qemu-riscv": "9.2.4-1.1",
@@ -648,6 +648,18 @@
       "clean-nucleo-h533re-cmake-gcc": [
         "xpm run clean --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-h533re-cmake-gcc-release --ignore-errors"
+      ],
+      "install-raspberry-pi-pico-cmake-gcc": [
+        "xpm install --config raspberry-pi-pico-cmake-gcc-debug",
+        "xpm install --config raspberry-pi-pico-cmake-gcc-release"
+      ],
+      "test-raspberry-pi-pico-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico-cmake-gcc-debug",
+        "xpm run test --config raspberry-pi-pico-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico-cmake-gcc-release",
+        "xpm run test --config raspberry-pi-pico-cmake-gcc-release"
       ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },

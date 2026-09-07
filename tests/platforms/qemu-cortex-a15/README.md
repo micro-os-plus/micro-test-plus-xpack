@@ -29,8 +29,8 @@ The source files to be added to user projects are:
 The `virt` machine defines:
 
 - virtual flash 0x00000000, 64 MiB, usable only as `-bios`
-- the RAM region 0x40000000 (1 GiB), with the actual value as given by 
-`-m`, 128 MiB if mising.
+- the RAM region 0x40000000 (1 GiB), with the actual value as given by
+  `-m`, 128 MiB if mising.
 
 ## Memory range
 
