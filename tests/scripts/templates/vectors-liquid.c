@@ -118,7 +118,7 @@ __attribute__ ((section(".interrupt_vectors"),used)) =
 void __attribute__ ((section(".after_vectors")))
 Default_Handler(void)
 {
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG_ENABLED)
   micro_os_plus_architecture_brk();
 #endif
   while (1)
