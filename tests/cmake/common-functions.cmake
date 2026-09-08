@@ -61,6 +61,11 @@ function (add_native_test_executable name)
               "$<TARGET_FILE:${name}>" > ${name}-list.txt
       VERBATIM
     )
+    set_property (
+      TARGET ${name}
+      APPEND
+      PROPERTY ADDITIONAL_CLEAN_FILES "${name}-list.txt"
+    )
   endif ()
 endfunction ()
 
@@ -72,6 +77,12 @@ function (add_cross_test_executable name)
   set_target_properties (${name} PROPERTIES OUTPUT_NAME "${name}")
 
   target_link_options (${name} PRIVATE -Wl,-Map,${name}-map.txt # -v
+  )
+
+  set_property (
+    TARGET ${name}
+    APPEND
+    PROPERTY ADDITIONAL_CLEAN_FILES "${name}-map.txt"
   )
 
   # TODO use add_custom_target()
@@ -91,6 +102,12 @@ function (add_cross_test_executable name)
       COMMAND ${CMAKE_OBJCOPY} -O ihex "$<TARGET_FILE:${name}>"
               "$<TARGET_FILE:${name}>.hex"
     )
+
+    set_property (
+      TARGET ${name}
+      APPEND
+      PROPERTY ADDITIONAL_CLEAN_FILES "$<TARGET_FILE:${name}>.hex"
+    )
   endif ()
 
   if (XPACK_ENABLE_CREATE_LISTING)
@@ -100,6 +117,12 @@ function (add_cross_test_executable name)
       COMMAND ${CMAKE_OBJDUMP} --source --all-headers --demangle --line-numbers
               --wide "$<TARGET_FILE:${name}>" > ${name}-list.txt
       VERBATIM
+    )
+
+    set_property (
+      TARGET ${name}
+      APPEND
+      PROPERTY ADDITIONAL_CLEAN_FILES "${name}-list.txt"
     )
   endif ()
 endfunction ()
