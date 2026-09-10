@@ -1,8 +1,6 @@
 # platforms/nucleo-f411re
 
-Note: It cannot be a library, since it makes extensive use of `weak` symbols.
-
-DO NOT include `startup_stm32f411xe.s`.
+Note: It cannot be a static library, since it makes extensive use of `weak` symbols.
 
 ## OpenOCD invocation
 

@@ -1,8 +1,6 @@
 # platforms/nucleo-f767zi
 
-Note: It cannot be a library, since it makes extensive use of `weak` symbols.
-
-DO NOT include `startup_stm32f7xx.s`.
+Note: It cannot be a static library, since it makes extensive use of `weak` symbols.
 
 ## OpenOCD invocation
 

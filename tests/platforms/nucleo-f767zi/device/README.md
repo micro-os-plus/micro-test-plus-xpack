@@ -1,4 +1,4 @@
-# device-stm32f7xx
+# device/stm32f7xx
 
 This folder includes the stm32f7xx definitions.
 

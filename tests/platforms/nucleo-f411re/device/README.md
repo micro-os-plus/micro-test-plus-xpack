@@ -1,4 +1,4 @@
-# device-stm32411xe
+# device/stm32f411xe
 
 This folder includes the stm32f411xe definitions.
 

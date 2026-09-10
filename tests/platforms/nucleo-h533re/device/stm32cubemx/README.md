@@ -46,16 +46,16 @@ The infinite loop must be commented out:
 
 ## CMake
 
-## `startup_stm32f767xx.s`
+## `startup_stm32h533xx.s`
 
-The assembly file `startup_stm32f767xx.s` must **not** be included in the build,
+The assembly file `startup_stm32h533xx.s` must **not** be included in the build,
 the functionality being provided by the portable `startup-xpack` package.
 
-## `vectors-stm32f767xx.c`
+## `vectors-stm32h533xx.c`
 
 The file was added to replace the STM assemply file.
 
 ## Memory map
 
-The memory map is copied from `STM32F767xx_FLASH.ld` into
+The memory map is copied from `STM32h533xx_FLASH.ld` into
 `device/linker-scripts/mem.ld`
