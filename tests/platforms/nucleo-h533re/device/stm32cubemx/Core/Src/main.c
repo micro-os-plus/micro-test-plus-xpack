@@ -61,26 +61,8 @@ static void MPU_Config(void);
 // Trick to avoid clashing with the µOS++ specific main().
 // Do not call it directly, since it configures again the clocks.
 // Copy relevant calls to os_startup_initialize_hardware().
-int cubemx_main(void);
-#define main cubemx_main
-
-// ----------------------------------------------------------------------------
-
-void
-micro_os_plus_startup_initialise_hardware (void);
-
-void
-micro_os_plus_startup_initialise_hardware (void)
-{
-  MPU_Config();
-  HAL_Init();
-  SystemClock_Config();
-  MX_GPIO_Init();
-  MX_ICACHE_Init();
-
-  BSP_LED_Init(LED_GREEN);
-  BSP_LED_On(LED_GREEN);
-}
+int micro_os_plus_startup_initialise_hardware_hook (void);
+#define main micro_os_plus_startup_initialise_hardware_hook
 
 /* USER CODE END 0 */
 
@@ -133,13 +115,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+  // while (1)
+  //   {
 
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+  //   }
+  return 0;
   /* USER CODE END 3 */
 }
 
