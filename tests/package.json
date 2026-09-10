@@ -53,7 +53,7 @@
       "@xpack-dev-tools/ninja-build": "1.13.1-1.1"
     },
     "properties": {
-      "buildVerbose": "true",
+      "buildVerbose": "false",
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
       "commandClearBuildFolder": "node scripts/clear-build-folder.mjs {{ properties.buildFolderRelativePathPosix }}",
@@ -1708,7 +1708,7 @@
         },
         "actions": {
           "link-dependencies": [
-            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup --config {{ configuration.name }}"
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
           ]
         }
       },
@@ -1739,7 +1739,7 @@
         },
         "actions": {
           "link-dependencies": [
-            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup --config {{ configuration.name }}"
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
           ]
         }
       },
@@ -1770,7 +1770,7 @@
         },
         "actions": {
           "link-dependencies": [
-            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup --config {{ configuration.name }}"
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
           ]
         }
       },
