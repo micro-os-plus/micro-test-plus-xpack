@@ -34,6 +34,8 @@ The `mps2-an500` machine defines:
 - ZBT SSRAM 2&3, 0x2000_0000 – 0x203F_FFFF, 2+2 MiB, Real RAM
 - PSRAM, 0x6000_0000 - 0x60FF_FFFF, 16 MB, External PSRAM (slow, but large)
 
+Semihosting heap base: 0x60000000, limit: 0x61000000, stack base: 0x61000000, limit: 0x60000000
+
 ## Memory range
 
 The applications are built for the following memory ranges:

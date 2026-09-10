@@ -32,6 +32,8 @@ The `mps2-an505` machine defines:
 - SSRAM 2&3, 0x2800_0000 – 0x283F_FFFF, 2+2 MiB, Additional on-chip SRAM
 - System RAM, 0x8000_0000 - 0x80FF_FFFF, 16 MB, The largest contiguous block of RAM
 
+Semihosting heap base: 0x80000000, limit: 0x81000000, stack base: 0x81000000, limit: 0x80000000.
+
 ## Memory range
 
 The applications are built for the following memory ranges:

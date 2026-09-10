@@ -35,6 +35,8 @@ The `mps2-an385` machine defines:
 - ZBT SSRAM 2&3, 0x2000_0000 – 0x203F_FFFF, 2+2 MiB, Real RAM
 - PSRAM, 0x2100_0000–0x21FF_FFFF, 16 MiB
 
+Semihosting heap base: 0x21000000, limit: 0x22000000, stack base: 0x22000000, limit: 0x21000000.
+
 ## Memory range
 
 The applications are built for the following memory ranges:

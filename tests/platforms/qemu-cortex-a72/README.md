@@ -30,6 +30,8 @@ The source files to be added to user projects are:
 - the RAM region 0x40000000 (1 GiB), with the actual value as given by 
 `-m`, 128 MiB if mising.
 
+Semihosting heap base: 0x44000000, limit: 0x48000000, stack base: 0x48000000, limit: 0x44000000.
+
 ## Memory range
 
 The applications are built for the following memory range:
