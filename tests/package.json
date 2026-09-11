@@ -204,8 +204,8 @@
         "@micro-os-plus/devices-qemu-aarch32": "^5.0.1",
         "@micro-os-plus/architecture-aarch64": "^4.1.0",
         "@micro-os-plus/devices-qemu-aarch64": "^5.0.1",
-        "@micro-os-plus/semihosting": "^10.0.0",
-        "@micro-os-plus/startup": "^7.1.0",
+        "@micro-os-plus/semihosting": "^10.1.0",
+        "@micro-os-plus/startup": "^7.2.0",
         "@xpack-3rd-party/arm-cmsis-core": "5.4.0-7",
         "@xpack-dev-tools/qemu-arm": "9.2.4-1.1",
         "@xpack-dev-tools/qemu-riscv": "9.2.4-1.1",
@@ -616,6 +616,22 @@
       "clean-nucleo-f411re-cmake-gcc": [
         "xpm run clean --config nucleo-f411re-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-f411re-cmake-gcc-release --ignore-errors"
+      ],
+      "install-nucleo-f411re-cubemx-startup-cmake-gcc": [
+        "xpm install --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
+        "xpm install --config nucleo-f411re-cubemx-startup-cmake-gcc-release"
+      ],
+      "test-nucleo-f411re-cubemx-startup-cmake-gcc": [
+        "xpm run setup --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
+        "xpm run build --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
+        "xpm run test --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f411re-cubemx-startup-cmake-gcc-release",
+        "xpm run build --config nucleo-f411re-cubemx-startup-cmake-gcc-release",
+        "xpm run test --config nucleo-f411re-cubemx-startup-cmake-gcc-release"
+      ],
+      "clean-nucleo-f411re-cubemx-startup-cmake-gcc": [
+        "xpm run clean --config nucleo-f411re-cubemx-startup-cmake-gcc-debug --ignore-errors",
+        "xpm run clean --config nucleo-f411re-cubemx-startup-cmake-gcc-release --ignore-errors"
       ],
       "install-nucleo-f767zi-cmake-gcc": [
         "xpm install --config nucleo-f767zi-cmake-gcc-debug",
@@ -1715,6 +1731,37 @@
       "nucleo-f411re-cmake-gcc-release": {
         "inherits": [
           "nucleo-f411re-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
+      "nucleo-f411re-cubemx-startup-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "cortexm-actions",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "devDependencies": {
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}"
+        },
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "nucleo-f411re-cubemx-startup",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "nucleo-f411re-cubemx-startup-cmake-gcc-release": {
+        "inherits": [
+          "nucleo-f411re-cubemx-startup-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel"
