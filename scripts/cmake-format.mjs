@@ -35,6 +35,7 @@ const files = globSync(['**/CMakeLists.txt', '**/*.cmake'], {
     '**/build/**',
     '**/xpacks/**',
     '**/node_modules/**',
+    '**/stm32cubemx/**',
   ],
 })
 
