@@ -49,6 +49,7 @@ function (add_openocd_test)
   endforeach ()
 
   # TODO: update when upstream openocd is updated to support the H5 family.
+  # https://review.openocd.org/c/openocd/+/9913
   add_test (
     NAME "${arg_NAME}"
     COMMAND

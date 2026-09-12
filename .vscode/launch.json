@@ -6,6 +6,8 @@
   // https://github.com/Marus/cortex-debug/blob/master/debug_attributes.md
   "version": "0.2.0",
   "configurations": [
+    // ------------------------------------------------------------------------
+    // Native.
     {
       "name": "(lldb) native-cmake-debug sample-test",
       "type": "cppdbg",
@@ -48,45 +50,301 @@
       "externalConsole": false,
       "MIMode": "gdb"
     },
+    // ------------------------------------------------------------------------
+    // Pico.
     {
-      "name": "(arm-none-eabi-gdb) qemu-mps2-an386-cmake-debug sample-test",
-      "cwd": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug",
-      "executable": "platform/sample-test.elf",
+      "name": "Pico Debug empty-test",
+      "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/empty-test.elf",
       "request": "launch",
       "type": "cortex-debug",
-      "servertype": "qemu",
-      "serverpath": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug/xpacks/.bin/qemu-system-arm",
-      "serverArgs": [
-        "-d",
-        "unimp,guest_errors",
-        "--semihosting-config",
-        "arg=sample-test,arg=one,arg=two"
+      "servertype": "openocd",
+      "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
       ],
-      "machine": "mps2-an386",
-      "cpu": "cortex-m4",
-      "objdumpPath": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug/xpacks/.bin/arm-none-eabi-objdump",
-      "gdbPath": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug/xpacks/.bin/arm-none-eabi-gdb",
-      "runToEntryPoint": "_start"
+      "device": "${command:raspberry-pi-pico.getChipUppercase}",
+      "configFiles": [
+        "interface/cmsis-dap.cfg",
+        "target/${command:raspberry-pi-pico.getTarget}.cfg"
+      ],
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline empty-test one two --output-file empty-test.tap",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/empty-test.elf\"",
+        "break _reset_handler",
+        "break crt0.S:547"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    // ------------------------------------------------------------------------
+    // Nucleo.
+    {
+      "name": "nucleo-f411re-cmake-gcc-debug suite-test",
+      "cwd": "${workspaceRoot}/tests/build/nucleo-f411re-cmake-gcc-debug",
+      "executable": "${workspaceRoot}/tests/build/nucleo-f411re-cmake-gcc-debug/suite-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "serverpath": "${workspaceRoot}/tests/build/nucleo-f411re-cmake-gcc-debug/xpacks/.bin/openocd",
+      "gdbPath": "${workspaceRoot}/tests/build/nucleo-f411re-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "STM32F411RE",
+      "configFiles": [
+        "interface/stlink-dap.cfg",
+        "target/stm32f4x.cfg"
+      ],
+      "svdFile": "${workspaceRoot}/tests/platforms/nucleo-f411re/device/STM32F411.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline suite-test one two --output-file suite-test.tap",
+        "load \"${workspaceRoot}/tests/build/nucleo-f411re-cmake-gcc-debug/suite-test.elf\"",
+        // "break Reset_Handler"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
     },
     {
-      "name": "(arm-none-eabi-gdb) qemu-mps2-an386-meson-debug sample-test",
-      "cwd": "${workspaceRoot}/build/qemu-mps2-an386-meson-debug",
-      "executable": "meson-out/sample-test.elf",
+      "name": "nucleo-f767zi-cmake-gcc-debug suite-test",
+      "cwd": "${workspaceRoot}/tests/build/nucleo-f767zi-cmake-gcc-debug",
+      "executable": "${workspaceRoot}/tests/build/nucleo-f767zi-cmake-gcc-debug/suite-test.elf",
       "request": "launch",
       "type": "cortex-debug",
-      "servertype": "qemu",
-      "serverpath": "${workspaceRoot}/build/qemu-mps2-an386-meson-debug/xpacks/.bin/qemu-system-arm",
-      "serverArgs": [
-        "-d",
-        "unimp,guest_errors",
-        "--semihosting-config",
-        "arg=sample-test,arg=one,arg=two"
+      "servertype": "openocd",
+      "serverpath": "${workspaceRoot}/tests/build/nucleo-f767zi-cmake-gcc-debug/xpacks/.bin/openocd",
+      "gdbPath": "${workspaceRoot}/tests/build/nucleo-f767zi-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
       ],
-      "machine": "mps2-an386",
+      "device": "STM32F767ZI",
+      "configFiles": [
+        "interface/stlink-dap.cfg",
+        "target/stm32f7x.cfg"
+      ],
+      "svdFile": "${workspaceRoot}/tests/platforms/nucleo-f767zi/device/STM32F767.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline suite-test one two --output-file suite-test.tap",
+        "load \"${workspaceRoot}/tests/build/nucleo-f767zi-cmake-gcc-debug/suite-test.elf\"",
+        // "break Reset_Handler"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    {
+      "name": "nucleo-h533re-cmake-gcc-debug suite-test",
+      "cwd": "${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug",
+      // "cwd": "/Users/ilg/.local/st-openocd/openocd/scripts",
+      "executable": "${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug/suite-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      // https://review.openocd.org/c/openocd/+/9913
+      "serverpath": "/Users/ilg/.local/st-openocd/bin/openocd",
+      "gdbPath": "${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "STM32H533RE",
+      "configFiles": [
+        "interface/stlink-dap.cfg",
+        "target/stm32h5x.cfg"
+      ],
+      "serverArgs": [
+        "-s",
+        "/Users/ilg/.local/st-openocd/openocd/scripts"
+      ],
+      "svdFile": "${workspaceRoot}/tests/platforms/nucleo-h533re/device/STM32H533.svd",
+      "runToEntryPoint": "main",
+      // Halt (do not reset) before loading: the flash may currently hold a
+      // blank/stale image whose vector table is invalid, and resetting into
+      // it faults immediately (CPU lockup, "clearing lockup after double
+      // fault"). Only reset once the valid ELF has been flashed.
+      "overrideLaunchCommands": [
+        "monitor halt",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline suite-test one two --output-file suite-test.tap",
+        "load \"${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug/suite-test.elf\"",
+        "monitor reset init",
+        "break Reset_Handler"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    {
+      "name": "nucleo-h533re-cmake-gcc-debug unit-test",
+      "cwd": "${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug",
+      // "cwd": "/Users/ilg/.local/st-openocd/openocd/scripts",
+      "executable": "${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug/unit-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      // https://review.openocd.org/c/openocd/+/9913
+      "serverpath": "/Users/ilg/.local/st-openocd/bin/openocd",
+      "gdbPath": "${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "STM32H533RE",
+      "configFiles": [
+        "interface/stlink-dap.cfg",
+        "target/stm32h5x.cfg"
+      ],
+      "serverArgs": [
+        "-s",
+        "/Users/ilg/.local/st-openocd/openocd/scripts"
+      ],
+      // "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
+      "runToEntryPoint": "main",
+      // Halt (do not reset) before loading: the flash may currently hold a
+      // blank/stale image whose vector table is invalid, and resetting into
+      // it faults immediately (CPU lockup, "clearing lockup after double
+      // fault"). Only reset once the valid ELF has been flashed.
+      "overrideLaunchCommands": [
+        "monitor halt",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline unit-test one two --output-file unit-test.tap",
+        "load \"${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug/unit-test.elf\"",
+        "monitor reset init",
+        "break Reset_Handler"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    // ------------------------------------------------------------------------
+    // QEMU.    
+    {
+      "name": "qemu-cortex-m4f-cmake-gcc-debug suite-test",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "qemu",
+      "cwd": "${workspaceRoot}/tests/build/qemu-cortex-m4f-cmake-gcc-debug",
+      "executable": "${workspaceRoot}/tests/build/qemu-cortex-m4f-cmake-gcc-debug/suite-test.elf",
+      "serverpath": "${workspaceRoot}/tests/build/qemu-cortex-m4f-cmake-gcc-debug/xpacks/.bin/qemu-system-arm",
       "cpu": "cortex-m4",
-      "objdumpPath": "${workspaceRoot}/build/qemu-mps2-an386-meson-debug/xpacks/.bin/arm-none-eabi-objdump",
-      "gdbPath": "${workspaceRoot}/build/qemu-mps2-an386-meson-debug/xpacks/.bin/arm-none-eabi-gdb",
-      "runToEntryPoint": "_start"
+      "machine": "mps2-an386",
+      "serverArgs": [
+        "--nographic",
+        "-d",
+        "unimp,guest_errors,cpu_reset",
+        "--semihosting-config",
+        "enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap"
+      ],
+      "gdbPath": "${workspaceRoot}/tests/build/qemu-cortex-m4f-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "runToEntryPoint": "main",
+      "postLaunchCommands": [
+        "break _debugger_entry_point",
+        "break Reset_Handler",
+        "break _start"
+      ]
+    },
+    {
+      "name": "qemu-cortex-m33-cmake-gcc-debug suite-test",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "qemu",
+      "cwd": "${workspaceRoot}/tests/build/qemu-cortex-m33-cmake-gcc-debug",
+      "executable": "${workspaceRoot}/tests/build/qemu-cortex-m33-cmake-gcc-debug/suite-test.elf",
+      "serverpath": "${workspaceRoot}/tests/build/qemu-cortex-m33-cmake-gcc-debug/xpacks/.bin/qemu-system-arm",
+      "cpu": "cortex-m33",
+      "machine": "mps2-an505",
+      "serverArgs": [
+        "--nographic",
+        "-d",
+        "unimp,guest_errors,cpu_reset",
+        "--semihosting-config",
+        "enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap"
+      ],
+      "gdbPath": "${workspaceRoot}/tests/build/qemu-cortex-m33-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "runToEntryPoint": "main",
+      "postLaunchCommands": [
+        "break _debugger_entry_point",
+        "break Reset_Handler",
+        "break _start",
+      ]
+    },
+    {
+      "name": "qemu-aarch32-a15-cmake-gcc-debug suite-test",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "qemu",
+      "cwd": "${workspaceRoot}/tests/build/qemu-aarch32-a15-cmake-gcc-debug",
+      "executable": "${workspaceRoot}/tests/build/qemu-aarch32-a15-cmake-gcc-debug/suite-test.elf",
+      "serverpath": "${workspaceRoot}/tests/build/qemu-aarch32-a15-cmake-gcc-debug/xpacks/.bin/qemu-system-arm",
+      "cpu": "cortex-a15",
+      "machine": "virt",
+      "serverArgs": [
+        "-smp",
+        "1",
+        "--nographic",
+        "-d",
+        "unimp,guest_errors,cpu_reset",
+        "--semihosting-config",
+        "enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap"
+      ],
+      "gdbPath": "${workspaceRoot}/tests/build/qemu-aarch32-a15-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "showDevDebugOutput": "raw",
+      "runToEntryPoint": "main",
+      "postLaunchCommands": [
+        // "break _debugger_entry_point",
+        "break Reset_Handler",
+        "break _start"
+      ]
+    },
+    {
+      "name": "qemu-aarch64-a72-cmake-gcc-debug suite-test",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "qemu",
+      "cwd": "${workspaceRoot}/tests/build/qemu-aarch64-a72-cmake-gcc-debug",
+      "executable": "${workspaceRoot}/tests/build/qemu-aarch64-a72-cmake-gcc-debug/suite-test.elf",
+      "serverpath": "${workspaceRoot}/tests/build/qemu-aarch64-a72-cmake-gcc-debug/xpacks/.bin/qemu-system-aarch64",
+      "cpu": "cortex-a72",
+      "machine": "virt",
+      "serverArgs": [
+        "-smp",
+        "1",
+        "--nographic",
+        "-d",
+        "unimp,guest_errors,cpu_reset",
+        "--semihosting-config",
+        "enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap"
+      ],
+      "gdbPath": "${workspaceRoot}/tests/build/qemu-aarch64-a72-cmake-gcc-debug/xpacks/.bin/aarch64-none-elf-gdb",
+      "showDevDebugOutput": "raw",
+      "runToEntryPoint": "main",
+      "postLaunchCommands": [
+        // "break _debugger_entry_point",
+        "break Reset_Handler",
+        "break _start"
+      ]
     }
   ]
 }
