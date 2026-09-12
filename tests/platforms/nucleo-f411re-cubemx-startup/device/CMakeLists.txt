@@ -15,8 +15,6 @@ message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/device/'...")
 
 # -----------------------------------------------------------------------------
 
-# add_subdirectory ("stm32cubemx")
-
 set (SAVED_CMAKE_PROJECT_NAME "${CMAKE_PROJECT_NAME}")
 set (CMAKE_PROJECT_NAME "dummy")
 add_executable (${CMAKE_PROJECT_NAME} EXCLUDE_FROM_ALL)
@@ -48,6 +46,7 @@ get_directory_property (
 add_library (stm32cubemx-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
+
 target_include_directories (stm32cubemx-interface INTERFACE ${MX_Include_Dirs})
 
 target_sources (stm32cubemx-interface INTERFACE ${MX_Application_Src})
@@ -60,6 +59,7 @@ target_link_libraries (stm32cubemx-interface INTERFACE # Possibly m.
 xpack_display_target_lists (stm32cubemx-interface)
 
 # -----------------------------------------------------------------------------
+
 # Aliases.
 add_library (micro-os-plus::stm32cubemx ALIAS stm32cubemx-interface)
 message (VERBOSE "> micro-os-plus::stm32cubemx -> stm32cubemx-interface")
@@ -70,6 +70,7 @@ message (VERBOSE "> micro-os-plus::stm32cubemx -> stm32cubemx-interface")
 add_library (stm32cubemx-drivers-objects-library OBJECT EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
+
 target_include_directories (
   stm32cubemx-drivers-objects-library PUBLIC ${MX_Include_Dirs}
 )
@@ -104,6 +105,7 @@ target_link_libraries (stm32cubemx-drivers-objects-library PRIVATE)
 xpack_display_target_lists (stm32cubemx-drivers-objects-library)
 
 # -----------------------------------------------------------------------------
+
 # Aliases.
 add_library (
   micro-os-plus::stm32cubemx-drivers-objects-library ALIAS
@@ -120,6 +122,7 @@ message (
 add_library (device-stm32f411xe-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
+
 target_include_directories (device-stm32f411xe-interface INTERFACE "include")
 
 target_sources (device-stm32f411xe-interface INTERFACE)
@@ -180,6 +183,7 @@ target_link_libraries (
 xpack_display_target_lists (device-stm32f411xe-interface)
 
 # -----------------------------------------------------------------------------
+
 # Aliases.
 add_library (micro-os-plus::device ALIAS device-stm32f411xe-interface)
 message (VERBOSE "> micro-os-plus::device -> device-stm32f411xe-interface")

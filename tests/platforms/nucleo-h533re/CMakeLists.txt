@@ -28,6 +28,7 @@ add_subdirectory ("device")
 add_library (platform-nucleo-f411re-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
+
 target_include_directories (
   platform-nucleo-f411re-interface INTERFACE "include"
 )
@@ -114,6 +115,7 @@ target_link_libraries (
 xpack_display_target_lists (platform-nucleo-f411re-interface)
 
 # -----------------------------------------------------------------------------
+
 # Aliases.
 add_library (micro-os-plus::platform ALIAS platform-nucleo-f411re-interface)
 message (VERBOSE
