@@ -1,6 +1,6 @@
 /*
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
- * Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
+ * Copyright (c) 2023-2026 Liviu Ionescu. All rights reserved.
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose is hereby granted, under the terms of the MIT license.
@@ -11,31 +11,18 @@
 
 // ----------------------------------------------------------------------------
 
-#include "pico/runtime.h"
-#include "micro-os-plus/startup.h"
-#include "micro-os-plus/diag/trace.h"
+#if defined(OS_USE_OS_APP_CONFIG_H)
+#include <cmsis-plus/os-app-config.h>
+#endif
 
-// ----------------------------------------------------------------------------
+#include <cmsis-plus/cortexm/exception-handlers.h>
+#include <cmsis-plus/rtos/os-c-decls.h>
 
-extern "C"
-
+void __attribute__ ((section (".after_vectors")))
+SysTick_Handler (void)
 {
-  void
-  runtime_init (void)
-  {
-    micro_os_plus_startup_run_main ();
-  }
-
-#if defined(NDEBUG)
-  void
-  hard_assertion_failure (void)
-  {
-    micro_os_plus_trace_puts ("Hard assert");
-    while (1)
-      {
-      }
-  }
-#endif // defined(NDEBUG)
+  // Call the system timer handler to keep track of time.
+  os_systick_handler ();
 }
 
 // ----------------------------------------------------------------------------

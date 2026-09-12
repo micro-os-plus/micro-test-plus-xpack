@@ -677,6 +677,10 @@
         "xpm run build --config raspberry-pi-pico-cmake-gcc-release",
         "xpm run test --config raspberry-pi-pico-cmake-gcc-release"
       ],
+      "clean-raspberry-pi-pico-cmake-gcc": [
+        "xpm run clean --config raspberry-pi-pico-cmake-gcc-debug",
+        "xpm run clean --config raspberry-pi-pico-cmake-gcc-release"
+      ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
@@ -1846,7 +1850,7 @@
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
-          "@xpack-3rd-party/raspberrypi-pico-sdk": "github:xpack-3rd-party/raspberrypi-pico-sdk-xpack#v1.5.1-1"
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "github:xpack-3rd-party/raspberrypi-pico-sdk-xpack#v2.3.0-3"
         },
         "actions": {
           "link-dependencies": [

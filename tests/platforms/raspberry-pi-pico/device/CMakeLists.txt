@@ -53,6 +53,7 @@ target_compile_options (
 
 target_link_libraries (
   device-raspberry-pi-rp2040-interface INTERFACE cmsis_core pico_standard_link
+                                                 pico_crt0 pico_runtime_init
 )
 
 xpack_display_target_lists (device-raspberry-pi-rp2040-interface)

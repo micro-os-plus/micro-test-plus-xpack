@@ -11,31 +11,33 @@
 
 // ----------------------------------------------------------------------------
 
-#include "pico/runtime.h"
-#include "micro-os-plus/startup.h"
-#include "micro-os-plus/diag/trace.h"
+#include "micro-os-plus/device.h"
 
 // ----------------------------------------------------------------------------
 
-extern "C"
+#if defined(MICRO_OS_PLUS_STARTUP_ENABLED)
 
+#define SYSTEM_CLOCK (16000000UL)
+uint32_t SystemCoreClock = SYSTEM_CLOCK;
+
+// ----------------------------------------------------------------------------
+
+void
+SystemInit (void)
 {
-  void
-  runtime_init (void)
-  {
-    micro_os_plus_startup_run_main ();
-  }
-
-#if defined(NDEBUG)
-  void
-  hard_assertion_failure (void)
-  {
-    micro_os_plus_trace_puts ("Hard assert");
-    while (1)
-      {
-      }
-  }
-#endif // defined(NDEBUG)
+  // FPU settings
+#if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
+  // set CP10 and CP11 Full Access
+  SCB->CPACR |= ((3UL << 10 * 2) | (3UL << 11 * 2));
+#endif // (__FPU_PRESENT == 1) && (__FPU_USED == 1)
 }
+
+void
+SystemCoreClockUpdate (void)
+{
+  SystemCoreClock = SYSTEM_CLOCK;
+}
+
+#endif // defined(MICRO_OS_PLUS_STARTUP_ENABLED)
 
 // ----------------------------------------------------------------------------

@@ -51,9 +51,9 @@
       "MIMode": "gdb"
     },
     // ------------------------------------------------------------------------
-    // Pico.
+    // Raspberry Pi Pico.
     {
-      "name": "Pico Debug empty-test",
+      "name": "raspberry-pi-pico-cmake-gcc-debug empty-test",
       "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
       "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/empty-test.elf",
       "request": "launch",
@@ -80,14 +80,82 @@
         "monitor arm semihosting_cmdline empty-test one two --output-file empty-test.tap",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/empty-test.elf\"",
         "break _reset_handler",
-        "break crt0.S:547"
+        // "break crt0.S:547"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    {
+      "name": "raspberry-pi-pico-cmake-gcc-debug minimal-test",
+      "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/minimal-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "${command:raspberry-pi-pico.getChipUppercase}",
+      "configFiles": [
+        "interface/cmsis-dap.cfg",
+        "target/${command:raspberry-pi-pico.getTarget}.cfg"
+      ],
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline minimal-test one two --output-file minimal-test.tap",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/minimal-test.elf\"",
+        "break _reset_handler",
+        // "break crt0.S:547"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    {
+      "name": "raspberry-pi-pico-cmake-gcc-debug sample-test",
+      "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/sample-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "${command:raspberry-pi-pico.getChipUppercase}",
+      "configFiles": [
+        "interface/cmsis-dap.cfg",
+        "target/${command:raspberry-pi-pico.getTarget}.cfg"
+      ],
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline sample-test one two --output-file sample-test.tap",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/sample-test.elf\"",
+        "break _reset_handler",
+        // "break crt0.S:547"
       ],
       "openOCDLaunchCommands": [
         "adapter speed 5000"
       ]
     },
     // ------------------------------------------------------------------------
-    // Nucleo.
+    // STM Nucleo boards.
     {
       "name": "nucleo-f411re-cmake-gcc-debug suite-test",
       "cwd": "${workspaceRoot}/tests/build/nucleo-f411re-cmake-gcc-debug",
