@@ -207,6 +207,7 @@
         "@micro-os-plus/semihosting": "^10.1.0",
         "@micro-os-plus/startup": "^7.2.0",
         "@xpack-3rd-party/arm-cmsis-core": "5.4.0-7",
+        "@xpack-3rd-party/raspberrypi-pico-sdk": "github:xpack-3rd-party/raspberrypi-pico-sdk-xpack#v2.3.0-3",
         "@xpack-dev-tools/qemu-arm": "9.2.4-1.1",
         "@xpack-dev-tools/qemu-riscv": "9.2.4-1.1",
         "@xpack-dev-tools/openocd": "0.12.0-7.1"
@@ -680,6 +681,38 @@
       "clean-raspberry-pi-pico-cmake-gcc": [
         "xpm run clean --config raspberry-pi-pico-cmake-gcc-debug",
         "xpm run clean --config raspberry-pi-pico-cmake-gcc-release"
+      ],
+      "install-raspberry-pi-pico2-arm-cmake-gcc": [
+        "xpm install --config raspberry-pi-pico2-arm-cmake-gcc-debug",
+        "xpm install --config raspberry-pi-pico2-arm-cmake-gcc-release"
+      ],
+      "test-raspberry-pi-pico2-arm-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico2-arm-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico2-arm-cmake-gcc-debug",
+        "xpm run test --config raspberry-pi-pico2-arm-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico2-arm-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico2-arm-cmake-gcc-release",
+        "xpm run test --config raspberry-pi-pico2-arm-cmake-gcc-release"
+      ],
+      "clean-raspberry-pi-pico2-arm-cmake-gcc": [
+        "xpm run clean --config raspberry-pi-pico2-arm-cmake-gcc-debug",
+        "xpm run clean --config raspberry-pi-pico2-arm-cmake-gcc-release"
+      ],
+      "install-raspberry-pi-pico2-riscv-cmake-gcc": [
+        "xpm install --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
+        "xpm install --config raspberry-pi-pico2-riscv-cmake-gcc-release"
+      ],
+      "test-raspberry-pi-pico2-riscv-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
+        "xpm run test --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico2-riscv-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico2-riscv-cmake-gcc-release",
+        "xpm run test --config raspberry-pi-pico2-riscv-cmake-gcc-release"
+      ],
+      "clean-raspberry-pi-pico2-riscv-cmake-gcc": [
+        "xpm run clean --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
+        "xpm run clean --config raspberry-pi-pico2-riscv-cmake-gcc-release"
       ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
@@ -1850,7 +1883,7 @@
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
-          "@xpack-3rd-party/raspberrypi-pico-sdk": "github:xpack-3rd-party/raspberrypi-pico-sdk-xpack#v2.3.0-3"
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
         },
         "actions": {
           "link-dependencies": [
@@ -1861,6 +1894,71 @@
       "raspberry-pi-pico-cmake-gcc-release": {
         "inherits": [
           "raspberry-pi-pico-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
+      "raspberry-pi-pico2-arm-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "cortexm-actions",
+          "arm-cmsis-core-dependencies",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "raspberry-pi-pico2-arm",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "devDependencies": {
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/startup --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "raspberry-pi-pico2-arm-cmake-gcc-release": {
+        "inherits": [
+          "raspberry-pi-pico2-arm-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
+      "raspberry-pi-pico2-riscv-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "riscv-actions",
+          "bare-metal-dependencies",
+          "cross-riscv-none-elf-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "raspberry-pi-pico2-riscv",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake"
+        },
+        "devDependencies": {
+          "@micro-os-plus/architecture-riscv": "{{ properties.dependencies-releases['@micro-os-plus/architecture-riscv'] }}",
+          "@xpack-3rd-party/raspberrypi-pico-riscv-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/startup --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "raspberry-pi-pico2-riscv-cmake-gcc-release": {
+        "inherits": [
+          "raspberry-pi-pico2-riscv-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel"
