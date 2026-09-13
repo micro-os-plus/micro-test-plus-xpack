@@ -36,8 +36,9 @@ set (
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup"
 )
 
+# -----------------------------------------------------------------------------
+
 set (PICO_BOARD pico)
-set (PICO_PLATFORM rp2040)
 set (PICO_CXX_ENABLE_EXCEPTIONS 1)
 
 # -----------------------------------------------------------------------------

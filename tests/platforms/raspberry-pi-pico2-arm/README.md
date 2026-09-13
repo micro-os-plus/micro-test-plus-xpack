@@ -5,10 +5,10 @@ Raspberry Pi Pico 2 board (RP2350).
 
 ## Prerequisites
 
-- [Raspberry Pi Pico 2 or Pico 2 H](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html)
+- [Raspberry Pi Pico 2 or Pico 2 with headers](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#pico2)
 - [Raspberry Pi Debug Probe](https://www.raspberrypi.com/products/debug-probe/)
 
-The **Pico 2 H** is a newer version, with a small 3 pin connector soldered,
+The **Pico 2 with headers** is a newer version, with a small 3 pin connector soldered,
 which can be directly connected to the Debug Probe, without any
 custom wiring.
 
@@ -30,17 +30,16 @@ The following folders should be passed to the compiler during the build:
 
 ## Source files
 
-Unlike the RP2040 `raspberry-pi-pico` platform, there is no locally
-committed boot stage 2 assembly source here.
+None.
 
 ## Memory range
 
 The applications are built for the following memory range:
 
 - FLASH: 0x1000_0000-0x103F_FFFF (4 MB)
-- RAM: 0x2000_0000-0x2003_FFFF (512 KB main SRAM)
-- SCRATCH: 0x2008_0000 0x2004_1FFF (two 4 KB banks)
-- stack: 0x2004_2000 (top of `SCRATCH_Y`)
+- RAM: 0x2000_0000-0x2007_FFFF (512 KB main SRAM)
+- SCRATCH: 0x2008_0000 0x2008_1FFF (two 4 KB banks)
+- stack: 0x2008_2000 (top of `SCRATCH_Y`)
 
 ## Eclipse OpenOCD launcher
 

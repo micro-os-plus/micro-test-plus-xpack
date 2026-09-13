@@ -30,9 +30,7 @@ The following folders should be passed to the compiler during the build:
 
 ## Source files
 
-The source files to be added to user projects are:
-
-- `src/bs2_default_padded_checksummed.S`
+None.
 
 ## Memory range
 
@@ -40,7 +38,8 @@ The applications are built for the following memory range:
 
 - FLASH: 0x1000_0000-0x001F_FFFF (2 MB)
 - RAM: 0x2000_0000-0x2003_FFFF (256 KB)
-- stack: 0x2004_0000
+- SCRATCH: 0x2004_0000 0x2004_0FFF (4 KB)
+- stack: 0x2004_1000 (top of `SCRATCH`)
 
 ## Eclipse OpenOCD launcher
 
