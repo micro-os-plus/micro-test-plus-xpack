@@ -60,6 +60,14 @@ This is the **µTest++ Testing Framework** project, part of
 When adding new source files, place them in the appropriate `src` or `include`
 folder, and add corresponding entries in the top CMake and Meson configurations.
 
+Avoid running `find /` commands that search the entire filesystem, as this 
+always timeouts.
+
+## Tools binaries
+
+The tools binaries required for the project are located in the `xpacks/.bin`
+folder within the build folders and the project root.
+
 ## Testing
 
 After making changes, run in a terminal:
