@@ -36,6 +36,14 @@ prepend_compile_common_private_options (stm32cubemx-drivers-objects-library)
 set (XPACK_OPENOCD_INTERFACE "stlink.cfg")
 set (XPACK_OPENOCD_TARGET "stm32f4x.cfg")
 
+# Running successive OpenOCD/CMSIS-DAP sessions back-to-back has been observed
+# to intermittently fail the "verify" step of the next session with USB
+# communication errors (e.g. "error reading USB data", "Pipe error", "CMSIS-DAP
+# command SWD_Sequence failed"), most likely because the probe/host USB stack
+# has not yet settled after the previous OpenOCD process released the device.
+# Insert a short settle delay between consecutive OpenOCD tests as a workaround.
+set (XPACK_OPENOCD_USB_SETTLE_DELAY_SECONDS "2")
+
 function (add_openocd_test)
 
   cmake_parse_arguments (PARSE_ARGV 0 arg "" "NAME" "COMMAND")
@@ -48,6 +56,24 @@ function (add_openocd_test)
     string (APPEND semihosting_cmdline " ${a}")
   endforeach ()
 
+  # If a previous OpenOCD test was already registered, insert a settle delay
+  # test between it and this one, and chain the dependencies so ctest runs them
+  # strictly in order: previous test -> delay -> this test, regardless of how
+  # ctest would otherwise schedule them.
+  set (openocd_depends "")
+  if (DEFINED XPACK_LAST_OPENOCD_TEST_NAME)
+    set (settle_test_name "${arg_NAME}-usb-settle-delay")
+    add_test (NAME "${settle_test_name}"
+              COMMAND "${CMAKE_COMMAND}" -E sleep
+                      "${XPACK_OPENOCD_USB_SETTLE_DELAY_SECONDS}"
+    )
+    set_tests_properties (
+      "${settle_test_name}" PROPERTIES DEPENDS
+                                       "${XPACK_LAST_OPENOCD_TEST_NAME}"
+    )
+    set (openocd_depends "${settle_test_name}")
+  endif ()
+
   add_test (
     NAME "${arg_NAME}"
     COMMAND
@@ -57,6 +83,16 @@ function (add_openocd_test)
       -f "interface/${XPACK_OPENOCD_INTERFACE}" -c "transport select swd" -f
       "target/${XPACK_OPENOCD_TARGET}" -c "program ${name}.elf verify" -c
       "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset"
+  )
+
+  if (openocd_depends)
+    set_tests_properties ("${arg_NAME}" PROPERTIES DEPENDS "${openocd_depends}")
+  endif ()
+
+  set (
+    XPACK_LAST_OPENOCD_TEST_NAME
+    "${arg_NAME}"
+    PARENT_SCOPE
   )
 
 endfunction ()
