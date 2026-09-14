@@ -1984,7 +1984,7 @@
         },
         "actions": {
           "link-dependencies": [
-            "xpm link @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/startup --config {{ configuration.name }}"
+            "xpm link @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
           ]
         }
       },
@@ -2017,7 +2017,7 @@
         },
         "actions": {
           "link-dependencies": [
-            "xpm link @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/startup --config {{ configuration.name }}"
+            "xpm link @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
           ]
         }
       },
@@ -2049,7 +2049,7 @@
         },
         "actions": {
           "link-dependencies": [
-            "xpm link @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/startup --config {{ configuration.name }}"
+            "xpm link @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
           ]
         }
       },
