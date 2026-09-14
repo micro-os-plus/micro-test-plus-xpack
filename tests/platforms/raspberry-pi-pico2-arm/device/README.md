@@ -29,17 +29,20 @@ None of the higher-level SDK libraries (`pico_stdlib`,
 ### Overridden functions
 
 Because `pico_clib_interface` and the SDK's default `runtime_init()`
-implementation are not linked, two functions normally provided by the
-SDK are supplied locally instead:
+implementation are not linked, `pico_crt0`'s empty weak `runtime_init()`
+stub (`bx lr`) is the one that runs; two functions normally provided by
+the SDK are supplied locally instead:
 
-- [src/runtime-init.cpp](src/runtime-init.cpp) — replaces the weak
-  `runtime_init()` from `pico_runtime_init`; instead of running the
-  SDK's own staged `runtime_init()` dispatcher and calling `main()`,
-  it calls `runtime_init_per_core_enable_coprocessors()` (otherwise
-  the FPU coprocessor is never enabled, and the first floating-point
-  instruction, e.g. in `printf`, faults with a `UsageFault`/`NOCP`),
-  then forwards to `micro_os_plus_startup_run_main()`, handing control
-  to the µOS++ startup sequence.
+- [src/wraps.c](src/wraps.c) — uses `--wrap` to intercept `main()` and
+  `__libc_init_array()`. `__wrap_main()` first calls
+  `runtime_init_per_core_enable_coprocessors()` directly (otherwise,
+  since the SDK's own `runtime_init()` that would normally call it is
+  not linked, the FPU coprocessor is never enabled, and the first
+  floating-point instruction, e.g. in `printf`, faults with a
+  `UsageFault`/`NOCP`), then forwards to
+  `micro_os_plus_startup_run_main()`, handing control to the µOS++
+  startup sequence. `__wrap__libc_init_array()` is silenced, since
+  static initialisers are run by the µOS++ startup code instead.
 - [src/_sbrk.c](src/_sbrk.c) — a copy (cosmetic formatting changes
   only) of the `_sbrk()` implementation from the SDK's
   `pico_clib_interface`, reused here because that component is not

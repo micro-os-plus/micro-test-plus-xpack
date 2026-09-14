@@ -12,40 +12,44 @@
 // ----------------------------------------------------------------------------
 
 #include "pico/runtime.h"
-#include "pico/runtime_init.h"
+#include "micro-os-plus/device.h"
 #include "micro-os-plus/startup.h"
 #include "micro-os-plus/diag/trace.h"
 
 // ----------------------------------------------------------------------------
 
-extern "C"
-
+void
+__wrap_main (void)
 {
-  void
-  runtime_init (void)
-  {
-    // This custom runtime_init() replaces the SDK's own staged
-    // dispatcher (the PICO_RUNTIME_INIT_FUNC_* chain in
-    // pico_runtime_init/runtime_init.c), so none of those steps run
-    // unless called explicitly here. In particular, the FPU coprocessor
-    // (CP10) is never enabled otherwise, which faults with a UsageFault
-    // (CFSR NOCP) the moment code executes a floating-point instruction,
-    // e.g. formatting a float/double in printf.
-    runtime_init_per_core_enable_coprocessors ();
+  // Call the µOS++ startup code to do some more initialisations,
+  // prepare the semihosting environment, run static initializers,
+  // then main() with argc/argv parameters and exit(code).
+  // Note: requires MICRO_OS_PLUS_STARTUP_CALL_REAL_MAIN_ENABLED.
+  micro_os_plus_startup_run_main ();
 
-    micro_os_plus_startup_run_main ();
-  }
+  while (1)
+    {
+      __WFI (); // Wait For Interrupt
+    }
+}
+
+void
+__wrap__libc_init_array (void)
+{
+  // Silence this call, the static initializers are later called in the
+  // micro_os_plus_startup_run_main() right before calling main().
+}
 
 #if defined(NDEBUG)
-  void
-  hard_assertion_failure (void)
-  {
-    micro_os_plus_trace_puts ("Hard assert");
-    while (1)
-      {
-      }
-  }
-#endif // defined(NDEBUG)
+void
+hard_assertion_failure (void)
+{
+  micro_os_plus_trace_puts ("Hard assert");
+  while (1)
+    {
+      __WFI (); // Wait For Interrupt
+    }
 }
+#endif // defined(NDEBUG)
 
 // ----------------------------------------------------------------------------

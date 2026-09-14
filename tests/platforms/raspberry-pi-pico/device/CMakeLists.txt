@@ -24,8 +24,7 @@ target_include_directories (
 )
 
 target_sources (
-  device-raspberry-pi-rp2040-interface INTERFACE "src/_sbrk.c"
-                                                 "src/runtime-init.cpp"
+  device-raspberry-pi-rp2040-interface INTERFACE "src/_sbrk.c" "src/wraps.c"
 )
 
 target_compile_definitions (device-raspberry-pi-rp2040-interface INTERFACE)
@@ -49,6 +48,12 @@ target_compile_options (
             -Wno-aggregate-return
             -Wno-packed
             -Wno-missing-declarations
+)
+
+target_link_options (
+  device-raspberry-pi-rp2040-interface INTERFACE
+  #
+  -Wl,--wrap=main -Wl,--wrap=__libc_init_array
 )
 
 target_link_libraries (

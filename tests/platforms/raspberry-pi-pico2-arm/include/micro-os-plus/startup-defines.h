@@ -43,9 +43,15 @@
 
 // The low level heap allocator, in sync with the startup and the linker
 // scripts.
-// #if !defined(MICRO_OS_PLUS_STARTUP_SBRK_ENABLED)
+#if !defined(MICRO_OS_PLUS_STARTUP_SBRK_ENABLED)
 // #define MICRO_OS_PLUS_STARTUP_SBRK_ENABLED
-// #endif // !defined(MICRO_OS_PLUS_STARTUP_SBRK_ENABLED)
+#endif // !defined(MICRO_OS_PLUS_STARTUP_SBRK_ENABLED)
+
+// When the main is wrapped, call the real main function, otherwise main
+// will loop.
+#if !defined(MICRO_OS_PLUS_STARTUP_CALL_REAL_MAIN_ENABLED)
+#define MICRO_OS_PLUS_STARTUP_CALL_REAL_MAIN_ENABLED
+#endif // !defined(MICRO_OS_PLUS_STARTUP_CALL_REAL_MAIN_ENABLED)
 
 // ----------------------------------------------------------------------------
 
