@@ -73,8 +73,8 @@ int __wrap_main(void)
 
 void __wrap___libc_init_array(void)
 {
-  // Silence this call, the static initializers will be called in the 
-  // µOS++ startup code.
+  // Silence this call, the static initializers are later called in the
+  // micro_os_plus_startup_run_main() right before calling main().
 }
 
 // ----------------------------------------------------------------------------
