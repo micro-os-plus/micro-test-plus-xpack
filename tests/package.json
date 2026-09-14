@@ -283,7 +283,8 @@
       "actions-setup-build-test-for-config": "{% for build-type in properties.build-types %}{% for test-action in properties.test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
       "actions-test-for-configs": "{% for config in configs %}{{ properties.action-test-for-config }}{{ os.EOL }}{% endfor %}",
       "action-test-for-config": "xpm run test-{{ config }}",
-      "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}"
+      "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}",
+      "actions-clear-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clear --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}"
     },
     "actions": {
       "xcdl-export": [
@@ -317,6 +318,9 @@
       "clean": [
         "{{ properties.compute-default-configs }}{{ properties.actions-clean-for-configs }}"
       ],
+      "clear": [
+        "{{ properties.compute-default-configs }}{{ properties.actions-clear-for-configs }}"
+      ],
       "install-ci": [
         "xpm install",
         "{{ properties.compute-ci-configs }}{{ properties.actions-install-for-configs }}"
@@ -331,6 +335,9 @@
       "clean-ci": [
         "{{ properties.compute-ci-configs }}{{ properties.actions-clean-for-configs }}"
       ],
+      "clear-ci": [
+        "{{ properties.compute-ci-configs }}{{ properties.actions-clear-for-configs }}"
+      ],
       "install-selected": [
         "xpm install",
         "{{ properties.compute-selected-configs }}{{ properties.actions-install-for-configs }}"
@@ -344,6 +351,9 @@
       ],
       "clean-selected": [
         "{{ properties.compute-selected-configs }}{{ properties.actions-clean-for-configs }}"
+      ],
+      "clear-selected": [
+        "{{ properties.compute-selected-configs }}{{ properties.actions-clear-for-configs }}"
       ],
       "install-latest": [
         "xpm install",
@@ -365,6 +375,9 @@
       "clean-latest": [
         "{{ properties.compute-latest-configs }}{{ properties.actions-clean-for-configs }}"
       ],
+      "clear-latest": [
+        "{{ properties.compute-latest-configs }}{{ properties.actions-clear-for-configs }}"
+      ],
       "install-all": [
         "xpm install",
         "{{ properties.compute-all-configs }}{{ properties.actions-install-for-configs }}"
@@ -384,6 +397,9 @@
       ],
       "clean-all": [
         "{{ properties.compute-all-configs }}{{ properties.actions-clean-for-configs }}"
+      ],
+      "clear-all": [
+        "{{ properties.compute-all-configs }}{{ properties.actions-clear-for-configs }}"
       ],
       "test-native-{{ matrix.builder }}-all": {
         "matrix": {
@@ -618,6 +634,10 @@
         "xpm run clean --config nucleo-f411re-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-f411re-cmake-gcc-release --ignore-errors"
       ],
+      "clear-nucleo-f411re-cmake-gcc": [
+        "xpm run clear --config nucleo-f411re-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-f411re-cmake-gcc-release --ignore-errors"
+      ],
       "install-nucleo-f411re-cubemx-startup-cmake-gcc": [
         "xpm install --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
         "xpm install --config nucleo-f411re-cubemx-startup-cmake-gcc-release"
@@ -633,6 +653,10 @@
       "clean-nucleo-f411re-cubemx-startup-cmake-gcc": [
         "xpm run clean --config nucleo-f411re-cubemx-startup-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-f411re-cubemx-startup-cmake-gcc-release --ignore-errors"
+      ],
+      "clear-nucleo-f411re-cubemx-startup-cmake-gcc": [
+        "xpm run clear --config nucleo-f411re-cubemx-startup-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-f411re-cubemx-startup-cmake-gcc-release --ignore-errors"
       ],
       "install-nucleo-f767zi-cmake-gcc": [
         "xpm install --config nucleo-f767zi-cmake-gcc-debug",
@@ -650,6 +674,10 @@
         "xpm run clean --config nucleo-f767zi-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-f767zi-cmake-gcc-release --ignore-errors"
       ],
+      "clear-nucleo-f767zi-cmake-gcc": [
+        "xpm run clear --config nucleo-f767zi-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-f767zi-cmake-gcc-release --ignore-errors"
+      ],
       "install-nucleo-h533re-cmake-gcc": [
         "xpm install --config nucleo-h533re-cmake-gcc-debug",
         "xpm install --config nucleo-h533re-cmake-gcc-release"
@@ -666,9 +694,10 @@
         "xpm run clean --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-h533re-cmake-gcc-release --ignore-errors"
       ],
-      "install-raspberry-pi-pico-cmake-gcc": [
-        "xpm install --config raspberry-pi-pico-cmake-gcc-debug",
-        "xpm install --config raspberry-pi-pico-cmake-gcc-release"
+      "clear-nucleo-h533re-cmake-gcc": [
+        "xpm run clear --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-h533re-cmake-gcc-release --ignore-errors"
+      ],
       ],
       "test-raspberry-pi-pico-cmake-gcc": [
         "xpm run setup --config raspberry-pi-pico-cmake-gcc-debug",
