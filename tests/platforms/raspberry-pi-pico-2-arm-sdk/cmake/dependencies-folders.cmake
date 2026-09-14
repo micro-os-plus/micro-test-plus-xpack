@@ -21,6 +21,13 @@ message (
 )
 
 # -----------------------------------------------------------------------------
+
+# All the dependencies folders will be included in `tests-main.cmake` with
+# `add_subdirectory()`.
+
+# The SOURCE_DIR is the `tests` folder; the BINARY_DIR is the `build/<config>`
+# folder.
+
 set (
   xpack_dependencies_folders
   #

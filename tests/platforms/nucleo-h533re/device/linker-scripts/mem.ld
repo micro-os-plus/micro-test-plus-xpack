@@ -1,6 +1,6 @@
 /* 
  * The STM32F411xe memory map.
- * The memory sections are defined in the `architecture-cortexm` package.
+ * The memory sections are defined in the `startup` package.
  */
 MEMORY
 {
