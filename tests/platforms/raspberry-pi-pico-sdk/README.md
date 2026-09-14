@@ -1,14 +1,15 @@
-# platforms/raspberry-pi-pico2-arm
+# platforms/raspberry-pi-pico-sdk
 
-Support files for building Cortex-M33 tests to run on the
-Raspberry Pi Pico 2 board (RP2350).
+Support files for building Cortex-M0+ tests to run on the
+Raspberry Pi Pico board, with the 
+[Pico SDK](https://www.raspberrypi.com/documentation/pico-sdk/).
 
 ## Prerequisites
 
-- [Raspberry Pi Pico 2 or Pico 2 with headers](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#pico2)
+- [Raspberry Pi Pico or Pico H](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html)
 - [Raspberry Pi Debug Probe](https://www.raspberrypi.com/products/debug-probe/)
 
-The **Pico 2 with headers** is a newer version, with a small 3 pin connector soldered,
+The **Pico H** is a newer version, with a small 3 pin connector soldered,
 which can be directly connected to the Debug Probe, without any
 custom wiring.
 
@@ -36,10 +37,10 @@ None.
 
 The applications are built for the following memory range:
 
-- FLASH: 0x1000_0000-0x103F_FFFF (4 MB)
-- RAM: 0x2000_0000-0x2007_FFFF (512 KB main SRAM)
-- SCRATCH: 0x2008_0000 0x2008_1FFF (two 4 KB banks)
-- stack: 0x2008_2000 (top of `SCRATCH_Y`)
+- FLASH: 0x1000_0000-0x001F_FFFF (2 MB)
+- RAM: 0x2000_0000-0x2003_FFFF (256 KB)
+- SCRATCH: 0x2004_0000 0x2004_0FFF (4 KB)
+- stack: 0x2004_1000 (top of `SCRATCH`)
 
 ## Eclipse OpenOCD launcher
 
@@ -52,7 +53,7 @@ Executable path: absolute path to `openocd`
 Config options:
 `-f "interface/cmsis-dap.cfg"`
 `-c "adapter speed 5000"`
-`-f "target/rp2350.cfg"`
+`-f "target/rp2040.cfg"`
 GDB Client Setup
 Executable path: absolute path to `arm-none-eabi-gdb`
 Commands:
@@ -75,7 +76,7 @@ openocd \
       -c "set USE_CORE 0" \
       -f "interface/cmsis-dap.cfg" \
       -c "adapter speed 5000" \
-      -f "target/rp2350.cfg" \
+      -f "target/rp2040.cfg" \
       -c "program test.elf verify" \
       -c "arm semihosting enable" \
       -c "arm semihosting_cmdline test one two" \

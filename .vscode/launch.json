@@ -53,24 +53,24 @@
     // ------------------------------------------------------------------------
     // Raspberry Pi Pico.
     {
-      "name": "raspberry-pi-pico-cmake-gcc-debug empty-test",
+      "name": "raspberry-pi-pico-sdk-cmake-gcc-debug empty-test",
       "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
-      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/empty-test.elf",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/empty-test.elf",
       "request": "launch",
       "type": "cortex-debug",
       "servertype": "openocd",
       "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
-      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
       "debuggerArgs": [
         "-ex",
         "set debug-file-directory /debug"
       ],
-      "device": "${command:raspberry-pi-pico.getChipUppercase}",
+      "device": "RP2040",
       "configFiles": [
         "interface/cmsis-dap.cfg",
-        "target/${command:raspberry-pi-pico.getTarget}.cfg"
+        "target/rp2040.cfg"
       ],
-      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2040/hardware_regs/RP2350.svd",
       "runToEntryPoint": "main",
       // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
       // Also works fine for flash binaries
@@ -78,7 +78,7 @@
         "monitor reset init",
         "monitor arm semihosting enable",
         "monitor arm semihosting_cmdline empty-test one two --output-file empty-test.tap",
-        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/empty-test.elf\"",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/empty-test.elf\"",
         "break _reset_handler",
         // "break crt0.S:547"
       ],
@@ -87,24 +87,24 @@
       ]
     },
     {
-      "name": "raspberry-pi-pico-cmake-gcc-debug minimal-test",
+      "name": "raspberry-pi-pico-sdk-cmake-gcc-debug minimal-test",
       "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
-      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/minimal-test.elf",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/minimal-test.elf",
       "request": "launch",
       "type": "cortex-debug",
       "servertype": "openocd",
       "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
-      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
       "debuggerArgs": [
         "-ex",
         "set debug-file-directory /debug"
       ],
-      "device": "${command:raspberry-pi-pico.getChipUppercase}",
+      "device": "RP2040",
       "configFiles": [
         "interface/cmsis-dap.cfg",
-        "target/${command:raspberry-pi-pico.getTarget}.cfg"
+        "target/rp2040.cfg"
       ],
-      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2040/hardware_regs/RP2350.svd",
       "runToEntryPoint": "main",
       // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
       // Also works fine for flash binaries
@@ -112,7 +112,7 @@
         "monitor reset init",
         "monitor arm semihosting enable",
         "monitor arm semihosting_cmdline minimal-test one two --output-file minimal-test.tap",
-        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/minimal-test.elf\"",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/minimal-test.elf\"",
         "break _reset_handler",
         // "break crt0.S:547"
       ],
@@ -121,24 +121,24 @@
       ]
     },
     {
-      "name": "raspberry-pi-pico-cmake-gcc-debug sample-test",
+      "name": "raspberry-pi-pico-sdk-cmake-gcc-debug sample-test",
       "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
-      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/sample-test.elf",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/sample-test.elf",
       "request": "launch",
       "type": "cortex-debug",
       "servertype": "openocd",
       "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
-      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
       "debuggerArgs": [
         "-ex",
         "set debug-file-directory /debug"
       ],
-      "device": "${command:raspberry-pi-pico.getChipUppercase}",
+      "device": "RP2040",
       "configFiles": [
         "interface/cmsis-dap.cfg",
-        "target/${command:raspberry-pi-pico.getTarget}.cfg"
+        "target/rp2040.cfg"
       ],
-      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2040/hardware_regs/RP2350.svd",
       "runToEntryPoint": "main",
       // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
       // Also works fine for flash binaries
@@ -146,7 +146,7 @@
         "monitor reset init",
         "monitor arm semihosting enable",
         "monitor arm semihosting_cmdline sample-test one two --output-file sample-test.tap",
-        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/sample-test.elf\"",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/sample-test.elf\"",
         "break _reset_handler",
         // "break crt0.S:547"
       ],
@@ -155,24 +155,24 @@
       ]
     },
     {
-      "name": "raspberry-pi-pico2-arm-cmake-gcc-debug sample-test",
+      "name": "raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug sample-test",
       "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
-      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico2-arm-cmake-gcc-debug/sample-test.elf",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug/sample-test.elf",
       "request": "launch",
       "type": "cortex-debug",
       "servertype": "openocd",
       "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
-      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico2-arm-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
       "debuggerArgs": [
         "-ex",
         "set debug-file-directory /debug"
       ],
-      "device": "${command:raspberry-pi-pico.getChipUppercase}",
+      "device": "RP2350",
       "configFiles": [
         "interface/cmsis-dap.cfg",
         "target/rp2350.cfg"
       ],
-      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2350/hardware_regs/RP2350.svd",
       "runToEntryPoint": "main",
       // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
       // Also works fine for flash binaries
@@ -180,7 +180,7 @@
         "monitor reset init",
         "monitor arm semihosting enable",
         "monitor arm semihosting_cmdline sample-test one two --output-file sample-test.tap",
-        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico2-arm-cmake-gcc-debug/sample-test.elf\"",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug/sample-test.elf\"",
         "break _reset_handler",
         // "break crt0.S:547"
       ],
@@ -322,7 +322,7 @@
         "-s",
         "/Users/ilg/.local/st-openocd/openocd/scripts"
       ],
-      // "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
+      // "svdFile": "x.svd",
       "runToEntryPoint": "main",
       // Halt (do not reset) before loading: the flash may currently hold a
       // blank/stale image whose vector table is invalid, and resetting into

@@ -698,50 +698,65 @@
         "xpm run clear --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
         "xpm run clear --config nucleo-h533re-cmake-gcc-release --ignore-errors"
       ],
+      "install-raspberry-pi-pico-sdk-cmake-gcc": [
+        "xpm install --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm install --config raspberry-pi-pico-sdk-cmake-gcc-release"
       ],
-      "test-raspberry-pi-pico-cmake-gcc": [
-        "xpm run setup --config raspberry-pi-pico-cmake-gcc-debug",
-        "xpm run build --config raspberry-pi-pico-cmake-gcc-debug",
-        "xpm run test --config raspberry-pi-pico-cmake-gcc-debug",
-        "xpm run setup --config raspberry-pi-pico-cmake-gcc-release",
-        "xpm run build --config raspberry-pi-pico-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-pico-cmake-gcc-release"
+      "test-raspberry-pi-pico-sdk-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm run test --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico-sdk-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico-sdk-cmake-gcc-release",
+        "xpm run test --config raspberry-pi-pico-sdk-cmake-gcc-release"
       ],
-      "clean-raspberry-pi-pico-cmake-gcc": [
-        "xpm run clean --config raspberry-pi-pico-cmake-gcc-debug",
-        "xpm run clean --config raspberry-pi-pico-cmake-gcc-release"
+      "clean-raspberry-pi-pico-sdk-cmake-gcc": [
+        "xpm run clean --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm run clean --config raspberry-pi-pico-sdk-cmake-gcc-release"
       ],
-      "install-raspberry-pi-pico2-arm-cmake-gcc": [
-        "xpm install --config raspberry-pi-pico2-arm-cmake-gcc-debug",
-        "xpm install --config raspberry-pi-pico2-arm-cmake-gcc-release"
+      "clear-raspberry-pi-pico-sdk-cmake-gcc": [
+        "xpm run clear --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm run clear --config raspberry-pi-pico-sdk-cmake-gcc-release"
       ],
-      "test-raspberry-pi-pico2-arm-cmake-gcc": [
-        "xpm run setup --config raspberry-pi-pico2-arm-cmake-gcc-debug",
-        "xpm run build --config raspberry-pi-pico2-arm-cmake-gcc-debug",
-        "xpm run test --config raspberry-pi-pico2-arm-cmake-gcc-debug",
-        "xpm run setup --config raspberry-pi-pico2-arm-cmake-gcc-release",
-        "xpm run build --config raspberry-pi-pico2-arm-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-pico2-arm-cmake-gcc-release"
+      "install-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
+        "xpm install --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm install --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
       ],
-      "clean-raspberry-pi-pico2-arm-cmake-gcc": [
-        "xpm run clean --config raspberry-pi-pico2-arm-cmake-gcc-debug",
-        "xpm run clean --config raspberry-pi-pico2-arm-cmake-gcc-release"
+      "test-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm run test --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release",
+        "xpm run test --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
       ],
-      "install-raspberry-pi-pico2-riscv-cmake-gcc": [
-        "xpm install --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
-        "xpm install --config raspberry-pi-pico2-riscv-cmake-gcc-release"
+      "clean-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
+        "xpm run clean --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm run clean --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
       ],
-      "test-raspberry-pi-pico2-riscv-cmake-gcc": [
-        "xpm run setup --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
-        "xpm run build --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
-        "xpm run test --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
-        "xpm run setup --config raspberry-pi-pico2-riscv-cmake-gcc-release",
-        "xpm run build --config raspberry-pi-pico2-riscv-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-pico2-riscv-cmake-gcc-release"
+      "clear-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
+        "xpm run clear --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm run clear --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
       ],
-      "clean-raspberry-pi-pico2-riscv-cmake-gcc": [
-        "xpm run clean --config raspberry-pi-pico2-riscv-cmake-gcc-debug",
-        "xpm run clean --config raspberry-pi-pico2-riscv-cmake-gcc-release"
+      "install-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
+        "xpm install --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
+        "xpm install --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
+      ],
+      "test-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
+        "xpm run test --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release",
+        "xpm run test --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
+      ],
+      "clean-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
+        "xpm run clean --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
+        "xpm run clean --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
+      ],
+      "clear-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
+        "xpm run clear --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
+        "xpm run clear --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
       ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
@@ -1895,7 +1910,7 @@
           "buildType": "MinSizeRel"
         }
       },
-      "raspberry-pi-pico-cmake-gcc-debug": {
+      "raspberry-pi-pico-sdk-cmake-gcc-debug": {
         "inherits": [
           "short-win-paths-properties",
           "cmake-cross-actions",
@@ -1907,7 +1922,7 @@
         ],
         "properties": {
           "buildType": "Debug",
-          "platformName": "raspberry-pi-pico",
+          "platformName": "raspberry-pi-pico-sdk",
           "toolchainFileName": "arm-none-eabi-gcc.cmake"
         },
         "devDependencies": {
@@ -1920,15 +1935,15 @@
           ]
         }
       },
-      "raspberry-pi-pico-cmake-gcc-release": {
+      "raspberry-pi-pico-sdk-cmake-gcc-release": {
         "inherits": [
-          "raspberry-pi-pico-cmake-gcc-debug"
+          "raspberry-pi-pico-sdk-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel"
         }
       },
-      "raspberry-pi-pico2-arm-cmake-gcc-debug": {
+      "raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug": {
         "inherits": [
           "short-win-paths-properties",
           "cmake-cross-actions",
@@ -1940,7 +1955,7 @@
         ],
         "properties": {
           "buildType": "Debug",
-          "platformName": "raspberry-pi-pico2-arm",
+          "platformName": "raspberry-pi-pico-2-arm-sdk",
           "toolchainFileName": "arm-none-eabi-gcc.cmake"
         },
         "devDependencies": {
@@ -1953,15 +1968,15 @@
           ]
         }
       },
-      "raspberry-pi-pico2-arm-cmake-gcc-release": {
+      "raspberry-pi-pico-2-arm-sdk-cmake-gcc-release": {
         "inherits": [
-          "raspberry-pi-pico2-arm-cmake-gcc-debug"
+          "raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel"
         }
       },
-      "raspberry-pi-pico2-riscv-cmake-gcc-debug": {
+      "raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug": {
         "inherits": [
           "short-win-paths-properties",
           "cmake-cross-actions",
@@ -1972,7 +1987,7 @@
         ],
         "properties": {
           "buildType": "Debug",
-          "platformName": "raspberry-pi-pico2-riscv",
+          "platformName": "raspberry-pi-pico-2-riscv-sdk",
           "toolchainFileName": "riscv-none-elf-gcc.cmake"
         },
         "devDependencies": {
@@ -1985,9 +2000,9 @@
           ]
         }
       },
-      "raspberry-pi-pico2-riscv-cmake-gcc-release": {
+      "raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release": {
         "inherits": [
-          "raspberry-pi-pico2-riscv-cmake-gcc-debug"
+          "raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel"
