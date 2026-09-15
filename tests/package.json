@@ -59,7 +59,7 @@
       "commandClearBuildFolder": "node scripts/clear-build-folder.mjs {{ properties.buildFolderRelativePathPosix }}",
       "commandCMakeGenerateNative": "{{ properties.commandCMakeRefresh }} --log-level=VERBOSE",
       "commandCMakeGenerateNativeWithToolchain": "{{ properties.commandCMakeGenerateNative }} -D CMAKE_TOOLCHAIN_FILE=cmake/toolchains/{{ properties.toolchainFileName }}",
-      "commandCMakeGenerateCross": "{{ properties.commandCMakeRefresh }} --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=cmake/toolchains/{{ properties.toolchainFileName }}",
+      "commandCMakeGenerateCross": "{{ properties.commandCMakeRefresh }} --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE={% if os.platform == 'win32' %}%CD%/cmake/toolchains/{{ properties.toolchainFileName }}{% else %}$(pwd)/cmake/toolchains/{{ properties.toolchainFileName }}{% endif %}",
       "commandCMakeRefresh": "cmake -S . -B {{ properties.buildFolderRelativePathPosix }} -G Ninja{% if os.platform == 'win32' %} -D CMAKE_MAKE_PROGRAM=ninja.cmd{% endif %} -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
       "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePathPosix }}{% if properties.buildVerbose == 'true' %} --verbose{% endif %}",
       "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePathPosix }} --target clean",
@@ -105,6 +105,15 @@
         "qemu-aarch64-a72-meson-gcc",
         "qemu-riscv-rv32imac-cmake-gcc",
         "qemu-riscv-rv32imac-meson-gcc"
+      ],
+      "configs-boards": [
+        "nucleo-f411re",
+        "nucleo-f411re-cubemx-startup",
+        "nucleo-f767zi",
+        "nucleo-h533re",
+        "raspberry-pi-pico",
+        "raspberry-pi-pico-2-arm-sdk",
+        "raspberry-pi-pico-sdk"
       ],
       "$native-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
       "native-gcc-releases": {
@@ -267,6 +276,8 @@
       "compute-latest-cmake-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'cmake' %}{{ properties.add-latest-configs-for-builder }}",
       "compute-latest-meson-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'meson' %}{{ properties.add-latest-configs-for-builder }}",
       "compute-latest-configs": "{% assign configs = '' | split: '' %}{% for builder in properties.builders %}{{ properties.add-latest-configs-for-builder }}{% endfor %}",
+      "add-boards-configs": "{% for board in properties.configs-boards %}{% assign config = board | append: '-cmake-gcc' %}{% assign configs = configs | push: config %}{% endfor %}",
+      "compute-boards-configs": "{% assign configs = '' | split: '' %}{{ properties.add-boards-configs }}",
       "add-native-gcc-versions-to-configs-for-builder": "{% assign native-gcc-versions = properties.native-gcc-versions | split_lines %}{% for version in native-gcc-versions %}{% assign config = 'native-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}",
       "add-native-clang-versions-to-configs-for-builder": "{% assign native-clang-versions = properties.native-clang-versions | split_lines %}{% for version in native-clang-versions %}{% assign config = 'native-' | append: builder | append: '-clang' | append: version %}{% assign configs = configs | push: config %}{% endfor %}",
       "add-qemu-cortexm-variants-versions-to-configs-for-builder": "{% assign arm-none-eabi-gcc-versions = properties.arm-none-eabi-gcc-versions | split_lines %}{% for variant in properties.qemu-cortexm-variants %}{% for version in arm-none-eabi-gcc-versions %}{% assign config = 'qemu-cortex-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}",
@@ -281,8 +292,10 @@
       "actions-link-dependencies-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run link-dependencies --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
       "actions-setup-build-test-for-configs": "{% for config in configs %}{{ properties.actions-setup-build-test-for-config }}{% endfor %}",
       "actions-setup-build-test-for-config": "{% for build-type in properties.build-types %}{% for test-action in properties.test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
+      "actions-build-for-configs": "{% for config in configs %}{{ properties.action-build-for-config }}{{ os.EOL }}{% endfor %}",
       "actions-test-for-configs": "{% for config in configs %}{{ properties.action-test-for-config }}{{ os.EOL }}{% endfor %}",
       "action-test-for-config": "xpm run test-{{ config }}",
+      "action-build-for-config": "xpm run build-{{ config }}",
       "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}",
       "actions-clear-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clear --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}"
     },
@@ -294,6 +307,9 @@
         "node scripts/convert-startup-to-vectors.mjs platforms/nucleo-h533re/device/stm32cubemx/startup_stm32h533xx.s platforms/nucleo-h533re/device/src/vectors-stm32h533xx.c",
         "node scripts/convert-startup-to-vectors.mjs platforms/nucleo-f411re/device/stm32cubemx/startup_stm32f411xe.s platforms/nucleo-f411re/device/src/vectors-stm32f411xe.c",
         "node scripts/convert-startup-to-vectors.mjs platforms/nucleo-f767zi/device/stm32cubemx/startup_stm32f767xx.s platforms/nucleo-f767zi/device/src/vectors-stm32f767xx.c"
+      ],
+      "clear": [
+        "{{ properties.compute-default-configs }}{{ properties.actions-clear-for-configs }}"
       ],
       "install": [
         "xpm install",
@@ -318,8 +334,8 @@
       "clean": [
         "{{ properties.compute-default-configs }}{{ properties.actions-clean-for-configs }}"
       ],
-      "clear": [
-        "{{ properties.compute-default-configs }}{{ properties.actions-clear-for-configs }}"
+      "clear-ci": [
+        "{{ properties.compute-ci-configs }}{{ properties.actions-clear-for-configs }}"
       ],
       "install-ci": [
         "xpm install",
@@ -335,8 +351,8 @@
       "clean-ci": [
         "{{ properties.compute-ci-configs }}{{ properties.actions-clean-for-configs }}"
       ],
-      "clear-ci": [
-        "{{ properties.compute-ci-configs }}{{ properties.actions-clear-for-configs }}"
+      "clear-selected": [
+        "{{ properties.compute-selected-configs }}{{ properties.actions-clear-for-configs }}"
       ],
       "install-selected": [
         "xpm install",
@@ -352,8 +368,8 @@
       "clean-selected": [
         "{{ properties.compute-selected-configs }}{{ properties.actions-clean-for-configs }}"
       ],
-      "clear-selected": [
-        "{{ properties.compute-selected-configs }}{{ properties.actions-clear-for-configs }}"
+      "clear-latest": [
+        "{{ properties.compute-latest-configs }}{{ properties.actions-clear-for-configs }}"
       ],
       "install-latest": [
         "xpm install",
@@ -375,8 +391,25 @@
       "clean-latest": [
         "{{ properties.compute-latest-configs }}{{ properties.actions-clean-for-configs }}"
       ],
-      "clear-latest": [
-        "{{ properties.compute-latest-configs }}{{ properties.actions-clear-for-configs }}"
+      "clear-boards": [
+        "{{ properties.compute-boards-configs }}{{ properties.actions-clear-for-configs }}"
+      ],
+      "install-boards": [
+        "xpm install",
+        "{{ properties.compute-boards-configs }}{{ properties.actions-install-for-configs }}"
+      ],
+      "link-dependencies-boards": [
+        "xpm run link-dependencies",
+        "{{ properties.compute-boards-configs }}{{ properties.actions-link-dependencies-for-configs }}"
+      ],
+      "build-boards": [
+        "{{ properties.compute-boards-configs }}{{ properties.actions-build-for-configs }}"
+      ],
+      "clean-boards": [
+        "{{ properties.compute-boards-configs }}{{ properties.actions-clean-for-configs }}"
+      ],
+      "clear-all": [
+        "{{ properties.compute-all-configs }}{{ properties.actions-clear-for-configs }}"
       ],
       "install-all": [
         "xpm install",
@@ -397,9 +430,6 @@
       ],
       "clean-all": [
         "{{ properties.compute-all-configs }}{{ properties.actions-clean-for-configs }}"
-      ],
-      "clear-all": [
-        "{{ properties.compute-all-configs }}{{ properties.actions-clear-for-configs }}"
       ],
       "test-native-{{ matrix.builder }}-all": {
         "matrix": {
@@ -618,9 +648,19 @@
           "{% assign config = 'qemu-riscv-' | append: matrix.qemu-riscv-variant | append: '-' | append: matrix.builder | append: '-gcc' | append: matrix.riscv-none-elf-gcc-version %}{{ properties.actions-setup-build-test-for-config }}"
         ]
       },
+      "clear-nucleo-f411re-cmake-gcc": [
+        "xpm run clear --config nucleo-f411re-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-f411re-cmake-gcc-release --ignore-errors"
+      ],
       "install-nucleo-f411re-cmake-gcc": [
         "xpm install --config nucleo-f411re-cmake-gcc-debug",
         "xpm install --config nucleo-f411re-cmake-gcc-release"
+      ],
+      "build-nucleo-f411re-cmake-gcc": [
+        "xpm run setup --config nucleo-f411re-cmake-gcc-debug",
+        "xpm run build --config nucleo-f411re-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f411re-cmake-gcc-release",
+        "xpm run build --config nucleo-f411re-cmake-gcc-release"
       ],
       "test-nucleo-f411re-cmake-gcc": [
         "xpm run setup --config nucleo-f411re-cmake-gcc-debug",
@@ -634,13 +674,19 @@
         "xpm run clean --config nucleo-f411re-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-f411re-cmake-gcc-release --ignore-errors"
       ],
-      "clear-nucleo-f411re-cmake-gcc": [
-        "xpm run clear --config nucleo-f411re-cmake-gcc-debug --ignore-errors",
-        "xpm run clear --config nucleo-f411re-cmake-gcc-release --ignore-errors"
+      "clear-nucleo-f411re-cubemx-startup-cmake-gcc": [
+        "xpm run clear --config nucleo-f411re-cubemx-startup-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-f411re-cubemx-startup-cmake-gcc-release --ignore-errors"
       ],
       "install-nucleo-f411re-cubemx-startup-cmake-gcc": [
         "xpm install --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
         "xpm install --config nucleo-f411re-cubemx-startup-cmake-gcc-release"
+      ],
+      "build-nucleo-f411re-cubemx-startup-cmake-gcc": [
+        "xpm run setup --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
+        "xpm run build --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f411re-cubemx-startup-cmake-gcc-release",
+        "xpm run build --config nucleo-f411re-cubemx-startup-cmake-gcc-release"
       ],
       "test-nucleo-f411re-cubemx-startup-cmake-gcc": [
         "xpm run setup --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
@@ -654,13 +700,19 @@
         "xpm run clean --config nucleo-f411re-cubemx-startup-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-f411re-cubemx-startup-cmake-gcc-release --ignore-errors"
       ],
-      "clear-nucleo-f411re-cubemx-startup-cmake-gcc": [
-        "xpm run clear --config nucleo-f411re-cubemx-startup-cmake-gcc-debug --ignore-errors",
-        "xpm run clear --config nucleo-f411re-cubemx-startup-cmake-gcc-release --ignore-errors"
+      "clear-nucleo-f767zi-cmake-gcc": [
+        "xpm run clear --config nucleo-f767zi-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-f767zi-cmake-gcc-release --ignore-errors"
       ],
       "install-nucleo-f767zi-cmake-gcc": [
         "xpm install --config nucleo-f767zi-cmake-gcc-debug",
         "xpm install --config nucleo-f767zi-cmake-gcc-release"
+      ],
+      "build-nucleo-f767zi-cmake-gcc": [
+        "xpm run setup --config nucleo-f767zi-cmake-gcc-debug",
+        "xpm run build --config nucleo-f767zi-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f767zi-cmake-gcc-release",
+        "xpm run build --config nucleo-f767zi-cmake-gcc-release"
       ],
       "test-nucleo-f767zi-cmake-gcc": [
         "xpm run setup --config nucleo-f767zi-cmake-gcc-debug",
@@ -674,13 +726,19 @@
         "xpm run clean --config nucleo-f767zi-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-f767zi-cmake-gcc-release --ignore-errors"
       ],
-      "clear-nucleo-f767zi-cmake-gcc": [
-        "xpm run clear --config nucleo-f767zi-cmake-gcc-debug --ignore-errors",
-        "xpm run clear --config nucleo-f767zi-cmake-gcc-release --ignore-errors"
+      "clear-nucleo-h533re-cmake-gcc": [
+        "xpm run clear --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-h533re-cmake-gcc-release --ignore-errors"
       ],
       "install-nucleo-h533re-cmake-gcc": [
         "xpm install --config nucleo-h533re-cmake-gcc-debug",
         "xpm install --config nucleo-h533re-cmake-gcc-release"
+      ],
+      "build-nucleo-h533re-cmake-gcc": [
+        "xpm run setup --config nucleo-h533re-cmake-gcc-debug",
+        "xpm run build --config nucleo-h533re-cmake-gcc-debug",
+        "xpm run setup --config nucleo-h533re-cmake-gcc-release",
+        "xpm run build --config nucleo-h533re-cmake-gcc-release"
       ],
       "test-nucleo-h533re-cmake-gcc": [
         "xpm run setup --config nucleo-h533re-cmake-gcc-debug",
@@ -694,13 +752,19 @@
         "xpm run clean --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-h533re-cmake-gcc-release --ignore-errors"
       ],
-      "clear-nucleo-h533re-cmake-gcc": [
-        "xpm run clear --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
-        "xpm run clear --config nucleo-h533re-cmake-gcc-release --ignore-errors"
+      "clear-raspberry-pi-pico-cmake-gcc": [
+        "xpm run clear --config raspberry-pi-pico-cmake-gcc-debug",
+        "xpm run clear --config raspberry-pi-pico-cmake-gcc-release"
       ],
       "install-raspberry-pi-pico-cmake-gcc": [
         "xpm install --config raspberry-pi-pico-cmake-gcc-debug",
         "xpm install --config raspberry-pi-pico-cmake-gcc-release"
+      ],
+      "build-raspberry-pi-pico-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico-cmake-gcc-release"
       ],
       "test-raspberry-pi-pico-cmake-gcc": [
         "xpm run setup --config raspberry-pi-pico-cmake-gcc-debug",
@@ -714,13 +778,19 @@
         "xpm run clean --config raspberry-pi-pico-cmake-gcc-debug",
         "xpm run clean --config raspberry-pi-pico-cmake-gcc-release"
       ],
-      "clear-raspberry-pi-pico-cmake-gcc": [
-        "xpm run clear --config raspberry-pi-pico-cmake-gcc-debug",
-        "xpm run clear --config raspberry-pi-pico-cmake-gcc-release"
+      "clear-raspberry-pi-pico-sdk-cmake-gcc": [
+        "xpm run clear --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm run clear --config raspberry-pi-pico-sdk-cmake-gcc-release"
       ],
       "install-raspberry-pi-pico-sdk-cmake-gcc": [
         "xpm install --config raspberry-pi-pico-sdk-cmake-gcc-debug",
         "xpm install --config raspberry-pi-pico-sdk-cmake-gcc-release"
+      ],
+      "build-raspberry-pi-pico-sdk-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico-sdk-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico-sdk-cmake-gcc-release"
       ],
       "test-raspberry-pi-pico-sdk-cmake-gcc": [
         "xpm run setup --config raspberry-pi-pico-sdk-cmake-gcc-debug",
@@ -734,13 +804,19 @@
         "xpm run clean --config raspberry-pi-pico-sdk-cmake-gcc-debug",
         "xpm run clean --config raspberry-pi-pico-sdk-cmake-gcc-release"
       ],
-      "clear-raspberry-pi-pico-sdk-cmake-gcc": [
-        "xpm run clear --config raspberry-pi-pico-sdk-cmake-gcc-debug",
-        "xpm run clear --config raspberry-pi-pico-sdk-cmake-gcc-release"
+      "clear-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
+        "xpm run clear --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm run clear --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
       ],
       "install-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
         "xpm install --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
         "xpm install --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
+      ],
+      "build-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
       ],
       "test-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
         "xpm run setup --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
@@ -754,13 +830,19 @@
         "xpm run clean --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
         "xpm run clean --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
       ],
-      "clear-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
-        "xpm run clear --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
-        "xpm run clear --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
+      "clear-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
+        "xpm run clear --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
+        "xpm run clear --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
       ],
       "install-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
         "xpm install --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
         "xpm install --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
+      ],
+      "build-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
       ],
       "test-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
         "xpm run setup --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
@@ -773,10 +855,6 @@
       "clean-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
         "xpm run clean --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
         "xpm run clean --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
-      ],
-      "clear-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
-        "xpm run clear --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
-        "xpm run clear --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
       ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
