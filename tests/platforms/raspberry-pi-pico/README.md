@@ -1,8 +1,7 @@
-# platforms/raspberry-pi-pico-sdk
+# platforms/raspberry-pi-pico
 
 Support files for building Cortex-M0+ tests to run on the
-Raspberry Pi Pico board, with the 
-[Pico SDK](https://www.raspberrypi.com/documentation/pico-sdk/).
+Raspberry Pi Pico board without the SDK.
 
 ## Prerequisites
 

@@ -35,26 +35,7 @@ target_sources (
 
 target_compile_definitions (device-raspberry-pi-rp2040-interface INTERFACE)
 
-target_compile_options (
-  device-raspberry-pi-rp2040-interface
-  INTERFACE # Turn off many warnings, the Pico SDK throws a lot of them.
-            $<$<COMPILE_LANGUAGE:C>:-Wno-c++-compat>
-            $<$<COMPILE_LANGUAGE:C>:-Wno-old-style-definition>
-            $<$<COMPILE_LANGUAGE:C>:-Wno-missing-prototypes>
-            $<$<COMPILE_LANGUAGE:C>:-Wno-nested-externs>
-            $<$<COMPILE_LANGUAGE:C>:-Wno-bad-function-cast>
-            -Wno-undef
-            -Wno-arith-conversion
-            -Wno-attributes
-            -Wno-padded
-            -Wno-format
-            -Wno-format-y2k
-            -Wno-format-nonliteral
-            -Wno-format-security
-            -Wno-aggregate-return
-            -Wno-packed
-            -Wno-missing-declarations
-)
+target_compile_options (device-raspberry-pi-rp2040-interface INTERFACE)
 
 target_link_options (device-raspberry-pi-rp2040-interface INTERFACE)
 
