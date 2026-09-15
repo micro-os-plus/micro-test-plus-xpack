@@ -24,6 +24,9 @@ message (
 
 # -----------------------------------------------------------------------------
 
+# More libraries in addition to common ones (common-options, diag-trace, 
+# platform and semihosting). Included in `cmake/project-functions.cmake`.
+
 set (xpack_dependencies_libraries #
      micro-os-plus::stm32cubemx-drivers-objects-library
 )

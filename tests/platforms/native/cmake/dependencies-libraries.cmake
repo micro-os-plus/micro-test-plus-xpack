@@ -24,6 +24,9 @@ message (
 
 # -----------------------------------------------------------------------------
 
+# More libraries in addition to common ones (common-options, diag-trace, and
+# platform). Included in `cmake/project-functions.cmake`.
+
 set (xpack_dependencies_libraries # None so far.
 )
 

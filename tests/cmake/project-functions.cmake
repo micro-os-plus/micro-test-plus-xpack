@@ -21,6 +21,9 @@ message (VERBOSE "Including 'tests/cmake/project-functions.cmake'...")
 
 # -----------------------------------------------------------------------------
 
+# `xpack_dependencies_libraries` is defined in each platform
+# `cmake/dependencies-libraries.cmake` file.
+
 function (target_link_native_test_libraries name)
   target_link_libraries (
     ${name}
@@ -43,6 +46,9 @@ function (target_link_native_test_libraries name)
 endfunction ()
 
 # -----------------------------------------------------------------------------
+
+# `xpack_dependencies_libraries` is defined in each platform
+# `cmake/dependencies-libraries.cmake` file.
 
 function (target_link_cross_test_libraries name)
   target_link_libraries (
