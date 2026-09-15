@@ -102,6 +102,7 @@ _local_link_args += [
 
   # Path are relative to the build folder.
   '-Txpacks/@micro-os-plus/devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld',
+  '-Txpacks/@micro-os-plus/startup/linker-scripts/section-interrupt-vectors.ld',
   '-Txpacks/@micro-os-plus/startup/linker-scripts/sections.ld',
 ]
 
