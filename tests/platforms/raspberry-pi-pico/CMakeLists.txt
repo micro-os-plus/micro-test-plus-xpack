@@ -82,6 +82,7 @@ target_link_options (
   # exceptions. -specs=nano.specs
   -Wl,--gc-sections
   -Wl,-z,max-page-size=4096
+  -Wl,--defsym=__vectors_align=256
   # Prefer absolute paths over paths relative to the build folder.
   -T${CMAKE_CURRENT_SOURCE_DIR}/linker-scripts/mem.ld
   -T${CMAKE_CURRENT_SOURCE_DIR}/linker-scripts/section-boot2.ld
