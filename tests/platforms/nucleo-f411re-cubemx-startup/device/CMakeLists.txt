@@ -178,6 +178,7 @@ target_link_options (
 
 target_link_libraries (
   device-stm32f411xe-interface INTERFACE micro-os-plus::stm32cubemx
+                                         micro-os-plus::architecture
 )
 
 xpack_display_target_lists (device-stm32f411xe-interface)

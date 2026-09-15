@@ -84,6 +84,8 @@ target_link_options (
   -Wl,-z,max-page-size=4096
   # Prefer absolute paths over paths relative to the build folder.
   -T${CMAKE_CURRENT_SOURCE_DIR}/linker-scripts/mem.ld
+  -T${CMAKE_CURRENT_SOURCE_DIR}/linker-scripts/section-boot2.ld
+  -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/section-interrupt-vectors.ld
   -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/sections.ld
 )
 

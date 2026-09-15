@@ -93,6 +93,7 @@ target_link_options (
   # Including files from other packages is not very nice, but functional. Prefer
   # absolute paths over paths relative to the build folder.
   -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld
+  -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/section-interrupt-vectors.ld
   -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/sections.ld
 )
 

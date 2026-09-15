@@ -157,11 +157,13 @@ target_link_options (
   INTERFACE
   # Prefer absolute paths over paths relative to the build folder.
   -T${CMAKE_CURRENT_SOURCE_DIR}/linker-scripts/mem.ld
+  -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/section-interrupt-vectors.ld
   -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/sections.ld
 )
 
 target_link_libraries (
   device-stm32f7xx-interface INTERFACE micro-os-plus::stm32cubemx
+                                       micro-os-plus::architecture
 )
 
 xpack_display_target_lists (device-stm32f7xx-interface)
