@@ -1,0 +1,296 @@
+/*
+ * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
+ * Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can be
+ * obtained from https://opensource.org/licenses/mit.
+ */
+
+// ----------------------------------------------------------------------------
+
+// clang-format off
+
+// ----------------------------------------------------------------------------
+
+#include "micro-os-plus/architecture.h"
+#include "micro-os-plus/architecture-cortexm/exception-handlers.h"
+
+// ----------------------------------------------------------------------------
+
+void __attribute__((weak))
+Default_Handler(void);
+
+/*
+ * Forward declaration of the specific IRQ handlers. These are aliased
+ * to the Default_Handler, which is a 'forever' loop. When the application
+ * defines an actual handler (with the same name), it will automatically
+ * take precedence over these weak definitions.
+ */
+
+void __attribute__ ((weak, alias("Default_Handler")))
+TIMER0_IRQ_0_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+TIMER0_IRQ_1_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+TIMER0_IRQ_2_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+TIMER0_IRQ_3_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+TIMER1_IRQ_0_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+TIMER1_IRQ_1_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+TIMER1_IRQ_2_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+TIMER1_IRQ_3_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PWM_IRQ_WRAP_0_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PWM_IRQ_WRAP_1_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+DMA_IRQ_0_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+DMA_IRQ_1_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+DMA_IRQ_2_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+DMA_IRQ_3_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+USBCTRL_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PIO0_IRQ_0_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PIO0_IRQ_1_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PIO1_IRQ_0_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PIO1_IRQ_1_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PIO2_IRQ_0_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PIO2_IRQ_1_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+IO_IRQ_BANK0_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+IO_IRQ_BANK0_NS_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+IO_IRQ_QSPI_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+IO_IRQ_QSPI_NS_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+SIO_IRQ_FIFO_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+SIO_IRQ_BELL_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+SIO_IRQ_FIFO_NS_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+SIO_IRQ_BELL_NS_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+SIO_IRQ_MTIMECMP_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+CLOCKS_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+SPI0_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+SPI1_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+UART0_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+UART1_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+ADC_IRQ_FIFO_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+I2C0_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+I2C1_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+OTP_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+TRNG_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PROC0_IRQ_CTI_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PROC1_IRQ_CTI_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PLL_SYS_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+PLL_USB_IRQ_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+POWMAN_IRQ_POW_Handler(void);
+
+void __attribute__ ((weak, alias("Default_Handler")))
+POWMAN_IRQ_TIMER_Handler(void);
+
+// ----------------------------------------------------------------------------
+
+extern uint32_t __stack;
+
+typedef void
+(*handler_ptr_t)(void);
+
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+
+#pragma GCC diagnostic ignored "-Wpedantic"
+#endif // defined(__GNUC__)
+
+/**
+ * The table of interrupt handlers. It has an explicit section name
+ * and relies on the linker script to place it at the correct location
+ * in memory, usually at the very beginning of the flash bank.
+ */
+__attribute__ ((section(".interrupt_vectors"),used))
+handler_ptr_t _interrupt_vectors[] =
+  {
+    // Cortex-M Core Handlers
+    (handler_ptr_t) &__stack,          // MSP
+    Reset_Handler,                     // The reset handler
+
+    NMI_Handler,                       // The NMI handler
+    HardFault_Handler,                 // The Hard Fault handler
+    MemManage_Handler,                 // The Memory Management handler
+    BusFault_Handler,                  // The Bus Fault handler
+    UsageFault_Handler,                // The Usage Fault handler
+    SecureFault_Handler,               // The Secure Fault handler
+    0,                                 // Reserved
+    0,                                 // Reserved
+    0,                                 // Reserved
+    SVC_Handler,                       // SVCall handler
+    DebugMon_Handler,                  // The Debug Monitor handler
+    0,                                 // Reserved
+    PendSV_Handler,                    // The PendSV handler
+    SysTick_Handler,                   // The SysTick handler
+
+    // ------------------------------------------------------------------------
+    // External Interrupts
+    TIMER0_IRQ_0_Handler, // 0
+    TIMER0_IRQ_1_Handler,
+    TIMER0_IRQ_2_Handler,
+    TIMER0_IRQ_3_Handler,
+    TIMER1_IRQ_0_Handler,
+    TIMER1_IRQ_1_Handler,
+    TIMER1_IRQ_2_Handler,
+    TIMER1_IRQ_3_Handler,
+    PWM_IRQ_WRAP_0_Handler,
+    PWM_IRQ_WRAP_1_Handler,
+    DMA_IRQ_0_Handler,
+    DMA_IRQ_1_Handler,
+    DMA_IRQ_2_Handler,
+    DMA_IRQ_3_Handler,
+    USBCTRL_IRQ_Handler,
+    PIO0_IRQ_0_Handler,
+    PIO0_IRQ_1_Handler,
+    PIO1_IRQ_0_Handler,
+    PIO1_IRQ_1_Handler,
+    PIO2_IRQ_0_Handler,
+    PIO2_IRQ_1_Handler,
+    IO_IRQ_BANK0_Handler,
+    IO_IRQ_BANK0_NS_Handler,
+    IO_IRQ_QSPI_Handler,
+    IO_IRQ_QSPI_NS_Handler,
+    SIO_IRQ_FIFO_Handler,
+    SIO_IRQ_BELL_Handler,
+    SIO_IRQ_FIFO_NS_Handler,
+    SIO_IRQ_BELL_NS_Handler,
+    SIO_IRQ_MTIMECMP_Handler,
+    CLOCKS_IRQ_Handler,
+    SPI0_IRQ_Handler,
+    SPI1_IRQ_Handler,
+    UART0_IRQ_Handler,
+    UART1_IRQ_Handler,
+    ADC_IRQ_FIFO_Handler,
+    I2C0_IRQ_Handler,
+    I2C1_IRQ_Handler,
+    OTP_IRQ_Handler,
+    TRNG_IRQ_Handler,
+    PROC0_IRQ_CTI_Handler,
+    PROC1_IRQ_CTI_Handler,
+    PLL_SYS_IRQ_Handler,
+    PLL_USB_IRQ_Handler,
+    POWMAN_IRQ_POW_Handler,
+    POWMAN_IRQ_TIMER_Handler, // 45
+
+    // The CMSIS header defines six more `SPARE_IRQ_[0-5]_IRQn` interrupts.
+    Default_Handler,
+    Default_Handler,
+    Default_Handler,
+    Default_Handler,
+    Default_Handler,
+    Default_Handler, // 51
+};
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+
+// ----------------------------------------------------------------------------
+
+/**
+ * The processor ends up here if an unexpected interrupt occurs or a
+ * specific handler is not present in the application code.
+ * When in DEBUG, trigger a debug exception to clearly notify
+ * the user of the exception and help identify the cause.
+ * Otherwise enter a forever loop.
+ */
+void __attribute__ ((section(".after_vectors")))
+Default_Handler(void)
+{
+#if defined(DEBUG)
+  micro_os_plus_architecture_brk();
+#endif
+  while (1)
+    {
+      micro_os_plus_architecture_wfi();
+    }
+}
+
+// ----------------------------------------------------------------------------
