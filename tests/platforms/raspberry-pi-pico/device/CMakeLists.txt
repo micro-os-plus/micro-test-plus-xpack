@@ -14,6 +14,7 @@
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/device'...")
 
 # -----------------------------------------------------------------------------
+
 # Define the device library.
 add_library (device-raspberry-pi-rp2040-interface INTERFACE EXCLUDE_FROM_ALL)
 
