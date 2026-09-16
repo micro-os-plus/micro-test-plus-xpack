@@ -206,7 +206,7 @@
       ],
       "dependencies-releases": {
         "@micro-os-plus/architecture-synthetic-posix": "^5.0.2",
-        "@micro-os-plus/architecture-cortexm": "^8.0.0",
+        "@micro-os-plus/architecture-cortexm": "^8.1.0",
         "@micro-os-plus/devices-qemu-cortexm": "^7.0.1",
         "@micro-os-plus/architecture-riscv": "^6.0.0",
         "@micro-os-plus/devices-qemu-riscv": "^2.1.0",
@@ -215,7 +215,7 @@
         "@micro-os-plus/architecture-aarch64": "^4.1.0",
         "@micro-os-plus/devices-qemu-aarch64": "^5.0.1",
         "@micro-os-plus/semihosting": "^10.1.0",
-        "@micro-os-plus/startup": "^7.2.0",
+        "@micro-os-plus/startup": "^8.0.0",
         "@xpack-3rd-party/arm-cmsis-core": "5.4.0-7",
         "@xpack-3rd-party/raspberrypi-pico-sdk": "github:xpack-3rd-party/raspberrypi-pico-sdk-xpack#v2.3.0-3",
         "@xpack-dev-tools/qemu-arm": "9.2.4-1.1",
@@ -1669,7 +1669,7 @@
           "hidden": true,
           "inherits": [
             "short-win-paths-properties",
-            "cmake-native-actions",
+            "cmake-cross-actions",
             "aarch64-actions",
             "bare-metal-dependencies",
             "aarch64-dependencies",
