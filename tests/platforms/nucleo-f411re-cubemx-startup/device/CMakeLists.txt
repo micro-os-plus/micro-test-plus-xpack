@@ -119,16 +119,16 @@ message (
 # -----------------------------------------------------------------------------
 
 # Define the device library.
-add_library (device-stm32f411xe-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (micro-os-plus-device-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
-target_include_directories (device-stm32f411xe-interface INTERFACE "include")
+target_include_directories (micro-os-plus-device-interface INTERFACE "include")
 
-target_sources (device-stm32f411xe-interface INTERFACE)
+target_sources (micro-os-plus-device-interface INTERFACE)
 
 target_compile_options (
-  device-stm32f411xe-interface
+  micro-os-plus-device-interface
   INTERFACE $<$<COMPILE_LANGUAGE:C>:-Wno-missing-prototypes>
             $<$<COMPILE_LANGUAGE:C>:-Wno-nested-externs>
             $<$<COMPILE_LANGUAGE:C>:-Wno-strict-prototypes>
@@ -143,7 +143,7 @@ target_compile_options (
 )
 
 target_link_options (
-  device-stm32f411xe-interface
+  micro-os-plus-device-interface
   INTERFACE
   #
   -Wl,--wrap=main
@@ -177,16 +177,16 @@ target_link_options (
 )
 
 target_link_libraries (
-  device-stm32f411xe-interface INTERFACE micro-os-plus::stm32cubemx
-                                         micro-os-plus::architecture
+  micro-os-plus-device-interface INTERFACE micro-os-plus::stm32cubemx
+                                           micro-os-plus::architecture
 )
 
-xpack_display_target_lists (device-stm32f411xe-interface)
+xpack_display_target_lists (micro-os-plus-device-interface)
 
 # -----------------------------------------------------------------------------
 
 # Aliases.
-add_library (micro-os-plus::device ALIAS device-stm32f411xe-interface)
-message (VERBOSE "> micro-os-plus::device -> device-stm32f411xe-interface")
+add_library (micro-os-plus::device ALIAS micro-os-plus-device-interface)
+message (VERBOSE "> micro-os-plus::device -> micro-os-plus-device-interface")
 
 # -----------------------------------------------------------------------------

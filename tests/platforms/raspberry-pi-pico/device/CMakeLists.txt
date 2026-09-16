@@ -16,12 +16,12 @@ message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/device'...")
 # -----------------------------------------------------------------------------
 
 # Define the device library.
-add_library (device-raspberry-pi-rp2040-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (micro-os-plus-device-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
 target_include_directories (
-  device-raspberry-pi-rp2040-interface
+  micro-os-plus-device-interface
   INTERFACE
     "include"
     "${CMAKE_BINARY_DIR}/xpacks/@xpack-3rd-party/raspberrypi-pico-sdk/src/rp2_common/cmsis/stub/CMSIS/Core/Include"
@@ -29,29 +29,27 @@ target_include_directories (
 )
 
 target_sources (
-  device-raspberry-pi-rp2040-interface
+  micro-os-plus-device-interface
   INTERFACE "src/bs2_default_padded_checksummed.S" "src/vectors-rp2040.c"
             "src/system-rp2040.c"
 )
 
-target_compile_definitions (device-raspberry-pi-rp2040-interface INTERFACE)
+target_compile_definitions (micro-os-plus-device-interface INTERFACE)
 
-target_compile_options (device-raspberry-pi-rp2040-interface INTERFACE)
+target_compile_options (micro-os-plus-device-interface INTERFACE)
 
-target_link_options (device-raspberry-pi-rp2040-interface INTERFACE)
+target_link_options (micro-os-plus-device-interface INTERFACE)
 
 target_link_libraries (
-  device-raspberry-pi-rp2040-interface INTERFACE micro-os-plus::architecture
+  micro-os-plus-device-interface INTERFACE micro-os-plus::architecture
 )
 
-xpack_display_target_lists (device-raspberry-pi-rp2040-interface)
+xpack_display_target_lists (micro-os-plus-device-interface)
 
 # -----------------------------------------------------------------------------
 
 # Aliases.
-add_library (micro-os-plus::device ALIAS device-raspberry-pi-rp2040-interface)
-message (VERBOSE
-         "> micro-os-plus::device -> device-raspberry-pi-rp2040-interface"
-)
+add_library (micro-os-plus::device ALIAS micro-os-plus-device-interface)
+message (VERBOSE "> micro-os-plus::device -> micro-os-plus-device-interface")
 
 # -----------------------------------------------------------------------------

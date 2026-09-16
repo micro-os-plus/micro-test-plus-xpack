@@ -16,20 +16,18 @@ message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/device'...")
 # -----------------------------------------------------------------------------
 
 # Define the device library.
-add_library (device-raspberry-pi-rp2350-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (micro-os-plus-device-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
-target_include_directories (
-  device-raspberry-pi-rp2350-interface INTERFACE "include"
-)
+target_include_directories (micro-os-plus-device-interface INTERFACE "include")
 
 target_sources (
-  device-raspberry-pi-rp2350-interface INTERFACE "src/_sbrk.c" "src/wraps.c"
+  micro-os-plus-device-interface INTERFACE "src/_sbrk.c" "src/wraps.c"
 )
 
 target_compile_definitions (
-  device-raspberry-pi-rp2350-interface
+  micro-os-plus-device-interface
   INTERFACE # Default is 0x800 (2 KB); full (non-nano) Newlib's
             # vfprintf/_svfprintf can overflow that. 0x1000 (4 KB) is the
             # maximum obtainable this way, since the stack is reserved out of
@@ -39,7 +37,7 @@ target_compile_definitions (
 )
 
 target_compile_options (
-  device-raspberry-pi-rp2350-interface
+  micro-os-plus-device-interface
   INTERFACE # Turn off many warnings, the Pico SDK throws a lot of them.
             $<$<COMPILE_LANGUAGE:C>:-Wno-c++-compat>
             $<$<COMPILE_LANGUAGE:C>:-Wno-old-style-definition>
@@ -60,25 +58,23 @@ target_compile_options (
 )
 
 target_link_options (
-  device-raspberry-pi-rp2350-interface INTERFACE
+  micro-os-plus-device-interface INTERFACE
   #
   -Wl,--wrap=main -Wl,--wrap=__libc_init_array
 )
 
 target_link_libraries (
-  device-raspberry-pi-rp2350-interface
+  micro-os-plus-device-interface
   INTERFACE cmsis_core pico_standard_link pico_crt0 pico_runtime_init
             micro-os-plus::architecture
 )
 
-xpack_display_target_lists (device-raspberry-pi-rp2350-interface)
+xpack_display_target_lists (micro-os-plus-device-interface)
 
 # -----------------------------------------------------------------------------
 
 # Aliases.
-add_library (micro-os-plus::device ALIAS device-raspberry-pi-rp2350-interface)
-message (VERBOSE
-         "> micro-os-plus::device -> device-raspberry-pi-rp2350-interface"
-)
+add_library (micro-os-plus::device ALIAS micro-os-plus-device-interface)
+message (VERBOSE "> micro-os-plus::device -> micro-os-plus-device-interface")
 
 # -----------------------------------------------------------------------------
