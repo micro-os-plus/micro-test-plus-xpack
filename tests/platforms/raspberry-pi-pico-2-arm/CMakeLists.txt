@@ -23,19 +23,18 @@ message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/'...")
 add_subdirectory ("device")
 
 # -----------------------------------------------------------------------------
+
 # Define the platform library.
-add_library (
-  platform-raspberry-pi-pico-2-arm-interface INTERFACE EXCLUDE_FROM_ALL
-)
+add_library (micro-os-plus-platform-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
 target_include_directories (
-  platform-raspberry-pi-pico-2-arm-interface INTERFACE "include"
+  micro-os-plus-platform-interface INTERFACE "include"
 )
 
 target_compile_definitions (
-  platform-raspberry-pi-pico-2-arm-interface
+  micro-os-plus-platform-interface
   INTERFACE
     "${xpack_platform_compile_definition}"
     # Full POSIX conformance:
@@ -72,13 +71,12 @@ set (
 )
 
 target_compile_options (
-  platform-raspberry-pi-pico-2-arm-interface
-  INTERFACE ${xpack_platform_common_args}
+  micro-os-plus-platform-interface INTERFACE ${xpack_platform_common_args}
 )
 
 # When `-flto` is used, the compile options must be passed to the linker too.
 target_link_options (
-  platform-raspberry-pi-pico-2-arm-interface
+  micro-os-plus-platform-interface
   INTERFACE
   # -v
   ${xpack_platform_common_args}
@@ -97,28 +95,25 @@ target_link_options (
 
 if ("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")
   target_link_options (
-    platform-raspberry-pi-pico-2-arm-interface INTERFACE
+    micro-os-plus-platform-interface INTERFACE
     # .elf has a LOAD segment with RWX permissions (GCC 12)
     -Wl,--no-warn-rwx-segment
   )
 endif ()
 
 target_link_libraries (
-  platform-raspberry-pi-pico-2-arm-interface INTERFACE micro-os-plus::device
-                                                       micro-os-plus::startup
+  micro-os-plus-platform-interface INTERFACE micro-os-plus::device
+                                             micro-os-plus::startup
 )
 
-xpack_display_target_lists (platform-raspberry-pi-pico-2-arm-interface)
+xpack_display_target_lists (micro-os-plus-platform-interface)
 
 # -----------------------------------------------------------------------------
 
 # Aliases.
-add_library (
-  micro-os-plus::platform ALIAS platform-raspberry-pi-pico-2-arm-interface
-)
-message (
-  VERBOSE
-  "> micro-os-plus::platform -> platform-raspberry-pi-pico-2-arm-interface"
+add_library (micro-os-plus::platform ALIAS micro-os-plus-platform-interface)
+message (VERBOSE
+         "> micro-os-plus::platform -> micro-os-plus-platform-interface"
 )
 
 # -----------------------------------------------------------------------------
