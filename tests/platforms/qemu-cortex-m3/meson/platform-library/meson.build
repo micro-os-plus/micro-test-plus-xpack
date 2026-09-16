@@ -119,7 +119,7 @@ _local_dependencies += [
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-platform_qemu_cortex_m3_dependency = declare_dependency(
+micro_os_plus_platform_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),
   sources: files(_local_sources),
   compile_args: _local_compile_args + _local_compile_definitions,
@@ -127,8 +127,8 @@ platform_qemu_cortex_m3_dependency = declare_dependency(
   link_args: _local_compile_args + _local_link_args,
   link_with: _local_link_with,
 )
-platform_qemu_cortex_m3_dependency_compile_c_args =  _local_compile_c_args
-platform_qemu_cortex_m3_dependency_compile_cpp_args = _local_compile_cpp_args
+micro_os_plus_platform_dependency_compile_c_args =  _local_compile_c_args
+micro_os_plus_platform_dependency_compile_cpp_args = _local_compile_cpp_args
 
 foreach xn : _local_include_directories
   message('+ -I ' + xn)
@@ -137,14 +137,6 @@ endforeach
 foreach xn : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
   message('+ ' + xn)
 endforeach
-message('> platform_qemu_cortex_m3_dependency')
-
-# -----------------------------------------------------------------------------
-
-# Aliases.
-platform_dependency = platform_qemu_cortex_m3_dependency
-platform_dependency_compile_c_args = platform_qemu_cortex_m3_dependency_compile_c_args
-platform_dependency_compile_cpp_args = platform_qemu_cortex_m3_dependency_compile_cpp_args
-message('> platform_dependency')
+message('> micro_os_plus_platform_dependency')
 
 # -----------------------------------------------------------------------------
