@@ -16,7 +16,7 @@
 
 // Add guard checks for data & bss.
 #if !defined(MICRO_OS_PLUS_STARTUP_GUARD_CHECKS_ENABLED)
-// #define MICRO_OS_PLUS_STARTUP_GUARD_CHECKS_ENABLED
+#define MICRO_OS_PLUS_STARTUP_GUARD_CHECKS_ENABLED
 #endif // !defined(MICRO_OS_PLUS_STARTUP_GUARD_CHECKS_ENABLED)
 
 // Iterate over the array of multiple RAM sections, if supported by the
@@ -27,12 +27,12 @@
 
 // Initialise hardware early.
 #if !defined(MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_EARLY_ENABLED)
-// #define MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_EARLY_ENABLED
+#define MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_EARLY_ENABLED
 #endif // !defined(MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_EARLY_ENABLED)
 
 // Call the custom hardware initialization.
 #if !defined(MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED)
-// #define MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED
+#define MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED
 #endif // !defined(MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED)
 
 // The exit() and abort() functions used to terminate the application in a

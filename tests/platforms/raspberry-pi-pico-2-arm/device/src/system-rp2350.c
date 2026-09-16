@@ -12,37 +12,41 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/device.h"
+#include "micro-os-plus/startup.h"
+#include "micro-os-plus/rp2350/clock.h"
 
 // ----------------------------------------------------------------------------
 
-#if defined(MICRO_OS_PLUS_STARTUP_ENABLED)
+uint32_t SystemCoreClock;
 
-// SystemInit() below does not configure any clock (no clocks_init()
-// equivalent is linked), so clk_sys is left running from the ring
-// oscillator (ROSC), as documented in the Pico SDK's hardware/rosc.h:
-// "RP2 chips boot from the ring oscillator initially, meaning the first
-// stages of the bootrom, [...] will be clocked by the ring oscillator."
-// The ROSC is not a calibrated source; its frequency depends on process,
-// voltage and temperature. This value is only an approximation, carried
-// over from RP2040's documented ~6.5 MHz typical default ROSC frequency
-// and not verified against the RP2350 datasheet. For an accurate reading,
-// call `rosc_measure_freq_khz()` (Pico SDK `hardware/rosc.h`) at runtime.
-#define SYSTEM_CLOCK (6500000)
-uint32_t SystemCoreClock = SYSTEM_CLOCK;
+// ----------------------------------------------------------------------------
+
+int
+micro_os_plus_startup_initialise_hardware_early_hook (void)
+{
+  SystemCoreClock = micro_os_plus_rp2350_clock_init ();
+  return 0;
+}
+
+int
+micro_os_plus_startup_initialise_hardware_hook (void)
+{
+  SystemInit ();
+  return 0;
+}
 
 // ----------------------------------------------------------------------------
 
 void
 SystemInit (void)
 {
+  SystemCoreClockUpdate ();
 }
 
 void
 SystemCoreClockUpdate (void)
 {
-  SystemCoreClock = SYSTEM_CLOCK;
+  SystemCoreClock = micro_os_plus_rp2350_clock_get_frequency_hz ();
 }
-
-#endif // defined(MICRO_OS_PLUS_STARTUP_ENABLED)
 
 // ----------------------------------------------------------------------------
