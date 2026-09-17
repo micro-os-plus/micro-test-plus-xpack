@@ -98,7 +98,7 @@ foreach dep: xpack_dependencies_folders
 endforeach
 
 # Include the platform library.
-subdir('platforms/' + xpack_platform_name + '/meson/platform-library')
+subdir('platforms/' + xpack_platform_name)
 
 # -----------------------------------------------------------------------------
 
@@ -128,6 +128,6 @@ subdir('meson/define-executables')
 # Artefact specifics.
 
 # Include the platform specific artefacts and tests.
-subdir('platforms/' + xpack_platform_name)
+subdir('platforms/' + xpack_platform_name + '/meson/artefacts')
 
 # -----------------------------------------------------------------------------

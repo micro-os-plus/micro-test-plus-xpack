@@ -13,118 +13,131 @@
 #
 # -----------------------------------------------------------------------------
 
-# Create the platform specific test executables.
+# Create the platform specific library.
 
 # -----------------------------------------------------------------------------
 
-message('Processing tests/platforms/qemu-riscv-rv64imafdc...')
+message('Including tests/platforms/' + xpack_platform_name + '/meson.build...')
 
 # -----------------------------------------------------------------------------
 
-# NOTE: Exceptions are disabled.
+_local_compile_args = [] # Common C/C++ args.
+_local_compile_c_args = []
+_local_compile_cpp_args = []
+_local_include_directories = []
+_local_sources = []
+_local_compile_definitions = []
+_local_dependencies = []
+_local_link_args = []
+_local_link_with = []
 
 # -----------------------------------------------------------------------------
 
-qemu = find_program('qemu-system-riscv64')
-qemu_machine_args = [ '--machine', 'virt', '--cpu', 'rv64' ]
-qemu_extra_args = [ '-smp', '1', '-bios', 'none', '--nographic', '-d', 'unimp,guest_errors' ]
+_local_include_directories += [
+  'include',
+]
 
-# -----------------------------------------------------------------------------
+_local_sources += [
+  # None.
+]
 
-# https://mesonbuild.com/Unit-tests.html#malloc_perturb_
-xpack_environment = environment()
-xpack_environment.set('MALLOC_PERTURB_', '0')
+# Compiler definitions must passed as options.
+_local_compile_definitions += [
+  # Full POSIX conformance:
+  # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
+  '-D_POSIX_C_SOURCE=200809L',
 
-# -----------------------------------------------------------------------------
+  # For S_IREAD
+  '-D_GNU_SOURCE'
+]
 
-# Define the tests commands.
+_local_compile_args += [
+  # https://gcc.gnu.org/onlinedocs/gcc/RISC-V-Options.html
+  # Do not use rv64gc, the compiler does not match it as rv64imafdc.
+  '-march=rv64imafdc_zicsr',
+  '-mabi=lp64d',
+  '-mcmodel=medany',
+  '-msmall-data-limit=8',
 
-if (xpack_enable_empty_test)
+  # '-fno-move-loop-invariants',
 
-  # https://mesonbuild.com/Reference-manual_functions.html#test
-  test(
-    'empty-test',
-    qemu,
-    args: qemu_machine_args + 
-      [ '--kernel', empty_test ] + 
-      qemu_extra_args + 
-      [ '--semihosting-config', 
-      'enable=on,target=native,arg=empty-test,arg=one,arg=two' ],
-    env: xpack_environment
-  )
+  # Embedded builds must be warning free.
+  '-Werror',
+]
 
+if get_option('buildtype').contains('debug')
+  _local_compile_args += [
+    '-fno-omit-frame-pointer'
+  ]
+else
+  _local_compile_args += [
+    # -flto fails with undefined reference to `_write', `_fstat`...
+    # '-flto'
+  ]
 endif
 
-# -----------------------------------------------------------------------------
+_local_compile_cpp_args += [
+  '-fno-exceptions', # it fails at run-time.
+  # '-fno-rtti',
+  # '-fno-use-cxa-atexit',
+  '-fno-threadsafe-statics',
+]
 
-if (xpack_enable_minimal_test)
+_local_compile_c_args += common_options_dependency_compile_c_args
+_local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
-  # https://mesonbuild.com/Reference-manual_functions.html#test
-  test(
-    'minimal-test',
-    qemu,
-    args: qemu_machine_args + 
-      [ '--kernel', minimal_test ] + 
-      qemu_extra_args + 
-      [ '--semihosting-config', 
-      'enable=on,target=native,arg=minimal-test,arg=one,arg=two' ],
-    env: xpack_environment
-  )
+_local_link_args += [
+  '-v',
 
+  '-nostartfiles',
+  # '--specs=rdimon.specs', '-Wl,--start-group', '-lgcc', '-lc', '-lc', '-lm', '-lrdimon', '-Wl,--end-group',
+
+  # Ensure the linker will keep the interrupt vectors which otherwise
+  # are not referred from anywhere.
+  # '-u_interrupt_vectors',
+
+  # nano has no exceptions.
+  # '-specs=nano.specs'
+
+  '-Wl,--gc-sections',
+
+  # Path are relative to the build folder.
+  '-Txpacks/@micro-os-plus/devices-qemu-riscv/linker-scripts/mem-virt-rv64.ld',
+  '-Txpacks/@micro-os-plus/startup/linker-scripts/section-reset-entry.ld',
+  '-Txpacks/@micro-os-plus/startup/linker-scripts/sections.ld',
+]
+
+if c_compiler.version().version_compare('>=12.0.0')
+  _local_link_args += [
+    # .elf has a LOAD segment with RWX permissions (GCC 12)
+    '-Wl,--no-warn-rwx-segments',
+  ]
 endif
 
-# -----------------------------------------------------------------------------
+_local_dependencies += [
+  micro_os_plus_devices_qemu_riscv_dependency,
+  micro_os_plus_startup_dependency,
+]
 
-if (xpack_enable_suite_test)
+# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
+micro_os_plus_platform_dependency = declare_dependency(
+  include_directories: include_directories(_local_include_directories),
+  sources: files(_local_sources),
+  compile_args: _local_compile_args + _local_compile_definitions,
+  dependencies: _local_dependencies,
+  link_args: _local_compile_args + _local_link_args,
+  link_with: _local_link_with,
+)
+micro_os_plus_platform_dependency_compile_c_args =  _local_compile_c_args
+micro_os_plus_platform_dependency_compile_cpp_args = _local_compile_cpp_args
 
-  # https://mesonbuild.com/Reference-manual_functions.html#test
-  test(
-    'suite-test',
-    qemu,
-    args: qemu_machine_args + 
-      [ '--kernel', suite_test ] + 
-      qemu_extra_args + 
-      [ '--semihosting-config', 
-      'enable=on,target=native,arg=suite-test,arg=one,arg=two' ],
-    env: xpack_environment
-  )
-
-endif
-
-# -----------------------------------------------------------------------------
-
-if (xpack_enable_sample_test)
-
-  # https://mesonbuild.com/Reference-manual_functions.html#test
-  test(
-    'sample-test',
-    qemu,
-    args: qemu_machine_args + 
-      [ '--kernel', sample_test ] + 
-      qemu_extra_args + 
-      [ '--semihosting-config', 
-      'enable=on,target=native,arg=sample-test,arg=one,arg=two' ],
-    env: xpack_environment
-  )
-
-endif
-
-# -----------------------------------------------------------------------------
-
-if (xpack_enable_unit_test)
-
-  # https://mesonbuild.com/Reference-manual_functions.html#test
-  test(
-    'unit-test',
-    qemu,
-    args: qemu_machine_args + 
-      [ '--kernel', unit_test ] + 
-      qemu_extra_args + 
-      [ '--semihosting-config', 
-      'enable=on,target=native,arg=unit-test,arg=one,arg=two' ],
-    env: xpack_environment
-  )
-
-endif
+foreach xn : _local_include_directories
+  message('+ -I ' + xn)
+endforeach
+# Note: depenedencies compile_args not shown.
+foreach xn : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
+  message('+ ' + xn)
+endforeach
+message('> micro_os_plus_platform_dependency')
 
 # -----------------------------------------------------------------------------
