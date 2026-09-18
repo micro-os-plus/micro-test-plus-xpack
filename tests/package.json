@@ -206,7 +206,7 @@
       ],
       "dependencies-releases": {
         "@micro-os-plus/architecture-synthetic-posix": "^5.0.2",
-        "@micro-os-plus/architecture-cortexm": "^8.1.0",
+        "@micro-os-plus/architecture-cortexm": "^8.2.0",
         "@micro-os-plus/devices-qemu-cortexm": "^7.0.1",
         "@micro-os-plus/architecture-riscv": "^6.0.0",
         "@micro-os-plus/devices-qemu-riscv": "^2.1.0",
