@@ -12,27 +12,41 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/device.h"
+#include "micro-os-plus/startup.h"
+#include "micro-os-plus/rp2040/clock.h"
 
 // ----------------------------------------------------------------------------
 
-#if defined(MICRO_OS_PLUS_STARTUP_ENABLED)
+uint32_t SystemCoreClock;
 
-#define SYSTEM_CLOCK (125000000)
-uint32_t SystemCoreClock = SYSTEM_CLOCK;
+// ----------------------------------------------------------------------------
+
+int
+micro_os_plus_startup_initialise_hardware_early_hook (void)
+{
+  SystemCoreClock = micro_os_plus_rp2040_clock_init ();
+  return 0;
+}
+
+int
+micro_os_plus_startup_initialise_hardware_hook (void)
+{
+  SystemInit ();
+  return 0;
+}
 
 // ----------------------------------------------------------------------------
 
 void
 SystemInit (void)
 {
+  SystemCoreClockUpdate ();
 }
 
 void
 SystemCoreClockUpdate (void)
 {
-  SystemCoreClock = SYSTEM_CLOCK;
+  SystemCoreClock = micro_os_plus_rp2040_clock_get_frequency_hz ();
 }
-
-#endif // defined(MICRO_OS_PLUS_STARTUP_ENABLED)
 
 // ----------------------------------------------------------------------------

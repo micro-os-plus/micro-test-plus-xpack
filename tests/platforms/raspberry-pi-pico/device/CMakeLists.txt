@@ -15,6 +15,10 @@ message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/device'...")
 
 # -----------------------------------------------------------------------------
 
+add_subdirectory ("rp2040")
+
+# -----------------------------------------------------------------------------
+
 # Define the device library.
 add_library (micro-os-plus-device-interface INTERFACE EXCLUDE_FROM_ALL)
 
@@ -42,6 +46,7 @@ target_link_options (micro-os-plus-device-interface INTERFACE)
 
 target_link_libraries (
   micro-os-plus-device-interface INTERFACE micro-os-plus::architecture
+                                           micro-os-plus::device-rp2040
 )
 
 xpack_display_target_lists (micro-os-plus-device-interface)
