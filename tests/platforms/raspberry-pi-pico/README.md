@@ -30,7 +30,12 @@ The following folders should be passed to the compiler during the build:
 
 ## Source files
 
-None.
+- `src/hooks.cpp` — the `micro_os_plus_startup_initialise_hardware_*`
+  hooks (clock bring-up, `SystemInit()`); also instantiates the
+  `activityLed` (`platform::pico::led_green`) and powers it up.
+- `src/led-green.cpp` — `platform::pico::led_green` driver for the
+  onboard green LED (GPIO25), implemented directly on the RP2040 CMSIS
+  peripherals.
 
 ## Memory range
 

@@ -12,28 +12,11 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/device.h"
-#include "micro-os-plus/startup.h"
 #include "micro-os-plus/rp2040/clock.h"
 
 // ----------------------------------------------------------------------------
 
 uint32_t SystemCoreClock;
-
-// ----------------------------------------------------------------------------
-
-int
-micro_os_plus_startup_initialise_hardware_early_hook (void)
-{
-  SystemCoreClock = micro_os_plus_rp2040_clock_init ();
-  return 0;
-}
-
-int
-micro_os_plus_startup_initialise_hardware_hook (void)
-{
-  SystemInit ();
-  return 0;
-}
 
 // ----------------------------------------------------------------------------
 
