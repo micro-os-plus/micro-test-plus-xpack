@@ -14,8 +14,6 @@
 #include "micro-os-plus/device.h"
 #include "micro-os-plus/raspberry-pi-pico/led-green.h"
 
-#include <cstdint>
-
 // Only the Pico SDK's register-definition headers are used below (no SDK
 // library is linked); they provide the peripheral bit-field names used to
 // drive GPIO25, matching the CMSIS register structs already pulled in via
@@ -24,6 +22,10 @@
 #include "hardware/platform_defs.h"
 #include "hardware/regs/io_bank0.h"
 #include "hardware/regs/resets.h"
+
+#include <cstdint>
+
+// ----------------------------------------------------------------------------
 
 // The SIO/IO_BANK0/RESETS macros above expand to C-style pointer casts
 // (e.g. `((SIO_Type*) SIO_BASE)`); silence the resulting warning at
