@@ -35,6 +35,36 @@ This is the **µTest++ Testing Framework** project, part of
 - For C/C++, the naming convention is snake_case.
 - For C++, write multiple level namespaces on the same line.
 
+## Includes order
+
+- Project-specific headers.
+- µOS++ headers
+- Third-party library headers.
+- Standard library headers.
+- Use alphabetical order within each group.
+- Separate each group with a blank line.
+- Brace the whole group of includes by separator lines
+
+## Compiler pragmas
+
+When needed to silence warnings, use separate groups of pragmas for each compiler.
+
+Use __GNUC__ guards, and, if necessary, __clang__ guards to apply compiler-specific pragmas.
+
+```c
+#if defined(__GNUC__)
+#pragma GCC diagnostic ignored "-Waggregate-return"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#endif // defined(__GNUC__)
+#pragma GCC diagnostic ignored "-Wredundant-tags"
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
+```
+
+Brace the whole group of includes by separator lines.
+
 ## Documentation
 
 - Add comprehensive documentation comments accepted by Doxygen

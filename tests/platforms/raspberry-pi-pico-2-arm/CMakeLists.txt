@@ -33,6 +33,11 @@ target_include_directories (
   micro-os-plus-platform-interface INTERFACE "include"
 )
 
+target_sources (
+  micro-os-plus-platform-interface INTERFACE "src/hooks.cpp"
+                                             "src/led-green.cpp"
+)
+
 target_compile_definitions (
   micro-os-plus-platform-interface
   INTERFACE
