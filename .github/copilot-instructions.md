@@ -33,6 +33,7 @@ This is the **µTest++ Testing Framework** project, part of
 - Use consistent formatting and naming conventions based on prettier and
   clang-format configurations.
 - For C/C++, the naming convention is snake_case.
+- For C++, write multiple level namespaces on the same line.
 
 ## Documentation
 
@@ -75,6 +76,19 @@ After making changes, run in a terminal:
 - `xpm run test -C tests` to execute the test with the system compiler
 - `xpm run test-native-clang -C tests` to execute the test with clang
 - `xpm run test-qemu-cortex-m7f-gcc -C tests` to execute the test with cross gcc
+
+When editing non-native platforms, run one by one specific actions for the given configuration.
+
+- xpm run setup --config <name>
+- xpm run build --config <name>
+
+For non-qemu plaforms, running the tests can be done only after confirming that the board is 
+powered up, with the command:
+
+- xpm run test --config <name>
+
+QEMU tests can be done directly, without confirmation that the board is
+powered up.
 
 ## Code Review
 
