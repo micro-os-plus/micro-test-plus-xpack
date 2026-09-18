@@ -69,6 +69,11 @@ target_link_libraries (
             micro-os-plus::architecture
 )
 
+xpack_display_target_lists (cmsis_core)
+xpack_display_target_lists (pico_standard_link)
+xpack_display_target_lists (pico_crt0)
+xpack_display_target_lists (pico_runtime_init)
+
 xpack_display_target_lists (micro-os-plus-device-interface)
 
 # -----------------------------------------------------------------------------
