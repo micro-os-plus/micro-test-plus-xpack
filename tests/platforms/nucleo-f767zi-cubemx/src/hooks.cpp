@@ -25,9 +25,11 @@ platform::nucleo_f767zi_cubemx::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 
-// Called after the static initialisers have run (post_init_array, not
-// initialise_hardware, so that activity_led is touched only after its
-// own static initialiser has executed).
+// Called from micro_os_plus_startup_run_main(), after the static
+// initialisers have run (post_init_array, not initialise_hardware, so
+// that activity_led is touched only after its own static initialiser
+// has executed).
+// Requires MICRO_OS_PLUS_STARTUP_POST_INIT_ARRAY_ENABLED (startup-defines.h).
 int
 micro_os_plus_startup_post_init_array_hook (void)
 {
@@ -37,6 +39,10 @@ micro_os_plus_startup_post_init_array_hook (void)
   return 0;
 }
 
+// Called from micro_os_plus_startup_exit() right before the
+// application session terminates (semihosting exit or hardware reset).
+// Requires MICRO_OS_PLUS_STARTUP_FINALISE_HARDWARE_ENABLED
+// (startup-defines.h).
 void
 micro_os_plus_startup_finalise_hardware_hook (void)
 {

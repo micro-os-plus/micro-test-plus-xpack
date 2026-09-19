@@ -23,11 +23,13 @@ platform::raspberry_pi_pico::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 
-// Called before the data & bss sections are initialised, typically used to
-// set up the system clock (so that the initialisations are faster) and
-// possibly to enable external RAM.
+// Called from _start(), before the data & bss sections are initialised,
+// typically used to set up the system clock (so that the
+// initialisations are faster) and possibly to enable external RAM.
 // If any driver leaves values in RAM, they will be cleared and lost, so
 // those drivers should reinitialise their RAM contents in the next hook.
+// Requires MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_EARLY_ENABLED
+// (startup-defines.h).
 int
 micro_os_plus_startup_initialise_hardware_early_hook (void)
 {
@@ -35,8 +37,11 @@ micro_os_plus_startup_initialise_hardware_early_hook (void)
   return 0;
 }
 
-// Called after the data & bss sections are initialised, typically used to
-// finalise the hardware setup.
+// Called from micro_os_plus_startup_run_main(), after the data & bss
+// sections are initialised, typically used to finalise the hardware
+// setup.
+// Requires MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED
+// (startup-defines.h).
 int
 micro_os_plus_startup_initialise_hardware_hook (void)
 {
@@ -45,7 +50,9 @@ micro_os_plus_startup_initialise_hardware_hook (void)
   return 0;
 }
 
-// Called after the static initialisers have run.
+// Called from micro_os_plus_startup_run_main(), after the static
+// initialisers have run.
+// Requires MICRO_OS_PLUS_STARTUP_POST_INIT_ARRAY_ENABLED (startup-defines.h).
 int
 micro_os_plus_startup_post_init_array_hook (void)
 {
@@ -55,6 +62,10 @@ micro_os_plus_startup_post_init_array_hook (void)
   return 0;
 }
 
+// Called from micro_os_plus_startup_exit() right before the
+// application session terminates (semihosting exit or hardware reset).
+// Requires MICRO_OS_PLUS_STARTUP_FINALISE_HARDWARE_ENABLED
+// (startup-defines.h).
 void
 micro_os_plus_startup_finalise_hardware_hook (void)
 {

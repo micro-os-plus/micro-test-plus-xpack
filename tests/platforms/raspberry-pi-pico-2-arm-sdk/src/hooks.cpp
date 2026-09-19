@@ -25,8 +25,9 @@ platform::raspberry_pi_pico_2_arm_sdk::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 
-// Called after the data & bss sections are initialised, typically used to
-// finalise the hardware setup.
+// Called from micro_os_plus_startup_run_main() (via __wrap_main() in
+// wraps.c), after the static initialisers have run.
+// Requires MICRO_OS_PLUS_STARTUP_POST_INIT_ARRAY_ENABLED (startup-defines.h).
 int
 micro_os_plus_startup_post_init_array_hook (void)
 {
@@ -36,6 +37,10 @@ micro_os_plus_startup_post_init_array_hook (void)
   return 0;
 }
 
+// Called from micro_os_plus_startup_exit() right before the
+// application session terminates (semihosting exit or hardware reset).
+// Requires MICRO_OS_PLUS_STARTUP_FINALISE_HARDWARE_ENABLED
+// (startup-defines.h).
 void
 micro_os_plus_startup_finalise_hardware_hook (void)
 {
