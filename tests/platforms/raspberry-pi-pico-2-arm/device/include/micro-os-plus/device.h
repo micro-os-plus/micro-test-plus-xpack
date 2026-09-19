@@ -14,6 +14,7 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Warith-conversion"
 #if defined(__cplusplus)
@@ -23,11 +24,14 @@
 #pragma GCC diagnostic ignored "-Wredundant-decls"
 #pragma GCC diagnostic ignored "-Wold-style-definition"
 #pragma GCC diagnostic ignored "-Wstrict-prototypes"
-#endif
+#endif // defined(__cplusplus)
+#endif // defined(__GNUC__)
 
 #include "RP2350.h"
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

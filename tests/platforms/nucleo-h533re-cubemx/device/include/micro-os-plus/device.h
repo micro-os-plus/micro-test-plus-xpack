@@ -14,17 +14,21 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__cplusplus)
 #pragma GCC diagnostic ignored "-Wuseless-cast"
 #else
 #pragma GCC diagnostic ignored "-Wnested-externs"
 #pragma GCC diagnostic ignored "-Wredundant-decls"
-#endif
+#endif // defined(__cplusplus)
+#endif // defined(__GNUC__)
 
 #include "stm32h5xx.h"
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

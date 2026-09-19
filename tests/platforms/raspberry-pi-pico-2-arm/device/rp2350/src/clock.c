@@ -18,15 +18,19 @@
 // SDK library is linked); they provide the peripheral bit-field names
 // used to program the clocks, matching the CMSIS register structs
 // already pulled in via micro-os-plus/device.h (RP2350.h).
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wundef" // PICO_RP2350A, only used by the
-                                          // SDK's own CMake build.
+// SDK's own CMake build.
+#endif // defined(__GNUC__)
 #include "hardware/platform_defs.h"
 #include "hardware/regs/clocks.h"
 #include "hardware/regs/pll.h"
 #include "hardware/regs/resets.h"
 #include "hardware/regs/xosc.h"
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

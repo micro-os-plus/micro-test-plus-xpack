@@ -31,8 +31,10 @@
 // (e.g. `((SIO_Type*) SIO_BASE)`); silence the resulting warning at
 // each expansion site below, since micro-os-plus/device.h only covers
 // casts made while parsing RP2040.h itself, not macro uses here.
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
+#endif // defined(__GNUC__)
 
 namespace platform::pico
 {
@@ -108,6 +110,8 @@ namespace platform::pico
 
 } // namespace platform::pico
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------

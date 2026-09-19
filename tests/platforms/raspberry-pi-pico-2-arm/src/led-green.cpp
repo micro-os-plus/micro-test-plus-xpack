@@ -19,14 +19,18 @@
 // drive GPIO25, matching the CMSIS register structs already pulled in via
 // micro-os-plus/device.h (RP2350.h), the same way rp2350/clock.c uses
 // CLOCKS->..., XOSC->..., PLL_SYS->....
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wundef" // PICO_RP2350A, only used by the
 // SDK's own CMake build.
+#endif // defined(__GNUC__)
 #include "hardware/platform_defs.h"
 #include "hardware/regs/io_bank0.h"
 #include "hardware/regs/pads_bank0.h"
 #include "hardware/regs/resets.h"
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 #include <cstdint>
 
@@ -36,8 +40,10 @@
 // (e.g. `((SIO_Type*) SIO_BASE)`); silence the resulting warning at
 // each expansion site below, since micro-os-plus/device.h only covers
 // casts made while parsing RP2350.h itself, not macro uses here.
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
+#endif // defined(__GNUC__)
 
 namespace platform::pico2
 {
@@ -121,6 +127,8 @@ namespace platform::pico2
 
 } // namespace platform::pico2
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
