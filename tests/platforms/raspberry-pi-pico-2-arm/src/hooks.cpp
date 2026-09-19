@@ -42,6 +42,13 @@ micro_os_plus_startup_initialise_hardware_hook (void)
 {
   SystemInit ();
 
+  return 0;
+}
+
+// Called after the static initialisers have run.
+int
+micro_os_plus_startup_post_init_array_hook (void)
+{
   activity_led.power_up ();
   activity_led.turn_on ();
 
