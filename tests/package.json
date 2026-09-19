@@ -867,6 +867,10 @@
         "xpm install --config raspberry-pi-pico-cmake-gcc-debug",
         "xpm install --config raspberry-pi-pico-cmake-gcc-release"
       ],
+      "link-dependencies-raspberry-pi-pico-cmake-gcc": [
+        "xpm run link-dependencies --config raspberry-pi-pico-cmake-gcc-debug",
+        "xpm run link-dependencies --config raspberry-pi-pico-cmake-gcc-release"
+      ],
       "build-raspberry-pi-pico-cmake-gcc": [
         "xpm run setup --config raspberry-pi-pico-cmake-gcc-debug",
         "xpm run build --config raspberry-pi-pico-cmake-gcc-debug",
@@ -892,6 +896,10 @@
       "install-raspberry-pi-pico-sdk-cmake-gcc": [
         "xpm install --config raspberry-pi-pico-sdk-cmake-gcc-debug",
         "xpm install --config raspberry-pi-pico-sdk-cmake-gcc-release"
+      ],
+      "link-dependencies-raspberry-pi-pico-sdk-cmake-gcc": [
+        "xpm run link-dependencies --config raspberry-pi-pico-sdk-cmake-gcc-debug",
+        "xpm run link-dependencies --config raspberry-pi-pico-sdk-cmake-gcc-release"
       ],
       "build-raspberry-pi-pico-sdk-cmake-gcc": [
         "xpm run setup --config raspberry-pi-pico-sdk-cmake-gcc-debug",
@@ -919,6 +927,10 @@
         "xpm install --config raspberry-pi-pico-2-arm-cmake-gcc-debug",
         "xpm install --config raspberry-pi-pico-2-arm-cmake-gcc-release"
       ],
+      "link-dependencies-raspberry-pi-pico-2-arm-cmake-gcc": [
+        "xpm run link-dependencies --config raspberry-pi-pico-2-arm-cmake-gcc-debug",
+        "xpm run link-dependencies --config raspberry-pi-pico-2-arm-cmake-gcc-release"
+      ],
       "build-raspberry-pi-pico-2-arm-cmake-gcc": [
         "xpm run setup --config raspberry-pi-pico-2-arm-cmake-gcc-debug",
         "xpm run build --config raspberry-pi-pico-2-arm-cmake-gcc-debug",
@@ -944,6 +956,10 @@
       "install-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
         "xpm install --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
         "xpm install --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
+      ],
+      "link-dependencies-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
+        "xpm run link-dependencies --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
+        "xpm run link-dependencies --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
       ],
       "build-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
         "xpm run setup --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
