@@ -107,10 +107,10 @@
         "qemu-riscv-rv32imac-meson-gcc"
       ],
       "configs-boards": [
-        "nucleo-f411re",
+        "nucleo-f411re-cubemx",
         "nucleo-f411re-cubemx-startup",
-        "nucleo-f767zi",
-        "nucleo-h533re",
+        "nucleo-f767zi-cubemx",
+        "nucleo-h533re-cubemx",
         "raspberry-pi-pico",
         "raspberry-pi-pico-2-arm",
         "raspberry-pi-pico-2-arm-sdk",
@@ -657,6 +657,10 @@
         "xpm install --config nucleo-f411re-cmake-gcc-debug",
         "xpm install --config nucleo-f411re-cmake-gcc-release"
       ],
+      "link-dependencies-nucleo-f411re-cmake-gcc": [
+        "xpm run link-dependencies --config nucleo-f411re-cmake-gcc-debug",
+        "xpm run link-dependencies --config nucleo-f411re-cmake-gcc-release"
+      ],
       "build-nucleo-f411re-cmake-gcc": [
         "xpm run setup --config nucleo-f411re-cmake-gcc-debug",
         "xpm run build --config nucleo-f411re-cmake-gcc-debug",
@@ -675,6 +679,36 @@
         "xpm run clean --config nucleo-f411re-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-f411re-cmake-gcc-release --ignore-errors"
       ],
+      "clear-nucleo-f411re-cubemx-cmake-gcc": [
+        "xpm run clear --config nucleo-f411re-cubemx-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-f411re-cubemx-cmake-gcc-release --ignore-errors"
+      ],
+      "install-nucleo-f411re-cubemx-cmake-gcc": [
+        "xpm install --config nucleo-f411re-cubemx-cmake-gcc-debug",
+        "xpm install --config nucleo-f411re-cubemx-cmake-gcc-release"
+      ],
+      "link-dependencies-nucleo-f411re-cubemx-cmake-gcc": [
+        "xpm run link-dependencies --config nucleo-f411re-cubemx-cmake-gcc-debug",
+        "xpm run link-dependencies --config nucleo-f411re-cubemx-cmake-gcc-release"
+      ],
+      "build-nucleo-f411re-cubemx-cmake-gcc": [
+        "xpm run setup --config nucleo-f411re-cubemx-cmake-gcc-debug",
+        "xpm run build --config nucleo-f411re-cubemx-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f411re-cubemx-cmake-gcc-release",
+        "xpm run build --config nucleo-f411re-cubemx-cmake-gcc-release"
+      ],
+      "test-nucleo-f411re-cubemx-cmake-gcc": [
+        "xpm run setup --config nucleo-f411re-cubemx-cmake-gcc-debug",
+        "xpm run build --config nucleo-f411re-cubemx-cmake-gcc-debug",
+        "xpm run test --config nucleo-f411re-cubemx-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f411re-cubemx-cmake-gcc-release",
+        "xpm run build --config nucleo-f411re-cubemx-cmake-gcc-release",
+        "xpm run test --config nucleo-f411re-cubemx-cmake-gcc-release"
+      ],
+      "clean-nucleo-f411re-cubemx-cmake-gcc": [
+        "xpm run clean --config nucleo-f411re-cubemx-cmake-gcc-debug --ignore-errors",
+        "xpm run clean --config nucleo-f411re-cubemx-cmake-gcc-release --ignore-errors"
+      ],
       "clear-nucleo-f411re-cubemx-startup-cmake-gcc": [
         "xpm run clear --config nucleo-f411re-cubemx-startup-cmake-gcc-debug --ignore-errors",
         "xpm run clear --config nucleo-f411re-cubemx-startup-cmake-gcc-release --ignore-errors"
@@ -682,6 +716,10 @@
       "install-nucleo-f411re-cubemx-startup-cmake-gcc": [
         "xpm install --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
         "xpm install --config nucleo-f411re-cubemx-startup-cmake-gcc-release"
+      ],
+      "link-dependencies-nucleo-f411re-cubemx-startup-cmake-gcc": [
+        "xpm run link-dependencies --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
+        "xpm run link-dependencies --config nucleo-f411re-cubemx-startup-cmake-gcc-release"
       ],
       "build-nucleo-f411re-cubemx-startup-cmake-gcc": [
         "xpm run setup --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
@@ -709,6 +747,10 @@
         "xpm install --config nucleo-f767zi-cmake-gcc-debug",
         "xpm install --config nucleo-f767zi-cmake-gcc-release"
       ],
+      "link-dependencies-nucleo-f767zi-cmake-gcc": [
+        "xpm run link-dependencies --config nucleo-f767zi-cmake-gcc-debug",
+        "xpm run link-dependencies --config nucleo-f767zi-cmake-gcc-release"
+      ],
       "build-nucleo-f767zi-cmake-gcc": [
         "xpm run setup --config nucleo-f767zi-cmake-gcc-debug",
         "xpm run build --config nucleo-f767zi-cmake-gcc-debug",
@@ -727,6 +769,36 @@
         "xpm run clean --config nucleo-f767zi-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-f767zi-cmake-gcc-release --ignore-errors"
       ],
+      "clear-nucleo-f767zi-cubemx-cmake-gcc": [
+        "xpm run clear --config nucleo-f767zi-cubemx-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-f767zi-cubemx-cmake-gcc-release --ignore-errors"
+      ],
+      "install-nucleo-f767zi-cubemx-cmake-gcc": [
+        "xpm install --config nucleo-f767zi-cubemx-cmake-gcc-debug",
+        "xpm install --config nucleo-f767zi-cubemx-cmake-gcc-release"
+      ],
+      "link-dependencies-nucleo-f767zi-cubemx-cmake-gcc": [
+        "xpm run link-dependencies --config nucleo-f767zi-cubemx-cmake-gcc-debug",
+        "xpm run link-dependencies --config nucleo-f767zi-cubemx-cmake-gcc-release"
+      ],
+      "build-nucleo-f767zi-cubemx-cmake-gcc": [
+        "xpm run setup --config nucleo-f767zi-cubemx-cmake-gcc-debug",
+        "xpm run build --config nucleo-f767zi-cubemx-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f767zi-cubemx-cmake-gcc-release",
+        "xpm run build --config nucleo-f767zi-cubemx-cmake-gcc-release"
+      ],
+      "test-nucleo-f767zi-cubemx-cmake-gcc": [
+        "xpm run setup --config nucleo-f767zi-cubemx-cmake-gcc-debug",
+        "xpm run build --config nucleo-f767zi-cubemx-cmake-gcc-debug",
+        "xpm run test --config nucleo-f767zi-cubemx-cmake-gcc-debug",
+        "xpm run setup --config nucleo-f767zi-cubemx-cmake-gcc-release",
+        "xpm run build --config nucleo-f767zi-cubemx-cmake-gcc-release",
+        "xpm run test --config nucleo-f767zi-cubemx-cmake-gcc-release"
+      ],
+      "clean-nucleo-f767zi-cubemx-cmake-gcc": [
+        "xpm run clean --config nucleo-f767zi-cubemx-cmake-gcc-debug --ignore-errors",
+        "xpm run clean --config nucleo-f767zi-cubemx-cmake-gcc-release --ignore-errors"
+      ],
       "clear-nucleo-h533re-cmake-gcc": [
         "xpm run clear --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
         "xpm run clear --config nucleo-h533re-cmake-gcc-release --ignore-errors"
@@ -734,6 +806,10 @@
       "install-nucleo-h533re-cmake-gcc": [
         "xpm install --config nucleo-h533re-cmake-gcc-debug",
         "xpm install --config nucleo-h533re-cmake-gcc-release"
+      ],
+      "link-dependencies-nucleo-h533re-cmake-gcc": [
+        "xpm run link-dependencies --config nucleo-h533re-cmake-gcc-debug",
+        "xpm run link-dependencies --config nucleo-h533re-cmake-gcc-release"
       ],
       "build-nucleo-h533re-cmake-gcc": [
         "xpm run setup --config nucleo-h533re-cmake-gcc-debug",
@@ -752,6 +828,36 @@
       "clean-nucleo-h533re-cmake-gcc": [
         "xpm run clean --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
         "xpm run clean --config nucleo-h533re-cmake-gcc-release --ignore-errors"
+      ],
+      "clear-nucleo-h533re-cubemx-cmake-gcc": [
+        "xpm run clear --config nucleo-h533re-cubemx-cmake-gcc-debug --ignore-errors",
+        "xpm run clear --config nucleo-h533re-cubemx-cmake-gcc-release --ignore-errors"
+      ],
+      "install-nucleo-h533re-cubemx-cmake-gcc": [
+        "xpm install --config nucleo-h533re-cubemx-cmake-gcc-debug",
+        "xpm install --config nucleo-h533re-cubemx-cmake-gcc-release"
+      ],
+      "link-dependencies-nucleo-h533re-cubemx-cmake-gcc": [
+        "xpm run link-dependencies --config nucleo-h533re-cubemx-cmake-gcc-debug",
+        "xpm run link-dependencies --config nucleo-h533re-cubemx-cmake-gcc-release"
+      ],
+      "build-nucleo-h533re-cubemx-cmake-gcc": [
+        "xpm run setup --config nucleo-h533re-cubemx-cmake-gcc-debug",
+        "xpm run build --config nucleo-h533re-cubemx-cmake-gcc-debug",
+        "xpm run setup --config nucleo-h533re-cubemx-cmake-gcc-release",
+        "xpm run build --config nucleo-h533re-cubemx-cmake-gcc-release"
+      ],
+      "test-nucleo-h533re-cubemx-cmake-gcc": [
+        "xpm run setup --config nucleo-h533re-cubemx-cmake-gcc-debug",
+        "xpm run build --config nucleo-h533re-cubemx-cmake-gcc-debug",
+        "xpm run test --config nucleo-h533re-cubemx-cmake-gcc-debug",
+        "xpm run setup --config nucleo-h533re-cubemx-cmake-gcc-release",
+        "xpm run build --config nucleo-h533re-cubemx-cmake-gcc-release",
+        "xpm run test --config nucleo-h533re-cubemx-cmake-gcc-release"
+      ],
+      "clean-nucleo-h533re-cubemx-cmake-gcc": [
+        "xpm run clean --config nucleo-h533re-cubemx-cmake-gcc-debug --ignore-errors",
+        "xpm run clean --config nucleo-h533re-cubemx-cmake-gcc-release --ignore-errors"
       ],
       "clear-raspberry-pi-pico-cmake-gcc": [
         "xpm run clear --config raspberry-pi-pico-cmake-gcc-debug",
@@ -1942,6 +2048,37 @@
           "buildType": "MinSizeRel"
         }
       },
+      "nucleo-f411re-cubemx-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "cortexm-actions",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "devDependencies": {
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}"
+        },
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "nucleo-f411re-cubemx",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "nucleo-f411re-cubemx-cmake-gcc-release": {
+        "inherits": [
+          "nucleo-f411re-cubemx-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
       "nucleo-f411re-cubemx-startup-cmake-gcc-debug": {
         "inherits": [
           "short-win-paths-properties",
@@ -2004,6 +2141,37 @@
           "buildType": "MinSizeRel"
         }
       },
+      "nucleo-f767zi-cubemx-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "cortexm-actions",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "devDependencies": {
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}"
+        },
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "nucleo-f767zi-cubemx",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "nucleo-f767zi-cubemx-cmake-gcc-release": {
+        "inherits": [
+          "nucleo-f767zi-cubemx-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
       "nucleo-h533re-cmake-gcc-debug": {
         "inherits": [
           "short-win-paths-properties",
@@ -2030,6 +2198,37 @@
       "nucleo-h533re-cmake-gcc-release": {
         "inherits": [
           "nucleo-h533re-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
+      "nucleo-h533re-cubemx-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "cortexm-actions",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "devDependencies": {
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}"
+        },
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "nucleo-h533re-cubemx",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "nucleo-h533re-cubemx-cmake-gcc-release": {
+        "inherits": [
+          "nucleo-h533re-cubemx-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel"
