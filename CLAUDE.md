@@ -13,7 +13,7 @@ Boost UT (BDD-style `"..."_test`, `expect`, `that`, operators), adapted for
 constrained embedded targets (bare-metal Cortex-M/A, RISC-V) as well as
 native Linux/macOS/Windows builds. Requires C++20.
 
-This is a source **library** xPack, not an application: the top-level
+This is a source **library** xpm package, not an application: the top-level
 folder builds the library and exposes it via CMake/meson/xPack (xcdl)
 integration; a separate `tests/` sub-project builds and runs sample
 programs against it on many toolchains and platforms.
@@ -95,7 +95,7 @@ downstream projects via one of:
   file, add it to **all** of these `target_sources()` lists.
 - **meson** (`meson.build`): declares an equivalent
   `micro_os_plus_micro_test_plus_dependency`.
-- **xPack/xCDL** (`xcdl-package.jsonc`): package metadata for the xPack
+- **xPack/xCDL** (`xcdl-package.jsonc`): package metadata for the xpm
   package manager.
 
 ## Testing
