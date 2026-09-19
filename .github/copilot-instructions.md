@@ -49,7 +49,8 @@ This is the **µTest++ Testing Framework** project, part of
 
 When needed to silence warnings, use separate groups of pragmas for each compiler.
 
-Use __GNUC__ guards, and, if necessary, __clang__ guards to apply compiler-specific pragmas.
+Always use __GNUC__ guards, and, if necessary, __clang__ guards to apply 
+compiler-specific pragmas.
 
 ```c
 #if defined(__GNUC__)
