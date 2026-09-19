@@ -27,7 +27,7 @@
 // ----------------------------------------------------------------------------
 
 // After reset, the RP2040 clk_sys is left running from the uncalibrated
-// ring oscillator (ROSC). `micro_os_plus_rp2040_clock_init()` below brings
+// ring oscillator (ROSC). `micro_os_plus_rp2040_clock_initialise()` below brings
 // up the crystal oscillator and the system PLL, then switches
 // clk_sys/clk_ref/clk_peri to a calibrated 125 MHz, the same target the
 // Pico SDK itself uses by default for RP2040 (see
@@ -48,7 +48,7 @@
 #define PLL_SYS_POSTDIV2 (2u)
 
 uint32_t
-micro_os_plus_rp2040_clock_init (void)
+micro_os_plus_rp2040_clock_initialise (void)
 {
   // Disable resus, in case it was left enabled by previous software.
   CLOCKS->CLK_SYS_RESUS_CTRL = 0;
@@ -95,10 +95,9 @@ micro_os_plus_rp2040_clock_init (void)
   PLL_SYS->PWR &= ~PLL_PWR_POSTDIVPD_BITS;
 
   // clk_ref = XOSC, undivided.
-  CLOCKS->CLK_REF_CTRL
-      = (CLOCKS->CLK_REF_CTRL & ~CLOCKS_CLK_REF_CTRL_SRC_BITS)
-        | (CLOCKS_CLK_REF_CTRL_SRC_VALUE_XOSC_CLKSRC
-           << CLOCKS_CLK_REF_CTRL_SRC_LSB);
+  CLOCKS->CLK_REF_CTRL = (CLOCKS->CLK_REF_CTRL & ~CLOCKS_CLK_REF_CTRL_SRC_BITS)
+                         | (CLOCKS_CLK_REF_CTRL_SRC_VALUE_XOSC_CLKSRC
+                            << CLOCKS_CLK_REF_CTRL_SRC_LSB);
   while (!(CLOCKS->CLK_REF_SELECTED
            & (1u << CLOCKS_CLK_REF_CTRL_SRC_VALUE_XOSC_CLKSRC)))
     {
@@ -111,10 +110,9 @@ micro_os_plus_rp2040_clock_init (void)
       = (CLOCKS->CLK_SYS_CTRL & ~CLOCKS_CLK_SYS_CTRL_AUXSRC_BITS)
         | (CLOCKS_CLK_SYS_CTRL_AUXSRC_VALUE_CLKSRC_PLL_SYS
            << CLOCKS_CLK_SYS_CTRL_AUXSRC_LSB);
-  CLOCKS->CLK_SYS_CTRL
-      = (CLOCKS->CLK_SYS_CTRL & ~CLOCKS_CLK_SYS_CTRL_SRC_BITS)
-        | (CLOCKS_CLK_SYS_CTRL_SRC_VALUE_CLKSRC_CLK_SYS_AUX
-           << CLOCKS_CLK_SYS_CTRL_SRC_LSB);
+  CLOCKS->CLK_SYS_CTRL = (CLOCKS->CLK_SYS_CTRL & ~CLOCKS_CLK_SYS_CTRL_SRC_BITS)
+                         | (CLOCKS_CLK_SYS_CTRL_SRC_VALUE_CLKSRC_CLK_SYS_AUX
+                            << CLOCKS_CLK_SYS_CTRL_SRC_LSB);
   while (!(CLOCKS->CLK_SYS_SELECTED
            & (1u << CLOCKS_CLK_SYS_CTRL_SRC_VALUE_CLKSRC_CLK_SYS_AUX)))
     {
@@ -123,10 +121,9 @@ micro_os_plus_rp2040_clock_init (void)
   CLOCKS->CLK_SYS_DIV = 1u << CLOCKS_CLK_SYS_DIV_INT_LSB;
 
   // clk_peri = clk_sys, undivided; feeds the UART/SPI baud generators.
-  CLOCKS->CLK_PERI_CTRL
-      = CLOCKS_CLK_PERI_CTRL_ENABLE_BITS
-        | (CLOCKS_CLK_PERI_CTRL_AUXSRC_VALUE_CLK_SYS
-           << CLOCKS_CLK_PERI_CTRL_AUXSRC_LSB);
+  CLOCKS->CLK_PERI_CTRL = CLOCKS_CLK_PERI_CTRL_ENABLE_BITS
+                          | (CLOCKS_CLK_PERI_CTRL_AUXSRC_VALUE_CLK_SYS
+                             << CLOCKS_CLK_PERI_CTRL_AUXSRC_LSB);
 
   return SYS_CLK_HZ;
 }

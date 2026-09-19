@@ -35,7 +35,7 @@
 // ----------------------------------------------------------------------------
 
 // After reset, the RP2350 clk_sys is left running from the uncalibrated
-// ring oscillator (ROSC). `micro_os_plus_rp2350_clock_init()` below brings
+// ring oscillator (ROSC). `micro_os_plus_rp2350_clock_initialise()` below brings
 // up the crystal oscillator and the system PLL, then switches
 // clk_sys/clk_ref/clk_peri to a calibrated 150 MHz, the same target the
 // Pico SDK itself uses by default for RP2350 (see
@@ -56,7 +56,7 @@
 #define PLL_SYS_POSTDIV2 (2u)
 
 uint32_t
-micro_os_plus_rp2350_clock_init (void)
+micro_os_plus_rp2350_clock_initialise (void)
 {
   // Disable resus, in case it was left enabled by previous software.
   CLOCKS->CLK_SYS_RESUS_CTRL = 0;

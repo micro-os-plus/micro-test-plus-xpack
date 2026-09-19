@@ -25,12 +25,12 @@ extern "C"
   // clk_ref/clk_sys/clk_peri from the reset-time ROSC to the resulting
   // calibrated clock. Returns the resulting clk_sys frequency, in Hz.
   uint32_t
-  micro_os_plus_rp2350_clock_init (void);
+  micro_os_plus_rp2350_clock_initialise (void);
 
   // Read back the clock configuration registers (PLL_SYS and the
   // CLK_SYS divider) and compute the current clk_sys frequency, in Hz.
   // Assumes clk_sys is sourced from PLL_SYS via the aux mux, as
-  // programmed by micro_os_plus_rp2350_clock_init().
+  // programmed by micro_os_plus_rp2350_clock_initialise().
   uint32_t
   micro_os_plus_rp2350_clock_get_frequency_hz (void);
 
