@@ -27,11 +27,34 @@ overwritten when regenerating code.
 
 #### `Core/src/main.c`
 
-There are several customisations done to main:
+One customisation is done to main:
+
+- rename `main()` as `micro_os_plus_startup_initialise_hardware_hook()`
+
+```c
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+int micro_os_plus_startup_initialise_hardware_hook (void);
+
+// ----------------------------------------------------------------------------
+
+// Turn the main function into the hardware initialization hook.
+
+// Mind the fact that the `while` loop at the end is commented out
+// and the function returns 0.
+
+#define main micro_os_plus_startup_initialise_hardware_hook
+
+/* USER CODE END 0 */
+```
+
+#### `src/wraps.c`
+
+The two functions actually being wrapped:
 
 - wrap `main()`
 - wrap `__libc_init_array()`
-- rename `main()` as `micro_os_plus_startup_initialise_hardware_hook()`
 
 To wrap the two functions, add the following to the linker options:
 
@@ -40,17 +63,7 @@ To wrap the two functions, add the following to the linker options:
   -Wl,--wrap=__libc_init_array
 ```
 
-To rename `main()` and define the wrapped functions, use:
-
 ```c
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-int micro_os_plus_startup_initialise_hardware_hook (void);
-void micro_os_plus_startup_run_main(void);
-int __wrap_main(void);
-void __wrap___libc_init_array(void);
-
 // Trick to intercept the call from _start(), since we need to do a
 // little bit more than STM32CubeMX initialization.
 int __wrap_main(void)
@@ -67,17 +80,6 @@ void __wrap___libc_init_array(void)
   // Silence this call, the static initializers will be called in the
   // µOS++ startup code.
 }
-
-// ----------------------------------------------------------------------------
-
-// Turn the main function into the hardware initialization hook.
-
-// Mind the fact that the `while` loop at the end is commented out
-// and the function returns 0.
-
-#define main micro_os_plus_startup_initialise_hardware_hook
-
-/* USER CODE END 0 */
 ```
 
 #### `stm32f4xx_it.c`

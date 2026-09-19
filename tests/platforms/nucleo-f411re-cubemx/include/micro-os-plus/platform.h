@@ -16,6 +16,8 @@
 
 #include "micro-os-plus/device.h"
 
+#include "micro-os-plus/nucleo-f411re-cubemx/led-green.h"
+
 // ----------------------------------------------------------------------------
 
 #endif /* MICRO_OS_PLUS_PLATFORM_H_ */

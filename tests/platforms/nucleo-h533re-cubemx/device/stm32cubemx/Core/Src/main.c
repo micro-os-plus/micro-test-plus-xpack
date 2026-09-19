@@ -58,6 +58,7 @@ static void MPU_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 // Trick to avoid clashing with the µOS++ specific main().
 // Do not call it directly, since it configures again the clocks.
 // Copy relevant calls to os_startup_initialize_hardware().

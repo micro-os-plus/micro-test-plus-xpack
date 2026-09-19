@@ -18,7 +18,7 @@
 // include it from C translation units.
 #if defined(__cplusplus)
 
-namespace platform::nucleo_f411re_cubemx_startup
+namespace platform
 {
   // Driver for the Nucleo-F411RE onboard green LED (`LD2`, `PA5`),
   // implemented on top of the STM32F4xx HAL's `hardware_gpio`-equivalent
@@ -63,7 +63,7 @@ namespace platform::nucleo_f411re_cubemx_startup
     void
     power_down (void);
   };
-} // namespace platform::nucleo_f411re_cubemx_startup
+} // namespace platform
 
 #endif // defined(__cplusplus)
 

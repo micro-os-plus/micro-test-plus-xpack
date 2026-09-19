@@ -28,7 +28,7 @@
 // the `BSP_LED_*()`/`LED_GREEN` declarations used below.
 #include "main.h"
 
-namespace platform::nucleo_h533re_cubemx
+namespace platform
 {
   void
   led_green::power_up (void)
@@ -60,7 +60,7 @@ namespace platform::nucleo_h533re_cubemx
     BSP_LED_DeInit (LED_GREEN);
   }
 
-} // namespace platform::nucleo_h533re_cubemx
+} // namespace platform
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

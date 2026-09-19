@@ -18,7 +18,7 @@
 // include it from C translation units.
 #if defined(__cplusplus)
 
-namespace platform::nucleo_h533re_cubemx
+namespace platform
 {
   // Driver for the Nucleo-H533RE onboard green LED (`LED_GREEN`,
   // `LED2`, `PA5` on this Nucleo-64 board; the BSP maps `LED_GREEN` to
@@ -66,7 +66,7 @@ namespace platform::nucleo_h533re_cubemx
     void
     power_down (void);
   };
-} // namespace platform::nucleo_h533re_cubemx
+} // namespace platform
 
 #endif // defined(__cplusplus)
 

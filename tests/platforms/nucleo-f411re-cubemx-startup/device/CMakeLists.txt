@@ -125,7 +125,7 @@ add_library (micro-os-plus-device-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (micro-os-plus-device-interface INTERFACE "include")
 
-target_sources (micro-os-plus-device-interface INTERFACE)
+target_sources (micro-os-plus-device-interface INTERFACE "src/wraps.c")
 
 target_compile_options (
   micro-os-plus-device-interface

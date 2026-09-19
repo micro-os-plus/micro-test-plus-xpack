@@ -11,8 +11,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/platform.h"
 #include "micro-os-plus/startup.h"
-#include "micro-os-plus/nucleo-f411re-cubemx-startup/led-green.h"
 
 // ----------------------------------------------------------------------------
 
@@ -21,14 +21,15 @@
 // `micro_os_plus_startup_initialise_hardware_hook()`) already brings up
 // the clocks and configures the LD2 pin, so there is no
 // `initialise_hardware_early_hook` here.
-platform::nucleo_f411re_cubemx_startup::led_green activity_led;
+platform::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 
 // Called from micro_os_plus_startup_run_main(), after the static
-// initialisers have run (post_init_array, not initialise_hardware, so
-// that activity_led is touched only after its own static initialiser
-// has executed).
+// initialisers have run. `led_green` has no data members and a
+// trivial default constructor, so there is no actual ordering hazard
+// here; post_init_array_hook is used simply as the conventional point,
+// once the C++ runtime is fully up, to touch peripherals.
 // Requires MICRO_OS_PLUS_STARTUP_POST_INIT_ARRAY_ENABLED (startup-defines.h).
 int
 micro_os_plus_startup_post_init_array_hook (void)

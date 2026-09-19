@@ -11,8 +11,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/platform.h"
 #include "micro-os-plus/startup.h"
-#include "micro-os-plus/nucleo-h533re-cubemx/led-green.h"
 
 // ----------------------------------------------------------------------------
 
@@ -24,14 +24,15 @@
 // driver's own `power_up()`/`turn_on()` below are harmless repeats of
 // that, and its `finalise_hardware_hook` below adds what the
 // CubeMX-generated code does not: turning the LED off again on exit.
-platform::nucleo_h533re_cubemx::led_green activity_led;
+platform::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 
 // Called from micro_os_plus_startup_run_main(), after the static
-// initialisers have run (post_init_array, not initialise_hardware, so
-// that activity_led is touched only after its own static initialiser
-// has executed).
+// initialisers have run. `led_green` has no data members and a
+// trivial default constructor, so there is no actual ordering hazard
+// here; post_init_array_hook is used simply as the conventional point,
+// once the C++ runtime is fully up, to touch peripherals.
 // Requires MICRO_OS_PLUS_STARTUP_POST_INIT_ARRAY_ENABLED (startup-defines.h).
 int
 micro_os_plus_startup_post_init_array_hook (void)

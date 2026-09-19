@@ -55,27 +55,6 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-int micro_os_plus_startup_initialise_hardware_hook (void);
-void micro_os_plus_startup_run_main(void);
-int __wrap_main(void);
-void __wrap___libc_init_array(void);
-
-// Trick to intercept the call from _start(), since we need to do a
-// little bit more than STM32CubeMX initialization.
-int __wrap_main(void)
-{
-  micro_os_plus_startup_run_main();
-
-  while (1) {
-    __WFI(); // Wait For Interrupt
-  };
-}
-
-void __wrap___libc_init_array(void)
-{
-  // Silence this call, the static initializers are later called in the
-  // micro_os_plus_startup_run_main() right before calling main().
-}
 
 // ----------------------------------------------------------------------------
 
@@ -84,6 +63,7 @@ void __wrap___libc_init_array(void)
 // Mind the fact that the `while` loop at the end is commented out 
 // and the function returns 0.
 
+int micro_os_plus_startup_initialise_hardware_hook (void);
 #define main micro_os_plus_startup_initialise_hardware_hook
 
 /* USER CODE END 0 */

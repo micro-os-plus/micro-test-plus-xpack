@@ -26,6 +26,8 @@
 
 #include "stm32h5xx.h"
 
+#include "stm32h5xx_hal.h"
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)

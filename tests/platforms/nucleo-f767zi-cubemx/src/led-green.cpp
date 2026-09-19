@@ -28,7 +28,7 @@
 // `stm32f7xx_hal.h` for the `HAL_GPIO_*()` declarations used below.
 #include "main.h"
 
-namespace platform::nucleo_f767zi_cubemx
+namespace platform
 {
   void
   led_green::power_up (void)
@@ -67,7 +67,7 @@ namespace platform::nucleo_f767zi_cubemx
     HAL_GPIO_DeInit (LD1_GPIO_Port, LD1_Pin);
   }
 
-} // namespace platform::nucleo_f767zi_cubemx
+} // namespace platform
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

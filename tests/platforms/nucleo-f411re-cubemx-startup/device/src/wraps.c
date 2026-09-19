@@ -1,6 +1,6 @@
 /*
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
- * Copyright (c) 2023-2026 Liviu Ionescu. All rights reserved.
+ * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose is hereby granted, under the terms of the MIT license.
@@ -9,31 +9,31 @@
  * obtained from https://opensource.org/licenses/mit.
  */
 
-#ifndef MICRO_OS_PLUS_DEVICE_H
-#define MICRO_OS_PLUS_DEVICE_H
+// ----------------------------------------------------------------------------
+
+#include "micro-os-plus/device.h"
+#include "micro-os-plus/startup.h"
 
 // ----------------------------------------------------------------------------
 
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__cplusplus)
-#pragma GCC diagnostic ignored "-Wuseless-cast"
-#else
-#pragma GCC diagnostic ignored "-Wnested-externs"
-#pragma GCC diagnostic ignored "-Wredundant-decls"
-#endif // defined(__cplusplus)
-#endif // defined(__GNUC__)
+// Trick to intercept the call from _start(), since we need to do a
+// little bit more than STM32CubeMX initialization.
+int
+__wrap_main (void)
+{
+  micro_os_plus_startup_run_main ();
 
-#include "stm32f4xx.h"
+  while (1)
+    {
+      __WFI (); // Wait For Interrupt
+    }
+}
 
-#include "stm32f4xx_hal.h"
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-
-// ----------------------------------------------------------------------------
-
-#endif /* MICRO_OS_PLUS_DEVICE_H */
+void
+__wrap___libc_init_array (void)
+{
+  // Silence this call, the static initializers are later called in the
+  // micro_os_plus_startup_run_main() right before calling main().
+}
 
 // ----------------------------------------------------------------------------

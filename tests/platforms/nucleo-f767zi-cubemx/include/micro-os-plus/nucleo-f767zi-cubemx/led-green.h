@@ -18,7 +18,7 @@
 // include it from C translation units.
 #if defined(__cplusplus)
 
-namespace platform::nucleo_f767zi_cubemx
+namespace platform
 {
   // Driver for the Nucleo-F767ZI onboard green LED (`LD1`, `PB0`),
   // implemented on top of the STM32F7xx HAL's `hardware_gpio`-equivalent
@@ -63,7 +63,7 @@ namespace platform::nucleo_f767zi_cubemx
     void
     power_down (void);
   };
-} // namespace platform::nucleo_f767zi_cubemx
+} // namespace platform
 
 #endif // defined(__cplusplus)
 

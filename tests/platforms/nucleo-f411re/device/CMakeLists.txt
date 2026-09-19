@@ -22,14 +22,14 @@ add_library (micro-os-plus-device-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
   micro-os-plus-device-interface
-  INTERFACE
-    "include"
-    # Vendored CMSIS headers (register/bit-field definitions, no HAL); kept from
-    # the original CubeMX-generated project, all the rest of which (Core/,
-    # Drivers/STM32F4xx_HAL_Driver/, the generated CMake, the .ioc) was removed
-    # once this platform stopped using the HAL/CubeMX bring-up.
-    "stm32cubemx/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
-    "stm32cubemx/Drivers/CMSIS/Include"
+  INTERFACE "include"
+            # Vendored CMSIS headers (register/bit-field definitions, no HAL);
+            # kept from the original CubeMX-generated project, all the rest of
+            # which (Core/, Drivers/STM32F4xx_HAL_Driver/, the generated CMake,
+            # the .ioc) was removed once this platform stopped using the
+            # HAL/CubeMX bring-up.
+            "stm32cubemx/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
+            "stm32cubemx/Drivers/CMSIS/Include"
 )
 
 target_compile_definitions (
