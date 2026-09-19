@@ -215,7 +215,7 @@
         "@micro-os-plus/architecture-aarch64": "^4.1.0",
         "@micro-os-plus/devices-qemu-aarch64": "^5.0.1",
         "@micro-os-plus/semihosting": "^10.1.0",
-        "@micro-os-plus/startup": "^8.1.0",
+        "@micro-os-plus/startup": "^9.0.0",
         "@xpack-3rd-party/arm-cmsis-core": "5.4.0-7",
         "@xpack-3rd-party/raspberrypi-pico-sdk": "2.3.0-5",
         "@xpack-dev-tools/qemu-arm": "9.2.4-1.1",
