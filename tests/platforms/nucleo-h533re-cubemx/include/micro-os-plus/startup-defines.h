@@ -35,6 +35,15 @@
 #define MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED
 #endif // !defined(MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED)
 
+// Finalise the hardware setup.
+#if !defined(MICRO_OS_PLUS_STARTUP_FINALISE_HARDWARE_ENABLED)
+#define MICRO_OS_PLUS_STARTUP_FINALISE_HARDWARE_ENABLED
+#endif // !defined(MICRO_OS_PLUS_STARTUP_FINALISE_HARDWARE_ENABLED)
+
+#if !defined(MICRO_OS_PLUS_STARTUP_POST_INIT_ARRAY_ENABLED)
+#define MICRO_OS_PLUS_STARTUP_POST_INIT_ARRAY_ENABLED
+#endif // !defined(MICRO_OS_PLUS_STARTUP_POST_INIT_ARRAY_ENABLED)
+
 // The exit() and abort() functions used to terminate the application in a
 // civilised way, especially when using semihosting.
 #if !defined(MICRO_OS_PLUS_STARTUP_EXIT_ENABLED)
