@@ -22,9 +22,13 @@ the startup sequence into the µOS++ `micro-os-plus::startup` machinery.
 - `pico_crt0` — the reset handler and vector table (`_start()`)
 - `pico_runtime_init` — the weak, overridable `runtime_init()` hook
   called by `pico_crt0` once the C runtime (data/bss) has been set up
+- `hardware_gpio` — the SDK's GPIO driver, used by
+  [../src/led-green.cpp](../src/led-green.cpp) to drive the onboard
+  green LED; not pulled in transitively by any of the above, so it is
+  linked explicitly
 
-None of the higher-level SDK libraries (`pico_stdlib`,
-`pico_clib_interface`, hardware drivers, and so on) are linked.
+None of the other higher-level SDK libraries (`pico_stdlib`,
+`pico_clib_interface`, and so on) are linked.
 
 ### Overridden functions
 
