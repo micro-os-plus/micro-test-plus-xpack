@@ -1,4 +1,4 @@
-# platforms/nucleo-f767zi
+# platforms/nucleo-f767zi-cubemx
 
 Note: It cannot be a static library, since it makes extensive use of `weak` symbols.
 

@@ -18,7 +18,7 @@
 // include it from C translation units.
 #if defined(__cplusplus)
 
-namespace platform::pico
+namespace platform::raspberry_pi_pico
 {
   // Driver for the Raspberry Pi Pico onboard green LED, wired to
   // GPIO25, active-high, with no series resistor other than the
@@ -60,7 +60,7 @@ namespace platform::pico
     void
     power_down (void);
   };
-} // namespace platform::pico
+} // namespace platform::raspberry_pi_pico
 
 #endif // defined(__cplusplus)
 

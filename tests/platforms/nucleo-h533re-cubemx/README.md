@@ -1,4 +1,4 @@
-# platforms/nucleo-h533re
+# platforms/nucleo-h533re-cubemx
 
 Note: It cannot be a static library, since it makes extensive use of `weak` symbols.
 

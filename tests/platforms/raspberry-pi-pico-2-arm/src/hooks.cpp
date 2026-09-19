@@ -19,7 +19,7 @@
 // ----------------------------------------------------------------------------
 
 // The onboard green LED, used to signal general board activity.
-platform::pico2::led_green activityLed;
+platform::raspberry_pi_pico_2_arm::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 
@@ -42,8 +42,8 @@ micro_os_plus_startup_initialise_hardware_hook (void)
 {
   SystemInit ();
 
-  activityLed.power_up ();
-  activityLed.turn_on ();
+  activity_led.power_up ();
+  activity_led.turn_on ();
 
   return 0;
 }
@@ -51,8 +51,8 @@ micro_os_plus_startup_initialise_hardware_hook (void)
 void
 micro_os_plus_startup_finalise_hardware_hook (void)
 {
-  activityLed.turn_off ();
-  activityLed.power_down ();
+  activity_led.turn_off ();
+  activity_led.power_down ();
 }
 
 // ----------------------------------------------------------------------------

@@ -21,18 +21,18 @@
 // pico_crt0/pico_runtime_init already bring up the clocks (see
 // __wrap_main() in wraps.c), so there is no
 // initialise_hardware_early_hook here.
-platform::pico::led_green activityLed;
+platform::raspberry_pi_pico_sdk::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 
 // Called after the static initialisers have run (post_init_array, not
-// initialise_hardware, so that activityLed is touched only after its
+// initialise_hardware, so that activity_led is touched only after its
 // own static initialiser has executed).
 int
 micro_os_plus_startup_post_init_array_hook (void)
 {
-  activityLed.power_up ();
-  activityLed.turn_on ();
+  activity_led.power_up ();
+  activity_led.turn_on ();
 
   return 0;
 }
@@ -40,8 +40,8 @@ micro_os_plus_startup_post_init_array_hook (void)
 void
 micro_os_plus_startup_finalise_hardware_hook (void)
 {
-  activityLed.turn_off ();
-  activityLed.power_down ();
+  activity_led.turn_off ();
+  activity_led.power_down ();
 }
 
 // ----------------------------------------------------------------------------

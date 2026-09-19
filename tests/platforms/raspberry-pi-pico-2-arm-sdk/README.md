@@ -1,7 +1,7 @@
 # platforms/raspberry-pi-pico-2-arm-sdk
 
 Support files for building Cortex-M33 tests to run on the
-Raspberry Pi Pico 2 board with the 
+Raspberry Pi Pico 2 board with the
 [Pico SDK](https://www.raspberrypi.com/documentation/pico-sdk/).
 
 ## Prerequisites
@@ -34,14 +34,14 @@ The following folders should be passed to the compiler during the build:
 - `src/hooks.cpp` — the `micro_os_plus_startup_post_init_array_hook`/
   `micro_os_plus_startup_finalise_hardware_hook` hooks (called from
   `micro_os_plus_startup_run_main()`/`exit()`, see `__wrap_main()` in
-  `device/src/wraps.c`); instantiates the `activityLed`
-  (`platform::pico2::led_green`), turning it on/off around the
+  `device/src/wraps.c`); instantiates the `activity_led`
+  (`platform::raspberry_pi_pico_2_arm_sdk::led_green`), turning it on/off around the
   application's run. `post_init_array_hook` (not
-  `initialise_hardware_hook`) is used so `activityLed` is touched only
+  `initialise_hardware_hook`) is used so `activity_led` is touched only
   after its static initialiser has run; no
   `initialise_hardware_early_hook` is needed, as the Pico SDK's own
   `pico_crt0`/`pico_runtime_init` already bring up the clocks.
-- `src/led-green.cpp` — `platform::pico2::led_green` driver for the
+- `src/led-green.cpp` — `platform::raspberry_pi_pico_2_arm_sdk::led_green` driver for the
   onboard green LED (`PICO_DEFAULT_LED_PIN`), implemented on top of the
   Pico SDK's own `hardware_gpio` driver, unlike the sibling
   raspberry-pi-pico-2-arm platform, which drives the RP2350 CMSIS

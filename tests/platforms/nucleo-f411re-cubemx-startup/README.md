@@ -1,4 +1,4 @@
-# platforms/nucleo-f411re
+# platforms/nucleo-f411re-cubemx-startup
 
 Note: It cannot be a static library, since it makes extensive use of `weak` symbols.
 

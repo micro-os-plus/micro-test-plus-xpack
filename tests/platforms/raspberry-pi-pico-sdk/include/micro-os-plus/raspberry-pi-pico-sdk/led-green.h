@@ -18,7 +18,7 @@
 // include it from C translation units.
 #if defined(__cplusplus)
 
-namespace platform::pico
+namespace platform::raspberry_pi_pico_sdk
 {
   // Driver for the Raspberry Pi Pico onboard green LED
   // (`PICO_DEFAULT_LED_PIN`), implemented on top of the Pico SDK's own
@@ -60,7 +60,7 @@ namespace platform::pico
     void
     power_down (void);
   };
-} // namespace platform::pico
+} // namespace platform::raspberry_pi_pico_sdk
 
 #endif // defined(__cplusplus)
 
