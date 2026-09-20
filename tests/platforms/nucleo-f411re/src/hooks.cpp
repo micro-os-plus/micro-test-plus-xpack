@@ -13,6 +13,11 @@
 
 #include "micro-os-plus/platform.h"
 #include "micro-os-plus/startup.h"
+#include "micro-os-plus/diag/trace.h"
+
+// ----------------------------------------------------------------------------
+
+using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -53,6 +58,8 @@ int
 micro_os_plus_startup_initialise_hardware_hook (void)
 {
   SystemInit ();
+
+  trace::printf ("SystemCoreClock: %u Hz\n", SystemCoreClock);
 
   return 0;
 }
