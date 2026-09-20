@@ -16,8 +16,8 @@
 // Only the Pico SDK's register-definition headers are used below (no SDK
 // library is linked); they provide the peripheral bit-field names used to
 // drive GPIO25, matching the CMSIS register structs already pulled in via
-// micro-os-plus/device.h (RP2040.h), the same way rp2040/clock.c uses
-// CLOCKS->..., XOSC->..., PLL_SYS->....
+// micro-os-plus/device.h (RP2040.h), the same way rp2040/system-clock.c
+// uses CLOCKS->..., XOSC->..., PLL_SYS->....
 #include "hardware/platform_defs.h"
 #include "hardware/regs/io_bank0.h"
 #include "hardware/regs/resets.h"
@@ -46,7 +46,7 @@ namespace platform::raspberry_pi_pico
   {
     // IO_BANK0, PADS_BANK0 and SIO are clocked from clk_sys, which is
     // already running (off the ROSC) straight out of reset, well before
-    // rp2040_clock_init() (clock.c) ever runs, so no clock setup is
+    // rp2040_clock_init() (system-clock.c) ever runs, so no clock setup is
     // needed here, unlike clk_peri-fed peripherals (UART/SPI/ADC).
     // clk_sys to each of them can be independently gated via
     // CLOCKS->WAKE_EN0 (CLK_SYS_IO/CLK_SYS_PADS/CLK_SYS_SIO bits), but

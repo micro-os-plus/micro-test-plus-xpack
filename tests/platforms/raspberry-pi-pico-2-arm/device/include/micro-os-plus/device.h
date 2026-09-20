@@ -35,7 +35,7 @@
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
 
-#include "micro-os-plus/rp2350/clock.h"
+#include "micro-os-plus/rp2350/system-clock.h"
 
 // ----------------------------------------------------------------------------
 

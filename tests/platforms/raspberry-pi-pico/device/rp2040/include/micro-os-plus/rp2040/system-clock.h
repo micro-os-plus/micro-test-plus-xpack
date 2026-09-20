@@ -9,8 +9,8 @@
  * obtained from https://opensource.org/licenses/mit.
  */
 
-#ifndef MICRO_OS_PLUS_RP2350_CLOCK_H_
-#define MICRO_OS_PLUS_RP2350_CLOCK_H_
+#ifndef MICRO_OS_PLUS_RP2040_SYSTEM_CLOCK_H_
+#define MICRO_OS_PLUS_RP2040_SYSTEM_CLOCK_H_
 
 // ----------------------------------------------------------------------------
 
@@ -25,14 +25,14 @@ extern "C"
   // clk_ref/clk_sys/clk_peri from the reset-time ROSC to the resulting
   // calibrated clock. Returns the resulting clk_sys frequency, in Hz.
   uint32_t
-  micro_os_plus_rp2350_clock_initialise (void);
+  micro_os_plus_rp2040_clock_initialise (void);
 
   // Read back the clock configuration registers (PLL_SYS and the
   // CLK_SYS divider) and compute the current clk_sys frequency, in Hz.
   // Assumes clk_sys is sourced from PLL_SYS via the aux mux, as
-  // programmed by micro_os_plus_rp2350_clock_initialise().
+  // programmed by micro_os_plus_rp2040_clock_initialise().
   uint32_t
-  micro_os_plus_rp2350_clock_get_frequency_hz (void);
+  micro_os_plus_rp2040_clock_get_frequency_hz (void);
 
 #if defined(__cplusplus)
 }
@@ -40,6 +40,6 @@ extern "C"
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_RP2350_CLOCK_H_
+#endif // MICRO_OS_PLUS_RP2040_SYSTEM_CLOCK_H_
 
 // ----------------------------------------------------------------------------

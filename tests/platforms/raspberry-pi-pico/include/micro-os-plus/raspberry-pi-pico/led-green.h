@@ -24,8 +24,8 @@ namespace platform::raspberry_pi_pico
   // GPIO25, active-high, with no series resistor other than the
   // RP2040 pad driver. Implemented directly on the RP2040 CMSIS
   // register structs (SIO, IO_BANK0, PADS_BANK0, RESETS), matching
-  // the raw-register approach used by rp2040/clock.c; no Pico SDK
-  // runtime dependency.
+  // the raw-register approach used by rp2040/system-clock.c; no Pico
+  // SDK runtime dependency.
   class led_green
   {
   public:

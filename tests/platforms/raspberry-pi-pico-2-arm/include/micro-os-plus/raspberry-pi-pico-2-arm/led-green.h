@@ -24,8 +24,8 @@ namespace platform::raspberry_pi_pico_2_arm
   // GPIO25, active-high, with no series resistor other than the
   // RP2350 pad driver. Implemented directly on the RP2350 CMSIS
   // register structs (SIO, IO_BANK0, PADS_BANK0, RESETS), matching
-  // the raw-register approach used by rp2350/clock.c; no Pico SDK
-  // runtime dependency.
+  // the raw-register approach used by rp2350/system-clock.c; no Pico
+  // SDK runtime dependency.
   class led_green
   {
   public:

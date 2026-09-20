@@ -32,7 +32,7 @@
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
 
-#include "micro-os-plus/rp2040/clock.h"
+#include "micro-os-plus/rp2040/system-clock.h"
 
 // ----------------------------------------------------------------------------
 
