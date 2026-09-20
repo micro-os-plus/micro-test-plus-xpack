@@ -23,6 +23,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "micro-os-plus/diag/trace.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,6 +89,8 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+
+  micro_os_plus_trace_printf ("SystemCoreClock: %lu Hz\n", SystemCoreClock);
 
   /* USER CODE END SysInit */
 
