@@ -13,15 +13,51 @@
 
 #include "micro-os-plus/platform.h"
 #include "micro-os-plus/startup.h"
+#include "micro-os-plus/diag/trace.h"
+#include "hardware/clocks.h"
+#include "pico/runtime_init.h"
+
+// ----------------------------------------------------------------------------
+
+using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
 // The onboard green LED, used to signal general board activity. Unlike
-// the raspberry-pi-pico platform, the Pico SDK's own
-// pico_crt0/pico_runtime_init already bring up the clocks (see
-// __wrap_main() in wraps.c), so there is no
-// initialise_hardware_early_hook here.
+// the raspberry-pi-pico platform, there is no
+// initialise_hardware_early_hook here; the clocks are brought up in
+// initialise_hardware_hook below instead (see the comment there for
+// why this differs from a plain pico-sdk application).
 platform::led_green activity_led;
+
+// ----------------------------------------------------------------------------
+
+// Called from micro_os_plus_startup_run_main() (via __wrap_main() in
+// wraps.c), after the data & bss sections are initialised. A plain
+// pico-sdk application gets its clocks from the SDK's own
+// `runtime_init()` (pico_runtime), called from crt0 before `main()`;
+// this project does not link `pico_runtime`, because its `runtime_init()`
+// also runs the `__init_array` C++ static initialisers, which would
+// then run a second time when `micro_os_plus_startup_run_main()` runs
+// them itself (see the wrapped, no-op `__libc_init_array()` in
+// wraps.c). Instead, the handful of `pico_runtime_init` steps needed to
+// bring up clk_sys are called here directly, in the same order
+// `runtime_init()` would use, without pulling in the rest of it. There
+// is no CMSIS-style `SystemCoreClock` in this build, so the resulting
+// frequency is read back directly via the SDK's `clock_get_hz()`.
+// Requires MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED
+// (startup-defines.h).
+int
+micro_os_plus_startup_initialise_hardware_hook (void)
+{
+  runtime_init_early_resets ();
+  runtime_init_clocks ();
+  runtime_init_post_clock_resets ();
+
+  trace::printf ("SystemCoreClock: %u Hz\n", clock_get_hz (clk_sys));
+
+  return 0;
+}
 
 // ----------------------------------------------------------------------------
 
