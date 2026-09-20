@@ -35,7 +35,7 @@ target_include_directories (
 target_sources (
   micro-os-plus-device-interface
   INTERFACE "src/bs2_default_padded_checksummed.S" "src/vectors-rp2040.c"
-            "src/system-rp2040.c"
+            "src/system-rp2040.cpp"
 )
 
 target_compile_definitions (micro-os-plus-device-interface INTERFACE)

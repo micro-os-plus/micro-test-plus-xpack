@@ -25,13 +25,13 @@ target_include_directories (
   device-raspberry-pi-rp2040-interface
   INTERFACE
     "include"
-    # Header-only register bit-field definitions used by src/system-clock.c to
-    # bring up the clocks; no Pico SDK library/CMake target is linked.
+    # Header-only register bit-field definitions used by src/system-clock.cpp
+    # to bring up the clocks; no Pico SDK library/CMake target is linked.
     "${CMAKE_BINARY_DIR}/xpacks/@xpack-3rd-party/raspberrypi-pico-sdk/src/rp2040/hardware_regs/include"
 )
 
 target_sources (
-  device-raspberry-pi-rp2040-interface INTERFACE "src/system-clock.c"
+  device-raspberry-pi-rp2040-interface INTERFACE "src/system-clock.cpp"
 )
 
 xpack_display_target_lists (device-raspberry-pi-rp2040-interface)

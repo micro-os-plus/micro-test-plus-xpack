@@ -36,7 +36,7 @@ are compiled.
   for the RP2040, all aliased to `Default_Handler`; the reset handler
   itself (`Reset_Handler`) and the other Cortex-M core handlers come
   from `micro-os-plus::architecture-cortexm`.
-- [src/system-rp2040.c](src/system-rp2040.c) — the CMSIS-mandated
+- [src/system-rp2040.cpp](src/system-rp2040.cpp) — the CMSIS-mandated
   `SystemInit()` and `SystemCoreClockUpdate()` functions, and the
   `SystemCoreClock` variable, built only when
   `MICRO_OS_PLUS_STARTUP_ENABLED` is defined.

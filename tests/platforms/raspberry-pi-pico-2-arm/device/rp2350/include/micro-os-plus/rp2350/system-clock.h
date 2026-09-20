@@ -14,28 +14,48 @@
 
 // ----------------------------------------------------------------------------
 
-#include <stdint.h>
-
+// This is a C++ only header (the driver is a class, not a C API); do not
+// include it from C translation units.
 #if defined(__cplusplus)
-extern "C"
+
+#include <cstdint>
+
+namespace device
 {
-#endif // defined(__cplusplus)
+  // Driver bringing the RP2350 system clock up to its maximum
+  // frequency, implemented directly on the register bit-field
+  // definitions borrowed from the Pico SDK's header-only
+  // `hardware_regs` (no SDK library calls); CLOCKS/XOSC/PLL_SYS/RESETS
+  // are the CMSIS-style register structs already pulled in via
+  // micro-os-plus/device.h (RP2350.h).
+  class system_clock
+  {
+  public:
+    system_clock () = default;
 
-  // Bring up the crystal oscillator and the system PLL, and switch
-  // clk_ref/clk_sys/clk_peri from the reset-time ROSC to the resulting
-  // calibrated clock. Returns the resulting clk_sys frequency, in Hz.
-  uint32_t
-  micro_os_plus_rp2350_clock_initialise (void);
+    system_clock (const system_clock&) = delete;
+    system_clock&
+    operator= (const system_clock&)
+        = delete;
 
-  // Read back the clock configuration registers (PLL_SYS and the
-  // CLK_SYS divider) and compute the current clk_sys frequency, in Hz.
-  // Assumes clk_sys is sourced from PLL_SYS via the aux mux, as
-  // programmed by micro_os_plus_rp2350_clock_initialise().
-  uint32_t
-  micro_os_plus_rp2350_clock_get_frequency_hz (void);
+    ~system_clock () = default;
 
-#if defined(__cplusplus)
-}
+    // Bring up the crystal oscillator and the system PLL, and switch
+    // clk_ref/clk_sys/clk_peri from the reset-time ROSC to the
+    // resulting calibrated clock. Returns the resulting clk_sys
+    // frequency, in Hz.
+    std::uint32_t
+    initialise (void);
+
+    // Read back the clock configuration registers (PLL_SYS and the
+    // CLK_SYS divider) and compute the current clk_sys frequency, in
+    // Hz. Assumes clk_sys is sourced from PLL_SYS via the aux mux, as
+    // programmed by initialise().
+    std::uint32_t
+    clock_get_frequency_hz (void);
+  };
+} // namespace device
+
 #endif // defined(__cplusplus)
 
 // ----------------------------------------------------------------------------

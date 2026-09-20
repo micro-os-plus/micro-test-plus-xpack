@@ -15,20 +15,29 @@
 
 // ----------------------------------------------------------------------------
 
+// system_RP2040.h (pulled in via micro-os-plus/device.h, RP2040.h) declares
+// SystemCoreClock/SystemInit/SystemCoreClockUpdate inside its own
+// `#ifdef __cplusplus extern "C"` block, so the definitions below must be
+// given matching C language linkage.
+extern "C" uint32_t SystemCoreClock;
 uint32_t SystemCoreClock;
 
-// ----------------------------------------------------------------------------
+// A private instance, used only to read back the clock configuration;
+// distinct from the one `src/hooks.cpp` uses to bring the clock up in
+// `micro_os_plus_startup_initialise_hardware_early_hook()`, since
+// `device::system_clock` carries no state of its own.
+device::system_clock system_clock;
 
-void
+extern "C" void
 SystemInit (void)
 {
   SystemCoreClockUpdate ();
 }
 
-void
+extern "C" void
 SystemCoreClockUpdate (void)
 {
-  SystemCoreClock = micro_os_plus_rp2350_clock_get_frequency_hz ();
+  SystemCoreClock = system_clock.clock_get_frequency_hz ();
 }
 
 // ----------------------------------------------------------------------------

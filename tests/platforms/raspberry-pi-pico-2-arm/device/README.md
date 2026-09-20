@@ -40,7 +40,7 @@ are compiled.
   Armv8-M-specific `MemManage_Handler`/`BusFault_Handler`/
   `UsageFault_Handler`/`SecureFault_Handler`/`DebugMon_Handler`, come
   from `micro-os-plus::architecture-cortexm`.
-- [src/system-rp2350.c](src/system-rp2350.c) — the CMSIS-mandated
+- [src/system-rp2350.cpp](src/system-rp2350.cpp) — the CMSIS-mandated
   `SystemInit()` and `SystemCoreClockUpdate()` functions, and the
   `SystemCoreClock` variable, built only when
   `MICRO_OS_PLUS_STARTUP_ENABLED` is defined.

@@ -31,7 +31,7 @@ platform::raspberry_pi_pico_2_arm::led_green activity_led;
 int
 micro_os_plus_startup_initialise_hardware_early_hook (void)
 {
-  SystemCoreClock = micro_os_plus_rp2350_clock_initialise ();
+  SystemCoreClock = system_clock.initialise ();
   return 0;
 }
 
