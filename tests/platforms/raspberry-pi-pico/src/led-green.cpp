@@ -35,7 +35,7 @@
 #pragma GCC diagnostic ignored "-Wold-style-cast"
 #endif // defined(__GNUC__)
 
-namespace platform::raspberry_pi_pico
+namespace platform
 {
   // GPIO25 is the only pin the onboard green LED is wired to; no other
   // board revision moves it.
@@ -108,7 +108,7 @@ namespace platform::raspberry_pi_pico
                              << IO_BANK0_GPIO25_CTRL_FUNCSEL_LSB);
   }
 
-} // namespace platform::raspberry_pi_pico
+} // namespace platform
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

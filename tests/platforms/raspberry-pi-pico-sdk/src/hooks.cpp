@@ -21,7 +21,7 @@
 // pico_crt0/pico_runtime_init already bring up the clocks (see
 // __wrap_main() in wraps.c), so there is no
 // initialise_hardware_early_hook here.
-platform::raspberry_pi_pico_sdk::led_green activity_led;
+platform::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 

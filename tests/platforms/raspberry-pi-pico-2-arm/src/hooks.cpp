@@ -17,7 +17,7 @@
 // ----------------------------------------------------------------------------
 
 // The onboard green LED, used to signal general board activity.
-platform::raspberry_pi_pico_2_arm::led_green activity_led;
+platform::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 

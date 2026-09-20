@@ -32,8 +32,8 @@ The following folders should be passed to the compiler during the build:
 
 - `src/hooks.cpp` — the `micro_os_plus_startup_initialise_hardware_*`
   hooks (clock bring-up, `SystemInit()`); also instantiates the
-  `activity_led` (`platform::raspberry_pi_pico_2_arm::led_green`) and powers it up.
-- `src/led-green.cpp` — `platform::raspberry_pi_pico_2_arm::led_green` driver for the
+  `activity_led` (`platform::led_green`) and powers it up.
+- `src/led-green.cpp` — `platform::led_green` driver for the
   onboard green LED (GPIO25), implemented directly on the RP2350 CMSIS
   peripherals.
 

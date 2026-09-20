@@ -19,7 +19,7 @@
 // needed for it here.
 #include "hardware/gpio.h"
 
-namespace platform::raspberry_pi_pico_sdk
+namespace platform
 {
   void
   led_green::power_up (void)
@@ -61,6 +61,6 @@ namespace platform::raspberry_pi_pico_sdk
     gpio_deinit (PICO_DEFAULT_LED_PIN);
   }
 
-} // namespace platform::raspberry_pi_pico_sdk
+} // namespace platform
 
 // ----------------------------------------------------------------------------
