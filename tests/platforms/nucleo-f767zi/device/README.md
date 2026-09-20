@@ -40,9 +40,12 @@ compile definition, and the sources below.
 ## `system-clock.cpp`
 
 `device::system_clock` (declared in
-`include/micro-os-plus/stm32f767zi/system-clock.h`), reproducing, on
-the CMSIS `RCC`/`FLASH`/`PWR` registers, the modest clock tree the
-`stm32cubemx.ioc` configuration set up (HSI, 16 MHz, no PLL); see
+`include/micro-os-plus/stm32f767zi/system-clock.h`), bringing up HSE,
+in bypass mode, at the nominal 16 MHz the onboard ST-Link is documented
+(in `stm32cubemx.ioc`'s `PH0/OSC_IN` pin assignment, `GPIO_Label` and
+`RCC.HSE_VALUE`) to feed into `PH0/OSC_IN` — more accurate than the
+internal HSI the CubeMX-generated `SystemClock_Config()` actually used,
+at the same frequency; see the driver header for details. See
 `src/hooks.cpp` for where it is instantiated and called.
 
 ## `vectors-stm32f767xx.c`

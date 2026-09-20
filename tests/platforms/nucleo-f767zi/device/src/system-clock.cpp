@@ -26,9 +26,10 @@
 
 namespace device
 {
-  // The STM32F767 HSI oscillator's nominal (factory-trimmed) frequency;
-  // matches HSI_VALUE in the CubeMX-generated stm32f7xx_hal_conf.h.
-  static constexpr std::uint32_t hsi_hz = 16'000'000;
+  // Nominal frequency of the clock the onboard ST-Link feeds into
+  // PH0/OSC_IN; matches RCC.HSE_VALUE in stm32cubemx.ioc. Confirmed
+  // working on real hardware; see system-clock.h.
+  static constexpr std::uint32_t hse_hz = 16'000'000;
 
   std::uint32_t
   system_clock::initialise (void)
@@ -41,12 +42,15 @@ namespace device
     // 16 MHz); already its reset value, set explicitly for clarity.
     FLASH->ACR = (FLASH->ACR & ~FLASH_ACR_LATENCY_Msk) | FLASH_ACR_LATENCY_0WS;
 
-    // HSI is already on and selected as the SYSCLK source at reset;
-    // bring it up explicitly, in case some earlier code turned it off.
-    RCC->CR |= RCC_CR_HSION;
-    while (!(RCC->CR & RCC_CR_HSIRDY))
+    // Bring up HSE in bypass mode (an external clock signal is being
+    // fed in, not a resonator); HSEBYP may only be written while
+    // HSEON is cleared, which it already is, at reset.
+    RCC->CR |= RCC_CR_HSEBYP;
+    RCC->CR |= RCC_CR_HSEON;
+    while (!(RCC->CR & RCC_CR_HSERDY))
       {
-        // Busy wait for HSI to stabilise.
+        // Busy wait for HSE to stabilise (or, if the clock signal is
+        // not actually present on this board, forever).
       }
 
     // AHB (HCLK) undivided (16 MHz); APB1 (PCLK1) divided by 2 (its
@@ -57,12 +61,11 @@ namespace device
            & ~(RCC_CFGR_HPRE_Msk | RCC_CFGR_PPRE1_Msk | RCC_CFGR_PPRE2_Msk))
           | RCC_CFGR_HPRE_DIV1 | RCC_CFGR_PPRE1_DIV2 | RCC_CFGR_PPRE2_DIV1;
 
-    // Switch SYSCLK to HSI; already the case at reset, set explicitly
-    // for clarity.
-    RCC->CFGR = (RCC->CFGR & ~RCC_CFGR_SW_Msk) | RCC_CFGR_SW_HSI;
-    while ((RCC->CFGR & RCC_CFGR_SWS_Msk) != RCC_CFGR_SWS_HSI)
+    // Switch SYSCLK to HSE.
+    RCC->CFGR = (RCC->CFGR & ~RCC_CFGR_SW_Msk) | RCC_CFGR_SW_HSE;
+    while ((RCC->CFGR & RCC_CFGR_SWS_Msk) != RCC_CFGR_SWS_HSE)
       {
-        // Busy wait for the glitchless mux to settle on HSI.
+        // Busy wait for the glitchless mux to settle on HSE.
       }
 
     return clock_get_frequency_hz ();
@@ -71,14 +74,14 @@ namespace device
   std::uint32_t
   system_clock::clock_get_frequency_hz (void)
   {
-    // Assumes SYSCLK is sourced from HSI, as programmed by
+    // Assumes SYSCLK is sourced from HSE, as programmed by
     // initialise(); nothing else in this codebase changes the source
     // afterwards.
     static constexpr std::uint32_t hpre_shift[16]
         = { 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9 };
     std::uint32_t hpre = (RCC->CFGR & RCC_CFGR_HPRE_Msk) >> RCC_CFGR_HPRE_Pos;
 
-    return hsi_hz >> hpre_shift[hpre];
+    return hse_hz >> hpre_shift[hpre];
   }
 
 } // namespace device

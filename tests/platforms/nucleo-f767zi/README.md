@@ -12,10 +12,12 @@ everything is implemented directly on the CMSIS registers, driven from
 - `micro_os_plus_startup_initialise_hardware_early_hook()` — called
   from `_start()`, before the data & bss sections are initialised;
   instantiates `device::system_clock` and calls its
-  `initialise()` to bring the system clock up as configured by the
-  original STM32CubeMX project (HSI, 16 MHz, no PLL; see
-  `device/include/micro-os-plus/stm32f767zi/system-clock.h`),
-  assigning the result to `SystemCoreClock`.
+  `initialise()` to bring the system clock up on HSE, in bypass mode,
+  at the nominal 16 MHz the onboard ST-Link is documented to feed into
+  `PH0/OSC_IN` — more accurate than, at the same frequency as, the
+  internal HSI the original STM32CubeMX project actually used (see
+  `device/include/micro-os-plus/stm32f767zi/system-clock.h` for
+  details), assigning the result to `SystemCoreClock`.
 - `micro_os_plus_startup_initialise_hardware_hook()` — called after the
   data & bss sections are initialised; calls `SystemInit()`
   (`device/src/system-stm32f767xx.cpp`, not the CubeMX-generated one),
