@@ -14,6 +14,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/architecture.h"
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__cplusplus)
@@ -25,7 +27,6 @@
 #endif // defined(__GNUC__)
 
 #include "stm32f4xx.h"
-
 #include "stm32f4xx_hal.h"
 
 #if defined(__GNUC__)

@@ -11,10 +11,10 @@
 
 // ----------------------------------------------------------------------------
 
-#include "pico/runtime.h"
 #include "micro-os-plus/device.h"
 #include "micro-os-plus/startup.h"
 #include "micro-os-plus/diag/trace.h"
+#include "pico/runtime.h"
 
 // ----------------------------------------------------------------------------
 

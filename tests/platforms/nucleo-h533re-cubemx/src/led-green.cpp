@@ -11,7 +11,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "micro-os-plus/nucleo-h533re-cubemx/led-green.h"
+#include "micro-os-plus/platform.h"
 
 // The CMSIS/HAL/BSP headers pulled in below (transitively, via `main.h`)
 // use C-style casts and, in the CMSIS core inline functions, casts that
@@ -22,11 +22,6 @@
 #pragma GCC diagnostic ignored "-Wold-style-cast"
 #pragma GCC diagnostic ignored "-Wuseless-cast"
 #endif // defined(__GNUC__)
-
-// The CubeMX-generated `main.h` (STM32H5xx HAL, `#ifdef __cplusplus
-// extern "C"`-wrapped); includes, transitively, `stm32h5xx_nucleo.h` for
-// the `BSP_LED_*()`/`LED_GREEN` declarations used below.
-#include "main.h"
 
 namespace platform
 {

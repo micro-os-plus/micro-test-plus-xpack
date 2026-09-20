@@ -11,8 +11,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "micro-os-plus/device.h"
-#include "micro-os-plus/raspberry-pi-pico-2-arm/led-green.h"
+#include "micro-os-plus/platform.h"
 
 // Only the Pico SDK's register-definition headers are used below (no SDK
 // library is linked); they provide the peripheral bit-field names used to

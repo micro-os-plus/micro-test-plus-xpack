@@ -12,7 +12,6 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/device.h"
-#include "micro-os-plus/rp2040/clock.h"
 
 // Only the Pico SDK's register-definition headers are used below (no
 // SDK library is linked); they provide the peripheral bit-field names

@@ -11,7 +11,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "micro-os-plus/nucleo-f411re-cubemx-startup/led-green.h"
+#include "micro-os-plus/platform.h"
 
 // The CMSIS/HAL headers pulled in below (transitively, via `main.h`) use
 // C-style casts and, in the CMSIS core inline functions, casts that are
@@ -22,11 +22,6 @@
 #pragma GCC diagnostic ignored "-Wold-style-cast"
 #pragma GCC diagnostic ignored "-Wuseless-cast"
 #endif // defined(__GNUC__)
-
-// The CubeMX-generated `main.h` (STM32F4xx HAL, `#ifdef __cplusplus extern
-// "C"`-wrapped); provides `LD2_Pin`/`LD2_GPIO_Port` and, transitively,
-// `stm32f4xx_hal.h` for the `HAL_GPIO_*()` declarations used below.
-#include "main.h"
 
 namespace platform
 {

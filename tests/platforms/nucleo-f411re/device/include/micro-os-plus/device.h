@@ -14,6 +14,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/architecture.h"
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__cplusplus)
@@ -26,13 +28,15 @@
 
 #include "stm32f4xx.h"
 
-#include "micro-os-plus/stm32f411re/system-clock.h"
-
-extern device::system_clock system_clock;
-
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
+
+#include "micro-os-plus/stm32f411re/system-clock.h"
+
+// ----------------------------------------------------------------------------
+
+extern device::system_clock system_clock;
 
 // ----------------------------------------------------------------------------
 

@@ -11,10 +11,8 @@
 
 // ----------------------------------------------------------------------------
 
-#include "micro-os-plus/device.h"
+#include "micro-os-plus/platform.h"
 #include "micro-os-plus/startup.h"
-#include "micro-os-plus/rp2350/clock.h"
-#include "micro-os-plus/raspberry-pi-pico-2-arm/led-green.h"
 
 // ----------------------------------------------------------------------------
 

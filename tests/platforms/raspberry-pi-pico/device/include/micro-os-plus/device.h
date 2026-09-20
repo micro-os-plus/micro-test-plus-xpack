@@ -14,6 +14,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/architecture.h"
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__cplusplus)
@@ -29,6 +31,8 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
+
+#include "micro-os-plus/rp2040/clock.h"
 
 // ----------------------------------------------------------------------------
 

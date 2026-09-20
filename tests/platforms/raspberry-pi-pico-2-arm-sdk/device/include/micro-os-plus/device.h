@@ -14,6 +14,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/architecture.h"
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__cplusplus)

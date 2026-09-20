@@ -16,6 +16,11 @@
 
 #include "micro-os-plus/device.h"
 
+// The CubeMX-generated `main.h` (STM32F7xx HAL, `#ifdef __cplusplus extern
+// "C"`-wrapped); provides `LD1_Pin`/`LD1_GPIO_Port` and, transitively,
+// `stm32f7xx_hal.h` for the `HAL_GPIO_*()` declarations used below.
+#include "main.h"
+
 #include "micro-os-plus/nucleo-f767zi-cubemx/led-green.h"
 
 // ----------------------------------------------------------------------------

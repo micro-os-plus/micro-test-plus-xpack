@@ -11,7 +11,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "micro-os-plus/raspberry-pi-pico-2-arm-sdk/led-green.h"
+#include "micro-os-plus/platform.h"
 
 // The Pico SDK's own GPIO driver; PICO_DEFAULT_LED_PIN comes from the
 // board header (boards/pico2.h), force-included by the SDK's CMake

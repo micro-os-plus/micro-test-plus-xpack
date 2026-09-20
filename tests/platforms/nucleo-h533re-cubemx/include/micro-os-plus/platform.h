@@ -16,6 +16,11 @@
 
 #include "micro-os-plus/device.h"
 
+// The CubeMX-generated `main.h` (STM32H5xx HAL, `#ifdef __cplusplus
+// extern "C"`-wrapped); includes, transitively, `stm32h5xx_nucleo.h` for
+// the `BSP_LED_*()`/`LED_GREEN` declarations used below.
+#include "main.h"
+
 #include "micro-os-plus/nucleo-h533re-cubemx/led-green.h"
 
 // ----------------------------------------------------------------------------

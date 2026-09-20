@@ -11,8 +11,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/platform.h"
 #include "micro-os-plus/startup.h"
-#include "micro-os-plus/raspberry-pi-pico-sdk/led-green.h"
 
 // ----------------------------------------------------------------------------
 

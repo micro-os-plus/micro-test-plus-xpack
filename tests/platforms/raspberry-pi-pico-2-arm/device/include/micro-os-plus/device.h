@@ -14,6 +14,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/architecture.h"
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Warith-conversion"
@@ -32,6 +34,8 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
+
+#include "micro-os-plus/rp2350/clock.h"
 
 // ----------------------------------------------------------------------------
 
