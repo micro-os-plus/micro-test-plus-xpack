@@ -25,8 +25,8 @@ target_include_directories (
   device-raspberry-pi-rp2350-interface
   INTERFACE
     "include"
-    # Header-only register bit-field definitions used by src/system-clock.cpp
-    # to bring up the clocks; no Pico SDK library/CMake target is linked.
+    # Header-only register bit-field definitions used by src/system-clock.cpp to
+    # bring up the clocks; no Pico SDK library/CMake target is linked.
     "${CMAKE_BINARY_DIR}/xpacks/@xpack-3rd-party/raspberrypi-pico-sdk/src/rp2350/hardware_regs/include"
 )
 
