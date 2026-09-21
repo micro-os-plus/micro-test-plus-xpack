@@ -27,9 +27,12 @@ __wrap_main (void)
   // Note: requires MICRO_OS_PLUS_STARTUP_CALL_REAL_MAIN_ENABLED.
   micro_os_plus_startup_run_main ();
 
+#if defined(MICRO_OS_PLUS_DEBUG_ENABLED)
+  micro_os_plus_architecture_brk ();
+#endif
   while (1)
     {
-      __WFI (); // Wait For Interrupt
+      micro_os_plus_architecture_wfi ();
     }
 }
 
@@ -45,9 +48,13 @@ void
 hard_assertion_failure (void)
 {
   micro_os_plus_trace_puts ("Hard assert");
+
+#if defined(MICRO_OS_PLUS_DEBUG_ENABLED)
+  micro_os_plus_architecture_brk ();
+#endif
   while (1)
     {
-      __WFI (); // Wait For Interrupt
+      micro_os_plus_architecture_wfi ();
     }
 }
 #endif // defined(NDEBUG)
