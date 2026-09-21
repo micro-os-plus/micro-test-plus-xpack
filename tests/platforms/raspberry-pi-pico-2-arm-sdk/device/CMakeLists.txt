@@ -65,8 +65,13 @@ target_link_options (
 
 target_link_libraries (
   micro-os-plus-device-interface
-  INTERFACE cmsis_core pico_standard_link pico_crt0 pico_runtime_init
-            hardware_gpio hardware_clocks micro-os-plus::architecture
+  INTERFACE cmsis_core
+            pico_standard_link
+            pico_crt0
+            pico_runtime_init
+            hardware_gpio
+            hardware_clocks
+            micro-os-plus::architecture
 )
 
 xpack_display_target_lists (cmsis_core)
