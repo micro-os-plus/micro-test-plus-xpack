@@ -28,6 +28,9 @@ namespace platform
   void
   led_green::power_up (void)
   {
+    // Harmless to call again even though `cubemx_main()`, called from
+    // `micro_os_plus_startup_initialise_hardware_hook()`, already did
+    // so before this driver ever runs.
     BSP_LED_Init (LED_GREEN);
   }
 

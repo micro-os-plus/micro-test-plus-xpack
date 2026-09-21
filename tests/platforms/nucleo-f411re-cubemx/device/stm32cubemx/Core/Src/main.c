@@ -23,8 +23,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "micro-os-plus/diag/trace.h"
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,11 +55,16 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-// Trick to avoid clashing with the µOS++ specific main().
-// Do not call it directly, since it configures again the clocks.
-// Copy relevant calls to os_startup_initialize_hardware().
-int micro_os_plus_startup_initialise_hardware_hook (void);
-#define main micro_os_plus_startup_initialise_hardware_hook
+// Renamed to cubemx_main() to avoid clashing with the µOS++ specific
+// main(); called explicitly from
+// micro_os_plus_startup_initialise_hardware_hook() (src/hooks.cpp),
+// which expects it to return, not loop forever.
+//
+// Warning: the final `while (1)` loop below must stay commented out
+// (with the `return 0;` in its place), otherwise this function never
+// returns.
+#define main cubemx_main
+int cubemx_main (void);
 
 /* USER CODE END 0 */
 
@@ -89,8 +92,6 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
-  micro_os_plus_trace_printf ("SystemCoreClock: %lu Hz\n", SystemCoreClock);
 
   /* USER CODE END SysInit */
 

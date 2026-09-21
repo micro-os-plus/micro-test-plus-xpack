@@ -37,12 +37,7 @@ namespace platform
 
     ~led_green () = default;
 
-    // Drive the pin low (LED off). The pin itself (clock, mode,
-    // output-push-pull) is already configured by the CubeMX-generated
-    // `MX_GPIO_Init()`, called from
-    // `micro_os_plus_startup_initialise_hardware_hook()` well before
-    // this driver ever runs, so only the output level needs setting
-    // here.
+    // Configure the pin and drive it low (LED off).
     void
     power_up (void);
 

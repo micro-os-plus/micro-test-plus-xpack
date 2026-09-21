@@ -28,10 +28,16 @@ namespace platform
   void
   led_green::power_up (void)
   {
-    // The pin's clock, mode (output push-pull) and speed are already
-    // configured by the CubeMX-generated `MX_GPIO_Init()`, called from
-    // `micro_os_plus_startup_initialise_hardware_hook()`; only the
-    // output level needs setting here.
+    // Initialise the pin (mode, pull, speed), the same way as the
+    // CubeMX-generated `MX_GPIO_Init()` (`cubemx_main()`).
+    GPIO_InitTypeDef GPIO_InitStruct = {};
+    GPIO_InitStruct.Pin = LD2_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init (LD2_GPIO_Port, &GPIO_InitStruct);
+
+    // Active-high: start with the LED off.
     HAL_GPIO_WritePin (LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
   }
 

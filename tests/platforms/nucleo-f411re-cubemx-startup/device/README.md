@@ -27,27 +27,50 @@ overwritten when regenerating code.
 
 #### `Core/src/main.c`
 
-One customisation is done to main:
+There are two customisations done to main:
 
-- rename `main()` as `micro_os_plus_startup_initialise_hardware_hook()`
+- rename `main()` as `cubemx_main()`, to avoid clashing with the
+  µOS++ specific `main()`
 
 ```c
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-int micro_os_plus_startup_initialise_hardware_hook (void);
-
-// ----------------------------------------------------------------------------
-
-// Turn the main function into the hardware initialization hook.
-
-// Mind the fact that the `while` loop at the end is commented out
-// and the function returns 0.
-
-#define main micro_os_plus_startup_initialise_hardware_hook
+// Renamed to cubemx_main() to avoid clashing with the µOS++ specific
+// main(); called explicitly from
+// micro_os_plus_startup_initialise_hardware_hook() (src/hooks.cpp),
+// which expects it to return, not loop forever.
+//
+// Warning: the final `while (1)` loop below must stay commented out
+// (with the `return 0;` in its place), otherwise this function never
+// returns.
+#define main cubemx_main
+int cubemx_main (void);
 
 /* USER CODE END 0 */
 ```
+
+- comment out the infinite loop, so `cubemx_main()` returns instead of
+  blocking forever, and add a `return 0;` in its place:
+
+```c
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  // while (1)
+  //  {
+      /* USER CODE END WHILE */
+
+      /* USER CODE BEGIN 3 */
+  //  }
+  return 0;
+  /* USER CODE END 3 */
+
+```
+
+`micro_os_plus_startup_initialise_hardware_hook()` (`src/hooks.cpp`)
+simply calls `cubemx_main()`; the initialisation calls
+(`HAL_Init()`, `SystemClock_Config()`, `MX_GPIO_Init()`, etc.) stay in
+`main.c`, unchanged.
 
 #### `src/wraps.c`
 

@@ -27,24 +27,31 @@ overwritten when regenerating code.
 
 #### `Core/src/main.c`
 
-There are several customisations done to main:
+There are two customisations done to main:
 
-- rename `main()` as `micro_os_plus_startup_initialise_hardware_hook()`
+- rename `main()` as `cubemx_main()`, to avoid clashing with the
+  µOS++ specific `main()`
 
 ```c
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-// Trick to avoid clashing with the µOS++ specific main().
-// Do not call it directly, since it configures again the clocks.
-// Copy relevant calls to os_startup_initialize_hardware().
-int micro_os_plus_startup_initialise_hardware_hook (void);
-#define main micro_os_plus_startup_initialise_hardware_hook
+// Renamed to cubemx_main() to avoid clashing with the µOS++ specific
+// main(); called explicitly from
+// micro_os_plus_startup_initialise_hardware_hook() (src/hooks.cpp),
+// which expects it to return, not loop forever.
+//
+// Warning: the final `while (1)` loop below must stay commented out
+// (with the `return 0;` in its place), otherwise this function never
+// returns.
+#define main cubemx_main
+int cubemx_main (void);
 
 /* USER CODE END 0 */
 ```
 
-The infinite loop must be commented out:
+- comment out the infinite loop, so `cubemx_main()` returns instead of
+  blocking forever, and add a `return 0;` in its place:
 
 ```c
   /* Infinite loop */
@@ -59,6 +66,11 @@ The infinite loop must be commented out:
   /* USER CODE END 3 */
 
 ```
+
+`micro_os_plus_startup_initialise_hardware_hook()` (`src/hooks.cpp`)
+simply calls `cubemx_main()`; the initialisation calls
+(`HAL_Init()`, `SystemClock_Config()`, `MX_GPIO_Init()`, etc.) stay in
+`main.c`, unchanged.
 
 ## CMake
 

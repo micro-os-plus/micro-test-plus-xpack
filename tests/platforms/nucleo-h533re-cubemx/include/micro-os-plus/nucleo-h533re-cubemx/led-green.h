@@ -28,9 +28,11 @@ namespace platform
   // `stm32cubemx-drivers-objects-library`), unlike the sibling
   // nucleo-f411re-cubemx/nucleo-f767zi-cubemx platforms, whose CubeMX
   // projects have no BSP layer and drive `HAL_GPIO_*()` directly. This
-  // is the same BSP the CubeMX-generated `main()` itself already calls
-  // (`BSP_LED_Init(LED_GREEN)`/`BSP_LED_On(LED_GREEN)`) to light the
-  // LED at boot; this driver only adds turning it off again on exit.
+  // is the same BSP that the CubeMX-generated `cubemx_main()`, called
+  // from `micro_os_plus_startup_initialise_hardware_hook()`, itself
+  // already calls (`BSP_LED_Init(LED_GREEN)`/`BSP_LED_On(LED_GREEN)`)
+  // to light the LED at boot; this driver only adds turning it off
+  // again on exit.
   class led_green
   {
   public:
@@ -43,26 +45,23 @@ namespace platform
 
     ~led_green () = default;
 
-    // Configure the pin via `BSP_LED_Init()`. Harmless to call again
-    // even though the CubeMX-generated
-    // `micro_os_plus_startup_initialise_hardware_hook()` (renamed
-    // `main()`) already did so before this driver ever runs.
+    // Configure the GPIO pin.
     void
     power_up (void);
 
-    // Turn the LED on via `BSP_LED_On()`.
+    // Turn the LED on.
     void
     turn_on (void);
 
-    // Turn the LED off via `BSP_LED_Off()`.
+    // Turn the LED off.
     void
     turn_off (void);
 
-    // Invert the current output level via `BSP_LED_Toggle()`.
+    // Invert the current output level.
     void
     toggle (void);
 
-    // Return the pin to its reset state via `BSP_LED_DeInit()`.
+    // Return the GPIO pin to its reset state.
     void
     power_down (void);
   };

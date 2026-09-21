@@ -13,17 +13,39 @@
 
 #include "micro-os-plus/platform.h"
 #include "micro-os-plus/startup.h"
+#include "micro-os-plus/diag/trace.h"
 
 // ----------------------------------------------------------------------------
 
-// The onboard green LED, used to signal general board activity. The
-// CubeMX-generated `main()` (renamed
-// `micro_os_plus_startup_initialise_hardware_hook()`) already brings up
-// the clocks and configures the LD1 pin, so there is no
+// The onboard green LED, used to signal general board activity.
+// `micro_os_plus_startup_initialise_hardware_hook()` below already
+// calls the CubeMX-generated `cubemx_main()`, which brings up the
+// clocks and configures the LD1 pin, so there is no
 // `initialise_hardware_early_hook` here.
 platform::led_green activity_led;
 
 // ----------------------------------------------------------------------------
+
+// Declared, but not exposed via a header, in the CubeMX-generated
+// `device/stm32cubemx/Core/Src/main.c`, where it is `main()` renamed
+// via the `#define main cubemx_main` trick.
+extern "C" int
+cubemx_main (void);
+
+// Called from micro_os_plus_startup_run_main(), after the data & bss
+// sections are initialised, typically used to finalise the hardware
+// setup.
+// Requires MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED
+// (startup-defines.h).
+int
+micro_os_plus_startup_initialise_hardware_hook (void)
+{
+  cubemx_main ();
+
+  micro_os_plus::trace::printf ("SystemCoreClock: %lu Hz\n", SystemCoreClock);
+
+  return 0;
+}
 
 // Called from micro_os_plus_startup_run_main(), after the static
 // initialisers have run. `led_green` has no data members and a
