@@ -38,9 +38,10 @@ compile definition, and the sources below.
 
 `device::system_clock` (declared in
 `include/micro-os-plus/stm32f411re/system-clock.h`), bringing the
-system clock up to its maximum (100 MHz), implemented directly on the
-CMSIS `RCC`/`FLASH`/`PWR` registers; see `src/hooks.cpp` for where it
-is instantiated and called.
+system clock up to 96 MHz (matching the sibling CubeMX platforms,
+rather than this device's 100 MHz maximum), implemented directly on
+the CMSIS `RCC`/`FLASH`/`PWR` registers; see `src/hooks.cpp` for where
+it is instantiated and called.
 
 ## `vectors-stm32f411xe.c`
 

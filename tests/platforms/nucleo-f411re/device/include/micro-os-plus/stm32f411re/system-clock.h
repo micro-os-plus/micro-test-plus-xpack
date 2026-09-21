@@ -22,9 +22,10 @@
 
 namespace device
 {
-  // Driver bringing the STM32F411 system clock up to its maximum
-  // frequency, implemented directly on the CMSIS `RCC`/`FLASH`/`PWR`
-  // register structs (no HAL calls).
+  // Driver bringing the STM32F411 system clock up to 96 MHz (matching
+  // the CubeMX-generated platforms' clock tree, rather than this
+  // device's 100 MHz maximum), implemented directly on the CMSIS
+  // `RCC`/`FLASH`/`PWR` register structs (no HAL calls).
   //
   // Nucleo-F411RE has no separate HSE crystal; PH0-OSC_IN is instead
   // fed an 8 MHz clock signal by the onboard ST-LINK's own MCO output
@@ -44,11 +45,11 @@ namespace device
     ~system_clock () = default;
 
     // Bring up HSE (bypass, fed by the ST-LINK MCO), configure the
-    // main PLL for a 100 MHz SYSCLK/HCLK (the maximum for this
-    // device), raise the flash latency and enable the ART
-    // accelerator (prefetch, I-cache, D-cache) for that frequency,
-    // select voltage scale 1 (required above 64 MHz), and switch
-    // SYSCLK to the PLL. Returns the resulting HCLK frequency, in Hz.
+    // main PLL for a 96 MHz SYSCLK/HCLK, raise the flash latency and
+    // enable the ART accelerator (prefetch, I-cache, D-cache) for
+    // that frequency, select voltage scale 1 (required above 64 MHz),
+    // and switch SYSCLK to the PLL. Returns the resulting HCLK
+    // frequency, in Hz.
     std::uint32_t
     initialise (void);
 

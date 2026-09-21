@@ -33,10 +33,12 @@ namespace device
   static constexpr std::uint32_t hse_hz = 8'000'000;
 
   // PLL: 8 MHz / 4 = 2 MHz VCO input (the value ST recommends, for the
-  // best jitter performance) * 100 = 200 MHz VCO / 2 = 100 MHz SYSCLK,
-  // the maximum HCLK the STM32F411 supports.
+  // best jitter performance) * 96 = 192 MHz VCO / 2 = 96 MHz SYSCLK,
+  // matching the CubeMX-generated platforms (whose default clock tree
+  // keeps PLLQ at a clean 48 MHz), even though the STM32F411 itself
+  // supports up to 100 MHz HCLK.
   static constexpr std::uint32_t pll_m = 4;
-  static constexpr std::uint32_t pll_n = 100;
+  static constexpr std::uint32_t pll_n = 96;
   // PLLP is encoded as (PLLP / 2 - 1); 0 selects PLLP = 2.
   static constexpr std::uint32_t pll_p_field = 0;
   static constexpr std::uint32_t pll_p = 2;
@@ -47,7 +49,7 @@ namespace device
     // Raise the flash latency for the target HCLK before raising the
     // clock itself (the reverse order is required when decreasing the
     // frequency), and enable the ART accelerator (prefetch, I-cache,
-    // D-cache) for best performance at 100 MHz.
+    // D-cache) for best performance at 96 MHz.
     FLASH->ACR = FLASH_ACR_LATENCY_3WS | FLASH_ACR_PRFTEN | FLASH_ACR_ICEN
                  | FLASH_ACR_DCEN;
 
@@ -77,9 +79,9 @@ namespace device
         // Busy wait for the PLL to lock.
       }
 
-    // AHB (HCLK) undivided (100 MHz); APB1 (PCLK1) divided by 2 (its
-    // 50 MHz maximum); APB2 (PCLK2) undivided (within its 100 MHz
-    // maximum).
+    // AHB (HCLK) undivided (96 MHz); APB1 (PCLK1) divided by 2 (48 MHz,
+    // within its 50 MHz maximum); APB2 (PCLK2) undivided (within its
+    // 100 MHz maximum).
     RCC->CFGR
         = (RCC->CFGR
            & ~(RCC_CFGR_HPRE_Msk | RCC_CFGR_PPRE1_Msk | RCC_CFGR_PPRE2_Msk))

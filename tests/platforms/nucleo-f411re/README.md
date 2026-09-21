@@ -12,7 +12,8 @@ everything is implemented directly on the CMSIS registers, driven from
 - `micro_os_plus_startup_initialise_hardware_early_hook()` — called
   from `_start()`, before the data & bss sections are initialised;
   instantiates `device::system_clock` and calls its
-  `initialise()` to bring the system clock up to its maximum (100 MHz,
+  `initialise()` to bring the system clock up to 96 MHz (matching the
+  sibling CubeMX platforms, rather than this device's 100 MHz maximum;
   from the 8 MHz clock signal the onboard ST-LINK feeds into
   HSE-bypass; see
   `device/include/micro-os-plus/stm32f411re/system-clock.h`),
