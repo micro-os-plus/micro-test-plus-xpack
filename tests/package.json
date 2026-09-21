@@ -107,9 +107,12 @@
         "qemu-riscv-rv32imac-meson-gcc"
       ],
       "configs-boards": [
+        "nucleo-f411re",
         "nucleo-f411re-cubemx",
         "nucleo-f411re-cubemx-startup",
+        "nucleo-f767zi",
         "nucleo-f767zi-cubemx",
+        "nucleo-h533re",
         "nucleo-h533re-cubemx",
         "raspberry-pi-pico",
         "raspberry-pi-pico-2-arm",
