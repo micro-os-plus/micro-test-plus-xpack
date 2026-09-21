@@ -22,17 +22,21 @@
 
 namespace device
 {
-  // Driver bringing up the STM32H533 system clock as configured by the
-  // original STM32CubeMX project (`stm32cubemx.ioc`, no longer part of
-  // the build, see device/README.md): HSI, divided by 2 (32 MHz), fed
-  // straight to SYSCLK, with no PLL; implemented directly on the CMSIS
-  // `RCC`/`FLASH`/`PWR` register structs (no HAL calls).
+  // Driver bringing up the STM32H533 system clock on HSE, fed by the
+  // on-board 24 MHz X3 crystal (populated and selected by default on
+  // this board, unlike the sibling nucleo-f411re/nucleo-f767zi
+  // platforms, whose HSE instead defaults to the ST-LINK's MCO
+  // output), driving the main PLL1 for a 250 MHz SYSCLK/HCLK, the
+  // device's maximum; implemented directly on the CMSIS `RCC`/
+  // `FLASH`/`PWR` register structs (no HAL calls), matching the
+  // nucleo-h533re-cubemx platform's clock tree.
   //
-  // Unlike the sibling nucleo-f411re platform, this does not raise the
-  // clock anywhere near the device's maximum (250 MHz, which would
-  // additionally require configuring the main PLL1); it merely
-  // reproduces, on bare registers, the modest clock tree the
-  // CubeMX-generated `SystemClock_Config()` used to set up.
+  // An earlier revision of this driver instead reproduced the
+  // original STM32CubeMX project's modest HSI/2 (32 MHz), no-PLL
+  // clock tree; an even earlier attempt at HSE hung on `HSERDY`,
+  // apparently from assuming bypass mode (as on F411RE/F767ZI)
+  // instead of crystal mode, on a board that, per its `.ioc`, ships
+  // with the crystal populated and the ST-LINK MCO path disconnected.
   class system_clock
   {
   public:
@@ -45,20 +49,21 @@ namespace device
 
     ~system_clock () = default;
 
-    // Select voltage scale 3 (sufficient up to 24 MHz HCLK, matching
-    // the 32 MHz HSI/2 used here) and wait for the regulator to report
-    // ready, set the flash latency and programming delay for that
-    // frequency (1 wait state, no extra write delay), and divide HSI
-    // by 2, leaving AHB (HCLK), APB1 (PCLK1), APB2 (PCLK2) and APB3
-    // (PCLK3) undivided, with HSI, already running at reset, selected
-    // as the SYSCLK source. Returns the resulting HCLK frequency, in
-    // Hz.
+    // Select voltage scale 0 (required for HCLK above roughly
+    // 200 MHz) and wait for the regulator to report ready, bring up
+    // HSE on the on-board crystal, configure PLL1 for a 250 MHz
+    // SYSCLK/HCLK, set the flash latency and high-frequency write
+    // delay for that frequency (5 wait states, extra write delay),
+    // and switch SYSCLK to PLL1, leaving AHB (HCLK), APB1 (PCLK1),
+    // APB2 (PCLK2) and APB3 (PCLK3) undivided. Returns the resulting
+    // HCLK frequency, in Hz.
     std::uint32_t
     initialise (void);
 
-    // Read back the clock configuration registers (RCC_CR, RCC_CFGR2)
-    // and compute the current HCLK frequency, in Hz. Assumes SYSCLK is
-    // sourced from HSI, as programmed by initialise().
+    // Read back the clock configuration registers (RCC_PLL1CFGR,
+    // RCC_PLL1DIVR, RCC_PLL1FRACR, RCC_CFGR2) and compute the current
+    // HCLK frequency, in Hz. Assumes SYSCLK is sourced from PLL1, fed
+    // from HSE, as programmed by initialise().
     std::uint32_t
     clock_get_frequency_hz (void);
   };

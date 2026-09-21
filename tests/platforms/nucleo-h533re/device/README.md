@@ -43,10 +43,11 @@ compile definition, and the sources below.
 ## `system-clock.cpp`
 
 `device::system_clock` (declared in
-`include/micro-os-plus/stm32h533re/system-clock.h`), reproducing, on
-the CMSIS `RCC`/`FLASH`/`PWR` registers, the modest clock tree the
-`stm32cubemx.ioc` configuration set up (HSI, divided by 2, 32 MHz, no
-PLL); see `src/hooks.cpp` for where it is instantiated and called.
+`include/micro-os-plus/stm32h533re/system-clock.h`), bringing up HSE
+on the on-board 24 MHz X3 crystal and configuring PLL1 for a 250 MHz
+SYSCLK/HCLK (the device's maximum), on the CMSIS `RCC`/`FLASH`/`PWR`
+registers, matching the `stm32cubemx.ioc` configuration; see
+`src/hooks.cpp` for where it is instantiated and called.
 
 ## `vectors-stm32h533xx.c`
 

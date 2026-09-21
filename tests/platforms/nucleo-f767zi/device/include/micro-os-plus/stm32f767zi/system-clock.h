@@ -23,31 +23,29 @@
 namespace device
 {
   // Driver bringing up the STM32F767 system clock on HSE, in bypass
-  // mode, rather than on the internal HSI the original STM32CubeMX
-  // project (`stm32cubemx.ioc`, no longer part of the build, see
-  // device/README.md) actually configures (HSI is accurate to roughly
+  // mode (HSI, used by an earlier revision of this driver and by an
+  // earlier revision of the sibling nucleo-f767zi-cubemx platform's
+  // CubeMX-generated `SystemClock_Config()`, is accurate to roughly
   // ±1% over temperature; HSE, crystal-derived, is typically better
   // than ±50 ppm); implemented directly on the CMSIS `RCC`/`FLASH`/
   // `PWR` register structs (no HAL calls).
   //
   // Nucleo-F767ZI's `PH0/OSC_IN` is wired, per the `.ioc`
-  // (`PH0/OSC_IN.Mode=HSE-External-Clock-Source`, `PH0/OSC_IN.
-  // GPIO_Label=MCO [STM32F103CBT6_PA8]`), to receive the MCO output of
-  // the onboard ST-LINK/V2-1's own STM32F103CBT6, at a nominal 16 MHz
-  // (`RCC.HSE_VALUE=16000000` in the same `.ioc`) — the same
-  // frequency, and the same mechanism, HSI already used here, just
-  // more accurate. Confirmed working on real hardware (unlike the
-  // sibling nucleo-h533re platform, where the equivalent attempt hung
-  // on `HSERDY`, indicating that board's ST-Link clock does not reach
-  // the target's HSE pin; F767ZI's `.ioc` at least named the actual
-  // source chip/pin, which H533RE's did not).
+  // (`PH0/OSC_IN.Mode=HSE-External-Clock-Source`, `RCC.HSE_VALUE=
+  // 16000000`), to receive the MCO output of the onboard ST-LINK/
+  // V2-1's own STM32F103CBT6, at a nominal 16 MHz. Confirmed working
+  // on real hardware (unlike the sibling nucleo-h533re platform,
+  // where the equivalent attempt hung on `HSERDY`, indicating that
+  // board's ST-Link clock does not reach the target's HSE pin; an
+  // earlier revision of F767ZI's `.ioc` labelled `PH0/OSC_IN` with the
+  // actual MCO source, `MCO [STM32F103CBT6_PA8]`, which H533RE's
+  // never did — an early hint the two boards' ST-Link wiring
+  // differs).
   //
-  // Unlike the sibling nucleo-f411re platform, this does not raise the
-  // clock anywhere near the device's maximum (216 MHz, which would
-  // additionally require enabling Over-drive mode); it merely selects
-  // a more accurate clock source than the CubeMX-generated
-  // `SystemClock_Config()` used, at the same, otherwise undivided,
-  // frequency.
+  // Like the sibling nucleo-f411re platform, the main PLL is
+  // configured for the device's maximum HCLK (216 MHz here, which
+  // additionally requires enabling Over-Drive mode), matching the
+  // nucleo-f767zi-cubemx platform's clock tree.
   class system_clock
   {
   public:
@@ -60,18 +58,20 @@ namespace device
 
     ~system_clock () = default;
 
-    // Select voltage scale 3 (sufficient for HCLK up to 144 MHz, well
-    // above the 16 MHz used here), set the flash latency for that
-    // frequency (0 wait states), bring up HSE in bypass mode, and
-    // switch SYSCLK to it, dividing APB1 (PCLK1) by 2 (its 54 MHz
-    // maximum), leaving AHB (HCLK) and APB2 (PCLK2) undivided. Returns
-    // the resulting HCLK frequency, in Hz.
+    // Select voltage scale 1 and enable Over-Drive mode (required for
+    // HCLK above 180 MHz), set the flash latency and enable the
+    // prefetch buffer and ART accelerator for 216 MHz, bring up HSE
+    // in bypass mode, configure the main PLL for a 216 MHz SYSCLK/
+    // HCLK, and switch SYSCLK to it, dividing APB1 (PCLK1) by 4 (its
+    // 54 MHz maximum) and APB2 (PCLK2) by 2 (its 108 MHz maximum).
+    // Returns the resulting HCLK frequency, in Hz.
     std::uint32_t
     initialise (void);
 
-    // Read back the clock configuration register (RCC_CFGR) and
-    // compute the current HCLK frequency, in Hz. Assumes SYSCLK is
-    // sourced from HSE, as programmed by initialise().
+    // Read back the clock configuration registers (RCC_PLLCFGR,
+    // RCC_CFGR) and compute the current HCLK frequency, in Hz.
+    // Assumes SYSCLK is sourced from the main PLL, fed from HSE, as
+    // programmed by initialise().
     std::uint32_t
     clock_get_frequency_hz (void);
   };

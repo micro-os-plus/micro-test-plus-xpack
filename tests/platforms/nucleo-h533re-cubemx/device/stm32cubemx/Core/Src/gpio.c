@@ -36,6 +36,7 @@
      PC14-OSC32_IN(OSC32_IN)   ------> RCC_OSC32_IN
      PC15-OSC32_OUT(OSC32_OUT)   ------> RCC_OSC32_OUT
      PH0-OSC_IN(PH0)   ------> RCC_OSC_IN
+     PH1-OSC_OUT(PH1)   ------> RCC_OSC_OUT
      PA2   ------> USART2_TX
      PA3   ------> USART2_RX
      PA13(JTMS/SWDIO)   ------> DEBUG_JTMS-SWDIO
@@ -67,18 +68,12 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PH1 */
-  GPIO_InitStruct.Pin = GPIO_PIN_1;
-  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : PA0 PA1 PA4 PA6
-                           PA7 PA8 PA9 PA10
-                           PA11 PA12 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_4|GPIO_PIN_6
-                          |GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10
-                          |GPIO_PIN_11|GPIO_PIN_12;
+  /*Configure GPIO pins : PA0 PA1 PA4 PA5
+                           PA6 PA7 PA8 PA9
+                           PA10 PA11 PA12 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_4|GPIO_PIN_5
+                          |GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9
+                          |GPIO_PIN_10|GPIO_PIN_11|GPIO_PIN_12;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
