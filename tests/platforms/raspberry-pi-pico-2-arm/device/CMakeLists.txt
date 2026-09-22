@@ -36,7 +36,7 @@ target_include_directories (
 target_sources (
   micro-os-plus-device-interface
   INTERFACE "src/vectors-rp2350.c" "src/system-rp2350.cpp"
-            "src/embedded-block-rp2350.c"
+            "src/embedded-block-rp2350-arm.c"
 )
 
 target_compile_definitions (micro-os-plus-device-interface INTERFACE)
