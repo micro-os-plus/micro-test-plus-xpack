@@ -118,6 +118,7 @@
         "raspberry-pi-pico-sdk",
         "raspberry-pi-pico-2-arm",
         "raspberry-pi-pico-2-arm-sdk",
+        "raspberry-pi-pico-2-riscv",
         "raspberry-pi-pico-2-riscv-sdk"
       ],
       "$native-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
