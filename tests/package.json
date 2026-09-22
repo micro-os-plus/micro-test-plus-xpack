@@ -115,9 +115,10 @@
         "nucleo-h533re",
         "nucleo-h533re-cubemx",
         "raspberry-pi-pico",
+        "raspberry-pi-pico-sdk",
         "raspberry-pi-pico-2-arm",
         "raspberry-pi-pico-2-arm-sdk",
-        "raspberry-pi-pico-sdk"
+        "raspberry-pi-pico-2-riscv-sdk"
       ],
       "$native-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
       "native-gcc-releases": {
@@ -2401,7 +2402,7 @@
         },
         "devDependencies": {
           "@micro-os-plus/architecture-riscv": "{{ properties.dependencies-releases['@micro-os-plus/architecture-riscv'] }}",
-          "@xpack-3rd-party/raspberrypi-pico-riscv-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
         },
         "actions": {
           "link-dependencies": [
