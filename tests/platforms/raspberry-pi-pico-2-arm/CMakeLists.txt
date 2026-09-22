@@ -57,6 +57,7 @@ set (
   -mfloat-abi=softfp
   -ftls-model=local-exec
   -fno-math-errno
+  -Werror
   # -fno-move-loop-invariants Embedded builds generally must be warning free,
   # but PICO SDK does not allow this. -Werror -flto fails to run on QEMU.
   # $<$<CONFIG:Release>:-flto> $<$<CONFIG:MinSizeRel>:-flto>

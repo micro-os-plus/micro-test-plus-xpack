@@ -52,6 +52,7 @@ set (
   -mcpu=cortex-m0plus
   -mthumb
   -mfloat-abi=soft
+  -Werror
   # -fno-move-loop-invariants Embedded builds generally must be warning free,
   # but PICO SDK does not allow this. -Werror -flto fails to run on QEMU.
   # $<$<CONFIG:Release>:-flto> $<$<CONFIG:MinSizeRel>:-flto>
