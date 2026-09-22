@@ -40,7 +40,6 @@ target_sources (
 target_compile_definitions (
   micro-os-plus-platform-interface
   INTERFACE
-    "${xpack_platform_compile_definition}"
     # Full POSIX conformance:
     # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
     _POSIX_C_SOURCE=200809L

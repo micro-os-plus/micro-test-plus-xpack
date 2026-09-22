@@ -41,7 +41,6 @@ target_sources (
 target_compile_definitions (
   micro-os-plus-platform-interface
   INTERFACE
-    "${xpack_platform_compile_definition}"
     # Full POSIX conformance:
     # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
     _POSIX_C_SOURCE=200809L
@@ -95,6 +94,7 @@ target_link_options (
   # Prefer absolute paths over paths relative to the build folder.
   -T${CMAKE_CURRENT_SOURCE_DIR}/linker-scripts/mem.ld
   -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/section-interrupt-vectors.ld
+  -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/section-embedded-block.ld
   -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup/linker-scripts/sections.ld
 )
 
