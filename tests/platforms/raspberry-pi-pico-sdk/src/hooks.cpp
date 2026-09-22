@@ -54,7 +54,7 @@ micro_os_plus_startup_initialise_hardware_hook (void)
   runtime_init_clocks ();
   runtime_init_post_clock_resets ();
 
-  trace::printf ("SystemCoreClock: %u Hz\n", clock_get_hz (clk_sys));
+  trace::printf ("SystemCoreClock: %lu Hz\n", clock_get_hz (clk_sys));
 
   return 0;
 }
