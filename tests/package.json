@@ -1035,6 +1035,58 @@
         "xpm run clean --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
         "xpm run clean --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
       ],
+      "clear-raspberry-pi-zero-2-w-aarch32-cmake-gcc": [
+        "xpm run clear --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
+        "xpm run clear --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release"
+      ],
+      "install-raspberry-pi-zero-2-w-aarch32-cmake-gcc": [
+        "xpm install --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
+        "xpm install --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release"
+      ],
+      "build-raspberry-pi-zero-2-w-aarch32-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release"
+      ],
+      "test-raspberry-pi-zero-2-w-aarch32-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
+        "xpm run test --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release",
+        "xpm run test --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release"
+      ],
+      "clean-raspberry-pi-zero-2-w-aarch32-cmake-gcc": [
+        "xpm run clean --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
+        "xpm run clean --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release"
+      ],
+      "clear-raspberry-pi-zero-2-w-aarch64-cmake-gcc": [
+        "xpm run clear --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
+        "xpm run clear --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release"
+      ],
+      "install-raspberry-pi-zero-2-w-aarch64-cmake-gcc": [
+        "xpm install --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
+        "xpm install --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release"
+      ],
+      "build-raspberry-pi-zero-2-w-aarch64-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release"
+      ],
+      "test-raspberry-pi-zero-2-w-aarch64-cmake-gcc": [
+        "xpm run setup --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
+        "xpm run build --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
+        "xpm run test --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
+        "xpm run setup --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release",
+        "xpm run build --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release",
+        "xpm run test --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release"
+      ],
+      "clean-raspberry-pi-zero-2-w-aarch64-cmake-gcc": [
+        "xpm run clean --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
+        "xpm run clean --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release"
+      ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
@@ -2471,6 +2523,68 @@
       "raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release": {
         "inherits": [
           "raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
+      "raspberry-pi-pico-zero-2-w-aarch32-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "aarch32-actions",
+          "bare-metal-dependencies",
+          "cross-arm-none-eabi-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "raspberry-pi-pico-zero-2-w-aarch32",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        },
+        "devDependencies": {
+          "@micro-os-plus/architecture-aarch32": "{{ properties.dependencies-releases['@micro-os-plus/architecture-aarch32'] }}"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @micro-os-plus/architecture-aarch32 @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "raspberry-pi-pico-zero-2-w-aarch32-cmake-gcc-release": {
+        "inherits": [
+          "raspberry-pi-pico-zero-2-w-aarch32-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel"
+        }
+      },
+      "raspberry-pi-pico-zero-2-w-aarch64-cmake-gcc-debug": {
+        "inherits": [
+          "short-win-paths-properties",
+          "cmake-cross-actions",
+          "aarch64-actions",
+          "bare-metal-dependencies",
+          "cross-aarch64-none-elf-gcc-dependencies",
+          "openocd-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "raspberry-pi-pico-zero-2-w-aarch64",
+          "toolchainFileName": "aarch64-none-elf-gcc.cmake"
+        },
+        "devDependencies": {
+          "@micro-os-plus/architecture-aarch64": "{{ properties.dependencies-releases['@micro-os-plus/architecture-aarch64'] }}"
+        },
+        "actions": {
+          "link-dependencies": [
+            "xpm link @micro-os-plus/architecture-aarch64 @micro-os-plus/startup @micro-os-plus/semihosting --config {{ configuration.name }}"
+          ]
+        }
+      },
+      "raspberry-pi-pico-zero-2-w-aarch64-cmake-gcc-release": {
+        "inherits": [
+          "raspberry-pi-pico-zero-2-w-aarch64-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel"
