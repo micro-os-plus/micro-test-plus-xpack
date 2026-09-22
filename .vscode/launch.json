@@ -189,6 +189,246 @@
       ]
     },
     {
+      "name": "raspberry-pi-pico-2-riscv-cmake-gcc-debug empty-test",
+      "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/empty-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/xpacks/.bin/riscv-none-elf-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "RP2350",
+      "configFiles": [
+        "interface/cmsis-dap.cfg",
+        "target/rp2350-riscv.cfg"
+      ],
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2350/hardware_regs/RP2350.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline empty-test one two --output-file empty-test.tap",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/empty-test.elf\"",
+        "break _reset_handler",
+        "break _debugger_entry_point"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    {
+      // Trial alternative to the cortex-debug entry above, for the same
+      // empty-test binary: cppdbg (Microsoft C/C++ extension) drives GDB
+      // directly via generic GDB-MI, with no ARM-specific logic in its
+      // Disassembly view, unlike cortex-debug (see the "disassembly does
+      // not display the instructions" discussion). OpenOCD is started
+      // separately as a plain GDB server by the "preLaunchTask" (left
+      // running with its GDB port open), instead of cortex-debug's own
+      // single-shot "program ... verify ... reset" flow.
+      "name": "(cppdbg) raspberry-pi-pico-2-riscv-cmake-gcc-debug empty-test",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/empty-test.elf",
+      "cwd": "${workspaceRoot}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/xpacks/.bin/riscv-none-elf-gdb",
+      "preLaunchTask": "openocd-raspberry-pi-pico-2-riscv-cmake-gcc-debug",
+      "setupCommands": [
+        {
+          "text": "target extended-remote localhost:3333"
+        },
+        {
+          "text": "file \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/empty-test.elf\""
+        },
+        {
+          "text": "set mem inaccessible-by-default off",
+          "ignoreFailures": true
+        },
+        {
+          "text": "monitor reset init"
+        },
+        {
+          "text": "monitor arm semihosting enable"
+        },
+        {
+          "text": "monitor arm semihosting_cmdline empty-test one two --output-file empty-test.tap"
+        },
+        {
+          "text": "load"
+        },
+        {
+          "text": "break _reset_handler"
+        },
+        {
+          "text": "break _debugger_entry_point"
+        },
+        {
+          "text": "break main"
+        }
+        // No further "monitor reset init" here: "load" above already
+        // leaves PC at the ELF's entry point (_debugger_entry_point, per
+        // the linker's ENTRY() directive), which is what
+        // "_debugger_entry_point"'s own code re-enters the boot ROM for.
+        // A real hardware reset instead goes through the boot ROM's own
+        // picobin ENTRY_POINT handling, which is not yet validated on
+        // this platform (see device/README.md) and was observed to skip
+        // past the _reset_handler/_debugger_entry_point breakpoints
+        // straight to main.
+      ],
+      // MIEngine inserts any editor/gutter breakpoints (and function
+      // breakpoints) after setupCommands finish, then runs this command.
+      // Do NOT resume manually inside setupCommands (that would run
+      // before those breakpoints are inserted, silently skipping any set
+      // via the editor rather than via "break ..." above) or use
+      // "exec-run" (a remote target already connected via "target
+      // extended-remote" rejects it: "remote target does not support
+      // run").
+      "launchCompleteCommand": "exec-continue"
+    },
+    {
+      "name": "raspberry-pi-pico-2-riscv-cmake-gcc-debug minimal-test",
+      "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/minimal-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/xpacks/.bin/riscv-none-elf-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "RP2350",
+      "configFiles": [
+        "interface/cmsis-dap.cfg",
+        "target/rp2350-riscv.cfg"
+      ],
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2350/hardware_regs/RP2350.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline minimal-test one two --output-file minimal-test.tap",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/minimal-test.elf\"",
+        "break _reset_handler",
+        "break _debugger_entry_point"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    {
+      "name": "raspberry-pi-pico-2-riscv-cmake-gcc-debug sample-test",
+      "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/sample-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/xpacks/.bin/riscv-none-elf-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "RP2350",
+      "configFiles": [
+        "interface/cmsis-dap.cfg",
+        "target/rp2350-riscv.cfg"
+      ],
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2350/hardware_regs/RP2350.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline sample-test one two --output-file sample-test.tap",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/sample-test.elf\"",
+        "break _reset_handler",
+        "break _debugger_entry_point"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    {
+      "name": "raspberry-pi-pico-2-riscv-cmake-gcc-debug suite-test",
+      "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/suite-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/xpacks/.bin/riscv-none-elf-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "RP2350",
+      "configFiles": [
+        "interface/cmsis-dap.cfg",
+        "target/rp2350-riscv.cfg"
+      ],
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2350/hardware_regs/RP2350.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline suite-test one two --output-file suite-test.tap",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/suite-test.elf\"",
+        "break _reset_handler",
+        "break _debugger_entry_point"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    {
+      "name": "raspberry-pi-pico-2-riscv-cmake-gcc-debug unit-test",
+      "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
+      "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/unit-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "serverpath": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd.exe",
+      "gdbPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/xpacks/.bin/riscv-none-elf-gdb",
+      "debuggerArgs": [
+        "-ex",
+        "set debug-file-directory /debug"
+      ],
+      "device": "RP2350",
+      "configFiles": [
+        "interface/cmsis-dap.cfg",
+        "target/rp2350-riscv.cfg"
+      ],
+      "svdFile": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2350/hardware_regs/RP2350.svd",
+      "runToEntryPoint": "main",
+      // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
+      // Also works fine for flash binaries
+      "overrideLaunchCommands": [
+        "monitor reset init",
+        "monitor arm semihosting enable",
+        "monitor arm semihosting_cmdline unit-test one two --output-file unit-test.tap",
+        "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/unit-test.elf\"",
+        "break _reset_handler",
+        "break _debugger_entry_point"
+      ],
+      "openOCDLaunchCommands": [
+        "adapter speed 5000"
+      ]
+    },
+    {
       "name": "raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug empty-test",
       "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts",
       "executable": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug/empty-test.elf",

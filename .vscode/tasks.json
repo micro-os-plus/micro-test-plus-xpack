@@ -10,6 +10,60 @@
       },
       "label": "xPack: build qemu-mps2-an386-meson-debug",
       "detail": "xpm run build --config qemu-mps2-an386-meson-debug"
+    },
+    {
+      // Starts OpenOCD as a persistent GDB server (default port 3333, left
+      // open, not the single-shot "program ... verify ... reset" flow used
+      // by the cortex-debug launch entries) so a generic GDB-MI debug
+      // adapter (cppdbg) can attach to it instead. Used as the
+      // "preLaunchTask" for the "(cppdbg) raspberry-pi-pico-2-riscv..."
+      // launch configuration, to compare against the same test's
+      // cortex-debug entry (see the "any idea why the debugger disassembly
+      // does not display the instructions?" discussion).
+      "type": "shell",
+      "label": "openocd-raspberry-pi-pico-2-riscv-cmake-gcc-debug",
+      "command": "${userHome}/.pico-sdk/openocd/0.12.0+dev/openocd",
+      "args": [
+        "-c",
+        "set USE_CORE rv0",
+        "-f",
+        "interface/cmsis-dap.cfg",
+        "-c",
+        "adapter speed 5000",
+        "-f",
+        "target/rp2350.cfg"
+      ],
+      "options": {
+        "cwd": "${userHome}/.pico-sdk/openocd/0.12.0+dev/scripts"
+      },
+      "isBackground": true,
+      // VS Code requires a "pattern" for every problem matcher, even one
+      // that (like here) only exists to drive the background begin/end
+      // detection below; the "file"/"line"/"message" group mappings are
+      // mandatory for the pattern to be accepted, but the regexp itself
+      // deliberately never matches OpenOCD's own (non-error) output as
+      // a problem.
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^(?!.*)()()()",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Open On-Chip Debugger",
+          "endsPattern": "Listening on port \\d+ for gdb connections"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      // Left running for the debug session; VS Code stops it when the
+      // debug session ends (matching a background preLaunchTask).
+      "isDefault": false
     }
   ]
 }
