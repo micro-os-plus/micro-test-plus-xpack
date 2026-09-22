@@ -54,6 +54,7 @@ set (
 set (CMAKE_C_EXTENSIONS ON)
 
 set (PICO_BOARD pico2)
+set (PICO_PLATFORM rp2350-arm-s)
 set (PICO_CXX_ENABLE_EXCEPTIONS 1)
 # Avoid fetching/building picotool from source; disables UF2 output and the
 # post-build hash/signing step on the RP2350 image.
