@@ -240,6 +240,11 @@
       "MIMode": "gdb",
       "miDebuggerPath": "${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/xpacks/.bin/riscv-none-elf-gdb",
       "preLaunchTask": "openocd-raspberry-pi-pico-2-riscv-cmake-gcc-debug",
+      // For the "mcu-debug.peripheral-viewer" extension (install it
+      // separately): its key for non-cortex-debug adapters is "svdPath",
+      // not cortex-debug's "svdFile", same SVD used by the cortex-debug
+      // entries above.
+      "svdPath": "${userHome}/.pico-sdk/sdk/2.3.0/src/rp2350/hardware_regs/RP2350.svd",
       "setupCommands": [
         {
           "text": "target extended-remote localhost:3333"
