@@ -16,7 +16,7 @@ The generic RISC-V reset entry (`gp`/`sp`/FPU bring-up, exporting
 `reset_entry`) is **not** provided here any more: it now lives in
 `micro-os-plus::architecture-riscv` itself (`src/reset-entry.S`), which
 this platform links via `micro-os-plus::architecture` and which is
-controlled by `MICRO_OS_PLUS_INCLUDE_ARCHITECTURES_RISCV_RESET_ENTRY_ENABLED`
+controlled by `MICRO_OS_PLUS_ARCHITECTURES_RISCV_RESET_ENTRY_ENABLED`
 in [include/micro-os-plus/architecture-defines.h](../include/micro-os-plus/architecture-defines.h)
 (left at its default, enabled). Only the debugger entry point is still
 platform-specific here; see "Custom implementation" below for why.
@@ -73,7 +73,7 @@ compiled.
   application is started by a debugger rather than a cold reset.
   `architecture-riscv` ships its own generic (no-op) version of this
   file, disabled here via
-  `MICRO_OS_PLUS_INCLUDE_ARCHITECTURES_RISCV_DEBUGGER_ENTRY_POINT_ENABLED`
+  `MICRO_OS_PLUS_ARCHITECTURES_RISCV_DEBUGGER_ENTRY_POINT_ENABLED`
   in
   [include/micro-os-plus/architecture-defines.h](../include/micro-os-plus/architecture-defines.h)
   so this platform-specific one is used instead ("reimplement this
@@ -118,7 +118,7 @@ different confidence levels:
   `ENTRY_POINT` item intends, or the reset invalidating those
   already-set breakpoints without GDB noticing (both remain open;
   distinguishing them needs a fresh session that only sets breakpoints
-  *after* the reset it will run from). Unlike Arm, RISC-V has no
+  _after_ the reset it will run from). Unlike Arm, RISC-V has no
   implicit "vector table at image start" boot convention, so this path
   depends entirely on the boot ROM correctly parsing the `ENTRY_POINT`
   item -- matching the Pico SDK's own `pico_crt0/embedded_start_block.inc.S`
