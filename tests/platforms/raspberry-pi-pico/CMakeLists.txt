@@ -18,11 +18,6 @@
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/'...")
 
 # -----------------------------------------------------------------------------
-
-# TODO: possibly update to separate device-stm32f4-extras, when ready.
-add_subdirectory ("device")
-
-# -----------------------------------------------------------------------------
 # Define the platform library.
 add_library (micro-os-plus-platform-interface INTERFACE EXCLUDE_FROM_ALL)
 

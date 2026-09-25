@@ -36,6 +36,7 @@ set (
   #
   # Platform specific dependencies.
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-riscv"
+  "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-raspberry-pi"
   #
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/semihosting"
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup"

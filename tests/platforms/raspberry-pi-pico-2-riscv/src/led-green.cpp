@@ -12,7 +12,7 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/platform.h"
-#include "micro-os-plus/rp2350/registers.h"
+#include "micro-os-plus/rp2350-riscv/registers.h"
 
 // Only the Pico SDK's register-definition headers are used below (no SDK
 // library is linked, and no `hardware_structs`/CMSIS dependency -- see

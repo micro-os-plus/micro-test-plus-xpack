@@ -19,7 +19,7 @@ message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/'...")
 
 # -----------------------------------------------------------------------------
 
-add_subdirectory ("device")
+# add_subdirectory ("device")
 
 # -----------------------------------------------------------------------------
 

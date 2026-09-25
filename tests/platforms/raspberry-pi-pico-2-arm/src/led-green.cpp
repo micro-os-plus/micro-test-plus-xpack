@@ -25,8 +25,8 @@
 #endif // defined(__GNUC__)
 #include "hardware/platform_defs.h"
 #include "hardware/regs/io_bank0.h"
-#include "hardware/regs/pads_bank0.h"
 #include "hardware/regs/resets.h"
+#include "hardware/regs/pads_bank0.h"
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
