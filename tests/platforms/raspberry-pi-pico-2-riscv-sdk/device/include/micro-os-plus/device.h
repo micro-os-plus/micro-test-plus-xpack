@@ -14,6 +14,14 @@
 
 // ----------------------------------------------------------------------------
 
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/device-defines.h")
+#include "micro-os-plus/device-defines.h"
+#endif // __has_include("micro-os-plus/device-defines.h")
+
 #include "micro-os-plus/architecture.h"
 
 // The Hazard3-core-specific RISC-V CSRs and custom-instruction intrinsics
