@@ -28,7 +28,7 @@ message (
 # platform and semihosting). Included in `cmake/project-functions.cmake`.
 
 set (xpack_dependencies_libraries
-     micro-os-plus::devices-raspberry-pi-vectors-rp2040
+     micro-os-plus::devices-raspberry-pi-rp2040-support
 )
 
 # -----------------------------------------------------------------------------
