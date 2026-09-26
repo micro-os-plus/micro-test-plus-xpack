@@ -2453,11 +2453,12 @@
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
+          "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}",
           "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
         },
         "actions": {
           "link-dependencies": [
-            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @xpack-3rd-party/raspberrypi-pico-sdk --config {{ configuration.name }}"
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/devices-raspberry-pi --config {{ configuration.name }}"
           ]
         }
       },
@@ -2518,11 +2519,12 @@
         },
         "devDependencies": {
           "@micro-os-plus/architecture-riscv": "{{ properties.dependencies-releases['@micro-os-plus/architecture-riscv'] }}",
+          "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}",
           "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
         },
         "actions": {
           "link-dependencies": [
-            "xpm link @micro-os-plus/architecture-riscv @micro-os-plus/startup @micro-os-plus/semihosting @xpack-3rd-party/raspberrypi-pico-sdk --config {{ configuration.name }}"
+            "xpm link @micro-os-plus/architecture-riscv @micro-os-plus/startup @micro-os-plus/semihosting @xpack-3rd-party/raspberrypi-pico-sdk @micro-os-plus/devices-raspberry-pi --config {{ configuration.name }}"
           ]
         }
       },

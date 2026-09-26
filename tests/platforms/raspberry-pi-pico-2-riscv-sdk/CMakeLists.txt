@@ -18,11 +18,6 @@
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/'...")
 
 # -----------------------------------------------------------------------------
-
-# TODO: possibly update to separate device-stm32f4-extras, when ready.
-add_subdirectory ("device")
-
-# -----------------------------------------------------------------------------
 # Define the platform library.
 add_library (micro-os-plus-platform-interface INTERFACE EXCLUDE_FROM_ALL)
 
@@ -34,7 +29,7 @@ target_include_directories (
 
 target_sources (
   micro-os-plus-platform-interface INTERFACE "src/hooks.cpp"
-                                             "src/led-green.cpp"
+                                             "src/led-green.cpp" "src/wraps.c"
 )
 
 target_compile_definitions (
@@ -45,6 +40,18 @@ target_compile_definitions (
     _POSIX_C_SOURCE=200809L
     # For S_IREAD
     _GNU_SOURCE
+    # Default is 0x800 (2 KB); full (non-nano) Newlib's
+    # vfprintf/_svfprintf can overflow that. 0x1000 (4 KB) is the maximum
+    # obtainable this way, since the stack is reserved out of the 4 KB SCRATCH_Y
+    # bank; going further requires relocating the stack into main RAM via a
+    # linker script override.
+    PICO_STACK_SIZE=0x1000
+    # runtime_init_default_alarm_pool() (pico_time) unconditionally claims a
+    # hardware alarm and arms its IRQ during runtime_init, even though this
+    # platform never uses add_alarm_*/sleep_*; that armed-but-unhandled
+    # machine-timer IRQ was hitting the SDK's weak isr_riscv_machine_timer
+    # placeholder (an ebreak). Skip it.
+    PICO_TIME_DEFAULT_ALARM_POOL_DISABLED=1
 )
 
 set (
@@ -68,6 +75,15 @@ set (
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
+  # Turn off many warnings, the Pico SDK throws a lot of them.
+  $<$<COMPILE_LANGUAGE:C>:-Wno-c++-compat>
+  $<$<COMPILE_LANGUAGE:C>:-Wno-missing-prototypes>
+  $<$<COMPILE_LANGUAGE:C>:-Wno-nested-externs>
+  $<$<COMPILE_LANGUAGE:C>:-Wno-bad-function-cast>
+  -Wno-undef
+  -Wno-arith-conversion
+  -Wno-padded
+  -Wno-missing-declarations
 )
 
 target_compile_options (
@@ -87,6 +103,8 @@ target_link_options (
   # exceptions. -specs=nano.specs
   -Wl,--gc-sections
   -Wl,-z,max-page-size=4096
+  -Wl,--wrap=main
+  -Wl,--wrap=__libc_init_array
 )
 
 if ("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")
@@ -98,8 +116,15 @@ if ("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")
 endif ()
 
 target_link_libraries (
-  micro-os-plus-platform-interface INTERFACE micro-os-plus::device
-                                             micro-os-plus::startup
+  micro-os-plus-platform-interface
+  INTERFACE micro-os-plus::device
+            hardware_hazard3
+            pico_standard_link
+            pico_crt0
+            pico_runtime_init
+            hardware_gpio
+            hardware_clocks
+            micro-os-plus::startup
 )
 
 xpack_display_target_lists (micro-os-plus-platform-interface)

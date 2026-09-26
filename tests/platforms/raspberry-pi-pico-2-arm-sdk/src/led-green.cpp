@@ -66,3 +66,12 @@ namespace platform
 } // namespace platform
 
 // ----------------------------------------------------------------------------
+
+// The onboard green LED, used to signal general board activity. Unlike
+// the raspberry-pi-pico-2-arm platform, there is no
+// initialise_hardware_early_hook here; the clocks are brought up in
+// initialise_hardware_hook below instead (see the comment there for
+// why this differs from a plain pico-sdk application).
+platform::led_green activity_led;
+
+// ----------------------------------------------------------------------------

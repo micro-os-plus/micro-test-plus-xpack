@@ -20,6 +20,11 @@
 // ----------------------------------------------------------------------------
 
 void
+__wrap_main (void);
+void
+__wrap__libc_init_array (void);
+
+void
 __wrap_main (void)
 {
   // `pico_clib_interface` is not linked, so the SDK's own `runtime_init()`

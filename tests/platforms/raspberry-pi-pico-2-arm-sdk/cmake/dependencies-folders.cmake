@@ -36,6 +36,7 @@ set (
   #
   # Platform specific dependencies.
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-cortexm"
+  "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-raspberry-pi"
   # Pico SDK.
   "${CMAKE_BINARY_DIR}/xpacks/@xpack-3rd-party/raspberrypi-pico-sdk"
   #
