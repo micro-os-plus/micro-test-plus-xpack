@@ -15,7 +15,7 @@
 
 // The ELF entry point when the application is started by a debuggger.
 #if !defined(MICRO_OS_PLUS_ARCHITECTURES_CORTEXM_DEBUGGER_ENTRY_POINT_ENABLED)
-#define MICRO_OS_PLUS_ARCHITECTURES_CORTEXM_DEBUGGER_ENTRY_POINT_ENABLED
+// #define MICRO_OS_PLUS_ARCHITECTURES_CORTEXM_DEBUGGER_ENTRY_POINT_ENABLED
 #endif // !defined(MICRO_OS_PLUS_ARCHITECTURES_CORTEXM_DEBUGGER_ENTRY_POINT_ENABLED)
 
 // Initialise the Vector Table Offset Register (VTOR) when the application is started by a debugger.
