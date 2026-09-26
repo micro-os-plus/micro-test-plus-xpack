@@ -19,6 +19,11 @@
 // ----------------------------------------------------------------------------
 
 void
+__wrap_main (void);
+void
+__wrap__libc_init_array (void);
+
+void
 __wrap_main (void)
 {
   // Call the µOS++ startup code to do some more initialisations,

@@ -23,15 +23,6 @@ using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
-// The onboard green LED, used to signal general board activity. Unlike
-// the raspberry-pi-pico platform, there is no
-// initialise_hardware_early_hook here; the clocks are brought up in
-// initialise_hardware_hook below instead (see the comment there for
-// why this differs from a plain pico-sdk application).
-platform::led_green activity_led;
-
-// ----------------------------------------------------------------------------
-
 // Called from micro_os_plus_startup_run_main() (via __wrap_main() in
 // wraps.c), after the data & bss sections are initialised. A plain
 // pico-sdk application gets its clocks from the SDK's own
@@ -60,6 +51,8 @@ micro_os_plus_startup_initialise_hardware_hook (void)
 }
 
 // ----------------------------------------------------------------------------
+
+extern platform::led_green activity_led;
 
 // Called from micro_os_plus_startup_run_main() (via __wrap_main() in
 // wraps.c), after the static initialisers have run (post_init_array,

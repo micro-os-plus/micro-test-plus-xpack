@@ -18,11 +18,6 @@
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}/'...")
 
 # -----------------------------------------------------------------------------
-
-# TODO: possibly update to separate device-stm32f4-extras, when ready.
-add_subdirectory ("device")
-
-# -----------------------------------------------------------------------------
 # Define the platform library.
 add_library (micro-os-plus-platform-interface INTERFACE EXCLUDE_FROM_ALL)
 
@@ -34,7 +29,7 @@ target_include_directories (
 
 target_sources (
   micro-os-plus-platform-interface INTERFACE "src/hooks.cpp"
-                                             "src/led-green.cpp"
+                                             "src/led-green.cpp" "src/wraps.c"
 )
 
 target_compile_definitions (
@@ -71,7 +66,16 @@ set (
 )
 
 target_compile_options (
-  micro-os-plus-platform-interface INTERFACE ${xpack_platform_common_args}
+  micro-os-plus-platform-interface
+  INTERFACE ${xpack_platform_common_args}
+            $<$<COMPILE_LANGUAGE:C>:-Wno-c++-compat>
+            $<$<COMPILE_LANGUAGE:C>:-Wno-missing-prototypes>
+            $<$<COMPILE_LANGUAGE:C>:-Wno-nested-externs>
+            $<$<COMPILE_LANGUAGE:C>:-Wno-bad-function-cast>
+            -Wno-undef
+            -Wno-arith-conversion
+            -Wno-padded
+            -Wno-missing-declarations
 )
 
 # When `-flto` is used, the compile options must be passed to the linker too.
@@ -87,6 +91,9 @@ target_link_options (
   # exceptions. -specs=nano.specs
   -Wl,--gc-sections
   -Wl,-z,max-page-size=4096
+  # Hack to integrate with the SDK.
+  -Wl,--wrap=main
+  -Wl,--wrap=__libc_init_array
 )
 
 if ("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")
@@ -98,8 +105,16 @@ if ("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")
 endif ()
 
 target_link_libraries (
-  micro-os-plus-platform-interface INTERFACE micro-os-plus::device
-                                             micro-os-plus::startup
+  micro-os-plus-platform-interface
+  INTERFACE micro-os-plus::device
+            cmsis_core
+            pico_standard_link
+            pico_crt0
+            pico_runtime_init
+            hardware_gpio
+            hardware_clocks
+            micro-os-plus::architecture
+            micro-os-plus::startup
 )
 
 xpack_display_target_lists (micro-os-plus-platform-interface)
