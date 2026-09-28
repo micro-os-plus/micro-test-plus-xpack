@@ -40,11 +40,10 @@ target_compile_definitions (
     _POSIX_C_SOURCE=200809L
     # For S_IREAD
     _GNU_SOURCE
-    # Default is 0x800 (2 KB); full (non-nano) Newlib's
-    # vfprintf/_svfprintf can overflow that. 0x1000 (4 KB) is the maximum
-    # obtainable this way, since the stack is reserved out of the 4 KB SCRATCH_Y
-    # bank; going further requires relocating the stack into main RAM via a
-    # linker script override.
+    # Default is 0x800 (2 KB); full (non-nano) Newlib's vfprintf/_svfprintf can
+    # overflow that. 0x1000 (4 KB) is the maximum obtainable this way, since the
+    # stack is reserved out of the 4 KB SCRATCH_Y bank; going further requires
+    # relocating the stack into main RAM via a linker script override.
     PICO_STACK_SIZE=0x1000
     # runtime_init_default_alarm_pool() (pico_time) unconditionally claims a
     # hardware alarm and arms its IRQ during runtime_init, even though this
@@ -52,6 +51,16 @@ target_compile_definitions (
     # machine-timer IRQ was hitting the SDK's weak isr_riscv_machine_timer
     # placeholder (an ebreak). Skip it.
     PICO_TIME_DEFAULT_ALARM_POOL_DISABLED=1
+    # The first SDK hardware initialisers are called explicitly, in the SDK
+    # order, from micro_os_plus_startup_initialise_hardware_hook() (hooks.cpp),
+    # to have the clocks available early; exclude them from __preinit_array, so
+    # that they run only once.
+    PICO_RUNTIME_SKIP_INIT_BOOTROM_RESET=1
+    PICO_RUNTIME_SKIP_INIT_PER_CORE_BOOTROM_RESET=1
+    PICO_RUNTIME_SKIP_INIT_EARLY_RESETS=1
+    PICO_RUNTIME_SKIP_INIT_USB_POWER_DOWN=1
+    PICO_RUNTIME_SKIP_INIT_CLOCKS=1
+    PICO_RUNTIME_SKIP_INIT_POST_CLOCK_RESETS=1
 )
 
 set (
@@ -115,15 +124,23 @@ if ("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")
   )
 endif ()
 
+# Do not link `pico_stdlib` (or `pico_runtime`): it brings in
+# `pico_clib_interface`, `pico_stdio`, `pico_printf` and `pico_malloc`, which
+# redefine or `--wrap` the newlib syscalls, `exit()`/`_exit()`,
+# `printf()`/`puts()`/`vsnprintf()` and `malloc()`, colliding with the µOS++
+# startup and semihosting implementations. µOS++ owns everything from the C
+# library down; the SDK provides only the boot image, the linker script, the
+# reset entry (crt0) and the hardware drivers.
 target_link_libraries (
   micro-os-plus-platform-interface
   INTERFACE micro-os-plus::device
-            hardware_hazard3
             pico_standard_link
             pico_crt0
+            pico_platform
             pico_runtime_init
-            hardware_gpio
             hardware_clocks
+            hardware_gpio
+            hardware_hazard3
             micro-os-plus::startup
 )
 

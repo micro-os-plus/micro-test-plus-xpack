@@ -26,31 +26,38 @@ using namespace micro_os_plus;
 // The onboard green LED, used to signal general board activity. Unlike
 // the raspberry-pi-pico-2-arm platform, there is no
 // initialise_hardware_early_hook here; the clocks are brought up in
-// initialise_hardware_hook below instead (see the comment there for
-// why this differs from a plain pico-sdk application).
+// initialise_hardware_hook below (see the comment there).
 platform::led_green activity_led;
 
 // ----------------------------------------------------------------------------
 
 // Called from micro_os_plus_startup_run_main() (via __wrap_main() in
-// wraps.c), after the data & bss sections are initialised. A plain
-// pico-sdk application gets its clocks from the SDK's own
-// `runtime_init()` (pico_runtime), called from crt0 before `main()`;
-// this project does not link `pico_runtime`, because its `runtime_init()`
-// also runs the `__init_array` C++ static initialisers, which would
-// then run a second time when `micro_os_plus_startup_run_main()` runs
-// them itself (see the wrapped, no-op `__libc_init_array()` in
-// wraps.c). Instead, the handful of `pico_runtime_init` steps needed to
-// bring up clk_sys are called here directly, in the same order
-// `runtime_init()` would use, without pulling in the rest of it. There
-// is no CMSIS-style `SystemCoreClock` in this build, so the resulting
-// frequency is read back directly via the SDK's `clock_get_hz()`.
+// wraps.c), after the data & bss sections are initialised, but BEFORE
+// the preinit/init arrays run.
+//
+// This project does not link `pico_runtime`, so crt0 calls only the
+// empty weak `runtime_init()` stub. The pico-sdk runtime initialisers
+// are registered by the linked SDK libraries in `__preinit_array` (via
+// `PICO_RUNTIME_INIT_FUNC*()`), and are run by
+// `micro_os_plus_run_init_array()`, before the C++ static constructors.
+//
+// The first hardware steps (bootrom state reset, early resets,
+// USB power down, clocks, post-clock resets) are
+// excluded from `__preinit_array` (via the `PICO_RUNTIME_SKIP_INIT_*`
+// definitions in CMakeLists.txt) and are called here instead, in the
+// same SDK order, so that the clocks are available early, for example
+// to report the frequency right after the CPU identification. Each step
+// still runs exactly once; the remaining initialisers (spin locks,
+// mutexes, IRQ priorities, etc.) follow from `__preinit_array`.
 // Requires MICRO_OS_PLUS_STARTUP_INITIALISE_HARDWARE_ENABLED
 // (startup-defines.h).
 int
 micro_os_plus_startup_initialise_hardware_hook (void)
 {
+  runtime_init_bootrom_reset ();
+  runtime_init_per_core_bootrom_reset ();
   runtime_init_early_resets ();
+  runtime_init_usb_power_down ();
   runtime_init_clocks ();
   runtime_init_post_clock_resets ();
 
@@ -62,7 +69,8 @@ micro_os_plus_startup_initialise_hardware_hook (void)
 // ----------------------------------------------------------------------------
 
 // Called from micro_os_plus_startup_run_main() (via __wrap_main() in
-// wraps.c), after the static initialisers have run.
+// wraps.c), after the preinit/init arrays have run; the clocks are
+// initialised at this point.
 // Requires MICRO_OS_PLUS_STARTUP_POST_INIT_ARRAY_ENABLED (startup-defines.h).
 int
 micro_os_plus_startup_post_init_array_hook (void)
