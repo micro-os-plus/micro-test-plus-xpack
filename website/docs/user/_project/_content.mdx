@@ -863,6 +863,20 @@ ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
 
 On embedded platforms using Arm semihosting, the clock resolution is in the range of tens of milliseconds — too coarse for meaningful reporting — and timings are therefore omitted from the output.
 
+### Console output
+
+The reporters write all console output through the standard `stdout`
+stream, using `vfprintf()`, `fputs()`, and `fflush()`. Output written
+by the tests with `printf()` shares the same stream and buffer, so the
+two appear in the expected order.
+
+On embedded platforms, where the output is usually forwarded to the host
+via semihosting, a serial port, or a debug channel, the platform must
+route `stdout` and `printf()`/`puts()`/`putchar()` to the same
+destination. Platforms that redirect only `printf()` (for example via
+`-Wl,--wrap=printf`) to a separate channel may interleave the test and
+reporter output out of order.
+
 ## C API
 
 Whilst µTest++ can be used to test C code, its implementation relies
