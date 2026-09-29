@@ -136,14 +136,14 @@ if (XPACK_ENABLE_EMPTY_TEST)
     one
     two
     --output-file
-    empty-test.tap
+    empty-test-noexcept.tap
   )
 
   add_compare_files_test (
     NAME "empty-test-compare"
     DEPENDS "empty-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test-noexcept.tap"
   )
 endif ()
 
@@ -164,14 +164,14 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     one
     two
     --output-file
-    minimal-test.tap
+    minimal-test-noexcept.tap
   )
 
   add_compare_files_test (
     NAME "minimal-test-compare"
     DEPENDS "minimal-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test-noexcept.tap"
   )
 endif ()
 
@@ -192,14 +192,14 @@ if (XPACK_ENABLE_SUITE_TEST)
     one
     two
     --output-file
-    suite-test.tap
+    suite-test-noexcept.tap
   )
 
   add_compare_files_test (
     NAME "suite-test-compare"
     DEPENDS "suite-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test-noexcept.tap"
   )
 endif ()
 
@@ -220,14 +220,14 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     one
     two
     --output-file
-    sample-test.tap
+    sample-test-noexcept.tap
   )
 
   add_compare_files_test (
     NAME "sample-test-compare"
     DEPENDS "sample-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test-noexcept.tap"
   )
 endif ()
 
@@ -251,13 +251,13 @@ if (XPACK_ENABLE_UNIT_TEST)
       one
       two
       --output-file
-      unit-test.tap
+      unit-test-noexcept.tap
     )
     add_compare_files_test (
       NAME "unit-test-compare"
       DEPENDS "unit-test"
-      FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.tap"
-            "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+      FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.tap"
+            "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test-noexcept.tap"
     )
   endif ()
 
@@ -271,13 +271,13 @@ if (XPACK_ENABLE_UNIT_TEST)
     --reporter
     human
     --output-file
-    unit-test.txt
+    unit-test-noexcept.txt
   )
   add_compare_files_test (
     NAME "unit-test-reporter-human-compare"
     DEPENDS "unit-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-noexcept.txt"
   )
 endif ()
 

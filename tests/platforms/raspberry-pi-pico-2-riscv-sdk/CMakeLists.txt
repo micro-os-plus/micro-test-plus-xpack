@@ -69,6 +69,7 @@ set (
   -mabi=ilp32
   -mstrict-align
   -fno-math-errno
+  -fno-exceptions # it fails at run-time.
   # -fno-move-loop-invariants Embedded builds generally must be warning free,
   # but PICO SDK does not allow this. -Werror -flto fails to run on QEMU.
   # $<$<CONFIG:Release>:-flto> $<$<CONFIG:MinSizeRel>:-flto>
