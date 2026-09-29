@@ -545,9 +545,8 @@ namespace micro_os_plus::micro_test_plus
               {
                 write_buffer_to_file_ ();
 
-                fprintf (output_file_, "%s✗ %s - %sFAILED%s %s\n",
-                         indent.c_str (), subtest.name (), colours_.fail,
-                         colours_.none, message_totals);
+                fprintf (output_file_, "%s✗ %s - FAILED %s\n", indent.c_str (),
+                         subtest.name (), message_totals);
               }
 
             if (verbosity_ == verbosity::normal)
