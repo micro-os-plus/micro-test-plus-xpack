@@ -479,9 +479,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Output the current buffered content to the output file.
      *
      * @details
-     * The buffer is written verbatim, without appending a line ending,
-     * and is not cleared. If no output file is open, the call has no
-     * effect.
+     * The buffer is written without appending a line ending, and is not
+     * cleared. ANSI colour sequences are removed, so the file receives
+     * plain text even when the console output is coloured. If no output
+     * file is open, the call has no effect.
      *
      * @par Parameters
      *	 None.

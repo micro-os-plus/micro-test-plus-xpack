@@ -224,15 +224,52 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Writes the contents of `buffer_` to `output_file_` without appending
    * a newline. If `output_file_` is null, the call is a no-op.
+   *
+   * The buffer may contain ANSI colour sequences, added when the console
+   * is a terminal, which must not reach the file. They are removed while
+   * writing: each `ESC [`, followed by any digits and semicolons, and
+   * terminated by `m`, is skipped, and the text between the sequences is
+   * written unchanged. Any other use of `ESC` is written as is.
    */
   void
   reporter::write_buffer_to_file_ (void)
   {
-    // Pass only the string, do not add an `\n` here.
-    if (output_file_ != nullptr)
+    if (output_file_ == nullptr)
       {
-        fputs (buffer_.c_str (), output_file_);
+        return;
       }
+
+    // Pass only the string, do not add an `\n` here.
+    const std::string_view text{ buffer_ };
+    size_t start = 0;
+    size_t pos = text.find ('\033');
+    while (pos != std::string_view::npos)
+      {
+        // Parse `ESC [ <digits and semicolons> m`.
+        size_t end = pos + 1;
+        if (end < text.size () && text[end] == '[')
+          {
+            ++end;
+            while (end < text.size ()
+                   && ((text[end] >= '0' && text[end] <= '9')
+                       || text[end] == ';'))
+              {
+                ++end;
+              }
+            if (end < text.size () && text[end] == 'm')
+              {
+                // A colour sequence; write the preceding text and skip it.
+                const std::string_view chunk
+                    = text.substr (start, pos - start);
+                fwrite (chunk.data (), 1, chunk.size (), output_file_);
+                start = end + 1;
+              }
+          }
+        pos = text.find ('\033', pos + 1);
+      }
+
+    const std::string_view chunk = text.substr (start);
+    fwrite (chunk.data (), 1, chunk.size (), output_file_);
   }
 
   /**
