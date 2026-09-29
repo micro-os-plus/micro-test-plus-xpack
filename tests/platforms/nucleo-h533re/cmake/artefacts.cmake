@@ -74,15 +74,21 @@ function (add_openocd_test)
 
   # TODO: update when upstream openocd is updated to support the H5 family.
   # https://review.openocd.org/c/openocd/+/9913
+
+  # Use `reset halt` + `resume`, not `reset`: an early semihosting call may halt
+  # the core while OpenOCD is still in the reset procedure, and remain
+  # unserviced.
   add_test (
     NAME "${arg_NAME}"
     COMMAND
       /Users/ilg/.local/st-openocd/bin/openocd${extension} -s
       /Users/ilg/.local/st-openocd/openocd/scripts
       # -d3
+      -c "gdb port disabled" -c "tcl port disabled" -c "telnet port disabled"
       -f "interface/${XPACK_OPENOCD_INTERFACE}" -f
       "target/${XPACK_OPENOCD_TARGET}" -c "program ${name}.elf verify" -c
-      "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset"
+      "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset halt" -c
+      "resume"
   )
 
   if (openocd_depends)

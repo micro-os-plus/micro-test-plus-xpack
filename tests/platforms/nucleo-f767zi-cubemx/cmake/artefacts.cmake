@@ -74,6 +74,9 @@ function (add_openocd_test)
     set (openocd_depends "${settle_test_name}")
   endif ()
 
+  # Use `reset halt` + `resume`, not `reset`: an early semihosting call may halt
+  # the core while OpenOCD is still in the reset procedure, and remain
+  # unserviced.
   add_test (
     NAME "${arg_NAME}"
     COMMAND
@@ -82,7 +85,8 @@ function (add_openocd_test)
       -c "gdb port disabled" -c "tcl port disabled" -c "telnet port disabled"
       -f "interface/${XPACK_OPENOCD_INTERFACE}" -c "transport select swd" -f
       "target/${XPACK_OPENOCD_TARGET}" -c "program ${name}.elf verify" -c
-      "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset"
+      "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset halt" -c
+      "resume"
   )
 
   if (openocd_depends)
