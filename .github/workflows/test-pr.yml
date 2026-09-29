@@ -14,17 +14,17 @@
 # -----------------------------------------------------------------------------
 
 # https://micro-os-plus.github.io/micro-test-plus-xpack/
-# https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-ci.yml
+# https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-pr.yml
 
-# Workflow for running some tests on each Push.
-name: Test on Push
+# Workflow for running some tests on each Pull Request.
+name: Test on Pull Request
 
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 
 on:
-  # Runs on pushes, if all conditions are met:
-  push:
+  # Runs on pull requests, if all conditions are met:
+  pull_request:
     # ... on the active branches ...
     branches:
       - 'xpack-development'
@@ -53,15 +53,19 @@ on:
       - '.npmignore'
       - '**/README**'
 
-# Allow one concurrent run per push; new pushes cancel older runs.
+# Allow one concurrent run per pull request; new pushes cancel older runs.
 # https://docs.github.com/en/actions/using-jobs/using-concurrency
 concurrency:
-  group: "tests-ci-${{ github.ref_name }}"
+  group: "tests-pr-${{ github.event.pull_request.number }}"
   cancel-in-progress: true
+
+# Pull requests from forks must not get write access.
+permissions:
+  contents: read
 
 jobs:
   ci-test:
-    name: 'µTest++ Testing Framework CI tests'
+    name: 'µTest++ Testing Framework PR tests'
 
     runs-on: ${{ matrix.os }}
 

@@ -27,6 +27,7 @@ on:
   workflow_dispatch:
 
 # Allow one concurrent run.
+# https://docs.github.com/en/actions/using-jobs/using-concurrency
 concurrency:
   group: 'test-all'
   cancel-in-progress: true
@@ -35,28 +36,28 @@ jobs:
   ci-test:
     name: 'All µTest++ Testing Framework tests'
 
-    runs-on:  ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
     strategy:
       # Do not cancel the other matrix jobs if one of them fails.
       fail-fast: false
       matrix:
         # https://github.com/actions/runner-images
-        os: 
-          [ 
-            'ubuntu-24.04', 
-            'ubuntu-22.04', 
-            'ubuntu-24.04-arm', 
-            'ubuntu-22.04-arm', 
-            'macos-15-intel', 
-            'macos-15', 
-            'windows-2025', 
-            'windows-2022' 
+        os:
+          [
+            'ubuntu-24.04',
+            'ubuntu-22.04',
+            'ubuntu-24.04-arm',
+            'ubuntu-22.04-arm',
+            'macos-15-intel',
+            'macos-15',
+            'windows-2025',
+            'windows-2022',
           ]
         # https://nodejs.org/en - use LTS
-        node-version: [ '24' ]
+        node-version: ['24']
         # https://www.npmjs.com/package/xpm
-        xpm-version: [ '0.23.2' ]
+        xpm-version: ['0.23.2']
 
     steps:
       - name: Checkout
@@ -109,4 +110,4 @@ jobs:
       - name: Run tests on ${{ matrix.os }}
         run: xpm run test-all -C tests
         env:
-            CI: true
+          CI: true
