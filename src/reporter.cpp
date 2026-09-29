@@ -46,6 +46,8 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
+#include <cstdarg>
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -166,7 +168,7 @@ namespace micro_os_plus::micro_test_plus
         fflush (output_file_);
         fclose (output_file_);
 
-        printf ("Test output written to '%s'.\n", output_file_path_);
+        write_console_ ("Test output written to '%s'.\n", output_file_path_);
 
         output_file_ = nullptr;
         output_file_path_ = nullptr;
@@ -208,24 +210,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This method writes the contents of the internal output buffer to the
-   * standard output stream without appending a newline character. After
-   * outputting the buffer, it is cleared to prepare for subsequent output.
-   * This approach ensures that test results are presented promptly and
-   * efficiently, supporting clear and organised reporting across all test
-   * cases and folders.
+   * console without appending a newline character. The buffer is not
+   * cleared; the caller is responsible for clearing it when appropriate.
    */
   void
-  reporter::write_buffer_to_stdout (void)
+  reporter::write_buffer_to_console (void)
   {
     // Pass only the string, do not add an `\n` here.
-    printf ("%s", buffer_.c_str ());
+    fputs (buffer_.c_str (), stdout);
   }
 
   /**
    * @details
-   * Writes the contents of `buffer_` to `output_file_` using `fprintf`
-   * without appending a newline. If `output_file_` is null, the call is
-   * a no-op.
+   * Writes the contents of `buffer_` to `output_file_` without appending
+   * a newline. If `output_file_` is null, the call is a no-op.
    */
   void
   reporter::write_buffer_to_file_ (void)
@@ -233,8 +231,43 @@ namespace micro_os_plus::micro_test_plus
     // Pass only the string, do not add an `\n` here.
     if (output_file_ != nullptr)
       {
-        fprintf (output_file_, "%s", buffer_.c_str ());
+        fputs (buffer_.c_str (), output_file_);
       }
+  }
+
+  /**
+   * @details
+   * The arguments are forwarded to `vfprintf()` on `stdout`. The stream
+   * is explicit, so the compiler does not rewrite the call into
+   * `puts()` or `putchar()`, and all console output shares the same
+   * `FILE`-based path.
+   */
+  void
+  reporter::write_console_ (const char* format, ...)
+  {
+    va_list args;
+    va_start (args, format);
+    vfprintf (stdout, format, args);
+    va_end (args);
+  }
+
+  /**
+   * @details
+   * The arguments are forwarded to `vfprintf()` on `output_file_`. If
+   * `output_file_` is null, the arguments are ignored.
+   */
+  void
+  reporter::write_file_ (const char* format, ...)
+  {
+    if (output_file_ == nullptr)
+      {
+        return;
+      }
+
+    va_list args;
+    va_start (args, format);
+    vfprintf (output_file_, format, args);
+    va_end (args);
   }
 
   /**
@@ -271,14 +304,13 @@ namespace micro_os_plus::micro_test_plus
           }
         line.append ("\n");
 
-        if (output_file_ != nullptr)
-          fprintf (output_file_, "%s", line.c_str ());
+        write_file_ ("%s", line.c_str ());
 
 #if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
       && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
         if (verbosity_ == verbosity::normal
             || verbosity_ == verbosity::verbose)
-          printf ("%s", line.c_str ());
+          write_console_ ("%s", line.c_str ());
 #endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
       }
 
@@ -322,16 +354,13 @@ namespace micro_os_plus::micro_test_plus
       line.append (", with MICRO_OS_PLUS_DIAG_TRACE_ENABLED");
 #endif // defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
 
-      if (output_file_ != nullptr)
-        {
-          fprintf (output_file_, "%s\n", line.c_str ());
-        }
+      write_file_ ("%s\n", line.c_str ());
 
 #if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
       && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
       if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
         {
-          printf ("%s\n", line.c_str ());
+          write_console_ ("%s\n", line.c_str ());
         }
 #endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
     }
@@ -340,9 +369,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This method flushes the output buffer of the `reporter` by
-   * synchronising it with the standard output stream. This guarantees that all
-   * pending test output is immediately written and visible, ensuring prompt
-   * and reliable reporting of test results across all test cases and folders.
+   * synchronising it with the console and the output file. This
+   * guarantees that all pending test output is immediately written and
+   * visible, ensuring prompt and reliable reporting of test results across
+   * all test cases and folders.
    */
   void
   reporter::flush (void)

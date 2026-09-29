@@ -300,7 +300,11 @@ namespace micro_os_plus::micro_test_plus
     endline (void);
 
     /**
-     * @brief Output the current buffered content.
+     * @brief Output the current buffered content to the console.
+     *
+     * @details
+     * The console is the standard output stream; the buffer is written
+     * verbatim, without appending a line ending, and is not cleared.
      *
      * @note Public because `deferred_reporter_base` calls this
      *   from its destructor when aborting, after the subtest
@@ -313,7 +317,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    write_buffer_to_stdout (void);
+    write_buffer_to_console (void);
 
     /**
      * @brief Flush the current buffered content.
@@ -471,8 +475,62 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] inline auto
     colour_ (const bool cond) const;
 
+    /**
+     * @brief Output the current buffered content to the output file.
+     *
+     * @details
+     * The buffer is written verbatim, without appending a line ending,
+     * and is not cleared. If no output file is open, the call has no
+     * effect.
+     *
+     * @par Parameters
+     *	 None.
+     * @par Returns
+     *   Nothing.
+     */
     void
     write_buffer_to_file_ (void);
+
+    /**
+     * @brief Write formatted text to the console.
+     *
+     * @details
+     * All reporter console output is routed through this function, so
+     * that it reaches the standard output stream via a single path,
+     * shared with the output of the user `printf()` calls. Using one
+     * stream-based path keeps the reporter and user output in the same
+     * buffer, preserving their relative order.
+     *
+     * @param format A `printf()`-style format string.
+     * @param ... The arguments referred to by the format string.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    write_console_ (const char* format, ...)
+#if defined(__GNUC__)
+        __attribute__ ((format (printf, 2, 3)))
+#endif // defined(__GNUC__)
+        ;
+
+    /**
+     * @brief Write formatted text to the output file.
+     *
+     * @details
+     * If no output file is open, the call has no effect, so callers do
+     * not need to check `output_file_` themselves.
+     *
+     * @param format A `printf()`-style format string.
+     * @param ... The arguments referred to by the format string.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    write_file_ (const char* format, ...)
+#if defined(__GNUC__)
+        __attribute__ ((format (printf, 2, 3)))
+#endif // defined(__GNUC__)
+        ;
 
     /**
      * @brief Appends informational (non-result) text to the output buffer.
@@ -554,8 +612,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Output accumulation buffer.
      *
      * @details
-     * Accumulates all reporter output until it is written to standard
-     * output or the output file via `write_buffer_to_stdout()` or
+     * Accumulates all reporter output until it is written to the
+     * console or the output file via `write_buffer_to_console()` or
      * `write_buffer_to_file_()`.
      */
     std::string buffer_{};

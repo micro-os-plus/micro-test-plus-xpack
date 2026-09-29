@@ -133,20 +133,17 @@ namespace micro_os_plus::micro_test_plus
 
     if (verbosity_ != verbosity::silent)
       {
-        printf ("\n");
+        write_console_ ("\n");
       }
 
     write_info_ ();
 
     const char* message = "TAP version 14";
-    if (output_file_ != nullptr)
-      {
-        fprintf (output_file_, "%s\n", message);
-      }
+    write_file_ ("%s\n", message);
 
     if (verbosity_ != verbosity::silent)
       {
-        printf ("%s\n", message);
+        write_console_ ("%s\n", message);
 
         flush ();
       }
@@ -202,31 +199,28 @@ namespace micro_os_plus::micro_test_plus
                   microseconds);
       }
 
-    if (output_file_ != nullptr)
-      {
-        fprintf (output_file_, "%s\n# { %s%s }\n", message_summary,
-                 message_totals, message_time);
-      }
+    write_file_ ("%s\n# { %s%s }\n", message_summary, message_totals,
+                 message_time);
 
     if (verbosity_ != verbosity::silent)
       {
         if (add_empty_line_)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
         if (verbosity_ != verbosity::quiet)
           {
-            printf ("%s\n", message_summary);
+            write_console_ ("%s\n", message_summary);
           }
         else
           {
             // With quiet verbosity, there are no ok/not ok lines, so the TAP
             // plan should look like a skipped test.
-            printf ("1..0\n");
+            write_console_ ("1..0\n");
           }
 
-        printf ("# { %s%s }\n", message_totals, message_time);
+        write_console_ ("# { %s%s }\n", message_totals, message_time);
 
         flush ();
       }
@@ -253,19 +247,16 @@ namespace micro_os_plus::micro_test_plus
     snprintf (message_subtest, sizeof (message_subtest), "# Subtest: %s",
               suite.name ());
 
-    if (output_file_ != nullptr)
-      {
-        fprintf (output_file_, "%s\n", message_subtest);
-      }
+    write_file_ ("%s\n", message_subtest);
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
-        printf ("%s\n", message_subtest);
+        write_console_ ("%s\n", message_subtest);
 
         flush ();
 
@@ -339,13 +330,10 @@ namespace micro_os_plus::micro_test_plus
                   microseconds);
       }
 
-    if (output_file_ != nullptr)
-      {
-        write_buffer_to_file_ ();
+    write_buffer_to_file_ ();
 
-        fprintf (output_file_, "%s\n%s%s }\n", message_summary, message_totals,
+    write_file_ ("%s\n%s%s }\n", message_summary, message_totals,
                  message_time);
-      }
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
@@ -353,7 +341,7 @@ namespace micro_os_plus::micro_test_plus
       {
         if (add_empty_line_ && suite.totals ().executed_subtests () > 0)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
         if (suite.totals ().was_successful ()) [[likely]]
@@ -364,11 +352,11 @@ namespace micro_os_plus::micro_test_plus
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
-                write_buffer_to_stdout ();
+                write_buffer_to_console ();
               }
 
-            printf ("%s\n%s%s }\n", message_summary, message_totals,
-                    message_time);
+            write_console_ ("%s\n%s%s }\n", message_summary, message_totals,
+                            message_time);
           }
         else
           {
@@ -376,10 +364,10 @@ namespace micro_os_plus::micro_test_plus
 
             // Show full TAP output accumulated in the buffer for failed suite
             // cases, as it may contain useful information about the failure.
-            write_buffer_to_stdout ();
+            write_buffer_to_console ();
 
-            printf ("%s\n%s%s }\n", message_summary, message_totals,
-                    message_time);
+            write_console_ ("%s\n%s%s }\n", message_summary, message_totals,
+                            message_time);
           }
 
         flush ();
@@ -410,7 +398,7 @@ namespace micro_os_plus::micro_test_plus
     if (!buffer_.empty ())
       {
         // Each suite should start with an empty buffer.
-        write_buffer_to_stdout ();
+        write_buffer_to_console ();
         flush ();
         abort ();
       }
@@ -421,19 +409,16 @@ namespace micro_os_plus::micro_test_plus
     snprintf (message_subtest, sizeof (message_subtest), "%s# Subtest: %s",
               indent.c_str (), subtest.name ());
 
-    if (output_file_ != nullptr)
-      {
-        fprintf (output_file_, "%s\n", message_subtest);
-      }
+    write_file_ ("%s\n", message_subtest);
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
-        printf ("%s\n", message_subtest);
+        write_console_ ("%s\n", message_subtest);
 
         flush ();
 
@@ -493,12 +478,9 @@ namespace micro_os_plus::micro_test_plus
                   subtest.totals ().failed_checks ());
       }
 
-    if (output_file_ != nullptr)
-      {
-        write_buffer_to_file_ ();
+    write_buffer_to_file_ ();
 
-        fprintf (output_file_, "%s\n%s\n", message_summary, message_totals);
-      }
+    write_file_ ("%s\n%s\n", message_summary, message_totals);
 
     // At this point, the buffer may contain output from the subtest, which
     // should be displayed.
@@ -506,7 +488,7 @@ namespace micro_os_plus::micro_test_plus
       {
         if (add_empty_line_)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
         if (subtest.totals ().was_successful ()) [[likely]]
@@ -516,20 +498,20 @@ namespace micro_os_plus::micro_test_plus
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
-                write_buffer_to_stdout ();
+                write_buffer_to_console ();
 
-                printf ("%s\n", message_summary);
+                write_console_ ("%s\n", message_summary);
               }
             else
               {
                 // Without verbosity, show only the summary line
                 // and count only subtests, not checks, as the TAP output is
                 // not shown.
-                printf ("%s1..%zu\n", indent2.c_str (),
-                        subtest.totals ().executed_subtests ());
+                write_console_ ("%s1..%zu\n", indent2.c_str (),
+                                subtest.totals ().executed_subtests ());
               }
 
-            printf ("%s\n", message_totals);
+            write_console_ ("%s\n", message_totals);
           }
         else
           {
@@ -538,9 +520,9 @@ namespace micro_os_plus::micro_test_plus
             // Show full TAP output accumulated in the buffer for failed
             // subtests, as it may contain useful information about the
             // failure.
-            write_buffer_to_stdout ();
+            write_buffer_to_console ();
 
-            printf ("%s\n%s\n", message_summary, message_totals);
+            write_console_ ("%s\n%s\n", message_summary, message_totals);
           }
 
         flush ();

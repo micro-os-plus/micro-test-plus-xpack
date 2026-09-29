@@ -155,20 +155,17 @@ namespace micro_os_plus::micro_test_plus
 
     if (verbosity_ != verbosity::silent)
       {
-        printf ("\n");
+        write_console_ ("\n");
       }
 
     write_info_ ();
 
     const char* message = "µTest++ human report";
-    if (output_file_ != nullptr)
-      {
-        fprintf (output_file_, "%s\n", message);
-      }
+    write_file_ ("%s\n", message);
 
     if (verbosity_ != verbosity::silent)
       {
-        printf ("%s\n", message);
+        write_console_ ("%s\n", message);
 
         flush ();
       }
@@ -196,7 +193,7 @@ namespace micro_os_plus::micro_test_plus
       {
         if (add_empty_line_)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
         size_t total_suites_count = runner.total_suites_count ();
@@ -230,25 +227,17 @@ namespace micro_os_plus::micro_test_plus
 
         if (runner.totals ().was_successful ()) [[likely]]
           {
-            if (output_file_ != nullptr)
-              {
-                fprintf (output_file_, "✓ %s%s\n", message_totals,
-                         message_time);
-              }
+            write_file_ ("✓ %s%s\n", message_totals, message_time);
 
-            printf ("%s✓%s %s%s\n", colours_.pass, colours_.none,
-                    message_totals, message_time);
+            write_console_ ("%s✓%s %s%s\n", colours_.pass, colours_.none,
+                            message_totals, message_time);
           }
         else
           {
-            if (output_file_ != nullptr)
-              {
-                fprintf (output_file_, "✗ %s%s\n", message_totals,
-                         message_time);
-              }
+            write_file_ ("✗ %s%s\n", message_totals, message_time);
 
-            printf ("%s✗%s %s%s\n", colours_.fail, colours_.none,
-                    message_totals, message_time);
+            write_console_ ("%s✗%s %s%s\n", colours_.fail, colours_.none,
+                            message_totals, message_time);
           }
 
         flush ();
@@ -278,15 +267,12 @@ namespace micro_os_plus::micro_test_plus
       {
         if (add_empty_line_)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
-        if (output_file_ != nullptr)
-          {
-            fprintf (output_file_, "• %s\n", suite.name ());
-          }
+        write_file_ ("• %s\n", suite.name ());
 
-        printf ("• %s\n", suite.name ());
+        write_console_ ("• %s\n", suite.name ());
 
         flush ();
 
@@ -336,7 +322,7 @@ namespace micro_os_plus::micro_test_plus
 
         if (suite.totals ().executed_subtests () > 0)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
         if (suite.totals ().was_successful ()) [[likely]]
@@ -351,23 +337,21 @@ namespace micro_os_plus::micro_test_plus
                       suite.totals ().executed_subtests (),
                       suite.totals ().executed_subtests () == 1 ? "" : "s");
 
-            if (output_file_ != nullptr)
-              {
-                write_buffer_to_file_ ();
+            write_buffer_to_file_ ();
 
-                fprintf (output_file_, "✓ %s - passed %s%s\n", suite.name (),
-                         message_totals, message_time);
-              }
+            write_file_ ("✓ %s - passed %s%s\n", suite.name (), message_totals,
+                         message_time);
 
             if (verbosity_ == verbosity::verbose)
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
-                write_buffer_to_stdout ();
+                write_buffer_to_console ();
               }
 
-            printf ("%s✓%s %s - passed %s%s\n", colours_.pass, colours_.none,
-                    suite.name (), message_totals, message_time);
+            write_console_ ("%s✓%s %s - passed %s%s\n", colours_.pass,
+                            colours_.none, suite.name (), message_totals,
+                            message_time);
           }
         else
           {
@@ -383,21 +367,18 @@ namespace micro_os_plus::micro_test_plus
                       suite.totals ().executed_subtests (),
                       suite.totals ().executed_subtests () == 1 ? "" : "s");
 
-            if (output_file_ != nullptr)
-              {
-                write_buffer_to_file_ ();
+            write_buffer_to_file_ ();
 
-                fprintf (output_file_, "✗ %s - FAILED %s%s\n", suite.name (),
-                         message_totals, message_time);
-              }
+            write_file_ ("✗ %s - FAILED %s%s\n", suite.name (), message_totals,
+                         message_time);
 
             // Show full TAP output accumulated in the buffer for failed suite
             // cases, as it may contain useful information about the failure.
-            write_buffer_to_stdout ();
+            write_buffer_to_console ();
 
-            printf ("%s✗%s %s - %sFAILED%s %s%s\n", colours_.fail,
-                    colours_.none, suite.name (), colours_.fail, colours_.none,
-                    message_totals, message_time);
+            write_console_ ("%s✗%s %s - %sFAILED%s %s%s\n", colours_.fail,
+                            colours_.none, suite.name (), colours_.fail,
+                            colours_.none, message_totals, message_time);
           }
       }
 
@@ -441,19 +422,16 @@ namespace micro_os_plus::micro_test_plus
 
     std::string indent (indent_size * subtest.nesting_depth (), ' ');
 
-    if (output_file_ != nullptr)
-      {
-        fprintf (output_file_, "%s• %s\n", indent.c_str (), subtest.name ());
-      }
+    write_file_ ("%s• %s\n", indent.c_str (), subtest.name ());
 
     if (verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
-        printf ("%s• %s\n", indent.c_str (), subtest.name ());
+        write_console_ ("%s• %s\n", indent.c_str (), subtest.name ());
 
         add_empty_line_ = false;
       }
@@ -491,7 +469,7 @@ namespace micro_os_plus::micro_test_plus
 
         if (add_empty_line_)
           {
-            printf ("\n");
+            write_console_ ("\n");
           }
 
         if (subtest.totals ().was_successful ()) [[likely]]
@@ -504,29 +482,25 @@ namespace micro_os_plus::micro_test_plus
                       subtest.totals ().successful_checks (),
                       subtest.totals ().successful_checks () == 1 ? "" : "s");
 
-            if (output_file_ != nullptr)
-              {
-                write_buffer_to_file_ ();
+            write_buffer_to_file_ ();
 
-                fprintf (output_file_, "%s✓ %s\n", indent.c_str (),
-                         message_totals);
-              }
+            write_file_ ("%s✓ %s\n", indent.c_str (), message_totals);
 
             if (verbosity_ == verbosity::verbose)
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
-                write_buffer_to_stdout ();
+                write_buffer_to_console ();
 
-                printf ("%s%s✓%s %s\n", indent.c_str (), colours_.pass,
-                        colours_.none, message_totals);
+                write_console_ ("%s%s✓%s %s\n", indent.c_str (), colours_.pass,
+                                colours_.none, message_totals);
 
                 add_empty_line_ = true;
               }
             else
               {
-                printf ("%s%s✓%s %s\n", indent.c_str (), colours_.pass,
-                        colours_.none, message_totals);
+                write_console_ ("%s%s✓%s %s\n", indent.c_str (), colours_.pass,
+                                colours_.none, message_totals);
 
                 add_empty_line_ = false;
               }
@@ -541,32 +515,29 @@ namespace micro_os_plus::micro_test_plus
                       subtest.totals ().successful_checks () == 1 ? "" : "s",
                       subtest.totals ().failed_checks ());
 
-            if (output_file_ != nullptr)
-              {
-                write_buffer_to_file_ ();
+            write_buffer_to_file_ ();
 
-                fprintf (output_file_, "%s✗ %s - FAILED %s\n", indent.c_str (),
+            write_file_ ("%s✗ %s - FAILED %s\n", indent.c_str (),
                          subtest.name (), message_totals);
-              }
 
             if (verbosity_ == verbosity::normal)
               {
                 if (!add_empty_line_)
                   {
-                    printf ("\n");
+                    write_console_ ("\n");
                   }
 
-                printf ("%s• %s\n", indent.c_str (), subtest.name ());
+                write_console_ ("%s• %s\n", indent.c_str (), subtest.name ());
               }
 
             // Show full output accumulated in the buffer for failed
             // subtests, as it may contain useful information about the
             // failure.
-            write_buffer_to_stdout ();
+            write_buffer_to_console ();
 
-            printf ("%s%s✗%s %s - %sFAILED%s %s\n", indent.c_str (),
-                    colours_.fail, colours_.none, subtest.name (),
-                    colours_.fail, colours_.none, message_totals);
+            write_console_ ("%s%s✗%s %s - %sFAILED%s %s\n", indent.c_str (),
+                            colours_.fail, colours_.none, subtest.name (),
+                            colours_.fail, colours_.none, message_totals);
 
             add_empty_line_ = true;
           }

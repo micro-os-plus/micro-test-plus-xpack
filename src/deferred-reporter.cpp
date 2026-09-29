@@ -123,7 +123,7 @@ namespace micro_os_plus::micro_test_plus
 
       if (abort_ && !value_) [[unlikely]]
         {
-          subtest_.reporter ().write_buffer_to_stdout ();
+          subtest_.reporter ().write_buffer_to_console ();
           subtest_.reporter ().flush ();
           subtest_.abort (location_);
         }
