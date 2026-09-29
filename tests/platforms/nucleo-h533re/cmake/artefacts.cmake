@@ -84,7 +84,8 @@ function (add_openocd_test)
       /Users/ilg/.local/st-openocd/bin/openocd${extension} -s
       /Users/ilg/.local/st-openocd/openocd/scripts
       # -d3
-      -c "gdb port disabled" -c "tcl port disabled" -c "telnet port disabled"
+      # -c "gdb port disabled" -c "tcl port disabled" -c "telnet port disabled"
+      -c "gdb_port disabled" -c "tcl_port disabled" -c "telnet_port disabled"
       -f "interface/${XPACK_OPENOCD_INTERFACE}" -f
       "target/${XPACK_OPENOCD_TARGET}" -c "program ${name}.elf verify" -c
       "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset halt" -c
