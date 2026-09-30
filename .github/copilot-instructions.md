@@ -109,18 +109,22 @@ folder within the build folders and the project root.
 After making changes, run in a terminal:
 
 - `xpm run test -C tests` to execute the test with the system compiler
-- `xpm run test-native-clang -C tests` to execute the test with clang
-- `xpm run test-qemu-cortex-m7f-gcc -C tests` to execute the test with cross gcc
+- `xpm run test-native-cmake-clang -C tests` to execute the test with clang
+- `xpm run test-qemu-cortex-m7f-cmake-gcc -C tests` to execute the test with cross gcc
 
-When editing non-native platforms, run one by one specific actions for the given configuration.
+When using linked writable projects, it is necessary to run the linking step to ensure all dependencies are correctly resolved.
 
-- xpm run setup --config <name>
-- xpm run build --config <name>
+- `xpm run link-dependencies --config <name>`
+
+When using non-native platforms, run one by one specific actions for the given configuration.
+
+- `xpm run setup --config <name>`
+- `xpm run build --config <name>`
 
 For non-qemu plaforms, running the tests can be done only after confirming that the board is 
 powered up, with the command:
 
-- xpm run test --config <name>
+- `xpm run test --config <name>`
 
 QEMU tests can be done directly, without confirmation that the board is
 powered up.
@@ -129,8 +133,14 @@ powered up.
 
 - When asked for a code review, follow the separate instructions in `.github/skills/code-review/SKILL.md` for a thorough and uncompromising review of the codebase.
 
-## Version Control
+## Commit Message Guidelines
 
 When making changes to the codebase, follow these guidelines for version control:
 
-- Use descriptive commit messages that clearly explain the purpose of the changes
+- Use the imperative mood in the subject line (e.g., "Fix bug" instead of "Fixed bug" or "Fixes bug").
+- Limit the subject line to 50 characters.
+- Capitalize the subject line.
+- Do not end the subject line with a period.
+- Use the body to explain what and why vs. how.
+- Wrap the body at 72 characters.
+- Include references to relevant issues or pull requests if applicable.
