@@ -106,9 +106,9 @@ The J-Link uses the standard ARM 20-pin JTAG connector (2 × 10, 2.54 mm pitch).
 | 17 | DBGRQ | — | — | Not connected. |
 | 18 | GND | ? (*) | GND | |
 | 19 | 5V-Supply | — | — | **Do not connect.** It is a 5 V output from the J-Link. |
-| 20 | GND | ? (*) | GND | At least one is required; more are better for signal integrity. |
+| 20 | GND | ? (*) | GND |  |
 
-(*) - 39, 6, 9, 14, 20, 25, 30, 34
+(*) - GND any of 39, 6, 9, 14, 20, 25, 30, 34 - At least one is required; more are better for signal integrity.
 
 The GPIO pins use 3.3 V levels and are not 5 V tolerant. Connect VTref to 3V3, never to 5V.
 
@@ -154,8 +154,8 @@ It is redundant when `enable_jtag_gpio=1` is present and is not required.
 | 25 | GP19 TCK/SWCLK | 22 | GPIO25 (TCK) | |
 | 26 | GP20 NC | — | — | |
 | 27 | GP21 TDO | 18 | GPIO24 (TDO) | |
-| 28 | GND |  | GND | At least one is required; more are better for signal integrity. |
+| 28 | GND | ? (*) | GND |  |
 
-(*) - 39, 6, 9, 14, 20, 25, 30, 34
+(*) - GND any of 39, 6, 9, 14, 20, 25, 30, 34 - At least one is required; more are better for signal integrity.
 
 -/-/-
