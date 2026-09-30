@@ -2,6 +2,8 @@
 
 The JTAG pins are available in Alt4 and Alt5 configurations.
 
+It is recommended to use Alt4.
+
 ## The Alt4 GPIO configuration for JTAG
 
 - GPIO22/TRST
@@ -82,20 +84,31 @@ Connections that are not GPIO pins:
 
 The J-Link uses the standard ARM 20-pin JTAG connector (2 × 10, 2.54 mm pitch).
 
-| J-Link pin | J-Link signal | Pi header pin | Pi signal | Notes |
+### Corresponding Pins
+
+| J&#x2011;Link pin | J&#x2011;Link signal | Pi Zero header pin | Pi Zero signal | Notes |
 | --- | --- | --- | --- | --- |
 | 1 | VTref | 1 (or 17) | 3V3 | Reference only; required for the J-Link level shifters. |
 | 2 | NC | — | — | Not connected. |
 | 3 | nTRST | 15 | GPIO22 (TRST) | Optional but recommended; GPIO22 has a default pull-down, which may hold the TAP in reset if left unconnected. |
 | 5 | TDI | 37 | GPIO26 (TDI) | |
+| 6 | GND | ? (*) | GND | |
 | 7 | TMS | 13 | GPIO27 (TMS) | |
+| 8 | GND | ? (*) | GND | |
 | 9 | TCK | 22 | GPIO25 (TCK) | |
+| 10 | GND | ? (*) | GND | |
 | 11 | RTCK | 16 | GPIO23 (RTCK) | Optional; needed only for adaptive clocking. |
+| 12 | GND | ? (*) | GND | |
 | 13 | TDO | 18 | GPIO24 (TDO) | |
+| 14 | GND | ? (*) | GND | |
 | 15 | RESET (nSRST) | — | — | Not connected; the Pi has no reset line on the header. |
+| 16 | GND | ? (*) | GND | |
 | 17 | DBGRQ | — | — | Not connected. |
+| 18 | GND | ? (*) | GND | |
 | 19 | 5V-Supply | — | — | **Do not connect.** It is a 5 V output from the J-Link. |
-| 4, 6, 8, 10, 12, 14, 16, 18, 20 | GND | 39 (and/or 6, 9, 14, 20, 25, 30, 34) | GND | At least one is required; more are better for signal integrity. |
+| 20 | GND | ? (*) | GND | At least one is required; more are better for signal integrity. |
+
+(*) - 39, 6, 9, 14, 20, 25, 30, 34
 
 The GPIO pins use 3.3 V levels and are not 5 V tolerant. Connect VTref to 3V3, never to 5V.
 
@@ -119,3 +132,30 @@ gpio=22-27=a4
 
 It is redundant when `enable_jtag_gpio=1` is present and is not required.
 
+## Connecting a JTAGprobe
+
+**JTAGprobe** is a Raspberry Pi Pico running a fork of open source `debugprobe`:
+
+- https://github.com/lonehog/JTAGprobe
+- https://github.com/raspberrypi/debugprobe
+
+### Corresponding Pins
+
+| Pico pin | JTAG Signal | Pi Zero header pin | Pi Zero signal | Notes |
+| --- | --- | --- | --- | --- |
+| 18 | GND | ? (*) | GND | |
+| 19 | GP14 TMS/SWDIO | 13 | GPIO27 (TMS) | |
+| 20 | GP15 nTRST | 15 | GPIO22 (TRST) | Optional but recommended; GPIO22 has a default pull-down, which may hold the TAP in reset if left unconnected. |
+| | | | | |
+| 21 | GP16 nRESET | — | — | Not connected; the Pi has no reset line on the header. |
+| 22 | GP17 NC | — | — | |
+| 23 | GND | ? (*) | GND | |
+| 24 | GP18 TDI | 37 | GPIO26 (TDI) | |
+| 25 | GP19 TCK/SWCLK | 22 | GPIO25 (TCK) | |
+| 26 | GP20 NC | — | — | |
+| 27 | GP21 TDO | 18 | GPIO24 (TDO) | |
+| 28 | GND |  | GND | At least one is required; more are better for signal integrity. |
+
+(*) - 39, 6, 9, 14, 20, 25, 30, 34
+
+-/-/-
