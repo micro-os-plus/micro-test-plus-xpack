@@ -30,6 +30,7 @@ on:
 # https://docs.github.com/en/actions/using-jobs/using-concurrency
 concurrency:
   group: 'test-all'
+  # A new manual trigger cancels the older run.
   cancel-in-progress: true
 
 jobs:
@@ -39,7 +40,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     strategy:
-      # Do not cancel the other matrix jobs if one of them fails.
+      # Run all platforms to completion, even if one fails.
       fail-fast: false
       matrix:
         # https://github.com/actions/runner-images

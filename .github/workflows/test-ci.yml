@@ -56,7 +56,8 @@ on:
 # Allow one concurrent run per push; new pushes cancel older runs.
 # https://docs.github.com/en/actions/using-jobs/using-concurrency
 concurrency:
-  group: "tests-ci-${{ github.ref_name }}"
+  group: 'tests-ci-${{ github.ref_name }}'
+  # A new push to the same branch cancels the older run.
   cancel-in-progress: true
 
 jobs:
@@ -66,7 +67,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     strategy:
-      # Do not cancel the other matrix jobs if one of them fails.
+      # Run all platforms to completion, even if one fails.
       fail-fast: false
       matrix:
         # https://github.com/actions/runner-images
@@ -79,9 +80,9 @@ jobs:
             'windows-2025',
           ]
         # https://nodejs.org/en - use LTS
-        node-version: [ '24' ]
+        node-version: ['24']
         # https://www.npmjs.com/package/xpm
-        xpm-version: [ '0.23.2' ]
+        xpm-version: ['0.23.2']
 
     steps:
       - name: Checkout
