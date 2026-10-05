@@ -25,7 +25,8 @@ import json5 from 'json5'
 const scriptPath = fileURLToPath(import.meta.url)
 const scriptFolderPath = path.dirname(scriptPath)
 const scriptName = path.basename(scriptPath)
-const projectFolderPath = path.dirname(scriptFolderPath)
+// The script resides in the `maintenance/scripts` folder.
+const projectFolderPath = path.dirname(path.dirname(scriptFolderPath))
 
 // ----------------------------------------------------------------------------
 

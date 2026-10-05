@@ -41,7 +41,7 @@ const files = globSync(['**/CMakeLists.txt', '**/*.cmake'], {
 
 const args = [
   '--config-file',
-  'config/.cmake-format.py',
+  'maintenance/config/.cmake-format.py',
   '--in-place',
   ...files,
 ]

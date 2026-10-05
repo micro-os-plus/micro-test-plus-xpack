@@ -92,6 +92,10 @@ Brace the whole group of includes by separator lines.
 - `/include`: Contains the C++ header files
 - `/tests`: Contains the test suites and test cases
 - `/website`: Contains the project documentation and guides
+- `/maintenance`: Contains the project maintenance resources, which are
+  not published with the package: `/maintenance/config` (the formatter
+  configuration files), `/maintenance/scripts` (the maintenance scripts
+  and their templates), and `/maintenance/docs` (the developer notes)
 
 When adding new source files, place them in the appropriate `src` or `include`
 folder, and add corresponding entries in the top CMake and Meson configurations.

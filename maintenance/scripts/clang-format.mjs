@@ -24,7 +24,12 @@ const files = [
   ...globSync('tests/platforms/*/device/{include,src}/**/*.{cpp,c,h}'),
 ]
 
-const args = ['--style=file:config/.clang-format', '-i', '--verbose', ...files]
+const args = [
+  '--style=file:maintenance/config/.clang-format',
+  '-i',
+  '--verbose',
+  ...files,
+]
 
 console.log()
 console.log(`[clang-format ${args.join(' ')}]`)

@@ -61,11 +61,11 @@
       "@xpack-dev-tools/clang": "21.1.8-1.1"
     },
     "actions": {
-      "clang-format": "node scripts/clang-format.mjs",
-      "cmake-format": "node scripts/cmake-format.mjs",
-      "jsonc-format": "node scripts/jsonc-format.mjs",
-      "xcdl-export": "node scripts/xcdl-export.mjs xcdl-package.json*",
-      "prettier": "prettier scripts tests/scripts --write --config config/.prettierrc.json --ignore-path config/.prettierignore"
+      "clang-format": "node maintenance/scripts/clang-format.mjs",
+      "cmake-format": "node maintenance/scripts/cmake-format.mjs",
+      "jsonc-format": "node maintenance/scripts/jsonc-format.mjs",
+      "xcdl-export": "node maintenance/scripts/xcdl-export.mjs xcdl-package.json*",
+      "prettier": "prettier maintenance/scripts tests/scripts --write --config maintenance/config/.prettierrc.json --ignore-path maintenance/config/.prettierignore"
     }
   },
   "engines": {

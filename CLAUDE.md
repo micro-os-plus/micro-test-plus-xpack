@@ -36,6 +36,14 @@ programs against it on many toolchains and platforms.
   builds and runs sample test programs against the library across many
   toolchains and platforms; see "Testing" below.
 - `website/` — Docusaurus-based project documentation/guides.
+- `maintenance/` — project maintenance resources, not part of the
+  published package: `maintenance/config/` (formatter configurations
+  `.clang-format`, `.cmake-format.py`, `.prettierrc.json`,
+  `.prettierignore`, and `top-templates.json`),
+  `maintenance/scripts/` (the `.mjs` scripts behind the top-level
+  `xpm run clang-format`, `cmake-format`, `jsonc-format`,
+  `xcdl-export` actions, plus their Liquid `templates/`), and
+  `maintenance/docs/` (developer notes).
 - `xcdl-package.jsonc`, `CMakeLists.txt`, `meson.build` — build-system
   integration for consumers (xCDL/xpm, CMake, meson).
 
