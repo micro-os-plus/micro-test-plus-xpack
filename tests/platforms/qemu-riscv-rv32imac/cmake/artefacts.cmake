@@ -32,7 +32,7 @@ set (XPACK_QEMU_MACHINE_ARGS --machine virt --cpu rv32)
 set (
   XPACK_QEMU_EXTRA_ARGS
   -smp
-  1
+  2
   -bios
   none
   --nographic
