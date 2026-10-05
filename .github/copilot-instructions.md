@@ -131,7 +131,9 @@ powered up.
 
 ## Code Review
 
-- When asked for a code review, follow the separate instructions in `.github/skills/code-review/SKILL.md` for a thorough and uncompromising review of the codebase.
+- When asked for a code review, follow the separate instructions in
+`.github/skills/code-review/SKILL.md` for a thorough and uncompromising
+review of the codebase.
 
 ## Commit Message Guidelines
 
@@ -144,3 +146,18 @@ When making changes to the codebase, follow these guidelines for version control
 - Use the body to explain what and why vs. how.
 - Wrap the body at 72 characters.
 - Include references to relevant issues or pull requests if applicable.
+
+## xcdl
+
+The `xcdl` tool is not yet available; `xcdl-package.jsonc` is used only to
+generate the top-level CMake and Meson files (`xpm run xcdl-export`). Only
+`publicIncludeFolders`, `sourceFiles`, and `dependencies` affect the
+generated files; all other properties (`generatedFile`, `activeIf`,
+`defaultValue`, `implements`, and the commented-out `defaultDefine`
+entries) are informative only.
+
+In particular, no `*-defines.h` file is generated, so a commented-out
+`defaultDefine` does not mean that the macro is disabled. Its name
+documents the macro that the application must define itself, either in
+`micro-os-plus/project-config.h` or in project specific header files 
+(e.g., `micro-os-plus/startup-defines.h`).
