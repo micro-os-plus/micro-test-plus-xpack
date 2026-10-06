@@ -42,8 +42,9 @@
     "liquidjs": "^10.25.0",
     "prettier": "^3.9.6"
   },
+  "dependencies": {},
   "scripts": {
-    "generate-top-commons": "node node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.mjs --micro-os-plus",
+    "generate-top-commons": "node node_modules/@xpack/npm-packages-helper/maintenance/scripts/generate-top-commons.mjs --micro-os-plus",
     "npm-install": "npm install",
     "npm-link-helpers": "npm link @xpack/npm-packages-helper",
     "npm-outdated": "npm outdated",

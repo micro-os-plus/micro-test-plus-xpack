@@ -1,6 +1,6 @@
 /*
  * DO NOT EDIT! Automatically generated from template file:
- * npm-packages-helper/templates/common/scripts/xcdl-export-liquid.mjs
+ * npm-packages-helper/templates/common/maintenance/scripts/xcdl-export-liquid.mjs
  *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
@@ -26,12 +26,42 @@ const scriptPath = fileURLToPath(import.meta.url)
 const scriptFolderPath = path.dirname(scriptPath)
 const scriptName = path.basename(scriptPath)
 // The script resides in the `maintenance/scripts` folder.
+// Walk two steps up to reach the project folder.
 const projectFolderPath = path.dirname(path.dirname(scriptFolderPath))
 
 // ----------------------------------------------------------------------------
 
-if (process.argv.length < 3) {
-  console.error(`Usage: ${scriptName} <xcdl-package.jsonc>`)
+const showUsage = () => {
+  console.error()
+  console.error(`Usage: ${scriptName} [--skip-meson] <xcdl-package.jsonc>`)
+  console.error()
+  console.error('Options:')
+  console.error('  --skip-meson   do not generate the meson.build file')
+}
+
+const args = process.argv.slice(2)
+
+const skipMeson = args.includes('--skip-meson')
+const positionalArgs = args.filter((arg) => !arg.startsWith('--'))
+
+const unknownOptions = args.filter(
+  (arg) => arg.startsWith('--') && arg !== '--skip-meson'
+)
+if (unknownOptions.length > 0) {
+  console.error(`Unknown option(s): ${unknownOptions.join(' ')}`)
+  showUsage()
+  process.exit(1)
+}
+
+if (positionalArgs.length < 1) {
+  console.error('Missing mandatory <xcdl-package.jsonc> argument')
+  showUsage()
+  process.exit(1)
+}
+
+if (positionalArgs.length > 1) {
+  console.error(`Too many arguments: ${positionalArgs.join(' ')}`)
+  showUsage()
   process.exit(1)
 }
 
@@ -43,9 +73,10 @@ if (!fs.existsSync(packageJsonPath)) {
   process.exit(1)
 }
 
-const xcdlJsoncPath = process.argv[2]
+const xcdlJsoncPath = positionalArgs[0]
 if (!fs.existsSync(xcdlJsoncPath)) {
   console.error(`missing mandatory ${xcdlJsoncPath}...`)
+  showUsage()
   process.exit(1)
 }
 
@@ -209,10 +240,14 @@ liquidSubstitute(
   path.resolve(projectFolderPath, 'CMakeLists.txt')
 )
 
-liquidSubstitute(
-  path.resolve(scriptFolderPath, 'templates', 'meson-liquid.build'),
-  path.resolve(projectFolderPath, 'meson.build')
-)
+if (skipMeson) {
+  console.log('skipping meson.build (--skip-meson)')
+} else {
+  liquidSubstitute(
+    path.resolve(scriptFolderPath, 'templates', 'meson-liquid.build'),
+    path.resolve(projectFolderPath, 'meson.build')
+  )
+}
 
 // ----------------------------------------------------------------------------
 

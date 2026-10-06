@@ -86,7 +86,6 @@ build-assets/
 wrappers/
 extras/
 inspiration/
-maintenance-scripts/
 maintenance/
 tests/
 config/
@@ -105,5 +104,6 @@ eslint.config.js
 **/code-review.md
 **/CODE-REVIEW.md
 **/CLAUDE.md
+.claude/
 
 #end
