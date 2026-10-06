@@ -43,6 +43,7 @@ include ("cmake/common-options-library.cmake")
 message (VERBOSE "")
 # Set `xpack_dependencies_folders` with the platform specific dependencies.
 include ("platforms/${PLATFORM_NAME}/cmake/dependencies-folders.cmake")
+
 foreach (folder ${xpack_dependencies_folders})
   file (RELATIVE_PATH relative_folder "${CMAKE_SOURCE_DIR}" "${folder}")
   message (VERBOSE "  ${relative_folder}")

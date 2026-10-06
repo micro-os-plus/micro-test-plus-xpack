@@ -37,6 +37,7 @@ function (target_link_native_test_libraries name)
             # Platform dependency.
             micro-os-plus::platform # bring device & architecture too
   )
+
   if (NOT ARGN)
     message (
       FATAL_ERROR
@@ -64,6 +65,7 @@ function (target_link_cross_test_libraries name)
             micro-os-plus::platform # bring device & architecture too
             micro-os-plus::semihosting
   )
+  
   if (NOT ARGN)
     message (
       FATAL_ERROR

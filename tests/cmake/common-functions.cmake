@@ -61,6 +61,7 @@ function (add_native_test_executable name)
               "$<TARGET_FILE:${name}>" > ${name}-list.txt
       VERBATIM
     )
+
     set_property (
       TARGET ${name}
       APPEND
