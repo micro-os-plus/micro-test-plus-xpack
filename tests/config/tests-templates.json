@@ -1,6 +1,6 @@
 {
   "platforms": [
-    "native",
+    "synthetic-posix",
     "qemu-cortex-m0",
     "qemu-cortex-m3",
     "qemu-cortex-m4f",

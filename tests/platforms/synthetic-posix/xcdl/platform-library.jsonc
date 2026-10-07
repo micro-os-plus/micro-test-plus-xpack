@@ -1,6 +1,6 @@
 {
   // DO NOT EDIT! Automatically generated from template file:
-  // build-helper/templates/common/_micro-os-plus/tests/platforms/native/xcdl/platform-library-liquid.jsonc
+  // build-helper/templates/common/_micro-os-plus/tests/platforms/synthetic-posix/xcdl/platform-library-liquid.jsonc
   "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
   "minimumXcdlRequired": "2.0.0",
   "license": "MIT",

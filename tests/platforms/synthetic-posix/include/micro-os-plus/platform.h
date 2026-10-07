@@ -1,6 +1,6 @@
 /*
  * DO NOT EDIT! Automatically generated from template file:
- * build-helper/templates/common/_micro-os-plus/tests/platforms/native/include/micro-os-plus/project-config-liquid.h
+ * build-helper/templates/common/_micro-os-plus/tests/platforms/synthetic-posix/include/micro-os-plus/platform-liquid.h
  *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -14,18 +14,19 @@
 
 // ----------------------------------------------------------------------------
 
-#ifndef MICRO_OS_PLUS_PROJECT_CONFIG_H_
-#define MICRO_OS_PLUS_PROJECT_CONFIG_H_
+#ifndef MICRO_OS_PLUS_PLATFORM_H_
+#define MICRO_OS_PLUS_PLATFORM_H_
 
 // ----------------------------------------------------------------------------
-// Platform configuration definitions.
-// .S assembly files have `#define __ASSEMBLER__ 1`.
-// If so, this file should define only preprocessor macros.
+
+#include "micro-os-plus/device.h"
+
+// ----------------------------------------------------------------------------
 
 // ...
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_PROJECT_CONFIG_H_
+#endif // MICRO_OS_PLUS_PLATFORM_H_
 
 // ----------------------------------------------------------------------------

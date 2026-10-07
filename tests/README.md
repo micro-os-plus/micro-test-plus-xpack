@@ -4,7 +4,7 @@ There are several tests available, a unit test and two sample tests.
 
 The CI workflow runs several tests, both as native processes and as
 semihosted applications emulated by QEMU; for details see
-[ci.yml](../.github/workflows/ci.yml).
+[test-ci.yml](../.github/workflows/test-ci.yml).
 
 Exactly the same source files are built on all platforms, without
 changes.
@@ -36,11 +36,11 @@ It is build only on native cmake configuration.
 - meson 1.3.0 still fails with gcc 11
   (<https://github.com/mesonbuild/meson/issues/12552>)
 
-- `test-native-cmake-sys` and `test-native-meson-sys` are strict only on
+- `test-synthetic-posix-cmake-sys` and `test-synthetic-posix-meson-sys` are strict only on
 Darwin, which is known to have the toolchain; otherwise it is allowed to fail
-- `test-native-cmake-gcc11` and `test-native-meson-gcc11` fail on Darwin
+- `test-synthetic-posix-cmake-gcc11` and `test-synthetic-posix-meson-gcc11` fail on Darwin
 
-```
+```console
 g++: warning: could not understand version 14.00.00
 ld: warning: -multiply_defined is obsolete
 ld: warning: REFERENCED_DYNAMICALLY flag on symbol '_NXArgc' is deprecated
@@ -72,7 +72,7 @@ error: running 'xpm run build --config native-cmake-gcc11-release' failed
 
 - on Linux the linker complains about libpthread:
 
-```
+```console
 /home/ilg/.local/xPacks/@xpack-dev-tools/gcc/13.2.0-1.1/.content/bin/../lib/gcc/aarch64-unknown-linux-gnu/13.2.0/../../../../aarch64-unknown-linux-gnu/bin/ld: warning: libpthread.so.0, needed by /home/ilg/.local/xPacks/@xpack-dev-tools/gcc/13.2.0-1.1/.content/bin/../lib/gcc/aarch64-unknown-linux-gnu/13.2.0/../../../../lib64/libstdc++.so, not found (try using -rpath or -rpath-link)
 ```
 

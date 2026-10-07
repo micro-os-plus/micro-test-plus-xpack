@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT! Automatically generated from template file:
-# build-helper/templates/common/_micro-os-plus/tests/platforms/native/meson/dependencies-folders/meson-liquid.build
+# build-helper/templates/common/_micro-os-plus/tests/platforms/synthetic-posix/meson/dependencies-libraries/meson-liquid.build
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -13,24 +13,11 @@
 #
 # -----------------------------------------------------------------------------
 
-# Define a list of folders where the platform dependencies are located.
+# Define a list of libraries dependencies.
 
 # -----------------------------------------------------------------------------
 
-message('Including tests/platforms/' + xpack_platform_name + '/meson/dependencies-folders/meson.build...')
-
-# -----------------------------------------------------------------------------
-
-# The base folder is `tests`.
-xpack_dependencies_folders = [
-
-  # Order matters: dependencies must precede their dependants.
-
-  # Dependencies: none.
-  'xpacks/@micro-os-plus/diag-trace',
-  
-  # Dependencies: none.
-  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-synthetic-posix',
-]
+# None so far.
+xpack_dependencies_libraries = []
 
 # -----------------------------------------------------------------------------

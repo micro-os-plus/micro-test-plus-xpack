@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // DO NOT EDIT! Automatically generated from template file:
-// build-helper/templates/common/_micro-os-plus/tests/platforms/native/include/micro-os-plus/diag/trace-defines-liquid.h
+// build-helper/templates/common/_micro-os-plus/tests/platforms/synthetic-posix/include/micro-os-plus/diag/trace-defines-liquid.h
 // TODO: generate it via xcdl, when available.
 // ----------------------------------------------------------------------------
 
