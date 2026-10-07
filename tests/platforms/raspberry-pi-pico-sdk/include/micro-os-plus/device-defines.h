@@ -1,4 +1,8 @@
 // ----------------------------------------------------------------------------
+// DO NOT EDIT! Automatically generated from template file:
+// build-helper/templates/common/_micro-os-plus/tests/platforms/raspberry-pi-pico-sdk/include/micro-os-plus/device-defines-liquid.h
+// TODO: generate it via xcdl, when available.
+// ----------------------------------------------------------------------------
 
 #ifndef MICRO_OS_PLUS_DEVICE_DEFINES_H_
 #define MICRO_OS_PLUS_DEVICE_DEFINES_H_

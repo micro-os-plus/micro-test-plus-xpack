@@ -1,4 +1,7 @@
 /*
+ * DO NOT EDIT! Automatically generated from template file:
+ * build-helper/templates/common/_micro-os-plus/tests/platforms/nucleo-f411re-cubemx-startup/src/led-green-liquid.cpp
+ *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
  *
@@ -12,6 +15,8 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/platform.h"
+
+// ----------------------------------------------------------------------------
 
 // The CMSIS/HAL headers pulled in below (transitively, via `main.h`) use
 // C-style casts and, in the CMSIS core inline functions, casts that are

@@ -1,4 +1,7 @@
 /*
+ * DO NOT EDIT! Automatically generated from template file:
+ * build-helper/templates/common/_micro-os-plus/tests/platforms/raspberry-pi-pico-2-riscv-sdk/src/led-green-liquid.cpp
+ *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
  *
@@ -18,6 +21,8 @@
 // build via the generated pico/config_autogen.h, no explicit include
 // needed for it here.
 #include "hardware/gpio.h"
+
+// ----------------------------------------------------------------------------
 
 namespace platform
 {

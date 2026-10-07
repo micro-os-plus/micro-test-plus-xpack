@@ -1,5 +1,8 @@
 # device/stm32h533re
 
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/platforms/nucleo-h533re-cubemx/device/README-liquid.md
+
 This folder includes the **stm32h533re** device definitions.
 
 The result is a CMake interface library `micro-os-plus::device`.

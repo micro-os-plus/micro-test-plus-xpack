@@ -1,5 +1,8 @@
 # platforms/raspberry-pi-pico
 
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/platforms/raspberry-pi-pico/README-liquid.md
+
 Support files for building Cortex-M0+ tests to run on the
 Raspberry Pi Pico board without the SDK.
 

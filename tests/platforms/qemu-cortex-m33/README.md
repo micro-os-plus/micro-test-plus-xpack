@@ -1,7 +1,7 @@
 # platforms/qemu-cortex-m33
 
 > DO NOT EDIT! Automatically generated from template file:
-> build-helper/templates/common/\_micro-os-plus/tests/platforms/qemu-cortex-m33/README-liquid.md
+> build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-m33/README-liquid.md
 
 Support files for building Cortex-M33 application to run on the
 QEMU "mps2-an505" emulated board (which is a Cortex-M33 board).

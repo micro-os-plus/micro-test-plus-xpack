@@ -1,5 +1,8 @@
 # device
 
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/platforms/nucleo-f411re/device/README-liquid.md
+
 This folder includes the **stm32f411xe** device definitions.
 
 The result is a CMake interface library `micro-os-plus::device`.

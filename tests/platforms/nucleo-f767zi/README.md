@@ -1,5 +1,8 @@
 # platforms/nucleo-f767zi
 
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/platforms/nucleo-f767zi/README-liquid.md
+
 Note: It cannot be a static library, since it makes extensive use of `weak` symbols.
 
 ## Source files

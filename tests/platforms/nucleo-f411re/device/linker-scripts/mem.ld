@@ -1,4 +1,7 @@
 /* 
+ * DO NOT EDIT! Automatically generated from template file:
+ * build-helper/templates/common/_micro-os-plus/tests/platforms/nucleo-f411re/device/linker-scripts/mem-liquid.ld
+ *
  * The STM32F411xe memory map.
  * The memory sections are defined in the `startup` package.
  */

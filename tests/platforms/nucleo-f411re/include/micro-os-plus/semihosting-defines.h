@@ -1,7 +1,7 @@
-// DO NOT EDIT!  Automatically generated from template file:
-// build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-m4f/include/micro-os-plus/semihosting-defines-liquid.h
-// TODO: generate it via xcdl, and remove this other one from the tests.
-
+// ----------------------------------------------------------------------------
+// DO NOT EDIT! Automatically generated from template file:
+// build-helper/templates/common/_micro-os-plus/tests/platforms/nucleo-f411re/include/micro-os-plus/semihosting-defines-liquid.h
+// TODO: generate it via xcdl, when available.
 // ----------------------------------------------------------------------------
 
 #ifndef MICRO_OS_PLUS_SEMIHOSTING_DEFINES_H_

@@ -1,3 +1,8 @@
+/*
+ * DO NOT EDIT! Automatically generated from template file:
+ * build-helper/templates/common/_micro-os-plus/tests/platforms/raspberry-pi-pico/linker-scripts/section-boot2-liquid.ld
+ */
+
 SECTIONS
 {
   /* ----------------------------------------------------------------------- */

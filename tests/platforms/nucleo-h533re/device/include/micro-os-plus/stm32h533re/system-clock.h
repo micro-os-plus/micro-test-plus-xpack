@@ -1,4 +1,7 @@
 /*
+ * DO NOT EDIT! Automatically generated from template file:
+ * build-helper/templates/common/_micro-os-plus/tests/platforms/nucleo-h533re/device/include/micro-os-plus/stm32h533re/system-clock-liquid.h
+ *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
  *
@@ -8,6 +11,8 @@
  * If a copy of the license was not distributed with this file, it can be
  * obtained from https://opensource.org/licenses/mit.
  */
+
+// ----------------------------------------------------------------------------
 
 #ifndef MICRO_OS_PLUS_STM32H533RE_SYSTEM_CLOCK_H_
 #define MICRO_OS_PLUS_STM32H533RE_SYSTEM_CLOCK_H_

@@ -1,6 +1,9 @@
 /*
+ * DO NOT EDIT! Automatically generated from template file:
+ * build-helper/templates/common/_micro-os-plus/tests/scripts/convert-startup-to-vectors-liquid.mjs
+ *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
- * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
+ * Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose is hereby granted, under the terms of the MIT license.
@@ -46,7 +49,7 @@ const scriptName = path.basename(scriptPath)
  * is expected to write the result to stdout instead.
  *
  * @param {string[]} argv - `process.argv`.
- * @returns {{ inputFilePath: string, outputFilePath: string | null }}
+ * @returns {\{ inputFilePath: string, outputFilePath: string | null }\}
  */
 const parseArgs = (argv) => {
   if (argv.length < 3) {
@@ -81,7 +84,7 @@ const parseArgs = (argv) => {
  * generated C file.
  *
  * @param {string[]} lines - The input assembly file, split into lines.
- * @returns {{ symbol: string, comment: string | null }[]} The ordered
+ * @returns {\{ symbol: string, comment: string | null }[]} The ordered
  *   list of `.word` entries (handler names, or `0` for reserved/unused
  *   slots), each with its trailing comment, if any.
  */
@@ -149,10 +152,10 @@ const liquidEngine = new Liquid({
  * The `handlers` array expects objects with a `symbol` field and a
  * `comment` field. `comment` must be `null` (not an empty string)
  * when there is no comment: liquidjs, like Ruby Liquid, treats `""`
- * as truthy, so `{% if handler.comment %}` would otherwise still
+ * as truthy, so `{\% if handler.comment %\}` would otherwise still
  * render an empty trailing `// ` on every line.
  *
- * @param {{ symbol: string, comment: string | null }[]} handlers
+ * @param {\{ symbol: string, comment: string | null }[]} handlers
  * @param {string} libraryFilePath
  * @param {boolean} isArmArch6m
  * @param {boolean} isArmArch8m

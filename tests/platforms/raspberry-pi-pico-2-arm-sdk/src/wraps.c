@@ -1,4 +1,7 @@
 /*
+ * DO NOT EDIT! Automatically generated from template file:
+ * build-helper/templates/common/_micro-os-plus/tests/platforms/raspberry-pi-pico-2-arm-sdk/src/wraps-liquid.c
+ *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
  *

@@ -1,4 +1,7 @@
 /*
+ * DO NOT EDIT! Automatically generated from template file:
+ * build-helper/templates/common/_micro-os-plus/tests/platforms/raspberry-pi-pico-2-riscv/linker-scripts/mem-liquid.ld
+ *
  * The Raspberry Pi Pico 2 memory map.
  * The memory sections are defined in the `startup` package.
  */
