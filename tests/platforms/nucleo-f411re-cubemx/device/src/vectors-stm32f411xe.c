@@ -1,6 +1,6 @@
 /*
- * DO NOT EDIT! Automatically generated from template file:
- * platforms/nucleo-f411re/device/stm32cubemx/startup_stm32f411xe.s
+ * DO NOT EDIT! Automatically generated from CMSIS startup file:
+ * platforms/nucleo-f411re-cubemx/device/stm32cubemx/startup_stm32f411xe.s
  *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2023-2026 Liviu Ionescu. All rights reserved.
