@@ -105,12 +105,12 @@ foreach test : tests
   _local_compile_c_args += micro_os_plus_platform_dependency_compile_c_args
   _local_compile_cpp_args += micro_os_plus_platform_dependency_compile_cpp_args
 
-  if xpack_platform_name != 'native'
+  if xpack_platform_name != 'synthetic-posix'
     # _local_compile_c_args += micro_os_plus_semihosting_dependency_compile_c_args
     # _local_compile_cpp_args += micro_os_plus_semihosting_dependency_compile_cpp_args
   endif
 
-  if xpack_platform_name != 'native'
+  if xpack_platform_name != 'synthetic-posix'
     _local_link_args += [
       '-Wl,-Map,'+ test_name + '-map.txt',
       # '-v',
@@ -128,7 +128,7 @@ foreach test : tests
   # Platform specific dependencies. Bring device & architecture too
   _local_dependencies += [ micro_os_plus_platform_dependency ]
 
-  if xpack_platform_name != 'native'
+  if xpack_platform_name != 'synthetic-posix'
     _local_dependencies += [ micro_os_plus_semihosting_dependency ]
   endif
 
@@ -146,7 +146,7 @@ foreach test : tests
     dependencies: _local_dependencies,
     link_args: _local_link_args,
     link_with: _local_link_with,
-    name_suffix: xpack_platform_name != 'native' ? 'elf' : [],
+    name_suffix: xpack_platform_name != 'synthetic-posix' ? 'elf' : [],
   )
 
   # ---------------------------------------------------------------------------
@@ -162,7 +162,7 @@ foreach test : tests
 
   # ---------------------------------------------------------------------------
 
-  if xpack_platform_name != 'native'
+  if xpack_platform_name != 'synthetic-posix'
 
     # https://mesonbuild.com/Reference-manual_functions.html#custom_target
     if xpack_enable_report_size
