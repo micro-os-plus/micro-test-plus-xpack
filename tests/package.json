@@ -2,7 +2,6 @@
   "name": "tests",
   "version": "0.0.0",
   "description": "Tests",
-  "main": "",
   "author": {
     "name": "Liviu Ionescu",
     "email": "ilg@livius.net",
@@ -10,8 +9,8 @@
   },
   "license": "MIT",
   "$dependenciesUrls": {
-    "npm-packages-helper": "https://github.com/xpack/npm-packages-helper.git",
     "build-helper": "https://github.com/micro-os-plus/build-helper.git",
+    "npm-packages-helper": "https://github.com/xpack/npm-packages-helper.git",
     "del-cli": "https://www.npmjs.com/package/del-cli",
     "json": "https://www.npmjs.com/package/json",
     "json5": "https://www.npmjs.com/package/json5",
@@ -19,8 +18,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack",
+    "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "del-cli": "^7.0.0",
     "json": "^11.0.0",
     "json5": "^2.2.3",
@@ -28,10 +27,10 @@
   },
   "scripts": {
     "generate-tests-commons": "node node_modules/@micro-os-plus/build-helper/maintenance/scripts/generate-tests-commons.mjs --micro-os-plus",
+    "npm-ci": "npm ci",
     "npm-install": "npm install",
     "npm-link-helpers": "npm link @xpack/npm-packages-helper @micro-os-plus/build-helper",
     "npm-outdated": "npm outdated",
-    "npm-ci": "npm ci",
     "deep-clean": "del-cli build node_modules xpacks package-lock.json"
   },
   "xpack": {
@@ -42,8 +41,7 @@
       "xpack-dev-tools": "https://github.com/xpack-dev-tools",
       "cmake": "https://www.npmjs.com/package/@xpack-dev-tools/cmake",
       "meson-build": "https://www.npmjs.com/package/@xpack-dev-tools/meson-build",
-      "ninja-build": "https://www.npmjs.com/package/@xpack-dev-tools/ninja-build",
-      "build-helper": "https://www.npmjs.com/package/@micro-os-plus/build-helper"
+      "ninja-build": "https://www.npmjs.com/package/@xpack-dev-tools/ninja-build"
     },
     "dependencies": {},
     "devDependencies": {
@@ -79,11 +77,11 @@
       "commandXcdlClean": "echo xcdl build -C {{ properties.buildFolderRelativePathPosix }} --target clean",
       "commandXcdlPerformTests": "echo xcdl test -C {{ properties.buildFolderRelativePathPosix }} --verbose",
       "configs-ci-non-darwin": [
-        "native-cmake-gcc"
+        "synthetic-posix-cmake-gcc"
       ],
       "configs-ci": [
-        "native-cmake-clang",
-        "native-meson-clang",
+        "synthetic-posix-cmake-clang",
+        "synthetic-posix-meson-clang",
         "qemu-cortex-m0-cmake-gcc",
         "qemu-cortex-m7f-cmake-gcc",
         "qemu-aarch64-a72-cmake-gcc",
@@ -91,12 +89,12 @@
         "qemu-cortex-m0-meson-gcc"
       ],
       "configs-selected-non-darwin": [
-        "native-cmake-gcc",
-        "native-meson-gcc"
+        "synthetic-posix-cmake-gcc",
+        "synthetic-posix-meson-gcc"
       ],
       "configs-selected": [
-        "native-cmake-clang",
-        "native-meson-clang",
+        "synthetic-posix-cmake-clang",
+        "synthetic-posix-meson-clang",
         "qemu-cortex-m0-cmake-gcc",
         "qemu-cortex-m0-meson-gcc",
         "qemu-cortex-m4f-cmake-gcc",
@@ -105,6 +103,21 @@
         "qemu-aarch64-a72-meson-gcc",
         "qemu-riscv-rv32imac-cmake-gcc",
         "qemu-riscv-rv32imac-meson-gcc"
+      ],
+      "$configs-boards": [
+        "nucleo-f411re",
+        "nucleo-f411re-cubemx",
+        "nucleo-f411re-cubemx-startup",
+        "nucleo-f767zi",
+        "nucleo-f767zi-cubemx",
+        "nucleo-h533re",
+        "nucleo-h533re-cubemx",
+        "raspberry-pi-pico",
+        "raspberry-pi-pico-sdk",
+        "raspberry-pi-pico-2-arm",
+        "raspberry-pi-pico-2-arm-sdk",
+        "raspberry-pi-pico-2-riscv",
+        "raspberry-pi-pico-2-riscv-sdk"
       ],
       "configs-boards": [
         "nucleo-f411re",
@@ -265,28 +278,28 @@
       "add-synthetic-posix-gcc-to-configs-for-builder": "{% assign config = 'synthetic-posix-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}",
       "add-synthetic-posix-clang-to-configs-for-builder": "{% assign config = 'synthetic-posix-' | append: builder | append: '-clang' %}{% assign configs = configs | push: config %}",
       "add-synthetic-posix-to-configs-for-builder": "{% if os.platform == 'win32' %}{{ properties.add-synthetic-posix-gcc-to-configs-for-builder }}{% else %}{{ properties.add-synthetic-posix-sys-to-configs-for-builder }}{% endif %}",
-      "compute-default-cmake-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'cmake' %}{{ properties.add-native-to-configs-for-builder }}",
-      "compute-default-meson-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'meson' %}{{ properties.add-native-to-configs-for-builder }}",
-      "compute-default-xcdl-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'xcdl' %}{{ properties.add-native-to-configs-for-builder }}",
-      "compute-default-configs": "{% assign configs = '' | split: '' %}{% for builder in properties.builders %}{{ properties.add-native-to-configs-for-builder }}{% endfor %}",
+      "compute-default-cmake-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'cmake' %}{{ properties.add-synthetic-posix-to-configs-for-builder }}",
+      "compute-default-meson-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'meson' %}{{ properties.add-synthetic-posix-to-configs-for-builder }}",
+      "compute-default-xcdl-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'xcdl' %}{{ properties.add-synthetic-posix-to-configs-for-builder }}",
+      "compute-default-configs": "{% assign configs = '' | split: '' %}{% for builder in properties.builders %}{{ properties.add-synthetic-posix-to-configs-for-builder }}{% endfor %}",
       "add-ci-non-darwin-configs": "{% for config in properties.configs-ci-non-darwin %}{% assign configs = configs | push: config %}{% endfor %}",
       "add-ci-configs": "{% for config in properties.configs-ci %}{% assign configs = configs | push: config %}{% endfor %}",
       "compute-ci-configs": "{% assign configs = '' | split: '' %}{% if os.platform != 'darwin' %}{{ properties.add-ci-non-darwin-configs }}{% endif %}{{ properties.add-ci-configs }}",
       "add-selected-configs": "{% for config in properties.configs-selected %}{% assign configs = configs | push: config %}{% endfor %}",
-      "add-selected-non-darwin-configs": "{% for config in properties.configs-selected=non-darwin %}{% assign configs = configs | push: config %}{% endfor %}",
+      "add-selected-non-darwin-configs": "{% for config in properties.configs-selected-non-darwin %}{% assign configs = configs | push: config %}{% endfor %}",
       "compute-selected-configs": "{% assign configs = '' | split: '' %}{% if os.platform != 'darwin' %}{{ properties.add-selected-non-darwin-configs }}{% endif %}{{ properties.add-selected-configs }}",
       "add-qemu-cortexm-variants-to-configs-for-builder": "{% for variant in properties.qemu-cortexm-variants %}{% assign config = 'qemu-cortex-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}",
       "add-qemu-aarch32-variants-to-configs-for-builder": "{% for variant in properties.qemu-aarch32-variants %}{% assign config = 'qemu-aarch32-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}",
       "add-qemu-aarch64-variants-to-configs-for-builder": "{% for variant in properties.qemu-aarch64-variants %}{% assign config = 'qemu-aarch64-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}",
       "add-qemu-riscv-variants-to-configs-for-builder": "{% for variant in properties.qemu-riscv-variants %}{% assign config = 'qemu-riscv-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}",
-      "add-latest-configs-for-builder": "{% if os.platform != 'darwin' %}{{ properties.add-native-gcc-to-configs-for-builder }}{% endif %}{{ properties.add-native-clang-to-configs-for-builder }}{{ properties.add-qemu-cortexm-variants-to-configs-for-builder }}{{ properties.add-qemu-aarch32-variants-to-configs-for-builder }}{{ properties.add-qemu-aarch64-variants-to-configs-for-builder }}{{ properties.add-qemu-riscv-variants-to-configs-for-builder }}",
+      "add-latest-configs-for-builder": "{% if os.platform != 'darwin' %}{{ properties.add-synthetic-posix-gcc-to-configs-for-builder }}{% endif %}{{ properties.add-synthetic-posix-clang-to-configs-for-builder }}{{ properties.add-qemu-cortexm-variants-to-configs-for-builder }}{{ properties.add-qemu-aarch32-variants-to-configs-for-builder }}{{ properties.add-qemu-aarch64-variants-to-configs-for-builder }}{{ properties.add-qemu-riscv-variants-to-configs-for-builder }}",
       "compute-latest-cmake-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'cmake' %}{{ properties.add-latest-configs-for-builder }}",
       "compute-latest-meson-configs": "{% assign configs = '' | split: '' %}{% assign builder = 'meson' %}{{ properties.add-latest-configs-for-builder }}",
       "compute-latest-configs": "{% assign configs = '' | split: '' %}{% for builder in properties.builders %}{{ properties.add-latest-configs-for-builder }}{% endfor %}",
       "add-boards-configs": "{% for board in properties.configs-boards %}{% assign config = board | append: '-cmake-gcc' %}{% assign configs = configs | push: config %}{% endfor %}",
       "compute-boards-configs": "{% assign configs = '' | split: '' %}{{ properties.add-boards-configs }}",
-      "add-native-gcc-versions-to-configs-for-builder": "{% assign native-gcc-versions = properties.native-gcc-versions | split_lines %}{% for version in native-gcc-versions %}{% assign config = 'native-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}",
-      "add-native-clang-versions-to-configs-for-builder": "{% assign native-clang-versions = properties.native-clang-versions | split_lines %}{% for version in native-clang-versions %}{% assign config = 'native-' | append: builder | append: '-clang' | append: version %}{% assign configs = configs | push: config %}{% endfor %}",
+      "add-native-gcc-versions-to-configs-for-builder": "{% assign native-gcc-versions = properties.native-gcc-versions | split_lines %}{% for version in native-gcc-versions %}{% assign config = 'synthetic-posix-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}",
+      "add-native-clang-versions-to-configs-for-builder": "{% assign native-clang-versions = properties.native-clang-versions | split_lines %}{% for version in native-clang-versions %}{% assign config = 'synthetic-posix-' | append: builder | append: '-clang' | append: version %}{% assign configs = configs | push: config %}{% endfor %}",
       "add-qemu-cortexm-variants-versions-to-configs-for-builder": "{% assign arm-none-eabi-gcc-versions = properties.arm-none-eabi-gcc-versions | split_lines %}{% for variant in properties.qemu-cortexm-variants %}{% for version in arm-none-eabi-gcc-versions %}{% assign config = 'qemu-cortex-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}",
       "add-qemu-aarch32-variants-versions-to-configs-for-builder": "{% assign arm-none-eabi-gcc-versions = properties.arm-none-eabi-gcc-versions | split_lines %}{% for variant in properties.qemu-aarch32-variants %}{% for version in arm-none-eabi-gcc-versions %}{% assign config = 'qemu-aarch32-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}",
       "add-qemu-aarch64-variants-versions-to-configs-for-builder": "{% assign arm-none-eabi-gcc-versions = properties.arm-none-eabi-gcc-versions | split_lines %}{% for variant in properties.qemu-aarch64-variants %}{% for version in arm-none-eabi-gcc-versions %}{% assign config = 'qemu-aarch64-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}",
@@ -304,18 +317,7 @@
       "action-test-for-config": "xpm run test-{{ config }}",
       "action-build-for-config": "xpm run build-{{ config }}",
       "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}",
-      "actions-clear-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clear --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}",
-      "commandCMakeGenerateNative": "{{ properties.commandCMakeRefresh }} --log-level=VERBOSE",
-      "commandCMakeGenerateNativeWithToolchain": "{{ properties.commandCMakeGenerateNative }} -D CMAKE_TOOLCHAIN_FILE=cmake/toolchains/{{ properties.toolchainFileName }}",
-      "commandMesonSetupNative": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} {{ properties.buildFolderRelativePathPosix }} .",
-      "commandMesonSetupNativeWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --native-file meson/toolchains/{{ properties.toolchainFileName }} --native-file platforms/{{ properties.platformName }}/meson/native.ini {{ properties.buildFolderRelativePathPosix }} .",
-      "native-dependencies": [
-        "@micro-os-plus/architecture-synthetic-posix"
-      ],
-      "add-native-sys-to-configs-for-builder": "{% assign config = 'native-' | append: builder | append: '-sys' %}{% assign configs = configs | push: config %}",
-      "add-native-gcc-to-configs-for-builder": "{% assign config = 'native-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}",
-      "add-native-clang-to-configs-for-builder": "{% assign config = 'native-' | append: builder | append: '-clang' %}{% assign configs = configs | push: config %}",
-      "add-native-to-configs-for-builder": "{% if os.platform == 'win32' %}{{ properties.add-native-gcc-to-configs-for-builder }}{% else %}{{ properties.add-native-sys-to-configs-for-builder }}{% endif %}"
+      "actions-clear-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clear --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}"
     },
     "actions": {
       "xcdl-export": [
@@ -1100,60 +1102,7 @@
         "xpm run clean --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
         "xpm run clean --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release"
       ],
-      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh",
-      "test-native-{{ matrix.builder }}-all": {
-        "matrix": {
-          "builder": [
-            "{{ properties.builders | join_lines }}"
-          ]
-        },
-        "template": [
-          "xpm run test-native-{{ matrix.builder }}-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
-          "{% assign native-gcc-versions = properties.native-gcc-versions | split_lines %}{% for version in native-gcc-versions %}{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-{{ matrix.builder }}-gcc{{ version }}{{ os.EOL }}{% endfor %}",
-          "{% assign native-clang-versions = properties.native-clang-versions | split_lines %}{% for version in native-clang-versions %}xpm run test-native-{{ matrix.builder }}-clang{{ version }}{{ os.EOL }}{% endfor %}"
-        ]
-      },
-      "test-native-{{ matrix.builder }}-sys": {
-        "matrix": {
-          "builder": [
-            "{{ properties.builders | join_lines }}"
-          ]
-        },
-        "template": [
-          "{% assign config = 'native-' | append: matrix.builder | append: '-sys' %}{{ properties.actions-setup-build-test-for-config }}"
-        ]
-      },
-      "test-native-xcdl-sys": [
-        "{% assign config = 'native-xcdl-sys' %}{{ properties.actions-setup-build-test-for-config }}"
-      ],
-      "test-native-{{ matrix.builder }}-gcc{{ matrix.native-gcc-version }}": {
-        "matrix": {
-          "builder": [
-            "{{ properties.builders | join_lines }}"
-          ],
-          "native-gcc-version": [
-            "",
-            "{{ properties.native-gcc-versions | join_lines }}"
-          ]
-        },
-        "template": [
-          "{% assign config = 'native-' | append: matrix.builder | append: '-gcc' | append: matrix.native-gcc-version %}{{ properties.actions-setup-build-test-for-config }}"
-        ]
-      },
-      "test-native-{{ matrix.builder }}-clang{{ matrix.native-clang-version }}": {
-        "matrix": {
-          "builder": [
-            "{{ properties.builders | join_lines }}"
-          ],
-          "native-clang-version": [
-            "",
-            "{{ properties.native-clang-versions | join_lines }}"
-          ]
-        },
-        "template": [
-          "{% assign config = 'native-' | append: matrix.builder | append: '-clang' | append: matrix.native-clang-version %}{{ properties.actions-setup-build-test-for-config }}"
-        ]
-      }
+      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
       "short-win-paths-properties": {
@@ -1178,7 +1127,7 @@
       "cmake-cross-actions": {
         "hidden": true,
         "inherits": [
-          "cmake-native-actions"
+          "cmake-synthetic-posix-actions"
         ],
         "actions": {
           "setup": "{{ properties.commandCMakeGenerateCross }}",
@@ -1202,7 +1151,7 @@
       "meson-cross-actions": {
         "hidden": true,
         "inherits": [
-          "meson-native-actions"
+          "meson-synthetic-posix-actions"
         ],
         "actions": {
           "setup": "{{ properties.commandMesonSetupCross }}"
@@ -1225,7 +1174,7 @@
       "xcdl-cross-actions": {
         "hidden": true,
         "inherits": [
-          "xcdl-native-actions"
+          "xcdl-synthetic-posix-actions"
         ],
         "actions": {
           "setup": "{{ properties.commandXcdlSetupCross }}"
@@ -2660,330 +2609,6 @@
         ],
         "properties": {
           "buildType": "MinSizeRel"
-        }
-      },
-      "cmake-native-actions": {
-        "hidden": true,
-        "actions": {
-          "setup": "{{ properties.commandCMakeGenerateNativeWithToolchain }}",
-          "build": [
-            "{{ properties.commandCMakeRefresh }}",
-            "{{ properties.commandCMakeBuild }}"
-          ],
-          "test": "{{ properties.commandCMakePerformTests }}",
-          "clean": "{{ properties.commandCMakeClean }}"
-        }
-      },
-      "meson-native-actions": {
-        "hidden": true,
-        "actions": {
-          "setup": "{{ properties.commandMesonSetupNativeWithToolchain }}",
-          "refresh": "{{ properties.commandMesonRefresh }}",
-          "build": [
-            "{{ properties.commandMesonRefresh }}",
-            "{{ properties.commandMesonBuild }}"
-          ],
-          "test": "{{ properties.commandMesonPerformTests }}",
-          "clean": "{{ properties.commandMesonClean }}",
-          "clear": "{{ properties.commandClearBuildFolder }}"
-        }
-      },
-      "xcdl-native-actions": {
-        "hidden": true,
-        "actions": {
-          "setup": "{{ properties.commandXcdlSetupNativeWithToolchain }} --cdl-configuration native-{{ buildType }}",
-          "refresh": "{{ properties.commandXcdlRefresh }}",
-          "build": [
-            "{{ properties.commandXcdlRefresh }}",
-            "{{ properties.commandXcdlBuild }}"
-          ],
-          "test": "{{ properties.commandXcdlPerformTests }}",
-          "clean": "{{ properties.commandXcdlClean }}",
-          "clear": "{{ properties.commandClearBuildFolder }}"
-        }
-      },
-      "native-actions": {
-        "hidden": true,
-        "actions": {
-          "install": [
-            "xpm install --config {{ configuration.name }}"
-          ],
-          "clear": "{{ properties.commandClearBuildFolder }}",
-          "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
-          ]
-        }
-      },
-      "native-dependencies": {
-        "hidden": true,
-        "devDependencies": {
-          "@micro-os-plus/architecture-synthetic-posix": "{{ properties.dependencies-releases['@micro-os-plus/architecture-synthetic-posix'] }}"
-        }
-      },
-      "native-gcc-dependencies": {
-        "hidden": true,
-        "inherits": [
-          "native-gcc{{ properties.native-gcc-releases | keys | reverse | first }}-dependencies"
-        ]
-      },
-      "native-gcc{{ matrix.native-gcc-version }}-dependencies": {
-        "matrix": {
-          "native-gcc-version": [
-            "{{ properties.native-gcc-versions | join_lines }}"
-          ]
-        },
-        "template": {
-          "hidden": true,
-          "devDependencies": {
-            "@xpack-dev-tools/gcc": {
-              "specifier": "{{ properties.native-gcc-releases[matrix.native-gcc-version].specifier }}",
-              "platforms": "{{ properties.native-gcc-releases[matrix.native-gcc-version].platforms }}"
-            }
-          }
-        }
-      },
-      "native-clang-dependencies": {
-        "hidden": true,
-        "inherits": [
-          "native-clang{{ properties.native-clang-releases | keys | reverse | first }}-dependencies"
-        ]
-      },
-      "native-clang{{ matrix.native-clang-version }}-dependencies": {
-        "matrix": {
-          "native-clang-version": [
-            "{{ properties.native-clang-versions | join_lines }}"
-          ]
-        },
-        "template": {
-          "hidden": true,
-          "devDependencies": {
-            "@xpack-dev-tools/clang": "{{ properties.native-clang-releases[matrix.native-clang-version] }}"
-          }
-        }
-      },
-      "native-cmake-sys-debug": {
-        "inherits": [
-          "short-win-paths-properties",
-          "cmake-native-actions",
-          "native-actions",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "shortConfigurationName": "ncsd"
-        },
-        "actions": {
-          "setup": "{{ properties.commandCMakeGenerateNative }}"
-        }
-      },
-      "native-cmake-sys-release": {
-        "inherits": [
-          "native-cmake-sys-debug"
-        ],
-        "properties": {
-          "buildType": "Release",
-          "shortConfigurationName": "ncsr"
-        }
-      },
-      "native-meson-sys-debug": {
-        "inherits": [
-          "short-win-paths-properties",
-          "meson-native-actions",
-          "native-actions",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "shortConfigurationName": "nmsd"
-        },
-        "actions": {
-          "setup": "{{ properties.commandMesonSetupNative }}"
-        }
-      },
-      "native-meson-sys-release": {
-        "inherits": [
-          "native-meson-sys-debug"
-        ],
-        "properties": {
-          "buildType": "release",
-          "shortConfigurationName": "nmsr"
-        }
-      },
-      "native-xcdl-sys-debug": {
-        "inherits": [
-          "short-win-paths-properties",
-          "xcdl-native-actions",
-          "native-actions",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "shortConfigurationName": "nxsd"
-        },
-        "actions": {
-          "setup": "{{ properties.commandXcdlSetupNative }}"
-        }
-      },
-      "native-xcdl-sys-release": {
-        "inherits": [
-          "native-xcdl-sys-debug"
-        ],
-        "properties": {
-          "buildType": "release",
-          "shortConfigurationName": "nxsr"
-        }
-      },
-      "native-cmake-gcc": {
-        "hidden": true,
-        "inherits": [
-          "short-win-paths-properties",
-          "cmake-native-actions",
-          "native-actions",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc.cmake"
-        }
-      },
-      "native-meson-gcc": {
-        "hidden": true,
-        "inherits": [
-          "short-win-paths-properties",
-          "meson-native-actions",
-          "native-actions",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc-{{ os.platform }}.ini"
-        }
-      },
-      "native-xcdl-gcc": {
-        "hidden": true,
-        "inherits": [
-          "short-win-paths-properties",
-          "xcdl-native-actions",
-          "native-actions",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc-{{ os.platform }}.ini"
-        }
-      },
-      "native-{{ matrix.builder }}-gcc{{ matrix.native-gcc-version }}-debug": {
-        "matrix": {
-          "builder": [
-            "{{ properties.builders | join_lines }}"
-          ],
-          "native-gcc-version": [
-            "",
-            "{{ properties.native-gcc-versions | join_lines }}"
-          ]
-        },
-        "template": {
-          "inherits": [
-            "native-{{ matrix.builder }}-gcc",
-            "native-gcc{{ matrix.native-gcc-version }}-dependencies"
-          ],
-          "properties": {
-            "shortConfigurationName": "n{{ matrix.builder | slice:0 | downcase }}g{{ matrix.native-gcc-version | slice:0 | downcase }}d"
-          }
-        }
-      },
-      "native-{{ matrix.builder }}-gcc{{ matrix.native-gcc-version }}-release": {
-        "matrix": {
-          "builder": [
-            "{{ properties.builders | join_lines }}"
-          ],
-          "native-gcc-version": [
-            "",
-            "{{ properties.native-gcc-versions | join_lines }}"
-          ]
-        },
-        "template": {
-          "inherits": [
-            "native-{{ matrix.builder }}-gcc{{ matrix.native-gcc-version }}-debug"
-          ],
-          "properties": {
-            "buildType": "{% case matrix.builder %}{% when 'cmake' %}Release{% when 'meson' %}release{% else %}unknown{% endcase %}",
-            "shortConfigurationName": "n{{ matrix.builder | slice:0 | downcase }}g{{ matrix.native-gcc-version | slice:0 | downcase }}r"
-          }
-        }
-      },
-      "native-cmake-clang": {
-        "hidden": true,
-        "inherits": [
-          "short-win-paths-properties",
-          "cmake-native-actions",
-          "native-actions",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "clang.cmake"
-        }
-      },
-      "native-meson-clang": {
-        "hidden": true,
-        "inherits": [
-          "short-win-paths-properties",
-          "meson-native-actions",
-          "native-actions",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "clang-{{ os.platform }}.ini"
-        }
-      },
-      "native-{{ matrix.builder }}-clang{{ matrix.native-clang-version }}-debug": {
-        "matrix": {
-          "builder": [
-            "{{ properties.builders | join_lines }}"
-          ],
-          "native-clang-version": [
-            "",
-            "{{ properties.native-clang-versions | join_lines }}"
-          ]
-        },
-        "template": {
-          "inherits": [
-            "native-{{ matrix.builder }}-clang",
-            "native-clang{{ matrix.native-clang-version }}-dependencies"
-          ],
-          "properties": {
-            "shortConfigurationName": "n{{ matrix.builder | slice:0 | downcase }}c{{ matrix.native-clang-version | slice:0 | downcase }}d"
-          }
-        }
-      },
-      "native-{{ matrix.builder }}-clang{{ matrix.native-clang-version }}-release": {
-        "matrix": {
-          "builder": [
-            "{{ properties.builders | join_lines }}"
-          ],
-          "native-clang-version": [
-            "",
-            "{{ properties.native-clang-versions | join_lines }}"
-          ]
-        },
-        "template": {
-          "inherits": [
-            "native-{{ matrix.builder }}-clang{{ matrix.native-clang-version }}-debug"
-          ],
-          "properties": {
-            "buildType": "{% case matrix.builder %}{% when 'cmake' %}Release{% when 'meson' %}release{% else %}unknown{% endcase %}",
-            "shortConfigurationName": "n{{ matrix.builder | slice:0 | downcase }}c{{ matrix.native-clang-version | slice:0 | downcase }}r"
-          }
         }
       }
     }
