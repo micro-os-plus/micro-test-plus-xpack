@@ -622,7 +622,7 @@
         "interface/stlink-dap.cfg",
         "target/stm32f4x.cfg"
       ],
-      "svdFile": "${workspaceRoot}/tests/platforms/nucleo-f411re/device/STM32F411.svd",
+      "svdFile": "${workspaceRoot}/tests/platforms/nucleo-f411re/device-stm32f411re/STM32F411.svd",
       "runToEntryPoint": "main",
       // Fix for no_flash binaries, where monitor reset halt doesn't do what is expected
       // Also works fine for flash binaries
