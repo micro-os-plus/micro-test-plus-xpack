@@ -6,7 +6,6 @@ build
 coverage
 dist
 bin
-maintenance/scripts
 templates
 
 # Ignore Liquid template files.
