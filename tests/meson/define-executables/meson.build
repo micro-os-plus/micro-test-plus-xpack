@@ -76,7 +76,7 @@ foreach test : tests
 
   test_name = test['name']
   message('> ' + test_name)
-  
+
   test_dependency = test['dependency']
   test_dependency_compile_c_args = test['compile_c_args']
   test_dependency_compile_cpp_args = test['compile_cpp_args']
