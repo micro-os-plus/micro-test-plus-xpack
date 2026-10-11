@@ -126,7 +126,7 @@ xpm run test-qemu-cortex-m7f-gcc -C tests  # cross build run under QEMU (Cortex-
 
 Other platforms available under `tests/platforms/` (each with its own
 `test-<platform>-*` action): native, qemu-cortex-{m0,m3,m33,m4f,m7f},
-qemu-cortex-a15, qemu-cortex-a72, qemu-riscv-{rv32imac,rv64imafdc},
+qemu-aarch32-a15, qemu-aarch64-a72, qemu-riscv-{rv32imac,rv64imafdc},
 nucleo-{f411re,f767zi,h533re}, raspberry-pi-pico. `xpm run <action> -C
 tests` runs any action defined in `tests/package.json`'s `xpack.actions`
 (inspect that file for the exact generated action names, e.g.

@@ -1795,7 +1795,7 @@
           ],
           "properties": {
             "buildType": "Debug",
-            "platformName": "qemu-cortex-{{ matrix.qemu-aarch32-variant }}",
+            "platformName": "qemu-aarch32-{{ matrix.qemu-aarch32-variant }}",
             "toolchainFileName": "arm-none-eabi-gcc.cmake"
           }
         }
@@ -1818,7 +1818,7 @@
           ],
           "properties": {
             "buildType": "debug",
-            "platformName": "qemu-cortex-{{ matrix.qemu-aarch32-variant }}",
+            "platformName": "qemu-aarch32-{{ matrix.qemu-aarch32-variant }}",
             "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
           }
         }
@@ -1921,7 +1921,7 @@
           ],
           "properties": {
             "buildType": "Debug",
-            "platformName": "qemu-cortex-{{ matrix.qemu-aarch64-variant }}",
+            "platformName": "qemu-aarch64-{{ matrix.qemu-aarch64-variant }}",
             "toolchainFileName": "aarch64-none-elf-gcc.cmake"
           }
         }
@@ -1944,7 +1944,7 @@
           ],
           "properties": {
             "buildType": "debug",
-            "platformName": "qemu-cortex-{{ matrix.qemu-aarch64-variant }}",
+            "platformName": "qemu-aarch64-{{ matrix.qemu-aarch64-variant }}",
             "toolchainFileName": "aarch64-none-elf-gcc-{{ os.platform }}.ini"
           }
         }
