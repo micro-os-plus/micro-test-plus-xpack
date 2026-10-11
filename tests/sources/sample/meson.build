@@ -27,7 +27,7 @@
 # -----------------------------------------------------------------------------
 
 # The source code for a sample test.
-message('Processing sources/sample...')
+message('Processing \'tests/sources/sample/\'...')
 
 # -----------------------------------------------------------------------------
 
@@ -50,9 +50,15 @@ _local_sources += [
   'src/main.cpp',
 ]
 
+# The dependencies are single objects; enclose them in brackets,
+# to append them as elements of the list.
 _local_dependencies += [
   micro_os_plus_micro_test_plus_dependency,
 ]
+# The dependencies' C/C++ args are lists; add them without brackets,
+# to concatenate their elements rather than nest the lists.
+_local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
+_local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 tests_sample_dependency = declare_dependency(

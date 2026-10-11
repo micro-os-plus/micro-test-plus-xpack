@@ -46,6 +46,7 @@ if (xpack_enable_empty_test)
       'enable=on,target=native,arg=empty-test,arg=one,arg=two' ],
     env: xpack_environment
   )
+  message('T> empty-test')
 
 endif
 
@@ -64,6 +65,7 @@ if (xpack_enable_minimal_test)
       'enable=on,target=native,arg=minimal-test,arg=one,arg=two' ],
     env: xpack_environment
   )
+  message('T> minimal-test')
 
 endif
 
@@ -82,6 +84,7 @@ if (xpack_enable_suite_test)
       'enable=on,target=native,arg=suite-test,arg=one,arg=two' ],
     env: xpack_environment
   )
+  message('T> suite-test')
 
 endif
 
@@ -100,6 +103,7 @@ if (xpack_enable_sample_test)
       'enable=on,target=native,arg=sample-test,arg=one,arg=two' ],
     env: xpack_environment
   )
+  message('T> sample-test')
 
 endif
 
@@ -118,6 +122,7 @@ if (xpack_enable_unit_test)
       'enable=on,target=native,arg=unit-test,arg=one,arg=two' ],
     env: xpack_environment
   )
+  message('T> unit-test')
 
 endif
 

@@ -94,6 +94,8 @@ function (add_openocd_test)
     PARENT_SCOPE
   )
 
+  message (VERBOSE "T> ${arg_NAME}")
+
 endfunction ()
 
 # -----------------------------------------------------------------------------
@@ -122,6 +124,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -150,6 +154,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -178,6 +184,8 @@ if (XPACK_ENABLE_SUITE_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -206,6 +214,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -256,6 +266,8 @@ if (XPACK_ENABLE_UNIT_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.txt"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------

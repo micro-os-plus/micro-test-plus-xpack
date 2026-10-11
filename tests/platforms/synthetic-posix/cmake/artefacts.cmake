@@ -56,6 +56,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_test (NAME "empty-test-verbose" COMMAND empty-test one two --output-file
                                               empty-test-verbose.tap --verbose
   )
+  message (VERBOSE "T> empty-test-verbose")
 
   add_compare_files_test (
     NAME "empty-test-verbose-compare"
@@ -68,6 +69,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_test (NAME "empty-test" COMMAND empty-test one two --output-file
                                       empty-test.tap
   )
+  message (VERBOSE "T> empty-test")
   add_compare_files_test (
     NAME "empty-test-compare"
     DEPENDS "empty-test"
@@ -79,6 +81,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_test (NAME "empty-test-quiet" COMMAND empty-test one two --output-file
                                             empty-test-quiet.tap --quiet
   )
+  message (VERBOSE "T> empty-test-quiet")
   add_compare_files_test (
     NAME "empty-test-quiet-compare"
     DEPENDS "empty-test-quiet"
@@ -90,6 +93,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_test (NAME "empty-test-silent" COMMAND empty-test one two --output-file
                                              empty-test-silent.tap --silent
   )
+  message (VERBOSE "T> empty-test-silent")
   add_compare_files_test (
     NAME "empty-test-silent-compare"
     DEPENDS "empty-test-silent"
@@ -105,6 +109,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
             COMMAND empty-test one two --reporter human --output-file
                     empty-test-verbose.txt --verbose
   )
+  message (VERBOSE "T> empty-test-reporter-human-verbose")
   add_compare_files_test (
     NAME "empty-test-reporter-human-verbose-compare"
     DEPENDS "empty-test-reporter-human-verbose"
@@ -117,6 +122,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
             COMMAND empty-test one two --reporter human --output-file
                     empty-test.txt
   )
+  message (VERBOSE "T> empty-test-reporter-human")
   add_compare_files_test (
     NAME "empty-test-reporter-human-compare"
     DEPENDS "empty-test-reporter-human"
@@ -129,6 +135,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
             COMMAND empty-test one two --reporter human --output-file
                     empty-test-quiet.txt --quiet
   )
+  message (VERBOSE "T> empty-test-reporter-human-quiet")
   add_compare_files_test (
     NAME "empty-test-reporter-human-quiet-compare"
     DEPENDS "empty-test-reporter-human-quiet"
@@ -141,6 +148,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
             COMMAND empty-test one two --reporter human --output-file
                     empty-test-silent.txt --silent
   )
+  message (VERBOSE "T> empty-test-reporter-human-silent")
   add_compare_files_test (
     NAME "empty-test-reporter-human-silent-compare"
     DEPENDS "empty-test-reporter-human-silent"
@@ -148,6 +156,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/empty-test-silent.txt"
   )
 
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -175,6 +184,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
             COMMAND minimal-test one two --output-file minimal-test-verbose.tap
                     --verbose
   )
+  message (VERBOSE "T> minimal-test-verbose")
 
   add_compare_files_test (
     NAME "minimal-test-verbose-compare"
@@ -187,6 +197,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   add_test (NAME "minimal-test" COMMAND minimal-test one two --output-file
                                         minimal-test.tap
   )
+  message (VERBOSE "T> minimal-test")
   add_compare_files_test (
     NAME "minimal-test-compare"
     DEPENDS "minimal-test"
@@ -199,6 +210,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
             COMMAND minimal-test one two --output-file minimal-test-quiet.tap
                     --quiet
   )
+  message (VERBOSE "T> minimal-test-quiet")
   add_compare_files_test (
     NAME "minimal-test-quiet-compare"
     DEPENDS "minimal-test-quiet"
@@ -211,6 +223,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
             COMMAND minimal-test one two --output-file minimal-test-silent.tap
                     --silent
   )
+  message (VERBOSE "T> minimal-test-silent")
   add_compare_files_test (
     NAME "minimal-test-silent-compare"
     DEPENDS "minimal-test-silent"
@@ -226,6 +239,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
             COMMAND minimal-test one two --reporter human --output-file
                     minimal-test-verbose.txt --verbose
   )
+  message (VERBOSE "T> minimal-test-reporter-human-verbose")
   add_compare_files_test (
     NAME "minimal-test-reporter-human-verbose-compare"
     DEPENDS "minimal-test-reporter-human-verbose"
@@ -238,6 +252,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
             COMMAND minimal-test one two --reporter human --output-file
                     minimal-test.txt
   )
+  message (VERBOSE "T> minimal-test-reporter-human")
   add_compare_files_test (
     NAME "minimal-test-reporter-human-compare"
     DEPENDS "minimal-test-reporter-human"
@@ -250,6 +265,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
             COMMAND minimal-test one two --reporter human --output-file
                     minimal-test-quiet.txt --quiet
   )
+  message (VERBOSE "T> minimal-test-reporter-human-quiet")
   add_compare_files_test (
     NAME "minimal-test-reporter-human-quiet-compare"
     DEPENDS "minimal-test-reporter-human-quiet"
@@ -262,6 +278,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
             COMMAND minimal-test one two --reporter human --output-file
                     minimal-test-silent.txt --silent
   )
+  message (VERBOSE "T> minimal-test-reporter-human-silent")
   add_compare_files_test (
     NAME "minimal-test-reporter-human-silent-compare"
     DEPENDS "minimal-test-reporter-human-silent"
@@ -269,6 +286,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/minimal-test-silent.txt"
   )
 
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -287,6 +305,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_test (NAME "suite-test-verbose" COMMAND suite-test one two --output-file
                                               suite-test-verbose.tap --verbose
   )
+  message (VERBOSE "T> suite-test-verbose")
 
   add_compare_files_test (
     NAME "suite-test-verbose-compare"
@@ -299,6 +318,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_test (NAME "suite-test" COMMAND suite-test one two --output-file
                                       suite-test.tap
   )
+  message (VERBOSE "T> suite-test")
   add_compare_files_test (
     NAME "suite-test-compare"
     DEPENDS "suite-test"
@@ -310,6 +330,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_test (NAME "suite-test-quiet" COMMAND suite-test one two --output-file
                                             suite-test-quiet.tap --quiet
   )
+  message (VERBOSE "T> suite-test-quiet")
   add_compare_files_test (
     NAME "suite-test-quiet-compare"
     DEPENDS "suite-test-quiet"
@@ -321,6 +342,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_test (NAME "suite-test-silent" COMMAND suite-test one two --output-file
                                              suite-test-silent.tap --silent
   )
+  message (VERBOSE "T> suite-test-silent")
   add_compare_files_test (
     NAME "suite-test-silent-compare"
     DEPENDS "suite-test-silent"
@@ -336,6 +358,7 @@ if (XPACK_ENABLE_SUITE_TEST)
             COMMAND suite-test one two --reporter human --output-file
                     suite-test-verbose.txt --verbose
   )
+  message (VERBOSE "T> suite-test-reporter-human-verbose")
   add_compare_files_test (
     NAME "suite-test-reporter-human-verbose-compare"
     DEPENDS "suite-test-reporter-human-verbose"
@@ -348,6 +371,7 @@ if (XPACK_ENABLE_SUITE_TEST)
             COMMAND suite-test one two --reporter human --output-file
                     suite-test.txt
   )
+  message (VERBOSE "T> suite-test-reporter-human")
   add_compare_files_test (
     NAME "suite-test-reporter-human-compare"
     DEPENDS "suite-test-reporter-human"
@@ -360,6 +384,7 @@ if (XPACK_ENABLE_SUITE_TEST)
             COMMAND suite-test one two --reporter human --output-file
                     suite-test-quiet.txt --quiet
   )
+  message (VERBOSE "T> suite-test-reporter-human-quiet")
   add_compare_files_test (
     NAME "suite-test-reporter-human-quiet-compare"
     DEPENDS "suite-test-reporter-human-quiet"
@@ -372,6 +397,7 @@ if (XPACK_ENABLE_SUITE_TEST)
             COMMAND suite-test one two --reporter human --output-file
                     suite-test-silent.txt --silent
   )
+  message (VERBOSE "T> suite-test-reporter-human-silent")
   add_compare_files_test (
     NAME "suite-test-reporter-human-silent-compare"
     DEPENDS "suite-test-reporter-human-silent"
@@ -379,6 +405,7 @@ if (XPACK_ENABLE_SUITE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/suite-test-silent.txt"
   )
 
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -398,6 +425,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
             COMMAND sample-test one two --output-file sample-test-verbose.tap
                     --verbose
   )
+  message (VERBOSE "T> sample-test-verbose")
 
   add_compare_files_test (
     NAME "sample-test-verbose-compare"
@@ -410,6 +438,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_test (NAME "sample-test" COMMAND sample-test one two --output-file
                                        sample-test.tap
   )
+  message (VERBOSE "T> sample-test")
   add_compare_files_test (
     NAME "sample-test-compare"
     DEPENDS "sample-test"
@@ -421,6 +450,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_test (NAME "sample-test-quiet" COMMAND sample-test one two --output-file
                                              sample-test-quiet.tap --quiet
   )
+  message (VERBOSE "T> sample-test-quiet")
   add_compare_files_test (
     NAME "sample-test-quiet-compare"
     DEPENDS "sample-test-quiet"
@@ -432,6 +462,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_test (NAME "sample-test-silent" COMMAND sample-test one two --output-file
                                               sample-test-silent.tap --silent
   )
+  message (VERBOSE "T> sample-test-silent")
   add_compare_files_test (
     NAME "sample-test-silent-compare"
     DEPENDS "sample-test-silent"
@@ -447,6 +478,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
             COMMAND sample-test one two --reporter human --output-file
                     sample-test-verbose.txt --verbose
   )
+  message (VERBOSE "T> sample-test-reporter-human-verbose")
   add_compare_files_test (
     NAME "sample-test-reporter-human-verbose-compare"
     DEPENDS "sample-test-reporter-human-verbose"
@@ -459,6 +491,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
             COMMAND sample-test one two --reporter human --output-file
                     sample-test.txt
   )
+  message (VERBOSE "T> sample-test-reporter-human")
   add_compare_files_test (
     NAME "sample-test-reporter-human-compare"
     DEPENDS "sample-test-reporter-human"
@@ -471,6 +504,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
             COMMAND sample-test one two --reporter human --output-file
                     sample-test-quiet.txt --quiet
   )
+  message (VERBOSE "T> sample-test-reporter-human-quiet")
   add_compare_files_test (
     NAME "sample-test-reporter-human-quiet-compare"
     DEPENDS "sample-test-reporter-human-quiet"
@@ -483,6 +517,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
             COMMAND sample-test one two --reporter human --output-file
                     sample-test-silent.txt --silent
   )
+  message (VERBOSE "T> sample-test-reporter-human-silent")
   add_compare_files_test (
     NAME "sample-test-reporter-human-silent-compare"
     DEPENDS "sample-test-reporter-human-silent"
@@ -490,6 +525,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/sample-test-silent.txt"
   )
 
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -513,6 +549,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   add_test (NAME "unit-test-verbose" COMMAND unit-test one two --output-file
                                              unit-test-verbose.tap --verbose
   )
+  message (VERBOSE "T> unit-test-verbose")
 
   if (XPACK_ENABLE_COVERAGE)
     set_tests_properties (
@@ -525,6 +562,7 @@ if (XPACK_ENABLE_UNIT_TEST)
       COMMAND bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/show-coverage.sh"
               unit-test unit-test-verbose
     )
+    message (VERBOSE "T> unit-test-verbose-coverage")
     set_tests_properties (
       "unit-test-verbose-coverage" PROPERTIES DEPENDS "unit-test-verbose"
     )
@@ -541,6 +579,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   add_test (NAME "unit-test" COMMAND unit-test one two --output-file
                                      unit-test.tap
   )
+  message (VERBOSE "T> unit-test")
   add_compare_files_test (
     NAME "unit-test-compare"
     DEPENDS "unit-test"
@@ -552,6 +591,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   add_test (NAME "unit-test-quiet" COMMAND unit-test one two --output-file
                                            unit-test-quiet.tap --quiet
   )
+  message (VERBOSE "T> unit-test-quiet")
   add_compare_files_test (
     NAME "unit-test-quiet-compare"
     DEPENDS "unit-test-quiet"
@@ -563,6 +603,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   add_test (NAME "unit-test-silent" COMMAND unit-test one two --output-file
                                             unit-test-silent.tap --silent
   )
+  message (VERBOSE "T> unit-test-silent")
   add_compare_files_test (
     NAME "unit-test-silent-compare"
     DEPENDS "unit-test-silent"
@@ -578,6 +619,7 @@ if (XPACK_ENABLE_UNIT_TEST)
             COMMAND unit-test one two --reporter human --output-file
                     unit-test-verbose.txt --verbose
   )
+  message (VERBOSE "T> unit-test-reporter-human-verbose")
   add_compare_files_test (
     NAME "unit-test-reporter-human-verbose-compare"
     DEPENDS "unit-test-reporter-human-verbose"
@@ -590,6 +632,7 @@ if (XPACK_ENABLE_UNIT_TEST)
             COMMAND unit-test one two --reporter human --output-file
                     unit-test.txt
   )
+  message (VERBOSE "T> unit-test-reporter-human")
   add_compare_files_test (
     NAME "unit-test-reporter-human-compare"
     DEPENDS "unit-test-reporter-human"
@@ -602,6 +645,7 @@ if (XPACK_ENABLE_UNIT_TEST)
             COMMAND unit-test one two --reporter human --output-file
                     unit-test-quiet.txt --quiet
   )
+  message (VERBOSE "T> unit-test-reporter-human-quiet")
   add_compare_files_test (
     NAME "unit-test-reporter-human-quiet-compare"
     DEPENDS "unit-test-reporter-human-quiet"
@@ -614,6 +658,7 @@ if (XPACK_ENABLE_UNIT_TEST)
             COMMAND unit-test one two --reporter human --output-file
                     unit-test-silent.txt --silent
   )
+  message (VERBOSE "T> unit-test-reporter-human-silent")
   add_compare_files_test (
     NAME "unit-test-reporter-human-silent-compare"
     DEPENDS "unit-test-reporter-human-silent"
@@ -621,6 +666,7 @@ if (XPACK_ENABLE_UNIT_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-silent.txt"
   )
 
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------

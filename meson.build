@@ -64,9 +64,16 @@ _local_sources += [
   'src/utility.cpp',
 ]
 
+# The dependencies are single objects; enclose them in brackets,
+# to append them as elements of the list.
 _local_dependencies += [
   micro_os_plus_diag_trace_dependency,
 ]
+
+# The dependencies' C/C++ args are lists; add them without brackets,
+# to concatenate their elements rather than nest the lists.
+_local_compile_c_args += micro_os_plus_diag_trace_dependency_compile_c_args
+_local_compile_cpp_args += micro_os_plus_diag_trace_dependency_compile_cpp_args
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 micro_os_plus_micro_test_plus_dependency = declare_dependency(

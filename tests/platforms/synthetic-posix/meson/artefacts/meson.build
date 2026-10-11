@@ -36,6 +36,7 @@ if xpack_enable_empty_test
     args: [ 'one', 'two' ],
     env: xpack_environment
   )
+  message('T> empty-test')
 
 endif
 
@@ -50,6 +51,7 @@ if xpack_enable_minimal_test
     args: [ 'one', 'two' ],
     env: xpack_environment
   )
+  message('T> minimal-test')
 
 endif
 
@@ -64,6 +66,7 @@ if xpack_enable_suite_test
     args: [ 'one', 'two' ],
     env: xpack_environment
   )
+  message('T> suite-test')
 
 endif
 
@@ -78,6 +81,7 @@ if xpack_enable_sample_test
     args: [ 'one', 'two' ],
     env: xpack_environment
   )
+  message('T> sample-test')
 
 endif
 
@@ -92,6 +96,7 @@ if xpack_enable_unit_test
     args: [ 'one', 'two' ],
     env: xpack_environment
   )
+  message('T> unit-test')
 
 endif
 

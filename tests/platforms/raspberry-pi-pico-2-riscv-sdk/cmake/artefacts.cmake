@@ -115,6 +115,8 @@ function (add_openocd_test)
     PARENT_SCOPE
   )
 
+  message (VERBOSE "T> ${arg_NAME}")
+
 endfunction ()
 
 # -----------------------------------------------------------------------------
@@ -143,6 +145,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-noexcept.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test-noexcept.tap"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -171,6 +175,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-noexcept.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test-noexcept.tap"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -199,6 +205,8 @@ if (XPACK_ENABLE_SUITE_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-noexcept.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test-noexcept.tap"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -227,6 +235,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-noexcept.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test-noexcept.tap"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -277,6 +287,8 @@ if (XPACK_ENABLE_UNIT_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.txt"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-noexcept.txt"
   )
+
+  message (VERBOSE "") # Separator for readability
 endif ()
 
 # -----------------------------------------------------------------------------

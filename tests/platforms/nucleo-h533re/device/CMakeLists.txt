@@ -69,7 +69,7 @@ target_link_options (
 )
 
 target_link_libraries (
-  micro-os-plus-device-interface INTERFACE micro-os-plus::architecture
+  micro-os-plus-device-interface INTERFACE micro-os-plus::architecture-cortexm
 )
 
 xpack_display_target_lists (micro-os-plus-device-interface)

@@ -82,34 +82,51 @@ message('Platform name: ' + xpack_platform_name)
 # -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Reference-manual.html#subdir
+message('')  # Separator for readability
 subdir('meson/common-options-library')
+
+message('')  # Separator for readability
 subdir('meson/enable-all-warnings')
 
 # -----------------------------------------------------------------------------
 # Dependencies.
 
 # Set `xpack_dependencies_folders` with the platform specific dependencies.
+message('')  # Separator for readability
 subdir('platforms/'+ xpack_platform_name + '/meson/dependencies-folders')
 # The platform library is included in the dependencies, at the end.
 
 foreach dep: xpack_dependencies_folders
-  message('Adding dependency from ' + dep + '...')
+  message('  ' + dep)
+endforeach
+
+message('')  # Separator for readability
+message('Adding dependencies libraries...')
+foreach dep: xpack_dependencies_folders
+  message('')  # Separator for readability
   subdir(dep)
 endforeach
 
 # Include the platform library.
+message('')  # Separator for readability
+message('Adding platform library...')
+message('')  # Separator for readability
 subdir('platforms/' + xpack_platform_name)
 
 # -----------------------------------------------------------------------------
 
 # Include the project library, defined one level above.
+message('')  # Separator for readability
 message('Adding top library...')
+message('')  # Separator for readability
 subdir('top')
 
 # -----------------------------------------------------------------------------
 
+message('')  # Separator for readability
+message('Adding tests libraries...')
 foreach dep: xpack_dependencies_tests_folders
-  message('Adding test from ' + dep + '...')
+  message('')  # Separator for readability
   subdir(dep)
 endforeach
 
@@ -122,12 +139,19 @@ xpack_tested_library_dependency = micro_os_plus_micro_test_plus_dependency
 xpack_tested_library_dependency_compile_c_args = micro_os_plus_micro_test_plus_dependency_compile_c_args
 xpack_tested_library_dependency_compile_cpp_args = micro_os_plus_micro_test_plus_dependency_compile_cpp_args
 
+message('')  # Separator for readability
+message('Defining executables artefacts...')
+message('')  # Separator for readability
 subdir('meson/define-executables')
 
 # -----------------------------------------------------------------------------
 # Artefact specifics.
 
 # Include the platform specific artefacts and tests.
+message('Defining tests artefacts...')
+message('')  # Separator for readability
 subdir('platforms/' + xpack_platform_name + '/meson/artefacts')
+
+message('')  # Separator for readability
 
 # -----------------------------------------------------------------------------
