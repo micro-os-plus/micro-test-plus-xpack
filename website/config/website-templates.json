@@ -3,6 +3,7 @@
   "customUserTitle": "How to use the µTest++ Testing Framework",
   "tagline": "A lightweight, macro-free C++ testing framework for embedded projects, with TAP output",
   "hasCustomGettingStartedSidebar": true,
+  "hasCustomHomepageFeatures": true,
   "hasCustomUser": true,
   "hasDoxygenDocusaurusApi": true,
   "hasDoxygenReference": true,
