@@ -17,7 +17,7 @@ export const customDocsGettingStartedSidebarCategory =
     type: 'doc',
     id: 'getting-started/index',
   },
-  collapsed: true,
+  collapsed: false,
   items: [
     {
       type: 'doc',
