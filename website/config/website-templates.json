@@ -7,6 +7,7 @@
   "hasCustomUser": true,
   "hasDoxygenDocusaurusApi": true,
   "hasDoxygenReference": true,
+  "hasHomepageExample": true,
   "isXpmDependency": true,
   "shareOnTwitter": true,
   "skipAlgolia": true

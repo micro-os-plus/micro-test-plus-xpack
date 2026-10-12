@@ -21,6 +21,7 @@ import HeadTitle from '@site/src/components/HeadTitle';
 
 import styles from './index.module.css';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageExample from '@site/src/components/HomepageExample';
 import InstallWithCopy from '@site/src/components/InstallWithCopy';
 
 function HomepageHeader() {
@@ -49,6 +50,8 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <hr className="hero__hr"/>
+        <HomepageExample />
       </main>
     </Layout>
   );
