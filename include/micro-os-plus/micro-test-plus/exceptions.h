@@ -127,7 +127,7 @@ namespace micro_os_plus::micro_test_plus
 // ============================================================================
 // Templates, inlines & constexpr implementations.
 
-#include "inlines/exceptions-inline.h"
+#include "inlines/exceptions-inlines.h"
 
 // ----------------------------------------------------------------------------
 
