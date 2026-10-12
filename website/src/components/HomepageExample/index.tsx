@@ -3,20 +3,26 @@ import Heading from '@theme/Heading';
 
 const source = `#include <micro-os-plus/micro-test-plus.h>
 
+// Define a shortcut for the namespace.
 namespace mt = micro_os_plus::micro_test_plus;
 
 int
 main (int argc, char* argv[])
 {
+  // Create the test runner.
   mt::runner tr;
+  // Initialise it and get the default test suite.
   auto& ts = tr.initialise (argc, argv);
 
+  // Add test cases to the test suite.
   ts.test ("Check various conditions", [] (auto& t)
     {
+      // Check various conditions.
       t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
       t.expect (compute_condition ()) << "condition is true";
     });
 
+  // Run the tests and return the test result.
   return tr.exit_code ();
 }`;
 
