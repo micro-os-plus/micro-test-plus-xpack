@@ -18,9 +18,9 @@ argument-hint: 'Board platform name (e.g. raspberry-pi-pico, nucleo-f411re) and,
 LED wiring (which pin, which port, active-high or active-low) is
 **board-specific**; the GPIO peripheral it is wired to is **chip-specific**.
 Split the driver accordingly, following the precedent set by
-`tests/platforms/raspberry-pi-pico/device/rp2040/{include,src}/clock.*`:
+`tests/platforms/raspberry-pi-pico/device-<chip>/rp2040/{include,src}/clock.*`:
 
-- **Chip-level GPIO driver** — `tests/platforms/<board>/device/<chip>/`
+- **Chip-level GPIO driver** — `tests/platforms/<board>/device-<chip>/<chip>/`
   - `include/micro-os-plus/<chip>/gpio.h`
   - `src/gpio.c`
   - Provides generic, pin-parametrised operations only (configure a pin as

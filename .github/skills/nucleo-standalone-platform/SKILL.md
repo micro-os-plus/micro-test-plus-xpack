@@ -61,7 +61,7 @@ still reference the removed CubeMX objects library, and both `README.md`s.
    ```sh
    rsync -a --exclude='.DS_Store' tests/platforms/<board>-cubemx/ tests/platforms/<board>/
    find tests/platforms/<board> -name '.DS_Store' -delete
-   cd tests/platforms/<board>/device/stm32cubemx
+   cd tests/platforms/<board>/device-<chip>/stm32cubemx
    rm -rf .mxproject cmake CMakeLists.txt CMakePresets.json Core \
           Drivers/<FAMILY>_HAL_Driver Drivers/BSP \
           startup_*.s *_FLASH.ld *_RAM.ld
