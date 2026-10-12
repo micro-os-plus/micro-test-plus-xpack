@@ -9,43 +9,43 @@
     // ------------------------------------------------------------------------
     // Native.
     {
-      "name": "(lldb) native-cmake-debug sample-test",
+      "name": "(lldb) synthetic-posix-cmake-sys-debug sample-test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/sample-test",
+      "program": "${workspaceFolder}/tests/build/synthetic-posix-cmake-sys-debug/sample-test",
       "args": [
         "one",
         "two",
         "--verbose"
       ],
       "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/",
+      "cwd": "${workspaceFolder}/tests/build/synthetic-posix-cmake-sys-debug/",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb"
     },
     {
-      "name": "(lldb) native-cmake-debug unit-test",
+      "name": "(lldb) synthetic-posix-cmake-sys-debug unit-test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/unit-test",
+      "program": "${workspaceFolder}/tests/build/synthetic-posix-cmake-sys-debug/unit-test",
       "args": [
         "--verbose"
       ],
       "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/",
+      "cwd": "${workspaceFolder}/tests/build/synthetic-posix-cmake-sys-debug/",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb"
     },
     {
-      "name": "(gdb) native-cmake-clang12-debug unit-test",
+      "name": "(gdb) synthetic-posix-cmake-clang-debug unit-test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/native-cmake-clang12-debug/platform-bin/unit-test",
+      "program": "${workspaceFolder}/tests/build/synthetic-posix-cmake-clang-debug/unit-test",
       "args": [],
       "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/build/native-cmake-clang12-debug/platform-bin/",
+      "cwd": "${workspaceFolder}/tests/build/synthetic-posix-cmake-clang-debug/",
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb"
