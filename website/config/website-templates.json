@@ -2,6 +2,7 @@
   "customInstallLabel": "Integration Guide",
   "customUserTitle": "How to use the µTest++ Testing Framework",
   "tagline": "A lightweight, macro-free C++ testing framework for embedded projects, with TAP output",
+  "userGuideDescription": "How to write and run tests with µTest++, including test cases, suites, checks, comparators, reporters, and command line options.",
   "hasCustomGettingStartedSidebar": true,
   "hasCustomHomepageFeatures": true,
   "hasCustomUser": true,
