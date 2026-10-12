@@ -29,7 +29,7 @@ using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
-static static_suite ts_exceptions{ "Miscellaneous suite", tr, [] (auto& ts)
+static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
   {
     detail::runner_totals& current_suite_totals = ts.totals ();
 

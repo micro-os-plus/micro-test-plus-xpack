@@ -137,8 +137,9 @@ test_case_expect_integrals_failed_combinations (subtest& t)
 
 // ----------------------------------------------------------------------------
 
-static static_suite ts_integral_failed{ "Failed combinatorial integrals suite",
-                                        tr, [] (auto& ts)
+static static_suite ts_failed_integrals{
+  "Failed combinatorial integrals suite", tr,
+  [] (auto& ts)
   {
     detail::runner_totals& current_suite_totals = ts.totals ();
 
@@ -244,6 +245,7 @@ static static_suite ts_integral_failed{ "Failed combinatorial integrals suite",
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
-  } };
+  }
+};
 
 // ----------------------------------------------------------------------------
