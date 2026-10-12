@@ -45,6 +45,23 @@ The files in `sources/unit/src/` check if the framework counts the
 test results (successes and failures) correctly. Some checks are
 expected to fail.
 
+## Platforms
+
+The platform-specific files are in `platforms/<name>`.
+
+The device support comes from one of two sources:
+
+- For the QEMU and Raspberry Pi platforms, it comes from shared µOS++
+  packages (e.g. `@micro-os-plus/devices-qemu-cortexm`,
+  `@micro-os-plus/devices-raspberry-pi`), which serve several cores. The
+  platform selects the core by defining the device macros (e.g.
+  `MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_CORE_M7`) in
+  `include/micro-os-plus/device-defines.h`, which the package's
+  `micro-os-plus/device.h` includes when present.
+- For the NUCLEO platforms, it is part of the platform, in a
+  `device-<chip>` folder (e.g. `device-stm32f411re`), with its own
+  `include/micro-os-plus/device.h`; no `device-defines.h` is needed.
+
 ## Known issues
 
 - older meson fails on Darwin new linker, since it no longer supports
