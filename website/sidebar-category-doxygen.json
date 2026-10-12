@@ -898,9 +898,9 @@
                             },
                             {
                               "type": "doc",
-                              "label": "exceptions-inline.h",
+                              "label": "exceptions-inlines.h",
                               "className": "doxyEllipsis",
-                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-exceptions-inline-h"
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-exceptions-inlines-h"
                             },
                             {
                               "type": "doc",

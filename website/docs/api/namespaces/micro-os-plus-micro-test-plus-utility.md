@@ -50,7 +50,7 @@ namespace micro_os_plus::micro_test_plus::utility { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Check if a string matches a pattern. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#gaa2f0f4cff320a783ad2347c9ff3fc731">More...</a></p>
+<p>Check if a string matches a pattern with <span class="doxyComputerOutput">*</span> and <span class="doxyComputerOutput">?</span> wildcards. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#gaa2f0f4cff320a783ad2347c9ff3fc731">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -84,7 +84,7 @@ namespace micro_os_plus::micro_test_plus::utility { ... }
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility">micro_os_plus::micro_test_plus::utility</a></span> namespace provides a suite of helper functions designed to support advanced string operations and other common tasks within the µTest++ framework.</p>
 
 
-<p>These utilities include functions for pattern matching—such as verifying whether a string matches a specified pattern—and for splitting strings into sub-strings based on delimiters. The implementations are efficient and suitable for both embedded and general C++ projects.</p>
+<p>These utilities include functions for extracting the file name from a path, for pattern matching (verifying whether a string matches a pattern with <span class="doxyComputerOutput">*</span> and <span class="doxyComputerOutput">?</span> wildcards), and for splitting strings into sub-strings based on delimiters. The implementations are efficient and suitable for both embedded and general C++ projects.</p>
 
 
 <p>By encapsulating these helper functions within a dedicated namespace, the framework maintains clear code organisation and minimises naming conflicts.</p>

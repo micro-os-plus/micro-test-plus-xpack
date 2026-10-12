@@ -1,5 +1,17 @@
 var NAVTREEINDEX5 =
 {
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a271baf62ae8e74f4801dc3da24b575ea":[5,0,0,0,0,3,0],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a8b7760bde30950164a3c97632b468361":[3,0,0,0,0,3,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a8b7760bde30950164a3c97632b468361":[3,0,0,0,0,23,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a8b7760bde30950164a3c97632b468361":[5,0,0,0,0,3,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a8b7760bde30950164a3c97632b468361":[5,0,0,0,0,23,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#adbbcb62f9976b0f2f5461d52a89caf57":[3,0,0,0,0,3,1],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#adbbcb62f9976b0f2f5461d52a89caf57":[3,0,0,0,0,23,1],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#adbbcb62f9976b0f2f5461d52a89caf57":[5,0,0,0,0,3,1],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#adbbcb62f9976b0f2f5461d52a89caf57":[5,0,0,0,0,23,1],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html":[3,0,0,0,0,4],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html":[5,0,0,0,0,4],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#a42937839aa8c23e1c5482582eaf2aeb7":[3,0,0,0,0,4,1],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#a42937839aa8c23e1c5482582eaf2aeb7":[5,0,0,0,0,4,1],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#a7cd442bbb5af0f5d53632101d5c2eb0b":[3,0,0,0,0,4,0],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#a7cd442bbb5af0f5d53632101d5c2eb0b":[5,0,0,0,0,4,0],
@@ -237,17 +249,5 @@ var NAVTREEINDEX5 =
 "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#aa9f1e68b760d80aea085d684b2dccc4f":[5,0,0,0,2,7,1],
 "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#ab7f7f241b55abd7ac9e25234bbe64406":[3,0,0,0,5,7,3],
 "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#ab7f7f241b55abd7ac9e25234bbe64406":[5,0,0,0,2,7,3],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#aedc41334c71b7711435aee0cb8f44fb3":[3,0,0,0,5,7,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#aedc41334c71b7711435aee0cb8f44fb3":[5,0,0,0,2,7,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#afe9d8229d9f706703eeafae51fc69335":[3,0,0,0,5,7,4],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#afe9d8229d9f706703eeafae51fc69335":[5,0,0,0,2,7,4],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html":[3,0,0,0,5,8],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html":[5,0,0,0,2,8],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html":[3,0,0,0,5,9],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html":[5,0,0,0,2,9],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html":[3,0,0,0,5,10],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html":[5,0,0,0,2,10],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a4a819c9151d37da6e8a76f4629c7cc4d":[3,0,0,0,5,10,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a4a819c9151d37da6e8a76f4629c7cc4d":[5,0,0,0,2,10,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a7bec98988dcc3b8317f4dad31cbbf755":[3,0,0,0,5,10,1]
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#aedc41334c71b7711435aee0cb8f44fb3":[3,0,0,0,5,7,2]
 };

@@ -11,7 +11,7 @@ var searchData=
   ['eq_8',['eq',['../group__micro-os-plus-micro-test-plus-function-comparators.html#gae9dfca849300a917cb1c231d275baaa3',1,'micro_os_plus::micro_test_plus::eq(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)'],['../group__micro-os-plus-micro-test-plus-function-comparators.html#gabdb021d3d6a5759cd2a5f502b2514dea',1,'micro_os_plus::micro_test_plus::eq(Lhs_T *lhs, Rhs_T *rhs)']]],
   ['eq_5f_9',['eq_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html',1,'micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;'],['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html#a527ae62e9ed62a3ebbc3efd243d602c3',1,'micro_os_plus::micro_test_plus::detail::eq_::eq_()'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a3c134d5164d17cade8ff3f6de49c5e6b',1,'micro_os_plus::micro_test_plus::detail::eq_()']]],
   ['exceptions_10',['Checking Exceptions',['../group__micro-os-plus-micro-test-plus-exceptions.html',1,'']]],
-  ['exceptions_2dinline_2eh_11',['exceptions-inline.h',['../exceptions-inline_8h.html',1,'']]],
+  ['exceptions_2dinlines_2eh_11',['exceptions-inlines.h',['../exceptions-inlines_8h.html',1,'']]],
   ['exceptions_2eh_12',['exceptions.h',['../exceptions_8h.html',1,'']]],
   ['executed_5fchecks_13',['executed_checks',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html#afff854fdb78b39ad075042c6cd861d5f',1,'micro_os_plus::micro_test_plus::detail::runner_totals']]],
   ['executed_5fsubtests_14',['executed_subtests',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html#a3da8e6781da2c97e8d68fee2d9102b9d',1,'micro_os_plus::micro_test_plus::detail::runner_totals']]],

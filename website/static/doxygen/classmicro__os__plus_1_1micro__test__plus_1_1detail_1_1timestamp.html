@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmicro__os
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3021a3477870bda369e22bdf085bf7a7" id="r_a3021a3477870bda369e22bdf085bf7a7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3021a3477870bda369e22bdf085bf7a7">timestamp</a> () noexcept</td></tr>
-<tr class="memdesc:a3021a3477870bda369e22bdf085bf7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Zero-initialises the internal <span class="tt">timespec</span>.  <br /></td></tr>
+<tr class="memdesc:a3021a3477870bda369e22bdf085bf7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Captures the current time.  <br /></td></tr>
 <tr class="memitem:a5877a6dda459f5dc695f0e4569175a82" id="r_a5877a6dda459f5dc695f0e4569175a82"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5877a6dda459f5dc695f0e4569175a82">timestamp</a> (const timespec &amp;ts) noexcept</td></tr>
 <tr class="memdesc:a5877a6dda459f5dc695f0e4569175a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a timestamp from an existing <span class="tt">timespec</span> value.  <br /></td></tr>
 <tr class="memitem:a25cc87189f5ec1dbdef3302de6408d62" id="r_a25cc87189f5ec1dbdef3302de6408d62"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a25cc87189f5ec1dbdef3302de6408d62">timestamp</a> (const timestamp &amp;)=default</td></tr>
@@ -140,7 +140,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1edc35b9931f3fdb714daf9cae3da73e" id="r_a1edc35b9931f3fdb714daf9cae3da73e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1edc35b9931f3fdb714daf9cae3da73e">~timestamp</a> ()=default</td></tr>
 <tr class="memdesc:a1edc35b9931f3fdb714daf9cae3da73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defaulted destructor.  <br /></td></tr>
 <tr class="memitem:ae5494fb57bcc3b577c914a0cc95ff667" id="r_ae5494fb57bcc3b577c914a0cc95ff667"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae5494fb57bcc3b577c914a0cc95ff667">has_clock</a> (void) const noexcept</td></tr>
-<tr class="memdesc:ae5494fb57bcc3b577c914a0cc95ff667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if a monotonic clock is available on this target.  <br /></td></tr>
+<tr class="memdesc:ae5494fb57bcc3b577c914a0cc95ff667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the stored value is a valid clock reading.  <br /></td></tr>
 <tr class="memitem:a91c4b65a10407ab3c2a65343b924902b" id="r_a91c4b65a10407ab3c2a65343b924902b"><td class="memItemLeft"><a class="el" href="#a3021a3477870bda369e22bdf085bf7a7">timestamp</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a91c4b65a10407ab3c2a65343b924902b">operator=</a> (const <a class="el" href="#a3021a3477870bda369e22bdf085bf7a7">timestamp</a> &amp;)=default</td></tr>
 <tr class="memdesc:a91c4b65a10407ab3c2a65343b924902b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defaulted copy assignment operator.  <br /></td></tr>
 <tr class="memitem:a790a0f4322a690f7ab6591ada80222a0" id="r_a790a0f4322a690f7ab6591ada80222a0"><td class="memItemLeft"><a class="el" href="#a3021a3477870bda369e22bdf085bf7a7">timestamp</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a790a0f4322a690f7ab6591ada80222a0">operator=</a> (<a class="el" href="#a3021a3477870bda369e22bdf085bf7a7">timestamp</a> &amp;&amp;)=default</td></tr>
@@ -156,10 +156,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a62c9539975cee7a03be62eb0a903bbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying <span class="tt">timespec</span> value.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="A single point-in-time measurement, wrapping a timespec value.">timestamp</a></span> stores one <span class="tt">timespec</span> sample obtained from the system clock. It is default-constructible (zero-initialises the <span class="tt">timespec</span>), copy-constructible, and move-constructible, so that it can be used efficiently in <span class="tt">std::optional&lt;<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="A single point-in-time measurement, wrapping a timespec value.">timestamp</a>&gt;</span> containers.</p>
-<p>The <span class="tt"><a class="el" href="#ae5494fb57bcc3b577c914a0cc95ff667" title="Returns true if a monotonic clock is available on this target.">has_clock()</a></span> predicate allows callers to determine whether a real-time clock is available on the target platform before relying on the stored value. </p>
+<div class="textblock"><p><span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="A single point-in-time measurement, wrapping a timespec value.">timestamp</a></span> stores one <span class="tt">timespec</span> sample obtained from the system clock. The default constructor captures the current time; the class is copy-constructible and move-constructible, so that it can be used efficiently in <span class="tt">std::optional&lt;<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="A single point-in-time measurement, wrapping a timespec value.">timestamp</a>&gt;</span> containers.</p>
+<p>The <span class="tt"><a class="el" href="#ae5494fb57bcc3b577c914a0cc95ff667" title="Checks whether the stored value is a valid clock reading.">has_clock()</a></span> predicate allows callers to determine whether the stored value is a valid clock reading, since on targets without a clock the value remains zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00102">102</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00104">104</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3021a3477870bda369e22bdf085bf7a7" name="a3021a3477870bda369e22bdf085bf7a7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3021a3477870bda369e22bdf085bf7a7">&#9670;&#160;</a></span>timestamp() <span class="overload">[1/4]</span></h2>
@@ -183,6 +183,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>On targets without a clock, the internal <span class="tt">timespec</span> remains zero-initialised.</p>
 <p>On Windows, the current time is captured via <span class="tt">timespec_get()</span> with <span class="tt">TIME_UTC</span>. On POSIX platforms with <span class="tt">CLOCK_MONOTONIC</span> defined, <span class="tt">clock_gettime(CLOCK_MONOTONIC)</span> is used to obtain a monotonic timestamp. On platforms where neither macro is defined, <span class="tt"><a class="el" href="#a62c9539975cee7a03be62eb0a903bbf3" title="The underlying timespec value.">value_</a></span> remains zero-initialised. </p>
 
 <p class="definition">Definition at line <a class="el" href="timings_8cpp_source.html#l00071">71</a> of file <a class="el" href="timings_8cpp_source.html">timings.cpp</a>.</p>
@@ -193,9 +194,9 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   76</span>    clock_gettime (CLOCK_MONOTONIC, &amp;<a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>);</div>
 <div class="line"><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// defined(_WIN32) || defined(CLOCK_MONOTONIC)</span></div>
 <div class="line"><span class="lineno">   78</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_html_a62c9539975cee7a03be62eb0a903bbf3"><div class="ttname"><a href="#a62c9539975cee7a03be62eb0a903bbf3">micro_os_plus::micro_test_plus::detail::timestamp::value_</a></div><div class="ttdeci">timespec value_</div><div class="ttdoc">The underlying timespec value.</div><div class="ttdef"><b>Definition</b> <a href="timings_8h_source.html#l00185">timings.h:185</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_html_a62c9539975cee7a03be62eb0a903bbf3"><div class="ttname"><a href="#a62c9539975cee7a03be62eb0a903bbf3">micro_os_plus::micro_test_plus::detail::timestamp::value_</a></div><div class="ttdeci">timespec value_</div><div class="ttdoc">The underlying timespec value.</div><div class="ttdef"><b>Definition</b> <a href="timings_8h_source.html#l00214">timings.h:214</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00185">value_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00214">value_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a25cc87189f5ec1dbdef3302de6408d62">timestamp()</a>, <a class="el" href="#a78ec32dd29a858de635f6be2a4fd3f8f">timestamp()</a>, <a class="el" href="#a91c4b65a10407ab3c2a65343b924902b">operator=()</a>, and <a class="el" href="#a790a0f4322a690f7ab6591ada80222a0">operator=()</a>.</p>
 
@@ -236,7 +237,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   59</span>  {</div>
 <div class="line"><span class="lineno">   60</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00185">value_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00214">value_</a>.</p>
 
 </div>
 </div>
@@ -262,6 +263,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Copies the stored <span class="tt">timespec</span> value member-wise. </p>
 
 <p class="reference">References <a class="el" href="timings_8cpp_source.html#l00071">timestamp()</a>.</p>
 
@@ -289,6 +291,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Equivalent to a copy, since <span class="tt">timespec</span> is trivially copyable. </p>
 
 <p class="reference">References <a class="el" href="timings_8cpp_source.html#l00071">timestamp()</a>.</p>
 
@@ -316,6 +319,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>No resources are owned, so there is nothing to release. </p>
 
 <p class="reference">References <a class="el" href="timings-inlines_8h_source.html#l00067">value()</a>.</p>
 
@@ -347,7 +351,7 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">true</td><td>A real-time clock is available and timestamps are valid. </td></tr>
+    <tr><td class="paramname">true</td><td>A clock is available and the stored value is valid. </td></tr>
     <tr><td class="paramname">false</td><td>No clock is available; timing data should be ignored.</td></tr>
   </table>
   </dd>
@@ -359,7 +363,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_sec != 0 || <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_nsec != 0;</div>
 <div class="line"><span class="lineno">   90</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00185">value_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00214">value_</a>.</p>
 
 </div>
 </div>
@@ -385,6 +389,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Copies the stored <span class="tt">timespec</span> value member-wise.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this instance. </dd></dl>
 
 <p class="reference">References <a class="el" href="timings_8cpp_source.html#l00071">timestamp()</a>.</p>
 
@@ -412,6 +418,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Equivalent to a copy, since <span class="tt">timespec</span> is trivially copyable.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this instance. </dd></dl>
 
 <p class="reference">References <a class="el" href="timings_8cpp_source.html#l00071">timestamp()</a>.</p>
 
@@ -448,7 +456,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</div>
 <div class="line"><span class="lineno">   80</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00185">value_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00214">value_</a>.</p>
 
 </div>
 </div>
@@ -483,7 +491,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</div>
 <div class="line"><span class="lineno">   70</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00185">value_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00214">value_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a1edc35b9931f3fdb714daf9cae3da73e">~timestamp()</a>.</p>
 
@@ -509,9 +517,10 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Zero-initialised, then set by the constructors; a zero value means that no clock reading is available. </p>
 
-<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00185">185</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  185</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00214">214</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="timings_8cpp_source.html#l00071">timestamp()</a>, <a class="el" href="timings-inlines_8h_source.html#l00058">timestamp()</a>, <a class="el" href="timings_8cpp_source.html#l00087">has_clock()</a>, <a class="el" href="timings-inlines_8h_source.html#l00077">value()</a>, and <a class="el" href="timings-inlines_8h_source.html#l00067">value()</a>.</p>
 

@@ -14,10 +14,10 @@
 <listitem><para><anchor id="deprecated_1_deprecated000002"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d14217f53925b323f4236298e3dcc90" kindref="member">to_c</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ab8b464d71f15f55bd047dbfca50899" kindref="member">micro_os_plus::micro_test_plus::_d</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000022"/> Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" kindref="member">to_d</ref></computeroutput> (since 3.2.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000022"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3b9d6825aa201bf1fdf9cbe8c0ad4bff" kindref="member">to_d</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gadcff4454bf86ea03c0c3d1be42b04e12" kindref="member">micro_os_plus::micro_test_plus::_f</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000021"/> Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" kindref="member">to_f</ref></computeroutput> (since 3.2.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000021"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga3c89dfb65d916dfc34dfdfcb10334b5c" kindref="member">to_f</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">micro_os_plus::micro_test_plus::_i</ref>  </term></varlistentry>
 <listitem><para><anchor id="deprecated_1_deprecated000005"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref></computeroutput> (since 3.2.0).  </para>

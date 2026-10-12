@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('test-inlines_8
 </div><!--header-->
 <div class="contents">
 
-<p>C++ header file with inline implementations for the µTest++ test suite.  
+<p>C++ header file with inline implementations for the µTest++ test hierarchy.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="deferred-reporter_8h_source.html">micro-os-plus/micro-test-plus/deferred-reporter.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="reporter_8h_source.html">micro-os-plus/micro-test-plus/reporter.h</a>&quot;</code><br />
@@ -139,16 +139,41 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the µTest++ testing framework. <br /></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html">micro_os_plus::micro_test_plus::detail</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aaec16ed032c8fc52ba753a273b788381" id="r_aaec16ed032c8fc52ba753a273b788381"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>&#160;&#160;&#160;&quot;zu&quot;</td></tr>
+<tr class="memdesc:aaec16ed032c8fc52ba753a273b788381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Portable <span class="tt">printf()</span> conversion for <span class="tt">size_t</span> values in trace messages.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This header provides the inline implementations for the test suite facilities used within the µTest++ framework. It defines the logic for constructing and registering test suites, including the binding of callable objects and their arguments for flexible test suite definitions.</p>
-<p>The implementation ensures that each test suite is automatically registered with the global test runner upon construction, enabling automated discovery and execution of test suites. The use of <span class="tt">std::bind</span> allows for versatile test suite initialisation with arbitrary callable types and arguments.</p>
+<div class="textblock"><p>This header provides the inline and template implementations for the test hierarchy used within the µTest++ framework: the accessors of the base classes, the constructors that bind the callable objects and their arguments, the <span class="tt">test()</span> methods that create and run subtests, and the <span class="tt">expect()</span> and <span class="tt">assume()</span> checks.</p>
+<p>When additional arguments are given, <span class="tt">std::bind</span> is used to pre-bind them, allowing versatile test initialisation with arbitrary callable types and arguments. A <span class="tt">static_suite</span> additionally registers itself with its <span class="tt">static_runner</span> upon construction.</p>
 <p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace, maintaining a clear separation from user code and minimising the risk of naming conflicts.</p>
 <p>The header files are organised within the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 <p>This file is intended solely for internal use within the framework and should not be included directly by user code. </p>
 
 <p class="definition">Definition in file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-</div></div><!-- contents -->
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="aaec16ed032c8fc52ba753a273b788381" name="aaec16ed032c8fc52ba753a273b788381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaec16ed032c8fc52ba753a273b788381">&#9670;&#160;</a></span>MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE&#160;&#160;&#160;&quot;zu&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Clang's format checker on Windows (the "ms_printf" archetype) rejects the standard <span class="tt">z</span> modifier, even though the UCRT <span class="tt">printf()</span> implementation supports it at run time, so the Microsoft-specific <span class="tt">I</span> modifier is used there instead (<span class="tt">"Iu"</span>); elsewhere it is <span class="tt">"zu"</span>. Defined only when <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-config.html#ga27bb1b9066b162d868e0b1c557b91e0d" title="Enable trace in constructors and destructors in µTest++.">MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</a></span> is defined. </p>
+
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00079">79</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00472">micro_os_plus::micro_test_plus::static_suite::static_suite()</a>, and <a class="el" href="test-inlines_8h_source.html#l00137">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::totals()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

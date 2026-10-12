@@ -58,7 +58,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ methods. <a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ reflection utilities. <a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -86,7 +86,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ TAP suite reporter methods. <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ TAP test reporter methods. <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -142,7 +142,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ test suite methods. <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ test hierarchy methods. <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -170,7 +170,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ methods. <a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ utility functions. <a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">

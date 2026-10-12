@@ -26,9 +26,9 @@ keywords:
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gabd2f8b7401162835cb4735e4a7532c36">micro_os_plus::micro_test_plus::_c</a></dt>
 <dd><p><a id="_deprecated000002"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5d14217f53925b323f4236298e3dcc90">to_c</a></span> (since 3.2.0).</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6ab8b464d71f15f55bd047dbfca50899">micro_os_plus::micro_test_plus::_d</a></dt>
-<dd><p><a id="_deprecated000022"></a> Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to_d</a></span> (since 3.2.0).</p></dd>
+<dd><p><a id="_deprecated000022"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to_d</a></span> (since 3.2.0).</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gadcff4454bf86ea03c0c3d1be42b04e12">micro_os_plus::micro_test_plus::_f</a></dt>
-<dd><p><a id="_deprecated000021"></a> Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga3c89dfb65d916dfc34dfdfcb10334b5c">to_f</a></span> (since 3.2.0).</p></dd>
+<dd><p><a id="_deprecated000021"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga3c89dfb65d916dfc34dfdfcb10334b5c">to_f</a></span> (since 3.2.0).</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga1613ccf081248c601bed0f3022fba652">micro_os_plus::micro_test_plus::_i</a></dt>
 <dd><p><a id="_deprecated000005"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gab6ddb21470182cbdcf06436cde43718f">to_i</a></span> (since 3.2.0).</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaec10ef24cb02dd0fb7f5e44227562d51">micro_os_plus::micro_test_plus::_i16</a></dt>

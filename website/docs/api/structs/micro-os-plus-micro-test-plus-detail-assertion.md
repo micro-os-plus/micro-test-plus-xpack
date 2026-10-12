@@ -91,7 +91,7 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt; { ... }
 </dd>
 </dl>
 
-<p>Definition at line 126 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line 127 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -119,12 +119,16 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt; { ... }
 
 <p>The expression under evaluation.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00131">131</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+<p>Either a framework comparator (derived from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type_traits::op</a></span>) or a value convertible to <span class="doxyComputerOutput">bool</span>.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00136">136</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3bda35bdd21c44124c7828c65ac3395f">131</a></span><span class="doxyLineContent"><span class="doxyHighlight">      Expr_T <a href="#a3bda35bdd21c44124c7828c65ac3395f">expr</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3bda35bdd21c44124c7828c65ac3395f">136</a></span><span class="doxyLineContent"><span class="doxyHighlight">      Expr_T <a href="#a3bda35bdd21c44124c7828c65ac3395f">expr</a>{};</span></span></div>
 
 </div>
 
@@ -152,12 +156,16 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt; { ... }
 
 <p>The source location associated with the assertion.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00136">136</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+<p>Used by the reporter to show where a failed check is located.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00144">144</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acd2e0e20795f5a31ed3031ab51579dc0">136</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> <a href="#acd2e0e20795f5a31ed3031ab51579dc0">location</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acd2e0e20795f5a31ed3031ab51579dc0">144</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> <a href="#acd2e0e20795f5a31ed3031ab51579dc0">location</a>{};</span></span></div>
 
 </div>
 

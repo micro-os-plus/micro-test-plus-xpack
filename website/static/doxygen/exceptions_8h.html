@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('exceptions_8h.
 
 <p>C++ header with declarations for the µTest++ exception-checking functions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="exceptions-inline_8h_source.html">inlines/exceptions-inline.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="exceptions-inlines_8h_source.html">inlines/exceptions-inlines.h</a>&quot;</code><br />
 </div>
 <p><a href="exceptions_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -150,7 +150,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header provides the declarations for the exception-checking facilities of the µTest++ framework. It exposes three function templates — <span class="tt">throws&lt;Exception_T&gt;()</span>, <span class="tt">throws()</span>, and <span class="tt">nothrow()</span> — which allow test cases to verify that a callable throws a specific exception, throws any exception, or throws no exception, respectively.</p>
 <p>All declarations are conditionally compiled under <span class="tt">__cpp_exceptions</span> and reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
-<p>This header is located in the top-level <span class="tt">include/micro-os-plus</span> folder. Users should include <span class="tt">"<a class="el" href="micro-test-plus_8h.html" title="Main C++ header with the declarations for the µTest++ Testing Framework.">micro-os-plus/micro-test-plus.h</a>"</span> rather than this header directly. </p>
+<p>This header is located in the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder. Users should include <span class="tt">"<a class="el" href="micro-test-plus_8h.html" title="Main C++ header with the declarations for the µTest++ Testing Framework.">micro-os-plus/micro-test-plus.h</a>"</span> rather than this header directly. </p>
 
 <p class="definition">Definition in file <a class="el" href="exceptions_8h_source.html">exceptions.h</a>.</p>
 </div></div><!-- contents -->

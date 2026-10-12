@@ -359,7 +359,7 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 <p>These utilities facilitate advanced template programming, type deduction, and compile-time introspection, supporting the flexible and type-safe design of the framework.</p>
 
 
-<p>All definitions within this namespace are implemented in the <span class="doxyComputerOutput">include/micro-os-plus</span> folder to maintain a structured and modular codebase.</p>
+<p>All definitions within this namespace are implemented in the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 
 
 <hr/>

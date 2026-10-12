@@ -133,8 +133,8 @@
         </childnode>
       </node>
       <node id="22">
-        <label>inlines/exceptions-inline.h</label>
-        <link refid="exceptions-inline_8h"/>
+        <label>inlines/exceptions-inlines.h</label>
+        <link refid="exceptions-inlines_8h"/>
       </node>
       <node id="26">
         <label>inlines/expression-formatter-inlines.h</label>
@@ -426,7 +426,7 @@
 <para>It provides all essential declarations required to write and manage tests, including test runner and reporter objects, test suite and test case management, expectations, assumptions, comparators, logical operators, exception verification, and utility functions.</para>
 <para>The header also incorporates all necessary dependencies and internal headers to ensure the framework operates correctly and efficiently.</para>
 <para>All public API definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace and its nested namespaces, ensuring clear separation from user code and minimising the risk of naming conflicts.</para>
-<para>This file is located in the top-level <computeroutput>include/micro-os-plus</computeroutput> directory; all other header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> directory to maintain a structured and modular codebase.</para>
+<para>This file is located in the top-level <computeroutput>include/micro-os-plus</computeroutput> folder; all other header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase.</para>
 <para>To access the complete functionality of the µTest++ framework, users should include this header in their test projects.</para>
 <para>The implementation is significantly inspired by Boost UT, with adaptations and extensions to address the requirements of embedded development and the µTest++ framework. </para>
     </detaileddescription>

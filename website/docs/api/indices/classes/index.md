@@ -424,7 +424,7 @@ Generic strongly-typed wrapper for explicit type conversion
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Reporter to display test results, including operand values and types for failures
+Abstract base class for the reporters that display test results, including operand values for failures
 </td>
 </tr>
 
@@ -479,7 +479,7 @@ Local implementation of source location information for diagnostics
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/test-node">test_node</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Base class for runners and runable tests
+Base class for runners and runnable tests
 </td>
 </tr>
 

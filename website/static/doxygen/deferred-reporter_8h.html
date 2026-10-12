@@ -150,10 +150,10 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This header provides the two deferred-reporter classes used by <span class="tt">expect()</span> and <span class="tt">assume()</span> to capture a test-expression result and format the outcome only when the reporter object is destroyed (i.e. at the semicolon following the expression statement).</p>
+<div class="textblock"><p>This header provides the two deferred-reporter classes used by <span class="tt">expect()</span> and <span class="tt">assume()</span> to capture a test-expression result and report the outcome only when the reporter object is destroyed (i.e. at the semicolon following the expression statement), after the optional user message was appended.</p>
 <ul>
 <li><span class="tt">deferred_reporter_base</span> stores the boolean result, the source location, an optional user-supplied message (accumulated via <span class="tt">operator&lt;&lt;</span>), and a reference to the owning <span class="tt">subtest</span>. Its destructor calls the reporter to emit a pass or fail line.</li>
-<li><span class="tt">deferred_reporter&lt;Expr_T&gt;</span> derives from the base and additionally stores the original expression object so that the reporter can print the actual and expected values on failure.</li>
+<li><span class="tt">deferred_reporter</span> derives from the base; its template constructor formats the expression (with the actual operand values) into the expression formatter of the reporter, so that it can be printed on failure.</li>
 </ul>
 <p>Both classes live in the <span class="tt">detail</span> namespace and are not part of the public API.</p>
 <p>This file is intended solely for internal use within the framework and should not be included directly by user code. </p>

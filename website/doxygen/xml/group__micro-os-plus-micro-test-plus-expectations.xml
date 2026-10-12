@@ -38,7 +38,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="par"><title>Constraints</title><para>Enabled only if <computeroutput>Expr_T</computeroutput> is derived from <computeroutput>detail::op</computeroutput> or is convertible to <computeroutput>bool</computeroutput> (enforced via a C++20 <computeroutput>requires</computeroutput> clause).</para>
+<simplesect kind="par"><title>Constraints</title><para>Enabled only if <computeroutput>Expr_T</computeroutput> is derived from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">type_traits::op</ref></computeroutput> or is convertible to <computeroutput>bool</computeroutput> (enforced via a C++20 <computeroutput>requires</computeroutput> clause).</para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -59,13 +59,13 @@
 </parameterlist>
 <simplesect kind="return"><para>An output stream to write optional messages.</para>
 </simplesect>
-Constructs and returns a <computeroutput>deferred_reporter&lt;Expr_T&gt;</computeroutput> with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad8302d2dc629b643d34b3cfeafe44b3b" kindref="member">abort</ref> = false</computeroutput>. The reporter evaluates the condition and records a pass or fail when it is destroyed at the end of the expression statement. </para>
+Constructs and returns a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter" kindref="compound">detail::deferred_reporter</ref></computeroutput> with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad8302d2dc629b643d34b3cfeafe44b3b" kindref="member">abort</ref> = false</computeroutput>. The reporter evaluates the condition when constructed, and records a pass or fail when it is destroyed, at the end of the expression statement. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="642" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="293" bodyend="297"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad2169093aee09bc28ae7f70467569a23" compoundref="reporter-inlines_8h" startline="108" endline="111">micro_os_plus::micro_test_plus::reporter::expression</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" compoundref="test_8cpp" startline="149" endline="152">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="738" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="321" bodyend="325"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad2169093aee09bc28ae7f70467569a23" compoundref="reporter-inlines_8h" startline="104" endline="107">micro_os_plus::micro_test_plus::reporter::expression</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" compoundref="test_8cpp" startline="139" endline="142">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1ad3eb4bb11f1c6fc4631bae8a7215a95e">micro_os_plus::micro_test_plus::subtest::operator=</referencedby>
       </memberdef>
     </sectiondef>

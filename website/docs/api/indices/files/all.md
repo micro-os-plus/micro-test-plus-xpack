@@ -176,13 +176,14 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math"><b>math</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus"><b>micro_os_plus</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/top-common-h">top-common.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga3dd1e70998580fe7d7f410e5cd83879b"><b>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</b></a>: as macro definition in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">include/micro-os-plus/micro-test-plus.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#aaec16ed032c8fc52ba753a273b788381"><b>MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</b></a>: as macro definition in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">include/micro-os-plus/micro-test-plus/inlines/test-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga27bb1b9066b162d868e0b1c557b91e0d"><b>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</b></a>: as macro definition in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">include/micro-os-plus/micro-test-plus.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga039219e6edfdcaa8a5e07badd7f4830d"><b>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</b></a>: as macro definition in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">include/micro-os-plus/micro-test-plus.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus"><b>micro_test_plus</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp">src/utility.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4"><b>min_value()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#ga00ea8f3dfb7cb0ef39919065321cf62f"><b>mut()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 </ul>
-<p>8 entries</p>
+<p>9 entries</p>
 
 ## - N -
 
@@ -349,7 +350,7 @@ keywords:
 </ul>
 <p>5 entries</p>
 <br/>
-<p>Total: 208 entries.</p>
+<p>Total: 209 entries.</p>
 
 <hr/>
 

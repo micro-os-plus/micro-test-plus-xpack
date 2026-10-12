@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('reflection_8cp
 </div><!--header-->
 <div class="contents">
 
-<p>C++ source file with implementations for the µTest++ methods.  
+<p>C++ source file with implementations for the µTest++ reflection utilities.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="reflection_8h_source.html">micro-os-plus/micro-test-plus/reflection.h</a>&quot;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
@@ -141,7 +141,7 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afc93799846770e521c4721d0de0a81cc" id="r_afc93799846770e521c4721d0de0a81cc"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html#afc93799846770e521c4721d0de0a81cc">micro_os_plus::micro_test_plus::reflection::short_name</a> (const char *name) noexcept</td></tr>
-<tr class="memdesc:afc93799846770e521c4721d0de0a81cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract a short type or function name from a fully qualified name.  <br /></td></tr>
+<tr class="memdesc:afc93799846770e521c4721d0de0a81cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the file name from a path.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This source file contains the implementation of <span class="tt">reflection::short_name()</span>, which extracts the base file name from a fully qualified path by returning the portion after the last <span class="tt">/</span> separator, or the original string if no separator is present.</p>

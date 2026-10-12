@@ -431,13 +431,15 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runner-totals/#a9ccf52635c60eed8109ea7691ae49644"><b>was_successful()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runner-totals">micro_os_plus::micro_test_plus::detail::runner_totals</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter/#a3ec44dfd9c4eee36809395e2f8516c11"><b>write_buffer_to_console()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">micro_os_plus::micro_test_plus::reporter_tap</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter/#ae656aff0d07d7cc634f1a0b2046137e9"><b>write_buffer_to_file_()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">micro_os_plus::micro_test_plus::reporter_tap</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter/#a26d99bc552ad4ed31253028647e939b1"><b>write_buffer_to_stdout()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">micro_os_plus::micro_test_plus::reporter_tap</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter/#ad3a05675b2c172a4752ff2476cc49b1c"><b>write_console_()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">micro_os_plus::micro_test_plus::reporter_tap</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter/#adecd1993c9d85d4aa3872a0dbeaf7bf0"><b>write_file_()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">micro_os_plus::micro_test_plus::reporter_tap</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter/#a7ee71ebee4a54fb4b05c1f476cc78263"><b>write_info_()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">micro_os_plus::micro_test_plus::reporter_tap</a></li>
 </ul>
-<p>4 entries</p>
+<p>6 entries</p>
 <br/>
-<p>Total: 308 entries.</p>
+<p>Total: 310 entries.</p>
 
 <hr/>
 

@@ -105,7 +105,7 @@ keywords:
 <p>All public API definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace and its nested namespaces, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 
 
-<p>This file is located in the top-level <span class="doxyComputerOutput">include/micro-os-plus</span> directory; all other header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> directory to maintain a structured and modular codebase.</p>
+<p>This file is located in the top-level <span class="doxyComputerOutput">include/micro-os-plus</span> folder; all other header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 
 
 <p>To access the complete functionality of the µTest++ framework, users should include this header in their test projects.</p>

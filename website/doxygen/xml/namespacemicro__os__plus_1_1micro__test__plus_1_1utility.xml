@@ -12,7 +12,7 @@
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kindref="compound">micro_os_plus::micro_test_plus::utility</ref></computeroutput> namespace provides a suite of helper functions designed to support advanced string operations and other common tasks within the µTest++ framework.</para>
-<para>These utilities include functions for pattern matching—such as verifying whether a string matches a specified pattern—and for splitting strings into sub-strings based on delimiters. The implementations are efficient and suitable for both embedded and general C++ projects.</para>
+<para>These utilities include functions for extracting the file name from a path, for pattern matching (verifying whether a string matches a pattern with <computeroutput>*</computeroutput> and <computeroutput>?</computeroutput> wildcards), and for splitting strings into sub-strings based on delimiters. The implementations are efficient and suitable for both embedded and general C++ projects.</para>
 <para>By encapsulating these helper functions within a dedicated namespace, the framework maintains clear code organisation and minimises naming conflicts. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="64" column="3"/>

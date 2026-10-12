@@ -150,10 +150,10 @@ Namespaces</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header provides two lightweight classes used to measure the elapsed time of test suites and test sessions within the µTest++ framework:</p>
 <ul>
-<li><span class="tt">timestamp</span> wraps a single <span class="tt">timespec</span> value and records one point in time. It is default-constructible and trivially copyable.</li>
+<li><span class="tt">timestamp</span> wraps a single <span class="tt">timespec</span> value and records one point in time. The default constructor reads the clock; the class is trivially copyable.</li>
 <li><span class="tt">timestamps</span> pairs a begin and an end <span class="tt">timestamp</span> (both stored as <span class="tt">std::optional&lt;timestamp&gt;</span>) and exposes methods for recording the start and finish of an operation, querying whether both timestamps are available, and computing the elapsed time in milliseconds and microseconds.</li>
 </ul>
-<p>Timing support relies on <span class="tt">clock_gettime(CLOCK_MONOTONIC_RAW, ...)</span> when available; if the clock is not present (e.g. on bare-metal targets without an RTC) the timestamps are simply omitted and no timing information is reported.</p>
+<p>Timing support relies on <span class="tt">clock_gettime(CLOCK_MONOTONIC, ...)</span> on POSIX platforms and on <span class="tt">timespec_get(..., TIME_UTC)</span> on Windows. If no clock is available (e.g. on bare-metal targets without an RTC), the recorded values remain zero, <span class="tt">has_timestamps()</span> returns <span class="tt">false</span>, and no timing information is reported.</p>
 <p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 <p>This file is intended solely for internal use within the framework and should not be included directly by user code. </p>
 

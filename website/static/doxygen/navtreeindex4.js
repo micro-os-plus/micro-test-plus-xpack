@@ -1,5 +1,17 @@
 var NAVTREEINDEX4 =
 {
+"group__micro-os-plus-micro-test-plus-function-comparators.html#ga34e03399670ec0b365b94b7bea788dd8":[2,0,0,0,4,2],
+"group__micro-os-plus-micro-test-plus-function-comparators.html#ga3957927d25a61348b639fe01aab11258":[2,0,0,0,4,3],
+"group__micro-os-plus-micro-test-plus-function-comparators.html#ga59e4cf59954e81bc868e62b1c5c8db1f":[2,0,0,0,4,10],
+"group__micro-os-plus-micro-test-plus-function-comparators.html#gabdb021d3d6a5759cd2a5f502b2514dea":[2,0,0,0,4,1],
+"group__micro-os-plus-micro-test-plus-function-comparators.html#gac162522dcad1a6ff7c869d52d376b3ed":[2,0,0,0,4,8],
+"group__micro-os-plus-micro-test-plus-function-comparators.html#gae2fb681444d8256f6bf827eea6b7c29e":[2,0,0,0,4,4],
+"group__micro-os-plus-micro-test-plus-function-comparators.html#gae8a4dcd7ebf01cdfa7e46540cd6522fa":[2,0,0,0,4,5],
+"group__micro-os-plus-micro-test-plus-function-comparators.html#gae9dfca849300a917cb1c231d275baaa3":[2,0,0,0,4,0],
+"group__micro-os-plus-micro-test-plus-function-comparators.html#gaf8716c55446af28b090eb49acd8cf131":[2,0,0,0,4,7],
+"group__micro-os-plus-micro-test-plus-literals.html":[2,0,0,0,10],
+"group__micro-os-plus-micro-test-plus-literals.html#ga01adcd3866da43c393b7fba8a5e72bb2":[2,0,0,0,10,71],
+"group__micro-os-plus-micro-test-plus-literals.html#ga07f83438e4c0c85efdeacd78668f3543":[2,0,0,0,10,17],
 "group__micro-os-plus-micro-test-plus-literals.html#ga0b9d74a6595fe7fdefca21255ab59dc8":[2,0,0,0,10,23],
 "group__micro-os-plus-micro-test-plus-literals.html#ga102b1f7c41452481e6be2bd8da63e4a0":[2,0,0,0,10,14],
 "group__micro-os-plus-micro-test-plus-literals.html#ga1613ccf081248c601bed0f3022fba652":[2,0,0,0,10,6],
@@ -237,17 +249,5 @@ var NAVTREEINDEX4 =
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op__.html#adfe5734554daf4e5793f0708f3121284":[5,0,0,0,0,2,3],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html":[3,0,0,0,0,3],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html":[5,0,0,0,0,3],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a271baf62ae8e74f4801dc3da24b575ea":[3,0,0,0,0,3,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a271baf62ae8e74f4801dc3da24b575ea":[5,0,0,0,0,3,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a8b7760bde30950164a3c97632b468361":[3,0,0,0,0,3,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a8b7760bde30950164a3c97632b468361":[3,0,0,0,0,23,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a8b7760bde30950164a3c97632b468361":[5,0,0,0,0,3,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a8b7760bde30950164a3c97632b468361":[5,0,0,0,0,23,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#adbbcb62f9976b0f2f5461d52a89caf57":[3,0,0,0,0,3,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#adbbcb62f9976b0f2f5461d52a89caf57":[3,0,0,0,0,23,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#adbbcb62f9976b0f2f5461d52a89caf57":[5,0,0,0,0,3,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#adbbcb62f9976b0f2f5461d52a89caf57":[5,0,0,0,0,23,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html":[3,0,0,0,0,4],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html":[5,0,0,0,0,4],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#a42937839aa8c23e1c5482582eaf2aeb7":[3,0,0,0,0,4,1]
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html#a271baf62ae8e74f4801dc3da24b575ea":[3,0,0,0,0,3,0]
 };

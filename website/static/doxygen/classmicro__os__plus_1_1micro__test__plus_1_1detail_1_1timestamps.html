@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmicro__os
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a28411e9d980b53accf2a8c5221a1861f" id="r_a28411e9d980b53accf2a8c5221a1861f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a28411e9d980b53accf2a8c5221a1861f">timestamps</a> ()=default</td></tr>
-<tr class="memdesc:a28411e9d980b53accf2a8c5221a1861f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Both timestamps are uninitialised.  <br /></td></tr>
+<tr class="memdesc:a28411e9d980b53accf2a8c5221a1861f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
 <tr class="memitem:ad9bb8bdb44def63c7ace6e25efa6150e" id="r_ad9bb8bdb44def63c7ace6e25efa6150e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad9bb8bdb44def63c7ace6e25efa6150e">timestamps</a> (const timestamps &amp;)=delete</td></tr>
 <tr class="memdesc:ad9bb8bdb44def63c7ace6e25efa6150e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor to prevent copying.  <br /></td></tr>
 <tr class="memitem:aed7caa5ea1c202dd12403ae9a5b38167" id="r_aed7caa5ea1c202dd12403ae9a5b38167"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aed7caa5ea1c202dd12403ae9a5b38167">timestamps</a> (timestamps &amp;&amp;)=delete</td></tr>
@@ -161,9 +161,9 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ac621973713cc6e574f7aa70566a4e960" id="r_ac621973713cc6e574f7aa70566a4e960"><td class="memItemLeft">std::optional&lt; <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html">timestamp</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac621973713cc6e574f7aa70566a4e960">begin_time_</a></td></tr>
-<tr class="memdesc:ac621973713cc6e574f7aa70566a4e960"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timestamp recorded at the beginning of the test suite.  <br /></td></tr>
+<tr class="memdesc:ac621973713cc6e574f7aa70566a4e960"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timestamp recorded at the beginning of the measured interval.  <br /></td></tr>
 <tr class="memitem:a85749791b2161ff48e9a1de82c532017" id="r_a85749791b2161ff48e9a1de82c532017"><td class="memItemLeft">std::optional&lt; <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html">timestamp</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a85749791b2161ff48e9a1de82c532017">end_time_</a></td></tr>
-<tr class="memdesc:a85749791b2161ff48e9a1de82c532017"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timestamp recorded at the end of the test suite.  <br /></td></tr>
+<tr class="memdesc:a85749791b2161ff48e9a1de82c532017"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timestamp recorded at the end of the measured interval.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps.html" title="A begin/end timestamp pair used to measure elapsed time.">timestamps</a></span> stores an optional begin <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="A single point-in-time measurement, wrapping a timespec value.">timestamp</a></span> and an optional end <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="A single point-in-time measurement, wrapping a timespec value.">timestamp</a></span>. When both are available, <span class="tt"><a class="el" href="#a7e7ade6bb02af23d65e5ceaa958052dd" title="Computes the elapsed time between begin and end timestamps.">compute_elapsed_time()</a></span> derives the elapsed interval in milliseconds and microseconds.</p>
@@ -172,10 +172,10 @@ Protected Attributes</h2></td></tr>
 <li>Call <span class="tt"><a class="el" href="#aeb4873587b5be066c69c0ef26d64640b" title="Records the end timestamp using the current system clock.">timestamp_end()</a></span> immediately after it completes.</li>
 <li>Pass the elapsed values to the reporter.</li>
 </ol>
-<p>If the platform does not provide a monotonic clock, the <span class="tt">std::optional</span> members remain empty and <span class="tt"><a class="el" href="#a125c87d852257c18749074be3b698ed1" title="Returns true if both begin and end timestamps are available.">has_timestamps()</a></span> returns <span class="tt">false</span>, so that the reporter can skip timing output.</p>
+<p>If the platform does not provide a clock, the recorded timestamps hold zero values and <span class="tt"><a class="el" href="#a125c87d852257c18749074be3b698ed1" title="Returns true if both begin and end timestamps are available.">has_timestamps()</a></span> returns <span class="tt">false</span>, so that the reporter can skip timing output.</p>
 <p>The class is non-copyable and non-movable to prevent accidental sharing of live timing state. </p>
 
-<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00213">213</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00242">242</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a28411e9d980b53accf2a8c5221a1861f" name="a28411e9d980b53accf2a8c5221a1861f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28411e9d980b53accf2a8c5221a1861f">&#9670;&#160;</a></span>timestamps() <span class="overload">[1/3]</span></h2>
@@ -199,6 +199,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Both optional timestamps are initially empty; they are set by <span class="tt"><a class="el" href="#a1b2077718469ade9fda2e257a0d06293" title="Records the begin timestamp using the current system clock.">timestamp_begin()</a></span> and <span class="tt"><a class="el" href="#aeb4873587b5be066c69c0ef26d64640b" title="Records the end timestamp using the current system clock.">timestamp_end()</a></span>. </p>
 
 <p class="reference">Referenced by <a class="el" href="#ad9bb8bdb44def63c7ace6e25efa6150e">timestamps()</a>, <a class="el" href="#aed7caa5ea1c202dd12403ae9a5b38167">timestamps()</a>, <a class="el" href="#aa003cc61308004bc8e22ce2097e4564b">operator=()</a>, and <a class="el" href="#afe37704a6659bbaeb5a21372b5b53b60">operator=()</a>.</p>
 
@@ -226,6 +227,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The timing state belongs to a single test node. </p>
 
 <p class="reference">References <a class="el" href="#a28411e9d980b53accf2a8c5221a1861f">timestamps()</a>.</p>
 
@@ -253,6 +255,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The instance is a member of a node that is itself non-movable. </p>
 
 <p class="reference">References <a class="el" href="#a28411e9d980b53accf2a8c5221a1861f">timestamps()</a>.</p>
 
@@ -280,6 +283,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>No resources are owned, so there is nothing to release. </p>
 
 <p class="reference">References <a class="el" href="timings_8cpp_source.html#l00184">compute_elapsed_time()</a>, <a class="el" href="timings-inlines_8h_source.html#l00101">has_end()</a>, and <a class="el" href="timings_8cpp_source.html#l00167">has_timestamps()</a>.</p>
 
@@ -307,10 +311,12 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">milliseconds</td><td>The elapsed time in whole milliseconds. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">microseconds</td><td>The sub-millisecond remainder in microseconds.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">microseconds</td><td>The sub-millisecond remainder in microseconds. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><span class="tt"><a class="el" href="#a125c87d852257c18749074be3b698ed1" title="Returns true if both begin and end timestamps are available.">has_timestamps()</a></span> returns <span class="tt">true</span>.</dd></dl>
 <p>Subtracts the begin timestamp from the end timestamp in nanoseconds. If the nanosecond difference is negative, one second is borrowed from the seconds delta to normalise the result. The total elapsed duration in microseconds is then split into whole milliseconds (written to <code class="param">milliseconds</code>) and the remainder microseconds (written to <code class="param">microseconds</code>). Requires <span class="tt"><a class="el" href="#a125c87d852257c18749074be3b698ed1" title="Returns true if both begin and end timestamps are available.">has_timestamps()</a></span> to be <span class="tt">true</span>; behaviour is undefined otherwise. </p>
 
 <p class="definition">Definition at line <a class="el" href="timings_8cpp_source.html#l00184">184</a> of file <a class="el" href="timings_8cpp_source.html">timings.cpp</a>.</p>
@@ -335,12 +341,12 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  204</span>    microseconds = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span> (total_us % 1000LL);</div>
 <div class="line"><span class="lineno">  205</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_html_a125c87d852257c18749074be3b698ed1"><div class="ttname"><a href="#a125c87d852257c18749074be3b698ed1">micro_os_plus::micro_test_plus::detail::timestamps::has_timestamps</a></div><div class="ttdeci">bool has_timestamps(void) const noexcept</div><div class="ttdoc">Returns true if both begin and end timestamps are available.</div><div class="ttdef"><b>Definition</b> <a href="timings_8cpp_source.html#l00167">timings.cpp:167</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_html_a85749791b2161ff48e9a1de82c532017"><div class="ttname"><a href="#a85749791b2161ff48e9a1de82c532017">micro_os_plus::micro_test_plus::detail::timestamps::end_time_</a></div><div class="ttdeci">std::optional&lt; timestamp &gt; end_time_</div><div class="ttdoc">The timestamp recorded at the end of the test suite.</div><div class="ttdef"><b>Definition</b> <a href="timings_8h_source.html#l00347">timings.h:347</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_html_ac621973713cc6e574f7aa70566a4e960"><div class="ttname"><a href="#ac621973713cc6e574f7aa70566a4e960">micro_os_plus::micro_test_plus::detail::timestamps::begin_time_</a></div><div class="ttdeci">std::optional&lt; timestamp &gt; begin_time_</div><div class="ttdoc">The timestamp recorded at the beginning of the test suite.</div><div class="ttdef"><b>Definition</b> <a href="timings_8h_source.html#l00342">timings.h:342</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_html_a85749791b2161ff48e9a1de82c532017"><div class="ttname"><a href="#a85749791b2161ff48e9a1de82c532017">micro_os_plus::micro_test_plus::detail::timestamps::end_time_</a></div><div class="ttdeci">std::optional&lt; timestamp &gt; end_time_</div><div class="ttdoc">The timestamp recorded at the end of the measured interval.</div><div class="ttdef"><b>Definition</b> <a href="timings_8h_source.html#l00406">timings.h:406</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_html_ac621973713cc6e574f7aa70566a4e960"><div class="ttname"><a href="#ac621973713cc6e574f7aa70566a4e960">micro_os_plus::micro_test_plus::detail::timestamps::begin_time_</a></div><div class="ttdeci">std::optional&lt; timestamp &gt; begin_time_</div><div class="ttdoc">The timestamp recorded at the beginning of the measured interval.</div><div class="ttdef"><b>Definition</b> <a href="timings_8h_source.html#l00398">timings.h:398</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00342">begin_time_</a>, <a class="el" href="timings_8h_source.html#l00347">end_time_</a>, and <a class="el" href="timings_8cpp_source.html#l00167">has_timestamps()</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00398">begin_time_</a>, <a class="el" href="timings_8h_source.html#l00406">end_time_</a>, and <a class="el" href="timings_8cpp_source.html#l00167">has_timestamps()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a29791422e99ae1b77c0d0cefa97bbd88">~timestamps()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00189">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00167">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00310">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a29791422e99ae1b77c0d0cefa97bbd88">~timestamps()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00186">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00169">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>.</p>
 
 </div>
 </div>
@@ -374,14 +380,14 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Returns <span class="tt">true</span> when <span class="tt"><a class="el" href="#ac621973713cc6e574f7aa70566a4e960" title="The timestamp recorded at the beginning of the test suite.">begin_time_</a></span> holds a value, i.e. when <span class="tt"><a class="el" href="#a1b2077718469ade9fda2e257a0d06293" title="Records the begin timestamp using the current system clock.">timestamp_begin()</a></span> has previously been called. </p>
+<p>Returns <span class="tt">true</span> when <span class="tt"><a class="el" href="#ac621973713cc6e574f7aa70566a4e960" title="The timestamp recorded at the beginning of the measured interval.">begin_time_</a></span> holds a value, i.e. when <span class="tt"><a class="el" href="#a1b2077718469ade9fda2e257a0d06293" title="Records the begin timestamp using the current system clock.">timestamp_begin()</a></span> has previously been called. </p>
 
 <p class="definition">Definition at line <a class="el" href="timings-inlines_8h_source.html#l00090">90</a> of file <a class="el" href="timings-inlines_8h_source.html">timings-inlines.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   91</span>  {</div>
 <div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ac621973713cc6e574f7aa70566a4e960">begin_time_</a>.has_value ();</div>
 <div class="line"><span class="lineno">   93</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00342">begin_time_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00398">begin_time_</a>.</p>
 
 </div>
 </div>
@@ -415,14 +421,14 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Returns <span class="tt">true</span> when <span class="tt"><a class="el" href="#a85749791b2161ff48e9a1de82c532017" title="The timestamp recorded at the end of the test suite.">end_time_</a></span> holds a value, i.e. when <span class="tt"><a class="el" href="#aeb4873587b5be066c69c0ef26d64640b" title="Records the end timestamp using the current system clock.">timestamp_end()</a></span> has previously been called. </p>
+<p>Returns <span class="tt">true</span> when <span class="tt"><a class="el" href="#a85749791b2161ff48e9a1de82c532017" title="The timestamp recorded at the end of the measured interval.">end_time_</a></span> holds a value, i.e. when <span class="tt"><a class="el" href="#aeb4873587b5be066c69c0ef26d64640b" title="Records the end timestamp using the current system clock.">timestamp_end()</a></span> has previously been called. </p>
 
 <p class="definition">Definition at line <a class="el" href="timings-inlines_8h_source.html#l00101">101</a> of file <a class="el" href="timings-inlines_8h_source.html">timings-inlines.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  102</span>  {</div>
 <div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a85749791b2161ff48e9a1de82c532017">end_time_</a>.has_value ();</div>
 <div class="line"><span class="lineno">  104</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00347">end_time_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00406">end_time_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a29791422e99ae1b77c0d0cefa97bbd88">~timestamps()</a>.</p>
 
@@ -458,7 +464,7 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Returns <span class="tt">true</span> only when both the begin and end optional timestamps are engaged and each contains a valid (non-zero) clock reading, as determined by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html#ae5494fb57bcc3b577c914a0cc95ff667" title="Returns true if a monotonic clock is available on this target.">timestamp::has_clock()</a></span>. </p>
+<p>Returns <span class="tt">true</span> only when both the begin and end optional timestamps are engaged and each contains a valid (non-zero) clock reading, as determined by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html#ae5494fb57bcc3b577c914a0cc95ff667" title="Checks whether the stored value is a valid clock reading.">timestamp::has_clock()</a></span>. </p>
 
 <p class="definition">Definition at line <a class="el" href="timings_8cpp_source.html#l00167">167</a> of file <a class="el" href="timings_8cpp_source.html">timings.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  168</span>  {</div>
@@ -466,9 +472,9 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  170</span>           &amp;&amp; <a class="code hl_variable" href="#a85749791b2161ff48e9a1de82c532017">end_time_</a>.has_value () &amp;&amp; <a class="code hl_variable" href="#a85749791b2161ff48e9a1de82c532017">end_time_</a>-&gt;has_clock ();</div>
 <div class="line"><span class="lineno">  171</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00342">begin_time_</a>, and <a class="el" href="timings_8h_source.html#l00347">end_time_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00398">begin_time_</a>, and <a class="el" href="timings_8h_source.html#l00406">end_time_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a29791422e99ae1b77c0d0cefa97bbd88">~timestamps()</a>, <a class="el" href="timings_8cpp_source.html#l00184">compute_elapsed_time()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00189">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00167">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00310">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00286">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a29791422e99ae1b77c0d0cefa97bbd88">~timestamps()</a>, <a class="el" href="timings_8cpp_source.html#l00184">compute_elapsed_time()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00186">micro_os_plus::micro_test_plus::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00169">micro_os_plus::micro_test_plus::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00284">micro_os_plus::micro_test_plus::reporter_tap::end_suite()</a>.</p>
 
 </div>
 </div>
@@ -494,6 +500,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The timing state belongs to a single test node. </p>
 
 <p class="reference">References <a class="el" href="#a28411e9d980b53accf2a8c5221a1861f">timestamps()</a>.</p>
 
@@ -521,6 +528,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The instance is a member of a node that is itself non-movable. </p>
 
 <p class="reference">References <a class="el" href="#a28411e9d980b53accf2a8c5221a1861f">timestamps()</a>.</p>
 
@@ -566,7 +574,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  124</span>      }</div>
 <div class="line"><span class="lineno">  125</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00342">begin_time_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00398">begin_time_</a>.</p>
 
 </div>
 </div>
@@ -605,9 +613,9 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  108</span>      }</div>
 <div class="line"><span class="lineno">  109</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00342">begin_time_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00398">begin_time_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00345">micro_os_plus::micro_test_plus::static_suite::run()</a>, and <a class="el" href="test_8cpp_source.html#l00271">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00332">micro_os_plus::micro_test_plus::static_suite::run()</a>, and <a class="el" href="test_8cpp_source.html#l00258">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
 
 </div>
 </div>
@@ -651,7 +659,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  157</span>      }</div>
 <div class="line"><span class="lineno">  158</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00347">end_time_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00406">end_time_</a>.</p>
 
 </div>
 </div>
@@ -690,9 +698,9 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  141</span>      }</div>
 <div class="line"><span class="lineno">  142</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="timings_8h_source.html#l00347">end_time_</a>.</p>
+<p class="reference">References <a class="el" href="timings_8h_source.html#l00406">end_time_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00345">micro_os_plus::micro_test_plus::static_suite::run()</a>, and <a class="el" href="test_8cpp_source.html#l00271">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00332">micro_os_plus::micro_test_plus::static_suite::run()</a>, and <a class="el" href="test_8cpp_source.html#l00258">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
 
 </div>
 </div>
@@ -716,8 +724,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Empty until <span class="tt"><a class="el" href="#a1b2077718469ade9fda2e257a0d06293" title="Records the begin timestamp using the current system clock.">timestamp_begin()</a></span> is called; set only once. </p>
 
-<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00342">342</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00398">398</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="timings_8cpp_source.html#l00184">compute_elapsed_time()</a>, <a class="el" href="timings-inlines_8h_source.html#l00090">has_begin()</a>, <a class="el" href="timings_8cpp_source.html#l00167">has_timestamps()</a>, <a class="el" href="timings_8cpp_source.html#l00118">timestamp_begin()</a>, and <a class="el" href="timings_8cpp_source.html#l00102">timestamp_begin()</a>.</p>
 
@@ -742,8 +751,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Empty until <span class="tt"><a class="el" href="#aeb4873587b5be066c69c0ef26d64640b" title="Records the end timestamp using the current system clock.">timestamp_end()</a></span> is called; set only once. </p>
 
-<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00347">347</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timings_8h_source.html#l00406">406</a> of file <a class="el" href="timings_8h_source.html">timings.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="timings_8cpp_source.html#l00184">compute_elapsed_time()</a>, <a class="el" href="timings-inlines_8h_source.html#l00101">has_end()</a>, <a class="el" href="timings_8cpp_source.html#l00167">has_timestamps()</a>, <a class="el" href="timings_8cpp_source.html#l00151">timestamp_end()</a>, and <a class="el" href="timings_8cpp_source.html#l00135">timestamp_end()</a>.</p>
 

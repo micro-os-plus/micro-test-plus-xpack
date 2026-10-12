@@ -43,10 +43,10 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput">is_op</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is derived from the <span class="doxyComputerOutput">type_traits::op</span> base struct. It is the primary definition used throughout the framework; <span class="doxyComputerOutput">is_op_v</span> is derived from it for use in <span class="doxyComputerOutput">if constexpr</span> and boolean contexts.</p>
+<p>The <span class="doxyComputerOutput">is_op</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is derived from the <span class="doxyComputerOutput">type_traits::op</span> base struct. It is used throughout the framework, both as a constraint and as a boolean expression in <span class="doxyComputerOutput">if constexpr</span> contexts.</p>
 
 
-<p>Definition at line 446 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 473 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">

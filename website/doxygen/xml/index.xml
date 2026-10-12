@@ -276,13 +276,15 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a38ce845af263922f0e76a7e93fc0773d" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1ac300083569b6304a7e120bb78ac337" kind="function"><name>pass</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kind="function"><name>verbosity</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" kind="function"><name>write_buffer_to_stdout</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3ec44dfd9c4eee36809395e2f8516c11" kind="function"><name>write_buffer_to_console</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab6b39c68c08e7ccfb29a693bc86d391c" kind="function"><name>colour_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a4192b8554e00783a61e5bebe6d9545cc" kind="function"><name>output_fail_prefix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1af103dba717208ba08d44285066a7b326" kind="function"><name>output_fail_suffix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aa78041c4993a5a84f0eba4c278071c9f" kind="function"><name>output_pass_prefix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a18e488b545a2dfa190f9f003b4f7ef57" kind="function"><name>output_pass_suffix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae656aff0d07d7cc634f1a0b2046137e9" kind="function"><name>write_buffer_to_file_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad3a05675b2c172a4752ff2476cc49b1c" kind="function"><name>write_console_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1adecd1993c9d85d4aa3872a0dbeaf7bf0" kind="function"><name>write_file_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7ee71ebee4a54fb4b05c1f476cc78263" kind="function"><name>write_info_</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human" kind="class"><name>micro_os_plus::micro_test_plus::reporter_human</name>
@@ -314,13 +316,15 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a25e8e0a0222c7ea4c8b4c42c6c460a43" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1ac300083569b6304a7e120bb78ac337" kind="function"><name>pass</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kind="function"><name>verbosity</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" kind="function"><name>write_buffer_to_stdout</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3ec44dfd9c4eee36809395e2f8516c11" kind="function"><name>write_buffer_to_console</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab6b39c68c08e7ccfb29a693bc86d391c" kind="function"><name>colour_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a20077cabbb38559ff5b0f75140fc7eae" kind="function"><name>output_fail_prefix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aef7c1d0436d63165f94245bf16c69f6a" kind="function"><name>output_fail_suffix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ae831c47658d21e0e77bf7df79b8fc58f" kind="function"><name>output_pass_prefix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac5713ce51eb50a6841879b1c7d00c234" kind="function"><name>output_pass_suffix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae656aff0d07d7cc634f1a0b2046137e9" kind="function"><name>write_buffer_to_file_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad3a05675b2c172a4752ff2476cc49b1c" kind="function"><name>write_console_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1adecd1993c9d85d4aa3872a0dbeaf7bf0" kind="function"><name>write_file_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7ee71ebee4a54fb4b05c1f476cc78263" kind="function"><name>write_info_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" kind="variable"><name>add_empty_line_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a123948993e8c24962071a32d8274c4f6" kind="variable"><name>argvs_</name></member>
@@ -360,13 +364,15 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9fe6788edd80a8d3e7bb3940169dd92f" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1ac300083569b6304a7e120bb78ac337" kind="function"><name>pass</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kind="function"><name>verbosity</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" kind="function"><name>write_buffer_to_stdout</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3ec44dfd9c4eee36809395e2f8516c11" kind="function"><name>write_buffer_to_console</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab6b39c68c08e7ccfb29a693bc86d391c" kind="function"><name>colour_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a603243d6c5fb10d5891e70382f1aa0d8" kind="function"><name>output_fail_prefix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" kind="function"><name>output_fail_suffix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1abb4353e534969b0452aa63cee7652a29" kind="function"><name>output_pass_prefix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ac46a89737874c4f864a98b91d8c57ecd" kind="function"><name>output_pass_suffix_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae656aff0d07d7cc634f1a0b2046137e9" kind="function"><name>write_buffer_to_file_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad3a05675b2c172a4752ff2476cc49b1c" kind="function"><name>write_console_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1adecd1993c9d85d4aa3872a0dbeaf7bf0" kind="function"><name>write_file_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7ee71ebee4a54fb4b05c1f476cc78263" kind="function"><name>write_info_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" kind="variable"><name>add_empty_line_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a123948993e8c24962071a32d8274c4f6" kind="variable"><name>argvs_</name></member>
@@ -971,7 +977,7 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1aa3885b7b361bc6af9e7a52fa6dcc78a1" kind="function"><name>append_number_</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kind="function"><name>get</name></member>
   </compound>
-  <compound refid="exceptions-inline_8h" kind="file"><name>exceptions-inline.h</name>
+  <compound refid="exceptions-inlines_8h" kind="file"><name>exceptions-inlines.h</name>
     <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
@@ -1056,6 +1062,7 @@
   <compound refid="runner-totals-inlines_8h" kind="file"><name>runner-totals-inlines.h</name>
   </compound>
   <compound refid="test-inlines_8h" kind="file"><name>test-inlines.h</name>
+    <member refid="test-inlines_8h_1aaec16ed032c8fc52ba753a273b788381" kind="define"><name>MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</name></member>
   </compound>
   <compound refid="timings-inlines_8h" kind="file"><name>timings-inlines.h</name>
   </compound>

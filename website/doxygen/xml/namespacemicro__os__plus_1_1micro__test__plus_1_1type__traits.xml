@@ -31,8 +31,8 @@
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">type_traits</ref></computeroutput> namespace offers a comprehensive suite of type trait templates and metaprogramming utilities employed throughout the µTest++ framework.</para>
 <para>This includes templates for function traits, type lists, identity, value wrappers, and compile-time checks for container types, floating point types, and type convertibility. It also provides generic integral and floating point constant wrappers, as well as C++20 concepts and requirements checking.</para>
 <para>These utilities facilitate advanced template programming, type deduction, and compile-time introspection, supporting the flexible and type-safe design of the framework.</para>
-<para>All definitions within this namespace are implemented in the <computeroutput>include/micro-os-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
+<para>All definitions within this namespace are implemented in the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/type-traits-inlines.h" line="65" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/type-traits-inlines.h" line="67" column="3"/>
   </compounddef>
 </doxygen>

@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('deferred-repor
 </div><!--header-->
 <div class="contents">
 
-<p>C++ header file with inline implementations for the µTest++ internals.  
+<p>C++ header file with inline implementations for the µTest++ deferred reporter.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;charconv&gt;</code><br />
 <code>#include &lt;cstdio&gt;</code><br />
@@ -139,8 +139,7 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This header provides the inline implementations for internal components of the µTest++ framework, including operator overloads and constructors for deferred reporting mechanisms.</p>
-<p>It defines the logic for accumulating expectation messages, handling both arithmetic and string-like types, as well as the construction and destruction behaviour of deferred reporters, ensuring that test outcomes are accurately captured and reported.</p>
+<div class="textblock"><p>This header provides the inline and template implementations for the deferred reporters: the result accessor, the <span class="tt">operator&lt;&lt;</span> that accumulates the expectation messages (handling both arithmetic and string-like types), and the template constructor of <span class="tt">deferred_reporter</span>. The non-template constructor and the destructor of <span class="tt">deferred_reporter_base</span> are defined in <span class="tt"><a class="el" href="deferred-reporter_8cpp.html" title="C++ source file with implementations for the µTest++ deferred reporter methods.">src/deferred-reporter.cpp</a></span>.</p>
 <p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html" title="Internal implementation details for the µTest++ framework.">micro_os_plus::micro_test_plus::detail</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 <p>The header files are organised within the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 <p>This file is intended solely for internal use within the framework and should not be included directly by user code. </p>

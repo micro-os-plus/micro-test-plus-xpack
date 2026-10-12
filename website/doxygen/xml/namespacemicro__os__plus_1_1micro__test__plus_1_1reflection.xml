@@ -15,7 +15,7 @@
           <declname>name</declname>
         </param>
         <briefdescription>
-<para>Extract a short type or function name from a fully qualified name. </para>
+<para>Extract the file name from a path. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -23,20 +23,20 @@
 <parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The fully qualified name as a C-string. </para>
+<para>The path, as a C-string. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A pointer to the short name within the input string.</para>
+<simplesect kind="return"><para>A pointer to the file name within the input string.</para>
 </simplesect>
 This function extracts the short name from a given file path by locating the final folder separator (&apos;/&apos;). If a separator is found, it returns a pointer to the character immediately following it, effectively providing the file or folder name. If no separator is present, the original input string is returned. This utility is useful for reporting concise file or folder names in test output. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" line="74" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" bodystart="74" bodyend="93" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="211" declcolumn="5"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7bc806540e65c21095ef1ea1ef970db2" compoundref="runner_8cpp" startline="394" endline="404">micro_os_plus::micro_test_plus::runner::abort</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a20077cabbb38559ff5b0f75140fc7eae" compoundref="reporter-human_8cpp" startline="648" endline="679">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="650" endline="673">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" line="75" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" bodystart="75" bodyend="94" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="212" declcolumn="5"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7bc806540e65c21095ef1ea1ef970db2" compoundref="runner_8cpp" startline="398" endline="408">micro_os_plus::micro_test_plus::runner::abort</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a20077cabbb38559ff5b0f75140fc7eae" compoundref="reporter-human_8cpp" startline="621" endline="652">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="640" endline="663">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -60,9 +60,10 @@ This function extracts the short name from a given file path by locating the fin
 <para>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for well-known marker characters in the function signature string:</para>
 <para><itemizedlist>
 <listitem><para>Clang formats the signature as <computeroutput>"... [T = &lt;typename&gt;]"</computeroutput>, so the type name lies between the last <computeroutput>&apos;[&apos;</computeroutput> (skipping <computeroutput>"[T = "</computeroutput>) and the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
-</listitem><listitem><para>GCC formats the signature as <computeroutput>"... [with T = &lt;typename&gt;]"</computeroutput>, so the type name lies between the last <computeroutput>&apos;=&apos;</computeroutput> (skipping the trailing space) and the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
+</listitem><listitem><para>GCC formats the signature as <computeroutput>"... [with T = &lt;typename&gt;]"</computeroutput> or, on some versions, <computeroutput>"... [with T = &lt;typename&gt;; ...]"</computeroutput>, so the type name starts after the first <computeroutput>"T = "</computeroutput> and ends at the following <computeroutput>&apos;;&apos;</computeroutput> or, if there is none, at the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
 </listitem></itemizedlist>
 </para>
+<para>Other compilers (e.g. MSVC) are not supported and trigger a compile-time error.</para>
 <para>This approach is resilient to namespace renaming, namespace nesting changes, and compiler format updates.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
@@ -81,7 +82,7 @@ This function extracts the short name from a given file path by locating the fin
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="146" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="146" bodyend="169" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="224" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="150" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="150" bodyend="173" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="225" declcolumn="5"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a3d84f0a15194ead914bbf07a6e657e67" compoundref="expression-formatter-inlines_8h" startline="448" endline="454">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
@@ -90,8 +91,7 @@ This function extracts the short name from a given file path by locating the fin
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kindref="compound">reflection</ref></computeroutput> namespace provides facilities for obtaining source location information and type names at compile time, thereby supporting advanced reporting and diagnostics within the µTest++ framework.</para>
-<para>It includes a local implementation of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <computeroutput>__PRETTY_FUNCTION__</computeroutput>.</para>
-<para>All definitions within this namespace are intended to facilitate advanced reflection and reporting capabilities. </para>
+<para>It includes a local implementation of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> for standard libraries that do not yet provide <computeroutput>std::source_location</computeroutput>, as well as utilities for extracting file names from paths and concise type names from the compiler-specific <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="77" column="3"/>
   </compounddef>

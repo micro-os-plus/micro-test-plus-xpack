@@ -68,7 +68,7 @@ Folder with C++ header files containing inline µTest++ implementations
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deferred-reporter-inlines-h"><span class="doxyIconFile">deferred-reporter-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with inline implementations for the µTest++ internals
+C++ header file with inline implementations for the µTest++ deferred reporter
 </td>
 </tr>
 
@@ -85,7 +85,7 @@ C++ header file with inline implementations for the µTest++ internal detail nam
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/exceptions-inline-h"><span class="doxyIconFile">exceptions-inline.h</span></a>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines-h"><span class="doxyIconFile">exceptions-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with inline implementations for the µTest++ exceptions comparators
@@ -188,7 +188,7 @@ C++ header file with inline implementations for the µTest++ runner totals
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h"><span class="doxyIconFile">test-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with inline implementations for the µTest++ test suite
+C++ header file with inline implementations for the µTest++ test hierarchy
 </td>
 </tr>
 
@@ -368,7 +368,7 @@ C++ header file with declarations for the µTest++ test runner
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h"><span class="doxyIconFile">test.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with declarations for the µTest++ test suite
+C++ header file with declarations for the µTest++ test hierarchy
 </td>
 </tr>
 
@@ -448,7 +448,7 @@ C++ source file with non-template implementations for the µTest++ expression fo
 <a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp"><span class="doxyIconFile">reflection.cpp</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ source file with implementations for the µTest++ methods
+C++ source file with implementations for the µTest++ reflection utilities
 </td>
 </tr>
 
@@ -468,7 +468,7 @@ C++ source file with implementations for the µTest++ human test reporter method
 <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp"><span class="doxyIconFile">reporter-tap.cpp</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ source file with implementations for the µTest++ TAP suite reporter methods
+C++ source file with implementations for the µTest++ TAP test reporter methods
 </td>
 </tr>
 
@@ -508,7 +508,7 @@ C++ source file with implementations for the µTest++ test runner methods
 <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp"><span class="doxyIconFile">test.cpp</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ source file with implementations for the µTest++ test suite methods
+C++ source file with implementations for the µTest++ test hierarchy methods
 </td>
 </tr>
 
@@ -528,7 +528,7 @@ C++ source file with implementations for the µTest++ timings methods
 <a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp"><span class="doxyIconFile">utility.cpp</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ source file with implementations for the µTest++ methods
+C++ source file with implementations for the µTest++ utility functions
 </td>
 </tr>
 
