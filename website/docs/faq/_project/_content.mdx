@@ -2,7 +2,120 @@
 {/* ------------------------------------------------------------------------ */}
 
 <details>
-<summary>Warum?</summary>
+<summary>Why are the actual values not shown when a check fails?</summary>
 
-Darum! (placeholder)
+Because the check is a plain `bool` expression. In
+`t.expect (compute_answer () == 42)`, the comparison is evaluated before
+`expect()` is called, so µTest++ receives only `false`, and can report
+only the file and the line.
+
+To have the values reported, use a function comparator, or make one of
+the operands a µTest++ type, so that the comparison is performed by
+µTest++:
+
+```cpp
+t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+
+using namespace mt::operators;
+using namespace mt::literals;
+t.expect (compute_answer () == 42_i) << "answer is 42";
+```
+
+A failure then also reports the operands, for example
+`condition: 43 == 42`.
+
+</details>
+
+<details>
+<summary>What happens when an assumption fails?</summary>
+
+The failure is reported like a failed expectation, marked as aborted,
+and then the **whole test program is terminated**, not only the current
+test case. `runner::abort()` writes
+`error: test execution aborted at <file>:<line>` to `stderr` and calls
+`abort()`.
+
+As a consequence, the remaining test cases and suites do not run, no
+final totals are written, and `exit_code()` is never reached; the
+process ends with the status of an abnormal termination. On embedded
+platforms, the behaviour is that of the platform's `abort()`.
+
+Use `assume()` only for conditions without which the following checks
+are meaningless, and `expect()` for everything else.
+
+</details>
+
+<details>
+<summary>How can the test results be written to a file?</summary>
+
+Use the `--output-file` option, either as `--output-file=<path>` or as
+`--output-file <path>`. The file receives the complete results, whatever
+the console verbosity selected with `--verbose`, `--quiet`, or
+`--silent`. If the path is missing or the file cannot be opened, the
+program exits with an error message.
+
+On embedded platforms, the file is created with `fopen()`, so the
+platform must support file operations, for example through
+semihosting.
+
+</details>
+
+<details>
+<summary>How can the human-readable output be selected?</summary>
+
+Use `--reporter=human` or `--reporter human`. The default is
+`--reporter=tap`, which produces TAP 14 output. Any other name is
+rejected with `error: unknown reporter '<name>'`.
+
+</details>
+
+<details>
+<summary>Why do my static test suites not run?</summary>
+
+Usually because the source files that define them are compiled into a
+static library. The linker includes an object file from a static
+library only when the program references one of its symbols, and
+nothing references a static suite: it registers itself from its
+constructor. The object file is therefore dropped, and the suite
+silently does not run.
+
+Link the files that define static suites as object files: add them
+directly to the executable, use a CMake `OBJECT` library, or wrap the
+library in `-Wl,--whole-archive … -Wl,--no-whole-archive`.
+
+</details>
+
+<details>
+<summary>Why is the test output out of order on my board?</summary>
+
+The reporters write through `stdout` (`vfprintf()`, `fputs()`, and
+`fflush()`). If the platform forwards only `printf()` to the host, for
+example with `-Wl,--wrap=printf`, and `stdout` goes elsewhere, the two
+streams are not synchronised. Route `stdout` and all the `printf()`
+family to the same destination. See the
+[Console output](/docs/user/#console-output) section of the User's
+Guide.
+
+</details>
+
+<details>
+<summary>Can µTest++ be used to test C code?</summary>
+
+Yes. The code under test can be written in C, but the tests themselves
+are written in C++20, since µTest++ relies on C++ features that have no
+C equivalent. Include the C headers in the C++ test sources, within
+`extern "C"` if they do not already provide it.
+
+</details>
+
+<details>
+<summary>In what order do the tests run?</summary>
+
+The test cases added to the top suite in `main()`, with `ts.test (…)`,
+run immediately, in the order of the calls. The suites registered with
+the runner run later, when `exit_code()` is called, sorted by name;
+with a `static_runner`, the static suites follow, also sorted by name.
+The test cases within a suite run in the order in which they are
+defined.
+
 </details>
