@@ -29,6 +29,31 @@ using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
+namespace
+{
+  // A user-defined type, to check the comparators with custom types.
+  struct point
+  {
+    int x;
+    int y;
+  };
+
+  constexpr bool
+  operator== (const point& lhs, const point& rhs)
+  {
+    return lhs.x == rhs.x && lhs.y == rhs.y;
+  }
+
+  // Found by argument-dependent lookup when the operands are reported.
+  expression_formatter&
+  operator<< (expression_formatter& formatter, const point& p)
+  {
+    return formatter << "{ " << p.x << ", " << p.y << " }";
+  }
+} // namespace
+
+// ----------------------------------------------------------------------------
+
 static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
   {
     detail::runner_totals& current_suite_totals = ts.totals ();
@@ -151,6 +176,50 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (
             eq (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
             << "vector{ 1, 2, 3 } == vector{ 1, 2, 4 }";
+        local_counts.failed_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+
+    ts.test ("Custom types", [] (auto& t)
+      {
+        t.expect (eq (point{ 1, 2 }, point{ 1, 2 }))
+            << "point{ 1, 2 } == point{ 1, 2 }";
+        local_counts.successful_checks++;
+
+        t.expect (ne (point{ 1, 2 }, point{ 1, 3 }))
+            << "point{ 1, 2 } != point{ 1, 3 }";
+        local_counts.successful_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+
+    ts.test ("Custom types bad", [] (auto& t)
+      {
+        t.expect (eq (point{ 1, 2 }, point{ 1, 3 }))
+            << "point{ 1, 2 } == point{ 1, 3 }";
+        local_counts.failed_checks++;
+
+        // Without a message; the operands are reported in the condition.
+        t.expect (eq (point{ 1, 2 }, point{ 1, 3 }));
+        local_counts.failed_checks++;
+
+        t.expect (ne (point{ 1, 2 }, point{ 1, 2 }))
+            << "point{ 1, 2 } != point{ 1, 2 }";
         local_counts.failed_checks++;
 
         local_counts.executed_subtest++;

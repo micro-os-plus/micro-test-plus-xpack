@@ -687,6 +687,53 @@ namespace micro_os_plus::micro_test_plus
   } // namespace detail
 
   // --------------------------------------------------------------------------
+
+  /**
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @brief Public name of the formatter used to report operand values.
+   *
+   * @details
+   * The function comparators and the custom operators report the values
+   * of their operands when a check fails. Values of user-defined types
+   * can be reported only if the application provides an `operator<<`
+   * that writes them to this formatter, declared in the namespace of the
+   * type, so that it is found by argument-dependent lookup:
+   *
+   * @code{.cpp}
+   * namespace app
+   * {
+   *   struct point
+   *   {
+   *     int x;
+   *     int y;
+   *   };
+   *
+   *   constexpr bool
+   *   operator== (const point& lhs, const point& rhs)
+   *   {
+   *     return lhs.x == rhs.x && lhs.y == rhs.y;
+   *   }
+   *
+   *   inline mt::expression_formatter&
+   *   operator<< (mt::expression_formatter& formatter, const point& p)
+   *   {
+   *     return formatter << "{ " << p.x << ", " << p.y << " }";
+   *   }
+   * } // namespace app
+   * @endcode
+   *
+   * Without such an operator, comparators such as `eq()` do not compile
+   * for user-defined types, since the operand values cannot be
+   * formatted. Plain boolean checks, such as `expect (a == b)`, do not
+   * need it, but they report only the source location on failure.
+   *
+   * Only the public `operator<<` overloads of the formatter are intended
+   * for use by applications; the rest of the class is an implementation
+   * detail.
+   */
+  using expression_formatter = detail::expression_formatter;
+
+  // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)

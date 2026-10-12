@@ -599,9 +599,78 @@ Refer to the [Utility Functions](/docs/api/groups/micro-os-plus-micro-test-plus-
 
 ### Custom Types
 
-It is possible to extend the comparators using **templates that match custom types**; however, this is a non-trivial undertaking and requires a thorough understanding of C++.
+The function comparators also accept **user-defined types**, provided
+that the type has the operator used by the comparator: `operator==` for
+`eq()` and `ne()` (in C++20, `operator==` also provides `!=`), and
+`operator<=>` (or the individual relational operators) for `lt()`,
+`le()`, `gt()`, and `ge()`.
 
-@todo Provide guidance on this process and include an example test.
+Since the comparators **report the values** of their operands when a
+check fails, they also need to know how to print the type. For this, the
+application must define an `operator<<` that writes the value to an
+`mt::expression_formatter`, in the namespace of the type, so that it is
+found by argument-dependent lookup. Without it, the comparators do not
+compile for that type.
+
+```cpp showLineNumbers
+#include "micro-os-plus/micro-test-plus.h"
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+namespace app
+{
+  struct point
+  {
+    int x;
+    int y;
+  };
+
+  constexpr bool
+  operator== (const point& lhs, const point& rhs)
+  {
+    return lhs.x == rhs.x && lhs.y == rhs.y;
+  }
+
+  // Used to report the values of failed checks.
+  inline mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const point& p)
+  {
+    return formatter << "{ " << p.x << ", " << p.y << " }";
+  }
+} // namespace app
+
+int
+main (int argc, char* argv[])
+{
+  mt::runner tr;
+  auto& ts = tr.initialise (argc, argv);
+
+  ts.test ("Points", [] (auto& t) {
+    app::point p{ 1, 2 };
+    t.expect (mt::eq (p, app::point{ 1, 3 })) << "point is { 1, 3 }";
+  });
+
+  return tr.exit_code ();
+}
+```
+
+The failed check reports both values:
+
+```console
+        not ok 1 - point is { 1, 3 }
+          ---
+          condition: { 1, 2 } == { 1, 3 }
+          at:
+            filename: main.cpp
+            line: 35
+          ...
+```
+
+The formatter accepts the standard arithmetic types, characters,
+strings, pointers, and containers, so the members can usually be written
+directly, as above. A plain boolean check, such as
+`t.expect (p == q)`, needs no formatter, but on failure it reports only
+the source location.
 
 ### Test suites
 

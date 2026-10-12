@@ -716,7 +716,16 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (miscellaneous.cpp:147, {1, 2} != {1, 2})
         ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (miscellaneous.cpp:151, {1, 2, 3} == {1, 2, 4})
     ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
-✗ Miscellaneous suite - FAILED (10 checks passed, 10 failed, in 4 test cases)
+    • Custom types
+        ✓ point{ 1, 2 } == point{ 1, 2 }
+        ✓ point{ 1, 2 } != point{ 1, 3 }
+    ✓ Custom types - passed (2 checks)
+    • Custom types bad
+        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (miscellaneous.cpp:213, { 1, 2 } == { 1, 3 })
+        ✗ FAILED (miscellaneous.cpp:218, { 1, 2 } == { 1, 3 })
+        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (miscellaneous.cpp:221, { 1, 2 } != { 1, 2 })
+    ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
+✗ Miscellaneous suite - FAILED (12 checks passed, 13 failed, in 6 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -818,4 +827,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 354 checks passed, 323 failed, in 59 test cases, 11 test suites
+✗ Total: 356 checks passed, 326 failed, in 61 test cases, 11 test suites
