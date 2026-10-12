@@ -861,6 +861,23 @@
         "break Reset_Handler",
         "break _start"
       ]
+    },
+    // ------------------------------------------------------------------------
+    // Website scripts.
+    {
+      "name": "(node) website generate-website-commons",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/website",
+      "program": "${workspaceFolder}/website/node_modules/@xpack/docusaurus-template-liquid/maintenance/scripts/generate-website-commons.mjs",
+      "args": [
+        "--micro-os-plus"
+      ],
+      "stopOnEntry": true,
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
     }
   ]
 }
