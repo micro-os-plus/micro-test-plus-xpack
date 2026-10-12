@@ -113,7 +113,7 @@ folder within the build folders and the project root.
 After making changes, run in a terminal:
 
 - `xpm run test -C tests` to execute the test with the system compiler
-- `xpm run test-native-cmake-clang -C tests` to execute the test with clang
+- `xpm run test-synthetic-posix-cmake-clang -C tests` to execute the test with clang
 - `xpm run test-qemu-cortex-m7f-cmake-gcc -C tests` to execute the test with cross gcc
 
 When using linked writable projects, it is necessary to run the linking step to ensure all dependencies are correctly resolved.

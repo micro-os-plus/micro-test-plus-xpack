@@ -59,8 +59,9 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace.
   dynamic allocation is undesirable.
 - Test hierarchy (`test.h`, `src/test.cpp`), all deriving from an internal
   `detail::runnable_base`/`detail::runnable<T>` CRTP base:
-  - `top_suite` — the root suite created by the `"name"_test = [] { ... }`
-    or equivalent top-level syntax.
+  - `top_suite` — the implicit root suite owned by each `runner`,
+    returned by `runner::initialise()`; users do not construct it
+    directly.
   - `suite` — a named group of test cases; `static_suite` is the
     statically-allocated variant.
   - `subtest` — an individual test case/assertion group inside a suite.
@@ -68,9 +69,11 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace.
   results; concrete implementations are `reporter_human`
   (`reporter-human.h`, human-readable console output) and `reporter_tap`
   (`reporter-tap.h`, TAP-format output for CI/tooling consumption).
-  `deferred-reporter.h` buffers/replays reporter events, used where
-  output must be collected before being emitted (e.g. on targets without
-  synchronous console I/O).
+  `deferred-reporter.h` (internal, `detail` namespace) holds the object
+  returned by `expect()`/`assume()`: it stores the result, the source
+  location, and the message accumulated via `operator<<`, and reports
+  the outcome when it is destroyed, at the end of the expression
+  statement.
 - `expression-formatter.h`/`src/expression-formatter.cpp` and
   `reflection.h`/`src/reflection.cpp` provide the machinery behind
   `expect`/`that` expression decomposition, so failed expectations can
@@ -119,18 +122,24 @@ single `ctest`/`meson test` command from the top level.
 Common commands (run from the repository root):
 
 ```sh
-xpm run test -C tests                    # system compiler
-xpm run test-native-clang -C tests       # native build with clang
-xpm run test-qemu-cortex-m7f-gcc -C tests  # cross build run under QEMU (Cortex-M7F)
+xpm run test -C tests                                # system compiler
+xpm run test-synthetic-posix-cmake-clang -C tests    # native build with clang
+xpm run test-qemu-cortex-m7f-cmake-gcc -C tests      # cross build run under QEMU (Cortex-M7F)
 ```
 
 Other platforms available under `tests/platforms/` (each with its own
-`test-<platform>-*` action): native, qemu-cortex-{m0,m3,m33,m4f,m7f},
-qemu-aarch32-a15, qemu-aarch64-a72, qemu-riscv-{rv32imac,rv64imafdc},
-nucleo-{f411re,f767zi,h533re}, raspberry-pi-pico. `xpm run <action> -C
-tests` runs any action defined in `tests/package.json`'s `xpack.actions`
-(inspect that file for the exact generated action names, e.g.
-`test-native-<builder>-gcc<version>`, `test-qemu-cortex-<variant>-<builder>-gcc<version>`).
+`test-<platform>-*` action): synthetic-posix (native),
+qemu-cortex-{m0,m3,m33,m4f,m7f}, qemu-aarch32-a15, qemu-aarch64-a72,
+qemu-riscv-{rv32imac,rv64imafdc}, nucleo-f411re{,-cubemx,-cubemx-startup},
+nucleo-f767zi{,-cubemx}, nucleo-h533re{,-cubemx},
+raspberry-pi-pico{,-sdk}, raspberry-pi-pico-2-{arm,riscv}{,-sdk}, and
+raspberry-pi-zero-2-w-{aarch32,aarch64} (not yet functional).
+`xpm run <action> -C tests` runs any action defined in
+`tests/package.json`'s `xpack.actions` (inspect that file for the exact
+generated action names, e.g.
+`test-synthetic-posix-<builder>-gcc<version>`,
+`test-qemu-cortex-<variant>-<builder>-gcc<version>`; with the version
+omitted, the latest toolchain is used).
 
 Before considering a change complete, run at minimum the system-compiler
 test and, where the change could affect embedded/cross builds, the
