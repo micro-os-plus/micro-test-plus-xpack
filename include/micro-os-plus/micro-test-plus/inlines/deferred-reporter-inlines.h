@@ -18,17 +18,15 @@
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++
- * internals.
+ * deferred reporter.
  *
  * @details
- * This header provides the inline implementations for internal components of
- * the µTest++ framework, including operator overloads and constructors for
- * deferred reporting mechanisms.
- *
- * It defines the logic for accumulating expectation messages, handling both
- * arithmetic and string-like types, as well as the construction and
- * destruction behaviour of deferred reporters, ensuring that test outcomes are
- * accurately captured and reported.
+ * This header provides the inline and template implementations for the
+ * deferred reporters: the result accessor, the `operator<<` that
+ * accumulates the expectation messages (handling both arithmetic and
+ * string-like types), and the template constructor of `deferred_reporter`.
+ * The non-template constructor and the destructor of
+ * `deferred_reporter_base` are defined in `src/deferred-reporter.cpp`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -100,8 +98,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * If the argument is a `char`, it is appended directly as a character.
      * If the argument is of another arithmetic type, it is converted to a
-     * string using a fixed-size buffer and `std::to_chars` to avoid dynamic
-     * memory allocation. For all other types, the value is appended directly.
+     * string using a fixed-size buffer and `std::to_chars`, avoiding the
+     * temporary string that `std::to_string()` would allocate. For all
+     * other types (convertible to `std::string_view`), the value is
+     * appended directly.
      */
     template <class T>
       requires type_traits::printable<T>
@@ -154,8 +154,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * The expression is evaluated and its boolean result is passed to the base
      * class. The abort flag determines whether further test execution should
-     * be halted if the expectation fails. The source location provides
-     * contextual information for reporting purposes.
+     * be halted if the expectation fails. The expression is formatted into
+     * the expression formatter of the reporter (cleared first), and
+     * `has_expression_` records whether it is a framework comparator, whose
+     * text is to be displayed on failure.
      */
     template <class Expr_T>
     deferred_reporter::deferred_reporter (

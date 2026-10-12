@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ methods.
+ * @brief C++ source file with implementations for the µTest++ reflection
+ * utilities.
  *
  * @details
  * This source file contains the implementation of

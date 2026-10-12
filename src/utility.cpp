@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ methods.
+ * @brief C++ source file with implementations for the µTest++ utility
+ * functions.
  *
  * @details
  * This source file contains the implementations of the utility functions
@@ -100,29 +101,31 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__GNUC__)
 
     /**
- * @details
- * This function enables pattern-based string comparison for tests, supporting
- * both exact matches and wildcard patterns. The pattern may include `*` to
- * match any sequence of characters and `?` to match any single character. This
- * allows for flexible validation of string content in test assertions,
- * accommodating variable or partially known values.
- *
- * @warning The `*` wildcard is handled via recursion with a linear loop,
- *   giving $O(2^n)$ worst-case complexity in the number of `*` wildcards
- *   (e.g. a pattern such as `"a*a*a*b"` against a long string of `'a'`
- *   characters). For the typical short suite-name patterns used in a test
- *   framework this is not a concern, but callers should avoid patterns with
- *   many consecutive wildcards against long input strings.
- *
- * @par Examples
- *
- * @code{.cpp}
- * namespace mt = micro_os_plus::micro_test_plus;
- *
- * t.expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
- * t.expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
- * @endcode
- */
+     * @details
+     * This function enables pattern-based string comparison for tests,
+     * supporting both exact matches and wildcard patterns. The pattern may
+     * include `*` to match any sequence of characters (including an empty
+     * one) and `?` to match any single character. This allows for flexible
+     * validation of string content in test assertions, accommodating
+     * variable or partially known values.
+     *
+     * @warning The `*` wildcard is handled via recursion with a linear loop,
+     *   giving a worst-case complexity of `O(n^k)`, for an input of length
+     *   `n` and a pattern with `k` wildcards (e.g. a pattern such as
+     *   `"a*a*a*b"` against a long string of `'a'` characters). For the
+     *   typical short patterns used in a test framework this is not a
+     *   concern, but callers should avoid patterns with many wildcards
+     *   against long input strings.
+     *
+     * @par Examples
+     *
+     * @code{.cpp}
+     * namespace mt = micro_os_plus::micro_test_plus;
+     *
+     * t.expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
+     * t.expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
+     * @endcode
+     */
     [[nodiscard]] bool
     is_match (std::string_view input, std::string_view pattern)
     {

@@ -21,17 +21,19 @@
  *
  * @details
  * This header provides the two deferred-reporter classes used by `expect()`
- * and `assume()` to capture a test-expression result and format the outcome
+ * and `assume()` to capture a test-expression result and report the outcome
  * only when the reporter object is destroyed (i.e. at the semicolon
- * following the expression statement).
+ * following the expression statement), after the optional user message was
+ * appended.
  *
  * - `deferred_reporter_base` stores the boolean result, the source
  *   location, an optional user-supplied message (accumulated via
  *   `operator<<`), and a reference to the owning `subtest`. Its destructor
  *   calls the reporter to emit a pass or fail line.
- * - `deferred_reporter<Expr_T>` derives from the base and additionally
- *   stores the original expression object so that the reporter can print
- *   the actual and expected values on failure.
+ * - `deferred_reporter` derives from the base; its template constructor
+ *   formats the expression (with the actual operand values) into the
+ *   expression formatter of the reporter, so that it can be printed on
+ *   failure.
  *
  * Both classes live in the `detail` namespace and are not part of the
  * public API.
@@ -122,16 +124,27 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted copy constructor to prevent copying.
+       *
+       * @details
+       * Each instance reports exactly one check, from its destructor; a
+       * copy would report it twice.
        */
       deferred_reporter_base (const deferred_reporter_base&) = delete;
 
       /**
        * @brief Deleted move constructor to prevent moving.
+       *
+       * @details
+       * The instance is a temporary that lives only until the end of the
+       * expression statement.
        */
       deferred_reporter_base (deferred_reporter_base&&) = delete;
 
       /**
        * @brief Deleted copy assignment operator to prevent copying.
+       *
+       * @details
+       * Each instance reports exactly one check, from its destructor.
        */
       deferred_reporter_base&
       operator= (const deferred_reporter_base&)
@@ -139,6 +152,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
+       *
+       * @details
+       * Each instance reports exactly one check, from its destructor.
        */
       deferred_reporter_base&
       operator= (deferred_reporter_base&&)
@@ -166,7 +182,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Retrieves the result value.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @retval true  The reported condition was met.
        * @retval false The reported condition was not met.
        */
@@ -176,33 +192,54 @@ namespace micro_os_plus::micro_test_plus
     protected:
       /**
        * @brief Stores the result value of the report.
+       *
+       * @details
+       * The boolean value of the checked expression, computed by the
+       * constructor.
        */
       bool value_{};
 
       /**
        * @brief Indicates whether the reporting should abort further
        * processing.
+       *
+       * @details
+       * Set for `assume()` checks; a failure then terminates the test
+       * execution.
        */
       bool abort_ = false;
 
       /**
        * @brief Indicates whether the reporter has an associated expression.
+       *
+       * @details
+       * Set when the checked expression is a framework comparator, whose
+       * formatted text is displayed on failure.
        */
       bool has_expression_ = false;
 
       /**
        * @brief Stores the source location associated with the report.
+       *
+       * @details
+       * Displayed with failures, and used when aborting.
        */
       const reflection::source_location location_{};
 
       /**
        * @brief String to collect the expectation message passed via
        * `operator<<()`.
+       *
+       * @details
+       * Passed to the reporter by the destructor.
        */
       std::string deferred_output_{};
 
       /**
        * @brief Reference to the test case invoking this report.
+       *
+       * @details
+       * Provides access to the reporter and to the totals to be updated.
        */
       subtest& subtest_;
     };
@@ -217,11 +254,11 @@ namespace micro_os_plus::micro_test_plus
      * to provide deferred reporting functionality for a specific test
      * expression within the framework.
      *
-     * This class is responsible for capturing the expression under
-     * evaluation, the abort status, and the source location. It is intended
-     * exclusively for internal use and is implemented in the
-     * `include/micro-os-plus/micro-test-plus` folder to ensure a structured
-     * and modular codebase.
+     * Its template constructor evaluates the expression, records the abort
+     * status, and formats the expression into the expression formatter of
+     * the reporter. It is intended exclusively for internal use and is
+     * implemented in the `include/micro-os-plus/micro-test-plus` folder to
+     * ensure a structured and modular codebase.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -246,6 +283,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Destructor for the deferred reporter.
+       *
+       * @details
+       * Defaulted; the reporting is performed by the base class destructor.
        */
       ~deferred_reporter () = default;
     };

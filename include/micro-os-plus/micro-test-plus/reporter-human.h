@@ -21,15 +21,12 @@
  * reporter.
  *
  * @details
- * This header provides the declaration for `reporter_human`, the default
- * concrete implementation of the `reporter` abstract interface. It
- * formats and presents test results using `printf`-based standard output,
- * accumulating output in an internal string buffer and supporting
- * colour-coded diagnostics and multiple verbosity levels.
- *
- * Users who require custom output behaviour (e.g. redirecting to a serial
- * port on bare-metal targets) may derive a new class from `reporter`
- * instead of using this class.
+ * This header provides the declaration for `reporter_human`, a concrete
+ * implementation of the `reporter` abstract interface, selected with the
+ * `--reporter=human` command-line option (the default is TAP). It
+ * formats and presents test results in a human-readable form on the
+ * standard output, accumulating output in an internal string buffer and
+ * supporting colour-coded diagnostics and multiple verbosity levels.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -90,16 +87,17 @@ namespace micro_os_plus::micro_test_plus
    * @brief Human (standard output) implementation of `reporter`.
    *
    * @details
-   * `reporter_human` provides the default concrete implementation of the
-   * `reporter` abstract interface, formatting and presenting test results
-   * using `printf`-based output. It accumulates output in an internal string
+   * `reporter_human` provides a concrete implementation of the `reporter`
+   * abstract interface, formatting and presenting test results in a
+   * human-readable form. It accumulates output in an internal string
    * buffer and writes it to the standard output stream, supporting
-   * colour-coded diagnostics and multiple verbosity levels.
+   * colour-coded diagnostics (when the output is a terminal) and multiple
+   * verbosity levels.
    *
-   * Users who require custom output behaviour (e.g. redirecting to a serial
-   * port on bare-metal targets) may derive a new class from `reporter`
-   * and supply an instance via the `reporter` global pointer before calling
-   * `initialize()`.
+   * The reporter is created by the runner, as selected by the
+   * `--reporter` command-line option. A different output format requires
+   * a new class derived from `reporter`, and an extension of the runner
+   * to create it.
    *
    * All members and methods are defined within the
    * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
@@ -120,16 +118,28 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted copy constructor to prevent copying.
+     *
+     * @details
+     * The reporter owns the output buffer and the output file, which
+     * must not be shared.
      */
     reporter_human (const reporter_human&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
+     *
+     * @details
+     * The reporter is owned by the runner, through a pointer, and is
+     * never relocated.
      */
     reporter_human (reporter_human&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
+     *
+     * @details
+     * The reporter owns the output buffer and the output file, which
+     * must not be shared.
      */
     reporter_human&
     operator= (const reporter_human&)
@@ -137,6 +147,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
+     *
+     * @details
+     * The reporter is owned by the runner, through a pointer, and is
+     * never relocated.
      */
     reporter_human&
     operator= (reporter_human&&)
@@ -144,6 +158,9 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Destructor for the reporter_human class.
+     *
+     * @details
+     * The output file, if any, is closed by the base class destructor.
      */
     ~reporter_human () override;
 
@@ -227,7 +244,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Returns an empty comment prefix string.
      *
      * @par Parameters
-     *	 None.
+     *   None.
      * @return An empty string, as the human-readable format does not
      * use a comment prefix.
      */

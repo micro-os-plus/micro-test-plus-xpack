@@ -31,7 +31,8 @@
  * reside within the `micro_os_plus::micro_test_plus` namespace, ensuring
  * clear separation from user code and minimising the risk of naming conflicts.
  *
- * This header is located in the top-level `include/micro-os-plus` folder.
+ * This header is located in the `include/micro-os-plus/micro-test-plus`
+ * folder.
  * Users should include `"micro-os-plus/micro-test-plus.h"` rather than this
  * header directly.
  */
@@ -80,7 +81,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Callable_T The type of the callable object to be invoked.
    * @param func The callable object to check for exception throwing
    * behaviour.
-   * @return An output stream to write optional messages.
+   * @return A `detail::throws_` comparator object, holding the result, to be
+   * passed to `expect()` or `assume()`.
    */
   template <class Exception_T, class Callable_T>
   [[nodiscard]] constexpr auto
@@ -93,7 +95,8 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Callable_T The type of the callable object to be invoked.
    * @param func The callable object to check for exception throwing
    * behaviour.
-   * @return An output stream to write optional messages.
+   * @return A `detail::throws_` comparator object, holding the result, to be
+   * passed to `expect()` or `assume()`.
    */
   template <class Callable_T>
   [[nodiscard]] constexpr auto
@@ -104,8 +107,9 @@ namespace micro_os_plus::micro_test_plus
    * @brief Check if a callable does not throw an exception.
    *
    * @tparam Callable_T The type of the callable object to be invoked.
-   * @param func The callable object to check for exception safety.
-   * @return An output stream to write optional messages.
+   * @param func The callable object to check.
+   * @return A `detail::nothrow_` comparator object, holding the result, to be
+   * passed to `expect()` or `assume()`.
    */
   template <class Callable_T>
   [[nodiscard]] constexpr auto

@@ -17,15 +17,15 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ test suite.
+ * @brief C++ header file with declarations for the µTest++ test hierarchy.
  *
  * @details
- * This header provides the declarations for the test suite facilities used
- * within the µTest++ framework. It defines the interfaces for constructing,
- * registering, and managing test suites and their associated test cases. The
- * core classes, `test_node` and `suite`, offer mechanisms for
- * tracking test case execution, managing counters for successful and failed
- * checks, and supporting automated registration and discovery of test suites.
+ * This header provides the declarations for the test hierarchy used within
+ * the µTest++ framework: the internal `detail::test_node`,
+ * `detail::runnable_base`, and `detail::runnable` base classes, and the
+ * `subtest`, `suite`, `top_suite`, and `static_suite` classes. They offer
+ * mechanisms for running test cases, managing counters for successful and
+ * failed checks, and registering test suites with the runner.
  *
  * The design ensures that test suites are non-copyable and non-movable,
  * maintaining unique ownership and consistent state. Flexible support for
@@ -85,7 +85,7 @@
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
-// =============================================================================
+// ============================================================================
 
 namespace micro_os_plus::micro_test_plus
 {
@@ -132,18 +132,17 @@ namespace micro_os_plus::micro_test_plus
                            static_suite& static_suite_ref);
 
     /**
-     * @brief Base class for runners and runable tests.
+     * @brief Base class for runners and runnable tests.
      *
      * @details
-     * The `test_node` class provides the foundational interface for
-     * managing test within the µTest++ framework. It maintains counters
-     * for successful and failed checks, tracks test cases, and offers methods
-     * for marking the commencement and completion of test cases and suites.
+     * The `test_node` class provides the foundational interface for the
+     * nodes of the test tree within the µTest++ framework (the runner, the
+     * suites, and the subtests). It stores the node name and the
+     * `runner_totals` counters for successful and failed checks and for
+     * executed subtests.
      *
-     * This class ensures consistent state management and reporting for all
-     * derived classes. It also provides utility methods for querying the
-     * node's name, the number of successful and failed checks, the number of
-     * test cases, and the overall result of the node.
+     * The counters, and through them the overall result of the node, are
+     * accessible via `totals()`.
      *
      * All members and methods are defined within the
      * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation
@@ -163,16 +162,26 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted copy constructor to prevent copying.
+       *
+       * @details
+       * A copy would duplicate the counters and the owned children.
        */
       test_node (const test_node&) = delete;
 
       /**
        * @brief Deleted move constructor to prevent moving.
+       *
+       * @details
+       * Nodes are referred to by address (e.g. by their children and by
+       * the runner), so they must not be relocated.
        */
       test_node (test_node&&) = delete;
 
       /**
        * @brief Deleted copy assignment operator to prevent copying.
+       *
+       * @details
+       * A copy would duplicate the counters and the owned children.
        */
       test_node&
       operator= (const test_node&)
@@ -180,6 +189,10 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
+       *
+       * @details
+       * Nodes are referred to by address (e.g. by their children and by
+       * the runner), so they must not be relocated.
        */
       test_node&
       operator= (test_node&&)
@@ -187,6 +200,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Virtual destructor for the test_node class.
+       *
+       * @details
+       * Virtual, so that derived nodes are destroyed correctly.
        */
       virtual ~test_node ();
 
@@ -196,7 +212,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Gets the node name.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return A pointer to the null-terminated test node name.
        */
       [[nodiscard]] const char*
@@ -207,7 +223,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Gets the totals for the test.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return A reference to the runner_totals instance.
        */
       [[nodiscard]] runner_totals&
@@ -217,7 +233,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Gets the totals for the test (const overload).
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return A const reference to the runner_totals instance.
        */
       [[nodiscard]] const runner_totals&
@@ -233,7 +249,12 @@ namespace micro_os_plus::micro_test_plus
       const char* name_;
 
       /**
-       * @brief Totals for the test node, including nested cases.
+       * @brief Totals for the test node.
+       *
+       * @details
+       * For the runner and the suites, the totals include the checks of all
+       * their subtests; for a subtest, they include only its own checks,
+       * plus the number of nested subtests executed.
        */
       runner_totals totals_;
     };
@@ -274,16 +295,26 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted copy constructor to prevent copying.
+       *
+       * @details
+       * A copy would duplicate the counters and the owned children.
        */
       runnable_base (const runnable_base&) = delete;
 
       /**
        * @brief Deleted move constructor to prevent moving.
+       *
+       * @details
+       * Nodes are referred to by address (e.g. by their children and by
+       * the runner), so they must not be relocated.
        */
       runnable_base (runnable_base&&) = delete;
 
       /**
        * @brief Deleted copy assignment operator to prevent copying.
+       *
+       * @details
+       * A copy would duplicate the counters and the owned children.
        */
       runnable_base&
       operator= (const runnable_base&)
@@ -291,6 +322,10 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
+       *
+       * @details
+       * Nodes are referred to by address (e.g. by their children and by
+       * the runner), so they must not be relocated.
        */
       runnable_base&
       operator= (runnable_base&&)
@@ -298,6 +333,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Virtual destructor.
+       *
+       * @details
+       * Destroys the owned child subtests.
        */
       virtual ~runnable_base () override;
 
@@ -328,7 +366,8 @@ namespace micro_os_plus::micro_test_plus
       own_index (size_t index) noexcept;
 
       /**
-       * @brief Returns the index of the most recently created child subtest.
+       * @brief Returns the index of the most recent child test point
+       * (check or nested subtest).
        *
        * @par Parameters
        *   None.
@@ -338,7 +377,8 @@ namespace micro_os_plus::micro_test_plus
       current_subtest_index () const noexcept;
 
       /**
-       * @brief Increments and returns the child subtest sequential index.
+       * @brief Increments and returns the child test point sequential
+       * index.
        *
        * @par Parameters
        *   None.
@@ -361,7 +401,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Gets the test reporter associated with this test runnable.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return A reference to the test reporter.
        */
       [[nodiscard]] class reporter&
@@ -382,7 +422,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Gets the test runner associated with this test runnable.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return A reference to the test runner.
        */
       [[nodiscard]] class runner&
@@ -406,22 +446,29 @@ namespace micro_os_plus::micro_test_plus
     protected:
       /**
        * @brief Reference to the test runner that owns this object.
+       *
+       * @details
+       * Provides access to the reporter, and is used when aborting.
        */
       class runner& runner_;
 
       /**
        * @brief The test index, counting from 1.
+       *
+       * @details
+       * The position of this object within its parent, displayed by the
+       * TAP reporter in the `ok`/`not ok` lines.
        */
       size_t own_index_;
 
       /**
-       * @brief The subtest index, counting from 1.
+       * @brief The index of the child test points, counting from 1.
        *
        * @details
-       * This index is used for reporting and tracking the execution order of
-       * subtests within a suite, especially when nested subtests are
-       * involved. It is incremented for each subtest created, allowing for
-       * clear identification of subtests in reports and diagnostics.
+       * This index numbers the checks and the nested subtests of this
+       * object, in execution order, as required by the TAP `ok`/`not ok`
+       * lines. It is incremented for each check (by the deferred reporter)
+       * and for each nested subtest created.
        */
       size_t current_subtest_index_ = 0;
 
@@ -441,6 +488,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief CRTP base class factoring out callable storage, rule-of-five, and
      * `run()` logic shared by `subtest` and `suite`.
+     *
+     * @details
+     * The constructor stores the test body, binding any additional
+     * arguments, in a `std::function` that receives a reference to the
+     * derived class; the derived classes implement `run()`, which invokes
+     * it between the reporter notifications.
      *
      * @tparam Self_T The concrete derived class type (CRTP pattern). The
      * stored callable receives a `Self_T&` reference when the test is
@@ -471,16 +524,26 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted copy constructor to prevent copying.
+       *
+       * @details
+       * A copy would duplicate the counters and the owned children.
        */
       runnable (const runnable&) = delete;
 
       /**
        * @brief Deleted move constructor to prevent moving.
+       *
+       * @details
+       * Nodes are referred to by address (e.g. by their children and by
+       * the runner), so they must not be relocated.
        */
       runnable (runnable&&) = delete;
 
       /**
        * @brief Deleted copy assignment operator to prevent copying.
+       *
+       * @details
+       * A copy would duplicate the counters and the owned children.
        */
       runnable&
       operator= (const runnable&)
@@ -488,6 +551,10 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
+       *
+       * @details
+       * Nodes are referred to by address (e.g. by their children and by
+       * the runner), so they must not be relocated.
        */
       runnable&
       operator= (runnable&&)
@@ -495,6 +562,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Virtual destructor.
+       *
+       * @details
+       * Destroys the stored callable.
        */
       virtual ~runnable () override;
 
@@ -503,6 +573,11 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Runs the test function by invoking the stored callable with the
        * derived self instance.
+       *
+       * @details
+       * Implemented by `subtest` and `suite` (and overridden by
+       * `static_suite`), which surround the invocation with the reporter
+       * notifications.
        *
        * @par Parameters
        *   None.
@@ -516,6 +591,8 @@ namespace micro_os_plus::micro_test_plus
     protected:
       /**
        * @brief Callable storing the test body and any bound arguments.
+       *
+       * @details
        * Invoked with a reference to the derived `Self_T` instance.
        */
       std::function<void (Self_T&)> callable_;
@@ -575,16 +652,26 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted copy constructor to prevent copying.
+     *
+     * @details
+     * A copy would duplicate the counters and the owned children.
      */
     subtest (const subtest&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
+     *
+     * @details
+     * Nodes are referred to by address (e.g. by their children and by
+     * the runner), so they must not be relocated.
      */
     subtest (subtest&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
+     *
+     * @details
+     * A copy would duplicate the counters and the owned children.
      */
     subtest&
     operator= (const subtest&)
@@ -592,6 +679,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
+     *
+     * @details
+     * Nodes are referred to by address (e.g. by their children and by
+     * the runner), so they must not be relocated.
      */
     subtest&
     operator= (subtest&&)
@@ -599,13 +690,16 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Virtual destructor.
+     *
+     * @details
+     * Destroys the nested subtests, if any.
      */
     virtual ~subtest () override;
 
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Adds a test case to the suite.
+     * @brief Adds a nested test case to this subtest, and runs it.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -615,6 +709,8 @@ namespace micro_os_plus::micro_test_plus
      * invoked to perform the test.
      * @param arguments A possibly empty list of arguments to be passed to
      * the callable.
+     * @par Returns
+     *   Nothing.
      */
     template <typename Callable_T, typename... Args_T>
     void
@@ -629,8 +725,8 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Expr_T The type of the custom expression.
      *
      * @par Constraints
-     * Enabled only if `Expr_T` is derived from `detail::op` or
-     * is convertible to `bool` (enforced via a C++20 `requires` clause).
+     *   Enabled only if `Expr_T` is derived from `type_traits::op` or
+     *   is convertible to `bool` (enforced via a C++20 `requires` clause).
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.
@@ -649,8 +745,8 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Expr_T The type of the custom expression.
      *
      * @par Constraints
-     * Enabled only if `Expr_T` is derived from `detail::op` or
-     * is convertible to `bool` (enforced via a C++20 `requires` clause).
+     *   Enabled only if `Expr_T` is derived from `type_traits::op` or
+     *   is convertible to `bool` (enforced via a C++20 `requires` clause).
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.
@@ -688,11 +784,18 @@ namespace micro_os_plus::micro_test_plus
   protected:
     /**
      * @brief Reference to the parent suite that owns this subtest.
+     *
+     * @details
+     * The suite into which the totals of the nested subtests are
+     * accumulated.
      */
     suite& parent_suite_;
 
     /**
      * @brief The nesting depth of this subtest within the suite.
+     *
+     * @details
+     * 1 for the direct children of a suite; used for indentation.
      */
     size_t nesting_depth_;
   };
@@ -706,9 +809,10 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * `suite` represents a top-level named group of related test cases within
    * the µTest++ framework. It is created by calling `runner::suite()`, which
-   * constructs the object, stores it in the runner's collection, and runs it
-   * immediately. Each suite records its own timing information and propagates
-   * its results to the owning `runner`.
+   * constructs the object and stores it in the runner's collection; the
+   * stored suites are run later, sorted by name, by `runner::exit_code()`.
+   * Each suite records its own timing information and propagates its
+   * results to the owning `runner`.
    *
    * The body of a suite is supplied as a callable (typically a lambda) that
    * receives a `suite&` reference as its first argument. Inside the body,
@@ -742,16 +846,26 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted copy constructor to prevent copying.
+     *
+     * @details
+     * A copy would duplicate the counters and the owned children.
      */
     suite (const suite&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
+     *
+     * @details
+     * Nodes are referred to by address (e.g. by their children and by
+     * the runner), so they must not be relocated.
      */
     suite (suite&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
+     *
+     * @details
+     * A copy would duplicate the counters and the owned children.
      */
     suite&
     operator= (const suite&)
@@ -759,6 +873,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
+     *
+     * @details
+     * Nodes are referred to by address (e.g. by their children and by
+     * the runner), so they must not be relocated.
      */
     suite&
     operator= (suite&&)
@@ -766,13 +884,16 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Virtual destructor.
+     *
+     * @details
+     * Destroys the owned subtests.
      */
     virtual ~suite () override;
 
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Adds a test case to the suite.
+     * @brief Adds a test case to the suite, and runs it.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -782,6 +903,8 @@ namespace micro_os_plus::micro_test_plus
      * invoked to perform the test.
      * @param arguments A possibly empty list of arguments to be passed to
      * the callable.
+     * @par Returns
+     *   Nothing.
      */
     template <typename Callable_T, typename... Args_T>
     void
@@ -793,7 +916,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Gets the timings for this suite.
      *
      * @par Parameters
-     *	None.
+     *   None.
      * @return A reference to the timestamps instance.
      */
     [[nodiscard]] detail::timestamps&
@@ -803,7 +926,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Gets the timings for this suite (const overload).
      *
      * @par Parameters
-     *	None.
+     *   None.
      * @return A const reference to the timestamps instance.
      */
     [[nodiscard]] const detail::timestamps&
@@ -823,6 +946,9 @@ namespace micro_os_plus::micro_test_plus
   protected:
     /**
      * @brief Timing measurements for this suite's execution.
+     *
+     * @details
+     * Recorded by `run()`; displayed by the reporters.
      */
     detail::timestamps timings_;
   };
@@ -862,16 +988,26 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted copy constructor to prevent copying.
+     *
+     * @details
+     * A copy would duplicate the counters and the owned children.
      */
     top_suite (const top_suite&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
+     *
+     * @details
+     * Nodes are referred to by address (e.g. by their children and by
+     * the runner), so they must not be relocated.
      */
     top_suite (top_suite&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
+     *
+     * @details
+     * A copy would duplicate the counters and the owned children.
      */
     top_suite&
     operator= (const top_suite&)
@@ -879,6 +1015,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
+     *
+     * @details
+     * Nodes are referred to by address (e.g. by their children and by
+     * the runner), so they must not be relocated.
      */
     top_suite&
     operator= (top_suite&&)
@@ -886,13 +1026,19 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Virtual destructor.
+     *
+     * @details
+     * Destroys the owned subtests.
      */
     virtual ~top_suite () override;
 
     /**
      * @brief Sets the name of the top-level suite.
      *
-     * @param new_name The new name for the top-level suite.
+     * @param new_name The new name for the top-level suite; the string
+     * must outlive the suite.
+     * @par Returns
+     *   Nothing.
      */
     void
     name (const char* new_name) noexcept;
@@ -912,17 +1058,15 @@ namespace micro_os_plus::micro_test_plus
    * static-initialisation order.
    *
    * Upon construction, the suite automatically registers itself with the
-   * supplied `static_runner` by calling
-   * `static_runner::register_suite_()`. The runner defers execution of all
-   * registered static suites until `static_runner::run_suites_()` is invoked,
-   * which typically happens inside the implicit `main()` provided by the
-   * framework.
+   * supplied `static_runner`, via `detail::register_static_suite()`. The
+   * runner defers execution of all registered static suites until
+   * `static_runner::run_suites_()` is invoked by `runner::exit_code()`,
+   * after the dynamically registered suites.
    *
-   * In addition to the standard callable body inherited from `suite`, a
-   * `static_suite` may carry a second, statically-registered callable stored
-   * in `static_callable_`. The overridden `run()` method invokes both bodies
-   * in sequence, allowing the suite to integrate both dynamic and static
-   * registration patterns.
+   * The body is stored in `static_callable_`, which receives a
+   * `static_suite&` reference; the callable inherited from `suite` is left
+   * empty. The overridden `run()` method invokes `static_callable_`,
+   * surrounded by the reporter calls and the timing measurements.
    *
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
@@ -951,16 +1095,26 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted copy constructor to prevent copying.
+     *
+     * @details
+     * A copy would duplicate the counters and the owned children.
      */
     static_suite (const static_suite&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
+     *
+     * @details
+     * Nodes are referred to by address (e.g. by their children and by
+     * the runner), so they must not be relocated.
      */
     static_suite (static_suite&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
+     *
+     * @details
+     * A copy would duplicate the counters and the owned children.
      */
     static_suite&
     operator= (const static_suite&)
@@ -968,6 +1122,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
+     *
+     * @details
+     * Nodes are referred to by address (e.g. by their children and by
+     * the runner), so they must not be relocated.
      */
     static_suite&
     operator= (static_suite&&)
@@ -975,6 +1133,9 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Virtual destructor.
+     *
+     * @details
+     * Destroys the owned subtests and the stored callable.
      */
     virtual ~static_suite () override;
 
@@ -994,6 +1155,8 @@ namespace micro_os_plus::micro_test_plus
   protected:
     /**
      * @brief Callable storing the static suite body and any bound arguments.
+     *
+     * @details
      * Invoked with a reference to the concrete `static_suite` instance.
      */
     std::function<void (static_suite&)> static_callable_;

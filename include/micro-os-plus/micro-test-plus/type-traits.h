@@ -105,8 +105,8 @@ namespace micro_os_plus::micro_test_plus
    * design of the framework.
    *
    * All definitions within this namespace are implemented in the
-   * `include/micro-os-plus` folder to maintain a structured and modular
-   * codebase.
+   * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
+   * and modular codebase.
    */
   namespace type_traits
   {
@@ -159,6 +159,9 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Alias for the preserved type.
+       *
+       * @details
+       * Always `T`; the `Extra` parameters do not affect it.
        */
       using type = T;
     };
@@ -220,11 +223,17 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The return type of the function.
+       *
+       * @details
+       * Deduced from the function signature.
        */
       using result_type = R;
 
       /**
        * @brief Type list of all argument types.
+       *
+       * @details
+       * Deduced from the function signature, in declaration order.
        */
       using args = list<Args_T...>;
     };
@@ -253,11 +262,17 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The return type of the function.
+       *
+       * @details
+       * Deduced from the function signature.
        */
       using result_type = R;
 
       /**
        * @brief Type list of all argument types.
+       *
+       * @details
+       * Deduced from the function signature, in declaration order.
        */
       using args = list<Args_T...>;
     };
@@ -287,11 +302,17 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The return type of the member function.
+       *
+       * @details
+       * Deduced from the function signature.
        */
       using result_type = R;
 
       /**
        * @brief Type list of all argument types.
+       *
+       * @details
+       * Deduced from the function signature, in declaration order.
        */
       using args = list<Args_T...>;
     };
@@ -322,11 +343,17 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The return type of the const member function.
+       *
+       * @details
+       * Deduced from the function signature.
        */
       using result_type = R;
 
       /**
        * @brief Type list of all argument types.
+       *
+       * @details
+       * Deduced from the function signature, in declaration order.
        */
       using args = list<Args_T...>;
     };
@@ -424,9 +451,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `is_floating_point` concept is satisfied when `T` is one of the
-     * standard floating point types (`float`, `double`, or `long double`).
-     * It is the primary definition; `is_floating_point_v` is derived from
-     * it for use in `if constexpr` and non-concept contexts.
+     * standard floating point types (`float`, `double`, or `long double`),
+     * as determined by `std::is_floating_point_v`. It is used to constrain
+     * the floating point specialisation of `value<T>`.
      */
     template <class T>
     concept is_floating_point = std::is_floating_point_v<T>;
@@ -438,9 +465,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `is_op` concept is satisfied when `T` is derived from the
-     * `type_traits::op` base struct. It is the primary definition used
-     * throughout the framework; `is_op_v` is derived from it for use in
-     * `if constexpr` and boolean contexts.
+     * `type_traits::op` base struct. It is used throughout the framework,
+     * both as a constraint and as a boolean expression in `if constexpr`
+     * contexts.
      */
     template <class T>
     concept is_op = std::is_base_of_v<type_traits::op, T>;
@@ -506,8 +533,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `value_base_` struct template provides the `T value_{}` member,
      * an explicit `operator T()` conversion, and a `get()` accessor,
-     * shared by `genuine_integral_value`, `value<T>`, and the floating
-     * point specialisation `value<T>`.
+     * shared by `integral_constant`, `genuine_integral_value`, `value<T>`,
+     * and the floating point specialisation of `value<T>`.
      *
      * It inherits from `op` so that all derived types satisfy the `is_op`
      * concept without each struct needing to inherit from `op` directly.
@@ -519,6 +546,9 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The type of the stored value.
+       *
+       * @details
+       * Exposed for use by generic code that inspects wrapper types.
        */
       using value_type = T;
 
@@ -541,7 +571,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Getter for the stored value.
        *
        * @par Parameters
-       *	 None.
+       *   None.
        * @return The stored value.
        */
       [[nodiscard]] constexpr T
@@ -549,6 +579,10 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief The stored value.
+       *
+       * @details
+       * Public, so that derived wrappers and comparators can access it
+       * directly; value-initialised by default.
        */
       T value_{};
     };
@@ -576,6 +610,9 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The compile-time constant value.
+       *
+       * @details
+       * Equal to `N`; also available at run time via `get()`.
        */
       static constexpr auto value = N;
 
@@ -599,8 +636,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The floating point type (e.g., float, double).
      * @tparam N The integral part of the constant value.
-     * @tparam D The fractional part of the constant value.
-     * @tparam Size The number of decimal digits for the fractional part.
+     * @tparam D The fractional part of the constant value, scaled as
+     * returned by `math::den()` (e.g. 250 for `1.25`).
+     * @tparam Size The scale of `D`, as returned by `math::den_size()`,
+     * i.e. the number of decimal digits plus one (e.g. 3 for `1.25`).
      * @tparam P The sign of the value (1 for positive, -1 for negative).
      * Defaults to 1.
      *
@@ -629,6 +668,10 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief The type of the stored value.
+       *
+       * @details
+       * Provided directly, since this struct does not derive from
+       * `value_base_`.
        */
       using value_type = T;
 
@@ -636,7 +679,8 @@ namespace micro_os_plus::micro_test_plus
        * @brief The epsilon value used for floating point comparisons.
        *
        * @details
-       * Calculated as 1 divided by 10 raised to the power of (Size - 1).
+       * Calculated as 1 divided by 10 raised to the power of (Size - 1),
+       * i.e. one unit of the last decimal digit of the literal.
        */
       static constexpr auto epsilon = T (1) / math::pow (T (10), Size - 1);
 
@@ -661,7 +705,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Getter for the compile-time constant value.
        *
        * @par Parameters
-       *	 None.
+       *   None.
        * @return The compile-time constant as type `T`.
        */
       [[nodiscard]] constexpr T

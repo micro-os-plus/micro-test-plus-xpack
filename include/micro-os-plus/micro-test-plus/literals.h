@@ -38,9 +38,10 @@
  * recommended for new code, while the older `_i`, `_u8`, etc. aliases are
  * retained for backwards compatibility.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus::literals`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * The literal operators reside within the
+ * `micro_os_plus::micro_test_plus::literals` namespace, and the type wrappers
+ * within the `micro_os_plus::micro_test_plus` namespace, ensuring clear
+ * separation from user code and minimising the risk of naming conflicts.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -84,7 +85,7 @@
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
-// =============================================================================
+// ============================================================================
 
 namespace micro_os_plus::micro_test_plus
 {
@@ -105,15 +106,15 @@ namespace micro_os_plus::micro_test_plus
    * and ensuring that comparator functions and operators can display actual
    * values in test reports.
    *
-   * In addition to literals, the namespace includes wrappers for converting
-   * dynamic values and expressions to recognised types, both via deprecated
-   * aliases (such as `_i`, `_u8`) and the preferred `to_*` forms (such as
-   * `to_i`, `to_u8`).
+   * The complementary wrappers for converting dynamic values and
+   * expressions to recognised types, both the deprecated aliases (such as
+   * `_i`, `_u8`) and the preferred `to_*` forms (such as `to_i`, `to_u8`),
+   * are defined in the parent `micro_os_plus::micro_test_plus` namespace.
    *
    * All definitions within this namespace are intended to facilitate clear and
    * type-safe test expressions, and are implemented in the
-   * `include/micro-os-plus` folder to maintain a structured and modular
-   * codebase.
+   * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
+   * and modular codebase.
    */
   namespace literals
   {
@@ -475,12 +476,18 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `bool` values.
    *
+   * @details
+   * Equivalent to `to_b`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_b (since 3.2.0).
    */
   using _b = type_traits::value<bool>;
 
   /**
    * @brief Strongly-typed wrapper for `char` values.
+   *
+   * @details
+   * Equivalent to `to_c`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_c (since 3.2.0).
    */
@@ -489,12 +496,18 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `signed char` values.
    *
+   * @details
+   * Equivalent to `to_sc`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_sc (since 3.2.0).
    */
   using _sc = type_traits::value<signed char>;
 
   /**
    * @brief Strongly-typed wrapper for `short` values.
+   *
+   * @details
+   * Equivalent to `to_s`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_s (since 3.2.0).
    */
@@ -503,12 +516,18 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `int` values.
    *
+   * @details
+   * Equivalent to `to_i`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_i (since 3.2.0).
    */
   using _i = type_traits::value<int>;
 
   /**
    * @brief Strongly-typed wrapper for `long` values.
+   *
+   * @details
+   * Equivalent to `to_l`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_l (since 3.2.0).
    */
@@ -517,12 +536,18 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `long long` values.
    *
+   * @details
+   * Equivalent to `to_ll`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_ll (since 3.2.0).
    */
   using _ll = type_traits::value<long long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned` values.
+   *
+   * @details
+   * Equivalent to `to_u`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_u (since 3.2.0).
    */
@@ -531,12 +556,18 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `unsigned char` values.
    *
+   * @details
+   * Equivalent to `to_uc`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_uc (since 3.2.0).
    */
   using _uc = type_traits::value<unsigned char>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned short` values.
+   *
+   * @details
+   * Equivalent to `to_us`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_us (since 3.2.0).
    */
@@ -545,12 +576,18 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `unsigned long` values.
    *
+   * @details
+   * Equivalent to `to_ul`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_ul (since 3.2.0).
    */
   using _ul = type_traits::value<unsigned long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned long long` values.
+   *
+   * @details
+   * Equivalent to `to_ull`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_ull (since 3.2.0).
    */
@@ -559,12 +596,18 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `std::int8_t` values.
    *
+   * @details
+   * Equivalent to `to_i8`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_i8 (since 3.2.0).
    */
   using _i8 = type_traits::value<std::int8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int16_t` values.
+   *
+   * @details
+   * Equivalent to `to_i16`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_i16 (since 3.2.0).
    */
@@ -573,12 +616,18 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `std::int32_t` values.
    *
+   * @details
+   * Equivalent to `to_i32`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_i32 (since 3.2.0).
    */
   using _i32 = type_traits::value<std::int32_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int64_t` values.
+   *
+   * @details
+   * Equivalent to `to_i64`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_i64 (since 3.2.0).
    */
@@ -587,12 +636,18 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `std::uint8_t` values.
    *
+   * @details
+   * Equivalent to `to_u8`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_u8 (since 3.2.0).
    */
   using _u8 = type_traits::value<std::uint8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint16_t` values.
+   *
+   * @details
+   * Equivalent to `to_u16`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_u16 (since 3.2.0).
    */
@@ -601,6 +656,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `std::uint32_t` values.
    *
+   * @details
+   * Equivalent to `to_u32`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_u32 (since 3.2.0).
    */
   using _u32 = type_traits::value<std::uint32_t>;
@@ -608,24 +666,38 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `std::uint64_t` values.
    *
+   * @details
+   * Equivalent to `to_u64`; kept for backwards compatibility.
+   *
    * @deprecated Use @c to_u64 (since 3.2.0).
    */
   using _u64 = type_traits::value<std::uint64_t>;
 
   /**
-   * @brief Strongly-typed wrapper for `float` values. @deprecated
-   * Use @c to_f (since 3.2.0).
+   * @brief Strongly-typed wrapper for `float` values.
+   *
+   * @details
+   * Equivalent to `to_f`; kept for backwards compatibility.
+   *
+   * @deprecated Use @c to_f (since 3.2.0).
    */
   using _f = type_traits::value<float>;
 
   /**
-   * @brief Strongly-typed wrapper for `double` values. @deprecated
-   * Use @c to_d (since 3.2.0).
+   * @brief Strongly-typed wrapper for `double` values.
+   *
+   * @details
+   * Equivalent to `to_d`; kept for backwards compatibility.
+   *
+   * @deprecated Use @c to_d (since 3.2.0).
    */
   using _d = type_traits::value<double>;
 
   /**
    * @brief Strongly-typed wrapper for `long double` values.
+   *
+   * @details
+   * Equivalent to `to_ld`; kept for backwards compatibility.
    *
    * @deprecated Use @c to_ld (since 3.2.0).
    */
@@ -691,12 +763,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `bool` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `bool`.
+   *
    * @since 3.2.0
    */
   using to_b = type_traits::value<bool>;
 
   /**
    * @brief Strongly-typed wrapper for `char` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `char`.
    *
    * @since 3.2.0
    */
@@ -705,12 +785,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `signed char` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `signed char`.
+   *
    * @since 3.2.0
    */
   using to_sc = type_traits::value<signed char>;
 
   /**
    * @brief Strongly-typed wrapper for `short` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `short`.
    *
    * @since 3.2.0
    */
@@ -719,12 +807,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `int` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `int`.
+   *
    * @since 3.2.0
    */
   using to_i = type_traits::value<int>;
 
   /**
    * @brief Strongly-typed wrapper for `long` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `long`.
    *
    * @since 3.2.0
    */
@@ -733,12 +829,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `long long` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `long long`.
+   *
    * @since 3.2.0
    */
   using to_ll = type_traits::value<long long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned`.
    *
    * @since 3.2.0
    */
@@ -747,12 +851,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `unsigned char` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned char`.
+   *
    * @since 3.2.0
    */
   using to_uc = type_traits::value<unsigned char>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned short` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned short`.
    *
    * @since 3.2.0
    */
@@ -761,12 +873,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `unsigned long` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned long`.
+   *
    * @since 3.2.0
    */
   using to_ul = type_traits::value<unsigned long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned long long` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned long long`.
    *
    * @since 3.2.0
    */
@@ -775,12 +895,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `std::int8_t` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::int8_t`.
+   *
    * @since 3.2.0
    */
   using to_i8 = type_traits::value<std::int8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int16_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::int16_t`.
    *
    * @since 3.2.0
    */
@@ -789,12 +917,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `std::int32_t` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::int32_t`.
+   *
    * @since 3.2.0
    */
   using to_i32 = type_traits::value<std::int32_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int64_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::int64_t`.
    *
    * @since 3.2.0
    */
@@ -803,12 +939,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `std::uint8_t` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::uint8_t`.
+   *
    * @since 3.2.0
    */
   using to_u8 = type_traits::value<std::uint8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint16_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::uint16_t`.
    *
    * @since 3.2.0
    */
@@ -817,12 +961,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `std::uint32_t` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::uint32_t`.
+   *
    * @since 3.2.0
    */
   using to_u32 = type_traits::value<std::uint32_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint64_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::uint64_t`.
    *
    * @since 3.2.0
    */
@@ -831,6 +983,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `float` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `float`.
+   *
    * @since 3.2.0
    */
   using to_f = type_traits::value<float>;
@@ -838,12 +994,20 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Strongly-typed wrapper for `double` values.
    *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `double`.
+   *
    * @since 3.2.0
    */
   using to_d = type_traits::value<double>;
 
   /**
    * @brief Strongly-typed wrapper for `long double` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `long double`.
    *
    * @since 3.2.0
    */
@@ -874,12 +1038,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @code
    * MyType obj;
-   * auto wrapped = to_t<MyType>{obj}; // Explicitly treat obj as MyType for
-   * test comparison
+   * // Explicitly treat obj as MyType for test comparison.
+   * auto wrapped = to_t<MyType>{obj};
    * @endcode
-   *
-   * This file is intended solely for internal use within the framework and
-   * should not be included directly by user code.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */

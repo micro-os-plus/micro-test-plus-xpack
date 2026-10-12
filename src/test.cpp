@@ -17,22 +17,15 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ test suite
- * methods.
+ * @brief C++ source file with implementations for the µTest++ test
+ * hierarchy methods.
  *
  * @details
- * This source file contains the core implementations for the test suite
- * facilities of the µTest++ framework. It provides the logic for constructing,
- * registering, and managing test suites and their associated test cases. The
- * implementation covers initialisation and clean-up routines, execution of
- * test suites and test cases, tracking of successful and failed checks, and
- * integration with the test reporter for structured output.
- *
- * The design ensures that test suites are non-copyable and non-movable,
- * maintaining unique ownership and consistent state. Flexible support for
- * callable objects enables a wide range of test suite definitions,
- * facilitating expressive and maintainable test organisation across embedded
- * and general C++ projects.
+ * This source file contains the non-template implementations for the test
+ * hierarchy of the µTest++ framework: the constructors and destructors, the
+ * `run()` methods of the subtests and suites, which call the reporter
+ * before and after invoking the stored callable, and the registration of
+ * the child subtests, including the accumulation of their totals.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -108,12 +101,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * The constructor initialises a new instance of the `runnable_base` class
-     * with the specified name. It sets up the internal state required for
-     * managing test cases within the suite. If tracing is enabled, the
-     * function signature is output for diagnostic purposes. The default test
-     * suite does not require explicit registration, ensuring seamless
-     * integration within the µTest++ framework and supporting organised test
-     * management across all files and folders.
+     * with the specified name, runner reference, and own index; the child
+     * test point index starts at zero and the children collection is empty.
+     * If tracing is enabled, the function signature is output for
+     * diagnostic purposes.
      */
     runnable_base::runnable_base (const char* name, class runner& runner,
                                   size_t own_index)
@@ -126,10 +117,9 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * The destructor releases any resources associated with the
-     * `runnable_base` instance. It ensures that the test suite is properly
-     * cleaned up after execution, supporting robust and reliable test
-     * management across all files and folders within the µTest++ framework.
+     * The destructor destroys the owned child subtests, held by
+     * `std::unique_ptr` in `children_subtests_`. If tracing is enabled, the
+     * name is output for diagnostic purposes.
      */
     runnable_base::~runnable_base ()
     {
@@ -207,12 +197,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The destructor releases any resources associated with the
-   * `subtest` instance. If tracing is enabled, it outputs the
-   * function signature for diagnostic purposes. This ensures that the test
-   * suite is properly cleaned up after execution, supporting robust and
-   * reliable test management across all files and folders within the µTest++
-   * framework.
+   * No resources are owned directly by `subtest`; the nested subtests are
+   * destroyed by the base class. If tracing is enabled, the name is output
+   * for diagnostic purposes.
    */
   subtest::~subtest ()
   {

@@ -98,22 +98,35 @@ namespace micro_os_plus::micro_test_plus
     {
     public:
       /**
-       * @brief Default constructor. All counters are zero-initialised.
+       * @brief Default constructor.
+       *
+       * @details
+       * All counters start at zero, via their default member initialisers.
        */
       runner_totals () = default;
 
       /**
        * @brief Deleted copy constructor to prevent copying.
+       *
+       * @details
+       * The counters belong to a single node of the test tree; a copy would
+       * be updated independently and the results would diverge.
        */
       runner_totals (const runner_totals&) = delete;
 
       /**
        * @brief Deleted move constructor to prevent moving.
+       *
+       * @details
+       * The instance is a member of a node that is itself non-movable.
        */
       runner_totals (runner_totals&&) = delete;
 
       /**
        * @brief Deleted copy assignment operator to prevent copying.
+       *
+       * @details
+       * Totals are combined explicitly with `operator+=`, never replaced.
        */
       runner_totals&
       operator= (const runner_totals&)
@@ -121,6 +134,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
+       *
+       * @details
+       * Totals are combined explicitly with `operator+=`, never replaced.
        */
       runner_totals&
       operator= (runner_totals&&)
@@ -209,7 +225,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Checks whether all executed checks were successful.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @retval true  No checks failed.
        * @retval false At least one check failed.
        */
@@ -219,16 +235,27 @@ namespace micro_os_plus::micro_test_plus
     protected:
       /**
        * @brief Total number of successful checks.
+       *
+       * @details
+       * Incremented by `increment_successful_checks()` and by
+       * `operator+=`.
        */
       size_t successful_checks_ = 0;
 
       /**
        * @brief Total number of failed checks.
+       *
+       * @details
+       * Incremented by `increment_failed_checks()` and by `operator+=`.
        */
       size_t failed_checks_ = 0;
 
       /**
-       * @brief Total number of tests executed.
+       * @brief Total number of subtests executed.
+       *
+       * @details
+       * Incremented by `increment_executed_subtests()` and by
+       * `operator+=`.
        */
       size_t executed_subtests_ = 0;
     };

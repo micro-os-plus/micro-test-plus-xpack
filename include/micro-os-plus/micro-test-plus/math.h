@@ -99,8 +99,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * All definitions within this namespace are intended to facilitate
    * mathematical operations in a type-safe and efficient manner, and are
-   * implemented in the `include/micro-os-plus` folder to maintain a structured
-   * and modular codebase.
+   * implemented in the `include/micro-os-plus/micro-test-plus` folder to
+   * maintain a structured and modular codebase.
    */
   namespace math
   {
@@ -135,10 +135,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Generic exponentiation function to compute the power of a base
      * raised to an exponent.
      *
-     * @tparam T The type of the base value. Must support multiplication and
-     * construction from an integer.
-     * @tparam Exp_T The type of the exponent. Must support subtraction and
-     * comparison to zero.
+     * @tparam T The type of the base value. Must support multiplication
+     * assignment and construction from an integer.
+     * @tparam Exp_T The type of the exponent. Must be default-constructible
+     * (to zero), and support the `<` and prefix `++` operators.
      *
      * @param base The base value to be raised to the power of \p exp.
      * @param exp The exponent value.
@@ -156,7 +156,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the numeric value.
      *
      * @par Parameters
-     *	 None.
+     *   None.
      * @return The parsed integral value of type \c T.
      */
     template <class T, char... Cs>
@@ -164,30 +164,35 @@ namespace micro_os_plus::micro_test_plus
     num (void) -> T;
 
     /**
-     * @brief Computes the decimal part of a number represented as an array of
-     * characters.
+     * @brief Computes the scaled decimal part of a number represented as an
+     * array of characters.
      *
      * @tparam T The target integral type for the result.
-     * @tparam Cs The character pack representing the numeric value.
+     * @tparam Cs The character pack representing the numeric value; it must
+     * contain a decimal point.
      *
      * @par Parameters
-     *	 None.
-     * @return The parsed decimal part as an integral value of type \c T.
+     *   None.
+     * @return The digits after the decimal point, as an integral value of
+     * type \c T, multiplied by ten (e.g. 250 for `1.25`), to be divided by
+     * ten raised to the power returned by `den_size()`.
      */
     template <class T, char... Cs>
     [[nodiscard]] consteval auto
     den (void) -> T;
 
     /**
-     * @brief Computes the number of decimal places in a number represented as
-     * an array of characters.
+     * @brief Computes the scale of the decimal part of a number represented
+     * as an array of characters.
      *
      * @tparam T The integral type for the result.
-     * @tparam Cs The character pack representing the numeric value.
+     * @tparam Cs The character pack representing the numeric value; it must
+     * contain a decimal point.
      *
      * @par Parameters
-     *	 None.
-     * @return The number of decimal places as a value of type \c T.
+     *   None.
+     * @return The number of decimal places plus one (e.g. 3 for `1.25`), as
+     * a value of type \c T; it matches the scaling of `den()`.
      */
     template <class T, char... Cs>
     [[nodiscard]] consteval auto

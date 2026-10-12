@@ -85,20 +85,17 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * The destructor finalises the deferred reporting process for a test
-     * expression. If the evaluated expression is true, the reporter records a
-     * successful outcome along with any accumulated message. If the expression
-     * is false, the reporter records a failure, including the abort status,
-     * message, and source location for comprehensive reporting.
+     * expression, at the end of the expression statement, after all the
+     * user messages were appended. If the evaluated expression is true, the
+     * reporter records a successful outcome along with any accumulated
+     * message, and the successful checks counter of the subtest is
+     * incremented. If the expression is false, the reporter records a
+     * failure, including the abort status, message, expression, and source
+     * location, and the failed checks counter is incremented.
      *
-     * This mechanism ensures that all relevant information about the test
-     * outcome is captured and reported accurately when the deferred reporter
-     * goes out of scope.
-     *
-     * The destructor ensures that if an abort condition is set and the test
-     * expression has failed, the test output is flushed and the process is
-     * terminated. This mechanism guarantees immediate feedback and halts
-     * further execution upon critical test failures, aiding in rapid
-     * identification and resolution of issues during test runs.
+     * If an abort condition is set and the test expression has failed, the
+     * buffered test output is written to the console and flushed, and the
+     * process is terminated via `runner::abort()`.
      */
     deferred_reporter_base::~deferred_reporter_base ()
     {

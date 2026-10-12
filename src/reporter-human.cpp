@@ -22,10 +22,10 @@
  *
  * @details
  * This source file contains the implementations for `reporter_human`,
- * the default concrete implementation of the `reporter` abstract
- * interface. It formats and presents test results using `printf`-based
- * standard output, accumulating output in an internal string buffer and
- * supporting colour-coded diagnostics and multiple verbosity levels.
+ * the concrete implementation of the `reporter` abstract interface that
+ * presents test results in a human-readable form on the standard output,
+ * accumulating output in an internal string buffer and supporting
+ * colour-coded diagnostics and multiple verbosity levels.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -125,9 +125,8 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends spaces to the internal output buffer
-   * corresponding to `m.level` two-space indentation levels. It enables
-   * structured, readable nesting of test output across all test cases and
-   * folders by allowing `*this << indent(n) << "text"` chaining.
+   * corresponding to `m.level` four-space indentation levels, allowing
+   * `*this << indent(n) << "text"` chaining.
    */
   reporter_human&
   reporter_human::operator<< (detail::indent_t m)
@@ -142,9 +141,10 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * If verbosity is not silent, a blank line is printed to `stdout`
    * before the build-information block emitted by `write_info_()`. A
-   * fixed "µTest++ human report" heading is then written both to the
-   * output file (if open) and to `stdout`. The `add_empty_line_` flag
-   * is set so that subsequent suite output is visually separated.
+   * fixed "µTest++ human report" heading is then written to the output
+   * file (if open) and, unless verbosity is silent, to `stdout`. The
+   * `add_empty_line_` flag is set so that subsequent suite output is
+   * visually separated.
    */
   void
   reporter_human::begin_session ([[maybe_unused]] runner& runner)
@@ -175,12 +175,12 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Prints a summary line to `stdout` (and to the output file if open)
-   * showing the total number of successful checks, failed checks,
-   * executed test cases, and test suites, together with the elapsed
-   * time when timing data is available. The line is prefixed with a
-   * green `✓` tick on success or a red `✗` cross on failure, using
-   * ANSI colour codes when colour output is enabled.
+   * Unless verbosity is silent, prints a summary line to `stdout` (and to
+   * the output file if open) showing the total number of successful
+   * checks, failed checks, executed test cases, and test suites, together
+   * with the elapsed time when timing data is available. The line is
+   * prefixed with a green `✓` tick on success or a red `✗` cross on
+   * failure, using ANSI colour codes when colour output is enabled.
    */
   void
   reporter_human::end_session (runner& runner)
@@ -248,13 +248,11 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method marks the beginning of a test suite, ensuring that output is
-   * properly separated and clearly presented. If there is pending output, the
-   * stream is flushed and an empty line is added for clarity. For silent or
-   * quiet verbosity levels, output is suppressed. Otherwise, a message
-   * indicating the start of the test suite is displayed. This approach
-   * enhances the organisation and readability of test results across all test
-   * cases and folders.
+   * With normal or verbose verbosity, this method writes a `"• <name>"`
+   * line, marking the beginning of the test suite, to the output file (if
+   * open) and to `stdout`, preceded on `stdout` by an empty line when
+   * `add_empty_line_` is set. For silent or quiet verbosity levels, no
+   * output is produced.
    */
   void
   reporter_human::begin_suite (suite& suite)
@@ -282,15 +280,20 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method marks the end of a test suite, summarising the overall results
-   * and presenting them with appropriate formatting and colour coding. If the
-   * suite contains test cases and the verbosity is not set to quiet, an empty
-   * line is added for clarity. For suites with no failed checks and at least
-   * one successful check, a success message is displayed, including the number
-   * of checks and test cases. Otherwise, a failure message is shown, detailing
-   * the number of successful and failed checks, as well as the total number of
-   * test cases. The output is immediately flushed to ensure prompt and
-   * organised reporting across all test cases and folders.
+   * With normal or verbose verbosity, this method summarises the results of
+   * the test suite, with appropriate formatting and colour coding; for
+   * silent or quiet verbosity levels, no output is produced. An empty line
+   * is first added if the suite executed any test cases.
+   *
+   * For suites without failed checks, a `"✓ <name> - passed"` line is
+   * displayed, including the number of checks and test cases; the buffered
+   * check results are written to `stdout` only with verbose verbosity.
+   * Otherwise, a `"✗ <name> - FAILED"` line is shown, detailing the number
+   * of successful and failed checks and the number of test cases, preceded
+   * by the buffered check results. The buffered results are always written
+   * to the output file. The elapsed time is appended when available.
+   *
+   * Finally, the streams are flushed and the buffer is cleared.
    */
   void
   reporter_human::end_suite (suite& suite)
@@ -394,14 +397,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method marks the beginning of a test case, setting the internal state
-   * to indicate that test output is now within a test case context. If there
-   * is pending output and the verbosity level is set to verbose, it ensures
-   * that output is properly separated and displayed, adding an empty line if
-   * necessary. The output buffer is cleared and the stream is flushed to
-   * guarantee that all previous output is visible before the new test case
-   * begins. This approach enhances the clarity and organisation of test
-   * results across all test cases and folders.
+   * This method marks the beginning of a test case. The output buffer must
+   * be empty at this point; if it is not, its content is written to
+   * `stderr` and execution is aborted.
+   *
+   * A `"• <name>"` line, indented according to the nesting depth, is
+   * written to the output file (if open) and, with verbose verbosity, to
+   * `stdout`, preceded by an empty line when `add_empty_line_` is set.
    */
   void
   reporter_human::begin_subtest (subtest& subtest)
@@ -441,15 +443,19 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method marks the end of a test case, summarising its outcome and
-   * outputting the results with appropriate formatting and colour coding. If
-   * any checks have failed, a failure message is displayed, including the
-   * number of successful and failed checks. For passing test cases, a success
-   * message is shown with the total number of checks. The output is adjusted
-   * according to the verbosity level, and additional spacing is managed for
-   * clarity. The output buffer is cleared and the stream is flushed to ensure
-   * all results are immediately visible, supporting clear and organised
-   * reporting across all test cases and folders.
+   * With normal or verbose verbosity, this method summarises the outcome of
+   * the test case, with appropriate formatting and colour coding; for
+   * silent or quiet verbosity levels, no output is produced.
+   *
+   * For passing test cases, a `"✓ <name> - passed"` line is shown with the
+   * number of checks; the buffered check results are written to `stdout`
+   * only with verbose verbosity. For failing test cases, the buffered
+   * check results are always shown (preceded, with normal verbosity, by
+   * the test case name), followed by a `"✗ <name> - FAILED"` line with the
+   * number of successful and failed checks. The buffered results are
+   * always written to the output file.
+   *
+   * Finally, the streams are flushed and the buffer is cleared.
    */
   void
   reporter_human::end_subtest (subtest& subtest)
@@ -564,12 +570,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method outputs the prefix for a passing check result, applying the
-   * appropriate colour formatting and symbols to clearly indicate success. If
-   * the output occurs within a subtest, additional indentation is applied
-   * for readability. The prefix includes a tick symbol (`✓`) and, if provided,
-   * an associated message. Colour formatting is reset after the prefix to
-   * maintain consistent output style across all test cases and folders.
+   * This method outputs the prefix for a passing check result, indented one
+   * level deeper than the subtest. The prefix includes a tick symbol
+   * (`✓`), in the pass colour, and, if provided, the associated message.
+   * Colour formatting is reset immediately after the symbol.
    *
    * The prefix/suffix methods help shorten the code
    * generated by the template methods.
@@ -589,9 +593,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-    * Completes pass output by appending `endl` and flushing buffered
-    * content to the configured sinks.
-
+   * Completes the pass output by appending `endl`, which adds a line
+   * ending to the buffer and flushes the output streams.
+   *
    * The prefix/suffix methods help shorten the code
    * generated by the template methods.
    */
@@ -605,14 +609,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method outputs the prefix for a failing check result, applying the
-   * appropriate colour formatting and symbols to clearly indicate failure. If
-   * the output occurs within a subtest, additional indentation is applied
-   * for readability. The prefix includes a cross symbol (`✗`), an optional
-   * message, and the label "FAILED". The source location is appended in
-   * parentheses, showing the file or folder name and line number where the
-   * failure occurred. Colour formatting is reset after the prefix to maintain
-   * consistent output style across all test cases and folders.
+   * This method outputs the prefix for a failing check result, indented one
+   * level deeper than the subtest. The prefix includes a cross symbol
+   * (`✗`), an optional message, and the label "FAILED", both symbol and
+   * label in the fail colour. The source location (file name and line
+   * number) follows, after an opening parenthesis; when the failure has an
+   * expression, a comma separator is added, so that the expression follows
+   * inside the parentheses.
    */
   void
   reporter_human::output_fail_prefix_ (
@@ -655,11 +658,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This method outputs the suffix for a failing check result by closing the
-   * location information, appending an "aborted..." message if the check was
-   * aborted, and then adding a newline to the output. The output stream
-   * is flushed to ensure immediate visibility. This approach guarantees that
-   * failure results are clearly separated, promptly reported, and easily
-   * distinguishable across all test cases and folders.
+   * parenthesis, appending an "aborted..." message if the check was
+   * aborted, and then appending `endl`, which adds a line ending and
+   * flushes the output streams.
    */
   void
   reporter_human::output_fail_suffix_ (

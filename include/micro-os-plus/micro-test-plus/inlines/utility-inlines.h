@@ -68,9 +68,11 @@ namespace micro_os_plus::micro_test_plus
      * This function template facilitates string handling in tests by splitting
      * a string into a vector of substrings, using the specified delimiter.
      *
-     * The function iterates through the input string, identifying delimiter
-     * positions and extracting substrings between them. Each resulting
-     * substring is added to the output vector. This approach supports flexible
+     * The function iterates through the input string, identifying the
+     * positions of any of the delimiter characters (via `find_first_of()`)
+     * and extracting the substrings between them. Each non-empty substring
+     * is added to the output vector; empty substrings, such as those between
+     * consecutive delimiters, are omitted. This approach supports flexible
      * parsing of delimited data, which is particularly useful for validating
      * string processing logic in test cases.
      *

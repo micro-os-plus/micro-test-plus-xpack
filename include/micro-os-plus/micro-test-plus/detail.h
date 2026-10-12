@@ -102,8 +102,9 @@ namespace micro_os_plus::micro_test_plus
    * This approach enhances maintainability, mitigates the risk of naming
    * conflicts, and keeps the public API succinct.
    *
-   * The relevant header files are organised within the `include/micro-os-plus`
-   * folder to maintain a structured and modular codebase.
+   * The relevant header files are organised within the
+   * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
+   * and modular codebase.
    */
   namespace detail
   {
@@ -127,11 +128,18 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The expression under evaluation.
+       *
+       * @details
+       * Either a framework comparator (derived from `type_traits::op`) or a
+       * value convertible to `bool`.
        */
       Expr_T expr{};
 
       /**
        * @brief The source location associated with the assertion.
+       *
+       * @details
+       * Used by the reporter to show where a failed check is located.
        */
       reflection::source_location location{};
     };
@@ -182,7 +190,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Conversion operator to boolean.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return The result of the operation.
        */
       [[nodiscard]] constexpr
@@ -192,7 +200,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Retrieves the wrapped operand expression.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return The extracted operand value.
        */
       [[nodiscard]] constexpr auto
@@ -201,11 +209,18 @@ namespace micro_os_plus::micro_test_plus
     private:
       /**
        * @brief Stores the operand.
+       *
+       * @details
+       * Stored by value, so that it remains available for reporting after
+       * the original expression goes out of scope.
        */
       const T t_{};
 
       /**
        * @brief Stores the result of the operation.
+       *
+       * @details
+       * Computed once, by the derived comparator constructor.
        */
       const bool value_{};
     };
@@ -245,7 +260,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Conversion operator to boolean.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return The result of the comparison.
        */
       [[nodiscard]] constexpr
@@ -255,7 +270,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Retrieves the left-hand operand.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
@@ -265,7 +280,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Retrieves the right-hand operand.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
@@ -290,6 +305,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Stores the result of the comparison.
+       *
+       * @details
+       * Computed once, by the derived comparator constructor.
        */
       const bool value_{};
     };
@@ -322,7 +340,13 @@ namespace micro_os_plus::micro_test_plus
       constexpr eq_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
-    // Deduction guide.
+    /**
+     * @brief Deduction guide for the equality comparator.
+     *
+     * @details
+     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
+     * `eq_{ lhs, rhs }` can be written without explicit template arguments.
+     */
     template <typename Lhs_T, typename Rhs_T>
     eq_ (const Lhs_T&, const Rhs_T&) -> eq_<Lhs_T, Rhs_T>;
 
@@ -354,7 +378,13 @@ namespace micro_os_plus::micro_test_plus
       constexpr ne_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
-    // Deduction guide.
+    /**
+     * @brief Deduction guide for the non-equality comparator.
+     *
+     * @details
+     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
+     * `ne_{ lhs, rhs }` can be written without explicit template arguments.
+     */
     template <typename Lhs_T, typename Rhs_T>
     ne_ (const Lhs_T&, const Rhs_T&) -> ne_<Lhs_T, Rhs_T>;
 
@@ -386,7 +416,13 @@ namespace micro_os_plus::micro_test_plus
       constexpr gt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
-    // Deduction guide.
+    /**
+     * @brief Deduction guide for the greater than comparator.
+     *
+     * @details
+     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
+     * `gt_{ lhs, rhs }` can be written without explicit template arguments.
+     */
     template <typename Lhs_T, typename Rhs_T>
     gt_ (const Lhs_T&, const Rhs_T&) -> gt_<Lhs_T, Rhs_T>;
 
@@ -420,7 +456,13 @@ namespace micro_os_plus::micro_test_plus
       constexpr ge_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
-    // Deduction guide.
+    /**
+     * @brief Deduction guide for the greater than or equal comparator.
+     *
+     * @details
+     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
+     * `ge_{ lhs, rhs }` can be written without explicit template arguments.
+     */
     template <typename Lhs_T, typename Rhs_T>
     ge_ (const Lhs_T&, const Rhs_T&) -> ge_<Lhs_T, Rhs_T>;
 
@@ -452,7 +494,13 @@ namespace micro_os_plus::micro_test_plus
       constexpr lt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
-    // Deduction guide.
+    /**
+     * @brief Deduction guide for the less than comparator.
+     *
+     * @details
+     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
+     * `lt_{ lhs, rhs }` can be written without explicit template arguments.
+     */
     template <typename Lhs_T, typename Rhs_T>
     lt_ (const Lhs_T&, const Rhs_T&) -> lt_<Lhs_T, Rhs_T>;
 
@@ -486,7 +534,13 @@ namespace micro_os_plus::micro_test_plus
       constexpr le_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
-    // Deduction guide.
+    /**
+     * @brief Deduction guide for the less than or equal comparator.
+     *
+     * @details
+     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
+     * `le_{ lhs, rhs }` can be written without explicit template arguments.
+     */
     template <typename Lhs_T, typename Rhs_T>
     le_ (const Lhs_T&, const Rhs_T&) -> le_<Lhs_T, Rhs_T>;
 
@@ -519,7 +573,13 @@ namespace micro_os_plus::micro_test_plus
       constexpr and_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
-    // Deduction guide.
+    /**
+     * @brief Deduction guide for the logical AND comparator.
+     *
+     * @details
+     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
+     * `and_{ lhs, rhs }` can be written without explicit template arguments.
+     */
     template <typename Lhs_T, typename Rhs_T>
     and_ (const Lhs_T&, const Rhs_T&) -> and_<Lhs_T, Rhs_T>;
 
@@ -552,7 +612,13 @@ namespace micro_os_plus::micro_test_plus
       constexpr or_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
-    // Deduction guide.
+    /**
+     * @brief Deduction guide for the logical OR comparator.
+     *
+     * @details
+     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
+     * `or_{ lhs, rhs }` can be written without explicit template arguments.
+     */
     template <typename Lhs_T, typename Rhs_T>
     or_ (const Lhs_T&, const Rhs_T&) -> or_<Lhs_T, Rhs_T>;
 
@@ -582,7 +648,13 @@ namespace micro_os_plus::micro_test_plus
       explicit constexpr not_ (const T& t = {});
     };
 
-    // Deduction guide.
+    /**
+     * @brief Deduction guide for the logical NOT comparator.
+     *
+     * @details
+     * Deduces `T` from the constructor argument, so that `not_{ t }` can be
+     * written without an explicit template argument.
+     */
     template <typename T>
     not_ (const T&) -> not_<T>;
 
@@ -617,7 +689,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Conversion operator to boolean.
        *
        * @par Parameters
-       *	None.
+       *   None.
        * @return The result of the callable invocation.
        */
       [[nodiscard]] constexpr
@@ -626,6 +698,10 @@ namespace micro_os_plus::micro_test_plus
     private:
       /**
        * @brief Stores the result of the callable invocation.
+       *
+       * @details
+       * Computed once, by the derived operator constructor, which invokes
+       * the callable.
        */
       const bool value_{};
     };
@@ -637,8 +713,8 @@ namespace micro_os_plus::micro_test_plus
      * specific exception.
      *
      * @details
-     * This specialisation checks whether invoking the given callable throws
-     * an exception of the specified type. The check is performed at
+     * This primary template checks whether invoking the given callable
+     * throws an exception of the specified type. The check is performed at
      * construction time, with the result cached for reporting and
      * composition. Use this when a test must verify that an operation raises
      * an expected exception of a particular type.
@@ -700,7 +776,7 @@ namespace micro_os_plus::micro_test_plus
      * This struct checks whether invoking the given callable completes
      * without throwing an exception. The check is performed at construction
      * time, with the result cached for reporting and composition. Use this
-     * when a test must verify that an operation is exception-safe.
+     * when a test must verify that an operation does not throw.
      *
      * @tparam Callable_T The type of the callable object to be invoked.
      *
@@ -724,8 +800,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Appends the string representation of a numeric value to a
-     * buffer, using `std::to_chars` for allocation-free,
-     * locale-independent formatting.
+     * buffer, using locale-independent formatting.
      *
      * @tparam T The numeric type to format.
      * @param buffer The string to append to.

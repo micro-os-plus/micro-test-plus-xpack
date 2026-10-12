@@ -70,10 +70,11 @@ namespace micro_os_plus::micro_test_plus
    * of helper functions designed to support advanced string operations and
    * other common tasks within the µTest++ framework.
    *
-   * These utilities include functions for pattern matching—such as verifying
-   * whether a string matches a specified pattern—and for splitting strings
-   * into sub-strings based on delimiters. The implementations are efficient
-   * and suitable for both embedded and general C++ projects.
+   * These utilities include functions for extracting the file name from a
+   * path, for pattern matching (verifying whether a string matches a
+   * pattern with `*` and `?` wildcards), and for splitting strings into
+   * sub-strings based on delimiters. The implementations are efficient and
+   * suitable for both embedded and general C++ projects.
    *
    * By encapsulating these helper functions within a dedicated namespace, the
    * framework maintains clear code organisation and minimises naming
@@ -87,14 +88,15 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param path A null-terminated file path string.
      * @return A pointer to the first character of the file name within
-     * `path`, or `path` itself if no directory separator is found.
+     * `path`, or `path` itself if no path separator (`/` or `\`) is found.
      */
     [[nodiscard]] const char*
     extract_file_name (const char* path) noexcept;
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-utility-functions
-     * @brief Check if a string matches a pattern.
+     * @brief Check if a string matches a pattern with `*` and `?`
+     * wildcards.
      *
      * @param input The string view to be checked.
      * @param pattern The string view containing the pattern to match.
@@ -112,8 +114,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Delim_T Type of the delimiter.
      *
      * @param input Input string to split.
-     * @param delim Delimiter string.
-     * @return A vector containing the resulting sub-strings.
+     * @param delim Delimiter characters; any of them separates sub-strings.
+     * @return A vector containing the resulting sub-strings; empty
+     * sub-strings (e.g. between consecutive delimiters) are omitted.
      */
     template <class T, class Delim_T>
     [[nodiscard]] auto

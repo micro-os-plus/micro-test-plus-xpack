@@ -127,9 +127,9 @@ namespace micro_os_plus::micro_test_plus
      * base value to a given exponent, supporting any types that allow
      * multiplication.
      *
-     * The function iteratively multiplies the base by itself exponent times.
-     * If the exponent is zero, the function returns one (the multiplicative
-     * identity for the type).
+     * The function starts from one and multiplies the result by the base
+     * `exp` times. If the exponent is zero (or negative), the function
+     * returns one (the multiplicative identity for the type).
      *
      * This utility is designed to be lightweight and suitable for embedded
      * environments, where standard library alternatives may be unavailable,
@@ -192,7 +192,9 @@ namespace micro_os_plus::micro_test_plus
      * value, where all characters are either digits, a dot (`.`), or an
      * apostrophe (`'`). Parsing begins after the first dot, accumulating the
      * decimal digits as an integer value, each weighted by its decimal
-     * position.
+     * position. The weights are one order of magnitude higher than the
+     * digit positions (e.g. `1.25` yields 250), matching the scale returned
+     * by `den_size()`, so that `den() / 10^den_size()` gives the fraction.
      *
      * This utility is particularly useful for user-defined literals and other
      * compile-time constant expressions, enabling efficient and type-safe
@@ -227,8 +229,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * The function expects the character sequence to represent a numeric
      * value, where all characters are either digits, a dot (`.`), or an
-     * apostrophe (`'`). It locates the first dot and counts the number of
-     * digits that follow, returning the count as the number of decimal places.
+     * apostrophe (`'`). It locates the first dot and returns the number of
+     * characters that follow it plus one (e.g. 3 for `1.25`), which is the
+     * scale used by `den()`; the actual number of decimal places is one
+     * less.
      *
      * This utility is particularly useful for user-defined literals and other
      * compile-time constant expressions, enabling efficient and type-safe
@@ -262,9 +266,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This function template determines, at compile time, the number of
-     * decimal (fractional) digits present in a floating-point value, up to a
-     * maximum of seven digits of precision.
+     * This function template determines the number of decimal (fractional)
+     * digits present in a floating-point value, with a precision of about
+     * seven digits. Being `constexpr`, it can also be evaluated at compile
+     * time.
      *
      * The function repeatedly multiplies the input value by ten, incrementing
      * a counter until the fractional part is less than a defined precision

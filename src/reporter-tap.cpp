@@ -17,13 +17,15 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ TAP suite
+ * @brief C++ source file with implementations for the µTest++ TAP test
  * reporter methods.
  *
  * @details
  * This source file contains the implementations for `reporter_tap`,
  * a concrete implementation of the `reporter` abstract interface that
- * formats suite results according to the Test Anything Protocol (TAP).
+ * formats test results according to the Test Anything Protocol (TAP),
+ * version 14. It is the default reporter, also selected with the
+ * `--reporter=tap` command-line option.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -57,7 +59,7 @@
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
-// =============================================================================
+// ============================================================================
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
 
@@ -102,9 +104,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends spaces to the internal output buffer
-   * corresponding to `m.level` four-space indentation levels. It enables
-   * structured, readable nesting of suite output across all test cases and
-   * folders by allowing `*this << indent(n) << "text"` chaining.
+   * corresponding to `m.level` four-space indentation levels, allowing
+   * `*this << indent(n) << "text"` chaining; four spaces is the TAP 14
+   * subtest indentation.
    */
   reporter_tap&
   reporter_tap::operator<< (detail::indent_t m)
@@ -119,8 +121,9 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * If verbosity is not silent, emits a blank line to `stdout` and then
    * calls `write_info_()` to output build and environment information.
-   * The TAP version header `"TAP version 14"` is then written to both
-   * the output file (if open) and `stdout`. The `add_empty_line_` flag
+   * The TAP version header `"TAP version 14"` is then written to the
+   * output file (if open) and, unless verbosity is silent, to `stdout`.
+   * The `add_empty_line_` flag
    * is cleared so that the first suite header is not separated by an
    * extra blank line.
    */
@@ -156,9 +159,11 @@ namespace micro_os_plus::micro_test_plus
    * Emits the TAP plan line (`1..N`, where N is the total number of test
    * suites) followed by a comment line summarising successful checks,
    * failed checks, executed test cases, elapsed time, and suite count.
-   * Both lines are written to the output file when one is open. When
-   * verbosity is set to quiet, the plan is replaced by `1..0` to
-   * produce a valid skipped-test TAP document.
+   * Both lines are written to the output file when one is open, and,
+   * unless verbosity is silent, to `stdout`. When verbosity is set to
+   * quiet, the plan written to `stdout` is replaced by `1..0`, since no
+   * `ok`/`not ok` lines were displayed, producing a valid skipped-test TAP
+   * document.
    */
   void
   reporter_tap::end_session (runner& runner)
@@ -269,9 +274,11 @@ namespace micro_os_plus::micro_test_plus
    * Emits the TAP plan line for the suite's subtests followed by an
    * `ok`/`not ok` result line that includes the suite index, name,
    * pass/fail status, check counts, subtest count, and elapsed time.
-   * Any output accumulated in `buffer_` is flushed to the output file
-   * and, when verbosity is verbose or the suite failed, to `stdout`
-   * as well. The buffer is cleared on exit.
+   * Any output accumulated in `buffer_` is written to the output file
+   * and, with normal or verbose verbosity, when verbosity is verbose or
+   * the suite failed, to `stdout` as well; the plan and result lines are
+   * written to `stdout` only with normal or verbose verbosity. The buffer
+   * is cleared on exit.
    */
   void
   reporter_tap::end_suite (suite& suite)
@@ -428,11 +435,14 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Emits the TAP plan line for the subtest's checks followed by an
-   * `ok`/`not ok` result line that includes the subtest index, name,
-   * pass/fail status, and check counts. Any output accumulated in
-   * `buffer_` is flushed to the output file and, when verbosity is
-   * verbose or the subtest failed, to `stdout` as well. The buffer is
+   * Emits the TAP plan line for the subtest's checks and nested subtests,
+   * followed by an `ok`/`not ok` result line that includes the subtest
+   * index, name, pass/fail status, and check counts. Any output
+   * accumulated in `buffer_` is written to the output file and, with
+   * normal or verbose verbosity, when verbosity is verbose or the subtest
+   * failed, to `stdout` as well. With normal verbosity, for a passing
+   * subtest, the plan written to `stdout` counts only the nested subtests,
+   * since the individual check lines are not displayed. The buffer is
    * cleared on exit.
    */
   void
@@ -549,12 +559,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method outputs the prefix for a passing check result, applying the
-   * appropriate colour formatting and symbols to clearly indicate success. If
-   * the output occurs within a subtest, additional indentation is applied
-   * for readability. The prefix includes a tick symbol (`✓`) and, if provided,
-   * an associated message. Colour formatting is reset after the prefix to
-   * maintain consistent output style across all test cases and folders.
+   * This method outputs the prefix for a passing check result, as a TAP
+   * `"ok <n> - "` line, where `<n>` is the index of the check within the
+   * subtest, indented one level deeper than the subtest, followed by the
+   * message, if provided. No colours are used.
    *
    * The prefix/suffix methods help shorten the code
    * generated by the template methods.
@@ -573,9 +581,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-    * Completes pass output by appending `endl` and flushing buffered
-    * content to the configured sinks.
-
+   * Completes the pass output by appending `endl`, which adds a line
+   * ending to the buffer and flushes the output streams.
+   *
    * The prefix/suffix methods help shorten the code
    * generated by the template methods.
    */
@@ -589,12 +597,12 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method outputs the prefix for a failing check result, applying the
-   * appropriate colour formatting and symbols to clearly indicate failure. If
-   * the output occurs within a subtest, additional indentation is applied
-   * for readability. The prefix includes a cross symbol (`✗`), an optional
-   * message, and YAML diagnostics preamble. Colour formatting and line
-   * structure are arranged to conform to TAP14 diagnostics output.
+   * This method outputs the prefix for a failing check result, as a TAP
+   * `"not ok <n>"` line, indented one level deeper than the subtest,
+   * followed by the message, if provided. It then opens the TAP 14 YAML
+   * diagnostics block (`---`) and, when the failure has an expression,
+   * starts a `condition:` field, so that the expression follows on the
+   * same line. No colours are used.
    */
   void
   reporter_tap::output_fail_prefix_ (

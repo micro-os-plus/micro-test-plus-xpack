@@ -88,10 +88,10 @@ namespace micro_os_plus::micro_test_plus
    * the Test Anything Protocol (TAP). It accumulates output in an internal
    * string buffer and writes it to the standard output stream.
    *
-   * Users who require custom output behaviour (e.g. redirecting to a serial
-   * port on bare-metal targets) may derive a new class from `reporter`
-   * and supply an instance via the `reporter` global pointer before calling
-   * `initialize()`.
+   * The reporter is created by the runner, as selected by the
+   * `--reporter` command-line option. A different output format requires
+   * a new class derived from `reporter`, and an extension of the runner
+   * to create it.
    *
    * All members and methods are defined within the
    * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
@@ -112,16 +112,28 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted copy constructor to prevent copying.
+     *
+     * @details
+     * The reporter owns the output buffer and the output file, which
+     * must not be shared.
      */
     reporter_tap (const reporter_tap&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
+     *
+     * @details
+     * The reporter is owned by the runner, through a pointer, and is
+     * never relocated.
      */
     reporter_tap (reporter_tap&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
+     *
+     * @details
+     * The reporter owns the output buffer and the output file, which
+     * must not be shared.
      */
     reporter_tap&
     operator= (const reporter_tap&)
@@ -129,6 +141,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
+     *
+     * @details
+     * The reporter is owned by the runner, through a pointer, and is
+     * never relocated.
      */
     reporter_tap&
     operator= (reporter_tap&&)
@@ -136,6 +152,9 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Destructor for the reporter_tap class.
+     *
+     * @details
+     * The output file, if any, is closed by the base class destructor.
      */
     ~reporter_tap () override;
 
@@ -219,7 +238,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Returns the TAP comment prefix string `"# "`.
      *
      * @par Parameters
-     *	 None.
+     *   None.
      * @return The string `"# "`, used to prefix comment lines in TAP
      * output.
      */

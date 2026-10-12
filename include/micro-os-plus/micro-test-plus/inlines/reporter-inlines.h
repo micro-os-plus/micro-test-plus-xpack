@@ -22,17 +22,9 @@
  *
  * @details
  * This header provides the inline implementations for the test reporting
- * facilities used within the µTest++ framework. It defines the logic for
- * formatting and outputting test results, including operator overloads for
- * various value types, containers, and comparison expressions, as well as
- * structured output for logical and exception-related assertions.
- *
- * The implementations ensure that test outcomes are presented in a clear,
- * consistent, and expressive manner, supporting both value and pointer
- * semantics, and providing detailed diagnostics for both successful and failed
- * test cases. Special attention is given to formatting, colour highlighting,
- * and extensibility, enabling professional and readable test reports suitable
- * for embedded and general C++ development.
+ * facilities used within the µTest++ framework: the `indent()` manipulator
+ * factory, the `reporter` accessors, the colour selector, and the template
+ * output operators for pointers and arithmetic values.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -77,6 +69,10 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * Returns an `indent_t` aggregate initialised with `level`.
+   */
   inline detail::indent_t
   indent (size_t level)
   {
@@ -128,9 +124,9 @@ namespace micro_os_plus::micro_test_plus
    * This operator overload enables the `reporter` to output pointer
    * values in a consistent and readable format.
    *
-   * Null pointers are always rendered as the string `"nullptr"`,
-   * regardless of the platform, avoiding platform-specific behaviour
-   * such as `"(nil)"` on Linux/glibc or `"0x0"` on macOS.
+   * Null pointers are always rendered as the string `"0x0"`, regardless of
+   * the platform, avoiding platform-specific representations such as
+   * `"(nil)"` on Linux/glibc.
    *
    * Non-null pointers are formatted as a hexadecimal address using
    * `snprintf` with the `%p` format specifier. The resulting string is
@@ -176,13 +172,9 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * This template operator overload allows the `reporter` to output values of
    * any arithmetic type (integral or floating-point) in a consistent and
-   * readable format. The value is formatted using the `append_number_` helper
-   * function, which handles the conversion to a string representation with
-   * appropriate type suffixes where applicable (e.g., "f" for float, "l" for
-   * long double). This enables numeric values to be included in test reports
-   * and diagnostics in a clear and unambiguous manner, supporting the
-   * verification of test cases that involve arithmetic expressions and
-   * comparisons.
+   * readable format. The value is formatted using the
+   * `detail::append_number_()` helper, without a type suffix (unlike the
+   * `detail::expression_formatter` operators, which add one).
    */
   template <class T>
     requires std::is_arithmetic_v<T>

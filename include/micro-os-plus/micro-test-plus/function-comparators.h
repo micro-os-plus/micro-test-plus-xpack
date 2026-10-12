@@ -27,7 +27,7 @@
  * equality, non-equality, greater than, less than, greater than or equal,
  * and less than or equal. Additionally, it declares logical combinators such
  * as conjunction (`_and`), disjunction (`_or`), and negation (`_not`), as
- * well as a utility for safely removing constness from objects.
+ * well as a utility for removing constness from references (`mut`).
  *
  * These comparators and logical operators enable expressive and type-safe test
  * expectations and assertions, supporting both value and pointer semantics.
@@ -318,11 +318,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-utility-functions
-   * @brief Generic mutator to remove const qualification from any type.
+   * @brief Generic mutator to remove const qualification from a reference.
    *
    * @tparam T The type of the input object.
    *
-   * @param t The object from which to remove const qualification.
+   * @param t The object from which to remove const qualification; it must
+   * not be an object originally declared as `const`, if it is to be
+   * modified.
    * @return A non-const reference to the input object.
    */
   template <class T>

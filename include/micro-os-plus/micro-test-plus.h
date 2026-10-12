@@ -37,9 +37,9 @@
  * ensuring clear separation from user code and minimising the risk of naming
  * conflicts.
  *
- * This file is located in the top-level `include/micro-os-plus` directory; all
+ * This file is located in the top-level `include/micro-os-plus` folder; all
  * other header files are organised within the
- * `include/micro-os-plus/micro-test-plus` directory to maintain a structured
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
  * and modular codebase.
  *
  * To access the complete functionality of the µTest++ framework, users should

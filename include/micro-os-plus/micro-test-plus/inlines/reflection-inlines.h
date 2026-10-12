@@ -28,10 +28,10 @@
  * compiler-specific macros.
  *
  * The `source_location` implementation offers a lightweight,
- * constexpr-compatible alternative to `std::source_location`, enabling
- * enhanced diagnostics and reporting even in environments lacking C++20
- * support. The `type_name` utility leverages compiler intrinsics to obtain
- * human-readable type names for improved test output and debugging.
+ * constexpr-compatible alternative to `std::source_location`, used when the
+ * standard library does not provide it. The `type_name` utility parses the
+ * compiler-specific `__PRETTY_FUNCTION__` string to obtain human-readable
+ * type names for improved test output and debugging.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::reflection` namespace, ensuring clear
@@ -134,9 +134,13 @@ namespace micro_os_plus::micro_test_plus
      * - Clang formats the signature as `"... [T = <typename>]"`, so the type
      *   name lies between the last `'['` (skipping `"[T = "`) and the last
      *   `']'`.
-     * - GCC formats the signature as `"... [with T = <typename>]"`, so the
-     *   type name lies between the last `'='` (skipping the trailing space)
-     *   and the last `']'`.
+     * - GCC formats the signature as `"... [with T = <typename>]"` or, on
+     *   some versions, `"... [with T = <typename>; ...]"`, so the type name
+     *   starts after the first `"T = "` and ends at the following `';'` or,
+     *   if there is none, at the last `']'`.
+     *
+     * Other compilers (e.g. MSVC) are not supported and trigger a
+     * compile-time error.
      *
      * This approach is resilient to namespace renaming, namespace nesting
      * changes, and compiler format updates.

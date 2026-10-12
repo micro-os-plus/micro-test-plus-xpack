@@ -21,12 +21,12 @@
  * runner.
  *
  * @details
- * This header provides the inline template implementation for
- * `runner::suite()`, the method used to create and register a named test
- * suite with a `runner` instance. The method constructs a `suite` object
- * on the heap (wrapped in `std::unique_ptr`), transfers ownership to the
- * runner via `register_suite_()`, and the newly created suite runs
- * immediately as part of the registration process.
+ * This header provides the inline accessors of the `runner` class and the
+ * inline template implementation for `runner::suite()`, the method used to
+ * create and register a named test suite with a `runner` instance. The
+ * method constructs a `suite` object on the heap (wrapped in
+ * `std::unique_ptr`) and transfers ownership to the runner via
+ * `register_suite_()`; the suite is run later, by `exit_code()`.
  *
  * The implementation is separated into this inline header so that the
  * template definition is visible at every call site without cluttering the
@@ -73,7 +73,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns a reference to the reporter object stored in the unique pointer.
+   * Returns a reference to the reporter object stored in the unique pointer;
+   * valid only after `initialise()` has been called.
    */
   inline class reporter&
   runner::reporter (void) const noexcept
@@ -107,8 +108,8 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Constructs a `suite` object on the heap, binding the callable and any
    * additional arguments, then transfers ownership to the runner via
-   * `register_suite_()`. The suite runs immediately as part of the
-   * registration process.
+   * `register_suite_()`. The suite is not run here; all registered suites
+   * are run later, sorted by name, by `exit_code()`.
    */
   template <typename Callable_T, typename... Args_T>
   void

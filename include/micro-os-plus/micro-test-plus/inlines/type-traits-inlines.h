@@ -25,8 +25,10 @@
  * for all methods declared in the type-traits struct templates in
  * `type-traits.h`. It defines the bodies of the constructors, conversion
  * operators, and accessor methods for `value_base_`, `integral_constant`,
- * `floating_point_constant`, `genuine_integral_value`, and the `value<T>`
- * templates.
+ * `floating_point_constant`, `genuine_integral_value`, and the primary
+ * `value<T>` template. The constructors of the floating point
+ * specialisation of `value<T>` are defined in the class body, to work
+ * around a Clang 16 limitation with constrained partial specialisations.
  *
  * Separating the implementations from the declarations keeps `type-traits.h`
  * concise and focused on the interface, whilst grouping all method bodies

@@ -35,9 +35,11 @@
  * Specialised wrappers are provided for named boolean literals, supporting
  * enhanced expressiveness and type safety in test conditions.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus::literals`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * The literal operators reside within the
+ * `micro_os_plus::micro_test_plus::literals` namespace, and the constructors
+ * of the `_t` and `to_t` type wrappers within the
+ * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
+ * user code and minimising the risk of naming conflicts.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -122,7 +124,7 @@ namespace micro_os_plus::micro_test_plus
      * sequences at compile time.
      *
      * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_c` (for example, <tt>'A'_c</tt>) to
+     * constants to be suffixed with `_c` (for example, `65_c`) to
      * produce a type-safe value that integrates seamlessly with the µTest++
      * comparators and reporting mechanisms.
      */
@@ -529,6 +531,9 @@ namespace micro_os_plus::micro_test_plus
       {
         /**
          * @brief The underlying value type.
+         *
+         * @details
+         * The named literal behaves as a boolean value.
          */
         using value_type = bool;
 

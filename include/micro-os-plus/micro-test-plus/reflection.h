@@ -27,11 +27,11 @@
  * advanced diagnostics and reporting capabilities.
  *
  * The reflection utilities include a local implementation of `source_location`
- * for environments lacking C++20 standard support, as well as functions for
- * extracting concise type names using compiler-specific macros such as
- * `__PRETTY_FUNCTION__`. These facilities enable precise identification of
- * code locations and types in test reports, enhancing the clarity and
- * professionalism of diagnostic output.
+ * for standard libraries that do not yet provide `std::source_location`, a
+ * function to extract the file name from a path, and a function to extract
+ * concise type names using the compiler-specific `__PRETTY_FUNCTION__`
+ * macro. These facilities enable precise identification of code locations
+ * and types in test reports.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::reflection` namespace, ensuring clear
@@ -80,7 +80,7 @@
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
-// =============================================================================
+// ============================================================================
 
 namespace micro_os_plus::micro_test_plus
 {
@@ -95,13 +95,10 @@ namespace micro_os_plus::micro_test_plus
    * location information and type names at compile time, thereby supporting
    * advanced reporting and diagnostics within the µTest++ framework.
    *
-   * It includes a local implementation of `source_location` for environments
-   * lacking C++20 standard support, as well as utilities for extracting
-   * concise type names from compiler-specific macros such as
-   * `__PRETTY_FUNCTION__`.
-   *
-   * All definitions within this namespace are intended to facilitate advanced
-   * reflection and reporting capabilities.
+   * It includes a local implementation of `source_location` for standard
+   * libraries that do not yet provide `std::source_location`, as well as
+   * utilities for extracting file names from paths and concise type names
+   * from the compiler-specific `__PRETTY_FUNCTION__` macro.
    */
   namespace reflection
   {
@@ -115,12 +112,10 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `source_location` type provides access to source code location
      * details, such as file name and line number, for enhanced diagnostics and
-     * reporting within the µTest++ framework. When C++20 standard support is
-     * available, this alias refers to `std::source_location`; otherwise, a
-     * local implementation is used to ensure consistent functionality across
-     * all supported environments. This abstraction enables precise
-     * identification of code locations in test reports, supporting clear and
-     * professional diagnostics across all files and folders.
+     * reporting within the µTest++ framework. When the standard library
+     * provides it (`__cpp_lib_source_location` is defined), this alias refers
+     * to `std::source_location`; otherwise, a local implementation with the
+     * same interface subset is used.
      */
     using source_location = std::source_location;
 
@@ -132,7 +127,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * This class provides a lightweight, constexpr-compatible alternative to
-     * `std::source_location` for environments lacking C++20 standard support.
+     * `std::source_location`, used when the standard library does not
+     * provide it (`__cpp_lib_source_location` is not defined).
      *
      * It enables retrieval of the file name and line number at the point of
      * invocation, supporting enhanced diagnostics and reporting within the
@@ -170,7 +166,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Retrieve the file name associated with this source location.
        *
        * @par Parameters
-       *	 None.
+       *   None.
        * @return The file name as a constant character pointer.
        */
       [[nodiscard]] constexpr auto
@@ -180,7 +176,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Retrieve the line number associated with this source location.
        *
        * @par Parameters
-       *	 None.
+       *   None.
        * @return The line number as an unsigned integer.
        */
       [[nodiscard]] constexpr auto
@@ -189,11 +185,17 @@ namespace micro_os_plus::micro_test_plus
     private:
       /**
        * @brief The file name where the source location was captured.
+       *
+       * @details
+       * Defaults to `"unknown"` when no location was provided.
        */
       const char* file_{ "unknown" };
 
       /**
        * @brief The line number where the source location was captured.
+       *
+       * @details
+       * Defaults to zero when no location was provided.
        */
       unsigned int line_{};
     };
@@ -201,11 +203,10 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__cpp_lib_source_location)
 
     /**
-     * @brief Extract a short type or function name from a fully qualified
-     * name.
+     * @brief Extract the file name from a path.
      *
-     * @param name The fully qualified name as a C-string.
-     * @return A pointer to the short name within the input string.
+     * @param name The path, as a C-string.
+     * @return A pointer to the file name within the input string.
      */
     const char*
     short_name (const char* name) noexcept;
@@ -216,7 +217,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type whose name is to be extracted.
      *
      * @par Parameters
-     *	 None.
+     *   None.
      * @return A `std::string_view` containing the extracted type name.
      */
     template <class T>

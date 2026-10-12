@@ -60,7 +60,7 @@
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
-// =============================================================================
+// ============================================================================
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
 
@@ -73,9 +73,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Moves the supplied argument vector into `argvs_` and scans it for
-   * the `--verbose`, `--quiet`, `--silent`, and `--output-file=` options,
+   * the `--verbose`, `--quiet`, `--silent`, and `--output-file` options
+   * (the latter as `--output-file=<path>` or `--output-file <path>`),
    * adjusting `verbosity_` and optionally opening the output file. If
-   * the output file path is specified but the file cannot be opened, the
+   * the output file path is missing or the file cannot be opened, the
    * process exits with a diagnostic error message. The internal string
    * buffer is pre-allocated to reduce dynamic allocation overhead.
    */
@@ -179,11 +180,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `endl` function inserts a newline character into the specified
-   * `reporter` stream and flushes its output buffer. This operation
-   * ensures that each test output line is clearly separated and immediately
-   * visible, facilitating the readability and clarity of test results across
-   * all test cases and folders within the µTest++ framework.
+   * The `endl` function calls `reporter::endline()`, which appends a
+   * newline character to the buffer of the specified `reporter` and
+   * flushes the output streams.
    */
   reporter&
   endl (reporter& stream)
@@ -195,10 +194,8 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This method appends a newline character to the internal output buffer of
-   * the `reporter` and immediately flushes the stream. This ensures that
-   * each line of test output is clearly separated and promptly displayed,
-   * enhancing the readability and organisation of test results across all test
-   * cases and folders.
+   * the `reporter` and calls `flush()`. The buffer itself is written later,
+   * by the concrete reporters, at the end of each subtest or suite.
    */
   void
   reporter::endline (void)
@@ -309,13 +306,16 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Constructs and emits two informational lines: the first lists the
-   * programme name and any command-line arguments; the second identifies
-   * the compiler (Clang, GCC, or MSVC) together with the version string,
+   * Constructs and emits two informational lines, each prefixed by
+   * `get_comment_prefix()`: the first lists the program name (without
+   * the path) and any command-line arguments; the second identifies the
+   * compiler (Clang, GCC, or MSVC) together with the version string,
    * floating-point availability on bare-metal targets, exception support,
    * and any active debug or trace macros. Both lines are written to the
-   * output file when one is open, and to `stdout` unless verbosity is
-   * set to `silent`.
+   * output file when one is open, and to `stdout` when the verbosity is
+   * `normal` or `verbose`, except when both `MICRO_OS_PLUS_STARTUP_ENABLED`
+   * and `MICRO_OS_PLUS_DIAG_TRACE_ENABLED` are defined, since the startup
+   * code already displays this information.
    */
   void
   reporter::write_info_ (void)
@@ -352,8 +352,8 @@ namespace micro_os_plus::micro_test_plus
       }
 
     {
-      // Build the "Built with ..." line. For the output file the compiler
-      // version is omitted; for stdout it is appended via __VERSION__.
+      // Build the "Built with ..." line, including the compiler version
+      // (via __VERSION__); the same line goes to the file and to stdout.
       std::string line;
       line.reserve (256);
       line.append (get_comment_prefix ());
@@ -405,11 +405,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method flushes the output buffer of the `reporter` by
-   * synchronising it with the console and the output file. This
-   * guarantees that all pending test output is immediately written and
-   * visible, ensuring prompt and reliable reporting of test results across
-   * all test cases and folders.
+   * This method flushes the `stdout` stream and, if open, the output
+   * file, so that everything already written to them becomes visible. It
+   * does not write the contents of the internal buffer.
    */
   void
   reporter::flush (void)
@@ -428,9 +426,7 @@ namespace micro_os_plus::micro_test_plus
    * This operator overload enables manipulators, such as `endl`, to be used
    * with the `reporter` stream in a manner similar to standard C++
    * streams. When a manipulator function is passed, it is invoked with the
-   * current `reporter` instance, allowing for seamless integration of
-   * stream operations and improved readability of test output across all test
-   * cases and folders.
+   * current `reporter` instance.
    */
   reporter&
   reporter::operator<< (reporter& (*func) (reporter&))
@@ -444,9 +440,6 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * This operator overload appends the contents of the provided
    * `std::string_view` to the internal output buffer of the `reporter`.
-   * It enables seamless streaming of string data into the reporter, supporting
-   * clear and efficient formatting of test output across all test cases and
-   * folders.
    */
   reporter&
   reporter::operator<< (std::string_view sv)
@@ -458,9 +451,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the specified character to the internal
-   * output buffer of the `reporter`. It enables efficient streaming of
-   * individual characters into the reporter, supporting precise and flexible
-   * formatting of test output across all test cases and folders.
+   * output buffer of the `reporter`.
    */
   reporter&
   reporter::operator<< (char c)
@@ -472,10 +463,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the contents of the provided C-style string
-   * to the internal output buffer of the `reporter`. It enables efficient
-   * streaming of string literals and character arrays into the reporter,
-   * supporting clear and flexible formatting of test output across all test
-   * cases and folders.
+   * to the internal output buffer of the `reporter`.
    */
   reporter&
   reporter::operator<< (const char* s)
@@ -506,8 +494,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Reports a test failure, formatting the output with source location and,
-   * when `has_expression` is true, the pre-formatted expression string.
+   * Outputs a fail prefix (which includes the message and the source
+   * location), followed, when `has_expression` is true, by the
+   * pre-formatted expression string, and a fail suffix.
    */
   void
   reporter::fail (bool abort, std::string& message,

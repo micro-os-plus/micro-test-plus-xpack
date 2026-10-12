@@ -25,9 +25,10 @@
  * facilities of the µTest++ framework. It provides the logic for initialising
  * the test environment, registering and managing test suites, handling
  * command-line arguments, orchestrating test execution, and determining the
- * overall test result. The implementation supports automated discovery and
- * execution of test suites, flexible verbosity control, and robust mechanisms
- * for aborting test execution in critical scenarios.
+ * overall test result. The registered suites are executed sorted by name;
+ * the `static_runner` additionally executes the suites declared at
+ * namespace scope. A mechanism for aborting test execution in critical
+ * scenarios is also provided.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -152,11 +153,14 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Captures command-line arguments, selects the reporter implementation
-   * (`human` or `tap`), starts session timing, and emits the initial
-   * reporter notifications for the session and top suite.
+   * (`--reporter=human` or `--reporter=tap`, the default), starts session
+   * timing, and emits the initial reporter notifications for the session
+   * and top suite. An unknown reporter name, or a missing one, terminates
+   * the process with an error message.
    *
-   * If the top suite name is not provided, it attempts to derive a name from
-   * `argv[0]` or defaults to "default suite".
+   * If the top suite name is not provided, here or by the deprecated
+   * constructor, it is derived from the file name of `argv[0]`, without
+   * the extension, or defaults to "default suite".
    *
    * If tracing is enabled, the command-line arguments are
    * also logged for diagnostic purposes.

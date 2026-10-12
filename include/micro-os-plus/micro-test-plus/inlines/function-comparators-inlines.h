@@ -26,8 +26,8 @@
  * generic and pointer-based comparison operators, including equality,
  * non-equality, greater than, less than, and their respective logical
  * variants. Additionally, it implements logical combinators such as
- * conjunction (_and), disjunction (_or), and negation (_not), as well as a
- * utility for safely removing constness from objects.
+ * conjunction (`_and`), disjunction (`_or`), and negation (`_not`), as well
+ * as a utility for removing constness from references (`mut`).
  *
  * These comparators and logical operators enable expressive and type-safe test
  * expectations and assertions, supporting both value and pointer semantics.
@@ -315,11 +315,15 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `mut` function template provides a safe and generic mechanism to
-   * remove the `const` qualifier from any type. It returns a non-const
-   * reference to the input object, enabling modification of objects that were
-   * originally declared as `const`. This utility is particularly useful in
-   * testing scenarios where controlled mutation of test data is required.
+   * The `mut` function template provides a generic mechanism to remove the
+   * `const` qualifier from a reference, via `const_cast`. It returns a
+   * non-const reference to the input object, enabling modification of
+   * non-const objects accessed through a `const` reference. This utility is
+   * particularly useful in testing scenarios where controlled mutation of
+   * test data is required.
+   *
+   * @warning Modifying an object that was originally declared as `const`
+   * through the returned reference is undefined behaviour.
    */
   template <class T>
   constexpr auto

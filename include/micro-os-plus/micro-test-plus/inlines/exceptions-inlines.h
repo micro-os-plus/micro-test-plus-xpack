@@ -21,10 +21,10 @@
  * exceptions comparators.
  *
  * @details
- * This header provides the inline implementations for the exception comparator
- * templates used within the µTest++ framework.
- *
- * ...
+ * This header provides the inline implementations for the exception-checking
+ * function templates used within the µTest++ framework (`throws()` and
+ * `nothrow()`), which create the `detail::throws_` and `detail::nothrow_`
+ * comparator objects.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -71,10 +71,11 @@ namespace micro_os_plus::micro_test_plus
    * The `throws` function template verifies whether invoking the provided
    * callable object results in the throwing of a specific exception type
    * within the µTest++ framework. This is useful for testing error handling
-   * and exception safety in code under test.
+   * in code under test. Exceptions of other types are reported as failures.
    *
-   * The function returns an output stream, allowing optional messages to be
-   * appended to the test report for diagnostic purposes.
+   * The callable is invoked immediately, when the comparator is
+   * constructed; the result is reported when the comparator is passed to
+   * `expect()` or `assume()`, which also accept optional messages.
    */
   template <class Exception_T, class Callable_T>
   constexpr auto
@@ -87,11 +88,12 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * The `throws` function template verifies whether invoking the provided
    * callable object results in the throwing of any exception within the
-   * µTest++ framework. This is useful for testing general exception safety and
-   * ensuring that code under test properly signals error conditions.
+   * µTest++ framework. This is useful for ensuring that code under test
+   * properly signals error conditions.
    *
-   * The function returns an output stream, allowing optional messages to be
-   * appended to the test report for diagnostic purposes.
+   * The callable is invoked immediately, when the comparator is
+   * constructed; the result is reported when the comparator is passed to
+   * `expect()` or `assume()`, which also accept optional messages.
    */
   template <class Callable_T>
   constexpr auto
@@ -104,12 +106,12 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * The `nothrow` function template verifies whether invoking the provided
    * callable object does not result in the throwing of any exception within
-   * the µTest++ framework. This is useful for testing exception safety and
-   * ensuring that code under test does not unexpectedly signal error
-   * conditions.
+   * the µTest++ framework. This is useful for ensuring that code under test
+   * does not unexpectedly signal error conditions.
    *
-   * The function returns an output stream, allowing optional messages to be
-   * appended to the test report for diagnostic purposes.
+   * The callable is invoked immediately, when the comparator is
+   * constructed; the result is reported when the comparator is passed to
+   * `expect()` or `assume()`, which also accept optional messages.
    */
   template <class Callable_T>
   constexpr auto

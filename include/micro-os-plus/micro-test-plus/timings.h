@@ -22,17 +22,19 @@
  * time of test suites and test sessions within the µTest++ framework:
  *
  * - `timestamp` wraps a single `timespec` value and records one point in
- *   time. It is default-constructible and trivially copyable.
+ *   time. The default constructor reads the clock; the class is trivially
+ *   copyable.
  * - `timestamps` pairs a begin and an end `timestamp` (both stored as
  *   `std::optional<timestamp>`) and exposes methods for recording the
  *   start and finish of an operation, querying whether both timestamps are
  *   available, and computing the elapsed time in milliseconds and
  *   microseconds.
  *
- * Timing support relies on `clock_gettime(CLOCK_MONOTONIC_RAW, ...)` when
- * available; if the clock is not present (e.g. on bare-metal targets without
- * an RTC) the timestamps are simply omitted and no timing information is
- * reported.
+ * Timing support relies on `clock_gettime(CLOCK_MONOTONIC, ...)` on POSIX
+ * platforms and on `timespec_get(..., TIME_UTC)` on Windows. If no clock is
+ * available (e.g. on bare-metal targets without an RTC), the recorded
+ * values remain zero, `has_timestamps()` returns `false`, and no timing
+ * information is reported.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the
@@ -89,13 +91,13 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * `timestamp` stores one `timespec` sample obtained from the system clock.
-     * It is default-constructible (zero-initialises the `timespec`),
-     * copy-constructible, and move-constructible, so that it can be used
+     * The default constructor captures the current time; the class is
+     * copy-constructible and move-constructible, so that it can be used
      * efficiently in `std::optional<timestamp>` containers.
      *
-     * The `has_clock()` predicate allows callers to determine whether a
-     * real-time clock is available on the target platform before relying on
-     * the stored value.
+     * The `has_clock()` predicate allows callers to determine whether the
+     * stored value is a valid clock reading, since on targets without a
+     * clock the value remains zero.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -103,7 +105,11 @@ namespace micro_os_plus::micro_test_plus
     {
     public:
       /**
-       * @brief Default constructor. Zero-initialises the internal `timespec`.
+       * @brief Default constructor. Captures the current time.
+       *
+       * @details
+       * On targets without a clock, the internal `timespec` remains
+       * zero-initialised.
        */
       timestamp () noexcept;
 
@@ -120,16 +126,27 @@ namespace micro_os_plus::micro_test_plus
       // algorithms).
       /**
        * @brief Defaulted copy constructor.
+       *
+       * @details
+       * Copies the stored `timespec` value member-wise.
        */
       timestamp (const timestamp&) = default;
 
       /**
        * @brief Defaulted move constructor.
+       *
+       * @details
+       * Equivalent to a copy, since `timespec` is trivially copyable.
        */
       timestamp (timestamp&&) = default;
 
       /**
        * @brief Defaulted copy assignment operator.
+       *
+       * @details
+       * Copies the stored `timespec` value member-wise.
+       *
+       * @return Reference to this instance.
        */
       timestamp&
       operator= (const timestamp&)
@@ -137,6 +154,11 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Defaulted move assignment operator.
+       *
+       * @details
+       * Equivalent to a copy, since `timespec` is trivially copyable.
+       *
+       * @return Reference to this instance.
        */
       timestamp&
       operator= (timestamp&&)
@@ -144,15 +166,18 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Defaulted destructor.
+       *
+       * @details
+       * No resources are owned, so there is nothing to release.
        */
       ~timestamp () = default;
 
       /**
-       * @brief Returns true if a monotonic clock is available on this target.
+       * @brief Checks whether the stored value is a valid clock reading.
        *
        * @par Parameters
        *   None.
-       * @retval true  A real-time clock is available and timestamps are valid.
+       * @retval true  A clock is available and the stored value is valid.
        * @retval false No clock is available; timing data should be ignored.
        */
       bool
@@ -181,6 +206,10 @@ namespace micro_os_plus::micro_test_plus
     protected:
       /**
        * @brief The underlying `timespec` value.
+       *
+       * @details
+       * Zero-initialised, then set by the constructors; a zero value means
+       * that no clock reading is available.
        */
       timespec value_{};
     };
@@ -201,8 +230,8 @@ namespace micro_os_plus::micro_test_plus
      * 2. Call `timestamp_end()` immediately after it completes.
      * 3. Pass the elapsed values to the reporter.
      *
-     * If the platform does not provide a monotonic clock, the `std::optional`
-     * members remain empty and `has_timestamps()` returns `false`, so that the
+     * If the platform does not provide a clock, the recorded timestamps hold
+     * zero values and `has_timestamps()` returns `false`, so that the
      * reporter can skip timing output.
      *
      * The class is non-copyable and non-movable to prevent accidental sharing
@@ -214,22 +243,35 @@ namespace micro_os_plus::micro_test_plus
     {
     public:
       /**
-       * @brief Default constructor. Both timestamps are uninitialised.
+       * @brief Default constructor.
+       *
+       * @details
+       * Both optional timestamps are initially empty; they are set by
+       * `timestamp_begin()` and `timestamp_end()`.
        */
       timestamps () = default;
 
       /**
        * @brief Deleted copy constructor to prevent copying.
+       *
+       * @details
+       * The timing state belongs to a single test node.
        */
       timestamps (const timestamps&) = delete;
 
       /**
        * @brief Deleted move constructor to prevent moving.
+       *
+       * @details
+       * The instance is a member of a node that is itself non-movable.
        */
       timestamps (timestamps&&) = delete;
 
       /**
        * @brief Deleted copy assignment operator to prevent copying.
+       *
+       * @details
+       * The timing state belongs to a single test node.
        */
       timestamps&
       operator= (const timestamps&)
@@ -237,6 +279,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
+       *
+       * @details
+       * The instance is a member of a node that is itself non-movable.
        */
       timestamps&
       operator= (timestamps&&)
@@ -244,6 +289,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Defaulted destructor.
+       *
+       * @details
+       * No resources are owned, so there is nothing to release.
        */
       ~timestamps () = default;
 
@@ -330,6 +378,10 @@ namespace micro_os_plus::micro_test_plus
        * @param[out] milliseconds The elapsed time in whole milliseconds.
        * @param[out] microseconds The sub-millisecond remainder in
        * microseconds.
+       * @par Returns
+       *   Nothing.
+       *
+       * @pre `has_timestamps()` returns `true`.
        */
       void
       compute_elapsed_time (uint32_t& milliseconds,
@@ -337,12 +389,19 @@ namespace micro_os_plus::micro_test_plus
 
     protected:
       /**
-       * @brief The timestamp recorded at the beginning of the test suite.
+       * @brief The timestamp recorded at the beginning of the measured
+       * interval.
+       *
+       * @details
+       * Empty until `timestamp_begin()` is called; set only once.
        */
       std::optional<timestamp> begin_time_;
 
       /**
-       * @brief The timestamp recorded at the end of the test suite.
+       * @brief The timestamp recorded at the end of the measured interval.
+       *
+       * @details
+       * Empty until `timestamp_end()` is called; set only once.
        */
       std::optional<timestamp> end_time_;
     };

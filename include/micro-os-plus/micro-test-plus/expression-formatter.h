@@ -25,16 +25,17 @@
  * all value-formatting logic used by the µTest++ framework. The class owns
  * a `std::string` buffer and exposes `operator<<` overloads for every
  * standard arithmetic type, character type, string, pointer, container,
- * and framework expression type derived from `detail::op`.
+ * and framework expression type derived from `type_traits::op`.
  *
- * By consolidating the formatting operators and their shared `append_number_`
- * helper into a single class, the `reporter` is relieved of those
- * responsibilities, and `detail::deferred_reporter` can pre-format expression
- * text at construction time without requiring `reporter` or `subtest` to be
- * complete at that point.
+ * By consolidating the formatting operators into a single class (using the
+ * shared `detail::append_number_()` helper for numbers), the `reporter` is
+ * relieved of those responsibilities, and `detail::deferred_reporter` can
+ * pre-format expression text at construction time without requiring
+ * `reporter` or `subtest` to be complete at that point.
  *
- * Colour-code processing is intentionally excluded from this class; it
- * remains the responsibility of the owning `reporter`.
+ * The formatter shares the colour configuration of the owning `reporter`:
+ * comparator expressions are wrapped in pass/fail colour codes, which are
+ * empty strings unless the reporter enables colours.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the
@@ -104,10 +105,8 @@ namespace micro_os_plus::micro_test_plus
      * (typically red). The `none` member resets the colour to the terminal
      * default.
      *
-     * These colour codes enhance the clarity and professionalism of test
-     * reports by making it immediately apparent which tests have passed or
-     * failed, thereby improving the overall user experience when reviewing
-     * test results.
+     * By default all members are empty strings, so no escape sequences are
+     * emitted; reporters that support colours assign `colours_red_green`.
      *
      * @var colours::none
      * ANSI escape sequence to reset the terminal colour to default.
@@ -129,6 +128,14 @@ namespace micro_os_plus::micro_test_plus
           = ""; /**< @brief Terminal colour sequence for failing tests. */
     };
 
+    /**
+     * @brief Predefined colour set, with green for pass and red for fail.
+     *
+     * @details
+     * Assigned by reporters that output to a colour-capable terminal; the
+     * members are, in order, the reset, pass, and fail ANSI escape
+     * sequences.
+     */
     inline constexpr colours colours_red_green = {
       "\033[0m", /**< @brief Terminal colour reset sequence. */
       "\033[32m", /**< @brief Green colour sequence for passing tests. */
@@ -144,9 +151,9 @@ namespace micro_os_plus::micro_test_plus
      * `expression_formatter` owns a `std::string` buffer and provides
      * `operator<<` overloads for all standard arithmetic types, character
      * types, strings, pointers, containers, and framework expression types
-     * derived from `detail::op`.
+     * derived from `type_traits::op`.
      *
-     * The numeric overloads append a type suffix (e.g., `42u`, `3l`, `1.0f`)
+     * The numeric overloads append a type suffix (e.g., `42u`, `3l`, `1.5f`)
      * matching the conventions used in the existing reporter output, so that
      * the formatted text is identical whether produced by the reporter
      * directly or pre-formatted by a deferred reporter.
@@ -163,22 +170,31 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructor with colour configuration.
        *
        * @param colours Reference to a `colours` instance for output
-       * formatting.
+       * formatting; it must outlive the formatter.
        */
       expression_formatter (colours& colours) noexcept;
 
       /**
        * @brief Deleted copy constructor to prevent copying.
+       *
+       * @details
+       * The formatter is owned by a reporter and refers to its colours.
        */
       expression_formatter (const expression_formatter&) = delete;
 
       /**
        * @brief Deleted move constructor to prevent moving.
+       *
+       * @details
+       * The formatter is owned by a reporter and refers to its colours.
        */
       expression_formatter (expression_formatter&&) = delete;
 
       /**
        * @brief Deleted copy assignment operator to prevent copying.
+       *
+       * @details
+       * The formatter is owned by a reporter and refers to its colours.
        */
       expression_formatter&
       operator= (const expression_formatter&)
@@ -186,6 +202,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
+       *
+       * @details
+       * The formatter is owned by a reporter and refers to its colours.
        */
       expression_formatter&
       operator= (expression_formatter&&)
@@ -193,6 +212,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Default destructor.
+       *
+       * @details
+       * Releases the internal buffer; the referenced colours are not owned.
        */
       ~expression_formatter () = default;
 
@@ -419,7 +441,7 @@ namespace micro_os_plus::micro_test_plus
       operator<< (const T& t);
 
       // ----------------------------------------------------------------------
-      // Compound expression operator<< overloads (without colour).
+      // Compound expression operator<< overloads (with pass/fail colours).
 
       /**
        * @brief Formats an equality comparison as `lhs == rhs`.
@@ -645,11 +667,18 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief ANSI colour codes for output formatting.
+       *
+       * @details
+       * A reference to the colours of the owning reporter, so that later
+       * changes (e.g. enabling colours) are picked up automatically.
        */
       colours& colours_;
 
       /**
        * @brief The internal output buffer.
+       *
+       * @details
+       * Accumulates the formatted text; cleared with `clear()`.
        */
       std::string buffer_{};
     };

@@ -126,7 +126,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * A runner with no checks at all is considered successful, as it
+   * A node with no checks at all is considered successful, as it
    * did not fail any check.
    */
   inline bool

@@ -24,8 +24,9 @@
  * This header provides the out-of-line template and inline implementations
  * for all types declared in `detail.h`. It defines the bodies of the
  * generic getter, the unary and binary operator base class templates, all
- * relational and logical comparator constructors, and the callable operator
- * types (`throws_`, `nothrow_`).
+ * relational and logical comparator constructors, the callable operator
+ * types (`throws_`, `nothrow_`), and the `append_number_()` formatting
+ * helper.
  *
  * Separating the implementations from the declarations keeps `detail.h`
  * concise and focused on the interface, whilst grouping the complex
@@ -656,17 +657,21 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * The value is formatted into a local buffer, which is then appended
+     * to `buffer`.
+     *
      * For `long double`, a platform-specific path is chosen:
      * - On Windows and on platforms where `long double` has the same
-     *   storage width as `double` (e.g., ARM, RISC-V), the value is cast
+     *   storage width as `double` (e.g. 32-bit Arm), the value is cast
      *   to `double` and formatted with `std::to_chars`.
-     * - On x86-64 Linux/macOS with 80-bit extended precision, `snprintf`
-     *   with `%Lg` is used as a portable fallback because
-     *   `std::to_chars` for `long double` may be unavailable when linking
-     *   with `lld`.
+     * - On all other platforms (e.g. x86-64 Linux/macOS with 80-bit
+     *   extended precision, or AArch64 and RISC-V with 128-bit quad
+     *   precision), `snprintf` with `%Lg` is used as a portable fallback,
+     *   because `std::to_chars` for `long double` may be unavailable
+     *   (e.g. when linking with `lld`).
      *
      * For all other numeric types, `std::to_chars` is called directly,
-     * providing locale-independent, allocation-free formatting.
+     * providing locale-independent formatting.
      */
     template <class T>
       requires std::is_arithmetic_v<T>
@@ -682,17 +687,20 @@ namespace micro_os_plus::micro_test_plus
           // On Windows (all toolchains: MinGW, Clang, MSVC), the C runtime
           // does not handle the %Lg printf specifier correctly for 80-bit
           // long double, producing garbage output. On platforms where long
-          // double has the same width as double (ARM, RISC-V), the cast is
-          // lossless. In both cases, cast to double and use std::to_chars.
+          // double has the same width as double (e.g. 32-bit Arm), the cast
+          // is lossless. In both cases, cast to double and use
+          // std::to_chars.
           const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf),
                                                 static_cast<double> (v));
           if (ec == std::errc{})
             buffer.append (buf, ptr);
 #else
-          // On x86-64 Linux/macOS with 80-bit extended-precision long double,
-          // std::to_chars for long double may be unavailable (e.g., with lld).
+          // On other platforms (80-bit extended precision on x86-64,
+          // 128-bit quad precision on AArch64 and RISC-V), std::to_chars
+          // for long double may be unavailable (e.g., with lld).
           // Use snprintf as a portable fallback; %Lg is supported correctly
-          // by glibc and libc++ on these platforms.
+          // by the C libraries used on these platforms (e.g. glibc, the
+          // macOS libc, and newlib).
           snprintf (buf, sizeof (buf), "%Lg", v);
           buffer.append (buf);
 #endif // defined(_WIN32) || (defined(__SIZEOF_LONG_DOUBLE__) && __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)

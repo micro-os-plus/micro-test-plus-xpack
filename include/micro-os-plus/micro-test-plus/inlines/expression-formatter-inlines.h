@@ -29,10 +29,11 @@
  * `operator<<(genuine_integral_value<T>)`, and `operator<<(container)` —
  * are instantiated per concrete type at each call site.
  *
- * The `append_number_()` helper is also a template, selecting between a
- * `std::to_chars` path for standard numeric types and an `snprintf` fallback
- * for `long double` on platforms where `std::to_chars` lacks support for
- * 80-bit extended precision.
+ * The compound expression operators format comparator expressions and wrap
+ * them in the pass/fail colour codes of the owning reporter.
+ *
+ * Numbers are formatted with the `detail::append_number_()` helper, defined
+ * in `detail-inlines.h`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
@@ -75,8 +76,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Initializes the `colours_` reference with the provided `colours` instance.
-   * The internal buffer is default-initialized to an empty string.
+   * Initialises the `colours_` reference with the provided `colours`
+   * instance. The internal buffer is default-initialised to an empty string.
    */
   inline expression_formatter::expression_formatter (colours& colours) noexcept
       : colours_ (colours)
@@ -253,7 +254,7 @@ namespace micro_os_plus::micro_test_plus::detail
   }
 
   // --------------------------------------------------------------------------
-  // Compound expression operators (without colour codes).
+  // Compound expression operators (with pass/fail colour codes).
 
   /**
    * @details
@@ -439,8 +440,7 @@ namespace micro_os_plus::micro_test_plus::detail
    *
    * When invoked, the output highlights the `throws` qualifier along with the
    * specific exception type, making it immediately apparent which exception is
-   * expected. This enhances the readability and professionalism of test
-   * reports, and assists in the precise identification and debugging of
+   * expected, and assists in the precise identification and debugging of
    * exception-related test cases.
    */
   template <class Callable_T, class Exception_T>
@@ -460,8 +460,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * representation of the exception handling mechanism.
    *
    * When invoked, the output highlights the `throws` qualifier, making it
-   * immediately apparent when an expression is expected to throw, thereby
-   * improving the readability and professionalism of the test output.
+   * immediately apparent when an expression is expected to throw.
    */
   template <class Callable_T>
   expression_formatter&
@@ -473,13 +472,11 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This operator overload formats output for expressions that do not throw
-   * exceptions. It applies colour styling for clarity and ensures a structured
-   * and concise representation of exception safety within test reports.
+   * This operator overload formats output for expressions that are expected
+   * not to throw exceptions. It applies colour styling for clarity.
    *
    * The output highlights the `nothrow` qualifier, making it immediately
-   * apparent when an expression is guaranteed not to throw, thereby improving
-   * the readability and professionalism of the test output.
+   * apparent when an expression is expected not to throw.
    */
   template <class Callable_T>
   expression_formatter&

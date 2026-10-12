@@ -18,18 +18,19 @@
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++ test
- * suite.
+ * hierarchy.
  *
  * @details
- * This header provides the inline implementations for the test suite
- * facilities used within the µTest++ framework. It defines the logic for
- * constructing and registering test suites, including the binding of callable
- * objects and their arguments for flexible test suite definitions.
+ * This header provides the inline and template implementations for the test
+ * hierarchy used within the µTest++ framework: the accessors of the base
+ * classes, the constructors that bind the callable objects and their
+ * arguments, the `test()` methods that create and run subtests, and the
+ * `expect()` and `assume()` checks.
  *
- * The implementation ensures that each test suite is automatically registered
- * with the global test runner upon construction, enabling automated discovery
- * and execution of test suites. The use of `std::bind` allows for versatile
- * test suite initialisation with arbitrary callable types and arguments.
+ * When additional arguments are given, `std::bind` is used to pre-bind them,
+ * allowing versatile test initialisation with arbitrary callable types and
+ * arguments. A `static_suite` additionally registers itself with its
+ * `static_runner` upon construction.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, maintaining a clear separation from user code and minimising the
@@ -59,11 +60,18 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
-// Portable printf() length modifier for size_t values used in trace
-// messages. Clang's format checker on Windows (the "ms_printf" archetype)
-// rejects the standard 'z' modifier, even though the UCRT printf()
-// implementation supports it at run time, so the Microsoft-specific 'I'
-// modifier is used there instead.
+/**
+ * @def MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+ * @brief Portable `printf()` conversion for `size_t` values in trace
+ * messages.
+ *
+ * @details
+ * Clang's format checker on Windows (the "ms_printf" archetype) rejects the
+ * standard `z` modifier, even though the UCRT `printf()` implementation
+ * supports it at run time, so the Microsoft-specific `I` modifier is used
+ * there instead (`"Iu"`); elsewhere it is `"zu"`. Defined only when
+ * `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED` is defined.
+ */
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(_WIN32) && defined(__clang__) && !defined(__MINGW32__)
 #define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "Iu"
@@ -155,7 +163,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns the sequential index of the most recently created child subtest.
+     * Returns the sequential index of the most recent child test point
+     * (check or nested subtest).
      */
     inline size_t
     runnable_base::current_subtest_index () const noexcept
@@ -166,8 +175,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Each call to `test()` invokes this method before constructing the new
-     * `subtest`, so the index values form a strictly increasing, one-based
-     * sequence.
+     * `subtest`, and each check invokes it from the deferred reporter
+     * constructor, so the index values form a strictly increasing, one-based
+     * sequence of TAP test points.
      */
     inline size_t
     runnable_base::increment_subtest_index () noexcept
@@ -235,9 +245,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * No-op in production builds. When tracing is enabled via
-     * `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED`, emits a
-     * trace message identifying the instance being destroyed.
+     * Destroys the stored callable. When tracing is enabled, emits a trace
+     * message identifying the instance being destroyed.
      */
     template <typename Self_T>
     runnable<Self_T>::~runnable ()
@@ -254,8 +263,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Delegates to `runnable`, which binds the callable with
-   * its arguments.
+   * Delegates to `runnable`, which binds the callable with its arguments,
+   * and stores the parent suite and the nesting depth.
    */
   template <typename Callable_T, typename... Args_T>
   subtest::subtest (const char* name, class runner& runner,
@@ -276,9 +285,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Allocates a child `subtest` on the heap, incrementing the subtest index
-   * and deepening the nesting level by one relative to this subtest's depth,
-   * then transfers ownership to the framework via `after_subtest_create_()`.
+   * Allocates a child `subtest` on the heap, incrementing the test point
+   * index and deepening the nesting level by one relative to this subtest's
+   * depth, then transfers ownership to this subtest via
+   * `after_subtest_create_()`, which also runs it.
    */
   template <typename Callable_T, typename... Args_T>
   void
@@ -300,9 +310,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Constructs and returns a `deferred_reporter<Expr_T>` with `abort = false`.
-   * The reporter evaluates the condition and records a pass or fail when
-   * it is destroyed at the end of the expression statement.
+   * Constructs and returns a `detail::deferred_reporter` with
+   * `abort = false`. The reporter evaluates the condition when constructed,
+   * and records a pass or fail when it is destroyed, at the end of the
+   * expression statement.
    */
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
@@ -315,9 +326,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Constructs and returns a `deferred_reporter<Expr_T>` with `abort = true`.
-   * The reporter evaluates the condition, records a pass or fail when it is
-   * destroyed, and aborts execution if the condition is false.
+   * Constructs and returns a `detail::deferred_reporter` with
+   * `abort = true`. The reporter evaluates the condition when constructed,
+   * records a pass or fail when it is destroyed, and aborts execution if
+   * the condition is false.
    */
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
@@ -343,9 +355,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Delegates to `runnable`, which binds the callable with
-   * its arguments. After construction, the suite is registered with the
-   * static test runner.
+   * Delegates to `runnable`, which binds the callable with its arguments.
+   * The own index is initially 0; the runner assigns the final index
+   * before running the suite.
    */
   template <typename Callable_T, typename... Args_T>
   suite::suite (const char* name, class runner& runner, Callable_T&& callable,
@@ -369,28 +381,21 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `test` function template registers and executes a test case
-   * within the µTest++ framework. It accepts a descriptive name, a callable
-   * object (such as a lambda or function pointer), and an optional list of
-   * arguments to be passed to the callable. The test case is reported using
-   * the provided name, and its execution is managed by the framework's test
-   * runner.
+   * The `test` function template creates a test case (a `subtest` with
+   * nesting depth 1) and runs it immediately. It accepts a descriptive
+   * name, a callable object (such as a lambda or function pointer), and an
+   * optional list of arguments to be passed to the callable, after the
+   * leading `subtest&` reference. The test case is reported using the
+   * provided name.
    *
-   * Each test case typically involves evaluating a logical expression, such as
-   * comparing a computed result to an expected value. For C++ projects, it is
-   * also possible to verify whether evaluating an expression throws
-   * exceptions. Each test either succeeds or fails, and for expectations, the
-   * test runner maintains counts of successful and failed checks.
+   * Each test case typically involves evaluating logical expressions, such
+   * as comparing a computed result to an expected value, with `expect()` or
+   * `assume()`. When exceptions are enabled, it is also possible to verify
+   * whether evaluating an expression throws exceptions. Each check either
+   * succeeds or fails, and the suite totals count the successful and failed
+   * checks.
    *
-   * This function template enables flexible and expressive test case
-   * definitions, supporting both parameterised and non-parameterised tests. It
-   * is typically invoked at global scope or within test suite definitions to
-   * ensure automatic registration and execution.
-   *
-   * A test case is characterised by a name, a function that performs the
-   * checks, and optionally, arguments to be passed to that function. The
-   * implementation of `test` invokes the provided function with the given
-   * arguments and reports the results to the test runner.
+   * It is typically invoked within the body of a suite.
    *
    * @par Example
    *
@@ -444,7 +449,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Sets the name of the top-level suite.
+   * Stores the pointer; the string is not copied.
    *
    * Used internally by the runner to set the name of the top suite after
    * initialisation.
@@ -459,15 +464,15 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Delegates to `runnable`, which binds the callable with
-   * its arguments. After construction, the suite is registered with the
-   * static test runner.
+   * Delegates to `suite` with an empty callable, and stores the callable
+   * (binding its arguments, if any) in `static_callable_`. After
+   * construction, the suite is registered with the static test runner.
    */
   template <typename Callable_T, typename... Args_T>
   static_suite::static_suite (const char* name, static_runner& runner,
                               Callable_T&& callable, Args_T&&... arguments)
       // The nullptr passed to the base constructor is an optimisation to save
-      // some space, since this callble is not used by the static runner.
+      // some space, since this callable is not used by the static runner.
       : suite{ name, detail::to_runner (runner), nullptr }
   {
     if constexpr (sizeof...(arguments) == 0)
