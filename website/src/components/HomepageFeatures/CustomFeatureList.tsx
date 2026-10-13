@@ -37,7 +37,8 @@ export const FeatureList: FeatureItem[] = [
         its <b>small footprint</b> fits microcontrollers with limited
         memory. Results go to <code>stdout</code>, so <b>semihosting</b> or
         a serial port is sufficient. The same tests run on Cortex-M,
-        Cortex-A, and RISC-V devices, on QEMU, and on native hosts.
+        Cortex-A, and RISC-V devices, on QEMU, and on native POSIX and Windows 
+        hosts.
       </>
     ),
   },
