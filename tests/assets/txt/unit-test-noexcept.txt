@@ -76,7 +76,8 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     • Message values
         ✓ flag is true, not false
         ✓ int 42, char x, double 1.25
-    ✓ Message values - passed (2 checks)
+        ✓ null strings nullptr, nullptr, nullptr
+    ✓ Message values - passed (3 checks)
     • Floating-point tolerance
         ✓ 1.45 == 1.5_d
         ✓ not 1.45 < 1.5_d
@@ -90,7 +91,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ not 1.495 < approx (1.5, 0.01)
         ✓ 0.1f + 0.2f == approx (0.3f, 1e-6f)
     ✓ Floating-point tolerance - passed (11 checks)
-✗ Static top suite - FAILED (46 checks passed, 4 failed, in 19 test cases)
+✗ Static top suite - FAILED (47 checks passed, 4 failed, in 19 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -919,4 +920,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 412 checks passed, 330 failed, in 76 test cases, 12 test suites
+✗ Total: 413 checks passed, 330 failed, in 76 test cases, 12 test suites

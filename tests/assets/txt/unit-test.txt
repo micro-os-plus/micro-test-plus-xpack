@@ -76,7 +76,8 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Message values
         ✓ flag is true, not false
         ✓ int 42, char x, double 1.25
-    ✓ Message values - passed (2 checks)
+        ✓ null strings nullptr, nullptr, nullptr
+    ✓ Message values - passed (3 checks)
     • Floating-point tolerance
         ✓ 1.45 == 1.5_d
         ✓ not 1.45 < 1.5_d
@@ -90,7 +91,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ not 1.495 < approx (1.5, 0.01)
         ✓ 0.1f + 0.2f == approx (0.3f, 1e-6f)
     ✓ Floating-point tolerance - passed (11 checks)
-✗ Static top suite - FAILED (46 checks passed, 4 failed, in 19 test cases), time: 0.353 ms
+✗ Static top suite - FAILED (47 checks passed, 4 failed, in 19 test cases), time: 0.353 ms
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -948,4 +949,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases), time: 0.076 ms
-✗ Total: 417 checks passed, 336 failed, in 84 test cases, 13 test suites, time: 3.206 ms
+✗ Total: 418 checks passed, 336 failed, in 84 test cases, 13 test suites, time: 3.206 ms

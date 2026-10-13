@@ -103,8 +103,13 @@ namespace micro_os_plus::micro_test_plus
      * formatter, which uses a fixed-size buffer (avoiding the temporary
      * string that `std::to_string()` would allocate) and handles the
      * platforms where `std::to_chars()` is not available for
-     * `long double`. For all other types (convertible to
-     * `std::string_view`), the value is appended directly.
+     * `long double`. If it is `std::nullptr_t`, `"nullptr"` is appended.
+     * If it is a pointer (the `printable` concept admits only the pointers
+     * to `char`), the string is appended, or `"nullptr"` for a null
+     * pointer, as the expression formatter and the reporter do, since
+     * `std::string::append()` must not be called with a null pointer. For
+     * all other types (convertible to `std::string_view`), the value is
+     * appended directly.
      */
     template <class T>
       requires type_traits::printable<T>
@@ -122,6 +127,14 @@ namespace micro_os_plus::micro_test_plus
       else if constexpr (std::is_arithmetic_v<T>)
         {
           detail::append_number_ (deferred_output_, msg);
+        }
+      else if constexpr (std::is_null_pointer_v<T>)
+        {
+          deferred_output_.append ("nullptr");
+        }
+      else if constexpr (std::is_pointer_v<T>)
+        {
+          deferred_output_.append (msg != nullptr ? msg : "nullptr");
         }
       else
         {

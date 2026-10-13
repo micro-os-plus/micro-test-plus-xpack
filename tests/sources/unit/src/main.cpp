@@ -495,6 +495,13 @@ main (int argc, char* argv[])
                       << 1.25;
       local_counts.successful_checks++;
 
+      // Null C strings are written as `"nullptr"` (API-REVIEW.md #63).
+      char* null_string = nullptr;
+      const char* null_const_string = nullptr;
+      t.expect (true) << "null strings " << null_string << ", "
+                      << null_const_string << ", " << nullptr;
+      local_counts.successful_checks++;
+
       local_counts.executed_subtest++;
     });
 

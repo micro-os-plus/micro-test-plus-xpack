@@ -513,13 +513,17 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `printable` concept is satisfied when `T` is an arithmetic
-     * type or is implicitly convertible to `std::string_view`. It
-     * constrains the `operator<<` overload of `deferred_reporter_base`,
-     * ensuring that only types that can be meaningfully appended to the
-     * output message are accepted.
+     * type, `std::nullptr_t`, or is implicitly convertible to
+     * `std::string_view`. It constrains the `operator<<` overload of
+     * `deferred_reporter_base`, ensuring that only types that can be
+     * meaningfully appended to the output message are accepted.
+     *
+     * `std::nullptr_t` is listed explicitly since it is convertible to
+     * `std::string_view` in C++20, but not in C++23, where the
+     * corresponding constructor is deleted.
      */
     template <class T>
-    concept printable = std::is_arithmetic_v<T>
+    concept printable = std::is_arithmetic_v<T> or std::is_null_pointer_v<T>
                         or std::is_convertible_v<T, std::string_view>;
 
     // ------------------------------------------------------------------------
