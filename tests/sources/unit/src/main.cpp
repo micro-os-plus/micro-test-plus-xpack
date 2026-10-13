@@ -507,6 +507,46 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
+  // All six comparisons apply the tolerance of the floating-point literals
+  // and wrappers consistently: values within the tolerance are equal, and
+  // neither less nor greater; `approx()` makes the tolerance explicit
+  // (API-REVIEW.md #9).
+  ts.test ("Floating-point tolerance", [] (auto& t)
+    {
+      using namespace literals;
+
+      // `1.5_d` has a tolerance of 0.1, so 1.45 is equal to it.
+      t.expect (eq (1.45, 1.5_d)) << "1.45 == 1.5_d";
+      t.expect (_not (lt (1.45, 1.5_d))) << "not 1.45 < 1.5_d";
+      t.expect (le (1.45, 1.5_d)) << "1.45 <= 1.5_d";
+      t.expect (_not (gt (1.45, 1.5_d))) << "not 1.45 > 1.5_d";
+      t.expect (ge (1.45, 1.5_d)) << "1.45 >= 1.5_d";
+      t.expect (lt (1.3, 1.5_d)) << "1.3 < 1.5_d (outside the tolerance)";
+      local_counts.successful_checks += 6;
+
+      // An explicit tolerance of 0.01.
+      t.expect (ne (1.45, approx (1.5, 0.01))) << "1.45 != approx (1.5, 0.01)";
+      t.expect (lt (1.45, approx (1.5, 0.01))) << "1.45 < approx (1.5, 0.01)";
+      t.expect (eq (1.495, approx (1.5, 0.01)))
+          << "1.495 == approx (1.5, 0.01)";
+      t.expect (_not (lt (1.495, approx (1.5, 0.01))))
+          << "not 1.495 < approx (1.5, 0.01)";
+      t.expect (eq (0.1f + 0.2f, approx (0.3f, 1e-6f)))
+          << "0.1f + 0.2f == approx (0.3f, 1e-6f)";
+      local_counts.successful_checks += 5;
+
+      local_counts.executed_subtest++;
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_subtests ()
+               == local_counts.executed_subtest);
+
+  // --------------------------------------------------------------------------
+
   {
     detail::runner_totals fresh{};
     test_assert (fresh.was_successful ());

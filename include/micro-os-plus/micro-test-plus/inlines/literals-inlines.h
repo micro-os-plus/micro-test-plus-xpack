@@ -613,6 +613,21 @@ namespace micro_os_plus::micro_test_plus
   {
   }
 
+  /**
+   * @details
+   * Constructs the floating-point `type_traits::value<T>` with the given
+   * tolerance, instead of the one derived from the number of decimals of
+   * the value.
+   */
+  template <class T>
+    requires std::is_floating_point_v<T>
+  constexpr auto
+  approx (T value, std::type_identity_t<T> epsilon) noexcept
+      -> type_traits::value<T>
+  {
+    return type_traits::value<T>{ value, epsilon };
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 

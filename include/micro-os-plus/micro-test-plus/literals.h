@@ -72,6 +72,7 @@
 #include "math.h"
 
 #include <cstdint>
+#include <type_traits>
 
 // ----------------------------------------------------------------------------
 
@@ -1054,6 +1055,39 @@ namespace micro_os_plus::micro_test_plus
      */
     constexpr explicit to_t (const T& t);
   };
+
+  /**
+   * @ingroup micro-os-plus-micro-test-plus-literals
+   * @brief Wraps a floating-point value with an explicit comparison
+   * tolerance.
+   *
+   * @details
+   * The floating-point literals (`1.5_d`) and wrappers (`to_d{ 1.5 }`)
+   * compare with a tolerance derived from the number of decimals written
+   * (0.1 for `1.5`). `approx()` makes the tolerance explicit, independent
+   * of how the value is written. All six comparisons apply it: values
+   * whose difference is less than the tolerance are equal, and neither
+   * less nor greater. If both operands have a tolerance, the smaller one
+   * is used.
+   *
+   * @code{.cpp}
+   * t.expect (mt::eq (compute_float (), mt::approx (42.0f, 0.001f)));
+   * @endcode
+   *
+   * @tparam T The floating-point type of the value.
+   *
+   * @param value The expected value.
+   * @param epsilon The tolerance, converted to `T`.
+   * @return A `type_traits::value<T>` wrapper, recognised by the
+   * comparators and the operators.
+   *
+   * @since 5.1.0
+   */
+  template <class T>
+    requires std::is_floating_point_v<T>
+  [[nodiscard]] constexpr auto
+  approx (T value, std::type_identity_t<T> epsilon) noexcept
+      -> type_traits::value<T>;
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

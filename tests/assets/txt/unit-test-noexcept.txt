@@ -77,7 +77,20 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ flag is true, not false
         ✓ int 42, char x, double 1.25
     ✓ Message values - passed (2 checks)
-✗ Static top suite - FAILED (35 checks passed, 4 failed, in 18 test cases)
+    • Floating-point tolerance
+        ✓ 1.45 == 1.5_d
+        ✓ not 1.45 < 1.5_d
+        ✓ 1.45 <= 1.5_d
+        ✓ not 1.45 > 1.5_d
+        ✓ 1.45 >= 1.5_d
+        ✓ 1.3 < 1.5_d (outside the tolerance)
+        ✓ 1.45 != approx (1.5, 0.01)
+        ✓ 1.45 < approx (1.5, 0.01)
+        ✓ 1.495 == approx (1.5, 0.01)
+        ✓ not 1.495 < approx (1.5, 0.01)
+        ✓ 0.1f + 0.2f == approx (0.3f, 1e-6f)
+    ✓ Floating-point tolerance - passed (11 checks)
+✗ Static top suite - FAILED (46 checks passed, 4 failed, in 19 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -415,8 +428,8 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ptr1 > ptr2 FAILED (comparisons.cpp:504, 0x43fffaec > 0x43fffaec)
         ✗ ptr1 < ptr2 FAILED (comparisons.cpp:507, 0x43fffaec < 0x43fffaec)
         ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:510, 0x43fffaec == 0x43fffaf0)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:513, 0x40009908 != 0x40009908)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:516, 0x40009908 == 0x43fffaf0)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:513, 0x4000ae1c != 0x4000ae1c)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:516, 0x4000ae1c == 0x43fffaf0)
         ✗ pone >= ptwo FAILED (comparisons.cpp:528, 0x43fffaf8 >= 0x43fffafc)
         ✗ ptwo <= pone FAILED (comparisons.cpp:531, 0x43fffafc <= 0x43fffaf8)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
@@ -871,4 +884,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 378 checks passed, 328 failed, in 71 test cases, 11 test suites
+✗ Total: 389 checks passed, 328 failed, in 72 test cases, 11 test suites

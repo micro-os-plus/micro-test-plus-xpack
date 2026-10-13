@@ -15,6 +15,12 @@ and a decimal point, or a value that does not fit in the type of the
 literal (e.g. `300_u8`, or `-128_i8`, whose absolute value does not
 fit), is now a compilation error.
 
+The relational comparisons (`<`, `<=`, `>`, `>=`, `lt()`, `le()`, `gt()`,
+`ge()`) now apply the tolerance of the floating-point literals and
+wrappers, as `==` and `!=` already did: values within the tolerance are
+equal, so `1.45 < 1.5_d` is now false, and `1.45 <= 1.5_d` true. The new
+`mt::approx (value, epsilon)` sets the tolerance explicitly.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

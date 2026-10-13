@@ -184,6 +184,53 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * The tolerance is the smaller `epsilon` of the two operands, if both
+     * have one, otherwise the `epsilon` of the operand that has one. The
+     * operands are equal when the absolute value of their difference is
+     * less than the tolerance.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires (type_traits::has_epsilon<Lhs_T>
+                or type_traits::has_epsilon<Rhs_T>)
+    constexpr bool
+    within_tolerance_ (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wfloat-equal"
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
+#pragma clang diagnostic ignored "-Wpedantic"
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
+      const auto difference
+          = math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs));
+      if constexpr (type_traits::has_epsilon<Lhs_T>
+                    and type_traits::has_epsilon<Rhs_T>)
+        {
+          // If both values have precision, use the smallest one.
+          return difference < math::min_value (lhs.epsilon, rhs.epsilon);
+        }
+      else if constexpr (type_traits::has_epsilon<Lhs_T>)
+        {
+          return difference < lhs.epsilon;
+        }
+      else
+        {
+          return difference < rhs.epsilon;
+        }
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
      * Evaluates the equality of `lhs` and `rhs` inside an immediately
      * invoked lambda and passes the boolean result to the `binary_op_`
      * base class constructor. Supports types with static `value` members,
@@ -222,24 +269,10 @@ namespace micro_os_plus::micro_test_plus
             return Lhs_T::value == Rhs_T::value;
           }
         else if constexpr (type_traits::has_epsilon<Lhs_T>
-                           and type_traits::has_epsilon<Rhs_T>)
+                           or type_traits::has_epsilon<Rhs_T>)
           {
-            // If both values have precision, compare them using
-            // the smallest precision.
-            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
-                   < math::min_value (lhs.epsilon, rhs.epsilon);
-          }
-        else if constexpr (type_traits::has_epsilon<Lhs_T>)
-          {
-            // If only the left operand has precision, use it.
-            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
-                   < lhs.epsilon;
-          }
-        else if constexpr (type_traits::has_epsilon<Rhs_T>)
-          {
-            // If only the right operand has precision, use it.
-            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
-                   < rhs.epsilon;
+            // If any value has a precision, compare within the tolerance.
+            return detail::within_tolerance_ (lhs, rhs);
           }
         else
           {
@@ -291,20 +324,9 @@ namespace micro_os_plus::micro_test_plus
             return Lhs_T::value != Rhs_T::value;
           }
         else if constexpr (type_traits::has_epsilon<Lhs_T>
-                           and type_traits::has_epsilon<Rhs_T>)
+                           or type_traits::has_epsilon<Rhs_T>)
           {
-            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
-                   >= math::min_value (lhs.epsilon, rhs.epsilon);
-          }
-        else if constexpr (type_traits::has_epsilon<Lhs_T>)
-          {
-            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
-                   >= lhs.epsilon;
-          }
-        else if constexpr (type_traits::has_epsilon<Rhs_T>)
-          {
-            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
-                   >= rhs.epsilon;
+            return not detail::within_tolerance_ (lhs, rhs);
           }
         else
           {
@@ -324,8 +346,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Evaluates whether `lhs > rhs` inside an immediately invoked lambda
      * and passes the boolean result to the `binary_op_` base class
-     * constructor. Supports types with static `value` members and generic
-     * types.
+     * constructor. Supports types with static `value` members, types with
+     * an `epsilon` precision member (values within the tolerance are equal,
+     * as for `eq_`), and generic types.
      */
     template <class Lhs_T, class Rhs_T>
     constexpr gt_<Lhs_T, Rhs_T>::gt_ (const Lhs_T& lhs, const Rhs_T& rhs)
@@ -350,6 +373,13 @@ namespace micro_os_plus::micro_test_plus
           {
             return Lhs_T::value > Rhs_T::value;
           }
+        else if constexpr (type_traits::has_epsilon<Lhs_T>
+                           or type_traits::has_epsilon<Rhs_T>)
+          {
+            // Values within the tolerance are equal, not ordered.
+            return detail::unwrap_ (lhs) > detail::unwrap_ (rhs)
+                   and not detail::within_tolerance_ (lhs, rhs);
+          }
         else
           {
             return detail::unwrap_ (lhs) > detail::unwrap_ (rhs);
@@ -368,8 +398,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Evaluates whether `lhs >= rhs` inside an immediately invoked lambda
      * and passes the boolean result to the `binary_op_` base class
-     * constructor. Supports types with static `value` members and generic
-     * types.
+     * constructor. Supports types with static `value` members, types with
+     * an `epsilon` precision member (values within the tolerance are equal,
+     * as for `eq_`), and generic types.
      */
     template <class Lhs_T, class Rhs_T>
     constexpr ge_<Lhs_T, Rhs_T>::ge_ (const Lhs_T& lhs, const Rhs_T& rhs)
@@ -394,6 +425,13 @@ namespace micro_os_plus::micro_test_plus
           {
             return Lhs_T::value >= Rhs_T::value;
           }
+        else if constexpr (type_traits::has_epsilon<Lhs_T>
+                           or type_traits::has_epsilon<Rhs_T>)
+          {
+            // Values within the tolerance are equal.
+            return detail::unwrap_ (lhs) > detail::unwrap_ (rhs)
+                   or detail::within_tolerance_ (lhs, rhs);
+          }
         else
           {
             return detail::unwrap_ (lhs) >= detail::unwrap_ (rhs);
@@ -412,8 +450,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Evaluates whether `lhs < rhs` inside an immediately invoked lambda
      * and passes the boolean result to the `binary_op_` base class
-     * constructor. Supports types with static `value` members and generic
-     * types.
+     * constructor. Supports types with static `value` members, types with
+     * an `epsilon` precision member (values within the tolerance are equal,
+     * as for `eq_`), and generic types.
      */
     template <class Lhs_T, class Rhs_T>
     constexpr lt_<Lhs_T, Rhs_T>::lt_ (const Lhs_T& lhs, const Rhs_T& rhs)
@@ -438,6 +477,13 @@ namespace micro_os_plus::micro_test_plus
           {
             return Lhs_T::value < Rhs_T::value;
           }
+        else if constexpr (type_traits::has_epsilon<Lhs_T>
+                           or type_traits::has_epsilon<Rhs_T>)
+          {
+            // Values within the tolerance are equal, not ordered.
+            return detail::unwrap_ (lhs) < detail::unwrap_ (rhs)
+                   and not detail::within_tolerance_ (lhs, rhs);
+          }
         else
           {
             return detail::unwrap_ (lhs) < detail::unwrap_ (rhs);
@@ -456,8 +502,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Evaluates whether `lhs <= rhs` inside an immediately invoked lambda
      * and passes the boolean result to the `binary_op_` base class
-     * constructor. Supports types with static `value` members and generic
-     * types.
+     * constructor. Supports types with static `value` members, types with
+     * an `epsilon` precision member (values within the tolerance are equal,
+     * as for `eq_`), and generic types.
      */
     template <class Lhs_T, class Rhs_T>
     constexpr le_<Lhs_T, Rhs_T>::le_ (const Lhs_T& lhs, const Rhs_T& rhs)
@@ -481,6 +528,13 @@ namespace micro_os_plus::micro_test_plus
                       and type_traits::has_value<Rhs_T>)
           {
             return Lhs_T::value <= Rhs_T::value;
+          }
+        else if constexpr (type_traits::has_epsilon<Lhs_T>
+                           or type_traits::has_epsilon<Rhs_T>)
+          {
+            // Values within the tolerance are equal.
+            return detail::unwrap_ (lhs) < detail::unwrap_ (rhs)
+                   or detail::within_tolerance_ (lhs, rhs);
           }
         else
           {

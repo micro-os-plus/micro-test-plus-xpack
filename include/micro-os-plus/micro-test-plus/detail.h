@@ -165,6 +165,31 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] constexpr auto
     unwrap_ (const T& t);
 
+    /**
+     * @brief Checks whether two operands are equal within the tolerance of
+     * the floating-point wrappers.
+     *
+     * @details
+     * Used by all six comparators, so that a value within the tolerance is
+     * equal, and neither less nor greater; at least one operand must have
+     * an `epsilon` member (a floating-point literal, a `to_f`, `to_d`, or
+     * `to_ld` wrapper, or `approx()`).
+     *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
+     * @param lhs The left-hand operand.
+     * @param rhs The right-hand operand.
+     * @retval true The absolute difference is less than the tolerance (the
+     * smaller one, if both operands have one).
+     * @retval false Otherwise.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires (type_traits::has_epsilon<Lhs_T>
+                or type_traits::has_epsilon<Rhs_T>)
+    [[nodiscard]] constexpr bool
+    within_tolerance_ (const Lhs_T& lhs, const Rhs_T& rhs);
+
     // ========================================================================
 
     /**
