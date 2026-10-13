@@ -483,6 +483,30 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
+  // Values of the fundamental types, including `bool`, can be streamed into
+  // the check messages (API-REVIEW.md #6).
+  ts.test ("Message values", [] (auto& t)
+    {
+      const bool flag = true;
+      t.expect (flag) << "flag is " << flag << ", not " << !flag;
+      local_counts.successful_checks++;
+
+      t.expect (true) << "int " << 42 << ", char " << 'x' << ", double "
+                      << 1.25;
+      local_counts.successful_checks++;
+
+      local_counts.executed_subtest++;
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_subtests ()
+               == local_counts.executed_subtest);
+
+  // --------------------------------------------------------------------------
+
   {
     detail::runner_totals fresh{};
     test_assert (fresh.was_successful ());

@@ -53,7 +53,6 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
-#include <charconv>
 #include <cstdio>
 
 // ----------------------------------------------------------------------------
@@ -97,11 +96,15 @@ namespace micro_os_plus::micro_test_plus
      * message string.
      *
      * If the argument is a `char`, it is appended directly as a character.
-     * If the argument is of another arithmetic type, it is converted to a
-     * string using a fixed-size buffer and `std::to_chars`, avoiding the
-     * temporary string that `std::to_string()` would allocate. For all
-     * other types (convertible to `std::string_view`), the value is
-     * appended directly.
+     * If it is a `bool`, `"true"` or `"false"` is appended, as the
+     * expression formatter does (`std::to_chars()` has no `bool`
+     * overload). If it is of another arithmetic type, it is converted by
+     * `detail::append_number_()`, the helper also used by the expression
+     * formatter, which uses a fixed-size buffer (avoiding the temporary
+     * string that `std::to_string()` would allocate) and handles the
+     * platforms where `std::to_chars()` is not available for
+     * `long double`. For all other types (convertible to
+     * `std::string_view`), the value is appended directly.
      */
     template <class T>
       requires type_traits::printable<T>
@@ -112,30 +115,13 @@ namespace micro_os_plus::micro_test_plus
         {
           deferred_output_.push_back (msg);
         }
+      else if constexpr (std::is_same_v<T, bool>)
+        {
+          deferred_output_.append (msg ? "true" : "false");
+        }
       else if constexpr (std::is_arithmetic_v<T>)
         {
-          // Optimise to avoid dynamic memory allocation in std::to_string by
-          // using a fixed-size buffer and std::to_chars.
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
-          char buf[64];
-          // 64 bytes is sufficient for the longest decimal representation
-          // of any standard arithmetic type (long double ~45 chars).
-          static_assert (sizeof (buf) >= 50,
-                         "buf must be large enough for any arithmetic type");
-          auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), msg);
-          if (ec == std::errc{})
-            deferred_output_.append (buf, ptr);
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
+          detail::append_number_ (deferred_output_, msg);
         }
       else
         {
