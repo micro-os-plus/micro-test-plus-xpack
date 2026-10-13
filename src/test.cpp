@@ -157,11 +157,13 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Transfers ownership of @p child_test into `children_subtests_` and
      * immediately invokes `subtest::run()` on the newly stored subtest.
-     * The parent's executed-subtest counter is then incremented. The
-     * child's check counters are intentionally not merged into the parent
-     * totals; each subtest reports only its own counters. The child's
-     * totals are, however, accumulated into @p suite so that the suite
-     * summary reflects all checks performed by its subtests.
+     * The parent's executed-subtest counter is then incremented, and, if
+     * the child failed (a failed check, or a failed nested subtest), its
+     * failed-subtest counter too, so that the parent fails as well, as in
+     * node-tap. The child's check counters are intentionally not merged
+     * into the parent totals; each subtest reports only its own counters.
+     * The child's totals are, however, accumulated into @p suite so that
+     * the suite summary reflects all checks performed by its subtests.
      */
     void
     runnable_base::after_subtest_create_ (
@@ -180,8 +182,15 @@ namespace micro_os_plus::micro_test_plus
                      __PRETTY_FUNCTION__, name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
       totals ().increment_executed_subtests ();
+
       // Do not accumulate the totals from the child test into the current test
-      // totals, each subtest shows only its counters.
+      // totals, each subtest shows only its counters. But a failed child
+      // fails this test too, as in node-tap; the failure reaches all outer
+      // tests, one level at a time, when they end.
+      if (!subtest.totals ().was_successful ())
+        {
+          totals ().increment_failed_subtests ();
+        }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s suite '%s' totals\n", __PRETTY_FUNCTION__,

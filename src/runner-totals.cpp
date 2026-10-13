@@ -63,11 +63,11 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Adds the successful check count, failed check count, and executed
-   * subtest count of @p other to the corresponding members of this
-   * instance. Returns a reference to `*this` to support chaining.
-   * When tracing is enabled, the updated totals are output for
-   * diagnostic purposes.
+   * Adds the successful check count, failed check count, executed
+   * subtest count, and failed subtest count of @p other to the
+   * corresponding members of this instance. Returns a reference to
+   * `*this` to support chaining. When tracing is enabled, the updated
+   * totals are output for diagnostic purposes.
    */
   runner_totals&
   runner_totals::operator+= (const runner_totals& other) noexcept
@@ -75,10 +75,12 @@ namespace micro_os_plus::micro_test_plus::detail
     successful_checks_ += other.successful_checks ();
     failed_checks_ += other.failed_checks ();
     executed_subtests_ += other.executed_subtests ();
+    failed_subtests_ += other.failed_subtests ();
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s -> +%zu -%zu in xs%zu\n", __PRETTY_FUNCTION__,
-                   successful_checks_, failed_checks_, executed_subtests_);
+    trace::printf ("%s -> +%zu -%zu in xs%zu -xs%zu\n", __PRETTY_FUNCTION__,
+                   successful_checks_, failed_checks_, executed_subtests_,
+                   failed_subtests_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     return *this;

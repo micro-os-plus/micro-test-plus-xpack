@@ -331,6 +331,44 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
+  // A failed check in a nested test case also fails all the outer test
+  // cases, as in node-tap, although their own checks passed
+  // (API-REVIEW.md #2).
+  {
+    const size_t failed_subtests_before
+        = current_suite_totals.failed_subtests ();
+
+    ts.test ("Failed nested subtest", [] (auto& t)
+      {
+        t.expect (eq (1, 1)) << "outer check passes";
+        local_counts.successful_checks++;
+
+        t.test ("middle subtest", [] (auto& t2)
+          {
+            t2.test ("inner subtest", [] (auto& t3)
+              {
+                t3.expect (eq (1, 2)) << "inner check fails";
+                local_counts.failed_checks++;
+                local_counts.executed_subtest++; // inner
+              });
+            local_counts.executed_subtest++; // middle
+          });
+        local_counts.executed_subtest++; // outer
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+    // The inner, the middle, and the outer test cases failed.
+    test_assert (current_suite_totals.failed_subtests ()
+                 == failed_subtests_before + 3);
+  }
+
+  // --------------------------------------------------------------------------
+
   {
     detail::runner_totals fresh{};
     test_assert (fresh.was_successful ());

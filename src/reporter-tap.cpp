@@ -449,7 +449,9 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Emits the TAP plan line for the subtest's checks and nested subtests,
    * followed by an `ok`/`not ok` result line that includes the subtest
-   * index, name, pass/fail status, and check counts. Any output
+   * index, name, pass/fail status, and check counts. As in node-tap, the
+   * result is `not ok` when a check or a nested subtest failed; the number
+   * of failed nested subtests is added when it is not zero. Any output
    * accumulated in `buffer_` is written to the output file and, with
    * normal or verbose verbosity, when verbosity is verbose or the subtest
    * failed, to `stdout` as well. With normal verbosity, for a passing
@@ -480,7 +482,7 @@ namespace micro_os_plus::micro_test_plus
               subtest.totals ().executed_checks ()
                   + subtest.totals ().executed_subtests ());
 
-    char message_totals[120];
+    char message_totals[300];
     if (subtest.totals ().was_successful ()) [[likely]]
       {
         snprintf (message_totals, sizeof (message_totals),
@@ -491,13 +493,24 @@ namespace micro_os_plus::micro_test_plus
       }
     else
       {
+        // The nested failures are mentioned only when present, since a
+        // subtest may fail because of a nested one alone.
+        char message_subtests[48] = "";
+        if (subtest.totals ().failed_subtests () > 0)
+          {
+            snprintf (message_subtests, sizeof (message_subtests),
+                      ", %zu test case%s failed",
+                      subtest.totals ().failed_subtests (),
+                      subtest.totals ().failed_subtests () == 1 ? "" : "s");
+          }
+
         snprintf (message_totals, sizeof (message_totals),
                   "%snot ok %zu - %s # { FAILED, %zu check%s "
-                  "passed, %zu failed }",
+                  "passed, %zu failed%s }",
                   indent.c_str (), subtest.own_index (), subtest.name (),
                   subtest.totals ().successful_checks (),
                   subtest.totals ().successful_checks () == 1 ? "" : "s",
-                  subtest.totals ().failed_checks ());
+                  subtest.totals ().failed_checks (), message_subtests);
       }
 
     write_buffer_to_file_ ();

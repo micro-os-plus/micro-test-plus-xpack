@@ -77,8 +77,25 @@ TAP version 14
         ok 2 - inner subtest after a check # { passed, 1 check }
         1..2
     ok 10 - Nested subtest after a check # { passed, 1 check }
-    1..10
-not ok 1 - Static top suite # { FAILED, 27 checks passed, 2 failed, in 12 test cases }
+    # Subtest: Failed nested subtest
+        ok 1 - outer check passes
+        # Subtest: middle subtest
+            # Subtest: inner subtest
+                not ok 1 - inner check fails
+                  ---
+                  condition: 1 == 2
+                  at:
+                    filename: main.cpp
+                    line: 350
+                  ...
+                1..1
+            not ok 1 - inner subtest # { FAILED, 0 checks passed, 1 failed }
+            1..1
+        not ok 2 - middle subtest # { FAILED, 0 checks passed, 0 failed, 1 test case failed }
+        1..2
+    not ok 11 - Failed nested subtest # { FAILED, 1 check passed, 0 failed, 1 test case failed }
+    1..11
+not ok 1 - Static top suite # { FAILED, 28 checks passed, 3 failed, in 15 test cases }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
@@ -644,63 +661,63 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: 0x43fffb4c != 0x43fffb4c
+          condition: 0x43fffb3c != 0x43fffb3c
           at:
             filename: comparisons.cpp
             line: 498
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: 0x43fffb4c != 0x43fffb4c
+          condition: 0x43fffb3c != 0x43fffb3c
           at:
             filename: comparisons.cpp
             line: 501
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: 0x43fffb4c > 0x43fffb4c
+          condition: 0x43fffb3c > 0x43fffb3c
           at:
             filename: comparisons.cpp
             line: 504
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: 0x43fffb4c < 0x43fffb4c
+          condition: 0x43fffb3c < 0x43fffb3c
           at:
             filename: comparisons.cpp
             line: 507
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: 0x43fffb4c == 0x43fffb50
+          condition: 0x43fffb3c == 0x43fffb40
           at:
             filename: comparisons.cpp
             line: 510
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: 0x400078dc != 0x400078dc
+          condition: 0x400082cc != 0x400082cc
           at:
             filename: comparisons.cpp
             line: 513
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: 0x400078dc == 0x43fffb50
+          condition: 0x400082cc == 0x43fffb40
           at:
             filename: comparisons.cpp
             line: 516
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: 0x43fffb58 >= 0x43fffb5c
+          condition: 0x43fffb48 >= 0x43fffb4c
           at:
             filename: comparisons.cpp
             line: 528
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: 0x43fffb5c <= 0x43fffb58
+          condition: 0x43fffb4c <= 0x43fffb48
           at:
             filename: comparisons.cpp
             line: 531
@@ -723,7 +740,7 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: 0x43fffc28 == nullptr
+          condition: 0x43fffc18 == nullptr
           at:
             filename: comparisons.cpp
             line: 582
@@ -2856,4 +2873,4 @@ ok 10 - Timings suite # { passed, 27 checks in 6 test cases }
     1..3
 not ok 11 - Utility suite # { FAILED, 16 checks passed, 5 failed, in 3 test cases }
 1..11
-# { total: 358 checks passed, 326 failed, in 63 test cases, 11 test suites }
+# { total: 359 checks passed, 327 failed, in 66 test cases, 11 test suites }

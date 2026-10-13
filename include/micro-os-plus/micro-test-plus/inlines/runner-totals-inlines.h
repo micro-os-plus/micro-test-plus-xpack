@@ -86,6 +86,16 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Adds `count` to the `failed_subtests_` counter.
+   */
+  inline void
+  runner_totals::increment_failed_subtests (size_t count) noexcept
+  {
+    failed_subtests_ += count;
+  }
+
+  /**
+   * @details
    * Returns the value of the `successful_checks_` counter.
    */
   inline size_t
@@ -126,13 +136,25 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Returns the value of the `failed_subtests_` counter.
+   */
+  inline size_t
+  runner_totals::failed_subtests () const noexcept
+  {
+    return failed_subtests_;
+  }
+
+  /**
+   * @details
    * A node with no checks at all is considered successful, as it
-   * did not fail any check.
+   * did not fail any check. A subtest whose own checks all passed is
+   * still unsuccessful if one of its nested subtests failed, so that a
+   * failure is reported at every level above it, as in node-tap.
    */
   inline bool
   runner_totals::was_successful (void) const noexcept
   {
-    return failed_checks_ == 0;
+    return failed_checks_ == 0 && failed_subtests_ == 0;
   }
 
   // --------------------------------------------------------------------------

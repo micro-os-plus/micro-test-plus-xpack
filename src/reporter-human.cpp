@@ -463,11 +463,14 @@ namespace micro_os_plus::micro_test_plus
    *
    * For passing test cases, a `"✓ <name> - passed"` line is shown with the
    * number of checks; the buffered check results are written to `stdout`
-   * only with verbose verbosity. For failing test cases, the buffered
-   * check results are always shown (preceded, with normal verbosity, by
-   * the test case name), followed by a `"✗ <name> - FAILED"` line with the
-   * number of successful and failed checks. The buffered results are
-   * always written to the output file.
+   * only with verbose verbosity. A test case fails when one of its checks
+   * or one of its nested test cases failed. For failing test cases, the
+   * buffered check results are always shown (preceded, with normal
+   * verbosity, by the names of the test case and of the outer test cases,
+   * if not already displayed), followed by a `"✗ <name> - FAILED"` line
+   * with the number of successful and failed checks, and of the failed
+   * nested test cases, when not zero. The buffered results are always
+   * written to the output file.
    *
    * Finally, the streams are flushed and the buffer is cleared.
    */
@@ -528,29 +531,37 @@ namespace micro_os_plus::micro_test_plus
         else
           {
             // Failed subtest.
+
+            // The nested failures are mentioned only when present, since a
+            // subtest may fail because of a nested one alone.
+            char message_subtests[48] = "";
+            if (subtest.totals ().failed_subtests () > 0)
+              {
+                snprintf (message_subtests, sizeof (message_subtests),
+                          ", %zu test case%s failed",
+                          subtest.totals ().failed_subtests (),
+                          subtest.totals ().failed_subtests () == 1 ? ""
+                                                                    : "s");
+              }
+
             char message_totals[300];
             snprintf (message_totals, sizeof (message_totals),
-                      "(%zu check%s passed, %zu failed)",
+                      "(%zu check%s passed, %zu failed%s)",
                       subtest.totals ().successful_checks (),
                       subtest.totals ().successful_checks () == 1 ? "" : "s",
-                      subtest.totals ().failed_checks ());
+                      subtest.totals ().failed_checks (), message_subtests);
 
             write_buffer_to_file_ ();
 
             write_file_ ("%s✗ %s - FAILED %s\n", indent.c_str (),
                          subtest.name (), message_totals);
 
-            // The name may have been displayed by `commit_buffer_()`.
-            if (verbosity_ == verbosity::normal
-                && (open_subtests_.empty ()
-                    || !open_subtests_.back ().name_displayed))
+            if (verbosity_ == verbosity::normal)
               {
-                if (!add_empty_line_)
-                  {
-                    write_console_ ("\n");
-                  }
-
-                write_console_ ("%s• %s\n", indent.c_str (), subtest.name ());
+                // This test case and the outer ones, whose names may have
+                // been displayed already, by `commit_buffer_()` or by a
+                // failed sibling.
+                display_open_names_ ();
               }
 
             // Show full output accumulated in the buffer for failed
@@ -737,17 +748,12 @@ namespace micro_os_plus::micro_test_plus
       }
     else if (verbosity_ == verbosity::normal && buffer_has_failures_)
       {
-        open_subtest_t& outer = open_subtests_.back ();
-        if (!outer.name_displayed)
+        if (add_empty_line_)
           {
-            std::string indent (indent_size * outer.test->nesting_depth (),
-                                ' ');
-
-            write_console_ ("\n%s• %s\n", indent.c_str (),
-                            outer.test->name ());
-
-            outer.name_displayed = true;
+            write_console_ ("\n");
           }
+
+        display_open_names_ ();
 
         write_buffer_to_console ();
 
@@ -757,6 +763,38 @@ namespace micro_os_plus::micro_test_plus
     flush ();
 
     clear_buffer_ ();
+  }
+
+  /**
+   * @details
+   * Walks `open_subtests_` from the outermost test case and displays, on
+   * `stdout`, the indented `"• <name>"` line of each one whose name was
+   * not displayed yet, marking it as displayed. An empty line is written
+   * before the first name, unless `add_empty_line_` is set, in which case
+   * the caller has already written it.
+   */
+  void
+  reporter_human::display_open_names_ (void)
+  {
+    bool is_first = true;
+    for (open_subtest_t& open : open_subtests_)
+      {
+        if (open.name_displayed)
+          {
+            continue;
+          }
+
+        if (is_first && !add_empty_line_)
+          {
+            write_console_ ("\n");
+          }
+        is_first = false;
+
+        std::string indent (indent_size * open.test->nesting_depth (), ' ');
+        write_console_ ("%s• %s\n", indent.c_str (), open.test->name ());
+
+        open.name_displayed = true;
+      }
   }
 
   // --------------------------------------------------------------------------

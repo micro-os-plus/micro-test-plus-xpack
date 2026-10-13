@@ -319,6 +319,23 @@ namespace micro_os_plus::micro_test_plus
     commit_buffer_ (void);
 
     /**
+     * @brief Displays the names of the open test cases not yet displayed.
+     *
+     * @details
+     * With normal verbosity, the test case names are displayed only for
+     * failures; a failure in a nested test case also fails the outer ones,
+     * so their names are displayed first, outermost first, to show where
+     * the failure is.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    display_open_names_ (void);
+
+    /**
      * @brief A test case that has begun and not yet ended.
      *
      * @details

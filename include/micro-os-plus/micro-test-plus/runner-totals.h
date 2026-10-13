@@ -78,11 +78,16 @@ namespace micro_os_plus::micro_test_plus
      * tree.
      *
      * @details
-     * `runner_totals` records three counters that are maintained throughout a
+     * `runner_totals` records four counters that are maintained throughout a
      * test session:
      * - the number of checks that passed (`successful_checks_`),
-     * - the number of checks that failed (`failed_checks_`), and
-     * - the number of subtests that were executed (`executed_subtests_`).
+     * - the number of checks that failed (`failed_checks_`),
+     * - the number of subtests that were executed (`executed_subtests_`), and
+     * - the number of those subtests that failed (`failed_subtests_`).
+     *
+     * For a subtest, the subtest counters refer only to its direct nested
+     * subtests; for a suite or the runner, they refer to the subtests at
+     * all nesting levels.
      *
      * Every `test_node`-derived object (`runner`, `suite`, `subtest`) owns a
      * `runner_totals` member and accumulates its counts in place. At the end
@@ -182,6 +187,16 @@ namespace micro_os_plus::micro_test_plus
       increment_executed_subtests (size_t count = 1) noexcept;
 
       /**
+       * @brief Increments the failed-subtests counter.
+       *
+       * @param count The number of failed subtests to add (default 1).
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      increment_failed_subtests (size_t count = 1) noexcept;
+
+      /**
        * @brief Returns the number of checks that passed.
        *
        * @par Parameters
@@ -222,12 +237,23 @@ namespace micro_os_plus::micro_test_plus
       executed_subtests () const noexcept;
 
       /**
-       * @brief Checks whether all executed checks were successful.
+       * @brief Returns the number of executed subtests that failed.
        *
        * @par Parameters
        *   None.
-       * @retval true  No checks failed.
-       * @retval false At least one check failed.
+       * @return The cumulative count of failed subtests.
+       */
+      [[nodiscard]] size_t
+      failed_subtests () const noexcept;
+
+      /**
+       * @brief Checks whether all executed checks and subtests were
+       * successful.
+       *
+       * @par Parameters
+       *   None.
+       * @retval true  No checks and no subtests failed.
+       * @retval false At least one check or one subtest failed.
        */
       [[nodiscard]] bool
       was_successful (void) const noexcept;
@@ -258,6 +284,18 @@ namespace micro_os_plus::micro_test_plus
        * `operator+=`.
        */
       size_t executed_subtests_ = 0;
+
+      /**
+       * @brief Total number of executed subtests that failed.
+       *
+       * @details
+       * Incremented by `increment_failed_subtests()`, when a subtest ends
+       * with a failed check or a failed nested subtest, and by
+       * `operator+=`. A subtest fails when any of its nested subtests
+       * fails, as in node-tap, although the checks of the nested subtests
+       * are not counted in its check counters.
+       */
+      size_t failed_subtests_ = 0;
     };
 
     // ------------------------------------------------------------------------

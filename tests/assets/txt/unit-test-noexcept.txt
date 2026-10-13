@@ -55,7 +55,15 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
             ✓ inner check
         ✓ inner subtest after a check - passed (1 check)
     ✓ Nested subtest after a check - passed (1 check)
-✗ Static top suite - FAILED (27 checks passed, 2 failed, in 12 test cases)
+    • Failed nested subtest
+        ✓ outer check passes
+        • middle subtest
+            • inner subtest
+                ✗ inner check fails FAILED (main.cpp:350, 1 == 2)
+            ✗ inner subtest - FAILED (0 checks passed, 1 failed)
+        ✗ middle subtest - FAILED (0 checks passed, 0 failed, 1 test case failed)
+    ✗ Failed nested subtest - FAILED (1 check passed, 0 failed, 1 test case failed)
+✗ Static top suite - FAILED (28 checks passed, 3 failed, in 15 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -388,15 +396,15 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:498, 0x43fffb4c != 0x43fffb4c)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:501, 0x43fffb4c != 0x43fffb4c)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:504, 0x43fffb4c > 0x43fffb4c)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:507, 0x43fffb4c < 0x43fffb4c)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:510, 0x43fffb4c == 0x43fffb50)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:513, 0x400078dc != 0x400078dc)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:516, 0x400078dc == 0x43fffb50)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:528, 0x43fffb58 >= 0x43fffb5c)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:531, 0x43fffb5c <= 0x43fffb58)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:498, 0x43fffb3c != 0x43fffb3c)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:501, 0x43fffb3c != 0x43fffb3c)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:504, 0x43fffb3c > 0x43fffb3c)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:507, 0x43fffb3c < 0x43fffb3c)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:510, 0x43fffb3c == 0x43fffb40)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:513, 0x400082cc != 0x400082cc)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:516, 0x400082cc == 0x43fffb40)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:528, 0x43fffb48 >= 0x43fffb4c)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:531, 0x43fffb4c <= 0x43fffb48)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -405,7 +413,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:579, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:582, 0x43fffc28 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:582, 0x43fffc18 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
@@ -833,4 +841,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 358 checks passed, 326 failed, in 63 test cases, 11 test suites
+✗ Total: 359 checks passed, 327 failed, in 66 test cases, 11 test suites
