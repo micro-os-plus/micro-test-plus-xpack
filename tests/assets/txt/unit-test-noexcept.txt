@@ -723,10 +723,10 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ array{ 1, 2, 3 } != array{ 1, 2, 4 }
     ✓ Arrays - passed (4 checks)
     • Arrays bad
-        ✗ array{ 42 } ne array{ 42 } FAILED (miscellaneous.cpp:93, {42} != {42})
-        ✗ array{ 42 } eq array{ 43 } FAILED (miscellaneous.cpp:97, {42} == {43})
-        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (miscellaneous.cpp:101, {1, 2} != {1, 2})
-        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (miscellaneous.cpp:105, {1, 2, 3} == {1, 2, 4})
+        ✗ array{ 42 } ne array{ 42 } FAILED (miscellaneous.cpp:176, {42} != {42})
+        ✗ array{ 42 } eq array{ 43 } FAILED (miscellaneous.cpp:180, {42} == {43})
+        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (miscellaneous.cpp:184, {1, 2} != {1, 2})
+        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (miscellaneous.cpp:188, {1, 2, 3} == {1, 2, 4})
     ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
     • Vectors
         ✓ vector{ } == vector{ }
@@ -737,23 +737,39 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
     ✓ Vectors - passed (6 checks)
     • Vectors bad
-        ✗ vector{ } != vector{ } FAILED (miscellaneous.cpp:157, {} != {})
-        ✗ FAILED (miscellaneous.cpp:161, {} != {})
-        ✗ vector{ 42 } != vector{ 42 } FAILED (miscellaneous.cpp:164, {42} != {42})
-        ✗ vector{ 42 } == vector{ 43 } FAILED (miscellaneous.cpp:168, {42} == {43})
-        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (miscellaneous.cpp:172, {1, 2} != {1, 2})
-        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (miscellaneous.cpp:176, {1, 2, 3} == {1, 2, 4})
+        ✗ vector{ } != vector{ } FAILED (miscellaneous.cpp:240, {} != {})
+        ✗ FAILED (miscellaneous.cpp:244, {} != {})
+        ✗ vector{ 42 } != vector{ 42 } FAILED (miscellaneous.cpp:247, {42} != {42})
+        ✗ vector{ 42 } == vector{ 43 } FAILED (miscellaneous.cpp:251, {42} == {43})
+        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (miscellaneous.cpp:255, {1, 2} != {1, 2})
+        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (miscellaneous.cpp:259, {1, 2, 3} == {1, 2, 4})
     ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
     • Custom types
         ✓ point{ 1, 2 } == point{ 1, 2 }
         ✓ point{ 1, 2 } != point{ 1, 3 }
     ✓ Custom types - passed (2 checks)
     • Custom types bad
-        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (miscellaneous.cpp:213, { 1, 2 } == { 1, 3 })
-        ✗ FAILED (miscellaneous.cpp:218, { 1, 2 } == { 1, 3 })
-        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (miscellaneous.cpp:221, { 1, 2 } != { 1, 2 })
+        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (miscellaneous.cpp:296, { 1, 2 } == { 1, 3 })
+        ✗ FAILED (miscellaneous.cpp:301, { 1, 2 } == { 1, 3 })
+        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (miscellaneous.cpp:304, { 1, 2 } != { 1, 2 })
     ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
-✗ Miscellaneous suite - FAILED (12 checks passed, 13 failed, in 6 test cases)
+    • Reporter stream operators
+        ✓ const char*
+        ✓ std::string_view
+        ✓ char
+        ✓ bool
+        ✓ nullptr
+        ✓ integers
+        ✓ double
+        ✓ null pointer
+        ✓ endl
+        ✓ pointer to const
+    ✓ Reporter stream operators - passed (10 checks)
+    • Pointers to const
+        ✓ different const objects
+        ✓ same const object
+    ✓ Pointers to const - passed (2 checks)
+✗ Miscellaneous suite - FAILED (24 checks passed, 13 failed, in 8 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -855,4 +871,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 366 checks passed, 328 failed, in 69 test cases, 11 test suites
+✗ Total: 378 checks passed, 328 failed, in 71 test cases, 11 test suites

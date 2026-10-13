@@ -474,6 +474,33 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * This operator overload appends `"true"` or `"false"` to the internal
+   * output buffer of the `reporter`, as the expression formatter does.
+   * Being a non-template function, it is selected for `bool` values
+   * instead of the arithmetic template, which would format them as
+   * numbers.
+   */
+  reporter&
+  reporter::operator<< (bool v)
+  {
+    buffer_.append (v ? "true" : "false");
+    return *this;
+  }
+
+  /**
+   * @details
+   * This operator overload appends the string `"nullptr"` to the internal
+   * output buffer of the `reporter`, as the expression formatter does.
+   */
+  reporter&
+  reporter::operator<< (std::nullptr_t)
+  {
+    buffer_.append ("nullptr");
+    return *this;
+  }
+
+  /**
+   * @details
    * Outputs a pass prefix, followed by either the provided message or, if
    * the message is empty, the evaluated expression string itself. A pass
    * suffix is then appended to complete the output.

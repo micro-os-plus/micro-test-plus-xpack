@@ -724,6 +724,31 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
+    /**
+     * @details
+     * Object pointers are converted implicitly to `const volatile void*`,
+     * which accepts any qualification, and the qualifiers are then removed
+     * with `const_cast`; a `reinterpret_cast` to `void*` would not compile
+     * for pointers to `const` objects. Function pointers, which do not
+     * convert to `void*` implicitly, use `reinterpret_cast`.
+     */
+    template <class T>
+    constexpr void*
+    to_printable_pointer_ (T* v) noexcept
+    {
+      if constexpr (std::is_function_v<T>)
+        {
+          return reinterpret_cast<void*> (v);
+        }
+      else
+        {
+          const volatile void* p = v;
+          return const_cast<void*> (p);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+
   } // namespace detail
 
   // --------------------------------------------------------------------------

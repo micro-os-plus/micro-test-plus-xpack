@@ -820,6 +820,23 @@ namespace micro_os_plus::micro_test_plus
     void
     append_number_ (std::string& buffer, T v);
 
+    /**
+     * @brief Converts any pointer to the `void*` expected by the `%p`
+     * conversion of `printf()`.
+     *
+     * @details
+     * Pointers to `const` or `volatile` objects are accepted too; the
+     * qualifiers are removed only to pass the address to `printf()`, which
+     * does not access the object.
+     *
+     * @tparam T The type pointed to (an object or a function type).
+     * @param v The pointer.
+     * @return The same address, as `void*`.
+     */
+    template <class T>
+    [[nodiscard]] constexpr void*
+    to_printable_pointer_ (T* v) noexcept;
+
     // ------------------------------------------------------------------------
   } // namespace detail
 

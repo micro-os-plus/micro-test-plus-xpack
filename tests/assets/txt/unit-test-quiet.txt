@@ -63,6 +63,8 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Vectors bad
     • Custom types
     • Custom types bad
+    • Reporter stream operators
+    • Pointers to const
     • Operators
     • String view operators
     • timestamp::has_clock()
@@ -74,4 +76,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 369 checks passed, 331 failed, in 73 test cases, 12 test suites, time: 1.769 ms
+✗ Total: 381 checks passed, 331 failed, in 75 test cases, 12 test suites, time: 2.092 ms

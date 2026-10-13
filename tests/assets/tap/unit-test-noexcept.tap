@@ -2580,28 +2580,28 @@ not ok 7 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
           condition: {42} != {42}
           at:
             filename: miscellaneous.cpp
-            line: 93
+            line: 176
           ...
         not ok 2 - array{ 42 } eq array{ 43 }
           ---
           condition: {42} == {43}
           at:
             filename: miscellaneous.cpp
-            line: 97
+            line: 180
           ...
         not ok 3 - array{ 1, 2 } ne array{ 1, 2 }
           ---
           condition: {1, 2} != {1, 2}
           at:
             filename: miscellaneous.cpp
-            line: 101
+            line: 184
           ...
         not ok 4 - array{ 1, 2, 3 } eq array{ 1, 2, 4 }
           ---
           condition: {1, 2, 3} == {1, 2, 4}
           at:
             filename: miscellaneous.cpp
-            line: 105
+            line: 188
           ...
         1..4
     not ok 2 - Arrays bad # { FAILED, 0 checks passed, 4 failed }
@@ -2620,42 +2620,42 @@ not ok 7 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
           condition: {} != {}
           at:
             filename: miscellaneous.cpp
-            line: 157
+            line: 240
           ...
         not ok 2
           ---
           condition: {} != {}
           at:
             filename: miscellaneous.cpp
-            line: 161
+            line: 244
           ...
         not ok 3 - vector{ 42 } != vector{ 42 }
           ---
           condition: {42} != {42}
           at:
             filename: miscellaneous.cpp
-            line: 164
+            line: 247
           ...
         not ok 4 - vector{ 42 } == vector{ 43 }
           ---
           condition: {42} == {43}
           at:
             filename: miscellaneous.cpp
-            line: 168
+            line: 251
           ...
         not ok 5 - vector{ 1, 2 } != vector{ 1, 2 }
           ---
           condition: {1, 2} != {1, 2}
           at:
             filename: miscellaneous.cpp
-            line: 172
+            line: 255
           ...
         not ok 6 - vector{ 1, 2, 3 } == vector{ 1, 2, 4 }
           ---
           condition: {1, 2, 3} == {1, 2, 4}
           at:
             filename: miscellaneous.cpp
-            line: 176
+            line: 259
           ...
         1..6
     not ok 4 - Vectors bad # { FAILED, 0 checks passed, 6 failed }
@@ -2670,26 +2670,44 @@ not ok 7 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
           condition: { 1, 2 } == { 1, 3 }
           at:
             filename: miscellaneous.cpp
-            line: 213
+            line: 296
           ...
         not ok 2
           ---
           condition: { 1, 2 } == { 1, 3 }
           at:
             filename: miscellaneous.cpp
-            line: 218
+            line: 301
           ...
         not ok 3 - point{ 1, 2 } != point{ 1, 2 }
           ---
           condition: { 1, 2 } != { 1, 2 }
           at:
             filename: miscellaneous.cpp
-            line: 221
+            line: 304
           ...
         1..3
     not ok 6 - Custom types bad # { FAILED, 0 checks passed, 3 failed }
-    1..6
-not ok 8 - Miscellaneous suite # { FAILED, 12 checks passed, 13 failed, in 6 test cases }
+    # Subtest: Reporter stream operators
+        ok 1 - const char*
+        ok 2 - std::string_view
+        ok 3 - char
+        ok 4 - bool
+        ok 5 - nullptr
+        ok 6 - integers
+        ok 7 - double
+        ok 8 - null pointer
+        ok 9 - endl
+        ok 10 - pointer to const
+        1..10
+    ok 7 - Reporter stream operators # { passed, 10 checks }
+    # Subtest: Pointers to const
+        ok 1 - different const objects
+        ok 2 - same const object
+        1..2
+    ok 8 - Pointers to const # { passed, 2 checks }
+    1..8
+not ok 8 - Miscellaneous suite # { FAILED, 24 checks passed, 13 failed, in 8 test cases }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -2896,4 +2914,4 @@ ok 10 - Timings suite # { passed, 27 checks in 6 test cases }
     1..3
 not ok 11 - Utility suite # { FAILED, 16 checks passed, 5 failed, in 3 test cases }
 1..11
-# { total: 366 checks passed, 328 failed, in 69 test cases, 11 test suites }
+# { total: 378 checks passed, 328 failed, in 71 test cases, 11 test suites }

@@ -50,6 +50,89 @@ namespace
   {
     return formatter << "{ " << p.x << ", " << p.y << " }";
   }
+
+  // A reporter that ignores all events and exposes its output buffer, to
+  // check the text written by the `reporter` stream operators, without
+  // writing to the test output (API-REVIEW.md #7).
+  class buffer_reporter final : public reporter
+  {
+  public:
+    buffer_reporter () : reporter{ nullptr }
+    {
+    }
+
+    // The text accumulated by the stream operators.
+    const std::string&
+    text () const noexcept
+    {
+      return buffer_;
+    }
+
+    void
+    clear () noexcept
+    {
+      clear_buffer_ ();
+    }
+
+    void
+    begin_session (runner&) override
+    {
+    }
+
+    void
+    end_session (runner&) override
+    {
+    }
+
+    void
+    begin_suite (suite&) override
+    {
+    }
+
+    void
+    end_suite (suite&) override
+    {
+    }
+
+    void
+    begin_subtest (subtest&) override
+    {
+    }
+
+    void
+    end_subtest (subtest&) override
+    {
+    }
+
+    const char*
+    get_comment_prefix (void) override
+    {
+      return "";
+    }
+
+  protected:
+    void
+    output_pass_prefix_ (std::string&, subtest&) override
+    {
+    }
+
+    void
+    output_pass_suffix_ (subtest&) override
+    {
+    }
+
+    void
+    output_fail_prefix_ (std::string&, const bool,
+                         const reflection::source_location&, subtest&) override
+    {
+    }
+
+    void
+    output_fail_suffix_ (const reflection::source_location&, bool,
+                         subtest&) override
+    {
+    }
+  };
 } // namespace
 
 // ----------------------------------------------------------------------------
@@ -221,6 +304,89 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (ne (point{ 1, 2 }, point{ 1, 2 }))
             << "point{ 1, 2 } != point{ 1, 2 }";
         local_counts.failed_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+
+    // The text written by the `reporter` stream operators, for every
+    // supported type (API-REVIEW.md #7).
+    ts.test ("Reporter stream operators", [] (auto& t)
+      {
+        buffer_reporter r;
+
+        // Compares the accumulated text, then clears it.
+        auto check = [&] (std::string_view expected, const char* message)
+          {
+            t.expect (eq (std::string_view{ r.text () }, expected)) << message;
+            local_counts.successful_checks++;
+            r.clear ();
+          };
+
+        r << "text";
+        check ("text", "const char*");
+
+        r << std::string_view{ "view" };
+        check ("view", "std::string_view");
+
+        r << 'c';
+        check ("c", "char");
+
+        r << true << ' ' << false;
+        check ("true false", "bool");
+
+        r << nullptr;
+        check ("nullptr", "nullptr");
+
+        r << 42 << ' ' << -7 << ' ' << 42u << ' ' << 42L;
+        check ("42 -7 42 42", "integers");
+
+        r << 1.25;
+        check ("1.25", "double");
+
+        r << static_cast<int*> (nullptr);
+        check ("0x0", "null pointer");
+
+        r << "line" << endl;
+        check ("line\n", "endl");
+
+        // A non-null pointer, also to a const object, is displayed as an
+        // address, whose format depends on the platform.
+        static const int constant = 42;
+        r << &constant;
+        t.expect (not r.text ().empty () && r.text () != "0x0")
+            << "pointer to const";
+        local_counts.successful_checks++;
+        r.clear ();
+
+        local_counts.executed_subtest++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+
+    // The comparators accept pointers to const objects, whose addresses are
+    // displayed on failure.
+    ts.test ("Pointers to const", [] (auto& t)
+      {
+        static const int first = 1;
+        static const int second = 2;
+
+        t.expect (ne (&first, &second)) << "different const objects";
+        local_counts.successful_checks++;
+
+        t.expect (eq (&first, &first)) << "same const object";
+        local_counts.successful_checks++;
 
         local_counts.executed_subtest++;
       });

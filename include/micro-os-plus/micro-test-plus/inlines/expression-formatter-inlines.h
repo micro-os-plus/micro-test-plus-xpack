@@ -192,7 +192,7 @@ namespace micro_os_plus::micro_test_plus::detail
 #endif // defined(__GNUC__)
 
     char buff[20];
-    snprintf (buff, sizeof (buff), "%p", reinterpret_cast<void*> (v));
+    snprintf (buff, sizeof (buff), "%p", detail::to_printable_pointer_ (v));
     buffer_.append (buff);
 
 #if defined(__GNUC__)
