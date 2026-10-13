@@ -42,6 +42,15 @@ exercise_throw (bool mustThrow)
     }
 }
 
+static void
+exercise_throw_runtime_error (bool mustThrow)
+{
+  if (mustThrow)
+    {
+      throw std::runtime_error{ "boom" };
+    }
+}
+
 // ----------------------------------------------------------------------------
 
 static static_suite ts_exceptions{ "Exceptions suite", tr,
@@ -158,6 +167,64 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
+
+    // ------------------------------------------------------------------------
+
+    // An exception escaping a test case is reported as a failed check, at
+    // the location of the test() call, and the run continues with the next
+    // test case (API-REVIEW.md #14).
+    {
+      const size_t failed_subtests_before
+          = current_suite_totals.failed_subtests ();
+
+      ts.test ("Unexpected std::exception", [] (auto& t)
+        {
+          t.expect (true) << "check before the exception";
+          local_counts.successful_checks++;
+
+          // Reported as `unexpected exception: boom`.
+          exercise_throw_runtime_error (true);
+
+          t.expect (false) << "check after the exception";
+        });
+      // The exception, counted here since the body did not reach its end.
+      local_counts.failed_checks++;
+      local_counts.executed_subtest++;
+
+      ts.test ("Unexpected exception of unknown type", [] (auto& t)
+        {
+          // Reported as `unexpected exception of unknown type`.
+          exercise_throw (true);
+
+          t.expect (false) << "check after the exception";
+        });
+      local_counts.failed_checks++;
+      local_counts.executed_subtest++;
+
+      // The nested test case catches its own exception; the outer test
+      // case continues, and fails because of the failed nested test case.
+      ts.test ("Unexpected exception in nested test case", [] (auto& t)
+        {
+          t.test ("nested test case", [] (auto&)
+            { exercise_throw_runtime_error (true); });
+          local_counts.failed_checks++;
+          local_counts.executed_subtest++; // nested
+
+          t.expect (true) << "check after the nested test case";
+          local_counts.successful_checks++;
+        });
+      local_counts.executed_subtest++; // outer
+
+      test_assert (current_suite_totals.successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_suite_totals.failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_suite_totals.executed_subtests ()
+                   == local_counts.executed_subtest);
+      // The two test cases, and the nested and the outer test cases.
+      test_assert (current_suite_totals.failed_subtests ()
+                   == failed_subtests_before + 4);
+    }
   } };
 
 #endif // __EXCEPTIONS

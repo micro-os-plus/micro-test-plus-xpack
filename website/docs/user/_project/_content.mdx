@@ -336,8 +336,28 @@ Test case objects can be created using the `test()` method provided by the test 
 
 ```cpp
 template <typename Callable_T, typename... Args_T>
-void test (const char* name, Callable_T&& func, Args_T&&... arguments);
+void test (const detail::test_name& name, Callable_T&& func, Args_T&&... arguments);
 ```
+
+The name is a string literal or a `const char*`, converted implicitly to
+`detail::test_name`, which also records the location of the `test()`
+call.
+
+When exceptions are enabled, an exception that escapes the body of a
+test case is reported as a failed check of that test case, at the
+location of the `test()` call, and the run continues with the next test
+case; the message includes the result of `what()` for a
+`std::exception`:
+
+```console
+    • Parse configuration
+        ✓ header is valid
+        ✗ unexpected exception: invalid key FAILED (config.cpp:42)
+    ✗ Parse configuration - FAILED (1 check passed, 1 failed)
+```
+
+An exception that escapes the body of a test suite, outside its test
+cases, is not caught, and ends the run.
 
 Refer to the [Test Cases](/docs/api/groups/micro-os-plus-micro-test-plus-test-case/) reference page.
 

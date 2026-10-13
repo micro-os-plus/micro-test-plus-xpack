@@ -133,6 +133,78 @@ namespace micro_os_plus::micro_test_plus
                            static_suite& static_suite_ref);
 
     /**
+     * @brief The name of a test case, with the location of its definition.
+     *
+     * @details
+     * The first parameter of `suite::test()` and `subtest::test()`. The
+     * constructor is not explicit, so a string literal or a `const char*`
+     * passed as the test case name converts implicitly; the default
+     * argument of the constructor is evaluated at the place of the
+     * conversion, which is the call to `test()` in the user code, so the
+     * location of the test case is captured without an additional
+     * argument (which could not follow the variadic arguments of
+     * `test()`).
+     *
+     * The location is used to report a failure that is not associated with
+     * a check, such as an exception escaping the test case body.
+     *
+     * Since a conversion sequence may include only one user-defined
+     * conversion, an argument that converts to `const char*` via a
+     * user-defined conversion operator must be converted explicitly.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    class test_name
+    {
+    public:
+      /**
+       * @brief Constructs the name, capturing the location of the caller.
+       *
+       * @param name The test case name or description, used in reports;
+       * it must remain valid while the test case runs.
+       * @param location The location of the conversion, defaulting to the
+       * call to `test()` in the user code.
+       */
+      test_name (const char* name,
+                 const reflection::source_location& location
+                 = reflection::source_location::current ()) noexcept;
+
+      /**
+       * @brief Gets the test case name.
+       *
+       * @par Parameters
+       *   None.
+       * @return A pointer to the null-terminated test case name.
+       */
+      [[nodiscard]] const char*
+      name (void) const noexcept;
+
+      /**
+       * @brief Gets the location of the call to `test()`.
+       *
+       * @par Parameters
+       *   None.
+       * @return A reference to the stored source location.
+       */
+      [[nodiscard]] const reflection::source_location&
+      location (void) const noexcept;
+
+    private:
+      /**
+       * @brief The test case name.
+       *
+       * @details
+       * Not owned; test cases run immediately, while the name is valid.
+       */
+      const char* name_;
+
+      /**
+       * @brief The location of the call to `test()`.
+       */
+      reflection::source_location location_;
+    };
+
+    /**
      * @brief Base class for runners and runnable tests.
      *
      * @details
@@ -635,7 +707,8 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param name The subtest name or description, used in reports.
+     * @param name The subtest name or description, used in reports, and
+     * the location of the call to `test()` that created the subtest.
      * @param runner The test runner managing this subtest.
      * @param parent_suite The suite that owns this subtest.
      * @param own_index The one-based positional index within the parent.
@@ -647,9 +720,9 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `subtest&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-    subtest (const char* name, class runner& runner, suite& parent_suite,
-             size_t own_index, size_t nesting_depth, Callable_T&& callable,
-             Args_T&&... arguments);
+    subtest (const detail::test_name& name, class runner& runner,
+             suite& parent_suite, size_t own_index, size_t nesting_depth,
+             Callable_T&& callable, Args_T&&... arguments);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
@@ -705,7 +778,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param name The test case name or description, used in reports.
+     * @param name The test case name or description, used in reports; a
+     * string literal or a `const char*`, converted implicitly to
+     * `detail::test_name`, which also captures the location of the call.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test.
      * @param arguments A possibly empty list of arguments to be passed to
@@ -715,7 +790,8 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
     void
-    test (const char* name, Callable_T&& callable, Args_T&&... arguments);
+    test (const detail::test_name& name, Callable_T&& callable,
+          Args_T&&... arguments);
 
     // ------------------------------------------------------------------------
 
@@ -783,6 +859,35 @@ namespace micro_os_plus::micro_test_plus
     nesting_depth () const noexcept;
 
   protected:
+#if defined(__cpp_exceptions)
+    /**
+     * @brief Reports an exception that escaped the subtest body as a
+     * failed check.
+     *
+     * @details
+     * The failure is reported at the location of the call to `test()`
+     * that created the subtest, since the location of the `throw` is not
+     * known.
+     *
+     * @param what The explanatory string of a `std::exception`, or
+     * `nullptr` for an exception of another type.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    fail_unexpected_exception_ (const char* what);
+#endif // defined(__cpp_exceptions)
+
+  protected:
+    /**
+     * @brief The location of the call to `test()` that created this
+     * subtest.
+     *
+     * @details
+     * Used to report the failures that are not associated with a check.
+     */
+    reflection::source_location location_;
+
     /**
      * @brief Reference to the parent suite that owns this subtest.
      *
@@ -900,7 +1005,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param name The test case name or description, used in reports.
+     * @param name The test case name or description, used in reports; a
+     * string literal or a `const char*`, converted implicitly to
+     * `detail::test_name`, which also captures the location of the call.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test.
      * @param arguments A possibly empty list of arguments to be passed to
@@ -910,7 +1017,8 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
     void
-    test (const char* name, Callable_T&& callable, Args_T&&... arguments);
+    test (const detail::test_name& name, Callable_T&& callable,
+          Args_T&&... arguments);
 
     // ------------------------------------------------------------------------
 

@@ -49,6 +49,10 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Failed thrown exceptions
     • Not thrown exceptions
     • Failed not thrown exceptions
+    • Unexpected std::exception
+    • Unexpected exception of unknown type
+    • Unexpected exception in nested test case
+        • nested test case
     • Combinatorial floats
     • Combinatorial doubles
     • Combinatorial integrals with signed long long

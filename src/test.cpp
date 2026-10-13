@@ -43,6 +43,9 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
+#include <exception>
+#include <string>
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -221,6 +224,13 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Invokes the stored callable with the `Self_T` instance, surrounded by
    * reporter calls to begin and end the subtest.
+   *
+   * When exceptions are enabled, an exception that escapes the callable
+   * is caught and reported as a failed check of this subtest, and the
+   * subtest ends normally, so that the run continues with the next test
+   * case; the checks performed before the exception remain reported.
+   * Since the nested subtests catch their own exceptions, an exception
+   * is reported by the innermost subtest whose body it escapes.
    */
   void
   subtest::run (void)
@@ -235,13 +245,67 @@ namespace micro_os_plus::micro_test_plus
     // this->timings.timestamp_begin ();
     reporter.begin_subtest (*this);
 
+#if defined(__cpp_exceptions)
+    try
+      {
+        // Invoke the callable, passing the self reference followed by the
+        // variadic arguments.
+        callable_ (*this);
+      }
+    catch (const std::exception& e)
+      {
+        fail_unexpected_exception_ (e.what ());
+      }
+    catch (...)
+      {
+        fail_unexpected_exception_ (nullptr);
+      }
+#else
     // Invoke the callable, passing the self reference followed by the variadic
     // arguments.
     callable_ (*this);
+#endif // defined(__cpp_exceptions)
 
     // this->timings.timestamp_end ();
     reporter.end_subtest (*this);
   }
+
+#if defined(__cpp_exceptions)
+  /**
+   * @details
+   * The failure is reported as a check: the check index is incremented
+   * first, as `deferred_reporter_base` does, so that the TAP output
+   * numbers it after the checks already reported, and the failed checks
+   * counter is incremented, so that the subtest, and through it its
+   * parents, fail.
+   *
+   * The message is `unexpected exception: ` followed by @p what, or
+   * `unexpected exception of unknown type` when @p what is `nullptr`;
+   * the type of a `std::exception` is not shown, since its name is
+   * available only via RTTI, and only in an implementation-defined
+   * (usually mangled) form. There is no expression to display.
+   */
+  void
+  subtest::fail_unexpected_exception_ (const char* what)
+  {
+    increment_subtest_index ();
+
+    std::string message{ "unexpected exception" };
+    if (what != nullptr)
+      {
+        message.append (": ");
+        message.append (what);
+      }
+    else
+      {
+        message.append (" of unknown type");
+      }
+
+    const std::string expression{};
+    reporter ().fail (false, message, expression, false, location_, *this);
+    totals ().increment_failed_checks ();
+  }
+#endif // defined(__cpp_exceptions)
 
   // ==========================================================================
 

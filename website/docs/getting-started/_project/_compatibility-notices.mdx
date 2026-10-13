@@ -33,6 +33,16 @@ The `expression_formatter` and the reporters now write the non-const
 pointers; they were previously written as addresses. A null `char`
 pointer is written as `nullptr`.
 
+An exception that escapes the body of a test case is now reported as a
+failed check, at the location of the `test()` call, and the run
+continues with the next test case; it previously ended the program. To
+capture that location, the name parameter of `suite::test()` and
+`subtest::test()` is now a `detail::test_name`, converted implicitly
+from a string literal or a `const char*`; an argument that converts to
+`const char*` only via a user-defined conversion operator must now be
+converted explicitly. As for `expect()`, GCC with `-Waggregate-return`
+now warns at the `test()` calls too.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

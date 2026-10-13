@@ -111,6 +111,39 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Stores the name pointer and the location; when called implicitly,
+     * the location is the place of the conversion, in the user code.
+     */
+    inline test_name::test_name (
+        const char* name, const reflection::source_location& location) noexcept
+        : name_{ name }, location_{ location }
+    {
+    }
+
+    /**
+     * @details
+     * Returns the pointer stored in `name_`.
+     */
+    inline const char*
+    test_name::name (void) const noexcept
+    {
+      return name_;
+    }
+
+    /**
+     * @details
+     * Returns a reference to the location stored in `location_`.
+     */
+    inline const reflection::source_location&
+    test_name::location (void) const noexcept
+    {
+      return location_;
+    }
+
+    // ========================================================================
+
+    /**
+     * @details
      * Returns a pointer to the null-terminated name stored in `name_`.
      */
     inline const char*
@@ -265,22 +298,24 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Delegates to `runnable`, which binds the callable with its arguments,
-   * and stores the parent suite and the nesting depth.
+   * and stores the location of the call to `test()`, the parent suite,
+   * and the nesting depth.
    */
   template <typename Callable_T, typename... Args_T>
-  subtest::subtest (const char* name, class runner& runner,
+  subtest::subtest (const detail::test_name& name, class runner& runner,
                     suite& parent_suite, size_t own_index,
                     size_t nesting_depth, Callable_T&& callable,
                     Args_T&&... arguments)
-      : runnable<subtest>{ name, runner, own_index,
+      : runnable<subtest>{ name.name (), runner, own_index,
                            std::forward<Callable_T> (callable),
                            std::forward<Args_T> (arguments)... },
-        parent_suite_{ parent_suite }, nesting_depth_{ nesting_depth }
+        location_{ name.location () }, parent_suite_{ parent_suite },
+        nesting_depth_{ nesting_depth }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
                    " %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
-                   __PRETTY_FUNCTION__, name, own_index_, nesting_depth_);
+                   __PRETTY_FUNCTION__, name_, own_index_, nesting_depth_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -293,11 +328,11 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
   void
-  subtest::test (const char* name, Callable_T&& callable,
+  subtest::test (const detail::test_name& name, Callable_T&& callable,
                  Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     size_t own_index = increment_subtest_index ();
@@ -418,10 +453,11 @@ namespace micro_os_plus::micro_test_plus
 
   template <typename Callable_T, typename... Args_T>
   void
-  suite::test (const char* name, Callable_T&& callable, Args_T&&... arguments)
+  suite::test (const detail::test_name& name, Callable_T&& callable,
+               Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     size_t own_index = increment_subtest_index ();
