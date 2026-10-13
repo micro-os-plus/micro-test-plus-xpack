@@ -129,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
    * execution of test suites within the µTest++ framework. It owns the
    * implicit top suite, whose test cases are added after `initialise()`,
    * and a collection of test suites added with `suite()`, which are run
-   * later, sorted by name, by `exit_code()`.
+   * later, sorted by name, by `run()`.
    *
    * The test runner provides methods for initialising the test environment
    * (including the creation of the reporter selected on the command line),
@@ -231,21 +231,44 @@ namespace micro_os_plus::micro_test_plus
     initialise (int argc, char* argv[], const char* top_suite_name = "");
 
     /**
-     * @brief Runs the registered suites and returns the exit code.
+     * @brief Runs the registered suites, ends the session, and returns the
+     * exit code.
      *
      * @details
      * Completes the top suite, runs the suites registered with `suite()`
      * (and, for a `static_runner`, the static suites), and ends the session.
      *
+     * The session runs only once; later calls return the same exit code
+     * without running anything again.
+     *
      * @par Parameters
      *   None.
-     * @return 0 if all checks were successful, 1 otherwise.
+     * @return 0 if all checks were successful, 1 otherwise, or if the runner
+     * was not initialised.
+     *
+     * @since 5.1.0
+     */
+    int
+    run (void);
+
+    /**
+     * @brief Deprecated name of `run()`.
+     *
+     * @details
+     * Calls `run()`; once the session has ended, it only returns the exit
+     * code.
+     *
+     * @par Parameters
+     *   None.
+     * @return The value returned by `run()`.
+     *
+     * @deprecated Use `run()` (since 5.1.0).
      */
     int
     exit_code (void);
 
     /**
-     * @brief Adds a test suite to the runner, to be run by `exit_code()`.
+     * @brief Adds a test suite to the runner, to be run by `run()`.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -361,7 +384,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Its test cases are added directly, between `initialise()` and
-     * `exit_code()`.
+     * `run()`.
      */
     class top_suite top_suite_;
 
@@ -370,7 +393,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Each call to `runner::suite()` appends a new `suite` to this vector;
-     * the suites are run later, by `exit_code()`. The vector retains
+     * the suites are run later, by `run()`. The vector retains
      * ownership of all suites for the lifetime of the runner.
      */
     std::vector<std::unique_ptr<class suite>> children_suites_;
@@ -401,6 +424,38 @@ namespace micro_os_plus::micro_test_plus
      * `argv[0]`.
      */
     std::string top_suite_name_;
+
+    /**
+     * @brief The states of a test session.
+     *
+     * @details
+     * The session moves only forwards, from `created` to `initialised`
+     * (by `initialise()`) and to `finished` (by `run()`); the calls made in
+     * another state are reported or ignored.
+     */
+    enum class session_state_t
+    {
+      created, /**< Constructed; `initialise()` not yet called. */
+      initialised, /**< Initialised; test cases may be added and run. */
+      finished /**< All suites run and the session ended. */
+    };
+
+    /**
+     * @brief The current state of the test session.
+     *
+     * @details
+     * Set by `initialise()` and `run()`.
+     */
+    session_state_t session_state_ = session_state_t::created;
+
+    /**
+     * @brief The exit code computed by `run()`.
+     *
+     * @details
+     * Returned again by the calls of `run()` made after the session
+     * ended.
+     */
+    int exit_code_ = 1;
   };
 
   // ==========================================================================
@@ -422,7 +477,7 @@ namespace micro_os_plus::micro_test_plus
    * constructed before `static_runner` can safely append themselves to the
    * vector without losing registrations.
    *
-   * During `exit_code()`, `run_suites_()` is called, which first runs all
+   * During `run()`, `run_suites_()` is called, which first runs all
    * dynamically registered suites (base class behaviour) and then iterates
    * over the statically registered suites.
    *

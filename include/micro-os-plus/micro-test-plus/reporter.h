@@ -401,7 +401,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Mark the end of a test session.
      *
      * @details
-     * Called by `runner::exit_code()`, after all suites have run;
+     * Called by `runner::run()`, after all suites have run;
      * implementations display the session summary.
      *
      * @param runner Reference to the test runner.
@@ -432,7 +432,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Called by `suite::run()` and `static_suite::run()` after the suite
-     * body, and by `runner::exit_code()` for the top suite;
+     * body, and by `runner::run()` for the top suite;
      * implementations display the suite results.
      *
      * @param suite Reference to the test suite.

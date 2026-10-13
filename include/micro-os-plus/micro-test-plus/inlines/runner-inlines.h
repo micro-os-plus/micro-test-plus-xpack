@@ -26,7 +26,7 @@
  * create and register a named test suite with a `runner` instance. The
  * method constructs a `suite` object on the heap (wrapped in
  * `std::unique_ptr`) and transfers ownership to the runner via
- * `register_suite_()`; the suite is run later, by `exit_code()`.
+ * `register_suite_()`; the suite is run later, by `run()`.
  *
  * The implementation is separated into this inline header so that the
  * template definition is visible at every call site without cluttering the
@@ -109,7 +109,7 @@ namespace micro_os_plus::micro_test_plus
    * Constructs a `suite` object on the heap, binding the callable and any
    * additional arguments, then transfers ownership to the runner via
    * `register_suite_()`. The suite is not run here; all registered suites
-   * are run later, sorted by name, by `exit_code()`.
+   * are run later, sorted by name, by `run()`.
    */
   template <typename Callable_T, typename... Args_T>
   void

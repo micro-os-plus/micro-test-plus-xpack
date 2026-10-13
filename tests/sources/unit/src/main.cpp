@@ -382,7 +382,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // Exercise the dynamic runner::suite() path (registers a child suite
-  // that is run lazily inside exit_code()).
+  // that is run lazily inside run()).
   test_assert (tr.suites_count () == 1);
   tr.suite ("Dynamic suite", [] (auto& s)
     {
@@ -394,10 +394,26 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // The inner test should return failure.
-  // exit_code() must be always called, otherwise the test suites
+  // run() must be always called, otherwise the test suites
   // are not executed.
-  int code = tr.exit_code ();
+  int code = tr.run ();
   test_assert (code != 0);
+
+  // The session runs only once; the later calls of run(), and of the
+  // deprecated exit_code(), return the same code without running the
+  // suites again, and a second initialise() changes nothing
+  // (API-REVIEW.md #3).
+  {
+    const size_t executed_checks = tr.totals ().executed_checks ();
+    const size_t executed_subtests = tr.totals ().executed_subtests ();
+
+    test_assert (tr.run () == code);
+    test_assert (tr.exit_code () == code);
+    test_assert (&tr.initialise (argc, argv) == &ts);
+
+    test_assert (tr.totals ().executed_checks () == executed_checks);
+    test_assert (tr.totals ().executed_subtests () == executed_subtests);
+  }
 
   if (tr.reporter ().verbosity () > verbosity::quiet)
     {

@@ -26,7 +26,7 @@ main (int argc, char* argv[])
     t.expect (true);
   });
 
-  return tr.exit_code ();
+  return tr.run ();
 }
 @endcode
 

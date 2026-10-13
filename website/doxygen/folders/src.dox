@@ -14,7 +14,7 @@ more related components:
 - `reporter.cpp` — base `reporter` class and `operator<<` overloads
 - `runner-totals.cpp` — `runner_totals` accumulation and `operator+=`
 - `runner.cpp` — `runner` and `static_runner` constructors, suite
-  registration, and `exit_code()`
+  registration, and `run()`
 - `test.cpp` — `suite`, `top_suite`, `static_suite`, and `subtest`
   lifecycle methods
 - `timings.cpp` — `timestamp` and elapsed-time computation

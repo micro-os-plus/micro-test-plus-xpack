@@ -1,5 +1,14 @@
 {/* ------------------------------------------------------------------------ */}
 
+### v5.1 (not yet released)
+
+The runner function `exit_code()`, which runs the suites and ends the
+session, is deprecated in favour of `run()`, which does the same and
+returns the same exit code; `exit_code()` is still available, as an
+alias of `run()`. The session now runs only once: later calls of
+`run()` return the same exit code without running the suites again, and
+a second `initialise()` is reported and ignored.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

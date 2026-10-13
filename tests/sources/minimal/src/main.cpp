@@ -73,7 +73,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // Return the overall test result to the system.
-  return tr.exit_code ();
+  return tr.run ();
 }
 
 // ----------------------------------------------------------------------------

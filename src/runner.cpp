@@ -162,6 +162,9 @@ namespace micro_os_plus::micro_test_plus
    * constructor, it is derived from the file name of `argv[0]`, without
    * the extension, or defaults to "default suite".
    *
+   * The runner is initialised only once; a later call reports an error on
+   * `stderr` and returns the top suite, without other effects.
+   *
    * If tracing is enabled, the command-line arguments are
    * also logged for diagnostic purposes.
    */
@@ -187,6 +190,12 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(MICRO_OS_PLUS_DEBUG_ENABLED)
 #endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (session_state_ != session_state_t::created)
+      {
+        fprintf (stderr, "error: test runner already initialised\n");
+        return top_suite_;
+      }
 
     if (strlen (top_suite_name) > 0)
       {
@@ -275,6 +284,8 @@ namespace micro_os_plus::micro_test_plus
     top_suite_.timings ().timestamp_begin ();
     reporter_->begin_suite (top_suite_);
 
+    session_state_ = session_state_t::initialised;
+
     return top_suite_;
   }
 
@@ -357,15 +368,25 @@ namespace micro_os_plus::micro_test_plus
    * accumulate all registered child suites. Finally, records the session
    * end timestamp, notifies the reporter, and returns `0` if all checks
    * passed or `1` otherwise.
+   *
+   * The result is stored, and the later calls return it without running
+   * anything again. If the runner was not initialised, an error is
+   * reported on `stderr` and `1` is returned.
    */
   int
-  runner::exit_code (void)
+  runner::run (void)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (reporter_ == nullptr)
+    if (session_state_ == session_state_t::finished)
+      {
+        // The session has ended; do not run the suites again.
+        return exit_code_;
+      }
+
+    if (session_state_ != session_state_t::initialised)
       {
         fprintf (stderr, "error: test runner not initialised\n");
         return 1;
@@ -380,13 +401,25 @@ namespace micro_os_plus::micro_test_plus
     timings_.timestamp_end ();
     reporter_->end_session (*this);
 
-    const int result = totals_.was_successful () ? 0 : 1;
+    exit_code_ = totals_.was_successful () ? 0 : 1;
+    session_state_ = session_state_t::finished;
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s -> %d\n", __PRETTY_FUNCTION__, result);
+    trace::printf ("%s -> %d\n", __PRETTY_FUNCTION__, exit_code_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    return result;
+    return exit_code_;
+  }
+
+  /**
+   * @details
+   * Kept for compatibility; it calls `run()`, so the first call runs the
+   * session and the later ones return the stored exit code.
+   */
+  int
+  runner::exit_code (void)
+  {
+    return run ();
   }
 
   /**

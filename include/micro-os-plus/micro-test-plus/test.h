@@ -810,7 +810,7 @@ namespace micro_os_plus::micro_test_plus
    * `suite` represents a top-level named group of related test cases within
    * the µTest++ framework. It is created by calling `runner::suite()`, which
    * constructs the object and stores it in the runner's collection; the
-   * stored suites are run later, sorted by name, by `runner::exit_code()`.
+   * stored suites are run later, sorted by name, by `runner::run()`.
    * Each suite records its own timing information and propagates its
    * results to the owning `runner`.
    *
@@ -1060,7 +1060,7 @@ namespace micro_os_plus::micro_test_plus
    * Upon construction, the suite automatically registers itself with the
    * supplied `static_runner`, via `detail::register_static_suite()`. The
    * runner defers execution of all registered static suites until
-   * `static_runner::run_suites_()` is invoked by `runner::exit_code()`,
+   * `static_runner::run_suites_()` is invoked by `runner::run()`,
    * after the dynamically registered suites.
    *
    * The body is stored in `static_callable_`, which receives a

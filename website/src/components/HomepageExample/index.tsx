@@ -23,7 +23,7 @@ main (int argc, char* argv[])
     });
 
   // Run the tests and return the test result.
-  return tr.exit_code ();
+  return tr.run ();
 }`;
 
 const output = `TAP version 14

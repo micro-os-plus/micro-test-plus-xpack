@@ -69,7 +69,7 @@ main (int argc, char* argv[])
     mt::runner tr;
     tr.initialise (argc, argv, "Empty suite");
 
-    int exit_code = tr.exit_code ();
+    int exit_code = tr.run ();
 
     test_assert (exit_code == 0);
   }
@@ -90,7 +90,7 @@ main (int argc, char* argv[])
         test_assert (strcmp (t.name (), "Empty subtest") == 0);
       });
 
-    int exit_code = tr.exit_code ();
+    int exit_code = tr.run ();
 
     test_assert (exit_code == 0);
     test_assert (xc == 1);
@@ -132,8 +132,8 @@ main (int argc, char* argv[])
         test_assert (y == 1);
       });
 
-    // The suites are delayed until exit_code().
-    int exit_code = tr.exit_code ();
+    // The suites are delayed until run().
+    int exit_code = tr.run ();
     test_assert (exit_code == 0);
 
     test_assert (xc == 1);
@@ -168,7 +168,7 @@ main (int argc, char* argv[])
         test_assert (yc == 1);
       });
 
-    int exit_code = tr.exit_code ();
+    int exit_code = tr.run ();
 
     test_assert (exit_code == 0);
     test_assert (xc == 1);

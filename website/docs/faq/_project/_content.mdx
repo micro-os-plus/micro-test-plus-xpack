@@ -36,7 +36,7 @@ test case. `runner::abort()` writes
 `abort()`.
 
 As a consequence, the remaining test cases and suites do not run, no
-final totals are written, and `exit_code()` is never reached; the
+final totals are written, and `run()` is never reached; the
 process ends with the status of an abnormal termination. On embedded
 platforms, the behaviour is that of the platform's `abort()`.
 
@@ -113,7 +113,7 @@ C equivalent. Include the C headers in the C++ test sources, within
 
 The test cases added to the top suite in `main()`, with `ts.test (…)`,
 run immediately, in the order of the calls. The suites registered with
-the runner run later, when `exit_code()` is called, sorted by name;
+the runner run later, when `run()` is called, sorted by name;
 with a `static_runner`, the static suites follow, also sorted by name.
 The test cases within a suite run in the order in which they are
 defined.

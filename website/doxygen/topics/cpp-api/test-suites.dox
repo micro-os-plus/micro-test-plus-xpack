@@ -24,7 +24,7 @@ as the sequence in which static constructors are invoked is not specified.
 Consequently, test suites should be designed to be independent and must not
 rely on the execution order of other suites.
 
-All registered test suites are executed when `runner::exit_code()` is
+All registered test suites are executed when `runner::run()` is
 called, guaranteeing comprehensive test coverage across the project.
 
 @par Examples
@@ -44,7 +44,7 @@ main (int argc, char* argv[])
     t.expect (true) << "Passed";
   });
 
-  return tr.exit_code ();
+  return tr.run ();
 }
 
 // In a separate source file: a self-registering suite.

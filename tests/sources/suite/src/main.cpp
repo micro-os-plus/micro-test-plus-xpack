@@ -86,7 +86,7 @@ main (int argc, char* argv[])
         t.expect (compute_condition ()) << "condition is true";
       });
 
-    // The suite will be executed when the runner terminates, at `exit_code()`.
+    // The suite will be executed when the runner terminates, at `run()`.
     lr.suite ("Local suite 1", suite_function);
 
     ts.test ("Check various conditions 1.2", [] (auto& t)
@@ -97,7 +97,7 @@ main (int argc, char* argv[])
         t.expect (compute_condition ()) << "condition is true";
       });
 
-    exit_code = lr.exit_code ();
+    exit_code = lr.run ();
   }
 
   // --------------------------------------------------------------------------
@@ -113,7 +113,7 @@ main (int argc, char* argv[])
         t.expect (compute_condition ()) << "condition is true";
       });
 
-    // The suite will be executed when the runner terminates, at `exit_code()`,
+    // The suite will be executed when the runner terminates, at `run()`,
     // before the static suites.
     sr.suite ("Local suite 2", suite_function);
 
@@ -125,7 +125,7 @@ main (int argc, char* argv[])
         t.expect (compute_condition ()) << "condition is true";
       });
 
-    exit_code += sr.exit_code ();
+    exit_code += sr.run ();
   }
 
   // --------------------------------------------------------------------------
