@@ -21,6 +21,13 @@ wrappers, as `==` and `!=` already did: values within the tolerance are
 equal, so `1.45 < 1.5_d` is now false, and `1.45 <= 1.5_d` true. The new
 `mt::approx (value, epsilon)` sets the tolerance explicitly.
 
+The comparators now compare the C strings (`char` arrays, string
+literals, and `char` pointers) by content, as `std::string_view`, also
+with `std::string`; two `const char*` holding equal strings were
+previously compared by address. To compare the addresses, cast the
+pointers to `const void*`. The pointer overloads of the comparators
+were removed; the generic ones handle all the pointers.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

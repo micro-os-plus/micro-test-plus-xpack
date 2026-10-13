@@ -429,6 +429,73 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     // --------------------------------------------------------------------------
 
+    // The C strings (`char` arrays, string literals, and `char` pointers)
+    // are compared by content, also with `std::string`; a null pointer is
+    // equal only to another null pointer (API-REVIEW.md #12).
+    ts.test ("C string comparisons", [] (auto& t)
+      {
+        const char* actual = compute_abc ();
+        char array[] = "abc";
+        const char* null_string = nullptr;
+        char unterminated[3] = { 'a', 'b', 'c' };
+
+        t.expect (eq (actual, "abc")) << "actual == \"abc\"";
+        t.expect (eq (array, actual)) << "array == actual";
+        t.expect (eq ("abc", std::string{ "abc" })) << "\"abc\" == string";
+        t.expect (eq (std::string{ "abc" }, actual)) << "string == actual";
+        t.expect (eq ("abc"sv, actual)) << "string_view == actual";
+        t.expect (ne (actual, "abx")) << "actual != \"abx\"";
+        t.expect (lt (actual, "abd")) << "actual < \"abd\"";
+        t.expect (le (actual, "abc")) << "actual <= \"abc\"";
+        t.expect (gt (actual, "abb")) << "actual > \"abb\"";
+        t.expect (ge (actual, "abc")) << "actual >= \"abc\"";
+        local_counts.successful_checks += 10;
+
+        t.expect (eq (null_string, nullptr)) << "null_string == nullptr";
+        t.expect (ne (null_string, "")) << "null_string != \"\"";
+        t.expect (lt (null_string, "")) << "null_string < \"\"";
+        local_counts.successful_checks += 3;
+
+        // An array without a terminator is not read beyond its end.
+        t.expect (eq (unterminated, "abc")) << "unterminated == \"abc\"";
+        local_counts.successful_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+
+    // --------------------------------------------------------------------------
+
+    // The failed C string comparisons display the strings.
+    ts.test ("Failed C string comparisons", [] (auto& t)
+      {
+        const char* actual = compute_abc ();
+        const char* null_string = nullptr;
+
+        t.expect (eq (actual, "abx")) << "actual == \"abx\"";
+        local_counts.failed_checks++;
+
+        t.expect (eq (null_string, "abc")) << "null_string == \"abc\"";
+        local_counts.failed_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+
+    // --------------------------------------------------------------------------
+
     ts.test ("Pointer comparisons", [] (auto& t)
       {
         int one = 1;

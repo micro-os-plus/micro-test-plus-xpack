@@ -59,8 +59,12 @@
 #include "type-traits.h"
 #include "reflection.h"
 
+#include <compare>
+#include <cstddef>
 #include <cstdio>
 #include <string>
+#include <string_view>
+#include <type_traits>
 
 // ----------------------------------------------------------------------------
 
@@ -861,6 +865,167 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
     [[nodiscard]] constexpr void*
     to_printable_pointer_ (T* v) noexcept;
+
+    // ========================================================================
+
+    /**
+     * @brief A C string operand of a comparator.
+     *
+     * @details
+     * The comparators convert the `char` arrays (including the string
+     * literals) and the `char` pointers to this type (see `as_operand_()`),
+     * so that they are compared by content, as a reader of a test expects,
+     * and not by address. A null pointer is equal only to another null
+     * pointer (not to an empty string), and is less than any string.
+     *
+     * The characters are not copied; the operand must outlive the
+     * comparison, which is always the case within a check.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    struct c_string_
+    {
+      /**
+       * @brief Constructs the operand from a pointer to a null-terminated
+       * string.
+       *
+       * @param str The string, or `nullptr`.
+       */
+      constexpr explicit c_string_ (const char* str) noexcept;
+
+      /**
+       * @brief Constructs the operand from a `char` array.
+       *
+       * @details
+       * The string ends at the first null character, or at the end of the
+       * array, so that an array without a terminator is not read beyond
+       * its end.
+       *
+       * @param str The first character of the array.
+       * @param capacity The number of elements of the array.
+       */
+      constexpr c_string_ (const char* str, std::size_t capacity) noexcept;
+
+      /**
+       * @brief Returns the characters, as a string view.
+       *
+       * @par Parameters
+       *   None.
+       * @return The characters, without the terminator; empty for a null
+       * pointer.
+       */
+      [[nodiscard]] constexpr std::string_view
+      view (void) const noexcept;
+
+      /**
+       * @brief Returns whether the operand is a null pointer.
+       *
+       * @par Parameters
+       *   None.
+       * @retval true The operand is a null pointer.
+       * @retval false The operand is a string, possibly empty.
+       */
+      [[nodiscard]] constexpr bool
+      is_null (void) const noexcept;
+
+    private:
+      /**
+       * @brief The first character, or `nullptr`.
+       *
+       * @details
+       * Not owned; points into the operand passed to the comparator.
+       */
+      const char* str_;
+
+      /**
+       * @brief The number of characters, without the terminator.
+       *
+       * @details
+       * Computed by the constructors; zero for a null pointer.
+       */
+      std::size_t size_;
+    };
+
+    /**
+     * @brief Compares two C string operands for equality.
+     *
+     * @param lhs The left operand.
+     * @param rhs The right operand.
+     * @retval true Both are null, or both are strings with the same
+     * characters.
+     * @retval false Otherwise.
+     */
+    [[nodiscard]] constexpr bool
+    operator== (const c_string_& lhs, const c_string_& rhs) noexcept;
+
+    /**
+     * @brief Compares a C string operand with a string.
+     *
+     * @details
+     * Also used for `std::string` operands, which convert to
+     * `std::string_view`, and, as a rewritten candidate, with the operands
+     * in the reverse order.
+     *
+     * @param lhs The C string operand.
+     * @param rhs The string.
+     * @retval true The operand is not null and has the same characters.
+     * @retval false Otherwise.
+     */
+    [[nodiscard]] constexpr bool
+    operator== (const c_string_& lhs, std::string_view rhs) noexcept;
+
+    /**
+     * @brief Checks whether a C string operand is a null pointer.
+     *
+     * @param lhs The C string operand.
+     * @retval true The operand is a null pointer.
+     * @retval false Otherwise.
+     */
+    [[nodiscard]] constexpr bool
+    operator== (const c_string_& lhs, std::nullptr_t) noexcept;
+
+    /**
+     * @brief Orders two C string operands.
+     *
+     * @param lhs The left operand.
+     * @param rhs The right operand.
+     * @return The lexicographic order of the characters; a null pointer is
+     * equal to another null pointer and less than any string.
+     */
+    [[nodiscard]] constexpr std::strong_ordering
+    operator<=> (const c_string_& lhs, const c_string_& rhs) noexcept;
+
+    /**
+     * @brief Orders a C string operand and a string.
+     *
+     * @param lhs The C string operand.
+     * @param rhs The string.
+     * @return The lexicographic order of the characters; a null pointer is
+     * less than any string.
+     */
+    [[nodiscard]] constexpr std::strong_ordering
+    operator<=> (const c_string_& lhs, std::string_view rhs) noexcept;
+
+    /**
+     * @brief Prepares an operand of a comparator.
+     *
+     * @details
+     * The `char` arrays and the `char` pointers (not those of `signed
+     * char` or `unsigned char`, which are byte buffers) are converted to
+     * `c_string_`, so that they are compared by content; the other arrays
+     * are converted to pointers to their first element, the functions to
+     * function pointers, and all other operands are returned unchanged, so
+     * the other pointers, arrays, and functions are compared by address.
+     *
+     * @tparam T The type of the operand.
+     *
+     * @param t The operand.
+     * @return A `c_string_` for the C strings, otherwise a reference to
+     * `t`.
+     */
+    template <class T>
+    [[nodiscard]] constexpr decltype (auto)
+    as_operand_ (const T& t) noexcept;
 
     // ------------------------------------------------------------------------
   } // namespace detail

@@ -95,6 +95,25 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Appends the characters of the string, or `"nullptr"` for a null
+   * pointer, as the other operator overloads do for these values.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (const c_string_& s)
+  {
+    if (s.is_null ())
+      {
+        buffer_.append ("nullptr");
+      }
+    else
+      {
+        buffer_.append (s.view ());
+      }
+    return *this;
+  }
+
+  /**
+   * @details
    * Appends the string `"true"` or `"false"` to the internal buffer
    * based on the value of @p v.
    */

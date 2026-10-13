@@ -41,6 +41,13 @@ expected values:
 and 42.000000 != 42.000000))
 @endcode
 
+The C strings (`char` arrays, including the string literals, and `char`
+pointers) are compared by content, also with `std::string` and
+`std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
+not the addresses; a null `char` pointer is equal only to another null
+pointer (or `nullptr`), not to an empty string. The other pointers and
+arrays (including `uint8_t` buffers) are compared by address.
+
 @par Comparing Containers
 
 Containers can be compared for equality or inequality using the same

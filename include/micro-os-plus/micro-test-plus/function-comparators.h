@@ -23,14 +23,16 @@
  * @details
  * This header provides the declarations for the function comparator templates
  * and logical operators used within the µTest++ framework. It defines the
- * interfaces for generic and pointer-based comparison functions, including
+ * interfaces for the generic comparison functions, including
  * equality, non-equality, greater than, less than, greater than or equal,
  * and less than or equal. Additionally, it declares logical combinators such
  * as conjunction (`_and`), disjunction (`_or`), and negation (`_not`), as
  * well as a utility for removing constness from references (`mut`).
  *
  * These comparators and logical operators enable expressive and type-safe test
- * expectations and assertions, supporting both value and pointer semantics.
+ * expectations and assertions. The C strings (`char` arrays, including the
+ * string literals, and `char` pointers) are compared by content; the other
+ * pointers and arrays are compared by address.
  * The underscore-prefixed logical operators are intentionally named to avoid
  * conflicts with standard operators and provide clear, readable test
  * expressions.
@@ -86,7 +88,14 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
-   * @brief Generic equality comparator for non-pointer types.
+   * @brief Generic equality comparator.
+   *
+   * @details
+   * The C strings (`char` arrays, including the string literals, and
+   * `char` pointers) are compared by content, also with `std::string` and
+   * `std::string_view`; a null `char` pointer is equal only to another
+   * null pointer. The other pointers and arrays are compared by address.
+   * The same rules apply to `ne()`, `gt()`, `ge()`, `lt()`, and `le()`.
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -98,21 +107,6 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
   eq (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
-   * @brief Pointer equality comparator for any pointer types.
-   *
-   * @tparam Lhs_T Type of the left hand side pointer operand.
-   * @tparam Rhs_T Type of the right hand side pointer operand.
-   * @param lhs Left hand side pointer operand.
-   * @param rhs Right hand side pointer operand.
-   * @return A comparator object that evaluates to true if the pointers are
-   * equal.
-   */
-  template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
-  eq (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
@@ -131,22 +125,6 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
-   * @brief Pointer non-equality comparator.
-   *
-   * @tparam Lhs_T Type of the left hand side pointer operand.
-   * @tparam Rhs_T Type of the right hand side pointer operand.
-   * @param lhs Left hand side pointer operand.
-   * @param rhs Right hand side pointer operand.
-   * @return A comparator object that evaluates to true if the pointers are not
-   * equal.
-   *
-   */
-  template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
-  ne (Lhs_T* lhs, Rhs_T* rhs);
-
-  /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Generic greater than comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -159,21 +137,6 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
   gt (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
-   * @brief Pointer greater than comparator.
-   *
-   * @tparam Lhs_T Type of the left hand side pointer operand.
-   * @tparam Rhs_T Type of the right hand side pointer operand.
-   * @param lhs Left hand side pointer operand.
-   * @param rhs Right hand side pointer operand.
-   * @return A comparator object that evaluates to true if the left hand side
-   * pointer is greater than the right hand side pointer.
-   */
-  template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
-  gt (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
@@ -193,22 +156,6 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
-   * @brief Pointer greater than or equal comparator.
-   *
-   * @tparam Lhs_T Type of the left hand side pointer operand.
-   * @tparam Rhs_T Type of the right hand side pointer operand.
-   *
-   * @param lhs Left hand side pointer operand.
-   * @param rhs Right hand side pointer operand.
-   * @return A comparator object that evaluates to true if the left hand side
-   * pointer is greater than or equal to the right hand side pointer.
-   */
-  template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
-  ge (Lhs_T* lhs, Rhs_T* rhs);
-
-  /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Generic less than comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -225,22 +172,6 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
-   * @brief Pointer less than comparator.
-   *
-   * @tparam Lhs_T Type of the left hand side pointer operand.
-   * @tparam Rhs_T Type of the right hand side pointer operand.
-   *
-   * @param lhs Left hand side pointer operand.
-   * @param rhs Right hand side pointer operand.
-   * @return A comparator object that evaluates to true if the left hand side
-   * pointer is less than the right hand side pointer.
-   */
-  template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
-  lt (Lhs_T* lhs, Rhs_T* rhs);
-
-  /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
    * @brief Generic less than or equal comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -254,22 +185,6 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
   le (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
-   * @brief Pointer less than or equal comparator.
-   *
-   * @tparam Lhs_T Type of the left hand side pointer operand.
-   * @tparam Rhs_T Type of the right hand side pointer operand.
-   *
-   * @param lhs Left hand side pointer operand.
-   * @param rhs Right hand side pointer operand.
-   * @return A comparator object that evaluates to true if the left hand side
-   * pointer is less than or equal to the right hand side pointer.
-   */
-  template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
-  le (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions

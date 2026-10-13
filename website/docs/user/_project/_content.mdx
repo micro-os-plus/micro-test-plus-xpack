@@ -389,6 +389,13 @@ template <class Lhs_T, class Rhs_T>
 auto ge(const Lhs_T& lhs, const Rhs_T& rhs);
 ```
 
+The C strings (`char` arrays, including the string literals, and `char`
+pointers) are compared by content, also with `std::string` and
+`std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
+not the addresses; a null `char` pointer is equal only to another null
+pointer (or `nullptr`), not to an empty string. The other pointers and
+arrays (including `uint8_t` buffers) are compared by address.
+
 Refer to the [Function Comparators](/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/) reference page.
 
 ### Logical functions

@@ -38,6 +38,8 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Failed float comparisons
     • String comparisons
     • Failed string comparisons
+    • C string comparisons
+    • Failed C string comparisons
     • Pointer comparisons
     • Failed pointer comparisons
     • Null pointer comparisons
@@ -78,4 +80,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 393 checks passed, 331 failed, in 77 test cases, 13 test suites, time: 2.031 ms
+✗ Total: 407 checks passed, 333 failed, in 79 test cases, 13 test suites, time: 2.077 ms

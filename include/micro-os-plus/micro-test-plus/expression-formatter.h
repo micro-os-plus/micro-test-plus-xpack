@@ -251,6 +251,15 @@ namespace micro_os_plus::micro_test_plus
       operator<< (const char* s);
 
       /**
+       * @brief Appends a C string operand of a comparator.
+       *
+       * @param s The operand.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (const c_string_& s);
+
+      /**
        * @brief Appends the string representation of a boolean value.
        *
        * @param v The boolean value.

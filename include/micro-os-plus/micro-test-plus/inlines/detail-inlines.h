@@ -801,6 +801,162 @@ namespace micro_os_plus::micro_test_plus
         }
     }
 
+    // ========================================================================
+
+    /**
+     * @details
+     * The length is computed with `std::char_traits<char>::length()`,
+     * which, unlike `strlen()`, can be evaluated at compile time.
+     */
+    constexpr c_string_::c_string_ (const char* str) noexcept
+        : str_{ str },
+          size_{ str == nullptr ? 0 : std::char_traits<char>::length (str) }
+    {
+    }
+
+    /**
+     * @details
+     * The characters are counted up to the first null character, or up to
+     * `capacity`.
+     */
+    constexpr c_string_::c_string_ (const char* str,
+                                    std::size_t capacity) noexcept
+        : str_{ str }, size_{ capacity }
+    {
+      // Search within the array only; the view avoids indexing the raw
+      // pointer.
+      const std::size_t terminator
+          = std::string_view{ str, capacity }.find ('\0');
+      if (terminator != std::string_view::npos)
+        {
+          size_ = terminator;
+        }
+    }
+
+    /**
+     * @details
+     * Returns an empty view for a null pointer.
+     */
+    constexpr std::string_view
+    c_string_::view (void) const noexcept
+    {
+      return str_ == nullptr ? std::string_view{}
+                             : std::string_view{ str_, size_ };
+    }
+
+    /**
+     * @details
+     * Returns whether the stored pointer is null.
+     */
+    constexpr bool
+    c_string_::is_null (void) const noexcept
+    {
+      return str_ == nullptr;
+    }
+
+    /**
+     * @details
+     * Two null pointers are equal; a null pointer is not equal to any
+     * string, not even an empty one.
+     */
+    constexpr bool
+    operator== (const c_string_& lhs, const c_string_& rhs) noexcept
+    {
+      if (lhs.is_null () || rhs.is_null ())
+        {
+          return lhs.is_null () && rhs.is_null ();
+        }
+      return lhs.view () == rhs.view ();
+    }
+
+    /**
+     * @details
+     * A null pointer is not equal to any string.
+     */
+    constexpr bool
+    operator== (const c_string_& lhs, std::string_view rhs) noexcept
+    {
+      return !lhs.is_null () && lhs.view () == rhs;
+    }
+
+    /**
+     * @details
+     * Returns whether the operand is a null pointer.
+     */
+    constexpr bool
+    operator== (const c_string_& lhs, std::nullptr_t) noexcept
+    {
+      return lhs.is_null ();
+    }
+
+    /**
+     * @details
+     * A null pointer orders before any string.
+     */
+    constexpr std::strong_ordering
+    operator<=> (const c_string_& lhs, const c_string_& rhs) noexcept
+    {
+      if (lhs.is_null () || rhs.is_null ())
+        {
+          return !lhs.is_null () <=> !rhs.is_null ();
+        }
+      return lhs.view () <=> rhs.view ();
+    }
+
+    /**
+     * @details
+     * A null pointer orders before any string.
+     */
+    constexpr std::strong_ordering
+    operator<=> (const c_string_& lhs, std::string_view rhs) noexcept
+    {
+      if (lhs.is_null ())
+        {
+          return std::strong_ordering::less;
+        }
+      return lhs.view () <=> rhs;
+    }
+
+    /**
+     * @details
+     * Arrays of `char` are converted using their size as a bound, pointers
+     * to `char` using the null terminator; the cv-qualifiers of the
+     * characters are ignored. Every other operand is returned by
+     * reference, unchanged.
+     */
+    template <class T>
+    constexpr decltype (auto)
+    as_operand_ (const T& t) noexcept
+    {
+      if constexpr (std::is_array_v<T>
+                    && std::is_same_v<
+                        std::remove_cv_t<std::remove_extent_t<T>>, char>)
+        {
+          return c_string_{ t, std::extent_v<T> };
+        }
+      else if constexpr (std::is_pointer_v<T>
+                         && std::is_same_v<
+                             std::remove_cv_t<std::remove_pointer_t<T>>, char>)
+        {
+          return c_string_{ t };
+        }
+      else if constexpr (std::is_array_v<T>)
+        {
+          // Other arrays (e.g. byte buffers) are compared by address, as
+          // pointers to their first element.
+          return static_cast<const std::remove_extent_t<T>*> (t);
+        }
+      else if constexpr (std::is_function_v<T>)
+        {
+          // Functions are compared by address, as function pointers.
+          return &t;
+        }
+      else
+        {
+          return (t);
+        }
+    }
+
     // ------------------------------------------------------------------------
 
   } // namespace detail
