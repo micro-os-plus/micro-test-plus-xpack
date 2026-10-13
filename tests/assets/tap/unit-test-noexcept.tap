@@ -1,4 +1,4 @@
-# Running: unit-test --quiet one two --output-file unit-test-noexcept.tap
+# Running: unit-test one two --output-file unit-test-noexcept.tap
 # Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: Static top suite
@@ -69,8 +69,16 @@ TAP version 14
         ok 1 - inner subtest # { passed, 1 check }
         1..1
     ok 9 - Nested subtests # { passed, 0 checks }
-    1..9
-not ok 1 - Static top suite # { FAILED, 25 checks passed, 2 failed, in 10 test cases }
+    # Subtest: Nested subtest after a check
+        ok 1 - outer check before the nested subtest
+        # Subtest: inner subtest after a check
+            ok 1 - inner check
+            1..1
+        ok 2 - inner subtest after a check # { passed, 1 check }
+        1..2
+    ok 10 - Nested subtest after a check # { passed, 1 check }
+    1..10
+not ok 1 - Static top suite # { FAILED, 27 checks passed, 2 failed, in 12 test cases }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
@@ -334,56 +342,56 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: 42 != 42
           at:
             filename: comparisons.cpp
-            line: 115
+            line: 119
           ...
         not ok 2 - actual+1 == 42
           ---
           condition: 43 == 42
           at:
             filename: comparisons.cpp
-            line: 118
+            line: 122
           ...
         not ok 3 - actual-1 >= 42
           ---
           condition: 41 >= 42
           at:
             filename: comparisons.cpp
-            line: 122
+            line: 126
           ...
         not ok 4 - actual > 42
           ---
           condition: 42 > 42
           at:
             filename: comparisons.cpp
-            line: 126
+            line: 130
           ...
         not ok 5 - actual+1 <= 42
           ---
           condition: 43 <= 42
           at:
             filename: comparisons.cpp
-            line: 129
+            line: 133
           ...
         not ok 6 - actual < 42
           ---
           condition: 42 < 42
           at:
             filename: comparisons.cpp
-            line: 133
+            line: 137
           ...
         not ok 7 - 42_i != 42_i
           ---
           condition: 42 != 42
           at:
             filename: comparisons.cpp
-            line: 139
+            line: 143
           ...
         not ok 8 - 42 != 42_i
           ---
           condition: 42 != 42
           at:
             filename: comparisons.cpp
-            line: 142
+            line: 146
           ...
         1..8
     not ok 2 - Failed integer comparisons # { FAILED, 0 checks passed, 8 failed }
@@ -423,147 +431,147 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: 42f != 42f
           at:
             filename: comparisons.cpp
-            line: 264
+            line: 268
           ...
         not ok 2 - actual == 43.0
           ---
           condition: 42f == 43f
           at:
             filename: comparisons.cpp
-            line: 267
+            line: 271
           ...
         not ok 3 - actual != 42
           ---
           condition: 42f != 42
           at:
             filename: comparisons.cpp
-            line: 270
+            line: 274
           ...
         not ok 4 - actual == 43
           ---
           condition: 42f == 43
           at:
             filename: comparisons.cpp
-            line: 273
+            line: 277
           ...
         not ok 5 - 42.101f != 42.101_f
           ---
           condition: 42.101f != 42.101f
           at:
             filename: comparisons.cpp
-            line: 279
+            line: 283
           ...
         not ok 6 - 42.101f epsilon 0.01f != 42.10_f
           ---
           condition: 42.101f != 42.1f
           at:
             filename: comparisons.cpp
-            line: 282
+            line: 286
           ...
         not ok 7 - 42.101f epsilon 0.1f == 42.10_f
           ---
           condition: 42.101f == 42.1f
           at:
             filename: comparisons.cpp
-            line: 286
+            line: 290
           ...
         not ok 8 - 42.1010001f epsilon 0.1f != 42.1_f
           ---
           condition: 42.101f != 42.1f
           at:
             filename: comparisons.cpp
-            line: 290
+            line: 294
           ...
         not ok 9 - 42.101f == 42.10_f
           ---
           condition: 42.101f == 42.1f
           at:
             filename: comparisons.cpp
-            line: 294
+            line: 298
           ...
         not ok 10 - 42.101f == 42.100_f
           ---
           condition: 42.101f == 42.1f
           at:
             filename: comparisons.cpp
-            line: 297
+            line: 301
           ...
         not ok 11 - 42.10f == 42.1_f
           ---
           condition: 42.1f != 42.1f
           at:
             filename: comparisons.cpp
-            line: 300
+            line: 304
           ...
         not ok 12 - 42.42f == 42.42_f
           ---
           condition: 42.42f != 42.42f
           at:
             filename: comparisons.cpp
-            line: 303
+            line: 307
           ...
         not ok 13 - 42.42 == 42.420_d
           ---
           condition: 42.42 != 42.42
           at:
             filename: comparisons.cpp
-            line: 306
+            line: 310
           ...
         not ok 14 - 42.0 == 42.0_d
           ---
           condition: 42 != 42
           at:
             filename: comparisons.cpp
-            line: 309
+            line: 313
           ...
         not ok 15 - 42. == 42._d
           ---
           condition: 42 != 42
           at:
             filename: comparisons.cpp
-            line: 312
+            line: 316
           ...
         not ok 16 - 42.42 == 42.42_ld
           ---
           condition: 42.42l != 42.42l
           at:
             filename: comparisons.cpp
-            line: 315
+            line: 319
           ...
         not ok 17 - 1234._f == 1234.f
           ---
           condition: 1234f != 1234f
           at:
             filename: comparisons.cpp
-            line: 319
+            line: 323
           ...
         not ok 18 - 1234.56_f == 1234.56f
           ---
           condition: 1234.56f != 1234.56f
           at:
             filename: comparisons.cpp
-            line: 322
+            line: 326
           ...
         not ok 19 - 12345678.9f == 12345678.9_f
           ---
           condition: 12345679f != 12345679f
           at:
             filename: comparisons.cpp
-            line: 325
+            line: 329
           ...
         not ok 20 - 111111.42f == 111111.42_f
           ---
           condition: 111111.42f != 111111.42f
           at:
             filename: comparisons.cpp
-            line: 329
+            line: 333
           ...
         not ok 21 - 1111111111.42 == 1111111111.42_d
           ---
           condition: 1111111111.42 != 1111111111.42
           at:
             filename: comparisons.cpp
-            line: 333
+            line: 337
           ...
         1..21
     not ok 4 - Failed float comparisons # { FAILED, 0 checks passed, 21 failed }
@@ -582,42 +590,42 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: abc != abc
           at:
             filename: comparisons.cpp
-            line: 392
+            line: 396
           ...
         not ok 2 - actual_sv == abx_sv
           ---
           condition: abc == abx
           at:
             filename: comparisons.cpp
-            line: 396
+            line: 400
           ...
         not ok 3 - actual_sv >= abd_sv
           ---
           condition: abc >= abd
           at:
             filename: comparisons.cpp
-            line: 400
+            line: 404
           ...
         not ok 4 - actual_sv > abc_sv
           ---
           condition: abc > abc
           at:
             filename: comparisons.cpp
-            line: 404
+            line: 408
           ...
         not ok 5 - actual_sv <= abb_sv
           ---
           condition: abc <= abb
           at:
             filename: comparisons.cpp
-            line: 408
+            line: 412
           ...
         not ok 6 - actual_sv < abc_sv
           ---
           condition: abc < abc
           at:
             filename: comparisons.cpp
-            line: 412
+            line: 416
           ...
         1..6
     not ok 6 - Failed string comparisons # { FAILED, 0 checks passed, 6 failed }
@@ -639,63 +647,63 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: 0x43fffb4c != 0x43fffb4c
           at:
             filename: comparisons.cpp
-            line: 494
+            line: 498
           ...
         not ok 2 - ptr1 != ptr2
           ---
           condition: 0x43fffb4c != 0x43fffb4c
           at:
             filename: comparisons.cpp
-            line: 497
+            line: 501
           ...
         not ok 3 - ptr1 > ptr2
           ---
           condition: 0x43fffb4c > 0x43fffb4c
           at:
             filename: comparisons.cpp
-            line: 500
+            line: 504
           ...
         not ok 4 - ptr1 < ptr2
           ---
           condition: 0x43fffb4c < 0x43fffb4c
           at:
             filename: comparisons.cpp
-            line: 503
+            line: 507
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
           condition: 0x43fffb4c == 0x43fffb50
           at:
             filename: comparisons.cpp
-            line: 506
+            line: 510
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: 0x4003a5b0 != 0x4003a5b0
+          condition: 0x400078dc != 0x400078dc
           at:
             filename: comparisons.cpp
-            line: 509
+            line: 513
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: 0x4003a5b0 == 0x43fffb50
+          condition: 0x400078dc == 0x43fffb50
           at:
             filename: comparisons.cpp
-            line: 512
+            line: 516
           ...
         not ok 8 - pone >= ptwo
           ---
           condition: 0x43fffb58 >= 0x43fffb5c
           at:
             filename: comparisons.cpp
-            line: 524
+            line: 528
           ...
         not ok 9 - ptwo <= pone
           ---
           condition: 0x43fffb5c <= 0x43fffb58
           at:
             filename: comparisons.cpp
-            line: 527
+            line: 531
           ...
         1..9
     not ok 8 - Failed pointer comparisons # { FAILED, 0 checks passed, 9 failed }
@@ -711,21 +719,21 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: 0x0 != nullptr
           at:
             filename: comparisons.cpp
-            line: 575
+            line: 579
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: 0x43fffc38 == nullptr
+          condition: 0x43fffc28 == nullptr
           at:
             filename: comparisons.cpp
-            line: 578
+            line: 582
           ...
         not ok 3 - pfunc != nullptr
           ---
           condition: 0x0 != nullptr
           at:
             filename: comparisons.cpp
-            line: 581
+            line: 585
           ...
         1..3
     not ok 10 - Failed null pointer comparisons # { FAILED, 0 checks passed, 3 failed }
@@ -736,7 +744,7 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: not 42 == 42
           at:
             filename: comparisons.cpp
-            line: 602
+            line: 606
           ...
         ok 3 - (actual == 42) and (actual == 42.0)
         not ok 4 - (actual == 42) and (actual != 42.0)
@@ -744,21 +752,21 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: (42 == 42 and 42f != 42)
           at:
             filename: comparisons.cpp
-            line: 611
+            line: 615
           ...
         not ok 5 - (actual != 42) and (actual == 42.0)
           ---
           condition: (42 != 42 and 42f == 42)
           at:
             filename: comparisons.cpp
-            line: 616
+            line: 620
           ...
         not ok 6 - (actual != 42) and (actual != 42.0)
           ---
           condition: (42 != 42 and 42f != 42)
           at:
             filename: comparisons.cpp
-            line: 621
+            line: 625
           ...
         ok 7 - (42 == 42 and 42f == 42)
         not ok 8
@@ -766,7 +774,7 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: (42 == 42 and 42f != 42)
           at:
             filename: comparisons.cpp
-            line: 630
+            line: 634
           ...
         ok 9 - (actual == 42) or (actual == 42.0)
         ok 10 - (actual == 42) or (actual != 42.0)
@@ -776,7 +784,7 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: (42 != 42 or 42f != 42)
           at:
             filename: comparisons.cpp
-            line: 649
+            line: 653
           ...
         1..12
     not ok 11 - Logical operations # { FAILED, 6 checks passed, 6 failed }
@@ -2532,28 +2540,28 @@ not ok 7 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
           condition: {42} != {42}
           at:
             filename: miscellaneous.cpp
-            line: 68
+            line: 93
           ...
         not ok 2 - array{ 42 } eq array{ 43 }
           ---
           condition: {42} == {43}
           at:
             filename: miscellaneous.cpp
-            line: 72
+            line: 97
           ...
         not ok 3 - array{ 1, 2 } ne array{ 1, 2 }
           ---
           condition: {1, 2} != {1, 2}
           at:
             filename: miscellaneous.cpp
-            line: 76
+            line: 101
           ...
         not ok 4 - array{ 1, 2, 3 } eq array{ 1, 2, 4 }
           ---
           condition: {1, 2, 3} == {1, 2, 4}
           at:
             filename: miscellaneous.cpp
-            line: 80
+            line: 105
           ...
         1..4
     not ok 2 - Arrays bad # { FAILED, 0 checks passed, 4 failed }
@@ -2572,42 +2580,42 @@ not ok 7 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
           condition: {} != {}
           at:
             filename: miscellaneous.cpp
-            line: 132
+            line: 157
           ...
         not ok 2
           ---
           condition: {} != {}
           at:
             filename: miscellaneous.cpp
-            line: 136
+            line: 161
           ...
         not ok 3 - vector{ 42 } != vector{ 42 }
           ---
           condition: {42} != {42}
           at:
             filename: miscellaneous.cpp
-            line: 139
+            line: 164
           ...
         not ok 4 - vector{ 42 } == vector{ 43 }
           ---
           condition: {42} == {43}
           at:
             filename: miscellaneous.cpp
-            line: 143
+            line: 168
           ...
         not ok 5 - vector{ 1, 2 } != vector{ 1, 2 }
           ---
           condition: {1, 2} != {1, 2}
           at:
             filename: miscellaneous.cpp
-            line: 147
+            line: 172
           ...
         not ok 6 - vector{ 1, 2, 3 } == vector{ 1, 2, 4 }
           ---
           condition: {1, 2, 3} == {1, 2, 4}
           at:
             filename: miscellaneous.cpp
-            line: 151
+            line: 176
           ...
         1..6
     not ok 4 - Vectors bad # { FAILED, 0 checks passed, 6 failed }
@@ -2848,4 +2856,4 @@ ok 10 - Timings suite # { passed, 27 checks in 6 test cases }
     1..3
 not ok 11 - Utility suite # { FAILED, 16 checks passed, 5 failed, in 3 test cases }
 1..11
-# { total: 356 checks passed, 326 failed, in 61 test cases, 11 test suites }
+# { total: 358 checks passed, 326 failed, in 63 test cases, 11 test suites }

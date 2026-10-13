@@ -512,6 +512,20 @@ namespace micro_os_plus::micro_test_plus
       }
 
     output_fail_suffix_ (location, abort, subtest);
+
+    buffer_has_failures_ = true;
+  }
+
+  /**
+   * @details
+   * Empties `buffer_`, keeping its capacity, and resets
+   * `buffer_has_failures_`.
+   */
+  void
+  reporter::clear_buffer_ (void)
+  {
+    buffer_.clear ();
+    buffer_has_failures_ = false;
   }
 
   // --------------------------------------------------------------------------

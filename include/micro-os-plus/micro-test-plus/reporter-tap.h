@@ -295,6 +295,22 @@ namespace micro_os_plus::micro_test_plus
     void
     output_fail_suffix_ (const reflection::source_location& location,
                          bool abort, subtest& subtest) override;
+
+    /**
+     * @brief Writes the results buffered for the outer test case before
+     * a nested test case begins.
+     *
+     * @details
+     * Keeps the TAP stream in execution order, with the checks of the
+     * outer test case before the nested test case, as node-tap does.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    commit_buffer_ (void);
   };
 
   // --------------------------------------------------------------------------

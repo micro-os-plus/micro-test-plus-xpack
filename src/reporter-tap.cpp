@@ -380,7 +380,7 @@ namespace micro_os_plus::micro_test_plus
         flush ();
       }
 
-    buffer_.clear ();
+    clear_buffer_ ();
 
     add_empty_line_ = true;
   }
@@ -389,11 +389,15 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Validates that the output buffer is empty at subtest start; if not,
-   * the buffer is written to `stdout`, the stream is flushed, and
-   * execution is aborted. A `"# Subtest: <name>"` comment line
-   * (indented according to nesting depth) is written to the output file
-   * and, under normal or verbose verbosity, to `stdout` as well.
+   * For a nested subtest, the results of the checks already performed by
+   * the outer subtest, if any, are written first (see `commit_buffer_()`),
+   * so that the output follows the execution order. For a top-level
+   * subtest, the output buffer must be empty; if it is not, the buffer is
+   * written to `stdout`, the stream is flushed, and execution is aborted.
+   *
+   * A `"# Subtest: <name>"` comment line (indented according to nesting
+   * depth) is then written to the output file and, under normal or
+   * verbose verbosity, to `stdout` as well.
    */
   void
   reporter_tap::begin_subtest (subtest& subtest)
@@ -404,10 +408,18 @@ namespace micro_os_plus::micro_test_plus
 
     if (!buffer_.empty ())
       {
-        // Each suite should start with an empty buffer.
-        write_buffer_to_console ();
-        flush ();
-        abort ();
+        if (subtest.nesting_depth () > 1)
+          {
+            // The outer subtest performed checks before this nested one.
+            commit_buffer_ ();
+          }
+        else
+          {
+            // Each top-level subtest should start with an empty buffer.
+            write_buffer_to_console ();
+            flush ();
+            abort ();
+          }
       }
 
     std::string indent (indent_size * subtest.nesting_depth (), ' ');
@@ -538,7 +550,7 @@ namespace micro_os_plus::micro_test_plus
         flush ();
       }
 
-    buffer_.clear ();
+    clear_buffer_ ();
 
     add_empty_line_ = true;
   }
@@ -660,6 +672,41 @@ namespace micro_os_plus::micro_test_plus
     *this << indent (level + 1) << "  ..." << endl;
 
     flush ();
+  }
+
+  /**
+   * @details
+   * The buffered `ok`/`not ok` lines of the outer subtest are written to
+   * the output file and, with verbose verbosity, or with normal verbosity
+   * when they include a failure, to `stdout`, preceded by an empty line
+   * when `add_empty_line_` is set. The buffer is then cleared, so that
+   * the nested subtest starts with an empty buffer, and the remaining
+   * lines of the outer subtest are written by its `end_subtest()`.
+   *
+   * With normal verbosity, the passed checks committed here are not
+   * displayed, even if the outer subtest fails later; the output file
+   * always contains them.
+   */
+  void
+  reporter_tap::commit_buffer_ (void)
+  {
+    write_buffer_to_file_ ();
+
+    if (verbosity_ == verbosity::verbose
+        || (verbosity_ == verbosity::normal && buffer_has_failures_))
+      {
+        if (add_empty_line_)
+          {
+            write_console_ ("\n");
+            add_empty_line_ = false;
+          }
+
+        write_buffer_to_console ();
+      }
+
+    flush ();
+
+    clear_buffer_ ();
   }
 
   // --------------------------------------------------------------------------

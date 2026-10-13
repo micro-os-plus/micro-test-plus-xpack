@@ -301,6 +301,58 @@ namespace micro_os_plus::micro_test_plus
     void
     output_fail_suffix_ (const reflection::source_location& location,
                          bool abort, subtest& subtest) override;
+
+    /**
+     * @brief Writes the results buffered for the outer test case before
+     * a nested test case begins.
+     *
+     * @details
+     * Keeps the report in execution order, with the checks of the outer
+     * test case before the nested test case.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    commit_buffer_ (void);
+
+    /**
+     * @brief A test case that has begun and not yet ended.
+     *
+     * @details
+     * Recorded by `begin_subtest()` and removed by `end_subtest()`.
+     */
+    struct open_subtest_t
+    {
+      /**
+       * @brief The test case.
+       *
+       * @details
+       * Used to display its name when its results are committed.
+       */
+      subtest* test;
+
+      /**
+       * @brief Whether the name of the test case was displayed.
+       *
+       * @details
+       * Always true with verbose verbosity; with normal verbosity, set
+       * when failed results are committed before a nested test case, so
+       * that `end_subtest()` does not display the name again.
+       */
+      bool name_displayed;
+    };
+
+    /**
+     * @brief The test cases that have begun and not yet ended, outermost
+     * first.
+     *
+     * @details
+     * The last element is the test case that owns the buffered results.
+     */
+    std::vector<open_subtest_t> open_subtests_{};
   };
 
   // --------------------------------------------------------------------------

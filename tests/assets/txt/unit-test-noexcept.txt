@@ -1,4 +1,4 @@
-Running: unit-test --reporter human one two --output-file unit-test-noexcept.txt
+Running: unit-test one two --reporter human --output-file unit-test-noexcept.txt
 Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Static top suite
@@ -49,7 +49,13 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
             ✓ 1 == 1
         ✓ inner subtest - passed (1 check)
     ✓ Nested subtests - passed (0 checks)
-✗ Static top suite - FAILED (25 checks passed, 2 failed, in 10 test cases)
+    • Nested subtest after a check
+        ✓ outer check before the nested subtest
+        • inner subtest after a check
+            ✓ inner check
+        ✓ inner subtest after a check - passed (1 check)
+    ✓ Nested subtest after a check - passed (1 check)
+✗ Static top suite - FAILED (27 checks passed, 2 failed, in 12 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -293,14 +299,14 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ 42 == 42_i
     ✓ Integer comparisons - passed (8 checks)
     • Failed integer comparisons
-        ✗ actual != 42 FAILED (comparisons.cpp:115, 42 != 42)
-        ✗ actual+1 == 42 FAILED (comparisons.cpp:118, 43 == 42)
-        ✗ actual-1 >= 42 FAILED (comparisons.cpp:122, 41 >= 42)
-        ✗ actual > 42 FAILED (comparisons.cpp:126, 42 > 42)
-        ✗ actual+1 <= 42 FAILED (comparisons.cpp:129, 43 <= 42)
-        ✗ actual < 42 FAILED (comparisons.cpp:133, 42 < 42)
-        ✗ 42_i != 42_i FAILED (comparisons.cpp:139, 42 != 42)
-        ✗ 42 != 42_i FAILED (comparisons.cpp:142, 42 != 42)
+        ✗ actual != 42 FAILED (comparisons.cpp:119, 42 != 42)
+        ✗ actual+1 == 42 FAILED (comparisons.cpp:122, 43 == 42)
+        ✗ actual-1 >= 42 FAILED (comparisons.cpp:126, 41 >= 42)
+        ✗ actual > 42 FAILED (comparisons.cpp:130, 42 > 42)
+        ✗ actual+1 <= 42 FAILED (comparisons.cpp:133, 43 <= 42)
+        ✗ actual < 42 FAILED (comparisons.cpp:137, 42 < 42)
+        ✗ 42_i != 42_i FAILED (comparisons.cpp:143, 42 != 42)
+        ✗ 42 != 42_i FAILED (comparisons.cpp:146, 42 != 42)
     ✗ Failed integer comparisons - FAILED (0 checks passed, 8 failed)
     • Float comparisons
         ✓ actual == 42.0f
@@ -332,27 +338,27 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ 1111111111.42 == 1111111111.42_d
     ✓ Float comparisons - passed (27 checks)
     • Failed float comparisons
-        ✗ actual != 42.0 FAILED (comparisons.cpp:264, 42f != 42f)
-        ✗ actual == 43.0 FAILED (comparisons.cpp:267, 42f == 43f)
-        ✗ actual != 42 FAILED (comparisons.cpp:270, 42f != 42)
-        ✗ actual == 43 FAILED (comparisons.cpp:273, 42f == 43)
-        ✗ 42.101f != 42.101_f FAILED (comparisons.cpp:279, 42.101f != 42.101f)
-        ✗ 42.101f epsilon 0.01f != 42.10_f FAILED (comparisons.cpp:282, 42.101f != 42.1f)
-        ✗ 42.101f epsilon 0.1f == 42.10_f FAILED (comparisons.cpp:286, 42.101f == 42.1f)
-        ✗ 42.1010001f epsilon 0.1f != 42.1_f FAILED (comparisons.cpp:290, 42.101f != 42.1f)
-        ✗ 42.101f == 42.10_f FAILED (comparisons.cpp:294, 42.101f == 42.1f)
-        ✗ 42.101f == 42.100_f FAILED (comparisons.cpp:297, 42.101f == 42.1f)
-        ✗ 42.10f == 42.1_f FAILED (comparisons.cpp:300, 42.1f != 42.1f)
-        ✗ 42.42f == 42.42_f FAILED (comparisons.cpp:303, 42.42f != 42.42f)
-        ✗ 42.42 == 42.420_d FAILED (comparisons.cpp:306, 42.42 != 42.42)
-        ✗ 42.0 == 42.0_d FAILED (comparisons.cpp:309, 42 != 42)
-        ✗ 42. == 42._d FAILED (comparisons.cpp:312, 42 != 42)
-        ✗ 42.42 == 42.42_ld FAILED (comparisons.cpp:315, 42.42l != 42.42l)
-        ✗ 1234._f == 1234.f FAILED (comparisons.cpp:319, 1234f != 1234f)
-        ✗ 1234.56_f == 1234.56f FAILED (comparisons.cpp:322, 1234.56f != 1234.56f)
-        ✗ 12345678.9f == 12345678.9_f FAILED (comparisons.cpp:325, 12345679f != 12345679f)
-        ✗ 111111.42f == 111111.42_f FAILED (comparisons.cpp:329, 111111.42f != 111111.42f)
-        ✗ 1111111111.42 == 1111111111.42_d FAILED (comparisons.cpp:333, 1111111111.42 != 1111111111.42)
+        ✗ actual != 42.0 FAILED (comparisons.cpp:268, 42f != 42f)
+        ✗ actual == 43.0 FAILED (comparisons.cpp:271, 42f == 43f)
+        ✗ actual != 42 FAILED (comparisons.cpp:274, 42f != 42)
+        ✗ actual == 43 FAILED (comparisons.cpp:277, 42f == 43)
+        ✗ 42.101f != 42.101_f FAILED (comparisons.cpp:283, 42.101f != 42.101f)
+        ✗ 42.101f epsilon 0.01f != 42.10_f FAILED (comparisons.cpp:286, 42.101f != 42.1f)
+        ✗ 42.101f epsilon 0.1f == 42.10_f FAILED (comparisons.cpp:290, 42.101f == 42.1f)
+        ✗ 42.1010001f epsilon 0.1f != 42.1_f FAILED (comparisons.cpp:294, 42.101f != 42.1f)
+        ✗ 42.101f == 42.10_f FAILED (comparisons.cpp:298, 42.101f == 42.1f)
+        ✗ 42.101f == 42.100_f FAILED (comparisons.cpp:301, 42.101f == 42.1f)
+        ✗ 42.10f == 42.1_f FAILED (comparisons.cpp:304, 42.1f != 42.1f)
+        ✗ 42.42f == 42.42_f FAILED (comparisons.cpp:307, 42.42f != 42.42f)
+        ✗ 42.42 == 42.420_d FAILED (comparisons.cpp:310, 42.42 != 42.42)
+        ✗ 42.0 == 42.0_d FAILED (comparisons.cpp:313, 42 != 42)
+        ✗ 42. == 42._d FAILED (comparisons.cpp:316, 42 != 42)
+        ✗ 42.42 == 42.42_ld FAILED (comparisons.cpp:319, 42.42l != 42.42l)
+        ✗ 1234._f == 1234.f FAILED (comparisons.cpp:323, 1234f != 1234f)
+        ✗ 1234.56_f == 1234.56f FAILED (comparisons.cpp:326, 1234.56f != 1234.56f)
+        ✗ 12345678.9f == 12345678.9_f FAILED (comparisons.cpp:329, 12345679f != 12345679f)
+        ✗ 111111.42f == 111111.42_f FAILED (comparisons.cpp:333, 111111.42f != 111111.42f)
+        ✗ 1111111111.42 == 1111111111.42_d FAILED (comparisons.cpp:337, 1111111111.42 != 1111111111.42)
     ✗ Failed float comparisons - FAILED (0 checks passed, 21 failed)
     • String comparisons
         ✓ actual_sv == abc_sv
@@ -363,12 +369,12 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ actual_sv >= abc_sv
     ✓ String comparisons - passed (6 checks)
     • Failed string comparisons
-        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:392, abc != abc)
-        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:396, abc == abx)
-        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:400, abc >= abd)
-        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:404, abc > abc)
-        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:408, abc <= abb)
-        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:412, abc < abc)
+        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:396, abc != abc)
+        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:400, abc == abx)
+        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:404, abc >= abd)
+        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:408, abc > abc)
+        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:412, abc <= abb)
+        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:416, abc < abc)
     ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
     • Pointer comparisons
         ✓ ptr1 == &one
@@ -382,15 +388,15 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:494, 0x43fffb4c != 0x43fffb4c)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:497, 0x43fffb4c != 0x43fffb4c)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:500, 0x43fffb4c > 0x43fffb4c)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:503, 0x43fffb4c < 0x43fffb4c)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:506, 0x43fffb4c == 0x43fffb50)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:509, 0x4003a5b0 != 0x4003a5b0)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:512, 0x4003a5b0 == 0x43fffb50)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:524, 0x43fffb58 >= 0x43fffb5c)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:527, 0x43fffb5c <= 0x43fffb58)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:498, 0x43fffb4c != 0x43fffb4c)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:501, 0x43fffb4c != 0x43fffb4c)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:504, 0x43fffb4c > 0x43fffb4c)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:507, 0x43fffb4c < 0x43fffb4c)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:510, 0x43fffb4c == 0x43fffb50)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:513, 0x400078dc != 0x400078dc)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:516, 0x400078dc == 0x43fffb50)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:528, 0x43fffb58 >= 0x43fffb5c)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:531, 0x43fffb5c <= 0x43fffb58)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -398,23 +404,23 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ pfunc == nullptr
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
-        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:575, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:578, 0x43fffc38 == nullptr)
-        ✗ pfunc != nullptr FAILED (comparisons.cpp:581, 0x0 != nullptr)
+        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:579, 0x0 != nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:582, 0x43fffc28 == nullptr)
+        ✗ pfunc != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
         ✓ not (actual != 42)
-        ✗ not (actual == 42) FAILED (comparisons.cpp:602, not 42 == 42)
+        ✗ not (actual == 42) FAILED (comparisons.cpp:606, not 42 == 42)
         ✓ (actual == 42) and (actual == 42.0)
-        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:611, (42 == 42 and 42f != 42))
-        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:616, (42 != 42 and 42f == 42))
-        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:621, (42 != 42 and 42f != 42))
+        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:615, (42 == 42 and 42f != 42))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:620, (42 != 42 and 42f == 42))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:625, (42 != 42 and 42f != 42))
         ✓ (42 == 42 and 42f == 42)
-        ✗ FAILED (comparisons.cpp:630, (42 == 42 and 42f != 42))
+        ✗ FAILED (comparisons.cpp:634, (42 == 42 and 42f != 42))
         ✓ (actual == 42) or (actual == 42.0)
         ✓ (actual == 42) or (actual != 42.0)
         ✓ (actual != 42) or (actual == 42.0)
-        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:649, (42 != 42 or 42f != 42))
+        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:653, (42 != 42 or 42f != 42))
     ✗ Logical operations - FAILED (6 checks passed, 6 failed)
 ✗ Comparisons suite - FAILED (59 checks passed, 53 failed, in 11 test cases)
 • Failed combinatorial floats suite
@@ -695,10 +701,10 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ array{ 1, 2, 3 } != array{ 1, 2, 4 }
     ✓ Arrays - passed (4 checks)
     • Arrays bad
-        ✗ array{ 42 } ne array{ 42 } FAILED (miscellaneous.cpp:68, {42} != {42})
-        ✗ array{ 42 } eq array{ 43 } FAILED (miscellaneous.cpp:72, {42} == {43})
-        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (miscellaneous.cpp:76, {1, 2} != {1, 2})
-        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (miscellaneous.cpp:80, {1, 2, 3} == {1, 2, 4})
+        ✗ array{ 42 } ne array{ 42 } FAILED (miscellaneous.cpp:93, {42} != {42})
+        ✗ array{ 42 } eq array{ 43 } FAILED (miscellaneous.cpp:97, {42} == {43})
+        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (miscellaneous.cpp:101, {1, 2} != {1, 2})
+        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (miscellaneous.cpp:105, {1, 2, 3} == {1, 2, 4})
     ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
     • Vectors
         ✓ vector{ } == vector{ }
@@ -709,12 +715,12 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
     ✓ Vectors - passed (6 checks)
     • Vectors bad
-        ✗ vector{ } != vector{ } FAILED (miscellaneous.cpp:132, {} != {})
-        ✗ FAILED (miscellaneous.cpp:136, {} != {})
-        ✗ vector{ 42 } != vector{ 42 } FAILED (miscellaneous.cpp:139, {42} != {42})
-        ✗ vector{ 42 } == vector{ 43 } FAILED (miscellaneous.cpp:143, {42} == {43})
-        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (miscellaneous.cpp:147, {1, 2} != {1, 2})
-        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (miscellaneous.cpp:151, {1, 2, 3} == {1, 2, 4})
+        ✗ vector{ } != vector{ } FAILED (miscellaneous.cpp:157, {} != {})
+        ✗ FAILED (miscellaneous.cpp:161, {} != {})
+        ✗ vector{ 42 } != vector{ 42 } FAILED (miscellaneous.cpp:164, {42} != {42})
+        ✗ vector{ 42 } == vector{ 43 } FAILED (miscellaneous.cpp:168, {42} == {43})
+        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (miscellaneous.cpp:172, {1, 2} != {1, 2})
+        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (miscellaneous.cpp:176, {1, 2, 3} == {1, 2, 4})
     ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
     • Custom types
         ✓ point{ 1, 2 } == point{ 1, 2 }
@@ -827,4 +833,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 356 checks passed, 326 failed, in 61 test cases, 11 test suites
+✗ Total: 358 checks passed, 326 failed, in 63 test cases, 11 test suites

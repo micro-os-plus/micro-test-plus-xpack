@@ -1,5 +1,5 @@
 Running: unit-test one two --reporter human --output-file unit-test-quiet.txt --quiet
-Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/clang-xpack c11b808589ee097621f766bd72b30857f2fcabcd), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
     • assume
     • Initial counters
@@ -11,6 +11,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • reflection::short_name()
     • Nested subtests
         • inner subtest
+    • Nested subtest after a check
+        • inner subtest after a check
     • check in dynamic suite
     • Combinatorial floats
     • Combinatorial doubles
@@ -66,4 +68,4 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 359 checks passed, 329 failed, in 65 test cases, 12 test suites, time: 7.072 ms
+✗ Total: 361 checks passed, 329 failed, in 67 test cases, 12 test suites, time: 1.809 ms

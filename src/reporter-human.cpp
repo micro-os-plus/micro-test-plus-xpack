@@ -388,7 +388,7 @@ namespace micro_os_plus::micro_test_plus
     flush ();
 
     // Clear residual content when less verbose.
-    buffer_.clear ();
+    clear_buffer_ ();
 
     add_empty_line_ = true;
   }
@@ -397,8 +397,11 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method marks the beginning of a test case. The output buffer must
-   * be empty at this point; if it is not, its content is written to
+   * This method marks the beginning of a test case. For a nested test
+   * case, the results of the checks already performed by the outer test
+   * case, if any, are written first (see `commit_buffer_()`), so that the
+   * output follows the execution order. For a top-level test case, the
+   * output buffer must be empty; if it is not, its content is written to
    * `stderr` and execution is aborted.
    *
    * A `"• <name>"` line, indented according to the nesting depth, is
@@ -414,13 +417,24 @@ namespace micro_os_plus::micro_test_plus
 
     if (!buffer_.empty ())
       {
-        // Each suite should start with an empty buffer.
-        fprintf (stderr,
-                 "Buffer not empty at the beginning of a test case:\n%s\n",
-                 buffer_.c_str ());
-        flush ();
-        abort ();
+        if (subtest.nesting_depth () > 1 && !open_subtests_.empty ())
+          {
+            // The outer test case performed checks before this nested one.
+            commit_buffer_ ();
+          }
+        else
+          {
+            // Each top-level test case should start with an empty buffer.
+            fprintf (stderr,
+                     "Buffer not empty at the beginning of a test case:\n"
+                     "%s\n",
+                     buffer_.c_str ());
+            flush ();
+            abort ();
+          }
       }
+
+    open_subtests_.push_back ({ &subtest, verbosity_ == verbosity::verbose });
 
     std::string indent (indent_size * subtest.nesting_depth (), ' ');
 
@@ -526,7 +540,10 @@ namespace micro_os_plus::micro_test_plus
             write_file_ ("%s✗ %s - FAILED %s\n", indent.c_str (),
                          subtest.name (), message_totals);
 
-            if (verbosity_ == verbosity::normal)
+            // The name may have been displayed by `commit_buffer_()`.
+            if (verbosity_ == verbosity::normal
+                && (open_subtests_.empty ()
+                    || !open_subtests_.back ().name_displayed))
               {
                 if (!add_empty_line_)
                   {
@@ -552,7 +569,12 @@ namespace micro_os_plus::micro_test_plus
     flush ();
 
     // Clear residual content when less verbose.
-    buffer_.clear ();
+    clear_buffer_ ();
+
+    if (!open_subtests_.empty ())
+      {
+        open_subtests_.pop_back ();
+      }
   }
 
   // --------------------------------------------------------------------------
@@ -675,6 +697,66 @@ namespace micro_os_plus::micro_test_plus
     *this << endl;
 
     flush ();
+  }
+
+  /**
+   * @details
+   * The buffered results of the outer test case are written to the output
+   * file, with normal or verbose verbosity (as `end_subtest()` does), and,
+   * with verbose verbosity, to `stdout`. With normal verbosity,
+   * they are written to `stdout` only when they include a failure,
+   * preceded by the name of the outer test case, which this verbosity
+   * otherwise displays only when the test case ends. The buffer is then
+   * cleared, so that the nested test case starts with an empty buffer,
+   * and the remaining results of the outer test case are written by its
+   * `end_subtest()`.
+   *
+   * With normal verbosity, the passed checks committed here are not
+   * displayed, even if the outer test case fails later; the output file
+   * always contains them.
+   */
+  void
+  reporter_human::commit_buffer_ (void)
+  {
+    // As in `end_subtest()`, the results reach the output file only with
+    // normal or verbose verbosity.
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+      {
+        write_buffer_to_file_ ();
+      }
+
+    if (verbosity_ == verbosity::verbose)
+      {
+        if (add_empty_line_)
+          {
+            write_console_ ("\n");
+            add_empty_line_ = false;
+          }
+
+        write_buffer_to_console ();
+      }
+    else if (verbosity_ == verbosity::normal && buffer_has_failures_)
+      {
+        open_subtest_t& outer = open_subtests_.back ();
+        if (!outer.name_displayed)
+          {
+            std::string indent (indent_size * outer.test->nesting_depth (),
+                                ' ');
+
+            write_console_ ("\n%s• %s\n", indent.c_str (),
+                            outer.test->name ());
+
+            outer.name_displayed = true;
+          }
+
+        write_buffer_to_console ();
+
+        add_empty_line_ = true;
+      }
+
+    flush ();
+
+    clear_buffer_ ();
   }
 
   // --------------------------------------------------------------------------

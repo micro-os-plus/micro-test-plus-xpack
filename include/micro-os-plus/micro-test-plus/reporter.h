@@ -592,6 +592,21 @@ namespace micro_os_plus::micro_test_plus
     write_info_ (void);
 
     /**
+     * @brief Clears the output buffer.
+     *
+     * @details
+     * Also resets `buffer_has_failures_`, so that the flag always
+     * describes the current content of the buffer.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    clear_buffer_ (void);
+
+    /**
      * @brief Outputs the prefix for a passing condition.
      *
      * @details
@@ -687,6 +702,17 @@ namespace micro_os_plus::micro_test_plus
      * `write_buffer_to_file_()`.
      */
     std::string buffer_{};
+
+    /**
+     * @brief Whether the output buffer contains a failed check.
+     *
+     * @details
+     * Set by `fail()` and reset by `clear_buffer_()`. When a nested test
+     * case begins, the concrete reporters use it to decide whether the
+     * results already buffered for the outer test case are displayed
+     * with normal verbosity.
+     */
+    bool buffer_has_failures_{ false };
 
     /**
      * @brief Expression formatter for pass and fail reporting.

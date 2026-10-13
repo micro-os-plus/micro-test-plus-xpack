@@ -305,6 +305,32 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
+  // A check in the outer test case before the nested one leaves the
+  // outer result in the reporter buffer when the nested test case begins
+  // (API-REVIEW.md #1).
+  ts.test ("Nested subtest after a check", [] (auto& t)
+    {
+      t.expect (eq (1, 1)) << "outer check before the nested subtest";
+      local_counts.successful_checks++;
+
+      t.test ("inner subtest after a check", [] (auto& t2)
+        {
+          t2.expect (eq (2, 2)) << "inner check";
+          local_counts.successful_checks++;
+          local_counts.executed_subtest++; // inner
+        });
+      local_counts.executed_subtest++; // outer
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_subtests ()
+               == local_counts.executed_subtest);
+
+  // --------------------------------------------------------------------------
+
   {
     detail::runner_totals fresh{};
     test_assert (fresh.was_successful ());
