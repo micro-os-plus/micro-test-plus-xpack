@@ -569,6 +569,20 @@ main (int argc, char* argv[])
     });
   test_assert (tr.suites_count () == 2);
 
+  // The name of a dynamic suite is copied, so it can be a temporary string,
+  // destroyed before the suite runs; the name is longer than the short
+  // string buffer, so that AddressSanitizer would report a use after free
+  // (API-REVIEW.md #11).
+  tr.suite (
+      std::string ("Dynamic suite with a ").append ("temporary name").c_str (),
+      [] (auto& s)
+    {
+      s.test ("check in dynamic suite with a temporary name", [] (auto& t) {
+          t.expect (eq (2, 2)) << "2 == 2 in the suite with a temporary name";
+        });
+    });
+  test_assert (tr.suites_count () == 3);
+
   // --------------------------------------------------------------------------
 
   // The inner test should return failure.

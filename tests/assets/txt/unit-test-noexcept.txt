@@ -96,6 +96,11 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ 1 == 1 in dynamic suite
     ✓ check in dynamic suite - passed (1 check)
 ✓ Dynamic suite - passed (1 check in 1 test case)
+• Dynamic suite with a temporary name
+    • check in dynamic suite with a temporary name
+        ✓ 2 == 2 in the suite with a temporary name
+    ✓ check in dynamic suite with a temporary name - passed (1 check)
+✓ Dynamic suite with a temporary name - passed (1 check in 1 test case)
 • Combinatorial floats suite
     • Combinatorial floats
         ✓ 42.0 == 42 signed long long
@@ -423,15 +428,15 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:498, 0x43fffaec != 0x43fffaec)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:501, 0x43fffaec != 0x43fffaec)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:504, 0x43fffaec > 0x43fffaec)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:507, 0x43fffaec < 0x43fffaec)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:510, 0x43fffaec == 0x43fffaf0)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:513, 0x4000ae1c != 0x4000ae1c)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:516, 0x4000ae1c == 0x43fffaf0)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:528, 0x43fffaf8 >= 0x43fffafc)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:531, 0x43fffafc <= 0x43fffaf8)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:498, 0x43fffadc != 0x43fffadc)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:501, 0x43fffadc != 0x43fffadc)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:504, 0x43fffadc > 0x43fffadc)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:507, 0x43fffadc < 0x43fffadc)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:510, 0x43fffadc == 0x43fffae0)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:513, 0x4000b4e8 != 0x4000b4e8)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:516, 0x4000b4e8 == 0x43fffae0)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:528, 0x43fffae8 >= 0x43fffaec)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:531, 0x43fffaec <= 0x43fffae8)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -440,7 +445,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:579, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:582, 0x43fffbc8 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:582, 0x43fffbb8 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
@@ -884,4 +889,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 389 checks passed, 328 failed, in 72 test cases, 11 test suites
+✗ Total: 390 checks passed, 328 failed, in 73 test cases, 12 test suites

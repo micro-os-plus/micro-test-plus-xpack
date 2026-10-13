@@ -273,7 +273,8 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param name The test suite name or description, used in reports.
+     * @param name The test suite name or description, used in reports; it
+     * is copied, so the string need not outlive the call.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test suite.
      * @param arguments A possibly empty list of arguments to be passed to

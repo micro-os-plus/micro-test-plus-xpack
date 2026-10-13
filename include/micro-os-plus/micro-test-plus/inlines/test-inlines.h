@@ -359,13 +359,20 @@ namespace micro_os_plus::micro_test_plus
    * Delegates to `runnable`, which binds the callable with its arguments.
    * The own index is initially 0; the runner assigns the final index
    * before running the suite.
+   *
+   * The name is copied into `owned_name_`, and the node name points to the
+   * copy, since the suite may run after the string passed by the caller
+   * was destroyed.
    */
   template <typename Callable_T, typename... Args_T>
   suite::suite (const char* name, class runner& runner, Callable_T&& callable,
                 Args_T&&... arguments)
       : runnable<suite>{ name, runner, 0, std::forward<Callable_T> (callable),
-                         std::forward<Args_T> (arguments)... }
+                         std::forward<Args_T> (arguments)... },
+        owned_name_{ name }
   {
+    name_ = owned_name_.c_str ();
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
                    __PRETTY_FUNCTION__, name, own_index_);

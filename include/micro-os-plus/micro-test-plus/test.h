@@ -69,6 +69,7 @@
 
 #include <functional>
 #include <memory>
+#include <string>
 
 // ----------------------------------------------------------------------------
 
@@ -832,7 +833,8 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of the callable object.
      * @tparam Args_T The types of any additional callable arguments.
      *
-     * @param name The suite name or description, used in reports.
+     * @param name The suite name or description, used in reports; it is
+     * copied, so the string need not outlive the call.
      * @param runner The test runner managing this suite.
      * @param callable A generic callable object, usually a lambda,
      * invoked when the suite executes. Its first parameter must be
@@ -951,6 +953,18 @@ namespace micro_os_plus::micro_test_plus
      * Recorded by `run()`; displayed by the reporters.
      */
     detail::timestamps timings_;
+
+    /**
+     * @brief A copy of the suite name.
+     *
+     * @details
+     * The suites registered with `runner::suite()`, and the static suites,
+     * run later, when the string passed to the constructor may no longer
+     * exist; the name is therefore copied here, and the name of the node
+     * points to this copy. The test cases, which run immediately, do not
+     * copy their names.
+     */
+    std::string owned_name_{};
   };
 
   // ==========================================================================
@@ -1082,7 +1096,8 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param name The test suite name or description, used in reports.
+     * @param name The test suite name or description, used in reports; it
+     * is copied, so the string need not outlive the call.
      * @param runner The static test runner managing this suite.
      * @param callable A generic callable object, usually a lambda or
      * function, invoked to perform the test suite.
