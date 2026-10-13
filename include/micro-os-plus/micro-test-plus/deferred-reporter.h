@@ -32,8 +32,8 @@
  *   calls the reporter to emit a pass or fail line.
  * - `deferred_reporter` derives from the base; its template constructor
  *   formats the expression (with the actual operand values) into the
- *   expression formatter of the reporter, so that it can be printed on
- *   failure.
+ *   expression formatter of the reporter, which keeps the text for this
+ *   check until it is reported, so that it can be printed on failure.
  *
  * Both classes live in the `detail` namespace and are not part of the
  * public API.
@@ -256,7 +256,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * Its template constructor evaluates the expression, records the abort
      * status, and formats the expression into the expression formatter of
-     * the reporter. It is intended exclusively for internal use and is
+     * the reporter, which keeps the text for this check until it is
+     * reported. It is intended exclusively for internal use and is
      * implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * ensure a structured and modular codebase.
      *

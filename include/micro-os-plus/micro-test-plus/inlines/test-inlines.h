@@ -176,8 +176,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Each call to `test()` invokes this method before constructing the new
      * `subtest`, and each check invokes it from the deferred reporter
-     * constructor, so the index values form a strictly increasing, one-based
-     * sequence of TAP test points.
+     * destructor, when the check is reported, so the index values form a
+     * strictly increasing, one-based sequence of TAP test points, in output
+     * order.
      */
     inline size_t
     runnable_base::increment_subtest_index () noexcept

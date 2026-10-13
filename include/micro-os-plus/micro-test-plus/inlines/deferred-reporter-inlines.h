@@ -155,7 +155,9 @@ namespace micro_os_plus::micro_test_plus
      * The expression is evaluated and its boolean result is passed to the base
      * class. The abort flag determines whether further test execution should
      * be halted if the expectation fails. The expression is formatted into
-     * the expression formatter of the reporter (cleared first), and
+     * the expression formatter of the reporter, which is shared by all
+     * checks; `begin_check()` assigns it to this check, setting aside the
+     * text of a previous check not yet reported, if any.
      * `has_expression_` records whether it is a framework comparator, whose
      * text is to be displayed on failure.
      */
@@ -173,7 +175,9 @@ namespace micro_os_plus::micro_test_plus
       abort_ = abort;
       has_expression_ = type_traits::is_op<Expr_T>;
 
-      expression.clear ();
+      // The same address is used by the base destructor, to retrieve the
+      // text, even if other checks used the formatter in the meantime.
+      expression.begin_check (static_cast<deferred_reporter_base*> (this));
 
       expression << expr;
     }

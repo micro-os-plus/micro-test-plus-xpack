@@ -284,6 +284,85 @@ namespace micro_os_plus::micro_test_plus::detail
   }
 
   // --------------------------------------------------------------------------
+
+  /**
+   * @details
+   * In the usual case, the previous check was already reported (its
+   * `end_check()` reset `owner_`), and the buffer is only cleared,
+   * keeping its capacity. Otherwise the text of the previous, still
+   * pending, check is moved into `pending_`.
+   */
+  void
+  expression_formatter::begin_check (const void* owner)
+  {
+    if (owner_ != nullptr)
+      {
+        pending_.emplace_back (owner_, std::move (buffer_));
+      }
+
+    buffer_.clear ();
+    owner_ = owner;
+  }
+
+  /**
+   * @details
+   * Searches `pending_` only when the buffer belongs to another check.
+   * If the check is not found (which does not happen when the calls are
+   * paired), an empty string is returned.
+   */
+  const std::string&
+  expression_formatter::check_text (const void* owner) const noexcept
+  {
+    if (owner == owner_)
+      {
+        return buffer_;
+      }
+
+    for (size_t i = 0; i < pending_.size (); ++i)
+      {
+        if (pending_[i].first == owner)
+          {
+            return pending_[i].second;
+          }
+      }
+
+    static const std::string empty{};
+    return empty;
+  }
+
+  /**
+   * @details
+   * If the buffer belongs to @p owner, it is released (and reused by the
+   * next check); otherwise the text moved aside for @p owner is removed
+   * from `pending_`, by moving the last entry into its place.
+   */
+  void
+  expression_formatter::end_check (const void* owner) noexcept
+  {
+    if (owner == owner_)
+      {
+        owner_ = nullptr;
+        return;
+      }
+
+    // Use indices and `swap()` + `pop_back()` (both returning void) rather
+    // than iterators and `erase()`, which returns an iterator object and
+    // triggers -Waggregate-return; the order of the entries is irrelevant.
+    for (size_t i = 0; i < pending_.size (); ++i)
+      {
+        if (pending_[i].first == owner)
+          {
+            if (i + 1 != pending_.size ())
+              {
+                pending_[i].swap (pending_.back ());
+              }
+            pending_.pop_back ();
+            return;
+          }
+      }
+  }
+
+  // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus::detail
 
 // ----------------------------------------------------------------------------

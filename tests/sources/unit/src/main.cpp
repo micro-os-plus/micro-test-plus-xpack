@@ -369,6 +369,33 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
+  // The result of a check kept in a variable is reported when the variable
+  // goes out of scope, after the later checks, with its own expression
+  // (here `1 == 2`), and numbered in the order of the output
+  // (API-REVIEW.md #4).
+  ts.test ("Stored check result", [] (auto& t)
+    {
+      {
+        auto stored = t.expect (eq (1, 2));
+        stored << "stored check fails";
+        local_counts.failed_checks++;
+
+        t.expect (eq (3, 3)) << "later check passes";
+        local_counts.successful_checks++;
+      } // The stored check is reported here.
+
+      local_counts.executed_subtest++;
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_subtests ()
+               == local_counts.executed_subtest);
+
+  // --------------------------------------------------------------------------
+
   {
     detail::runner_totals fresh{};
     test_assert (fresh.was_successful ());

@@ -69,29 +69,37 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Stores the evaluated Boolean @p value, the @p location identifying
      * the source line of the assertion, and a reference to the owning
-     * @p subtest. The subtest's check index counter is incremented
-     * immediately so that the first check is reported as check #1.
+     * @p subtest. The check number is assigned later, by the destructor,
+     * when the check is reported.
      */
     deferred_reporter_base::deferred_reporter_base (
         bool value, const reflection::source_location& location,
         subtest& subtest)
         : value_{ value }, location_{ location }, subtest_{ subtest }
     {
-      // The index starts at 0, must be incremented before the first check is
-      // reported, to ensure that the first check is reported as check #1.
-      subtest_.increment_subtest_index ();
     }
 
     /**
      * @details
      * The destructor finalises the deferred reporting process for a test
      * expression, at the end of the expression statement, after all the
-     * user messages were appended. If the evaluated expression is true, the
+     * user messages were appended.
+     *
+     * The subtest's check index counter is incremented first, so that the
+     * check numbers follow the order in which the checks are reported (the
+     * first check is reported as check #1), also when the result of a check
+     * is kept in a variable and reported after later checks.
+     *
+     * If the evaluated expression is true, the
      * reporter records a successful outcome along with any accumulated
      * message, and the successful checks counter of the subtest is
      * incremented. If the expression is false, the reporter records a
      * failure, including the abort status, message, expression, and source
      * location, and the failed checks counter is incremented.
+     *
+     * The expression text is obtained from the expression formatter with
+     * `check_text()`, which returns the text of this check even if later
+     * checks used the formatter, and is released with `end_check()`.
      *
      * If an abort condition is set and the test expression has failed, the
      * buffered test output is written to the console and flushed, and the
@@ -103,7 +111,14 @@ namespace micro_os_plus::micro_test_plus
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-      auto& expression_str = subtest_.reporter ().expression ().str ();
+      // The index starts at 0; it must be incremented before the check is
+      // reported, so that the first check is reported as check #1.
+      subtest_.increment_subtest_index ();
+
+      // The text formatted by this check, even if the formatter was used by
+      // other checks in the meantime (when this result was kept).
+      auto& expression = subtest_.reporter ().expression ();
+      const std::string& expression_str = expression.check_text (this);
 
       if (value_) [[likely]]
         {
@@ -117,6 +132,8 @@ namespace micro_os_plus::micro_test_plus
                                      has_expression_, location_, subtest_);
           subtest_.totals ().increment_failed_checks ();
         }
+
+      expression.end_check (this);
 
       if (abort_ && !value_) [[unlikely]]
         {

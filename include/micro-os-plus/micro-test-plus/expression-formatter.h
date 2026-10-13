@@ -68,6 +68,8 @@
 #include <charconv>
 #include <cstdio>
 #include <string>
+#include <utility>
+#include <vector>
 #include <string_view>
 
 // ----------------------------------------------------------------------------
@@ -655,6 +657,47 @@ namespace micro_os_plus::micro_test_plus
       void
       reserve (size_t capacity);
 
+      // ----------------------------------------------------------------------
+      // Ownership by the checks.
+
+      /**
+       * @brief Prepares the buffer for the expression of a new check.
+       *
+       * @details
+       * If the text in the buffer belongs to a check that was not reported
+       * yet (its result was kept in a variable), the text is first moved
+       * aside, so that this check can still report it. The buffer is then
+       * cleared and assigned to @p owner.
+       *
+       * @param owner The check that will format its expression next.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      begin_check (const void* owner);
+
+      /**
+       * @brief Returns the expression text of a check.
+       *
+       * @param owner The check that formatted the expression.
+       * @return The text in the buffer, if it still belongs to @p owner,
+       * otherwise the text moved aside for it; it remains valid until
+       * `end_check()`.
+       */
+      [[nodiscard]] const std::string&
+      check_text (const void* owner) const noexcept;
+
+      /**
+       * @brief Releases the expression text of a check, after it was
+       * reported.
+       *
+       * @param owner The check that formatted the expression.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      end_check (const void* owner) noexcept;
+
     protected:
       /**
        * @brief Selects the appropriate colour code based on a condition.
@@ -681,6 +724,28 @@ namespace micro_os_plus::micro_test_plus
        * Accumulates the formatted text; cleared with `clear()`.
        */
       std::string buffer_{};
+
+      /**
+       * @brief The check whose expression is in the buffer.
+       *
+       * @details
+       * Set by `begin_check()` and reset by `end_check()`; `nullptr` when
+       * the text in the buffer does not belong to a pending check.
+       */
+      const void* owner_{ nullptr };
+
+      /**
+       * @brief The expression texts of the pending checks whose buffer was
+       * reused.
+       *
+       * @details
+       * Normally empty: a check is reported at the end of its statement,
+       * before the next check begins. Only when the result of a check is
+       * kept in a variable does a later check move its text here, keyed by
+       * the check, so that the check objects themselves do not need to own
+       * a copy, which would increase the stack usage of the test functions.
+       */
+      std::vector<std::pair<const void*, std::string>> pending_{};
     };
 
     // ------------------------------------------------------------------------
