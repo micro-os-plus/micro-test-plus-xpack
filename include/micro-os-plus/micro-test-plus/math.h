@@ -64,6 +64,7 @@
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include <array>
+#include <limits>
 
 // ----------------------------------------------------------------------------
 
@@ -71,8 +72,10 @@
 #pragma GCC diagnostic push
 
 #pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #pragma clang diagnostic ignored "-Wc++20-compat"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
@@ -149,8 +152,13 @@ namespace micro_os_plus::micro_test_plus
     pow (const T base, const Exp_T exp) noexcept -> T;
 
     /**
-     * @brief Computes the integral value of a number represented as an array
-     * of characters.
+     * @brief Computes the integral part of a decimal floating-point number
+     * represented as an array of characters.
+     *
+     * @details
+     * Used by the floating-point literal operators; the integer literals
+     * use `integer()`, which also accepts the C++ prefixes and checks the
+     * range.
      *
      * @tparam T The target integral type for the result.
      * @tparam Cs The character pack representing the numeric value.
@@ -212,6 +220,71 @@ namespace micro_os_plus::micro_test_plus
     template <class T, class Value_T>
     [[nodiscard]] constexpr auto
     den_size (Value_T value) -> T;
+
+    /**
+     * @brief The result of parsing the characters of an integer literal.
+     *
+     * @details
+     * Returned by `parse_integer_literal_()`; the checks of `integer()` are
+     * based on it.
+     */
+    struct integer_literal_t_
+    {
+      /**
+       * @brief The value of the literal.
+       *
+       * @details
+       * Valid only if `is_integer` is true and `is_too_large` is false.
+       */
+      unsigned long long value;
+
+      /**
+       * @brief Whether the characters form an integer literal.
+       *
+       * @details
+       * False for the floating-point literals (with a decimal point or an
+       * exponent), which the literal operator templates also receive.
+       */
+      bool is_integer;
+
+      /**
+       * @brief Whether the value exceeds `unsigned long long`.
+       *
+       * @details
+       * Detected while the digits are accumulated.
+       */
+      bool is_too_large;
+    };
+
+    /**
+     * @brief Parses the characters of an integer literal.
+     *
+     * @tparam Cs The characters of the literal, as received by a literal
+     * operator template.
+     *
+     * @par Parameters
+     *   None.
+     * @return The value, and whether the characters form an integer literal
+     * and whether its value fits in `unsigned long long`.
+     */
+    template <char... Cs>
+    [[nodiscard]] consteval auto
+    parse_integer_literal_ (void) -> integer_literal_t_;
+
+    /**
+     * @brief Computes the value of an integer literal, of type @c T.
+     *
+     * @tparam T The integral type of the result.
+     * @tparam Cs The characters of the literal, as received by a literal
+     * operator template.
+     *
+     * @par Parameters
+     *   None.
+     * @return The value of the literal, as a value of type \c T.
+     */
+    template <class T, char... Cs>
+    [[nodiscard]] consteval auto
+    integer (void) -> T;
 
     // ------------------------------------------------------------------------
   } // namespace math

@@ -530,6 +530,11 @@ namespace literals {
 }
 ```
 
+The integer literals follow the C++ syntax: decimal, hexadecimal (`0x10_i`),
+binary (`0b101_i`), and octal (`010_i`, which is 8), with digit separators
+(`1'000_i`). A decimal point, an exponent, or a value that does not fit in the
+type of the literal (e.g. `300_u8`) is a compilation error.
+
 Similarly, for dynamic values, wrappers are provided to convert them into
 recognised types:
 

@@ -96,7 +96,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i ()
     {
-      return type_traits::integral_constant<math::num<int, Cs...> ()>{};
+      return type_traits::integral_constant<math::integer<int, Cs...> ()>{};
     }
 
     /**
@@ -114,7 +114,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_s ()
     {
-      return type_traits::integral_constant<math::num<short, Cs...> ()>{};
+      return type_traits::integral_constant<math::integer<short, Cs...> ()>{};
     }
 
     /**
@@ -132,7 +132,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_c ()
     {
-      return type_traits::integral_constant<math::num<char, Cs...> ()>{};
+      return type_traits::integral_constant<math::integer<char, Cs...> ()>{};
     }
 
     /**
@@ -151,7 +151,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_sc ()
     {
       return type_traits::integral_constant<
-          math::num<signed char, Cs...> ()>{};
+          math::integer<signed char, Cs...> ()>{};
     }
 
     /**
@@ -169,7 +169,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_l ()
     {
-      return type_traits::integral_constant<math::num<long, Cs...> ()>{};
+      return type_traits::integral_constant<math::integer<long, Cs...> ()>{};
     }
 
     /**
@@ -187,7 +187,8 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_ll ()
     {
-      return type_traits::integral_constant<math::num<long long, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::integer<long long, Cs...> ()>{};
     }
 
     /**
@@ -205,7 +206,8 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u ()
     {
-      return type_traits::integral_constant<math::num<unsigned, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::integer<unsigned, Cs...> ()>{};
     }
 
     /**
@@ -224,7 +226,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_uc ()
     {
       return type_traits::integral_constant<
-          math::num<unsigned char, Cs...> ()>{};
+          math::integer<unsigned char, Cs...> ()>{};
     }
 
     /**
@@ -243,7 +245,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_us ()
     {
       return type_traits::integral_constant<
-          math::num<unsigned short, Cs...> ()>{};
+          math::integer<unsigned short, Cs...> ()>{};
     }
 
     /**
@@ -262,7 +264,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_ul ()
     {
       return type_traits::integral_constant<
-          math::num<unsigned long, Cs...> ()>{};
+          math::integer<unsigned long, Cs...> ()>{};
     }
 
     /**
@@ -281,7 +283,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_ull ()
     {
       return type_traits::integral_constant<
-          math::num<unsigned long long, Cs...> ()>{};
+          math::integer<unsigned long long, Cs...> ()>{};
     }
 
     /**
@@ -300,7 +302,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_i8 ()
     {
       return type_traits::integral_constant<
-          math::num<std::int8_t, Cs...> ()>{};
+          math::integer<std::int8_t, Cs...> ()>{};
     }
 
     /**
@@ -319,7 +321,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_i16 ()
     {
       return type_traits::integral_constant<
-          math::num<std::int16_t, Cs...> ()>{};
+          math::integer<std::int16_t, Cs...> ()>{};
     }
 
     /**
@@ -338,7 +340,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_i32 ()
     {
       return type_traits::integral_constant<
-          math::num<std::int32_t, Cs...> ()>{};
+          math::integer<std::int32_t, Cs...> ()>{};
     }
 
     /**
@@ -357,7 +359,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_i64 ()
     {
       return type_traits::integral_constant<
-          math::num<std::int64_t, Cs...> ()>{};
+          math::integer<std::int64_t, Cs...> ()>{};
     }
 
     /**
@@ -376,7 +378,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_u8 ()
     {
       return type_traits::integral_constant<
-          math::num<std::uint8_t, Cs...> ()>{};
+          math::integer<std::uint8_t, Cs...> ()>{};
     }
 
     /**
@@ -395,7 +397,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_u16 ()
     {
       return type_traits::integral_constant<
-          math::num<std::uint16_t, Cs...> ()>{};
+          math::integer<std::uint16_t, Cs...> ()>{};
     }
 
     /**
@@ -414,7 +416,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_u32 ()
     {
       return type_traits::integral_constant<
-          math::num<std::uint32_t, Cs...> ()>{};
+          math::integer<std::uint32_t, Cs...> ()>{};
     }
 
     /**
@@ -433,7 +435,7 @@ namespace micro_os_plus::micro_test_plus
     operator""_u64 ()
     {
       return type_traits::integral_constant<
-          math::num<std::uint64_t, Cs...> ()>{};
+          math::integer<std::uint64_t, Cs...> ()>{};
     }
 
     /**

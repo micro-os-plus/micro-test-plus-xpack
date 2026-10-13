@@ -126,6 +126,22 @@ static_asserts ()
       static_assert (42 == 42_i);
       static_assert (-42 == -42_i);
       static_assert (-42 == -42_i);
+
+      // The integer literals follow the C++ syntax: hexadecimal, binary, and
+      // octal prefixes, and digit separators (API-REVIEW.md #8). A decimal
+      // point, or a value that does not fit in the type of the literal (e.g.
+      // `300_u8`), is a compilation error.
+      static_assert (010 == 010_i);
+      static_assert (0x10 == 0x10_i);
+      static_assert (0X1F == 0X1F_i);
+      static_assert (0b101 == 0b101_i);
+      static_assert (0B1'0000 == 0B1'0000_i);
+      static_assert (0xFFu == 0xFF_u8);
+      static_assert (255u == 255_u8);
+      static_assert (127 == 127_i8);
+      static_assert (0xFFFF'FFFF'FFFF'FFFFull == 0xFFFF'FFFF'FFFF'FFFF_u64);
+      static_assert (18446744073709551615ull == 18446744073709551615_ull);
+
       static_assert (0. == 0.0_d);
       static_assert (0.f == .0_f);
       static_assert (0.1 == .1_d);

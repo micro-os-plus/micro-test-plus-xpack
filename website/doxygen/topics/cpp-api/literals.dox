@@ -12,6 +12,11 @@ constants to be expressed with explicit types, such as integers and
 floating-point values. For dynamic values, wrappers convert operands into
 recognised comparison types at run-time.
 
+The integer literals follow the C++ syntax: decimal, hexadecimal (`0x10_i`),
+binary (`0b101_i`), and octal (`010_i`, which is 8), with digit separators
+(`1'000_i`). A decimal point, an exponent, or a value that does not fit in the
+type of the literal (e.g. `300_u8`) is a compilation error.
+
 This approach ensures that both compile-time constants and run-time values
 can be compared accurately and expressively, supporting robust,
 maintainable test code.

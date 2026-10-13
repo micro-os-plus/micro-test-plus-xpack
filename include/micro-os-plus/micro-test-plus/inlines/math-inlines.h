@@ -314,6 +314,128 @@ namespace micro_os_plus::micro_test_plus
       return result;
     }
 
+    /**
+     * @details
+     * The characters are those of a valid C++ literal, already checked by
+     * the compiler (digits valid for the base, digit separators in valid
+     * positions). The base is given by the prefix: `0x` or `0X` for
+     * hexadecimal, `0b` or `0B` for binary, a leading `0` for octal, and
+     * none for decimal. The digit separators (`'`) are skipped.
+     *
+     * Any other character (a decimal point, an exponent, or a digit not
+     * valid for the base, as in the floating-point literal `09.5`) marks
+     * the literal as not an integer. The value is accumulated in
+     * `unsigned long long`, and the accumulation stops if it would
+     * overflow.
+     */
+    template <char... Cs>
+    consteval auto
+    parse_integer_literal_ (void) -> integer_literal_t_
+    {
+      constexpr std::array<char, sizeof...(Cs)> cs{ Cs... };
+      constexpr unsigned long long max_value
+          = std::numeric_limits<unsigned long long>::max ();
+
+      integer_literal_t_ result{ 0, true, false };
+
+      unsigned long long base = 10;
+      std::size_t i = 0;
+      if (cs.size () > 1 && cs[0] == '0')
+        {
+          if (cs[1] == 'x' || cs[1] == 'X')
+            {
+              base = 16;
+              i = 2;
+            }
+          else if (cs[1] == 'b' || cs[1] == 'B')
+            {
+              base = 2;
+              i = 2;
+            }
+          else
+            {
+              base = 8;
+              i = 1;
+            }
+        }
+
+      for (; i < cs.size (); ++i)
+        {
+          const char c = cs[i];
+          if (c == '\'')
+            {
+              continue;
+            }
+
+          unsigned long long digit = 0;
+          if (c >= '0' && c <= '9')
+            {
+              digit = static_cast<unsigned long long> (c - '0');
+            }
+          else if (base == 16 && c >= 'a' && c <= 'f')
+            {
+              digit = static_cast<unsigned long long> (c - 'a' + 10);
+            }
+          else if (base == 16 && c >= 'A' && c <= 'F')
+            {
+              digit = static_cast<unsigned long long> (c - 'A' + 10);
+            }
+          else
+            {
+              // A decimal point, an exponent, or a suffix character.
+              result.is_integer = false;
+              return result;
+            }
+
+          if (digit >= base)
+            {
+              // Possible only in a floating-point literal, like `09.5`.
+              result.is_integer = false;
+              return result;
+            }
+
+          if (result.value > (max_value - digit) / base)
+            {
+              result.is_too_large = true;
+              return result;
+            }
+
+          result.value = result.value * base + digit;
+        }
+
+      return result;
+    }
+
+    /**
+     * @details
+     * The literal must be an integer literal, in any of the C++ forms
+     * (decimal, hexadecimal, binary, or octal, with digit separators), and
+     * its value must fit in `T`; otherwise the compilation fails with an
+     * explicit message. Negative values are obtained with the unary minus,
+     * so the literal itself is never negative; the minimum value of a
+     * signed type (e.g. -128 for `int8_t`) cannot be written as a literal of
+     * that type, as its absolute value does not fit.
+     */
+    template <class T, char... Cs>
+    consteval auto
+    integer (void) -> T
+    {
+      constexpr integer_literal_t_ literal = parse_integer_literal_<Cs...> ();
+
+      static_assert (literal.is_integer,
+                     "µTest++: an integer literal must not have a decimal "
+                     "point or an exponent");
+      static_assert (!literal.is_integer || !literal.is_too_large,
+                     "µTest++: the integer literal is too large");
+      static_assert (!literal.is_integer || literal.is_too_large
+                         || literal.value <= static_cast<unsigned long long> (
+                                std::numeric_limits<T>::max ()),
+                     "µTest++: the integer literal value does not fit in the "
+                     "type of the literal");
+
+      return static_cast<T> (literal.value);
+    }
+
     // ------------------------------------------------------------------------
   } // namespace math
 
