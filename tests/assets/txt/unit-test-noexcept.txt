@@ -15,8 +15,8 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ 42
     ✓ expect(true) - passed (5 checks)
     • expect(false)
-        ✗ FAILED (main.cpp:127)
-        ✗ false FAILED (main.cpp:130)
+        ✗ FAILED (main.cpp:181)
+        ✗ false FAILED (main.cpp:184)
     ✗ expect(false) - FAILED (0 checks passed, 2 failed)
     • reflection::type_name()
         ✓ void == void
@@ -59,15 +59,21 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ outer check passes
         • middle subtest
             • inner subtest
-                ✗ inner check fails FAILED (main.cpp:350, 1 == 2)
+                ✗ inner check fails FAILED (main.cpp:404, 1 == 2)
             ✗ inner subtest - FAILED (0 checks passed, 1 failed)
         ✗ middle subtest - FAILED (0 checks passed, 0 failed, 1 test case failed)
     ✗ Failed nested subtest - FAILED (1 check passed, 0 failed, 1 test case failed)
     • Stored check result
         ✓ later check passes
-        ✗ stored check fails FAILED (main.cpp:379, 1 == 2)
+        ✗ stored check fails FAILED (main.cpp:433, 1 == 2)
     ✗ Stored check result - FAILED (1 check passed, 1 failed)
-✗ Static top suite - FAILED (29 checks passed, 4 failed, in 16 test cases)
+    • Application types with get()
+        ✓ wrapped values differ
+        ✓ wrapped values are equal
+        ✓ handles differ
+        ✓ to_i{ 42 } == 42
+    ✓ Application types with get() - passed (4 checks)
+✗ Static top suite - FAILED (33 checks passed, 4 failed, in 17 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -400,15 +406,15 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:498, 0x43fffadc != 0x43fffadc)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:501, 0x43fffadc != 0x43fffadc)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:504, 0x43fffadc > 0x43fffadc)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:507, 0x43fffadc < 0x43fffadc)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:510, 0x43fffadc == 0x43fffae0)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:513, 0x40008940 != 0x40008940)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:516, 0x40008940 == 0x43fffae0)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:528, 0x43fffae8 >= 0x43fffaec)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:531, 0x43fffaec <= 0x43fffae8)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:498, 0x43fffafc != 0x43fffafc)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:501, 0x43fffafc != 0x43fffafc)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:504, 0x43fffafc > 0x43fffafc)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:507, 0x43fffafc < 0x43fffafc)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:510, 0x43fffafc == 0x43fffb00)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:513, 0x40009320 != 0x40009320)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:516, 0x40009320 == 0x43fffb00)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:528, 0x43fffb08 >= 0x43fffb0c)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:531, 0x43fffb0c <= 0x43fffb08)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -417,7 +423,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:579, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:582, 0x43fffbb8 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:582, 0x43fffbd8 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
@@ -845,4 +851,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 360 checks passed, 328 failed, in 67 test cases, 11 test suites
+✗ Total: 364 checks passed, 328 failed, in 68 test cases, 11 test suites

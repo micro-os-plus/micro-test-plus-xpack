@@ -204,7 +204,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Delegates to `detail::get(t)` to obtain the displayable value
+   * Delegates to `detail::unwrap_(t)` to obtain the displayable value
    * of an op expression, then streams it through `operator<<` to
    * format it into the buffer.
    */
@@ -213,7 +213,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const T& t)
   {
-    *this << detail::get (t);
+    *this << detail::unwrap_ (t);
     return *this;
   }
 

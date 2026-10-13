@@ -402,7 +402,7 @@ namespace micro_os_plus::micro_test_plus
       operator<< (T* v);
 
       /**
-       * @brief Appends the value of an op expression via `detail::get`.
+       * @brief Appends the value of an op expression via `detail::unwrap_()`.
        *
        * @tparam T An expression type satisfying `type_traits::is_op<T>`.
        * @param t The expression object.

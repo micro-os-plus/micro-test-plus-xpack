@@ -92,10 +92,10 @@ namespace micro_os_plus::micro_test_plus
    * framework. These components do not form part of the public API and may be
    * modified without prior notice.
    *
-   * Within this namespace, one will find assertion handling, generic getter
-   * utilities, comparator structures for logical and relational operations,
-   * mechanisms for exception checking, and base classes for deferred reporting
-   * of test results.
+   * Within this namespace, one will find assertion handling, the value
+   * unwrapping helper, comparator structures for logical and relational
+   * operations, mechanisms for exception checking, and base classes for
+   * deferred reporting of test results.
    *
    * All definitions within `detail` are intended exclusively for internal use,
    * ensuring a clear distinction between user-facing and internal components.
@@ -147,16 +147,23 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief Generic getter function template for value retrieval.
+     * @brief Returns the value wrapped by a framework type, or the operand
+     * itself.
      *
-     * @tparam T The type from which the value is to be retrieved.
+     * @details
+     * Always call it qualified, as `detail::unwrap_()`, so that
+     * argument-dependent lookup cannot select a function of the
+     * application, defined in the namespace of an operand.
      *
-     * @param t The object or value to be accessed.
-     * @return The value obtained via the relevant getter implementation.
+     * @tparam T The type of the operand.
+     *
+     * @param t The operand.
+     * @return The value returned by `t.get()` for the framework wrappers
+     * (the literals and the `to_*` wrappers), otherwise `t`.
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    get (const T& t);
+    unwrap_ (const T& t);
 
     // ========================================================================
 

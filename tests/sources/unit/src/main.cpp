@@ -36,6 +36,60 @@ using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
+// Application types used to check that the comparators do not use
+// functions of the application named `get` (API-REVIEW.md #5).
+namespace user_types
+{
+  // A type with a free `get()` function in its namespace, which
+  // argument-dependent lookup would find.
+  struct wrapped
+  {
+    int v;
+
+    bool
+    operator== (const wrapped&) const
+        = default;
+  };
+
+  constexpr int
+  get (const wrapped&)
+  {
+    return 999;
+  }
+
+  // A type with a `get()` member function that does not return its value.
+  struct handle
+  {
+    int id;
+
+    int
+    get () const
+    {
+      return 0;
+    }
+
+    bool
+    operator== (const handle& other) const
+    {
+      return id == other.id;
+    }
+  };
+
+  inline expression_formatter&
+  operator<< (expression_formatter& formatter, const wrapped& w)
+  {
+    return formatter << "wrapped{ " << w.v << " }";
+  }
+
+  inline expression_formatter&
+  operator<< (expression_formatter& formatter, const handle& h)
+  {
+    return formatter << "handle{ " << h.id << " }";
+  }
+} // namespace user_types
+
+// ----------------------------------------------------------------------------
+
 static_runner tr;
 
 local_counts_t local_counts;
@@ -383,6 +437,39 @@ main (int argc, char* argv[])
         t.expect (eq (3, 3)) << "later check passes";
         local_counts.successful_checks++;
       } // The stored check is reported here.
+
+      local_counts.executed_subtest++;
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_subtests ()
+               == local_counts.executed_subtest);
+
+  // --------------------------------------------------------------------------
+
+  // The comparators compare the application types with their own
+  // operators, ignoring the application functions named `get`, both free
+  // (found by argument-dependent lookup) and member (API-REVIEW.md #5).
+  ts.test ("Application types with get()", [] (auto& t)
+    {
+      t.expect (ne (user_types::wrapped{ 1 }, user_types::wrapped{ 2 }))
+          << "wrapped values differ";
+      local_counts.successful_checks++;
+
+      t.expect (eq (user_types::wrapped{ 3 }, user_types::wrapped{ 3 }))
+          << "wrapped values are equal";
+      local_counts.successful_checks++;
+
+      t.expect (ne (user_types::handle{ 1 }, user_types::handle{ 2 }))
+          << "handles differ";
+      local_counts.successful_checks++;
+
+      // The framework wrappers are still unwrapped.
+      t.expect (eq (to_i{ 42 }, 42)) << "to_i{ 42 } == 42";
+      local_counts.successful_checks++;
 
       local_counts.executed_subtest++;
     });

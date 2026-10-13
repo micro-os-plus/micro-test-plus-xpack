@@ -17,6 +17,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         • middle subtest
             • inner subtest
     • Stored check result
+    • Application types with get()
     • check in dynamic suite
     • Combinatorial floats
     • Combinatorial doubles
@@ -72,4 +73,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 363 checks passed, 331 failed, in 71 test cases, 12 test suites, time: 1.938 ms
+✗ Total: 367 checks passed, 331 failed, in 72 test cases, 12 test suites, time: 1.816 ms

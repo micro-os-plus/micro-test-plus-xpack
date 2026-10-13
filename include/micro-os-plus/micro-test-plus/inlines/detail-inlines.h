@@ -23,7 +23,7 @@
  * @details
  * This header provides the out-of-line template and inline implementations
  * for all types declared in `detail.h`. It defines the bodies of the
- * generic getter, the unary and binary operator base class templates, all
+ * `unwrap_()` helper, the unary and binary operator base class templates, all
  * relational and logical comparator constructors, the callable operator
  * types (`throws_`, `nothrow_`), and the `append_number_()` formatting
  * helper.
@@ -74,16 +74,19 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * If the type `T` provides a `get()` member function, it is invoked
-     * and its result returned. Otherwise the argument itself is returned
-     * unchanged. The selection is performed at compile time via
-     * `if constexpr` with an inline `requires` expression.
+     * If the type `T` is a framework type (derived from `type_traits::op`)
+     * that provides a `get()` member function, it is invoked and its result
+     * returned. Otherwise the argument itself is returned unchanged, so
+     * that the types of the application, even those with a `get()` member
+     * function, are compared with their own operators. The selection is
+     * performed at compile time via `if constexpr` with an inline
+     * `requires` expression.
      */
     template <class T>
     constexpr auto
-    get (const T& t)
+    unwrap_ (const T& t)
     {
-      if constexpr (requires { t.get (); })
+      if constexpr (type_traits::is_op<T> && requires { t.get (); })
         return t.get ();
       else
         return t;
@@ -116,14 +119,14 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns the wrapped operand, applying the generic getter to ensure
-     * correct extraction for both custom and standard types.
+     * Returns the operand, unwrapped by `detail::unwrap_()` if it is a
+     * framework wrapper type.
      */
     template <class T>
     constexpr auto
     unary_op_<T>::operand () const
     {
-      return get (t_);
+      return detail::unwrap_ (t_);
     }
 
     // ------------------------------------------------------------------------
@@ -155,28 +158,26 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns the value of the left-hand operand, applying the generic
-     * getter to ensure correct extraction for both custom and standard
-     * types.
+     * Returns the value of the left-hand operand, unwrapped by
+     * `detail::unwrap_()` if it is a framework wrapper type.
      */
     template <class Lhs_T, class Rhs_T>
     constexpr auto
     binary_op_<Lhs_T, Rhs_T>::lhs (void) const
     {
-      return get (lhs_);
+      return detail::unwrap_ (lhs_);
     }
 
     /**
      * @details
-     * Returns the value of the right-hand operand, applying the generic
-     * getter to ensure correct extraction for both custom and standard
-     * types.
+     * Returns the value of the right-hand operand, unwrapped by
+     * `detail::unwrap_()` if it is a framework wrapper type.
      */
     template <class Lhs_T, class Rhs_T>
     constexpr auto
     binary_op_<Lhs_T, Rhs_T>::rhs (void) const
     {
-      return get (rhs_);
+      return detail::unwrap_ (rhs_);
     }
 
     // ------------------------------------------------------------------------
@@ -225,24 +226,26 @@ namespace micro_os_plus::micro_test_plus
           {
             // If both values have precision, compare them using
             // the smallest precision.
-            return math::abs (get (lhs) - get (rhs))
+            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
                    < math::min_value (lhs.epsilon, rhs.epsilon);
           }
         else if constexpr (type_traits::has_epsilon<Lhs_T>)
           {
             // If only the left operand has precision, use it.
-            return math::abs (get (lhs) - get (rhs)) < lhs.epsilon;
+            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
+                   < lhs.epsilon;
           }
         else if constexpr (type_traits::has_epsilon<Rhs_T>)
           {
             // If only the right operand has precision, use it.
-            return math::abs (get (lhs) - get (rhs)) < rhs.epsilon;
+            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
+                   < rhs.epsilon;
           }
         else
           {
-            // Call the generic getters, which might
-            // either call the type get() or return the value.
-            return get (lhs) == get (rhs);
+            // Unwrap the framework wrappers; other values, including
+            // the types of the application, are compared as they are.
+            return detail::unwrap_ (lhs) == detail::unwrap_ (rhs);
           }
 
 #if defined(__GNUC__)
@@ -290,20 +293,22 @@ namespace micro_os_plus::micro_test_plus
         else if constexpr (type_traits::has_epsilon<Lhs_T>
                            and type_traits::has_epsilon<Rhs_T>)
           {
-            return math::abs (get (lhs) - get (rhs))
+            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
                    >= math::min_value (lhs.epsilon, rhs.epsilon);
           }
         else if constexpr (type_traits::has_epsilon<Lhs_T>)
           {
-            return math::abs (get (lhs) - get (rhs)) >= lhs.epsilon;
+            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
+                   >= lhs.epsilon;
           }
         else if constexpr (type_traits::has_epsilon<Rhs_T>)
           {
-            return math::abs (get (lhs) - get (rhs)) >= rhs.epsilon;
+            return math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs))
+                   >= rhs.epsilon;
           }
         else
           {
-            return get (lhs) != get (rhs);
+            return detail::unwrap_ (lhs) != detail::unwrap_ (rhs);
           }
 
 #if defined(__GNUC__)
@@ -347,7 +352,7 @@ namespace micro_os_plus::micro_test_plus
           }
         else
           {
-            return get (lhs) > get (rhs);
+            return detail::unwrap_ (lhs) > detail::unwrap_ (rhs);
           }
 
 #if defined(__GNUC__)
@@ -391,7 +396,7 @@ namespace micro_os_plus::micro_test_plus
           }
         else
           {
-            return get (lhs) >= get (rhs);
+            return detail::unwrap_ (lhs) >= detail::unwrap_ (rhs);
           }
 
 #if defined(__GNUC__)
@@ -435,7 +440,7 @@ namespace micro_os_plus::micro_test_plus
           }
         else
           {
-            return get (lhs) < get (rhs);
+            return detail::unwrap_ (lhs) < detail::unwrap_ (rhs);
           }
 
 #if defined(__GNUC__)
@@ -479,7 +484,7 @@ namespace micro_os_plus::micro_test_plus
           }
         else
           {
-            return get (lhs) <= get (rhs);
+            return detail::unwrap_ (lhs) <= detail::unwrap_ (rhs);
           }
 
 #if defined(__GNUC__)
