@@ -696,7 +696,10 @@ The failed check reports both values:
 
 The formatter accepts the standard arithmetic types, characters,
 strings, pointers, and containers, so the members can usually be written
-directly, as above. A plain boolean check, such as
+directly, as above. The `char` pointers and arrays, also when not
+`const`, are written as strings (a null pointer as `nullptr`); the other
+pointers, including the `signed char` and `unsigned char` (`uint8_t`)
+pointers, are written as addresses. A plain boolean check, such as
 `t.expect (p == q)`, needs no formatter, but on failure it reports only
 the source location.
 

@@ -244,7 +244,12 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Appends a null-terminated C string to the buffer.
        *
-       * @param s The C string to append.
+       * @details
+       * Also selected for the non-const `char` pointers and arrays, which
+       * the pointer template does not accept. A null pointer is rendered
+       * as `"nullptr"`.
+       *
+       * @param s The C string to append, or a null pointer.
        * @return Reference to this instance.
        */
       expression_formatter&
@@ -402,11 +407,17 @@ namespace micro_os_plus::micro_test_plus
        * Null pointers are rendered as `"0x0"`. Non-null pointers are
        * formatted with `snprintf` using the `%p` specifier.
        *
-       * @tparam T The type pointed to.
+       * The `char` pointers are excluded, so that they are written as
+       * strings by the `const char*` overload, as the `const char`
+       * pointers are; the `signed char` and `unsigned char` pointers,
+       * usually byte buffers, are written as addresses.
+       *
+       * @tparam T The type pointed to, other than `char`.
        * @param v The pointer value.
        * @return Reference to this instance.
        */
       template <typename T>
+        requires (not std::is_same_v<T, char>)
       expression_formatter&
       operator<< (T* v);
 

@@ -463,12 +463,22 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the contents of the provided C-style string
-   * to the internal output buffer of the `reporter`.
+   * to the internal output buffer of the `reporter`, or `"nullptr"` for a
+   * null pointer, as the expression formatter does; the `char*` values also
+   * reach this overload, and `std::string::append()` must not be called
+   * with a null pointer.
    */
   reporter&
   reporter::operator<< (const char* s)
   {
-    buffer_.append (s);
+    if (s == nullptr)
+      {
+        buffer_.append ("nullptr");
+      }
+    else
+      {
+        buffer_.append (s);
+      }
     return *this;
   }
 

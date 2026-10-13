@@ -84,12 +84,22 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Appends the null-terminated C string @p s to the internal buffer
-   * using `buffer_.append(s)`.
+   * using `buffer_.append(s)`, or `"nullptr"` for a null pointer, as the
+   * `c_string_` overload does; the `char*` values also reach this
+   * overload, and `std::string::append()` must not be called with a
+   * null pointer.
    */
   expression_formatter&
   expression_formatter::operator<< (const char* s)
   {
-    buffer_.append (s);
+    if (s == nullptr)
+      {
+        buffer_.append ("nullptr");
+      }
+    else
+      {
+        buffer_.append (s);
+      }
     return *this;
   }
 

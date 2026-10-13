@@ -138,6 +138,7 @@ namespace micro_os_plus::micro_test_plus
    * pointer-related test cases.
    */
   template <typename T>
+    requires (not std::is_same_v<T, char>)
   reporter&
   reporter::operator<< (T* v)
   {

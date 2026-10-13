@@ -243,7 +243,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator for a constant character string.
      *
-     * @param s The string to output.
+     * @details
+     * Also selected for the non-const `char` pointers and arrays, which
+     * the pointer template does not accept. A null pointer is output as
+     * `"nullptr"`.
+     *
+     * @param s The string to output, or a null pointer.
      * @return Reference to the current reporter instance.
      */
     reporter&
@@ -281,12 +286,18 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display any pointer.
      *
-     * @tparam T The type of the pointer.
+     * @details
+     * The `char` pointers are excluded, so that they are output as
+     * strings by the `const char*` overload, as the `const char`
+     * pointers are.
+     *
+     * @tparam T The type pointed to, other than `char`.
      *
      * @param v The pointer value to output.
      * @return Reference to the current reporter instance.
      */
     template <typename T>
+      requires (not std::is_same_v<T, char>)
     reporter&
     operator<< (T* v);
 

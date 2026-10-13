@@ -28,6 +28,11 @@ previously compared by address. To compare the addresses, cast the
 pointers to `const void*`. The pointer overloads of the comparators
 were removed; the generic ones handle all the pointers.
 
+The `expression_formatter` and the reporters now write the non-const
+`char` pointers and arrays as strings, as they write the `const char`
+pointers; they were previously written as addresses. A null `char`
+pointer is written as `nullptr`.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

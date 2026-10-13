@@ -356,6 +356,20 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         r << "line" << endl;
         check ("line\n", "endl");
 
+        // The `char` pointers and arrays are displayed as strings, as the
+        // `const char` pointers are (API-REVIEW.md #13).
+        char text[] = "mutable";
+        r << text;
+        check ("mutable", "char array");
+
+        char* text_pointer = text;
+        r << text_pointer;
+        check ("mutable", "char*");
+
+        r << static_cast<char*> (nullptr) << ' '
+          << static_cast<const char*> (nullptr);
+        check ("nullptr nullptr", "null char pointers");
+
         // A non-null pointer, also to a const object, is displayed as an
         // address, whose format depends on the platform.
         static const int constant = 42;
@@ -364,6 +378,58 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
             << "pointer to const";
         local_counts.successful_checks++;
         r.clear ();
+
+        local_counts.executed_subtest++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+
+    // The text written by the `expression_formatter` stream operators for
+    // the character pointers and arrays (API-REVIEW.md #13).
+    ts.test ("Formatter character pointers", [] (auto& t)
+      {
+        detail::colours no_colours{};
+        expression_formatter f{ no_colours };
+
+        // Compares the accumulated text, then clears it.
+        auto check = [&] (std::string_view expected, const char* message)
+          {
+            t.expect (eq (std::string_view{ f.str () }, expected)) << message;
+            local_counts.successful_checks++;
+            f.clear ();
+          };
+
+        char text[] = "mutable";
+        f << text;
+        check ("mutable", "char array");
+
+        char* text_pointer = text;
+        f << text_pointer;
+        check ("mutable", "char*");
+
+        const char* const_text_pointer = text;
+        f << const_text_pointer;
+        check ("mutable", "const char*");
+
+        f << static_cast<char*> (nullptr) << ' '
+          << static_cast<const char*> (nullptr);
+        check ("nullptr nullptr", "null char pointers");
+
+        // The `signed char` and `unsigned char` pointers, usually byte
+        // buffers, are displayed as addresses, whose format depends on the
+        // platform.
+        unsigned char bytes[] = { 'a', 'b', 0 };
+        f << bytes;
+        t.expect (not f.str ().empty () && f.str () != "ab"
+                  && f.str () != "0x0")
+            << "unsigned char array";
+        local_counts.successful_checks++;
+        f.clear ();
 
         local_counts.executed_subtest++;
       });

@@ -801,13 +801,23 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ double
         ✓ null pointer
         ✓ endl
+        ✓ char array
+        ✓ char*
+        ✓ null char pointers
         ✓ pointer to const
-    ✓ Reporter stream operators - passed (10 checks)
+    ✓ Reporter stream operators - passed (13 checks)
+    • Formatter character pointers
+        ✓ char array
+        ✓ char*
+        ✓ const char*
+        ✓ null char pointers
+        ✓ unsigned char array
+    ✓ Formatter character pointers - passed (5 checks)
     • Pointers to const
         ✓ different const objects
         ✓ same const object
     ✓ Pointers to const - passed (2 checks)
-✗ Miscellaneous suite - FAILED (24 checks passed, 13 failed, in 8 test cases)
+✗ Miscellaneous suite - FAILED (32 checks passed, 13 failed, in 9 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -909,4 +919,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 404 checks passed, 330 failed, in 75 test cases, 12 test suites
+✗ Total: 412 checks passed, 330 failed, in 76 test cases, 12 test suites

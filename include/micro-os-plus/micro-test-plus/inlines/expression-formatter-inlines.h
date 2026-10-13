@@ -174,6 +174,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * `%p` specifier.
    */
   template <typename T>
+    requires (not std::is_same_v<T, char>)
   expression_formatter&
   expression_formatter::operator<< (T* v)
   {
