@@ -43,6 +43,14 @@ from a string literal or a `const char*`; an argument that converts to
 converted explicitly. As for `expect()`, GCC with `-Waggregate-return`
 now warns at the `test()` calls too.
 
+The counters and the indices of the runner, the suites, and the test
+cases can no longer be modified by the user code: `totals()` now
+returns only a `const` reference, so a reference that stores its result
+must be `const`, and the `own_index (size_t)` setter and
+`increment_subtest_index()` are no longer public. The read-only
+functions (`totals()`, `own_index()`, `current_subtest_index()`, and
+`children_subtests_count()`) are still available.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

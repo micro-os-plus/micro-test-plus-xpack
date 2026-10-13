@@ -124,13 +124,13 @@ namespace micro_os_plus::micro_test_plus
         {
           subtest_.reporter ().pass (deferred_output_, expression_str,
                                      subtest_);
-          subtest_.totals ().increment_successful_checks ();
+          subtest_.totals_.increment_successful_checks ();
         }
       else
         {
           subtest_.reporter ().fail (abort_, deferred_output_, expression_str,
                                      has_expression_, location_, subtest_);
-          subtest_.totals ().increment_failed_checks ();
+          subtest_.totals_.increment_failed_checks ();
         }
 
       expression.end_check (this);

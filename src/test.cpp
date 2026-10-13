@@ -184,7 +184,7 @@ namespace micro_os_plus::micro_test_plus
       trace::printf ("%s subtest '%s' executed one more subtest\n",
                      __PRETTY_FUNCTION__, name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-      totals ().increment_executed_subtests ();
+      totals_.increment_executed_subtests ();
 
       // Do not accumulate the totals from the child test into the current test
       // totals, each subtest shows only its counters. But a failed child
@@ -192,7 +192,7 @@ namespace micro_os_plus::micro_test_plus
       // tests, one level at a time, when they end.
       if (!subtest.totals ().was_successful ())
         {
-          totals ().increment_failed_subtests ();
+          totals_.increment_failed_subtests ();
         }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
@@ -201,7 +201,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
       // Accumulate the totals from the child test into the suite totals.
-      suite.totals () += subtest.totals ();
+      suite.totals_ += subtest.totals ();
     }
   } // namespace detail
 
@@ -303,7 +303,7 @@ namespace micro_os_plus::micro_test_plus
 
     const std::string expression{};
     reporter ().fail (false, message, expression, false, location_, *this);
-    totals ().increment_failed_checks ();
+    totals_.increment_failed_checks ();
   }
 #endif // defined(__cpp_exceptions)
 

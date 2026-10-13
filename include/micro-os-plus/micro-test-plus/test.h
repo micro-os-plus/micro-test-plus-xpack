@@ -102,6 +102,8 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
+    class deferred_reporter_base;
+
     // ========================================================================
 
     /**
@@ -215,7 +217,8 @@ namespace micro_os_plus::micro_test_plus
      * executed subtests.
      *
      * The counters, and through them the overall result of the node, are
-     * accessible via `totals()`.
+     * readable via `totals()`; only the framework updates them, via the
+     * protected `totals_` member.
      *
      * All members and methods are defined within the
      * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation
@@ -291,19 +294,12 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] const char*
       name (void) const noexcept;
 
-    public:
       /**
        * @brief Gets the totals for the test.
        *
-       * @par Parameters
-       *   None.
-       * @return A reference to the runner_totals instance.
-       */
-      [[nodiscard]] runner_totals&
-      totals () noexcept;
-
-      /**
-       * @brief Gets the totals for the test (const overload).
+       * @details
+       * The totals are read-only; there is no non-const overload, so that
+       * the counters cannot be modified from the test code.
        *
        * @par Parameters
        *   None.
@@ -328,6 +324,9 @@ namespace micro_os_plus::micro_test_plus
        * For the runner and the suites, the totals include the checks of all
        * their subtests; for a subtest, they include only its own checks,
        * plus the number of nested subtests executed.
+       *
+       * Updated by the node itself, by its parent (`runnable_base`), and by
+       * the deferred reporter (a friend of `runnable_base`).
        */
       runner_totals totals_;
     };
@@ -348,6 +347,12 @@ namespace micro_os_plus::micro_test_plus
      * Concrete runnable classes (`suite`, `subtest`) derive from
      * `runnable<Self_T>` which in turn derives from `runnable_base`.
      *
+     * The indices and the totals can be read by the user code and by the
+     * reporters, but they are modified only by the framework: the setters
+     * are protected, and the classes that update the nodes from outside
+     * (the runners, which number the suites, and the deferred reporter,
+     * which counts the checks) are friends.
+     *
      * The class is non-copyable and non-movable to preserve unique ownership
      * and consistent state throughout the test session.
      *
@@ -355,6 +360,13 @@ namespace micro_os_plus::micro_test_plus
      */
     class runnable_base : public test_node
     {
+      // Set the indices of the suites, before running them.
+      friend class micro_test_plus::runner;
+      friend class micro_test_plus::static_runner;
+
+      // Number and count the checks of the subtests.
+      friend class deferred_reporter_base;
+
     public:
       /**
        * @brief Constructs a `runnable_base` with a name, runner, and index.
@@ -425,20 +437,6 @@ namespace micro_os_plus::micro_test_plus
       own_index () const noexcept;
 
       /**
-       * @brief Sets the positional index of this object within its parent.
-       *
-       * @note This overload follows the same-name getter/setter pattern
-       * used throughout the framework: the getter is the `const` overload
-       * and the setter is the non-`const` single-argument overload.
-       *
-       * @param index The new index value.
-       * @par Returns
-       *   Nothing.
-       */
-      void
-      own_index (size_t index) noexcept;
-
-      /**
        * @brief Returns the index of the most recent child test point
        * (check or nested subtest).
        *
@@ -448,17 +446,6 @@ namespace micro_os_plus::micro_test_plus
        */
       [[nodiscard]] size_t
       current_subtest_index () const noexcept;
-
-      /**
-       * @brief Increments and returns the child test point sequential
-       * index.
-       *
-       * @par Parameters
-       *   None.
-       * @return The new index value after incrementing.
-       */
-      size_t
-      increment_subtest_index () noexcept;
 
       /**
        * @brief Returns the number of direct child subtests owned by this node.
@@ -502,6 +489,39 @@ namespace micro_os_plus::micro_test_plus
       runner (void) const noexcept;
 
     protected:
+      /**
+       * @brief Sets the positional index of this object within its parent.
+       *
+       * @details
+       * Used by the runners, which number the suites when they run them,
+       * and by the top suite, which is always the first one.
+       *
+       * @note This overload follows the same-name getter/setter pattern
+       * used throughout the framework: the getter is the `const` overload
+       * and the setter is the non-`const` single-argument overload.
+       *
+       * @param index The new index value.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      own_index (size_t index) noexcept;
+
+      /**
+       * @brief Increments and returns the child test point sequential
+       * index.
+       *
+       * @details
+       * Called for each check (by the deferred reporter) and for each
+       * nested subtest created.
+       *
+       * @par Parameters
+       *   None.
+       * @return The new index value after incrementing.
+       */
+      size_t
+      increment_subtest_index () noexcept;
+
       /**
        * @brief Registers a newly constructed child subtest and executes it
        * immediately.

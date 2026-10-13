@@ -106,7 +106,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  detail::runner_totals& current_suite_totals = ts.totals ();
+  const detail::runner_totals& current_suite_totals = ts.totals ();
 
   ts.test ("assume", [] (auto& t)
     {

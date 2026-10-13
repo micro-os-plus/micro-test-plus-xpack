@@ -154,16 +154,6 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns a reference to the `runner_totals` member.
-     */
-    inline runner_totals&
-    test_node::totals () noexcept
-    {
-      return totals_;
-    }
-
-    /**
-     * @details
      * Returns a const reference to the `runner_totals` member.
      */
     inline const runner_totals&
