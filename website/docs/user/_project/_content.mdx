@@ -535,6 +535,11 @@ binary (`0b101_i`), and octal (`010_i`, which is 8), with digit separators
 (`1'000_i`). A decimal point, an exponent, or a value that does not fit in the
 type of the literal (e.g. `300_u8`) is a compilation error.
 
+The floating-point literals are written with decimal digits and a decimal
+point, optionally with digit separators (`1'000.000'5_d`), but without an
+exponent; they can have up to 19 digits before the decimal point and 18
+after it, otherwise the compilation fails.
+
 The floating-point literals (`1.5_d`) and wrappers (`mt::to_d{ 1.5 }`)
 compare with a tolerance of one unit of the last decimal written (0.1 for
 `1.5`), so that `1.45 == 1.5_d` is true. All six comparisons apply it

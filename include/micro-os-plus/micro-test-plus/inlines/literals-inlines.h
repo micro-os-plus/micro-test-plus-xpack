@@ -454,9 +454,9 @@ namespace micro_os_plus::micro_test_plus
     operator""_f ()
     {
       return type_traits::floating_point_constant<
-          float, math::num<unsigned long, Cs...> (),
-          math::den<unsigned long, Cs...> (),
-          math::den_size<unsigned long, Cs...> ()>{};
+          float, math::num<unsigned long long, Cs...> (),
+          math::den<unsigned long long, Cs...> (),
+          math::den_size<unsigned long long, Cs...> ()>{};
     }
 
     /**
@@ -475,9 +475,9 @@ namespace micro_os_plus::micro_test_plus
     operator""_d ()
     {
       return type_traits::floating_point_constant<
-          double, math::num<unsigned long, Cs...> (),
-          math::den<unsigned long, Cs...> (),
-          math::den_size<unsigned long, Cs...> ()>{};
+          double, math::num<unsigned long long, Cs...> (),
+          math::den<unsigned long long, Cs...> (),
+          math::den_size<unsigned long long, Cs...> ()>{};
     }
 
     /**

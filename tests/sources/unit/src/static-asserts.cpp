@@ -142,6 +142,17 @@ static_asserts ()
       static_assert (0xFFFF'FFFF'FFFF'FFFFull == 0xFFFF'FFFF'FFFF'FFFF_u64);
       static_assert (18446744073709551615ull == 18446744073709551615_ull);
 
+      // The floating-point literals are computed with 64-bit integers on all
+      // platforms, and accept digit separators also after the decimal point
+      // (API-REVIEW.md #10). Too many digits, or an exponent, is a
+      // compilation error.
+      static_assert (1.000'5 == 1.000'5_d);
+      static_assert (1'000.5 == 1'000.5_d);
+      static_assert (5000000000.5 == 5000000000.5_d);
+      static_assert (1.9999999999 == 1.9999999999_d);
+      static_assert (decltype (1.000'5_d)::epsilon > 0.000099
+                     && decltype (1.000'5_d)::epsilon < 0.000101);
+
       static_assert (0. == 0.0_d);
       static_assert (0.f == .0_f);
       static_assert (0.1 == .1_d);

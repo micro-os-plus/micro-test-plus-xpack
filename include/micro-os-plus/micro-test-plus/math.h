@@ -152,6 +152,25 @@ namespace micro_os_plus::micro_test_plus
     pow (const T base, const Exp_T exp) noexcept -> T;
 
     /**
+     * @brief Counts the decimal digits of a floating-point literal, before
+     * or after the decimal point.
+     *
+     * @details
+     * The digit separators (`'`) are not counted.
+     *
+     * @tparam Fraction `true` to count the digits after the decimal point,
+     * `false` to count those before it.
+     * @tparam Cs The characters of the literal.
+     *
+     * @par Parameters
+     *   None.
+     * @return The number of digits.
+     */
+    template <bool Fraction, char... Cs>
+    [[nodiscard]] consteval auto
+    count_literal_digits_ (void) -> std::size_t;
+
+    /**
      * @brief Computes the integral part of a decimal floating-point number
      * represented as an array of characters.
      *

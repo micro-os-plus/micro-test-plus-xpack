@@ -147,13 +147,42 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Walks the characters once, counting the decimal digits before the
+     * first decimal point (`Fraction` false) or after it (`Fraction`
+     * true); the digit separators are skipped.
+     */
+    template <bool Fraction, char... Cs>
+    consteval auto
+    count_literal_digits_ (void) -> std::size_t
+    {
+      std::size_t count = 0;
+      bool is_fraction = false;
+      for (const char c : { Cs... })
+        {
+          if (c == '.')
+            {
+              is_fraction = true;
+            }
+          else if (c >= '0' and c <= '9' and is_fraction == Fraction)
+            {
+              ++count;
+            }
+        }
+      return count;
+    }
+
+    /**
+     * @details
      * This function template performs compile-time parsing of a numeric value
      * from a sequence of characters, typically provided as a template
      * parameter pack.
      *
-     * The function assumes that all characters are either digits, a dot (`.`),
-     * or an apostrophe (`'`). Parsing stops at the first dot, allowing the
-     * function to extract only the integral part of the number.
+     * The characters must be decimal digits, a dot (`.`), or digit
+     * separators (`'`), which are skipped; otherwise (e.g. an exponent) the
+     * compilation fails with an explicit message, as it does if the
+     * integral part has more digits than `T` can always hold. Parsing stops
+     * at the first dot, allowing the function to extract only the integral
+     * part of the number.
      *
      * This utility is particularly useful for user-defined literals and other
      * compile-time constant expressions, enabling efficient and type-safe
@@ -163,9 +192,15 @@ namespace micro_os_plus::micro_test_plus
     consteval auto
     num (void) -> T
     {
-      // Assume all are digits or dot or apostrophe.
       static_assert (
-          ((Cs == '.' or Cs == '\'' or (Cs >= '0' and Cs <= '9')) and ...));
+          ((Cs == '.' or Cs == '\'' or (Cs >= '0' and Cs <= '9')) and ...),
+          "µTest++: a floating-point literal must be written with decimal "
+          "digits and a decimal point, without an exponent");
+      static_assert (
+          count_literal_digits_<false, Cs...> ()
+              <= static_cast<std::size_t> (std::numeric_limits<T>::digits10),
+          "µTest++: the floating-point literal has too many "
+          "digits before the decimal point");
       T result{};
       for (const char c : { Cs... })
         {
@@ -191,10 +226,11 @@ namespace micro_os_plus::micro_test_plus
      * The function expects the character sequence to represent a numeric
      * value, where all characters are either digits, a dot (`.`), or an
      * apostrophe (`'`). Parsing begins after the first dot, accumulating the
-     * decimal digits as an integer value, each weighted by its decimal
-     * position. The weights are one order of magnitude higher than the
-     * digit positions (e.g. `1.25` yields 250), matching the scale returned
-     * by `den_size()`, so that `den() / 10^den_size()` gives the fraction.
+     * decimal digits as an integer value and skipping the digit separators;
+     * the result is then multiplied by ten (e.g. `1.25` yields 250),
+     * matching the scale returned by `den_size()`, so that
+     * `den() / 10^den_size()` gives the fraction. If the result could
+     * exceed `T`, the compilation fails with an explicit message.
      *
      * This utility is particularly useful for user-defined literals and other
      * compile-time constant expressions, enabling efficient and type-safe
@@ -207,18 +243,29 @@ namespace micro_os_plus::micro_test_plus
     {
       static_assert ((... || (Cs == '.')),
                      "den(): no decimal point in literal");
-      constexpr const std::array cs{ Cs... };
+      // The result has one more digit than the decimals (it is scaled by
+      // ten), and it must fit in `T`.
+      static_assert (
+          count_literal_digits_<true, Cs...> () + 1
+              <= static_cast<std::size_t> (std::numeric_limits<T>::digits10),
+          "µTest++: the floating-point literal has too many "
+          "decimals");
       T result{};
-      auto i = 0u;
-      while (cs[i++] != '.')
+      bool is_fraction = false;
+      for (const char c : { Cs... })
         {
+          if (c == '.')
+            {
+              is_fraction = true;
+            }
+          else if (is_fraction and c >= '0' and c <= '9')
+            {
+              // The digit separators are skipped.
+              result = static_cast<T> (result * static_cast<T> (10)
+                                       + static_cast<T> (c - '0'));
+            }
         }
-
-      for (auto j = i; j < sizeof...(Cs); ++j)
-        {
-          result += pow (T (10), sizeof...(Cs) - j) * T (cs[j] - '0');
-        }
-      return result;
+      return static_cast<T> (result * static_cast<T> (10));
     }
 
     /**
@@ -229,10 +276,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * The function expects the character sequence to represent a numeric
      * value, where all characters are either digits, a dot (`.`), or an
-     * apostrophe (`'`). It locates the first dot and returns the number of
-     * characters that follow it plus one (e.g. 3 for `1.25`), which is the
-     * scale used by `den()`; the actual number of decimal places is one
-     * less.
+     * apostrophe (`'`). It returns the number of digits that follow the
+     * first dot (the digit separators are not counted) plus one (e.g. 3 for
+     * `1.25`), which is the scale used by `den()`; the actual number of
+     * decimal places is one less.
      *
      * This utility is particularly useful for user-defined literals and other
      * compile-time constant expressions, enabling efficient and type-safe
@@ -244,24 +291,7 @@ namespace micro_os_plus::micro_test_plus
     {
       static_assert ((... || (Cs == '.')),
                      "den_size(): no decimal point in literal");
-      constexpr const std::array cs{ Cs... };
-      T i{};
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif // defined(__GNUC__)
-
-      while (cs[i++] != '.')
-        {
-        }
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-
-      return T (sizeof...(Cs)) - i + T (1);
+      return static_cast<T> (count_literal_digits_<true, Cs...> () + 1);
     }
 
     /**
