@@ -134,6 +134,34 @@ static static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
         t.expect (utility::is_match ("abc", "**")) << "abc matches **";
         local_counts.successful_checks++;
 
+        // A * that must retry after a partial match.
+        t.expect (utility::is_match ("aXbYbZc", "a*b*c"))
+            << "aXbYbZc matches a*b*c";
+        local_counts.successful_checks++;
+
+        // A * followed by ? at the end.
+        t.expect (utility::is_match ("ab", "*?")) << "ab matches *?";
+        local_counts.successful_checks++;
+
+        // A suite name, as selected by --filter.
+        t.expect (
+            utility::is_match ("Explicit namespace suite", "*namespace*"))
+            << "suite name matches *namespace*";
+        local_counts.successful_checks++;
+
+        // Many * wildcards against a long input, which do not match; the
+        // iterative match does not backtrack exponentially.
+        t.expect (not utility::is_match (
+            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "a*a*a*a*a*a*a*a*b"))
+            << "long input does not match a*a*a*a*a*a*a*a*b";
+        local_counts.successful_checks++;
+
+        // The pattern must cover the whole input.
+        t.expect (not utility::is_match ("Alpha one", "Alpha"))
+            << "Alpha one does not match Alpha";
+        local_counts.successful_checks++;
+
         local_counts.executed_subtest++;
       });
 

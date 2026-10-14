@@ -831,11 +831,27 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ missing argument
         ✓ output file not opened
     ✓ Runner option errors - passed (4 checks)
+    • Runner filter
+        ✓ suite filter passed
+        ✓ matching suites run
+        ✓ all their test cases run
+        ✓ one suite skipped
+        ✓ level filters passed
+        ✓ suites matching an alternative run
+        ✓ test cases matching the second pattern run
+        ✓ nested test cases matching the third pattern run
+        ✓ skipped suites and test cases counted
+        ✓ top suite filtered
+        ✓ top suite test case matching the second pattern runs
+        ✓ partial name does not match
+        ✓ nothing skipped without patterns
+        ✓ missing pattern
+    ✓ Runner filter - passed (14 checks)
     • Abort handler
         ✓ no initial handler
         ✓ previous handler returned
     ✓ Abort handler - passed (2 checks)
-✗ Miscellaneous suite - FAILED (42 checks passed, 13 failed, in 12 test cases)
+✗ Miscellaneous suite - FAILED (56 checks passed, 13 failed, in 13 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -930,7 +946,12 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ abc matches *bc
         ✓ abc matches *b*
         ✓ abc matches **
-    ✓ utility::is_match() — passing - passed (11 checks)
+        ✓ aXbYbZc matches a*b*c
+        ✓ ab matches *?
+        ✓ suite name matches *namespace*
+        ✓ long input does not match a*a*a*a*a*a*a*a*b
+        ✓ Alpha one does not match Alpha
+    ✓ utility::is_match() — passing - passed (16 checks)
     • utility::is_match() — failing
         ✗ "" matches abc FAILED (utility.cpp:152)
         ✗ abc matches b?? FAILED (utility.cpp:156)
@@ -938,5 +959,5 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ abc matches *C FAILED (utility.cpp:164)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
-✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 426 checks passed, 330 failed, in 79 test cases, 12 test suites
+✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
+✗ Total: 445 checks passed, 330 failed, in 80 test cases, 12 test suites

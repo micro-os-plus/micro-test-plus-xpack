@@ -81,6 +81,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Pointers to const
     • Runner options
     • Runner option errors
+    • Runner filter
     • Abort handler
     • Operators
     • String view operators
@@ -93,4 +94,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 434 checks passed, 341 failed, in 92 test cases, 13 test suites, time: 10.402 ms
+✗ Total: 453 checks passed, 341 failed, in 93 test cases, 13 test suites, time: 9.996 ms

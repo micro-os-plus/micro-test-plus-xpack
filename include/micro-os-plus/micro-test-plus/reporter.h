@@ -454,6 +454,25 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
+       * @brief Report a test suite skipped by the filter.
+       *
+       * @details
+       * Called by `runner::run_suites_()`, instead of running the suite,
+       * when its name does not match the first filter pattern; the suite
+       * has already been assigned its index. Implementations display a
+       * single line, without the suite body.
+       *
+       * @param suite Reference to the skipped test suite.
+       * @par Returns
+       *   Nothing.
+       *
+       * @since 5.1.0
+       */
+      virtual void
+      skip_suite (suite& suite)
+          = 0;
+
+      /**
        * @brief Mark the beginning of a subtest.
        *
        * @details
@@ -481,6 +500,26 @@ namespace micro_os_plus::micro_test_plus
        */
       virtual void
       end_subtest (subtest& subtest)
+          = 0;
+
+      /**
+       * @brief Report a subtest skipped by the filter.
+       *
+       * @details
+       * Called instead of `begin_subtest()` and `end_subtest()`, when the
+       * name of the subtest, or of its suite, does not match the filter
+       * pattern of its level; the subtest has already been assigned its
+       * index. Implementations display a single line, at the indentation
+       * of the subtest.
+       *
+       * @param subtest Reference to the skipped subtest.
+       * @par Returns
+       *   Nothing.
+       *
+       * @since 5.1.0
+       */
+      virtual void
+      skip_subtest (subtest& subtest)
           = 0;
 
       /**

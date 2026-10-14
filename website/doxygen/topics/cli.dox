@@ -104,3 +104,80 @@ TAP version 14
 
 In silent mode, the µTest++ reporter suppresses all output, and the
 framework returns only the exit code.
+
+@section cli-filter Filter
+
+By default, all test suites and test cases are run. To run only some of
+them, the `--filter` option selects them by name, as `--grep` does in
+node-tap:
+
+- `--filter=<pattern>` or `--filter <pattern>` – run only the suites and
+  the test cases whose names match the patterns
+
+The option may be repeated, one pattern per nesting level: the first
+pattern applies to the suite names, the second to the names of the test
+cases, and each further pattern to the names of the test cases nested one
+level deeper. The levels without a pattern are not filtered; to filter
+only the test cases, use `*` for the suites.
+
+In a pattern, `*` matches any sequence of characters, including an empty
+one, `?` matches any single character, and `|` separates alternatives. The
+match is case-sensitive, and the pattern must cover the whole name; for
+example, `Args` does not select a suite named `Args suite`, but `Args*`
+and `Args*|*namespace*` do. Since the patterns usually contain wildcards,
+they must be quoted, to prevent the shell from expanding them.
+
+The suites and the test cases that are not selected are reported as
+skipped, keep their numbers in the TAP plans, and their code is not run.
+The top suite is never skipped as a whole, since its body is `main()`, but
+its test cases are filtered like those of any other suite.
+
+On platforms without a command line, the patterns can be set in
+`runner_options::filter_patterns`.
+
+@par Example
+
+@code{.console}
+$ sample-test one two --filter='*namespace*'
+
+TAP version 14
+# Subtest: Sample
+...
+ok 1 - Sample # { passed, 31 checks in 13 test cases, time: X.XXX ms }
+
+ok 2 - Args suite # SKIP filtered
+
+# Subtest: Explicit namespace suite
+...
+ok 3 - Explicit namespace suite # { passed, 2 checks in 2 test cases, time: X.XXX ms }
+
+# Subtest: Implicit namespace suite
+...
+ok 4 - Implicit namespace suite # { passed, 2 checks in 2 test cases, time: X.XXX ms }
+
+1..4
+# { total: 35 checks passed, 0 failed, in 17 test cases, 4 test suites, 1 skipped, time: X.XXX ms }
+@endcode
+
+To run only the test cases named `Check one` of the same suites:
+
+@code{.console}
+$ sample-test one two --filter='*namespace*' --filter='Check one'
+...
+# Subtest: Explicit namespace suite
+
+    # Subtest: Check one
+        1..0
+    ok 1 - Check one # { passed, 1 check }
+
+    ok 2 - Check two # SKIP filtered
+
+    1..2
+ok 3 - Explicit namespace suite # { passed, 1 check in 1 test case, 1 skipped, time: X.XXX ms }
+...
+1..4
+# { total: 2 checks passed, 0 failed, in 2 test cases, 15 skipped, 4 test suites, 1 skipped, time: X.XXX ms }
+@endcode
+
+The test cases of the top suite `Sample` are skipped too, since its name
+does not match the first pattern.

@@ -198,6 +198,18 @@ namespace micro_os_plus::micro_test_plus
     increment_failed_subtests (size_t count = 1) noexcept;
 
     /**
+     * @brief Increments the skipped-subtests counter.
+     *
+     * @param count The number of skipped subtests to add (default 1).
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 5.1.0
+     */
+    void
+    increment_skipped_subtests (size_t count = 1) noexcept;
+
+    /**
      * @brief Returns the number of checks that passed.
      *
      * @par Parameters
@@ -246,6 +258,21 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] size_t
     failed_subtests () const noexcept;
+
+    /**
+     * @brief Returns the number of subtests skipped by the filter.
+     *
+     * @details
+     * The skipped subtests are not included in `executed_subtests()`.
+     *
+     * @par Parameters
+     *   None.
+     * @return The cumulative count of skipped subtests.
+     *
+     * @since 5.1.0
+     */
+    [[nodiscard]] size_t
+    skipped_subtests () const noexcept;
 
     /**
      * @brief Checks whether all executed checks and subtests were
@@ -297,6 +324,16 @@ namespace micro_os_plus::micro_test_plus
      * are not counted in its check counters.
      */
     size_t failed_subtests_ = 0;
+
+    /**
+     * @brief Total number of subtests skipped by the filter.
+     *
+     * @details
+     * Incremented by `increment_skipped_subtests()`, when the name of a
+     * subtest, or of its suite, does not match the filter pattern of its
+     * level, and by `operator+=`.
+     */
+    size_t skipped_subtests_ = 0;
   };
 
   // --------------------------------------------------------------------------

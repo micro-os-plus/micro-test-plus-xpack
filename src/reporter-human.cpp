@@ -176,8 +176,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Unless verbosity is silent, prints a summary line to `stdout` (and to
    * the output file if open) showing the total number of successful
-   * checks, failed checks, executed test cases, and test suites, together
-   * with the elapsed time when timing data is available. The line is
+   * checks, failed checks, executed test cases, and test suites, each
+   * count followed by the number skipped by the filter (only when not
+   * zero), together with the elapsed time when timing data is
+   * available. The line is
    * prefixed with a green `✓` tick on success or a red `✗` cross on
    * failure, using ANSI colour codes when colour output is enabled.
    */
@@ -205,16 +207,32 @@ namespace micro_os_plus::micro_test_plus::detail
                                                     microseconds);
           }
 
+        char message_skipped_subtests[40] = "";
+        if (runner.totals ().skipped_subtests () > 0)
+          {
+            snprintf (message_skipped_subtests,
+                      sizeof (message_skipped_subtests), ", %zu skipped",
+                      runner.totals ().skipped_subtests ());
+          }
+
+        char message_skipped_suites[40] = "";
+        if (runner.skipped_suites_count () > 0)
+          {
+            snprintf (message_skipped_suites, sizeof (message_skipped_suites),
+                      ", %zu skipped", runner.skipped_suites_count ());
+          }
+
         char message_totals[300];
         snprintf (message_totals, sizeof (message_totals),
                   "Total: %zu check%s passed, %zu failed, in %zu test "
-                  "case%s, %zu test suite%s",
+                  "case%s%s, %zu test suite%s%s",
                   runner.totals ().successful_checks (),
                   runner.totals ().successful_checks () == 1 ? "" : "s",
                   runner.totals ().failed_checks (),
                   runner.totals ().executed_subtests (),
                   runner.totals ().executed_subtests () == 1 ? "" : "s",
-                  total_suites_count, total_suites_count == 1 ? "" : "s");
+                  message_skipped_subtests, total_suites_count,
+                  total_suites_count == 1 ? "" : "s", message_skipped_suites);
 
         char message_time[120] = "";
         if (milliseconds > 0 || microseconds > 0)
@@ -322,6 +340,14 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         std::string indent (indent_size, ' ');
 
+        // The test cases skipped by the filter, only when not zero.
+        char message_skipped[40] = "";
+        if (suite.totals ().skipped_subtests () > 0)
+          {
+            snprintf (message_skipped, sizeof (message_skipped),
+                      ", %zu skipped", suite.totals ().skipped_subtests ());
+          }
+
         if (suite.totals ().executed_subtests () > 0)
           {
             write_console_ ("\n");
@@ -333,11 +359,12 @@ namespace micro_os_plus::micro_test_plus::detail
 
             char message_totals[300];
             snprintf (message_totals, sizeof (message_totals),
-                      "(%zu check%s in %zu test case%s)",
+                      "(%zu check%s in %zu test case%s%s)",
                       suite.totals ().successful_checks (),
                       suite.totals ().successful_checks () == 1 ? "" : "s",
                       suite.totals ().executed_subtests (),
-                      suite.totals ().executed_subtests () == 1 ? "" : "s");
+                      suite.totals ().executed_subtests () == 1 ? "" : "s",
+                      message_skipped);
 
             write_buffer_to_file_ ();
 
@@ -362,12 +389,13 @@ namespace micro_os_plus::micro_test_plus::detail
             char message_totals[300];
             snprintf (message_totals, sizeof (message_totals),
                       "(%zu check%s passed, %zu "
-                      "failed, in %zu test case%s)",
+                      "failed, in %zu test case%s%s)",
                       suite.totals ().successful_checks (),
                       suite.totals ().successful_checks () == 1 ? "" : "s",
                       suite.totals ().failed_checks (),
                       suite.totals ().executed_subtests (),
-                      suite.totals ().executed_subtests () == 1 ? "" : "s");
+                      suite.totals ().executed_subtests () == 1 ? "" : "s",
+                      message_skipped);
 
             write_buffer_to_file_ ();
 
@@ -390,6 +418,38 @@ namespace micro_os_plus::micro_test_plus::detail
     clear_buffer_ ();
 
     add_empty_line_ = true;
+  }
+
+  /**
+   * @details
+   * With normal or verbose verbosity, this method writes a
+   * `"• <name> - skipped (filtered)"` line, instead of the suite body and
+   * results, to the output file (if open) and to `stdout`, preceded on
+   * `stdout` by an empty line when `add_empty_line_` is set. For silent
+   * or quiet verbosity levels, no output is produced.
+   */
+  void
+  reporter_human::skip_suite (suite& suite)
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+      {
+        if (add_empty_line_)
+          {
+            write_console_ ("\n");
+          }
+
+        write_file_ ("• %s - skipped (filtered)\n", suite.name ());
+
+        write_console_ ("• %s - skipped (filtered)\n", suite.name ());
+
+        flush ();
+
+        add_empty_line_ = true;
+      }
   }
 
   // --------------------------------------------------------------------------
@@ -706,6 +766,68 @@ namespace micro_os_plus::micro_test_plus::detail
         *this << " aborted...";
       }
     *this << endl;
+
+    flush ();
+  }
+
+  /**
+   * @details
+   * As in `begin_subtest()`, for a nested test case, the results of the
+   * checks already performed by the outer test case, if any, are written
+   * first (see `commit_buffer_()`), so that the output follows the
+   * execution order; for a top-level test case, the output buffer must be
+   * empty, otherwise execution is aborted.
+   *
+   * With normal or verbose verbosity, a `"• <name> - skipped (filtered)"`
+   * line, indented according to the nesting depth, is then written to the
+   * output file (if open) and to `stdout`, preceded on `stdout` by an
+   * empty line when `add_empty_line_` is set. For silent or quiet
+   * verbosity levels, no output is produced.
+   */
+  void
+  reporter_human::skip_subtest (subtest& subtest)
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (!buffer_.empty ())
+      {
+        if (subtest.nesting_depth () > 1 && !open_subtests_.empty ())
+          {
+            // The outer test case performed checks before this nested one.
+            commit_buffer_ ();
+          }
+        else
+          {
+            // Each top-level test case should start with an empty buffer.
+            fprintf (stderr,
+                     "Buffer not empty at the beginning of a test case:\n"
+                     "%s\n",
+                     buffer_.c_str ());
+            flush ();
+            subtest.abort ();
+          }
+      }
+
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+      {
+        std::string indent (indent_size * subtest.nesting_depth (), ' ');
+
+        if (add_empty_line_)
+          {
+            write_console_ ("\n");
+          }
+
+        write_file_ ("%s• %s - skipped (filtered)\n", indent.c_str (),
+                     subtest.name ());
+
+        write_console_ ("%s• %s - skipped (filtered)\n", indent.c_str (),
+                        subtest.name ());
+
+        // As for a passed test case.
+        add_empty_line_ = (verbosity_ == verbosity::verbose);
+      }
 
     flush ();
   }

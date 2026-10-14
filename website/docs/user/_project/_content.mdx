@@ -328,7 +328,7 @@ options.verbosity_level = mt::verbosity::verbose;
 auto& ts = tr.initialise(options, "Main");
 ```
 
-The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, and `output_file_path` to `--output-file`.
+The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, `output_file_path` to `--output-file`, and `filter_patterns` to `--filter`.
 
 #### Test result
 
@@ -1127,6 +1127,19 @@ To adjust the verbosity, one of the following command-line options may be specif
 - `--silent` – suppress all output and return **solely the exit code**
 
 Refer to the [Command Line Options](/docs/api/groups/micro-os-plus-micro-test-plus-cli/) reference page.
+
+### Filter
+
+To run only some of the test suites and test cases, select them by name with the `--filter` option, as with `--grep` in node-tap. The option may be repeated, one pattern per nesting level: the first pattern applies to the suite names, the second to the test case names, and each further one to the nested test cases.
+
+```sh
+sample-test --filter='Args*|*namespace*'
+sample-test --filter='*' --filter='Check one'
+```
+
+In a pattern, `*` matches any sequence of characters, `?` matches any single character, and `|` separates alternatives; the match is case-sensitive, and the pattern must cover the whole name. The suites and test cases that do not match are not run, and are reported as skipped (`ok 2 - Args suite # SKIP filtered` in TAP); the totals lines show how many were skipped.
+
+The top suite is never skipped as a whole, since its body is `main()`, but its test cases are filtered like those of any other suite.
 
 ### The _human_ reporter
 

@@ -70,6 +70,8 @@
 #include <functional>
 #include <memory>
 #include <string>
+#include <string_view>
+#include <vector>
 
 // ----------------------------------------------------------------------------
 
@@ -243,7 +245,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Parses the µTest++ options from the command line (`--reporter`,
-     * `--silent`, `--quiet`, `--verbose`, and `--output-file`) into a
+     * `--silent`, `--quiet`, `--verbose`, `--output-file`, and
+     * `--filter`) into a
      * `runner_options` structure, and continues as the overload taking
      * the options. The other arguments are ignored, since the
      * applications may define their own.
@@ -279,7 +282,8 @@ namespace micro_os_plus::micro_test_plus
      * are still run, but `run()` returns 2.
      *
      * @param options The session options; the strings they refer to must
-     * remain valid until the call returns.
+     * remain valid until the call returns, and the filter patterns until
+     * `run()` returns.
      * @param top_suite_name The name given to the implicit top suite. Defaults
      * to an empty string.
      * @return Reference to the top-level test suite.
@@ -297,7 +301,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Completes the top suite, runs the suites registered with `suite()`
      * and the static suites that refer to this runner, together, sorted
-     * by name, and ends the session.
+     * by name, and ends the session. When filter patterns are given, the
+     * suites whose names do not match the first pattern are reported as
+     * skipped, without being run.
      *
      * The session runs only once; later calls return the same exit code
      * without running anything again.
@@ -469,6 +475,27 @@ namespace micro_os_plus::micro_test_plus
     static_suites_count (void) const noexcept;
 
     /**
+     * @brief Returns the count of the test suites skipped by the filter.
+     *
+     * @details
+     * Counts the suites, registered or static, whose names do not match
+     * the first filter pattern (`--filter` or
+     * `runner_options::filter_patterns`); it is complete only after
+     * `run()` has returned, and is zero when there are no patterns. The
+     * skipped suites are included in `suites_count()` and
+     * `static_suites_count()`; the skipped test cases are counted by
+     * `runner_totals::skipped_subtests()`.
+     *
+     * @par Parameters
+     *   None.
+     * @return The number of test suites that were not run.
+     *
+     * @since 5.1.0
+     */
+    [[nodiscard]] size_t
+    skipped_suites_count (void) const noexcept;
+
+    /**
      * @brief Gets the totals of the test session.
      *
      * @details
@@ -535,7 +562,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Runs the suites registered with `suite()` and the static suites
      * that refer to this runner in a single order, sorted by name; for
-     * equal names, the registered suites run first.
+     * equal names, the registered suites run first. The suites not
+     * selected by the first filter pattern are reported as skipped.
      *
      * @par Parameters
      *   None.
@@ -571,6 +599,27 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] runner_options
     parse_options_ (int argc, char* argv[]);
+
+    /**
+     * @brief Checks whether a suite or a test case is selected by the
+     * filter pattern of its nesting level.
+     *
+     * @details
+     * Level 0 refers to the suites, level 1 to their test cases, and each
+     * further level to the test cases nested one level deeper. A name is
+     * selected when there is no pattern for its level, or when it matches
+     * one of the alternatives of the pattern, separated by `|`, as
+     * defined by `utility::is_match()`.
+     *
+     * Also called by `detail::runnable_base`, a friend, before running a
+     * test case.
+     *
+     * @param name The name of the suite or of the test case.
+     * @param level The nesting level; 0 for suites.
+     * @return `true` if it must run, `false` if it must be skipped.
+     */
+    [[nodiscard]] bool
+    is_selected_ (const char* name, size_t level) const;
 
     // ------------------------------------------------------------------------
   protected:
@@ -629,6 +678,25 @@ namespace micro_os_plus::micro_test_plus
      * `argv[0]`, as kept in the session options.
      */
     std::string top_suite_name_;
+
+    /**
+     * @brief The patterns that select the suites to run.
+     *
+     * @details
+     * Copied by `initialise()` from `runner_options::filter_patterns`;
+     * the strings they refer to are not copied. Empty when all the suites
+     * must run.
+     */
+    std::vector<std::string_view> filter_patterns_;
+
+    /**
+     * @brief The number of suites skipped by the filter.
+     *
+     * @details
+     * Incremented by `run_suites_()`; returned by
+     * `skipped_suites_count()`.
+     */
+    size_t skipped_suites_count_ = 0;
 
     /**
      * @brief The states of a test session.

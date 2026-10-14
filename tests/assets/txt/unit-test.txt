@@ -877,12 +877,28 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ missing argument
         ✓ output file not opened
     ✓ Runner option errors - passed (4 checks)
+    • Runner filter
+        ✓ suite filter passed
+        ✓ matching suites run
+        ✓ all their test cases run
+        ✓ one suite skipped
+        ✓ level filters passed
+        ✓ suites matching an alternative run
+        ✓ test cases matching the second pattern run
+        ✓ nested test cases matching the third pattern run
+        ✓ skipped suites and test cases counted
+        ✓ top suite filtered
+        ✓ top suite test case matching the second pattern runs
+        ✓ partial name does not match
+        ✓ nothing skipped without patterns
+        ✓ missing pattern
+    ✓ Runner filter - passed (14 checks)
     • Abort handler
         ✓ no initial handler
         ✓ handler called
         ✓ previous handler returned
     ✓ Abort handler - passed (3 checks)
-✗ Miscellaneous suite - FAILED (43 checks passed, 13 failed, in 12 test cases), time: 2.074 ms
+✗ Miscellaneous suite - FAILED (57 checks passed, 13 failed, in 13 test cases), time: 2.049 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -977,7 +993,12 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ abc matches *bc
         ✓ abc matches *b*
         ✓ abc matches **
-    ✓ utility::is_match() — passing - passed (11 checks)
+        ✓ aXbYbZc matches a*b*c
+        ✓ ab matches *?
+        ✓ suite name matches *namespace*
+        ✓ long input does not match a*a*a*a*a*a*a*a*b
+        ✓ Alpha one does not match Alpha
+    ✓ utility::is_match() — passing - passed (16 checks)
     • utility::is_match() — failing
         ✗ "" matches abc FAILED (utility.cpp:152)
         ✗ abc matches b?? FAILED (utility.cpp:156)
@@ -985,5 +1006,5 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✗ abc matches *C FAILED (utility.cpp:164)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
-✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases), time: 0.248 ms
-✗ Total: 434 checks passed, 341 failed, in 92 test cases, 13 test suites, time: 12.627 ms
+✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
+✗ Total: 453 checks passed, 341 failed, in 93 test cases, 13 test suites, time: 11.880 ms

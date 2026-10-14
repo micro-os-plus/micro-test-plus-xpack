@@ -215,6 +215,20 @@ namespace micro_os_plus::micro_test_plus::detail
     end_suite (suite& suite) override;
 
     /**
+     * @brief Report a test suite skipped by the filter.
+     *
+     * @details
+     * Displays a `"• <name> - skipped (filtered)"` line, instead of the
+     * suite body and results.
+     *
+     * @param suite Reference to the skipped test suite.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    skip_suite (suite& suite) override;
+
+    /**
      * @brief Mark the beginning of a subtest.
      *
      * @param subtest Reference to the subtest.
@@ -233,6 +247,20 @@ namespace micro_os_plus::micro_test_plus::detail
      */
     virtual void
     end_subtest (subtest& subtest) override;
+
+    /**
+     * @brief Report a subtest skipped by the filter.
+     *
+     * @details
+     * Displays a `"• <name> - skipped (filtered)"` line,
+     * indented by its nesting depth.
+     *
+     * @param subtest Reference to the skipped subtest.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    skip_subtest (subtest& subtest) override;
 
     /**
      * @brief Returns an empty comment prefix string.

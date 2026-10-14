@@ -115,12 +115,22 @@ namespace
     }
 
     void
+    skip_suite (suite&) override
+    {
+    }
+
+    void
     begin_subtest (subtest&) override
     {
     }
 
     void
     end_subtest (subtest&) override
+    {
+    }
+
+    void
+    skip_subtest (subtest&) override
     {
     }
 
@@ -553,6 +563,185 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         file_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
         t.expect (eq (file_runner.run (), 2)) << "output file not opened";
+        local_counts.successful_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    // The --filter option selects the suites and the test cases to run by
+    // name, with one pattern per nesting level, as --grep in node-tap;
+    // within a pattern, `|` separates alternatives (API-REVIEW.md #29).
+    // The local runners are silent.
+    ts.test ("Runner filter", [] (auto& t)
+      {
+        // The number of runs of each suite and test case body.
+        struct runs_t
+        {
+          int alpha_one = 0;
+          int alpha_two = 0;
+          int beta = 0;
+          int first = 0;
+          int second = 0;
+          int inner = 0;
+          int other = 0;
+        };
+        runs_t runs{};
+
+        // Each suite has two test cases; the second one has two nested
+        // test cases.
+        auto body = [&runs] (suite& s)
+          {
+            s.test ("first", [&runs] (subtest&) noexcept { ++runs.first; });
+            s.test ("second", [&runs] (subtest& st)
+              {
+                ++runs.second;
+                st.test ("inner",
+                         [&runs] (subtest&) noexcept { ++runs.inner; });
+                st.test ("other",
+                         [&runs] (subtest&) noexcept { ++runs.other; });
+              });
+          };
+
+        auto add_suites = [&runs, &body] (runner& r)
+          {
+            r.suite ("Alpha one", [&runs, &body] (suite& s)
+              {
+                ++runs.alpha_one;
+                body (s);
+              });
+            r.suite ("Beta", [&runs, &body] (suite& s)
+              {
+                ++runs.beta;
+                body (s);
+              });
+            r.suite ("Alpha two", [&runs, &body] (suite& s)
+              {
+                ++runs.alpha_two;
+                body (s);
+              });
+          };
+
+        // A single pattern, set by the application, selects the suites;
+        // all their test cases run.
+        runner_options options{};
+        options.verbosity_level = verbosity::silent;
+        options.filter_patterns = { "Alpha*" };
+
+        runner suites_runner;
+        suites_runner.initialise (options);
+        add_suites (suites_runner);
+
+        t.expect (eq (suites_runner.run (), 0)) << "suite filter passed";
+        local_counts.successful_checks++;
+
+        t.expect (eq (runs.alpha_one, 1) and eq (runs.alpha_two, 1)
+                  and eq (runs.beta, 0))
+            << "matching suites run";
+        local_counts.successful_checks++;
+
+        t.expect (eq (runs.first, 2) and eq (runs.second, 2)
+                  and eq (runs.inner, 2) and eq (runs.other, 2))
+            << "all their test cases run";
+        local_counts.successful_checks++;
+
+        t.expect (eq (suites_runner.skipped_suites_count (), 1u)
+                  and eq (suites_runner.totals ().skipped_subtests (), 0u))
+            << "one suite skipped";
+        local_counts.successful_checks++;
+
+        // Patterns parsed from the command line, in both forms, one per
+        // level: the suites, the test cases, and the nested test cases.
+        char arg_name[] = "local";
+        char arg_silent[] = "--silent";
+        char arg_filter_suites[] = "--filter=Beta|Alpha t?o";
+        char arg_filter[] = "--filter";
+        char arg_second[] = "second";
+        char arg_filter_inner[] = "--filter=inner";
+
+        char* levels_argv[] = { arg_name,   arg_silent, arg_filter_suites,
+                                arg_filter, arg_second, arg_filter_inner,
+                                nullptr };
+
+        runs = runs_t{};
+        runner levels_runner;
+        levels_runner.initialise (6, levels_argv);
+        add_suites (levels_runner);
+
+        t.expect (eq (levels_runner.run (), 0)) << "level filters passed";
+        local_counts.successful_checks++;
+
+        t.expect (eq (runs.alpha_one, 0) and eq (runs.alpha_two, 1)
+                  and eq (runs.beta, 1))
+            << "suites matching an alternative run";
+        local_counts.successful_checks++;
+
+        t.expect (eq (runs.first, 0) and eq (runs.second, 2))
+            << "test cases matching the second pattern run";
+        local_counts.successful_checks++;
+
+        t.expect (eq (runs.inner, 2) and eq (runs.other, 0))
+            << "nested test cases matching the third pattern run";
+        local_counts.successful_checks++;
+
+        t.expect (eq (levels_runner.skipped_suites_count (), 1u)
+                  and eq (levels_runner.totals ().skipped_subtests (), 4u))
+            << "skipped suites and test cases counted";
+        local_counts.successful_checks++;
+
+        // The top suite is never skipped, but its test cases are filtered
+        // too, including by its name; a pattern must match the whole name.
+        runner_options top_options{};
+        top_options.verbosity_level = verbosity::silent;
+        top_options.filter_patterns = { "Local", "first" };
+
+        runs = runs_t{};
+        runner top_runner;
+        body (top_runner.initialise (top_options, "Local"));
+
+        t.expect (eq (top_runner.run (), 0)
+                  and eq (top_runner.totals ().skipped_subtests (), 1u))
+            << "top suite filtered";
+        local_counts.successful_checks++;
+
+        t.expect (eq (runs.first, 1) and eq (runs.second, 0))
+            << "top suite test case matching the second pattern runs";
+        local_counts.successful_checks++;
+
+        top_options.filter_patterns = { "Loc" };
+
+        runs = runs_t{};
+        runner partial_runner;
+        body (partial_runner.initialise (top_options, "Local"));
+
+        t.expect (eq (partial_runner.run (), 0)
+                  and eq (partial_runner.totals ().skipped_subtests (), 2u)
+                  and eq (runs.first, 0) and eq (runs.second, 0))
+            << "partial name does not match";
+        local_counts.successful_checks++;
+
+        // Without patterns, everything runs.
+        runner_options all_options{};
+        all_options.verbosity_level = verbosity::silent;
+
+        runs = runs_t{};
+        runner all_runner;
+        all_runner.initialise (all_options);
+        add_suites (all_runner);
+
+        t.expect (eq (all_runner.run (), 0)
+                  and eq (all_runner.skipped_suites_count (), 0u)
+                  and eq (all_runner.totals ().skipped_subtests (), 0u)
+                  and eq (runs.first, 3) and eq (runs.other, 3))
+            << "nothing skipped without patterns";
+        local_counts.successful_checks++;
+
+        // A missing pattern is an option error.
+        char* missing_argv[] = { arg_name, arg_silent, arg_filter, nullptr };
+
+        runner missing_runner;
+        missing_runner.initialise (3, missing_argv);
+
+        t.expect (eq (missing_runner.run (), 2)) << "missing pattern";
         local_counts.successful_checks++;
 
         local_counts.executed_subtest++;

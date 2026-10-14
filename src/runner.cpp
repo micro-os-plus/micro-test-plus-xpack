@@ -171,9 +171,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Creates the reporter selected by the options, starts session
-   * timing, and emits the initial reporter notifications for the session
-   * and top suite.
+   * Creates the reporter selected by the options, keeps a copy of the
+   * filter patterns, starts session timing, and emits the initial
+   * reporter notifications for the session and top suite.
    *
    * If the top suite name is not provided, here or by the deprecated
    * constructor, it is derived from the file name of
@@ -247,6 +247,16 @@ namespace micro_os_plus::micro_test_plus
         has_option_errors_ = true;
       }
 
+    // The views are copied, not the strings; they must remain valid until
+    // run() returns. Copy them one by one, since the vector assignment
+    // uses std::copy, which triggers -Waggregate-return in the standard
+    // library headers on some targets.
+    filter_patterns_.reserve (options.filter_patterns.size ());
+    for (const std::string_view pattern : options.filter_patterns)
+      {
+        filter_patterns_.push_back (pattern);
+      }
+
     // ------------------------------------------------------------------------
 
     timings_.timestamp_begin ();
@@ -267,9 +277,12 @@ namespace micro_os_plus::micro_test_plus
    * - `--reporter=<name>` or `--reporter <name>`, with `tap` (the default)
    *   or `human`;
    * - `--verbose`, `--quiet`, and `--silent`;
-   * - `--output-file=<path>` or `--output-file <path>`.
+   * - `--output-file=<path>` or `--output-file <path>`;
+   * - `--filter=<pattern>` or `--filter <pattern>`.
    *
-   * When an option is repeated, the last one takes effect. An option
+   * When an option is repeated, the last one takes effect, except
+   * `--filter`, whose patterns are all kept, in order, one per nesting
+   * level. An option
    * argument given separately is the next argument, whatever its content.
    * The other arguments are ignored. The whole command line is kept in the
    * options, to be listed by the reporter.
@@ -292,6 +305,7 @@ namespace micro_os_plus::micro_test_plus
 
     static constexpr std::string_view reporter_option{ "--reporter" };
     static constexpr std::string_view output_file_option{ "--output-file" };
+    static constexpr std::string_view filter_option{ "--filter" };
 
     // Get the value of an option given as `--option=<value>` or as
     // `--option <value>`; the latter advances the index past the value.
@@ -363,6 +377,12 @@ namespace micro_os_plus::micro_test_plus
             // output file.
             opts.output_file_path = value.empty () ? nullptr : value.data ();
           }
+        else if (get_value (filter_option, i, value))
+          {
+            // The view refers to the argv[] string, which remains valid
+            // until the program ends.
+            opts.filter_patterns.push_back (value);
+          }
       }
 
     return opts;
@@ -371,6 +391,36 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
+
+  /**
+   * @details
+   * The levels beyond the last pattern are not filtered. Otherwise, the
+   * alternatives of the pattern, separated by `|`, are tried in order,
+   * until one matches the whole name.
+   */
+  bool
+  runner::is_selected_ (const char* name, size_t level) const
+  {
+    if (level >= filter_patterns_.size ())
+      {
+        return true;
+      }
+
+    std::string_view alternatives{ filter_patterns_[level] };
+    while (true)
+      {
+        const size_t separator = alternatives.find ('|');
+        if (utility::is_match (name, alternatives.substr (0, separator)))
+          {
+            return true;
+          }
+        if (separator == std::string_view::npos)
+          {
+            return false;
+          }
+        alternatives.remove_prefix (separator + 1);
+      }
+  }
 
   // --------------------------------------------------------------------------
 
@@ -409,9 +459,12 @@ namespace micro_os_plus::micro_test_plus
    * of static suites is built.
    *
    * Each suite is assigned a 1-based index, following the top suite, in
-   * the order of execution, is executed via `suite::run()`, and its
-   * totals are accumulated into the runner totals. The executed-subtest
-   * counter is not incremented; suites are not counted as subtests.
+   * the order of execution. If the first filter pattern selects it, it is
+   * executed via `suite::run()`, and its totals are accumulated into the
+   * runner totals; otherwise, it is reported as skipped and counted in
+   * `skipped_suites_count_`, keeping its index, so that the TAP plan
+   * remains complete. The executed-subtest counter is not incremented;
+   * suites are not counted as subtests.
    */
   void
   runner::run_suites_ (void)
@@ -467,6 +520,13 @@ namespace micro_os_plus::micro_test_plus
           }
 
         suite_ptr->own_index (++own_index);
+
+        if (!is_selected_ (suite_ptr->name (), 0))
+          {
+            ++skipped_suites_count_;
+            reporter_->skip_suite (*suite_ptr);
+            continue;
+          }
 
         suite_ptr->run ();
 
@@ -628,6 +688,16 @@ namespace micro_os_plus::micro_test_plus
   runner::total_suites_count (void) const noexcept
   {
     return suites_count () + static_suites_count ();
+  }
+
+  /**
+   * @details
+   * Returns the counter incremented by `run_suites_()`.
+   */
+  size_t
+  runner::skipped_suites_count (void) const noexcept
+  {
+    return skipped_suites_count_;
   }
 
   // --------------------------------------------------------------------------

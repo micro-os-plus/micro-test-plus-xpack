@@ -96,6 +96,16 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Adds `count` to the `skipped_subtests_` counter.
+   */
+  inline void
+  runner_totals::increment_skipped_subtests (size_t count) noexcept
+  {
+    skipped_subtests_ += count;
+  }
+
+  /**
+   * @details
    * Returns the value of the `successful_checks_` counter.
    */
   inline size_t
@@ -142,6 +152,16 @@ namespace micro_os_plus::micro_test_plus
   runner_totals::failed_subtests () const noexcept
   {
     return failed_subtests_;
+  }
+
+  /**
+   * @details
+   * Returns the value of the `skipped_subtests_` counter.
+   */
+  inline size_t
+  runner_totals::skipped_subtests () const noexcept
+  {
+    return skipped_subtests_;
   }
 
   /**

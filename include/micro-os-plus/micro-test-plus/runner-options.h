@@ -21,9 +21,9 @@
  *
  * @details
  * This header provides the `runner_options` structure, which holds the
- * configuration of a test session (the reporter, the verbosity, and the
- * output file), together with the `reporter_kind` and `verbosity`
- * enumerations used by its members.
+ * configuration of a test session (the reporter, the verbosity, the
+ * output file, and the suite filter), together with the `reporter_kind`
+ * and `verbosity` enumerations used by its members.
  *
  * The options are usually parsed from the command line by
  * `runner::initialise (argc, argv)`; the applications without a command
@@ -56,6 +56,8 @@
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include <span>
+#include <string_view>
+#include <vector>
 
 // ----------------------------------------------------------------------------
 
@@ -140,7 +142,8 @@ namespace micro_os_plus::micro_test_plus
    * @endcode
    *
    * The structure only refers to the strings it uses; they must remain
-   * valid until `initialise()` returns.
+   * valid until `initialise()` returns, except the filter patterns, which
+   * must remain valid until `run()` returns.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    *
@@ -190,6 +193,35 @@ namespace micro_os_plus::micro_test_plus
      * default name of the top suite from `arguments[0]`.
      */
     std::span<char* const> arguments{};
+
+    /**
+     * @brief The patterns that select the suites and the test cases to
+     * run, one per nesting level.
+     *
+     * @details
+     * Each `--filter=<pattern>` or `--filter <pattern>` option adds one
+     * pattern; unlike the other options, `--filter` may be repeated. As
+     * with `--grep` in node-tap, the first pattern applies to the suite
+     * names, the second to the names of the test cases, and each further
+     * pattern to the names of the test cases nested one level deeper; the
+     * levels without a pattern are not filtered.
+     *
+     * Within a pattern, `|` separates alternatives; a name matches when
+     * it matches any of them, as defined by `utility::is_match()`: `*`
+     * matches any sequence of characters, `?` matches any single
+     * character, the match is case-sensitive, and the alternative must
+     * cover the whole name.
+     *
+     * The suites and the test cases that do not match are reported as
+     * skipped, and their bodies are not called. The top suite is never
+     * skipped as a whole, since its body is `main()`, but when its name
+     * does not match the first pattern, all its test cases are skipped.
+     *
+     * When the list is empty (the default), everything runs.
+     *
+     * @since 5.1.0
+     */
+    std::vector<std::string_view> filter_patterns{};
   };
 
   // --------------------------------------------------------------------------

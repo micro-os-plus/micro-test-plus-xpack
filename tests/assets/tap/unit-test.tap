@@ -2906,14 +2906,31 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 4 - output file not opened
         1..4
     ok 11 - Runner option errors # { passed, 4 checks }
+    # Subtest: Runner filter
+        ok 1 - suite filter passed
+        ok 2 - matching suites run
+        ok 3 - all their test cases run
+        ok 4 - one suite skipped
+        ok 5 - level filters passed
+        ok 6 - suites matching an alternative run
+        ok 7 - test cases matching the second pattern run
+        ok 8 - nested test cases matching the third pattern run
+        ok 9 - skipped suites and test cases counted
+        ok 10 - top suite filtered
+        ok 11 - top suite test case matching the second pattern runs
+        ok 12 - partial name does not match
+        ok 13 - nothing skipped without patterns
+        ok 14 - missing pattern
+        1..14
+    ok 12 - Runner filter # { passed, 14 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - handler called
         ok 3 - previous handler returned
         1..3
-    ok 12 - Abort handler # { passed, 3 checks }
-    1..12
-not ok 10 - Miscellaneous suite # { FAILED, 43 checks passed, 13 failed, in 12 test cases, time: 1.450 ms }
+    ok 13 - Abort handler # { passed, 3 checks }
+    1..13
+not ok 10 - Miscellaneous suite # { FAILED, 57 checks passed, 13 failed, in 13 test cases, time: 2.483 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3084,8 +3101,13 @@ ok 12 - Timings suite # { passed, 29 checks in 6 test cases, time: 0.467 ms }
         ok 9 - abc matches *bc
         ok 10 - abc matches *b*
         ok 11 - abc matches **
-        1..11
-    ok 2 - utility::is_match() — passing # { passed, 11 checks }
+        ok 12 - aXbYbZc matches a*b*c
+        ok 13 - ab matches *?
+        ok 14 - suite name matches *namespace*
+        ok 15 - long input does not match a*a*a*a*a*a*a*a*b
+        ok 16 - Alpha one does not match Alpha
+        1..16
+    ok 2 - utility::is_match() — passing # { passed, 16 checks }
     # Subtest: utility::is_match() — failing
         not ok 1 - "" matches abc
           ---
@@ -3120,6 +3142,6 @@ ok 12 - Timings suite # { passed, 29 checks in 6 test cases, time: 0.467 ms }
         1..5
     not ok 3 - utility::is_match() — failing # { FAILED, 0 checks passed, 5 failed }
     1..3
-not ok 13 - Utility suite # { FAILED, 16 checks passed, 5 failed, in 3 test cases, time: 0.217 ms }
+not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.261 ms }
 1..13
-# { total: 434 checks passed, 341 failed, in 92 test cases, 13 test suites, time: 11.627 ms }
+# { total: 453 checks passed, 341 failed, in 93 test cases, 13 test suites, time: 13.953 ms }

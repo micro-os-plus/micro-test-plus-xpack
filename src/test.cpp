@@ -162,7 +162,17 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Transfers ownership of @p child_test into `children_subtests_` and
      * immediately invokes `subtest::run()` on the newly stored subtest.
-     * The parent's executed-subtest counter is then incremented, and, if
+     *
+     * If the filter patterns do not select the subtest (its own name at
+     * its nesting level, or the name of @p suite at level 0, which
+     * matters only for the top suite, since the other suites run only
+     * when selected), its body is not called: the reporter is notified
+     * with `skip_subtest()` and the parent's skipped-subtest counter is
+     * incremented. The subtest keeps its index and its place among the
+     * children, so the TAP plan of the parent remains complete.
+     *
+     * Otherwise, the parent's executed-subtest counter is incremented
+     * after the run, and, if
      * the child failed (a failed check, or a failed nested subtest), its
      * failed-subtest counter too, so that the parent fails as well, as in
      * node-tap. The child's check counters are intentionally not merged
@@ -177,8 +187,19 @@ namespace micro_os_plus::micro_test_plus
       // Transfer ownership into the vector.
       children_subtests_.push_back (std::move (child_test));
 
-      // Run the child test case immediately.
       class subtest& subtest = *children_subtests_.back ();
+
+      // Skip the test cases not selected by the filter; the outer test
+      // cases, if any, were selected, otherwise this one was not created.
+      if (!runner_.is_selected_ (suite.name (), 0)
+          || !runner_.is_selected_ (subtest.name (), subtest.nesting_depth ()))
+        {
+          reporter ().skip_subtest (subtest);
+          totals_.increment_skipped_subtests ();
+          return;
+        }
+
+      // Run the child test case immediately.
       subtest.run ();
 
       // This test executed one more subtest.

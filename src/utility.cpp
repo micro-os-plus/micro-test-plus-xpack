@@ -109,13 +109,16 @@ namespace micro_os_plus::micro_test_plus
      * validation of string content in test assertions, accommodating
      * variable or partially known values.
      *
-     * @warning The `*` wildcard is handled via recursion with a linear loop,
-     *   giving a worst-case complexity of `O(n^k)`, for an input of length
-     *   `n` and a pattern with `k` wildcards (e.g. a pattern such as
-     *   `"a*a*a*b"` against a long string of `'a'` characters). For the
-     *   typical short patterns used in a test framework this is not a
-     *   concern, but callers should avoid patterns with many wildcards
-     *   against long input strings.
+     * The match is iterative, with no recursion, so the stack usage is
+     * constant, which matters on embedded targets. When a mismatch occurs
+     * after a `*`, only the most recent `*` is retried, one character
+     * further in the input; the earlier ones never need to be, since any
+     * match they could produce is also found by the most recent one. The
+     * worst-case complexity is `O(n * m)`, for an input of length `n` and
+     * a pattern of length `m`.
+     *
+     * The function is also used by the runner to select the suites
+     * matching the `--filter` patterns.
      *
      * @par Examples
      *
@@ -129,36 +132,49 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] bool
     is_match (std::string_view input, std::string_view pattern)
     {
-      if (std::empty (pattern))
-        {
-          return std::empty (input);
-        }
+      constexpr auto npos = std::string_view::npos;
 
-      if (std::empty (input))
-        {
-          return pattern[0] == '*' ? is_match (input, pattern.substr (1))
-                                   : false;
-        }
+      std::size_t i = 0; // Index in the input.
+      std::size_t p = 0; // Index in the pattern.
 
-      if (pattern[0] != '?' and pattern[0] != '*' and pattern[0] != input[0])
-        {
-          return false;
-        }
+      // The position of the most recent `*` in the pattern, and the input
+      // index where its match ends.
+      std::size_t star_p = npos;
+      std::size_t star_i = 0;
 
-      if (pattern[0] == '*')
+      while (i < input.size ())
         {
-          for (decltype (std::size (input)) i = 0u; i <= std::size (input);
-               ++i)
+          if (p < pattern.size ()
+              && (pattern[p] == '?' || pattern[p] == input[i]))
             {
-              if (is_match (input.substr (i), pattern.substr (1)))
-                {
-                  return true;
-                }
+              ++i;
+              ++p;
             }
-          return false;
+          else if (p < pattern.size () && pattern[p] == '*')
+            {
+              // Start by matching an empty sequence.
+              star_p = p++;
+              star_i = i;
+            }
+          else if (star_p != npos)
+            {
+              // Extend the match of the most recent `*` by one character.
+              p = star_p + 1;
+              i = ++star_i;
+            }
+          else
+            {
+              return false;
+            }
         }
 
-      return is_match (input.substr (1), pattern.substr (1));
+      // The input is exhausted; the rest of the pattern must be only `*`.
+      while (p < pattern.size () && pattern[p] == '*')
+        {
+          ++p;
+        }
+
+      return p == pattern.size ();
     }
 
   } // namespace utility
