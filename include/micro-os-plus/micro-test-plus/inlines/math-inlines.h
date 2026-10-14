@@ -33,9 +33,10 @@
  * Special attention is given to constexpr compatibility and minimal reliance
  * on the standard library, ensuring portability and performance.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus::math`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail::math` namespace, since they are
+ * implementation details of the literals and of the comparisons, not part
+ * of the public API.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -75,7 +76,7 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  namespace math
+  namespace detail::math
   {
 
     /**
@@ -467,7 +468,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     // ------------------------------------------------------------------------
-  } // namespace math
+  } // namespace detail::math
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

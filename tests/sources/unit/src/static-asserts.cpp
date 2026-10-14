@@ -104,6 +104,17 @@ static_asserts ()
     }
 
     {
+      // The mathematical utilities are in `detail::math`.
+      static_assert (detail::math::abs (-42) == 42);
+      static_assert (detail::math::min_value (1, 2) == 1);
+      static_assert (detail::math::pow (10, 3) == 1000);
+      static_assert (detail::math::integer<int, '4', '2'> () == 42);
+      static_assert (detail::math::num<int, '1', '.', '2', '5'> () == 1);
+      static_assert (detail::math::den<int, '1', '.', '2', '5'> () == 250);
+      static_assert (detail::math::den_size<int, '1', '.', '2', '5'> () == 3);
+    }
+
+    {
       using namespace literals;
       using namespace operators;
 

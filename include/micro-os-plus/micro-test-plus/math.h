@@ -34,9 +34,10 @@
  * on the standard library, ensuring portability and performance across a wide
  * range of platforms.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus::math`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail::math` namespace, since they are
+ * implementation details of the literals and of the comparisons, not part
+ * of the public API.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -87,12 +88,13 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus::math
-   * @brief Mathematical utilities for the µTest++ testing framework.
+   * @namespace micro_os_plus::micro_test_plus::detail::math
+   * @brief Internal mathematical utilities for the µTest++ testing framework.
    *
    * @details
-   * The `math` namespace offers a suite of constexpr mathematical
-   * function templates and utilities for use within the µTest++ framework.
+   * The `detail::math` namespace offers a suite of constexpr mathematical
+   * function templates and utilities, used by the literals and by the
+   * floating-point comparisons of the µTest++ framework.
    *
    * These functions include generic implementations for absolute value,
    * minimum value, exponentiation, and compile-time parsing of numeric values
@@ -100,12 +102,13 @@ namespace micro_os_plus::micro_test_plus
    * suitable for embedded environments, where standard library alternatives
    * may be unavailable, less efficient, or not constexpr.
    *
-   * All definitions within this namespace are intended to facilitate
-   * mathematical operations in a type-safe and efficient manner, and are
-   * implemented in the `include/micro-os-plus/micro-test-plus` folder to
-   * maintain a structured and modular codebase.
+   * The names of these functions suggest general mathematical functions,
+   * but their scope is limited to the needs of the framework (for example,
+   * `pow()` accepts only integral exponents); like everything in `detail`,
+   * they are not part of the public API and may be modified without prior
+   * notice.
    */
-  namespace math
+  namespace detail::math
   {
     /**
      * @brief Computes the absolute value of a given comparable value.
@@ -306,7 +309,7 @@ namespace micro_os_plus::micro_test_plus
     integer (void) -> T;
 
     // ------------------------------------------------------------------------
-  } // namespace math
+  } // namespace detail::math
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
