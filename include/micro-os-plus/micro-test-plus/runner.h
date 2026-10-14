@@ -416,6 +416,23 @@ namespace micro_os_plus::micro_test_plus
     void
     register_suite_ (std::unique_ptr<class suite> suite);
 
+    /**
+     * @brief Parses the command-line options of the test session.
+     *
+     * @details
+     * All the options are parsed here, once, and passed to the reporter;
+     * the arguments not recognised as options are ignored, since the
+     * applications may define their own. A missing option argument, or
+     * an unknown reporter name, terminates the process with an error
+     * message.
+     *
+     * @param argc The argument count from main().
+     * @param argv The argument vector from main().
+     * @return The parsed options.
+     */
+    [[nodiscard]] static detail::options
+    parse_options_ (int argc, char* argv[]);
+
     // ------------------------------------------------------------------------
   protected:
     /**
@@ -443,7 +460,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Created by `initialise()`, as selected by the `--reporter`
-     * command-line option.
+     * command-line option, and configured with the options parsed by
+     * `parse_options_()`.
      */
     std::unique_ptr<detail::reporter> reporter_;
 

@@ -57,7 +57,7 @@ namespace
   class buffer_reporter final : public detail::reporter
   {
   public:
-    buffer_reporter () : reporter{ nullptr }
+    buffer_reporter () : reporter{ detail::options{} }
     {
     }
 

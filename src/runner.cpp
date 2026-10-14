@@ -152,11 +152,11 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Captures command-line arguments, selects the reporter implementation
-   * (`--reporter=human` or `--reporter=tap`, the default), starts session
-   * timing, and emits the initial reporter notifications for the session
-   * and top suite. An unknown reporter name, or a missing one, terminates
-   * the process with an error message.
+   * Parses the command-line options with `parse_options_()`, creates
+   * the selected reporter (`--reporter=human` or `--reporter=tap`, the
+   * default) with these options, starts session timing, and emits the
+   * initial reporter notifications for the session and top suite. An
+   * option error terminates the process with an error message.
    *
    * If the top suite name is not provided, here or by the deprecated
    * constructor, it is derived from the file name of `argv[0]`, without
@@ -229,51 +229,16 @@ namespace micro_os_plus::micro_test_plus
         top_suite_.name (top_suite_name_.c_str ());
       }
 
-    std::vector<std::string_view> argvs (argv, argv + argc);
-
-    std::string_view reporter_name{ "tap" };
-    static constexpr std::string_view reporter_prefix{ "--reporter=" };
-    for (size_t i = 0; i < argvs.size (); ++i)
-      {
-        if (argvs[i].starts_with (reporter_prefix))
-          {
-            reporter_name = argvs[i].substr (reporter_prefix.size ());
-          }
-        else if (argvs[i]
-                 == reporter_prefix.substr (0, reporter_prefix.size () - 1))
-          {
-            if (i + 1 < argvs.size ())
-              {
-                reporter_name = argvs[++i];
-              }
-            else
-              {
-                fprintf (stderr, "error: --reporter option requires a "
-                                 "reporter name argument\n");
-                exit (1);
-              }
-          }
-      }
+    const detail::options opts{ parse_options_ (argc, argv) };
 
     // Initialise and configure the reporter.
-    if (reporter_name == "human")
+    if (opts.selected_reporter == detail::reporter_kind::human)
       {
-        reporter_ = std::make_unique<detail::reporter_human> (
-            std::make_unique<std::vector<std::string_view>> (
-                std::move (argvs)));
-      }
-    else if (reporter_name == "tap")
-      {
-        reporter_ = std::make_unique<detail::reporter_tap> (
-            std::make_unique<std::vector<std::string_view>> (
-                std::move (argvs)));
+        reporter_ = std::make_unique<detail::reporter_human> (opts);
       }
     else
       {
-        fprintf (stderr, "error: unknown reporter '%.*s'\n",
-                 static_cast<int> (reporter_name.size ()),
-                 reporter_name.data ());
-        exit (1);
+        reporter_ = std::make_unique<detail::reporter_tap> (opts);
       }
 
     // ------------------------------------------------------------------------
@@ -287,6 +252,108 @@ namespace micro_os_plus::micro_test_plus
     session_state_ = session_state_t::initialised;
 
     return top_suite_;
+  }
+
+  /**
+   * @details
+   * Scans the arguments after `argv[0]`, in order, for:
+   *
+   * - `--reporter=<name>` or `--reporter <name>`, with `tap` (the default)
+   *   or `human`;
+   * - `--verbose`, `--quiet`, and `--silent`;
+   * - `--output-file=<path>` or `--output-file <path>`.
+   *
+   * When an option is repeated, the last one takes effect. An option
+   * argument given separately is the next argument, whatever its content.
+   * The other arguments are ignored. The whole command line is kept in the
+   * options, to be listed by the reporter.
+   */
+  detail::options
+  runner::parse_options_ (int argc, char* argv[])
+  {
+    detail::options opts{};
+
+    if (argc <= 0 || argv == nullptr)
+      {
+        return opts;
+      }
+
+    opts.arguments = { argv, static_cast<size_t> (argc) };
+
+    static constexpr std::string_view reporter_option{ "--reporter" };
+    static constexpr std::string_view output_file_option{ "--output-file" };
+
+    // Get the value of an option given as `--option=<value>` or as
+    // `--option <value>`; the latter advances the index past the value.
+    // Return false if the argument is not this option.
+    auto get_value = [&] (std::string_view option, size_t& i,
+                          std::string_view& value) -> bool
+    {
+      const std::string_view argument{ opts.arguments[i] };
+      if (argument == option)
+        {
+          if (i + 1 >= opts.arguments.size ())
+            {
+              fprintf (stderr, "error: %.*s option requires an argument\n",
+                       static_cast<int> (option.size ()), option.data ());
+              exit (1);
+            }
+          value = opts.arguments[++i];
+          return true;
+        }
+      if (argument.starts_with (option)
+          && argument.substr (option.size ()).starts_with ('='))
+        {
+          value = argument.substr (option.size () + 1);
+          return true;
+        }
+      return false;
+    };
+
+    for (size_t i = 1; i < opts.arguments.size (); ++i)
+      {
+        const std::string_view argument{ opts.arguments[i] };
+        std::string_view value{};
+
+        if (argument == "--verbose")
+          {
+            opts.verbosity_level = verbosity::verbose;
+          }
+        else if (argument == "--quiet")
+          {
+            opts.verbosity_level = verbosity::quiet;
+          }
+        else if (argument == "--silent")
+          {
+            opts.verbosity_level = verbosity::silent;
+          }
+        else if (get_value (reporter_option, i, value))
+          {
+            if (value == "human")
+              {
+                opts.selected_reporter = detail::reporter_kind::human;
+              }
+            else if (value == "tap")
+              {
+                opts.selected_reporter = detail::reporter_kind::tap;
+              }
+            else
+              {
+                fprintf (stderr, "error: unknown reporter '%.*s'\n",
+                         static_cast<int> (value.size ()), value.data ());
+                exit (1);
+              }
+          }
+        else if (get_value (output_file_option, i, value))
+          {
+            // The value is a suffix of a null-terminated argv[] string,
+            // so it is null-terminated too. An empty path disables the
+            // output file.
+            opts.output_file_path = value.empty () ? nullptr : value.data ();
+          }
+      }
+
+    return opts;
   }
 
 #if defined(__GNUC__)

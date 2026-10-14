@@ -70,6 +70,7 @@
 #include <string_view>
 #include <string>
 #include <memory>
+#include <span>
 #include <vector>
 #include <charconv>
 
@@ -172,6 +173,74 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] indent_t
     indent (size_t level);
 
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief The built-in reporters, selectable from the command line.
+     *
+     * @details
+     * Selected with the `--reporter` command-line option; the default is
+     * `tap`.
+     */
+    enum class reporter_kind
+    {
+      tap, /**< The TAP reporter, `reporter_tap`. */
+      human /**< The human-readable reporter, `reporter_human`. */
+    };
+
+    /**
+     * @brief The test session options, parsed from the command line.
+     *
+     * @details
+     * The runner parses the command-line arguments once, in
+     * `runner::initialise()`, into this structure, and passes it to the
+     * constructor of the selected reporter. The arguments not recognised
+     * as options are ignored, since the applications may define their
+     * own.
+     */
+    struct options
+    {
+      /**
+       * @brief The reporter that displays the results.
+       *
+       * @details
+       * Set by `--reporter=<name>` or `--reporter <name>`, where the name
+       * is `tap` or `human`.
+       */
+      reporter_kind selected_reporter{ reporter_kind::tap };
+
+      /**
+       * @brief The level of detail of the console output.
+       *
+       * @details
+       * Set by `--silent`, `--quiet`, or `--verbose`; when several are
+       * given, the last one takes effect.
+       */
+      micro_test_plus::verbosity verbosity_level{
+        micro_test_plus::verbosity::normal
+      };
+
+      /**
+       * @brief Path of the optional output file, or `nullptr`.
+       *
+       * @details
+       * Set by `--output-file=<path>` or `--output-file <path>`; it
+       * points into one of the null-terminated `argv[]` strings, which
+       * live until the end of the program. An empty path leaves it
+       * `nullptr`, so that no file is written.
+       */
+      const char* output_file_path{ nullptr };
+
+      /**
+       * @brief The complete command line, including `argv[0]`.
+       *
+       * @details
+       * A view of the `argv[]` array of `main()`, listed by the
+       * reporters at the beginning of the report.
+       */
+      std::span<char* const> arguments{};
+    };
+
     // ========================================================================
 
     /**
@@ -215,10 +284,10 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructor for the reporter class.
        *
-       * @param argvs Owning pointer to the command-line arguments vector;
-       * the reporter takes ownership via move.
+       * @param opts The session options, parsed by the runner from the
+       * command line.
        */
-      reporter (std::unique_ptr<std::vector<std::string_view>> argvs);
+      explicit reporter (const options& opts);
 
       /**
        * @brief Virtual destructor for the reporter class.
@@ -705,7 +774,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief The verbosity level for test reporting.
        *
        * @details
-       * Set by the constructor from the command-line options.
+       * Set by the constructor from the options parsed by the runner.
        */
       enum verbosity verbosity_ = verbosity::normal;
 
@@ -763,8 +832,8 @@ namespace micro_os_plus::micro_test_plus
        * @brief Path of the optional output file.
        *
        * @details
-       * Set from the `--output-file` command-line option; it points into the
-       * original `argv[]` string. Used to name the file in the confirmation
+       * Set from the `--output-file` command-line option, as parsed by the
+       * runner; it points into the original `argv[]` string. Used to name the file in the confirmation
        * message displayed when the file is closed.
        */
       const char* output_file_path_{ nullptr };
@@ -781,13 +850,13 @@ namespace micro_os_plus::micro_test_plus
       FILE* output_file_{ nullptr };
 
       /**
-       * @brief Owns the command-line arguments passed to the test runner.
+       * @brief The command-line arguments passed to the test runner.
        *
        * @details
-       * Parsed by the constructor for options, and listed by
-       * `write_info_()`.
+       * A view of the `argv[]` array of `main()`, copied from the
+       * options by the constructor, and listed by `write_info_()`.
        */
-      std::unique_ptr<std::vector<std::string_view>> argvs_{};
+      std::span<char* const> arguments_{};
     };
 
     // ------------------------------------------------------------------------

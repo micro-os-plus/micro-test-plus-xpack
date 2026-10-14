@@ -72,79 +72,29 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Moves the supplied argument vector into `argvs_` and scans it for
-   * the `--verbose`, `--quiet`, `--silent`, and `--output-file` options
-   * (the latter as `--output-file=<path>` or `--output-file <path>`),
-   * adjusting `verbosity_` and optionally opening the output file. If
-   * the output file path is missing or the file cannot be opened, the
-   * process exits with a diagnostic error message. The internal string
-   * buffer is pre-allocated to reduce dynamic allocation overhead.
+   * Copies the verbosity and the view of the command-line arguments from
+   * the options parsed by the runner, and opens the output file, if one
+   * was requested. If the file cannot be opened, the process exits with a
+   * diagnostic error message. The internal string buffer is pre-allocated
+   * to reduce dynamic allocation overhead.
    */
-  reporter::reporter (std::unique_ptr<std::vector<std::string_view>> argvs)
+  reporter::reporter (const options& opts)
+      : verbosity_{ opts.verbosity_level }, arguments_{ opts.arguments }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-    std::string_view output_file_sv{};
-
-    argvs_ = std::move (argvs);
-
-    static constexpr std::string_view output_file_prefix{ "--output-file=" };
-    if (argvs_)
+    if (opts.output_file_path != nullptr)
       {
-        const auto& args = *argvs_;
-        for (size_t i = 0; i < args.size (); ++i)
-          {
-            if (args[i] == "--verbose")
-              {
-                verbosity_ = verbosity::verbose;
-              }
-            else if (args[i] == "--quiet")
-              {
-                verbosity_ = verbosity::quiet;
-              }
-            else if (args[i] == "--silent")
-              {
-                verbosity_ = verbosity::silent;
-              }
-            else if (args[i].starts_with (output_file_prefix))
-              {
-                output_file_sv = args[i].substr (output_file_prefix.size ());
-              }
-            else if (args[i]
-                     == output_file_prefix.substr (
-                         0, output_file_prefix.size () - 1))
-              {
-                if (i + 1 < args.size ())
-                  {
-                    output_file_sv = args[++i];
-                  }
-                else
-                  {
-                    fprintf (stderr, "error: --output-file option requires a "
-                                     "file path argument\n");
-                    exit (1);
-                  }
-              }
-          }
-      }
-
-    if (!output_file_sv.empty ())
-      {
-        // .data() is safe: all string_views are views into argv[]
-        // entries, which are null-terminated C strings.
-        output_file_ = fopen (output_file_sv.data (), "w");
+        output_file_ = fopen (opts.output_file_path, "w");
         if (output_file_ == nullptr)
           {
-            fprintf (stderr, "error: Failed to open output file '%.*s'\n",
-                     static_cast<int> (output_file_sv.size ()),
-                     output_file_sv.data ());
+            fprintf (stderr, "error: Failed to open output file '%s'\n",
+                     opts.output_file_path);
             exit (1);
           }
-        // The original string is zero terminated, so we can safely use .data()
-        // here.
-        output_file_path_ = output_file_sv.data ();
+        output_file_path_ = opts.output_file_path;
       }
 
     // Pre-allocate buffer to reduce dynamic allocations.
@@ -320,24 +270,23 @@ namespace micro_os_plus::micro_test_plus::detail
   void
   reporter::write_info_ (void)
   {
-    if (argvs_ && !argvs_->empty ())
+    if (!arguments_.empty ())
       {
-        const auto& args = *argvs_;
         std::string line;
         line.reserve (256);
         line.append (get_comment_prefix ());
         line.append ("Running: ");
 
         // Append only the file name part of argv[0].
-        const std::string_view arg0 = args[0];
+        const std::string_view arg0{ arguments_[0] };
         const auto sep = arg0.rfind ('/');
         line.append ((sep != std::string_view::npos) ? arg0.substr (sep + 1)
                                                      : arg0);
 
-        for (size_t i = 1; i < args.size (); ++i)
+        for (const char* argument : arguments_.subspan (1))
           {
             line.append (" ");
-            line.append (args[i]);
+            line.append (argument);
           }
         line.append ("\n");
 

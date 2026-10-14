@@ -105,10 +105,10 @@ namespace micro_os_plus::micro_test_plus::detail
     /**
      * @brief Constructor for the reporter_human class.
      *
-     * @param argvs Owning pointer to the command-line arguments vector;
-     * the reporter takes ownership via move.
+     * @param opts The session options, parsed by the runner from the
+     * command line.
      */
-    reporter_human (std::unique_ptr<std::vector<std::string_view>> argvs);
+    explicit reporter_human (const options& opts);
 
     /**
      * @brief Deleted copy constructor to prevent copying.

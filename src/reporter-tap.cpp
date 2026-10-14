@@ -72,12 +72,10 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Delegates construction to the `reporter` base class with the supplied
-   * argument vector. If tracing is enabled, the function signature is
+   * options. If tracing is enabled, the function signature is
    * output for diagnostic purposes.
    */
-  reporter_tap::reporter_tap (
-      std::unique_ptr<std::vector<std::string_view>> argvs)
-      : reporter{ std::move (argvs) }
+  reporter_tap::reporter_tap (const options& opts) : reporter{ opts }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
