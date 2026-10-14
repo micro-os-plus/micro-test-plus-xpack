@@ -76,10 +76,20 @@ namespace micro_os_plus::micro_test_plus
    * Returns a reference to the reporter object stored in the unique pointer;
    * valid only after `initialise()` has been called.
    */
-  inline class reporter&
+  inline detail::reporter&
   runner::reporter (void) const noexcept
   {
     return *reporter_;
+  }
+
+  /**
+   * @details
+   * Returns the verbosity parsed by the reporter from the command line.
+   */
+  inline auto
+  runner::verbosity (void) const noexcept -> micro_test_plus::verbosity
+  {
+    return reporter_->verbosity ();
   }
 
   /**

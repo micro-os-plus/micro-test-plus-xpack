@@ -27,9 +27,9 @@
  * version 14. It is the default reporter, also selected with the
  * `--reporter=tap` command-line option.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
+ * are internal to the framework.
  *
  * This file must be included when building the µTest++ library.
  */
@@ -65,7 +65,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace micro_os_plus::micro_test_plus
+namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
@@ -109,7 +109,7 @@ namespace micro_os_plus::micro_test_plus
    * subtest indentation.
    */
   reporter_tap&
-  reporter_tap::operator<< (detail::indent_t m)
+  reporter_tap::operator<< (indent_t m)
   {
     buffer_.append (m.level * indent_size, ' ');
     return *this;
@@ -723,7 +723,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus
+} // namespace micro_os_plus::micro_test_plus::detail
 
 // ----------------------------------------------------------------------------
 

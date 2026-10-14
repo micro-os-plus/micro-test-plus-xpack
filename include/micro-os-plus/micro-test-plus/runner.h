@@ -62,6 +62,7 @@
 #include "timings.h"
 #include "test.h"
 #include "reflection.h"
+#include "reporter.h"
 
 #include <functional>
 #include <memory>
@@ -93,13 +94,13 @@
  * components, types, and utilities of the µTest++ testing framework, providing
  * a dedicated scope for its public API.
  *
- * The main classes (the runners, the suites and subtests, and the
- * reporters) are defined directly in this namespace. Several nested
- * namespaces group specific aspects of the framework: `math` (mathematical
- * utilities), `type_traits` (type traits and value wrappers), `reflection`
- * (source locations and type names), `literals` (user-defined literals),
- * `operators` (comparison and logical operators), `utility` (utility
- * functions), and `detail` (internal implementation details).
+ * The main classes (the runners, and the suites and subtests) are defined
+ * directly in this namespace. Several nested namespaces group specific
+ * aspects of the framework: `math` (mathematical utilities), `type_traits`
+ * (type traits and value wrappers), `reflection` (source locations and type
+ * names), `literals` (user-defined literals), `operators` (comparison and
+ * logical operators), `utility` (utility functions), and `detail` (internal
+ * implementation details, including the reporters).
  *
  * By grouping all definitions within this namespace and its sub-namespaces,
  * the framework achieves clear code organisation, minimises naming conflicts,
@@ -116,9 +117,6 @@ namespace micro_os_plus::micro_test_plus
 
   class suite;
   class top_suite;
-  class reporter;
-  class reporter_human;
-  class reporter_tap;
 
   // ==========================================================================
 
@@ -148,8 +146,11 @@ namespace micro_os_plus::micro_test_plus
   class runner : public detail::test_node
   {
     // Display the session duration.
-    friend class reporter_human;
-    friend class reporter_tap;
+    friend class detail::reporter_human;
+    friend class detail::reporter_tap;
+
+    // Pass the reporter to the suites and the test cases.
+    friend class detail::runnable_base;
 
   public:
     /**
@@ -323,14 +324,22 @@ namespace micro_os_plus::micro_test_plus
     total_suites_count (void) const noexcept;
 
     /**
-     * @brief Returns a reference to the test reporter.
+     * @brief Returns the verbosity level of the console output.
+     *
+     * @details
+     * The level is selected with the `--silent`, `--quiet`, and
+     * `--verbose` command-line options; the tests can use it to decide
+     * whether to display their own messages. Valid only after
+     * `initialise()` has been called.
      *
      * @par Parameters
      *   None.
-     * @return Reference to the test reporter.
+     * @return The active `verbosity` value.
+     *
+     * @since 5.1.0
      */
-    [[nodiscard]] class reporter&
-    reporter (void) const noexcept;
+    [[nodiscard]] auto
+    verbosity (void) const noexcept -> micro_test_plus::verbosity;
 
     /**
      * @brief Returns the count of test suites.
@@ -343,6 +352,21 @@ namespace micro_os_plus::micro_test_plus
     suites_count (void) const noexcept;
 
   protected:
+    /**
+     * @brief Returns a reference to the test reporter.
+     *
+     * @details
+     * Protected, since the reporter is internal to the framework; it is
+     * used by the suites and the test cases, through
+     * `detail::runnable_base`, which is a friend.
+     *
+     * @par Parameters
+     *   None.
+     * @return Reference to the test reporter.
+     */
+    [[nodiscard]] detail::reporter&
+    reporter (void) const noexcept;
+
     /**
      * @brief Gets the timings for this runner.
      *
@@ -421,7 +445,7 @@ namespace micro_os_plus::micro_test_plus
      * Created by `initialise()`, as selected by the `--reporter`
      * command-line option.
      */
-    std::unique_ptr<class reporter> reporter_;
+    std::unique_ptr<detail::reporter> reporter_;
 
     /**
      * @brief Timings for this runner.

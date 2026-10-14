@@ -27,9 +27,9 @@
  * accumulating output in an internal string buffer and supporting
  * colour-coded diagnostics and multiple verbosity levels.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
+ * are internal to the framework.
  *
  * This file must be included when building the µTest++ library.
  */
@@ -70,7 +70,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace micro_os_plus::micro_test_plus
+namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
@@ -93,7 +93,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
     if (isatty (fileno (stdout)))
       {
-        colours_ = detail::colours_red_green;
+        colours_ = colours_red_green;
       }
 #endif // defined(__APPLE__) || defined(__linux__) || defined(__unix__)
   }
@@ -129,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
    * `*this << indent(n) << "text"` chaining.
    */
   reporter_human&
-  reporter_human::operator<< (detail::indent_t m)
+  reporter_human::operator<< (indent_t m)
   {
     buffer_.append (m.level * indent_size, ' ');
     return *this;
@@ -798,7 +798,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus
+} // namespace micro_os_plus::micro_test_plus::detail
 
 // ----------------------------------------------------------------------------
 

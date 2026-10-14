@@ -258,13 +258,13 @@ namespace micro_os_plus::micro_test_plus
     // Initialise and configure the reporter.
     if (reporter_name == "human")
       {
-        reporter_ = std::make_unique<reporter_human> (
+        reporter_ = std::make_unique<detail::reporter_human> (
             std::make_unique<std::vector<std::string_view>> (
                 std::move (argvs)));
       }
     else if (reporter_name == "tap")
       {
-        reporter_ = std::make_unique<reporter_tap> (
+        reporter_ = std::make_unique<detail::reporter_tap> (
             std::make_unique<std::vector<std::string_view>> (
                 std::move (argvs)));
       }

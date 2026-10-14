@@ -26,9 +26,9 @@
  * factory, the `reporter` accessors, the colour selector, and the template
  * output operators for pointers and arithmetic values.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
+ * are internal to the framework.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -65,7 +65,7 @@
 
 // ============================================================================
 
-namespace micro_os_plus::micro_test_plus
+namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
@@ -73,7 +73,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns an `indent_t` aggregate initialised with `level`.
    */
-  inline detail::indent_t
+  inline indent_t
   indent (size_t level)
   {
     return { level };
@@ -100,7 +100,7 @@ namespace micro_os_plus::micro_test_plus
    * convert various types of values and expressions into their string
    * representations for output in test reports.
    */
-  inline detail::expression_formatter&
+  inline expression_formatter&
   reporter::expression ()
   {
     return expression_;
@@ -159,7 +159,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__GNUC__)
 
     char buff[20];
-    snprintf (buff, sizeof (buff), "%p", detail::to_printable_pointer_ (v));
+    snprintf (buff, sizeof (buff), "%p", to_printable_pointer_ (v));
     buffer_.append (buff);
 
 #if defined(__GNUC__)
@@ -182,12 +182,12 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (T v)
   {
-    detail::append_number_ (buffer_, v);
+    append_number_ (buffer_, v);
     return *this;
   }
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus
+} // namespace micro_os_plus::micro_test_plus::detail
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

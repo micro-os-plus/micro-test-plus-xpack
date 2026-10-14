@@ -54,7 +54,7 @@ namespace
   // A reporter that ignores all events and exposes its output buffer, to
   // check the text written by the `reporter` stream operators, without
   // writing to the test output (API-REVIEW.md #7).
-  class buffer_reporter final : public reporter
+  class buffer_reporter final : public detail::reporter
   {
   public:
     buffer_reporter () : reporter{ nullptr }
@@ -353,7 +353,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         r << static_cast<int*> (nullptr);
         check ("0x0", "null pointer");
 
-        r << "line" << endl;
+        r << "line" << detail::endl;
         check ("line\n", "endl");
 
         // The `char` pointers and arrays are displayed as strings, as the

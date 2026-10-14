@@ -24,9 +24,9 @@
  * implementation of the `reporter` abstract interface that formats test
  * results according to the Test Anything Protocol (TAP).
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
+ * are internal to the framework.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -69,14 +69,8 @@
 
 // ============================================================================
 
-namespace micro_os_plus::micro_test_plus
+namespace micro_os_plus::micro_test_plus::detail
 {
-  // --------------------------------------------------------------------------
-
-  class runner;
-  class suite;
-  class subtest;
-
   // ==========================================================================
 
   /**
@@ -94,8 +88,8 @@ namespace micro_os_plus::micro_test_plus
    * to create it.
    *
    * All members and methods are defined within the
-   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
-   * user code and minimising the risk of naming conflicts.
+   * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
+   * are internal to the framework.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
@@ -167,7 +161,7 @@ namespace micro_os_plus::micro_test_plus
      * @return Reference to the current reporter instance.
      */
     reporter_tap&
-    operator<< (detail::indent_t m);
+    operator<< (indent_t m);
 
     // Bring base class operator<< overloads into scope to prevent name hiding.
     using reporter::operator<<;
@@ -314,7 +308,7 @@ namespace micro_os_plus::micro_test_plus
   };
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus
+} // namespace micro_os_plus::micro_test_plus::detail
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

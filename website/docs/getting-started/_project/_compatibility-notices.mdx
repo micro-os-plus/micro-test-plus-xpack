@@ -63,6 +63,13 @@ of the runner and of the suites, and the `expression()` function of the
 reporters, are no longer public, since they return internal types and
 are used only by the framework.
 
+The reporters (`reporter`, `reporter_human`, and `reporter_tap`) and the
+`endl` and `indent()` manipulators moved to the `detail` namespace,
+since they are internal to the framework and custom reporters are not
+supported; the reporter is still selected with the `--reporter`
+command-line option. `runner::reporter()` is no longer public; replace
+`runner.reporter ().verbosity ()` with the new `runner.verbosity ()`.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

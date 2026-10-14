@@ -31,9 +31,9 @@
  * Concrete formatting behaviour is implemented by derived reporters
  * (`reporter_human` and `reporter_tap`).
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
+ * are internal to the framework.
  *
  * This file must be included when building the µTest++ library.
  */
@@ -66,7 +66,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace micro_os_plus::micro_test_plus
+namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
@@ -566,7 +566,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus
+} // namespace micro_os_plus::micro_test_plus::detail
 
 // ----------------------------------------------------------------------------
 

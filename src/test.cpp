@@ -239,7 +239,7 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    class reporter& reporter = this->reporter ();
+    detail::reporter& reporter = this->reporter ();
 
     // For now, subtests do not record the time.
     // this->timings.timestamp_begin ();
@@ -334,7 +334,7 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    class reporter& reporter = this->reporter ();
+    detail::reporter& reporter = this->reporter ();
 
     this->timings ().timestamp_begin ();
     reporter.begin_suite (*this);
@@ -408,7 +408,7 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    class reporter& reporter = this->reporter ();
+    detail::reporter& reporter = this->reporter ();
 
     this->timings ().timestamp_begin ();
     reporter.begin_suite (*this);

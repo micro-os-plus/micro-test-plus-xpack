@@ -94,9 +94,6 @@ namespace micro_os_plus::micro_test_plus
 
   class runner;
   class static_runner;
-  class reporter;
-  class reporter_human;
-  class reporter_tap;
   class runner_totals;
   class subtest;
   class suite;
@@ -105,6 +102,9 @@ namespace micro_os_plus::micro_test_plus
   namespace detail
   {
     class deferred_reporter_base;
+    class reporter;
+    class reporter_human;
+    class reporter_tap;
 
     // ========================================================================
 
@@ -366,7 +366,7 @@ namespace micro_os_plus::micro_test_plus
       friend class micro_test_plus::runner;
       friend class micro_test_plus::static_runner;
 
-      // Number and count the checks of the subtests.
+      // Number and count the checks of the subtests, and report them.
       friend class deferred_reporter_base;
 
     public:
@@ -460,16 +460,6 @@ namespace micro_os_plus::micro_test_plus
       children_subtests_count (void) const noexcept;
 
       /**
-       * @brief Gets the test reporter associated with this test runnable.
-       *
-       * @par Parameters
-       *   None.
-       * @return A reference to the test reporter.
-       */
-      [[nodiscard]] class reporter&
-      reporter (void) const noexcept;
-
-      /**
        * @brief Aborts test execution via the owning runner.
        *
        * @param sl The source location from which the abort is triggered.
@@ -491,6 +481,21 @@ namespace micro_os_plus::micro_test_plus
       runner (void) const noexcept;
 
     protected:
+      /**
+       * @brief Gets the test reporter associated with this test runnable.
+       *
+       * @details
+       * Protected, since the reporter is internal to the framework; it is
+       * used by the suites and the test cases, which derive from this
+       * class, and by the deferred reporter, which is a friend.
+       *
+       * @par Parameters
+       *   None.
+       * @return A reference to the test reporter.
+       */
+      [[nodiscard]] class reporter&
+      reporter (void) const noexcept;
+
       /**
        * @brief Sets the positional index of this object within its parent.
        *
@@ -975,8 +980,8 @@ namespace micro_os_plus::micro_test_plus
     friend class micro_test_plus::runner;
 
     // Display the suite duration.
-    friend class micro_test_plus::reporter_human;
-    friend class micro_test_plus::reporter_tap;
+    friend class detail::reporter_human;
+    friend class detail::reporter_tap;
 
   protected:
     /**
