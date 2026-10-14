@@ -96,7 +96,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i ()
     {
-      return type_traits::integral_constant<math::integer<int, Cs...> ()>{};
+      return detail::integral_constant<math::integer<int, Cs...> ()>{};
     }
 
     /**
@@ -114,7 +114,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_s ()
     {
-      return type_traits::integral_constant<math::integer<short, Cs...> ()>{};
+      return detail::integral_constant<math::integer<short, Cs...> ()>{};
     }
 
     /**
@@ -132,7 +132,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_c ()
     {
-      return type_traits::integral_constant<math::integer<char, Cs...> ()>{};
+      return detail::integral_constant<math::integer<char, Cs...> ()>{};
     }
 
     /**
@@ -150,8 +150,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_sc ()
     {
-      return type_traits::integral_constant<
-          math::integer<signed char, Cs...> ()>{};
+      return detail::integral_constant<math::integer<signed char, Cs...> ()>{};
     }
 
     /**
@@ -169,7 +168,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_l ()
     {
-      return type_traits::integral_constant<math::integer<long, Cs...> ()>{};
+      return detail::integral_constant<math::integer<long, Cs...> ()>{};
     }
 
     /**
@@ -187,8 +186,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_ll ()
     {
-      return type_traits::integral_constant<
-          math::integer<long long, Cs...> ()>{};
+      return detail::integral_constant<math::integer<long long, Cs...> ()>{};
     }
 
     /**
@@ -206,8 +204,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u ()
     {
-      return type_traits::integral_constant<
-          math::integer<unsigned, Cs...> ()>{};
+      return detail::integral_constant<math::integer<unsigned, Cs...> ()>{};
     }
 
     /**
@@ -225,7 +222,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_uc ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<unsigned char, Cs...> ()>{};
     }
 
@@ -244,7 +241,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_us ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<unsigned short, Cs...> ()>{};
     }
 
@@ -263,7 +260,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_ul ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<unsigned long, Cs...> ()>{};
     }
 
@@ -282,7 +279,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_ull ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<unsigned long long, Cs...> ()>{};
     }
 
@@ -301,8 +298,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i8 ()
     {
-      return type_traits::integral_constant<
-          math::integer<std::int8_t, Cs...> ()>{};
+      return detail::integral_constant<math::integer<std::int8_t, Cs...> ()>{};
     }
 
     /**
@@ -320,7 +316,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i16 ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<std::int16_t, Cs...> ()>{};
     }
 
@@ -339,7 +335,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i32 ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<std::int32_t, Cs...> ()>{};
     }
 
@@ -358,7 +354,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i64 ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<std::int64_t, Cs...> ()>{};
     }
 
@@ -377,7 +373,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u8 ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<std::uint8_t, Cs...> ()>{};
     }
 
@@ -396,7 +392,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u16 ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<std::uint16_t, Cs...> ()>{};
     }
 
@@ -415,7 +411,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u32 ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<std::uint32_t, Cs...> ()>{};
     }
 
@@ -434,7 +430,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u64 ()
     {
-      return type_traits::integral_constant<
+      return detail::integral_constant<
           math::integer<std::uint64_t, Cs...> ()>{};
     }
 
@@ -453,7 +449,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_f ()
     {
-      return type_traits::floating_point_constant<
+      return detail::floating_point_constant<
           float, math::num<unsigned long long, Cs...> (),
           math::den<unsigned long long, Cs...> (),
           math::den_size<unsigned long long, Cs...> ()>{};
@@ -474,7 +470,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_d ()
     {
-      return type_traits::floating_point_constant<
+      return detail::floating_point_constant<
           double, math::num<unsigned long long, Cs...> (),
           math::den<unsigned long long, Cs...> (),
           math::den_size<unsigned long long, Cs...> ()>{};
@@ -495,7 +491,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_ld ()
     {
-      return type_traits::floating_point_constant<
+      return detail::floating_point_constant<
           long double, math::num<unsigned long long, Cs...> (),
           math::den<unsigned long long, Cs...> (),
           math::den_size<unsigned long long, Cs...> ()>{};
@@ -524,12 +520,12 @@ namespace micro_os_plus::micro_test_plus
        * @brief Wrapper type for named boolean literals.
        *
        * @details
-       * This structure inherits from `std::string_view` and a type trait base,
+       * This structure inherits from `std::string_view` and `detail::op`,
        * providing a strongly-typed boolean value for use in test expressions.
        * It defines conversion to `bool` and equality operators for comparison
        * with other named instances and boolean values.
        */
-      struct named : std::string_view, type_traits::op
+      struct named : std::string_view, detail::op
       {
         /**
          * @brief The underlying value type.
@@ -596,26 +592,26 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Constructs an `_t` instance by forwarding the provided value to the base
-   * `type_traits::value<T>` wrapper.
+   * `detail::value<T>` wrapper.
    */
   template <class T>
-  constexpr _t<T>::_t (const T& t) : type_traits::value<T>{ t }
+  constexpr _t<T>::_t (const T& t) : detail::value<T>{ t }
   {
   }
 
   /**
    * @details
    * Constructs a `to_t` instance by forwarding the provided value to the
-   * base `type_traits::value<T>` wrapper.
+   * base `detail::value<T>` wrapper.
    */
   template <class T>
-  constexpr to_t<T>::to_t (const T& t) : type_traits::value<T>{ t }
+  constexpr to_t<T>::to_t (const T& t) : detail::value<T>{ t }
   {
   }
 
   /**
    * @details
-   * Constructs the floating-point `type_traits::value<T>` with the given
+   * Constructs the floating-point `detail::value<T>` with the given
    * tolerance, instead of the one derived from the number of decimals of
    * the value.
    */
@@ -623,9 +619,9 @@ namespace micro_os_plus::micro_test_plus
     requires std::is_floating_point_v<T>
   constexpr auto
   approx (T value, std::type_identity_t<T> epsilon) noexcept
-      -> type_traits::value<T>
+      -> detail::value<T>
   {
-    return type_traits::value<T>{ value, epsilon };
+    return detail::value<T>{ value, epsilon };
   }
 
   // --------------------------------------------------------------------------

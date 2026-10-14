@@ -97,9 +97,10 @@ namespace micro_os_plus::micro_test_plus
    * modified without prior notice.
    *
    * Within this namespace, one will find assertion handling, the value
-   * unwrapping helper, comparator structures for logical and relational
-   * operations, mechanisms for exception checking, and base classes for
-   * deferred reporting of test results.
+   * wrappers (declared in `values.h`), the value unwrapping helper,
+   * comparator structures for logical and relational operations,
+   * mechanisms for exception checking, and base classes for deferred
+   * reporting of test results.
    *
    * All definitions within `detail` are intended exclusively for internal use,
    * ensuring a clear distinction between user-facing and internal components.
@@ -134,7 +135,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief The expression under evaluation.
        *
        * @details
-       * Either a framework comparator (derived from `type_traits::op`) or a
+       * Either a framework comparator (derived from `detail::op`) or a
        * value convertible to `bool`.
        */
       Expr_T expr{};
@@ -211,7 +212,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
-    struct unary_op_ : type_traits::op
+    struct unary_op_ : op
     {
       /**
        * @brief Constructs a unary comparator with the given operand and
@@ -280,7 +281,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct binary_op_ : type_traits::op
+    struct binary_op_ : op
     {
       /**
        * @brief Constructs a binary comparator with the given operands and
@@ -711,7 +712,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    struct callable_op_ : type_traits::op
+    struct callable_op_ : op
     {
       /**
        * @brief Constructs a callable operator with the pre-computed

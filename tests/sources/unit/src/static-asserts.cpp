@@ -90,6 +90,21 @@ static_asserts ()
 
     {
       using namespace literals;
+
+      // The value wrappers are in `detail`, not in `type_traits`.
+      static_assert (std::is_same_v<to_i, detail::value<int>>);
+      static_assert (std::is_base_of_v<detail::value<double>, _t<double>>);
+      static_assert (
+          std::is_same_v<decltype (42_i), detail::integral_constant<42>>);
+      static_assert (type_traits::is_op<to_i>);
+      static_assert (type_traits::is_op<decltype (42_i)>);
+      static_assert (type_traits::is_op<decltype (1.5_d)>);
+      static_assert (type_traits::has_epsilon<to_d>);
+      static_assert (not type_traits::has_epsilon<to_i>);
+    }
+
+    {
+      using namespace literals;
       using namespace operators;
 
       static_assert ("true"_b);

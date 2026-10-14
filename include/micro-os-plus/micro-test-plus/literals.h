@@ -126,7 +126,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the integer
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `int` value.
      */
     template <char... Cs>
@@ -140,7 +140,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the integer
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `short` value.
      */
     template <char... Cs>
@@ -154,7 +154,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the character
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `char` value.
      */
     template <char... Cs>
@@ -168,7 +168,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the signed
      * character constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `signed char` value.
      */
     template <char... Cs>
@@ -182,7 +182,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the long
      * integer constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `long` value.
      */
     template <char... Cs>
@@ -196,7 +196,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the long long
      * integer constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `long long` value.
      */
     template <char... Cs>
@@ -210,7 +210,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the unsigned
      * integer constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `unsigned` value.
      */
     template <char... Cs>
@@ -224,7 +224,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the unsigned
      * character constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `unsigned char` value.
      */
     template <char... Cs>
@@ -238,7 +238,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the unsigned
      * short constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `unsigned short` value.
      */
     template <char... Cs>
@@ -252,7 +252,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the unsigned
      * long integer constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `unsigned long` value.
      */
     template <char... Cs>
@@ -266,7 +266,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the unsigned
      * long long integer constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `unsigned long long` value.
      */
     template <char... Cs>
@@ -280,7 +280,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the `int8_t`
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `int8_t` value.
      */
     template <char... Cs>
@@ -294,7 +294,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the `int16_t`
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `int16_t` value.
      */
     template <char... Cs>
@@ -308,7 +308,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the `int32_t`
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `int32_t` value.
      */
     template <char... Cs>
@@ -322,7 +322,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the `int64_t`
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `int64_t` value.
      */
     template <char... Cs>
@@ -336,7 +336,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the `uint8_t`
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `uint8_t` value.
      */
     template <char... Cs>
@@ -350,7 +350,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the `uint16_t`
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `uint16_t` value.
      */
     template <char... Cs>
@@ -364,7 +364,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the `uint32_t`
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `uint32_t` value.
      */
     template <char... Cs>
@@ -378,7 +378,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the `uint64_t`
      * constant.
      *
-     * @return A `type_traits::integral_constant` instance holding the parsed
+     * @return A `detail::integral_constant` instance holding the parsed
      * `uint64_t` value.
      */
     template <char... Cs>
@@ -392,7 +392,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the
      * floating-point constant.
      *
-     * @return A `type_traits::floating_point_constant` instance holding the
+     * @return A `detail::floating_point_constant` instance holding the
      * parsed `float` value.
      */
     template <char... Cs>
@@ -406,7 +406,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the
      * floating-point constant.
      *
-     * @return A `type_traits::floating_point_constant` instance holding the
+     * @return A `detail::floating_point_constant` instance holding the
      * parsed `double` value.
      */
     template <char... Cs>
@@ -420,7 +420,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Cs The character pack representing the digits of the
      * floating-point constant.
      *
-     * @return A `type_traits::floating_point_constant` instance holding the
+     * @return A `detail::floating_point_constant` instance holding the
      * parsed `long double` value.
      */
     template <char... Cs>
@@ -482,7 +482,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_b (since 3.2.0).
    */
-  using _b = type_traits::value<bool>;
+  using _b = detail::value<bool>;
 
   /**
    * @brief Strongly-typed wrapper for `char` values.
@@ -492,7 +492,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_c (since 3.2.0).
    */
-  using _c = type_traits::value<char>;
+  using _c = detail::value<char>;
 
   /**
    * @brief Strongly-typed wrapper for `signed char` values.
@@ -502,7 +502,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_sc (since 3.2.0).
    */
-  using _sc = type_traits::value<signed char>;
+  using _sc = detail::value<signed char>;
 
   /**
    * @brief Strongly-typed wrapper for `short` values.
@@ -512,7 +512,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_s (since 3.2.0).
    */
-  using _s = type_traits::value<short>;
+  using _s = detail::value<short>;
 
   /**
    * @brief Strongly-typed wrapper for `int` values.
@@ -522,7 +522,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_i (since 3.2.0).
    */
-  using _i = type_traits::value<int>;
+  using _i = detail::value<int>;
 
   /**
    * @brief Strongly-typed wrapper for `long` values.
@@ -532,7 +532,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_l (since 3.2.0).
    */
-  using _l = type_traits::value<long>;
+  using _l = detail::value<long>;
 
   /**
    * @brief Strongly-typed wrapper for `long long` values.
@@ -542,7 +542,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_ll (since 3.2.0).
    */
-  using _ll = type_traits::value<long long>;
+  using _ll = detail::value<long long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned` values.
@@ -552,7 +552,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_u (since 3.2.0).
    */
-  using _u = type_traits::value<unsigned>;
+  using _u = detail::value<unsigned>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned char` values.
@@ -562,7 +562,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_uc (since 3.2.0).
    */
-  using _uc = type_traits::value<unsigned char>;
+  using _uc = detail::value<unsigned char>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned short` values.
@@ -572,7 +572,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_us (since 3.2.0).
    */
-  using _us = type_traits::value<unsigned short>;
+  using _us = detail::value<unsigned short>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned long` values.
@@ -582,7 +582,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_ul (since 3.2.0).
    */
-  using _ul = type_traits::value<unsigned long>;
+  using _ul = detail::value<unsigned long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned long long` values.
@@ -592,7 +592,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_ull (since 3.2.0).
    */
-  using _ull = type_traits::value<unsigned long long>;
+  using _ull = detail::value<unsigned long long>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int8_t` values.
@@ -602,7 +602,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_i8 (since 3.2.0).
    */
-  using _i8 = type_traits::value<std::int8_t>;
+  using _i8 = detail::value<std::int8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int16_t` values.
@@ -612,7 +612,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_i16 (since 3.2.0).
    */
-  using _i16 = type_traits::value<std::int16_t>;
+  using _i16 = detail::value<std::int16_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int32_t` values.
@@ -622,7 +622,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_i32 (since 3.2.0).
    */
-  using _i32 = type_traits::value<std::int32_t>;
+  using _i32 = detail::value<std::int32_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int64_t` values.
@@ -632,7 +632,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_i64 (since 3.2.0).
    */
-  using _i64 = type_traits::value<std::int64_t>;
+  using _i64 = detail::value<std::int64_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint8_t` values.
@@ -642,7 +642,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_u8 (since 3.2.0).
    */
-  using _u8 = type_traits::value<std::uint8_t>;
+  using _u8 = detail::value<std::uint8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint16_t` values.
@@ -652,7 +652,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_u16 (since 3.2.0).
    */
-  using _u16 = type_traits::value<std::uint16_t>;
+  using _u16 = detail::value<std::uint16_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint32_t` values.
@@ -662,7 +662,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_u32 (since 3.2.0).
    */
-  using _u32 = type_traits::value<std::uint32_t>;
+  using _u32 = detail::value<std::uint32_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint64_t` values.
@@ -672,7 +672,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_u64 (since 3.2.0).
    */
-  using _u64 = type_traits::value<std::uint64_t>;
+  using _u64 = detail::value<std::uint64_t>;
 
   /**
    * @brief Strongly-typed wrapper for `float` values.
@@ -682,7 +682,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_f (since 3.2.0).
    */
-  using _f = type_traits::value<float>;
+  using _f = detail::value<float>;
 
   /**
    * @brief Strongly-typed wrapper for `double` values.
@@ -692,7 +692,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_d (since 3.2.0).
    */
-  using _d = type_traits::value<double>;
+  using _d = detail::value<double>;
 
   /**
    * @brief Strongly-typed wrapper for `long double` values.
@@ -702,7 +702,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use @c to_ld (since 3.2.0).
    */
-  using _ld = type_traits::value<long double>;
+  using _ld = detail::value<long double>;
 
   /**
    * @brief Deprecated generic strongly-typed wrapper for explicit type
@@ -713,7 +713,7 @@ namespace micro_os_plus::micro_test_plus
    * `T`, enabling explicit conversion of dynamic values and expressions to a
    * type recognised by the µTest++ comparators and reporting mechanisms.
    *
-   * This wrapper inherits from `type_traits::value<T>`, ensuring that the
+   * This wrapper inherits from `detail::value<T>`, ensuring that the
    * encapsulated value is treated as the specified type within the framework.
    *
    * @deprecated Use `to_t` (since 3.2.0).
@@ -721,7 +721,7 @@ namespace micro_os_plus::micro_test_plus
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   template <class T>
-  struct _t : type_traits::value<T>
+  struct _t : detail::value<T>
   {
     /**
      * @brief Constructor for the deprecated strongly-typed wrapper.
@@ -743,7 +743,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * These type aliases provide a modern, type-safe mechanism for explicitly
    * converting values to the required types for µTest++ test expressions and
-   * comparators. Each alias is a wrapper around `type_traits::value<T>`,
+   * comparators. Each alias is a wrapper around `detail::value<T>`,
    * ensuring that the value is treated as the specified type within the
    * framework.
    *
@@ -770,7 +770,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_b = type_traits::value<bool>;
+  using to_b = detail::value<bool>;
 
   /**
    * @brief Strongly-typed wrapper for `char` values.
@@ -781,7 +781,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_c = type_traits::value<char>;
+  using to_c = detail::value<char>;
 
   /**
    * @brief Strongly-typed wrapper for `signed char` values.
@@ -792,7 +792,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_sc = type_traits::value<signed char>;
+  using to_sc = detail::value<signed char>;
 
   /**
    * @brief Strongly-typed wrapper for `short` values.
@@ -803,7 +803,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_s = type_traits::value<short>;
+  using to_s = detail::value<short>;
 
   /**
    * @brief Strongly-typed wrapper for `int` values.
@@ -814,7 +814,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i = type_traits::value<int>;
+  using to_i = detail::value<int>;
 
   /**
    * @brief Strongly-typed wrapper for `long` values.
@@ -825,7 +825,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_l = type_traits::value<long>;
+  using to_l = detail::value<long>;
 
   /**
    * @brief Strongly-typed wrapper for `long long` values.
@@ -836,7 +836,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_ll = type_traits::value<long long>;
+  using to_ll = detail::value<long long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned` values.
@@ -847,7 +847,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u = type_traits::value<unsigned>;
+  using to_u = detail::value<unsigned>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned char` values.
@@ -858,7 +858,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_uc = type_traits::value<unsigned char>;
+  using to_uc = detail::value<unsigned char>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned short` values.
@@ -869,7 +869,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_us = type_traits::value<unsigned short>;
+  using to_us = detail::value<unsigned short>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned long` values.
@@ -880,7 +880,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_ul = type_traits::value<unsigned long>;
+  using to_ul = detail::value<unsigned long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned long long` values.
@@ -891,7 +891,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_ull = type_traits::value<unsigned long long>;
+  using to_ull = detail::value<unsigned long long>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int8_t` values.
@@ -902,7 +902,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i8 = type_traits::value<std::int8_t>;
+  using to_i8 = detail::value<std::int8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int16_t` values.
@@ -913,7 +913,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i16 = type_traits::value<std::int16_t>;
+  using to_i16 = detail::value<std::int16_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int32_t` values.
@@ -924,7 +924,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i32 = type_traits::value<std::int32_t>;
+  using to_i32 = detail::value<std::int32_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int64_t` values.
@@ -935,7 +935,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i64 = type_traits::value<std::int64_t>;
+  using to_i64 = detail::value<std::int64_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint8_t` values.
@@ -946,7 +946,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u8 = type_traits::value<std::uint8_t>;
+  using to_u8 = detail::value<std::uint8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint16_t` values.
@@ -957,7 +957,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u16 = type_traits::value<std::uint16_t>;
+  using to_u16 = detail::value<std::uint16_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint32_t` values.
@@ -968,7 +968,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u32 = type_traits::value<std::uint32_t>;
+  using to_u32 = detail::value<std::uint32_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint64_t` values.
@@ -979,7 +979,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u64 = type_traits::value<std::uint64_t>;
+  using to_u64 = detail::value<std::uint64_t>;
 
   /**
    * @brief Strongly-typed wrapper for `float` values.
@@ -990,7 +990,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_f = type_traits::value<float>;
+  using to_f = detail::value<float>;
 
   /**
    * @brief Strongly-typed wrapper for `double` values.
@@ -1001,7 +1001,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_d = type_traits::value<double>;
+  using to_d = detail::value<double>;
 
   /**
    * @brief Strongly-typed wrapper for `long double` values.
@@ -1012,7 +1012,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_ld = type_traits::value<long double>;
+  using to_ld = detail::value<long double>;
 
   /**
    * @}
@@ -1029,7 +1029,7 @@ namespace micro_os_plus::micro_test_plus
    * `T`, enabling explicit conversion of dynamic values and expressions to a
    * type recognised by the µTest++ comparators and reporting mechanisms.
    *
-   * This wrapper inherits from `type_traits::value<T>`, ensuring that the
+   * This wrapper inherits from `detail::value<T>`, ensuring that the
    * encapsulated value is treated as the specified type within the framework.
    * It is particularly useful for enhancing type safety and clarity in test
    * expressions, especially when working with user-defined or less common
@@ -1046,7 +1046,7 @@ namespace micro_os_plus::micro_test_plus
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   template <class T>
-  struct to_t : type_traits::value<T>
+  struct to_t : detail::value<T>
   {
     /**
      * @brief Constructor for the strongly-typed wrapper.
@@ -1078,7 +1078,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @param value The expected value.
    * @param epsilon The tolerance, converted to `T`.
-   * @return A `type_traits::value<T>` wrapper, recognised by the
+   * @return A `detail::value<T>` wrapper, recognised by the
    * comparators and the operators.
    *
    * @since 5.1.0
@@ -1087,7 +1087,7 @@ namespace micro_os_plus::micro_test_plus
     requires std::is_floating_point_v<T>
   [[nodiscard]] constexpr auto
   approx (T value, std::type_identity_t<T> epsilon) noexcept
-      -> type_traits::value<T>;
+      -> detail::value<T>;
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

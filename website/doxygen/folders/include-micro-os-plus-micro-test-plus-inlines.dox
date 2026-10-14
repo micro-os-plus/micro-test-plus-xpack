@@ -5,8 +5,8 @@
 This folder gathers the inline implementation headers used by µTest++.
 These headers define logic for core library components, including the
 deferred reporter, function comparators, literals, mathematical utilities,
-reflection utilities, test reporters, test runners, test suites, and
-utility functions.
+reflection utilities, test reporters, test runners, test suites,
+utility functions, and value wrappers.
 
 By separating inline implementations from their corresponding
 declarations, this structure promotes modularity, clarity, and

@@ -8,8 +8,8 @@ functionality of the µTest++ Testing Framework.
 It includes declarations for essential library components, including
 test suite and test case management, test runner and reporter classes,
 function comparators, overloaded operators, user-defined literals,
-mathematical utilities, type traits, reflection utilities, and supporting
-internal mechanisms.
+mathematical utilities, type traits, value wrappers, reflection
+utilities, and supporting internal mechanisms.
 
 By consolidating public API definitions in this folder, the project
 maintains a clear separation from implementation details (located in the

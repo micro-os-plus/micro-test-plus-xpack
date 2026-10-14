@@ -572,32 +572,41 @@ For convenience, it is also possible to overload the
 
 ```cpp
 namespace operators {
-  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-  bool operator== (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires type_traits::any_op<Lhs_T, Rhs_T>
+  auto operator== (const Lhs_T& lhs, const Rhs_T& rhs);
 
-  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-  bool operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires type_traits::any_op<Lhs_T, Rhs_T>
+  auto operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 
-  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-  bool operator< (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires type_traits::any_op<Lhs_T, Rhs_T>
+  auto operator< (const Lhs_T& lhs, const Rhs_T& rhs);
 
-  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-  bool operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires type_traits::any_op<Lhs_T, Rhs_T>
+  auto operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
 
-  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-  bool operator> (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires type_traits::any_op<Lhs_T, Rhs_T>
+  auto operator> (const Lhs_T& lhs, const Rhs_T& rhs);
 
-  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-  bool operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires type_traits::any_op<Lhs_T, Rhs_T>
+  auto operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
 
-  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-  bool operator and (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires type_traits::any_op<Lhs_T, Rhs_T>
+  auto operator and (const Lhs_T& lhs, const Rhs_T& rhs);
 
-  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-  bool operator or (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires type_traits::any_op<Lhs_T, Rhs_T>
+  auto operator or (const Lhs_T& lhs, const Rhs_T& rhs);
 
-  template <class T, type_traits::requires_t<....>>
-  bool operator not (const T& t);
+  template <class T>
+    requires type_traits::is_op<T>
+  auto operator not (const T& t);
 }
 ```
 
@@ -610,8 +619,8 @@ objects:
 
 ```cpp
 namespace operators {
-  bool operator== (std::string_view lhs, std::string_view rhs);
-  bool operator!= (std::string_view lhs, std::string_view rhs);
+  auto operator== (std::string_view lhs, std::string_view rhs);
+  auto operator!= (std::string_view lhs, std::string_view rhs);
 }
 ```
 
@@ -623,11 +632,15 @@ Equality operators are provided for iterable containers:
 
 ```cpp
 namespace operators {
-  template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
-  bool operator== (T&& lhs, T&& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires (type_traits::container_like<Lhs_T>
+              and type_traits::container_like<Rhs_T>)
+  auto operator== (const Lhs_T& lhs, const Rhs_T& rhs);
 
-  template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
-  bool operator!= (T&& lhs, T&& rhs);
+  template <class Lhs_T, class Rhs_T>
+    requires (type_traits::container_like<Lhs_T>
+              and type_traits::container_like<Rhs_T>)
+  auto operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 }
 ```
 
@@ -662,7 +675,7 @@ namespace literals {
   auto operator""_f (); // float
   auto operator""_d (); // double
   auto operator""_ld (); // long double
-  auto operator""_b (); // bool
+  auto operator""_b (const char* name, std::size_t size); // named bool, true
 }
 ```
 
@@ -691,35 +704,35 @@ Similarly, for dynamic values, wrappers are provided to convert them into
 recognised types:
 
 ```cpp
-  using to_b = type_traits::value<bool>;
-  using to_c = type_traits::value<char>;
-  using to_sc = type_traits::value<signed char>;
-  using to_s = type_traits::value<short>;
-  using to_i = type_traits::value<int>;
-  using to_l = type_traits::value<long>;
-  using to_ll = type_traits::value<long long>;
-  using to_u = type_traits::value<unsigned>;
-  using to_uc = type_traits::value<unsigned char>;
-  using to_us = type_traits::value<unsigned short>;
-  using to_ul = type_traits::value<unsigned long>;
-  using to_ull = type_traits::value<unsigned long long>;
-  using to_i8 = type_traits::value<std::int8_t>;
-  using to_i16 = type_traits::value<std::int16_t>;
-  using to_i32 = type_traits::value<std::int32_t>;
-  using to_i64 = type_traits::value<std::int64_t>;
-  using to_u8 = type_traits::value<std::uint8_t>;
-  using to_u16 = type_traits::value<std::uint16_t>;
-  using to_u32 = type_traits::value<std::uint32_t>;
-  using to_u64 = type_traits::value<std::uint64_t>;
-  using to_f = type_traits::value<float>;
-  using to_d = type_traits::value<double>;
-  using to_ld = type_traits::value<long double>;
+  using to_b = detail::value<bool>;
+  using to_c = detail::value<char>;
+  using to_sc = detail::value<signed char>;
+  using to_s = detail::value<short>;
+  using to_i = detail::value<int>;
+  using to_l = detail::value<long>;
+  using to_ll = detail::value<long long>;
+  using to_u = detail::value<unsigned>;
+  using to_uc = detail::value<unsigned char>;
+  using to_us = detail::value<unsigned short>;
+  using to_ul = detail::value<unsigned long>;
+  using to_ull = detail::value<unsigned long long>;
+  using to_i8 = detail::value<std::int8_t>;
+  using to_i16 = detail::value<std::int16_t>;
+  using to_i32 = detail::value<std::int32_t>;
+  using to_i64 = detail::value<std::int64_t>;
+  using to_u8 = detail::value<std::uint8_t>;
+  using to_u16 = detail::value<std::uint16_t>;
+  using to_u32 = detail::value<std::uint32_t>;
+  using to_u64 = detail::value<std::uint64_t>;
+  using to_f = detail::value<float>;
+  using to_d = detail::value<double>;
+  using to_ld = detail::value<long double>;
 
   // Template for wrapping any other type.
   template <class T>
-  struct to_t : type_traits::value<T>
+  struct to_t : detail::value<T>
   {
-    constexpr explicit to_t (const T& t) : type_traits::value<T>{ t }
+    constexpr explicit to_t (const T& t) : detail::value<T>{ t }
     {
     }
   };

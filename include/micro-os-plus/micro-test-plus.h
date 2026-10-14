@@ -92,6 +92,9 @@
 #include "micro-test-plus/math.h"
 
 // Requires math.h.
+#include "micro-test-plus/values.h"
+
+// Requires values.h.
 #include "micro-test-plus/type-traits.h"
 
 // No deps.

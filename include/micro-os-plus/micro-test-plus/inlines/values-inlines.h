@@ -18,32 +18,32 @@
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++
- * type trait utilities.
+ * value wrappers.
  *
  * @details
  * This header provides the out-of-class template and inline implementations
- * for all methods declared in the type-traits struct templates in
- * `type-traits.h`. It defines the bodies of the constructors, conversion
+ * for all methods declared in the value wrapper struct templates in
+ * `values.h`. It defines the bodies of the constructors, conversion
  * operators, and accessor methods for `value_base_`, `integral_constant`,
  * `floating_point_constant`, `genuine_integral_value`, and the primary
  * `value<T>` template. The constructors of the floating point
  * specialisation of `value<T>` are defined in the class body, to work
  * around a Clang 16 limitation with constrained partial specialisations.
  *
- * Separating the implementations from the declarations keeps `type-traits.h`
+ * Separating the implementations from the declarations keeps `values.h`
  * concise and focused on the interface, whilst grouping all method bodies
  * here for maintainability.
  *
  * All definitions reside within the
- * `micro_os_plus::micro_test_plus::type_traits` namespace, ensuring clear
+ * `micro_os_plus::micro_test_plus::detail` namespace, ensuring clear
  * separation from user code and minimising the risk of naming conflicts.
  *
  * This file is intended solely for internal use within the framework and
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_TYPE_TRAITS_INLINES_H_
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_TYPE_TRAITS_INLINES_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_VALUES_INLINES_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_VALUES_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  namespace type_traits
+  namespace detail
   {
     // ========================================================================
 
@@ -181,7 +181,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     // ------------------------------------------------------------------------
-  } // namespace type_traits
+  } // namespace detail
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
@@ -196,6 +196,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_TYPE_TRAITS_INLINES_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_VALUES_INLINES_H_
 
 // ----------------------------------------------------------------------------

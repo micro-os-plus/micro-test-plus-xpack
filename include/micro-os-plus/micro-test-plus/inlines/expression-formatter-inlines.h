@@ -225,8 +225,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class T>
   expression_formatter&
-  expression_formatter::operator<< (
-      const type_traits::genuine_integral_value<T>& v)
+  expression_formatter::operator<< (const detail::genuine_integral_value<T>& v)
   {
     detail::append_number_ (buffer_, static_cast<long long> (v.get ()));
     return *this;

@@ -25,7 +25,7 @@
  * all value-formatting logic used by the µTest++ framework. The class owns
  * a `std::string` buffer and exposes `operator<<` overloads for every
  * standard arithmetic type, character type, string, pointer, container,
- * and framework expression type derived from `type_traits::op`.
+ * and framework expression type derived from `detail::op`.
  *
  * By consolidating the formatting operators into a single class (using the
  * shared `detail::append_number_()` helper for numbers), the `reporter` is
@@ -153,7 +153,7 @@ namespace micro_os_plus::micro_test_plus
      * `expression_formatter` owns a `std::string` buffer and provides
      * `operator<<` overloads for all standard arithmetic types, character
      * types, strings, pointers, containers, and framework expression types
-     * derived from `type_traits::op`.
+     * derived from `detail::op`.
      *
      * The numeric overloads append a type suffix (e.g., `42u`, `3l`, `1.5f`)
      * matching the conventions used in the existing reporter output, so that
@@ -442,7 +442,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class T>
       expression_formatter&
-      operator<< (const type_traits::genuine_integral_value<T>& v);
+      operator<< (const detail::genuine_integral_value<T>& v);
 
       /**
        * @brief Appends a container's elements enclosed in braces.

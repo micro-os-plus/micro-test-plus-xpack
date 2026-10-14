@@ -102,10 +102,10 @@
  * The main classes (the runners, and the suites and subtests) are defined
  * directly in this namespace. Several nested namespaces group specific
  * aspects of the framework: `math` (mathematical utilities), `type_traits`
- * (type traits and value wrappers), `reflection` (source locations and type
+ * (type traits and concepts), `reflection` (source locations and type
  * names), `literals` (user-defined literals), `operators` (comparison and
  * logical operators), `utility` (utility functions), and `detail` (internal
- * implementation details, including the reporters).
+ * implementation details, including the reporters and the value wrappers).
  *
  * By grouping all definitions within this namespace and its sub-namespaces,
  * the framework achieves clear code organisation, minimises naming conflicts,
