@@ -613,16 +613,8 @@ namespace micro_os_plus::micro_test_plus
      * otherwise the arguments are bound after the leading reference, which
      * is passed when the body is invoked.
      *
-     * When @p Self_T differs from @p Param_T, the stored function object
-     * receives a `Param_T&` reference and passes it to the callable
-     * converted to `Self_T&`; this allows a class derived from `suite`
-     * (`static_suite`) to reuse the function object stored by `suite`,
-     * while its callable receives a reference to the derived class.
-     *
-     * @tparam Param_T The type referred to by the parameter of the stored
-     * function object.
      * @tparam Self_T The type referred to by the first parameter of the
-     * callable; `Param_T` or a class derived from it.
+     * callable (`subtest` or `suite`).
      * @tparam Callable_T The type of the callable object.
      * @tparam Args_T The types of the additional callable arguments.
      *
@@ -631,9 +623,8 @@ namespace micro_os_plus::micro_test_plus
      * callable after the leading `Self_T&` reference.
      * @return The function object that invokes the callable.
      */
-    template <typename Param_T, typename Self_T = Param_T, typename Callable_T,
-              typename... Args_T>
-    [[nodiscard]] std::function<void (Param_T&)>
+    template <typename Self_T, typename Callable_T, typename... Args_T>
+    [[nodiscard]] std::function<void (Self_T&)>
     bind_callable (Callable_T&& callable, Args_T&&... arguments);
 
     // ------------------------------------------------------------------------
@@ -1106,9 +1097,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Callable storing the suite body and any bound arguments.
      *
      * @details
-     * Invoked by `run()` with a reference to this suite. For a
-     * `static_suite`, it converts the reference to `static_suite&` before
-     * passing it to the user callable.
+     * Invoked by `run()` with a reference to this suite; a
+     * `static_suite` also stores its body here, so all suite callables
+     * receive a `suite&` reference.
      */
     std::function<void (suite&)> callable_;
 
@@ -1253,8 +1244,9 @@ namespace micro_os_plus::micro_test_plus
    * after the dynamically registered suites.
    *
    * The body is stored in the callable inherited from `suite`, and is run
-   * by `suite::run()`; the user callable receives a `static_suite&`
-   * reference.
+   * by `suite::run()`; the user callable receives a `suite&` reference,
+   * as for the suites registered with `runner::suite()`, so the same
+   * function can serve both kinds of suites.
    *
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
@@ -1274,9 +1266,10 @@ namespace micro_os_plus::micro_test_plus
      * is copied, so the string need not outlive the call.
      * @param runner The static test runner managing this suite.
      * @param callable A generic callable object, usually a lambda or
-     * function, invoked to perform the test suite.
-     * @param arguments A possibly empty list of arguments to be passed to
-     * the callable.
+     * function, invoked to perform the test suite. Its first parameter
+     * must be `suite&`.
+     * @param arguments A possibly empty list of arguments forwarded to
+     * the callable after the leading `suite&` reference.
      */
     template <typename Callable_T, typename... Args_T>
     static_suite (const char* name, static_runner& runner,

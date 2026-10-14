@@ -334,9 +334,6 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Invokes the stored callable with this suite, surrounded by
    * reporter calls to begin and end the suite.
-   *
-   * For a `static_suite`, the callable converts the reference to
-   * `static_suite&`.
    */
   void
   suite::run (void)

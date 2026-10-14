@@ -103,6 +103,13 @@ always returned `"runner"`, was removed; the name shown in the reports
 is that of the top suite, returned by `initialise()`. The session
 totals are still available, via `runner::totals()`.
 
+The callable of a `static_suite` now receives a `suite&` reference, as
+the callable of a suite registered with `runner::suite()` does, so the
+same function can serve both kinds of suites; it previously received a
+`static_suite&`. Replace `mt::static_suite&` with `mt::suite&` in the
+parameter lists of the suite functions; the lambdas with an `auto&`
+parameter need no change.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

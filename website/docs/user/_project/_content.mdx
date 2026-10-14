@@ -872,7 +872,7 @@ namespace mt = micro_os_plus::micro_test_plus;
 extern mt::static_runner sr;
 
 static void
-suite_function (mt::static_suite& ts)
+suite_function (mt::suite& ts)
 {
   ts.test ("Check various conditions", [] (auto& t)
     {
@@ -930,7 +930,7 @@ namespace mt = micro_os_plus::micro_test_plus;
 // Define a function template to run the tests.
 template <class T>
 void
-check_double_list_links (mt::static_suite& ts)
+check_double_list_links (mt::suite& ts)
 {
   static T left_links;
   static T links;

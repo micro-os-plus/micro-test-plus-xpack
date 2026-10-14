@@ -52,7 +52,7 @@ compute_condition (void)
 // ----------------------------------------------------------------------------
 
 static void
-suite_function (mt::static_suite& ts)
+suite_function (mt::suite& ts)
 {
   // Test comparison functions.
   ts.test ("Check various conditions", [] (auto& t)

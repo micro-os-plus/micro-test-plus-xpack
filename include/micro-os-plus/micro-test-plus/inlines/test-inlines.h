@@ -238,57 +238,20 @@ namespace micro_os_plus::micro_test_plus
      * when additional arguments must be bound, to avoid triggering a GCC
      * ARM bug in `__is_nothrow_invocable<_Bind<...>, Self_T&>` (GCC
      * 15.2.1).
-     *
-     * When the reference must be converted, the callable (or its binding)
-     * is captured by a lambda, which performs the `static_cast`; this is
-     * safe, since the stored function object is invoked only by the
-     * `run()` of the object itself, which passes `*this`. The lambda is
-     * `mutable`, so that callables with a non-const call operator can be
-     * invoked, as when stored directly, and it is `noexcept` when the
-     * callable is, otherwise GCC warns (`-Wnoexcept`) that it does not
-     * throw, but is not declared `noexcept`.
      */
-    template <typename Param_T, typename Self_T, typename Callable_T,
-              typename... Args_T>
-    std::function<void (Param_T&)>
+    template <typename Self_T, typename Callable_T, typename... Args_T>
+    std::function<void (Self_T&)>
     bind_callable (Callable_T&& callable, Args_T&&... arguments)
     {
-      if constexpr (std::is_same_v<Param_T, Self_T>)
+      if constexpr (sizeof...(arguments) == 0)
         {
-          if constexpr (sizeof...(arguments) == 0)
-            {
-              return std::forward<Callable_T> (callable);
-            }
-          else
-            {
-              return std::bind (std::forward<Callable_T> (callable),
-                                std::placeholders::_1,
-                                std::forward<Args_T> (arguments)...);
-            }
+          return std::forward<Callable_T> (callable);
         }
       else
         {
-          // Propagate the exception specification of the callable, computed
-          // on its own type, not on the type returned by std::bind.
-          constexpr bool is_nothrow = std::is_nothrow_invocable_v<
-              std::decay_t<Callable_T>&, Self_T&,
-              std::unwrap_ref_decay_t<Args_T>&...>;
-
-          if constexpr (sizeof...(arguments) == 0)
-            {
-              return [body = std::forward<Callable_T> (callable)] (
-                         Param_T& self) mutable noexcept (is_nothrow)
-                { body (static_cast<Self_T&> (self)); };
-            }
-          else
-            {
-              return
-                  [bound = std::bind (std::forward<Callable_T> (callable),
-                                      std::placeholders::_1,
-                                      std::forward<Args_T> (arguments)...)] (
-                      Param_T& self) mutable noexcept (is_nothrow)
-                { bound (static_cast<Self_T&> (self)); };
-            }
+          return std::bind (std::forward<Callable_T> (callable),
+                            std::placeholders::_1,
+                            std::forward<Args_T> (arguments)...);
         }
     }
 
@@ -529,18 +492,17 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Delegates to `suite` with a function object that passes the
-   * reference to the suite to the callable as `static_suite&` (binding
-   * its arguments, if any). After construction, the suite is registered
-   * with the static test runner.
+   * Delegates to `suite`, which stores the callable and binds its
+   * arguments, if any; the callable receives a `suite&` reference, as
+   * for the suites registered with `runner::suite()`. After
+   * construction, the suite is registered with the static test runner.
    */
   template <typename Callable_T, typename... Args_T>
   static_suite::static_suite (const char* name, static_runner& runner,
                               Callable_T&& callable, Args_T&&... arguments)
       : suite{ name, detail::to_runner (runner),
-               detail::bind_callable<suite, static_suite> (
-                   std::forward<Callable_T> (callable),
-                   std::forward<Args_T> (arguments)...) }
+               std::forward<Callable_T> (callable),
+               std::forward<Args_T> (arguments)... }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",

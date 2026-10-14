@@ -362,7 +362,7 @@ static mt::static_suite ts_separate
 
 // Parametrized test suite, with constants, values, references and pointers.
 static void
-test_suite_with_args (mt::static_suite& ts, int ic, int iv, int& ir, int* ip1,
+test_suite_with_args (mt::suite& ts, int ic, int iv, int& ir, int* ip1,
                       int* ip2)
 {
   ts.test ("args", [&] (auto& t)
