@@ -491,7 +491,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief C++20 concept satisfied when a type can be used as a test
-     * expression in `expect()` or `assume()`.
+     * expression in `expect()` or `require()`.
      *
      * @tparam T The type to be checked.
      *
@@ -499,7 +499,7 @@ namespace micro_os_plus::micro_test_plus
      * The `checkable` concept is satisfied when `T` is either a
      * framework operator type (derived from `op`) or is implicitly
      * convertible to `bool`. It is used to constrain the `expect()` and
-     * `assume()` function templates, ensuring that only sensible
+     * `require()` function templates, ensuring that only sensible
      * expression types are accepted.
      */
     template <class T>

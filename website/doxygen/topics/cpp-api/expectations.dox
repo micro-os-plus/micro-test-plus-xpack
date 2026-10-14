@@ -3,8 +3,8 @@
 
 @details
 During test execution, each condition outcome, whether passing or failing,
-is explicitly reported in test results. Unlike assumptions, a failed
-expectation does not terminate the
+is explicitly reported in test results. Unlike requirements, a failed
+expectation does not stop the
 test; execution continues, allowing multiple conditions to be checked within
 a single test case.
 

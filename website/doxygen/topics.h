@@ -42,7 +42,7 @@
     @include{doc} topics/cpp-api/inits.dox
     @include{doc} topics/cpp-api/test-case.dox
     @include{doc} topics/cpp-api/expectations.dox
-    @include{doc} topics/cpp-api/assumptions.dox
+    @include{doc} topics/cpp-api/requirements.dox
     @include{doc} topics/cpp-api/function-comparators.dox
     @include{doc} topics/cpp-api/logical-functions.dox
     @include{doc} topics/cpp-api/exceptions.dox

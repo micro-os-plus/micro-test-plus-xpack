@@ -21,7 +21,7 @@
  *
  * @details
  * This header provides the two deferred-reporter classes used by `expect()`
- * and `assume()` to capture a test-expression result and report the outcome
+ * and `require()` to capture a test-expression result and report the outcome
  * only when the reporter object is destroyed (i.e. at the semicolon
  * following the expression statement), after the optional user message was
  * appended.
@@ -35,7 +35,10 @@
  *   expression formatter of the reporter, which keeps the text for this
  *   check until it is reported, so that it can be printed on failure.
  *
- * Both classes live in the `detail` namespace and are not part of the
+ * It also defines `failed_requirement`, the exception thrown to stop a
+ * test case after a failed `require()`.
+ *
+ * All live in the `detail` namespace and are not part of the
  * public API.
  *
  * This file is intended solely for internal use within the framework and
@@ -88,6 +91,26 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
+    // ========================================================================
+
+    /**
+     * @brief The exception thrown to stop a test case after a failed
+     * `require()`.
+     *
+     * @details
+     * Thrown by the destructor of `deferred_reporter_base`, after the
+     * failure was reported and counted, when exceptions are enabled, and
+     * caught by `subtest::run()`, which ends the test case normally; the
+     * run continues with the next test case.
+     *
+     * It is deliberately not derived from `std::exception`, so that a
+     * `catch (const std::exception&)` in the test case body does not stop
+     * it; a `catch (...)` does, and should rethrow it.
+     */
+    struct failed_requirement
+    {
+    };
+
     // ========================================================================
 
     /**
@@ -162,8 +185,12 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Destructor for the deferred reporter base.
+       *
+       * @details
+       * Reports the check. It may throw `failed_requirement`, after a
+       * failed `require()`, to stop the test case, hence `noexcept (false)`.
        */
-      ~deferred_reporter_base ();
+      ~deferred_reporter_base () noexcept (false);
 
       /**
        * @brief Appends a message to the reporter.
@@ -204,10 +231,20 @@ namespace micro_os_plus::micro_test_plus
        * processing.
        *
        * @details
-       * Set for `assume()` checks; a failure then terminates the test
-       * execution.
+       * Set for `require()` checks; a failure then stops the test case,
+       * or, without exceptions, the test execution.
        */
       bool abort_ = false;
+
+      /**
+       * @brief The number of uncaught exceptions when the check was
+       * created.
+       *
+       * @details
+       * If the destructor finds more, it runs during stack unwinding (for
+       * a result kept in a variable), and must not throw.
+       */
+      int uncaught_exceptions_ = 0;
 
       /**
        * @brief Indicates whether the reporter has an associated expression.
@@ -286,9 +323,10 @@ namespace micro_os_plus::micro_test_plus
        * @brief Destructor for the deferred reporter.
        *
        * @details
-       * Defaulted; the reporting is performed by the base class destructor.
+       * Defaulted; the reporting is performed by the base class destructor,
+       * which may throw.
        */
-      ~deferred_reporter () = default;
+      ~deferred_reporter () noexcept (false) = default;
     };
 
     // ------------------------------------------------------------------------

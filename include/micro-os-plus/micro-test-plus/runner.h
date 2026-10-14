@@ -358,8 +358,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Sets the function called when test execution is aborted.
      *
      * @details
-     * Test execution is aborted by a failed `assume()`, or when the
-     * reporter detects an internal inconsistency. The diagnostic message
+     * Test execution is aborted by a failed `require()`, when exceptions
+     * are not enabled (otherwise only the test case is stopped), or when
+     * the reporter detects an internal inconsistency. The diagnostic message
      * is written to `stderr` before the handler is called.
      *
      * The handler can be set at any time, before or after `initialise()`.

@@ -27,21 +27,27 @@ A failure then also reports the operands, for example
 </details>
 
 <details>
-<summary>What happens when an assumption fails?</summary>
+<summary>What happens when a requirement fails?</summary>
 
 The failure is reported like a failed expectation, marked as aborted,
-and then the **whole test program is terminated**, not only the current
-test case. `runner::abort()` writes
-`error: test execution aborted at <file>:<line>` to `stderr` and calls
-`abort()`.
+and then, when exceptions are enabled, the **current test case is
+stopped**: the rest of its body is skipped, and the run continues with
+the next test case. This is how the fatal assertions of most other
+frameworks behave (`ASSERT_*` in GoogleTest, `REQUIRE()` in Catch2 and
+doctest, `BOOST_REQUIRE()` in Boost.Test); see the comparison in the
+[User's Guide](/docs/user/#comparison-with-other-frameworks).
 
-As a consequence, the remaining test cases and suites do not run, no
-final totals are written, and `run()` is never reached; the
-process ends with the status of an abnormal termination. On embedded
-platforms, the behaviour is that of the platform's `abort()`.
+Without exceptions, the test case cannot be stopped, and the **whole
+test execution is aborted**: `runner::abort()` writes
+`error: test execution aborted at <file>:<line>` to `stderr`, calls the
+handler set with `runner::set_abort_handler()`, if any, and then
+`abort()`. The remaining test cases and suites do not run, and no final
+totals are written.
 
-Use `assume()` only for conditions without which the following checks
-are meaningless, and `expect()` for everything else.
+Use `require()` only for conditions without which the following checks
+are meaningless, and `expect()` for everything else. `assume()` is a
+deprecated alias of `require()`; unlike in JUnit, an unmet assumption
+fails the test case, it does not skip it.
 
 </details>
 

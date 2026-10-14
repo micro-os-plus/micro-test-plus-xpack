@@ -26,6 +26,7 @@ using namespace micro_os_plus::micro_test_plus;
 #pragma GCC diagnostic ignored "-Wsign-compare"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-bind-to-temporary-copy"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
 #endif // defined(__clang__)
@@ -224,6 +225,90 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       // The two test cases, and the nested and the outer test cases.
       test_assert (current_suite_totals.failed_subtests ()
                    == failed_subtests_before + 4);
+    }
+
+    // ------------------------------------------------------------------------
+
+    // A failed require() stops only the current test case, as the fatal
+    // assertions of the other frameworks do, and the run continues with the
+    // next test case (API-REVIEW.md #22).
+    {
+      const size_t failed_subtests_before
+          = current_suite_totals.failed_subtests ();
+
+      ts.test ("Failed require", [] (auto& t)
+        {
+          t.expect (true) << "check before the requirement";
+          local_counts.successful_checks++;
+
+          try
+            {
+              // Counted before, since the statement does not return.
+              local_counts.failed_checks++;
+              t.require (false) << "failed requirement";
+            }
+          catch (const std::exception&)
+            {
+              // Not a std::exception, so not caught here.
+              t.expect (false) << "requirement caught as std::exception";
+            }
+
+          t.expect (false) << "check after the requirement";
+        });
+      local_counts.executed_subtest++;
+
+      ts.test ("Failed deprecated assume", [] (auto& t)
+        {
+          local_counts.failed_checks++;
+          t.assume (false) << "failed assumption";
+
+          t.expect (false) << "check after the assumption";
+        });
+      local_counts.executed_subtest++;
+
+      // The nested test case is stopped; the outer test case continues,
+      // and fails because of the failed nested test case.
+      ts.test ("Failed require in nested test case", [] (auto& t)
+        {
+          t.test ("nested test case", [] (auto& nt)
+            {
+              local_counts.failed_checks++;
+              nt.require (false) << "failed nested requirement";
+
+              nt.expect (false) << "check after the nested requirement";
+            });
+          local_counts.executed_subtest++; // nested
+
+          t.expect (true) << "check after the nested test case";
+          local_counts.successful_checks++;
+        });
+      local_counts.executed_subtest++; // outer
+
+      // A kept result is reported during the stack unwinding caused by
+      // another exception; it must not throw, which would terminate.
+      ts.test ("Failed require during unwinding", [] (auto& t)
+        {
+          // Bound directly to the returned temporary, which lives until
+          // the end of the body.
+          auto&& kept = t.require (false);
+          kept << "failed kept requirement";
+          local_counts.failed_checks++;
+
+          // Reported as `unexpected exception: boom`.
+          exercise_throw_runtime_error (true);
+        });
+      local_counts.failed_checks++; // the exception
+      local_counts.executed_subtest++;
+
+      test_assert (current_suite_totals.successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_suite_totals.failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_suite_totals.executed_subtests ()
+                   == local_counts.executed_subtest);
+      // Three test cases, and the nested and the outer test cases.
+      test_assert (current_suite_totals.failed_subtests ()
+                   == failed_subtests_before + 5);
     }
   } };
 

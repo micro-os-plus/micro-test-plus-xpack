@@ -152,8 +152,8 @@ namespace micro_os_plus::micro_test_plus
      * location.
      *
      * The expression is evaluated and its boolean result is passed to the base
-     * class. The abort flag determines whether further test execution should
-     * be halted if the expectation fails. The expression is formatted into
+     * class. The abort flag, set by `require()`, determines whether the
+     * test case is stopped if the check fails. The expression is formatted into
      * the expression formatter of the reporter, which is shared by all
      * checks; `begin_check()` assigns it to this check, setting aside the
      * text of a previous check not yet reported, if any.

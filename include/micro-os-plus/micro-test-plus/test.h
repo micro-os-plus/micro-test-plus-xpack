@@ -716,7 +716,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * The body of the subtest is supplied as a callable (typically a lambda)
    * that receives a `subtest&` reference as its first argument. Inside the
-   * body, `expect()` and `assume()` are used to evaluate conditions and
+   * body, `expect()` and `require()` are used to evaluate conditions and
    * record the results. Subtests may be nested to an arbitrary depth.
    *
    * The constructor is private, since its parameters are set by the
@@ -856,14 +856,50 @@ namespace micro_os_plus::micro_test_plus
                                 = reflection::source_location::current ());
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-assumptions
-     * @brief Check a condition and, if false, abort test execution.
+     * @ingroup micro-os-plus-micro-test-plus-requirements
+     * @brief Check a condition and, if false, stop the test case.
+     *
+     * @details
+     * The failure is reported and counted as for `expect()`; then, when
+     * exceptions are enabled, the rest of the test case body is skipped,
+     * and the run continues with the next test case, as `ASSERT_*` in
+     * GoogleTest, `REQUIRE()` in Catch2 and doctest, and `BOOST_REQUIRE()`
+     * in Boost.Test do. Without exceptions, the test execution is aborted
+     * with `runner::abort()`.
+     *
+     * The test case is stopped by throwing a private exception, at the end
+     * of the statement, after the optional message was appended. It is
+     * not derived from `std::exception`; a `catch (...)` in the test case
+     * body must rethrow it, and the body must not be `noexcept`.
      *
      * @tparam Expr_T The type of the custom expression.
      *
      * @par Constraints
      *   Enabled only if `Expr_T` is derived from `type_traits::op` or
      *   is convertible to `bool` (enforced via a C++20 `requires` clause).
+     *
+     * @param expr Logical expression to evaluate.
+     * @param sl Optional source location, defaulting to the current line.
+     * @return An output stream to write optional messages.
+     */
+    template <class Expr_T>
+      requires type_traits::checkable<Expr_T>
+    auto
+    require (const Expr_T& expr, const reflection::source_location& sl
+                                 = reflection::source_location::current ());
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-requirements
+     * @brief Check a condition and, if false, stop the test case.
+     *
+     * @details
+     * The same as `require()`. The name was misleading: in other
+     * frameworks (JUnit, Hypothesis), an unmet assumption skips the test,
+     * while here it fails it.
+     *
+     * @deprecated Use `require()` (since 5.1.0).
+     *
+     * @tparam Expr_T The type of the custom expression.
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.

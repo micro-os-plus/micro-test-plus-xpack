@@ -35,13 +35,13 @@ while version 4.x represented a complete redesign, drawing even more inspiration
 - For more complex applications, test cases may be organised into test suites.
 - Test suites can reside in separate compilation units and automatically register themselves with the test runner.
 - A **test suite** is a named collection of test cases.
-- A **test case** comprises a sequence of **test conditions** (also referred to as **tests** or **checks**), which are expectations or assumptions — conditions anticipated to be true.
+- A **test case** comprises a sequence of **test conditions** (also referred to as **tests** or **checks**), which are expectations or requirements — conditions anticipated to be true.
 - Tests are based on logical expressions, typically evaluating a result and comparing it to an expected value.
 - For C++ projects, it is also possible to verify whether evaluating an expression results in an **exception** being thrown.
 - Each test either passes or fails.
 - For **expectations**, the runner maintains a count of occurrences.
-- **Assumptions** are critical conditions that must be satisfied for the test to proceed.
-- Failed assumptions result in the test being aborted.
+- **Requirements** are critical conditions that must be satisfied for the test case to proceed.
+- A failed requirement stops the current test case; the run continues with the next one.
 - Test progress is displayed on STDOUT, with each test on a separate line, prefixed by an indication of whether the test passed or failed.
 - Failed tests indicate the location within the file and, where possible, the actual values used in the evaluation.
 - The primary result of the test is returned to the system as the process exit code.
@@ -342,7 +342,7 @@ The result is 0 if all checks passed, and 1 otherwise. If the command-line optio
 
 #### Aborting the test execution
 
-A failed assumption aborts the test execution: the location is reported on `stderr`, and the process is terminated with `::abort()`. On embedded targets, where terminating the process is not meaningful, the application can set a handler, called before `::abort()`, for example to reset the target or to signal the result to the debugger:
+When exceptions are not enabled, a failed requirement aborts the test execution (see [Requirements](#requirements)): the location is reported on `stderr`, and the process is terminated with `::abort()`. On embedded targets, where terminating the process is not meaningful, the application can set a handler, called before `::abort()`, for example to reset the target or to signal the result to the debugger:
 
 ```cpp
 tr.set_abort_handler ([] (const mt::reflection::source_location& sl)
@@ -388,23 +388,105 @@ cases, is not caught, and ends the run.
 
 Refer to the [Test Cases](/docs/api/groups/micro-os-plus-micro-test-plus-test-case/) reference page.
 
-### Expectations and assumptions
+### Expectations and requirements
 
-Expectations and assumptions are functions that evaluate expressions
-yielding boolean values.
+Expectations and requirements are checks that evaluate expressions
+yielding boolean values; they differ in what happens after a failure.
 
-Expectations and assumption objects can be created using the `expect()` and `assume()` methods provided by test case objects:
+Both are created with methods of the test case objects, and return an
+object to which a message can be appended with `<<`; the check is
+reported at the end of the statement:
 
 ```cpp
-template <class Expr_T, type_traits::requires_t<....>>
-bool expect(const Expr_T& expr);
+template <class Expr_T>
+  requires type_traits::checkable<Expr_T>
+auto expect (const Expr_T& expr);
 
-template <class Expr_T, type_traits::requires_t<....>>
-bool assume(const Expr_T& expr);
+template <class Expr_T>
+  requires type_traits::checkable<Expr_T>
+auto require (const Expr_T& expr);
 ```
 
+A failed **expectation** is reported and counted, and the test case
+continues, so that all its checks are evaluated and reported in one run.
+
+#### Requirements
+
+A failed **requirement** is reported and counted as a failed
+expectation, and then the rest of the test case is skipped, since the
+following checks would be meaningless; the run continues with the next
+test case:
+
+```cpp
+ts.test ("Parse configuration", [] (auto& t)
+  {
+    auto config = parse ("config.json");
+    t.require (config.has_value ()) << "configuration parsed";
+
+    // Not reached if the configuration could not be parsed.
+    t.expect (config->version == 2) << "version 2";
+  });
+```
+
+A failed requirement in a nested test case stops only the nested test
+case; the outer test case continues, and fails because of it.
+
+The test case is stopped by throwing an exception, at the end of the
+statement, after the message was appended. It is not derived from
+`std::exception`, so a `catch (const std::exception&)` in the test case
+body does not intercept it; a `catch (...)` does, and must rethrow it
+with `throw;`. The test case body must not be `noexcept`, since the
+exception would call `std::terminate()`.
+
+Without exceptions (for example with `-fno-exceptions`, common on
+embedded targets), the test case cannot be stopped, and a failed
+requirement aborts the whole test execution, as described in
+[Aborting the test execution](#aborting-the-test-execution); the
+remaining test cases do not run and no totals are written.
+
+`assume()` is a deprecated alias of `require()`. The name was
+misleading: in JUnit and Hypothesis, an unmet assumption **skips** the
+test, which is not counted as failed, while in µTest++ it fails it.
+
+#### Comparison with other frameworks
+
+The plain `assert()` macro, mentioned in the [Rationale](#rationale),
+terminates the whole program at the first failure. Test frameworks
+distinguish the non-fatal checks, which only report the failure, from
+the fatal ones, which also stop the test; most of them stop only the
+current test case, which is also the behaviour of `require()`:
+
+| Framework | Non-fatal | Fatal | After a fatal failure |
+| --- | --- | --- | --- |
+| µTest++ | `expect()` | `require()` | the test case is stopped |
+| GoogleTest | `EXPECT_*()` | `ASSERT_*()` | the current function returns |
+| Catch2 | `CHECK()` | `REQUIRE()` | the test case is stopped |
+| doctest | `CHECK()` | `REQUIRE()` | the test case is stopped |
+| Boost.Test | `BOOST_CHECK()` | `BOOST_REQUIRE()` | the test case is stopped |
+| Boost.UT | `expect()` | `expect (...) << fatal` | the program exits |
+| Unity (C) | — | `TEST_ASSERT_*()` | the test is stopped |
+| JUnit | — | `assert*()` | the test is stopped |
+| C library | — | `assert()` | the program is aborted |
+
+Some differences are worth noting:
+
+- in GoogleTest, `ASSERT_*()` returns only from the function in which
+  it is used; if this is a helper function, the test continues after
+  the call;
+- Catch2, doctest, and Boost.Test also stop the test case with an
+  exception; without exceptions, Catch2 calls `std::terminate()`,
+  and doctest either removes `REQUIRE()`, or makes it behave as
+  `CHECK()`;
+- Boost.UT reports the fatal failure and calls `std::exit()`, so the
+  remaining tests do not run, as with the previous versions of
+  `assume()`;
+- Unity, a C framework, stops the test with `longjmp()`, which does not
+  run the destructors of the C++ objects;
+- in JUnit, an unmet `assume*()` aborts the test, which is reported as
+  skipped, not as failed.
+
 Refer to the [Expectations](/docs/api/groups/micro-os-plus-micro-test-plus-expectations/)
-and [Assumptions](/docs/api/groups/micro-os-plus-micro-test-plus-assumptions/) reference pages.
+and [Requirements](/docs/api/groups/micro-os-plus-micro-test-plus-requirements/) reference pages.
 
 ### Subtests
 

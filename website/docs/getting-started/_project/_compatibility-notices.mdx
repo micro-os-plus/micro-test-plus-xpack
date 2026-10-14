@@ -80,10 +80,22 @@ into the same structure.
 The option errors (an unknown `--reporter` name, a missing option
 argument, or an output file that cannot be opened) no longer terminate
 the program: they are reported on `stderr`, the option is ignored, the
-tests are run, and `run()` returns 2. A failed `assume()` still aborts
-the test execution, but the new `runner::set_abort_handler()` can
-replace the final `::abort()` call, for example to reset an embedded
+tests are run, and `run()` returns 2. The new
+`runner::set_abort_handler()` can replace the final `::abort()` call
+when the test execution is aborted, for example to reset an embedded
 target.
+
+`assume()` is deprecated in favour of `require()`, which does the same:
+in other frameworks (JUnit, Hypothesis), an unmet assumption skips the
+test, while here it fails it. When exceptions are enabled, a failed
+`require()` (or `assume()`) now stops only the current test case, as
+`ASSERT_*` in GoogleTest, `REQUIRE()` in Catch2 and doctest, and
+`BOOST_REQUIRE()` in Boost.Test do, and the run continues with the next
+test case; it previously aborted the program, without the final
+totals. The test case is stopped with an exception not derived from
+`std::exception`, so a test case body that calls `require()` must not
+be `noexcept`, and a `catch (...)` in it must rethrow. Without
+exceptions, a failed `require()` still aborts the test execution.
 
 ### v4.1 (2026-05-12)
 

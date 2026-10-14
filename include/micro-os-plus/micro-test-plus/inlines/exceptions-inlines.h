@@ -75,7 +75,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * The callable is invoked immediately, when the comparator is
    * constructed; the result is reported when the comparator is passed to
-   * `expect()` or `assume()`, which also accept optional messages.
+   * `expect()` or `require()`, which also accept optional messages.
    */
   template <class Exception_T, class Callable_T>
   constexpr auto
@@ -93,7 +93,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * The callable is invoked immediately, when the comparator is
    * constructed; the result is reported when the comparator is passed to
-   * `expect()` or `assume()`, which also accept optional messages.
+   * `expect()` or `require()`, which also accept optional messages.
    */
   template <class Callable_T>
   constexpr auto
@@ -111,7 +111,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * The callable is invoked immediately, when the comparator is
    * constructed; the result is reported when the comparator is passed to
-   * `expect()` or `assume()`, which also accept optional messages.
+   * `expect()` or `require()`, which also accept optional messages.
    */
   template <class Callable_T>
   constexpr auto

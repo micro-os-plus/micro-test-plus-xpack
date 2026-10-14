@@ -25,8 +25,8 @@
  * `detail::deferred_reporter_base` class, which supports deferred
  * reporting of test expression results. The constructor captures the
  * result value, source location, and subtest reference; the destructor
- * updates the subtest counters and optionally aborts execution on
- * critical failures.
+ * updates the subtest counters and, after a failed `require()`, stops the
+ * test case.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail` namespace.
@@ -42,6 +42,8 @@
 #if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
+
+#include <exception>
 
 // ----------------------------------------------------------------------------
 
@@ -71,12 +73,19 @@ namespace micro_os_plus::micro_test_plus
      * the source line of the assertion, and a reference to the owning
      * @p subtest. The check number is assigned later, by the destructor,
      * when the check is reported.
+     *
+     * When exceptions are enabled, the number of uncaught exceptions is
+     * also stored, so that the destructor can tell whether it runs during
+     * stack unwinding.
      */
     deferred_reporter_base::deferred_reporter_base (
         bool value, const reflection::source_location& location,
         subtest& subtest)
         : value_{ value }, location_{ location }, subtest_{ subtest }
     {
+#if defined(__cpp_exceptions)
+      uncaught_exceptions_ = std::uncaught_exceptions ();
+#endif // defined(__cpp_exceptions)
     }
 
     /**
@@ -101,11 +110,19 @@ namespace micro_os_plus::micro_test_plus
      * `check_text()`, which returns the text of this check even if later
      * checks used the formatter, and is released with `end_check()`.
      *
-     * If an abort condition is set and the test expression has failed, the
-     * buffered test output is written to the console and flushed, and the
-     * process is terminated via `runner::abort()`.
+     * If the check is a `require()` and the test expression has failed,
+     * the test case is stopped: when exceptions are enabled, by throwing
+     * `failed_requirement`, caught by `subtest::run()`, as the fatal
+     * assertions of most C++ test frameworks do; the run then continues
+     * with the next test case. If the destructor runs during stack
+     * unwinding (for a result kept in a variable), it does not throw,
+     * since the test case is already being stopped.
+     *
+     * Without exceptions, the buffered test output is written to the
+     * console and flushed, and the test execution is aborted via
+     * `runner::abort()`.
      */
-    deferred_reporter_base::~deferred_reporter_base ()
+    deferred_reporter_base::~deferred_reporter_base () noexcept (false)
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -137,9 +154,16 @@ namespace micro_os_plus::micro_test_plus
 
       if (abort_ && !value_) [[unlikely]]
         {
+#if defined(__cpp_exceptions)
+          if (std::uncaught_exceptions () <= uncaught_exceptions_)
+            {
+              throw failed_requirement{};
+            }
+#else
           subtest_.reporter ().write_buffer_to_console ();
           subtest_.reporter ().flush ();
           subtest_.abort (location_);
+#endif // defined(__cpp_exceptions)
         }
     }
   } // namespace detail

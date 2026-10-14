@@ -108,16 +108,17 @@ main (int argc, char* argv[])
 
   const runner_totals& current_suite_totals = ts.totals ();
 
-  ts.test ("assume", [] (auto& t)
+  ts.test ("require", [] (auto& t)
     {
+      t.require (true) << "Requirement 1";
+      local_counts.successful_checks++;
+
+      // The deprecated alias.
       t.assume (true) << "Assumption 1";
       local_counts.successful_checks++;
 
-    // Enable this to check if the test is aborted.
-#if 0
-      t.assume(false) << "Check assume()";
-      local_counts.failed_checks++;
-#endif // 0-1
+      // The failed requirements are checked in exceptions.cpp; without
+      // exceptions, they abort the test execution.
       local_counts.executed_subtest++;
     });
 
@@ -145,7 +146,7 @@ main (int argc, char* argv[])
       t.expect (true);
       local_counts.successful_checks++;
 
-      t.assume (true) << "Assumption 2";
+      t.require (true) << "Requirement 2";
       local_counts.successful_checks++;
 
       t.expect (true) << "TRUE";
@@ -168,11 +169,6 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
-
-  // t.assume (true) << "Assumption 3";
-  // local_counts.successful_checks++;
-  // t.assume (true) << "Assumption 4";
-  // local_counts.successful_checks++;
 
   // --------------------------------------------------------------------------
 

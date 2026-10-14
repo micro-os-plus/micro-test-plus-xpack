@@ -1,0 +1,17 @@
+@defgroup micro-os-plus-micro-test-plus-requirements Requirements
+@brief Requirements are checks that stop the test case when they fail.
+
+@details
+When a precondition of the following checks does not hold, the test case
+cannot continue meaningfully. A failed requirement is reported and counted
+like a failed expectation, and then the rest of the test case body is
+skipped; the run continues with the next test case.
+
+This is the behaviour of the fatal assertions of most C++ test frameworks
+(`ASSERT_*` in GoogleTest, `REQUIRE()` in Catch2 and doctest,
+`BOOST_REQUIRE()` in Boost.Test). The test case is stopped with an
+exception; without exceptions, the test execution is aborted with
+`runner::abort()`, as Catch2 does.
+
+`assume()` is a deprecated alias of `require()`; in JUnit or Hypothesis, an
+unmet assumption skips the test instead of failing it.

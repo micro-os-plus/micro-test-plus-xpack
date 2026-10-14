@@ -231,6 +231,10 @@ namespace micro_os_plus::micro_test_plus
    * case; the checks performed before the exception remain reported.
    * Since the nested subtests catch their own exceptions, an exception
    * is reported by the innermost subtest whose body it escapes.
+   *
+   * The `detail::failed_requirement` exception, thrown after a failed
+   * `require()`, only stops the body; the failure was already reported
+   * and counted.
    */
   void
   subtest::run (void)
@@ -251,6 +255,10 @@ namespace micro_os_plus::micro_test_plus
         // Invoke the callable, passing the self reference followed by the
         // variadic arguments.
         callable_ (*this);
+      }
+    catch (const detail::failed_requirement&)
+      {
+        // A failed require() stopped the test case; already reported.
       }
     catch (const std::exception& e)
       {

@@ -516,7 +516,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Protected, since the formatter is an implementation detail; it is
-       * used only by the checks (`subtest::expect()`, `subtest::assume()`,
+       * used only by the checks (`subtest::expect()`, `subtest::require()`,
        * and the deferred reporter), which are friends, and by the derived
        * reporters. The applications format their own types by defining
        * `operator<<` for the public `expression_formatter` alias.

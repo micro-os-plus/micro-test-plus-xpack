@@ -25,7 +25,7 @@
  * hierarchy used within the µTest++ framework: the accessors of the base
  * classes, the constructors that bind the callable objects and their
  * arguments, the `test()` methods that create and run subtests, and the
- * `expect()` and `assume()` checks.
+ * `expect()` and `require()` checks.
  *
  * When additional arguments are given, `std::bind` is used to pre-bind them,
  * allowing versatile test initialisation with arbitrary callable types and
@@ -355,16 +355,31 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Constructs and returns a `detail::deferred_reporter` with
    * `abort = true`. The reporter evaluates the condition when constructed,
-   * records a pass or fail when it is destroyed, and aborts execution if
-   * the condition is false.
+   * records a pass or fail when it is destroyed, and, if the condition is
+   * false, stops the test case by throwing `detail::failed_requirement`
+   * (caught by `subtest::run()`), or, without exceptions, aborts the test
+   * execution.
+   */
+  template <class Expr_T>
+    requires type_traits::checkable<Expr_T>
+  auto
+  subtest::require (const Expr_T& expr, const reflection::source_location& sl)
+  {
+    return detail::deferred_reporter{ expr, true, sl, *this,
+                                      reporter ().expression () };
+  }
+
+  /**
+   * @details
+   * Forwards to `require()`; the returned reporter is neither copied nor
+   * moved, since a prvalue is returned (guaranteed copy elision).
    */
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
   auto
   subtest::assume (const Expr_T& expr, const reflection::source_location& sl)
   {
-    return detail::deferred_reporter{ expr, true, sl, *this,
-                                      reporter ().expression () };
+    return require (expr, sl);
   }
 
   /**
@@ -424,7 +439,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * Each test case typically involves evaluating logical expressions, such
    * as comparing a computed result to an expected value, with `expect()` or
-   * `assume()`. When exceptions are enabled, it is also possible to verify
+   * `require()`. When exceptions are enabled, it is also possible to verify
    * whether evaluating an expression throws exceptions. Each check either
    * succeeds or fails, and the suite totals count the successful and failed
    * checks.

@@ -9,7 +9,7 @@ framework, purpose-built for embedded systems development.
 The **C++ API** is the primary interface for writing test suites and
 test cases. It is centred on the `runner` and `subtest` classes, which
 provide methods for registering tests, evaluating expectations and
-assumptions, and collecting results. Utility types such as
+requirements, and collecting results. Utility types such as
 strongly-typed literals, function comparators, and operator overloads
 complement the core API to enable expressive, type-safe assertions
 with no macro dependencies. The API is documented in the

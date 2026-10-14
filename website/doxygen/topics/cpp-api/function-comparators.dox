@@ -2,7 +2,7 @@
 @brief Functions for comparing actual and expected values in tests.
 
 @details
-While any boolean expression can be used in expectations and assumptions,
+While any boolean expression can be used in expectations and requirements,
 dedicated comparator functions such as `eq`, `ne`, `lt`, `le`, `gt`, and
 `ge` provide enhanced reporting by explicitly showing the compared values
 when a check fails.

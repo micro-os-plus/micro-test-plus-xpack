@@ -2,16 +2,17 @@
 # Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: Static top suite
-    # Subtest: assume
-        ok 1 - Assumption 1
-        1..1
-    ok 1 - assume # { passed, 1 check }
+    # Subtest: require
+        ok 1 - Requirement 1
+        ok 2 - Assumption 1
+        1..2
+    ok 1 - require # { passed, 2 checks }
     # Subtest: Initial counters
         1..0
     ok 2 - Initial counters # { passed, 0 checks }
     # Subtest: expect(true)
         ok 1 - true
-        ok 2 - Assumption 2
+        ok 2 - Requirement 2
         ok 3 - TRUE
         ok 4 - P
         ok 5 - 42
@@ -133,7 +134,7 @@ TAP version 14
         1..11
     ok 15 - Floating-point tolerance # { passed, 11 checks }
     1..15
-not ok 1 - Static top suite # { FAILED, 47 checks passed, 4 failed, in 19 test cases }
+not ok 1 - Static top suite # { FAILED, 48 checks passed, 4 failed, in 19 test cases }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
@@ -3002,4 +3003,4 @@ ok 11 - Timings suite # { passed, 29 checks in 6 test cases }
     1..3
 not ok 12 - Utility suite # { FAILED, 16 checks passed, 5 failed, in 3 test cases }
 1..12
-# { total: 425 checks passed, 330 failed, in 79 test cases, 12 test suites }
+# { total: 426 checks passed, 330 failed, in 79 test cases, 12 test suites }
