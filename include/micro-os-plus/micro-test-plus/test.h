@@ -712,6 +712,10 @@ namespace micro_os_plus::micro_test_plus
    * body, `expect()` and `assume()` are used to evaluate conditions and
    * record the results. Subtests may be nested to an arbitrary depth.
    *
+   * The constructor is private, since its parameters are set by the
+   * framework; the test cases are created only by `suite::test()` and
+   * `subtest::test()`.
+   *
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
    *
@@ -719,10 +723,18 @@ namespace micro_os_plus::micro_test_plus
    */
   class subtest : public detail::runnable<subtest>
   {
-  public:
+    // Create the top-level test cases.
+    friend class suite;
+
+  private:
     /**
      * @brief Constructs a subtest with a name, runner, parent suite, index,
      * nesting depth, and callable.
+     *
+     * @details
+     * Private, since the index, the nesting depth, and the parent suite
+     * are internal; a subtest constructed elsewhere would not be
+     * registered with its parent, and would never run.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -744,6 +756,7 @@ namespace micro_os_plus::micro_test_plus
              suite& parent_suite, size_t own_index, size_t nesting_depth,
              Callable_T&& callable, Args_T&&... arguments);
 
+  public:
     /**
      * @brief Deleted copy constructor to prevent copying.
      *
@@ -944,6 +957,11 @@ namespace micro_os_plus::micro_test_plus
    * receives a `suite&` reference as its first argument. Inside the body,
    * `suite::test()` is called to create and run individual subtests.
    *
+   * The constructor is protected, since a suite constructed elsewhere
+   * would not be registered with the runner; the suites are created only
+   * by `runner::suite()`, by the derived `static_suite`, which registers
+   * itself, and by the runner, for its `top_suite`.
+   *
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
    *
@@ -951,9 +969,17 @@ namespace micro_os_plus::micro_test_plus
    */
   class suite : public detail::runnable<suite>
   {
-  public:
+    // Create and register the suites.
+    friend class micro_test_plus::runner;
+
+  protected:
     /**
      * @brief Constructs a suite with a name, runner, and callable body.
+     *
+     * @details
+     * Protected, since the suite must be registered with the runner,
+     * which only `runner::suite()` and the `static_suite` constructor
+     * do.
      *
      * @tparam Callable_T The type of the callable object.
      * @tparam Args_T The types of any additional callable arguments.
@@ -971,6 +997,7 @@ namespace micro_os_plus::micro_test_plus
     suite (const char* name, class runner& runner, Callable_T&& callable,
            Args_T&&... arguments);
 
+  public:
     /**
      * @brief Deleted copy constructor to prevent copying.
      *
@@ -1108,25 +1135,34 @@ namespace micro_os_plus::micro_test_plus
    * stored in the runner's child-suite vector; instead it is a direct member
    * of `runner`.
    *
-   * Users do not normally construct `top_suite` directly.
+   * The constructor is private; only the runner constructs its top
+   * suite.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   class top_suite : public suite
   {
-  public:
-    // Expose the accessor for the suite name from the base test_node class,
-    // since the top_suite may need to change its name after construction, and
-    // the base class provides the necessary interface for that purpose.
-    using detail::test_node::name;
+    // Construct the top suite, a member of the runner.
+    friend class micro_test_plus::runner;
 
+  private:
     /**
      * @brief Constructs the top-level suite with a name and runner reference.
+     *
+     * @details
+     * Private, since each runner has exactly one top suite, which it
+     * constructs as a member.
      *
      * @param name The suite name used in reports.
      * @param runner The test runner that owns this suite.
      */
     top_suite (const char* name, class runner& runner);
+
+  public:
+    // Expose the accessor for the suite name from the base test_node class,
+    // since the top_suite may need to change its name after construction, and
+    // the base class provides the necessary interface for that purpose.
+    using detail::test_node::name;
 
     /**
      * @brief Deleted copy constructor to prevent copying.

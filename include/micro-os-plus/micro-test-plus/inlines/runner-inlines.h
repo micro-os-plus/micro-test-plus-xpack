@@ -120,9 +120,10 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    auto child_suite = std::make_unique<class suite> (
+    // Not std::make_unique(), which cannot access the protected constructor.
+    std::unique_ptr<class suite> child_suite{ new class suite (
         name, *this, std::forward<Callable_T> (callable),
-        std::forward<Args_T> (arguments)...);
+        std::forward<Args_T> (arguments)...) };
 
     register_suite_ (std::move (child_suite));
   }

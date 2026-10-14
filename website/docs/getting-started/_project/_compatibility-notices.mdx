@@ -51,6 +51,11 @@ must be `const`, and the `own_index (size_t)` setter and
 functions (`totals()`, `own_index()`, `current_subtest_index()`, and
 `children_subtests_count()`) are still available.
 
+The constructors of `subtest`, `suite`, and `top_suite` are no longer
+public, since a suite or a test case constructed directly was neither
+registered nor run. Create the suites with `runner::suite()` or as
+`static_suite` objects, and the test cases with `test()`.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in
