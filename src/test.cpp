@@ -111,9 +111,9 @@ namespace micro_os_plus::micro_test_plus
      * If tracing is enabled, the function signature is output for
      * diagnostic purposes.
      */
-    runnable_base::runnable_base (const char* name, class runner& runner,
+    runnable_base::runnable_base (const char* name, runner& test_runner,
                                   size_t own_index)
-        : test_node{ name }, runner_{ runner }, own_index_{ own_index }
+        : test_node{ name }, runner_{ test_runner }, own_index_{ own_index }
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
@@ -382,13 +382,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Initialises the base `suite` with @p name, the given @p runner, and
+   * Initialises the base `suite` with @p name, the given @p test_runner, and
    * a no-op callable. Sets `own_index` to 1, reserving index 0 for the
    * runner itself. If tracing is enabled, the name is output for
    * diagnostic purposes.
    */
-  top_suite::top_suite (const char* name, class runner& runner)
-      : suite{ name, runner, [] (suite&) noexcept {} }
+  top_suite::top_suite (const char* name, runner& test_runner)
+      : suite{ name, test_runner, [] (suite&) noexcept {} }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);

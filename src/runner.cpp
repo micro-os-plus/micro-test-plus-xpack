@@ -494,7 +494,7 @@ namespace micro_os_plus::micro_test_plus
     while (true)
       {
         // Skip the static suites run by other runners.
-        while (static_ptr != nullptr && &static_ptr->runner () != this)
+        while (static_ptr != nullptr && &static_ptr->test_runner () != this)
           {
             static_ptr = static_ptr->next_;
           }
@@ -671,7 +671,7 @@ namespace micro_os_plus::micro_test_plus
     for (const static_suite* suite_ptr = static_suite::first_;
          suite_ptr != nullptr; suite_ptr = suite_ptr->next_)
       {
-        if (&suite_ptr->runner () == this)
+        if (&suite_ptr->test_runner () == this)
           {
             ++count;
           }

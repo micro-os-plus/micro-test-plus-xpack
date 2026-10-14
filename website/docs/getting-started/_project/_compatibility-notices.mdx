@@ -119,6 +119,13 @@ existing code compiles unchanged; replace `mt::static_runner` with
 `static_runner::register_static_suite()` was removed;
 `runner::static_suites_count()` is now available for any runner.
 
+The `runner()` function of the suites and the test cases, which
+returned the runner that owns them, is no longer public, since it is
+used only by the framework; it is now named `test_runner()`, so that it
+no longer hides the `runner` class in the derived classes. A test
+function that needs the runner can capture it, or receive it as an
+argument.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

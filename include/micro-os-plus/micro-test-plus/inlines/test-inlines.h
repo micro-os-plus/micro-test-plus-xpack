@@ -223,8 +223,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Returns a reference to the owning test runner.
      */
-    inline class runner&
-    runnable_base::runner (void) const noexcept
+    inline runner&
+    runnable_base::test_runner (void) const noexcept
     {
       return runner_;
     }
@@ -266,11 +266,11 @@ namespace micro_os_plus::micro_test_plus
    * of the call to `test()`, the parent suite, and the nesting depth.
    */
   template <typename Callable_T, typename... Args_T>
-  subtest::subtest (const detail::test_name& name, class runner& runner,
+  subtest::subtest (const detail::test_name& name, runner& test_runner,
                     suite& parent_suite, size_t own_index,
                     size_t nesting_depth, Callable_T&& callable,
                     Args_T&&... arguments)
-      : runnable_base{ name.name (), runner, own_index },
+      : runnable_base{ name.name (), test_runner, own_index },
         callable_{ detail::bind_callable<subtest> (
             std::forward<Callable_T> (callable),
             std::forward<Args_T> (arguments)...) },
@@ -303,7 +303,7 @@ namespace micro_os_plus::micro_test_plus
     size_t own_index = increment_subtest_index ();
     // Not std::make_unique(), which cannot access the private constructor.
     std::unique_ptr<subtest> child_subtest{ new subtest (
-        name, runner (), parent_suite_, own_index, nesting_depth_ + 1,
+        name, test_runner (), parent_suite_, own_index, nesting_depth_ + 1,
         std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...) };
 
@@ -381,9 +381,9 @@ namespace micro_os_plus::micro_test_plus
    * was destroyed.
    */
   template <typename Callable_T, typename... Args_T>
-  suite::suite (const char* name, class runner& runner, Callable_T&& callable,
+  suite::suite (const char* name, runner& test_runner, Callable_T&& callable,
                 Args_T&&... arguments)
-      : runnable_base{ name, runner, 0 },
+      : runnable_base{ name, test_runner, 0 },
         callable_{ detail::bind_callable<suite> (
             std::forward<Callable_T> (callable),
             std::forward<Args_T> (arguments)...) },
@@ -446,7 +446,7 @@ namespace micro_os_plus::micro_test_plus
     size_t own_index = increment_subtest_index ();
     // Not std::make_unique(), which cannot access the private constructor.
     std::unique_ptr<subtest> child_subtest{ new subtest (
-        name, runner (), *this, own_index, 1,
+        name, test_runner (), *this, own_index, 1,
         std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...) };
 
@@ -499,9 +499,9 @@ namespace micro_os_plus::micro_test_plus
    * to be run by its runner; the runner itself is not accessed.
    */
   template <typename Callable_T, typename... Args_T>
-  static_suite::static_suite (const char* name, class runner& runner,
+  static_suite::static_suite (const char* name, runner& test_runner,
                               Callable_T&& callable, Args_T&&... arguments)
-      : suite{ name, runner, std::forward<Callable_T> (callable),
+      : suite{ name, test_runner, std::forward<Callable_T> (callable),
                std::forward<Args_T> (arguments)... }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)

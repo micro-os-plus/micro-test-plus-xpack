@@ -335,7 +335,8 @@ namespace micro_os_plus::micro_test_plus
      */
     class runnable_base : public test_node
     {
-      // Set the indices of the suites, before running them.
+      // Set the indices of the suites, before running them, and select
+      // the static suites by their runner.
       friend class micro_test_plus::runner;
 
       // Number and count the checks of the subtests, and report them.
@@ -346,11 +347,11 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs a `runnable_base` with a name, runner, and index.
        *
        * @param name The name used in reports.
-       * @param runner The test runner managing this object.
+       * @param test_runner The test runner managing this object.
        * @param own_index The positional index of this object within its
        * parent.
        */
-      runnable_base (const char* name, runner& runner, size_t own_index);
+      runnable_base (const char* name, runner& test_runner, size_t own_index);
 
       /**
        * @brief Deleted copy constructor to prevent copying.
@@ -458,17 +459,26 @@ namespace micro_os_plus::micro_test_plus
       abort (const reflection::source_location& sl
              = reflection::source_location::current ());
 
+    protected:
       /**
-       * @brief Gets the test runner associated with this test runnable.
+       * @brief Gets the test runner that owns this test runnable.
+       *
+       * @details
+       * Protected, since the runner is internal to the framework; it is
+       * used by the suites and the test cases, which derive from this
+       * class and pass it to their nested test cases, and by the runner,
+       * which is a friend and selects the static suites it runs.
+       *
+       * Not named `runner()`, which would hide the `runner` class in this
+       * class and in the derived ones.
        *
        * @par Parameters
        *   None.
        * @return A reference to the test runner.
        */
-      [[nodiscard]] class runner&
-      runner (void) const noexcept;
+      [[nodiscard]] runner&
+      test_runner (void) const noexcept;
 
-    protected:
       /**
        * @brief Gets the test reporter associated with this test runnable.
        *
@@ -538,7 +548,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Provides access to the reporter, and is used when aborting.
        */
-      class runner& runner_;
+      runner& runner_;
 
       /**
        * @brief The test index, counting from 1.
@@ -646,7 +656,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param name The subtest name or description, used in reports, and
      * the location of the call to `test()` that created the subtest.
-     * @param runner The test runner managing this subtest.
+     * @param test_runner The test runner managing this subtest.
      * @param parent_suite The suite that owns this subtest.
      * @param own_index The one-based positional index within the parent.
      * @param nesting_depth The depth of nesting; 1 for top-level
@@ -657,7 +667,7 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `subtest&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-    subtest (const detail::test_name& name, class runner& runner,
+    subtest (const detail::test_name& name, runner& test_runner,
              suite& parent_suite, size_t own_index, size_t nesting_depth,
              Callable_T&& callable, Args_T&&... arguments);
 
@@ -940,7 +950,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param name The suite name or description, used in reports; it is
      * copied, so the string need not outlive the call.
-     * @param runner The test runner managing this suite.
+     * @param test_runner The test runner managing this suite.
      * @param callable A generic callable object, usually a lambda,
      * invoked when the suite executes. Its first parameter must be
      * `suite&`.
@@ -948,7 +958,7 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `suite&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-    suite (const char* name, class runner& runner, Callable_T&& callable,
+    suite (const char* name, runner& test_runner, Callable_T&& callable,
            Args_T&&... arguments);
 
   public:
@@ -1126,9 +1136,9 @@ namespace micro_os_plus::micro_test_plus
      * constructs as a member.
      *
      * @param name The suite name used in reports.
-     * @param runner The test runner that owns this suite.
+     * @param test_runner The test runner that owns this suite.
      */
-    top_suite (const char* name, class runner& runner);
+    top_suite (const char* name, runner& test_runner);
 
   public:
     // Expose the accessor for the suite name from the base test_node class,
@@ -1246,7 +1256,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param name The test suite name or description, used in reports; it
      * is copied, so the string need not outlive the call.
-     * @param runner The test runner that runs this suite.
+     * @param test_runner The test runner that runs this suite.
      * @param callable A generic callable object, usually a lambda or
      * function, invoked to perform the test suite. Its first parameter
      * must be `suite&`.
@@ -1254,8 +1264,8 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `suite&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-    static_suite (const char* name, class runner& runner,
-                  Callable_T&& callable, Args_T&&... arguments);
+    static_suite (const char* name, runner& test_runner, Callable_T&& callable,
+                  Args_T&&... arguments);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
