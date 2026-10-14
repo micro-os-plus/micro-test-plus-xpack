@@ -925,8 +925,8 @@ namespace micro_os_plus::micro_test_plus
      * reference, unchanged.
      */
     template <class T>
-    constexpr decltype (auto)
-    as_operand_ (const T& t) noexcept
+    constexpr auto
+    as_operand_ (const T& t) noexcept -> decltype (auto)
     {
       if constexpr (std::is_array_v<T>
                     && std::is_same_v<

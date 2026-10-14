@@ -1024,8 +1024,8 @@ namespace micro_os_plus::micro_test_plus
      * `t`.
      */
     template <class T>
-    [[nodiscard]] constexpr decltype (auto)
-    as_operand_ (const T& t) noexcept;
+    [[nodiscard]] constexpr auto
+    as_operand_ (const T& t) noexcept -> decltype (auto);
 
     // ------------------------------------------------------------------------
   } // namespace detail
