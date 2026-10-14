@@ -77,43 +77,17 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Stores the supplied @p name pointer, which is expected to point to
-     * a string with a lifetime exceeding that of this instance. If
-     * tracing is enabled, the name is output for diagnostic purposes.
-     */
-    test_node::test_node (const char* name) : name_{ name }
-    {
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-      trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-    }
-
-    /**
-     * @details
-     * No resources are owned by `test_node`; the destructor performs no
-     * explicit clean-up. If tracing is enabled, the node name is output
-     * for diagnostic purposes.
-     */
-    test_node::~test_node ()
-    {
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-      trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-    }
-
-    // ========================================================================
-
-    /**
-     * @details
      * The constructor initialises a new instance of the `runnable_base` class
-     * with the specified name, runner reference, and own index; the child
-     * test point index starts at zero and the children collection is empty.
+     * with the specified name, runner reference, and own index; the name
+     * pointer is stored, and is expected to point to a string with a
+     * lifetime exceeding that of this instance. The totals and the child
+     * test point index start at zero and the children collection is empty.
      * If tracing is enabled, the function signature is output for
      * diagnostic purposes.
      */
     runnable_base::runnable_base (const char* name, runner& test_runner,
                                   size_t own_index)
-        : test_node{ name }, runner_{ test_runner }, own_index_{ own_index }
+        : name_{ name }, runner_{ test_runner }, own_index_{ own_index }
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);

@@ -21,11 +21,10 @@
  *
  * @details
  * This header provides the declarations for the test hierarchy used within
- * the µTest++ framework: the internal `detail::test_node` and
- * `detail::runnable_base` base classes, and the `subtest`, `suite`,
- * `top_suite`, and `static_suite` classes. They offer mechanisms for
- * running test cases, managing counters for successful and failed checks,
- * and registering test suites with the runner.
+ * the µTest++ framework: the internal `detail::runnable_base` base class,
+ * and the `subtest`, `suite`, `top_suite`, and `static_suite` classes. They
+ * offer mechanisms for running test cases, managing counters for successful
+ * and failed checks, and registering test suites with the runner.
  *
  * The design ensures that test suites are non-copyable and non-movable,
  * maintaining unique ownership and consistent state. Flexible support for
@@ -179,139 +178,17 @@ namespace micro_os_plus::micro_test_plus
       reflection::source_location location_;
     };
 
-    /**
-     * @brief Base class for the nodes of the test tree.
-     *
-     * @details
-     * The `test_node` class provides the foundational interface for the
-     * nodes of the test tree within the µTest++ framework (the suites and
-     * the subtests). It stores the node name and the
-     * `runner_totals` counters for successful and failed checks and for
-     * executed subtests.
-     *
-     * The counters, and through them the overall result of the node, are
-     * readable via `totals()`; only the framework updates them, via the
-     * protected `totals_` member.
-     *
-     * All members and methods are defined within the
-     * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation
-     * from user code and minimising the risk of naming conflicts.
-     *
-     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-     */
-    class test_node
-    {
-    public:
-      /**
-       * @brief Constructs a test node.
-       *
-       * @param name The test node name.
-       */
-      test_node (const char* name);
-
-      /**
-       * @brief Deleted copy constructor to prevent copying.
-       *
-       * @details
-       * A copy would duplicate the counters and the owned children.
-       */
-      test_node (const test_node&) = delete;
-
-      /**
-       * @brief Deleted move constructor to prevent moving.
-       *
-       * @details
-       * Nodes are referred to by address (e.g. by their children and by
-       * the runner), so they must not be relocated.
-       */
-      test_node (test_node&&) = delete;
-
-      /**
-       * @brief Deleted copy assignment operator to prevent copying.
-       *
-       * @details
-       * A copy would duplicate the counters and the owned children.
-       */
-      test_node&
-      operator= (const test_node&)
-          = delete;
-
-      /**
-       * @brief Deleted move assignment operator to prevent moving.
-       *
-       * @details
-       * Nodes are referred to by address (e.g. by their children and by
-       * the runner), so they must not be relocated.
-       */
-      test_node&
-      operator= (test_node&&)
-          = delete;
-
-      /**
-       * @brief Virtual destructor for the test_node class.
-       *
-       * @details
-       * Virtual, so that derived nodes are destroyed correctly.
-       */
-      virtual ~test_node ();
-
-      // ----------------------------------------------------------------------
-
-      /**
-       * @brief Gets the node name.
-       *
-       * @par Parameters
-       *   None.
-       * @return A pointer to the null-terminated test node name.
-       */
-      [[nodiscard]] const char*
-      name (void) const noexcept;
-
-      /**
-       * @brief Gets the totals for the test.
-       *
-       * @details
-       * The totals are read-only; there is no non-const overload, so that
-       * the counters cannot be modified from the test code.
-       *
-       * @par Parameters
-       *   None.
-       * @return A const reference to the runner_totals instance.
-       */
-      [[nodiscard]] const runner_totals&
-      totals () const noexcept;
-
-    protected:
-      /**
-       * @brief The test node name.
-       *
-       * @note Derived classes may access this member directly in
-       * addition to the public `name()` getter.
-       */
-      const char* name_;
-
-      /**
-       * @brief Totals for the test node.
-       *
-       * @details
-       * For the suites, the totals include the checks of all their
-       * subtests; for a subtest, they include only its own checks,
-       * plus the number of nested subtests executed.
-       *
-       * Updated by the node itself, by its parent (`runnable_base`), and by
-       * the deferred reporter (a friend of `runnable_base`).
-       */
-      runner_totals totals_;
-    };
-
     // ========================================================================
 
     /**
      * @brief Non-template base for all runnable objects (suites and subtests).
      *
      * @details
-     * `runnable_base` extends `test_node` with the state that is shared by
-     * every runnable object:
+     * `runnable_base` is the single base of the nodes of the test tree,
+     * and holds the state that is shared by every runnable object:
+     * - the node name,
+     * - the `runner_totals` counters for the successful and failed checks
+     *   and for the executed subtests,
      * - a reference to the owning `runner`,
      * - the object's own index within its parent container,
      * - a sequential subtest index used when creating nested subtests, and
@@ -333,7 +210,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    class runnable_base : public test_node
+    class runnable_base
     {
       // Set the indices of the suites, before running them, and select
       // the static suites by their runner.
@@ -395,11 +272,36 @@ namespace micro_os_plus::micro_test_plus
        * @brief Virtual destructor.
        *
        * @details
-       * Destroys the owned child subtests.
+       * Virtual, so that the derived nodes are destroyed correctly;
+       * destroys the owned child subtests.
        */
-      virtual ~runnable_base () override;
+      virtual ~runnable_base ();
 
       // ----------------------------------------------------------------------
+
+      /**
+       * @brief Gets the node name.
+       *
+       * @par Parameters
+       *   None.
+       * @return A pointer to the null-terminated node name.
+       */
+      [[nodiscard]] const char*
+      name (void) const noexcept;
+
+      /**
+       * @brief Gets the totals of the node.
+       *
+       * @details
+       * The totals are read-only; there is no non-const overload, so that
+       * the counters cannot be modified from the test code.
+       *
+       * @par Parameters
+       *   None.
+       * @return A const reference to the runner_totals instance.
+       */
+      [[nodiscard]] const runner_totals&
+      totals () const noexcept;
 
       /**
        * @brief Returns the positional index of this object within its parent.
@@ -542,6 +444,29 @@ namespace micro_os_plus::micro_test_plus
                              suite& suite);
 
     protected:
+      /**
+       * @brief The node name.
+       *
+       * @details
+       * Not owned; it points to a string whose lifetime exceeds that of
+       * the node. Derived classes may access this member directly, in
+       * addition to the public `name()` getter.
+       */
+      const char* name_;
+
+      /**
+       * @brief Totals for the node.
+       *
+       * @details
+       * For the suites, the totals include the checks of all their
+       * subtests; for a subtest, they include only its own checks,
+       * plus the number of nested subtests executed.
+       *
+       * Updated by the node itself, by its parent, and by the deferred
+       * reporter, which is a friend.
+       */
+      runner_totals totals_;
+
       /**
        * @brief Reference to the test runner that owns this object.
        *
@@ -1141,10 +1066,10 @@ namespace micro_os_plus::micro_test_plus
     top_suite (const char* name, runner& test_runner);
 
   public:
-    // Expose the accessor for the suite name from the base test_node class,
-    // since the top_suite may need to change its name after construction, and
-    // the base class provides the necessary interface for that purpose.
-    using detail::test_node::name;
+    // Expose the accessor for the suite name from the base runnable_base
+    // class, which the setter below would otherwise hide, since the
+    // top_suite may need to change its name after construction.
+    using detail::runnable_base::name;
 
     /**
      * @brief Deleted copy constructor to prevent copying.

@@ -147,7 +147,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns a pointer to the null-terminated name stored in `name_`.
      */
     inline const char*
-    test_node::name (void) const noexcept
+    runnable_base::name (void) const noexcept
     {
       return name_;
     }
@@ -157,12 +157,10 @@ namespace micro_os_plus::micro_test_plus
      * Returns a const reference to the `runner_totals` member.
      */
     inline const runner_totals&
-    test_node::totals () const noexcept
+    runnable_base::totals () const noexcept
     {
       return totals_;
     }
-
-    // ========================================================================
 
     /**
      * @details

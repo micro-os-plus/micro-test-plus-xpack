@@ -82,10 +82,6 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  class test_node;
-
-  // --------------------------------------------------------------------------
-
   /**
    * @namespace micro_os_plus::micro_test_plus::detail
    * @brief Internal implementation details for the µTest++ framework.
