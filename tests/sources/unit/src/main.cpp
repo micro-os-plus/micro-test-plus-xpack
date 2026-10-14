@@ -90,7 +90,16 @@ namespace user_types
 
 // ----------------------------------------------------------------------------
 
-static_runner tr;
+runner tr;
+
+// A second runner, never initialised. Its static suite is constructed
+// before it, and is neither counted nor run by `tr` (API-REVIEW.md #26).
+extern runner other_runner;
+
+static static_suite other_suite{ "Other runner suite", other_runner,
+                                 [] (auto&) noexcept {} };
+
+runner other_runner;
 
 local_counts_t local_counts;
 
@@ -585,6 +594,27 @@ main (int argc, char* argv[])
         });
     });
   test_assert (tr.suites_count () == 3);
+
+  // --------------------------------------------------------------------------
+
+  // The static suites are kept in a list independent of the runner
+  // objects; each runner counts and runs only its own, and a static suite
+  // leaves the list when it is destroyed (API-REVIEW.md #26).
+  {
+    const size_t static_suites_count = tr.static_suites_count ();
+    test_assert (static_suites_count > 0);
+    test_assert (tr.total_suites_count ()
+                 == tr.suites_count () + static_suites_count);
+
+    test_assert (other_runner.static_suites_count () == 1);
+    {
+      static_suite local_suite{ "Local static suite", other_runner,
+                                [] (auto&) noexcept {} };
+      test_assert (other_runner.static_suites_count () == 2);
+      test_assert (tr.static_suites_count () == static_suites_count);
+    }
+    test_assert (other_runner.static_suites_count () == 1);
+  }
 
   // --------------------------------------------------------------------------
 

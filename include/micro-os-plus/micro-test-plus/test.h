@@ -94,11 +94,9 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   class runner;
-  class static_runner;
   class runner_totals;
   class subtest;
   class suite;
-  class static_suite;
 
   namespace detail
   {
@@ -108,34 +106,6 @@ namespace micro_os_plus::micro_test_plus
     class reporter_tap;
 
     // ========================================================================
-
-    /**
-     * @brief Converts a `static_runner` reference to a `runner` reference.
-     *
-     * @details
-     * This declaration breaks the include-order cycle between `test` and
-     * `runner` headers. The definition is provided in a translation unit where
-     * both types are complete, so the conversion remains type-safe.
-     *
-     * @param static_runner_ref The source `static_runner` reference.
-     * @return The same object viewed as its `runner` base.
-     */
-    runner&
-    to_runner (static_runner& static_runner_ref) noexcept;
-
-    /**
-     * @brief Registers a static suite with a static runner.
-     *
-     * @details
-     * This declaration allows `test-inlines.h` to request registration
-     * without requiring the complete `static_runner` type in that header.
-     *
-     * @param static_runner_ref The destination static runner.
-     * @param static_suite_ref The static suite to register.
-     */
-    void
-    register_static_suite (static_runner& static_runner_ref,
-                           static_suite& static_suite_ref);
 
     /**
      * @brief The name of a test case, with the location of its definition.
@@ -367,7 +337,6 @@ namespace micro_os_plus::micro_test_plus
     {
       // Set the indices of the suites, before running them.
       friend class micro_test_plus::runner;
-      friend class micro_test_plus::static_runner;
 
       // Number and count the checks of the subtests, and report them.
       friend class deferred_reporter_base;
@@ -1229,19 +1198,23 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @ingroup micro-os-plus-micro-test-plus-test-suites
    * @brief A test suite designed for static (namespace-scope) registration
-   * with a `static_runner`.
+   * with a `runner`.
    *
    * @details
    * `static_suite` extends `suite` to support the pattern where test suites
    * are declared as namespace-scope objects and therefore constructed before
-   * or after the `static_runner` instance, in unspecified
-   * static-initialisation order.
+   * or after the `runner` instance, in unspecified static-initialisation
+   * order.
    *
-   * Upon construction, the suite automatically registers itself with the
-   * supplied `static_runner`, via `detail::register_static_suite()`. The
-   * runner defers execution of all registered static suites until
-   * `static_runner::run_suites_()` is invoked by `runner::run()`,
-   * after the dynamically registered suites.
+   * Upon construction, the suite inserts itself into a list of all static
+   * suites, kept sorted by name, which does not depend on the runner
+   * object: its head is a `constinit` pointer, initialised before any
+   * constructor runs, and the links are members of the suites. The
+   * runner is only referred to, not accessed, so it may be constructed
+   * later. When `runner::run()` is called, after the suites registered
+   * with `runner::suite()`, the runner runs the static suites that refer
+   * to it, in the order of the list. Upon destruction, the suite removes
+   * itself from the list.
    *
    * The body is stored in the callable inherited from `suite`, and is run
    * by `suite::run()`; the user callable receives a `suite&` reference,
@@ -1255,16 +1228,23 @@ namespace micro_os_plus::micro_test_plus
    */
   class static_suite : public suite
   {
+    // Walk the list of static suites, to count and run them.
+    friend class micro_test_plus::runner;
+
   public:
     /**
      * @brief Class template constructor for static_suite.
+     *
+     * @details
+     * The runner is only referred to, not accessed, so it may be a
+     * namespace-scope object constructed after this suite.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
      * @param name The test suite name or description, used in reports; it
      * is copied, so the string need not outlive the call.
-     * @param runner The static test runner managing this suite.
+     * @param runner The test runner that runs this suite.
      * @param callable A generic callable object, usually a lambda or
      * function, invoked to perform the test suite. Its first parameter
      * must be `suite&`.
@@ -1272,7 +1252,7 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `suite&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-    static_suite (const char* name, static_runner& runner,
+    static_suite (const char* name, class runner& runner,
                   Callable_T&& callable, Args_T&&... arguments);
 
     /**
@@ -1317,9 +1297,60 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      *
      * @details
-     * Destroys the owned subtests and the stored callable.
+     * Removes the suite from the list of static suites, and destroys the
+     * owned subtests and the stored callable.
      */
     virtual ~static_suite () override;
+
+  protected:
+    /**
+     * @brief Inserts this suite into the list of static suites.
+     *
+     * @details
+     * Called by the constructor, after the name was copied; the list is
+     * kept sorted by name.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    link_ (void) noexcept;
+
+    /**
+     * @brief Removes this suite from the list of static suites.
+     *
+     * @details
+     * Called by the destructor.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    unlink_ (void) noexcept;
+
+    /**
+     * @brief The next suite in the list of static suites.
+     *
+     * @details
+     * Null for the last suite. Set by `link_()` and `unlink_()`.
+     */
+    static_suite* next_ = nullptr;
+
+    /**
+     * @brief The first suite in the list of static suites.
+     *
+     * @details
+     * The list includes the static suites of all runners, sorted by name;
+     * each runner selects its own. The pointer is constant-initialised
+     * (`constinit`, in `src/test.cpp`), so it is null before any
+     * constructor runs, whatever the order of the static initialisation
+     * across translation units.
+     */
+    static static_suite* first_;
   };
 
   // --------------------------------------------------------------------------

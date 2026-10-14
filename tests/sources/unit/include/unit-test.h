@@ -111,7 +111,7 @@ local_test_assert (const char* failedexpr, const char* file, int line);
 
 // ----------------------------------------------------------------------------
 
-extern micro_os_plus::micro_test_plus::static_runner tr;
+extern micro_os_plus::micro_test_plus::runner tr;
 
 // ----------------------------------------------------------------------------
 

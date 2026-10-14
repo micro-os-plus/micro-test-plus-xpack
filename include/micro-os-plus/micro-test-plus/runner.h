@@ -22,8 +22,9 @@
  * @details
  * This header provides the declarations for the test runner facilities used
  * within the µTest++ framework. It defines the `runner` class, which manages
- * the registration and execution of test suites, and the `static_runner`
- * class, which additionally manages suites declared at namespace scope.
+ * the registration and execution of test suites, including the static
+ * suites declared at namespace scope, and the deprecated `static_runner`
+ * alias.
  *
  * The test runner is responsible for initialising the test environment,
  * creating the reporter, registering test suites, processing command-line
@@ -131,7 +132,10 @@ namespace micro_os_plus::micro_test_plus
    * execution of test suites within the µTest++ framework. It owns the
    * implicit top suite, whose test cases are added after `initialise()`,
    * and a collection of test suites added with `suite()`, which are run
-   * later, sorted by name, by `run()`.
+   * later, sorted by name, by `run()`. The `static_suite` objects that
+   * refer to the runner are run after them, also sorted by name; they are
+   * kept in a list independent of the runner object, so they may be
+   * constructed before it.
    *
    * The test runner provides methods for initialising the test environment
    * (including the creation of the reporter selected on the command line,
@@ -228,10 +232,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Destroys the registered suites and the reporter, which closes the
-     * output file, if any. Virtual, so that `static_runner` is destroyed
-     * correctly.
+     * output file, if any. The static suites are not owned by the runner.
      */
-    virtual ~runner ();
+    ~runner ();
 
     /**
      * @brief Initialises the test runner with command-line arguments.
@@ -291,7 +294,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Completes the top suite, runs the suites registered with `suite()`
-     * (and, for a `static_runner`, the static suites), and ends the session.
+     * and the static suites that refer to this runner, and ends the
+     * session.
      *
      * The session runs only once; later calls return the same exit code
      * without running anything again.
@@ -403,14 +407,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Returns the total count of registered test suites.
      *
      * @details
-     * Virtual, so that `static_runner` can add its static suites.
+     * The sum of `suites_count()` and `static_suites_count()`.
      *
      * @par Parameters
      *   None.
      * @return The total number of test suites managed by this runner,
-     * including the top suite.
+     * including the top suite and the static suites.
      */
-    [[nodiscard]] virtual size_t
+    [[nodiscard]] size_t
     total_suites_count (void) const noexcept;
 
     /**
@@ -441,6 +445,20 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] size_t
     suites_count (void) const noexcept;
+
+    /**
+     * @brief Returns the count of static test suites.
+     *
+     * @details
+     * Counts the `static_suite` objects that refer to this runner; it is
+     * complete only after the static initialisation.
+     *
+     * @par Parameters
+     *   None.
+     * @return The number of static test suites run by this runner.
+     */
+    [[nodiscard]] size_t
+    static_suites_count (void) const noexcept;
 
     /**
      * @brief Gets the totals of the test session.
@@ -506,12 +524,16 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Runs all registered test suites.
      *
+     * @details
+     * Runs the suites registered with `suite()`, then the static suites
+     * that refer to this runner.
+     *
      * @par Parameters
      *   None.
      * @par Returns
      *   Nothing.
      */
-    virtual void
+    void
     run_suites_ (void);
 
     /**
@@ -653,166 +675,17 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-runners
-   * @brief A `runner` variant that also manages statically-registered test
-   * suites.
+   * @brief Deprecated name of `runner`.
    *
    * @details
-   * `static_runner` extends `runner` to handle `static_suite` objects that
-   * are declared at namespace scope and therefore constructed before or after
-   * the runner itself, in unspecified static-initialisation order.
+   * The `runner` also runs the `static_suite` objects that refer to it,
+   * so a separate runner class is no longer needed.
    *
-   * The key design constraint is that `static_runner` instances must
-   * themselves be declared at namespace scope (in the BSS segment), so the
-   * pointer `static_children_suites_` is zero-initialised by the C runtime
-   * before any constructor runs. This ensures that `static_suite` objects
-   * constructed before `static_runner` can safely append themselves to the
-   * vector without losing registrations.
-   *
-   * During `run()`, `run_suites_()` is called, which first runs all
-   * dynamically registered suites (base class behaviour) and then iterates
-   * over the statically registered suites.
-   *
-   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+   * @deprecated Use `runner` (since 5.1.0).
    */
-  class static_runner final : public runner
-  {
-  public:
-    /**
-     * @brief Constructor for the static_runner class.
-     *
-     * @details
-     * The top suite name is set later, by `initialise()`.
-     *
-     * @par Parameters
-     *   None.
-     */
-    static_runner (void);
+  using static_runner = runner;
 
-    /**
-     * @brief Constructs the static runner with a top-suite name.
-     *
-     * @details
-     * The name can still be overridden by `initialise()`.
-     *
-     * @param top_suite_name The name of the implicit top-level suite.
-     *
-     * @deprecated Use the anonymous constructor.
-     */
-    static_runner (const char* top_suite_name);
-
-    /**
-     * @brief Deleted copy constructor to prevent copying.
-     *
-     * @details
-     * The runner owns the suites, the reporter, and the session totals,
-     * which must not be duplicated.
-     */
-    static_runner (const static_runner&) = delete;
-
-    /**
-     * @brief Deleted move constructor to prevent moving.
-     *
-     * @details
-     * The suites keep a reference to the runner, so it must not be
-     * relocated.
-     */
-    static_runner (static_runner&&) = delete;
-
-    /**
-     * @brief Deleted copy assignment operator to prevent copying.
-     *
-     * @details
-     * The runner owns the suites, the reporter, and the session totals,
-     * which must not be duplicated.
-     */
-    static_runner&
-    operator= (const static_runner&)
-        = delete;
-
-    /**
-     * @brief Deleted move assignment operator to prevent moving.
-     *
-     * @details
-     * The suites keep a reference to the runner, so it must not be
-     * relocated.
-     */
-    static_runner&
-    operator= (static_runner&&)
-        = delete;
-
-    /**
-     * @brief Destructor for the static_runner class.
-     *
-     * @details
-     * Deletes the vector of static suite pointers, but not the suites,
-     * which have static storage duration.
-     */
-    virtual ~static_runner () override;
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @brief Registers a static test suite with the runner.
-     *
-     * @param runner The static runner instance.
-     * @param suite The static test suite to register.
-     * @par Returns
-     *   Nothing.
-     */
-    static void
-    register_static_suite (static_runner& runner, static_suite& suite);
-
-    /**
-     * @brief Returns the total count of registered static test suites.
-     *
-     * @par Parameters
-     *   None.
-     * @return The total number of registered static test suites.
-     */
-    [[nodiscard]] size_t
-    static_suites_count (void) const noexcept;
-
-    /**
-     * @brief Returns the total count of all test suites, including static and
-     * dynamic.
-     *
-     * @par Parameters
-     *   None.
-     * @return The total number of test suites.
-     */
-    [[nodiscard]] virtual size_t
-    total_suites_count (void) const noexcept final override;
-
-  protected:
-    /**
-     * @brief Runs all child suites, including statically registered ones.
-     *
-     * @par Parameters
-     *   None.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    run_suites_ (void) override;
-
-  protected:
-    /**
-     * @brief Pointer to the vector of registered static test suites.
-     *
-     * @details
-     * `static_runner` instances are always declared at namespace scope,
-     * so this pointer lives in the BSS segment and is zero-initialised
-     * before any constructor runs. This guarantees that static test suites
-     * registered before this runner's constructor executes (due to
-     * unspecified static initialisation order across translation units)
-     * are not lost. The pointer MUST NOT carry an explicit
-     * default member initialiser, as that would run during construction
-     * and could overwrite a value already set by an earlier-constructed
-     * `static_suite`.
-     */
-    std::vector<static_suite*>* static_children_suites_;
-  };
-
+  // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)

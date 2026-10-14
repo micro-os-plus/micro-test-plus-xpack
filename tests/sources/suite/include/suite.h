@@ -25,7 +25,7 @@
 #include <stdexcept>
 #include <vector>
 
-extern micro_os_plus::micro_test_plus::static_runner sr;
+extern micro_os_plus::micro_test_plus::runner sr;
 
 // ----------------------------------------------------------------------------
 

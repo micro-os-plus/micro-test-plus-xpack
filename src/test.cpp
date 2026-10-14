@@ -43,6 +43,7 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
+#include <cstring>
 #include <exception>
 #include <string>
 
@@ -53,6 +54,7 @@
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#pragma clang diagnostic ignored "-Wc++20-compat"
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Wredundant-tags"
@@ -391,15 +393,68 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * No resources are owned directly by `static_suite`; the destructor
-   * performs no explicit clean-up. If tracing is enabled, the suite
-   * name is output for diagnostic purposes.
+   * Constant-initialised, so it is null before any static constructor
+   * runs; the static suites constructed before the runner are therefore
+   * not lost.
+   */
+  constinit static_suite* static_suite::first_ = nullptr;
+
+  /**
+   * @details
+   * Removes the suite from the list of static suites. If tracing is
+   * enabled, the suite name is output for diagnostic purposes.
    */
   static_suite::~static_suite ()
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
+
+    unlink_ ();
+  }
+
+  /**
+   * @details
+   * Inserts the suite after the suites with names less than or equal to
+   * its own, so the list remains sorted by name, and the suites with the
+   * same name remain in the order of their construction. No memory is
+   * allocated.
+   */
+  void
+  static_suite::link_ (void) noexcept
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    // std::strcmp() compares as unsigned char, like std::string_view,
+    // without a temporary object (which triggers -Waggregate-return).
+    static_suite** link = &first_;
+    while (*link != nullptr && std::strcmp ((*link)->name_, name_) <= 0)
+      {
+        link = &(*link)->next_;
+      }
+    next_ = *link;
+    *link = this;
+  }
+
+  /**
+   * @details
+   * Searches the list for the suite and, if found, bypasses it.
+   */
+  void
+  static_suite::unlink_ (void) noexcept
+  {
+    for (static_suite** link = &first_; *link != nullptr;
+         link = &(*link)->next_)
+      {
+        if (*link == this)
+          {
+            *link = next_;
+            next_ = nullptr;
+            return;
+          }
+      }
   }
 
   // --------------------------------------------------------------------------

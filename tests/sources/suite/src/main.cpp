@@ -65,7 +65,7 @@ suite_function (mt::suite& t)
 // ----------------------------------------------------------------------------
 
 // Test if initialise() overrides this.
-mt::static_runner sr{ "Overriden" };
+mt::runner sr{ "Overriden" };
 
 int
 main (int argc, char* argv[])

@@ -840,7 +840,7 @@ Test suites are named sequences of test cases.
 
 In the common use case, test suites are static instances of the `static_suite`
 class, which automatically register themselves with a static instance of the
-`static_runner`.
+`runner`.
 
 The main program looks like this:
 
@@ -849,7 +849,7 @@ The main program looks like this:
 
 namespace mt = micro_os_plus::micro_test_plus;
 
-mt::static_runner sr;
+mt::runner sr;
 
 int
 main (int argc, char* argv[])
@@ -869,7 +869,7 @@ Each test suite resides in a separate source file, for example:
 
 namespace mt = micro_os_plus::micro_test_plus;
 
-extern mt::static_runner sr;
+extern mt::runner sr;
 
 static void
 suite_function (mt::suite& ts)

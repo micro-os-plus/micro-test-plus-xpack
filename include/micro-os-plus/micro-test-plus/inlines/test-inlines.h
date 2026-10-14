@@ -29,8 +29,8 @@
  *
  * When additional arguments are given, `std::bind` is used to pre-bind them,
  * allowing versatile test initialisation with arbitrary callable types and
- * arguments. A `static_suite` additionally registers itself with its
- * `static_runner` upon construction.
+ * arguments. A `static_suite` additionally inserts itself into the list of
+ * static suites upon construction.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, maintaining a clear separation from user code and minimising the
@@ -495,13 +495,13 @@ namespace micro_os_plus::micro_test_plus
    * Delegates to `suite`, which stores the callable and binds its
    * arguments, if any; the callable receives a `suite&` reference, as
    * for the suites registered with `runner::suite()`. After
-   * construction, the suite is registered with the static test runner.
+   * construction, the suite is inserted into the list of static suites,
+   * to be run by its runner; the runner itself is not accessed.
    */
   template <typename Callable_T, typename... Args_T>
-  static_suite::static_suite (const char* name, static_runner& runner,
+  static_suite::static_suite (const char* name, class runner& runner,
                               Callable_T&& callable, Args_T&&... arguments)
-      : suite{ name, detail::to_runner (runner),
-               std::forward<Callable_T> (callable),
+      : suite{ name, runner, std::forward<Callable_T> (callable),
                std::forward<Args_T> (arguments)... }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
@@ -509,7 +509,7 @@ namespace micro_os_plus::micro_test_plus
                    __PRETTY_FUNCTION__, name, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-    detail::register_static_suite (runner, *this);
+    link_ ();
   }
 
   // --------------------------------------------------------------------------

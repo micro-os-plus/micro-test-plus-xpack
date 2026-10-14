@@ -54,9 +54,12 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace.
 - `runner` (in `runner.h`, defined in `src/runner.cpp`) is the top-level
   test session driver: it owns the tree of suites/tests, tracks pass/fail
   totals (`runner-totals.h`), timings (`timings.h`), and drives a
-  `reporter` to print progress and the final summary. `static_runner` is
-  a `runner` specialisation for statically-allocated/embedded use where
-  dynamic allocation is undesirable.
+  `reporter` to print progress and the final summary. It also runs the
+  `static_suite` objects that refer to it, which are kept in an
+  intrusive list sorted by name, with a `constinit` head pointer
+  (`static_suite::first_`), independent of the runner object, so they
+  may be constructed before it. `static_runner` is a deprecated alias
+  of `runner`.
 - Test hierarchy (`test.h`, `src/test.cpp`), all deriving from the
   internal `detail::runnable_base` base (`suite` and `subtest` each store
   their body in a `std::function` taking a reference to their own class):

@@ -110,6 +110,15 @@ same function can serve both kinds of suites; it previously received a
 parameter lists of the suite functions; the lambdas with an `auto&`
 parameter need no change.
 
+The `static_runner` class is deprecated, and is now an alias of
+`runner`, since any runner also runs the `static_suite` objects that
+refer to it; the static suites are kept in a list independent of the
+runner object, so they may be constructed before it, in any order. The
+existing code compiles unchanged; replace `mt::static_runner` with
+`mt::runner` in the new code. The public static member
+`static_runner::register_static_suite()` was removed;
+`runner::static_suites_count()` is now available for any runner.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in
