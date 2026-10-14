@@ -54,6 +54,8 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
+#include "detail.h"
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
