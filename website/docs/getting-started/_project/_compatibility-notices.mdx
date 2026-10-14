@@ -56,6 +56,13 @@ public, since a suite or a test case constructed directly was neither
 registered nor run. Create the suites with `runner::suite()` or as
 `static_suite` objects, and the test cases with `test()`.
 
+The `runner_totals` class, returned by `totals()`, moved from the
+`detail` namespace to `micro_os_plus::micro_test_plus`; replace
+`detail::runner_totals` with `runner_totals`. The `timings()` functions
+of the runner and of the suites, and the `expression()` function of the
+reporters, are no longer public, since they return internal types and
+are used only by the framework.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

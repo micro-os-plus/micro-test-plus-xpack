@@ -123,6 +123,11 @@ namespace micro_os_plus::micro_test_plus
   class suite;
   class subtest;
 
+  namespace detail
+  {
+    class deferred_reporter_base;
+  } // namespace detail
+
   /**
    * @brief Output stream manipulator for ending a line in test reports.
    *
@@ -204,6 +209,11 @@ namespace micro_os_plus::micro_test_plus
    */
   class reporter
   {
+    // Pass the expression formatter to the checks, and format their
+    // expressions.
+    friend class subtest;
+    friend class detail::deferred_reporter_base;
+
   public:
     /**
      * @brief Constructor for the reporter class.
@@ -509,8 +519,18 @@ namespace micro_os_plus::micro_test_plus
     auto
     verbosity () const -> micro_test_plus::verbosity;
 
+    // ------------------------------------------------------------------------
+
+  protected:
     /**
      * @brief Provides access to the expression formatter for this reporter.
+     *
+     * @details
+     * Protected, since the formatter is an implementation detail; it is
+     * used only by the checks (`subtest::expect()`, `subtest::assume()`,
+     * and the deferred reporter), which are friends, and by the derived
+     * reporters. The applications format their own types by defining
+     * `operator<<` for the public `expression_formatter` alias.
      *
      * @par Parameters
      *   None.
@@ -520,9 +540,6 @@ namespace micro_os_plus::micro_test_plus
     detail::expression_formatter&
     expression ();
 
-    // ------------------------------------------------------------------------
-
-  protected:
     /**
      * @brief Selects the appropriate colour code based on a condition.
      *

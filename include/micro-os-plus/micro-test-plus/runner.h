@@ -117,6 +117,8 @@ namespace micro_os_plus::micro_test_plus
   class suite;
   class top_suite;
   class reporter;
+  class reporter_human;
+  class reporter_tap;
 
   // ==========================================================================
 
@@ -145,6 +147,10 @@ namespace micro_os_plus::micro_test_plus
    */
   class runner : public detail::test_node
   {
+    // Display the session duration.
+    friend class reporter_human;
+    friend class reporter_tap;
+
   public:
     /**
      * @brief Constructor for the runner class.
@@ -327,7 +333,23 @@ namespace micro_os_plus::micro_test_plus
     reporter (void) const noexcept;
 
     /**
+     * @brief Returns the count of test suites.
+     *
+     * @par Parameters
+     *   None.
+     * @return The number of test suites, including the top one.
+     */
+    [[nodiscard]] size_t
+    suites_count (void) const noexcept;
+
+  protected:
+    /**
      * @brief Gets the timings for this runner.
+     *
+     * @details
+     * Protected, since the timings are an implementation detail; they
+     * are set by `run()`, and are read only by the reporters, which are
+     * friends.
      *
      * @par Parameters
      *   None.
@@ -339,6 +361,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Gets the timings for this runner (const overload).
      *
+     * @details
+     * Protected, for the same reasons as the non-const overload.
+     *
      * @par Parameters
      *   None.
      * @return A const reference to the timestamps instance.
@@ -346,17 +371,6 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] const detail::timestamps&
     timings () const noexcept;
 
-    /**
-     * @brief Returns the count of test suites.
-     *
-     * @par Parameters
-     *   None.
-     * @return The number of test suites, including the top one.
-     */
-    [[nodiscard]] size_t
-    suites_count (void) const noexcept;
-
-  protected:
     /**
      * @brief Runs all registered test suites.
      *

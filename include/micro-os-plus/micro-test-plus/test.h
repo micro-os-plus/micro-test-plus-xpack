@@ -95,6 +95,8 @@ namespace micro_os_plus::micro_test_plus
   class runner;
   class static_runner;
   class reporter;
+  class reporter_human;
+  class reporter_tap;
   class runner_totals;
   class subtest;
   class suite;
@@ -969,8 +971,12 @@ namespace micro_os_plus::micro_test_plus
    */
   class suite : public detail::runnable<suite>
   {
-    // Create and register the suites.
+    // Create and register the suites, and time the top suite.
     friend class micro_test_plus::runner;
+
+    // Display the suite duration.
+    friend class micro_test_plus::reporter_human;
+    friend class micro_test_plus::reporter_tap;
 
   protected:
     /**
@@ -1070,26 +1076,6 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Gets the timings for this suite.
-     *
-     * @par Parameters
-     *   None.
-     * @return A reference to the timestamps instance.
-     */
-    [[nodiscard]] detail::timestamps&
-    timings () noexcept;
-
-    /**
-     * @brief Gets the timings for this suite (const overload).
-     *
-     * @par Parameters
-     *   None.
-     * @return A const reference to the timestamps instance.
-     */
-    [[nodiscard]] const detail::timestamps&
-    timings () const noexcept;
-
-    /**
      * @brief Executes the suite body by invoking the stored callable.
      *
      * @par Parameters
@@ -1101,6 +1087,34 @@ namespace micro_os_plus::micro_test_plus
     run (void) override;
 
   protected:
+    /**
+     * @brief Gets the timings for this suite.
+     *
+     * @details
+     * Protected, since the timings are an implementation detail; they
+     * are set when the suite runs, and are read only by the runner and
+     * by the reporters, which are friends.
+     *
+     * @par Parameters
+     *   None.
+     * @return A reference to the timestamps instance.
+     */
+    [[nodiscard]] detail::timestamps&
+    timings () noexcept;
+
+    /**
+     * @brief Gets the timings for this suite (const overload).
+     *
+     * @details
+     * Protected, for the same reasons as the non-const overload.
+     *
+     * @par Parameters
+     *   None.
+     * @return A const reference to the timestamps instance.
+     */
+    [[nodiscard]] const detail::timestamps&
+    timings () const noexcept;
+
     /**
      * @brief Timing measurements for this suite's execution.
      *
