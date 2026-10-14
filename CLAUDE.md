@@ -57,8 +57,9 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace.
   `reporter` to print progress and the final summary. `static_runner` is
   a `runner` specialisation for statically-allocated/embedded use where
   dynamic allocation is undesirable.
-- Test hierarchy (`test.h`, `src/test.cpp`), all deriving from an internal
-  `detail::runnable_base`/`detail::runnable<T>` CRTP base:
+- Test hierarchy (`test.h`, `src/test.cpp`), all deriving from the
+  internal `detail::runnable_base` base (`suite` and `subtest` each store
+  their body in a `std::function` taking a reference to their own class):
   - `top_suite` — the implicit root suite owned by each `runner`,
     returned by `runner::initialise()`; users do not construct it
     directly.

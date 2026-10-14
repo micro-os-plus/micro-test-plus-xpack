@@ -222,7 +222,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Invokes the stored callable with the `Self_T` instance, surrounded by
+   * Invokes the stored callable with this subtest, surrounded by
    * reporter calls to begin and end the subtest.
    *
    * When exceptions are enabled, an exception that escapes the callable
@@ -332,8 +332,11 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Invokes the stored callable with the `Self_T` instance, surrounded by
+   * Invokes the stored callable with this suite, surrounded by
    * reporter calls to begin and end the suite.
+   *
+   * For a `static_suite`, the callable converts the reference to
+   * `static_suite&`.
    */
   void
   suite::run (void)
@@ -400,31 +403,6 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-  }
-
-  /**
-   * @details
-   * Records the suite begin timestamp, notifies the reporter via
-   * `begin_suite()`, invokes the stored static callable with `*this`,
-   * records the suite end timestamp, and notifies the reporter via
-   * `end_suite()`.
-   */
-  void
-  static_suite::run (void)
-  {
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
-
-    detail::reporter& reporter = this->reporter ();
-
-    this->timings ().timestamp_begin ();
-    reporter.begin_suite (*this);
-
-    static_callable_ (*this);
-
-    this->timings ().timestamp_end ();
-    reporter.end_suite (*this);
   }
 
   // --------------------------------------------------------------------------

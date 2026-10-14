@@ -233,51 +233,63 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Binds the callable and its arguments into the stored `callable_`
-     * function object. When `run()` is called, the stored function is invoked
-     * with a reference to the derived `Self_T` instance as its first argument,
-     * followed by the bound arguments.
+     * Without additional arguments, the callable already has the signature
+     * `void (Self_T&)`, and is stored directly. `std::bind` is used only
+     * when additional arguments must be bound, to avoid triggering a GCC
+     * ARM bug in `__is_nothrow_invocable<_Bind<...>, Self_T&>` (GCC
+     * 15.2.1).
+     *
+     * When the reference must be converted, the callable (or its binding)
+     * is captured by a lambda, which performs the `static_cast`; this is
+     * safe, since the stored function object is invoked only by the
+     * `run()` of the object itself, which passes `*this`. The lambda is
+     * `mutable`, so that callables with a non-const call operator can be
+     * invoked, as when stored directly, and it is `noexcept` when the
+     * callable is, otherwise GCC warns (`-Wnoexcept`) that it does not
+     * throw, but is not declared `noexcept`.
      */
-    template <typename Self_T>
-    template <typename Callable_T, typename... Args_T>
-    runnable<Self_T>::runnable (const char* name, class runner& runner,
-                                size_t own_index, Callable_T&& callable,
-                                Args_T&&... arguments)
-        : runnable_base{ name, runner, own_index }
+    template <typename Param_T, typename Self_T, typename Callable_T,
+              typename... Args_T>
+    std::function<void (Param_T&)>
+    bind_callable (Callable_T&& callable, Args_T&&... arguments)
     {
-      // When there are no extra arguments the callable already has the
-      // signature void(Self_T&), so store it directly. Only use std::bind when
-      // additional arguments must be pre-bound, to avoid triggering a GCC ARM
-      // bug in
-      // __is_nothrow_invocable<_Bind<...>, Self_T&> (GCC 15.2.1).
-      if constexpr (sizeof...(arguments) == 0)
+      if constexpr (std::is_same_v<Param_T, Self_T>)
         {
-          callable_ = std::forward<Callable_T> (callable);
+          if constexpr (sizeof...(arguments) == 0)
+            {
+              return std::forward<Callable_T> (callable);
+            }
+          else
+            {
+              return std::bind (std::forward<Callable_T> (callable),
+                                std::placeholders::_1,
+                                std::forward<Args_T> (arguments)...);
+            }
         }
       else
         {
-          callable_ = std::bind (std::forward<Callable_T> (callable),
-                                 std::placeholders::_1,
-                                 std::forward<Args_T> (arguments)...);
+          // Propagate the exception specification of the callable, computed
+          // on its own type, not on the type returned by std::bind.
+          constexpr bool is_nothrow = std::is_nothrow_invocable_v<
+              std::decay_t<Callable_T>&, Self_T&,
+              std::unwrap_ref_decay_t<Args_T>&...>;
+
+          if constexpr (sizeof...(arguments) == 0)
+            {
+              return [body = std::forward<Callable_T> (callable)] (
+                         Param_T& self) mutable noexcept (is_nothrow)
+                { body (static_cast<Self_T&> (self)); };
+            }
+          else
+            {
+              return
+                  [bound = std::bind (std::forward<Callable_T> (callable),
+                                      std::placeholders::_1,
+                                      std::forward<Args_T> (arguments)...)] (
+                      Param_T& self) mutable noexcept (is_nothrow)
+                { bound (static_cast<Self_T&> (self)); };
+            }
         }
-
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-      trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
-                     __PRETTY_FUNCTION__, name, own_index_);
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-    }
-
-    /**
-     * @details
-     * Destroys the stored callable. When tracing is enabled, emits a trace
-     * message identifying the instance being destroyed.
-     */
-    template <typename Self_T>
-    runnable<Self_T>::~runnable ()
-    {
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-      trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
     }
 
     // ------------------------------------------------------------------------
@@ -287,18 +299,18 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Delegates to `runnable`, which binds the callable with its arguments,
-   * and stores the location of the call to `test()`, the parent suite,
-   * and the nesting depth.
+   * Stores the callable, binding its arguments, if any, and the location
+   * of the call to `test()`, the parent suite, and the nesting depth.
    */
   template <typename Callable_T, typename... Args_T>
   subtest::subtest (const detail::test_name& name, class runner& runner,
                     suite& parent_suite, size_t own_index,
                     size_t nesting_depth, Callable_T&& callable,
                     Args_T&&... arguments)
-      : runnable<subtest>{ name.name (), runner, own_index,
-                           std::forward<Callable_T> (callable),
-                           std::forward<Args_T> (arguments)... },
+      : runnable_base{ name.name (), runner, own_index },
+        callable_{ detail::bind_callable<subtest> (
+            std::forward<Callable_T> (callable),
+            std::forward<Args_T> (arguments)...) },
         location_{ name.location () }, parent_suite_{ parent_suite },
         nesting_depth_{ nesting_depth }
   {
@@ -397,9 +409,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Delegates to `runnable`, which binds the callable with its arguments.
-   * The own index is initially 0; the runner assigns the final index
-   * before running the suite.
+   * Stores the callable, binding its arguments, if any. The own index is
+   * initially 0; the runner assigns the final index before running the
+   * suite.
    *
    * The name is copied into `owned_name_`, and the node name points to the
    * copy, since the suite may run after the string passed by the caller
@@ -408,8 +420,10 @@ namespace micro_os_plus::micro_test_plus
   template <typename Callable_T, typename... Args_T>
   suite::suite (const char* name, class runner& runner, Callable_T&& callable,
                 Args_T&&... arguments)
-      : runnable<suite>{ name, runner, 0, std::forward<Callable_T> (callable),
-                         std::forward<Args_T> (arguments)... },
+      : runnable_base{ name, runner, 0 },
+        callable_{ detail::bind_callable<suite> (
+            std::forward<Callable_T> (callable),
+            std::forward<Args_T> (arguments)...) },
         owned_name_{ name }
   {
     name_ = owned_name_.c_str ();
@@ -515,28 +529,19 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Delegates to `suite` with an empty callable, and stores the callable
-   * (binding its arguments, if any) in `static_callable_`. After
-   * construction, the suite is registered with the static test runner.
+   * Delegates to `suite` with a function object that passes the
+   * reference to the suite to the callable as `static_suite&` (binding
+   * its arguments, if any). After construction, the suite is registered
+   * with the static test runner.
    */
   template <typename Callable_T, typename... Args_T>
   static_suite::static_suite (const char* name, static_runner& runner,
                               Callable_T&& callable, Args_T&&... arguments)
-      // The nullptr passed to the base constructor is an optimisation to save
-      // some space, since this callable is not used by the static runner.
-      : suite{ name, detail::to_runner (runner), nullptr }
+      : suite{ name, detail::to_runner (runner),
+               detail::bind_callable<suite, static_suite> (
+                   std::forward<Callable_T> (callable),
+                   std::forward<Args_T> (arguments)...) }
   {
-    if constexpr (sizeof...(arguments) == 0)
-      {
-        static_callable_ = std::forward<Callable_T> (callable);
-      }
-    else
-      {
-        static_callable_ = std::bind (std::forward<Callable_T> (callable),
-                                      std::placeholders::_1,
-                                      std::forward<Args_T> (arguments)...);
-      }
-
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
                    __PRETTY_FUNCTION__, name, own_index_);

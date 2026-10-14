@@ -21,11 +21,11 @@
  *
  * @details
  * This header provides the declarations for the test hierarchy used within
- * the µTest++ framework: the internal `detail::test_node`,
- * `detail::runnable_base`, and `detail::runnable` base classes, and the
- * `subtest`, `suite`, `top_suite`, and `static_suite` classes. They offer
- * mechanisms for running test cases, managing counters for successful and
- * failed checks, and registering test suites with the runner.
+ * the µTest++ framework: the internal `detail::test_node` and
+ * `detail::runnable_base` base classes, and the `subtest`, `suite`,
+ * `top_suite`, and `static_suite` classes. They offer mechanisms for
+ * running test cases, managing counters for successful and failed checks,
+ * and registering test suites with the runner.
  *
  * The design ensures that test suites are non-copyable and non-movable,
  * maintaining unique ownership and consistent state. Flexible support for
@@ -70,6 +70,7 @@
 #include <functional>
 #include <memory>
 #include <string>
+#include <type_traits>
 
 // ----------------------------------------------------------------------------
 
@@ -340,14 +341,16 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * `runnable_base` extends `test_node` with the state that is shared by
-     * every runnable object but does not depend on the CRTP self-type:
+     * every runnable object:
      * - a reference to the owning `runner`,
      * - the object's own index within its parent container,
      * - a sequential subtest index used when creating nested subtests, and
      * - an owning vector of child `subtest` instances.
      *
-     * Concrete runnable classes (`suite`, `subtest`) derive from
-     * `runnable<Self_T>` which in turn derives from `runnable_base`.
+     * The concrete runnable classes (`suite`, `subtest`) derive from
+     * `runnable_base`; each stores its body in a `std::function` that
+     * receives a reference to its own class, and implements `run()`, which
+     * invokes the body between the reporter notifications.
      *
      * The indices and the totals can be read by the user code and by the
      * reporters, but they are modified only by the framework: the setters
@@ -458,6 +461,22 @@ namespace micro_os_plus::micro_test_plus
        */
       [[nodiscard]] size_t
       children_subtests_count (void) const noexcept;
+
+      /**
+       * @brief Runs the body of the test case or suite.
+       *
+       * @details
+       * Implemented by `subtest` and `suite`, which invoke the stored
+       * callable surrounded by the reporter notifications.
+       *
+       * @par Parameters
+       *   None.
+       * @par Returns
+       *   Nothing.
+       */
+      virtual void
+      run (void)
+          = 0;
 
       /**
        * @brief Aborts test execution via the owning runner.
@@ -586,117 +605,36 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief CRTP base class factoring out callable storage, rule-of-five, and
-     * `run()` logic shared by `subtest` and `suite`.
+     * @brief Creates the function object that stores the body of a test
+     * case or suite.
      *
      * @details
-     * The constructor stores the test body, binding any additional
-     * arguments, in a `std::function` that receives a reference to the
-     * derived class; the derived classes implement `run()`, which invokes
-     * it between the reporter notifications.
+     * The callable is stored as is when there are no additional arguments;
+     * otherwise the arguments are bound after the leading reference, which
+     * is passed when the body is invoked.
      *
-     * @tparam Self_T The concrete derived class type (CRTP pattern). The
-     * stored callable receives a `Self_T&` reference when the test is
-     * executed.
+     * When @p Self_T differs from @p Param_T, the stored function object
+     * receives a `Param_T&` reference and passes it to the callable
+     * converted to `Self_T&`; this allows a class derived from `suite`
+     * (`static_suite`) to reuse the function object stored by `suite`,
+     * while its callable receives a reference to the derived class.
      *
-     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     * @tparam Param_T The type referred to by the parameter of the stored
+     * function object.
+     * @tparam Self_T The type referred to by the first parameter of the
+     * callable; `Param_T` or a class derived from it.
+     * @tparam Callable_T The type of the callable object.
+     * @tparam Args_T The types of the additional callable arguments.
+     *
+     * @param callable A generic callable object, usually a lambda.
+     * @param arguments A possibly empty list of arguments forwarded to the
+     * callable after the leading `Self_T&` reference.
+     * @return The function object that invokes the callable.
      */
-    template <typename Self_T>
-    class runnable : public detail::runnable_base
-    {
-    public:
-      /**
-       * @brief Class template constructor.
-       *
-       * @tparam Callable_T The callable type.
-       * @tparam Args_T The additional argument types.
-       *
-       * @param name The test name, used in reports.
-       * @param runner The test runner managing this test.
-       * @param own_index The test index within the runner.
-       * @param callable The callable invoked when the test runs.
-       * @param arguments Additional arguments forwarded to the callable
-       * after the leading `Self_T&` reference.
-       */
-      template <typename Callable_T, typename... Args_T>
-      runnable (const char* name, class runner& runner, size_t own_index,
-                Callable_T&& callable, Args_T&&... arguments);
-
-      /**
-       * @brief Deleted copy constructor to prevent copying.
-       *
-       * @details
-       * A copy would duplicate the counters and the owned children.
-       */
-      runnable (const runnable&) = delete;
-
-      /**
-       * @brief Deleted move constructor to prevent moving.
-       *
-       * @details
-       * Nodes are referred to by address (e.g. by their children and by
-       * the runner), so they must not be relocated.
-       */
-      runnable (runnable&&) = delete;
-
-      /**
-       * @brief Deleted copy assignment operator to prevent copying.
-       *
-       * @details
-       * A copy would duplicate the counters and the owned children.
-       */
-      runnable&
-      operator= (const runnable&)
-          = delete;
-
-      /**
-       * @brief Deleted move assignment operator to prevent moving.
-       *
-       * @details
-       * Nodes are referred to by address (e.g. by their children and by
-       * the runner), so they must not be relocated.
-       */
-      runnable&
-      operator= (runnable&&)
-          = delete;
-
-      /**
-       * @brief Virtual destructor.
-       *
-       * @details
-       * Destroys the stored callable.
-       */
-      virtual ~runnable () override;
-
-      // ----------------------------------------------------------------------
-
-      /**
-       * @brief Runs the test function by invoking the stored callable with the
-       * derived self instance.
-       *
-       * @details
-       * Implemented by `subtest` and `suite` (and overridden by
-       * `static_suite`), which surround the invocation with the reporter
-       * notifications.
-       *
-       * @par Parameters
-       *   None.
-       * @par Returns
-       *   Nothing.
-       */
-      virtual void
-      run (void)
-          = 0;
-
-    protected:
-      /**
-       * @brief Callable storing the test body and any bound arguments.
-       *
-       * @details
-       * Invoked with a reference to the derived `Self_T` instance.
-       */
-      std::function<void (Self_T&)> callable_;
-    };
+    template <typename Param_T, typename Self_T = Param_T, typename Callable_T,
+              typename... Args_T>
+    [[nodiscard]] std::function<void (Param_T&)>
+    bind_callable (Callable_T&& callable, Args_T&&... arguments);
 
     // ------------------------------------------------------------------------
   } // namespace detail
@@ -728,7 +666,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
-  class subtest : public detail::runnable<subtest>
+  class subtest : public detail::runnable_base
   {
     // Create the top-level test cases.
     friend class suite;
@@ -956,6 +894,14 @@ namespace micro_os_plus::micro_test_plus
 
   protected:
     /**
+     * @brief Callable storing the test case body and any bound arguments.
+     *
+     * @details
+     * Invoked by `run()` with a reference to this subtest.
+     */
+    std::function<void (subtest&)> callable_;
+
+    /**
      * @brief The location of the call to `test()` that created this
      * subtest.
      *
@@ -1010,7 +956,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
-  class suite : public detail::runnable<suite>
+  class suite : public detail::runnable_base
   {
     // Create and register the suites, and time the top suite.
     friend class micro_test_plus::runner;
@@ -1157,6 +1103,16 @@ namespace micro_os_plus::micro_test_plus
     timings () const noexcept;
 
     /**
+     * @brief Callable storing the suite body and any bound arguments.
+     *
+     * @details
+     * Invoked by `run()` with a reference to this suite. For a
+     * `static_suite`, it converts the reference to `static_suite&` before
+     * passing it to the user callable.
+     */
+    std::function<void (suite&)> callable_;
+
+    /**
      * @brief Timing measurements for this suite's execution.
      *
      * @details
@@ -1296,10 +1252,9 @@ namespace micro_os_plus::micro_test_plus
    * `static_runner::run_suites_()` is invoked by `runner::run()`,
    * after the dynamically registered suites.
    *
-   * The body is stored in `static_callable_`, which receives a
-   * `static_suite&` reference; the callable inherited from `suite` is left
-   * empty. The overridden `run()` method invokes `static_callable_`,
-   * surrounded by the reporter calls and the timing measurements.
+   * The body is stored in the callable inherited from `suite`, and is run
+   * by `suite::run()`; the user callable receives a `static_suite&`
+   * reference.
    *
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
@@ -1372,28 +1327,6 @@ namespace micro_os_plus::micro_test_plus
      * Destroys the owned subtests and the stored callable.
      */
     virtual ~static_suite () override;
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @brief Executes the static suite body using the stored static callable.
-     *
-     * @par Parameters
-     *   None.
-     * @par Returns
-     *   Nothing.
-     */
-    virtual void
-    run (void) override;
-
-  protected:
-    /**
-     * @brief Callable storing the static suite body and any bound arguments.
-     *
-     * @details
-     * Invoked with a reference to the concrete `static_suite` instance.
-     */
-    std::function<void (static_suite&)> static_callable_;
   };
 
   // --------------------------------------------------------------------------
