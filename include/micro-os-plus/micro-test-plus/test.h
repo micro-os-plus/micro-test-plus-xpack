@@ -209,12 +209,12 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief Base class for runners and runnable tests.
+     * @brief Base class for the nodes of the test tree.
      *
      * @details
      * The `test_node` class provides the foundational interface for the
-     * nodes of the test tree within the µTest++ framework (the runner, the
-     * suites, and the subtests). It stores the node name and the
+     * nodes of the test tree within the µTest++ framework (the suites and
+     * the subtests). It stores the node name and the
      * `runner_totals` counters for successful and failed checks and for
      * executed subtests.
      *
@@ -323,8 +323,8 @@ namespace micro_os_plus::micro_test_plus
        * @brief Totals for the test node.
        *
        * @details
-       * For the runner and the suites, the totals include the checks of all
-       * their subtests; for a subtest, they include only its own checks,
+       * For the suites, the totals include the checks of all their
+       * subtests; for a subtest, they include only its own checks,
        * plus the number of nested subtests executed.
        *
        * Updated by the node itself, by its parent (`runnable_base`), and by

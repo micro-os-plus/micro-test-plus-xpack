@@ -141,7 +141,7 @@
 // timings.h + deferred-reporter.h, reporter.h.
 #include "micro-test-plus/test.h"
 
-// Requires timings.h, test.h (detail::test_node, top_suite), reflection.h,
+// Requires timings.h, test.h (top_suite), runner-totals.h, reflection.h,
 // runner-options.h.
 #include "micro-test-plus/runner.h"
 

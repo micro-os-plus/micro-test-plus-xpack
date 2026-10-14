@@ -112,6 +112,16 @@ namespace micro_os_plus::micro_test_plus
     return timings_;
   }
 
+  /**
+   * @details
+   * Returns a const reference to the `runner_totals` member.
+   */
+  inline const runner_totals&
+  runner::totals () const noexcept
+  {
+    return totals_;
+  }
+
   // --------------------------------------------------------------------------
 
   /**

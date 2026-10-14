@@ -97,6 +97,12 @@ totals. The test case is stopped with an exception not derived from
 be `noexcept`, and a `catch (...)` in it must rethrow. Without
 exceptions, a failed `require()` still aborts the test execution.
 
+The runner no longer derives from the internal `detail::test_node`
+class, since it is not a node of the test tree: `runner::name()`, which
+always returned `"runner"`, was removed; the name shown in the reports
+is that of the top suite, returned by `initialise()`. The session
+totals are still available, via `runner::totals()`.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

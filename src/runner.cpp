@@ -107,10 +107,10 @@ namespace micro_os_plus::micro_test_plus
    * its top suite (`top_suite_`). If tracing is enabled, it outputs the
    * function signature for diagnostic purposes.
    */
-  runner::runner (void) : test_node{ "runner" }, top_suite_{ "", *this }
+  runner::runner (void) : top_suite_{ "", *this }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, top_suite_.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -121,10 +121,10 @@ namespace micro_os_plus::micro_test_plus
    * function signature for diagnostic purposes.
    */
   runner::runner (const char* top_suite_name)
-      : test_node{ "runner" }, top_suite_{ top_suite_name, *this }
+      : top_suite_{ top_suite_name, *this }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, top_suite_.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -609,7 +609,7 @@ namespace micro_os_plus::micro_test_plus
   static_runner::static_runner (void) : runner{}
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, top_suite_.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -623,7 +623,7 @@ namespace micro_os_plus::micro_test_plus
       : runner{ top_suite_name }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, top_suite_.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 

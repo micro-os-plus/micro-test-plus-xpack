@@ -64,6 +64,7 @@
 #include "reflection.h"
 #include "reporter.h"
 #include "runner-options.h"
+#include "runner-totals.h"
 
 #include <functional>
 #include <memory>
@@ -139,13 +140,17 @@ namespace micro_os_plus::micro_test_plus
    * exit code. It also offers an abort mechanism for terminating test
    * execution in exceptional circumstances.
    *
+   * The runner is not a node of the test tree: it has no name of its own
+   * (the name shown in the reports belongs to the top suite), and it owns
+   * the session totals, which accumulate the totals of all the suites.
+   *
    * All members and methods are defined within the
    * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
    * user code and minimising the risk of naming conflicts.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
-  class runner : public detail::test_node
+  class runner
   {
     // Display the session duration.
     friend class detail::reporter_human;
@@ -223,9 +228,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Destroys the registered suites and the reporter, which closes the
-     * output file, if any.
+     * output file, if any. Virtual, so that `static_runner` is destroyed
+     * correctly.
      */
-    virtual ~runner () override;
+    virtual ~runner ();
 
     /**
      * @brief Initialises the test runner with command-line arguments.
@@ -436,6 +442,23 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] size_t
     suites_count (void) const noexcept;
 
+    /**
+     * @brief Gets the totals of the test session.
+     *
+     * @details
+     * The counters include the checks and the test cases of all the
+     * suites that were run, including the top suite; they are complete
+     * only after `run()` has returned. The totals are read-only; there is
+     * no non-const overload, so that the counters cannot be modified from
+     * the test code.
+     *
+     * @par Parameters
+     *   None.
+     * @return A const reference to the session totals.
+     */
+    [[nodiscard]] const runner_totals&
+    totals () const noexcept;
+
   protected:
     /**
      * @brief Returns a reference to the test reporter.
@@ -557,6 +580,15 @@ namespace micro_os_plus::micro_test_plus
      * Measure the duration of the entire test session.
      */
     detail::timestamps timings_;
+
+    /**
+     * @brief Totals of the test session.
+     *
+     * @details
+     * The totals of each suite are added by `run()` and `run_suites_()`,
+     * after the suite was run.
+     */
+    runner_totals totals_;
 
     /**
      * @brief Owned storage for the implicit top-suite name.

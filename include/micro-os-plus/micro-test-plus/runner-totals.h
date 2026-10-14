@@ -23,8 +23,8 @@
  * This header provides the `runner_totals` class, which aggregates the
  * counts of successful checks, failed checks, and executed subtests for a
  * test runner, test suite, or subtest. Instances of this class are embedded
- * inside every `test_node`-derived object and updated in place as the
- * test session progresses.
+ * inside the runner and every node of the test tree, and updated in place
+ * as the test session progresses.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the
@@ -87,10 +87,10 @@ namespace micro_os_plus::micro_test_plus
    * subtests; for a suite or the runner, they refer to the subtests at
    * all nesting levels.
    *
-   * Every `test_node`-derived object (`runner`, `suite`, `subtest`) owns a
-   * `runner_totals` member and accumulates its counts in place. At the end
-   * of each suite or session the operator `+=` propagates the child totals
-   * up to the parent node.
+   * The runner and every node of the test tree (`suite`, `subtest`) own a
+   * `runner_totals` member and accumulate their counts in place. At the
+   * end of each suite or session the operator `+=` propagates the child
+   * totals up to the parent node, or to the runner.
    *
    * The tests can read the counters of the runner, of a suite, or of a
    * test case through the read-only `totals()` accessor.
