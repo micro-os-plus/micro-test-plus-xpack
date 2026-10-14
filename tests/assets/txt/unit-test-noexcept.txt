@@ -93,16 +93,6 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ 0.1f + 0.2f == approx (0.3f, 1e-6f)
     ✓ Floating-point tolerance - passed (11 checks)
 ✗ Static top suite - FAILED (48 checks passed, 4 failed, in 19 test cases)
-• Dynamic suite
-    • check in dynamic suite
-        ✓ 1 == 1 in dynamic suite
-    ✓ check in dynamic suite - passed (1 check)
-✓ Dynamic suite - passed (1 check in 1 test case)
-• Dynamic suite with a temporary name
-    • check in dynamic suite with a temporary name
-        ✓ 2 == 2 in the suite with a temporary name
-    ✓ check in dynamic suite with a temporary name - passed (1 check)
-✓ Dynamic suite with a temporary name - passed (1 check in 1 test case)
 • Combinatorial floats suite
     • Combinatorial floats
         ✓ 42.0 == 42 signed long long
@@ -485,6 +475,16 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:720, (42 != 42 or 42f != 42))
     ✗ Logical operations - FAILED (6 checks passed, 6 failed)
 ✗ Comparisons suite - FAILED (73 checks passed, 55 failed, in 13 test cases)
+• Dynamic suite
+    • check in dynamic suite
+        ✓ 1 == 1 in dynamic suite
+    ✓ check in dynamic suite - passed (1 check)
+✓ Dynamic suite - passed (1 check in 1 test case)
+• Dynamic suite with a temporary name
+    • check in dynamic suite with a temporary name
+        ✓ 2 == 2 in the suite with a temporary name
+    ✓ check in dynamic suite with a temporary name - passed (1 check)
+✓ Dynamic suite with a temporary name - passed (1 check in 1 test case)
 • Failed combinatorial floats suite
     • Combinatorial floats
         ✗ 42.0 == 42 signed long long FAILED (float-failed-combinations.cpp:36, 42f != 42ll)

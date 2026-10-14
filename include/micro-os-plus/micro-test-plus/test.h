@@ -898,7 +898,8 @@ namespace micro_os_plus::micro_test_plus
    * `suite` represents a top-level named group of related test cases within
    * the µTest++ framework. It is created by calling `runner::suite()`, which
    * constructs the object and stores it in the runner's collection; the
-   * stored suites are run later, sorted by name, by `runner::run()`.
+   * stored suites are run later by `runner::run()`, together with the
+   * static suites, sorted by name.
    * Each suite records its own timing information and propagates its
    * results to the owning `runner`.
    *
@@ -1211,9 +1212,10 @@ namespace micro_os_plus::micro_test_plus
    * object: its head is a `constinit` pointer, initialised before any
    * constructor runs, and the links are members of the suites. The
    * runner is only referred to, not accessed, so it may be constructed
-   * later. When `runner::run()` is called, after the suites registered
-   * with `runner::suite()`, the runner runs the static suites that refer
-   * to it, in the order of the list. Upon destruction, the suite removes
+   * later. When `runner::run()` is called, the runner runs the static
+   * suites that refer to it, in the order of the list, merged by name
+   * with the suites registered with `runner::suite()`; for equal names,
+   * the registered suites run first. Upon destruction, the suite removes
    * itself from the list.
    *
    * The body is stored in the callable inherited from `suite`, and is run

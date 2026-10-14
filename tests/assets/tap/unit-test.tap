@@ -135,20 +135,6 @@ TAP version 14
     ok 15 - Floating-point tolerance # { passed, 11 checks }
     1..15
 not ok 1 - Static top suite # { FAILED, 48 checks passed, 4 failed, in 19 test cases, time: 1.513 ms }
-# Subtest: Dynamic suite
-    # Subtest: check in dynamic suite
-        ok 1 - 1 == 1 in dynamic suite
-        1..1
-    ok 1 - check in dynamic suite # { passed, 1 check }
-    1..1
-ok 2 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.068 ms }
-# Subtest: Dynamic suite with a temporary name
-    # Subtest: check in dynamic suite with a temporary name
-        ok 1 - 2 == 2 in the suite with a temporary name
-        1..1
-    ok 1 - check in dynamic suite with a temporary name # { passed, 1 check }
-    1..1
-ok 3 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.056 ms }
 # Subtest: Combinatorial floats suite
     # Subtest: Combinatorial floats
         ok 1 - 42.0 == 42 signed long long
@@ -199,7 +185,7 @@ ok 3 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
         1..21
     ok 2 - Combinatorial doubles # { passed, 21 checks }
     1..2
-ok 4 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.443 ms }
+ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.443 ms }
 # Subtest: Combinatorial integrals suite
     # Subtest: Combinatorial integrals with signed long long
         ok 1 - eq matches signed long long
@@ -386,7 +372,7 @@ ok 4 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0
         1..20
     ok 8 - Combinatorial integrals with unsigned char # { passed, 20 checks }
     1..8
-ok 5 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 1.541 ms }
+ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 1.541 ms }
 # Subtest: Comparisons suite
     # Subtest: Integer comparisons
         ok 1 - actual == 42
@@ -886,7 +872,21 @@ ok 5 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
         1..12
     not ok 13 - Logical operations # { FAILED, 6 checks passed, 6 failed }
     1..13
-not ok 6 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test cases, time: 1.631 ms }
+not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test cases, time: 1.631 ms }
+# Subtest: Dynamic suite
+    # Subtest: check in dynamic suite
+        ok 1 - 1 == 1 in dynamic suite
+        1..1
+    ok 1 - check in dynamic suite # { passed, 1 check }
+    1..1
+ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.068 ms }
+# Subtest: Dynamic suite with a temporary name
+    # Subtest: check in dynamic suite with a temporary name
+        ok 1 - 2 == 2 in the suite with a temporary name
+        1..1
+    ok 1 - check in dynamic suite with a temporary name # { passed, 1 check }
+    1..1
+ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.056 ms }
 # Subtest: Exceptions suite
     # Subtest: thrown exceptions
         ok 1 - exception thrown

@@ -132,10 +132,12 @@ namespace micro_os_plus::micro_test_plus
    * execution of test suites within the µTest++ framework. It owns the
    * implicit top suite, whose test cases are added after `initialise()`,
    * and a collection of test suites added with `suite()`, which are run
-   * later, sorted by name, by `run()`. The `static_suite` objects that
-   * refer to the runner are run after them, also sorted by name; they are
-   * kept in a list independent of the runner object, so they may be
-   * constructed before it.
+   * later, by `run()`. The `static_suite` objects that refer to the
+   * runner are kept in a list independent of the runner object, so they
+   * may be constructed before it. `run()` runs the suites added with
+   * `suite()` and the static suites together, in a single order, sorted
+   * by name; for equal names, the suites added with `suite()` run first,
+   * in the order of their addition.
    *
    * The test runner provides methods for initialising the test environment
    * (including the creation of the reporter selected on the command line,
@@ -294,8 +296,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Completes the top suite, runs the suites registered with `suite()`
-     * and the static suites that refer to this runner, and ends the
-     * session.
+     * and the static suites that refer to this runner, together, sorted
+     * by name, and ends the session.
      *
      * The session runs only once; later calls return the same exit code
      * without running anything again.
@@ -329,6 +331,12 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Adds a test suite to the runner, to be run by `run()`.
+     *
+     * @details
+     * Unlike the test cases added to the top suite, which run
+     * immediately, the suite is only stored; `run()` runs it later,
+     * together with the static suites that refer to this runner, sorted
+     * by name.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -525,8 +533,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Runs all registered test suites.
      *
      * @details
-     * Runs the suites registered with `suite()`, then the static suites
-     * that refer to this runner.
+     * Runs the suites registered with `suite()` and the static suites
+     * that refer to this runner in a single order, sorted by name; for
+     * equal names, the registered suites run first.
      *
      * @par Parameters
      *   None.

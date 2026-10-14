@@ -114,7 +114,7 @@ main (int argc, char* argv[])
       });
 
     // The suite will be executed when the runner terminates, at `run()`,
-    // before the static suites.
+    // together with the static suites, sorted by name.
     sr.suite ("Local suite 2", suite_function);
 
     ts.test ("Check various conditions 2.2", [] (auto& t)

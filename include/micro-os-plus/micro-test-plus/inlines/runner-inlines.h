@@ -129,7 +129,8 @@ namespace micro_os_plus::micro_test_plus
    * Constructs a `suite` object on the heap, binding the callable and any
    * additional arguments, then transfers ownership to the runner via
    * `register_suite_()`. The suite is not run here; all registered suites
-   * are run later, sorted by name, by `run()`.
+   * are run later by `run()`, together with the static suites, sorted by
+   * name.
    */
   template <typename Callable_T, typename... Args_T>
   void

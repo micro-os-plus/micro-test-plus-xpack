@@ -20,8 +20,6 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Application types with get()
     • Message values
     • Floating-point tolerance
-    • check in dynamic suite
-    • check in dynamic suite with a temporary name
     • Combinatorial floats
     • Combinatorial doubles
     • Combinatorial integrals with signed long long
@@ -45,6 +43,8 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Null pointer comparisons
     • Failed null pointer comparisons
     • Logical operations
+    • check in dynamic suite
+    • check in dynamic suite with a temporary name
     • thrown exceptions
     • Failed thrown exceptions
     • Not thrown exceptions

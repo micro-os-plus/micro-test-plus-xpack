@@ -25,9 +25,9 @@
  * facilities of the µTest++ framework. It provides the logic for initialising
  * the test environment, registering and managing test suites, handling
  * command-line arguments, orchestrating test execution, and determining the
- * overall test result. The registered suites are executed sorted by name,
- * followed by the suites declared at namespace scope, also sorted by name.
- * A mechanism for aborting test execution in critical scenarios is also
+ * overall test result. The registered suites and the suites declared at
+ * namespace scope are executed together, in a single order, sorted by
+ * name. A mechanism for aborting test execution in critical scenarios is also
  * provided.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
@@ -49,6 +49,7 @@
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
 #include <algorithm>
+#include <cstring>
 #include <string>
 
 // ----------------------------------------------------------------------------
@@ -392,69 +393,85 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Sorts `children_suites_` alphabetically by suite name using a
-   * selection sort on `unique_ptr::swap`, avoiding the
-   * `-Waggregate-return` diagnostic that `std::sort` would trigger on
-   * unique-pointer iterators. Each suite is assigned a 1-based index
-   * offset by the top-suite index, executed via `suite::run()`, and its
+   * Runs the suites registered with `suite()` and the static suites that
+   * refer to this runner in a single order, sorted by name.
+   *
+   * First, `children_suites_` is sorted by name with an insertion sort
+   * on `unique_ptr::swap`, avoiding the `-Waggregate-return` diagnostic
+   * that `std::stable_sort` would trigger on unique-pointer iterators;
+   * the sort is stable, so the registered suites with the same name
+   * remain in the order of their registration.
+   *
+   * The sorted registered suites are then merged with the list of static
+   * suites, which is already sorted by name; the static suites of other
+   * runners are skipped. For equal names, the registered suite runs
+   * first. The names are compared with `std::strcmp()`, as when the list
+   * of static suites is built.
+   *
+   * Each suite is assigned a 1-based index, following the top suite, in
+   * the order of execution, is executed via `suite::run()`, and its
    * totals are accumulated into the runner totals. The executed-subtest
    * counter is not incremented; suites are not counted as subtests.
-   *
-   * The static suites that refer to this runner follow, in the order of
-   * the list of static suites, which is kept sorted by name, and are
-   * numbered after the registered suites.
    */
   void
   runner::run_suites_ (void)
   {
-    // Use selection sort with unique_ptr::swap (returns void) to avoid
-    // std::sort triggering -Waggregate-return via std::move_backward,
-    // which returns a class-type iterator when operating on unique_ptr
-    // elements.
+    // Use insertion sort with unique_ptr::swap (returns void) to avoid
+    // std::stable_sort triggering -Waggregate-return via
+    // std::move_backward, which returns a class-type iterator when
+    // operating on unique_ptr elements.
     const size_t n = children_suites_.size ();
-    for (size_t i = 0; i < n; ++i)
+    for (size_t i = 1; i < n; ++i)
       {
-        size_t min_idx = i;
-        for (size_t j = i + 1; j < n; ++j)
+        for (size_t j = i;
+             j > 0
+             && std::strcmp (children_suites_[j - 1]->name (),
+                             children_suites_[j]->name ())
+                    > 0;
+             --j)
           {
-            if (std::string_view{ children_suites_[j]->name () }
-                < std::string_view{ children_suites_[min_idx]->name () })
-              min_idx = j;
+            children_suites_[j - 1].swap (children_suites_[j]);
           }
-        if (min_idx != i)
-          children_suites_[i].swap (children_suites_[min_idx]);
       }
 
-    for (size_t i = 0; i < n; ++i)
+    // The top suite has index 1.
+    size_t own_index = 1;
+    size_t i = 0;
+    static_suite* static_ptr = static_suite::first_;
+    while (true)
       {
-        auto* suite_ptr = children_suites_[i].get ();
-
-        // +1 for 1-based index, +1 for top suite
-        suite_ptr->own_index (i + 1 + 1);
-
-        // Run the child suite immediately.
-        suite_ptr->run ();
-
-        // Accumulate the totals from the child suite into the runner
-        // totals.
-        // DO NOT increment executed_subtests here.
-        totals_ += suite_ptr->totals ();
-      }
-
-    size_t own_index = suites_count ();
-    for (static_suite* suite_ptr = static_suite::first_; suite_ptr != nullptr;
-         suite_ptr = suite_ptr->next_)
-      {
-        if (&suite_ptr->runner () != this)
+        // Skip the static suites run by other runners.
+        while (static_ptr != nullptr && &static_ptr->runner () != this)
           {
-            // Run by another runner.
-            continue;
+            static_ptr = static_ptr->next_;
+          }
+
+        class suite* suite_ptr;
+        if (i < n
+            && (static_ptr == nullptr
+                || std::strcmp (children_suites_[i]->name (),
+                                static_ptr->name ())
+                       <= 0))
+          {
+            suite_ptr = children_suites_[i].get ();
+            ++i;
+          }
+        else if (static_ptr != nullptr)
+          {
+            suite_ptr = static_ptr;
+            static_ptr = static_ptr->next_;
+          }
+        else
+          {
+            break;
           }
 
         suite_ptr->own_index (++own_index);
 
         suite_ptr->run ();
 
+        // Accumulate the totals from the child suite into the runner
+        // totals.
         // DO NOT increment executed_subtests here.
         totals_ += suite_ptr->totals ();
       }
@@ -464,8 +481,8 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Finalises the top suite by recording its end timestamp and notifying
    * the reporter, then accumulates its totals into the runner totals.
-   * Subsequently invokes `run_suites_()` to sort, execute, and
-   * accumulate all registered child suites. Finally, records the session
+   * Subsequently invokes `run_suites_()` to execute, sorted by name, and
+   * accumulate the registered and the static child suites. Finally, records the session
    * end timestamp, notifies the reporter, and returns `0` if all checks
    * passed or `1` otherwise; if `initialise()` reported an option error,
    * `2` is returned, regardless of the checks.
