@@ -170,7 +170,7 @@ namespace
 
 static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
   {
-    const runner_totals& current_suite_totals = ts.totals ();
+    const counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 

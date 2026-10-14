@@ -52,7 +52,7 @@ _local_include_directories += [
 
 _local_sources += [
   'src/runner.cpp',
-  'src/runner-totals.cpp',
+  'src/counters.cpp',
   'src/deferred-reporter.cpp',
   'src/expression-formatter.cpp',
   'src/reporter.cpp',

@@ -76,7 +76,7 @@ target_include_directories (
 target_sources (
   micro-os-plus-micro-test-plus-interface
   INTERFACE "src/runner.cpp"
-            "src/runner-totals.cpp"
+            "src/counters.cpp"
             "src/deferred-reporter.cpp"
             "src/expression-formatter.cpp"
             "src/reporter.cpp"
@@ -144,7 +144,7 @@ target_include_directories (
 target_sources (
   micro-os-plus-micro-test-plus-objects-library
   PRIVATE "src/runner.cpp"
-          "src/runner-totals.cpp"
+          "src/counters.cpp"
           "src/deferred-reporter.cpp"
           "src/expression-formatter.cpp"
           "src/reporter.cpp"
@@ -232,7 +232,7 @@ target_include_directories (
 target_sources (
   micro-os-plus-micro-test-plus-static-library
   PRIVATE "src/runner.cpp"
-          "src/runner-totals.cpp"
+          "src/counters.cpp"
           "src/deferred-reporter.cpp"
           "src/expression-formatter.cpp"
           "src/reporter.cpp"

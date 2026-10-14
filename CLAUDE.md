@@ -26,7 +26,7 @@ programs against it on many toolchains and platforms.
   concern (`runner.h`, `test.h`, `reporter.h`, `reporter-human.h`,
   `reporter-tap.h`, `deferred-reporter.h`, `operators.h`,
   `function-comparators.h`, `expression-formatter.h`, `reflection.h`,
-  `type-traits.h`, `timings.h`, `runner-totals.h`, `literals.h`,
+  `type-traits.h`, `timings.h`, `counters.h`, `literals.h`,
   `math.h`, `utility.h`, `exceptions.h`, `detail.h`).
 - `include/micro-os-plus/micro-test-plus/inlines/*.h` — inline/template
   definitions for the above headers (kept separate from the declarations).
@@ -53,7 +53,7 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace.
 
 - `runner` (in `runner.h`, defined in `src/runner.cpp`) is the top-level
   test session driver: it owns the tree of suites/tests, tracks pass/fail
-  totals (`runner-totals.h`), timings (`timings.h`), and drives a
+  totals (`counters.h`), timings (`timings.h`), and drives a
   `reporter` to print progress and the final summary. It also runs the
   `static_suite` objects that refer to it, which are kept in an
   intrusive list sorted by name, with a `constinit` head pointer

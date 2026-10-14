@@ -330,7 +330,7 @@ namespace micro_os_plus::micro_test_plus::detail
       }
 
     char message_totals[160];
-    if (suite.totals ().was_successful ()) [[likely]]
+    if (suite.totals ().passed ()) [[likely]]
       {
         snprintf (message_totals, sizeof (message_totals),
                   "ok %zu - %s # { passed, %zu check%s in %zu "
@@ -378,7 +378,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        if (suite.totals ().was_successful ()) [[likely]]
+        if (suite.totals ().passed ()) [[likely]]
           {
             // Successful test suite.
 
@@ -552,7 +552,7 @@ namespace micro_os_plus::micro_test_plus::detail
                   + test_case.totals ().skipped_test_cases ());
 
     char message_totals[300];
-    if (test_case.totals ().was_successful ()) [[likely]]
+    if (test_case.totals ().passed ()) [[likely]]
       {
         snprintf (message_totals, sizeof (message_totals),
                   "%sok %zu - %s # { passed, %zu check%s }", indent.c_str (),
@@ -596,7 +596,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        if (test_case.totals ().was_successful ()) [[likely]]
+        if (test_case.totals ().passed ()) [[likely]]
           {
             // Successful test case.
             if (verbosity_ == verbosity::verbose)

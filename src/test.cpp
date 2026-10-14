@@ -188,7 +188,7 @@ namespace micro_os_plus::micro_test_plus
       // totals, each test case shows only its counters. But a failed child
       // fails this test too, as in node-tap; the failure reaches all outer
       // tests, one level at a time, when they end.
-      if (!test_case.totals ().was_successful ())
+      if (!test_case.totals ().passed ())
         {
           totals_.increment_failed_test_cases ();
         }

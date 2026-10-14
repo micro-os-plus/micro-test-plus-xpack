@@ -141,7 +141,7 @@ test_case_expect_floats_passed_combinatorial (test_case& t)
 static static_suite ts_passed_floats{ "Combinatorial floats suite", tr,
                                       [] (auto& ts)
   {
-    const runner_totals& current_suite_totals = ts.totals ();
+    const counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 

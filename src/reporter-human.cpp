@@ -242,7 +242,7 @@ namespace micro_os_plus::micro_test_plus::detail
                       microseconds);
           }
 
-        if (runner.totals ().was_successful ()) [[likely]]
+        if (runner.totals ().passed ()) [[likely]]
           {
             write_file_ ("✓ %s%s\n", message_totals, message_time);
 
@@ -353,7 +353,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        if (suite.totals ().was_successful ()) [[likely]]
+        if (suite.totals ().passed ()) [[likely]]
           {
             // Successful test suite.
 
@@ -556,7 +556,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        if (test_case.totals ().was_successful ()) [[likely]]
+        if (test_case.totals ().passed ()) [[likely]]
           {
             // Successful test case.
 

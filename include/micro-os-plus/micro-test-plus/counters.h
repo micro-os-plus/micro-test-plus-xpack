@@ -17,10 +17,10 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ runner totals.
+ * @brief C++ header file with declarations for the µTest++ counters.
  *
  * @details
- * This header provides the `runner_totals` class, which aggregates the
+ * This header provides the `counters` class, which aggregates the
  * counts of successful checks, failed checks, and executed test cases for a
  * test runner, test suite, or test case. Instances of this class are embedded
  * inside the runner and every node of the test tree, and updated in place
@@ -36,8 +36,8 @@
  * user code.
  */
 
-#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_RUNNER_TOTALS_H_
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_RUNNER_TOTALS_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_COUNTERS_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_COUNTERS_H_
 
 // ----------------------------------------------------------------------------
 
@@ -76,20 +76,22 @@ namespace micro_os_plus::micro_test_plus
    * tree.
    *
    * @details
-   * `runner_totals` records four counters that are maintained throughout a
+   * `counters` records five counters that are maintained throughout a
    * test session:
    * - the number of checks that passed (`successful_checks_`),
    * - the number of checks that failed (`failed_checks_`),
    * - the number of test cases that were executed (`executed_test_cases_`),
+   * - the number of those test cases that failed (`failed_test_cases_`),
    *   and
-   * - the number of those test cases that failed (`failed_test_cases_`).
+   * - the number of test cases skipped by the filter
+   *   (`skipped_test_cases_`).
    *
    * For a test case, the test case counters refer only to its direct nested
    * test cases; for a suite or the runner, they refer to the test cases at
    * all nesting levels.
    *
    * The runner and every node of the test tree (`suite`, `test_case`) own a
-   * `runner_totals` member and accumulate their counts in place. At the
+   * `counters` member and accumulate their counts in place. At the
    * end of each suite or session the operator `+=` propagates the child
    * totals up to the parent node, or to the runner.
    *
@@ -101,7 +103,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
-  class runner_totals
+  class counters
   {
   public:
     /**
@@ -110,7 +112,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * All counters start at zero, via their default member initialisers.
      */
-    runner_totals () = default;
+    counters () = default;
 
     /**
      * @brief Deleted copy constructor to prevent copying.
@@ -119,7 +121,7 @@ namespace micro_os_plus::micro_test_plus
      * The counters belong to a single node of the test tree; a copy would
      * be updated independently and the results would diverge.
      */
-    runner_totals (const runner_totals&) = delete;
+    counters (const counters&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
@@ -127,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The instance is a member of a node that is itself non-movable.
      */
-    runner_totals (runner_totals&&) = delete;
+    counters (counters&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
@@ -135,8 +137,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Totals are combined explicitly with `operator+=`, never replaced.
      */
-    runner_totals&
-    operator= (const runner_totals&)
+    counters&
+    operator= (const counters&)
         = delete;
 
     /**
@@ -145,8 +147,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Totals are combined explicitly with `operator+=`, never replaced.
      */
-    runner_totals&
-    operator= (runner_totals&&)
+    counters&
+    operator= (counters&&)
         = delete;
 
     /**
@@ -155,8 +157,8 @@ namespace micro_os_plus::micro_test_plus
      * @param other The instance whose totals are to be added.
      * @return Reference to this instance.
      */
-    runner_totals&
-    operator+= (const runner_totals& other) noexcept;
+    counters&
+    operator+= (const counters& other) noexcept;
 
     /**
      * @brief Increments the successful-checks counter.
@@ -285,7 +287,7 @@ namespace micro_os_plus::micro_test_plus
      * @retval false At least one check or one test case failed.
      */
     [[nodiscard]] bool
-    was_successful (void) const noexcept;
+    passed () const noexcept;
 
   protected:
     /**
@@ -351,10 +353,10 @@ namespace micro_os_plus::micro_test_plus
 // ============================================================================
 // Templates, inlines & constexpr implementations.
 
-#include "inlines/runner-totals-inlines.h"
+#include "inlines/counters-inlines.h"
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_RUNNER_TOTALS_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_COUNTERS_H_
 
 // ----------------------------------------------------------------------------

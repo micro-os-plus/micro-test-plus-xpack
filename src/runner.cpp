@@ -585,7 +585,7 @@ namespace micro_os_plus::micro_test_plus
       }
     else
       {
-        exit_code_ = totals_.was_successful () ? 0 : 1;
+        exit_code_ = totals_.passed () ? 0 : 1;
       }
     session_state_ = session_state_t::finished;
 

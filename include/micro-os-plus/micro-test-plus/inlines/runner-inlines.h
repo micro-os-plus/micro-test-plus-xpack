@@ -114,9 +114,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns a const reference to the `runner_totals` member.
+   * Returns a const reference to the `counters` member.
    */
-  inline const runner_totals&
+  inline const counters&
   runner::totals () const noexcept
   {
     return totals_;

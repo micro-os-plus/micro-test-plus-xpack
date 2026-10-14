@@ -115,7 +115,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  const runner_totals& current_suite_totals = ts.totals ();
+  const counters& current_suite_totals = ts.totals ();
 
   ts.test ("require", [] (auto& t)
     {
@@ -560,8 +560,8 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   {
-    runner_totals fresh{};
-    test_assert (fresh.was_successful ());
+    counters fresh{};
+    test_assert (fresh.passed ());
     test_assert (fresh.executed_checks () == 0);
   }
 

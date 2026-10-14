@@ -17,13 +17,13 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ runner
- * totals methods.
+ * @brief C++ source file with implementations for the µTest++ counters
+ * methods.
  *
  * @details
  * This source file contains the implementation of the
- * `runner_totals::operator+=` method, which aggregates test result
- * counters from one `runner_totals` instance into another. It
+ * `counters::operator+=` method, which aggregates test result
+ * counters from one `counters` instance into another. It
  * accumulates successful checks, failed checks, and the executed, failed,
  * and skipped test cases.
  *
@@ -35,7 +35,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "micro-os-plus/micro-test-plus/runner-totals.h"
+#include "micro-os-plus/micro-test-plus/counters.h"
 
 #if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
@@ -70,8 +70,8 @@ namespace micro_os_plus::micro_test_plus
    * reference to `*this` to support chaining. When tracing is enabled, the updated
    * totals are output for diagnostic purposes.
    */
-  runner_totals&
-  runner_totals::operator+= (const runner_totals& other) noexcept
+  counters&
+  counters::operator+= (const counters& other) noexcept
   {
     successful_checks_ += other.successful_checks ();
     failed_checks_ += other.failed_checks ();

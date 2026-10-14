@@ -129,7 +129,7 @@
 #include "micro-test-plus/deferred-reporter.h"
 
 // No deps.
-#include "micro-test-plus/runner-totals.h"
+#include "micro-test-plus/counters.h"
 
 // Requires reporter.h, reflection.h.
 #include "micro-test-plus/reporter-human.h"
@@ -140,11 +140,11 @@
 // No deps.
 #include "micro-test-plus/utility.h"
 
-// Requires reporter.h, runner-totals.h, reflection.h, type-traits.h and
+// Requires reporter.h, counters.h, reflection.h, type-traits.h and
 // timings.h + deferred-reporter.h, reporter.h.
 #include "micro-test-plus/test.h"
 
-// Requires timings.h, test.h (top_suite), runner-totals.h, reflection.h,
+// Requires timings.h, test.h (top_suite), counters.h, reflection.h,
 // runner-options.h.
 #include "micro-test-plus/runner.h"
 

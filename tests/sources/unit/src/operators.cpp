@@ -33,7 +33,7 @@ using namespace micro_os_plus::micro_test_plus;
 
 static static_suite ts_operators{ "Operators suite", tr, [] (auto& ts)
   {
-    const runner_totals& current_suite_totals = ts.totals ();
+    const counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 

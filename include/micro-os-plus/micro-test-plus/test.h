@@ -61,7 +61,7 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include "runner-totals.h"
+#include "counters.h"
 #include "type-traits.h"
 #include "timings.h"
 #include "reflection.h"
@@ -92,8 +92,8 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  class counters;
   class runner;
-  class runner_totals;
   class test_case;
   class suite;
 
@@ -188,8 +188,8 @@ namespace micro_os_plus::micro_test_plus
      * `runnable_base` is the single base of the nodes of the test tree,
      * and holds the state that is shared by every runnable object:
      * - the node name,
-     * - the `runner_totals` counters for the successful and failed checks
-     *   and for the executed test cases,
+     * - the counters of the successful and failed checks and of the
+     *   executed test cases,
      * - a reference to the owning `runner`,
      * - the object's own index within its parent container,
      * - the number of the most recent test point (check or nested test
@@ -300,9 +300,9 @@ namespace micro_os_plus::micro_test_plus
        *
        * @par Parameters
        *   None.
-       * @return A const reference to the runner_totals instance.
+       * @return A const reference to the `counters` instance.
        */
-      [[nodiscard]] const runner_totals&
+      [[nodiscard]] const counters&
       totals () const noexcept;
 
       /**
@@ -472,7 +472,7 @@ namespace micro_os_plus::micro_test_plus
        * Updated by the node itself, by its parent, and by the deferred
        * reporter, which is a friend.
        */
-      runner_totals totals_;
+      counters totals_;
 
       /**
        * @brief Reference to the test runner that owns this object.

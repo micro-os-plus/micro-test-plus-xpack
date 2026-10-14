@@ -16,12 +16,14 @@ with the public headers, and the build system files (`CMakeLists.txt`,
 ├── include
 │   └── micro-os-plus
 │       ├── micro-test-plus
+│       │   ├── counters.h
 │       │   ├── deferred-reporter.h
 │       │   ├── detail.h
 │       │   ├── exceptions.h
 │       │   ├── expression-formatter.h
 │       │   ├── function-comparators.h
 │       │   ├── inlines
+│       │   │   ├── counters-inlines.h
 │       │   │   ├── deferred-reporter-inlines.h
 │       │   │   ├── detail-inlines.h
 │       │   │   ├── exceptions-inlines.h
@@ -33,7 +35,6 @@ with the public headers, and the build system files (`CMakeLists.txt`,
 │       │   │   ├── reflection-inlines.h
 │       │   │   ├── reporter-inlines.h
 │       │   │   ├── runner-inlines.h
-│       │   │   ├── runner-totals-inlines.h
 │       │   │   ├── test-inlines.h
 │       │   │   ├── timings-inlines.h
 │       │   │   ├── utility-inlines.h
@@ -46,7 +47,6 @@ with the public headers, and the build system files (`CMakeLists.txt`,
 │       │   ├── reporter-human.h
 │       │   ├── reporter-tap.h
 │       │   ├── reporter.h
-│       │   ├── runner-totals.h
 │       │   ├── runner.h
 │       │   ├── test.h
 │       │   ├── timings.h
@@ -59,13 +59,13 @@ with the public headers, and the build system files (`CMakeLists.txt`,
 ├── package.json
 ├── README.md
 ├── src
+│   ├── counters.cpp
 │   ├── deferred-reporter.cpp
 │   ├── expression-formatter.cpp
 │   ├── reflection.cpp
 │   ├── reporter-human.cpp
 │   ├── reporter-tap.cpp
 │   ├── reporter.cpp
-│   ├── runner-totals.cpp
 │   ├── runner.cpp
 │   ├── test.cpp
 │   ├── timings.cpp

@@ -65,7 +65,7 @@
 #include "reflection.h"
 #include "reporter.h"
 #include "runner-options.h"
-#include "runner-totals.h"
+#include "counters.h"
 
 #include <functional>
 #include <memory>
@@ -484,7 +484,7 @@ namespace micro_os_plus::micro_test_plus
      * `run()` has returned, and is zero when there are no patterns. The
      * skipped suites are included in `suites_count()` and
      * `static_suites_count()`; the skipped test cases are counted by
-     * `runner_totals::skipped_test_cases()`.
+     * `counters::skipped_test_cases()`.
      *
      * @par Parameters
      *   None.
@@ -509,7 +509,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return A const reference to the session totals.
      */
-    [[nodiscard]] const runner_totals&
+    [[nodiscard]] const counters&
     totals () const noexcept;
 
   protected:
@@ -668,7 +668,7 @@ namespace micro_os_plus::micro_test_plus
      * The totals of each suite are added by `run()` and `run_suites_()`,
      * after the suite was run.
      */
-    runner_totals totals_;
+    counters totals_;
 
     /**
      * @brief Owned storage for the implicit top-suite name.

@@ -18,11 +18,11 @@
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++
- * runner totals.
+ * counters.
  *
  * @details
- * This header provides the inline method bodies for the `runner_totals`
- * class, separated from the class declaration in `runner-totals.h` to
+ * This header provides the inline method bodies for the `counters`
+ * class, separated from the class declaration in `counters.h` to
  * enforce the project convention that declarations reside in headers
  * and implementations reside in inline files.
  *
@@ -31,8 +31,8 @@
  * the risk of naming conflicts.
  */
 
-#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_RUNNER_TOTALS_INLINES_H_
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_RUNNER_TOTALS_INLINES_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_COUNTERS_INLINES_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_COUNTERS_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ namespace micro_os_plus::micro_test_plus
    * Adds `count` to the `successful_checks_` counter.
    */
   inline void
-  runner_totals::increment_successful_checks (size_t count) noexcept
+  counters::increment_successful_checks (size_t count) noexcept
   {
     successful_checks_ += count;
   }
@@ -69,7 +69,7 @@ namespace micro_os_plus::micro_test_plus
    * Adds `count` to the `failed_checks_` counter.
    */
   inline void
-  runner_totals::increment_failed_checks (size_t count) noexcept
+  counters::increment_failed_checks (size_t count) noexcept
   {
     failed_checks_ += count;
   }
@@ -79,7 +79,7 @@ namespace micro_os_plus::micro_test_plus
    * Adds `count` to the `executed_test_cases_` counter.
    */
   inline void
-  runner_totals::increment_executed_test_cases (size_t count) noexcept
+  counters::increment_executed_test_cases (size_t count) noexcept
   {
     executed_test_cases_ += count;
   }
@@ -89,7 +89,7 @@ namespace micro_os_plus::micro_test_plus
    * Adds `count` to the `failed_test_cases_` counter.
    */
   inline void
-  runner_totals::increment_failed_test_cases (size_t count) noexcept
+  counters::increment_failed_test_cases (size_t count) noexcept
   {
     failed_test_cases_ += count;
   }
@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
    * Adds `count` to the `skipped_test_cases_` counter.
    */
   inline void
-  runner_totals::increment_skipped_test_cases (size_t count) noexcept
+  counters::increment_skipped_test_cases (size_t count) noexcept
   {
     skipped_test_cases_ += count;
   }
@@ -109,7 +109,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `successful_checks_` counter.
    */
   inline size_t
-  runner_totals::successful_checks () const noexcept
+  counters::successful_checks () const noexcept
   {
     return successful_checks_;
   }
@@ -119,7 +119,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `failed_checks_` counter.
    */
   inline size_t
-  runner_totals::failed_checks () const noexcept
+  counters::failed_checks () const noexcept
   {
     return failed_checks_;
   }
@@ -129,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the sum of `successful_checks_` and `failed_checks_`.
    */
   inline size_t
-  runner_totals::executed_checks () const noexcept
+  counters::executed_checks () const noexcept
   {
     return successful_checks_ + failed_checks_;
   }
@@ -139,7 +139,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `executed_test_cases_` counter.
    */
   inline size_t
-  runner_totals::executed_test_cases () const noexcept
+  counters::executed_test_cases () const noexcept
   {
     return executed_test_cases_;
   }
@@ -149,7 +149,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `failed_test_cases_` counter.
    */
   inline size_t
-  runner_totals::failed_test_cases () const noexcept
+  counters::failed_test_cases () const noexcept
   {
     return failed_test_cases_;
   }
@@ -159,7 +159,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `skipped_test_cases_` counter.
    */
   inline size_t
-  runner_totals::skipped_test_cases () const noexcept
+  counters::skipped_test_cases () const noexcept
   {
     return skipped_test_cases_;
   }
@@ -172,7 +172,7 @@ namespace micro_os_plus::micro_test_plus
    * failure is reported at every level above it, as in node-tap.
    */
   inline bool
-  runner_totals::was_successful (void) const noexcept
+  counters::passed () const noexcept
   {
     return failed_checks_ == 0 && failed_test_cases_ == 0;
   }
@@ -192,6 +192,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_RUNNER_TOTALS_INLINES_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_COUNTERS_INLINES_H_
 
 // ----------------------------------------------------------------------------

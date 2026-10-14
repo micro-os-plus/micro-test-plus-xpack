@@ -142,7 +142,7 @@ test_case_expect_integrals_passed_combinations (test_case& t)
 static static_suite ts_passed_integrals{ "Combinatorial integrals suite", tr,
                                          [] (auto& ts)
   {
-    const runner_totals& current_suite_totals = ts.totals ();
+    const counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
