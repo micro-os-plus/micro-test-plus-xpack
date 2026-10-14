@@ -25,7 +25,7 @@
  * `runner_totals::operator+=` method, which aggregates test result
  * counters from one `runner_totals` instance into another. It
  * accumulates successful checks, failed checks, and the executed, failed,
- * and skipped subtests.
+ * and skipped test cases.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus` namespace.
@@ -65,7 +65,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Adds the successful check count, failed check count, executed
-   * subtest count, failed subtest count, and skipped subtest count of
+   * test case count, failed test case count, and skipped test case count of
    * @p other to the corresponding members of this instance. Returns a
    * reference to `*this` to support chaining. When tracing is enabled, the updated
    * totals are output for diagnostic purposes.
@@ -75,14 +75,14 @@ namespace micro_os_plus::micro_test_plus
   {
     successful_checks_ += other.successful_checks ();
     failed_checks_ += other.failed_checks ();
-    executed_subtests_ += other.executed_subtests ();
-    failed_subtests_ += other.failed_subtests ();
-    skipped_subtests_ += other.skipped_subtests ();
+    executed_test_cases_ += other.executed_test_cases ();
+    failed_test_cases_ += other.failed_test_cases ();
+    skipped_test_cases_ += other.skipped_test_cases ();
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s -> +%zu -%zu in xs%zu -xs%zu\n", __PRETTY_FUNCTION__,
-                   successful_checks_, failed_checks_, executed_subtests_,
-                   failed_subtests_);
+                   successful_checks_, failed_checks_, executed_test_cases_,
+                   failed_test_cases_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     return *this;

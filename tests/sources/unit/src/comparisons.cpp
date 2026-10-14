@@ -100,21 +100,21 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
           local_counts.successful_checks++;
         }
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
     ts.test ("Failed integer comparisons", [] (auto& t)
       {
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
 
         t.expect (ne (my_actual_integral (), 42)) << "actual != 42";
         local_counts.failed_checks++;
@@ -152,8 +152,8 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -251,15 +251,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
           local_counts.successful_checks++;
         }
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -339,15 +339,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
           local_counts.failed_checks++;
         }
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -379,15 +379,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
             << "actual_sv >= abc_sv";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -417,15 +417,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
             << "actual_sv < abc_sv";
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -460,15 +460,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (eq (unterminated, "abc")) << "unterminated == \"abc\"";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -484,15 +484,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (eq (null_string, "abc")) << "null_string == \"abc\"";
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -541,15 +541,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (gt (ptwo, pone)) << "ptwo > pone";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -598,15 +598,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (le (ptwo, pone)) << "ptwo <= pone";
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -625,15 +625,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (eq (pfunc, nullptr)) << "pfunc == nullptr";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -652,15 +652,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (ne (pfunc, nullptr)) << "pfunc != nullptr";
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // --------------------------------------------------------------------------
 
@@ -722,15 +722,15 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
             << "(actual != 42) or (actual != 42.0)";
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
   } };
 
 // ----------------------------------------------------------------------------

@@ -102,15 +102,15 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
             << "tv_sec==0, tv_nsec==1 -> has_clock true";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -147,15 +147,15 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
             << "const value() accessor";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -194,15 +194,15 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
             << "real begin, zeroed end: has_timestamps false";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -224,15 +224,15 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
         t.expect (eq (us, 0u)) << "second begin ignored: us unchanged";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -253,15 +253,15 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
         t.expect (eq (us, 0u)) << "second end ignored: us unchanged";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -325,15 +325,15 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
         t.expect (eq (us, 0u)) << "no timestamps -> 0 µs";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
   } };

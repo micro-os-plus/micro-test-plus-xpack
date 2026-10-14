@@ -28,7 +28,7 @@
  *
  * - `deferred_reporter_base` stores the boolean result, the source
  *   location, an optional user-supplied message (accumulated via
- *   `operator<<`), and a reference to the owning `subtest`. Its destructor
+ *   `operator<<`), and a reference to the owning `test_case`. Its destructor
  *   calls the reporter to emit a pass or fail line.
  * - `deferred_reporter` derives from the base; its template constructor
  *   formats the expression (with the actual operand values) into the
@@ -85,7 +85,7 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  class subtest;
+  class test_case;
 
   // --------------------------------------------------------------------------
 
@@ -100,7 +100,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Thrown by the destructor of `deferred_reporter_base`, after the
      * failure was reported and counted, when exceptions are enabled, and
-     * caught by `subtest::run()`, which ends the test case normally; the
+     * caught by `test_case::run()`, which ends the test case normally; the
      * run continues with the next test case.
      *
      * It is deliberately not derived from `std::exception`, so that a
@@ -139,11 +139,11 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param value The result value associated with the report.
        * @param location The source location relevant to the report.
-       * @param subtest The subtest that owns this deferred report.
+       * @param test_case The test case that owns this deferred report.
        */
       deferred_reporter_base (bool value,
                               const reflection::source_location& location,
-                              subtest& subtest);
+                              test_case& test_case);
 
       /**
        * @brief Deleted copy constructor to prevent copying.
@@ -278,7 +278,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Provides access to the reporter and to the totals to be updated.
        */
-      subtest& subtest_;
+      test_case& test_case_;
     };
 
     // ========================================================================
@@ -310,14 +310,15 @@ namespace micro_os_plus::micro_test_plus
        * @param abort Indicates whether reporting should abort further
        * processing.
        * @param location The source location relevant to the report.
-       * @param subtest The subtest that owns this deferred report.
+       * @param test_case The test case that owns this deferred report.
        * @param expression The expression formatter to format the expression
        * text.
        */
       template <class Expr_T>
       deferred_reporter (const Expr_T& expr, bool abort,
                          const reflection::source_location& location,
-                         subtest& subtest, expression_formatter& expression);
+                         test_case& test_case,
+                         expression_formatter& expression);
 
       /**
        * @brief Destructor for the deferred reporter.

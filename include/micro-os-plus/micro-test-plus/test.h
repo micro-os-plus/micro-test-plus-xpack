@@ -22,7 +22,7 @@
  * @details
  * This header provides the declarations for the test hierarchy used within
  * the µTest++ framework: the internal `detail::runnable_base` base class,
- * and the `subtest`, `suite`, `top_suite`, and `static_suite` classes. They
+ * and the `test_case`, `suite`, `top_suite`, and `static_suite` classes. They
  * offer mechanisms for running test cases, managing counters for successful
  * and failed checks, and registering test suites with the runner.
  *
@@ -94,7 +94,7 @@ namespace micro_os_plus::micro_test_plus
 
   class runner;
   class runner_totals;
-  class subtest;
+  class test_case;
   class suite;
 
   namespace detail
@@ -110,7 +110,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief The name of a test case, with the location of its definition.
      *
      * @details
-     * The first parameter of `suite::test()` and `subtest::test()`. The
+     * The first parameter of `suite::test()` and `test_case::test()`. The
      * constructor is not explicit, so a string literal or a `const char*`
      * passed as the test case name converts implicitly; the default
      * argument of the constructor is evaluated at the place of the
@@ -181,20 +181,22 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief Non-template base for all runnable objects (suites and subtests).
+     * @brief Non-template base for all runnable objects (suites and test
+     * cases).
      *
      * @details
      * `runnable_base` is the single base of the nodes of the test tree,
      * and holds the state that is shared by every runnable object:
      * - the node name,
      * - the `runner_totals` counters for the successful and failed checks
-     *   and for the executed subtests,
+     *   and for the executed test cases,
      * - a reference to the owning `runner`,
      * - the object's own index within its parent container,
-     * - a sequential subtest index used when creating nested subtests, and
-     * - an owning vector of child `subtest` instances.
+     * - the number of the most recent test point (check or nested test
+     *   case), used in the TAP output, and
+     * - an owning vector of child `test_case` instances.
      *
-     * The concrete runnable classes (`suite`, `subtest`) derive from
+     * The concrete runnable classes (`suite`, `test_case`) derive from
      * `runnable_base`; each stores its body in a `std::function` that
      * receives a reference to its own class, and implements `run()`, which
      * invokes the body between the reporter notifications.
@@ -216,7 +218,7 @@ namespace micro_os_plus::micro_test_plus
       // the static suites by their runner.
       friend class micro_test_plus::runner;
 
-      // Number and count the checks of the subtests, and report them.
+      // Number and count the checks of the test cases, and report them.
       friend class deferred_reporter_base;
 
     public:
@@ -273,7 +275,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Virtual, so that the derived nodes are destroyed correctly;
-       * destroys the owned child subtests.
+       * destroys the owned child test cases.
        */
       virtual ~runnable_base ();
 
@@ -314,31 +316,36 @@ namespace micro_os_plus::micro_test_plus
       own_index () const noexcept;
 
       /**
-       * @brief Returns the index of the most recent child test point
-       * (check or nested subtest).
+       * @brief Returns the number of the most recent child test point
+       * (check or nested test case).
+       *
+       * @details
+       * The TAP reporter prints it in the `ok`/`not ok` lines.
        *
        * @par Parameters
        *   None.
-       * @return The current child subtest sequential index.
+       * @return The one-based test point number, or 0 before the first
+       * test point.
        */
       [[nodiscard]] size_t
-      current_subtest_index () const noexcept;
+      test_point_number () const noexcept;
 
       /**
-       * @brief Returns the number of direct child subtests owned by this node.
+       * @brief Returns the number of direct child test cases owned by this
+       * node.
        *
        * @par Parameters
        *   None.
-       * @return The number of child subtests.
+       * @return The number of child test cases.
        */
       [[nodiscard]] size_t
-      children_subtests_count (void) const noexcept;
+      child_test_cases_count (void) const noexcept;
 
       /**
        * @brief Runs the body of the test case or suite.
        *
        * @details
-       * Implemented by `subtest` and `suite`, which invoke the stored
+       * Implemented by `test_case` and `suite`, which invoke the stored
        * callable surrounded by the reporter notifications.
        *
        * @par Parameters
@@ -415,33 +422,33 @@ namespace micro_os_plus::micro_test_plus
       own_index (size_t index) noexcept;
 
       /**
-       * @brief Increments and returns the child test point sequential
-       * index.
+       * @brief Advances to the next child test point, and returns its
+       * number.
        *
        * @details
-       * Called for each check (by the deferred reporter) and for each
-       * nested subtest created.
+       * Called for each check (by the deferred reporter, when the check is
+       * reported) and for each nested test case created.
        *
        * @par Parameters
        *   None.
-       * @return The new index value after incrementing.
+       * @return The one-based number of the new test point.
        */
       size_t
-      increment_subtest_index () noexcept;
+      next_test_point_number () noexcept;
 
       /**
-       * @brief Registers a newly constructed child subtest and executes it
+       * @brief Registers a newly constructed child test case and executes it
        * immediately.
        *
-       * @param child_test Owning pointer to the newly created `subtest`.
+       * @param child_test Owning pointer to the newly created `test_case`.
        * @param suite The parent `suite` to which execution results are
        * reported.
        * @par Returns
        *   Nothing.
        */
       void
-      after_subtest_create_ (std::unique_ptr<subtest> child_test,
-                             suite& suite);
+      after_test_case_create_ (std::unique_ptr<test_case> child_test,
+                               suite& suite);
 
     protected:
       /**
@@ -459,8 +466,8 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * For the suites, the totals include the checks of all their
-       * subtests; for a subtest, they include only its own checks,
-       * plus the number of nested subtests executed.
+       * test cases; for a test case, they include only its own checks,
+       * plus the number of nested test cases executed.
        *
        * Updated by the node itself, by its parent, and by the deferred
        * reporter, which is a friend.
@@ -485,25 +492,26 @@ namespace micro_os_plus::micro_test_plus
       size_t own_index_;
 
       /**
-       * @brief The index of the child test points, counting from 1.
+       * @brief The number of the most recent child test point.
        *
        * @details
-       * This index numbers the checks and the nested subtests of this
+       * Test points are numbered from 1; the value is 0 before the first
+       * one. This number counts the checks and the nested test cases of this
        * object, in execution order, as required by the TAP `ok`/`not ok`
        * lines. It is incremented for each check (by the deferred reporter)
-       * and for each nested subtest created.
+       * and for each nested test case created.
        */
-      size_t current_subtest_index_ = 0;
+      size_t test_point_number_ = 0;
 
       /**
-       * @brief Owning collection of direct child subtests.
+       * @brief Owning collection of direct child test cases.
        *
        * @details
-       * Each call to `test()` appends a new `subtest` to this vector and
+       * Each call to `test()` appends a new `test_case` to this vector and
        * runs it immediately. The vector retains ownership for the lifetime of
        * the parent runnable.
        */
-      std::vector<std::unique_ptr<subtest>> children_subtests_;
+      std::vector<std::unique_ptr<test_case>> child_test_cases_;
     };
 
     // ========================================================================
@@ -518,7 +526,7 @@ namespace micro_os_plus::micro_test_plus
      * is passed when the body is invoked.
      *
      * @tparam Self_T The type referred to by the first parameter of the
-     * callable (`subtest` or `suite`).
+     * callable (`test_case` or `suite`).
      * @tparam Callable_T The type of the callable object.
      * @tparam Args_T The types of the additional callable arguments.
      *
@@ -541,60 +549,60 @@ namespace micro_os_plus::micro_test_plus
    * @brief A named, runnable test case that lives inside a `suite`.
    *
    * @details
-   * `subtest` represents a single, named test case or a nested group of
-   * checks within a parent `suite` or `subtest`. It is constructed by calling
-   * `suite::test()` or `subtest::test()`, both of which create the object,
-   * immediately execute its callable body via `run()`, and register the
-   * result with the parent node.
+   * `test_case` represents a single, named test case or a nested group of
+   * checks within a parent `suite` or `test_case`. It is constructed by
+   * calling `suite::test()` or `test_case::test()`, both of which create
+   * the object, immediately execute its callable body via `run()`, and
+   * register the result with the parent node.
    *
-   * The body of the subtest is supplied as a callable (typically a lambda)
-   * that receives a `subtest&` reference as its first argument. Inside the
+   * The body of the test case is supplied as a callable (typically a lambda)
+   * that receives a `test_case&` reference as its first argument. Inside the
    * body, `expect()` and `require()` are used to evaluate conditions and
-   * record the results. Subtests may be nested to an arbitrary depth.
+   * record the results. Test cases may be nested to an arbitrary depth.
    *
    * The constructor is private, since its parameters are set by the
    * framework; the test cases are created only by `suite::test()` and
-   * `subtest::test()`.
+   * `test_case::test()`.
    *
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
-  class subtest : public detail::runnable_base
+  class test_case : public detail::runnable_base
   {
     // Create the top-level test cases.
     friend class suite;
 
   private:
     /**
-     * @brief Constructs a subtest with a name, runner, parent suite, index,
+     * @brief Constructs a test case with a name, runner, parent suite, index,
      * nesting depth, and callable.
      *
      * @details
      * Private, since the index, the nesting depth, and the parent suite
-     * are internal; a subtest constructed elsewhere would not be
+     * are internal; a test case constructed elsewhere would not be
      * registered with its parent, and would never run.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param name The subtest name or description, used in reports, and
-     * the location of the call to `test()` that created the subtest.
-     * @param test_runner The test runner managing this subtest.
-     * @param parent_suite The suite that owns this subtest.
+     * @param name The test case name or description, used in reports, and
+     * the location of the call to `test()` that created the test case.
+     * @param test_runner The test runner managing this test case.
+     * @param parent_suite The suite that owns this test case.
      * @param own_index The one-based positional index within the parent.
      * @param nesting_depth The depth of nesting; 1 for top-level
-     * subtests.
+     * test cases.
      * @param callable A generic callable object, usually a lambda,
-     * invoked when the subtest executes.
+     * invoked when the test case executes.
      * @param arguments A possibly empty list of arguments forwarded to
-     * the callable after the leading `subtest&` reference.
+     * the callable after the leading `test_case&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-    subtest (const detail::test_name& name, runner& test_runner,
-             suite& parent_suite, size_t own_index, size_t nesting_depth,
-             Callable_T&& callable, Args_T&&... arguments);
+    test_case (const detail::test_name& name, runner& test_runner,
+               suite& parent_suite, size_t own_index, size_t nesting_depth,
+               Callable_T&& callable, Args_T&&... arguments);
 
   public:
     /**
@@ -603,7 +611,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * A copy would duplicate the counters and the owned children.
      */
-    subtest (const subtest&) = delete;
+    test_case (const test_case&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
@@ -612,7 +620,7 @@ namespace micro_os_plus::micro_test_plus
      * Nodes are referred to by address (e.g. by their children and by
      * the runner), so they must not be relocated.
      */
-    subtest (subtest&&) = delete;
+    test_case (test_case&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
@@ -620,8 +628,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * A copy would duplicate the counters and the owned children.
      */
-    subtest&
-    operator= (const subtest&)
+    test_case&
+    operator= (const test_case&)
         = delete;
 
     /**
@@ -631,22 +639,22 @@ namespace micro_os_plus::micro_test_plus
      * Nodes are referred to by address (e.g. by their children and by
      * the runner), so they must not be relocated.
      */
-    subtest&
-    operator= (subtest&&)
+    test_case&
+    operator= (test_case&&)
         = delete;
 
     /**
      * @brief Virtual destructor.
      *
      * @details
-     * Destroys the nested subtests, if any.
+     * Destroys the nested test cases, if any.
      */
-    virtual ~subtest () override;
+    virtual ~test_case () override;
 
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Adds a nested test case to this subtest, and runs it.
+     * @brief Adds a nested test case to this test case, and runs it.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -747,7 +755,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Executes the subtest body by invoking the stored callable.
+     * @brief Executes the test case body by invoking the stored callable.
      *
      * @par Parameters
      *   None.
@@ -758,7 +766,7 @@ namespace micro_os_plus::micro_test_plus
     run (void) override;
 
     /**
-     * @brief Returns the nesting depth of this subtest.
+     * @brief Returns the nesting depth of this test case.
      *
      * @par Parameters
      *   None.
@@ -770,12 +778,12 @@ namespace micro_os_plus::micro_test_plus
   protected:
 #if defined(__cpp_exceptions)
     /**
-     * @brief Reports an exception that escaped the subtest body as a
+     * @brief Reports an exception that escaped the test case body as a
      * failed check.
      *
      * @details
      * The failure is reported at the location of the call to `test()`
-     * that created the subtest, since the location of the `throw` is not
+     * that created the test case, since the location of the `throw` is not
      * known.
      *
      * @param what The explanatory string of a `std::exception`, or
@@ -792,13 +800,13 @@ namespace micro_os_plus::micro_test_plus
      * @brief Callable storing the test case body and any bound arguments.
      *
      * @details
-     * Invoked by `run()` with a reference to this subtest.
+     * Invoked by `run()` with a reference to this test case.
      */
-    std::function<void (subtest&)> callable_;
+    std::function<void (test_case&)> callable_;
 
     /**
      * @brief The location of the call to `test()` that created this
-     * subtest.
+     * test case.
      *
      * @details
      * Used to report the failures that are not associated with a check.
@@ -806,16 +814,16 @@ namespace micro_os_plus::micro_test_plus
     reflection::source_location location_;
 
     /**
-     * @brief Reference to the parent suite that owns this subtest.
+     * @brief Reference to the parent suite that owns this test case.
      *
      * @details
-     * The suite into which the totals of the nested subtests are
+     * The suite into which the totals of the nested test cases are
      * accumulated.
      */
     suite& parent_suite_;
 
     /**
-     * @brief The nesting depth of this subtest within the suite.
+     * @brief The nesting depth of this test case within the suite.
      *
      * @details
      * 1 for the direct children of a suite; used for indentation.
@@ -840,7 +848,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * The body of a suite is supplied as a callable (typically a lambda) that
    * receives a `suite&` reference as its first argument. Inside the body,
-   * `suite::test()` is called to create and run individual subtests.
+   * `suite::test()` is called to create and run individual test cases.
    *
    * The constructor is protected, since a suite constructed elsewhere
    * would not be registered with the runner; the suites are created only
@@ -929,7 +937,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      *
      * @details
-     * Destroys the owned subtests.
+     * Destroys the owned test cases.
      */
     virtual ~suite () override;
 
@@ -1113,7 +1121,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      *
      * @details
-     * Destroys the owned subtests.
+     * Destroys the owned test cases.
      */
     virtual ~top_suite () override;
 
@@ -1235,7 +1243,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Removes the suite from the list of static suites, and destroys the
-     * owned subtests and the stored callable.
+     * owned test cases and the stored callable.
      */
     virtual ~static_suite () override;
 

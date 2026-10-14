@@ -31,7 +31,7 @@ using namespace micro_os_plus::micro_test_plus;
 
 template <typename T>
 static void
-test_case_expect_floats_failed_combinatorial (subtest& t)
+test_case_expect_floats_failed_combinatorial (test_case& t)
 {
   t.expect (
       ne (my_actual_float<T> (), my_expected_integral<signed long long> ()))
@@ -133,7 +133,7 @@ test_case_expect_floats_failed_combinatorial (subtest& t)
 
   // ---
 
-  local_counts.executed_subtest++;
+  local_counts.executed_test_cases++;
 }
 
 // ----------------------------------------------------------------------------
@@ -152,8 +152,8 @@ static static_suite ts_failed_floats{ "Failed combinatorial floats suite", tr,
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("Combinatorial doubles",
              test_case_expect_floats_failed_combinatorial<double>);
@@ -162,8 +162,8 @@ static static_suite ts_failed_floats{ "Failed combinatorial floats suite", tr,
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
   } };
 
 // ----------------------------------------------------------------------------

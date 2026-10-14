@@ -37,7 +37,7 @@ An exception that escapes the body of a test case is now reported as a
 failed check, at the location of the `test()` call, and the run
 continues with the next test case; it previously ended the program. To
 capture that location, the name parameter of `suite::test()` and
-`subtest::test()` is now a `detail::test_name`, converted implicitly
+`test_case::test()` is now a `detail::test_name`, converted implicitly
 from a string literal or a `const char*`; an argument that converts to
 `const char*` only via a user-defined conversion operator must now be
 converted explicitly. As for `expect()`, GCC with `-Waggregate-return`
@@ -48,10 +48,11 @@ cases can no longer be modified by the user code: `totals()` now
 returns only a `const` reference, so a reference that stores its result
 must be `const`, and the `own_index (size_t)` setter and
 `increment_subtest_index()` are no longer public. The read-only
-functions (`totals()`, `own_index()`, `current_subtest_index()`, and
-`children_subtests_count()`) are still available.
+functions (`totals()`, `own_index()`, `test_point_number()`, and
+`child_test_cases_count()`, see below for their new names) are still
+available.
 
-The constructors of `subtest`, `suite`, and `top_suite` are no longer
+The constructors of `test_case`, `suite`, and `top_suite` are no longer
 public, since a suite or a test case constructed directly was neither
 registered nor run. Create the suites with `runner::suite()` or as
 `static_suite` objects, and the test cases with `test()`.
@@ -125,6 +126,20 @@ used only by the framework; it is now named `test_runner()`, so that it
 no longer hides the `runner` class in the derived classes. A test
 function that needs the runner can capture it, or receive it as an
 argument.
+
+The `subtest` class is renamed `test_case`, the term used by the
+documentation and by the reports, and the functions named after it are
+renamed accordingly; the old names are not kept. Replace `mt::subtest`
+with `mt::test_case`; the lambdas with an `auto&` parameter need no
+change. In `runner_totals`, `executed_subtests()` is now
+`executed_test_cases()`, next to the new `failed_test_cases()` and
+`skipped_test_cases()`; in the suites and the test cases,
+`children_subtests_count()` is now
+`child_test_cases_count()`, and `current_subtest_index()`, which
+returns the number of the most recent check or nested test case, as
+printed in the TAP output, is now `test_point_number()`. The output of
+the reporters is unchanged; the TAP reporter still introduces each test
+case with a `# Subtest:` line.
 
 ### v4.1 (2026-05-12)
 

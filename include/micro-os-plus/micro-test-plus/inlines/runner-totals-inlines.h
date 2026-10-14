@@ -76,32 +76,32 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Adds `count` to the `executed_subtests_` counter.
+   * Adds `count` to the `executed_test_cases_` counter.
    */
   inline void
-  runner_totals::increment_executed_subtests (size_t count) noexcept
+  runner_totals::increment_executed_test_cases (size_t count) noexcept
   {
-    executed_subtests_ += count;
+    executed_test_cases_ += count;
   }
 
   /**
    * @details
-   * Adds `count` to the `failed_subtests_` counter.
+   * Adds `count` to the `failed_test_cases_` counter.
    */
   inline void
-  runner_totals::increment_failed_subtests (size_t count) noexcept
+  runner_totals::increment_failed_test_cases (size_t count) noexcept
   {
-    failed_subtests_ += count;
+    failed_test_cases_ += count;
   }
 
   /**
    * @details
-   * Adds `count` to the `skipped_subtests_` counter.
+   * Adds `count` to the `skipped_test_cases_` counter.
    */
   inline void
-  runner_totals::increment_skipped_subtests (size_t count) noexcept
+  runner_totals::increment_skipped_test_cases (size_t count) noexcept
   {
-    skipped_subtests_ += count;
+    skipped_test_cases_ += count;
   }
 
   /**
@@ -136,45 +136,45 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the value of the `executed_subtests_` counter.
+   * Returns the value of the `executed_test_cases_` counter.
    */
   inline size_t
-  runner_totals::executed_subtests () const noexcept
+  runner_totals::executed_test_cases () const noexcept
   {
-    return executed_subtests_;
+    return executed_test_cases_;
   }
 
   /**
    * @details
-   * Returns the value of the `failed_subtests_` counter.
+   * Returns the value of the `failed_test_cases_` counter.
    */
   inline size_t
-  runner_totals::failed_subtests () const noexcept
+  runner_totals::failed_test_cases () const noexcept
   {
-    return failed_subtests_;
+    return failed_test_cases_;
   }
 
   /**
    * @details
-   * Returns the value of the `skipped_subtests_` counter.
+   * Returns the value of the `skipped_test_cases_` counter.
    */
   inline size_t
-  runner_totals::skipped_subtests () const noexcept
+  runner_totals::skipped_test_cases () const noexcept
   {
-    return skipped_subtests_;
+    return skipped_test_cases_;
   }
 
   /**
    * @details
    * A node with no checks at all is considered successful, as it
-   * did not fail any check. A subtest whose own checks all passed is
-   * still unsuccessful if one of its nested subtests failed, so that a
+   * did not fail any check. A test case whose own checks all passed is
+   * still unsuccessful if one of its nested test cases failed, so that a
    * failure is reported at every level above it, as in node-tap.
    */
   inline bool
   runner_totals::was_successful (void) const noexcept
   {
-    return failed_checks_ == 0 && failed_subtests_ == 0;
+    return failed_checks_ == 0 && failed_test_cases_ == 0;
   }
 
   // --------------------------------------------------------------------------

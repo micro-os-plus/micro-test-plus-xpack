@@ -126,15 +126,15 @@ static static_suite ts_operators{ "Operators suite", tr, [] (auto& ts)
             << "(actual != 42) or (actual != 42.0)";
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("String view operators", [] (auto& t)
       {
@@ -156,15 +156,15 @@ static static_suite ts_operators{ "Operators suite", tr, [] (auto& ts)
             << "equal string views with !=";
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
   } };
 
 // ----------------------------------------------------------------------------

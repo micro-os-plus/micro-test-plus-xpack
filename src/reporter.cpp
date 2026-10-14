@@ -151,7 +151,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * This method appends a newline character to the internal output buffer of
    * the `reporter` and calls `flush()`. The buffer itself is written later,
-   * by the concrete reporters, at the end of each subtest or suite.
+   * by the concrete reporters, at the end of each test case or suite.
    */
   void
   reporter::endline (void)
@@ -482,16 +482,16 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   void
   reporter::pass (std::string& message, const std::string& expression,
-                  subtest& subtest)
+                  test_case& test_case)
   {
-    output_pass_prefix_ (message, subtest);
+    output_pass_prefix_ (message, test_case);
 
     if (message.empty ())
       {
         *this << expression;
       }
 
-    output_pass_suffix_ (subtest);
+    output_pass_suffix_ (test_case);
   }
 
   /**
@@ -504,16 +504,16 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter::fail (bool abort, std::string& message,
                   const std::string& expression, bool has_expression,
                   const reflection::source_location& location,
-                  subtest& subtest)
+                  test_case& test_case)
   {
-    output_fail_prefix_ (message, has_expression, location, subtest);
+    output_fail_prefix_ (message, has_expression, location, test_case);
 
     if (has_expression)
       {
         *this << expression;
       }
 
-    output_fail_suffix_ (location, abort, subtest);
+    output_fail_suffix_ (location, abort, test_case);
 
     buffer_has_failures_ = true;
   }

@@ -104,7 +104,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * This operator overload appends spaces to the internal output buffer
    * corresponding to `m.level` four-space indentation levels, allowing
    * `*this << indent(n) << "text"` chaining; four spaces is the TAP 14
-   * subtest indentation.
+   * test case indentation.
    */
   reporter_tap&
   reporter_tap::operator<< (indent_t m)
@@ -185,11 +185,12 @@ namespace micro_os_plus::micro_test_plus::detail
     snprintf (message_summary, sizeof (message_summary), "1..%zu",
               total_suites_count);
 
-    char message_skipped_subtests[40] = "";
-    if (runner.totals ().skipped_subtests () > 0)
+    char message_skipped_test_cases[40] = "";
+    if (runner.totals ().skipped_test_cases () > 0)
       {
-        snprintf (message_skipped_subtests, sizeof (message_skipped_subtests),
-                  ", %zu skipped", runner.totals ().skipped_subtests ());
+        snprintf (message_skipped_test_cases,
+                  sizeof (message_skipped_test_cases), ", %zu skipped",
+                  runner.totals ().skipped_test_cases ());
       }
 
     char message_skipped_suites[40] = "";
@@ -206,9 +207,9 @@ namespace micro_os_plus::micro_test_plus::detail
               runner.totals ().successful_checks (),
               runner.totals ().successful_checks () == 1 ? "" : "s",
               runner.totals ().failed_checks (),
-              runner.totals ().executed_subtests (),
-              runner.totals ().executed_subtests () == 1 ? "" : "s",
-              message_skipped_subtests, total_suites_count,
+              runner.totals ().executed_test_cases (),
+              runner.totals ().executed_test_cases () == 1 ? "" : "s",
+              message_skipped_test_cases, total_suites_count,
               total_suites_count == 1 ? "" : "s", message_skipped_suites);
 
     char message_time[120] = "";
@@ -251,7 +252,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Emits a `"# Subtest: <name>"` comment line to mark the start of a
-   * TAP subtest block for the suite. The line is written to the output
+   * TAP test case block for the suite. The line is written to the output
    * file when one is open. Under normal or verbose verbosity, it is also
    * written to `stdout`, preceded by a blank line when `add_empty_line_`
    * is set.
@@ -263,11 +264,11 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    char message_subtest[120];
-    snprintf (message_subtest, sizeof (message_subtest), "# Subtest: %s",
+    char message_test_case[120];
+    snprintf (message_test_case, sizeof (message_test_case), "# Subtest: %s",
               suite.name ());
 
-    write_file_ ("%s\n", message_subtest);
+    write_file_ ("%s\n", message_test_case);
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
@@ -276,7 +277,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        write_console_ ("%s\n", message_subtest);
+        write_console_ ("%s\n", message_test_case);
 
         flush ();
 
@@ -286,9 +287,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Emits the TAP plan line for the suite's subtests followed by an
+   * Emits the TAP plan line for the suite's test cases followed by an
    * `ok`/`not ok` result line that includes the suite index, name,
-   * pass/fail status, check counts, subtest count, and elapsed time.
+   * pass/fail status, check counts, test case count, and elapsed time.
    * Any output accumulated in `buffer_` is written to the output file
    * and, with normal or verbose verbosity, when verbosity is verbose or
    * the suite failed, to `stdout` as well; the plan and result lines are
@@ -303,8 +304,8 @@ namespace micro_os_plus::micro_test_plus::detail
         "%s '%s' +%zu -%zu in xc%zu, xs%zu | cs%zu\n", __PRETTY_FUNCTION__,
         suite.name (), suite.totals ().successful_checks (),
         suite.totals ().failed_checks (), suite.totals ().executed_checks (),
-        suite.totals ().executed_subtests (),
-        suite.children_subtests_count ());
+        suite.totals ().executed_test_cases (),
+        suite.child_test_cases_count ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     uint32_t milliseconds = 0;
@@ -318,14 +319,14 @@ namespace micro_os_plus::micro_test_plus::detail
 
     char message_summary[40];
     snprintf (message_summary, sizeof (message_summary), "%s1..%zu",
-              indent.c_str (), suite.children_subtests_count ());
+              indent.c_str (), suite.child_test_cases_count ());
 
     // The test cases skipped by the filter, only when not zero.
     char message_skipped[40] = "";
-    if (suite.totals ().skipped_subtests () > 0)
+    if (suite.totals ().skipped_test_cases () > 0)
       {
         snprintf (message_skipped, sizeof (message_skipped), ", %zu skipped",
-                  suite.totals ().skipped_subtests ());
+                  suite.totals ().skipped_test_cases ());
       }
 
     char message_totals[160];
@@ -337,8 +338,8 @@ namespace micro_os_plus::micro_test_plus::detail
                   suite.own_index (), suite.name (),
                   suite.totals ().successful_checks (),
                   suite.totals ().successful_checks () == 1 ? "" : "s",
-                  suite.totals ().executed_subtests (),
-                  suite.totals ().executed_subtests () == 1 ? "" : "s",
+                  suite.totals ().executed_test_cases (),
+                  suite.totals ().executed_test_cases () == 1 ? "" : "s",
                   message_skipped);
       }
     else
@@ -350,8 +351,8 @@ namespace micro_os_plus::micro_test_plus::detail
                   suite.totals ().successful_checks (),
                   suite.totals ().successful_checks () == 1 ? "" : "s",
                   suite.totals ().failed_checks (),
-                  suite.totals ().executed_subtests (),
-                  suite.totals ().executed_subtests () == 1 ? "" : "s",
+                  suite.totals ().executed_test_cases (),
+                  suite.totals ().executed_test_cases () == 1 ? "" : "s",
                   message_skipped);
       }
 
@@ -372,7 +373,7 @@ namespace micro_os_plus::micro_test_plus::detail
     // should be displayed.
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
-        if (add_empty_line_ && suite.totals ().executed_subtests () > 0)
+        if (add_empty_line_ && suite.totals ().executed_test_cases () > 0)
           {
             write_console_ ("\n");
           }
@@ -414,7 +415,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Emits an `ok <index> - <name> # SKIP filtered` line, without a
-   * subtest block, so that the suite keeps its place in the TAP plan of
+   * test case block, so that the suite keeps its place in the TAP plan of
    * the session. The line is written to the output file when one is
    * open. Under normal or verbose verbosity, it is also written to
    * `stdout`, preceded by a blank line when `add_empty_line_` is set.
@@ -452,10 +453,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * For a nested subtest, the results of the checks already performed by
-   * the outer subtest, if any, are written first (see `commit_buffer_()`),
+   * For a nested test case, the results of the checks already performed by
+   * the outer test case, if any, are written first (see `commit_buffer_()`),
    * so that the output follows the execution order. For a top-level
-   * subtest, the output buffer must be empty; if it is not, the buffer is
+   * test case, the output buffer must be empty; if it is not, the buffer is
    * written to `stdout`, the stream is flushed, and execution is aborted
    * with `runner::abort()`, which calls the handler set by
    * `runner::set_abort_handler()`, if any.
@@ -465,35 +466,35 @@ namespace micro_os_plus::micro_test_plus::detail
    * verbose verbosity, to `stdout` as well.
    */
   void
-  reporter_tap::begin_subtest (subtest& subtest)
+  reporter_tap::begin_test_case (test_case& test_case)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     if (!buffer_.empty ())
       {
-        if (subtest.nesting_depth () > 1)
+        if (test_case.nesting_depth () > 1)
           {
-            // The outer subtest performed checks before this nested one.
+            // The outer test case performed checks before this nested one.
             commit_buffer_ ();
           }
         else
           {
-            // Each top-level subtest should start with an empty buffer.
+            // Each top-level test case should start with an empty buffer.
             write_buffer_to_console ();
             flush ();
-            subtest.abort ();
+            test_case.abort ();
           }
       }
 
-    std::string indent (indent_size * subtest.nesting_depth (), ' ');
+    std::string indent (indent_size * test_case.nesting_depth (), ' ');
 
-    char message_subtest[120];
-    snprintf (message_subtest, sizeof (message_subtest), "%s# Subtest: %s",
-              indent.c_str (), subtest.name ());
+    char message_test_case[120];
+    snprintf (message_test_case, sizeof (message_test_case), "%s# Subtest: %s",
+              indent.c_str (), test_case.name ());
 
-    write_file_ ("%s\n", message_subtest);
+    write_file_ ("%s\n", message_test_case);
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
@@ -502,7 +503,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        write_console_ ("%s\n", message_subtest);
+        write_console_ ("%s\n", message_test_case);
 
         flush ();
 
@@ -512,80 +513,81 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Emits the TAP plan line for the subtest's checks and nested subtests,
-   * followed by an `ok`/`not ok` result line that includes the subtest
+   * Emits the TAP plan line for the test case's checks and nested test cases,
+   * followed by an `ok`/`not ok` result line that includes the test case
    * index, name, pass/fail status, and check counts. As in node-tap, the
-   * result is `not ok` when a check or a nested subtest failed; the number
-   * of failed nested subtests is added when it is not zero. Any output
+   * result is `not ok` when a check or a nested test case failed; the number
+   * of failed nested test cases is added when it is not zero. Any output
    * accumulated in `buffer_` is written to the output file and, with
-   * normal or verbose verbosity, when verbosity is verbose or the subtest
+   * normal or verbose verbosity, when verbosity is verbose or the test case
    * failed, to `stdout` as well. With normal verbosity, for a passing
-   * subtest, the plan written to `stdout` counts only the nested subtests,
+   * test case, the plan written to `stdout` counts only the nested test cases,
    * since the individual check lines are not displayed. The buffer is
    * cleared on exit.
    */
   void
-  reporter_tap::end_subtest (subtest& subtest)
+  reporter_tap::end_test_case (test_case& test_case)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s' i%zu +%zu -%zu in xc%zu, xs%zu | cs%zu\n",
-                   __PRETTY_FUNCTION__, subtest.name (),
-                   subtest.nesting_depth (),
-                   subtest.totals ().successful_checks (),
-                   subtest.totals ().failed_checks (),
-                   subtest.totals ().executed_checks (),
-                   subtest.totals ().executed_subtests (),
-                   subtest.children_subtests_count ());
+                   __PRETTY_FUNCTION__, test_case.name (),
+                   test_case.nesting_depth (),
+                   test_case.totals ().successful_checks (),
+                   test_case.totals ().failed_checks (),
+                   test_case.totals ().executed_checks (),
+                   test_case.totals ().executed_test_cases (),
+                   test_case.child_test_cases_count ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    std::string indent (indent_size * subtest.nesting_depth (), ' ');
-    std::string indent2 (indent_size * (subtest.nesting_depth () + 1), ' ');
+    std::string indent (indent_size * test_case.nesting_depth (), ' ');
+    std::string indent2 (indent_size * (test_case.nesting_depth () + 1), ' ');
 
     char message_summary[40];
-    // The nested subtests skipped by the filter keep their index, and are
+    // The nested test cases skipped by the filter keep their index, and are
     // counted in the plan.
     snprintf (message_summary, sizeof (message_summary), "%s1..%zu",
               indent2.c_str (),
-              subtest.totals ().executed_checks ()
-                  + subtest.totals ().executed_subtests ()
-                  + subtest.totals ().skipped_subtests ());
+              test_case.totals ().executed_checks ()
+                  + test_case.totals ().executed_test_cases ()
+                  + test_case.totals ().skipped_test_cases ());
 
     char message_totals[300];
-    if (subtest.totals ().was_successful ()) [[likely]]
+    if (test_case.totals ().was_successful ()) [[likely]]
       {
         snprintf (message_totals, sizeof (message_totals),
                   "%sok %zu - %s # { passed, %zu check%s }", indent.c_str (),
-                  subtest.own_index (), subtest.name (),
-                  subtest.totals ().successful_checks (),
-                  subtest.totals ().successful_checks () == 1 ? "" : "s");
+                  test_case.own_index (), test_case.name (),
+                  test_case.totals ().successful_checks (),
+                  test_case.totals ().successful_checks () == 1 ? "" : "s");
       }
     else
       {
         // The nested failures are mentioned only when present, since a
-        // subtest may fail because of a nested one alone.
-        char message_subtests[48] = "";
-        if (subtest.totals ().failed_subtests () > 0)
+        // test case may fail because of a nested one alone.
+        char message_test_cases[48] = "";
+        if (test_case.totals ().failed_test_cases () > 0)
           {
-            snprintf (message_subtests, sizeof (message_subtests),
+            snprintf (message_test_cases, sizeof (message_test_cases),
                       ", %zu test case%s failed",
-                      subtest.totals ().failed_subtests (),
-                      subtest.totals ().failed_subtests () == 1 ? "" : "s");
+                      test_case.totals ().failed_test_cases (),
+                      test_case.totals ().failed_test_cases () == 1 ? ""
+                                                                    : "s");
           }
 
         snprintf (message_totals, sizeof (message_totals),
                   "%snot ok %zu - %s # { FAILED, %zu check%s "
                   "passed, %zu failed%s }",
-                  indent.c_str (), subtest.own_index (), subtest.name (),
-                  subtest.totals ().successful_checks (),
-                  subtest.totals ().successful_checks () == 1 ? "" : "s",
-                  subtest.totals ().failed_checks (), message_subtests);
+                  indent.c_str (), test_case.own_index (), test_case.name (),
+                  test_case.totals ().successful_checks (),
+                  test_case.totals ().successful_checks () == 1 ? "" : "s",
+                  test_case.totals ().failed_checks (), message_test_cases);
       }
 
     write_buffer_to_file_ ();
 
     write_file_ ("%s\n%s\n", message_summary, message_totals);
 
-    // At this point, the buffer may contain output from the subtest, which
+    // At this point, the buffer may contain output from the test case, which
     // should be displayed.
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
@@ -594,9 +596,9 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        if (subtest.totals ().was_successful ()) [[likely]]
+        if (test_case.totals ().was_successful ()) [[likely]]
           {
-            // Successful subtest.
+            // Successful test case.
             if (verbosity_ == verbosity::verbose)
               {
                 // With verbosity, show full TAP output accumulated in the
@@ -608,21 +610,22 @@ namespace micro_os_plus::micro_test_plus::detail
             else
               {
                 // Without verbosity, show only the summary line
-                // and count only subtests, not checks, as the TAP output is
+                // and count only test cases, not checks, as the TAP output is
                 // not shown.
-                write_console_ ("%s1..%zu\n", indent2.c_str (),
-                                subtest.totals ().executed_subtests ()
-                                    + subtest.totals ().skipped_subtests ());
+                write_console_ (
+                    "%s1..%zu\n", indent2.c_str (),
+                    test_case.totals ().executed_test_cases ()
+                        + test_case.totals ().skipped_test_cases ());
               }
 
             write_console_ ("%s\n", message_totals);
           }
         else
           {
-            // Failed subtest.
+            // Failed test case.
 
             // Show full TAP output accumulated in the buffer for failed
-            // subtests, as it may contain useful information about the
+            // test cases, as it may contain useful information about the
             // failure.
             write_buffer_to_console ();
 
@@ -655,18 +658,19 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * This method outputs the prefix for a passing check result, as a TAP
    * `"ok <n> - "` line, where `<n>` is the index of the check within the
-   * subtest, indented one level deeper than the subtest, followed by the
+   * test case, indented one level deeper than the test case, followed by the
    * message, if provided. No colours are used.
    *
    * The prefix/suffix methods help shorten the code
    * generated by the template methods.
    */
   void
-  reporter_tap::output_pass_prefix_ (std::string& message, subtest& subtest)
+  reporter_tap::output_pass_prefix_ (std::string& message,
+                                     test_case& test_case)
   {
-    size_t level = subtest.nesting_depth ();
+    size_t level = test_case.nesting_depth ();
     *this << indent (level + 1) << "ok "
-          << static_cast<int> (subtest.current_subtest_index ()) << " - ";
+          << static_cast<int> (test_case.test_point_number ()) << " - ";
     if (!message.empty ())
       {
         *this << message.c_str ();
@@ -682,7 +686,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * generated by the template methods.
    */
   void
-  reporter_tap::output_pass_suffix_ ([[maybe_unused]] subtest& subtest)
+  reporter_tap::output_pass_suffix_ ([[maybe_unused]] test_case& test_case)
   {
     *this << endl;
 
@@ -692,7 +696,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * This method outputs the prefix for a failing check result, as a TAP
-   * `"not ok <n>"` line, indented one level deeper than the subtest,
+   * `"not ok <n>"` line, indented one level deeper than the test case,
    * followed by the message, if provided. It then opens the TAP 14 YAML
    * diagnostics block (`---`) and, when the failure has an expression,
    * starts a `condition:` field, so that the expression follows on the
@@ -702,11 +706,11 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter_tap::output_fail_prefix_ (
       std::string& message, const bool has_expression,
       [[maybe_unused]] const reflection::source_location& location,
-      subtest& subtest)
+      test_case& test_case)
   {
-    size_t level = subtest.nesting_depth ();
+    size_t level = test_case.nesting_depth ();
     *this << indent (level + 1) << "not ok "
-          << static_cast<int> (subtest.current_subtest_index ());
+          << static_cast<int> (test_case.test_point_number ());
 
     if (!message.empty ())
       {
@@ -733,9 +737,9 @@ namespace micro_os_plus::micro_test_plus::detail
   void
   reporter_tap::output_fail_suffix_ (
       const reflection::source_location& location, bool abort,
-      subtest& subtest)
+      test_case& test_case)
   {
-    size_t level = subtest.nesting_depth ();
+    size_t level = test_case.nesting_depth ();
     if (abort)
       {
         *this << " aborted...";
@@ -758,46 +762,46 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * As in `begin_subtest()`, for a nested subtest, the results of the
-   * checks already performed by the outer subtest, if any, are written
+   * As in `begin_test_case()`, for a nested test case, the results of the
+   * checks already performed by the outer test case, if any, are written
    * first (see `commit_buffer_()`), so that the output follows the
-   * execution order; for a top-level subtest, the output buffer must be
+   * execution order; for a top-level test case, the output buffer must be
    * empty, otherwise execution is aborted.
    *
    * An `ok <index> - <name> # SKIP filtered` line, indented according to
-   * the nesting depth, without a subtest block, is then written to the
+   * the nesting depth, without a test case block, is then written to the
    * output file and, under normal or verbose verbosity, to `stdout`,
    * preceded by a blank line when `add_empty_line_` is set.
    */
   void
-  reporter_tap::skip_subtest (subtest& subtest)
+  reporter_tap::skip_test_case (test_case& test_case)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     if (!buffer_.empty ())
       {
-        if (subtest.nesting_depth () > 1)
+        if (test_case.nesting_depth () > 1)
           {
-            // The outer subtest performed checks before this nested one.
+            // The outer test case performed checks before this nested one.
             commit_buffer_ ();
           }
         else
           {
-            // Each top-level subtest should start with an empty buffer.
+            // Each top-level test case should start with an empty buffer.
             write_buffer_to_console ();
             flush ();
-            subtest.abort ();
+            test_case.abort ();
           }
       }
 
-    std::string indent (indent_size * subtest.nesting_depth (), ' ');
+    std::string indent (indent_size * test_case.nesting_depth (), ' ');
 
     char message_skipped[160];
     snprintf (message_skipped, sizeof (message_skipped),
               "%sok %zu - %s # SKIP filtered", indent.c_str (),
-              subtest.own_index (), subtest.name ());
+              test_case.own_index (), test_case.name ());
 
     write_file_ ("%s\n", message_skipped);
 
@@ -818,15 +822,15 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * The buffered `ok`/`not ok` lines of the outer subtest are written to
+   * The buffered `ok`/`not ok` lines of the outer test case are written to
    * the output file and, with verbose verbosity, or with normal verbosity
    * when they include a failure, to `stdout`, preceded by an empty line
    * when `add_empty_line_` is set. The buffer is then cleared, so that
-   * the nested subtest starts with an empty buffer, and the remaining
-   * lines of the outer subtest are written by its `end_subtest()`.
+   * the nested test case starts with an empty buffer, and the remaining
+   * lines of the outer test case are written by its `end_test_case()`.
    *
    * With normal verbosity, the passed checks committed here are not
-   * displayed, even if the outer subtest fails later; the output file
+   * displayed, even if the outer test case fails later; the output file
    * always contains them.
    */
   void

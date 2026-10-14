@@ -128,25 +128,25 @@ main (int argc, char* argv[])
 
       // The failed requirements are checked in exceptions.cpp; without
       // exceptions, they abort the test execution.
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   ts.test ("Initial counters", [] ([[maybe_unused]] auto& t) noexcept
-    { local_counts.executed_subtest++; });
+    { local_counts.executed_test_cases++; });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -169,15 +169,15 @@ main (int argc, char* argv[])
       t.expect (true) << 42;
       local_counts.successful_checks++;
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -189,15 +189,15 @@ main (int argc, char* argv[])
       t.expect (false) << "false";
       local_counts.failed_checks++;
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -222,15 +222,15 @@ main (int argc, char* argv[])
       t.expect (eq (reflection::type_name<float> (), "float"sv));
       local_counts.successful_checks++;
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -276,15 +276,15 @@ main (int argc, char* argv[])
           << "a..b (consecutive delimiters) splits into [a, b]";
       local_counts.successful_checks++;
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -307,15 +307,15 @@ main (int argc, char* argv[])
       t.expect (eq (_t<int>{ x }, 42)) << "_t<int> deprecated generic wrapper";
       local_counts.successful_checks++;
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -332,15 +332,15 @@ main (int argc, char* argv[])
                     "file.cpp"sv));
       local_counts.successful_checks++;
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -350,17 +350,17 @@ main (int argc, char* argv[])
         {
           t2.expect (eq (1, 1));
           local_counts.successful_checks++;
-          local_counts.executed_subtest++; // inner
+          local_counts.executed_test_cases++; // inner
         });
-      local_counts.executed_subtest++; // outer
+      local_counts.executed_test_cases++; // outer
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -376,17 +376,17 @@ main (int argc, char* argv[])
         {
           t2.expect (eq (2, 2)) << "inner check";
           local_counts.successful_checks++;
-          local_counts.executed_subtest++; // inner
+          local_counts.executed_test_cases++; // inner
         });
-      local_counts.executed_subtest++; // outer
+      local_counts.executed_test_cases++; // outer
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -394,8 +394,8 @@ main (int argc, char* argv[])
   // cases, as in node-tap, although their own checks passed
   // (API-REVIEW.md #2).
   {
-    const size_t failed_subtests_before
-        = current_suite_totals.failed_subtests ();
+    const size_t failed_test_cases_before
+        = current_suite_totals.failed_test_cases ();
 
     ts.test ("Failed nested subtest", [] (auto& t)
       {
@@ -408,22 +408,22 @@ main (int argc, char* argv[])
               {
                 t3.expect (eq (1, 2)) << "inner check fails";
                 local_counts.failed_checks++;
-                local_counts.executed_subtest++; // inner
+                local_counts.executed_test_cases++; // inner
               });
-            local_counts.executed_subtest++; // middle
+            local_counts.executed_test_cases++; // middle
           });
-        local_counts.executed_subtest++; // outer
+        local_counts.executed_test_cases++; // outer
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
     // The inner, the middle, and the outer test cases failed.
-    test_assert (current_suite_totals.failed_subtests ()
-                 == failed_subtests_before + 3);
+    test_assert (current_suite_totals.failed_test_cases ()
+                 == failed_test_cases_before + 3);
   }
 
   // --------------------------------------------------------------------------
@@ -443,15 +443,15 @@ main (int argc, char* argv[])
         local_counts.successful_checks++;
       } // The stored check is reported here.
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -476,15 +476,15 @@ main (int argc, char* argv[])
       t.expect (eq (to_i{ 42 }, 42)) << "to_i{ 42 } == 42";
       local_counts.successful_checks++;
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -507,15 +507,15 @@ main (int argc, char* argv[])
                       << null_const_string << ", " << nullptr;
       local_counts.successful_checks++;
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -547,15 +547,15 @@ main (int argc, char* argv[])
           << "0.1f + 0.2f == approx (0.3f, 1e-6f)";
       local_counts.successful_checks += 5;
 
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
     });
 
   test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_subtests ()
-               == local_counts.executed_subtest);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
 
   // --------------------------------------------------------------------------
 
@@ -630,14 +630,14 @@ main (int argc, char* argv[])
   // (API-REVIEW.md #3).
   {
     const size_t executed_checks = tr.totals ().executed_checks ();
-    const size_t executed_subtests = tr.totals ().executed_subtests ();
+    const size_t executed_test_cases = tr.totals ().executed_test_cases ();
 
     test_assert (tr.run () == code);
     test_assert (tr.exit_code () == code);
     test_assert (&tr.initialise (argc, argv) == &ts);
 
     test_assert (tr.totals ().executed_checks () == executed_checks);
-    test_assert (tr.totals ().executed_subtests () == executed_subtests);
+    test_assert (tr.totals ().executed_test_cases () == executed_test_cases);
   }
 
   if (tr.verbosity () > verbosity::quiet)

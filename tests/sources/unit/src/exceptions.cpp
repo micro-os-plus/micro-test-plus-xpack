@@ -87,15 +87,15 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -123,15 +123,15 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -141,15 +141,15 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
             << "exception not thrown";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -159,15 +159,15 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
             << "exception not thrown";
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -175,8 +175,8 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
     // the location of the test() call, and the run continues with the next
     // test case (API-REVIEW.md #14).
     {
-      const size_t failed_subtests_before
-          = current_suite_totals.failed_subtests ();
+      const size_t failed_test_cases_before
+          = current_suite_totals.failed_test_cases ();
 
       ts.test ("Unexpected std::exception", [] (auto& t)
         {
@@ -190,7 +190,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
         });
       // The exception, counted here since the body did not reach its end.
       local_counts.failed_checks++;
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
 
       ts.test ("Unexpected exception of unknown type", [] (auto& t)
         {
@@ -200,7 +200,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
           t.expect (false) << "check after the exception";
         });
       local_counts.failed_checks++;
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
 
       // The nested test case catches its own exception; the outer test
       // case continues, and fails because of the failed nested test case.
@@ -209,22 +209,22 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
           t.test ("nested test case", [] (auto&)
             { exercise_throw_runtime_error (true); });
           local_counts.failed_checks++;
-          local_counts.executed_subtest++; // nested
+          local_counts.executed_test_cases++; // nested
 
           t.expect (true) << "check after the nested test case";
           local_counts.successful_checks++;
         });
-      local_counts.executed_subtest++; // outer
+      local_counts.executed_test_cases++; // outer
 
       test_assert (current_suite_totals.successful_checks ()
                    == local_counts.successful_checks);
       test_assert (current_suite_totals.failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_suite_totals.executed_subtests ()
-                   == local_counts.executed_subtest);
+      test_assert (current_suite_totals.executed_test_cases ()
+                   == local_counts.executed_test_cases);
       // The two test cases, and the nested and the outer test cases.
-      test_assert (current_suite_totals.failed_subtests ()
-                   == failed_subtests_before + 4);
+      test_assert (current_suite_totals.failed_test_cases ()
+                   == failed_test_cases_before + 4);
     }
 
     // ------------------------------------------------------------------------
@@ -233,8 +233,8 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
     // assertions of the other frameworks do, and the run continues with the
     // next test case (API-REVIEW.md #22).
     {
-      const size_t failed_subtests_before
-          = current_suite_totals.failed_subtests ();
+      const size_t failed_test_cases_before
+          = current_suite_totals.failed_test_cases ();
 
       ts.test ("Failed require", [] (auto& t)
         {
@@ -255,7 +255,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
           t.expect (false) << "check after the requirement";
         });
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
 
       ts.test ("Failed deprecated assume", [] (auto& t)
         {
@@ -264,7 +264,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
           t.expect (false) << "check after the assumption";
         });
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
 
       // The nested test case is stopped; the outer test case continues,
       // and fails because of the failed nested test case.
@@ -277,12 +277,12 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
               nt.expect (false) << "check after the nested requirement";
             });
-          local_counts.executed_subtest++; // nested
+          local_counts.executed_test_cases++; // nested
 
           t.expect (true) << "check after the nested test case";
           local_counts.successful_checks++;
         });
-      local_counts.executed_subtest++; // outer
+      local_counts.executed_test_cases++; // outer
 
       // A kept result is reported during the stack unwinding caused by
       // another exception; it must not throw, which would terminate.
@@ -298,17 +298,17 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
           exercise_throw_runtime_error (true);
         });
       local_counts.failed_checks++; // the exception
-      local_counts.executed_subtest++;
+      local_counts.executed_test_cases++;
 
       test_assert (current_suite_totals.successful_checks ()
                    == local_counts.successful_checks);
       test_assert (current_suite_totals.failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_suite_totals.executed_subtests ()
-                   == local_counts.executed_subtest);
+      test_assert (current_suite_totals.executed_test_cases ()
+                   == local_counts.executed_test_cases);
       // Three test cases, and the nested and the outer test cases.
-      test_assert (current_suite_totals.failed_subtests ()
-                   == failed_subtests_before + 5);
+      test_assert (current_suite_totals.failed_test_cases ()
+                   == failed_test_cases_before + 5);
     }
   } };
 

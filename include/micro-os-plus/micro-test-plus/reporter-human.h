@@ -229,38 +229,38 @@ namespace micro_os_plus::micro_test_plus::detail
     skip_suite (suite& suite) override;
 
     /**
-     * @brief Mark the beginning of a subtest.
+     * @brief Mark the beginning of a test case.
      *
-     * @param subtest Reference to the subtest.
+     * @param test_case Reference to the test case.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    begin_subtest (subtest& subtest) override;
+    begin_test_case (test_case& test_case) override;
 
     /**
-     * @brief Mark the end of a subtest.
+     * @brief Mark the end of a test case.
      *
-     * @param subtest Reference to the subtest.
+     * @param test_case Reference to the test case.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    end_subtest (subtest& subtest) override;
+    end_test_case (test_case& test_case) override;
 
     /**
-     * @brief Report a subtest skipped by the filter.
+     * @brief Report a test case skipped by the filter.
      *
      * @details
      * Displays a `"• <name> - skipped (filtered)"` line,
      * indented by its nesting depth.
      *
-     * @param subtest Reference to the skipped subtest.
+     * @param test_case Reference to the skipped test case.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    skip_subtest (subtest& subtest) override;
+    skip_test_case (test_case& test_case) override;
 
     /**
      * @brief Returns an empty comment prefix string.
@@ -278,22 +278,22 @@ namespace micro_os_plus::micro_test_plus::detail
      * @brief Outputs the prefix for a passing condition.
      *
      * @param message The message to display.
-     * @param subtest The subtest that owns this check.
+     * @param test_case The test case that owns this check.
      * @par Returns
      *   Nothing.
      */
     void
-    output_pass_prefix_ (std::string& message, subtest& subtest) override;
+    output_pass_prefix_ (std::string& message, test_case& test_case) override;
 
     /**
      * @brief Outputs the suffix for a passing condition.
      *
-     * @param subtest The subtest that owns this check.
+     * @param test_case The test case that owns this check.
      * @par Returns
      *   Nothing.
      */
     void
-    output_pass_suffix_ (subtest& subtest) override;
+    output_pass_suffix_ (test_case& test_case) override;
 
     /**
      * @brief Outputs the prefix for a failing condition.
@@ -302,27 +302,27 @@ namespace micro_os_plus::micro_test_plus::detail
      * @param has_expression Whether the failure is associated with an
      * expression.
      * @param location The source location of the failure.
-     * @param subtest The subtest that owns this check.
+     * @param test_case The test case that owns this check.
      * @par Returns
      *   Nothing.
      */
     void
     output_fail_prefix_ (std::string& message, const bool has_expression,
                          const reflection::source_location& location,
-                         subtest& subtest) override;
+                         test_case& test_case) override;
 
     /**
      * @brief Outputs the suffix for a failing condition.
      *
      * @param location The source location of the failure.
      * @param abort Whether to abort execution after failure.
-     * @param subtest The subtest that owns this check.
+     * @param test_case The test case that owns this check.
      * @par Returns
      *   Nothing.
      */
     void
     output_fail_suffix_ (const reflection::source_location& location,
-                         bool abort, subtest& subtest) override;
+                         bool abort, test_case& test_case) override;
 
     /**
      * @brief Writes the results buffered for the outer test case before
@@ -361,9 +361,9 @@ namespace micro_os_plus::micro_test_plus::detail
      * @brief A test case that has begun and not yet ended.
      *
      * @details
-     * Recorded by `begin_subtest()` and removed by `end_subtest()`.
+     * Recorded by `begin_test_case()` and removed by `end_test_case()`.
      */
-    struct open_subtest_t
+    struct open_test_case_t
     {
       /**
        * @brief The test case.
@@ -371,7 +371,7 @@ namespace micro_os_plus::micro_test_plus::detail
        * @details
        * Used to display its name when its results are committed.
        */
-      subtest* test;
+      test_case* test;
 
       /**
        * @brief Whether the name of the test case was displayed.
@@ -379,7 +379,7 @@ namespace micro_os_plus::micro_test_plus::detail
        * @details
        * Always true with verbose verbosity; with normal verbosity, set
        * when failed results are committed before a nested test case, so
-       * that `end_subtest()` does not display the name again.
+       * that `end_test_case()` does not display the name again.
        */
       bool name_displayed;
     };
@@ -391,7 +391,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @details
      * The last element is the test case that owns the buffered results.
      */
-    std::vector<open_subtest_t> open_subtests_{};
+    std::vector<open_test_case_t> open_test_cases_{};
   };
 
   // --------------------------------------------------------------------------

@@ -24,7 +24,7 @@
  * This header provides the inline and template implementations for the test
  * hierarchy used within the µTest++ framework: the accessors of the base
  * classes, the constructors that bind the callable objects and their
- * arguments, the `test()` methods that create and run subtests, and the
+ * arguments, the `test()` methods that create and run test cases, and the
  * `expect()` and `require()` checks.
  *
  * When additional arguments are given, `std::bind` is used to pre-bind them,
@@ -184,37 +184,37 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns the sequential index of the most recent child test point
-     * (check or nested subtest).
+     * Returns the number of the most recent child test point (check or
+     * nested test case).
      */
     inline size_t
-    runnable_base::current_subtest_index () const noexcept
+    runnable_base::test_point_number () const noexcept
     {
-      return current_subtest_index_;
+      return test_point_number_;
     }
 
     /**
      * @details
      * Each call to `test()` invokes this method before constructing the new
-     * `subtest`, and each check invokes it from the deferred reporter
-     * destructor, when the check is reported, so the index values form a
+     * `test_case`, and each check invokes it from the deferred reporter
+     * destructor, when the check is reported, so the numbers form a
      * strictly increasing, one-based sequence of TAP test points, in output
      * order.
      */
     inline size_t
-    runnable_base::increment_subtest_index () noexcept
+    runnable_base::next_test_point_number () noexcept
     {
-      return ++current_subtest_index_;
+      return ++test_point_number_;
     }
 
     /**
      * @details
-     * Returns the number of child subtests owned by this node.
+     * Returns the number of child test cases owned by this node.
      */
     inline size_t
-    runnable_base::children_subtests_count (void) const noexcept
+    runnable_base::child_test_cases_count (void) const noexcept
     {
-      return children_subtests_.size ();
+      return child_test_cases_.size ();
     }
 
     /**
@@ -264,12 +264,12 @@ namespace micro_os_plus::micro_test_plus
    * of the call to `test()`, the parent suite, and the nesting depth.
    */
   template <typename Callable_T, typename... Args_T>
-  subtest::subtest (const detail::test_name& name, runner& test_runner,
-                    suite& parent_suite, size_t own_index,
-                    size_t nesting_depth, Callable_T&& callable,
-                    Args_T&&... arguments)
+  test_case::test_case (const detail::test_name& name, runner& test_runner,
+                        suite& parent_suite, size_t own_index,
+                        size_t nesting_depth, Callable_T&& callable,
+                        Args_T&&... arguments)
       : runnable_base{ name.name (), test_runner, own_index },
-        callable_{ detail::bind_callable<subtest> (
+        callable_{ detail::bind_callable<test_case> (
             std::forward<Callable_T> (callable),
             std::forward<Args_T> (arguments)...) },
         location_{ name.location () }, parent_suite_{ parent_suite },
@@ -284,28 +284,28 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Allocates a child `subtest` on the heap, incrementing the test point
-   * index and deepening the nesting level by one relative to this subtest's
-   * depth, then transfers ownership to this subtest via
-   * `after_subtest_create_()`, which also runs it.
+   * Allocates a child `test_case` on the heap, incrementing the test point
+   * index and deepening the nesting level by one relative to this test case's
+   * depth, then transfers ownership to this test case via
+   * `after_test_case_create_()`, which also runs it.
    */
   template <typename Callable_T, typename... Args_T>
   void
-  subtest::test (const detail::test_name& name, Callable_T&& callable,
-                 Args_T&&... arguments)
+  test_case::test (const detail::test_name& name, Callable_T&& callable,
+                   Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    size_t own_index = increment_subtest_index ();
+    size_t own_index = next_test_point_number ();
     // Not std::make_unique(), which cannot access the private constructor.
-    std::unique_ptr<subtest> child_subtest{ new subtest (
+    std::unique_ptr<test_case> child_test_case{ new test_case (
         name, test_runner (), parent_suite_, own_index, nesting_depth_ + 1,
         std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...) };
 
-    after_subtest_create_ (std::move (child_subtest), parent_suite_);
+    after_test_case_create_ (std::move (child_test_case), parent_suite_);
   }
 
   /**
@@ -318,7 +318,7 @@ namespace micro_os_plus::micro_test_plus
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
   auto
-  subtest::expect (const Expr_T& expr, const reflection::source_location& sl)
+  test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
   {
     return detail::deferred_reporter{ expr, false, sl, *this,
                                       reporter ().expression () };
@@ -330,13 +330,14 @@ namespace micro_os_plus::micro_test_plus
    * `abort = true`. The reporter evaluates the condition when constructed,
    * records a pass or fail when it is destroyed, and, if the condition is
    * false, stops the test case by throwing `detail::failed_requirement`
-   * (caught by `subtest::run()`), or, without exceptions, aborts the test
+   * (caught by `test_case::run()`), or, without exceptions, aborts the test
    * execution.
    */
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
   auto
-  subtest::require (const Expr_T& expr, const reflection::source_location& sl)
+  test_case::require (const Expr_T& expr,
+                      const reflection::source_location& sl)
   {
     return detail::deferred_reporter{ expr, true, sl, *this,
                                       reporter ().expression () };
@@ -350,18 +351,18 @@ namespace micro_os_plus::micro_test_plus
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
   auto
-  subtest::assume (const Expr_T& expr, const reflection::source_location& sl)
+  test_case::assume (const Expr_T& expr, const reflection::source_location& sl)
   {
     return require (expr, sl);
   }
 
   /**
    * @details
-   * Top-level subtests (direct children of a `suite`) have depth 1.
+   * Top-level test cases (direct children of a `suite`) have depth 1.
    * Each additional level of nesting increments the depth by 1.
    */
   inline size_t
-  subtest::nesting_depth () const noexcept
+  test_case::nesting_depth () const noexcept
   {
     return nesting_depth_;
   }
@@ -405,11 +406,11 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `test` function template creates a test case (a `subtest` with
+   * The `test` function template creates a test case (a `test_case` with
    * nesting depth 1) and runs it immediately. It accepts a descriptive
    * name, a callable object (such as a lambda or function pointer), and an
    * optional list of arguments to be passed to the callable, after the
-   * leading `subtest&` reference. The test case is reported using the
+   * leading `test_case&` reference. The test case is reported using the
    * provided name.
    *
    * Each test case typically involves evaluating logical expressions, such
@@ -441,14 +442,14 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    size_t own_index = increment_subtest_index ();
+    size_t own_index = next_test_point_number ();
     // Not std::make_unique(), which cannot access the private constructor.
-    std::unique_ptr<subtest> child_subtest{ new subtest (
+    std::unique_ptr<test_case> child_test_case{ new test_case (
         name, test_runner (), *this, own_index, 1,
         std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...) };
 
-    after_subtest_create_ (std::move (child_subtest), *this);
+    after_test_case_create_ (std::move (child_test_case), *this);
   }
 
   /**

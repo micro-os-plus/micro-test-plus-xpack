@@ -463,8 +463,8 @@ namespace micro_os_plus::micro_test_plus
    * executed via `suite::run()`, and its totals are accumulated into the
    * runner totals; otherwise, it is reported as skipped and counted in
    * `skipped_suites_count_`, keeping its index, so that the TAP plan
-   * remains complete. The executed-subtest counter is not incremented;
-   * suites are not counted as subtests.
+   * remains complete. The executed test cases counter is not incremented;
+   * suites are not counted as test cases.
    */
   void
   runner::run_suites_ (void)
@@ -532,7 +532,7 @@ namespace micro_os_plus::micro_test_plus
 
         // Accumulate the totals from the child suite into the runner
         // totals.
-        // DO NOT increment executed_subtests here.
+        // DO NOT increment executed_test_cases here.
         totals_ += suite_ptr->totals ();
       }
   }

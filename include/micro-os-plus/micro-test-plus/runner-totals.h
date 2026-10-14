@@ -21,8 +21,8 @@
  *
  * @details
  * This header provides the `runner_totals` class, which aggregates the
- * counts of successful checks, failed checks, and executed subtests for a
- * test runner, test suite, or subtest. Instances of this class are embedded
+ * counts of successful checks, failed checks, and executed test cases for a
+ * test runner, test suite, or test case. Instances of this class are embedded
  * inside the runner and every node of the test tree, and updated in place
  * as the test session progresses.
  *
@@ -72,7 +72,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @brief Aggregated pass/fail/subtest counters for a node in the test
+   * @brief Aggregated check and test case counters for a node in the test
    * tree.
    *
    * @details
@@ -80,14 +80,15 @@ namespace micro_os_plus::micro_test_plus
    * test session:
    * - the number of checks that passed (`successful_checks_`),
    * - the number of checks that failed (`failed_checks_`),
-   * - the number of subtests that were executed (`executed_subtests_`), and
-   * - the number of those subtests that failed (`failed_subtests_`).
+   * - the number of test cases that were executed (`executed_test_cases_`),
+   *   and
+   * - the number of those test cases that failed (`failed_test_cases_`).
    *
-   * For a subtest, the subtest counters refer only to its direct nested
-   * subtests; for a suite or the runner, they refer to the subtests at
+   * For a test case, the test case counters refer only to its direct nested
+   * test cases; for a suite or the runner, they refer to the test cases at
    * all nesting levels.
    *
-   * The runner and every node of the test tree (`suite`, `subtest`) own a
+   * The runner and every node of the test tree (`suite`, `test_case`) own a
    * `runner_totals` member and accumulate their counts in place. At the
    * end of each suite or session the operator `+=` propagates the child
    * totals up to the parent node, or to the runner.
@@ -178,36 +179,36 @@ namespace micro_os_plus::micro_test_plus
     increment_failed_checks (size_t count = 1) noexcept;
 
     /**
-     * @brief Increments the executed-subtests counter.
+     * @brief Increments the executed test cases counter.
      *
-     * @param count The number of subtests to add (default 1).
+     * @param count The number of test cases to add (default 1).
      * @par Returns
      *   Nothing.
      */
     void
-    increment_executed_subtests (size_t count = 1) noexcept;
+    increment_executed_test_cases (size_t count = 1) noexcept;
 
     /**
-     * @brief Increments the failed-subtests counter.
+     * @brief Increments the failed test cases counter.
      *
-     * @param count The number of failed subtests to add (default 1).
+     * @param count The number of failed test cases to add (default 1).
      * @par Returns
      *   Nothing.
      */
     void
-    increment_failed_subtests (size_t count = 1) noexcept;
+    increment_failed_test_cases (size_t count = 1) noexcept;
 
     /**
-     * @brief Increments the skipped-subtests counter.
+     * @brief Increments the skipped test cases counter.
      *
-     * @param count The number of skipped subtests to add (default 1).
+     * @param count The number of skipped test cases to add (default 1).
      * @par Returns
      *   Nothing.
      *
      * @since 5.1.0
      */
     void
-    increment_skipped_subtests (size_t count = 1) noexcept;
+    increment_skipped_test_cases (size_t count = 1) noexcept;
 
     /**
      * @brief Returns the number of checks that passed.
@@ -240,48 +241,48 @@ namespace micro_os_plus::micro_test_plus
     executed_checks () const noexcept;
 
     /**
-     * @brief Returns the number of subtests that were executed.
+     * @brief Returns the number of test cases that were executed.
      *
      * @par Parameters
      *   None.
-     * @return The cumulative count of executed subtests.
+     * @return The cumulative count of executed test cases.
      */
     [[nodiscard]] size_t
-    executed_subtests () const noexcept;
+    executed_test_cases () const noexcept;
 
     /**
-     * @brief Returns the number of executed subtests that failed.
+     * @brief Returns the number of executed test cases that failed.
      *
      * @par Parameters
      *   None.
-     * @return The cumulative count of failed subtests.
+     * @return The cumulative count of failed test cases.
      */
     [[nodiscard]] size_t
-    failed_subtests () const noexcept;
+    failed_test_cases () const noexcept;
 
     /**
-     * @brief Returns the number of subtests skipped by the filter.
+     * @brief Returns the number of test cases skipped by the filter.
      *
      * @details
-     * The skipped subtests are not included in `executed_subtests()`.
+     * The skipped test cases are not included in `executed_test_cases()`.
      *
      * @par Parameters
      *   None.
-     * @return The cumulative count of skipped subtests.
+     * @return The cumulative count of skipped test cases.
      *
      * @since 5.1.0
      */
     [[nodiscard]] size_t
-    skipped_subtests () const noexcept;
+    skipped_test_cases () const noexcept;
 
     /**
-     * @brief Checks whether all executed checks and subtests were
+     * @brief Checks whether all executed checks and test cases were
      * successful.
      *
      * @par Parameters
      *   None.
-     * @retval true  No checks and no subtests failed.
-     * @retval false At least one check or one subtest failed.
+     * @retval true  No checks and no test cases failed.
+     * @retval false At least one check or one test case failed.
      */
     [[nodiscard]] bool
     was_successful (void) const noexcept;
@@ -305,35 +306,35 @@ namespace micro_os_plus::micro_test_plus
     size_t failed_checks_ = 0;
 
     /**
-     * @brief Total number of subtests executed.
+     * @brief Total number of test cases executed.
      *
      * @details
-     * Incremented by `increment_executed_subtests()` and by
+     * Incremented by `increment_executed_test_cases()` and by
      * `operator+=`.
      */
-    size_t executed_subtests_ = 0;
+    size_t executed_test_cases_ = 0;
 
     /**
-     * @brief Total number of executed subtests that failed.
+     * @brief Total number of executed test cases that failed.
      *
      * @details
-     * Incremented by `increment_failed_subtests()`, when a subtest ends
-     * with a failed check or a failed nested subtest, and by
-     * `operator+=`. A subtest fails when any of its nested subtests
-     * fails, as in node-tap, although the checks of the nested subtests
+     * Incremented by `increment_failed_test_cases()`, when a test case ends
+     * with a failed check or a failed nested test case, and by
+     * `operator+=`. A test case fails when any of its nested test cases
+     * fails, as in node-tap, although the checks of the nested test cases
      * are not counted in its check counters.
      */
-    size_t failed_subtests_ = 0;
+    size_t failed_test_cases_ = 0;
 
     /**
-     * @brief Total number of subtests skipped by the filter.
+     * @brief Total number of test cases skipped by the filter.
      *
      * @details
-     * Incremented by `increment_skipped_subtests()`, when the name of a
-     * subtest, or of its suite, does not match the filter pattern of its
+     * Incremented by `increment_skipped_test_cases()`, when the name of a
+     * test case, or of its suite, does not match the filter pattern of its
      * level, and by `operator+=`.
      */
-    size_t skipped_subtests_ = 0;
+    size_t skipped_test_cases_ = 0;
   };
 
   // --------------------------------------------------------------------------

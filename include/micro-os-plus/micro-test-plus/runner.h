@@ -99,7 +99,7 @@
  * components, types, and utilities of the µTest++ testing framework, providing
  * a dedicated scope for its public API.
  *
- * The main classes (the runners, and the suites and subtests) are defined
+ * The main classes (the runners, and the suites and test cases) are defined
  * directly in this namespace. Several nested namespaces group specific
  * aspects of the framework: `math` (mathematical utilities), `type_traits`
  * (type traits and concepts), `reflection` (source locations and type
@@ -484,7 +484,7 @@ namespace micro_os_plus::micro_test_plus
      * `run()` has returned, and is zero when there are no patterns. The
      * skipped suites are included in `suites_count()` and
      * `static_suites_count()`; the skipped test cases are counted by
-     * `runner_totals::skipped_subtests()`.
+     * `runner_totals::skipped_test_cases()`.
      *
      * @par Parameters
      *   None.

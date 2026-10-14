@@ -163,9 +163,10 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
     deferred_reporter::deferred_reporter (
         const Expr_T& expr, bool abort,
-        const reflection::source_location& location, subtest& subtest,
+        const reflection::source_location& location, test_case& test_case,
         expression_formatter& expression)
-        : deferred_reporter_base{ static_cast<bool> (expr), location, subtest }
+        : deferred_reporter_base{ static_cast<bool> (expr), location,
+                                  test_case }
 
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)

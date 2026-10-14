@@ -76,15 +76,15 @@ static static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
             << "Mixed separators, last wins";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -162,15 +162,15 @@ static static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
             << "Alpha one does not match Alpha";
         local_counts.successful_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
 
@@ -196,15 +196,15 @@ static static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
         t.expect (utility::is_match ("ab", "???")) << "ab matches ???";
         local_counts.failed_checks++;
 
-        local_counts.executed_subtest++;
+        local_counts.executed_test_cases++;
       });
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     // ------------------------------------------------------------------------
   } };

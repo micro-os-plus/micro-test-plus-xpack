@@ -31,7 +31,7 @@ using namespace micro_os_plus::micro_test_plus;
 
 template <typename T>
 static void
-test_case_expect_integrals_failed_combinations (subtest& t)
+test_case_expect_integrals_failed_combinations (test_case& t)
 {
   t.expect (
       ne (my_actual_integral<T> (), my_expected_integral<signed long long> ()))
@@ -132,7 +132,7 @@ test_case_expect_integrals_failed_combinations (subtest& t)
       << "le matches unsigned int";
   local_counts.failed_checks++;
 
-  local_counts.executed_subtest++;
+  local_counts.executed_test_cases++;
 }
 
 // ----------------------------------------------------------------------------
@@ -152,8 +152,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test (
         "Combinatorial integrals unsigned long long",
@@ -163,8 +163,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("Combinatorial integrals with signed int",
              test_case_expect_integrals_failed_combinations<signed int>);
@@ -173,8 +173,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("Combinatorial integrals with unsigned int",
              test_case_expect_integrals_failed_combinations<unsigned int>);
@@ -183,8 +183,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("Combinatorial integrals with signed short",
              test_case_expect_integrals_failed_combinations<signed int>);
@@ -193,8 +193,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("Combinatorial integrals with unsigned short",
              test_case_expect_integrals_failed_combinations<unsigned int>);
@@ -203,8 +203,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("Combinatorial integrals with signed short",
              test_case_expect_integrals_failed_combinations<signed short>);
@@ -213,8 +213,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("Combinatorial integrals with unsigned short",
              test_case_expect_integrals_failed_combinations<unsigned short>);
@@ -223,8 +223,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("Combinatorial integrals with signed char",
              test_case_expect_integrals_failed_combinations<signed char>);
@@ -233,8 +233,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
 
     ts.test ("Combinatorial integrals with unsigned char",
              test_case_expect_integrals_failed_combinations<unsigned char>);
@@ -243,8 +243,8 @@ static static_suite ts_failed_integrals{
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
   }
 };
 

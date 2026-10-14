@@ -207,12 +207,12 @@ namespace micro_os_plus::micro_test_plus::detail
                                                     microseconds);
           }
 
-        char message_skipped_subtests[40] = "";
-        if (runner.totals ().skipped_subtests () > 0)
+        char message_skipped_test_cases[40] = "";
+        if (runner.totals ().skipped_test_cases () > 0)
           {
-            snprintf (message_skipped_subtests,
-                      sizeof (message_skipped_subtests), ", %zu skipped",
-                      runner.totals ().skipped_subtests ());
+            snprintf (message_skipped_test_cases,
+                      sizeof (message_skipped_test_cases), ", %zu skipped",
+                      runner.totals ().skipped_test_cases ());
           }
 
         char message_skipped_suites[40] = "";
@@ -229,9 +229,9 @@ namespace micro_os_plus::micro_test_plus::detail
                   runner.totals ().successful_checks (),
                   runner.totals ().successful_checks () == 1 ? "" : "s",
                   runner.totals ().failed_checks (),
-                  runner.totals ().executed_subtests (),
-                  runner.totals ().executed_subtests () == 1 ? "" : "s",
-                  message_skipped_subtests, total_suites_count,
+                  runner.totals ().executed_test_cases (),
+                  runner.totals ().executed_test_cases () == 1 ? "" : "s",
+                  message_skipped_test_cases, total_suites_count,
                   total_suites_count == 1 ? "" : "s", message_skipped_suites);
 
         char message_time[120] = "";
@@ -342,13 +342,13 @@ namespace micro_os_plus::micro_test_plus::detail
 
         // The test cases skipped by the filter, only when not zero.
         char message_skipped[40] = "";
-        if (suite.totals ().skipped_subtests () > 0)
+        if (suite.totals ().skipped_test_cases () > 0)
           {
             snprintf (message_skipped, sizeof (message_skipped),
-                      ", %zu skipped", suite.totals ().skipped_subtests ());
+                      ", %zu skipped", suite.totals ().skipped_test_cases ());
           }
 
-        if (suite.totals ().executed_subtests () > 0)
+        if (suite.totals ().executed_test_cases () > 0)
           {
             write_console_ ("\n");
           }
@@ -362,8 +362,8 @@ namespace micro_os_plus::micro_test_plus::detail
                       "(%zu check%s in %zu test case%s%s)",
                       suite.totals ().successful_checks (),
                       suite.totals ().successful_checks () == 1 ? "" : "s",
-                      suite.totals ().executed_subtests (),
-                      suite.totals ().executed_subtests () == 1 ? "" : "s",
+                      suite.totals ().executed_test_cases (),
+                      suite.totals ().executed_test_cases () == 1 ? "" : "s",
                       message_skipped);
 
             write_buffer_to_file_ ();
@@ -393,8 +393,8 @@ namespace micro_os_plus::micro_test_plus::detail
                       suite.totals ().successful_checks (),
                       suite.totals ().successful_checks () == 1 ? "" : "s",
                       suite.totals ().failed_checks (),
-                      suite.totals ().executed_subtests (),
-                      suite.totals ().executed_subtests () == 1 ? "" : "s",
+                      suite.totals ().executed_test_cases (),
+                      suite.totals ().executed_test_cases () == 1 ? "" : "s",
                       message_skipped);
 
             write_buffer_to_file_ ();
@@ -469,15 +469,15 @@ namespace micro_os_plus::micro_test_plus::detail
    * `stdout`, preceded by an empty line when `add_empty_line_` is set.
    */
   void
-  reporter_human::begin_subtest (subtest& subtest)
+  reporter_human::begin_test_case (test_case& test_case)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     if (!buffer_.empty ())
       {
-        if (subtest.nesting_depth () > 1 && !open_subtests_.empty ())
+        if (test_case.nesting_depth () > 1 && !open_test_cases_.empty ())
           {
             // The outer test case performed checks before this nested one.
             commit_buffer_ ();
@@ -490,15 +490,16 @@ namespace micro_os_plus::micro_test_plus::detail
                      "%s\n",
                      buffer_.c_str ());
             flush ();
-            subtest.abort ();
+            test_case.abort ();
           }
       }
 
-    open_subtests_.push_back ({ &subtest, verbosity_ == verbosity::verbose });
+    open_test_cases_.push_back (
+        { &test_case, verbosity_ == verbosity::verbose });
 
-    std::string indent (indent_size * subtest.nesting_depth (), ' ');
+    std::string indent (indent_size * test_case.nesting_depth (), ' ');
 
-    write_file_ ("%s• %s\n", indent.c_str (), subtest.name ());
+    write_file_ ("%s• %s\n", indent.c_str (), test_case.name ());
 
     if (verbosity_ == verbosity::verbose)
       {
@@ -507,7 +508,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        write_console_ ("%s• %s\n", indent.c_str (), subtest.name ());
+        write_console_ ("%s• %s\n", indent.c_str (), test_case.name ());
 
         add_empty_line_ = false;
       }
@@ -535,19 +536,19 @@ namespace micro_os_plus::micro_test_plus::detail
    * Finally, the streams are flushed and the buffer is cleared.
    */
   void
-  reporter_human::end_subtest (subtest& subtest)
+  reporter_human::end_test_case (test_case& test_case)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s' i%zu\n", __PRETTY_FUNCTION__, subtest.name (),
-                   subtest.nesting_depth ());
+    trace::printf ("%s '%s' i%zu\n", __PRETTY_FUNCTION__, test_case.name (),
+                   test_case.nesting_depth ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    // At this point, the buffer may contain output from the subtest, which
+    // At this point, the buffer may contain output from the test case, which
     // should be displayed.
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
-        std::string indent (indent_size * subtest.nesting_depth (), ' ');
-        std::string indent2 (indent_size * (subtest.nesting_depth () + 1),
+        std::string indent (indent_size * test_case.nesting_depth (), ' ');
+        std::string indent2 (indent_size * (test_case.nesting_depth () + 1),
                              ' ');
 
         if (add_empty_line_)
@@ -555,15 +556,16 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        if (subtest.totals ().was_successful ()) [[likely]]
+        if (test_case.totals ().was_successful ()) [[likely]]
           {
-            // Successful subtest.
+            // Successful test case.
 
             char message_totals[300];
             snprintf (message_totals, sizeof (message_totals),
-                      "%s - passed (%zu check%s)", subtest.name (),
-                      subtest.totals ().successful_checks (),
-                      subtest.totals ().successful_checks () == 1 ? "" : "s");
+                      "%s - passed (%zu check%s)", test_case.name (),
+                      test_case.totals ().successful_checks (),
+                      test_case.totals ().successful_checks () == 1 ? ""
+                                                                    : "s");
 
             write_buffer_to_file_ ();
 
@@ -590,31 +592,32 @@ namespace micro_os_plus::micro_test_plus::detail
           }
         else
           {
-            // Failed subtest.
+            // Failed test case.
 
             // The nested failures are mentioned only when present, since a
-            // subtest may fail because of a nested one alone.
-            char message_subtests[48] = "";
-            if (subtest.totals ().failed_subtests () > 0)
+            // test case may fail because of a nested one alone.
+            char message_test_cases[48] = "";
+            if (test_case.totals ().failed_test_cases () > 0)
               {
-                snprintf (message_subtests, sizeof (message_subtests),
+                snprintf (message_test_cases, sizeof (message_test_cases),
                           ", %zu test case%s failed",
-                          subtest.totals ().failed_subtests (),
-                          subtest.totals ().failed_subtests () == 1 ? ""
-                                                                    : "s");
+                          test_case.totals ().failed_test_cases (),
+                          test_case.totals ().failed_test_cases () == 1 ? ""
+                                                                        : "s");
               }
 
             char message_totals[300];
             snprintf (message_totals, sizeof (message_totals),
                       "(%zu check%s passed, %zu failed%s)",
-                      subtest.totals ().successful_checks (),
-                      subtest.totals ().successful_checks () == 1 ? "" : "s",
-                      subtest.totals ().failed_checks (), message_subtests);
+                      test_case.totals ().successful_checks (),
+                      test_case.totals ().successful_checks () == 1 ? "" : "s",
+                      test_case.totals ().failed_checks (),
+                      message_test_cases);
 
             write_buffer_to_file_ ();
 
             write_file_ ("%s✗ %s - FAILED %s\n", indent.c_str (),
-                         subtest.name (), message_totals);
+                         test_case.name (), message_totals);
 
             if (verbosity_ == verbosity::normal)
               {
@@ -625,12 +628,12 @@ namespace micro_os_plus::micro_test_plus::detail
               }
 
             // Show full output accumulated in the buffer for failed
-            // subtests, as it may contain useful information about the
+            // test cases, as it may contain useful information about the
             // failure.
             write_buffer_to_console ();
 
             write_console_ ("%s%s✗%s %s - %sFAILED%s %s\n", indent.c_str (),
-                            colours_.fail, colours_.none, subtest.name (),
+                            colours_.fail, colours_.none, test_case.name (),
                             colours_.fail, colours_.none, message_totals);
 
             add_empty_line_ = true;
@@ -642,9 +645,9 @@ namespace micro_os_plus::micro_test_plus::detail
     // Clear residual content when less verbose.
     clear_buffer_ ();
 
-    if (!open_subtests_.empty ())
+    if (!open_test_cases_.empty ())
       {
-        open_subtests_.pop_back ();
+        open_test_cases_.pop_back ();
       }
   }
 
@@ -664,7 +667,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * This method outputs the prefix for a passing check result, indented one
-   * level deeper than the subtest. The prefix includes a tick symbol
+   * level deeper than the test case. The prefix includes a tick symbol
    * (`✓`), in the pass colour, and, if provided, the associated message.
    * Colour formatting is reset immediately after the symbol.
    *
@@ -672,9 +675,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * generated by the template methods.
    */
   void
-  reporter_human::output_pass_prefix_ (std::string& message, subtest& subtest)
+  reporter_human::output_pass_prefix_ (std::string& message,
+                                       test_case& test_case)
   {
-    size_t level = subtest.nesting_depth ();
+    size_t level = test_case.nesting_depth ();
 
     *this << indent (level + 1);
     *this << colours_.pass << "✓" << colours_.none << " ";
@@ -693,7 +697,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * generated by the template methods.
    */
   void
-  reporter_human::output_pass_suffix_ ([[maybe_unused]] subtest& subtest)
+  reporter_human::output_pass_suffix_ ([[maybe_unused]] test_case& test_case)
   {
     *this << endl;
 
@@ -703,7 +707,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * This method outputs the prefix for a failing check result, indented one
-   * level deeper than the subtest. The prefix includes a cross symbol
+   * level deeper than the test case. The prefix includes a cross symbol
    * (`✗`), an optional message, and the label "FAILED", both symbol and
    * label in the fail colour. The source location (file name and line
    * number) follows, after an opening parenthesis; when the failure has an
@@ -713,7 +717,7 @@ namespace micro_os_plus::micro_test_plus::detail
   void
   reporter_human::output_fail_prefix_ (
       std::string& message, const bool has_expression,
-      const reflection::source_location& location, subtest& subtest)
+      const reflection::source_location& location, test_case& test_case)
   {
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -726,7 +730,7 @@ namespace micro_os_plus::micro_test_plus::detail
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
-    size_t level = subtest.nesting_depth ();
+    size_t level = test_case.nesting_depth ();
 
     *this << indent (level + 1);
     *this << colours_.fail << "✗" << colours_.none << " ";
@@ -758,7 +762,7 @@ namespace micro_os_plus::micro_test_plus::detail
   void
   reporter_human::output_fail_suffix_ (
       [[maybe_unused]] const reflection::source_location& location, bool abort,
-      [[maybe_unused]] subtest& subtest)
+      [[maybe_unused]] test_case& test_case)
   {
     *this << ")";
     if (abort)
@@ -772,7 +776,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * As in `begin_subtest()`, for a nested test case, the results of the
+   * As in `begin_test_case()`, for a nested test case, the results of the
    * checks already performed by the outer test case, if any, are written
    * first (see `commit_buffer_()`), so that the output follows the
    * execution order; for a top-level test case, the output buffer must be
@@ -785,15 +789,15 @@ namespace micro_os_plus::micro_test_plus::detail
    * verbosity levels, no output is produced.
    */
   void
-  reporter_human::skip_subtest (subtest& subtest)
+  reporter_human::skip_test_case (test_case& test_case)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     if (!buffer_.empty ())
       {
-        if (subtest.nesting_depth () > 1 && !open_subtests_.empty ())
+        if (test_case.nesting_depth () > 1 && !open_test_cases_.empty ())
           {
             // The outer test case performed checks before this nested one.
             commit_buffer_ ();
@@ -806,13 +810,13 @@ namespace micro_os_plus::micro_test_plus::detail
                      "%s\n",
                      buffer_.c_str ());
             flush ();
-            subtest.abort ();
+            test_case.abort ();
           }
       }
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
-        std::string indent (indent_size * subtest.nesting_depth (), ' ');
+        std::string indent (indent_size * test_case.nesting_depth (), ' ');
 
         if (add_empty_line_)
           {
@@ -820,10 +824,10 @@ namespace micro_os_plus::micro_test_plus::detail
           }
 
         write_file_ ("%s• %s - skipped (filtered)\n", indent.c_str (),
-                     subtest.name ());
+                     test_case.name ());
 
         write_console_ ("%s• %s - skipped (filtered)\n", indent.c_str (),
-                        subtest.name ());
+                        test_case.name ());
 
         // As for a passed test case.
         add_empty_line_ = (verbosity_ == verbosity::verbose);
@@ -835,14 +839,14 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * The buffered results of the outer test case are written to the output
-   * file, with normal or verbose verbosity (as `end_subtest()` does), and,
+   * file, with normal or verbose verbosity (as `end_test_case()` does), and,
    * with verbose verbosity, to `stdout`. With normal verbosity,
    * they are written to `stdout` only when they include a failure,
    * preceded by the name of the outer test case, which this verbosity
    * otherwise displays only when the test case ends. The buffer is then
    * cleared, so that the nested test case starts with an empty buffer,
    * and the remaining results of the outer test case are written by its
-   * `end_subtest()`.
+   * `end_test_case()`.
    *
    * With normal verbosity, the passed checks committed here are not
    * displayed, even if the outer test case fails later; the output file
@@ -851,7 +855,7 @@ namespace micro_os_plus::micro_test_plus::detail
   void
   reporter_human::commit_buffer_ (void)
   {
-    // As in `end_subtest()`, the results reach the output file only with
+    // As in `end_test_case()`, the results reach the output file only with
     // normal or verbose verbosity.
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
@@ -889,7 +893,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Walks `open_subtests_` from the outermost test case and displays, on
+   * Walks `open_test_cases_` from the outermost test case and displays, on
    * `stdout`, the indented `"• <name>"` line of each one whose name was
    * not displayed yet, marking it as displayed. An empty line is written
    * before the first name, unless `add_empty_line_` is set, in which case
@@ -899,7 +903,7 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter_human::display_open_names_ (void)
   {
     bool is_first = true;
-    for (open_subtest_t& open : open_subtests_)
+    for (open_test_case_t& open : open_test_cases_)
       {
         if (open.name_displayed)
           {

@@ -31,7 +31,7 @@
  * shared `detail::append_number_()` helper for numbers), the `reporter` is
  * relieved of those responsibilities, and `detail::deferred_reporter` can
  * pre-format expression text at construction time without requiring
- * `reporter` or `subtest` to be complete at that point.
+ * `reporter` or `test_case` to be complete at that point.
  *
  * The formatter shares the colour configuration of the owning `reporter`:
  * comparator expressions are wrapped in pass/fail colour codes, which are

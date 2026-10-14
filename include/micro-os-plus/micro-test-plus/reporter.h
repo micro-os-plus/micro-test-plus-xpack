@@ -25,7 +25,7 @@
  * `endl` and `indent()` stream manipulators, and the abstract `reporter`
  * base class, which accumulates output in a buffer, writes it to the
  * console and to an optional output file, and dispatches the pass/fail
- * results and the session, suite, and subtest events to the concrete
+ * results and the session, suite, and test case events to the concrete
  * reporters (`reporter_human` and `reporter_tap`).
  *
  * The formatting of the values and the comparison expressions is delegated
@@ -97,7 +97,7 @@ namespace micro_os_plus::micro_test_plus
   // Forward definitions.
   class runner;
   class suite;
-  class subtest;
+  class test_case;
 
   namespace detail
   {
@@ -167,10 +167,10 @@ namespace micro_os_plus::micro_test_plus
      * distinguish between successful and failed checks.
      *
      * The pure virtual methods report the beginning and end of the session,
-     * the suites, and the subtests, and format the pass and fail results; they
-     * are implemented by `reporter_human` and `reporter_tap`. The concrete
-     * reporter is created by the runner, as selected by the `--reporter`
-     * command-line option.
+     * the suites, and the test cases, and format the pass and fail results;
+     * they are implemented by `reporter_human` and `reporter_tap`. The
+     * concrete reporter is created by the runner, as selected by the
+     * `--reporter` command-line option.
      *
      * The reporters are internal to the framework: their public members are
      * the protocol between the runner, the test nodes, the checks, and the
@@ -184,7 +184,7 @@ namespace micro_os_plus::micro_test_plus
     {
       // Pass the expression formatter to the checks, and format their
       // expressions.
-      friend class micro_test_plus::subtest;
+      friend class micro_test_plus::test_case;
       friend class deferred_reporter_base;
 
     public:
@@ -318,7 +318,7 @@ namespace micro_os_plus::micro_test_plus
        * verbatim, without appending a line ending, and is not cleared.
        *
        * @note Public because `deferred_reporter_base` calls this
-       *   from its destructor when aborting, after the subtest
+       *   from its destructor when aborting, after the test case
        *   instance is no longer accessible via the normal
        *   reporting path.
        *
@@ -364,13 +364,13 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param message The message to display.
        * @param expression The string representation of the expression.
-       * @param subtest The subtest that owns this check.
+       * @param test_case The test case that owns this check.
        * @par Returns
        *   Nothing.
        */
       void
       pass (std::string& message, const std::string& expression,
-            subtest& subtest);
+            test_case& test_case);
 
       /**
        * @brief Report a failed condition.
@@ -381,14 +381,14 @@ namespace micro_os_plus::micro_test_plus
        * @param has_expression Whether the expression is a compound op to
        * display.
        * @param location The source location of the failure.
-       * @param subtest The subtest that owns this check.
+       * @param test_case The test case that owns this check.
        * @par Returns
        *   Nothing.
        */
       void
       fail (bool abort, std::string& message, const std::string& expression,
             bool has_expression, const reflection::source_location& location,
-            subtest& subtest);
+            test_case& test_case);
 
       // ----------------------------------------------------------------------
 
@@ -473,53 +473,53 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Mark the beginning of a subtest.
+       * @brief Mark the beginning of a test case.
        *
        * @details
-       * Called by `subtest::run()` before the subtest body; the output
+       * Called by `test_case::run()` before the test case body; the output
        * buffer is expected to be empty at this point.
        *
-       * @param subtest Reference to the subtest.
+       * @param test_case Reference to the test case.
        * @par Returns
        *   Nothing.
        */
       virtual void
-      begin_subtest (subtest& subtest)
+      begin_test_case (test_case& test_case)
           = 0;
 
       /**
-       * @brief Mark the end of a subtest.
+       * @brief Mark the end of a test case.
        *
        * @details
-       * Called by `subtest::run()` after the subtest body; implementations
-       * display the subtest results and clear the output buffer.
+       * Called by `test_case::run()` after the test case body; implementations
+       * display the test case results and clear the output buffer.
        *
-       * @param subtest Reference to the subtest.
+       * @param test_case Reference to the test case.
        * @par Returns
        *   Nothing.
        */
       virtual void
-      end_subtest (subtest& subtest)
+      end_test_case (test_case& test_case)
           = 0;
 
       /**
-       * @brief Report a subtest skipped by the filter.
+       * @brief Report a test case skipped by the filter.
        *
        * @details
-       * Called instead of `begin_subtest()` and `end_subtest()`, when the
-       * name of the subtest, or of its suite, does not match the filter
-       * pattern of its level; the subtest has already been assigned its
+       * Called instead of `begin_test_case()` and `end_test_case()`, when the
+       * name of the test case, or of its suite, does not match the filter
+       * pattern of its level; the test case has already been assigned its
        * index. Implementations display a single line, at the indentation
-       * of the subtest.
+       * of the test case.
        *
-       * @param subtest Reference to the skipped subtest.
+       * @param test_case Reference to the skipped test case.
        * @par Returns
        *   Nothing.
        *
        * @since 5.1.0
        */
       virtual void
-      skip_subtest (subtest& subtest)
+      skip_test_case (test_case& test_case)
           = 0;
 
       /**
@@ -555,9 +555,10 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Protected, since the formatter is an implementation detail; it is
-       * used only by the checks (`subtest::expect()`, `subtest::require()`,
-       * and the deferred reporter), which are friends, and by the derived
-       * reporters. The applications format their own types by defining
+       * used only by the checks (`test_case::expect()`,
+       * `test_case::require()`, and the deferred reporter), which are
+       * friends, and by the derived reporters. The applications format
+       * their own types by defining
        * `operator<<` for the public `expression_formatter` alias.
        *
        * @par Parameters
@@ -670,12 +671,12 @@ namespace micro_os_plus::micro_test_plus
        * the message, if any.
        *
        * @param message The message to display.
-       * @param subtest The subtest that owns this check.
+       * @param test_case The test case that owns this check.
        * @par Returns
        *   Nothing.
        */
       virtual void
-      output_pass_prefix_ (std::string& message, subtest& subtest)
+      output_pass_prefix_ (std::string& message, test_case& test_case)
           = 0;
 
       /**
@@ -684,12 +685,12 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Called by `pass()` after the expression text, to complete the line.
        *
-       * @param subtest The subtest that owns this check.
+       * @param test_case The test case that owns this check.
        * @par Returns
        *   Nothing.
        */
       virtual void
-      output_pass_suffix_ (subtest& subtest)
+      output_pass_suffix_ (test_case& test_case)
           = 0;
 
       /**
@@ -703,14 +704,14 @@ namespace micro_os_plus::micro_test_plus
        * @param has_expression Whether the failure is associated with an
        * expression.
        * @param location The source location of the failure.
-       * @param subtest The subtest that owns this check.
+       * @param test_case The test case that owns this check.
        * @par Returns
        *   Nothing.
        */
       virtual void
       output_fail_prefix_ (std::string& message, const bool has_expression,
                            const reflection::source_location& location,
-                           subtest& subtest)
+                           test_case& test_case)
           = 0;
 
       /**
@@ -722,13 +723,13 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param location The source location of the failure.
        * @param abort Whether to abort execution after failure.
-       * @param subtest The subtest that owns this check.
+       * @param test_case The test case that owns this check.
        * @par Returns
        *   Nothing.
        */
       virtual void
       output_fail_suffix_ (const reflection::source_location& location,
-                           bool abort, subtest& subtest)
+                           bool abort, test_case& test_case)
           = 0;
 
     protected:
