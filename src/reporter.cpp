@@ -73,19 +73,19 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Copies the verbosity and the view of the command-line arguments from
-   * the options parsed by the runner, and opens the output file, if one
-   * was requested. If the file cannot be opened, the process exits with a
-   * diagnostic error message. The internal string buffer is pre-allocated
-   * to reduce dynamic allocation overhead.
+   * the session options, and opens the output file, if a non-empty path
+   * was given, keeping a copy of the path. If the file cannot be opened,
+   * the process exits with a diagnostic error message. The internal
+   * string buffer is pre-allocated to reduce dynamic allocation overhead.
    */
-  reporter::reporter (const options& opts)
+  reporter::reporter (const runner_options& opts)
       : verbosity_{ opts.verbosity_level }, arguments_{ opts.arguments }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-    if (opts.output_file_path != nullptr)
+    if (opts.output_file_path != nullptr && opts.output_file_path[0] != '\0')
       {
         output_file_ = fopen (opts.output_file_path, "w");
         if (output_file_ == nullptr)
@@ -119,10 +119,11 @@ namespace micro_os_plus::micro_test_plus::detail
         fflush (output_file_);
         fclose (output_file_);
 
-        write_console_ ("Test output written to '%s'.\n", output_file_path_);
+        write_console_ ("Test output written to '%s'.\n",
+                        output_file_path_.c_str ());
 
         output_file_ = nullptr;
-        output_file_path_ = nullptr;
+        output_file_path_.clear ();
       }
   }
 

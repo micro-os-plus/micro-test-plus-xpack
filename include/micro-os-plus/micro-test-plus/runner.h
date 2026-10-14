@@ -63,6 +63,7 @@
 #include "test.h"
 #include "reflection.h"
 #include "reporter.h"
+#include "runner-options.h"
 
 #include <functional>
 #include <memory>
@@ -132,7 +133,8 @@ namespace micro_os_plus::micro_test_plus
    * later, sorted by name, by `run()`.
    *
    * The test runner provides methods for initialising the test environment
-   * (including the creation of the reporter selected on the command line),
+   * (including the creation of the reporter selected on the command line,
+   * or by the `runner_options` passed to `initialise()`),
    * registering test suites, and determining the overall test result via an
    * exit code. It also offers an abort mechanism for terminating test
    * execution in exceptional circumstances.
@@ -228,6 +230,15 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Initialises the test runner with command-line arguments.
      *
+     * @details
+     * Parses the µTest++ options from the command line (`--reporter`,
+     * `--silent`, `--quiet`, `--verbose`, and `--output-file`) into a
+     * `runner_options` structure, and continues as the overload taking
+     * the options. The other arguments are ignored, since the
+     * applications may define their own. A missing option argument, or
+     * an unknown reporter name, terminates the program with an error
+     * message.
+     *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
      * @param top_suite_name The name given to the implicit top suite. Defaults
@@ -236,6 +247,31 @@ namespace micro_os_plus::micro_test_plus
      */
     class suite&
     initialise (int argc, char* argv[], const char* top_suite_name = "");
+
+    /**
+     * @brief Initialises the test runner with the given options.
+     *
+     * @details
+     * Creates the selected reporter, starts the session, and returns the
+     * top suite, without parsing a command line; intended for the
+     * applications that do not have one, such as the embedded ones
+     * without semihosting arguments.
+     *
+     * If no name is given, here or by the deprecated constructor, the top
+     * suite is named after `options.arguments[0]`, when available, or
+     * "default suite".
+     *
+     * @param options The session options; the strings they refer to must
+     * remain valid until the call returns.
+     * @param top_suite_name The name given to the implicit top suite. Defaults
+     * to an empty string.
+     * @return Reference to the top-level test suite.
+     *
+     * @since 5.1.0
+     */
+    class suite&
+    initialise (const runner_options& options,
+                const char* top_suite_name = "");
 
     /**
      * @brief Runs the registered suites, ends the session, and returns the
@@ -328,7 +364,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The level is selected with the `--silent`, `--quiet`, and
-     * `--verbose` command-line options; the tests can use it to decide
+     * `--verbose` command-line options, or with
+     * `runner_options::verbosity_level`; the tests can use it to decide
      * whether to display their own messages. Valid only after
      * `initialise()` has been called.
      *
@@ -430,7 +467,7 @@ namespace micro_os_plus::micro_test_plus
      * @param argv The argument vector from main().
      * @return The parsed options.
      */
-    [[nodiscard]] static detail::options
+    [[nodiscard]] static runner_options
     parse_options_ (int argc, char* argv[]);
 
     // ------------------------------------------------------------------------
@@ -459,8 +496,8 @@ namespace micro_os_plus::micro_test_plus
      * results.
      *
      * @details
-     * Created by `initialise()`, as selected by the `--reporter`
-     * command-line option, and configured with the options parsed by
+     * Created by `initialise()`, as selected by the session options,
+     * either given by the caller or parsed from the command line by
      * `parse_options_()`.
      */
     std::unique_ptr<detail::reporter> reporter_;
@@ -478,7 +515,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Set by `initialise()`, either from its argument or derived from
-     * `argv[0]`.
+     * `argv[0]`, as kept in the session options.
      */
     std::string top_suite_name_;
 

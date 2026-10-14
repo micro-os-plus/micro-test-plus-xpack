@@ -70,6 +70,13 @@ supported; the reporter is still selected with the `--reporter`
 command-line option. `runner::reporter()` is no longer public; replace
 `runner.reporter ().verbosity ()` with the new `runner.verbosity ()`.
 
+The runner can now be initialised without a command line, with a new
+`initialise (options, name)` overload taking a `runner_options`
+structure (the reporter, the verbosity, and the output file), so the
+applications without command-line arguments no longer need to build an
+`argv` array; `initialise (argc, argv, name)` parses the command line
+into the same structure.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

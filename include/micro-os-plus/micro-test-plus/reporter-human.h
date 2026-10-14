@@ -105,10 +105,10 @@ namespace micro_os_plus::micro_test_plus::detail
     /**
      * @brief Constructor for the reporter_human class.
      *
-     * @param opts The session options, parsed by the runner from the
-     * command line.
+     * @param opts The session options, passed to `runner::initialise()`
+     * or parsed by it from the command line.
      */
-    explicit reporter_human (const options& opts);
+    explicit reporter_human (const runner_options& opts);
 
     /**
      * @brief Deleted copy constructor to prevent copying.

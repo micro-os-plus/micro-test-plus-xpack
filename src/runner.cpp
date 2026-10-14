@@ -152,18 +152,14 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Parses the command-line options with `parse_options_()`, creates
-   * the selected reporter (`--reporter=human` or `--reporter=tap`, the
-   * default) with these options, starts session timing, and emits the
-   * initial reporter notifications for the session and top suite. An
-   * option error terminates the process with an error message.
+   * Parses the command-line options with `parse_options_()`, and passes
+   * them to the overload taking the options, which creates the selected
+   * reporter (`--reporter=human` or `--reporter=tap`, the default) and
+   * starts the session. An option error terminates the process with an
+   * error message.
    *
-   * If the top suite name is not provided, here or by the deprecated
-   * constructor, it is derived from the file name of `argv[0]`, without
-   * the extension, or defaults to "default suite".
-   *
-   * The runner is initialised only once; a later call reports an error on
-   * `stderr` and returns the top suite, without other effects.
+   * The options are not parsed if the runner is already initialised; the
+   * error is then reported by the other overload.
    *
    * If tracing is enabled, the command-line arguments are
    * also logged for diagnostic purposes.
@@ -193,11 +189,41 @@ namespace micro_os_plus::micro_test_plus
 
     if (session_state_ != session_state_t::created)
       {
+        return initialise (runner_options{}, top_suite_name);
+      }
+
+    return initialise (parse_options_ (argc, argv), top_suite_name);
+  }
+
+  /**
+   * @details
+   * Creates the reporter selected by the options, starts session
+   * timing, and emits the initial reporter notifications for the session
+   * and top suite.
+   *
+   * If the top suite name is not provided, here or by the deprecated
+   * constructor, it is derived from the file name of
+   * `options.arguments[0]` (usually `argv[0]`), without the extension,
+   * or defaults to "default suite".
+   *
+   * The runner is initialised only once; a later call reports an error on
+   * `stderr` and returns the top suite, without other effects.
+   */
+  suite&
+  runner::initialise (const runner_options& options,
+                      const char* top_suite_name)
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (session_state_ != session_state_t::created)
+      {
         fprintf (stderr, "error: test runner already initialised\n");
         return top_suite_;
       }
 
-    if (strlen (top_suite_name) > 0)
+    if (top_suite_name != nullptr && strlen (top_suite_name) > 0)
       {
         // If provided by this call, use it, possibly override the
         // deprecated constructor.
@@ -209,10 +235,10 @@ namespace micro_os_plus::micro_test_plus
         // If not provided by the constructor or by this call, try to extract a
         // name from argv[0], which is commonly the executable name. If that
         // fails, use a default name.
-        if (argc > 0 && argv != nullptr && argv[0] != nullptr)
+        if (!options.arguments.empty () && options.arguments[0] != nullptr)
           {
             std::string_view top_suite_name_view{ utility::extract_file_name (
-                argv[0]) };
+                options.arguments[0]) };
 
             const auto dot_pos = top_suite_name_view.rfind ('.');
             if (dot_pos != std::string_view::npos)
@@ -229,16 +255,14 @@ namespace micro_os_plus::micro_test_plus
         top_suite_.name (top_suite_name_.c_str ());
       }
 
-    const detail::options opts{ parse_options_ (argc, argv) };
-
     // Initialise and configure the reporter.
-    if (opts.selected_reporter == detail::reporter_kind::human)
+    if (options.selected_reporter == reporter_kind::human)
       {
-        reporter_ = std::make_unique<detail::reporter_human> (opts);
+        reporter_ = std::make_unique<detail::reporter_human> (options);
       }
     else
       {
-        reporter_ = std::make_unique<detail::reporter_tap> (opts);
+        reporter_ = std::make_unique<detail::reporter_tap> (options);
       }
 
     // ------------------------------------------------------------------------
@@ -268,10 +292,10 @@ namespace micro_os_plus::micro_test_plus
    * The other arguments are ignored. The whole command line is kept in the
    * options, to be listed by the reporter.
    */
-  detail::options
+  runner_options
   runner::parse_options_ (int argc, char* argv[])
   {
-    detail::options opts{};
+    runner_options opts{};
 
     if (argc <= 0 || argv == nullptr)
       {
@@ -331,11 +355,11 @@ namespace micro_os_plus::micro_test_plus
           {
             if (value == "human")
               {
-                opts.selected_reporter = detail::reporter_kind::human;
+                opts.selected_reporter = reporter_kind::human;
               }
             else if (value == "tap")
               {
-                opts.selected_reporter = detail::reporter_kind::tap;
+                opts.selected_reporter = reporter_kind::tap;
               }
             else
               {

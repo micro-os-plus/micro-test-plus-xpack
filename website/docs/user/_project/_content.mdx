@@ -318,6 +318,18 @@ auto& ts = tr.initialise(argc, argv, "Main");
 
 The initialisation method returns the default top suite, which is required later to create test cases.
 
+On platforms without a command line, such as embedded applications without semihosting arguments, the runner can be initialised with the options set directly, starting from the defaults, instead of the main arguments:
+
+```cpp
+mt::runner_options options{};
+options.selected_reporter = mt::reporter_kind::human;
+options.verbosity_level = mt::verbosity::verbose;
+
+auto& ts = tr.initialise(options, "Main");
+```
+
+The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, and `output_file_path` to `--output-file`.
+
 #### Test result
 
 To run the registered suites, end the session, and return the test result as the process exit code, the runner provides the `run()` method; the session runs only once, and later calls return the same result:

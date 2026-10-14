@@ -115,7 +115,11 @@
 // Requires type-traits.h, detail.h + reflection.h.
 #include "micro-test-plus/expression-formatter.h"
 
-// Requires type-traits.h, detail.h, expression-formatter.h, reflection.h.
+// No deps.
+#include "micro-test-plus/runner-options.h"
+
+// Requires type-traits.h, detail.h, expression-formatter.h, reflection.h,
+// runner-options.h.
 #include "micro-test-plus/reporter.h"
 
 // Requires type-traits.h, reflection.h, expression-formatter.h.
@@ -137,7 +141,8 @@
 // timings.h + deferred-reporter.h, reporter.h.
 #include "micro-test-plus/test.h"
 
-// Requires timings.h, test.h (detail::test_node, top_suite), reflection.h.
+// Requires timings.h, test.h (detail::test_node, top_suite), reflection.h,
+// runner-options.h.
 #include "micro-test-plus/runner.h"
 
 // ----------------------------------------------------------------------------

@@ -818,7 +818,13 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ different const objects
         ✓ same const object
     ✓ Pointers to const - passed (2 checks)
-✗ Miscellaneous suite - FAILED (32 checks passed, 13 failed, in 9 test cases)
+    • Runner options
+        ✓ given name
+        ✓ given verbosity
+        ✓ local session passed
+        ✓ default name without arguments
+    ✓ Runner options - passed (4 checks)
+✗ Miscellaneous suite - FAILED (36 checks passed, 13 failed, in 10 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -920,4 +926,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 413 checks passed, 330 failed, in 76 test cases, 12 test suites
+✗ Total: 417 checks passed, 330 failed, in 77 test cases, 12 test suites

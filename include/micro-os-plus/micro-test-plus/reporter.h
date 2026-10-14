@@ -65,6 +65,7 @@
 #include "detail.h"
 #include "expression-formatter.h"
 #include "reflection.h"
+#include "runner-options.h"
 
 #include <cstdio>
 #include <string_view>
@@ -92,32 +93,6 @@
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
-
-  /**
-   * @brief The verbosity levels for test reporting.
-   *
-   * @details
-   * The `verbosity` enumeration defines the available levels of detail for
-   * test output produced by the reporting system. These levels control the
-   * amount and type of information displayed during test execution, allowing
-   * users to tailor the output to their specific requirements.
-   *
-   * The level is selected with the `--silent`, `--quiet`, and `--verbose`
-   * command-line options; the default is `normal`. It affects only the
-   * console output; the optional output file always receives the full
-   * report.
-   *
-   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-   */
-  enum class verbosity
-  {
-    silent = 0, /**< No console output; only the exit code is returned. */
-    quiet = 1, /**< Displays only the overall session summary. */
-    normal = 2, /**< Displays test suite and test case results; the
-                   individual checks are shown only for failures. */
-    verbose = 3 /**< Displays all results, including passed checks, for maximum
-                   detail. */
-  };
 
   // Forward definitions.
   class runner;
@@ -173,74 +148,6 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] indent_t
     indent (size_t level);
 
-    // ------------------------------------------------------------------------
-
-    /**
-     * @brief The built-in reporters, selectable from the command line.
-     *
-     * @details
-     * Selected with the `--reporter` command-line option; the default is
-     * `tap`.
-     */
-    enum class reporter_kind
-    {
-      tap, /**< The TAP reporter, `reporter_tap`. */
-      human /**< The human-readable reporter, `reporter_human`. */
-    };
-
-    /**
-     * @brief The test session options, parsed from the command line.
-     *
-     * @details
-     * The runner parses the command-line arguments once, in
-     * `runner::initialise()`, into this structure, and passes it to the
-     * constructor of the selected reporter. The arguments not recognised
-     * as options are ignored, since the applications may define their
-     * own.
-     */
-    struct options
-    {
-      /**
-       * @brief The reporter that displays the results.
-       *
-       * @details
-       * Set by `--reporter=<name>` or `--reporter <name>`, where the name
-       * is `tap` or `human`.
-       */
-      reporter_kind selected_reporter{ reporter_kind::tap };
-
-      /**
-       * @brief The level of detail of the console output.
-       *
-       * @details
-       * Set by `--silent`, `--quiet`, or `--verbose`; when several are
-       * given, the last one takes effect.
-       */
-      micro_test_plus::verbosity verbosity_level{
-        micro_test_plus::verbosity::normal
-      };
-
-      /**
-       * @brief Path of the optional output file, or `nullptr`.
-       *
-       * @details
-       * Set by `--output-file=<path>` or `--output-file <path>`; it
-       * points into one of the null-terminated `argv[]` strings, which
-       * live until the end of the program. An empty path leaves it
-       * `nullptr`, so that no file is written.
-       */
-      const char* output_file_path{ nullptr };
-
-      /**
-       * @brief The complete command line, including `argv[0]`.
-       *
-       * @details
-       * A view of the `argv[]` array of `main()`, listed by the
-       * reporters at the beginning of the report.
-       */
-      std::span<char* const> arguments{};
-    };
-
     // ========================================================================
 
     /**
@@ -284,10 +191,10 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructor for the reporter class.
        *
-       * @param opts The session options, parsed by the runner from the
-       * command line.
+       * @param opts The session options, passed to `runner::initialise()`
+       * or parsed by it from the command line.
        */
-      explicit reporter (const options& opts);
+      explicit reporter (const runner_options& opts);
 
       /**
        * @brief Virtual destructor for the reporter class.
@@ -774,7 +681,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief The verbosity level for test reporting.
        *
        * @details
-       * Set by the constructor from the options parsed by the runner.
+       * Set by the constructor from the session options.
        */
       enum verbosity verbosity_ = verbosity::normal;
 
@@ -832,11 +739,12 @@ namespace micro_os_plus::micro_test_plus
        * @brief Path of the optional output file.
        *
        * @details
-       * Set from the `--output-file` command-line option, as parsed by the
-       * runner; it points into the original `argv[]` string. Used to name the file in the confirmation
-       * message displayed when the file is closed.
+       * Copied by the constructor from the session options, so that the
+       * caller's string need not outlive `runner::initialise()`. Used to
+       * name the file in the confirmation message displayed when the file
+       * is closed.
        */
-      const char* output_file_path_{ nullptr };
+      std::string output_file_path_{};
 
       /**
        * @brief Optional output file, receiving a copy of the test report.
@@ -854,7 +762,9 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * A view of the `argv[]` array of `main()`, copied from the
-       * options by the constructor, and listed by `write_info_()`.
+       * session options by the constructor, and listed by `write_info_()`,
+       * which is called only by `begin_session()`, within
+       * `runner::initialise()`; it is not used afterwards.
        */
       std::span<char* const> arguments_{};
     };

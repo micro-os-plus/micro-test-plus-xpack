@@ -847,7 +847,13 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ different const objects
         ✓ same const object
     ✓ Pointers to const - passed (2 checks)
-✗ Miscellaneous suite - FAILED (32 checks passed, 13 failed, in 9 test cases), time: 0.285 ms
+    • Runner options
+        ✓ given name
+        ✓ given verbosity
+        ✓ local session passed
+        ✓ default name without arguments
+    ✓ Runner options - passed (4 checks)
+✗ Miscellaneous suite - FAILED (36 checks passed, 13 failed, in 10 test cases), time: 0.285 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -949,4 +955,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases), time: 0.076 ms
-✗ Total: 418 checks passed, 336 failed, in 84 test cases, 13 test suites, time: 3.206 ms
+✗ Total: 422 checks passed, 336 failed, in 85 test cases, 13 test suites, time: 3.206 ms

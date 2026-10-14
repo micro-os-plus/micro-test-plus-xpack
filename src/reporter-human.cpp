@@ -82,7 +82,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * red/green colour scheme. If tracing is enabled, the function
    * signature is output for diagnostic purposes.
    */
-  reporter_human::reporter_human (const options& opts) : reporter{ opts }
+  reporter_human::reporter_human (const runner_options& opts)
+      : reporter{ opts }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);

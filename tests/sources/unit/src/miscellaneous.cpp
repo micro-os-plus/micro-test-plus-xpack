@@ -57,7 +57,7 @@ namespace
   class buffer_reporter final : public detail::reporter
   {
   public:
-    buffer_reporter () : reporter{ detail::options{} }
+    buffer_reporter () : reporter{ runner_options{} }
     {
     }
 
@@ -452,6 +452,40 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.successful_checks++;
 
         t.expect (eq (&first, &first)) << "same const object";
+        local_counts.successful_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    // A runner can be initialised without a command line, with the options
+    // set by the application (API-REVIEW.md #20). The local runners are
+    // silent, so that they do not write to the test output.
+    ts.test ("Runner options", [] (auto& t)
+      {
+        runner_options options{};
+        options.selected_reporter = reporter_kind::human;
+        options.verbosity_level = verbosity::silent;
+
+        runner named_runner;
+        auto& named_ts = named_runner.initialise (options, "Local");
+
+        t.expect (eq (named_ts.name (), "Local")) << "given name";
+        local_counts.successful_checks++;
+
+        t.expect (named_runner.verbosity () == verbosity::silent)
+            << "given verbosity";
+        local_counts.successful_checks++;
+
+        named_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        t.expect (eq (named_runner.run (), 0)) << "local session passed";
+        local_counts.successful_checks++;
+
+        runner unnamed_runner;
+        auto& unnamed_ts = unnamed_runner.initialise (options);
+
+        t.expect (eq (unnamed_ts.name (), "default suite"))
+            << "default name without arguments";
         local_counts.successful_checks++;
 
         local_counts.executed_subtest++;
