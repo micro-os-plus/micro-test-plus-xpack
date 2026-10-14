@@ -401,7 +401,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * case, if any, are written first (see `commit_buffer_()`), so that the
    * output follows the execution order. For a top-level test case, the
    * output buffer must be empty; if it is not, its content is written to
-   * `stderr` and execution is aborted.
+   * `stderr` and execution is aborted with `runner::abort()`, which calls
+   * the handler set by `runner::set_abort_handler()`, if any.
    *
    * A `"• <name>"` line, indented according to the nesting depth, is
    * written to the output file (if open) and, with verbose verbosity, to
@@ -429,7 +430,7 @@ namespace micro_os_plus::micro_test_plus::detail
                      "%s\n",
                      buffer_.c_str ());
             flush ();
-            abort ();
+            subtest.abort ();
           }
       }
 

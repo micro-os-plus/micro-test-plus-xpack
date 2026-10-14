@@ -51,6 +51,26 @@ namespace
     return formatter << "{ " << p.x << ", " << p.y << " }";
   }
 
+  // An abort handler which, when exceptions are available, returns
+  // control to the test case, without terminating the process
+  // (API-REVIEW.md #21).
+#if defined(__EXCEPTIONS)
+  struct abort_exception
+  {
+  };
+
+  [[noreturn]] void
+  test_abort_handler (const reflection::source_location&)
+  {
+    throw abort_exception{};
+  }
+#else
+  void
+  test_abort_handler (const reflection::source_location&)
+  {
+  }
+#endif // defined(__EXCEPTIONS)
+
   // A reporter that ignores all events and exposes its output buffer, to
   // check the text written by the `reporter` stream operators, without
   // writing to the test output (API-REVIEW.md #7).
@@ -486,6 +506,88 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         t.expect (eq (unnamed_ts.name (), "default suite"))
             << "default name without arguments";
+        local_counts.successful_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    // An option error does not terminate the process; it is reported on
+    // stderr (the messages are expected in the test output), the tests are
+    // still run, and `run()` returns 2 (API-REVIEW.md #21).
+    ts.test ("Runner option errors", [] (auto& t)
+      {
+        char arg_name[] = "local";
+        char arg_silent[] = "--silent";
+        char arg_bad_reporter[] = "--reporter=unknown";
+        char arg_reporter[] = "--reporter";
+
+        char* bad_reporter_argv[]
+            = { arg_name, arg_silent, arg_bad_reporter, nullptr };
+        runner bad_reporter_runner;
+        auto& bad_reporter_ts
+            = bad_reporter_runner.initialise (3, bad_reporter_argv);
+        bad_reporter_ts.test ("Local test",
+                              [] (auto& lt) { lt.expect (true); });
+
+        t.expect (bad_reporter_runner.verbosity () == verbosity::silent)
+            << "valid options still applied";
+        local_counts.successful_checks++;
+
+        t.expect (eq (bad_reporter_runner.run (), 2)) << "unknown reporter";
+        local_counts.successful_checks++;
+
+        char* missing_argv[] = { arg_name, arg_silent, arg_reporter, nullptr };
+        runner missing_runner;
+        auto& missing_ts = missing_runner.initialise (3, missing_argv);
+        missing_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        t.expect (eq (missing_runner.run (), 2)) << "missing argument";
+        local_counts.successful_checks++;
+
+        runner_options options{};
+        options.verbosity_level = verbosity::silent;
+        options.output_file_path = "/non-existent-folder/report.txt";
+
+        runner file_runner;
+        auto& file_ts = file_runner.initialise (options);
+        file_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        t.expect (eq (file_runner.run (), 2)) << "output file not opened";
+        local_counts.successful_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    // The abort handler can be replaced, and, when exceptions are
+    // available, it can return control to the application by throwing
+    // (API-REVIEW.md #21).
+    ts.test ("Abort handler", [] (auto& t)
+      {
+        runner local_runner;
+
+        t.expect (local_runner.set_abort_handler (test_abort_handler)
+                  == nullptr)
+            << "no initial handler";
+        local_counts.successful_checks++;
+
+#if defined(__EXCEPTIONS)
+        bool caught = false;
+        try
+          {
+            local_runner.abort ();
+          }
+        catch (const abort_exception&)
+          {
+            caught = true;
+          }
+
+        t.expect (caught) << "handler called";
+        local_counts.successful_checks++;
+#endif // defined(__EXCEPTIONS)
+
+        t.expect (local_runner.set_abort_handler (nullptr)
+                  == &test_abort_handler)
+            << "previous handler returned";
         local_counts.successful_checks++;
 
         local_counts.executed_subtest++;

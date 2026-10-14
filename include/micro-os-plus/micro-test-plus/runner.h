@@ -235,9 +235,11 @@ namespace micro_os_plus::micro_test_plus
      * `--silent`, `--quiet`, `--verbose`, and `--output-file`) into a
      * `runner_options` structure, and continues as the overload taking
      * the options. The other arguments are ignored, since the
-     * applications may define their own. A missing option argument, or
-     * an unknown reporter name, terminates the program with an error
-     * message.
+     * applications may define their own.
+     *
+     * A missing option argument, or an unknown reporter name, is reported
+     * on `stderr` and the option is ignored; the tests are still run, but
+     * `run()` returns 2.
      *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
@@ -260,6 +262,10 @@ namespace micro_os_plus::micro_test_plus
      * If no name is given, here or by the deprecated constructor, the top
      * suite is named after `options.arguments[0]`, when available, or
      * "default suite".
+     *
+     * If the output file cannot be opened, the error is reported on
+     * `stderr` and the report is written only to the console; the tests
+     * are still run, but `run()` returns 2.
      *
      * @param options The session options; the strings they refer to must
      * remain valid until the call returns.
@@ -287,7 +293,8 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return 0 if all checks were successful, 1 otherwise, or if the runner
-     * was not initialised.
+     * was not initialised, and 2 if `initialise()` reported an option
+     * error, regardless of the checks.
      *
      * @since 5.1.0
      */
@@ -332,7 +339,47 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
+     * @brief The type of the function called when test execution is
+     * aborted.
+     *
+     * @details
+     * The handler receives the source location from which the abort was
+     * triggered. It is not expected to return; it may, for example, reset
+     * an embedded target, signal the test result to a debugger, or throw
+     * an exception (except when called from a check, which reports from a
+     * destructor). If it returns, the process is terminated with
+     * `::abort()`.
+     *
+     * @since 5.1.0
+     */
+    using abort_handler_t = void (*) (const reflection::source_location& sl);
+
+    /**
+     * @brief Sets the function called when test execution is aborted.
+     *
+     * @details
+     * Test execution is aborted by a failed `assume()`, or when the
+     * reporter detects an internal inconsistency. The diagnostic message
+     * is written to `stderr` before the handler is called.
+     *
+     * The handler can be set at any time, before or after `initialise()`.
+     *
+     * @param handler The new handler, or `nullptr` to restore the default
+     * behaviour, which terminates the process with `::abort()`.
+     * @return The previous handler, or `nullptr` if none was set.
+     *
+     * @since 5.1.0
+     */
+    abort_handler_t
+    set_abort_handler (abort_handler_t handler) noexcept;
+
+    /**
      * @brief Aborts test execution immediately.
+     *
+     * @details
+     * Writes the source location to `stderr`, and calls the handler set by
+     * `set_abort_handler()`, if any. If there is no handler, or if it
+     * returns, the process is terminated with `::abort()`.
      *
      * @param sl The source location from which the abort is triggered.
      * @par Returns
@@ -460,14 +507,14 @@ namespace micro_os_plus::micro_test_plus
      * All the options are parsed here, once, and passed to the reporter;
      * the arguments not recognised as options are ignored, since the
      * applications may define their own. A missing option argument, or
-     * an unknown reporter name, terminates the process with an error
-     * message.
+     * an unknown reporter name, is reported on `stderr`, the option is
+     * ignored, and `has_option_errors_` is set.
      *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
      * @return The parsed options.
      */
-    [[nodiscard]] static runner_options
+    [[nodiscard]] runner_options
     parse_options_ (int argc, char* argv[]);
 
     // ------------------------------------------------------------------------
@@ -550,6 +597,23 @@ namespace micro_os_plus::micro_test_plus
      * ended.
      */
     int exit_code_ = 1;
+
+    /**
+     * @brief Whether `initialise()` reported an option error.
+     *
+     * @details
+     * Set for a missing option argument, an unknown reporter name, or an
+     * output file that cannot be opened; `run()` then returns 2.
+     */
+    bool has_option_errors_ = false;
+
+    /**
+     * @brief The function called by `abort()`, if not null.
+     *
+     * @details
+     * Set by `set_abort_handler()`.
+     */
+    abort_handler_t abort_handler_ = nullptr;
   };
 
   // ==========================================================================

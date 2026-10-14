@@ -338,6 +338,21 @@ To run the registered suites, end the session, and return the test result as the
 return tr.run ();
 ```
 
+The result is 0 if all checks passed, and 1 otherwise. If the command-line options, or the `runner_options`, were not valid (an unknown reporter name, a missing option argument, or an output file that cannot be opened), the error is reported on `stderr` when the runner is initialised, the option is ignored, and the tests are still run, but the result is 2.
+
+#### Aborting the test execution
+
+A failed assumption aborts the test execution: the location is reported on `stderr`, and the process is terminated with `::abort()`. On embedded targets, where terminating the process is not meaningful, the application can set a handler, called before `::abort()`, for example to reset the target or to signal the result to the debugger:
+
+```cpp
+tr.set_abort_handler ([] (const mt::reflection::source_location& sl)
+  {
+    // Signal the failure, then reset the target; do not return.
+  });
+```
+
+If the handler returns, `::abort()` is still called.
+
 Refer to the [Test Runners](/docs/api/groups/micro-os-plus-micro-test-plus-runners/) reference page.
 
 ### Test cases

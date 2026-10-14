@@ -315,6 +315,16 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
         t.expect (eq (us, 0u)) << "zero elapsed -> 0 µs";
         local_counts.successful_checks++;
 
+        // Without timestamps, the elapsed time is zero.
+        test_timestamps tt6;
+        ms = 1;
+        us = 1;
+        tt6.compute_elapsed_time (ms, us);
+        t.expect (eq (ms, 0u)) << "no timestamps -> 0 ms";
+        local_counts.successful_checks++;
+        t.expect (eq (us, 0u)) << "no timestamps -> 0 µs";
+        local_counts.successful_checks++;
+
         local_counts.executed_subtest++;
       });
 

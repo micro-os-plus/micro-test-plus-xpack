@@ -37,8 +37,6 @@
 
 #include "micro-os-plus/micro-test-plus/timings.h"
 
-#include <cassert>
-
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -177,17 +175,20 @@ namespace micro_os_plus::micro_test_plus::detail
    * from the seconds delta to normalise the result. The total elapsed
    * duration in microseconds is then split into whole milliseconds
    * (written to @p milliseconds) and the remainder microseconds (written
-   * to @p microseconds). Requires `has_timestamps()` to be `true`;
-   * behaviour is undefined otherwise.
+   * to @p microseconds). If `has_timestamps()` is `false`, both are set
+   * to zero.
    */
   void
   timestamps::compute_elapsed_time (uint32_t& milliseconds,
                                     uint32_t& microseconds) const
   {
-    assert (has_timestamps ());
+    if (!has_timestamps ())
+      {
+        milliseconds = 0;
+        microseconds = 0;
+        return;
+      }
 
-    // Precondition: has_timestamps() must be true before calling this method.
-    // Invoking it with disengaged optionals is undefined behaviour.
     long long delta_ns
         = end_time_->value ().tv_nsec - begin_time_->value ().tv_nsec;
     long long delta_s

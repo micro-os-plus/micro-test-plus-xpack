@@ -77,6 +77,14 @@ applications without command-line arguments no longer need to build an
 `argv` array; `initialise (argc, argv, name)` parses the command line
 into the same structure.
 
+The option errors (an unknown `--reporter` name, a missing option
+argument, or an output file that cannot be opened) no longer terminate
+the program: they are reported on `stderr`, the option is ignored, the
+tests are run, and `run()` returns 2. A failed `assume()` still aborts
+the test execution, but the new `runner::set_abort_handler()` can
+replace the final `::abort()` call, for example to reset an embedded
+target.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

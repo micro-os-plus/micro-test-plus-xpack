@@ -375,13 +375,15 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Computes the elapsed time between begin and end timestamps.
        *
+       * @details
+       * Without both timestamps (see `has_timestamps()`), the elapsed time
+       * is zero.
+       *
        * @param[out] milliseconds The elapsed time in whole milliseconds.
        * @param[out] microseconds The sub-millisecond remainder in
        * microseconds.
        * @par Returns
        *   Nothing.
-       *
-       * @pre `has_timestamps()` returns `true`.
        */
       void
       compute_elapsed_time (uint32_t& milliseconds,

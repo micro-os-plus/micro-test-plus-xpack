@@ -824,7 +824,17 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ local session passed
         ✓ default name without arguments
     ✓ Runner options - passed (4 checks)
-✗ Miscellaneous suite - FAILED (36 checks passed, 13 failed, in 10 test cases)
+    • Runner option errors
+        ✓ valid options still applied
+        ✓ unknown reporter
+        ✓ missing argument
+        ✓ output file not opened
+    ✓ Runner option errors - passed (4 checks)
+    • Abort handler
+        ✓ no initial handler
+        ✓ previous handler returned
+    ✓ Abort handler - passed (2 checks)
+✗ Miscellaneous suite - FAILED (42 checks passed, 13 failed, in 12 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -895,8 +905,10 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ ns borrow -> 0 µs
         ✓ zero elapsed -> 0 ms
         ✓ zero elapsed -> 0 µs
-    ✓ timestamps::compute_elapsed_time() - passed (10 checks)
-✓ Timings suite - passed (27 checks in 6 test cases)
+        ✓ no timestamps -> 0 ms
+        ✓ no timestamps -> 0 µs
+    ✓ timestamps::compute_elapsed_time() - passed (12 checks)
+✓ Timings suite - passed (29 checks in 6 test cases)
 • Utility suite
     • utility::extract_file_name()
         ✓ Unix path returns filename
@@ -926,4 +938,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases)
-✗ Total: 417 checks passed, 330 failed, in 77 test cases, 12 test suites
+✗ Total: 425 checks passed, 330 failed, in 79 test cases, 12 test suites

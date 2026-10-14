@@ -341,6 +341,22 @@ namespace micro_os_plus::micro_test_plus
       void
       flush (void);
 
+      /**
+       * @brief Returns whether the output file could not be opened.
+       *
+       * @details
+       * Checked by `runner::initialise()`, which reports it as an option
+       * error; the report is then written only to the console.
+       *
+       * @par Parameters
+       *   None.
+       * @retval true The output file was requested but could not be
+       * opened.
+       * @retval false No output file was requested, or it was opened.
+       */
+      [[nodiscard]] bool
+      has_output_file_error (void) const noexcept;
+
       // ----------------------------------------------------------------------
 
       /**
@@ -756,6 +772,14 @@ namespace micro_os_plus::micro_test_plus
        * destructor.
        */
       FILE* output_file_{ nullptr };
+
+      /**
+       * @brief Whether the output file could not be opened.
+       *
+       * @details
+       * Set by the constructor, and returned by `has_output_file_error()`.
+       */
+      bool has_output_file_error_{ false };
 
       /**
        * @brief The command-line arguments passed to the test runner.

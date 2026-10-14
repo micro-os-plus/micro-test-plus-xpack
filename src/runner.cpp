@@ -155,8 +155,8 @@ namespace micro_os_plus::micro_test_plus
    * Parses the command-line options with `parse_options_()`, and passes
    * them to the overload taking the options, which creates the selected
    * reporter (`--reporter=human` or `--reporter=tap`, the default) and
-   * starts the session. An option error terminates the process with an
-   * error message.
+   * starts the session. An option error is reported on `stderr`, the
+   * option is ignored, and `run()` will return 2.
    *
    * The options are not parsed if the runner is already initialised; the
    * error is then reported by the other overload.
@@ -205,6 +205,9 @@ namespace micro_os_plus::micro_test_plus
    * constructor, it is derived from the file name of
    * `options.arguments[0]` (usually `argv[0]`), without the extension,
    * or defaults to "default suite".
+   *
+   * If the output file cannot be opened, the reporter writes only to the
+   * console, and `run()` will return 2.
    *
    * The runner is initialised only once; a later call reports an error on
    * `stderr` and returns the top suite, without other effects.
@@ -265,6 +268,11 @@ namespace micro_os_plus::micro_test_plus
         reporter_ = std::make_unique<detail::reporter_tap> (options);
       }
 
+    if (reporter_->has_output_file_error ())
+      {
+        has_option_errors_ = true;
+      }
+
     // ------------------------------------------------------------------------
 
     timings_.timestamp_begin ();
@@ -291,6 +299,10 @@ namespace micro_os_plus::micro_test_plus
    * argument given separately is the next argument, whatever its content.
    * The other arguments are ignored. The whole command line is kept in the
    * options, to be listed by the reporter.
+   *
+   * A missing option argument, or an unknown reporter name, is reported on
+   * `stderr`, the option is ignored, and `has_option_errors_` is set, so
+   * that `run()` returns 2; the parsing continues with the next argument.
    */
   runner_options
   runner::parse_options_ (int argc, char* argv[])
@@ -309,30 +321,32 @@ namespace micro_os_plus::micro_test_plus
 
     // Get the value of an option given as `--option=<value>` or as
     // `--option <value>`; the latter advances the index past the value.
-    // Return false if the argument is not this option.
+    // Return false if the argument is not this option, or if its value is
+    // missing, which is reported as an error.
     auto get_value = [&] (std::string_view option, size_t& i,
                           std::string_view& value) -> bool
-    {
-      const std::string_view argument{ opts.arguments[i] };
-      if (argument == option)
-        {
-          if (i + 1 >= opts.arguments.size ())
-            {
-              fprintf (stderr, "error: %.*s option requires an argument\n",
-                       static_cast<int> (option.size ()), option.data ());
-              exit (1);
-            }
-          value = opts.arguments[++i];
-          return true;
-        }
-      if (argument.starts_with (option)
-          && argument.substr (option.size ()).starts_with ('='))
-        {
-          value = argument.substr (option.size () + 1);
-          return true;
-        }
-      return false;
-    };
+      {
+        const std::string_view argument{ opts.arguments[i] };
+        if (argument == option)
+          {
+            if (i + 1 >= opts.arguments.size ())
+              {
+                fprintf (stderr, "error: %.*s option requires an argument\n",
+                         static_cast<int> (option.size ()), option.data ());
+                has_option_errors_ = true;
+                return false;
+              }
+            value = opts.arguments[++i];
+            return true;
+          }
+        if (argument.starts_with (option)
+            && argument.substr (option.size ()).starts_with ('='))
+          {
+            value = argument.substr (option.size () + 1);
+            return true;
+          }
+        return false;
+      };
 
     for (size_t i = 1; i < opts.arguments.size (); ++i)
       {
@@ -365,7 +379,7 @@ namespace micro_os_plus::micro_test_plus
               {
                 fprintf (stderr, "error: unknown reporter '%.*s'\n",
                          static_cast<int> (value.size ()), value.data ());
-                exit (1);
+                has_option_errors_ = true;
               }
           }
         else if (get_value (output_file_option, i, value))
@@ -458,7 +472,8 @@ namespace micro_os_plus::micro_test_plus
    * Subsequently invokes `run_suites_()` to sort, execute, and
    * accumulate all registered child suites. Finally, records the session
    * end timestamp, notifies the reporter, and returns `0` if all checks
-   * passed or `1` otherwise.
+   * passed or `1` otherwise; if `initialise()` reported an option error,
+   * `2` is returned, regardless of the checks.
    *
    * The result is stored, and the later calls return it without running
    * anything again. If the runner was not initialised, an error is
@@ -492,7 +507,14 @@ namespace micro_os_plus::micro_test_plus
     timings_.timestamp_end ();
     reporter_->end_session (*this);
 
-    exit_code_ = totals_.was_successful () ? 0 : 1;
+    if (has_option_errors_)
+      {
+        exit_code_ = 2;
+      }
+    else
+      {
+        exit_code_ = totals_.was_successful () ? 0 : 1;
+      }
     session_state_ = session_state_t::finished;
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
@@ -515,8 +537,23 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Prints the source location of the fatal error to `stderr` and then
-   * terminates the process via `::abort()`.
+   * Stores the new handler and returns the previous one; a null handler
+   * restores the default behaviour.
+   */
+  runner::abort_handler_t
+  runner::set_abort_handler (abort_handler_t handler) noexcept
+  {
+    abort_handler_t previous = abort_handler_;
+    abort_handler_ = handler;
+    return previous;
+  }
+
+  /**
+   * @details
+   * Prints the source location of the fatal error to `stderr`, flushes
+   * the standard streams, and calls the handler set by
+   * `set_abort_handler()`, if any. If there is no handler, or if it
+   * returns, the process is terminated via `::abort()`.
    */
   void
   runner::abort (const reflection::source_location& sl)
@@ -527,6 +564,14 @@ namespace micro_os_plus::micro_test_plus
 
     fprintf (stderr, "\nerror: test execution aborted at %s:%u\n",
              reflection::short_name (sl.file_name ()), sl.line ());
+
+    fflush (stdout);
+    fflush (stderr);
+
+    if (abort_handler_ != nullptr)
+      {
+        abort_handler_ (sl);
+      }
 
     ::abort ();
   }

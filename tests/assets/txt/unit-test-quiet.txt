@@ -75,6 +75,8 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Formatter character pointers
     • Pointers to const
     • Runner options
+    • Runner option errors
+    • Abort handler
     • Operators
     • String view operators
     • timestamp::has_clock()
@@ -86,4 +88,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 422 checks passed, 336 failed, in 85 test cases, 13 test suites, time: 1.967 ms
+✗ Total: 431 checks passed, 336 failed, in 87 test cases, 13 test suites, time: 4.698 ms

@@ -391,7 +391,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * the outer subtest, if any, are written first (see `commit_buffer_()`),
    * so that the output follows the execution order. For a top-level
    * subtest, the output buffer must be empty; if it is not, the buffer is
-   * written to `stdout`, the stream is flushed, and execution is aborted.
+   * written to `stdout`, the stream is flushed, and execution is aborted
+   * with `runner::abort()`, which calls the handler set by
+   * `runner::set_abort_handler()`, if any.
    *
    * A `"# Subtest: <name>"` comment line (indented according to nesting
    * depth) is then written to the output file and, under normal or
@@ -416,7 +418,7 @@ namespace micro_os_plus::micro_test_plus::detail
             // Each top-level subtest should start with an empty buffer.
             write_buffer_to_console ();
             flush ();
-            abort ();
+            subtest.abort ();
           }
       }
 

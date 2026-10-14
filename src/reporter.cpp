@@ -75,8 +75,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * Copies the verbosity and the view of the command-line arguments from
    * the session options, and opens the output file, if a non-empty path
    * was given, keeping a copy of the path. If the file cannot be opened,
-   * the process exits with a diagnostic error message. The internal
-   * string buffer is pre-allocated to reduce dynamic allocation overhead.
+   * an error message is written to `stderr`, the report is written only to
+   * the console, and `has_output_file_error()` returns `true`. The
+   * internal string buffer is pre-allocated to reduce dynamic allocation
+   * overhead.
    */
   reporter::reporter (const runner_options& opts)
       : verbosity_{ opts.verbosity_level }, arguments_{ opts.arguments }
@@ -92,9 +94,12 @@ namespace micro_os_plus::micro_test_plus::detail
           {
             fprintf (stderr, "error: Failed to open output file '%s'\n",
                      opts.output_file_path);
-            exit (1);
+            has_output_file_error_ = true;
           }
-        output_file_path_ = opts.output_file_path;
+        else
+          {
+            output_file_path_ = opts.output_file_path;
+          }
       }
 
     // Pre-allocate buffer to reduce dynamic allocations.
@@ -367,6 +372,16 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         fflush (output_file_);
       }
+  }
+
+  /**
+   * @details
+   * Returns the flag set by the constructor when `fopen()` failed.
+   */
+  bool
+  reporter::has_output_file_error (void) const noexcept
+  {
+    return has_output_file_error_;
   }
 
   // --------------------------------------------------------------------------
