@@ -71,6 +71,10 @@
  * supports it at run time, so the Microsoft-specific `I` modifier is used
  * there instead (`"Iu"`); elsewhere it is `"zu"`. Defined only when
  * `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED` is defined.
+ *
+ * The string literals are concatenated when the templates are parsed,
+ * not when they are instantiated, so the macro is undefined at the end
+ * of this header, to keep it out of the user code.
  */
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(_WIN32) && defined(__clang__) && !defined(__MINGW32__)
@@ -511,6 +515,9 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
+
+// Used only by the trace messages above; keep it out of the user code.
+#undef MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
 
 // ----------------------------------------------------------------------------
 
