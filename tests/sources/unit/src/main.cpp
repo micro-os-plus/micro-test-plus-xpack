@@ -122,8 +122,15 @@ main (int argc, char* argv[])
       t.require (true) << "Requirement 1";
       local_counts.successful_checks++;
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
       // The deprecated alias.
       t.assume (true) << "Assumption 1";
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
       local_counts.successful_checks++;
 
       // The failed requirements are checked in exceptions.cpp; without
@@ -630,7 +637,14 @@ main (int argc, char* argv[])
     const size_t executed_test_cases = tr.totals ().executed_test_cases ();
 
     test_assert (tr.run () == code);
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
     test_assert (tr.exit_code () == code);
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
     test_assert (&tr.initialise (argc, argv) == &ts);
 
     test_assert (tr.totals ().executed_checks () == executed_checks);

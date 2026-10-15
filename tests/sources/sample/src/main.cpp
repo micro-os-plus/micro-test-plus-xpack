@@ -97,7 +97,14 @@ exercise_throw (bool mustThrow)
 // ----------------------------------------------------------------------------
 
 // Test the deprecated constructor, and the deprecated static_runner name.
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
 static mt::static_runner tr{ "Sample" };
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 int
 main (int argc, char* argv[])

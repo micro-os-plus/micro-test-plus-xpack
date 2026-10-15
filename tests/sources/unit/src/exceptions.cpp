@@ -260,7 +260,14 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       ts.test ("Failed deprecated assume", [] (auto& t)
         {
           local_counts.failed_checks++;
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
           t.assume (false) << "failed assumption";
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
           t.expect (false) << "check after the assumption";
         });

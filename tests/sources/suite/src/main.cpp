@@ -65,7 +65,14 @@ suite_function (mt::suite& t)
 // ----------------------------------------------------------------------------
 
 // Test if initialise() overrides this.
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
 mt::runner sr{ "Overriden" };
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
 int
 main (int argc, char* argv[])

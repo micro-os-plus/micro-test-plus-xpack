@@ -732,7 +732,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Expr_T>
       requires type_traits::checkable<Expr_T>
-    auto
+    [[deprecated ("use require()")]] auto
     assume (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ());
 

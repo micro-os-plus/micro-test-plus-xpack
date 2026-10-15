@@ -158,6 +158,15 @@ becomes `mt::to_i (expr)`, and `mt::_t<T>{ expr }` becomes
 `mt::to_t<T>{ expr }`. The literals with the same suffixes (`42_i`,
 `1.5_d`) are unchanged.
 
+The deprecated entities, previously marked as such only in the
+documentation, now carry the `[[deprecated]]` attribute, so the
+compiler warns where they are used: the runner constructor with the top
+suite name (deprecated in v4.1), `exit_code()`, `assume()`, and
+`static_runner`. They still work as before, but a build with `-Werror`
+now fails. Replace them with, respectively, the constructor without
+arguments followed by `initialise (argc, argv, name)`, `run()`,
+`require()`, and `runner`.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

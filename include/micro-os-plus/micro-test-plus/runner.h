@@ -187,8 +187,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param top_suite_name The name given to the implicit top suite.
      *
-     * @deprecated Use the anonymous constructor.
+     * @deprecated Use the anonymous constructor, and pass the name to
+     * `initialise()` (since 4.1.0).
      */
+    [[deprecated ("use runner() and pass the name to initialise()")]]
     runner (const char* top_suite_name);
 
     /**
@@ -332,7 +334,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @deprecated Use `run()` (since 5.1.0).
      */
-    int
+    [[deprecated ("use run()")]] int
     exit_code (void);
 
     /**
@@ -720,7 +722,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @deprecated Use `runner` (since 5.1.0).
    */
-  using static_runner = runner;
+  using static_runner [[deprecated ("use runner")]] = runner;
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

@@ -78,8 +78,8 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr{ "Suite with subtest" };
-    auto& ts = tr.initialise (argc, argv);
+    mt::runner tr;
+    auto& ts = tr.initialise (argc, argv, "Suite with subtest");
 
     int xc = 0;
     ts.test ("Empty subtest", [&xc] (auto& t)
@@ -100,8 +100,8 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr{ "Suite with second subtest" };
-    auto& ts = tr.initialise (argc, argv);
+    mt::runner tr;
+    auto& ts = tr.initialise (argc, argv, "Suite with second subtest");
 
     int xc = 0;
     ts.test ("First subtest", [&xc] (auto& t)
@@ -144,8 +144,8 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr{ "Top suite with nested subtests" };
-    auto& ts = tr.initialise (argc, argv);
+    mt::runner tr;
+    auto& ts = tr.initialise (argc, argv, "Top suite with nested subtests");
     // printf ("in test suite '%s'\n", ts.name ());
 
     int xc = 0;
