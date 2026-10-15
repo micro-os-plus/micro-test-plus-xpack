@@ -5,7 +5,7 @@
 
 # The µTest++ Testing Framework
 
-A source code library with µTest++, a lightweight testing framework for embedded platforms.
+A source code library with µTest++, a lightweight, macro-free C++ testing framework for embedded projects, with TAP output.
 
 ## Project documentation
 
@@ -16,7 +16,7 @@ For information on how to use this project, please refer to the
 
 The source code of the current release is available on
 GitHub as [micro-os-plus/micro-test-plus-xpack](https://github.com/micro-os-plus/micro-test-plus-xpack),
-the [v5.0.1](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v5.0.1) tree.
+the [v5.1.0](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v5.1.0) tree.
 
 ## License
 
