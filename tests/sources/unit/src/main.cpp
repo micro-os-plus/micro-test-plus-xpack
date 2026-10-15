@@ -529,9 +529,9 @@ main (int argc, char* argv[])
 
       // `1.5_d` has a tolerance of 0.1, so 1.45 is equal to it.
       t.expect (eq (1.45, 1.5_d)) << "1.45 == 1.5_d";
-      t.expect (_not (lt (1.45, 1.5_d))) << "not 1.45 < 1.5_d";
+      t.expect (negate (lt (1.45, 1.5_d))) << "not 1.45 < 1.5_d";
       t.expect (le (1.45, 1.5_d)) << "1.45 <= 1.5_d";
-      t.expect (_not (gt (1.45, 1.5_d))) << "not 1.45 > 1.5_d";
+      t.expect (negate (gt (1.45, 1.5_d))) << "not 1.45 > 1.5_d";
       t.expect (ge (1.45, 1.5_d)) << "1.45 >= 1.5_d";
       t.expect (lt (1.3, 1.5_d)) << "1.3 < 1.5_d (outside the tolerance)";
       local_counts.successful_checks += 6;
@@ -541,7 +541,7 @@ main (int argc, char* argv[])
       t.expect (lt (1.45, approx (1.5, 0.01))) << "1.45 < approx (1.5, 0.01)";
       t.expect (eq (1.495, approx (1.5, 0.01)))
           << "1.495 == approx (1.5, 0.01)";
-      t.expect (_not (lt (1.495, approx (1.5, 0.01))))
+      t.expect (negate (lt (1.495, approx (1.5, 0.01))))
           << "not 1.495 < approx (1.5, 0.01)";
       t.expect (eq (0.1f + 0.2f, approx (0.3f, 1e-6f)))
           << "0.1f + 0.2f == approx (0.3f, 1e-6f)";

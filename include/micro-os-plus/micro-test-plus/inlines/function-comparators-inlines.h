@@ -26,14 +26,14 @@
  * generic comparison operators, including equality,
  * non-equality, greater than, less than, and their respective logical
  * variants. Additionally, it implements logical combinators such as
- * conjunction (`_and`), disjunction (`_or`), and negation (`_not`), as well
- * as a utility for removing constness from references (`mut`).
+ * conjunction (`both`), disjunction (`either`), and negation (`negate`), as
+ * well as a utility for removing constness from references (`mut`).
  *
  * These comparators and logical operators enable expressive and type-safe test
  * expectations and assertions; the C strings are compared by content, the
  * other pointers by address.
- * The underscore-prefixed logical operators are intentionally named to avoid
- * conflicts with standard operators.
+ * The logical combinators have descriptive names, since `and`, `or`, and
+ * `not` are alternative tokens and cannot be used as identifiers.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -169,54 +169,56 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `_not` function template provides a generic logical negation for any
-   * expression type. It constructs a logical negator object that can be used
-   * within the µTest++ framework to assert that a given condition is false.
-   * This function is typically used in test expectations and assertions to
-   * invert logical expressions or custom comparators.
+   * The `negate` function template provides a generic logical negation for
+   * any expression type. It constructs a logical negator object that can be
+   * used within the µTest++ framework to assert that a given condition is
+   * false. This function is typically used in test expectations and
+   * assertions to invert logical expressions or custom comparators.
    *
-   * The underscore in the function name is intentional to differentiate it
-   * from the standard logical not operator.
+   * It is the function form of the `!` operator from the
+   * `micro_test_plus::operators` namespace.
    */
   template <class Expr_T>
   constexpr auto
-  _not (const Expr_T& expr)
+  negate (const Expr_T& expr)
   {
     return detail::not_op<Expr_T>{ expr };
   }
 
   /**
    * @details
-   * The `_and` function template provides a generic logical conjunction for
+   * The `both` function template provides a generic logical conjunction for
    * any expression types. It constructs a logical conjunction object that can
    * be used within the µTest++ framework to assert that both given conditions
    * are true. This function is typically used in test expectations and
    * assertions to combine logical expressions or custom comparators.
    *
-   * The underscore in the function name is intentional to differentiate it
-   * from the standard logical and operator.
+   * It is the function form of the `&&` operator from the
+   * `micro_test_plus::operators` namespace.
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  _and (const Lhs_T& lhs, const Rhs_T& rhs)
+  both (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::and_op<Lhs_T, Rhs_T>{ lhs, rhs };
   }
 
   /**
    * @details
-   * The `_or` function template provides a generic logical disjunction for any
-   * expression types. It constructs a logical disjunction object that can be
-   * used within the µTest++ framework to assert that at least one of the given
-   * conditions is true. This function is typically used in test expectations
-   * and assertions to combine logical expressions or custom comparators.
+   * The `either` function template provides a generic logical disjunction
+   * for any expression types. It constructs a logical disjunction object that
+   * can be used within the µTest++ framework to assert that at least one of
+   * the given conditions is true. This function is typically used in test
+   * expectations and assertions to combine logical expressions or custom
+   * comparators.
    *
-   * The underscore in the function name is intentional to differentiate it
-   * from the standard logical or operator.
+   * It is the function form of the `||` operator from the
+   * `micro_test_plus::operators` namespace; the disjunction is inclusive, so
+   * the result is also true when both conditions are true.
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  _or (const Lhs_T& lhs, const Rhs_T& rhs)
+  either (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::or_op<Lhs_T, Rhs_T>{ lhs, rhs };
   }

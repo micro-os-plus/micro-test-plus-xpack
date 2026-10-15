@@ -143,6 +143,12 @@ printed in the TAP output, is now `test_point_number()`. The output of
 the reporters is unchanged; the TAP reporter still introduces each test
 case with a `# Subtest:` line.
 
+The logical functions `_and()`, `_or()`, and `_not()` are renamed
+`both()`, `either()`, and `negate()`, since a leading underscore is not
+used by the other public names, and `and`, `or`, and `not` are
+alternative tokens; the old names are not kept. The overloaded `&&`,
+`||`, and `!` operators are unchanged.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

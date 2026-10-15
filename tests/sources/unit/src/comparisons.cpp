@@ -666,59 +666,59 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     ts.test ("Logical operations", [] (auto& t)
       {
-        t.expect (_not (ne (my_actual_integral (), 42)))
+        t.expect (negate (ne (my_actual_integral (), 42)))
             << "not (actual != 42)";
         local_counts.successful_checks++;
 
-        t.expect (_not (eq (my_actual_integral (), 42)))
+        t.expect (negate (eq (my_actual_integral (), 42)))
             << "not (actual == 42)";
         local_counts.failed_checks++;
 
-        t.expect (_and (eq (my_actual_integral (), 42),
+        t.expect (both (eq (my_actual_integral (), 42),
                         eq (my_actual_float<float> (), 42.0)))
             << "(actual == 42) and (actual == 42.0)";
         local_counts.successful_checks++;
 
-        t.expect (_and (eq (my_actual_integral (), 42),
+        t.expect (both (eq (my_actual_integral (), 42),
                         ne (my_actual_float<float> (), 42.0)))
             << "(actual == 42) and (actual != 42.0)";
         local_counts.failed_checks++;
 
-        t.expect (_and (ne (my_actual_integral (), 42),
+        t.expect (both (ne (my_actual_integral (), 42),
                         eq (my_actual_float<float> (), 42.0)))
             << "(actual != 42) and (actual == 42.0)";
         local_counts.failed_checks++;
 
-        t.expect (_and (ne (my_actual_integral (), 42),
+        t.expect (both (ne (my_actual_integral (), 42),
                         ne (my_actual_float<float> (), 42.0)))
             << "(actual != 42) and (actual != 42.0)";
         local_counts.failed_checks++;
 
-        t.expect (_and (eq (my_actual_integral (), 42),
+        t.expect (both (eq (my_actual_integral (), 42),
                         eq (my_actual_float<float> (), 42.0)));
         local_counts.successful_checks++;
 
-        t.expect (_and (eq (my_actual_integral (), 42),
+        t.expect (both (eq (my_actual_integral (), 42),
                         ne (my_actual_float<float> (), 42.0)));
         local_counts.failed_checks++;
 
-        t.expect (_or (eq (my_actual_integral (), 42),
-                       eq (my_actual_float<float> (), 42.0)))
+        t.expect (either (eq (my_actual_integral (), 42),
+                          eq (my_actual_float<float> (), 42.0)))
             << "(actual == 42) or (actual == 42.0)";
         local_counts.successful_checks++;
 
-        t.expect (_or (eq (my_actual_integral (), 42),
-                       ne (my_actual_float<float> (), 42.0)))
+        t.expect (either (eq (my_actual_integral (), 42),
+                          ne (my_actual_float<float> (), 42.0)))
             << "(actual == 42) or (actual != 42.0)";
         local_counts.successful_checks++;
 
-        t.expect (_or (ne (my_actual_integral (), 42),
-                       eq (my_actual_float<float> (), 42.0)))
+        t.expect (either (ne (my_actual_integral (), 42),
+                          eq (my_actual_float<float> (), 42.0)))
             << "(actual != 42) or (actual == 42.0)";
         local_counts.successful_checks++;
 
-        t.expect (_or (ne (my_actual_integral (), 42),
-                       ne (my_actual_float<float> (), 42.0)))
+        t.expect (either (ne (my_actual_integral (), 42),
+                          ne (my_actual_float<float> (), 42.0)))
             << "(actual != 42) or (actual != 42.0)";
         local_counts.failed_checks++;
 

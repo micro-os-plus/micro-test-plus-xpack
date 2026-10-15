@@ -530,17 +530,19 @@ Refer to the [Function Comparators](/docs/api/groups/micro-os-plus-micro-test-pl
 ### Logical functions
 
 Complex expressions may be evaluated in a single statement using the logical
-functions `_and()`, `_or()`, and `_not()`.
+functions `both()`, `either()`, and `negate()`, the function forms of the
+`&&`, `||`, and `!` operators; `either()` is an inclusive or, true also
+when both operands are true.
 
 ```cpp
 template <class Lhs_T, class Rhs_T>
-auto _and (const Lhs_T& lhs, const Rhs_T& rhs);
+auto both (const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class Lhs_T, class Rhs_T>
-auto _or (const Lhs_T& lhs, const Rhs_T& rhs);
+auto either (const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class Expr_T>
-auto _not (const Expr_T& expr);
+auto negate (const Expr_T& expr);
 ```
 
 Refer to the [Logical Functions](/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/) reference page.

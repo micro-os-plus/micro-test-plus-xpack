@@ -173,12 +173,11 @@ main (int argc, char* argv[])
 
   ts.test ("Check compound conditions", [] (auto& t)
     {
-      // More complex conditions can be constructed with _and(), _or(),
-      // _not() (the underscore is required to differentiate the functions
-      // from the language and/or/not operators).
+      // More complex conditions can be constructed with both(), either(),
+      // and negate(), the function forms of the &&, ||, and ! operators.
 
       t.expect (
-          mt::_and (mt::eq (compute_answer (), 42),
+          mt::both (mt::eq (compute_answer (), 42),
                     mt::eq (std::string_view{ compute_ultimate_answer () },
                             "fortytwo"sv)))
           << "logical 'and' expression";

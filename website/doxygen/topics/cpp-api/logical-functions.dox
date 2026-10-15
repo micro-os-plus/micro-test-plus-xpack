@@ -2,19 +2,21 @@
 @brief Functions used to compose logical expressions in tests.
 
 @details
-The functions `mt::_and()`, `mt::_or()`, and `mt::_not()` combine multiple
-conditions, allowing expressive and concise test logic.
+The functions `mt::both()`, `mt::either()`, and `mt::negate()` combine
+multiple conditions, allowing expressive and concise test logic.
+`mt::either()` is an inclusive or: it is true also when both conditions
+are true.
 
-These function names are prefixed with an underscore to avoid clashes with
-language alternative tokens or related macros named `and`, `or`, and
-`not`. Using these logical functions allows developers to express compound
-conditions clearly and improve readability.
+The functions have descriptive names, since `and`, `or`, and `not` are
+alternative tokens and cannot be used as identifiers. Using these logical
+functions allows developers to express compound conditions clearly and
+improve readability.
 
 @par Example
 
 @code{.cpp}
 ts.test ("Check compound conditions", [] (auto& t) {
-  t.expect (mt::_and (mt::eq (compute_answer (), 42),
+  t.expect (mt::both (mt::eq (compute_answer (), 42),
                       mt::eq (compute_float (), 42.0)));
 });
 @endcode

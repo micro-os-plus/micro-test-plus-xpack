@@ -26,16 +26,15 @@
  * interfaces for the generic comparison functions, including
  * equality, non-equality, greater than, less than, greater than or equal,
  * and less than or equal. Additionally, it declares logical combinators such
- * as conjunction (`_and`), disjunction (`_or`), and negation (`_not`), as
- * well as a utility for removing constness from references (`mut`).
+ * as conjunction (`both`), disjunction (`either`), and negation (`negate`),
+ * as well as a utility for removing constness from references (`mut`).
  *
  * These comparators and logical operators enable expressive and type-safe test
  * expectations and assertions. The C strings (`char` arrays, including the
  * string literals, and `char` pointers) are compared by content; the other
  * pointers and arrays are compared by address.
- * The underscore-prefixed logical operators are intentionally named to avoid
- * conflicts with standard operators and provide clear, readable test
- * expressions.
+ * The logical combinators have descriptive names, since `and`, `or`, and
+ * `not` are alternative tokens and cannot be used as identifiers.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -199,7 +198,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Expr_T>
   [[nodiscard]] constexpr auto
-  _not (const Expr_T& expr);
+  negate (const Expr_T& expr);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
@@ -215,11 +214,11 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  _and (const Lhs_T& lhs, const Rhs_T& rhs);
+  both (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
-   * @brief Generic logical **or** operation.
+   * @brief Generic logical (inclusive) **or** operation.
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -227,11 +226,11 @@ namespace micro_os_plus::micro_test_plus
    * @param lhs Left hand side operand.
    * @param rhs Right hand side operand.
    * @return An object that evaluates to true if at least one of the operand
-   * expressions is true.
+   * expressions is true, including when both are.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  _or (const Lhs_T& lhs, const Rhs_T& rhs);
+  either (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-utility-functions
