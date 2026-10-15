@@ -21,6 +21,16 @@ wrappers, as `==` and `!=` already did: values within the tolerance are
 equal, so `1.45 < 1.5_d` is now false, and `1.45 <= 1.5_d` true. The new
 `mt::approx (value, epsilon)` sets the tolerance explicitly.
 
+The tolerance of the floating-point wrappers (`mt::to_f`, `mt::to_d`,
+and `mt::to_ld`) is now one unit of the last decimal of the value, as
+documented, for all values. Previously, the rounding of many values
+(e.g. `mt::to_d{ 0.011 }`) produced 17 or 18 decimals, so they were
+compared almost exactly, and a negative value (e.g. `mt::to_d{ -1.5 }`)
+gave an undefined tolerance. Such comparisons may now give a different
+result: `mt::lt (0.0105, mt::to_d{ 0.011 })` is now false, since the
+values are within the tolerance of 0.001. To compare exactly, use
+`mt::approx (value, 0.0)`, or a plain floating-point value.
+
 The comparators now compare the C strings (`char` arrays, string
 literals, and `char` pointers) by content, as `std::string_view`, also
 with `std::string`; two `const char*` holding equal strings were
