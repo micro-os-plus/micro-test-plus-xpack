@@ -135,7 +135,7 @@ namespace
     }
 
     const char*
-    get_comment_prefix (void) override
+    comment_prefix (void) const override
     {
       return "";
     }

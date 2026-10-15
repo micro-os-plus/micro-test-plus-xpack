@@ -662,7 +662,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * lines; the `write_info_()` output appears as plain text.
    */
   const char*
-  reporter_human::get_comment_prefix (void)
+  reporter_human::comment_prefix (void) const
   {
     return "";
   }

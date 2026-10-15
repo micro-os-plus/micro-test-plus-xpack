@@ -534,7 +534,7 @@ namespace micro_os_plus::micro_test_plus
        * @return A null-terminated prefix string.
        */
       virtual const char*
-      get_comment_prefix (void)
+      comment_prefix (void) const
           = 0;
 
       /**

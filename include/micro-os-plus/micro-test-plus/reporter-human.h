@@ -271,7 +271,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * use a comment prefix.
      */
     virtual const char*
-    get_comment_prefix (void) override;
+    comment_prefix (void) const override;
 
   protected:
     /**

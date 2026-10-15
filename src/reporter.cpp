@@ -263,7 +263,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Constructs and emits two informational lines, each prefixed by
-   * `get_comment_prefix()`: the first lists the program name (without
+   * `comment_prefix()`: the first lists the program name (without
    * the path) and any command-line arguments; the second identifies the
    * compiler (Clang, GCC, or MSVC) together with the version string,
    * floating-point availability on bare-metal targets, exception support,
@@ -280,7 +280,7 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         std::string line;
         line.reserve (256);
-        line.append (get_comment_prefix ());
+        line.append (comment_prefix ());
         line.append ("Running: ");
 
         // Append only the file name part of argv[0].
@@ -311,7 +311,7 @@ namespace micro_os_plus::micro_test_plus::detail
       // (via __VERSION__); the same line goes to the file and to stdout.
       std::string line;
       line.reserve (256);
-      line.append (get_comment_prefix ());
+      line.append (comment_prefix ());
       line.append ("Built with ");
 #if defined(__clang__)
       line.append ("clang " __VERSION__);

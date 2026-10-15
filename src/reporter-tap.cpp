@@ -653,7 +653,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * the TAP comment marker.
    */
   const char*
-  reporter_tap::get_comment_prefix (void)
+  reporter_tap::comment_prefix (void) const
   {
     return "# ";
   }

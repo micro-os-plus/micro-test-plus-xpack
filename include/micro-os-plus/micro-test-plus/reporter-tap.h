@@ -265,7 +265,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * output.
      */
     virtual const char*
-    get_comment_prefix (void) override;
+    comment_prefix (void) const override;
 
   protected:
     /**
