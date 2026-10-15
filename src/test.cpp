@@ -127,7 +127,7 @@ namespace micro_os_plus::micro_test_plus
      * before the process is terminated via `::abort()`.
      */
     [[noreturn]] void
-    runnable_base::abort (const reflection::source_location& sl)
+    runnable_base::abort (const reflection::source_location& sl) const
     {
       runner_.abort (sl);
     }

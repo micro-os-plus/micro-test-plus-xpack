@@ -383,8 +383,8 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      pass (std::string& message, const std::string& expression,
-            test_case& test_case);
+      pass (const std::string& message, const std::string& expression,
+            const test_case& test_case);
 
       /**
        * @brief Report a failed condition.
@@ -398,8 +398,8 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      fail (failure_info& failure, const std::string& expression,
-            test_case& test_case);
+      fail (const failure_info& failure, const std::string& expression,
+            const test_case& test_case);
 
       // ----------------------------------------------------------------------
 
@@ -415,7 +415,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      begin_session (runner& runner)
+      begin_session (const runner& runner)
           = 0;
 
       /**
@@ -430,7 +430,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      end_session (runner& runner)
+      end_session (const runner& runner)
           = 0;
 
       /**
@@ -445,7 +445,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      begin_suite (suite& suite)
+      begin_suite (const suite& suite)
           = 0;
 
       /**
@@ -461,7 +461,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      end_suite (suite& suite)
+      end_suite (const suite& suite)
           = 0;
 
       /**
@@ -480,7 +480,7 @@ namespace micro_os_plus::micro_test_plus
        * @since 5.1.0
        */
       virtual void
-      skip_suite (suite& suite)
+      skip_suite (const suite& suite)
           = 0;
 
       /**
@@ -495,7 +495,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      begin_test_case (test_case& test_case)
+      begin_test_case (const test_case& test_case)
           = 0;
 
       /**
@@ -510,7 +510,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      end_test_case (test_case& test_case)
+      end_test_case (const test_case& test_case)
           = 0;
 
       /**
@@ -530,7 +530,7 @@ namespace micro_os_plus::micro_test_plus
        * @since 5.1.0
        */
       virtual void
-      skip_test_case (test_case& test_case)
+      skip_test_case (const test_case& test_case)
           = 0;
 
       /**
@@ -668,7 +668,8 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      output_pass_prefix_ (std::string& message, test_case& test_case)
+      output_pass_prefix_ (const std::string& message,
+                           const test_case& test_case)
           = 0;
 
       /**
@@ -682,7 +683,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      output_pass_suffix_ (test_case& test_case)
+      output_pass_suffix_ (const test_case& test_case)
           = 0;
 
       /**
@@ -701,9 +702,10 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      output_fail_prefix_ (std::string& message, const bool has_expression,
+      output_fail_prefix_ (const std::string& message,
+                           const bool has_expression,
                            const reflection::source_location& location,
-                           test_case& test_case)
+                           const test_case& test_case)
           = 0;
 
       /**
@@ -722,7 +724,7 @@ namespace micro_os_plus::micro_test_plus
        */
       virtual void
       output_fail_suffix_ (const reflection::source_location& location,
-                           check_kind kind, test_case& test_case)
+                           check_kind kind, const test_case& test_case)
           = 0;
 
     protected:

@@ -182,7 +182,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    begin_session (runner& runner) override;
+    begin_session (const runner& runner) override;
 
     /**
      * @brief Mark the end of a test session.
@@ -192,7 +192,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    end_session (runner& runner) override;
+    end_session (const runner& runner) override;
 
     /**
      * @brief Mark the beginning of a suite.
@@ -202,7 +202,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    begin_suite (suite& suite) override;
+    begin_suite (const suite& suite) override;
 
     /**
      * @brief Mark the end of a test suite.
@@ -212,7 +212,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    end_suite (suite& suite) override;
+    end_suite (const suite& suite) override;
 
     /**
      * @brief Report a test suite skipped by the filter.
@@ -226,7 +226,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    skip_suite (suite& suite) override;
+    skip_suite (const suite& suite) override;
 
     /**
      * @brief Mark the beginning of a test case.
@@ -236,7 +236,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    begin_test_case (test_case& test_case) override;
+    begin_test_case (const test_case& test_case) override;
 
     /**
      * @brief Mark the end of a test case.
@@ -246,7 +246,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    end_test_case (test_case& test_case) override;
+    end_test_case (const test_case& test_case) override;
 
     /**
      * @brief Report a test case skipped by the filter.
@@ -260,7 +260,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    skip_test_case (test_case& test_case) override;
+    skip_test_case (const test_case& test_case) override;
 
     /**
      * @brief Returns an empty comment prefix string.
@@ -283,7 +283,8 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_pass_prefix_ (std::string& message, test_case& test_case) override;
+    output_pass_prefix_ (const std::string& message,
+                         const test_case& test_case) override;
 
     /**
      * @brief Outputs the suffix for a passing condition.
@@ -293,7 +294,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_pass_suffix_ (test_case& test_case) override;
+    output_pass_suffix_ (const test_case& test_case) override;
 
     /**
      * @brief Outputs the prefix for a failing condition.
@@ -307,9 +308,9 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_fail_prefix_ (std::string& message, const bool has_expression,
+    output_fail_prefix_ (const std::string& message, const bool has_expression,
                          const reflection::source_location& location,
-                         test_case& test_case) override;
+                         const test_case& test_case) override;
 
     /**
      * @brief Outputs the suffix for a failing condition.
@@ -323,7 +324,7 @@ namespace micro_os_plus::micro_test_plus::detail
      */
     void
     output_fail_suffix_ (const reflection::source_location& location,
-                         check_kind kind, test_case& test_case) override;
+                         check_kind kind, const test_case& test_case) override;
 
     /**
      * @brief Writes the results buffered for the outer test case before
@@ -372,7 +373,7 @@ namespace micro_os_plus::micro_test_plus::detail
        * @details
        * Used to display its name when its results are committed.
        */
-      test_case* test;
+      const test_case* test;
 
       /**
        * @brief Whether the name of the test case was displayed.

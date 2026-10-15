@@ -175,7 +175,7 @@ namespace micro_os_plus::micro_test_plus
        * @param colours Reference to a `colours` instance for output
        * formatting; it must outlive the formatter.
        */
-      expression_formatter (colours& colours) noexcept;
+      expression_formatter (const colours& colours) noexcept;
 
       /**
        * @brief Deleted copy constructor to prevent copying.
@@ -762,7 +762,7 @@ namespace micro_os_plus::micro_test_plus
        * A reference to the colours of the owning reporter, so that later
        * changes (e.g. enabling colours) are picked up automatically.
        */
-      colours& colours_;
+      const colours& colours_;
 
       /**
        * @brief The internal output buffer.

@@ -366,7 +366,7 @@ namespace micro_os_plus::micro_test_plus
        */
       [[noreturn]] void
       abort (const reflection::source_location& sl
-             = reflection::source_location::current ());
+             = reflection::source_location::current ()) const;
 
     protected:
       /**

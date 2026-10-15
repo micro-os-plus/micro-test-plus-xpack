@@ -79,7 +79,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * Initialises the `colours_` reference with the provided `colours`
    * instance. The internal buffer is default-initialised to an empty string.
    */
-  inline expression_formatter::expression_formatter (colours& colours) noexcept
+  inline expression_formatter::expression_formatter (
+      const colours& colours) noexcept
       : colours_ (colours)
   {
   }

@@ -97,42 +97,42 @@ namespace
     }
 
     void
-    begin_session (runner&) override
+    begin_session (const runner&) override
     {
     }
 
     void
-    end_session (runner&) override
+    end_session (const runner&) override
     {
     }
 
     void
-    begin_suite (suite&) override
+    begin_suite (const suite&) override
     {
     }
 
     void
-    end_suite (suite&) override
+    end_suite (const suite&) override
     {
     }
 
     void
-    skip_suite (suite&) override
+    skip_suite (const suite&) override
     {
     }
 
     void
-    begin_test_case (test_case&) override
+    begin_test_case (const test_case&) override
     {
     }
 
     void
-    end_test_case (test_case&) override
+    end_test_case (const test_case&) override
     {
     }
 
     void
-    skip_test_case (test_case&) override
+    skip_test_case (const test_case&) override
     {
     }
 
@@ -144,25 +144,25 @@ namespace
 
   protected:
     void
-    output_pass_prefix_ (std::string&, test_case&) override
+    output_pass_prefix_ (const std::string&, const test_case&) override
     {
     }
 
     void
-    output_pass_suffix_ (test_case&) override
+    output_pass_suffix_ (const test_case&) override
     {
     }
 
     void
-    output_fail_prefix_ (std::string&, const bool,
+    output_fail_prefix_ (const std::string&, const bool,
                          const reflection::source_location&,
-                         test_case&) override
+                         const test_case&) override
     {
     }
 
     void
     output_fail_suffix_ (const reflection::source_location&,
-                         detail::check_kind, test_case&) override
+                         detail::check_kind, const test_case&) override
     {
     }
   };

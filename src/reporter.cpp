@@ -480,8 +480,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * suffix is then appended to complete the output.
    */
   void
-  reporter::pass (std::string& message, const std::string& expression,
-                  test_case& test_case)
+  reporter::pass (const std::string& message, const std::string& expression,
+                  const test_case& test_case)
   {
     output_pass_prefix_ (message, test_case);
 
@@ -500,8 +500,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * pre-formatted expression string, and a fail suffix.
    */
   void
-  reporter::fail (failure_info& failure, const std::string& expression,
-                  test_case& test_case)
+  reporter::fail (const failure_info& failure, const std::string& expression,
+                  const test_case& test_case)
   {
     output_fail_prefix_ (failure.message, failure.has_expression,
                          failure.location, test_case);
