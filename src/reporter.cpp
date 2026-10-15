@@ -136,28 +136,27 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * The `endl` function calls `reporter::endline()`, which appends a
-   * newline character to the buffer of the specified `reporter` and
-   * flushes the output streams.
+   * The `endl` function calls `reporter::end_line()`, which appends a
+   * newline character to the buffer of the specified `reporter`.
    */
   reporter&
   endl (reporter& stream)
   {
-    stream.endline ();
+    stream.end_line ();
     return stream;
   }
 
   /**
    * @details
    * This method appends a newline character to the internal output buffer of
-   * the `reporter` and calls `flush()`. The buffer itself is written later,
-   * by the concrete reporters, at the end of each test case or suite.
+   * the `reporter`. The buffer itself is written later, by the concrete
+   * reporters, at the end of each test case or suite, which then also
+   * flush the streams.
    */
   void
-  reporter::endline (void)
+  reporter::end_line (void)
   {
     buffer_.append ("\n");
-    flush ();
   }
 
   /**
@@ -365,7 +364,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * does not write the contents of the internal buffer.
    */
   void
-  reporter::flush (void)
+  reporter::flush_streams (void)
   {
     fflush (stdout);
     if (output_file_ != nullptr)

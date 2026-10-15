@@ -107,6 +107,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output stream manipulator for ending a line in test reports.
      *
+     * @details
+     * Calls `reporter::end_line()`, which appends a line ending to the
+     * internal buffer. Unlike `std::endl`, it does not flush; the buffer
+     * is written later, by the concrete reporters.
+     *
      * @param stream Reference to the `reporter` instance.
      * @return Reference to the same `reporter` instance, enabling chaining
      * of output operations.
@@ -299,8 +304,12 @@ namespace micro_os_plus::micro_test_plus
       // ----------------------------------------------------------------------
 
       /**
-       * @brief Inserts a line ending into the output buffer and flushes the
-       * output streams.
+       * @brief Appends a line ending to the internal output buffer.
+       *
+       * @details
+       * Nothing is written to the console or to the output file; the
+       * buffer is written by the concrete reporters, at the end of each
+       * test case or suite.
        *
        * @par Parameters
        *   None.
@@ -308,7 +317,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      endline (void);
+      end_line (void);
 
       /**
        * @brief Output the current buffered content to the console.
@@ -331,7 +340,11 @@ namespace micro_os_plus::micro_test_plus
       write_buffer_to_console (void);
 
       /**
-       * @brief Flush the standard output stream and the output file.
+       * @brief Flushes the standard output stream and the output file.
+       *
+       * @details
+       * Only the C streams are flushed; the internal output buffer is not
+       * written.
        *
        * @par Parameters
        *   None.
@@ -339,7 +352,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      flush (void);
+      flush_streams (void);
 
       /**
        * @brief Returns whether the output file could not be opened.

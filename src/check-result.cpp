@@ -162,7 +162,7 @@ namespace micro_os_plus::micro_test_plus
             }
 #else
           test_case_.reporter_ ().write_buffer_to_console ();
-          test_case_.reporter_ ().flush ();
+          test_case_.reporter_ ().flush_streams ();
           test_case_.abort (location_);
 #endif // defined(__cpp_exceptions)
         }
