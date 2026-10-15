@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @brief Number of spaces per indentation level.
    *
    * @details
-   * Used by `operator<<(indent_t)` and related methods to compute
+   * Used by `operator<<(indentation)` and related methods to compute
    * the leading whitespace for each nesting depth.
    */
   constexpr size_t indent_size = 4;
@@ -128,7 +128,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * `*this << indent(n) << "text"` chaining.
    */
   reporter_human&
-  reporter_human::operator<< (indent_t m)
+  reporter_human::operator<< (indentation m)
   {
     buffer_.append (m.level * indent_size, ' ');
     return *this;
@@ -201,9 +201,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
         uint32_t milliseconds = 0;
         uint32_t microseconds = 0;
-        if (runner.stopwatch ().has_elapsed ())
+        if (runner.stopwatch_.has_elapsed ())
           {
-            const auto elapsed = runner.stopwatch ().elapsed ().count ();
+            const auto elapsed = runner.stopwatch_.elapsed ().count ();
             milliseconds = static_cast<uint32_t> (elapsed / 1000);
             microseconds = static_cast<uint32_t> (elapsed % 1000);
           }
@@ -322,9 +322,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
-    if (suite.stopwatch ().has_elapsed ())
+    if (suite.stopwatch_.has_elapsed ())
       {
-        const auto elapsed = suite.stopwatch ().elapsed ().count ();
+        const auto elapsed = suite.stopwatch_.elapsed ().count ();
         milliseconds = static_cast<uint32_t> (elapsed / 1000);
         microseconds = static_cast<uint32_t> (elapsed % 1000);
       }
@@ -906,7 +906,7 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter_human::display_open_names_ (void)
   {
     bool is_first = true;
-    for (open_test_case_t& open : open_test_cases_)
+    for (open_test_case& open : open_test_cases_)
       {
         if (open.name_displayed)
           {

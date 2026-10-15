@@ -133,7 +133,7 @@ namespace micro_os_plus::micro_test_plus
      * If it is a `bool`, `"true"` or `"false"` is appended, as the
      * expression formatter does (`std::to_chars()` has no `bool`
      * overload). If it is of another arithmetic type, it is converted by
-     * `detail::append_number_()`, the helper also used by the expression
+     * `detail::append_number()`, the helper also used by the expression
      * formatter, which uses a fixed-size buffer (avoiding the temporary
      * string that `std::to_string()` would allocate) and handles the
      * platforms where `std::to_chars()` is not available for
@@ -160,7 +160,7 @@ namespace micro_os_plus::micro_test_plus
         }
       else if constexpr (std::is_arithmetic_v<T>)
         {
-          detail::append_number_ (message_, msg);
+          detail::append_number (message_, msg);
         }
       else if constexpr (std::is_null_pointer_v<T>)
         {

@@ -73,43 +73,12 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns a reference to the reporter object stored in the unique pointer;
-   * valid only after `initialise()` has been called.
-   */
-  inline detail::reporter&
-  runner::reporter (void) const noexcept
-  {
-    return *reporter_;
-  }
-
-  /**
-   * @details
    * Returns the verbosity parsed by the reporter from the command line.
    */
   inline auto
   runner::verbosity (void) const noexcept -> micro_test_plus::verbosity
   {
     return reporter_->verbosity ();
-  }
-
-  /**
-   * @details
-   * Returns a reference to the `stopwatch_` member.
-   */
-  inline detail::stopwatch&
-  runner::stopwatch () noexcept
-  {
-    return stopwatch_;
-  }
-
-  /**
-   * @details
-   * Returns a const reference to the `stopwatch_` member.
-   */
-  inline const detail::stopwatch&
-  runner::stopwatch () const noexcept
-  {
-    return stopwatch_;
   }
 
   /**

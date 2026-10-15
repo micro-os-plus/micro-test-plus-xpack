@@ -514,49 +514,6 @@ namespace micro_os_plus::micro_test_plus
 
   protected:
     /**
-     * @brief Returns a reference to the test reporter.
-     *
-     * @details
-     * Protected, since the reporter is internal to the framework; it is
-     * used by the suites and the test cases, through
-     * `detail::runnable_base`, which is a friend.
-     *
-     * @par Parameters
-     *   None.
-     * @return Reference to the test reporter.
-     */
-    [[nodiscard]] detail::reporter&
-    reporter (void) const noexcept;
-
-    /**
-     * @brief Gets the stopwatch of this runner.
-     *
-     * @details
-     * Protected, since the stopwatch is an implementation detail; it
-     * is started by `initialise()` and stopped by `run()`, and is read
-     * only by the reporters, which are friends.
-     *
-     * @par Parameters
-     *   None.
-     * @return A reference to the stopwatch.
-     */
-    [[nodiscard]] detail::stopwatch&
-    stopwatch () noexcept;
-
-    /**
-     * @brief Gets the stopwatch of this runner (const overload).
-     *
-     * @details
-     * Protected, for the same reasons as the non-const overload.
-     *
-     * @par Parameters
-     *   None.
-     * @return A const reference to the stopwatch.
-     */
-    [[nodiscard]] const detail::stopwatch&
-    stopwatch () const noexcept;
-
-    /**
      * @brief Runs all registered test suites.
      *
      * @details
@@ -649,7 +606,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Created by `initialise()`, as selected by the session options,
      * either given by the caller or parsed from the command line by
-     * `parse_options_()`.
+     * `parse_options_()`. Used by the suites and the test cases,
+     * through `detail::runnable_base`, which is a friend.
      */
     std::unique_ptr<detail::reporter> reporter_;
 
@@ -657,7 +615,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Stopwatch of this runner.
      *
      * @details
-     * Measures the duration of the entire test session.
+     * Measures the duration of the entire test session; started by
+     * `initialise()`, stopped by `run()`, and read by the reporters,
+     * which are friends.
      */
     detail::stopwatch stopwatch_;
 
@@ -706,7 +666,7 @@ namespace micro_os_plus::micro_test_plus
      * (by `initialise()`) and to `finished` (by `run()`); the calls made in
      * another state are reported or ignored.
      */
-    enum class session_state_t
+    enum class session_state
     {
       created, /**< Constructed; `initialise()` not yet called. */
       initialised, /**< Initialised; test cases may be added and run. */
@@ -719,7 +679,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Set by `initialise()` and `run()`.
      */
-    session_state_t session_state_ = session_state_t::created;
+    session_state session_state_ = session_state::created;
 
     /**
      * @brief The exit code computed by `run()`.

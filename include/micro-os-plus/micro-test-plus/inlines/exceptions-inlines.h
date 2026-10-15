@@ -23,7 +23,7 @@
  * @details
  * This header provides the inline implementations for the exception-checking
  * function templates used within the µTest++ framework (`throws()` and
- * `nothrow()`), which create the `detail::throws_` and `detail::nothrow_`
+ * `nothrow()`), which create the `detail::throws_op` and `detail::nothrow_op`
  * comparator objects.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
@@ -81,7 +81,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   throws (const Callable_T& func)
   {
-    return detail::throws_<Callable_T, Exception_T>{ func };
+    return detail::throws_op<Callable_T, Exception_T>{ func };
   }
 
   /**
@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   throws (const Callable_T& func)
   {
-    return detail::throws_<Callable_T>{ func };
+    return detail::throws_op<Callable_T>{ func };
   }
 
   /**
@@ -117,7 +117,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   nothrow (const Callable_T& func)
   {
-    return detail::nothrow_<Callable_T>{ func };
+    return detail::nothrow_op<Callable_T>{ func };
   }
 
 #endif // defined(__cpp_exceptions)

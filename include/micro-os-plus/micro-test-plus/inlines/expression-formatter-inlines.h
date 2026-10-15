@@ -32,7 +32,7 @@
  * The compound expression operators format comparator expressions and wrap
  * them in the pass/fail colour codes of the owning reporter.
  *
- * Numbers are formatted with the `detail::append_number_()` helper, defined
+ * Numbers are formatted with the `detail::append_number()` helper, defined
  * in `detail-inlines.h`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
@@ -193,7 +193,7 @@ namespace micro_os_plus::micro_test_plus::detail
 #endif // defined(__GNUC__)
 
     char buff[20];
-    snprintf (buff, sizeof (buff), "%p", detail::to_printable_pointer_ (v));
+    snprintf (buff, sizeof (buff), "%p", detail::to_printable_pointer (v));
     buffer_.append (buff);
 
 #if defined(__GNUC__)
@@ -205,7 +205,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Delegates to `detail::unwrap_(t)` to obtain the displayable value
+   * Delegates to `detail::unwrap(t)` to obtain the displayable value
    * of an op expression, then streams it through `operator<<` to
    * format it into the buffer.
    */
@@ -214,7 +214,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const T& t)
   {
-    *this << detail::unwrap_ (t);
+    *this << detail::unwrap (t);
     return *this;
   }
 
@@ -227,7 +227,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::genuine_integral_value<T>& v)
   {
-    detail::append_number_ (buffer_, static_cast<long long> (v.get ()));
+    detail::append_number (buffer_, static_cast<long long> (v.get ()));
     return *this;
   }
 
@@ -269,7 +269,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::eq_<Lhs_T, Rhs_T>& op)
+  expression_formatter::operator<< (const detail::eq_op<Lhs_T, Rhs_T>& op)
   {
     return (*this << colour_ (op) << op.lhs () << " == " << op.rhs ()
                   << colours_.none);
@@ -289,7 +289,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::ne_<Lhs_T, Rhs_T>& op)
+  expression_formatter::operator<< (const detail::ne_op<Lhs_T, Rhs_T>& op)
   {
     return (*this << colour_ (op) << op.lhs () << " != " << op.rhs ()
                   << colours_.none);
@@ -309,7 +309,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::gt_<Lhs_T, Rhs_T>& op)
+  expression_formatter::operator<< (const detail::gt_op<Lhs_T, Rhs_T>& op)
   {
     return (*this << colour_ (op) << op.lhs () << " > " << op.rhs ()
                   << colours_.none);
@@ -330,7 +330,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::ge_<Lhs_T, Rhs_T>& op)
+  expression_formatter::operator<< (const detail::ge_op<Lhs_T, Rhs_T>& op)
   {
     return (*this << colour_ (op) << op.lhs () << " >= " << op.rhs ()
                   << colours_.none);
@@ -349,7 +349,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::lt_<Rhs_T, Lhs_T>& op)
+  expression_formatter::operator<< (const detail::lt_op<Rhs_T, Lhs_T>& op)
   {
     return (*this << colour_ (op) << op.lhs () << " < " << op.rhs ()
                   << colours_.none);
@@ -370,7 +370,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::le_<Rhs_T, Lhs_T>& op)
+  expression_formatter::operator<< (const detail::le_op<Rhs_T, Lhs_T>& op)
   {
     return (*this << colour_ (op) << op.lhs () << " <= " << op.rhs ()
                   << colours_.none);
@@ -390,7 +390,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::and_<Lhs_T, Rhs_T>& op)
+  expression_formatter::operator<< (const detail::and_op<Lhs_T, Rhs_T>& op)
   {
     return (*this << '(' << op.lhs () << colour_ (op) << " and "
                   << colours_.none << op.rhs () << ')');
@@ -410,7 +410,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::or_<Lhs_T, Rhs_T>& op)
+  expression_formatter::operator<< (const detail::or_op<Lhs_T, Rhs_T>& op)
   {
     return (*this << '(' << op.lhs () << colour_ (op) << " or "
                   << colours_.none << op.rhs () << ')');
@@ -426,7 +426,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::not_<T>& op)
+  expression_formatter::operator<< (const detail::not_op<T>& op)
   {
     return (*this << colour_ (op) << "not " << op.operand () << colours_.none);
   }
@@ -446,7 +446,7 @@ namespace micro_os_plus::micro_test_plus::detail
   template <class Callable_T, class Exception_T>
   expression_formatter&
   expression_formatter::operator<< (
-      const detail::throws_<Callable_T, Exception_T>& op)
+      const detail::throws_op<Callable_T, Exception_T>& op)
   {
     return (*this << colour_ (op) << "throws<"
                   << reflection::type_name<Exception_T> () << ">"
@@ -465,7 +465,7 @@ namespace micro_os_plus::micro_test_plus::detail
   template <class Callable_T>
   expression_formatter&
   expression_formatter::operator<< (
-      const detail::throws_<Callable_T, void>& op)
+      const detail::throws_op<Callable_T, void>& op)
   {
     return (*this << colour_ (op) << "throws" << colours_.none);
   }
@@ -480,7 +480,7 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Callable_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::nothrow_<Callable_T>& op)
+  expression_formatter::operator<< (const detail::nothrow_op<Callable_T>& op)
   {
     return (*this << colour_ (op) << "nothrow" << colours_.none);
   }

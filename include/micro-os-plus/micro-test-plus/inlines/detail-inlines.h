@@ -23,9 +23,9 @@
  * @details
  * This header provides the out-of-line template and inline implementations
  * for all types declared in `detail.h`. It defines the bodies of the
- * `unwrap_()` helper, the unary and binary operator base class templates, all
+ * `unwrap()` helper, the unary and binary operator base class templates, all
  * relational and logical comparator constructors, the callable operator
- * types (`throws_`, `nothrow_`), and the `append_number_()` formatting
+ * types (`throws_op`, `nothrow_op`), and the `append_number()` formatting
  * helper.
  *
  * Separating the implementations from the declarations keeps `detail.h`
@@ -84,7 +84,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     constexpr auto
-    unwrap_ (const T& t)
+    unwrap (const T& t)
     {
       if constexpr (type_traits::is_op<T> && requires { t.get (); })
         return t.get ();
@@ -100,7 +100,7 @@ namespace micro_os_plus::micro_test_plus
      * operation in the corresponding private members.
      */
     template <class T>
-    constexpr unary_op_<T>::unary_op_ (const T& t, bool value)
+    constexpr unary_op<T>::unary_op (const T& t, bool value)
         : t_{ t }, value_{ value }
     {
     }
@@ -111,7 +111,7 @@ namespace micro_os_plus::micro_test_plus
      * comparator's constructor.
      */
     template <class T>
-    constexpr unary_op_<T>::
+    constexpr unary_op<T>::
     operator bool () const
     {
       return value_;
@@ -119,14 +119,14 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns the operand, unwrapped by `detail::unwrap_()` if it is a
+     * Returns the operand, unwrapped by `detail::unwrap()` if it is a
      * framework wrapper type.
      */
     template <class T>
     constexpr auto
-    unary_op_<T>::operand () const
+    unary_op<T>::operand () const
     {
-      return detail::unwrap_ (t_);
+      return detail::unwrap (t_);
     }
 
     // ------------------------------------------------------------------------
@@ -137,9 +137,8 @@ namespace micro_os_plus::micro_test_plus
      * comparison in the corresponding private members.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr binary_op_<Lhs_T, Rhs_T>::binary_op_ (const Lhs_T& lhs,
-                                                    const Rhs_T& rhs,
-                                                    bool value)
+    constexpr binary_op<Lhs_T, Rhs_T>::binary_op (const Lhs_T& lhs,
+                                                  const Rhs_T& rhs, bool value)
         : lhs_{ lhs }, rhs_{ rhs }, value_{ value }
     {
     }
@@ -150,7 +149,7 @@ namespace micro_os_plus::micro_test_plus
      * comparator's constructor.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr binary_op_<Lhs_T, Rhs_T>::
+    constexpr binary_op<Lhs_T, Rhs_T>::
     operator bool () const
     {
       return value_;
@@ -159,25 +158,25 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Returns the value of the left-hand operand, unwrapped by
-     * `detail::unwrap_()` if it is a framework wrapper type.
+     * `detail::unwrap()` if it is a framework wrapper type.
      */
     template <class Lhs_T, class Rhs_T>
     constexpr auto
-    binary_op_<Lhs_T, Rhs_T>::lhs (void) const
+    binary_op<Lhs_T, Rhs_T>::lhs (void) const
     {
-      return detail::unwrap_ (lhs_);
+      return detail::unwrap (lhs_);
     }
 
     /**
      * @details
      * Returns the value of the right-hand operand, unwrapped by
-     * `detail::unwrap_()` if it is a framework wrapper type.
+     * `detail::unwrap()` if it is a framework wrapper type.
      */
     template <class Lhs_T, class Rhs_T>
     constexpr auto
-    binary_op_<Lhs_T, Rhs_T>::rhs (void) const
+    binary_op<Lhs_T, Rhs_T>::rhs (void) const
     {
-      return detail::unwrap_ (rhs_);
+      return detail::unwrap (rhs_);
     }
 
     // ------------------------------------------------------------------------
@@ -193,7 +192,7 @@ namespace micro_os_plus::micro_test_plus
       requires (type_traits::has_epsilon<Lhs_T>
                 or type_traits::has_epsilon<Rhs_T>)
     constexpr bool
-    within_tolerance_ (const Lhs_T& lhs, const Rhs_T& rhs)
+    within_tolerance (const Lhs_T& lhs, const Rhs_T& rhs)
     {
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -207,7 +206,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
       const auto difference
-          = math::abs (detail::unwrap_ (lhs) - detail::unwrap_ (rhs));
+          = math::abs (detail::unwrap (lhs) - detail::unwrap (rhs));
       if constexpr (type_traits::has_epsilon<Lhs_T>
                     and type_traits::has_epsilon<Rhs_T>)
         {
@@ -232,13 +231,13 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Evaluates the equality of `lhs` and `rhs` inside an immediately
-     * invoked lambda and passes the boolean result to the `binary_op_`
+     * invoked lambda and passes the boolean result to the `binary_op`
      * base class constructor. Supports types with static `value` members,
      * types with an `epsilon` precision member, and generic types.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr eq_<Lhs_T, Rhs_T>::eq_ (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op_<Lhs_T, Rhs_T>{ lhs, rhs, [&]
+    constexpr eq_op<Lhs_T, Rhs_T>::eq_op (const Lhs_T& lhs, const Rhs_T& rhs)
+        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
       {
         // This lambda is called in the constructor to evaluate the
         // comparison. Its result is implicitly converted to bool via
@@ -272,13 +271,13 @@ namespace micro_os_plus::micro_test_plus
                            or type_traits::has_epsilon<Rhs_T>)
           {
             // If any value has a precision, compare within the tolerance.
-            return detail::within_tolerance_ (lhs, rhs);
+            return detail::within_tolerance (lhs, rhs);
           }
         else
           {
             // Unwrap the framework wrappers; other values, including
             // the types of the application, are compared as they are.
-            return detail::unwrap_ (lhs) == detail::unwrap_ (rhs);
+            return detail::unwrap (lhs) == detail::unwrap (rhs);
           }
 
 #if defined(__GNUC__)
@@ -293,13 +292,13 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Evaluates the non-equality of `lhs` and `rhs` inside an immediately
-     * invoked lambda and passes the boolean result to the `binary_op_`
+     * invoked lambda and passes the boolean result to the `binary_op`
      * base class constructor. Supports types with static `value` members,
      * types with an `epsilon` precision member, and generic types.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr ne_<Lhs_T, Rhs_T>::ne_ (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op_<Lhs_T, Rhs_T>{ lhs, rhs, [&]
+    constexpr ne_op<Lhs_T, Rhs_T>::ne_op (const Lhs_T& lhs, const Rhs_T& rhs)
+        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
       {
         using std::operator==;
         using std::operator!=;
@@ -326,11 +325,11 @@ namespace micro_os_plus::micro_test_plus
         else if constexpr (type_traits::has_epsilon<Lhs_T>
                            or type_traits::has_epsilon<Rhs_T>)
           {
-            return not detail::within_tolerance_ (lhs, rhs);
+            return not detail::within_tolerance (lhs, rhs);
           }
         else
           {
-            return detail::unwrap_ (lhs) != detail::unwrap_ (rhs);
+            return detail::unwrap (lhs) != detail::unwrap (rhs);
           }
 
 #if defined(__GNUC__)
@@ -345,14 +344,14 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Evaluates whether `lhs > rhs` inside an immediately invoked lambda
-     * and passes the boolean result to the `binary_op_` base class
+     * and passes the boolean result to the `binary_op` base class
      * constructor. Supports types with static `value` members, types with
      * an `epsilon` precision member (values within the tolerance are equal,
-     * as for `eq_`), and generic types.
+     * as for `eq_op`), and generic types.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr gt_<Lhs_T, Rhs_T>::gt_ (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op_<Lhs_T, Rhs_T>{ lhs, rhs, [&]
+    constexpr gt_op<Lhs_T, Rhs_T>::gt_op (const Lhs_T& lhs, const Rhs_T& rhs)
+        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
       {
         using std::operator>;
 
@@ -377,12 +376,12 @@ namespace micro_os_plus::micro_test_plus
                            or type_traits::has_epsilon<Rhs_T>)
           {
             // Values within the tolerance are equal, not ordered.
-            return detail::unwrap_ (lhs) > detail::unwrap_ (rhs)
-                   and not detail::within_tolerance_ (lhs, rhs);
+            return detail::unwrap (lhs) > detail::unwrap (rhs)
+                   and not detail::within_tolerance (lhs, rhs);
           }
         else
           {
-            return detail::unwrap_ (lhs) > detail::unwrap_ (rhs);
+            return detail::unwrap (lhs) > detail::unwrap (rhs);
           }
 
 #if defined(__GNUC__)
@@ -397,14 +396,14 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Evaluates whether `lhs >= rhs` inside an immediately invoked lambda
-     * and passes the boolean result to the `binary_op_` base class
+     * and passes the boolean result to the `binary_op` base class
      * constructor. Supports types with static `value` members, types with
      * an `epsilon` precision member (values within the tolerance are equal,
-     * as for `eq_`), and generic types.
+     * as for `eq_op`), and generic types.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr ge_<Lhs_T, Rhs_T>::ge_ (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op_<Lhs_T, Rhs_T>{ lhs, rhs, [&]
+    constexpr ge_op<Lhs_T, Rhs_T>::ge_op (const Lhs_T& lhs, const Rhs_T& rhs)
+        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
       {
         using std::operator>=;
 
@@ -429,12 +428,12 @@ namespace micro_os_plus::micro_test_plus
                            or type_traits::has_epsilon<Rhs_T>)
           {
             // Values within the tolerance are equal.
-            return detail::unwrap_ (lhs) > detail::unwrap_ (rhs)
-                   or detail::within_tolerance_ (lhs, rhs);
+            return detail::unwrap (lhs) > detail::unwrap (rhs)
+                   or detail::within_tolerance (lhs, rhs);
           }
         else
           {
-            return detail::unwrap_ (lhs) >= detail::unwrap_ (rhs);
+            return detail::unwrap (lhs) >= detail::unwrap (rhs);
           }
 
 #if defined(__GNUC__)
@@ -449,14 +448,14 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Evaluates whether `lhs < rhs` inside an immediately invoked lambda
-     * and passes the boolean result to the `binary_op_` base class
+     * and passes the boolean result to the `binary_op` base class
      * constructor. Supports types with static `value` members, types with
      * an `epsilon` precision member (values within the tolerance are equal,
-     * as for `eq_`), and generic types.
+     * as for `eq_op`), and generic types.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr lt_<Lhs_T, Rhs_T>::lt_ (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op_<Lhs_T, Rhs_T>{ lhs, rhs, [&]
+    constexpr lt_op<Lhs_T, Rhs_T>::lt_op (const Lhs_T& lhs, const Rhs_T& rhs)
+        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
       {
         using std::operator<;
 
@@ -481,12 +480,12 @@ namespace micro_os_plus::micro_test_plus
                            or type_traits::has_epsilon<Rhs_T>)
           {
             // Values within the tolerance are equal, not ordered.
-            return detail::unwrap_ (lhs) < detail::unwrap_ (rhs)
-                   and not detail::within_tolerance_ (lhs, rhs);
+            return detail::unwrap (lhs) < detail::unwrap (rhs)
+                   and not detail::within_tolerance (lhs, rhs);
           }
         else
           {
-            return detail::unwrap_ (lhs) < detail::unwrap_ (rhs);
+            return detail::unwrap (lhs) < detail::unwrap (rhs);
           }
 
 #if defined(__GNUC__)
@@ -501,14 +500,14 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Evaluates whether `lhs <= rhs` inside an immediately invoked lambda
-     * and passes the boolean result to the `binary_op_` base class
+     * and passes the boolean result to the `binary_op` base class
      * constructor. Supports types with static `value` members, types with
      * an `epsilon` precision member (values within the tolerance are equal,
-     * as for `eq_`), and generic types.
+     * as for `eq_op`), and generic types.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr le_<Lhs_T, Rhs_T>::le_ (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op_<Lhs_T, Rhs_T>{ lhs, rhs, [&]
+    constexpr le_op<Lhs_T, Rhs_T>::le_op (const Lhs_T& lhs, const Rhs_T& rhs)
+        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
       {
         using std::operator<=;
 
@@ -533,12 +532,12 @@ namespace micro_os_plus::micro_test_plus
                            or type_traits::has_epsilon<Rhs_T>)
           {
             // Values within the tolerance are equal.
-            return detail::unwrap_ (lhs) < detail::unwrap_ (rhs)
-                   or detail::within_tolerance_ (lhs, rhs);
+            return detail::unwrap (lhs) < detail::unwrap (rhs)
+                   or detail::within_tolerance (lhs, rhs);
           }
         else
           {
-            return detail::unwrap_ (lhs) <= detail::unwrap_ (rhs);
+            return detail::unwrap (lhs) <= detail::unwrap (rhs);
           }
 
 #if defined(__GNUC__)
@@ -553,12 +552,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Evaluates the logical conjunction `static_cast<bool>(lhs) and
-     * static_cast<bool>(rhs)` and passes the result to the `binary_op_`
+     * static_cast<bool>(rhs)` and passes the result to the `binary_op`
      * base class constructor.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr and_<Lhs_T, Rhs_T>::and_ (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op_<Lhs_T, Rhs_T>{
+    constexpr and_op<Lhs_T, Rhs_T>::and_op (const Lhs_T& lhs, const Rhs_T& rhs)
+        : binary_op<Lhs_T, Rhs_T>{
             lhs, rhs, static_cast<bool> (lhs) and static_cast<bool> (rhs)
           }
     {
@@ -569,12 +568,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Evaluates the logical disjunction `static_cast<bool>(lhs) or
-     * static_cast<bool>(rhs)` and passes the result to the `binary_op_`
+     * static_cast<bool>(rhs)` and passes the result to the `binary_op`
      * base class constructor.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr or_<Lhs_T, Rhs_T>::or_ (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op_<Lhs_T, Rhs_T>{
+    constexpr or_op<Lhs_T, Rhs_T>::or_op (const Lhs_T& lhs, const Rhs_T& rhs)
+        : binary_op<Lhs_T, Rhs_T>{
             lhs, rhs, static_cast<bool> (lhs) or static_cast<bool> (rhs)
           }
     {
@@ -585,11 +584,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Evaluates the logical negation `not static_cast<bool>(t)` and
-     * passes the result to the `unary_op_` base class constructor.
+     * passes the result to the `unary_op` base class constructor.
      */
     template <class T>
-    constexpr not_<T>::not_ (const T& t)
-        : unary_op_<T>{ t, not static_cast<bool> (t) }
+    constexpr not_op<T>::not_op (const T& t)
+        : unary_op<T>{ t, not static_cast<bool> (t) }
     {
     }
 
@@ -602,7 +601,7 @@ namespace micro_os_plus::micro_test_plus
      * Stores the pre-computed boolean result in the private `value_`
      * member.
      */
-    constexpr callable_op_::callable_op_ (bool value) : value_{ value }
+    constexpr callable_op::callable_op (bool value) : value_{ value }
     {
     }
 
@@ -611,7 +610,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the pre-computed boolean result stored by the derived
      * operator's constructor.
      */
-    constexpr callable_op_::
+    constexpr callable_op::
     operator bool () const
     {
       return value_;
@@ -624,13 +623,13 @@ namespace micro_os_plus::micro_test_plus
      * Invokes `func` inside a try/catch block. If `func` throws an
      * exception of type `Exception_T`, the result is `true`; if it throws
      * any other exception the result is `false`; if no exception is thrown
-     * the result is `false`. The result is passed to the `callable_op_`
+     * the result is `false`. The result is passed to the `callable_op`
      * base class constructor.
      */
     template <class Callable_T, class Exception_T>
-    constexpr throws_<Callable_T, Exception_T>::throws_ (
+    constexpr throws_op<Callable_T, Exception_T>::throws_op (
         const Callable_T& func)
-        : callable_op_{ [&func]
+        : callable_op{ [&func]
       {
         try
           {
@@ -655,12 +654,12 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Invokes `func` inside a try/catch block. If `func` throws any
      * exception the result is `true`; if no exception is thrown the result
-     * is `false`. The result is passed to the `callable_op_` base class
+     * is `false`. The result is passed to the `callable_op` base class
      * constructor.
      */
     template <class Callable_T>
-    constexpr throws_<Callable_T, void>::throws_ (const Callable_T& func)
-        : callable_op_{ [&func]
+    constexpr throws_op<Callable_T, void>::throws_op (const Callable_T& func)
+        : callable_op{ [&func]
       {
         try
           {
@@ -681,12 +680,12 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Invokes `func` inside a try/catch block. If `func` completes without
      * throwing, the result is `true`; if any exception is thrown the result
-     * is `false`. The result is passed to the `callable_op_` base class
+     * is `false`. The result is passed to the `callable_op` base class
      * constructor.
      */
     template <class Callable_T>
-    constexpr nothrow_<Callable_T>::nothrow_ (const Callable_T& func)
-        : callable_op_{ [&func]
+    constexpr nothrow_op<Callable_T>::nothrow_op (const Callable_T& func)
+        : callable_op{ [&func]
       {
         try
           {
@@ -735,7 +734,7 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
       requires std::is_arithmetic_v<T>
     void
-    append_number_ (std::string& buffer, const T v)
+    append_number (std::string& buffer, const T v)
     {
       char buf[32];
       if constexpr (std::is_same_v<T, long double>)
@@ -788,7 +787,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     constexpr void*
-    to_printable_pointer_ (T* v) noexcept
+    to_printable_pointer (T* v) noexcept
     {
       if constexpr (std::is_function_v<T>)
         {
@@ -808,7 +807,7 @@ namespace micro_os_plus::micro_test_plus
      * The length is computed with `std::char_traits<char>::length()`,
      * which, unlike `strlen()`, can be evaluated at compile time.
      */
-    constexpr c_string_::c_string_ (const char* str) noexcept
+    constexpr c_string::c_string (const char* str) noexcept
         : str_{ str },
           size_{ str == nullptr ? 0 : std::char_traits<char>::length (str) }
     {
@@ -819,8 +818,8 @@ namespace micro_os_plus::micro_test_plus
      * The characters are counted up to the first null character, or up to
      * `capacity`.
      */
-    constexpr c_string_::c_string_ (const char* str,
-                                    std::size_t capacity) noexcept
+    constexpr c_string::c_string (const char* str,
+                                  std::size_t capacity) noexcept
         : str_{ str }, size_{ capacity }
     {
       // Search within the array only; the view avoids indexing the raw
@@ -838,7 +837,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns an empty view for a null pointer.
      */
     constexpr std::string_view
-    c_string_::view (void) const noexcept
+    c_string::view (void) const noexcept
     {
       return str_ == nullptr ? std::string_view{}
                              : std::string_view{ str_, size_ };
@@ -849,7 +848,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns whether the stored pointer is null.
      */
     constexpr bool
-    c_string_::is_null (void) const noexcept
+    c_string::is_null (void) const noexcept
     {
       return str_ == nullptr;
     }
@@ -860,7 +859,7 @@ namespace micro_os_plus::micro_test_plus
      * string, not even an empty one.
      */
     constexpr bool
-    operator== (const c_string_& lhs, const c_string_& rhs) noexcept
+    operator== (const c_string& lhs, const c_string& rhs) noexcept
     {
       if (lhs.is_null () || rhs.is_null ())
         {
@@ -874,7 +873,7 @@ namespace micro_os_plus::micro_test_plus
      * A null pointer is not equal to any string.
      */
     constexpr bool
-    operator== (const c_string_& lhs, std::string_view rhs) noexcept
+    operator== (const c_string& lhs, std::string_view rhs) noexcept
     {
       return !lhs.is_null () && lhs.view () == rhs;
     }
@@ -884,7 +883,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns whether the operand is a null pointer.
      */
     constexpr bool
-    operator== (const c_string_& lhs, std::nullptr_t) noexcept
+    operator== (const c_string& lhs, std::nullptr_t) noexcept
     {
       return lhs.is_null ();
     }
@@ -894,7 +893,7 @@ namespace micro_os_plus::micro_test_plus
      * A null pointer orders before any string.
      */
     constexpr std::strong_ordering
-    operator<=> (const c_string_& lhs, const c_string_& rhs) noexcept
+    operator<=> (const c_string& lhs, const c_string& rhs) noexcept
     {
       if (lhs.is_null () || rhs.is_null ())
         {
@@ -908,7 +907,7 @@ namespace micro_os_plus::micro_test_plus
      * A null pointer orders before any string.
      */
     constexpr std::strong_ordering
-    operator<=> (const c_string_& lhs, std::string_view rhs) noexcept
+    operator<=> (const c_string& lhs, std::string_view rhs) noexcept
     {
       if (lhs.is_null ())
         {
@@ -926,19 +925,19 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     constexpr auto
-    as_operand_ (const T& t) noexcept -> decltype (auto)
+    as_operand (const T& t) noexcept -> decltype (auto)
     {
       if constexpr (std::is_array_v<T>
                     && std::is_same_v<
                         std::remove_cv_t<std::remove_extent_t<T>>, char>)
         {
-          return c_string_{ t, std::extent_v<T> };
+          return c_string{ t, std::extent_v<T> };
         }
       else if constexpr (std::is_pointer_v<T>
                          && std::is_same_v<
                              std::remove_cv_t<std::remove_pointer_t<T>>, char>)
         {
-          return c_string_{ t };
+          return c_string{ t };
         }
       else if constexpr (std::is_array_v<T>)
         {

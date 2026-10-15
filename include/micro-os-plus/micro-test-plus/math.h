@@ -171,7 +171,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <bool Fraction, char... Cs>
     [[nodiscard]] consteval auto
-    count_literal_digits_ (void) -> std::size_t;
+    count_literal_digits (void) -> std::size_t;
 
     /**
      * @brief Computes the integral part of a decimal floating-point number
@@ -247,10 +247,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief The result of parsing the characters of an integer literal.
      *
      * @details
-     * Returned by `parse_integer_literal_()`; the checks of `integer()` are
+     * Returned by `parse_integer_literal()`; the checks of `integer()` are
      * based on it.
      */
-    struct integer_literal_t_
+    struct integer_literal
     {
       /**
        * @brief The value of the literal.
@@ -291,7 +291,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <char... Cs>
     [[nodiscard]] consteval auto
-    parse_integer_literal_ (void) -> integer_literal_t_;
+    parse_integer_literal (void) -> integer_literal;
 
     /**
      * @brief Computes the value of an integer literal, of type @c T.

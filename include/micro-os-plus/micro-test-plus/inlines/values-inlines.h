@@ -24,7 +24,7 @@
  * This header provides the out-of-class template and inline implementations
  * for all methods declared in the value wrapper struct templates in
  * `values.h`. It defines the bodies of the constructors, conversion
- * operators, and accessor methods for `value_base_`, `integral_constant`,
+ * operators, and accessor methods for `value_base`, `integral_constant`,
  * `floating_point_constant`, `genuine_integral_value`, and the primary
  * `value<T>` template. The constructors of the floating point
  * specialisation of `value<T>` are defined in the class body, to work
@@ -73,7 +73,7 @@ namespace micro_os_plus::micro_test_plus
      * Stores the supplied value in the `value_` member.
      */
     template <class T>
-    constexpr value_base_<T>::value_base_ (const T& v) noexcept : value_{ v }
+    constexpr value_base<T>::value_base (const T& v) noexcept : value_{ v }
     {
     }
 
@@ -82,7 +82,7 @@ namespace micro_os_plus::micro_test_plus
      * Allows explicit conversion to the encapsulated value.
      */
     template <class T>
-    constexpr value_base_<T>::
+    constexpr value_base<T>::
     operator T () const noexcept
     {
       return value_;
@@ -94,7 +94,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     constexpr T
-    value_base_<T>::get (void) const noexcept
+    value_base<T>::get (void) const noexcept
     {
       return value_;
     }
@@ -103,11 +103,11 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Delegates to `value_base_<decltype(N)>{ N }` to initialise the base.
+     * Delegates to `value_base<decltype(N)>{ N }` to initialise the base.
      */
     template <auto N>
     constexpr integral_constant<N>::integral_constant () noexcept
-        : value_base_<decltype (N)>{ N }
+        : value_base<decltype (N)>{ N }
     {
     }
 
@@ -163,12 +163,12 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Delegates to `value_base_<T>{ _value }` to initialise the base.
+     * Delegates to `value_base<T>{ _value }` to initialise the base.
      */
     template <class T>
     constexpr genuine_integral_value<T>::genuine_integral_value (
         const T& _value) noexcept
-        : value_base_<T>{ _value }
+        : value_base<T>{ _value }
     {
     }
 
@@ -176,7 +176,7 @@ namespace micro_os_plus::micro_test_plus
 
     template <class T>
     constexpr value<T>::value (const T& _value) noexcept
-        : value_base_<T>{ _value }
+        : value_base<T>{ _value }
     {
     }
 

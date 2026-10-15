@@ -154,7 +154,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <bool Fraction, char... Cs>
     consteval auto
-    count_literal_digits_ (void) -> std::size_t
+    count_literal_digits (void) -> std::size_t
     {
       std::size_t count = 0;
       bool is_fraction = false;
@@ -198,7 +198,7 @@ namespace micro_os_plus::micro_test_plus
           "µTest++: a floating-point literal must be written with decimal "
           "digits and a decimal point, without an exponent");
       static_assert (
-          count_literal_digits_<false, Cs...> ()
+          count_literal_digits<false, Cs...> ()
               <= static_cast<std::size_t> (std::numeric_limits<T>::digits10),
           "µTest++: the floating-point literal has too many "
           "digits before the decimal point");
@@ -247,7 +247,7 @@ namespace micro_os_plus::micro_test_plus
       // The result has one more digit than the decimals (it is scaled by
       // ten), and it must fit in `T`.
       static_assert (
-          count_literal_digits_<true, Cs...> () + 1
+          count_literal_digits<true, Cs...> () + 1
               <= static_cast<std::size_t> (std::numeric_limits<T>::digits10),
           "µTest++: the floating-point literal has too many "
           "decimals");
@@ -292,7 +292,7 @@ namespace micro_os_plus::micro_test_plus
     {
       static_assert ((... || (Cs == '.')),
                      "den_size(): no decimal point in literal");
-      return static_cast<T> (count_literal_digits_<true, Cs...> () + 1);
+      return static_cast<T> (count_literal_digits<true, Cs...> () + 1);
     }
 
     /**
@@ -361,13 +361,13 @@ namespace micro_os_plus::micro_test_plus
      */
     template <char... Cs>
     consteval auto
-    parse_integer_literal_ (void) -> integer_literal_t_
+    parse_integer_literal (void) -> integer_literal
     {
       constexpr std::array<char, sizeof...(Cs)> cs{ Cs... };
       constexpr unsigned long long max_value
           = std::numeric_limits<unsigned long long>::max ();
 
-      integer_literal_t_ result{ 0, true, false };
+      integer_literal result{ 0, true, false };
 
       unsigned long long base = 10;
       std::size_t i = 0;
@@ -451,7 +451,7 @@ namespace micro_os_plus::micro_test_plus
     consteval auto
     integer (void) -> T
     {
-      constexpr integer_literal_t_ literal = parse_integer_literal_<Cs...> ();
+      constexpr integer_literal literal = parse_integer_literal<Cs...> ();
 
       static_assert (literal.is_integer,
                      "µTest++: an integer literal must not have a decimal "

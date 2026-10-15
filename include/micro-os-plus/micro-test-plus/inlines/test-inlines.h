@@ -174,16 +174,6 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Sets the positional index of this object within its parent.
-     */
-    inline void
-    runnable_base::own_index (size_t index) noexcept
-    {
-      own_index_ = index;
-    }
-
-    /**
-     * @details
      * Returns the number of the most recent child test point (check or
      * nested test case).
      */
@@ -202,7 +192,7 @@ namespace micro_os_plus::micro_test_plus
      * order.
      */
     inline size_t
-    runnable_base::next_test_point_number () noexcept
+    runnable_base::next_test_point_number_ () noexcept
     {
       return ++test_point_number_;
     }
@@ -222,7 +212,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns a reference to the owning test runner.
      */
     inline runner&
-    runnable_base::test_runner (void) const noexcept
+    runnable_base::test_runner_ (void) const noexcept
     {
       return runner_;
     }
@@ -298,10 +288,10 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    size_t own_index = next_test_point_number ();
+    size_t own_index = next_test_point_number_ ();
     // Not std::make_unique(), which cannot access the private constructor.
     std::unique_ptr<test_case> child_test_case{ new test_case (
-        name, test_runner (), parent_suite_, own_index, nesting_depth_ + 1,
+        name, test_runner_ (), parent_suite_, own_index, nesting_depth_ + 1,
         std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...) };
 
@@ -321,7 +311,7 @@ namespace micro_os_plus::micro_test_plus
   test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
   {
     return detail::check_result{ expr, false, sl, *this,
-                                 reporter ().expression () };
+                                 reporter_ ().expression_ };
   }
 
   /**
@@ -340,7 +330,7 @@ namespace micro_os_plus::micro_test_plus
                       const reflection::source_location& sl)
   {
     return detail::check_result{ expr, true, sl, *this,
-                                 reporter ().expression () };
+                                 reporter_ ().expression_ };
   }
 
   /**
@@ -442,34 +432,14 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    size_t own_index = next_test_point_number ();
+    size_t own_index = next_test_point_number_ ();
     // Not std::make_unique(), which cannot access the private constructor.
     std::unique_ptr<test_case> child_test_case{ new test_case (
-        name, test_runner (), *this, own_index, 1,
+        name, test_runner_ (), *this, own_index, 1,
         std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...) };
 
     after_test_case_create_ (std::move (child_test_case), *this);
-  }
-
-  /**
-   * @details
-   * Returns a reference to the `stopwatch_` member.
-   */
-  inline detail::stopwatch&
-  suite::stopwatch () noexcept
-  {
-    return stopwatch_;
-  }
-
-  /**
-   * @details
-   * Returns a const reference to the `stopwatch_` member.
-   */
-  inline const detail::stopwatch&
-  suite::stopwatch () const noexcept
-  {
-    return stopwatch_;
   }
 
   // ==========================================================================

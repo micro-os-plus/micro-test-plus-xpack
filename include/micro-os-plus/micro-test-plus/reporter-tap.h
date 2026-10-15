@@ -155,13 +155,13 @@ namespace micro_os_plus::micro_test_plus::detail
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Output operator for the `indent_t` manipulator.
+     * @brief Output operator for the `indentation` manipulator.
      *
      * @param m The indentation manipulator produced by `indent(n)`.
      * @return Reference to the current reporter instance.
      */
     reporter_tap&
-    operator<< (indent_t m);
+    operator<< (indentation m);
 
     // Bring base class operator<< overloads into scope to prevent name hiding.
     using reporter::operator<<;

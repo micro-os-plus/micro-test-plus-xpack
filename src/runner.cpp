@@ -161,7 +161,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (session_state_ != session_state_t::created)
+    if (session_state_ != session_state::created)
       {
         return initialise (runner_options{}, top_suite_name);
       }
@@ -194,7 +194,7 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (session_state_ != session_state_t::created)
+    if (session_state_ != session_state::created)
       {
         fprintf (stderr, "error: test runner already initialised\n");
         return top_suite_;
@@ -262,10 +262,10 @@ namespace micro_os_plus::micro_test_plus
     stopwatch_.start ();
     reporter_->begin_session (*this);
 
-    top_suite_.stopwatch ().start ();
+    top_suite_.stopwatch_.start ();
     reporter_->begin_suite (top_suite_);
 
-    session_state_ = session_state_t::initialised;
+    session_state_ = session_state::initialised;
 
     return top_suite_;
   }
@@ -476,11 +476,10 @@ namespace micro_os_plus::micro_test_plus
     const size_t n = children_suites_.size ();
     for (size_t i = 1; i < n; ++i)
       {
-        for (size_t j = i;
-             j > 0
-             && std::strcmp (children_suites_[j - 1]->name (),
-                             children_suites_[j]->name ())
-                    > 0;
+        for (size_t j = i; j > 0
+                           && std::strcmp (children_suites_[j - 1]->name (),
+                                           children_suites_[j]->name ())
+                                  > 0;
              --j)
           {
             children_suites_[j - 1].swap (children_suites_[j]);
@@ -494,7 +493,7 @@ namespace micro_os_plus::micro_test_plus
     while (true)
       {
         // Skip the static suites run by other runners.
-        while (static_ptr != nullptr && &static_ptr->test_runner () != this)
+        while (static_ptr != nullptr && &static_ptr->test_runner_ () != this)
           {
             static_ptr = static_ptr->next_;
           }
@@ -519,7 +518,7 @@ namespace micro_os_plus::micro_test_plus
             break;
           }
 
-        suite_ptr->own_index (++own_index);
+        suite_ptr->own_index_ = ++own_index;
 
         if (!is_selected_ (suite_ptr->name (), 0))
           {
@@ -558,19 +557,19 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (session_state_ == session_state_t::finished)
+    if (session_state_ == session_state::finished)
       {
         // The session has ended; do not run the suites again.
         return exit_code_;
       }
 
-    if (session_state_ != session_state_t::initialised)
+    if (session_state_ != session_state::initialised)
       {
         fprintf (stderr, "error: test runner not initialised\n");
         return 1;
       }
 
-    top_suite_.stopwatch ().stop ();
+    top_suite_.stopwatch_.stop ();
     reporter_->end_suite (top_suite_);
     totals_ += top_suite_.totals ();
 
@@ -587,7 +586,7 @@ namespace micro_os_plus::micro_test_plus
       {
         exit_code_ = totals_.passed () ? 0 : 1;
       }
-    session_state_ = session_state_t::finished;
+    session_state_ = session_state::finished;
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s -> %d\n", __PRETTY_FUNCTION__, exit_code_);
@@ -671,7 +670,7 @@ namespace micro_os_plus::micro_test_plus
     for (const static_suite* suite_ptr = static_suite::first_;
          suite_ptr != nullptr; suite_ptr = suite_ptr->next_)
       {
-        if (&suite_ptr->test_runner () == this)
+        if (&suite_ptr->test_runner_ () == this)
           {
             ++count;
           }

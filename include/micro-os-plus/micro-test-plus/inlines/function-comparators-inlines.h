@@ -75,8 +75,8 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The `eq` function template provides a generic equality comparator for any
-   * types. The operands are first passed to `detail::as_operand_()`, which
-   * converts the C strings to `detail::c_string_`, so that they are
+   * types. The operands are first passed to `detail::as_operand()`, which
+   * converts the C strings to `detail::c_string`, so that they are
    * compared by content. It constructs a comparator object that can be used
    * within the µTest++ framework to assert that two values are equal. This
    * function is typically used in test expectations and assertions to compare
@@ -86,7 +86,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   eq (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::eq_{ detail::as_operand_ (lhs), detail::as_operand_ (rhs) };
+    return detail::eq_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
   }
 
   /**
@@ -101,7 +101,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   ne (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::ne_{ detail::as_operand_ (lhs), detail::as_operand_ (rhs) };
+    return detail::ne_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
   }
 
   /**
@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   gt (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::gt_{ detail::as_operand_ (lhs), detail::as_operand_ (rhs) };
+    return detail::gt_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
   }
 
   /**
@@ -131,7 +131,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   ge (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::ge_{ detail::as_operand_ (lhs), detail::as_operand_ (rhs) };
+    return detail::ge_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
   }
 
   /**
@@ -146,7 +146,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   lt (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::lt_{ detail::as_operand_ (lhs), detail::as_operand_ (rhs) };
+    return detail::lt_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
   }
 
   /**
@@ -161,7 +161,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   le (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::le_{ detail::as_operand_ (lhs), detail::as_operand_ (rhs) };
+    return detail::le_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
   }
 
   // --------------------------------------------------------------------------
@@ -182,7 +182,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   _not (const Expr_T& expr)
   {
-    return detail::not_<Expr_T>{ expr };
+    return detail::not_op<Expr_T>{ expr };
   }
 
   /**
@@ -200,7 +200,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   _and (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::and_<Lhs_T, Rhs_T>{ lhs, rhs };
+    return detail::and_op<Lhs_T, Rhs_T>{ lhs, rhs };
   }
 
   /**
@@ -218,7 +218,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   _or (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::or_<Lhs_T, Rhs_T>{ lhs, rhs };
+    return detail::or_op<Lhs_T, Rhs_T>{ lhs, rhs };
   }
 
   // --------------------------------------------------------------------------

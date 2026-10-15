@@ -115,9 +115,9 @@ namespace micro_os_plus::micro_test_plus
      * reporter associated with the owning runner instance.
      */
     [[nodiscard]] reporter&
-    runnable_base::reporter (void) const noexcept
+    runnable_base::reporter_ (void) const noexcept
     {
-      return runner_.reporter ();
+      return *runner_.reporter_;
     }
 
     /**
@@ -169,7 +169,7 @@ namespace micro_os_plus::micro_test_plus
           || !runner_.is_selected_ (test_case.name (),
                                     test_case.nesting_depth ()))
         {
-          reporter ().skip_test_case (test_case);
+          reporter_ ().skip_test_case (test_case);
           totals_.increment_skipped_test_cases ();
           return;
         }
@@ -241,10 +241,10 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    detail::reporter& reporter = this->reporter ();
+    detail::reporter& reporter = this->reporter_ ();
 
     // For now, test cases do not record the time.
-    // this->stopwatch ().start ();
+    // this->stopwatch_.start ();
     reporter.begin_test_case (*this);
 
 #if defined(__cpp_exceptions)
@@ -272,7 +272,7 @@ namespace micro_os_plus::micro_test_plus
     callable_ (*this);
 #endif // defined(__cpp_exceptions)
 
-    // this->stopwatch ().stop ();
+    // this->stopwatch_.stop ();
     reporter.end_test_case (*this);
   }
 
@@ -294,7 +294,7 @@ namespace micro_os_plus::micro_test_plus
   void
   test_case::fail_unexpected_exception_ (const char* what)
   {
-    next_test_point_number ();
+    next_test_point_number_ ();
 
     std::string message{ "unexpected exception" };
     if (what != nullptr)
@@ -308,7 +308,7 @@ namespace micro_os_plus::micro_test_plus
       }
 
     const std::string expression{};
-    reporter ().fail (false, message, expression, false, location_, *this);
+    reporter_ ().fail (false, message, expression, false, location_, *this);
     totals_.increment_failed_checks ();
   }
 #endif // defined(__cpp_exceptions)
@@ -340,16 +340,16 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    detail::reporter& reporter = this->reporter ();
+    detail::reporter& reporter = this->reporter_ ();
 
-    this->stopwatch ().start ();
+    this->stopwatch_.start ();
     reporter.begin_suite (*this);
 
     // Invoke the callable, passing the self reference followed by the variadic
     // arguments.
     callable_ (*this);
 
-    this->stopwatch ().stop ();
+    this->stopwatch_.stop ();
     reporter.end_suite (*this);
   }
 
@@ -369,7 +369,7 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-    own_index (1);
+    own_index_ = 1;
   }
 
   /**

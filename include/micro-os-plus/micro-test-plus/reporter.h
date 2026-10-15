@@ -124,7 +124,7 @@ namespace micro_os_plus::micro_test_plus
      * reporters so that `*this << indent(n) << "text"` works naturally in
      * chains.
      */
-    struct indent_t
+    struct indentation
     {
       /**
        * @brief Number of four-space indentation levels.
@@ -136,16 +136,16 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief Factory function that creates an `indent_t` manipulator.
+     * @brief Factory function that creates an `indentation` manipulator.
      *
      * @details
      * Allows writing `reporter << indent(n)` instead of constructing the
      * manipulator explicitly.
      *
      * @param level The number of four-space indentation levels.
-     * @return An `indent_t` value for use with `operator<<`.
+     * @return An `indentation` value for use with `operator<<`.
      */
-    [[nodiscard]] indent_t
+    [[nodiscard]] indentation
     indent (size_t level);
 
     // ========================================================================
@@ -551,25 +551,6 @@ namespace micro_os_plus::micro_test_plus
 
     protected:
       /**
-       * @brief Provides access to the expression formatter for this reporter.
-       *
-       * @details
-       * Protected, since the formatter is an implementation detail; it is
-       * used only by the checks (`test_case::expect()`,
-       * `test_case::require()`, and the check result), which are
-       * friends, and by the derived reporters. The applications format
-       * their own types by defining
-       * `operator<<` for the public `expression_formatter` alias.
-       *
-       * @par Parameters
-       *   None.
-       * @return Reference to the `expression_formatter` instance used by this
-       * reporter.
-       */
-      expression_formatter&
-      expression ();
-
-      /**
        * @brief Selects the appropriate colour code based on a condition.
        *
        * @param cond Boolean value indicating pass (true) or fail (false).
@@ -775,9 +756,12 @@ namespace micro_os_plus::micro_test_plus
        * @brief Expression formatter for pass and fail reporting.
        *
        * @details
-       * Used by `detail::check_result` to pre-format expressions at
-       * construction time; `pass()` and `fail()` then append the formatted
-       * text to `buffer_`.
+       * Used by the checks (`test_case::expect()`,
+       * `test_case::require()`, and `detail::check_result`), which are
+       * friends, to pre-format expressions at construction time; `pass()`
+       * and `fail()` then append the formatted text to `buffer_`. The
+       * applications format their own types by defining `operator<<` for
+       * the public `expression_formatter` alias.
        */
       expression_formatter expression_{ colours_ };
 

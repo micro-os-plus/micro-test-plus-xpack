@@ -378,15 +378,15 @@ namespace micro_os_plus::micro_test_plus
        * class and pass it to their nested test cases, and by the runner,
        * which is a friend and selects the static suites it runs.
        *
-       * Not named `runner()`, which would hide the `runner` class in this
-       * class and in the derived ones.
+       * Not named `runner_()`, which is the name of the data member it
+       * returns.
        *
        * @par Parameters
        *   None.
        * @return A reference to the test runner.
        */
       [[nodiscard]] runner&
-      test_runner (void) const noexcept;
+      test_runner_ (void) const noexcept;
 
       /**
        * @brief Gets the test reporter associated with this test runnable.
@@ -401,25 +401,7 @@ namespace micro_os_plus::micro_test_plus
        * @return A reference to the test reporter.
        */
       [[nodiscard]] class reporter&
-      reporter (void) const noexcept;
-
-      /**
-       * @brief Sets the positional index of this object within its parent.
-       *
-       * @details
-       * Used by the runners, which number the suites when they run them,
-       * and by the top suite, which is always the first one.
-       *
-       * @note This overload follows the same-name getter/setter pattern
-       * used throughout the framework: the getter is the `const` overload
-       * and the setter is the non-`const` single-argument overload.
-       *
-       * @param index The new index value.
-       * @par Returns
-       *   Nothing.
-       */
-      void
-      own_index (size_t index) noexcept;
+      reporter_ (void) const noexcept;
 
       /**
        * @brief Advances to the next child test point, and returns its
@@ -434,7 +416,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The one-based number of the new test point.
        */
       size_t
-      next_test_point_number () noexcept;
+      next_test_point_number_ () noexcept;
 
       /**
        * @brief Registers a newly constructed child test case and executes it
@@ -487,7 +469,9 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * The position of this object within its parent, displayed by the
-       * TAP reporter in the `ok`/`not ok` lines.
+       * TAP reporter in the `ok`/`not ok` lines. Set directly by the
+       * runner, which numbers the suites when it runs them, and by the
+       * top suite, which is always the first one.
        */
       size_t own_index_;
 
@@ -979,35 +963,6 @@ namespace micro_os_plus::micro_test_plus
 
   protected:
     /**
-     * @brief Gets the stopwatch of this suite.
-     *
-     * @details
-     * Protected, since the stopwatch is an implementation detail; it
-     * is started and stopped when the suite runs (by the runner, for
-     * the top suite), and is read only by the reporters, which are
-     * friends.
-     *
-     * @par Parameters
-     *   None.
-     * @return A reference to the stopwatch.
-     */
-    [[nodiscard]] detail::stopwatch&
-    stopwatch () noexcept;
-
-    /**
-     * @brief Gets the stopwatch of this suite (const overload).
-     *
-     * @details
-     * Protected, for the same reasons as the non-const overload.
-     *
-     * @par Parameters
-     *   None.
-     * @return A const reference to the stopwatch.
-     */
-    [[nodiscard]] const detail::stopwatch&
-    stopwatch () const noexcept;
-
-    /**
      * @brief Callable storing the suite body and any bound arguments.
      *
      * @details
@@ -1022,7 +977,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Measures the duration of the suite; started and stopped by
-     * `run()`, and displayed by the reporters.
+     * `run()` (by the runner, for the top suite), and read by the
+     * reporters, which are friends.
      */
     detail::stopwatch stopwatch_;
 

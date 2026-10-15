@@ -85,7 +85,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Appends the null-terminated C string @p s to the internal buffer
    * using `buffer_.append(s)`, or `"nullptr"` for a null pointer, as the
-   * `c_string_` overload does; the `char*` values also reach this
+   * `c_string` overload does; the `char*` values also reach this
    * overload, and `std::string::append()` must not be called with a
    * null pointer.
    */
@@ -109,7 +109,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * pointer, as the other operator overloads do for these values.
    */
   expression_formatter&
-  expression_formatter::operator<< (const c_string_& s)
+  expression_formatter::operator<< (const c_string& s)
   {
     if (s.is_null ())
       {
@@ -148,12 +148,12 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p c to its decimal string representation via
-   * `append_number_()` and appends the type suffix `"c"`.
+   * `append_number()` and appends the type suffix `"c"`.
    */
   expression_formatter&
   expression_formatter::operator<< (signed char c)
   {
-    detail::append_number_ (buffer_, c);
+    detail::append_number (buffer_, c);
     buffer_.append ("c");
     return *this;
   }
@@ -161,12 +161,12 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p c to its decimal string representation via
-   * `append_number_()` and appends the type suffix `"uc"`.
+   * `append_number()` and appends the type suffix `"uc"`.
    */
   expression_formatter&
   expression_formatter::operator<< (unsigned char c)
   {
-    detail::append_number_ (buffer_, c);
+    detail::append_number (buffer_, c);
     buffer_.append ("uc");
     return *this;
   }
@@ -174,12 +174,12 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number_()` and appends the type suffix `"s"`.
+   * `append_number()` and appends the type suffix `"s"`.
    */
   expression_formatter&
   expression_formatter::operator<< (signed short v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     buffer_.append ("s");
     return *this;
   }
@@ -187,12 +187,12 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number_()` and appends the type suffix `"us"`.
+   * `append_number()` and appends the type suffix `"us"`.
    */
   expression_formatter&
   expression_formatter::operator<< (unsigned short v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     buffer_.append ("us");
     return *this;
   }
@@ -200,24 +200,24 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number_()` without a type suffix.
+   * `append_number()` without a type suffix.
    */
   expression_formatter&
   expression_formatter::operator<< (signed int v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     return *this;
   }
 
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number_()` and appends the type suffix `"u"`.
+   * `append_number()` and appends the type suffix `"u"`.
    */
   expression_formatter&
   expression_formatter::operator<< (unsigned int v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     buffer_.append ("u");
     return *this;
   }
@@ -225,12 +225,12 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number_()` and appends the type suffix `"l"`.
+   * `append_number()` and appends the type suffix `"l"`.
    */
   expression_formatter&
   expression_formatter::operator<< (signed long v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     buffer_.append ("l");
     return *this;
   }
@@ -238,12 +238,12 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number_()` and appends the type suffix `"ul"`.
+   * `append_number()` and appends the type suffix `"ul"`.
    */
   expression_formatter&
   expression_formatter::operator<< (unsigned long v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     buffer_.append ("ul");
     return *this;
   }
@@ -251,12 +251,12 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number_()` and appends the type suffix `"ll"`.
+   * `append_number()` and appends the type suffix `"ll"`.
    */
   expression_formatter&
   expression_formatter::operator<< (signed long long v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     buffer_.append ("ll");
     return *this;
   }
@@ -264,50 +264,50 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number_()` and appends the type suffix `"ull"`.
+   * `append_number()` and appends the type suffix `"ull"`.
    */
   expression_formatter&
   expression_formatter::operator<< (unsigned long long v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     buffer_.append ("ull");
     return *this;
   }
 
   /**
    * @details
-   * Converts @p v to its string representation via `append_number_()`
+   * Converts @p v to its string representation via `append_number()`
    * and appends the type suffix `"f"`.
    */
   expression_formatter&
   expression_formatter::operator<< (float v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     buffer_.append ("f");
     return *this;
   }
 
   /**
    * @details
-   * Converts @p v to its string representation via `append_number_()`
+   * Converts @p v to its string representation via `append_number()`
    * without a type suffix.
    */
   expression_formatter&
   expression_formatter::operator<< (double v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     return *this;
   }
 
   /**
    * @details
-   * Converts @p v to its string representation via `append_number_()`
+   * Converts @p v to its string representation via `append_number()`
    * and appends the type suffix `"l"`.
    */
   expression_formatter&
   expression_formatter::operator<< (long double v)
   {
-    detail::append_number_ (buffer_, v);
+    detail::append_number (buffer_, v);
     buffer_.append ("l");
     return *this;
   }

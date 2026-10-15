@@ -69,31 +69,31 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Constructs an `eq_` comparator object from the two `string_view`
+     * Constructs an `eq_op` comparator object from the two `string_view`
      * operands and returns it. The comparator evaluates to `true` if the
      * string views are equal.
      */
     constexpr auto
     operator== (std::string_view lhs, std::string_view rhs)
     {
-      return detail::eq_{ lhs, rhs };
+      return detail::eq_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs an `ne_` comparator object from the two `string_view`
+     * Constructs an `ne_op` comparator object from the two `string_view`
      * operands and returns it. The comparator evaluates to `true` if the
      * string views are not equal.
      */
     constexpr auto
     operator!= (std::string_view lhs, std::string_view rhs)
     {
-      return detail::ne_{ lhs, rhs };
+      return detail::ne_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs an `eq_` comparator object from the two container
+     * Constructs an `eq_op` comparator object from the two container
      * operands and returns it. The comparator evaluates to `true` if the
      * containers are equal in content and order.
      *
@@ -106,12 +106,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::eq_{ lhs, rhs };
+      return detail::eq_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs an `ne_` comparator object from the two container
+     * Constructs an `ne_op` comparator object from the two container
      * operands and returns it. The comparator evaluates to `true` if the
      * containers are not equal in content or order.
      *
@@ -124,12 +124,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::ne_{ lhs, rhs };
+      return detail::ne_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs an `eq_` comparator object from the two operands and
+     * Constructs an `eq_op` comparator object from the two operands and
      * returns it. The comparator evaluates to `true` if the operands are
      * equal. At least one operand must derive from the local `op` base.
      */
@@ -138,12 +138,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::eq_{ lhs, rhs };
+      return detail::eq_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs an `ne_` comparator object from the two operands and
+     * Constructs an `ne_op` comparator object from the two operands and
      * returns it. The comparator evaluates to `true` if the operands are
      * not equal. At least one operand must derive from the local `op` base.
      */
@@ -152,12 +152,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::ne_{ lhs, rhs };
+      return detail::ne_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs a `gt_` comparator object from the two operands and
+     * Constructs a `gt_op` comparator object from the two operands and
      * returns it. The comparator evaluates to `true` if `lhs` is greater
      * than `rhs`. At least one operand must derive from the local `op` base.
      */
@@ -166,12 +166,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator> (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::gt_{ lhs, rhs };
+      return detail::gt_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs a `ge_` comparator object from the two operands and
+     * Constructs a `ge_op` comparator object from the two operands and
      * returns it. The comparator evaluates to `true` if `lhs` is greater
      * than or equal to `rhs`. At least one operand must derive from the
      * local `op` base.
@@ -181,12 +181,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator>= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::ge_{ lhs, rhs };
+      return detail::ge_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs an `lt_` comparator object from the two operands and
+     * Constructs an `lt_op` comparator object from the two operands and
      * returns it. The comparator evaluates to `true` if `lhs` is less
      * than `rhs`. At least one operand must derive from the local `op` base.
      */
@@ -195,12 +195,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator< (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::lt_{ lhs, rhs };
+      return detail::lt_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs an `le_` comparator object from the two operands and
+     * Constructs an `le_op` comparator object from the two operands and
      * returns it. The comparator evaluates to `true` if `lhs` is less than
      * or equal to `rhs`. At least one operand must derive from the local
      * `op` base.
@@ -210,12 +210,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator<= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::le_{ lhs, rhs };
+      return detail::le_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs an `and_` logical conjunction object from the two operands
+     * Constructs an `and_op` logical conjunction object from the two operands
      * and returns it. The object evaluates to `true` if both operands are
      * true. At least one operand must derive from the local `op` base.
      */
@@ -224,12 +224,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator and (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::and_{ lhs, rhs };
+      return detail::and_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs an `or_` logical disjunction object from the two operands
+     * Constructs an `or_op` logical disjunction object from the two operands
      * and returns it. The object evaluates to `true` if at least one operand
      * is true. At least one operand must derive from the local `op` base.
      */
@@ -238,12 +238,12 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator or (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::or_{ lhs, rhs };
+      return detail::or_op{ lhs, rhs };
     }
 
     /**
      * @details
-     * Constructs a `not_` logical negator object from the operand and
+     * Constructs a `not_op` logical negator object from the operand and
      * returns it. The object evaluates to `true` if the operand is false.
      * The operand must derive from the local `op` base.
      */
@@ -252,7 +252,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator not(const T& t)
     {
-      return detail::not_{ t };
+      return detail::not_op{ t };
     }
 
     // ------------------------------------------------------------------------

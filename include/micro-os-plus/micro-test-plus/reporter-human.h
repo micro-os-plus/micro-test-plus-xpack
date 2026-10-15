@@ -161,13 +161,13 @@ namespace micro_os_plus::micro_test_plus::detail
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Output operator for the `indent_t` manipulator.
+     * @brief Output operator for the `indentation` manipulator.
      *
      * @param m The indentation manipulator produced by `indent(n)`.
      * @return Reference to the current reporter instance.
      */
     reporter_human&
-    operator<< (indent_t m);
+    operator<< (indentation m);
 
     // Bring base class operator<< overloads into scope to prevent name hiding.
     using reporter::operator<<;
@@ -363,7 +363,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @details
      * Recorded by `begin_test_case()` and removed by `end_test_case()`.
      */
-    struct open_test_case_t
+    struct open_test_case
     {
       /**
        * @brief The test case.
@@ -391,7 +391,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @details
      * The last element is the test case that owns the buffered results.
      */
-    std::vector<open_test_case_t> open_test_cases_{};
+    std::vector<open_test_case> open_test_cases_{};
   };
 
   // --------------------------------------------------------------------------

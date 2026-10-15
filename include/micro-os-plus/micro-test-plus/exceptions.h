@@ -83,7 +83,7 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Callable_T The type of the callable object to be invoked.
    * @param func The callable object to check for exception throwing
    * behaviour.
-   * @return A `detail::throws_` comparator object, holding the result, to be
+   * @return A `detail::throws_op` comparator object, holding the result, to be
    * passed to `expect()` or `require()`.
    */
   template <class Exception_T, class Callable_T>
@@ -97,7 +97,7 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Callable_T The type of the callable object to be invoked.
    * @param func The callable object to check for exception throwing
    * behaviour.
-   * @return A `detail::throws_` comparator object, holding the result, to be
+   * @return A `detail::throws_op` comparator object, holding the result, to be
    * passed to `expect()` or `require()`.
    */
   template <class Callable_T>
@@ -110,8 +110,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Callable_T The type of the callable object to be invoked.
    * @param func The callable object to check.
-   * @return A `detail::nothrow_` comparator object, holding the result, to be
-   * passed to `expect()` or `require()`.
+   * @return A `detail::nothrow_op` comparator object, holding the result,
+   * to be passed to `expect()` or `require()`.
    */
   template <class Callable_T>
   [[nodiscard]] constexpr auto

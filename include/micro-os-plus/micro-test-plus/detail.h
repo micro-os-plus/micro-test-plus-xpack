@@ -152,7 +152,7 @@ namespace micro_os_plus::micro_test_plus
      * itself.
      *
      * @details
-     * Always call it qualified, as `detail::unwrap_()`, so that
+     * Always call it qualified, as `detail::unwrap()`, so that
      * argument-dependent lookup cannot select a function of the
      * application, defined in the namespace of an operand.
      *
@@ -164,7 +164,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    unwrap_ (const T& t);
+    unwrap (const T& t);
 
     /**
      * @brief Checks whether two operands are equal within the tolerance of
@@ -189,7 +189,7 @@ namespace micro_os_plus::micro_test_plus
       requires (type_traits::has_epsilon<Lhs_T>
                 or type_traits::has_epsilon<Rhs_T>)
     [[nodiscard]] constexpr bool
-    within_tolerance_ (const Lhs_T& lhs, const Rhs_T& rhs);
+    within_tolerance (const Lhs_T& lhs, const Rhs_T& rhs);
 
     // ========================================================================
 
@@ -198,7 +198,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * This base struct stores a single operand and the pre-computed boolean
-     * result of a unary operation. Derived structs such as `not_` inherit
+     * result of a unary operation. Derived structs such as `not_op` inherit
      * from this to provide logical negation. The result is computed at
      * construction time, enabling consistent handling and reporting of
      * operations throughout the assertion framework.
@@ -208,7 +208,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
-    struct unary_op_ : op
+    struct unary_op : op
     {
       /**
        * @brief Constructs a unary comparator with the given operand and
@@ -217,7 +217,7 @@ namespace micro_os_plus::micro_test_plus
        * @param t The operand.
        * @param value The pre-computed boolean result of the operation.
        */
-      constexpr unary_op_ (const T& t, bool value);
+      constexpr unary_op (const T& t, bool value);
 
       /**
        * @brief Conversion operator to boolean.
@@ -266,10 +266,11 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * This base struct stores two operands (left-hand and right-hand) along
      * with the pre-computed boolean result of a binary comparison. Derived
-     * structs such as `eq_`, `lt_`, and others inherit from this to provide
-     * relational and logical operations. The comparison result is computed at
-     * construction time and cached, enabling efficient reporting and
-     * composition of complex assertions without repeated computation.
+     * structs such as `eq_op`, `lt_op`, and others inherit from this to
+     * provide relational and logical operations. The comparison result is
+     * computed at construction time and cached, enabling efficient
+     * reporting and composition of complex assertions without repeated
+     * computation.
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
@@ -277,7 +278,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct binary_op_ : op
+    struct binary_op : op
     {
       /**
        * @brief Constructs a binary comparator with the given operands and
@@ -287,7 +288,7 @@ namespace micro_os_plus::micro_test_plus
        * @param rhs The right-hand operand.
        * @param value The pre-computed boolean result of the comparison.
        */
-      constexpr binary_op_ (const Lhs_T& lhs, const Rhs_T& rhs, bool value);
+      constexpr binary_op (const Lhs_T& lhs, const Rhs_T& rhs, bool value);
 
       /**
        * @brief Conversion operator to boolean.
@@ -351,7 +352,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Equality comparator struct template.
      *
      * @details
-     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * Derived from `binary_op`, this struct checks whether the left-hand
      * operand is equal to the right-hand operand. It is used within test
      * expressions to provide human-readable equality assertions with
      * enhanced reporting of the actual and expected values upon failure.
@@ -362,7 +363,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct eq_ : binary_op_<Lhs_T, Rhs_T>
+    struct eq_op : binary_op<Lhs_T, Rhs_T>
     {
       /**
        * @brief Constructs an equality comparator for the given operands.
@@ -370,7 +371,7 @@ namespace micro_os_plus::micro_test_plus
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr eq_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      constexpr eq_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
     /**
@@ -378,10 +379,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `eq_{ lhs, rhs }` can be written without explicit template arguments.
+     * `eq_op{ lhs, rhs }` can be written without explicit template arguments.
      */
     template <typename Lhs_T, typename Rhs_T>
-    eq_ (const Lhs_T&, const Rhs_T&) -> eq_<Lhs_T, Rhs_T>;
+    eq_op (const Lhs_T&, const Rhs_T&) -> eq_op<Lhs_T, Rhs_T>;
 
     // ========================================================================
 
@@ -389,7 +390,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Non-equality comparator struct template.
      *
      * @details
-     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * Derived from `binary_op`, this struct checks whether the left-hand
      * operand is not equal to the right-hand operand. It is used within test
      * expressions to provide human-readable inequality assertions with
      * enhanced reporting of the actual and expected values upon failure.
@@ -400,7 +401,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct ne_ : binary_op_<Lhs_T, Rhs_T>
+    struct ne_op : binary_op<Lhs_T, Rhs_T>
     {
       /**
        * @brief Constructs a non-equality comparator for the given operands.
@@ -408,7 +409,7 @@ namespace micro_os_plus::micro_test_plus
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr ne_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      constexpr ne_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
     /**
@@ -416,10 +417,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `ne_{ lhs, rhs }` can be written without explicit template arguments.
+     * `ne_op{ lhs, rhs }` can be written without explicit template arguments.
      */
     template <typename Lhs_T, typename Rhs_T>
-    ne_ (const Lhs_T&, const Rhs_T&) -> ne_<Lhs_T, Rhs_T>;
+    ne_op (const Lhs_T&, const Rhs_T&) -> ne_op<Lhs_T, Rhs_T>;
 
     // ========================================================================
 
@@ -427,7 +428,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Greater than comparator struct template.
      *
      * @details
-     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * Derived from `binary_op`, this struct checks whether the left-hand
      * operand is greater than the right-hand operand. It is used within test
      * expressions to provide human-readable relational assertions with
      * enhanced reporting of the actual and expected values upon failure.
@@ -438,7 +439,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct gt_ : binary_op_<Lhs_T, Rhs_T>
+    struct gt_op : binary_op<Lhs_T, Rhs_T>
     {
       /**
        * @brief Constructs a greater than comparator for the given operands.
@@ -446,7 +447,7 @@ namespace micro_os_plus::micro_test_plus
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr gt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      constexpr gt_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
     /**
@@ -454,10 +455,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `gt_{ lhs, rhs }` can be written without explicit template arguments.
+     * `gt_op{ lhs, rhs }` can be written without explicit template arguments.
      */
     template <typename Lhs_T, typename Rhs_T>
-    gt_ (const Lhs_T&, const Rhs_T&) -> gt_<Lhs_T, Rhs_T>;
+    gt_op (const Lhs_T&, const Rhs_T&) -> gt_op<Lhs_T, Rhs_T>;
 
     // ========================================================================
 
@@ -465,7 +466,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Greater than or equal comparator struct template.
      *
      * @details
-     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * Derived from `binary_op`, this struct checks whether the left-hand
      * operand is greater than or equal to the right-hand operand. It is used
      * within test expressions to provide human-readable relational
      * assertions with enhanced reporting of the actual and expected values
@@ -477,7 +478,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct ge_ : binary_op_<Lhs_T, Rhs_T>
+    struct ge_op : binary_op<Lhs_T, Rhs_T>
     {
       /**
        * @brief Constructs a greater than or equal comparator for the given
@@ -486,7 +487,7 @@ namespace micro_os_plus::micro_test_plus
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr ge_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      constexpr ge_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
     /**
@@ -494,10 +495,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `ge_{ lhs, rhs }` can be written without explicit template arguments.
+     * `ge_op{ lhs, rhs }` can be written without explicit template arguments.
      */
     template <typename Lhs_T, typename Rhs_T>
-    ge_ (const Lhs_T&, const Rhs_T&) -> ge_<Lhs_T, Rhs_T>;
+    ge_op (const Lhs_T&, const Rhs_T&) -> ge_op<Lhs_T, Rhs_T>;
 
     // ========================================================================
 
@@ -505,7 +506,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Less than comparator struct template.
      *
      * @details
-     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * Derived from `binary_op`, this struct checks whether the left-hand
      * operand is less than the right-hand operand. It is used within test
      * expressions to provide human-readable relational assertions with
      * enhanced reporting of the actual and expected values upon failure.
@@ -516,7 +517,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct lt_ : binary_op_<Lhs_T, Rhs_T>
+    struct lt_op : binary_op<Lhs_T, Rhs_T>
     {
       /**
        * @brief Constructs a less than comparator for the given operands.
@@ -524,7 +525,7 @@ namespace micro_os_plus::micro_test_plus
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr lt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      constexpr lt_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
     /**
@@ -532,10 +533,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `lt_{ lhs, rhs }` can be written without explicit template arguments.
+     * `lt_op{ lhs, rhs }` can be written without explicit template arguments.
      */
     template <typename Lhs_T, typename Rhs_T>
-    lt_ (const Lhs_T&, const Rhs_T&) -> lt_<Lhs_T, Rhs_T>;
+    lt_op (const Lhs_T&, const Rhs_T&) -> lt_op<Lhs_T, Rhs_T>;
 
     // ========================================================================
 
@@ -543,7 +544,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Less than or equal comparator struct template.
      *
      * @details
-     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * Derived from `binary_op`, this struct checks whether the left-hand
      * operand is less than or equal to the right-hand operand. It is used
      * within test expressions to provide human-readable relational
      * assertions with enhanced reporting of the actual and expected values
@@ -555,7 +556,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct le_ : binary_op_<Lhs_T, Rhs_T>
+    struct le_op : binary_op<Lhs_T, Rhs_T>
     {
       /**
        * @brief Constructs a less than or equal comparator for the given
@@ -564,7 +565,7 @@ namespace micro_os_plus::micro_test_plus
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr le_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      constexpr le_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
     /**
@@ -572,10 +573,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `le_{ lhs, rhs }` can be written without explicit template arguments.
+     * `le_op{ lhs, rhs }` can be written without explicit template arguments.
      */
     template <typename Lhs_T, typename Rhs_T>
-    le_ (const Lhs_T&, const Rhs_T&) -> le_<Lhs_T, Rhs_T>;
+    le_op (const Lhs_T&, const Rhs_T&) -> le_op<Lhs_T, Rhs_T>;
 
     // ========================================================================
 
@@ -583,7 +584,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical AND comparator struct template.
      *
      * @details
-     * Derived from `binary_op_`, this struct combines two sub-expressions
+     * Derived from `binary_op`, this struct combines two sub-expressions
      * with a logical AND operation. It enables composition of complex
      * assertions by combining multiple conditions into a single logical
      * whole, with reporting that shows the combined result and individual
@@ -595,7 +596,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct and_ : binary_op_<Lhs_T, Rhs_T>
+    struct and_op : binary_op<Lhs_T, Rhs_T>
     {
       /**
        * @brief Constructs a logical AND comparator for the given operands.
@@ -603,7 +604,7 @@ namespace micro_os_plus::micro_test_plus
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr and_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      constexpr and_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
     /**
@@ -611,10 +612,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `and_{ lhs, rhs }` can be written without explicit template arguments.
+     * `and_op{ lhs, rhs }` can be written without explicit template arguments.
      */
     template <typename Lhs_T, typename Rhs_T>
-    and_ (const Lhs_T&, const Rhs_T&) -> and_<Lhs_T, Rhs_T>;
+    and_op (const Lhs_T&, const Rhs_T&) -> and_op<Lhs_T, Rhs_T>;
 
     // ========================================================================
 
@@ -622,7 +623,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical OR comparator struct template.
      *
      * @details
-     * Derived from `binary_op_`, this struct combines two sub-expressions
+     * Derived from `binary_op`, this struct combines two sub-expressions
      * with a logical OR operation. It enables composition of complex
      * assertions by combining multiple conditions into a single logical
      * whole, with reporting that shows the combined result and individual
@@ -634,7 +635,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Lhs_T, class Rhs_T>
-    struct or_ : binary_op_<Lhs_T, Rhs_T>
+    struct or_op : binary_op<Lhs_T, Rhs_T>
     {
       /**
        * @brief Constructs a logical OR comparator for the given operands.
@@ -642,7 +643,7 @@ namespace micro_os_plus::micro_test_plus
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr or_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      constexpr or_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
     };
 
     /**
@@ -650,10 +651,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `or_{ lhs, rhs }` can be written without explicit template arguments.
+     * `or_op{ lhs, rhs }` can be written without explicit template arguments.
      */
     template <typename Lhs_T, typename Rhs_T>
-    or_ (const Lhs_T&, const Rhs_T&) -> or_<Lhs_T, Rhs_T>;
+    or_op (const Lhs_T&, const Rhs_T&) -> or_op<Lhs_T, Rhs_T>;
 
     // ========================================================================
 
@@ -661,7 +662,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical NOT comparator struct template.
      *
      * @details
-     * Derived from `unary_op_`, this struct negates a single sub-expression,
+     * Derived from `unary_op`, this struct negates a single sub-expression,
      * enabling test writers to assert that a condition does not hold. The
      * negation result is computed at construction time, ensuring consistent
      * reporting throughout the assertion framework.
@@ -671,25 +672,25 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
-    struct not_ : unary_op_<T>
+    struct not_op : unary_op<T>
     {
       /**
        * @brief Constructs a logical NOT comparator for the given operand.
        *
        * @param t The operand to be negated.
        */
-      explicit constexpr not_ (const T& t = {});
+      explicit constexpr not_op (const T& t = {});
     };
 
     /**
      * @brief Deduction guide for the logical NOT comparator.
      *
      * @details
-     * Deduces `T` from the constructor argument, so that `not_{ t }` can be
+     * Deduces `T` from the constructor argument, so that `not_op{ t }` can be
      * written without an explicit template argument.
      */
     template <typename T>
-    not_ (const T&) -> not_<T>;
+    not_op (const T&) -> not_op<T>;
 
     // ========================================================================
 
@@ -701,14 +702,14 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * This base struct provides common functionality for operators that wrap
      * callable invocations, particularly for exception-checking operations.
-     * Derived structs (such as `throws_` and `nothrow_`) use this base to
+     * Derived structs (such as `throws_op` and `nothrow_op`) use this base to
      * store and manage the pre-computed boolean result of a callable
      * invocation, enabling consistent reporting and composition of
      * exception-checking assertions.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    struct callable_op_ : op
+    struct callable_op : op
     {
       /**
        * @brief Constructs a callable operator with the pre-computed
@@ -716,7 +717,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param value The pre-computed boolean result of the invocation.
        */
-      constexpr explicit callable_op_ (bool value);
+      constexpr explicit callable_op (bool value);
 
       /**
        * @brief Conversion operator to boolean.
@@ -759,7 +760,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Callable_T, class Exception_T = void>
-    struct throws_ : callable_op_
+    struct throws_op : callable_op
     {
       /**
        * @brief Constructs an exception checking operator for the given
@@ -767,7 +768,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param func The callable object to be invoked.
        */
-      constexpr explicit throws_ (const Callable_T& func);
+      constexpr explicit throws_op (const Callable_T& func);
     };
 
     // ========================================================================
@@ -788,7 +789,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Callable_T>
-    struct throws_<Callable_T, void> : callable_op_
+    struct throws_op<Callable_T, void> : callable_op
     {
       /**
        * @brief Constructs an exception checking operator for the given
@@ -796,7 +797,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param func The callable object to be invoked.
        */
-      constexpr explicit throws_ (const Callable_T& func);
+      constexpr explicit throws_op (const Callable_T& func);
     };
 
     // ========================================================================
@@ -816,7 +817,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class Callable_T>
-    struct nothrow_ : callable_op_
+    struct nothrow_op : callable_op
     {
       /**
        * @brief Constructs a nothrow checking operator for the given
@@ -824,7 +825,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param func The callable object to be invoked.
        */
-      constexpr explicit nothrow_ (const Callable_T& func);
+      constexpr explicit nothrow_op (const Callable_T& func);
     };
 
 #endif // defined(__cpp_exceptions)
@@ -844,7 +845,7 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
       requires std::is_arithmetic_v<T>
     void
-    append_number_ (std::string& buffer, T v);
+    append_number (std::string& buffer, T v);
 
     /**
      * @brief Converts any pointer to the `void*` expected by the `%p`
@@ -861,7 +862,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     [[nodiscard]] constexpr void*
-    to_printable_pointer_ (T* v) noexcept;
+    to_printable_pointer (T* v) noexcept;
 
     // ========================================================================
 
@@ -870,7 +871,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The comparators convert the `char` arrays (including the string
-     * literals) and the `char` pointers to this type (see `as_operand_()`),
+     * literals) and the `char` pointers to this type (see `as_operand()`),
      * so that they are compared by content, as a reader of a test expects,
      * and not by address. A null pointer is equal only to another null
      * pointer (not to an empty string), and is less than any string.
@@ -880,7 +881,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    struct c_string_
+    struct c_string
     {
       /**
        * @brief Constructs the operand from a pointer to a null-terminated
@@ -888,7 +889,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param str The string, or `nullptr`.
        */
-      constexpr explicit c_string_ (const char* str) noexcept;
+      constexpr explicit c_string (const char* str) noexcept;
 
       /**
        * @brief Constructs the operand from a `char` array.
@@ -901,7 +902,7 @@ namespace micro_os_plus::micro_test_plus
        * @param str The first character of the array.
        * @param capacity The number of elements of the array.
        */
-      constexpr c_string_ (const char* str, std::size_t capacity) noexcept;
+      constexpr c_string (const char* str, std::size_t capacity) noexcept;
 
       /**
        * @brief Returns the characters, as a string view.
@@ -953,7 +954,7 @@ namespace micro_os_plus::micro_test_plus
      * @retval false Otherwise.
      */
     [[nodiscard]] constexpr bool
-    operator== (const c_string_& lhs, const c_string_& rhs) noexcept;
+    operator== (const c_string& lhs, const c_string& rhs) noexcept;
 
     /**
      * @brief Compares a C string operand with a string.
@@ -969,7 +970,7 @@ namespace micro_os_plus::micro_test_plus
      * @retval false Otherwise.
      */
     [[nodiscard]] constexpr bool
-    operator== (const c_string_& lhs, std::string_view rhs) noexcept;
+    operator== (const c_string& lhs, std::string_view rhs) noexcept;
 
     /**
      * @brief Checks whether a C string operand is a null pointer.
@@ -979,7 +980,7 @@ namespace micro_os_plus::micro_test_plus
      * @retval false Otherwise.
      */
     [[nodiscard]] constexpr bool
-    operator== (const c_string_& lhs, std::nullptr_t) noexcept;
+    operator== (const c_string& lhs, std::nullptr_t) noexcept;
 
     /**
      * @brief Orders two C string operands.
@@ -990,7 +991,7 @@ namespace micro_os_plus::micro_test_plus
      * equal to another null pointer and less than any string.
      */
     [[nodiscard]] constexpr std::strong_ordering
-    operator<=> (const c_string_& lhs, const c_string_& rhs) noexcept;
+    operator<=> (const c_string& lhs, const c_string& rhs) noexcept;
 
     /**
      * @brief Orders a C string operand and a string.
@@ -1001,7 +1002,7 @@ namespace micro_os_plus::micro_test_plus
      * less than any string.
      */
     [[nodiscard]] constexpr std::strong_ordering
-    operator<=> (const c_string_& lhs, std::string_view rhs) noexcept;
+    operator<=> (const c_string& lhs, std::string_view rhs) noexcept;
 
     /**
      * @brief Prepares an operand of a comparator.
@@ -1009,7 +1010,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `char` arrays and the `char` pointers (not those of `signed
      * char` or `unsigned char`, which are byte buffers) are converted to
-     * `c_string_`, so that they are compared by content; the other arrays
+     * `c_string`, so that they are compared by content; the other arrays
      * are converted to pointers to their first element, the functions to
      * function pointers, and all other operands are returned unchanged, so
      * the other pointers, arrays, and functions are compared by address.
@@ -1017,12 +1018,12 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type of the operand.
      *
      * @param t The operand.
-     * @return A `c_string_` for the C strings, otherwise a reference to
+     * @return A `c_string` for the C strings, otherwise a reference to
      * `t`.
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    as_operand_ (const T& t) noexcept -> decltype (auto);
+    as_operand (const T& t) noexcept -> decltype (auto);
 
     // ------------------------------------------------------------------------
   } // namespace detail

@@ -131,22 +131,23 @@ namespace micro_os_plus::micro_test_plus
 
       // The index starts at 0; it must be incremented before the check is
       // reported, so that the first check is reported as check #1.
-      test_case_.next_test_point_number ();
+      test_case_.next_test_point_number_ ();
 
       // The text formatted by this check, even if the formatter was used by
       // other checks in the meantime (when this result was kept).
-      auto& expression = test_case_.reporter ().expression ();
+      auto& expression = test_case_.reporter_ ().expression_;
       const std::string& expression_str = expression.check_text (this);
 
       if (value_) [[likely]]
         {
-          test_case_.reporter ().pass (message_, expression_str, test_case_);
+          test_case_.reporter_ ().pass (message_, expression_str, test_case_);
           test_case_.totals_.increment_successful_checks ();
         }
       else
         {
-          test_case_.reporter ().fail (abort_, message_, expression_str,
-                                       has_expression_, location_, test_case_);
+          test_case_.reporter_ ().fail (abort_, message_, expression_str,
+                                        has_expression_, location_,
+                                        test_case_);
           test_case_.totals_.increment_failed_checks ();
         }
 
@@ -160,8 +161,8 @@ namespace micro_os_plus::micro_test_plus
               throw failed_requirement{};
             }
 #else
-          test_case_.reporter ().write_buffer_to_console ();
-          test_case_.reporter ().flush ();
+          test_case_.reporter_ ().write_buffer_to_console ();
+          test_case_.reporter_ ().flush ();
           test_case_.abort (location_);
 #endif // defined(__cpp_exceptions)
         }

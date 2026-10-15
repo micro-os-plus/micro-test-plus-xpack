@@ -22,7 +22,7 @@
  * @details
  * This header provides the declarations for the value wrapper types used
  * within the µTest++ framework: the `op` base struct, shared by all the
- * framework expression types, the `value_base_` common base, the
+ * framework expression types, the `value_base` common base, the
  * compile-time `integral_constant` and `floating_point_constant` types,
  * created by the literals, and the run-time `genuine_integral_value` and
  * `value<T>` types, the latter named by the `to_*` and `_*` aliases.
@@ -112,10 +112,11 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type of the stored value.
      *
      * @details
-     * The `value_base_` struct template provides the `T value_{}` member,
-     * an explicit `operator T()` conversion, and a `get()` accessor,
-     * shared by `integral_constant`, `genuine_integral_value`, `value<T>`,
-     * and the floating point specialisation of `value<T>`.
+     * The `value_base` struct template stores the value in a private
+     * member, and provides an explicit `operator T()` conversion and a
+     * `get()` accessor, shared by `integral_constant`,
+     * `genuine_integral_value`, `value<T>`, and the floating point
+     * specialisation of `value<T>`.
      *
      * It inherits from `op` so that all derived types satisfy the
      * `type_traits::is_op` concept without each struct needing to inherit
@@ -124,7 +125,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
-    struct value_base_ : op
+    struct value_base : op
     {
       /**
        * @brief The type of the stored value.
@@ -135,11 +136,11 @@ namespace micro_os_plus::micro_test_plus
       using value_type = T;
 
       /**
-       * @brief Constructs a `value_base_` with the given value.
+       * @brief Constructs a `value_base` with the given value.
        *
        * @param v The value to be stored.
        */
-      constexpr explicit value_base_ (const T& v) noexcept;
+      constexpr explicit value_base (const T& v) noexcept;
 
       /**
        * @brief Explicit conversion operator to the underlying value type.
@@ -159,12 +160,13 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] constexpr T
       get (void) const noexcept;
 
+    private:
       /**
        * @brief The stored value.
        *
        * @details
-       * Public, so that derived wrappers and comparators can access it
-       * directly; value-initialised by default.
+       * Value-initialised by default. Derived wrappers and comparators
+       * access it via `get()` or the explicit conversion operator.
        */
       T value_{};
     };
@@ -177,8 +179,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `integral_constant` struct template provides a compile-time constant
      * value of an integral type, with additional utility features. It inherits
-     * from `value_base_<decltype(N)>`, which supplies the `value_type` alias,
-     * the `value_` runtime member, the explicit conversion operator, and the
+     * from `value_base<decltype(N)>`, which supplies the `value_type` alias,
+     * the runtime value storage, the explicit conversion operator, and the
      * `get()` accessor.
      *
      * This struct retains the compile-time `value` constant and provides a
@@ -188,7 +190,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <auto N>
-    struct integral_constant : value_base_<decltype (N)>
+    struct integral_constant : value_base<decltype (N)>
     {
       /**
        * @brief The compile-time constant value.
@@ -229,7 +231,7 @@ namespace micro_os_plus::micro_test_plus
      * The `floating_point_constant` struct template provides a compile-time
      * constant value of a floating point type, supporting custom size and
      * precision. It inherits from `op` directly rather than from
-     * `value_base_<T>`, which avoids introducing a user-provided constructor
+     * `value_base<T>`, which avoids introducing a user-provided constructor
      * into the type and keeps it trivially default-constructible. This
      * prevents the GCC ARM PSABI note about parameter-passing ABI changes
      * that is emitted for non-trivially-constructible types under C++17.
@@ -253,7 +255,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Provided directly, since this struct does not derive from
-       * `value_base_`.
+       * `value_base`.
        */
       using value_type = T;
 
@@ -310,12 +312,12 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `genuine_integral_value` struct template encapsulates a runtime
      * integral value. The stored value, explicit conversion operator, and
-     * getter are provided by the `value_base_` base.
+     * getter are provided by the `value_base` base.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
-    struct genuine_integral_value : value_base_<T>
+    struct genuine_integral_value : value_base<T>
     {
       /**
        * @brief Constructs a genuine_integral_value with the specified value.
@@ -334,12 +336,12 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `value` struct template encapsulates a value of type `T`. The
      * stored value, explicit conversion operator, and getter are provided
-     * by the `value_base_` base.
+     * by the `value_base` base.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
-    struct value : value_base_<T>
+    struct value : value_base<T>
     {
       /**
        * @brief Constructs a value object with the specified value.
@@ -347,7 +349,7 @@ namespace micro_os_plus::micro_test_plus
        * @param _value The value to be stored.
        *
        * @details
-       * Delegates to `value_base_<T>{ _value }` to initialise the base.
+       * Delegates to `value_base<T>{ _value }` to initialise the base.
        */
       constexpr value (const T& _value) noexcept;
     };
@@ -362,7 +364,7 @@ namespace micro_os_plus::micro_test_plus
      * The `value` struct template specialisation for floating point types
      * encapsulates a value of type `T` and provides an associated `epsilon`
      * for precision control during comparisons. The stored value, explicit
-     * conversion operator, and getter are provided by the `value_base_` base.
+     * conversion operator, and getter are provided by the `value_base` base.
      *
      * The `epsilon` member defines the precision used for floating point
      * comparisons and can be set explicitly or computed as a default based
@@ -376,7 +378,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
       requires std::floating_point<T>
-    struct value<T> : value_base_<T>
+    struct value<T> : value_base<T>
     {
       /**
        * @brief The epsilon value used for floating-point comparisons.
@@ -406,11 +408,11 @@ namespace micro_os_plus::micro_test_plus
        * @param precision The epsilon value to be used for comparisons.
        *
        * @details
-       * Delegates to `value_base_<T>{ _value }` and stores the supplied
+       * Delegates to `value_base<T>{ _value }` and stores the supplied
        * precision in `epsilon`.
        */
       constexpr value (const T& _value, const T precision) noexcept
-          : value_base_<T>{ _value }, epsilon{ precision }
+          : value_base<T>{ _value }, epsilon{ precision }
       {
       }
 

@@ -63,16 +63,15 @@ test cases own one too, not only the runner; its `was_successful()`
 function is now `passed()`. The old names are not kept; replace
 `detail::runner_totals` with `counters`, and `was_successful()` with
 `passed()`. The `timings()` functions
-of the runner and of the suites (now `stopwatch()`, returning a
-`detail::stopwatch`), and the `expression()` function of the reporters,
-are no longer public, since they return internal types and are used
+of the runner and of the suites, and the `expression()` function of the
+reporters, were removed, since they return internal types and are used
 only by the framework.
 
 The reporters (`reporter`, `reporter_human`, and `reporter_tap`) and the
 `endl` and `indent()` manipulators moved to the `detail` namespace,
 since they are internal to the framework and custom reporters are not
 supported; the reporter is still selected with the `--reporter`
-command-line option. `runner::reporter()` is no longer public; replace
+command-line option. `runner::reporter()` was removed; replace
 `runner.reporter ().verbosity ()` with the new `runner.verbosity ()`.
 
 The runner can now be initialised without a command line, with a new
@@ -126,10 +125,9 @@ existing code compiles unchanged; replace `mt::static_runner` with
 
 The `runner()` function of the suites and the test cases, which
 returned the runner that owns them, is no longer public, since it is
-used only by the framework; it is now named `test_runner()`, so that it
-no longer hides the `runner` class in the derived classes. A test
-function that needs the runner can capture it, or receive it as an
-argument.
+used only by the framework; it was renamed, so that it no longer hides
+the `runner` class in the derived classes. A test function that needs
+the runner can capture it, or receive it as an argument.
 
 The `subtest` class is renamed `test_case`, the term used by the
 documentation and by the reports, and the functions named after it are

@@ -28,7 +28,7 @@
  * and framework expression type derived from `detail::op`.
  *
  * By consolidating the formatting operators into a single class (using the
- * shared `detail::append_number_()` helper for numbers), the `reporter` is
+ * shared `detail::append_number()` helper for numbers), the `reporter` is
  * relieved of those responsibilities, and `detail::check_result` can
  * pre-format expression text at construction time without requiring
  * `reporter` or `test_case` to be complete at that point.
@@ -262,7 +262,7 @@ namespace micro_os_plus::micro_test_plus
        * @return Reference to this instance.
        */
       expression_formatter&
-      operator<< (const c_string_& s);
+      operator<< (const c_string& s);
 
       /**
        * @brief Appends the string representation of a boolean value.
@@ -422,7 +422,7 @@ namespace micro_os_plus::micro_test_plus
       operator<< (T* v);
 
       /**
-       * @brief Appends the value of an op expression via `detail::unwrap_()`.
+       * @brief Appends the value of an op expression via `detail::unwrap()`.
        *
        * @tparam T An expression type satisfying `type_traits::is_op<T>`.
        * @param t The expression object.
@@ -475,7 +475,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Lhs_T, class Rhs_T>
       expression_formatter&
-      operator<< (const detail::eq_<Lhs_T, Rhs_T>& op);
+      operator<< (const detail::eq_op<Lhs_T, Rhs_T>& op);
 
       /**
        * @brief Formats an inequality comparison as `lhs != rhs`.
@@ -487,7 +487,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Lhs_T, class Rhs_T>
       expression_formatter&
-      operator<< (const detail::ne_<Lhs_T, Rhs_T>& op);
+      operator<< (const detail::ne_op<Lhs_T, Rhs_T>& op);
 
       /**
        * @brief Formats a greater-than comparison as `lhs > rhs`.
@@ -499,7 +499,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Lhs_T, class Rhs_T>
       expression_formatter&
-      operator<< (const detail::gt_<Lhs_T, Rhs_T>& op);
+      operator<< (const detail::gt_op<Lhs_T, Rhs_T>& op);
 
       /**
        * @brief Formats a greater-than-or-equal comparison as `lhs >= rhs`.
@@ -511,7 +511,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Lhs_T, class Rhs_T>
       expression_formatter&
-      operator<< (const detail::ge_<Lhs_T, Rhs_T>& op);
+      operator<< (const detail::ge_op<Lhs_T, Rhs_T>& op);
 
       /**
        * @brief Formats a less-than comparison as `lhs < rhs`.
@@ -523,7 +523,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Lhs_T, class Rhs_T>
       expression_formatter&
-      operator<< (const detail::lt_<Rhs_T, Lhs_T>& op);
+      operator<< (const detail::lt_op<Rhs_T, Lhs_T>& op);
 
       /**
        * @brief Formats a less-than-or-equal comparison as `lhs <= rhs`.
@@ -535,7 +535,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Lhs_T, class Rhs_T>
       expression_formatter&
-      operator<< (const detail::le_<Rhs_T, Lhs_T>& op);
+      operator<< (const detail::le_op<Rhs_T, Lhs_T>& op);
 
       /**
        * @brief Formats a logical AND as `(lhs and rhs)`.
@@ -547,7 +547,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Lhs_T, class Rhs_T>
       expression_formatter&
-      operator<< (const detail::and_<Lhs_T, Rhs_T>& op);
+      operator<< (const detail::and_op<Lhs_T, Rhs_T>& op);
 
       /**
        * @brief Formats a logical OR as `(lhs or rhs)`.
@@ -559,7 +559,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Lhs_T, class Rhs_T>
       expression_formatter&
-      operator<< (const detail::or_<Lhs_T, Rhs_T>& op);
+      operator<< (const detail::or_op<Lhs_T, Rhs_T>& op);
 
       /**
        * @brief Formats a logical NOT as `not operand`.
@@ -570,7 +570,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class T>
       expression_formatter&
-      operator<< (const detail::not_<T>& op);
+      operator<< (const detail::not_op<T>& op);
 
 #if defined(__cpp_exceptions)
 
@@ -585,7 +585,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Callable_T, class Exception_T>
       expression_formatter&
-      operator<< (const detail::throws_<Callable_T, Exception_T>& op);
+      operator<< (const detail::throws_op<Callable_T, Exception_T>& op);
 
       /**
        * @brief Formats an untyped throws expression as `throws`.
@@ -596,7 +596,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Callable_T>
       expression_formatter&
-      operator<< (const detail::throws_<Callable_T, void>& op);
+      operator<< (const detail::throws_op<Callable_T, void>& op);
 
       /**
        * @brief Formats a nothrow expression as `nothrow`.
@@ -607,7 +607,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Callable_T>
       expression_formatter&
-      operator<< (const detail::nothrow_<Callable_T>& op);
+      operator<< (const detail::nothrow_op<Callable_T>& op);
 
 #endif // defined(__cpp_exceptions)
 

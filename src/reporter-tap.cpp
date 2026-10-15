@@ -107,7 +107,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * test case indentation.
    */
   reporter_tap&
-  reporter_tap::operator<< (indent_t m)
+  reporter_tap::operator<< (indentation m)
   {
     buffer_.append (m.level * indent_size, ' ');
     return *this;
@@ -176,9 +176,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
-    if (runner.stopwatch ().has_elapsed ())
+    if (runner.stopwatch_.has_elapsed ())
       {
-        const auto elapsed = runner.stopwatch ().elapsed ().count ();
+        const auto elapsed = runner.stopwatch_.elapsed ().count ();
         milliseconds = static_cast<uint32_t> (elapsed / 1000);
         microseconds = static_cast<uint32_t> (elapsed % 1000);
       }
@@ -312,9 +312,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
-    if (suite.stopwatch ().has_elapsed ())
+    if (suite.stopwatch_.has_elapsed ())
       {
-        const auto elapsed = suite.stopwatch ().elapsed ().count ();
+        const auto elapsed = suite.stopwatch_.elapsed ().count ();
         milliseconds = static_cast<uint32_t> (elapsed / 1000);
         microseconds = static_cast<uint32_t> (elapsed % 1000);
       }

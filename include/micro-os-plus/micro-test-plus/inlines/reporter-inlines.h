@@ -71,9 +71,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Returns an `indent_t` aggregate initialised with `level`.
+   * Returns an `indentation` aggregate initialised with `level`.
    */
-  inline indent_t
+  inline indentation
   indent (size_t level)
   {
     return { level };
@@ -89,21 +89,6 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter::verbosity () const -> micro_test_plus::verbosity
   {
     return verbosity_;
-  }
-
-  /**
-   * @details
-   * Returns a reference to the `expression_formatter` instance used by the
-   * reporter for formatting expressions in test reports. This allows the
-   * reporter to delegate the formatting of complex expressions to the
-   * `expression_formatter`, which provides a consistent and extensible way to
-   * convert various types of values and expressions into their string
-   * representations for output in test reports.
-   */
-  inline expression_formatter&
-  reporter::expression ()
-  {
-    return expression_;
   }
 
   /**
@@ -159,7 +144,7 @@ namespace micro_os_plus::micro_test_plus::detail
 #endif // defined(__GNUC__)
 
     char buff[20];
-    snprintf (buff, sizeof (buff), "%p", to_printable_pointer_ (v));
+    snprintf (buff, sizeof (buff), "%p", to_printable_pointer (v));
     buffer_.append (buff);
 
 #if defined(__GNUC__)
@@ -174,7 +159,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * This template operator overload allows the `reporter` to output values of
    * any arithmetic type (integral or floating-point) in a consistent and
    * readable format. The value is formatted using the
-   * `detail::append_number_()` helper, without a type suffix (unlike the
+   * `detail::append_number()` helper, without a type suffix (unlike the
    * `detail::expression_formatter` operators, which add one).
    */
   template <class T>
@@ -182,7 +167,7 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter&
   reporter::operator<< (T v)
   {
-    append_number_ (buffer_, v);
+    append_number (buffer_, v);
     return *this;
   }
 
