@@ -201,7 +201,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @par Returns
      *   Nothing.
      */
-    virtual void
+    void
     begin_suite (suite& suite) override;
 
     /**
@@ -211,7 +211,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @par Returns
      *   Nothing.
      */
-    virtual void
+    void
     end_suite (suite& suite) override;
 
     /**
@@ -225,7 +225,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @par Returns
      *   Nothing.
      */
-    virtual void
+    void
     skip_suite (suite& suite) override;
 
     /**
@@ -235,7 +235,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @par Returns
      *   Nothing.
      */
-    virtual void
+    void
     begin_test_case (test_case& test_case) override;
 
     /**
@@ -245,7 +245,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @par Returns
      *   Nothing.
      */
-    virtual void
+    void
     end_test_case (test_case& test_case) override;
 
     /**
@@ -259,7 +259,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @par Returns
      *   Nothing.
      */
-    virtual void
+    void
     skip_test_case (test_case& test_case) override;
 
     /**
@@ -270,7 +270,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * @return An empty string, as the human-readable format does not
      * use a comment prefix.
      */
-    virtual const char*
+    const char*
     comment_prefix (void) const override;
 
   protected:

@@ -633,7 +633,7 @@ namespace micro_os_plus::micro_test_plus
        * @return Const reference to the accumulated string.
        */
       [[nodiscard]] const std::string&
-      str () const noexcept;
+      str (void) const noexcept;
 
       /**
        * @brief Returns a pointer to the null-terminated buffer contents.
@@ -643,7 +643,7 @@ namespace micro_os_plus::micro_test_plus
        * @return Pointer to the null-terminated character array.
        */
       [[nodiscard]] const char*
-      c_str () const noexcept;
+      c_str (void) const noexcept;
 
       /**
        * @brief Clears the internal buffer.
@@ -654,7 +654,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      clear () noexcept;
+      clear (void) noexcept;
 
       /**
        * @brief Returns whether the internal buffer is empty.
@@ -665,7 +665,7 @@ namespace micro_os_plus::micro_test_plus
        * @retval false The buffer contains at least one character.
        */
       [[nodiscard]] bool
-      empty () const noexcept;
+      empty (void) const noexcept;
 
       /**
        * @brief Appends a sequence of identical characters to the buffer.

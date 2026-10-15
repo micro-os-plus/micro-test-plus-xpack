@@ -124,7 +124,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     constexpr auto
-    unary_op<T>::operand () const
+    unary_op<T>::operand (void) const
     {
       return detail::unwrap (t_);
     }

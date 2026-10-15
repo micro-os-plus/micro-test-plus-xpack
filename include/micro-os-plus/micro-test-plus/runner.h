@@ -512,7 +512,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A const reference to the session totals.
      */
     [[nodiscard]] const counters&
-    totals () const noexcept;
+    totals (void) const noexcept;
 
   protected:
     /**

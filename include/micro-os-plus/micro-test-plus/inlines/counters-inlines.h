@@ -109,7 +109,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `successful_checks_` counter.
    */
   inline size_t
-  counters::successful_checks () const noexcept
+  counters::successful_checks (void) const noexcept
   {
     return successful_checks_;
   }
@@ -119,7 +119,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `failed_checks_` counter.
    */
   inline size_t
-  counters::failed_checks () const noexcept
+  counters::failed_checks (void) const noexcept
   {
     return failed_checks_;
   }
@@ -129,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the sum of `successful_checks_` and `failed_checks_`.
    */
   inline size_t
-  counters::executed_checks () const noexcept
+  counters::executed_checks (void) const noexcept
   {
     return successful_checks_ + failed_checks_;
   }
@@ -139,7 +139,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `executed_test_cases_` counter.
    */
   inline size_t
-  counters::executed_test_cases () const noexcept
+  counters::executed_test_cases (void) const noexcept
   {
     return executed_test_cases_;
   }
@@ -149,7 +149,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `failed_test_cases_` counter.
    */
   inline size_t
-  counters::failed_test_cases () const noexcept
+  counters::failed_test_cases (void) const noexcept
   {
     return failed_test_cases_;
   }
@@ -159,7 +159,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the value of the `skipped_test_cases_` counter.
    */
   inline size_t
-  counters::skipped_test_cases () const noexcept
+  counters::skipped_test_cases (void) const noexcept
   {
     return skipped_test_cases_;
   }
@@ -172,7 +172,7 @@ namespace micro_os_plus::micro_test_plus
    * failure is reported at every level above it, as in node-tap.
    */
   inline bool
-  counters::passed () const noexcept
+  counters::passed (void) const noexcept
   {
     return failed_checks_ == 0 && failed_test_cases_ == 0;
   }

@@ -303,7 +303,7 @@ namespace micro_os_plus::micro_test_plus
        * @return A const reference to the `counters` instance.
        */
       [[nodiscard]] const counters&
-      totals () const noexcept;
+      totals (void) const noexcept;
 
       /**
        * @brief Returns the positional index of this object within its parent.
@@ -313,7 +313,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The one-based own index.
        */
       [[nodiscard]] size_t
-      own_index () const noexcept;
+      own_index (void) const noexcept;
 
       /**
        * @brief Returns the number of the most recent child test point
@@ -328,7 +328,7 @@ namespace micro_os_plus::micro_test_plus
        * test point.
        */
       [[nodiscard]] size_t
-      test_point_number () const noexcept;
+      test_point_number (void) const noexcept;
 
       /**
        * @brief Returns the number of direct child test cases owned by this
@@ -416,7 +416,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The one-based number of the new test point.
        */
       size_t
-      next_test_point_number_ () noexcept;
+      next_test_point_number_ (void) noexcept;
 
       /**
        * @brief Registers a newly constructed child test case and executes it
@@ -633,7 +633,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Destroys the nested test cases, if any.
      */
-    virtual ~test_case () override;
+    ~test_case () override;
 
     // ------------------------------------------------------------------------
 
@@ -746,7 +746,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    virtual void
+    void
     run (void) override;
 
     /**
@@ -757,7 +757,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The nesting depth (1 = top-level).
      */
     [[nodiscard]] size_t
-    nesting_depth () const noexcept;
+    nesting_depth (void) const noexcept;
 
   protected:
 #if defined(__cpp_exceptions)
@@ -923,7 +923,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Destroys the owned test cases.
      */
-    virtual ~suite () override;
+    ~suite () override;
 
     // ------------------------------------------------------------------------
 
@@ -958,7 +958,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    virtual void
+    void
     run (void) override;
 
   protected:
@@ -1081,7 +1081,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Destroys the owned test cases.
      */
-    virtual ~top_suite () override;
+    ~top_suite () override;
 
     /**
      * @brief Sets the name of the top-level suite.
@@ -1203,7 +1203,7 @@ namespace micro_os_plus::micro_test_plus
      * Removes the suite from the list of static suites, and destroys the
      * owned test cases and the stored callable.
      */
-    virtual ~static_suite () override;
+    ~static_suite () override;
 
   protected:
     /**

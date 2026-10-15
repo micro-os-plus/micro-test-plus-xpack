@@ -86,7 +86,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * Returns the verbosity level stored in `verbosity_`.
    */
   inline auto
-  reporter::verbosity () const -> micro_test_plus::verbosity
+  reporter::verbosity (void) const -> micro_test_plus::verbosity
   {
     return verbosity_;
   }

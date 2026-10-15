@@ -104,7 +104,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * Returns a const reference to the internal `buffer_` string.
    */
   inline const std::string&
-  expression_formatter::str () const noexcept
+  expression_formatter::str (void) const noexcept
   {
     return buffer_;
   }
@@ -115,7 +115,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * null-terminated contents of the internal buffer.
    */
   inline const char*
-  expression_formatter::c_str () const noexcept
+  expression_formatter::c_str (void) const noexcept
   {
     return buffer_.c_str ();
   }
@@ -126,7 +126,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * without releasing the allocated storage.
    */
   inline void
-  expression_formatter::clear () noexcept
+  expression_formatter::clear (void) noexcept
   {
     buffer_.clear ();
   }
@@ -137,7 +137,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * string has zero length.
    */
   inline bool
-  expression_formatter::empty () const noexcept
+  expression_formatter::empty (void) const noexcept
   {
     return buffer_.empty ();
   }

@@ -558,7 +558,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The active `verbosity` value.
        */
       auto
-      verbosity () const -> micro_test_plus::verbosity;
+      verbosity (void) const -> micro_test_plus::verbosity;
 
       // ----------------------------------------------------------------------
 

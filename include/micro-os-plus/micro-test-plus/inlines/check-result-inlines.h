@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the result value stored in `value_`.
      */
     inline bool
-    check_result::value () const
+    check_result::value (void) const
     {
       return value_;
     }

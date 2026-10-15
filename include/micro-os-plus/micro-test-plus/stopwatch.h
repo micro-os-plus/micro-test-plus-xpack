@@ -114,7 +114,7 @@ namespace micro_os_plus::micro_test_plus
        * Both readings are initially zero; they are set by `start()` and
        * `stop()`.
        */
-      stopwatch () = default;
+      stopwatch (void) = default;
 
       /**
        * @brief Deleted copy constructor to prevent copying.

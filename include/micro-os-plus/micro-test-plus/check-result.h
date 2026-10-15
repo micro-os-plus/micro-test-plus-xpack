@@ -219,7 +219,7 @@ namespace micro_os_plus::micro_test_plus
        * @retval false The checked condition was not met.
        */
       [[nodiscard]] bool
-      value () const;
+      value (void) const;
 
     private:
       /**

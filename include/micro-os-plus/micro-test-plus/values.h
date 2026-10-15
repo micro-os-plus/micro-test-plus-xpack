@@ -203,7 +203,7 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Default constructor. Initialises the base with `N`.
        */
-      constexpr integral_constant () noexcept;
+      constexpr integral_constant (void) noexcept;
 
       /**
        * @brief Unary minus operator.

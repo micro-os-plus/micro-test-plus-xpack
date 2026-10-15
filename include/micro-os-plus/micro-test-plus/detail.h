@@ -237,7 +237,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted operand value.
        */
       [[nodiscard]] constexpr auto
-      operand () const;
+      operand (void) const;
 
     private:
       /**

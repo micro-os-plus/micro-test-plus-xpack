@@ -157,7 +157,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns a const reference to the `counters` member.
      */
     inline const counters&
-    runnable_base::totals () const noexcept
+    runnable_base::totals (void) const noexcept
     {
       return totals_;
     }
@@ -167,7 +167,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the one-based positional index of this object within its parent.
      */
     inline size_t
-    runnable_base::own_index () const noexcept
+    runnable_base::own_index (void) const noexcept
     {
       return own_index_;
     }
@@ -178,7 +178,7 @@ namespace micro_os_plus::micro_test_plus
      * nested test case).
      */
     inline size_t
-    runnable_base::test_point_number () const noexcept
+    runnable_base::test_point_number (void) const noexcept
     {
       return test_point_number_;
     }
@@ -192,7 +192,7 @@ namespace micro_os_plus::micro_test_plus
      * order.
      */
     inline size_t
-    runnable_base::next_test_point_number_ () noexcept
+    runnable_base::next_test_point_number_ (void) noexcept
     {
       return ++test_point_number_;
     }
@@ -352,7 +352,7 @@ namespace micro_os_plus::micro_test_plus
    * Each additional level of nesting increments the depth by 1.
    */
   inline size_t
-  test_case::nesting_depth () const noexcept
+  test_case::nesting_depth (void) const noexcept
   {
     return nesting_depth_;
   }

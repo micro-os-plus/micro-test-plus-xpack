@@ -112,7 +112,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * All counters start at zero, via their default member initialisers.
      */
-    counters () = default;
+    counters (void) = default;
 
     /**
      * @brief Deleted copy constructor to prevent copying.
@@ -220,7 +220,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The cumulative count of successful checks.
      */
     [[nodiscard]] size_t
-    successful_checks () const noexcept;
+    successful_checks (void) const noexcept;
 
     /**
      * @brief Returns the number of checks that failed.
@@ -230,7 +230,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The cumulative count of failed checks.
      */
     [[nodiscard]] size_t
-    failed_checks () const noexcept;
+    failed_checks (void) const noexcept;
 
     /**
      * @brief Returns the total number of checks executed.
@@ -240,7 +240,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The sum of successful and failed checks.
      */
     [[nodiscard]] size_t
-    executed_checks () const noexcept;
+    executed_checks (void) const noexcept;
 
     /**
      * @brief Returns the number of test cases that were executed.
@@ -250,7 +250,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The cumulative count of executed test cases.
      */
     [[nodiscard]] size_t
-    executed_test_cases () const noexcept;
+    executed_test_cases (void) const noexcept;
 
     /**
      * @brief Returns the number of executed test cases that failed.
@@ -260,7 +260,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The cumulative count of failed test cases.
      */
     [[nodiscard]] size_t
-    failed_test_cases () const noexcept;
+    failed_test_cases (void) const noexcept;
 
     /**
      * @brief Returns the number of test cases skipped by the filter.
@@ -275,7 +275,7 @@ namespace micro_os_plus::micro_test_plus
      * @since 5.1.0
      */
     [[nodiscard]] size_t
-    skipped_test_cases () const noexcept;
+    skipped_test_cases (void) const noexcept;
 
     /**
      * @brief Checks whether all executed checks and test cases were
@@ -287,7 +287,7 @@ namespace micro_os_plus::micro_test_plus
      * @retval false At least one check or one test case failed.
      */
     [[nodiscard]] bool
-    passed () const noexcept;
+    passed (void) const noexcept;
 
   protected:
     /**

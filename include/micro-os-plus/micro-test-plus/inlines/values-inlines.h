@@ -106,7 +106,7 @@ namespace micro_os_plus::micro_test_plus
      * Delegates to `value_base<decltype(N)>{ N }` to initialise the base.
      */
     template <auto N>
-    constexpr integral_constant<N>::integral_constant () noexcept
+    constexpr integral_constant<N>::integral_constant (void) noexcept
         : value_base<decltype (N)>{ N }
     {
     }
