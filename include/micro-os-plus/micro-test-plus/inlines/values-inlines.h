@@ -25,10 +25,10 @@
  * for all methods declared in the value wrapper struct templates in
  * `values.h`. It defines the bodies of the constructors, conversion
  * operators, and accessor methods for `value_base`, `integral_constant`,
- * `floating_point_constant`, `genuine_integral_value`, and the primary
- * `value<T>` template. The constructors of the floating point
- * specialisation of `value<T>` are defined in the class body, to work
- * around a Clang 16 limitation with constrained partial specialisations.
+ * `floating_point_constant`, and the primary `value<T>` template. The
+ * constructors of the floating point specialisation of `value<T>` are
+ * defined in the class body, to work around a Clang 16 limitation with
+ * constrained partial specialisations.
  *
  * Separating the implementations from the declarations keeps `values.h`
  * concise and focused on the interface, whilst grouping all method bodies
@@ -158,19 +158,6 @@ namespace micro_os_plus::micro_test_plus
     floating_point_constant<T, N, D, Size, P>::operator- () const noexcept
     {
       return floating_point_constant<T, N, D, Size, -P>{};
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @details
-     * Delegates to `value_base<T>{ _value }` to initialise the base.
-     */
-    template <class T>
-    constexpr genuine_integral_value<T>::genuine_integral_value (
-        const T& _value) noexcept
-        : value_base<T>{ _value }
-    {
     }
 
     // ------------------------------------------------------------------------

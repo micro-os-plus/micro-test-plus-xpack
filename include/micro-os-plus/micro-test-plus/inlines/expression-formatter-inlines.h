@@ -25,8 +25,7 @@
  * `expression_formatter`. The buffer accessors (`str()`, `c_str()`,
  * `clear()`, `empty()`, `append()`, `reserve()`) are defined as inline
  * functions for zero-overhead access. The template operators —
- * `operator<<(T*)`, `operator<<(is_op<T>)`,
- * `operator<<(genuine_integral_value<T>)`, and `operator<<(container)` —
+ * `operator<<(T*)`, `operator<<(is_op<T>)`, and `operator<<(container)` —
  * are instantiated per concrete type at each call site.
  *
  * The compound expression operators format comparator expressions and wrap
@@ -192,19 +191,6 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (const T& t)
   {
     *this << detail::unwrap (t);
-    return *this;
-  }
-
-  /**
-   * @details
-   * Casts the underlying integral value to `long long` and formats
-   * it without a type suffix, appending the result to the buffer.
-   */
-  template <class T>
-  expression_formatter&
-  expression_formatter::operator<< (const detail::genuine_integral_value<T>& v)
-  {
-    detail::append_number (buffer_, static_cast<long long> (v.get ()));
     return *this;
   }
 

@@ -202,6 +202,14 @@ now fails. Replace them with, respectively, the constructor without
 arguments followed by `initialise (argc, argv, name)`, `run()`,
 `require()`, and `runner`.
 
+The helpers not used by the framework were removed: `mut()`, and the
+`type_traits::list`, `type_traits::identity`, and
+`type_traits::function_traits` templates. Code that used them must
+define its own equivalents; `mt::mut (x)` is `const_cast<T&> (x)`, and
+`std::type_identity` (C++20) replaces `type_traits::identity`. The
+utility functions `utility::is_match()` and `utility::split()` are
+unchanged.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

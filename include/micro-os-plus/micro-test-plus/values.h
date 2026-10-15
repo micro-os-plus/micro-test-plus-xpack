@@ -24,8 +24,8 @@
  * within the µTest++ framework: the `op` base struct, shared by all the
  * framework expression types, the `value_base` common base, the
  * compile-time `integral_constant` and `floating_point_constant` types,
- * created by the literals, and the run-time `genuine_integral_value` and
- * `value<T>` types, the latter named by the `to_*` and `_*` aliases.
+ * created by the literals, and the run-time `value<T>` type, named by the
+ * `to_*` and `_*` aliases.
  *
  * The wrappers carry the operands of the comparisons, so that the
  * comparators can apply the type-specific rules (for example the
@@ -114,9 +114,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `value_base` struct template stores the value in a private
      * member, and provides an explicit `operator T()` conversion and a
-     * `get()` accessor, shared by `integral_constant`,
-     * `genuine_integral_value`, `value<T>`, and the floating point
-     * specialisation of `value<T>`.
+     * `get()` accessor, shared by `integral_constant`, `value<T>`, and the
+     * floating point specialisation of `value<T>`.
      *
      * It inherits from `op` so that all derived types satisfy the
      * `type_traits::is_op` concept without each struct needing to inherit
@@ -307,29 +306,6 @@ namespace micro_os_plus::micro_test_plus
        */
       [[nodiscard]] constexpr auto
       operator- () const noexcept;
-    };
-
-    /**
-     * @brief Struct template representing a genuine integral value.
-     *
-     * @tparam T The type of the integral value.
-     *
-     * @details
-     * The `genuine_integral_value` struct template encapsulates a runtime
-     * integral value. The stored value, explicit conversion operator, and
-     * getter are provided by the `value_base` base.
-     *
-     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-     */
-    template <class T>
-    struct genuine_integral_value : value_base<T>
-    {
-      /**
-       * @brief Constructs a genuine_integral_value with the specified value.
-       *
-       * @param _value The integral value to be stored.
-       */
-      constexpr genuine_integral_value (const T& _value) noexcept;
     };
 
     /**

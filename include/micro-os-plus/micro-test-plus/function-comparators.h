@@ -26,8 +26,8 @@
  * interfaces for the generic comparison functions, including
  * equality, non-equality, greater than, less than, greater than or equal,
  * and less than or equal. Additionally, it declares logical combinators such
- * as conjunction (`both`), disjunction (`either`), and negation (`negate`),
- * as well as a utility for removing constness from references (`mut`).
+ * as conjunction (`both`), disjunction (`either`), and negation
+ * (`negate`).
  *
  * These comparators and logical operators enable expressive and type-safe test
  * expectations and assertions. The C strings (`char` arrays, including the
@@ -231,21 +231,6 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
   either (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  /**
-   * @ingroup micro-os-plus-micro-test-plus-utility-functions
-   * @brief Generic mutator to remove const qualification from a reference.
-   *
-   * @tparam T The type of the input object.
-   *
-   * @param t The object from which to remove const qualification; it must
-   * not be an object originally declared as `const`, if it is to be
-   * modified.
-   * @return A non-const reference to the input object.
-   */
-  template <class T>
-  [[nodiscard]] constexpr auto
-  mut (const T& t) noexcept -> T&;
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

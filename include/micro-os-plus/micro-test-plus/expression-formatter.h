@@ -445,17 +445,6 @@ namespace micro_os_plus::micro_test_plus
       operator<< (const T& t);
 
       /**
-       * @brief Appends a genuine integral value without a type suffix.
-       *
-       * @tparam T The underlying integral type.
-       * @param v The strongly-typed integral value.
-       * @return Reference to this instance.
-       */
-      template <class T>
-      expression_formatter&
-      operator<< (const detail::genuine_integral_value<T>& v);
-
-      /**
        * @brief Appends a container's elements enclosed in braces.
        *
        * @details

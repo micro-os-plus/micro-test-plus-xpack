@@ -26,8 +26,8 @@
  * generic comparison operators, including equality,
  * non-equality, greater than, less than, and their respective logical
  * variants. Additionally, it implements logical combinators such as
- * conjunction (`both`), disjunction (`either`), and negation (`negate`), as
- * well as a utility for removing constness from references (`mut`).
+ * conjunction (`both`), disjunction (`either`), and negation
+ * (`negate`).
  *
  * These comparators and logical operators enable expressive and type-safe test
  * expectations and assertions; the C strings are compared by content, the
@@ -230,28 +230,6 @@ namespace micro_os_plus::micro_test_plus
   either (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::or_op<Lhs_T, Rhs_T>{ lhs, rhs };
-  }
-
-  // --------------------------------------------------------------------------
-  // Utility functions.
-
-  /**
-   * @details
-   * The `mut` function template provides a generic mechanism to remove the
-   * `const` qualifier from a reference, via `const_cast`. It returns a
-   * non-const reference to the input object, enabling modification of
-   * non-const objects accessed through a `const` reference. This utility is
-   * particularly useful in testing scenarios where controlled mutation of
-   * test data is required.
-   *
-   * @warning Modifying an object that was originally declared as `const`
-   * through the returned reference is undefined behaviour.
-   */
-  template <class T>
-  constexpr auto
-  mut (const T& t) noexcept -> T&
-  {
-    return const_cast<T&> (t);
   }
 
   // --------------------------------------------------------------------------

@@ -56,25 +56,6 @@ static_asserts ()
     }
 
     {
-      static_assert (
-          std::is_same_v<type_traits::list<>,
-                         type_traits::function_traits<void ()>::args>);
-      static_assert (
-          std::is_same_v<void,
-                         type_traits::function_traits<void ()>::result_type>);
-      static_assert (
-          std::is_same_v<type_traits::list<int>,
-                         type_traits::function_traits<void (int)>::args>);
-      static_assert (
-          std::is_same_v<
-              type_traits::list<int, const float&>,
-              type_traits::function_traits<void (int, const float&)>::args>);
-      static_assert (
-          std::is_same_v<int,
-                         type_traits::function_traits<int ()>::result_type>);
-    }
-
-    {
       struct foo
       {
         int value;

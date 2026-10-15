@@ -24,8 +24,8 @@
  * µTest++ framework, encapsulated within the
  * `micro_os_plus::micro_test_plus::detail` namespace. It defines the core
  * mechanisms, helper structures, and utility templates that underpin the
- * framework's assertion handling, value retrieval, comparator logic, deferred
- * reporting, and exception checking facilities.
+ * framework's value retrieval, comparator logic, deferred reporting, and
+ * exception checking facilities.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -57,7 +57,6 @@
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include "type-traits.h"
-#include "reflection.h"
 
 #include <compare>
 #include <cstddef>
@@ -92,11 +91,10 @@ namespace micro_os_plus::micro_test_plus
    * framework. These components do not form part of the public API and may be
    * modified without prior notice.
    *
-   * Within this namespace, one will find assertion handling, the value
-   * wrappers (declared in `values.h`), the value unwrapping helper,
-   * comparator structures for logical and relational operations,
-   * mechanisms for exception checking, and base classes for deferred
-   * reporting of test results.
+   * Within this namespace, one will find the value wrappers (declared in
+   * `values.h`), the value unwrapping helper, comparator structures for
+   * logical and relational operations, mechanisms for exception checking,
+   * and base classes for deferred reporting of test results.
    *
    * All definitions within `detail` are intended exclusively for internal use,
    * ensuring a clear distinction between user-facing and internal components.
@@ -109,42 +107,6 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace detail
   {
-    // ========================================================================
-
-    /**
-     * @brief Assertion struct template for parameter passing to the evaluator.
-     *
-     * @details
-     * This structure encapsulates both the expression being tested and its
-     * associated source location. Used internally by the framework to pass
-     * assertion data through the evaluation pipeline, enabling accurate
-     * reporting of where assertions occur in test code.
-     *
-     * @tparam Expr_T The type of the expression being asserted.
-     *
-     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-     */
-    template <class Expr_T>
-    struct assertion
-    {
-      /**
-       * @brief The expression under evaluation.
-       *
-       * @details
-       * Either a framework comparator (derived from `detail::op`) or a
-       * value convertible to `bool`.
-       */
-      Expr_T expr{};
-
-      /**
-       * @brief The source location associated with the assertion.
-       *
-       * @details
-       * Used by the reporter to show where a failed check is located.
-       */
-      reflection::source_location location{};
-    };
-
     // ========================================================================
 
     /**
