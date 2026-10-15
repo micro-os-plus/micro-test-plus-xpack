@@ -93,7 +93,7 @@ static_asserts ()
 
       // The value wrappers are in `detail`, not in `type_traits`.
       static_assert (std::is_same_v<to_i, detail::value<int>>);
-      static_assert (std::is_base_of_v<detail::value<double>, _t<double>>);
+      static_assert (std::is_base_of_v<detail::value<double>, to_t<double>>);
       static_assert (
           std::is_same_v<decltype (42_i), detail::integral_constant<42>>);
       static_assert (type_traits::is_op<to_i>);
@@ -204,10 +204,10 @@ static_asserts ()
       using namespace operators;
 
       static_assert (
-          not std::is_same_v<decltype (_sc (42)), decltype (_c (42))>);
+          not std::is_same_v<decltype (to_sc{ 42 }), decltype (to_c{ 42 })>);
       static_assert (not std::is_same_v<decltype (42_sc), decltype (42_c)>);
       static_assert (
-          not std::is_same_v<decltype (_sc (42)), decltype (_uc (42u))>);
+          not std::is_same_v<decltype (to_sc{ 42 }), decltype (to_uc{ 42u })>);
       static_assert (not std::is_same_v<decltype (42_sc), decltype (42_uc)>);
     }
 
@@ -215,28 +215,7 @@ static_asserts ()
       using namespace literals;
       using namespace operators;
 
-      static_assert (_i (42) == 42_i);
-      static_assert (_b (true));
-      static_assert (not _b (false));
-      static_assert (_s (42) == 42_s);
-      static_assert (_c (42) == 42_c);
-      static_assert (_sc (42) == 42_sc);
-      static_assert (_l (42) == 42_l);
-      static_assert (_ll (42) == 42_ll);
-      static_assert (_uc (42u) == 42_uc);
-      static_assert (_us (42u) == 42_us);
-      static_assert (_us (42u) == 42_us);
-      static_assert (_ul (42u) == 42_ul);
-      static_assert (_ull (42u) == 42_ull);
-      static_assert (_ull (18'446'744'073'709'551'615ull)
-                     == 18'446'744'073'709'551'615_ull);
-    }
-
-    {
-      using namespace literals;
-      using namespace operators;
-
-      // Modern to_* wrappers (preferred since 3.2.0).
+      // The to_* wrappers.
       static_assert (to_i{ 42 } == 42_i);
       static_assert (to_b{ true });
       static_assert (not to_b{ false });
@@ -256,9 +235,6 @@ static_asserts ()
       // Generic to_t<T> wrapper (since 3.2.0).
       static_assert (to_t<int>{ 42 }.get () == 42);
       static_assert (to_t<bool>{ true }.get ());
-
-      // Deprecated _t<T> generic wrapper.
-      static_assert (_t<int>{ 42 }.get () == 42);
     }
   }
 }

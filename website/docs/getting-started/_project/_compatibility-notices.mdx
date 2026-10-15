@@ -149,6 +149,15 @@ used by the other public names, and `and`, `or`, and `not` are
 alternative tokens; the old names are not kept. The overloaded `&&`,
 `||`, and `!` operators are unchanged.
 
+The type wrappers deprecated in v3.2 were removed: the `_b`, `_c`,
+`_sc`, `_s`, `_i`, `_l`, `_ll`, `_u`, `_uc`, `_us`, `_ul`, `_ull`,
+`_i8`, `_i16`, `_i32`, `_i64`, `_u8`, `_u16`, `_u32`, `_u64`, `_f`,
+`_d`, and `_ld` aliases, and the generic `_t<T>` wrapper. Replace them
+with the `to_*` forms, which take the same arguments: `mt::_i (expr)`
+becomes `mt::to_i (expr)`, and `mt::_t<T>{ expr }` becomes
+`mt::to_t<T>{ expr }`. The literals with the same suffixes (`42_i`,
+`1.5_d`) are unchanged.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

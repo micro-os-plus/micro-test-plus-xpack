@@ -39,8 +39,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ to_f wraps float for eq
         ✓ to_d wraps double for eq
         ✓ to_t<int> generic wrapper
-        ✓ _t<int> deprecated generic wrapper
-    ✓ to_* modern wrappers - passed (4 checks)
+    ✓ to_* modern wrappers - passed (3 checks)
     • reflection::short_name()
         ✓ file.cpp == file.cpp
         ✓ file.cpp == file.cpp
@@ -92,7 +91,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ not 1.495 < approx (1.5, 0.01)
         ✓ 0.1f + 0.2f == approx (0.3f, 1e-6f)
     ✓ Floating-point tolerance - passed (11 checks)
-✗ Static top suite - FAILED (48 checks passed, 4 failed, in 19 test cases)
+✗ Static top suite - FAILED (47 checks passed, 4 failed, in 19 test cases)
 • Combinatorial floats suite
     • Combinatorial floats
         ✓ 42.0 == 42 signed long long
@@ -857,7 +856,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ actual == 42
         ✗ actual+1 == 42 with scalar FAILED (operators.cpp:48)
         ✗ actual+1 == 42 with _i literal FAILED (operators.cpp:52, 43 == 42)
-        ✗ actual+1 == 42 with _i() FAILED (operators.cpp:56, 43 == 42)
+        ✗ actual+1 == 42 with to_i() FAILED (operators.cpp:56, 43 == 42)
         ✓ actual+1 != 42
         ✓ actual-1 < 42
         ✓ actual <= 42
@@ -947,4 +946,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 434 checks passed, 330 failed, in 79 test cases, 12 test suites
+✗ Total: 433 checks passed, 330 failed, in 79 test cases, 12 test suites

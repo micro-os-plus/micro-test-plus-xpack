@@ -192,43 +192,43 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         {
           using namespace literals;
 
-          t.expect (eq (_f (42.101f), 42.101_f)) << "42.101f == 42.101_f";
+          t.expect (eq (to_f (42.101f), 42.101_f)) << "42.101f == 42.101_f";
           local_counts.successful_checks++;
 
-          t.expect (eq (_f (42.101f, 0.01f), 42.10_f))
+          t.expect (eq (to_f (42.101f, 0.01f), 42.10_f))
               << "42.101f epsilon 0.01f == 42.10_f";
           local_counts.successful_checks++;
 
-          t.expect (ne (_f (42.101f, 0.1f), 42.1000_f))
+          t.expect (ne (to_f (42.101f, 0.1f), 42.1000_f))
               << "42.101f epsilon 0.1f != 42.10_f";
           local_counts.successful_checks++;
 
-          t.expect (eq (_f (42.1010001f, 0.1f), 42.1_f))
+          t.expect (eq (to_f (42.1010001f, 0.1f), 42.1_f))
               << "42.1010001f epsilon 0.1f == 42.1_f";
           local_counts.successful_checks++;
 
-          t.expect (ne (_f (42.101f), 42.10_f)) << "42.101f != 42.10_f";
+          t.expect (ne (to_f (42.101f), 42.10_f)) << "42.101f != 42.10_f";
           local_counts.successful_checks++;
 
-          t.expect (ne (_f (42.101f), 42.100_f)) << "42.101f != 42.100_f";
+          t.expect (ne (to_f (42.101f), 42.100_f)) << "42.101f != 42.100_f";
           local_counts.successful_checks++;
 
-          t.expect (eq (_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
+          t.expect (eq (to_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
           local_counts.successful_checks++;
 
-          t.expect (eq (_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
+          t.expect (eq (to_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
           local_counts.successful_checks++;
 
-          t.expect (eq (_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
+          t.expect (eq (to_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
           local_counts.successful_checks++;
 
-          t.expect (eq (_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
+          t.expect (eq (to_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
           local_counts.successful_checks++;
 
-          t.expect (eq (_d (42.), 42._d)) << "42. == 42._d";
+          t.expect (eq (to_d (42.), 42._d)) << "42. == 42._d";
           local_counts.successful_checks++;
 
-          t.expect (eq (_ld{ static_cast<long double> (42.42) }, 42.42_ld))
+          t.expect (eq (to_ld{ static_cast<long double> (42.42) }, 42.42_ld))
               << "42.42 == 42.42_ld";
           local_counts.successful_checks++;
 
@@ -280,43 +280,43 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         {
           using namespace literals;
 
-          t.expect (ne (_f (42.101f), 42.101_f)) << "42.101f != 42.101_f";
+          t.expect (ne (to_f (42.101f), 42.101_f)) << "42.101f != 42.101_f";
           local_counts.failed_checks++;
 
-          t.expect (ne (_f (42.101f, 0.01f), 42.10_f))
+          t.expect (ne (to_f (42.101f, 0.01f), 42.10_f))
               << "42.101f epsilon 0.01f != 42.10_f";
           local_counts.failed_checks++;
 
-          t.expect (eq (_f (42.101f, 0.1f), 42.1000_f))
+          t.expect (eq (to_f (42.101f, 0.1f), 42.1000_f))
               << "42.101f epsilon 0.1f == 42.10_f";
           local_counts.failed_checks++;
 
-          t.expect (ne (_f (42.1010001f, 0.1f), 42.1_f))
+          t.expect (ne (to_f (42.1010001f, 0.1f), 42.1_f))
               << "42.1010001f epsilon 0.1f != 42.1_f";
           local_counts.failed_checks++;
 
-          t.expect (eq (_f (42.101f), 42.10_f)) << "42.101f == 42.10_f";
+          t.expect (eq (to_f (42.101f), 42.10_f)) << "42.101f == 42.10_f";
           local_counts.failed_checks++;
 
-          t.expect (eq (_f (42.101f), 42.100_f)) << "42.101f == 42.100_f";
+          t.expect (eq (to_f (42.101f), 42.100_f)) << "42.101f == 42.100_f";
           local_counts.failed_checks++;
 
-          t.expect (ne (_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
+          t.expect (ne (to_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
           local_counts.failed_checks++;
 
-          t.expect (ne (_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
+          t.expect (ne (to_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
           local_counts.failed_checks++;
 
-          t.expect (ne (_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
+          t.expect (ne (to_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
           local_counts.failed_checks++;
 
-          t.expect (ne (_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
+          t.expect (ne (to_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
           local_counts.failed_checks++;
 
-          t.expect (ne (_d (42.), 42._d)) << "42. == 42._d";
+          t.expect (ne (to_d (42.), 42._d)) << "42. == 42._d";
           local_counts.failed_checks++;
 
-          t.expect (ne (_ld{ static_cast<long double> (42.42) }, 42.42_ld))
+          t.expect (ne (to_ld{ static_cast<long double> (42.42) }, 42.42_ld))
               << "42.42 == 42.42_ld";
           local_counts.failed_checks++;
 

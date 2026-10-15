@@ -36,10 +36,10 @@
  * enhanced expressiveness and type safety in test conditions.
  *
  * The literal operators reside within the
- * `micro_os_plus::micro_test_plus::literals` namespace, and the constructors
- * of the `_t` and `to_t` type wrappers within the
- * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
- * user code and minimising the risk of naming conflicts.
+ * `micro_os_plus::micro_test_plus::literals` namespace, and the constructor
+ * of the `to_t` type wrapper within the `micro_os_plus::micro_test_plus`
+ * namespace, ensuring clear separation from user code and minimising the
+ * risk of naming conflicts.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -595,16 +595,6 @@ namespace micro_os_plus::micro_test_plus
   } // namespace literals
 
   // ==========================================================================
-
-  /**
-   * @details
-   * Constructs an `_t` instance by forwarding the provided value to the base
-   * `detail::value<T>` wrapper.
-   */
-  template <class T>
-  constexpr _t<T>::_t (const T& t) : detail::value<T>{ t }
-  {
-  }
 
   /**
    * @details

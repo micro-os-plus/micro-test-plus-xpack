@@ -304,9 +304,6 @@ main (int argc, char* argv[])
       t.expect (eq (to_t<int>{ x }, 42)) << "to_t<int> generic wrapper";
       local_counts.successful_checks++;
 
-      t.expect (eq (_t<int>{ x }, 42)) << "_t<int> deprecated generic wrapper";
-      local_counts.successful_checks++;
-
       local_counts.executed_test_cases++;
     });
 

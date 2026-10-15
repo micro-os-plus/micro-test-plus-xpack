@@ -53,8 +53,8 @@ static static_suite ts_operators{ "Operators suite", tr, [] (auto& ts)
             << "actual+1 == 42 with _i literal";
         local_counts.failed_checks++;
 
-        t.expect (_i (my_actual_integral_more<int> ()) == 42)
-            << "actual+1 == 42 with _i()";
+        t.expect (to_i (my_actual_integral_more<int> ()) == 42)
+            << "actual+1 == 42 with to_i()";
         local_counts.failed_checks++;
 
         t.expect (my_actual_integral_more<int> () != 42_i) << "actual+1 != 42";

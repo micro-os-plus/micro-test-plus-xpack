@@ -32,11 +32,9 @@
  * (such as `_i`, `_u16`, `_f`, `_d`, `_b`, etc.) to produce values that
  * integrate seamlessly with the µTest++ comparators and reporting mechanisms.
  *
- * In addition to literal operators, this header declares both deprecated and
- * modern type wrappers for explicit type conversion, supporting enhanced
- * clarity and type safety in test conditions. The preferred `to_*` forms are
- * recommended for new code, while the older `_i`, `_u8`, etc. aliases are
- * retained for backwards compatibility.
+ * In addition to literal operators, this header declares the `to_*` type
+ * wrappers for explicit type conversion, supporting enhanced clarity and type
+ * safety in test conditions.
  *
  * The literal operators reside within the
  * `micro_os_plus::micro_test_plus::literals` namespace, and the type wrappers
@@ -108,9 +106,8 @@ namespace micro_os_plus::micro_test_plus
    * values in test reports.
    *
    * The complementary wrappers for converting dynamic values and
-   * expressions to recognised types, both the deprecated aliases (such as
-   * `_i`, `_u8`) and the preferred `to_*` forms (such as `to_i`, `to_u8`),
-   * are defined in the parent `micro_os_plus::micro_test_plus` namespace.
+   * expressions to recognised types (such as `to_i`, `to_u8`) are defined
+   * in the parent `micro_os_plus::micro_test_plus` namespace.
    *
    * All definitions within this namespace are intended to facilitate clear and
    * type-safe test expressions, and are implemented in the
@@ -444,296 +441,10 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wdocumentation-deprecated-sync"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
   /**
    * @addtogroup micro-os-plus-micro-test-plus-literals
    * @{
    */
-
-  /**
-   * @name Deprecated Type Wrappers
-   * @brief Strongly-typed wrappers for explicit type conversion.
-   *
-   * @details
-   * These type aliases provide wrappers for converting values and expressions
-   * to specific types for use with µTest++ comparators and test expressions.
-   *
-   * The `_i`, `_u8`, etc. forms are now deprecated as of version 3.2.0. Please
-   * use the preferred `to_*` type wrappers for new code, as they offer
-   * improved clarity and consistency.
-   *
-   * @par Deprecated
-   * Use the corresponding `to_*` type wrappers instead
-   * (since 3.2.0).
-   */
-
-  /**
-   * @brief Strongly-typed wrapper for `bool` values.
-   *
-   * @details
-   * Equivalent to `to_b`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_b (since 3.2.0).
-   */
-  using _b = detail::value<bool>;
-
-  /**
-   * @brief Strongly-typed wrapper for `char` values.
-   *
-   * @details
-   * Equivalent to `to_c`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_c (since 3.2.0).
-   */
-  using _c = detail::value<char>;
-
-  /**
-   * @brief Strongly-typed wrapper for `signed char` values.
-   *
-   * @details
-   * Equivalent to `to_sc`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_sc (since 3.2.0).
-   */
-  using _sc = detail::value<signed char>;
-
-  /**
-   * @brief Strongly-typed wrapper for `short` values.
-   *
-   * @details
-   * Equivalent to `to_s`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_s (since 3.2.0).
-   */
-  using _s = detail::value<short>;
-
-  /**
-   * @brief Strongly-typed wrapper for `int` values.
-   *
-   * @details
-   * Equivalent to `to_i`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_i (since 3.2.0).
-   */
-  using _i = detail::value<int>;
-
-  /**
-   * @brief Strongly-typed wrapper for `long` values.
-   *
-   * @details
-   * Equivalent to `to_l`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_l (since 3.2.0).
-   */
-  using _l = detail::value<long>;
-
-  /**
-   * @brief Strongly-typed wrapper for `long long` values.
-   *
-   * @details
-   * Equivalent to `to_ll`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_ll (since 3.2.0).
-   */
-  using _ll = detail::value<long long>;
-
-  /**
-   * @brief Strongly-typed wrapper for `unsigned` values.
-   *
-   * @details
-   * Equivalent to `to_u`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_u (since 3.2.0).
-   */
-  using _u = detail::value<unsigned>;
-
-  /**
-   * @brief Strongly-typed wrapper for `unsigned char` values.
-   *
-   * @details
-   * Equivalent to `to_uc`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_uc (since 3.2.0).
-   */
-  using _uc = detail::value<unsigned char>;
-
-  /**
-   * @brief Strongly-typed wrapper for `unsigned short` values.
-   *
-   * @details
-   * Equivalent to `to_us`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_us (since 3.2.0).
-   */
-  using _us = detail::value<unsigned short>;
-
-  /**
-   * @brief Strongly-typed wrapper for `unsigned long` values.
-   *
-   * @details
-   * Equivalent to `to_ul`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_ul (since 3.2.0).
-   */
-  using _ul = detail::value<unsigned long>;
-
-  /**
-   * @brief Strongly-typed wrapper for `unsigned long long` values.
-   *
-   * @details
-   * Equivalent to `to_ull`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_ull (since 3.2.0).
-   */
-  using _ull = detail::value<unsigned long long>;
-
-  /**
-   * @brief Strongly-typed wrapper for `std::int8_t` values.
-   *
-   * @details
-   * Equivalent to `to_i8`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_i8 (since 3.2.0).
-   */
-  using _i8 = detail::value<std::int8_t>;
-
-  /**
-   * @brief Strongly-typed wrapper for `std::int16_t` values.
-   *
-   * @details
-   * Equivalent to `to_i16`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_i16 (since 3.2.0).
-   */
-  using _i16 = detail::value<std::int16_t>;
-
-  /**
-   * @brief Strongly-typed wrapper for `std::int32_t` values.
-   *
-   * @details
-   * Equivalent to `to_i32`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_i32 (since 3.2.0).
-   */
-  using _i32 = detail::value<std::int32_t>;
-
-  /**
-   * @brief Strongly-typed wrapper for `std::int64_t` values.
-   *
-   * @details
-   * Equivalent to `to_i64`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_i64 (since 3.2.0).
-   */
-  using _i64 = detail::value<std::int64_t>;
-
-  /**
-   * @brief Strongly-typed wrapper for `std::uint8_t` values.
-   *
-   * @details
-   * Equivalent to `to_u8`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_u8 (since 3.2.0).
-   */
-  using _u8 = detail::value<std::uint8_t>;
-
-  /**
-   * @brief Strongly-typed wrapper for `std::uint16_t` values.
-   *
-   * @details
-   * Equivalent to `to_u16`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_u16 (since 3.2.0).
-   */
-  using _u16 = detail::value<std::uint16_t>;
-
-  /**
-   * @brief Strongly-typed wrapper for `std::uint32_t` values.
-   *
-   * @details
-   * Equivalent to `to_u32`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_u32 (since 3.2.0).
-   */
-  using _u32 = detail::value<std::uint32_t>;
-
-  /**
-   * @brief Strongly-typed wrapper for `std::uint64_t` values.
-   *
-   * @details
-   * Equivalent to `to_u64`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_u64 (since 3.2.0).
-   */
-  using _u64 = detail::value<std::uint64_t>;
-
-  /**
-   * @brief Strongly-typed wrapper for `float` values.
-   *
-   * @details
-   * Equivalent to `to_f`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_f (since 3.2.0).
-   */
-  using _f = detail::value<float>;
-
-  /**
-   * @brief Strongly-typed wrapper for `double` values.
-   *
-   * @details
-   * Equivalent to `to_d`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_d (since 3.2.0).
-   */
-  using _d = detail::value<double>;
-
-  /**
-   * @brief Strongly-typed wrapper for `long double` values.
-   *
-   * @details
-   * Equivalent to `to_ld`; kept for backwards compatibility.
-   *
-   * @deprecated Use @c to_ld (since 3.2.0).
-   */
-  using _ld = detail::value<long double>;
-
-  /**
-   * @brief Deprecated generic strongly-typed wrapper for explicit type
-   * conversion.
-   *
-   * @details
-   * The `_t` template provides a public, strongly-typed wrapper for any type
-   * `T`, enabling explicit conversion of dynamic values and expressions to a
-   * type recognised by the µTest++ comparators and reporting mechanisms.
-   *
-   * This wrapper inherits from `detail::value<T>`, ensuring that the
-   * encapsulated value is treated as the specified type within the framework.
-   *
-   * @deprecated Use `to_t` (since 3.2.0).
-   *
-   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-   */
-  template <class T>
-  struct _t : detail::value<T>
-  {
-    /**
-     * @brief Constructor for the deprecated strongly-typed wrapper.
-     *
-     * @param t The value to be wrapped and explicitly converted.
-     */
-    constexpr explicit _t (const T& t);
-  };
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 
   /**
    * @name Type Wrappers
@@ -741,14 +452,14 @@ namespace micro_os_plus::micro_test_plus
    * expressions to specific types recognised by µTest++ comparators.
    *
    * @details
-   * These type aliases provide a modern, type-safe mechanism for explicitly
+   * These type aliases provide a type-safe mechanism for explicitly
    * converting values to the required types for µTest++ test expressions and
    * comparators. Each alias is a wrapper around `detail::value<T>`,
    * ensuring that the value is treated as the specified type within the
    * framework.
    *
-   * The `to_*` forms are the preferred approach since version 3.2.0,
-   * superseding the older `_i`, `_u8`, etc. aliases, which are now deprecated.
+   * The `to_*` forms replace the older `_i`, `_u8`, etc. aliases, which
+   * were deprecated in version 3.2.0 and removed in version 5.1.0.
    *
    * @par Example
    *
