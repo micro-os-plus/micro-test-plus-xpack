@@ -80,8 +80,8 @@ namespace micro_os_plus::micro_test_plus
      * The constructor initialises a new instance of the `runnable_base` class
      * with the specified name, runner reference, and own index; the name
      * pointer is stored, and is expected to point to a string with a
-     * lifetime exceeding that of this instance. The totals and the child
-     * test point index start at zero and the children collection is empty.
+     * lifetime exceeding that of this instance. The totals, the child
+     * test point index, and the child test cases count start at zero.
      * If tracing is enabled, the function signature is output for
      * diagnostic purposes.
      */
@@ -96,17 +96,15 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * The destructor destroys the owned child test cases, held by
-     * `std::unique_ptr` in `child_test_cases_`. If tracing is enabled, the
-     * name is output for diagnostic purposes.
+     * Nothing is owned; the child test cases were destroyed when the
+     * `test()` calls that created them returned. If tracing is enabled,
+     * the name is output for diagnostic purposes.
      */
     runnable_base::~runnable_base ()
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-
-      // child_test_cases_ holds unique_ptrs; destroyed automatically.
     }
 
     /**
@@ -134,8 +132,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Transfers ownership of @p child_test into `child_test_cases_` and
-     * immediately invokes `test_case::run()` on the newly stored test case.
+     * Counts @p test_case, which is a local object of the calling
+     * `test()`, and immediately invokes `test_case::run()` on it. The test
+     * case is not kept; only `child_test_cases_count_` is needed later,
+     * for the TAP plan.
      *
      * If the filter patterns do not select the test case (its own name at
      * its nesting level, or the name of @p suite at level 0, which
@@ -155,13 +155,10 @@ namespace micro_os_plus::micro_test_plus
      * the suite summary reflects all checks performed by its test cases.
      */
     void
-    runnable_base::after_test_case_create_ (
-        std::unique_ptr<class test_case> child_test, suite& suite)
+    runnable_base::after_test_case_create_ (class test_case& test_case,
+                                            suite& suite)
     {
-      // Transfer ownership into the vector.
-      child_test_cases_.push_back (std::move (child_test));
-
-      class test_case& test_case = *child_test_cases_.back ();
+      ++child_test_cases_count_;
 
       // Skip the test cases not selected by the filter; the outer test
       // cases, if any, were selected, otherwise this one was not created.
@@ -207,9 +204,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * No resources are owned directly by `test_case`; the nested test cases are
-   * destroyed by the base class. If tracing is enabled, the name is output
-   * for diagnostic purposes.
+   * No resources are owned directly by `test_case`; the stored body is
+   * destroyed with the object, when the `test()` call that created it
+   * returns. If tracing is enabled, the name is output for diagnostic
+   * purposes.
    */
   test_case::~test_case ()
   {

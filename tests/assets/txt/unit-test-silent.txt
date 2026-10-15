@@ -85,6 +85,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Runner filter
     • Callable arguments
     • Operand copies
+    • Test case lifetime
     • Abort handler
     • Operators
     • String view operators

@@ -200,12 +200,13 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns the number of child test cases owned by this node.
+     * Returns the number of child test cases created by this node,
+     * counted by `after_test_case_create_()`.
      */
     inline size_t
     runnable_base::child_test_cases_count (void) const noexcept
     {
-      return child_test_cases_.size ();
+      return child_test_cases_count_;
     }
 
     /**
@@ -281,10 +282,15 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Allocates a child `test_case` on the heap, incrementing the test point
-   * index and deepening the nesting level by one relative to this test case's
-   * depth, then transfers ownership to this test case via
-   * `after_test_case_create_()`, which also runs it.
+   * Constructs a child `test_case` as a local object, incrementing the
+   * test point index and deepening the nesting level by one relative to
+   * this test case's depth, then passes it to `after_test_case_create_()`,
+   * which counts and runs it.
+   *
+   * The child test case, with its stored body and bound arguments, is
+   * destroyed when this function returns, so the memory used by a
+   * test session does not grow with the number of test cases; the stack
+   * holds one test case for each level of nesting being run.
    */
   template <typename Callable_T, typename... Args_T>
   void
@@ -296,13 +302,15 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     size_t own_index = next_test_point_number_ ();
-    // Not std::make_unique(), which cannot access the private constructor.
-    std::unique_ptr<test_case> child_test_case{ new test_case (
-        name, test_runner_ (), parent_suite_, own_index, nesting_depth_ + 1,
-        std::forward<Callable_T> (callable),
-        std::forward<Args_T> (arguments)...) };
+    test_case child_test_case{ name,
+                               test_runner_ (),
+                               parent_suite_,
+                               own_index,
+                               nesting_depth_ + 1,
+                               std::forward<Callable_T> (callable),
+                               std::forward<Args_T> (arguments)... };
 
-    after_test_case_create_ (std::move (child_test_case), parent_suite_);
+    after_test_case_create_ (child_test_case, parent_suite_);
   }
 
   /**
@@ -410,6 +418,10 @@ namespace micro_os_plus::micro_test_plus
    * leading `test_case&` reference. The test case is reported using the
    * provided name.
    *
+   * The test case is a local object of this function, destroyed when it
+   * returns, together with its stored body and bound arguments; only the
+   * number of test cases is kept, for the TAP plan.
+   *
    * Each test case typically involves evaluating logical expressions, such
    * as comparing a computed result to an expected value, with `expect()` or
    * `require()`. When exceptions are enabled, it is also possible to verify
@@ -440,13 +452,15 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     size_t own_index = next_test_point_number_ ();
-    // Not std::make_unique(), which cannot access the private constructor.
-    std::unique_ptr<test_case> child_test_case{ new test_case (
-        name, test_runner_ (), *this, own_index, 1,
-        std::forward<Callable_T> (callable),
-        std::forward<Args_T> (arguments)...) };
+    test_case child_test_case{ name,
+                               test_runner_ (),
+                               *this,
+                               own_index,
+                               1,
+                               std::forward<Callable_T> (callable),
+                               std::forward<Args_T> (arguments)... };
 
-    after_test_case_create_ (std::move (child_test_case), *this);
+    after_test_case_create_ (child_test_case, *this);
   }
 
   // ==========================================================================

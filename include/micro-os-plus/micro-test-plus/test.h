@@ -67,7 +67,6 @@
 #include "reflection.h"
 
 #include <functional>
-#include <memory>
 #include <string>
 #include <type_traits>
 
@@ -236,7 +235,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Deleted copy constructor to prevent copying.
        *
        * @details
-       * A copy would duplicate the counters and the owned children.
+       * A copy would duplicate the counters.
        */
       runnable_base (const runnable_base&) = delete;
 
@@ -253,7 +252,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Deleted copy assignment operator to prevent copying.
        *
        * @details
-       * A copy would duplicate the counters and the owned children.
+       * A copy would duplicate the counters.
        */
       runnable_base&
       operator= (const runnable_base&)
@@ -274,8 +273,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Virtual destructor.
        *
        * @details
-       * Virtual, so that the derived nodes are destroyed correctly;
-       * destroys the owned child test cases.
+       * Virtual, so that the derived nodes are destroyed correctly.
        */
       virtual ~runnable_base ();
 
@@ -331,8 +329,11 @@ namespace micro_os_plus::micro_test_plus
       test_point_number (void) const noexcept;
 
       /**
-       * @brief Returns the number of direct child test cases owned by this
-       * node.
+       * @brief Returns the number of direct child test cases of this node.
+       *
+       * @details
+       * The test cases skipped by the filter are included, since they keep
+       * their index; the TAP reporter prints this number in the plan.
        *
        * @par Parameters
        *   None.
@@ -419,18 +420,21 @@ namespace micro_os_plus::micro_test_plus
       next_test_point_number_ (void) noexcept;
 
       /**
-       * @brief Registers a newly constructed child test case and executes it
+       * @brief Counts a newly constructed child test case and executes it
        * immediately.
        *
-       * @param child_test Owning pointer to the newly created `test_case`.
+       * @details
+       * The child test case is a local object of the `test()` function
+       * that created it, and is destroyed when that function returns.
+       *
+       * @param test_case The newly created `test_case`.
        * @param suite The parent `suite` to which execution results are
        * reported.
        * @par Returns
        *   Nothing.
        */
       void
-      after_test_case_create_ (std::unique_ptr<test_case> child_test,
-                               suite& suite);
+      after_test_case_create_ (class test_case& test_case, suite& suite);
 
     protected:
       /**
@@ -488,14 +492,16 @@ namespace micro_os_plus::micro_test_plus
       size_t test_point_number_ = 0;
 
       /**
-       * @brief Owning collection of direct child test cases.
+       * @brief The number of direct child test cases.
        *
        * @details
-       * Each call to `test()` appends a new `test_case` to this vector and
-       * runs it immediately. The vector retains ownership for the lifetime of
-       * the parent runnable.
+       * Incremented for each call to `test()`, which creates a child
+       * `test_case` and runs it immediately. The child test cases are not
+       * kept after they run, so that the memory does not grow with the
+       * number of test cases; only their number is needed later, for the
+       * TAP plan.
        */
-      std::vector<std::unique_ptr<test_case>> child_test_cases_;
+      size_t child_test_cases_count_ = 0;
     };
 
     // ========================================================================
@@ -538,7 +544,9 @@ namespace micro_os_plus::micro_test_plus
    * checks within a parent `suite` or `test_case`. It is constructed by
    * calling `suite::test()` or `test_case::test()`, both of which create
    * the object, immediately execute its callable body via `run()`, and
-   * register the result with the parent node.
+   * register the result with the parent node. The object is local to the
+   * `test()` call, and is destroyed when it returns, together with the
+   * stored body and its bound arguments.
    *
    * The body of the test case is supplied as a callable (typically a lambda)
    * that receives a `test_case&` reference as its first argument. Inside the
@@ -594,7 +602,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy constructor to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the owned children.
+     * A copy would duplicate the counters and the stored body.
      */
     test_case (const test_case&) = delete;
 
@@ -611,7 +619,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the owned children.
+     * A copy would duplicate the counters and the stored body.
      */
     test_case&
     operator= (const test_case&)
@@ -632,7 +640,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      *
      * @details
-     * Destroys the nested test cases, if any.
+     * Called when the `test()` function that created the test case
+     * returns; the nested test cases were already destroyed by then.
      */
     ~test_case () override;
 
@@ -884,7 +893,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy constructor to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the owned children.
+     * A copy would duplicate the counters and the stored body.
      */
     suite (const suite&) = delete;
 
@@ -901,7 +910,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the owned children.
+     * A copy would duplicate the counters and the stored body.
      */
     suite&
     operator= (const suite&)
@@ -1042,7 +1051,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy constructor to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the owned children.
+     * A copy would duplicate the counters and the stored body.
      */
     top_suite (const top_suite&) = delete;
 
@@ -1059,7 +1068,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the owned children.
+     * A copy would duplicate the counters and the stored body.
      */
     top_suite&
     operator= (const top_suite&)
@@ -1163,7 +1172,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy constructor to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the owned children.
+     * A copy would duplicate the counters and the stored body.
      */
     static_suite (const static_suite&) = delete;
 
@@ -1180,7 +1189,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the owned children.
+     * A copy would duplicate the counters and the stored body.
      */
     static_suite&
     operator= (const static_suite&)

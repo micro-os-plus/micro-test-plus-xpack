@@ -92,6 +92,33 @@ namespace
     return formatter << c.number;
   }
 
+  // A type that counts its live instances, to check that a test case
+  // and its stored body are destroyed when `test()` returns
+  // (API-REVIEW.md #54).
+  int live_instances = 0;
+
+  struct instance_counter
+  {
+    instance_counter ()
+    {
+      ++live_instances;
+    }
+
+    instance_counter (const instance_counter&)
+    {
+      ++live_instances;
+    }
+
+    instance_counter&
+    operator= (const instance_counter&)
+        = default;
+
+    ~instance_counter ()
+    {
+      --live_instances;
+    }
+  };
+
   // An abort handler which, when exceptions are available, returns
   // control to the test case, without terminating the process
   // (API-REVIEW.md #21).
@@ -933,6 +960,42 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         copies = counted_copies;
 
         t.expect (eq (copies, 2)) << "wrapped operand copied once";
+        local_counts.successful_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // A test case is destroyed when the `test()` call that created it
+    // returns, together with its body and bound arguments; only their
+    // number is kept (API-REVIEW.md #54).
+    ts.test ("Test case lifetime", [] (auto& t)
+      {
+        runner_options options{};
+        options.selected_reporter = reporter_kind::human;
+        options.verbosity_level = verbosity::silent;
+
+        runner local_runner;
+        auto& local_ts = local_runner.initialise (options, "Local");
+
+        live_instances = 0;
+
+        local_ts.test ("Captured", [counter = instance_counter{}] (auto& lt)
+          {
+            static_cast<void> (counter);
+            lt.expect (true);
+          });
+
+        local_ts.test ("Bound", [] (auto& lt, const instance_counter&)
+          { lt.expect (true); }, instance_counter{});
+
+        t.expect (eq (live_instances, 0)) << "test cases destroyed";
+        local_counts.successful_checks++;
+
+        t.expect (eq (local_ts.child_test_cases_count (), 2U))
+            << "test cases counted";
+        local_counts.successful_checks++;
+
+        t.expect (eq (local_runner.run (), 0)) << "local session passed";
         local_counts.successful_checks++;
 
         local_counts.executed_test_cases++;
