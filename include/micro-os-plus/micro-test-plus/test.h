@@ -506,8 +506,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The callable is stored as is when there are no additional arguments;
-     * otherwise the arguments are bound after the leading reference, which
-     * is passed when the body is invoked.
+     * otherwise a lambda stores copies of the arguments and passes them
+     * after the leading reference, which is passed when the body is
+     * invoked.
      *
      * @tparam Self_T The type referred to by the first parameter of the
      * callable (`test_case` or `suite`).

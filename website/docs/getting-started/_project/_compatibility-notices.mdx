@@ -123,6 +123,14 @@ same function can serve both kinds of suites; it previously received a
 parameter lists of the suite functions; the lambdas with an `auto&`
 parameter need no change.
 
+The additional arguments of `test()`, `runner::suite()`, and the
+`static_suite` constructor are now stored by a lambda, instead of
+`std::bind`, which adds less code. They are still copied, so a
+reference parameter refers to the copy, but a `std::ref()` argument is
+no longer unwrapped: it still converts to a parameter of type `T&`, but
+an `auto&` parameter now receives the `std::reference_wrapper` itself;
+call its `get()` function, or pass a pointer instead.
+
 The `static_runner` class is deprecated, and is now an alias of
 `runner`, since any runner also runs the `static_suite` objects that
 refer to it; the static suites are kept in a list independent of the

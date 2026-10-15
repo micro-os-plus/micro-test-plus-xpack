@@ -370,6 +370,14 @@ The name is a string literal or a `const char*`, converted implicitly to
 `detail::test_name`, which also records the location of the `test()`
 call.
 
+The additional arguments, if any, are passed to the callable after the
+test case reference. They are copied when `test()` is called, as they
+are by `runner::suite()` and by the `static_suite` constructor, whose
+suites run later, so a reference parameter refers to the copy. To
+refer to the caller's object, pass a pointer, or `std::ref (object)`
+for a parameter of type `T&`. A lambda can also capture the values
+instead.
+
 When exceptions are enabled, an exception that escapes the body of a
 test case is reported as a failed check of that test case, at the
 location of the `test()` call, and the run continues with the next test

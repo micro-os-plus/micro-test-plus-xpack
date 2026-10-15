@@ -27,7 +27,7 @@
  * arguments, the `test()` methods that create and run test cases, and the
  * `expect()` and `require()` checks.
  *
- * When additional arguments are given, `std::bind` is used to pre-bind them,
+ * When additional arguments are given, a lambda captures copies of them,
  * allowing versatile test initialisation with arbitrary callable types and
  * arguments. A `static_suite` additionally inserts itself into the list of
  * static suites upon construction.
@@ -91,6 +91,7 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #pragma GCC diagnostic ignored "-Wformat"
 #pragma GCC diagnostic ignored "-Wformat-extra-args"
+#pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -222,10 +223,15 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Without additional arguments, the callable already has the signature
-     * `void (Self_T&)`, and is stored directly. `std::bind` is used only
-     * when additional arguments must be bound, to avoid triggering a GCC
-     * ARM bug in `__is_nothrow_invocable<_Bind<...>, Self_T&>` (GCC
-     * 15.2.1).
+     * `void (Self_T&)`, and is stored directly, without a wrapper.
+     *
+     * Otherwise, a lambda captures the callable and copies of the
+     * arguments (decayed, as by `auto`), since a suite may run after the
+     * caller's temporaries are gone; it is `mutable`, so the callable
+     * receives the copies as non-`const` lvalues. A reference parameter
+     * thus refers to the copy; to refer to the caller's object, pass a
+     * pointer, or `std::ref()`, which converts to a `T&` parameter (an
+     * `auto&` parameter receives the `std::reference_wrapper` itself).
      */
     template <typename Self_T, typename Callable_T, typename... Args_T>
     std::function<void (Self_T&)>
@@ -237,9 +243,10 @@ namespace micro_os_plus::micro_test_plus
         }
       else
         {
-          return std::bind (std::forward<Callable_T> (callable),
-                            std::placeholders::_1,
-                            std::forward<Args_T> (arguments)...);
+          return [stored_callable = std::forward<Callable_T> (callable),
+                  ... stored_arguments
+                  = std::forward<Args_T> (arguments)] (Self_T& self) mutable
+            { std::invoke (stored_callable, self, stored_arguments...); };
         }
     }
 

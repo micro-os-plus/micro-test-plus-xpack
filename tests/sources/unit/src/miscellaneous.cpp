@@ -815,6 +815,62 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The additional arguments of `test()` and `suite()` are copied, so a
+    // reference parameter refers to the copy, unless `std::ref()` is
+    // passed, and a deferred suite receives the values of the call
+    // (API-REVIEW.md #52).
+    ts.test ("Callable arguments", [] (auto& t)
+      {
+        runner_options options{};
+        options.selected_reporter = reporter_kind::human;
+        options.verbosity_level = verbosity::silent;
+
+        runner local_runner;
+        auto& local_ts = local_runner.initialise (options, "Local");
+
+        int copied = 1;
+        int referred = 1;
+        int pointed = 1;
+
+        local_ts.test ("Arguments",
+                       [] (test_case& lt, int value, int& copy, int& reference,
+                           int* pointer)
+          {
+            copy = value;
+            reference = value;
+            *pointer = value;
+            lt.expect (true);
+          },
+                       2, copied, std::ref (referred), &pointed);
+
+        t.expect (eq (copied, 1)) << "reference parameter refers to a copy";
+        local_counts.successful_checks++;
+
+        t.expect (eq (referred, 2)) << "std::ref() refers to the object";
+        local_counts.successful_checks++;
+
+        t.expect (eq (pointed, 2)) << "pointer refers to the object";
+        local_counts.successful_checks++;
+
+        int value = 3;
+        int received = 0;
+
+        local_runner.suite ("Deferred", [] (suite& s, int v, int* out)
+          {
+            *out = v;
+            s.test ("Local test", [] (auto& lt) { lt.expect (true); });
+          }, value, &received);
+        value = 4;
+
+        t.expect (eq (local_runner.run (), 0)) << "local session passed";
+        local_counts.successful_checks++;
+
+        t.expect (eq (received, 3)) << "deferred suite received the copy";
+        local_counts.successful_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     // The abort handler can be replaced, and, when exceptions are
     // available, it can return control to the application by throwing
     // (API-REVIEW.md #21).
