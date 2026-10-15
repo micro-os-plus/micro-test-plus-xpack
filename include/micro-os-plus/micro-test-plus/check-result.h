@@ -21,10 +21,12 @@
  *
  * @details
  * This header provides the `check_result` class, the object returned by
- * `expect()` and `require()`. It captures the result of one check and
- * reports the outcome only when it is destroyed (i.e. at the semicolon
- * following the expression statement), after the optional user message
- * was appended via `operator<<`.
+ * `expect()` and `require()`, together with the `check_kind` enumeration
+ * and the `failure_info` structure, passed to the reporter. The check
+ * result captures the result of one check and reports the outcome only
+ * when it is destroyed (i.e. at the semicolon following the expression
+ * statement), after the optional user message was appended via
+ * `operator<<`.
  *
  * It also defines `failed_requirement`, the exception thrown to stop a
  * test case after a failed `require()`.
@@ -105,6 +107,86 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
+     * @brief The kind of a check, which determines what happens when it
+     * fails.
+     *
+     * @details
+     * An enumeration rather than a Boolean flag, so that the call sites
+     * name the kind of the check.
+     */
+    enum class check_kind
+    {
+      /**
+       * @brief A check created by `expect()`.
+       *
+       * @details
+       * A failure is reported and counted, and the test case continues.
+       */
+      expectation,
+
+      /**
+       * @brief A check created by `require()`.
+       *
+       * @details
+       * A failure is reported and counted, and the test case is stopped,
+       * or, without exceptions, the test execution is aborted.
+       */
+      requirement
+    };
+
+    // ========================================================================
+
+    /**
+     * @brief The details of a check, displayed when it fails.
+     *
+     * @details
+     * Grouped in one object, passed to `reporter::fail()`, so that the
+     * call sites do not pass unlabelled Boolean arguments. Held by
+     * `check_result`, and built by `test_case` when reporting an
+     * unexpected exception.
+     *
+     * The message is also displayed when the check passes.
+     */
+    struct failure_info
+    {
+      /**
+       * @brief The kind of the check.
+       *
+       * @details
+       * Determines whether the failure stops the test case, and whether
+       * the reporter displays the abort notice.
+       */
+      check_kind kind;
+
+      /**
+       * @brief The message passed via `operator<<()`, if any.
+       *
+       * @details
+       * Displayed before the expression and the source location.
+       */
+      std::string message;
+
+      /**
+       * @brief Indicates whether the check has an associated expression.
+       *
+       * @details
+       * Set when the checked expression is a framework comparator, whose
+       * formatted text is displayed on failure.
+       */
+      bool has_expression;
+
+      /**
+       * @brief The source location of the check.
+       *
+       * @details
+       * Displayed with failures, and used when aborting.
+       */
+      reflection::source_location location;
+    };
+
+    // ========================================================================
+
+    /**
      * @brief The result of one check, reported when destroyed.
      *
      * @details
@@ -138,15 +220,15 @@ namespace micro_os_plus::micro_test_plus
        * @tparam Expr_T The type of the expression.
        *
        * @param expr The expression under evaluation.
-       * @param abort Indicates whether a failure should stop the test
-       * case (`true` for `require()`).
+       * @param kind The kind of the check, `check_kind::requirement` for
+       * `require()`, whose failure stops the test case.
        * @param location The source location of the check.
        * @param test_case The test case that owns this check.
        * @param expression The expression formatter to format the expression
        * text.
        */
       template <class Expr_T>
-      check_result (const Expr_T& expr, bool abort,
+      check_result (const Expr_T& expr, check_kind kind,
                     const reflection::source_location& location,
                     test_case& test_case, expression_formatter& expression);
 
@@ -230,14 +312,13 @@ namespace micro_os_plus::micro_test_plus
        * instantiations of the template constructor, which delegates to it.
        *
        * @param value The result of the evaluated expression.
-       * @param abort Indicates whether a failure should stop the test
-       * case.
+       * @param kind The kind of the check.
        * @param has_expression Indicates whether the expression is a
        * framework comparator, whose text is displayed on failure.
        * @param location The source location of the check.
        * @param test_case The test case that owns this check.
        */
-      check_result (bool value, bool abort, bool has_expression,
+      check_result (bool value, check_kind kind, bool has_expression,
                     const reflection::source_location& location,
                     test_case& test_case);
 
@@ -251,23 +332,15 @@ namespace micro_os_plus::micro_test_plus
       const bool value_;
 
       /**
-       * @brief Indicates whether a failure should abort further
-       * processing.
+       * @brief The details displayed when the check fails.
        *
        * @details
-       * Set for `require()` checks; a failure then stops the test case,
-       * or, without exceptions, the test execution.
+       * The kind, the expression flag, and the location are set by the
+       * constructor; the message is collected via `operator<<()`. Passed
+       * to the reporter by the destructor; the message is also displayed
+       * when the check passes.
        */
-      const bool abort_;
-
-      /**
-       * @brief Indicates whether the check has an associated expression.
-       *
-       * @details
-       * Set when the checked expression is a framework comparator, whose
-       * formatted text is displayed on failure.
-       */
-      const bool has_expression_;
+      failure_info info_;
 
       /**
        * @brief The number of uncaught exceptions when the check was
@@ -278,23 +351,6 @@ namespace micro_os_plus::micro_test_plus
        * a result kept in a variable), and must not throw.
        */
       int uncaught_exceptions_ = 0;
-
-      /**
-       * @brief Stores the source location of the check.
-       *
-       * @details
-       * Displayed with failures, and used when aborting.
-       */
-      const reflection::source_location location_;
-
-      /**
-       * @brief String to collect the expectation message passed via
-       * `operator<<()`.
-       *
-       * @details
-       * Passed to the reporter by the destructor.
-       */
-      std::string message_{};
 
       /**
        * @brief Reference to the test case invoking this check.

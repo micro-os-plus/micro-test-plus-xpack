@@ -300,28 +300,28 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Constructs and returns a `detail::check_result` with
-   * `abort = false`. The check result evaluates the condition when
-   * constructed, and records a pass or fail when it is destroyed, at the end
-   * of the expression statement.
+   * Constructs and returns a `detail::check_result` of the kind
+   * `detail::check_kind::expectation`. The check result evaluates the
+   * condition when constructed, and records a pass or fail when it is
+   * destroyed, at the end of the expression statement.
    */
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
   auto
   test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
   {
-    return detail::check_result{ expr, false, sl, *this,
-                                 reporter_ ().expression_ };
+    return detail::check_result{ expr, detail::check_kind::expectation, sl,
+                                 *this, reporter_ ().expression_ };
   }
 
   /**
    * @details
-   * Constructs and returns a `detail::check_result` with
-   * `abort = true`. The check result evaluates the condition when
-   * constructed, records a pass or fail when it is destroyed, and, if the
-   * condition is false, stops the test case by throwing
-   * `detail::failed_requirement` (caught by `test_case::run()`), or,
-   * without exceptions, aborts the test execution.
+   * Constructs and returns a `detail::check_result` of the kind
+   * `detail::check_kind::requirement`. The check result evaluates the
+   * condition when constructed, records a pass or fail when it is
+   * destroyed, and, if the condition is false, stops the test case by
+   * throwing `detail::failed_requirement` (caught by `test_case::run()`),
+   * or, without exceptions, aborts the test execution.
    */
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
@@ -329,8 +329,8 @@ namespace micro_os_plus::micro_test_plus
   test_case::require (const Expr_T& expr,
                       const reflection::source_location& sl)
   {
-    return detail::check_result{ expr, true, sl, *this,
-                                 reporter_ ().expression_ };
+    return detail::check_result{ expr, detail::check_kind::requirement, sl,
+                                 *this, reporter_ ().expression_ };
   }
 
   /**

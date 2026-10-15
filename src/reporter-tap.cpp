@@ -734,17 +734,17 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Completes TAP14 YAML diagnostics for a failing check, optionally appends
-   * an "aborted..." marker, emits source filename/line fields, closes the
-   * YAML block, and flushes the stream.
+   * Completes TAP14 YAML diagnostics for a failing check, appends an
+   * "aborted..." marker if the check is a requirement, emits source
+   * filename/line fields, closes the YAML block, and flushes the stream.
    */
   void
   reporter_tap::output_fail_suffix_ (
-      const reflection::source_location& location, bool abort,
+      const reflection::source_location& location, check_kind kind,
       test_case& test_case)
   {
     size_t level = test_case.nesting_depth ();
-    if (abort)
+    if (kind == check_kind::requirement)
       {
         *this << " aborted...";
       }

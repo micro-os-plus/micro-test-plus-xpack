@@ -23,8 +23,8 @@
  * @details
  * This source file contains the non-template members of the
  * `detail::check_result` class, which reports the result of one check
- * when destroyed. The constructor captures the result value, the abort
- * status, the source location, and the test case reference; the
+ * when destroyed. The constructor captures the result value, the kind of
+ * the check, the source location, and the test case reference; the
  * destructor updates the test case counters and, after a failed
  * `require()`, stops the test case.
  *
@@ -69,21 +69,23 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @details
-     * Stores the evaluated Boolean @p value, the @p abort and
-     * @p has_expression flags, the @p location identifying the source line
-     * of the assertion, and a reference to the owning @p test_case. The
-     * check number is assigned later, by the destructor, when the check is
-     * reported.
+     * Stores the evaluated Boolean @p value, and, in the failure details,
+     * the @p kind of the check, the @p has_expression flag, and the
+     * @p location identifying the source line of the assertion, with an
+     * empty message; it also stores a reference to the owning
+     * @p test_case. The check number is assigned later, by the destructor,
+     * when the check is reported.
      *
      * When exceptions are enabled, the number of uncaught exceptions is
      * also stored, so that the destructor can tell whether it runs during
      * stack unwinding.
      */
-    check_result::check_result (bool value, bool abort, bool has_expression,
+    check_result::check_result (bool value, check_kind kind,
+                                bool has_expression,
                                 const reflection::source_location& location,
                                 test_case& test_case)
-        : value_{ value }, abort_{ abort }, has_expression_{ has_expression },
-          location_{ location }, test_case_{ test_case }
+        : value_{ value }, info_{ kind, {}, has_expression, location },
+          test_case_{ test_case }
     {
 #if defined(__cpp_exceptions)
       uncaught_exceptions_ = std::uncaught_exceptions ();
@@ -103,9 +105,10 @@ namespace micro_os_plus::micro_test_plus
      * If the evaluated expression is true, the reporter records a
      * successful outcome along with any accumulated message, and the
      * successful checks counter of the test case is incremented. If the
-     * expression is false, the reporter records a failure, including the
-     * abort status, message, expression, and source location, and the
-     * failed checks counter is incremented.
+     * expression is false, the reporter records a failure, with the
+     * failure details (the kind of the check, the message, and the source
+     * location) and the expression, and the failed checks counter is
+     * incremented.
      *
      * The expression text is obtained from the expression formatter with
      * `check_text()`, which returns the text of this check even if later
@@ -140,20 +143,19 @@ namespace micro_os_plus::micro_test_plus
 
       if (value_) [[likely]]
         {
-          test_case_.reporter_ ().pass (message_, expression_str, test_case_);
+          test_case_.reporter_ ().pass (info_.message, expression_str,
+                                        test_case_);
           test_case_.totals_.increment_successful_checks ();
         }
       else
         {
-          test_case_.reporter_ ().fail (abort_, message_, expression_str,
-                                        has_expression_, location_,
-                                        test_case_);
+          test_case_.reporter_ ().fail (info_, expression_str, test_case_);
           test_case_.totals_.increment_failed_checks ();
         }
 
       expression.end_check (this);
 
-      if (abort_ && !value_) [[unlikely]]
+      if (info_.kind == check_kind::requirement && !value_) [[unlikely]]
         {
 #if defined(__cpp_exceptions)
           if (std::uncaught_exceptions () <= uncaught_exceptions_)
@@ -163,7 +165,7 @@ namespace micro_os_plus::micro_test_plus
 #else
           test_case_.reporter_ ().write_buffer_to_console ();
           test_case_.reporter_ ().flush_streams ();
-          test_case_.abort (location_);
+          test_case_.abort (info_.location);
 #endif // defined(__cpp_exceptions)
         }
     }

@@ -79,11 +79,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * The expression is evaluated, and the result is passed, together with
-     * the abort status and whether the expression is a framework
+     * the kind of the check and whether the expression is a framework
      * comparator, to the non-template constructor, which also stores the
-     * source location and the test case. The abort flag, set by
-     * `require()`, determines whether the test case is stopped if the
-     * check fails.
+     * source location and the test case. The kind,
+     * `check_kind::requirement` for `require()`, determines whether the
+     * test case is stopped if the check fails.
      *
      * The expression is then formatted into the expression formatter of the
      * reporter, which is shared by all checks; `begin_check()` assigns it
@@ -91,11 +91,11 @@ namespace micro_os_plus::micro_test_plus
      * reported, if any.
      */
     template <class Expr_T>
-    check_result::check_result (const Expr_T& expr, bool abort,
+    check_result::check_result (const Expr_T& expr, check_kind kind,
                                 const reflection::source_location& location,
                                 test_case& test_case,
                                 expression_formatter& expression)
-        : check_result{ static_cast<bool> (expr), abort,
+        : check_result{ static_cast<bool> (expr), kind,
                         type_traits::is_op<Expr_T>, location, test_case }
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
@@ -152,27 +152,27 @@ namespace micro_os_plus::micro_test_plus
     {
       if constexpr (std::is_same_v<T, char>)
         {
-          message_.push_back (msg);
+          info_.message.push_back (msg);
         }
       else if constexpr (std::is_same_v<T, bool>)
         {
-          message_.append (msg ? "true" : "false");
+          info_.message.append (msg ? "true" : "false");
         }
       else if constexpr (std::is_arithmetic_v<T>)
         {
-          detail::append_number (message_, msg);
+          detail::append_number (info_.message, msg);
         }
       else if constexpr (std::is_null_pointer_v<T>)
         {
-          message_.append ("nullptr");
+          info_.message.append ("nullptr");
         }
       else if constexpr (std::is_pointer_v<T>)
         {
-          message_.append (msg != nullptr ? msg : "nullptr");
+          info_.message.append (msg != nullptr ? msg : "nullptr");
         }
       else
         {
-          message_.append (msg);
+          info_.message.append (msg);
         }
       return *this;
     }

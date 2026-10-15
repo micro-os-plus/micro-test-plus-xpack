@@ -496,23 +496,22 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Outputs a fail prefix (which includes the message and the source
-   * location), followed, when `has_expression` is true, by the
+   * location), followed, when `failure.has_expression` is true, by the
    * pre-formatted expression string, and a fail suffix.
    */
   void
-  reporter::fail (bool abort, std::string& message,
-                  const std::string& expression, bool has_expression,
-                  const reflection::source_location& location,
+  reporter::fail (failure_info& failure, const std::string& expression,
                   test_case& test_case)
   {
-    output_fail_prefix_ (message, has_expression, location, test_case);
+    output_fail_prefix_ (failure.message, failure.has_expression,
+                         failure.location, test_case);
 
-    if (has_expression)
+    if (failure.has_expression)
       {
         *this << expression;
       }
 
-    output_fail_suffix_ (location, abort, test_case);
+    output_fail_suffix_ (failure.location, failure.kind, test_case);
 
     buffer_has_failures_ = true;
   }

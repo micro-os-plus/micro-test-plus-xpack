@@ -62,6 +62,7 @@
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include "type-traits.h"
+#include "check-result.h"
 #include "detail.h"
 #include "expression-formatter.h"
 #include "reflection.h"
@@ -388,19 +389,16 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Report a failed condition.
        *
-       * @param abort Whether to abort execution after failure.
-       * @param message The message to display.
+       * @param failure The failure details: the kind of the check, the
+       * message to display, whether the expression is a compound op to
+       * display, and the source location of the failure.
        * @param expression The string representation of the expression.
-       * @param has_expression Whether the expression is a compound op to
-       * display.
-       * @param location The source location of the failure.
        * @param test_case The test case that owns this check.
        * @par Returns
        *   Nothing.
        */
       void
-      fail (bool abort, std::string& message, const std::string& expression,
-            bool has_expression, const reflection::source_location& location,
+      fail (failure_info& failure, const std::string& expression,
             test_case& test_case);
 
       // ----------------------------------------------------------------------
@@ -716,14 +714,15 @@ namespace micro_os_plus::micro_test_plus
        * output, including the abort notice, if any.
        *
        * @param location The source location of the failure.
-       * @param abort Whether to abort execution after failure.
+       * @param kind The kind of the check; for `check_kind::requirement`,
+       * the abort notice is displayed.
        * @param test_case The test case that owns this check.
        * @par Returns
        *   Nothing.
        */
       virtual void
       output_fail_suffix_ (const reflection::source_location& location,
-                           bool abort, test_case& test_case)
+                           check_kind kind, test_case& test_case)
           = 0;
 
     protected:

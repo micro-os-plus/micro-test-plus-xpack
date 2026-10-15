@@ -161,8 +161,8 @@ namespace
     }
 
     void
-    output_fail_suffix_ (const reflection::source_location&, bool,
-                         test_case&) override
+    output_fail_suffix_ (const reflection::source_location&,
+                         detail::check_kind, test_case&) override
     {
     }
   };

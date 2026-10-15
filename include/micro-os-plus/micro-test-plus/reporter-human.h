@@ -315,14 +315,15 @@ namespace micro_os_plus::micro_test_plus::detail
      * @brief Outputs the suffix for a failing condition.
      *
      * @param location The source location of the failure.
-     * @param abort Whether to abort execution after failure.
+     * @param kind The kind of the check; for `check_kind::requirement`,
+     * the abort notice is displayed.
      * @param test_case The test case that owns this check.
      * @par Returns
      *   Nothing.
      */
     void
     output_fail_suffix_ (const reflection::source_location& location,
-                         bool abort, test_case& test_case) override;
+                         check_kind kind, test_case& test_case) override;
 
     /**
      * @brief Writes the results buffered for the outer test case before

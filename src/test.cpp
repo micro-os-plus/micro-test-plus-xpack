@@ -296,19 +296,22 @@ namespace micro_os_plus::micro_test_plus
   {
     next_test_point_number_ ();
 
-    std::string message{ "unexpected exception" };
+    detail::failure_info failure{ .kind = detail::check_kind::expectation,
+                                  .message = "unexpected exception",
+                                  .has_expression = false,
+                                  .location = location_ };
     if (what != nullptr)
       {
-        message.append (": ");
-        message.append (what);
+        failure.message.append (": ");
+        failure.message.append (what);
       }
     else
       {
-        message.append (" of unknown type");
+        failure.message.append (" of unknown type");
       }
 
     const std::string expression{};
-    reporter_ ().fail (false, message, expression, false, location_, *this);
+    reporter_ ().fail (failure, expression, *this);
     totals_.increment_failed_checks ();
   }
 #endif // defined(__cpp_exceptions)
