@@ -61,14 +61,15 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace.
   may be constructed before it. `static_runner` is a deprecated alias
   of `runner`.
 - Test hierarchy (`test.h`, `src/test.cpp`), all deriving from the
-  internal `detail::runnable_base` base (`suite` and `subtest` each store
+  internal `detail::runnable_base` base (`suite` and `test_case` each store
   their body in a `std::function` taking a reference to their own class):
   - `top_suite` — the implicit root suite owned by each `runner`,
     returned by `runner::initialise()`; users do not construct it
     directly.
   - `suite` — a named group of test cases; `static_suite` is the
     statically-allocated variant.
-  - `subtest` — an individual test case/assertion group inside a suite.
+  - `test_case` — a named sequence of checks inside a suite; test cases
+    may be nested.
 - `reporter` (`reporter.h`) is an abstract base for formatting test
   results; concrete implementations are `reporter_human`
   (`reporter-human.h`, human-readable console output) and `reporter_tap`

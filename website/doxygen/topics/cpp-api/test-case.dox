@@ -3,7 +3,7 @@
 
 @details
 Each test case is defined by calling `suite::test()` with a descriptive
-name and a callable object (typically a lambda accepting a `subtest&`
+name and a callable object (typically a lambda accepting a `test_case&`
 reference), along with any optional arguments required for the test.
 
 Test cases allow related checks to be organised together within the same

@@ -17,6 +17,6 @@ more related components:
   registration, and `run()`
 - `stopwatch.cpp` — `stopwatch` clock readings and elapsed-time
   computation
-- `test.cpp` — `suite`, `top_suite`, `static_suite`, and `subtest`
+- `test.cpp` — `suite`, `top_suite`, `static_suite`, and `test_case`
   lifecycle methods
 - `utility.cpp` — `extract_file_name()` and `is_match()` helpers
