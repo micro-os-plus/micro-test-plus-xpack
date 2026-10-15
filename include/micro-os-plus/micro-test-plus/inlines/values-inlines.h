@@ -90,10 +90,11 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns the stored value by value.
+     * Returns a `const` reference to the stored value, valid as long as
+     * the wrapper.
      */
     template <class T>
-    constexpr T
+    constexpr const T&
     value_base<T>::get (void) const noexcept
     {
       return value_;

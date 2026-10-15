@@ -76,14 +76,15 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * If the type `T` is a framework type (derived from `detail::op`)
      * that provides a `get()` member function, it is invoked and its result
-     * returned. Otherwise the argument itself is returned unchanged, so
-     * that the types of the application, even those with a `get()` member
-     * function, are compared with their own operators. The selection is
-     * performed at compile time via `if constexpr` with an inline
-     * `requires` expression.
+     * returned. Otherwise a reference to the argument itself is returned,
+     * so that the types of the application, even those with a `get()`
+     * member function, are compared with their own operators, without a
+     * copy. The selection is performed at compile time via
+     * `if constexpr` with an inline `requires` expression; the return
+     * type is deduced with `decltype (auto)` from the selected branch.
      */
     template <class T>
-    constexpr auto
+    constexpr decltype (auto)
     unwrap (const T& t)
     {
       if constexpr (type_traits::is_op<T> && requires { t.get (); })
@@ -120,10 +121,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Returns the operand, unwrapped by `detail::unwrap()` if it is a
-     * framework wrapper type.
+     * framework wrapper type; the stored operand is not copied.
      */
     template <class T>
-    constexpr auto
+    constexpr decltype (auto)
     unary_op<T>::operand (void) const
     {
       return detail::unwrap (t_);
@@ -158,10 +159,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Returns the value of the left-hand operand, unwrapped by
-     * `detail::unwrap()` if it is a framework wrapper type.
+     * `detail::unwrap()` if it is a framework wrapper type; the stored
+     * operand is not copied.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr auto
+    constexpr decltype (auto)
     binary_op<Lhs_T, Rhs_T>::lhs (void) const
     {
       return detail::unwrap (lhs_);
@@ -170,10 +172,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Returns the value of the right-hand operand, unwrapped by
-     * `detail::unwrap()` if it is a framework wrapper type.
+     * `detail::unwrap()` if it is a framework wrapper type; the stored
+     * operand is not copied.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr auto
+    constexpr decltype (auto)
     binary_op<Lhs_T, Rhs_T>::rhs (void) const
     {
       return detail::unwrap (rhs_);

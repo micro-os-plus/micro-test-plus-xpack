@@ -153,11 +153,16 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Getter for the stored value.
        *
+       * @details
+       * Returns a reference, so that a wrapped object (for example a
+       * `to_t<std::string>`) is not copied each time it is compared or
+       * formatted.
+       *
        * @par Parameters
        *   None.
-       * @return The stored value.
+       * @return A reference to the stored value.
        */
-      [[nodiscard]] constexpr T
+      [[nodiscard]] constexpr const T&
       get (void) const noexcept;
 
     private:

@@ -53,6 +53,45 @@ namespace
     return formatter << "{ " << p.x << ", " << p.y << " }";
   }
 
+  // A user-defined type that counts its copies, to check that the
+  // comparators do not copy the operands more than needed
+  // (API-REVIEW.md #53).
+  int counted_copies = 0;
+
+  struct counted
+  {
+    explicit counted (int v) : number{ v }
+    {
+    }
+
+    counted (const counted& other) : number{ other.number }
+    {
+      ++counted_copies;
+    }
+
+    counted&
+    operator= (const counted& other)
+    {
+      number = other.number;
+      ++counted_copies;
+      return *this;
+    }
+
+    int number;
+  };
+
+  constexpr bool
+  operator== (const counted& lhs, const counted& rhs)
+  {
+    return lhs.number == rhs.number;
+  }
+
+  expression_formatter&
+  operator<< (expression_formatter& formatter, const counted& c)
+  {
+    return formatter << c.number;
+  }
+
   // An abort handler which, when exceptions are available, returns
   // control to the test case, without terminating the process
   // (API-REVIEW.md #21).
@@ -866,6 +905,34 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.successful_checks++;
 
         t.expect (eq (received, 3)) << "deferred suite received the copy";
+        local_counts.successful_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The operands are copied once, when stored in the comparator, and
+    // not again when they are compared or reported (API-REVIEW.md #53).
+    ts.test ("Operand copies", [] (auto& t)
+      {
+        const counted a{ 1 };
+        const counted b{ 1 };
+
+        counted_copies = 0;
+        t.expect (eq (a, b)) << "plain operands";
+        local_counts.successful_checks++;
+        int copies = counted_copies;
+
+        t.expect (eq (copies, 2)) << "plain operands copied once";
+        local_counts.successful_checks++;
+
+        const to_t<counted> wrapped{ a };
+
+        counted_copies = 0;
+        t.expect (eq (wrapped, b)) << "wrapped operand";
+        local_counts.successful_checks++;
+        copies = counted_copies;
+
+        t.expect (eq (copies, 2)) << "wrapped operand copied once";
         local_counts.successful_checks++;
 
         local_counts.executed_test_cases++;

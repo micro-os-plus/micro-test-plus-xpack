@@ -2951,14 +2951,21 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 5 - deferred suite received the copy
         1..5
     ok 14 - Callable arguments # { passed, 5 checks }
+    # Subtest: Operand copies
+        ok 1 - plain operands
+        ok 2 - plain operands copied once
+        ok 3 - wrapped operand
+        ok 4 - wrapped operand copied once
+        1..4
+    ok 15 - Operand copies # { passed, 4 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - handler called
         ok 3 - previous handler returned
         1..3
-    ok 15 - Abort handler # { passed, 3 checks }
-    1..15
-not ok 10 - Miscellaneous suite # { FAILED, 75 checks passed, 13 failed, in 15 test cases, time: 0.711 ms }
+    ok 16 - Abort handler # { passed, 3 checks }
+    1..16
+not ok 10 - Miscellaneous suite # { FAILED, 79 checks passed, 13 failed, in 16 test cases, time: 0.711 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3158,4 +3165,4 @@ ok 12 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.330 ms }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.261 ms }
 1..13
-# { total: 464 checks passed, 341 failed, in 94 test cases, 13 test suites, time: 4.661 ms }
+# { total: 468 checks passed, 341 failed, in 95 test cases, 13 test suites, time: 4.661 ms }

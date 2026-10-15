@@ -156,14 +156,18 @@ namespace micro_os_plus::micro_test_plus
      * argument-dependent lookup cannot select a function of the
      * application, defined in the namespace of an operand.
      *
+     * The operand is returned by reference, without a copy; the result
+     * is valid only as long as the operand.
+     *
      * @tparam T The type of the operand.
      *
      * @param t The operand.
      * @return The value returned by `t.get()` for the framework wrappers
-     * (the literals and the `to_*` wrappers), otherwise `t`.
+     * (the literals and the `to_*` wrappers), otherwise a reference to
+     * `t`.
      */
     template <class T>
-    [[nodiscard]] constexpr auto
+    [[nodiscard]] constexpr decltype (auto)
     unwrap (const T& t);
 
     /**
@@ -232,11 +236,15 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the wrapped operand expression.
        *
+       * @details
+       * The operand is unwrapped with `detail::unwrap()` and returned by
+       * reference, so that formatting it does not copy it.
+       *
        * @par Parameters
        *   None.
        * @return The extracted operand value.
        */
-      [[nodiscard]] constexpr auto
+      [[nodiscard]] constexpr decltype (auto)
       operand (void) const;
 
     private:
@@ -303,37 +311,49 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the left-hand operand.
        *
+       * @details
+       * The operand is unwrapped with `detail::unwrap()` and returned by
+       * reference, so that formatting it does not copy it.
+       *
        * @par Parameters
        *   None.
        * @return The extracted left-hand operand.
        */
-      [[nodiscard]] constexpr auto
+      [[nodiscard]] constexpr decltype (auto)
       lhs (void) const;
 
       /**
        * @brief Retrieves the right-hand operand.
        *
+       * @details
+       * The operand is unwrapped with `detail::unwrap()` and returned by
+       * reference, so that formatting it does not copy it.
+       *
        * @par Parameters
        *   None.
        * @return The extracted right-hand operand.
        */
-      [[nodiscard]] constexpr auto
+      [[nodiscard]] constexpr decltype (auto)
       rhs (void) const;
 
     private:
       /**
        * @brief Stores the left-hand operand.
        *
-       * @note Operands are stored by value; passing a large container
-       * will copy it into this member.
+       * @note Operands are stored by value, so that an operator may
+       * outlive the expressions it was built from; a large container is
+       * copied into this member, and again when the comparator is nested
+       * in a logical operator.
        */
       const Lhs_T lhs_{};
 
       /**
        * @brief Stores the right-hand operand.
        *
-       * @note Operands are stored by value; passing a large container
-       * will copy it into this member.
+       * @note Operands are stored by value, so that an operator may
+       * outlive the expressions it was built from; a large container is
+       * copied into this member, and again when the comparator is nested
+       * in a logical operator.
        */
       const Rhs_T rhs_{};
 

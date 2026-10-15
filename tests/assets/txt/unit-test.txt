@@ -919,12 +919,18 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ local session passed
         ✓ deferred suite received the copy
     ✓ Callable arguments - passed (5 checks)
+    • Operand copies
+        ✓ plain operands
+        ✓ plain operands copied once
+        ✓ wrapped operand
+        ✓ wrapped operand copied once
+    ✓ Operand copies - passed (4 checks)
     • Abort handler
         ✓ no initial handler
         ✓ handler called
         ✓ previous handler returned
     ✓ Abort handler - passed (3 checks)
-✗ Miscellaneous suite - FAILED (75 checks passed, 13 failed, in 15 test cases), time: 0.757 ms
+✗ Miscellaneous suite - FAILED (79 checks passed, 13 failed, in 16 test cases), time: 0.757 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1020,4 +1026,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 464 checks passed, 341 failed, in 94 test cases, 13 test suites, time: 5.050 ms
+✗ Total: 468 checks passed, 341 failed, in 95 test cases, 13 test suites, time: 5.050 ms
