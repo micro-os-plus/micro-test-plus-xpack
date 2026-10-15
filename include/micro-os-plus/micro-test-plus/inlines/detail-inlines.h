@@ -779,25 +779,55 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Object pointers are converted implicitly to `const volatile void*`,
-     * which accepts any qualification, and the qualifiers are then removed
-     * with `const_cast`; a `reinterpret_cast` to `void*` would not compile
-     * for pointers to `const` objects. Function pointers, which do not
-     * convert to `void*` implicitly, use `reinterpret_cast`.
+     * Null pointers are rendered as `"0x0"`, regardless of the platform,
+     * avoiding platform-specific representations such as `"(nil)"` on
+     * Linux/glibc. Non-null pointers are formatted with `snprintf()`,
+     * using the `%p` specifier.
+     *
+     * The `%p` specifier expects a `void*`. Object pointers are converted
+     * implicitly to `const volatile void*`, which accepts any
+     * qualification, and the qualifiers are then removed with
+     * `const_cast`; a `reinterpret_cast` to `void*` would not compile for
+     * pointers to `const` objects. The object is not accessed. Function
+     * pointers, which do not convert to `void*` implicitly, use
+     * `reinterpret_cast`.
      */
     template <class T>
-    constexpr void*
-    to_printable_pointer (T* v) noexcept
+    void
+    append_pointer (std::string& buffer, T* v)
     {
+      if (v == nullptr)
+        {
+          buffer.append ("0x0");
+          return;
+        }
+
+      void* p;
       if constexpr (std::is_function_v<T>)
         {
-          return reinterpret_cast<void*> (v);
+          p = reinterpret_cast<void*> (v);
         }
       else
         {
-          const volatile void* p = v;
-          return const_cast<void*> (p);
+          const volatile void* cvp = v;
+          p = const_cast<void*> (cvp);
         }
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
+
+      char buf[20];
+      snprintf (buf, sizeof (buf), "%p", p);
+      buffer.append (buf);
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
     }
 
     // ========================================================================

@@ -39,13 +39,11 @@
 #include "micro-os-plus/micro-test-plus/reporter-human.h"
 #include "micro-os-plus/micro-test-plus/runner.h"
 #include "micro-os-plus/micro-test-plus/test.h"
+#include "micro-os-plus/micro-test-plus/utility.h"
 
 #if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
-
-// For the PRIu32 macro used in snprintf() formatting of uint32_t values.
-#include <cinttypes>
 
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
 // For isatty() to detect if stdout is a terminal, enabling colour output.
@@ -113,30 +111,6 @@ namespace micro_os_plus::micro_test_plus::detail
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Number of spaces per indentation level.
-   *
-   * @details
-   * Used by `operator<<(indentation)` and related methods to compute
-   * the leading whitespace for each nesting depth.
-   */
-  constexpr size_t indent_size = 4;
-
-  /**
-   * @details
-   * This operator overload appends spaces to the internal output buffer
-   * corresponding to `m.level` four-space indentation levels, allowing
-   * `*this << indent(n) << "text"` chaining.
-   */
-  reporter_human&
-  reporter_human::operator<< (indentation m)
-  {
-    buffer_.append (m.level * indent_size, ' ');
-    return *this;
-  }
-
-  // --------------------------------------------------------------------------
-
-  /**
    * @details
    * If verbosity is not silent, a blank line is printed to `stdout`
    * before the build-information block emitted by `write_info_()`. A
@@ -199,15 +173,6 @@ namespace micro_os_plus::micro_test_plus::detail
 
         size_t total_suites_count = runner.total_suites_count ();
 
-        uint32_t milliseconds = 0;
-        uint32_t microseconds = 0;
-        if (runner.stopwatch_.has_elapsed ())
-          {
-            const auto elapsed = runner.stopwatch_.elapsed ().count ();
-            milliseconds = static_cast<uint32_t> (elapsed / 1000);
-            microseconds = static_cast<uint32_t> (elapsed % 1000);
-          }
-
         char message_skipped_test_cases[40] = "";
         if (runner.totals ().skipped_test_cases () > 0)
           {
@@ -235,13 +200,8 @@ namespace micro_os_plus::micro_test_plus::detail
                   message_skipped_test_cases, total_suites_count,
                   total_suites_count == 1 ? "" : "s", message_skipped_suites);
 
-        char message_time[120] = "";
-        if (milliseconds > 0 || microseconds > 0)
-          {
-            snprintf (message_time, sizeof (message_time),
-                      ", time: %" PRIu32 ".%03" PRIu32 " ms", milliseconds,
-                      microseconds);
-          }
+        char message_time[elapsed_time_size_];
+        format_elapsed_time_ (runner.stopwatch_, message_time);
 
         if (runner.totals ().passed ()) [[likely]]
           {
@@ -320,28 +280,14 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    uint32_t milliseconds = 0;
-    uint32_t microseconds = 0;
-    if (suite.stopwatch_.has_elapsed ())
-      {
-        const auto elapsed = suite.stopwatch_.elapsed ().count ();
-        milliseconds = static_cast<uint32_t> (elapsed / 1000);
-        microseconds = static_cast<uint32_t> (elapsed % 1000);
-      }
-
-    char message_time[120] = "";
-    if (milliseconds > 0 || microseconds > 0)
-      {
-        snprintf (message_time, sizeof (message_time),
-                  ", time: %" PRIu32 ".%03" PRIu32 " ms", milliseconds,
-                  microseconds);
-      }
+    char message_time[elapsed_time_size_];
+    format_elapsed_time_ (suite.stopwatch_, message_time);
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
-        std::string indent (indent_size, ' ');
+        std::string indent (indent_size_, ' ');
 
         // The test cases skipped by the filter, only when not zero.
         char message_skipped[40] = "";
@@ -500,7 +446,7 @@ namespace micro_os_plus::micro_test_plus::detail
     open_test_cases_.push_back (
         { &test_case, verbosity_ == verbosity::verbose });
 
-    std::string indent (indent_size * test_case.nesting_depth (), ' ');
+    std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
     write_file_ ("%s• %s\n", indent.c_str (), test_case.name ());
 
@@ -550,8 +496,8 @@ namespace micro_os_plus::micro_test_plus::detail
     // should be displayed.
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
-        std::string indent (indent_size * test_case.nesting_depth (), ' ');
-        std::string indent2 (indent_size * (test_case.nesting_depth () + 1),
+        std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
+        std::string indent2 (indent_size_ * (test_case.nesting_depth () + 1),
                              ' ');
 
         if (add_empty_line_)
@@ -744,7 +690,7 @@ namespace micro_os_plus::micro_test_plus::detail
         *this << " ";
       }
     *this << colours_.fail << "FAILED" << colours_.none;
-    *this << " (" << reflection::short_name (location.file_name ()) << ":"
+    *this << " (" << utility::extract_file_name (location.file_name ()) << ":"
           << location.line ();
     if (has_expression)
       {
@@ -820,7 +766,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
-        std::string indent (indent_size * test_case.nesting_depth (), ' ');
+        std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
         if (add_empty_line_)
           {
@@ -920,7 +866,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
         is_first = false;
 
-        std::string indent (indent_size * open.test->nesting_depth (), ' ');
+        std::string indent (indent_size_ * open.test->nesting_depth (), ' ');
         write_console_ ("%s• %s\n", indent.c_str (), open.test->name ());
 
         open.name_displayed = true;

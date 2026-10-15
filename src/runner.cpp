@@ -48,7 +48,6 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
-#include <algorithm>
 #include <cstring>
 #include <string>
 
@@ -634,7 +633,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     fprintf (stderr, "\nerror: test execution aborted at %s:%u\n",
-             reflection::short_name (sl.file_name ()), sl.line ());
+             utility::extract_file_name (sl.file_name ()), sl.line ());
 
     fflush (stdout);
     fflush (stderr);

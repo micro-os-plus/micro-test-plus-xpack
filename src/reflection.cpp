@@ -23,8 +23,7 @@
  * @details
  * This source file contains the implementation of
  * `reflection::short_name()`, which extracts the base file name from a
- * fully qualified path by returning the portion after the last `/`
- * separator, or the original string if no separator is present.
+ * fully qualified path, by delegating to `utility::extract_file_name()`.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::reflection` namespace.
@@ -35,8 +34,7 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/micro-test-plus/reflection.h"
-
-#include <cstring>
+#include "micro-os-plus/micro-test-plus/utility.h"
 
 // ----------------------------------------------------------------------------
 
@@ -64,33 +62,15 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This function extracts the short name from a given file path by locating
-     * the final folder separator ('/'). If a separator is found, it returns a
-     * pointer to the character immediately following it, effectively providing
-     * the file or folder name. If no separator is present, the original input
-     * string is returned. This utility is useful for reporting concise file or
-     * folder names in test output.
+     * Delegates to `utility::extract_file_name()`, the single
+     * implementation used by the framework, so both the `/` and the `\`
+     * separators are recognised. If no separator is present, the original
+     * input string is returned.
      */
     const char*
     short_name (const char* name) noexcept
     {
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
-      const char* p = strrchr (name, '/');
-      if (p != nullptr)
-        return p + 1;
-      else
-        return name;
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
+      return utility::extract_file_name (name);
     }
 
   } // namespace reflection

@@ -41,12 +41,16 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/micro-test-plus/reporter.h"
+#include "micro-os-plus/micro-test-plus/stopwatch.h"
+#include "micro-os-plus/micro-test-plus/utility.h"
 
 #if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
 #include <cstdarg>
+// For the PRIu32 macro used in snprintf() formatting of uint32_t values.
+#include <cinttypes>
 
 // ----------------------------------------------------------------------------
 
@@ -283,10 +287,7 @@ namespace micro_os_plus::micro_test_plus::detail
         line.append ("Running: ");
 
         // Append only the file name part of argv[0].
-        const std::string_view arg0{ arguments_[0] };
-        const auto sep = arg0.rfind ('/');
-        line.append ((sep != std::string_view::npos) ? arg0.substr (sep + 1)
-                                                     : arg0);
+        line.append (utility::extract_file_name (arguments_[0]));
 
         for (const char* argument : arguments_.subspan (1))
           {
@@ -397,6 +398,19 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     // Call the endl function.
     (*func) (*this);
+    return *this;
+  }
+
+  /**
+   * @details
+   * This operator overload appends spaces to the internal output buffer,
+   * `indent_size_` for each of the `m.level` indentation levels, allowing
+   * `*this << indent(n) << "text"` chaining in both reporters.
+   */
+  reporter&
+  reporter::operator<< (indentation m)
+  {
+    buffer_.append (m.level * indent_size_, ' ');
     return *this;
   }
 
@@ -526,6 +540,31 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     buffer_.clear ();
     buffer_has_failures_ = false;
+  }
+
+  /**
+   * @details
+   * The elapsed time, in microseconds, is displayed in milliseconds, with
+   * three decimals. When it is zero, either because the stopwatch has no
+   * readings or because the interval was shorter than a microsecond, the
+   * text is empty.
+   */
+  void
+  reporter::format_elapsed_time_ (const stopwatch& stopwatch,
+                                  char (&message)[elapsed_time_size_])
+  {
+    const auto elapsed = stopwatch.elapsed ().count ();
+    if (elapsed > 0)
+      {
+        snprintf (message, sizeof (message),
+                  ", time: %" PRIu32 ".%03" PRIu32 " ms",
+                  static_cast<uint32_t> (elapsed / 1000),
+                  static_cast<uint32_t> (elapsed % 1000));
+      }
+    else
+      {
+        message[0] = '\0';
+      }
   }
 
   // --------------------------------------------------------------------------

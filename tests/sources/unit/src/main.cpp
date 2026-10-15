@@ -336,6 +336,13 @@ main (int argc, char* argv[])
                     "file.cpp"sv));
       local_counts.successful_checks++;
 
+      // Windows-style path — returns filename component, as
+      // utility::extract_file_name() does.
+      t.expect (eq (std::string_view{ reflection::short_name (
+                        "C:\\some\\path\\file.cpp") },
+                    "file.cpp"sv));
+      local_counts.successful_checks++;
+
       local_counts.executed_test_cases++;
     });
 

@@ -32,8 +32,9 @@
  * The compound expression operators format comparator expressions and wrap
  * them in the pass/fail colour codes of the owning reporter.
  *
- * Numbers are formatted with the `detail::append_number()` helper, defined
- * in `detail-inlines.h`.
+ * Numbers and pointers are formatted with the `detail::append_number()`
+ * and `detail::append_pointer()` helpers, defined in `detail-inlines.h`
+ * and shared with the reporter.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
@@ -52,8 +53,6 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/micro-test-plus/reflection.h"
-
-#include <cstdio>
 
 // ----------------------------------------------------------------------------
 
@@ -169,38 +168,15 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Null pointers are rendered as `"0x0"` to avoid platform-specific
-   * representations such as `"(nil)"` on Linux/glibc. Non-null pointers
-   * are formatted as a hexadecimal address using `snprintf` with the
-   * `%p` specifier.
+   * The address is formatted by the `detail::append_pointer()` helper,
+   * shared with the `detail::reporter`.
    */
   template <typename T>
     requires (not std::is_same_v<T, char>)
   expression_formatter&
   expression_formatter::operator<< (T* v)
   {
-    if (v == nullptr)
-      {
-        buffer_.append ("0x0");
-        return *this;
-      }
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
-    char buff[20];
-    snprintf (buff, sizeof (buff), "%p", detail::to_printable_pointer (v));
-    buffer_.append (buff);
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-
+    detail::append_pointer (buffer_, v);
     return *this;
   }
 

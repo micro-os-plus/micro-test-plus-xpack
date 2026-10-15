@@ -23,8 +23,8 @@
  * @details
  * This header provides the inline implementations for the test reporting
  * facilities used within the µTest++ framework: the `indent()` manipulator
- * factory, the `reporter` accessors, the colour selector, and the template
- * output operators for pointers and arithmetic values.
+ * factory, the `reporter` accessor, and the template output operators for
+ * pointers and arithmetic values.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
@@ -44,11 +44,6 @@
 // ----------------------------------------------------------------------------
 
 #if defined(__cplusplus)
-
-// ----------------------------------------------------------------------------
-
-#include <cstdio>
-#include <cstring>
 
 // ----------------------------------------------------------------------------
 
@@ -91,66 +86,20 @@ namespace micro_os_plus::micro_test_plus::detail
     return verbosity_;
   }
 
-  /**
-   * @details
-   * Returns the ANSI colour code for pass or fail, depending on the boolean
-   * condition provided.
-   */
-  inline auto
-  reporter::colour_ (const bool cond) const
-  {
-    return cond ? colours_.pass : colours_.fail;
-  }
-
   // --------------------------------------------------------------------------
 
   /**
    * @details
-   * This operator overload enables the `reporter` to output pointer
-   * values in a consistent and readable format.
-   *
-   * Null pointers are always rendered as the string `"0x0"`, regardless of
-   * the platform, avoiding platform-specific representations such as
-   * `"(nil)"` on Linux/glibc.
-   *
-   * Non-null pointers are formatted as a hexadecimal address using
-   * `snprintf` with the `%p` format specifier. The resulting string is
-   * appended to the internal output buffer, allowing pointer values to be
-   * included in test reports and diagnostics.
-   *
-   * This approach provides clear and unambiguous representation of pointer
-   * addresses, which is particularly useful for debugging and verifying
-   * pointer-related test cases.
+   * The address is formatted by the `detail::append_pointer()` helper,
+   * shared with the `detail::expression_formatter`, so that the pointers
+   * are displayed identically in the expressions and in the messages.
    */
   template <typename T>
     requires (not std::is_same_v<T, char>)
   reporter&
   reporter::operator<< (T* v)
   {
-    if (v == nullptr)
-      {
-        // Explicitly render null pointers as "0x0" to avoid platform-specific
-        // representations such as "(nil)" on Linux/glibc.
-        buffer_.append ("0x0");
-        return *this;
-      }
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
-    char buff[20];
-    snprintf (buff, sizeof (buff), "%p", to_printable_pointer (v));
-    buffer_.append (buff);
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-
+    append_pointer (buffer_, v);
     return *this;
   }
 

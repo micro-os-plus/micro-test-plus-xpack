@@ -104,6 +104,7 @@ namespace micro_os_plus::micro_test_plus
   {
     class check_result;
     class reporter;
+    class stopwatch;
 
     /**
      * @brief Output stream manipulator for ending a line in test reports.
@@ -126,9 +127,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Parameterised stream manipulator for outputting indentation.
      *
      * @details
-     * Holds the indentation level; used with `operator<<` on the concrete
-     * reporters so that `*this << indent(n) << "text"` works naturally in
-     * chains.
+     * Holds the indentation level; used with `reporter::operator<<` so
+     * that `*this << indent(n) << "text"` works naturally in chains.
      */
     struct indentation
     {
@@ -136,7 +136,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Number of four-space indentation levels.
        *
        * @details
-       * Converted into spaces by the concrete reporters.
+       * Converted into spaces by `reporter::operator<<`.
        */
       size_t level;
     };
@@ -299,8 +299,17 @@ namespace micro_os_plus::micro_test_plus
       reporter&
       operator<< (reporter& (*func) (reporter&));
 
-      // ----------------------------------------------------------------------
-      // Specific operators.
+      /**
+       * @brief Output operator for the `indentation` manipulator.
+       *
+       * @details
+       * Appends `indent_size_` spaces for each indentation level.
+       *
+       * @param m The indentation manipulator produced by `indent(n)`.
+       * @return Reference to the current reporter instance.
+       */
+      reporter&
+      operator<< (indentation m);
 
       // ----------------------------------------------------------------------
 
@@ -562,15 +571,6 @@ namespace micro_os_plus::micro_test_plus
 
     protected:
       /**
-       * @brief Selects the appropriate colour code based on a condition.
-       *
-       * @param cond Boolean value indicating pass (true) or fail (false).
-       * @return The corresponding ANSI colour code as a string.
-       */
-      [[nodiscard]] inline auto
-      colour_ (const bool cond) const;
-
-      /**
        * @brief Output the current buffered content to the output file.
        *
        * @details
@@ -656,6 +656,37 @@ namespace micro_os_plus::micro_test_plus
       clear_buffer_ (void);
 
       /**
+       * @brief Size of the array that receives the elapsed time text.
+       *
+       * @details
+       * Large enough for `", time: 4294967295.999 ms"`, the longest text
+       * produced by `format_elapsed_time_()`.
+       */
+      static constexpr size_t elapsed_time_size_ = 32;
+
+      /**
+       * @brief Formats the elapsed time of a suite or of the session.
+       *
+       * @details
+       * The text is appended to the summary lines by the concrete
+       * reporters, in the form `", time: 1.234 ms"`; it is empty when
+       * the stopwatch has no elapsed time, so that the summary lines
+       * remain identical on the platforms without a clock.
+       *
+       * The array has a fixed size, known at compile time, so that the
+       * compiler can verify that the text is never truncated.
+       *
+       * @param stopwatch The stopwatch of the suite or of the runner.
+       * @param message The character array that receives the
+       * null-terminated text.
+       * @par Returns
+       *   Nothing.
+       */
+      static void
+      format_elapsed_time_ (const stopwatch& stopwatch,
+                            char (&message)[elapsed_time_size_]);
+
+      /**
        * @brief Outputs the prefix for a passing condition.
        *
        * @details
@@ -728,6 +759,15 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
     protected:
+      /**
+       * @brief Number of spaces per nesting level.
+       *
+       * @details
+       * Used by the concrete reporters to indent the lines of the nested
+       * test cases; four spaces is also the TAP 14 subtest indentation.
+       */
+      static constexpr size_t indent_size_ = 4;
+
       /**
        * @brief The verbosity level for test reporting.
        *

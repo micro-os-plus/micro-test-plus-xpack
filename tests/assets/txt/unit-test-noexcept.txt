@@ -43,7 +43,8 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     • reflection::short_name()
         ✓ file.cpp == file.cpp
         ✓ file.cpp == file.cpp
-    ✓ reflection::short_name() - passed (2 checks)
+        ✓ file.cpp == file.cpp
+    ✓ reflection::short_name() - passed (3 checks)
     • Nested subtests
         • inner subtest
             ✓ 1 == 1
@@ -91,7 +92,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ not 1.495 < approx (1.5, 0.01)
         ✓ 0.1f + 0.2f == approx (0.3f, 1e-6f)
     ✓ Floating-point tolerance - passed (11 checks)
-✗ Static top suite - FAILED (47 checks passed, 4 failed, in 19 test cases)
+✗ Static top suite - FAILED (48 checks passed, 4 failed, in 19 test cases)
 • Combinatorial floats suite
     • Combinatorial floats
         ✓ 42.0 == 42 signed long long
@@ -961,4 +962,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 446 checks passed, 330 failed, in 80 test cases, 12 test suites
+✗ Total: 447 checks passed, 330 failed, in 80 test cases, 12 test suites

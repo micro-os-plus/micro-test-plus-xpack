@@ -39,13 +39,11 @@
 #include "micro-os-plus/micro-test-plus/reporter-tap.h"
 #include "micro-os-plus/micro-test-plus/runner.h"
 #include "micro-os-plus/micro-test-plus/test.h"
+#include "micro-os-plus/micro-test-plus/utility.h"
 
 #if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
-
-// For the PRIu32 macro used in snprintf() formatting of uint32_t values.
-#include <cinttypes>
 
 // ----------------------------------------------------------------------------
 
@@ -93,24 +91,6 @@ namespace micro_os_plus::micro_test_plus::detail
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-  }
-
-  // --------------------------------------------------------------------------
-
-  constexpr size_t indent_size = 4;
-
-  /**
-   * @details
-   * This operator overload appends spaces to the internal output buffer
-   * corresponding to `m.level` four-space indentation levels, allowing
-   * `*this << indent(n) << "text"` chaining; four spaces is the TAP 14
-   * test case indentation.
-   */
-  reporter_tap&
-  reporter_tap::operator<< (indentation m)
-  {
-    buffer_.append (m.level * indent_size, ' ');
-    return *this;
   }
 
   // --------------------------------------------------------------------------
@@ -174,15 +154,6 @@ namespace micro_os_plus::micro_test_plus::detail
 
     size_t total_suites_count = runner.total_suites_count ();
 
-    uint32_t milliseconds = 0;
-    uint32_t microseconds = 0;
-    if (runner.stopwatch_.has_elapsed ())
-      {
-        const auto elapsed = runner.stopwatch_.elapsed ().count ();
-        milliseconds = static_cast<uint32_t> (elapsed / 1000);
-        microseconds = static_cast<uint32_t> (elapsed % 1000);
-      }
-
     char message_summary[32];
     snprintf (message_summary, sizeof (message_summary), "1..%zu",
               total_suites_count);
@@ -214,13 +185,8 @@ namespace micro_os_plus::micro_test_plus::detail
               message_skipped_test_cases, total_suites_count,
               total_suites_count == 1 ? "" : "s", message_skipped_suites);
 
-    char message_time[120] = "";
-    if (milliseconds > 0 || microseconds > 0)
-      {
-        snprintf (message_time, sizeof (message_time),
-                  ", time: %" PRIu32 ".%03" PRIu32 " ms", milliseconds,
-                  microseconds);
-      }
+    char message_time[elapsed_time_size_];
+    format_elapsed_time_ (runner.stopwatch_, message_time);
 
     write_file_ ("%s\n# { %s%s }\n", message_summary, message_totals,
                  message_time);
@@ -310,16 +276,7 @@ namespace micro_os_plus::micro_test_plus::detail
         suite.child_test_cases_count ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    uint32_t milliseconds = 0;
-    uint32_t microseconds = 0;
-    if (suite.stopwatch_.has_elapsed ())
-      {
-        const auto elapsed = suite.stopwatch_.elapsed ().count ();
-        milliseconds = static_cast<uint32_t> (elapsed / 1000);
-        microseconds = static_cast<uint32_t> (elapsed % 1000);
-      }
-
-    std::string indent (indent_size, ' ');
+    std::string indent (indent_size_, ' ');
 
     char message_summary[40];
     snprintf (message_summary, sizeof (message_summary), "%s1..%zu",
@@ -360,13 +317,8 @@ namespace micro_os_plus::micro_test_plus::detail
                   message_skipped);
       }
 
-    char message_time[120] = "";
-    if (milliseconds > 0 || microseconds > 0)
-      {
-        snprintf (message_time, sizeof (message_time),
-                  ", time: %" PRIu32 ".%03" PRIu32 " ms", milliseconds,
-                  microseconds);
-      }
+    char message_time[elapsed_time_size_];
+    format_elapsed_time_ (suite.stopwatch_, message_time);
 
     write_buffer_to_file_ ();
 
@@ -492,7 +444,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
       }
 
-    std::string indent (indent_size * test_case.nesting_depth (), ' ');
+    std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
     char message_test_case[120];
     snprintf (message_test_case, sizeof (message_test_case), "%s# Subtest: %s",
@@ -543,8 +495,8 @@ namespace micro_os_plus::micro_test_plus::detail
                    test_case.child_test_cases_count ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    std::string indent (indent_size * test_case.nesting_depth (), ' ');
-    std::string indent2 (indent_size * (test_case.nesting_depth () + 1), ' ');
+    std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
+    std::string indent2 (indent_size_ * (test_case.nesting_depth () + 1), ' ');
 
     char message_summary[40];
     // The nested test cases skipped by the filter keep their index, and are
@@ -755,9 +707,8 @@ namespace micro_os_plus::micro_test_plus::detail
     // 2-space indentation for YAML diagnostics.
 
     *this << indent (level + 1) << "  at:" << endl;
-    *this << indent (level + 1)
-          << "    filename: " << reflection::short_name (location.file_name ())
-          << endl;
+    *this << indent (level + 1) << "    filename: "
+          << utility::extract_file_name (location.file_name ()) << endl;
     *this << indent (level + 1) << "    line: " << location.line () << endl;
 
     *this << indent (level + 1) << "  ..." << endl;
@@ -801,7 +752,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
       }
 
-    std::string indent (indent_size * test_case.nesting_depth (), ' ');
+    std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
     char message_skipped[160];
     snprintf (message_skipped, sizeof (message_skipped),

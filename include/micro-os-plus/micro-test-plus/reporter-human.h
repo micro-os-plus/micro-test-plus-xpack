@@ -161,20 +161,6 @@ namespace micro_os_plus::micro_test_plus::detail
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Output operator for the `indentation` manipulator.
-     *
-     * @param m The indentation manipulator produced by `indent(n)`.
-     * @return Reference to the current reporter instance.
-     */
-    reporter_human&
-    operator<< (indentation m);
-
-    // Bring base class operator<< overloads into scope to prevent name hiding.
-    using reporter::operator<<;
-
-    // ------------------------------------------------------------------------
-
-    /**
      * @brief Mark the beginning of a test session.
      *
      * @param runner Reference to the test runner.
