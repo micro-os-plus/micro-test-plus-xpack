@@ -129,6 +129,22 @@ static_asserts ()
       static_assert (detail::math::num<int, '1', '.', '2', '5'> () == 1);
       static_assert (detail::math::den<int, '1', '.', '2', '5'> () == 250);
       static_assert (detail::math::den_size<int, '1', '.', '2', '5'> () == 3);
+
+      // The number of decimals of a run-time value is computed without
+      // undefined behaviour for negative and large values (a compile-time
+      // error in a constant expression), and is not affected by the
+      // rounding noise below an integer (API-REVIEW.md #60).
+      using ull = unsigned long long;
+      static_assert (detail::math::den_size<ull> (1.25) == 2);
+      static_assert (detail::math::den_size<ull> (2.0) == 1);
+      static_assert (detail::math::den_size<ull> (-2.25) == 2);
+      static_assert (detail::math::den_size<ull> (0.011) == 3);
+      static_assert (detail::math::den_size<ull> (42.42f) == 2);
+      static_assert (detail::math::den_size<ull> (1.25L) == 2);
+      static_assert (detail::math::den_size<ull> (1e20) == 1);
+      static_assert (detail::math::den_size<ull> (
+                         std::numeric_limits<double>::infinity ())
+                     == 1);
     }
 
     {

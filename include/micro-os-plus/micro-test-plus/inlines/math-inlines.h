@@ -302,11 +302,19 @@ namespace micro_os_plus::micro_test_plus
      * seven digits. Being `constexpr`, it can also be evaluated at compile
      * time.
      *
-     * The function repeatedly multiplies the input value by ten, incrementing
-     * a counter until the fractional part is less than a defined precision
-     * threshold (1e-7). This approach provides a robust means of estimating
-     * decimal precision for values where exact representation is not possible
-     * due to floating-point limitations.
+     * The function repeatedly multiplies the absolute value by ten,
+     * incrementing a counter until the distance to the nearest integer is
+     * at most a defined precision threshold (1e-7). Using the distance to
+     * the nearest integer, not the fractional part, prevents the rounding
+     * noise of a value just below an integer (e.g. 2674.9999999999995) from
+     * being taken as more decimals.
+     *
+     * The loop also stops when the value reaches the magnitude from which
+     * the type can represent only integers (2^23 for `float`, 2^52 for
+     * `double`), limited to 2^63 so that the conversion to
+     * `unsigned long long` is always defined. This bounds the number of
+     * steps for large values, infinities, and NaNs, for which the result
+     * is one.
      *
      * This utility is particularly useful for user-defined literals and
      * compile-time constant expressions, enabling efficient and type-safe
@@ -317,30 +325,33 @@ namespace micro_os_plus::micro_test_plus
     den_size (Value_T value) -> T
     {
       constexpr auto precision = Value_T (1e-7);
+      // From this magnitude upwards all values are integers.
+      constexpr auto integral_limit
+          = min_value (Value_T (1) / std::numeric_limits<Value_T>::epsilon (),
+                       Value_T (1ULL << 63));
+
+      value = abs (value);
       T result{};
-      Value_T tmp{};
-      do
+      for (;;)
         {
           value *= 10;
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
-#else // GCC only
-#pragma GCC diagnostic ignored "-Warith-conversion"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
-          tmp = value - T (value);
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
           ++result;
+
+          // Also true for infinities and NaNs.
+          if (not (value < integral_limit))
+            {
+              break;
+            }
+
+          const auto fraction
+              = value
+                - static_cast<Value_T> (
+                    static_cast<unsigned long long> (value));
+          if (min_value (fraction, Value_T (1) - fraction) <= precision)
+            {
+              break;
+            }
         }
-      while (tmp > precision);
 
       return result;
     }

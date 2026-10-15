@@ -547,6 +547,14 @@ main (int argc, char* argv[])
       t.expect (lt (1.3, 1.5_d)) << "1.3 < 1.5_d (outside the tolerance)";
       local_counts.successful_checks += 6;
 
+      // The tolerance of a wrapper is also derived from the number of
+      // decimals, for negative values too, and the rounding noise of 0.011
+      // does not make it 1e-18 (API-REVIEW.md #60).
+      t.expect (eq (-1.45, to_d{ -1.5 })) << "-1.45 == to_d{ -1.5 }";
+      t.expect (eq (0.0111, to_d{ 0.011 })) << "0.0111 == to_d{ 0.011 }";
+      t.expect (lt (0.009, to_d{ 0.011 })) << "0.009 < to_d{ 0.011 }";
+      local_counts.successful_checks += 3;
+
       // An explicit tolerance of 0.01.
       t.expect (ne (1.45, approx (1.5, 0.01))) << "1.45 != approx (1.5, 0.01)";
       t.expect (lt (1.45, approx (1.5, 0.01))) << "1.45 < approx (1.5, 0.01)";

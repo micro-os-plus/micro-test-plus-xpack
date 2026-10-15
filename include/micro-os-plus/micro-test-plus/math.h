@@ -229,15 +229,17 @@ namespace micro_os_plus::micro_test_plus
     den_size (void) -> T;
 
     /**
-     * @brief Computes the number of decimal places of a value, up to 7 digits.
+     * @brief Computes the number of decimal places of a value, with a
+     * precision of about seven digits.
      *
      * @tparam T The integral type for the result.
-     * @tparam Value_T The type of the input value, typically a floating-point
-     * type.
+     * @tparam Value_T The type of the input value, a floating-point type.
      *
-     * @param value The value whose decimal precision is to be determined.
-     * @return The number of decimal places, as a value of type \c T, up to a
-     * maximum of seven.
+     * @param value The value whose decimal precision is to be determined;
+     * it may be negative, infinite, or a NaN.
+     * @return The number of decimal places, as a value of type \c T, at
+     * least one; it is limited by the magnitude from which `Value_T`
+     * represents only integers.
      */
     template <class T, class Value_T>
     [[nodiscard]] constexpr auto

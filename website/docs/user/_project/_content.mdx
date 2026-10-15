@@ -704,7 +704,10 @@ The floating-point literals (`1.5_d`) and wrappers (`mt::to_d{ 1.5 }`)
 compare with a tolerance of one unit of the last decimal written (0.1 for
 `1.5`), so that `1.45 == 1.5_d` is true. All six comparisons apply it
 consistently: values within the tolerance are equal, and neither less nor
-greater. Plain floating-point values compare exactly. To set the tolerance
+greater. For the wrappers, the decimals are counted from the run-time
+value, ignoring differences below 1e-7 caused by its binary
+representation, so `mt::to_d{ 0.011 }` has a tolerance of 0.001.
+Plain floating-point values compare exactly. To set the tolerance
 explicitly, independent of how the value is written, use `mt::approx()`:
 
 ```cpp

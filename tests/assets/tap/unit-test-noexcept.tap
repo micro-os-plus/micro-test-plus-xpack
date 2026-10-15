@@ -126,19 +126,22 @@ TAP version 14
         ok 4 - not 1.45 > 1.5_d
         ok 5 - 1.45 >= 1.5_d
         ok 6 - 1.3 < 1.5_d (outside the tolerance)
-        ok 7 - 1.45 != approx (1.5, 0.01)
-        ok 8 - 1.45 < approx (1.5, 0.01)
-        ok 9 - 1.495 == approx (1.5, 0.01)
-        ok 10 - not 1.495 < approx (1.5, 0.01)
-        ok 11 - 0.1f + 0.2f == approx (0.3f, 1e-6f)
-        ok 12 - 1.5 == approx (1.5, 0.0)
-        ok 13 - not 1.5 != approx (1.5, 0.0)
-        ok 14 - 1.5 <= approx (1.5, 0.0)
-        ok 15 - 1.5 >= approx (1.5, 0.0)
-        1..15
-    ok 15 - Floating-point tolerance # { passed, 15 checks }
+        ok 7 - -1.45 == to_d{ -1.5 }
+        ok 8 - 0.0111 == to_d{ 0.011 }
+        ok 9 - 0.009 < to_d{ 0.011 }
+        ok 10 - 1.45 != approx (1.5, 0.01)
+        ok 11 - 1.45 < approx (1.5, 0.01)
+        ok 12 - 1.495 == approx (1.5, 0.01)
+        ok 13 - not 1.495 < approx (1.5, 0.01)
+        ok 14 - 0.1f + 0.2f == approx (0.3f, 1e-6f)
+        ok 15 - 1.5 == approx (1.5, 0.0)
+        ok 16 - not 1.5 != approx (1.5, 0.0)
+        ok 17 - 1.5 <= approx (1.5, 0.0)
+        ok 18 - 1.5 >= approx (1.5, 0.0)
+        1..18
+    ok 15 - Floating-point tolerance # { passed, 18 checks }
     1..15
-not ok 1 - Static top suite # { FAILED, 52 checks passed, 4 failed, in 19 test cases }
+not ok 1 - Static top suite # { FAILED, 55 checks passed, 4 failed, in 19 test cases }
 # Subtest: Combinatorial floats suite
     # Subtest: Combinatorial floats
         ok 1 - 42.0 == 42 signed long long
@@ -3052,4 +3055,4 @@ ok 11 - Stopwatch suite # { passed, 18 checks in 5 test cases }
     1..3
 not ok 12 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..12
-# { total: 463 checks passed, 330 failed, in 83 test cases, 12 test suites }
+# { total: 466 checks passed, 330 failed, in 83 test cases, 12 test suites }
