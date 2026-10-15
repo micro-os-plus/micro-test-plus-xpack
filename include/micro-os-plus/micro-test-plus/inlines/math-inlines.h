@@ -338,15 +338,14 @@ namespace micro_os_plus::micro_test_plus
           ++result;
 
           // Also true for infinities and NaNs.
-          if (not (value < integral_limit))
+          if (not(value < integral_limit))
             {
               break;
             }
 
-          const auto fraction
-              = value
-                - static_cast<Value_T> (
-                    static_cast<unsigned long long> (value));
+          const auto fraction = value
+                                - static_cast<Value_T> (
+                                    static_cast<unsigned long long> (value));
           if (min_value (fraction, Value_T (1) - fraction) <= precision)
             {
               break;

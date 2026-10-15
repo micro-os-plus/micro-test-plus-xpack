@@ -616,8 +616,8 @@ namespace micro_os_plus::micro_test_plus::detail
                                      const test_case& test_case)
   {
     size_t level = test_case.nesting_depth ();
-    *this << indent (level + 1) << "ok "
-          << test_case.test_point_number () << " - ";
+    *this << indent (level + 1) << "ok " << test_case.test_point_number ()
+          << " - ";
     if (!message.empty ())
       {
         *this << message.c_str ();
@@ -657,8 +657,7 @@ namespace micro_os_plus::micro_test_plus::detail
       const test_case& test_case)
   {
     size_t level = test_case.nesting_depth ();
-    *this << indent (level + 1) << "not ok "
-          << test_case.test_point_number ();
+    *this << indent (level + 1) << "not ok " << test_case.test_point_number ();
 
     if (!message.empty ())
       {
