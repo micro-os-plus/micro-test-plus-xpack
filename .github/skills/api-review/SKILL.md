@@ -67,18 +67,19 @@ on searches alone. A useful order, from the user's entry points
 inwards:
 
 1. `micro-test-plus.h` (what is included, and in which order);
-2. `runner.h`, `test.h`, and their inlines and `src/` files (the
-   session, the suites, and the test cases);
-3. `deferred-reporter.h` and `src/deferred-reporter.cpp` (what
-   `expect()` and `assume()` return and do);
+2. `runner.h`, `runner-options.h`, `test.h`, and their inlines and
+   `src/` files (the session, its configuration, the suites, and the
+   test cases);
+3. `check-result.h` and `src/check-result.cpp` (what `expect()` and
+   `assume()` return and do);
 4. `function-comparators.h`, `operators.h`, `exceptions.h`,
    `detail.h` (the checks and the comparison structures);
-5. `literals.h`, `type-traits.h`, `math.h` (the wrappers and the
-   literals);
+5. `values.h`, `literals.h`, `type-traits.h`, `math.h` (the wrappers
+   and the literals);
 6. `expression-formatter.h`, `reflection.h` (the failure messages);
 7. `reporter.h`, `reporter-human.h`, `reporter-tap.h`, and their
    `src/` files (the output protocol);
-8. `runner-totals.h`, `timings.h`, `utility.h` (the support classes).
+8. `counters.h`, `stopwatch.h`, `utility.h` (the support classes).
 
 While reading, note for each class and function: who calls it (the
 user, the framework, or only the tests), what it costs (allocations,
@@ -134,6 +135,10 @@ c++ -std=c++20 -DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED -Iinclude \
 Behaviour a user would see as wrong. These come first in the report.
 The questions that found real defects in this code base:
 
+- **Undefined behaviour**: code that compiles but may crash, produce
+  incorrect results, or have other unexpected effects due to violations
+  of the language rules (e.g., dereferencing null pointers, out-of-bounds
+  array access, use-after-free).
 - **Lifetimes**: which pointers and references does an object keep
   (names as `const char*`, `string_view` members, references to
   arguments)? Is the stored object used after the call returns
@@ -176,6 +181,8 @@ The questions that found real defects in this code base:
 - **Public and internal**: which members of the public classes exist
   only for the framework (setters, counters, mutable accessors)? Can a
   user break the state of a test? Are internal constructors public?
+- **detail namespace**: types and functions in the `detail` namespace
+  should remain internal and not leak into public interfaces.
 - **Leaks of `detail`**: `detail` types in public signatures, in base
   classes of public classes, or returned through `auto`.
 - **Extensibility**: are the classes that look extensible (the
@@ -190,8 +197,7 @@ The questions that found real defects in this code base:
   composition), templates whose parameter has no effect, and derived
   classes that bypass their base.
 - **Symmetry**: the same concept offered in two forms with different
-  signatures (static and dynamic suites, their callables, the two
-  runners).
+  signatures (static and dynamic suites, and their callables).
 - **Hidden policies**: execution order, deferred versus immediate
   execution, sorting, and anything else that the names do not reveal.
 - **Dead or misplaced code**: public helpers used only by the tests or
@@ -200,6 +206,16 @@ The questions that found real defects in this code base:
 
 ### 3. Naming and consistency
 
+- Getters and setters should be nouns (e.g., `name()` for a getter, 
+  `name(char* s)` for a setter).
+- Setters should return `void` and not the object itself (avoid chaining).
+- Getters should not have side effects.
+- Setters should not have side effects beyond modifying the value they set.
+- Consistency between getter and setter names (e.g., `name()` and
+  `name(char* s)`).
+- Getter and setter names should clearly indicate their purpose.
+- Member functions names should start with a verb that clearly indicate
+  their effect and purpose.
 - Names that do not describe the effect (a query that runs the tests,
   a `flush()` that does not flush the buffer, a `reporter` that is a
   check result).
@@ -209,8 +225,7 @@ The questions that found real defects in this code base:
   spellings for one entity (`_i`, `to_i`, the `_i` literal). When
   there are many, add a consistency table to the report.
 - Naming conventions with several meanings (the trailing underscore
-  for members, protected functions, and internal types; a leading
-  underscore on public functions).
+  for non-public members and functions.
 - Deprecated entities without `[[deprecated]]`.
 - Accessor style (`name()` versus `get_name()`), `(void)` versus `()`,
   `virtual` repeated on overrides, `final` on members of `final`
@@ -218,9 +233,13 @@ The questions that found real defects in this code base:
 - Boolean and adjacent same-type parameters that are unreadable at
   the call site.
 - Missing `const` on parameters, members, and virtual functions.
+- Missing `noexcept` on functions that are not expected to throw exceptions.
+- Missing `constexpr` on functions and variables that can be evaluated at
+  compile time.
 
 ### 4. Simplicity and duplication
 
+- Favour readability over cleverness and compactness.
 - The same logic implemented twice or more (sorting, formatting of
   times, file names of paths, `run()` bodies, stream operators);
   hand-written algorithms where the standard library has one.
@@ -232,6 +251,8 @@ The questions that found real defects in this code base:
   several times).
 
 ### 5. Suitability for embedded targets
+
+- Program size is more important than performance for embedded targets.
 
 - Heap allocations per test case and per check; objects kept alive
   after use; `std::function` and `std::bind` overheads.
@@ -252,6 +273,38 @@ compiler-specific code.
 List the parts that were checked and are good, so that the next review
 knows what was covered, and so that the report is not read as a list
 of complaints only.
+
+## Running test
+
+If the changes add new functionality, add new tests to cover it.
+
+After performing any changes, run the tests, first with the
+native compiler:
+
+```sh
+xpm run test
+```
+
+and then via the QEMU emulator:
+
+```sh
+xpm run test-latest-cmake
+```
+
+## Documentation
+
+Update the documentation to reflect any changes made to the API. 
+Ensure that all public interfaces are properly documented in the 
+`website/docs` pages, especially the user manual in `website/docs/user`
+and that any changes to the API are reflected in the documentation.
+
+Ignore the pages automatically generated by Doxygen (in `website/doxygen` 
+and `website/docs/api`), they are reviewed separately.
+
+## Committing the changes
+
+When committing the changes, make sure to reference the GitHub issue numbers
+and provide a clear, concise commit message that describes the changes made.
 
 ## Judging Findings
 
