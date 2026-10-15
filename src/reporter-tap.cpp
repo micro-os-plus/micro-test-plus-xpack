@@ -617,7 +617,7 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     size_t level = test_case.nesting_depth ();
     *this << indent (level + 1) << "ok "
-          << static_cast<int> (test_case.test_point_number ()) << " - ";
+          << test_case.test_point_number () << " - ";
     if (!message.empty ())
       {
         *this << message.c_str ();
@@ -658,7 +658,7 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     size_t level = test_case.nesting_depth ();
     *this << indent (level + 1) << "not ok "
-          << static_cast<int> (test_case.test_point_number ());
+          << test_case.test_point_number ();
 
     if (!message.empty ())
       {
