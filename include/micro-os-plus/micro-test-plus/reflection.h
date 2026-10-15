@@ -220,11 +220,18 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Extract the type name from the `__PRETTY_FUNCTION__` macro.
      *
+     * @details
+     * The name is spelled as the compiler prints it, and is used to
+     * identify the expected exception type in the `throws<E>` failure
+     * messages. Only clang and GCC are supported; with other compilers
+     * the function returns `"unknown"`.
+     *
      * @tparam T The type whose name is to be extracted.
      *
      * @par Parameters
      *   None.
-     * @return A `std::string_view` containing the extracted type name.
+     * @return A `std::string_view` containing the extracted type name, or
+     * `"unknown"` if it cannot be determined.
      */
     template <class T>
     [[nodiscard]] constexpr auto

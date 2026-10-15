@@ -129,48 +129,70 @@ namespace micro_os_plus::micro_test_plus
      *
      * Rather than relying on fixed character offsets (which are fragile across
      * compiler versions and namespace changes), the implementation searches
-     * for well-known marker characters in the function signature string:
+     * for the marker that introduces the template argument in the function
+     * signature string:
      *
      * - Clang formats the signature as `"... [T = <typename>]"`, so the type
-     *   name lies between the last `'['` (skipping `"[T = "`) and the last
-     *   `']'`.
+     *   name lies between the first `"[T = "` and the last `']'`. The
+     *   marker is searched for as a whole, since the type name may itself
+     *   contain brackets (e.g. `int[3]`).
      * - GCC formats the signature as `"... [with T = <typename>]"` or, on
      *   some versions, `"... [with T = <typename>; ...]"`, so the type name
-     *   starts after the first `"T = "` and ends at the following `';'` or,
-     *   if there is none, at the last `']'`.
+     *   starts after the first `"[with T = "` and ends at the following
+     *   `';'` or, if there is none, at the last `']'`.
      *
-     * Other compilers (e.g. MSVC) are not supported and trigger a
-     * compile-time error.
+     * If the marker is not found, or the compiler is not supported (e.g.
+     * MSVC, which uses `__FUNCSIG__` instead of `__PRETTY_FUNCTION__`), the
+     * function returns `"unknown"` rather than failing to compile, since
+     * the name is used only to improve the test output.
      *
-     * This approach is resilient to namespace renaming, namespace nesting
-     * changes, and compiler format updates.
+     * The expected layouts are verified at compile time by the
+     * `static_assert` checks that follow the definition.
      */
     template <class T>
     constexpr auto
     type_name (void) -> std::string_view
     {
-      const std::string_view sv = __PRETTY_FUNCTION__;
 #if defined(__clang__)
       // Clang: "... [T = <typename>]"
-      // rfind('[') locates the opening bracket of "[T = ...]".
-      const auto start = sv.rfind ('[') + 5; // skip "[T = "
+      const std::string_view sv = __PRETTY_FUNCTION__;
+      constexpr std::string_view marker{ "[T = " };
+      const auto pos = sv.find (marker);
       const auto end = sv.rfind (']');
 #elif defined(__GNUC__)
       // GCC: "... [with T = <typename>]" or, on some versions,
       //      "... [with T = <typename>; std::string_view = ...]"
-      // Search for "T = " explicitly to avoid landing on a later '='.
-      const auto t_eq = sv.find ("T = ");
-      const auto start = t_eq + 4; // skip "T = "
-      const auto semi = sv.find (';', start);
+      const std::string_view sv = __PRETTY_FUNCTION__;
+      constexpr std::string_view marker{ "[with T = " };
+      const auto pos = sv.find (marker);
+      const auto semi = sv.find (';', pos);
       const auto end
           = (semi != std::string_view::npos) ? semi : sv.rfind (']');
 #else
-// Note: MSVC uses __FUNCSIG__ instead of __PRETTY_FUNCTION__.
-// MSVC is not a supported target for this framework.
-#error "Unsupported compiler"
+      // Unsupported compiler; no portable signature string is available.
+      const std::string_view sv{};
+      constexpr std::string_view marker{};
+      const auto pos = std::string_view::npos;
+      const auto end = std::string_view::npos;
 #endif // defined(__clang__) || defined(__GNUC__)
+      if (pos == std::string_view::npos || end == std::string_view::npos
+          || end < pos + marker.size ())
+        {
+          return "unknown";
+        }
+      const auto start = pos + marker.size ();
       return sv.substr (start, end - start);
     }
+
+#if defined(__GNUC__)
+    // Compile-time self-test of the signature layout parsed above; a
+    // failure means that the compiler changed its __PRETTY_FUNCTION__
+    // format and `type_name()` must be updated.
+    static_assert (type_name<int> () == "int");
+    static_assert (type_name<unsigned int> () == "unsigned int");
+    static_assert (type_name<int[3]> () == "int [3]"
+                   || type_name<int[3]> () == "int[3]");
+#endif // defined(__GNUC__)
 
     // ------------------------------------------------------------------------
   } // namespace reflection
