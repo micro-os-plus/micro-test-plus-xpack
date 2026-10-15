@@ -280,7 +280,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The failure is reported as a check: the check index is incremented
-   * first, as `deferred_reporter_base` does, so that the TAP output
+   * first, as `check_result` does, so that the TAP output
    * numbers it after the checks already reported, and the failed checks
    * counter is incremented, so that the test case, and through it its
    * parents, fail.

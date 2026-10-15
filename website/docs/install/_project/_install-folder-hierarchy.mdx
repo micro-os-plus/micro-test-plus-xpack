@@ -16,15 +16,15 @@ with the public headers, and the build system files (`CMakeLists.txt`,
 ├── include
 │   └── micro-os-plus
 │       ├── micro-test-plus
+│       │   ├── check-result.h
 │       │   ├── counters.h
-│       │   ├── deferred-reporter.h
 │       │   ├── detail.h
 │       │   ├── exceptions.h
 │       │   ├── expression-formatter.h
 │       │   ├── function-comparators.h
 │       │   ├── inlines
+│       │   │   ├── check-result-inlines.h
 │       │   │   ├── counters-inlines.h
-│       │   │   ├── deferred-reporter-inlines.h
 │       │   │   ├── detail-inlines.h
 │       │   │   ├── exceptions-inlines.h
 │       │   │   ├── expression-formatter-inlines.h
@@ -59,8 +59,8 @@ with the public headers, and the build system files (`CMakeLists.txt`,
 ├── package.json
 ├── README.md
 ├── src
+│   ├── check-result.cpp
 │   ├── counters.cpp
-│   ├── deferred-reporter.cpp
 │   ├── expression-formatter.cpp
 │   ├── reflection.cpp
 │   ├── reporter-human.cpp

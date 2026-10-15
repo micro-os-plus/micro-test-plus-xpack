@@ -1,0 +1,331 @@
+/*
+ * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
+ * Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can be
+ * obtained from https://opensource.org/licenses/mit.
+ *
+ * Major parts of the code are inspired from v1.1.8 of the Boost UT project,
+ * released under the terms of the Boost Version 1.0 Software License,
+ * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
+ */
+
+// ----------------------------------------------------------------------------
+
+/**
+ * @file
+ * @brief C++ header file with declarations for the µTest++ check result.
+ *
+ * @details
+ * This header provides the `check_result` class, the object returned by
+ * `expect()` and `require()`. It captures the result of one check and
+ * reports the outcome only when it is destroyed (i.e. at the semicolon
+ * following the expression statement), after the optional user message
+ * was appended via `operator<<`.
+ *
+ * It also defines `failed_requirement`, the exception thrown to stop a
+ * test case after a failed `require()`.
+ *
+ * Both live in the `detail` namespace and are not part of the
+ * public API.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
+ */
+
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_CHECK_RESULT_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_CHECK_RESULT_H_
+
+// ----------------------------------------------------------------------------
+
+#if defined(__cplusplus)
+
+// ----------------------------------------------------------------------------
+
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
+
+#if __has_include("micro-os-plus/micro-test-plus-defines.h")
+#include "micro-os-plus/micro-test-plus-defines.h"
+#endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
+
+#include "type-traits.h"
+#include "reflection.h"
+#include "expression-formatter.h"
+
+#include <cstdio>
+#include <string>
+
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+
+#pragma GCC diagnostic ignored "-Wpadded"
+#pragma GCC diagnostic ignored "-Waggregate-return"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
+
+// ============================================================================
+
+namespace micro_os_plus::micro_test_plus
+{
+  class test_case;
+
+  // --------------------------------------------------------------------------
+
+  namespace detail
+  {
+    // ========================================================================
+
+    /**
+     * @brief The exception thrown to stop a test case after a failed
+     * `require()`.
+     *
+     * @details
+     * Thrown by the destructor of `check_result`, after the
+     * failure was reported and counted, when exceptions are enabled, and
+     * caught by `test_case::run()`, which ends the test case normally; the
+     * run continues with the next test case.
+     *
+     * It is deliberately not derived from `std::exception`, so that a
+     * `catch (const std::exception&)` in the test case body does not stop
+     * it; a `catch (...)` does, and should rethrow it.
+     */
+    struct failed_requirement
+    {
+    };
+
+    // ========================================================================
+
+    /**
+     * @brief The result of one check, reported when destroyed.
+     *
+     * @details
+     * Returned by `expect()` and `require()`, it lives until the end of
+     * the expression statement. Its template constructor evaluates the
+     * expression and formats it, with the actual operand values, into the
+     * expression formatter of the reporter, which keeps the text for this
+     * check until it is reported, so that it can be displayed on failure.
+     * The messages passed via `operator<<()` are collected into a string.
+     * The destructor reports the outcome, updates the counters of the test
+     * case, and, after a failed `require()`, stops the test case.
+     *
+     * Only the template constructor depends on the type of the expression;
+     * it delegates to a private non-template constructor, and the
+     * destructor, which does the reporting, is not a template either, so
+     * this code is compiled once, in `src/check-result.cpp`, not for each
+     * type of expression.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    class check_result
+    {
+    public:
+      /**
+       * @brief Constructs the result of a check of an expression.
+       *
+       * @details
+       * The expression is evaluated, and formatted into the expression
+       * formatter.
+       *
+       * @tparam Expr_T The type of the expression.
+       *
+       * @param expr The expression under evaluation.
+       * @param abort Indicates whether a failure should stop the test
+       * case (`true` for `require()`).
+       * @param location The source location of the check.
+       * @param test_case The test case that owns this check.
+       * @param expression The expression formatter to format the expression
+       * text.
+       */
+      template <class Expr_T>
+      check_result (const Expr_T& expr, bool abort,
+                    const reflection::source_location& location,
+                    test_case& test_case, expression_formatter& expression);
+
+      /**
+       * @brief Deleted copy constructor to prevent copying.
+       *
+       * @details
+       * Each instance reports exactly one check, from its destructor; a
+       * copy would report it twice.
+       */
+      check_result (const check_result&) = delete;
+
+      /**
+       * @brief Deleted move constructor to prevent moving.
+       *
+       * @details
+       * The instance is a temporary that lives only until the end of the
+       * expression statement.
+       */
+      check_result (check_result&&) = delete;
+
+      /**
+       * @brief Deleted copy assignment operator to prevent copying.
+       *
+       * @details
+       * Each instance reports exactly one check, from its destructor.
+       */
+      check_result&
+      operator= (const check_result&)
+          = delete;
+
+      /**
+       * @brief Deleted move assignment operator to prevent moving.
+       *
+       * @details
+       * Each instance reports exactly one check, from its destructor.
+       */
+      check_result&
+      operator= (check_result&&)
+          = delete;
+
+      /**
+       * @brief Destructor that reports the check.
+       *
+       * @details
+       * It may throw `failed_requirement`, after a failed `require()`, to
+       * stop the test case, hence `noexcept (false)`.
+       */
+      ~check_result () noexcept (false);
+
+      /**
+       * @brief Appends a message to the check.
+       *
+       * @tparam T The type of the message to append.
+       *
+       * @param msg The message to append.
+       * @return Reference to the current check result.
+       */
+      template <class T>
+        requires type_traits::printable<T>
+      auto&
+      operator<< (const T& msg);
+
+      /**
+       * @brief Retrieves the result value.
+       *
+       * @par Parameters
+       *   None.
+       * @retval true  The checked condition was met.
+       * @retval false The checked condition was not met.
+       */
+      [[nodiscard]] bool
+      value () const;
+
+    private:
+      /**
+       * @brief Constructs the result of a check from its parts.
+       *
+       * @details
+       * The non-template part of the construction, shared by all the
+       * instantiations of the template constructor, which delegates to it.
+       *
+       * @param value The result of the evaluated expression.
+       * @param abort Indicates whether a failure should stop the test
+       * case.
+       * @param has_expression Indicates whether the expression is a
+       * framework comparator, whose text is displayed on failure.
+       * @param location The source location of the check.
+       * @param test_case The test case that owns this check.
+       */
+      check_result (bool value, bool abort, bool has_expression,
+                    const reflection::source_location& location,
+                    test_case& test_case);
+
+      /**
+       * @brief Stores the result value of the check.
+       *
+       * @details
+       * The boolean value of the checked expression, computed by the
+       * template constructor.
+       */
+      const bool value_;
+
+      /**
+       * @brief Indicates whether a failure should abort further
+       * processing.
+       *
+       * @details
+       * Set for `require()` checks; a failure then stops the test case,
+       * or, without exceptions, the test execution.
+       */
+      const bool abort_;
+
+      /**
+       * @brief Indicates whether the check has an associated expression.
+       *
+       * @details
+       * Set when the checked expression is a framework comparator, whose
+       * formatted text is displayed on failure.
+       */
+      const bool has_expression_;
+
+      /**
+       * @brief The number of uncaught exceptions when the check was
+       * created.
+       *
+       * @details
+       * If the destructor finds more, it runs during stack unwinding (for
+       * a result kept in a variable), and must not throw.
+       */
+      int uncaught_exceptions_ = 0;
+
+      /**
+       * @brief Stores the source location of the check.
+       *
+       * @details
+       * Displayed with failures, and used when aborting.
+       */
+      const reflection::source_location location_;
+
+      /**
+       * @brief String to collect the expectation message passed via
+       * `operator<<()`.
+       *
+       * @details
+       * Passed to the reporter by the destructor.
+       */
+      std::string message_{};
+
+      /**
+       * @brief Reference to the test case invoking this check.
+       *
+       * @details
+       * Provides access to the reporter and to the totals to be updated.
+       */
+      test_case& test_case_;
+    };
+
+    // ------------------------------------------------------------------------
+  } // namespace detail
+
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::micro_test_plus
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+
+// ----------------------------------------------------------------------------
+
+#endif // defined(__cplusplus)
+
+// ============================================================================
+// Templates, inlines & constexpr implementations.
+
+#include "inlines/check-result-inlines.h"
+
+// ----------------------------------------------------------------------------
+
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_CHECK_RESULT_H_
+
+// ----------------------------------------------------------------------------

@@ -6,8 +6,8 @@ The `src` folder contains the `.cpp` implementation files for the µTest++
 library. Each file provides the non-inline method definitions for one or
 more related components:
 
+- `check-result.cpp` — `check_result` construction and reporting
 - `counters.cpp` — `counters` accumulation and `operator+=`
-- `deferred-reporter.cpp` — deferred check-result reporting helper
 - `expression-formatter.cpp` - stream implementation for expressions
 - `reflection.cpp` — `reflection::short_name()` implementation
 - `reporter-human.cpp` — human-readable reporter implementation

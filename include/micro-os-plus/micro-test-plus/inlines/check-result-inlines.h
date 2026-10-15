@@ -18,15 +18,14 @@
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++
- * deferred reporter.
+ * check result.
  *
  * @details
  * This header provides the inline and template implementations for the
- * deferred reporters: the result accessor, the `operator<<` that
- * accumulates the expectation messages (handling both arithmetic and
- * string-like types), and the template constructor of `deferred_reporter`.
- * The non-template constructor and the destructor of
- * `deferred_reporter_base` are defined in `src/deferred-reporter.cpp`.
+ * check result: the template constructor, the result accessor, and the
+ * `operator<<` that accumulates the expectation messages (handling both
+ * arithmetic and string-like types). The non-template constructor and the
+ * destructor are defined in `src/check-result.cpp`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -40,8 +39,8 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_DEFERRED_REPORTER_INLINES_H_
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_DEFERRED_REPORTER_INLINES_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_CHECK_RESULT_INLINES_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_CHECK_RESULT_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -79,10 +78,45 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * The expression is evaluated, and the result is passed, together with
+     * the abort status and whether the expression is a framework
+     * comparator, to the non-template constructor, which also stores the
+     * source location and the test case. The abort flag, set by
+     * `require()`, determines whether the test case is stopped if the
+     * check fails.
+     *
+     * The expression is then formatted into the expression formatter of the
+     * reporter, which is shared by all checks; `begin_check()` assigns it
+     * to this check, setting aside the text of a previous check not yet
+     * reported, if any.
+     */
+    template <class Expr_T>
+    check_result::check_result (const Expr_T& expr, bool abort,
+                                const reflection::source_location& location,
+                                test_case& test_case,
+                                expression_formatter& expression)
+        : check_result{ static_cast<bool> (expr), abort,
+                        type_traits::is_op<Expr_T>, location, test_case }
+    {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+      trace::printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
+
+      // The same address is used by the destructor, to retrieve the text,
+      // even if other checks used the formatter in the meantime.
+      expression.begin_check (this);
+
+      expression << expr;
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
      * Returns the result value stored in `value_`.
      */
     inline bool
-    deferred_reporter_base::value () const
+    check_result::value () const
     {
       return value_;
     }
@@ -91,7 +125,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This operator overload enables the deferred reporter to accumulate
+     * This operator overload enables the check result to accumulate
      * expectation messages by appending the provided value to the internal
      * message string.
      *
@@ -114,72 +148,33 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
       requires type_traits::printable<T>
     auto&
-    deferred_reporter_base::operator<< (const T& msg)
+    check_result::operator<< (const T& msg)
     {
       if constexpr (std::is_same_v<T, char>)
         {
-          deferred_output_.push_back (msg);
+          message_.push_back (msg);
         }
       else if constexpr (std::is_same_v<T, bool>)
         {
-          deferred_output_.append (msg ? "true" : "false");
+          message_.append (msg ? "true" : "false");
         }
       else if constexpr (std::is_arithmetic_v<T>)
         {
-          detail::append_number_ (deferred_output_, msg);
+          detail::append_number_ (message_, msg);
         }
       else if constexpr (std::is_null_pointer_v<T>)
         {
-          deferred_output_.append ("nullptr");
+          message_.append ("nullptr");
         }
       else if constexpr (std::is_pointer_v<T>)
         {
-          deferred_output_.append (msg != nullptr ? msg : "nullptr");
+          message_.append (msg != nullptr ? msg : "nullptr");
         }
       else
         {
-          deferred_output_.append (msg);
+          message_.append (msg);
         }
       return *this;
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @details
-     * This constructor initialises a deferred reporter for a specific
-     * expression, capturing the evaluation result, abort status, and source
-     * location.
-     *
-     * The expression is evaluated and its boolean result is passed to the base
-     * class. The abort flag, set by `require()`, determines whether the
-     * test case is stopped if the check fails. The expression is formatted into
-     * the expression formatter of the reporter, which is shared by all
-     * checks; `begin_check()` assigns it to this check, setting aside the
-     * text of a previous check not yet reported, if any.
-     * `has_expression_` records whether it is a framework comparator, whose
-     * text is to be displayed on failure.
-     */
-    template <class Expr_T>
-    deferred_reporter::deferred_reporter (
-        const Expr_T& expr, bool abort,
-        const reflection::source_location& location, test_case& test_case,
-        expression_formatter& expression)
-        : deferred_reporter_base{ static_cast<bool> (expr), location,
-                                  test_case }
-
-    {
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-      trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-      abort_ = abort;
-      has_expression_ = type_traits::is_op<Expr_T>;
-
-      // The same address is used by the base destructor, to retrieve the
-      // text, even if other checks used the formatter in the meantime.
-      expression.begin_check (static_cast<deferred_reporter_base*> (this));
-
-      expression << expr;
     }
 
     // ------------------------------------------------------------------------
@@ -198,6 +193,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_DEFERRED_REPORTER_INLINES_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_CHECK_RESULT_INLINES_H_
 
 // ----------------------------------------------------------------------------

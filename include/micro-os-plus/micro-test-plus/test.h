@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
-    class deferred_reporter_base;
+    class check_result;
     class reporter;
     class reporter_human;
     class reporter_tap;
@@ -204,7 +204,7 @@ namespace micro_os_plus::micro_test_plus
      * The indices and the totals can be read by the user code and by the
      * reporters, but they are modified only by the framework: the setters
      * are protected, and the classes that update the nodes from outside
-     * (the runners, which number the suites, and the deferred reporter,
+     * (the runners, which number the suites, and the check result,
      * which counts the checks) are friends.
      *
      * The class is non-copyable and non-movable to preserve unique ownership
@@ -219,7 +219,7 @@ namespace micro_os_plus::micro_test_plus
       friend class micro_test_plus::runner;
 
       // Number and count the checks of the test cases, and report them.
-      friend class deferred_reporter_base;
+      friend class check_result;
 
     public:
       /**
@@ -394,7 +394,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Protected, since the reporter is internal to the framework; it is
        * used by the suites and the test cases, which derive from this
-       * class, and by the deferred reporter, which is a friend.
+       * class, and by the check result, which is a friend.
        *
        * @par Parameters
        *   None.
@@ -426,7 +426,7 @@ namespace micro_os_plus::micro_test_plus
        * number.
        *
        * @details
-       * Called for each check (by the deferred reporter, when the check is
+       * Called for each check (by the check result, when the check is
        * reported) and for each nested test case created.
        *
        * @par Parameters
@@ -498,7 +498,7 @@ namespace micro_os_plus::micro_test_plus
        * Test points are numbered from 1; the value is 0 before the first
        * one. This number counts the checks and the nested test cases of this
        * object, in execution order, as required by the TAP `ok`/`not ok`
-       * lines. It is incremented for each check (by the deferred reporter)
+       * lines. It is incremented for each check (by the check result)
        * and for each nested test case created.
        */
       size_t test_point_number_ = 0;

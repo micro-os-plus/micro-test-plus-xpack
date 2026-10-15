@@ -29,7 +29,7 @@
  *
  * By consolidating the formatting operators into a single class (using the
  * shared `detail::append_number_()` helper for numbers), the `reporter` is
- * relieved of those responsibilities, and `detail::deferred_reporter` can
+ * relieved of those responsibilities, and `detail::check_result` can
  * pre-format expression text at construction time without requiring
  * `reporter` or `test_case` to be complete at that point.
  *
@@ -158,7 +158,7 @@ namespace micro_os_plus::micro_test_plus
      * The numeric overloads append a type suffix (e.g., `42u`, `3l`, `1.5f`)
      * matching the conventions used in the existing reporter output, so that
      * the formatted text is identical whether produced by the reporter
-     * directly or pre-formatted by a deferred reporter.
+     * directly or pre-formatted by a check result.
      *
      * The class is non-copyable and non-movable to avoid accidental copying
      * of the internal buffer.

@@ -53,7 +53,7 @@ _local_include_directories += [
 _local_sources += [
   'src/runner.cpp',
   'src/counters.cpp',
-  'src/deferred-reporter.cpp',
+  'src/check-result.cpp',
   'src/expression-formatter.cpp',
   'src/reporter.cpp',
   'src/reporter-human.cpp',

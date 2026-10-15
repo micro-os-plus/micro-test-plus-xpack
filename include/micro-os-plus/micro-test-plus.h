@@ -126,7 +126,7 @@
 #include "micro-test-plus/reporter.h"
 
 // Requires type-traits.h, reflection.h, expression-formatter.h.
-#include "micro-test-plus/deferred-reporter.h"
+#include "micro-test-plus/check-result.h"
 
 // No deps.
 #include "micro-test-plus/counters.h"
@@ -141,7 +141,7 @@
 #include "micro-test-plus/utility.h"
 
 // Requires reporter.h, counters.h, reflection.h, type-traits.h and
-// stopwatch.h + deferred-reporter.h, reporter.h.
+// stopwatch.h + check-result.h, reporter.h.
 #include "micro-test-plus/test.h"
 
 // Requires stopwatch.h, test.h (top_suite), counters.h, reflection.h,

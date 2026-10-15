@@ -24,7 +24,7 @@ programs against it on many toolchains and platforms.
   users include only this file.
 - `include/micro-os-plus/micro-test-plus/*.h` — public headers, one per
   concern (`runner.h`, `test.h`, `reporter.h`, `reporter-human.h`,
-  `reporter-tap.h`, `deferred-reporter.h`, `operators.h`,
+  `reporter-tap.h`, `check-result.h`, `operators.h`,
   `function-comparators.h`, `expression-formatter.h`, `reflection.h`,
   `type-traits.h`, `stopwatch.h`, `counters.h`, `literals.h`,
   `math.h`, `utility.h`, `exceptions.h`, `detail.h`).
@@ -74,7 +74,7 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace.
   results; concrete implementations are `reporter_human`
   (`reporter-human.h`, human-readable console output) and `reporter_tap`
   (`reporter-tap.h`, TAP-format output for CI/tooling consumption).
-  `deferred-reporter.h` (internal, `detail` namespace) holds the object
+  `check-result.h` (internal, `detail` namespace) holds the object
   returned by `expect()`/`assume()`: it stores the result, the source
   location, and the message accumulated via `operator<<`, and reports
   the outcome when it is destroyed, at the end of the expression

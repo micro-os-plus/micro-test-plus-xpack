@@ -53,7 +53,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "micro-os-plus/micro-test-plus/deferred-reporter.h"
+#include "micro-os-plus/micro-test-plus/check-result.h"
 #include "micro-os-plus/micro-test-plus/reporter.h"
 
 #if __has_include("micro-os-plus/diag/trace.h")
@@ -196,7 +196,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Each call to `test()` invokes this method before constructing the new
-     * `test_case`, and each check invokes it from the deferred reporter
+     * `test_case`, and each check invokes it from the check result
      * destructor, when the check is reported, so the numbers form a
      * strictly increasing, one-based sequence of TAP test points, in output
      * order.
@@ -310,28 +310,28 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Constructs and returns a `detail::deferred_reporter` with
-   * `abort = false`. The reporter evaluates the condition when constructed,
-   * and records a pass or fail when it is destroyed, at the end of the
-   * expression statement.
+   * Constructs and returns a `detail::check_result` with
+   * `abort = false`. The check result evaluates the condition when
+   * constructed, and records a pass or fail when it is destroyed, at the end
+   * of the expression statement.
    */
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
   auto
   test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
   {
-    return detail::deferred_reporter{ expr, false, sl, *this,
-                                      reporter ().expression () };
+    return detail::check_result{ expr, false, sl, *this,
+                                 reporter ().expression () };
   }
 
   /**
    * @details
-   * Constructs and returns a `detail::deferred_reporter` with
-   * `abort = true`. The reporter evaluates the condition when constructed,
-   * records a pass or fail when it is destroyed, and, if the condition is
-   * false, stops the test case by throwing `detail::failed_requirement`
-   * (caught by `test_case::run()`), or, without exceptions, aborts the test
-   * execution.
+   * Constructs and returns a `detail::check_result` with
+   * `abort = true`. The check result evaluates the condition when
+   * constructed, records a pass or fail when it is destroyed, and, if the
+   * condition is false, stops the test case by throwing
+   * `detail::failed_requirement` (caught by `test_case::run()`), or,
+   * without exceptions, aborts the test execution.
    */
   template <class Expr_T>
     requires type_traits::checkable<Expr_T>
@@ -339,8 +339,8 @@ namespace micro_os_plus::micro_test_plus
   test_case::require (const Expr_T& expr,
                       const reflection::source_location& sl)
   {
-    return detail::deferred_reporter{ expr, true, sl, *this,
-                                      reporter ().expression () };
+    return detail::check_result{ expr, true, sl, *this,
+                                 reporter ().expression () };
   }
 
   /**

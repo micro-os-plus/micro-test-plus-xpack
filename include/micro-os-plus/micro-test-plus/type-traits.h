@@ -472,7 +472,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief C++20 concept satisfied when a type can be appended to the
-     * deferred reporter's output via `operator<<`.
+     * message of a check result via `operator<<`.
      *
      * @tparam T The type to be checked.
      *
@@ -480,7 +480,7 @@ namespace micro_os_plus::micro_test_plus
      * The `printable` concept is satisfied when `T` is an arithmetic
      * type, `std::nullptr_t`, or is implicitly convertible to
      * `std::string_view`. It constrains the `operator<<` overload of
-     * `deferred_reporter_base`, ensuring that only types that can be
+     * `check_result`, ensuring that only types that can be
      * meaningfully appended to the output message are accepted.
      *
      * `std::nullptr_t` is listed explicitly since it is convertible to

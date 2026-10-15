@@ -101,7 +101,7 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
-    class deferred_reporter_base;
+    class check_result;
     class reporter;
 
     /**
@@ -185,7 +185,7 @@ namespace micro_os_plus::micro_test_plus
       // Pass the expression formatter to the checks, and format their
       // expressions.
       friend class micro_test_plus::test_case;
-      friend class deferred_reporter_base;
+      friend class check_result;
 
     public:
       /**
@@ -317,7 +317,7 @@ namespace micro_os_plus::micro_test_plus
        * The console is the standard output stream; the buffer is written
        * verbatim, without appending a line ending, and is not cleared.
        *
-       * @note Public because `deferred_reporter_base` calls this
+       * @note Public because `check_result` calls this
        *   from its destructor when aborting, after the test case
        *   instance is no longer accessible via the normal
        *   reporting path.
@@ -556,7 +556,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Protected, since the formatter is an implementation detail; it is
        * used only by the checks (`test_case::expect()`,
-       * `test_case::require()`, and the deferred reporter), which are
+       * `test_case::require()`, and the check result), which are
        * friends, and by the derived reporters. The applications format
        * their own types by defining
        * `operator<<` for the public `expression_formatter` alias.
@@ -775,7 +775,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Expression formatter for pass and fail reporting.
        *
        * @details
-       * Used by `detail::deferred_reporter` to pre-format expressions at
+       * Used by `detail::check_result` to pre-format expressions at
        * construction time; `pass()` and `fail()` then append the formatted
        * text to `buffer_`.
        */

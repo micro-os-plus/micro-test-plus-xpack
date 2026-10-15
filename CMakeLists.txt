@@ -77,7 +77,7 @@ target_sources (
   micro-os-plus-micro-test-plus-interface
   INTERFACE "src/runner.cpp"
             "src/counters.cpp"
-            "src/deferred-reporter.cpp"
+            "src/check-result.cpp"
             "src/expression-formatter.cpp"
             "src/reporter.cpp"
             "src/reporter-human.cpp"
@@ -145,7 +145,7 @@ target_sources (
   micro-os-plus-micro-test-plus-objects-library
   PRIVATE "src/runner.cpp"
           "src/counters.cpp"
-          "src/deferred-reporter.cpp"
+          "src/check-result.cpp"
           "src/expression-formatter.cpp"
           "src/reporter.cpp"
           "src/reporter-human.cpp"
@@ -233,7 +233,7 @@ target_sources (
   micro-os-plus-micro-test-plus-static-library
   PRIVATE "src/runner.cpp"
           "src/counters.cpp"
-          "src/deferred-reporter.cpp"
+          "src/check-result.cpp"
           "src/expression-formatter.cpp"
           "src/reporter.cpp"
           "src/reporter-human.cpp"

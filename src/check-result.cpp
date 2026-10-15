@@ -17,16 +17,16 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ deferred
- * reporter methods.
+ * @brief C++ source file with implementations for the µTest++ check
+ * result methods.
  *
  * @details
- * This source file contains the implementation of the
- * `detail::deferred_reporter_base` class, which supports deferred
- * reporting of test expression results. The constructor captures the
- * result value, source location, and test case reference; the destructor
- * updates the test case counters and, after a failed `require()`, stops the
- * test case.
+ * This source file contains the non-template members of the
+ * `detail::check_result` class, which reports the result of one check
+ * when destroyed. The constructor captures the result value, the abort
+ * status, the source location, and the test case reference; the
+ * destructor updates the test case counters and, after a failed
+ * `require()`, stops the test case.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail` namespace.
@@ -36,7 +36,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "micro-os-plus/micro-test-plus/deferred-reporter.h"
+#include "micro-os-plus/micro-test-plus/check-result.h"
 #include "micro-os-plus/micro-test-plus/test.h"
 
 #if __has_include("micro-os-plus/diag/trace.h")
@@ -69,19 +69,21 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @details
-     * Stores the evaluated Boolean @p value, the @p location identifying
-     * the source line of the assertion, and a reference to the owning
-     * @p test_case. The check number is assigned later, by the destructor,
-     * when the check is reported.
+     * Stores the evaluated Boolean @p value, the @p abort and
+     * @p has_expression flags, the @p location identifying the source line
+     * of the assertion, and a reference to the owning @p test_case. The
+     * check number is assigned later, by the destructor, when the check is
+     * reported.
      *
      * When exceptions are enabled, the number of uncaught exceptions is
      * also stored, so that the destructor can tell whether it runs during
      * stack unwinding.
      */
-    deferred_reporter_base::deferred_reporter_base (
-        bool value, const reflection::source_location& location,
-        test_case& test_case)
-        : value_{ value }, location_{ location }, test_case_{ test_case }
+    check_result::check_result (bool value, bool abort, bool has_expression,
+                                const reflection::source_location& location,
+                                test_case& test_case)
+        : value_{ value }, abort_{ abort }, has_expression_{ has_expression },
+          location_{ location }, test_case_{ test_case }
     {
 #if defined(__cpp_exceptions)
       uncaught_exceptions_ = std::uncaught_exceptions ();
@@ -90,21 +92,20 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * The destructor finalises the deferred reporting process for a test
-     * expression, at the end of the expression statement, after all the
-     * user messages were appended.
+     * The destructor reports the result of the check, at the end of the
+     * expression statement, after all the user messages were appended.
      *
      * The test point number of the test case is advanced first, so that the
      * check numbers follow the order in which the checks are reported (the
      * first check is reported as check #1), also when the result of a check
      * is kept in a variable and reported after later checks.
      *
-     * If the evaluated expression is true, the
-     * reporter records a successful outcome along with any accumulated
-     * message, and the successful checks counter of the test case is
-     * incremented. If the expression is false, the reporter records a
-     * failure, including the abort status, message, expression, and source
-     * location, and the failed checks counter is incremented.
+     * If the evaluated expression is true, the reporter records a
+     * successful outcome along with any accumulated message, and the
+     * successful checks counter of the test case is incremented. If the
+     * expression is false, the reporter records a failure, including the
+     * abort status, message, expression, and source location, and the
+     * failed checks counter is incremented.
      *
      * The expression text is obtained from the expression formatter with
      * `check_text()`, which returns the text of this check even if later
@@ -122,7 +123,7 @@ namespace micro_os_plus::micro_test_plus
      * console and flushed, and the test execution is aborted via
      * `runner::abort()`.
      */
-    deferred_reporter_base::~deferred_reporter_base () noexcept (false)
+    check_result::~check_result () noexcept (false)
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -139,15 +140,13 @@ namespace micro_os_plus::micro_test_plus
 
       if (value_) [[likely]]
         {
-          test_case_.reporter ().pass (deferred_output_, expression_str,
-                                       test_case_);
+          test_case_.reporter ().pass (message_, expression_str, test_case_);
           test_case_.totals_.increment_successful_checks ();
         }
       else
         {
-          test_case_.reporter ().fail (abort_, deferred_output_,
-                                       expression_str, has_expression_,
-                                       location_, test_case_);
+          test_case_.reporter ().fail (abort_, message_, expression_str,
+                                       has_expression_, location_, test_case_);
           test_case_.totals_.increment_failed_checks ();
         }
 

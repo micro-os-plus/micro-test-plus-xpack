@@ -161,11 +161,11 @@ main (int argc, char* argv[])
       t.expect (true) << "TRUE";
       local_counts.successful_checks++;
 
-      // char branch in deferred_reporter_base::operator<<.
+      // char branch in check_result::operator<<.
       t.expect (true) << 'P';
       local_counts.successful_checks++;
 
-      // Arithmetic (non-char) branch in deferred_reporter_base::operator<<.
+      // Arithmetic (non-char) branch in check_result::operator<<.
       t.expect (true) << 42;
       local_counts.successful_checks++;
 
