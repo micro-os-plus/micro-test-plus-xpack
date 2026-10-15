@@ -5,4 +5,16 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Check various conditions 2.2
     • Check various conditions in suite
     • Check various conditions
-✓ Total: 8 checks passed, 0 failed, in 4 test cases, 3 test suites, time: 0.150 ms
+    • Check a test case with a long name, which is longer than the fixed-size arrays previously used by the reporters to format the lines, including the indentation, the index, and the counts, to check that the name is no longer truncated, neither in the subtest line, nor in the result line, which must end with the counts
+    • Check deeply nested test cases
+        • Nested test case
+            • Nested test case
+                • Nested test case
+                    • Nested test case
+                        • Nested test case
+                            • Nested test case
+                                • Nested test case
+                                    • Nested test case
+                                        • Nested test case
+                                            • Nested test case
+✓ Total: 10 checks passed, 0 failed, in 16 test cases, 4 test suites, time: 0.327 ms

@@ -10,17 +10,45 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ answer is 42
         ✓ condition is true
     ✓ Check various conditions 2.2 - passed (2 checks)
-✓ Static top suite - passed (4 checks in 2 test cases), time: 0.040 ms
+✓ Static top suite - passed (4 checks in 2 test cases), time: 0.172 ms
 • Local suite 2
     • Check various conditions in suite
         ✓ answer is 42
         ✓ condition is true
     ✓ Check various conditions in suite - passed (2 checks)
-✓ Local suite 2 - passed (2 checks in 1 test case), time: 0.016 ms
+✓ Local suite 2 - passed (2 checks in 1 test case), time: 0.035 ms
 • Static suite
     • Check various conditions
         ✓ answer is 42
         ✓ condition is true
     ✓ Check various conditions - passed (2 checks)
-✓ Static suite - passed (2 checks in 1 test case), time: 0.016 ms
-✓ Total: 8 checks passed, 0 failed, in 4 test cases, 3 test suites, time: 0.115 ms
+✓ Static suite - passed (2 checks in 1 test case), time: 0.058 ms
+• Static suite with a long name, which is longer than the fixed-size arrays previously used by the reporters to format the lines, to check that the name is no longer truncated
+    • Check a test case with a long name, which is longer than the fixed-size arrays previously used by the reporters to format the lines, including the indentation, the index, and the counts, to check that the name is no longer truncated, neither in the subtest line, nor in the result line, which must end with the counts
+        ✓ answer is 42
+    ✓ Check a test case with a long name, which is longer than the fixed-size arrays previously used by the reporters to format the lines, including the indentation, the index, and the counts, to check that the name is no longer truncated, neither in the subtest line, nor in the result line, which must end with the counts - passed (1 check)
+    • Check deeply nested test cases
+        • Nested test case
+            • Nested test case
+                • Nested test case
+                    • Nested test case
+                        • Nested test case
+                            • Nested test case
+                                • Nested test case
+                                    • Nested test case
+                                        • Nested test case
+                                            • Nested test case
+                                                ✓ condition is true
+                                            ✓ Nested test case - passed (1 check)
+                                        ✓ Nested test case - passed (0 checks)
+                                    ✓ Nested test case - passed (0 checks)
+                                ✓ Nested test case - passed (0 checks)
+                            ✓ Nested test case - passed (0 checks)
+                        ✓ Nested test case - passed (0 checks)
+                    ✓ Nested test case - passed (0 checks)
+                ✓ Nested test case - passed (0 checks)
+            ✓ Nested test case - passed (0 checks)
+        ✓ Nested test case - passed (0 checks)
+    ✓ Check deeply nested test cases - passed (0 checks)
+✓ Static suite with a long name, which is longer than the fixed-size arrays previously used by the reporters to format the lines, to check that the name is no longer truncated - passed (2 checks in 12 test cases), time: 0.286 ms
+✓ Total: 10 checks passed, 0 failed, in 16 test cases, 4 test suites, time: 0.682 ms

@@ -67,3 +67,44 @@ suite_function (mt::suite& ts)
 static mt::static_suite suite = { "Static suite", sr, suite_function };
 
 // ----------------------------------------------------------------------------
+
+// The suite and test case names are longer than the fixed-size arrays
+// previously used by the reporters to format the lines, and the test
+// cases are nested deep enough to exceed them with the indentation alone,
+// to check that nothing is truncated.
+
+static void
+nested_test_case (mt::test_case& t, int depth)
+{
+  if (depth > 0)
+    {
+      t.test ("Nested test case", nested_test_case, depth - 1);
+    }
+  else
+    {
+      t.expect (compute_condition ()) << "condition is true";
+    }
+}
+
+static void
+long_names_suite_function (mt::suite& ts)
+{
+  ts.test ("Check a test case with a long name, which is longer than the "
+           "fixed-size arrays previously used by the reporters to format "
+           "the lines, including the indentation, the index, and the counts, "
+           "to check that the name is no longer truncated, neither in the "
+           "subtest line, nor in the result line, which must end with the "
+           "counts",
+           [] (auto& t)
+    { t.expect (mt::eq (compute_answer (), 42)) << "answer is 42"; });
+
+  ts.test ("Check deeply nested test cases", nested_test_case, 10);
+}
+
+static mt::static_suite long_names_suite
+    = { "Static suite with a long name, which is longer than the fixed-size "
+        "arrays previously used by the reporters to format the lines, to "
+        "check that the name is no longer truncated",
+        sr, long_names_suite_function };
+
+// ----------------------------------------------------------------------------

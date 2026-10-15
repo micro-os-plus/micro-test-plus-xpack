@@ -1,4 +1,4 @@
-# Running: suite-test one two --reporter tap --output-file suite-test.tap
+# Running: suite-test one two --output-file suite-test.tap
 # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: Static top suite
@@ -13,7 +13,7 @@ TAP version 14
         1..2
     ok 2 - Check various conditions 2.2 # { passed, 2 checks }
     1..2
-ok 1 - Static top suite # { passed, 4 checks in 2 test cases, time: 0.055 ms }
+ok 1 - Static top suite # { passed, 4 checks in 2 test cases, time: 0.157 ms }
 # Subtest: Local suite 2
     # Subtest: Check various conditions in suite
         ok 1 - answer is 42
@@ -21,7 +21,7 @@ ok 1 - Static top suite # { passed, 4 checks in 2 test cases, time: 0.055 ms }
         1..2
     ok 1 - Check various conditions in suite # { passed, 2 checks }
     1..1
-ok 2 - Local suite 2 # { passed, 2 checks in 1 test case, time: 0.022 ms }
+ok 2 - Local suite 2 # { passed, 2 checks in 1 test case, time: 0.034 ms }
 # Subtest: Static suite
     # Subtest: Check various conditions
         ok 1 - answer is 42
@@ -29,6 +29,47 @@ ok 2 - Local suite 2 # { passed, 2 checks in 1 test case, time: 0.022 ms }
         1..2
     ok 1 - Check various conditions # { passed, 2 checks }
     1..1
-ok 3 - Static suite # { passed, 2 checks in 1 test case, time: 0.021 ms }
-1..3
-# { total: 8 checks passed, 0 failed, in 4 test cases, 3 test suites, time: 0.153 ms }
+ok 3 - Static suite # { passed, 2 checks in 1 test case, time: 0.048 ms }
+# Subtest: Static suite with a long name, which is longer than the fixed-size arrays previously used by the reporters to format the lines, to check that the name is no longer truncated
+    # Subtest: Check a test case with a long name, which is longer than the fixed-size arrays previously used by the reporters to format the lines, including the indentation, the index, and the counts, to check that the name is no longer truncated, neither in the subtest line, nor in the result line, which must end with the counts
+        ok 1 - answer is 42
+        1..1
+    ok 1 - Check a test case with a long name, which is longer than the fixed-size arrays previously used by the reporters to format the lines, including the indentation, the index, and the counts, to check that the name is no longer truncated, neither in the subtest line, nor in the result line, which must end with the counts # { passed, 1 check }
+    # Subtest: Check deeply nested test cases
+        # Subtest: Nested test case
+            # Subtest: Nested test case
+                # Subtest: Nested test case
+                    # Subtest: Nested test case
+                        # Subtest: Nested test case
+                            # Subtest: Nested test case
+                                # Subtest: Nested test case
+                                    # Subtest: Nested test case
+                                        # Subtest: Nested test case
+                                            # Subtest: Nested test case
+                                                ok 1 - condition is true
+                                                1..1
+                                            ok 1 - Nested test case # { passed, 1 check }
+                                            1..1
+                                        ok 1 - Nested test case # { passed, 0 checks }
+                                        1..1
+                                    ok 1 - Nested test case # { passed, 0 checks }
+                                    1..1
+                                ok 1 - Nested test case # { passed, 0 checks }
+                                1..1
+                            ok 1 - Nested test case # { passed, 0 checks }
+                            1..1
+                        ok 1 - Nested test case # { passed, 0 checks }
+                        1..1
+                    ok 1 - Nested test case # { passed, 0 checks }
+                    1..1
+                ok 1 - Nested test case # { passed, 0 checks }
+                1..1
+            ok 1 - Nested test case # { passed, 0 checks }
+            1..1
+        ok 1 - Nested test case # { passed, 0 checks }
+        1..1
+    ok 2 - Check deeply nested test cases # { passed, 0 checks }
+    1..2
+ok 4 - Static suite with a long name, which is longer than the fixed-size arrays previously used by the reporters to format the lines, to check that the name is no longer truncated # { passed, 2 checks in 12 test cases, time: 0.279 ms }
+1..4
+# { total: 10 checks passed, 0 failed, in 16 test cases, 4 test suites, time: 0.651 ms }

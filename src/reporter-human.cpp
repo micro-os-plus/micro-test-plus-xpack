@@ -509,16 +509,18 @@ namespace micro_os_plus::micro_test_plus::detail
           {
             // Successful test case.
 
+            // The name is not included, since its length is not bounded;
+            // it is passed to each write.
             char message_totals[300];
-            snprintf (message_totals, sizeof (message_totals),
-                      "%s - passed (%zu check%s)", test_case.name (),
+            snprintf (message_totals, sizeof (message_totals), "(%zu check%s)",
                       test_case.totals ().successful_checks (),
                       test_case.totals ().successful_checks () == 1 ? ""
                                                                     : "s");
 
             write_buffer_to_file_ ();
 
-            write_file_ ("%s✓ %s\n", indent.c_str (), message_totals);
+            write_file_ ("%s✓ %s - passed %s\n", indent.c_str (),
+                         test_case.name (), message_totals);
 
             if (verbosity_ == verbosity::verbose)
               {
@@ -526,15 +528,17 @@ namespace micro_os_plus::micro_test_plus::detail
                 // buffer.
                 write_buffer_to_console ();
 
-                write_console_ ("%s%s✓%s %s\n", indent.c_str (), colours_.pass,
-                                colours_.none, message_totals);
+                write_console_ ("%s%s✓%s %s - passed %s\n", indent.c_str (),
+                                colours_.pass, colours_.none,
+                                test_case.name (), message_totals);
 
                 add_empty_line_ = true;
               }
             else
               {
-                write_console_ ("%s%s✓%s %s\n", indent.c_str (), colours_.pass,
-                                colours_.none, message_totals);
+                write_console_ ("%s%s✓%s %s - passed %s\n", indent.c_str (),
+                                colours_.pass, colours_.none,
+                                test_case.name (), message_totals);
 
                 add_empty_line_ = false;
               }
