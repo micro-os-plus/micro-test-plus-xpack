@@ -13,6 +13,8 @@
 
 #include "unit-test.h"
 
+#include <limits>
+
 using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
@@ -461,6 +463,71 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
             << "unsigned char array";
         local_counts.successful_checks++;
         f.clear ();
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The type suffixes written by the `expression_formatter` for the
+    // numbers, and the decimal point of the floating-point values
+    // (API-REVIEW.md #44).
+    ts.test ("Formatter number suffixes", [] (auto& t)
+      {
+        detail::colours no_colours{};
+        expression_formatter f{ no_colours };
+
+        // Compares the accumulated text, then clears it.
+        auto check = [&] (std::string_view expected, const char* message)
+          {
+            t.expect (eq (std::string_view{ f.str () }, expected)) << message;
+            local_counts.successful_checks++;
+            f.clear ();
+          };
+
+        f << static_cast<signed char> (5);
+        check ("5sc", "signed char");
+
+        f << static_cast<unsigned char> (5);
+        check ("5uc", "unsigned char");
+
+        f << 42;
+        check ("42", "int");
+
+        f << 42L;
+        check ("42l", "long");
+
+        f << 42.0f;
+        check ("42.0f", "integral float");
+
+        f << 42.0;
+        check ("42.0", "integral double");
+
+        f << 42.0L;
+        check ("42.0ld", "integral long double");
+
+        f << 1.5f;
+        check ("1.5f", "float");
+
+        f << 1.5;
+        check ("1.5", "double");
+
+        f << 1.5L;
+        check ("1.5ld", "long double");
+
+        f << -2.0;
+        check ("-2.0", "negative integral double");
+
+        f << 1e20;
+        check ("1e+20", "double with exponent");
+
+        f << std::numeric_limits<double>::infinity ();
+        check ("inf", "infinite double");
 
         local_counts.executed_test_cases++;
       });

@@ -33,6 +33,15 @@ The `expression_formatter` and the reporters now write the non-const
 pointers; they were previously written as addresses. A null `char`
 pointer is written as `nullptr`.
 
+In the failure messages, the `signed char` values are now written with
+the `sc` suffix (`5sc`), and the `long double` values with the `ld`
+suffix (`1.5ld`), the names of the `_sc` and `_ld` literals; they were
+previously written with `c` and `l`, which suggest `char` and `long`.
+The floating-point values with an integral value are now written with a
+decimal point (`42.0`, `42.0f`, `42.0ld`), so that they can be
+distinguished from the integers; they were previously written as `42`
+and `42f`. The messages added with `<<` are unchanged.
+
 An exception that escapes the body of a test case is now reported as a
 failed check, at the location of the `test()` call, and the run
 continues with the next test case; it previously ended the program. To

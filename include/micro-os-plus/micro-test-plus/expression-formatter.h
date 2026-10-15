@@ -155,10 +155,11 @@ namespace micro_os_plus::micro_test_plus
      * types, strings, pointers, containers, and framework expression types
      * derived from `detail::op`.
      *
-     * The numeric overloads append a type suffix (e.g., `42u`, `3l`, `1.5f`)
-     * matching the conventions used in the existing reporter output, so that
-     * the formatted text is identical whether produced by the reporter
-     * directly or pre-formatted by a check result.
+     * The numeric overloads append a type suffix named after the µTest++
+     * literals (e.g., `42u`, `3l`, `5sc`, `1.5f`, `1.5ld`); `int` and
+     * `double` have no suffix, and the floating-point values always have
+     * a decimal point or an exponent (`42.0`), so that they can be
+     * distinguished from the integers.
      *
      * The class is non-copyable and non-movable to avoid accidental copying
      * of the internal buffer.
@@ -281,7 +282,7 @@ namespace micro_os_plus::micro_test_plus
       expression_formatter& operator<< (std::nullptr_t);
 
       /**
-       * @brief Appends a signed char value with type suffix `"c"`.
+       * @brief Appends a signed char value with type suffix `"sc"`.
        *
        * @param c The signed char value.
        * @return Reference to this instance.
@@ -373,6 +374,9 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Appends a float value with type suffix `"f"`.
        *
+       * @details
+       * An integral value is written with a decimal point (`42.0f`).
+       *
        * @param v The float value.
        * @return Reference to this instance.
        */
@@ -382,6 +386,10 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Appends a double value (no suffix).
        *
+       * @details
+       * An integral value is written with a decimal point (`42.0`), to
+       * distinguish it from an `int`.
+       *
        * @param v The double value.
        * @return Reference to this instance.
        */
@@ -389,7 +397,10 @@ namespace micro_os_plus::micro_test_plus
       operator<< (double v);
 
       /**
-       * @brief Appends a long double value with type suffix `"l"`.
+       * @brief Appends a long double value with type suffix `"ld"`.
+       *
+       * @details
+       * An integral value is written with a decimal point (`42.0ld`).
        *
        * @param v The long double value.
        * @return Reference to this instance.
@@ -727,6 +738,22 @@ namespace micro_os_plus::micro_test_plus
        */
       [[nodiscard]] inline auto
       colour_ (const bool cond) const;
+
+      /**
+       * @brief Adds a decimal point to a floating-point value formatted
+       * as an integer.
+       *
+       * @details
+       * Called after a floating-point value was appended to the buffer;
+       * `".0"` is appended only if the value was written with digits
+       * only.
+       *
+       * @param start The position in the buffer where the value begins.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      append_decimal_point_ (std::size_t start);
 
       /**
        * @brief ANSI colour codes for output formatting.

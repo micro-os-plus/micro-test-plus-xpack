@@ -148,13 +148,15 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p c to its decimal string representation via
-   * `append_number()` and appends the type suffix `"c"`.
+   * `append_number()` and appends the type suffix `"sc"`, the name of
+   * the `_sc` literal; the suffix `"c"` would suggest `char`, which is
+   * written as a character.
    */
   expression_formatter&
   expression_formatter::operator<< (signed char c)
   {
     detail::append_number (buffer_, c);
-    buffer_.append ("c");
+    buffer_.append ("sc");
     return *this;
   }
 
@@ -276,13 +278,16 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Converts @p v to its string representation via `append_number()`
+   * Converts @p v to its string representation via `append_number()`,
+   * adds the decimal point if needed (via `append_decimal_point_()`),
    * and appends the type suffix `"f"`.
    */
   expression_formatter&
   expression_formatter::operator<< (float v)
   {
+    const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
+    append_decimal_point_ (start);
     buffer_.append ("f");
     return *this;
   }
@@ -290,26 +295,64 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its string representation via `append_number()`
+   * and adds the decimal point if needed (via `append_decimal_point_()`),
    * without a type suffix.
    */
   expression_formatter&
   expression_formatter::operator<< (double v)
   {
+    const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
+    append_decimal_point_ (start);
     return *this;
   }
 
   /**
    * @details
-   * Converts @p v to its string representation via `append_number()`
-   * and appends the type suffix `"l"`.
+   * Converts @p v to its string representation via `append_number()`,
+   * adds the decimal point if needed (via `append_decimal_point_()`),
+   * and appends the type suffix `"ld"`, the name of the `_ld` literal;
+   * the C++ suffix `"l"` would suggest `long`.
    */
   expression_formatter&
   expression_formatter::operator<< (long double v)
   {
+    const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
-    buffer_.append ("l");
+    append_decimal_point_ (start);
+    buffer_.append ("ld");
     return *this;
+  }
+
+  /**
+   * @details
+   * The shortest representation of a floating-point value with an
+   * integral value has no decimal point (`42.0` is formatted as `42`),
+   * so it cannot be distinguished from an integer. If the text appended
+   * since @p start contains only digits, after an optional sign, `".0"`
+   * is appended. The text with a decimal point or an exponent, and the
+   * infinities and NaNs, are left unchanged.
+   */
+  void
+  expression_formatter::append_decimal_point_ (std::size_t start)
+  {
+    if (start < buffer_.size ()
+        && (buffer_[start] == '-' || buffer_[start] == '+'))
+      {
+        ++start;
+      }
+    if (start == buffer_.size ())
+      {
+        return;
+      }
+    for (auto i = start; i < buffer_.size (); ++i)
+      {
+        if (buffer_[i] < '0' || buffer_[i] > '9')
+          {
+            return;
+          }
+      }
+    buffer_.append (".0");
   }
 
   // --------------------------------------------------------------------------
