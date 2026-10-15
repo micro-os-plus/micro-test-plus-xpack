@@ -883,49 +883,36 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ equal string views with != FAILED (operators.cpp:155, hello != hello)
     ✗ String view operators - FAILED (2 checks passed, 2 failed)
 ✗ Operators suite - FAILED (14 checks passed, 11 failed, in 2 test cases)
-• Timings suite
-    • timestamp::has_clock()
-        ✓ default ctor -> has_clock true
-        ✓ zeroed value -> has_clock false
-        ✓ tv_sec==0, tv_nsec==1 -> has_clock true
-    ✓ timestamp::has_clock() - passed (3 checks)
-    • timestamp copy semantics
-        ✓ copy ctor: tv_sec matches
-        ✓ copy ctor: tv_nsec matches
-        ✓ copy assign: tv_sec matches
-        ✓ copy assign: tv_nsec matches
-        ✓ const value() accessor
-    ✓ timestamp copy semantics - passed (5 checks)
-    • timestamps::has_timestamps() state
-        ✓ fresh: has_timestamps false
-        ✓ after begin only: has_timestamps false
-        ✓ after both: has_timestamps true
-        ✓ zeroed begin, real end: has_timestamps false
-        ✓ real begin, zeroed end: has_timestamps false
-    ✓ timestamps::has_timestamps() state - passed (5 checks)
-    • timestamps::timestamp_begin() idempotency
-        ✓ second begin ignored: ms unchanged
-        ✓ second begin ignored: us unchanged
-    ✓ timestamps::timestamp_begin() idempotency - passed (2 checks)
-    • timestamps::timestamp_end() idempotency
-        ✓ second end ignored: ms unchanged
-        ✓ second end ignored: us unchanged
-    ✓ timestamps::timestamp_end() idempotency - passed (2 checks)
-    • timestamps::compute_elapsed_time()
-        ✓ 1 s -> 1000 ms
-        ✓ 1 s -> 0 µs
-        ✓ 500 ms -> 500 ms
-        ✓ 500 ms -> 0 µs
-        ✓ 2.5 ms -> 2 ms
-        ✓ 2.5 ms -> 500 µs
-        ✓ ns borrow -> 600 ms
-        ✓ ns borrow -> 0 µs
-        ✓ zero elapsed -> 0 ms
+• Stopwatch suite
+    • stopwatch::start() and stop()
+        ✓ fresh: has_elapsed false
+        ✓ fresh: elapsed 0 µs
+        ✓ started only: has_elapsed false
+        ✓ started and stopped: has_elapsed if clock
+        ✓ started and stopped: elapsed >= 0 µs
+    ✓ stopwatch::start() and stop() - passed (5 checks)
+    • stopwatch::has_elapsed() state
+        ✓ both readings: has_elapsed true
+        ✓ zero start: has_elapsed false
+        ✓ zero stop: has_elapsed false
+        ✓ tv_sec==0, tv_nsec!=0: has_elapsed true
+    ✓ stopwatch::has_elapsed() state - passed (4 checks)
+    • stopwatch::start() idempotency
+        ✓ second start ignored: 1000000 µs
+    ✓ stopwatch::start() idempotency - passed (1 check)
+    • stopwatch::stop() idempotency
+        ✓ second stop ignored: 1000000 µs
+    ✓ stopwatch::stop() idempotency - passed (1 check)
+    • stopwatch::elapsed()
+        ✓ 1 s -> 1000000 µs
+        ✓ 500 ms -> 500000 µs
+        ✓ 2.5 ms -> 2500 µs
+        ✓ ns borrow -> 600000 µs
+        ✓ 1999 ns -> 1 µs
         ✓ zero elapsed -> 0 µs
-        ✓ no timestamps -> 0 ms
-        ✓ no timestamps -> 0 µs
-    ✓ timestamps::compute_elapsed_time() - passed (12 checks)
-✓ Timings suite - passed (29 checks in 6 test cases)
+        ✓ no stop -> 0 µs
+    ✓ stopwatch::elapsed() - passed (7 checks)
+✓ Stopwatch suite - passed (18 checks in 5 test cases)
 • Utility suite
     • utility::extract_file_name()
         ✓ Unix path returns filename
@@ -960,4 +947,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 445 checks passed, 330 failed, in 80 test cases, 12 test suites
+✗ Total: 434 checks passed, 330 failed, in 79 test cases, 12 test suites

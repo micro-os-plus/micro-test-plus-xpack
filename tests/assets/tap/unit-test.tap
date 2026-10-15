@@ -3030,56 +3030,42 @@ not ok 10 - Miscellaneous suite # { FAILED, 57 checks passed, 13 failed, in 13 t
     not ok 2 - String view operators # { FAILED, 2 checks passed, 2 failed }
     1..2
 not ok 11 - Operators suite # { FAILED, 14 checks passed, 11 failed, in 2 test cases, time: 0.332 ms }
-# Subtest: Timings suite
-    # Subtest: timestamp::has_clock()
-        ok 1 - default ctor -> has_clock true
-        ok 2 - zeroed value -> has_clock false
-        ok 3 - tv_sec==0, tv_nsec==1 -> has_clock true
-        1..3
-    ok 1 - timestamp::has_clock() # { passed, 3 checks }
-    # Subtest: timestamp copy semantics
-        ok 1 - copy ctor: tv_sec matches
-        ok 2 - copy ctor: tv_nsec matches
-        ok 3 - copy assign: tv_sec matches
-        ok 4 - copy assign: tv_nsec matches
-        ok 5 - const value() accessor
+# Subtest: Stopwatch suite
+    # Subtest: stopwatch::start() and stop()
+        ok 1 - fresh: has_elapsed false
+        ok 2 - fresh: elapsed 0 µs
+        ok 3 - started only: has_elapsed false
+        ok 4 - started and stopped: has_elapsed if clock
+        ok 5 - started and stopped: elapsed >= 0 µs
         1..5
-    ok 2 - timestamp copy semantics # { passed, 5 checks }
-    # Subtest: timestamps::has_timestamps() state
-        ok 1 - fresh: has_timestamps false
-        ok 2 - after begin only: has_timestamps false
-        ok 3 - after both: has_timestamps true
-        ok 4 - zeroed begin, real end: has_timestamps false
-        ok 5 - real begin, zeroed end: has_timestamps false
-        1..5
-    ok 3 - timestamps::has_timestamps() state # { passed, 5 checks }
-    # Subtest: timestamps::timestamp_begin() idempotency
-        ok 1 - second begin ignored: ms unchanged
-        ok 2 - second begin ignored: us unchanged
-        1..2
-    ok 4 - timestamps::timestamp_begin() idempotency # { passed, 2 checks }
-    # Subtest: timestamps::timestamp_end() idempotency
-        ok 1 - second end ignored: ms unchanged
-        ok 2 - second end ignored: us unchanged
-        1..2
-    ok 5 - timestamps::timestamp_end() idempotency # { passed, 2 checks }
-    # Subtest: timestamps::compute_elapsed_time()
-        ok 1 - 1 s -> 1000 ms
-        ok 2 - 1 s -> 0 µs
-        ok 3 - 500 ms -> 500 ms
-        ok 4 - 500 ms -> 0 µs
-        ok 5 - 2.5 ms -> 2 ms
-        ok 6 - 2.5 ms -> 500 µs
-        ok 7 - ns borrow -> 600 ms
-        ok 8 - ns borrow -> 0 µs
-        ok 9 - zero elapsed -> 0 ms
-        ok 10 - zero elapsed -> 0 µs
-        ok 11 - no timestamps -> 0 ms
-        ok 12 - no timestamps -> 0 µs
-        1..12
-    ok 6 - timestamps::compute_elapsed_time() # { passed, 12 checks }
-    1..6
-ok 12 - Timings suite # { passed, 29 checks in 6 test cases, time: 0.467 ms }
+    ok 1 - stopwatch::start() and stop() # { passed, 5 checks }
+    # Subtest: stopwatch::has_elapsed() state
+        ok 1 - both readings: has_elapsed true
+        ok 2 - zero start: has_elapsed false
+        ok 3 - zero stop: has_elapsed false
+        ok 4 - tv_sec==0, tv_nsec!=0: has_elapsed true
+        1..4
+    ok 2 - stopwatch::has_elapsed() state # { passed, 4 checks }
+    # Subtest: stopwatch::start() idempotency
+        ok 1 - second start ignored: 1000000 µs
+        1..1
+    ok 3 - stopwatch::start() idempotency # { passed, 1 check }
+    # Subtest: stopwatch::stop() idempotency
+        ok 1 - second stop ignored: 1000000 µs
+        1..1
+    ok 4 - stopwatch::stop() idempotency # { passed, 1 check }
+    # Subtest: stopwatch::elapsed()
+        ok 1 - 1 s -> 1000000 µs
+        ok 2 - 500 ms -> 500000 µs
+        ok 3 - 2.5 ms -> 2500 µs
+        ok 4 - ns borrow -> 600000 µs
+        ok 5 - 1999 ns -> 1 µs
+        ok 6 - zero elapsed -> 0 µs
+        ok 7 - no stop -> 0 µs
+        1..7
+    ok 5 - stopwatch::elapsed() # { passed, 7 checks }
+    1..5
+ok 12 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.330 ms }
 # Subtest: Utility suite
     # Subtest: utility::extract_file_name()
         ok 1 - Unix path returns filename
@@ -3144,4 +3130,4 @@ ok 12 - Timings suite # { passed, 29 checks in 6 test cases, time: 0.467 ms }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.261 ms }
 1..13
-# { total: 453 checks passed, 341 failed, in 93 test cases, 13 test suites, time: 13.953 ms }
+# { total: 442 checks passed, 341 failed, in 92 test cases, 13 test suites, time: 13.146 ms }

@@ -85,13 +85,12 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Abort handler
     • Operators
     • String view operators
-    • timestamp::has_clock()
-    • timestamp copy semantics
-    • timestamps::has_timestamps() state
-    • timestamps::timestamp_begin() idempotency
-    • timestamps::timestamp_end() idempotency
-    • timestamps::compute_elapsed_time()
+    • stopwatch::start() and stop()
+    • stopwatch::has_elapsed() state
+    • stopwatch::start() idempotency
+    • stopwatch::stop() idempotency
+    • stopwatch::elapsed()
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 453 checks passed, 341 failed, in 93 test cases, 13 test suites, time: 9.996 ms
+✗ Total: 442 checks passed, 341 failed, in 92 test cases, 13 test suites, time: 11.172 ms

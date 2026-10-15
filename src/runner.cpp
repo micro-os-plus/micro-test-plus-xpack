@@ -259,10 +259,10 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
-    timings_.timestamp_begin ();
+    stopwatch_.start ();
     reporter_->begin_session (*this);
 
-    top_suite_.timings ().timestamp_begin ();
+    top_suite_.stopwatch ().start ();
     reporter_->begin_suite (top_suite_);
 
     session_state_ = session_state_t::initialised;
@@ -539,13 +539,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Finalises the top suite by recording its end timestamp and notifying
+   * Finalises the top suite by stopping its stopwatch and notifying
    * the reporter, then accumulates its totals into the runner totals.
    * Subsequently invokes `run_suites_()` to execute, sorted by name, and
-   * accumulate the registered and the static child suites. Finally, records the session
-   * end timestamp, notifies the reporter, and returns `0` if all checks
-   * passed or `1` otherwise; if `initialise()` reported an option error,
-   * `2` is returned, regardless of the checks.
+   * accumulate the registered and the static child suites. Finally,
+   * stops the session stopwatch, notifies the reporter, and returns `0`
+   * if all checks passed or `1` otherwise; if `initialise()` reported an
+   * option error, `2` is returned, regardless of the checks.
    *
    * The result is stored, and the later calls return it without running
    * anything again. If the runner was not initialised, an error is
@@ -570,13 +570,13 @@ namespace micro_os_plus::micro_test_plus
         return 1;
       }
 
-    top_suite_.timings ().timestamp_end ();
+    top_suite_.stopwatch ().stop ();
     reporter_->end_suite (top_suite_);
     totals_ += top_suite_.totals ();
 
     run_suites_ ();
 
-    timings_.timestamp_end ();
+    stopwatch_.stop ();
     reporter_->end_session (*this);
 
     if (has_option_errors_)

@@ -802,16 +802,15 @@ test 60
 60:
 60: ✗ Operators suite - FAILED (14 checks passed, 11 failed, in 2 test cases), time: 0.061 ms
 60:
-60: • Timings suite
+60: • Stopwatch suite
 60:
-60:     ✓ timestamp::has_clock() - passed (3 checks)
-60:     ✓ timestamp copy semantics - passed (5 checks)
-60:     ✓ timestamps::has_timestamps() state - passed (5 checks)
-60:     ✓ timestamps::timestamp_begin() idempotency - passed (2 checks)
-60:     ✓ timestamps::timestamp_end() idempotency - passed (2 checks)
-60:     ✓ timestamps::compute_elapsed_time() - passed (10 checks)
+60:     ✓ stopwatch::start() and stop() - passed (5 checks)
+60:     ✓ stopwatch::has_elapsed() state - passed (4 checks)
+60:     ✓ stopwatch::start() idempotency - passed (1 check)
+60:     ✓ stopwatch::stop() idempotency - passed (1 check)
+60:     ✓ stopwatch::elapsed() - passed (7 checks)
 60:
-60: ✓ Timings suite - passed (27 checks in 6 test cases), time: 0.077 ms
+60: ✓ Stopwatch suite - passed (18 checks in 5 test cases), time: 0.077 ms
 60:
 60: • Utility suite
 60:
@@ -828,7 +827,7 @@ test 60
 60:
 60: ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases), time: 0.055 ms
 60:
-60: ✗ Total: 357 checks passed, 326 failed, in 63 test cases, 12 test suites, time: 1.899 ms
+60: ✗ Total: 348 checks passed, 326 failed, in 62 test cases, 12 test suites, time: 1.899 ms
 60: Overall, the µTest++ unit tests were successful!
 60:
 60: Test output written to 'unit-test.txt'.
@@ -850,7 +849,7 @@ test 62
 62:
 62: µTest++ human report
 62:
-62: ✗ Total: 357 checks passed, 326 failed, in 63 test cases, 12 test suites, time: 0.758 ms
+62: ✗ Total: 348 checks passed, 326 failed, in 62 test cases, 12 test suites, time: 0.758 ms
 62/63 Test #62: unit-test-reporter-human-quiet ..............   Passed    0.00 sec
 test 63
       Start 63: unit-test-reporter-human-silent

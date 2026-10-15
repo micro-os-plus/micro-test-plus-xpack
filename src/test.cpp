@@ -244,7 +244,7 @@ namespace micro_os_plus::micro_test_plus
     detail::reporter& reporter = this->reporter ();
 
     // For now, test cases do not record the time.
-    // this->timings.timestamp_begin ();
+    // this->stopwatch ().start ();
     reporter.begin_test_case (*this);
 
 #if defined(__cpp_exceptions)
@@ -272,7 +272,7 @@ namespace micro_os_plus::micro_test_plus
     callable_ (*this);
 #endif // defined(__cpp_exceptions)
 
-    // this->timings.timestamp_end ();
+    // this->stopwatch ().stop ();
     reporter.end_test_case (*this);
   }
 
@@ -342,14 +342,14 @@ namespace micro_os_plus::micro_test_plus
 
     detail::reporter& reporter = this->reporter ();
 
-    this->timings ().timestamp_begin ();
+    this->stopwatch ().start ();
     reporter.begin_suite (*this);
 
     // Invoke the callable, passing the self reference followed by the variadic
     // arguments.
     callable_ (*this);
 
-    this->timings ().timestamp_end ();
+    this->stopwatch ().stop ();
     reporter.end_suite (*this);
   }
 

@@ -47,8 +47,8 @@ target_sources (
             "src/miscellaneous.cpp"
             "src/operators.cpp"
             "src/static-asserts.cpp"
+            "src/stopwatch.cpp"
             "src/support.cpp"
-            "src/timings.cpp"
             "src/utility.cpp"
 )
 

@@ -141,10 +141,10 @@
 #include "micro-test-plus/utility.h"
 
 // Requires reporter.h, counters.h, reflection.h, type-traits.h and
-// timings.h + deferred-reporter.h, reporter.h.
+// stopwatch.h + deferred-reporter.h, reporter.h.
 #include "micro-test-plus/test.h"
 
-// Requires timings.h, test.h (top_suite), counters.h, reflection.h,
+// Requires stopwatch.h, test.h (top_suite), counters.h, reflection.h,
 // runner-options.h.
 #include "micro-test-plus/runner.h"
 

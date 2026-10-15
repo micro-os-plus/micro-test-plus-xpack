@@ -454,22 +454,22 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns a reference to the `timestamps` member.
+   * Returns a reference to the `stopwatch_` member.
    */
-  inline detail::timestamps&
-  suite::timings () noexcept
+  inline detail::stopwatch&
+  suite::stopwatch () noexcept
   {
-    return timings_;
+    return stopwatch_;
   }
 
   /**
    * @details
-   * Returns a const reference to the `timestamps` member.
+   * Returns a const reference to the `stopwatch_` member.
    */
-  inline const detail::timestamps&
-  suite::timings () const noexcept
+  inline const detail::stopwatch&
+  suite::stopwatch () const noexcept
   {
-    return timings_;
+    return stopwatch_;
   }
 
   // ==========================================================================

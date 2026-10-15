@@ -60,7 +60,7 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include "timings.h"
+#include "stopwatch.h"
 #include "test.h"
 #include "reflection.h"
 #include "reporter.h"
@@ -529,32 +529,32 @@ namespace micro_os_plus::micro_test_plus
     reporter (void) const noexcept;
 
     /**
-     * @brief Gets the timings for this runner.
+     * @brief Gets the stopwatch of this runner.
      *
      * @details
-     * Protected, since the timings are an implementation detail; they
-     * are set by `run()`, and are read only by the reporters, which are
-     * friends.
+     * Protected, since the stopwatch is an implementation detail; it
+     * is started by `initialise()` and stopped by `run()`, and is read
+     * only by the reporters, which are friends.
      *
      * @par Parameters
      *   None.
-     * @return A reference to the timestamps instance.
+     * @return A reference to the stopwatch.
      */
-    [[nodiscard]] detail::timestamps&
-    timings () noexcept;
+    [[nodiscard]] detail::stopwatch&
+    stopwatch () noexcept;
 
     /**
-     * @brief Gets the timings for this runner (const overload).
+     * @brief Gets the stopwatch of this runner (const overload).
      *
      * @details
      * Protected, for the same reasons as the non-const overload.
      *
      * @par Parameters
      *   None.
-     * @return A const reference to the timestamps instance.
+     * @return A const reference to the stopwatch.
      */
-    [[nodiscard]] const detail::timestamps&
-    timings () const noexcept;
+    [[nodiscard]] const detail::stopwatch&
+    stopwatch () const noexcept;
 
     /**
      * @brief Runs all registered test suites.
@@ -654,12 +654,12 @@ namespace micro_os_plus::micro_test_plus
     std::unique_ptr<detail::reporter> reporter_;
 
     /**
-     * @brief Timings for this runner.
+     * @brief Stopwatch of this runner.
      *
      * @details
-     * Measure the duration of the entire test session.
+     * Measures the duration of the entire test session.
      */
-    detail::timestamps timings_;
+    detail::stopwatch stopwatch_;
 
     /**
      * @brief Totals of the test session.

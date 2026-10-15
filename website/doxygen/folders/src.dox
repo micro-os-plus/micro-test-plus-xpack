@@ -15,7 +15,8 @@ more related components:
 - `reporter.cpp` — base `reporter` class and `operator<<` overloads
 - `runner.cpp` — `runner` and `static_runner` constructors, suite
   registration, and `run()`
+- `stopwatch.cpp` — `stopwatch` clock readings and elapsed-time
+  computation
 - `test.cpp` — `suite`, `top_suite`, `static_suite`, and `subtest`
   lifecycle methods
-- `timings.cpp` — `timestamp` and elapsed-time computation
 - `utility.cpp` — `extract_file_name()` and `is_match()` helpers

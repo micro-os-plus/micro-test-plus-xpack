@@ -1,0 +1,152 @@
+/*
+ * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
+ * Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can be
+ * obtained from https://opensource.org/licenses/mit.
+ *
+ * Major parts of the code are inspired from v1.1.8 of the Boost UT project,
+ * released under the terms of the Boost Version 1.0 Software License,
+ * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
+ */
+
+// ----------------------------------------------------------------------------
+
+/**
+ * @file
+ * @brief C++ source file with implementations for the µTest++ stopwatch.
+ *
+ * @details
+ * This source file contains the implementation of the `stopwatch` class
+ * of the µTest++ framework. It provides the member functions that read
+ * the monotonic clock at the start and at the end of the measured
+ * interval, and that compute the elapsed time between the two readings.
+ *
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus` namespace.
+ *
+ * This file must be included when building the µTest++ library.
+ */
+
+// ----------------------------------------------------------------------------
+
+#include "micro-os-plus/micro-test-plus/stopwatch.h"
+
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic ignored "-Waggregate-return"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wpre-c++17-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
+
+// ============================================================================
+
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
+
+// ----------------------------------------------------------------------------
+
+namespace micro_os_plus::micro_test_plus::detail
+{
+  // --------------------------------------------------------------------------
+
+  namespace
+  {
+    /**
+     * @brief Reads the system clock.
+     *
+     * @details
+     * On Windows, the current time is captured via `timespec_get()` with
+     * `TIME_UTC`. On POSIX platforms with `CLOCK_MONOTONIC` defined,
+     * `clock_gettime(CLOCK_MONOTONIC)` is used to obtain a monotonic
+     * reading. On platforms where neither macro is defined, @p ts is
+     * left unchanged.
+     *
+     * @param[out] ts The `timespec` where the reading is stored.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    read_clock (timespec& ts) noexcept
+    {
+#if defined(_WIN32)
+      timespec_get (&ts, TIME_UTC);
+#elif defined(CLOCK_MONOTONIC)
+      clock_gettime (CLOCK_MONOTONIC, &ts);
+#else
+      (void)ts;
+#endif // defined(_WIN32) || defined(CLOCK_MONOTONIC)
+    }
+  } // namespace
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @details
+   * If the start time has not yet been recorded, the system clock is
+   * read into `start_time_`. Subsequent calls are silently ignored,
+   * ensuring idempotent behaviour.
+   */
+  void
+  stopwatch::start (void) noexcept
+  {
+    // Ensure it is read only once.
+    if (!is_recorded_ (start_time_))
+      {
+        read_clock (start_time_);
+      }
+  }
+
+  /**
+   * @details
+   * If the stop time has not yet been recorded, the system clock is
+   * read into `stop_time_`. Subsequent calls are silently ignored,
+   * ensuring idempotent behaviour.
+   */
+  void
+  stopwatch::stop (void) noexcept
+  {
+    // Ensure it is read only once.
+    if (!is_recorded_ (stop_time_))
+      {
+        read_clock (stop_time_);
+      }
+  }
+
+  /**
+   * @details
+   * Converts the differences of the seconds and of the nanoseconds
+   * fields to a single nanoseconds duration, so that a negative
+   * nanoseconds difference borrows from the seconds without explicit
+   * normalisation, and truncates the result to whole microseconds. If
+   * `has_elapsed()` is `false`, the result is zero.
+   */
+  std::chrono::microseconds
+  stopwatch::elapsed (void) const noexcept
+  {
+    if (!has_elapsed ())
+      {
+        return std::chrono::microseconds::zero ();
+      }
+
+    const std::chrono::nanoseconds delta = std::chrono::seconds{
+      stop_time_.tv_sec - start_time_.tv_sec
+    } + std::chrono::nanoseconds{ stop_time_.tv_nsec - start_time_.tv_nsec };
+
+    return std::chrono::duration_cast<std::chrono::microseconds> (delta);
+  }
+
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::micro_test_plus::detail
+
+// ----------------------------------------------------------------------------
+
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
+
+// ----------------------------------------------------------------------------

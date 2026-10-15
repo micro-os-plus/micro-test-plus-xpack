@@ -63,7 +63,7 @@
 
 #include "counters.h"
 #include "type-traits.h"
-#include "timings.h"
+#include "stopwatch.h"
 #include "reflection.h"
 
 #include <functional>
@@ -979,32 +979,33 @@ namespace micro_os_plus::micro_test_plus
 
   protected:
     /**
-     * @brief Gets the timings for this suite.
+     * @brief Gets the stopwatch of this suite.
      *
      * @details
-     * Protected, since the timings are an implementation detail; they
-     * are set when the suite runs, and are read only by the runner and
-     * by the reporters, which are friends.
+     * Protected, since the stopwatch is an implementation detail; it
+     * is started and stopped when the suite runs (by the runner, for
+     * the top suite), and is read only by the reporters, which are
+     * friends.
      *
      * @par Parameters
      *   None.
-     * @return A reference to the timestamps instance.
+     * @return A reference to the stopwatch.
      */
-    [[nodiscard]] detail::timestamps&
-    timings () noexcept;
+    [[nodiscard]] detail::stopwatch&
+    stopwatch () noexcept;
 
     /**
-     * @brief Gets the timings for this suite (const overload).
+     * @brief Gets the stopwatch of this suite (const overload).
      *
      * @details
      * Protected, for the same reasons as the non-const overload.
      *
      * @par Parameters
      *   None.
-     * @return A const reference to the timestamps instance.
+     * @return A const reference to the stopwatch.
      */
-    [[nodiscard]] const detail::timestamps&
-    timings () const noexcept;
+    [[nodiscard]] const detail::stopwatch&
+    stopwatch () const noexcept;
 
     /**
      * @brief Callable storing the suite body and any bound arguments.
@@ -1017,12 +1018,13 @@ namespace micro_os_plus::micro_test_plus
     std::function<void (suite&)> callable_;
 
     /**
-     * @brief Timing measurements for this suite's execution.
+     * @brief Stopwatch of this suite.
      *
      * @details
-     * Recorded by `run()`; displayed by the reporters.
+     * Measures the duration of the suite; started and stopped by
+     * `run()`, and displayed by the reporters.
      */
-    detail::timestamps timings_;
+    detail::stopwatch stopwatch_;
 
     /**
      * @brief A copy of the suite name.

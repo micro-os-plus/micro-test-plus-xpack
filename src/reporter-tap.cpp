@@ -176,9 +176,11 @@ namespace micro_os_plus::micro_test_plus::detail
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
-    if (runner.timings ().has_timestamps ())
+    if (runner.stopwatch ().has_elapsed ())
       {
-        runner.timings ().compute_elapsed_time (milliseconds, microseconds);
+        const auto elapsed = runner.stopwatch ().elapsed ().count ();
+        milliseconds = static_cast<uint32_t> (elapsed / 1000);
+        microseconds = static_cast<uint32_t> (elapsed % 1000);
       }
 
     char message_summary[32];
@@ -310,9 +312,11 @@ namespace micro_os_plus::micro_test_plus::detail
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
-    if (suite.timings ().has_timestamps ())
+    if (suite.stopwatch ().has_elapsed ())
       {
-        suite.timings ().compute_elapsed_time (milliseconds, microseconds);
+        const auto elapsed = suite.stopwatch ().elapsed ().count ();
+        milliseconds = static_cast<uint32_t> (elapsed / 1000);
+        microseconds = static_cast<uint32_t> (elapsed % 1000);
       }
 
     std::string indent (indent_size, ' ');

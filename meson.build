@@ -59,7 +59,7 @@ _local_sources += [
   'src/reporter-human.cpp',
   'src/reporter-tap.cpp',
   'src/test.cpp',
-  'src/timings.cpp',
+  'src/stopwatch.cpp',
   'src/reflection.cpp',
   'src/utility.cpp',
 ]

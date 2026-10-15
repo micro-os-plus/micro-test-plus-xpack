@@ -1,3 +1,4 @@
+// ----------------------------------------------------------------------------
 /*
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -14,21 +15,21 @@
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++
- * timing utilities.
+ * stopwatch.
  *
  * @details
- * This header provides the inline method bodies for the `timestamp` and
- * `timestamps` classes, separated from the class declarations in
- * `timings.h` to enforce the project convention that declarations reside
- * in headers and implementations reside in inline files.
+ * This header provides the inline member function bodies of the
+ * `stopwatch` class, separated from the class declaration in
+ * `stopwatch.h` to enforce the project convention that declarations
+ * reside in headers and implementations reside in inline files.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising
  * the risk of naming conflicts.
  */
 
-#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_TIMINGS_INLINES_H_
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_TIMINGS_INLINES_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_STOPWATCH_INLINES_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_STOPWATCH_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -53,54 +54,24 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Stores the supplied `timespec` value in the `value_` member.
-   */
-  inline timestamp::timestamp (const timespec& ts) noexcept : value_{ ts }
-  {
-  }
-
-  /**
-   * @details
-   * Returns a mutable reference to the `value_` member.
-   */
-  inline timespec&
-  timestamp::value () noexcept
-  {
-    return value_;
-  }
-
-  /**
-   * @details
-   * Returns a const reference to the `value_` member.
-   */
-  inline const timespec&
-  timestamp::value () const noexcept
-  {
-    return value_;
-  }
-
-  // ==========================================================================
-
-  /**
-   * @details
-   * Returns `true` when `begin_time_` holds a value, i.e. when
-   * `timestamp_begin()` has previously been called.
+   * Returns `true` only when both the start and the stop readings were
+   * recorded, as determined by `is_recorded_()`.
    */
   inline bool
-  timestamps::has_begin () const noexcept
+  stopwatch::has_elapsed (void) const noexcept
   {
-    return begin_time_.has_value ();
+    return is_recorded_ (start_time_) && is_recorded_ (stop_time_);
   }
 
   /**
    * @details
-   * Returns `true` when `end_time_` holds a value, i.e. when
-   * `timestamp_end()` has previously been called.
+   * Returns `true` if at least one of the `tv_sec` or `tv_nsec` fields
+   * of @p ts is non-zero, indicating that a clock reading was captured.
    */
   inline bool
-  timestamps::has_end () const noexcept
+  stopwatch::is_recorded_ (const timespec& ts) noexcept
   {
-    return end_time_.has_value ();
+    return ts.tv_sec != 0 || ts.tv_nsec != 0;
   }
 
   // --------------------------------------------------------------------------
@@ -116,6 +87,6 @@ namespace micro_os_plus::micro_test_plus::detail
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_TIMINGS_INLINES_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_STOPWATCH_INLINES_H_
 
 // ----------------------------------------------------------------------------
