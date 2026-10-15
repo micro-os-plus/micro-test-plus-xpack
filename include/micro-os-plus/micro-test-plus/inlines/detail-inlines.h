@@ -228,28 +228,11 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
-    /**
-     * @details
-     * Evaluates the equality of `lhs` and `rhs` inside an immediately
-     * invoked lambda and passes the boolean result to the `binary_op`
-     * base class constructor. Supports types with static `value` members,
-     * types with an `epsilon` precision member, and generic types.
-     */
-    template <class Lhs_T, class Rhs_T>
-    constexpr eq_op<Lhs_T, Rhs_T>::eq_op (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
-      {
-        // This lambda is called in the constructor to evaluate the
-        // comparison. Its result is implicitly converted to bool via
-        // the operator bool() of whatever type the branch returns.
-        // This is intentional: all result types (integral_constant,
-        // comparator objects, plain bool) define operator bool().
-        using std::operator==;
-        using std::operator<;
-
+    // The operands are compared as they are, including mixed signedness
+    // and mixed integer and floating-point types; the warnings would be
+    // reported in the test code of the application, not in the library.
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
-
 #pragma GCC diagnostic ignored "-Wfloat-equal"
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wdouble-promotion"
@@ -260,289 +243,135 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
-        if constexpr (type_traits::has_value<Lhs_T>
-                      and type_traits::has_value<Rhs_T>)
-          {
-            // If both types have values (like numeric constants),
-            // compare them directly.
-            return Lhs_T::value == Rhs_T::value;
-          }
-        else if constexpr (type_traits::has_epsilon<Lhs_T>
-                           or type_traits::has_epsilon<Rhs_T>)
-          {
-            // If any value has a precision, compare within the tolerance.
-            return detail::within_tolerance (lhs, rhs);
-          }
-        else
-          {
-            // Unwrap the framework wrappers; other values, including
-            // the types of the application, are compared as they are.
-            return detail::unwrap (lhs) == detail::unwrap (rhs);
-          }
+    /**
+     * @details
+     * The using-declaration makes the standard operators visible to
+     * unqualified lookup, in addition to those found by argument-dependent
+     * lookup, and hides any `operator==` of the enclosing namespaces.
+     */
+    template <class Lhs_T, class Rhs_T>
+    constexpr bool
+    equal_to::apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      using std::operator==;
+      return lhs == rhs;
+    }
+
+    /**
+     * @details
+     * The using-declarations make the standard operators visible to
+     * unqualified lookup, in addition to those found by argument-dependent
+     * lookup; `operator==` is also needed for the C++20 rewritten
+     * candidates of `!=`.
+     */
+    template <class Lhs_T, class Rhs_T>
+    constexpr bool
+    not_equal_to::apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      using std::operator==;
+      using std::operator!=;
+      return lhs != rhs;
+    }
+
+    /**
+     * @details
+     * The using-declaration makes the standard operators visible to
+     * unqualified lookup, in addition to those found by argument-dependent
+     * lookup, and hides any `operator>` of the enclosing namespaces.
+     */
+    template <class Lhs_T, class Rhs_T>
+    constexpr bool
+    greater::apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      using std::operator>;
+      return lhs > rhs;
+    }
+
+    /**
+     * @details
+     * The using-declaration makes the standard operators visible to
+     * unqualified lookup, in addition to those found by argument-dependent
+     * lookup, and hides any `operator>=` of the enclosing namespaces.
+     */
+    template <class Lhs_T, class Rhs_T>
+    constexpr bool
+    greater_equal::apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      using std::operator>=;
+      return lhs >= rhs;
+    }
+
+    /**
+     * @details
+     * The using-declaration makes the standard operators visible to
+     * unqualified lookup, in addition to those found by argument-dependent
+     * lookup, and hides any `operator<` of the enclosing namespaces.
+     */
+    template <class Lhs_T, class Rhs_T>
+    constexpr bool
+    less::apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      using std::operator<;
+      return lhs < rhs;
+    }
+
+    /**
+     * @details
+     * The using-declaration makes the standard operators visible to
+     * unqualified lookup, in addition to those found by argument-dependent
+     * lookup, and hides any `operator<=` of the enclosing namespaces.
+     */
+    template <class Lhs_T, class Rhs_T>
+    constexpr bool
+    less_equal::apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      using std::operator<=;
+      return lhs <= rhs;
+    }
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
-      }() }
-    {
-    }
 
     // ------------------------------------------------------------------------
 
     /**
      * @details
-     * Evaluates the non-equality of `lhs` and `rhs` inside an immediately
-     * invoked lambda and passes the boolean result to the `binary_op`
-     * base class constructor. Supports types with static `value` members,
-     * types with an `epsilon` precision member, and generic types.
+     * Evaluates the comparison inside an immediately invoked lambda and
+     * passes the boolean result to the `binary_op` base class constructor:
+     * - for types with static `value` members (the integral constants),
+     *   the two values are compared directly;
+     * - if at least one operand has an `epsilon` member (the floating-point
+     *   wrappers), operands within the tolerance are equal, and the result
+     *   is `Compare_T::within_tolerance_result`; otherwise the unwrapped
+     *   values are compared;
+     * - for all other types, the framework wrappers are unwrapped, and the
+     *   values, including the types of the application, are compared as
+     *   they are.
      */
-    template <class Lhs_T, class Rhs_T>
-    constexpr ne_op<Lhs_T, Rhs_T>::ne_op (const Lhs_T& lhs, const Rhs_T& rhs)
+    template <class Lhs_T, class Rhs_T, class Compare_T>
+    constexpr compare_op<Lhs_T, Rhs_T, Compare_T>::compare_op (
+        const Lhs_T& lhs, const Rhs_T& rhs, Compare_T)
         : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
       {
-        using std::operator==;
-        using std::operator!=;
-        using std::operator>;
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#pragma GCC diagnostic ignored "-Wfloat-equal"
-#pragma GCC diagnostic ignored "-Wconversion"
-#pragma GCC diagnostic ignored "-Wdouble-promotion"
-#pragma GCC diagnostic ignored "-Wsign-compare"
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
-#pragma clang diagnostic ignored "-Wpedantic"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
         if constexpr (type_traits::has_value<Lhs_T>
                       and type_traits::has_value<Rhs_T>)
           {
-            return Lhs_T::value != Rhs_T::value;
+            return Compare_T::apply (Lhs_T::value, Rhs_T::value);
           }
         else if constexpr (type_traits::has_epsilon<Lhs_T>
                            or type_traits::has_epsilon<Rhs_T>)
           {
-            return not detail::within_tolerance (lhs, rhs);
+            return detail::within_tolerance (lhs, rhs)
+                       ? Compare_T::within_tolerance_result
+                       : Compare_T::apply (detail::unwrap (lhs),
+                                           detail::unwrap (rhs));
           }
         else
           {
-            return detail::unwrap (lhs) != detail::unwrap (rhs);
+            return Compare_T::apply (detail::unwrap (lhs),
+                                     detail::unwrap (rhs));
           }
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-      }() }
-    {
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @details
-     * Evaluates whether `lhs > rhs` inside an immediately invoked lambda
-     * and passes the boolean result to the `binary_op` base class
-     * constructor. Supports types with static `value` members, types with
-     * an `epsilon` precision member (values within the tolerance are equal,
-     * as for `eq_op`), and generic types.
-     */
-    template <class Lhs_T, class Rhs_T>
-    constexpr gt_op<Lhs_T, Rhs_T>::gt_op (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
-      {
-        using std::operator>;
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#pragma GCC diagnostic ignored "-Wconversion"
-#pragma GCC diagnostic ignored "-Wdouble-promotion"
-#pragma GCC diagnostic ignored "-Wsign-compare"
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
-#pragma clang diagnostic ignored "-Wpedantic"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
-        if constexpr (type_traits::has_value<Lhs_T>
-                      and type_traits::has_value<Rhs_T>)
-          {
-            return Lhs_T::value > Rhs_T::value;
-          }
-        else if constexpr (type_traits::has_epsilon<Lhs_T>
-                           or type_traits::has_epsilon<Rhs_T>)
-          {
-            // Values within the tolerance are equal, not ordered.
-            return detail::unwrap (lhs) > detail::unwrap (rhs)
-                   and not detail::within_tolerance (lhs, rhs);
-          }
-        else
-          {
-            return detail::unwrap (lhs) > detail::unwrap (rhs);
-          }
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-      }() }
-    {
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @details
-     * Evaluates whether `lhs >= rhs` inside an immediately invoked lambda
-     * and passes the boolean result to the `binary_op` base class
-     * constructor. Supports types with static `value` members, types with
-     * an `epsilon` precision member (values within the tolerance are equal,
-     * as for `eq_op`), and generic types.
-     */
-    template <class Lhs_T, class Rhs_T>
-    constexpr ge_op<Lhs_T, Rhs_T>::ge_op (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
-      {
-        using std::operator>=;
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#pragma GCC diagnostic ignored "-Wconversion"
-#pragma GCC diagnostic ignored "-Wdouble-promotion"
-#pragma GCC diagnostic ignored "-Wsign-compare"
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
-#pragma clang diagnostic ignored "-Wpedantic"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
-        if constexpr (type_traits::has_value<Lhs_T>
-                      and type_traits::has_value<Rhs_T>)
-          {
-            return Lhs_T::value >= Rhs_T::value;
-          }
-        else if constexpr (type_traits::has_epsilon<Lhs_T>
-                           or type_traits::has_epsilon<Rhs_T>)
-          {
-            // Values within the tolerance are equal.
-            return detail::unwrap (lhs) > detail::unwrap (rhs)
-                   or detail::within_tolerance (lhs, rhs);
-          }
-        else
-          {
-            return detail::unwrap (lhs) >= detail::unwrap (rhs);
-          }
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-      }() }
-    {
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @details
-     * Evaluates whether `lhs < rhs` inside an immediately invoked lambda
-     * and passes the boolean result to the `binary_op` base class
-     * constructor. Supports types with static `value` members, types with
-     * an `epsilon` precision member (values within the tolerance are equal,
-     * as for `eq_op`), and generic types.
-     */
-    template <class Lhs_T, class Rhs_T>
-    constexpr lt_op<Lhs_T, Rhs_T>::lt_op (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
-      {
-        using std::operator<;
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#pragma GCC diagnostic ignored "-Wconversion"
-#pragma GCC diagnostic ignored "-Wdouble-promotion"
-#pragma GCC diagnostic ignored "-Wsign-compare"
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
-#pragma clang diagnostic ignored "-Wpedantic"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
-        if constexpr (type_traits::has_value<Lhs_T>
-                      and type_traits::has_value<Rhs_T>)
-          {
-            return Lhs_T::value < Rhs_T::value;
-          }
-        else if constexpr (type_traits::has_epsilon<Lhs_T>
-                           or type_traits::has_epsilon<Rhs_T>)
-          {
-            // Values within the tolerance are equal, not ordered.
-            return detail::unwrap (lhs) < detail::unwrap (rhs)
-                   and not detail::within_tolerance (lhs, rhs);
-          }
-        else
-          {
-            return detail::unwrap (lhs) < detail::unwrap (rhs);
-          }
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-      }() }
-    {
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @details
-     * Evaluates whether `lhs <= rhs` inside an immediately invoked lambda
-     * and passes the boolean result to the `binary_op` base class
-     * constructor. Supports types with static `value` members, types with
-     * an `epsilon` precision member (values within the tolerance are equal,
-     * as for `eq_op`), and generic types.
-     */
-    template <class Lhs_T, class Rhs_T>
-    constexpr le_op<Lhs_T, Rhs_T>::le_op (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
-      {
-        using std::operator<=;
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-
-#pragma GCC diagnostic ignored "-Wconversion"
-#pragma GCC diagnostic ignored "-Wdouble-promotion"
-#pragma GCC diagnostic ignored "-Wsign-compare"
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
-#pragma clang diagnostic ignored "-Wpedantic"
-#endif // defined(__clang__)
-#endif // defined(__GNUC__)
-
-        if constexpr (type_traits::has_value<Lhs_T>
-                      and type_traits::has_value<Rhs_T>)
-          {
-            return Lhs_T::value <= Rhs_T::value;
-          }
-        else if constexpr (type_traits::has_epsilon<Lhs_T>
-                           or type_traits::has_epsilon<Rhs_T>)
-          {
-            // Values within the tolerance are equal.
-            return detail::unwrap (lhs) < detail::unwrap (rhs)
-                   or detail::within_tolerance (lhs, rhs);
-          }
-        else
-          {
-            return detail::unwrap (lhs) <= detail::unwrap (rhs);
-          }
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
       }() }
     {
     }

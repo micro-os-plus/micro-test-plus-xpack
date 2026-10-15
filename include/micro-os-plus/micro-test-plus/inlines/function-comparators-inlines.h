@@ -86,7 +86,8 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   eq (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::eq_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
+    return detail::compare_op{ detail::as_operand (lhs),
+                               detail::as_operand (rhs), detail::equal_to{} };
   }
 
   /**
@@ -101,7 +102,9 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   ne (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::ne_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
+    return detail::compare_op{ detail::as_operand (lhs),
+                               detail::as_operand (rhs),
+                               detail::not_equal_to{} };
   }
 
   /**
@@ -116,7 +119,8 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   gt (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::gt_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
+    return detail::compare_op{ detail::as_operand (lhs),
+                               detail::as_operand (rhs), detail::greater{} };
   }
 
   /**
@@ -131,7 +135,9 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   ge (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::ge_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
+    return detail::compare_op{ detail::as_operand (lhs),
+                               detail::as_operand (rhs),
+                               detail::greater_equal{} };
   }
 
   /**
@@ -146,7 +152,8 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   lt (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::lt_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
+    return detail::compare_op{ detail::as_operand (lhs),
+                               detail::as_operand (rhs), detail::less{} };
   }
 
   /**
@@ -161,7 +168,9 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   le (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return detail::le_op{ detail::as_operand (lhs), detail::as_operand (rhs) };
+    return detail::compare_op{ detail::as_operand (lhs),
+                               detail::as_operand (rhs),
+                               detail::less_equal{} };
   }
 
   // --------------------------------------------------------------------------

@@ -171,10 +171,10 @@ namespace micro_os_plus::micro_test_plus
      * the floating-point wrappers.
      *
      * @details
-     * Used by all six comparators, so that a value within the tolerance is
-     * equal, and neither less nor greater; at least one operand must have
-     * an `epsilon` member (a floating-point literal, a `to_f`, `to_d`, or
-     * `to_ld` wrapper, or `approx()`).
+     * Used by `compare_op` for all six tags, so that a value within the
+     * tolerance is equal, and neither less nor greater; at least one
+     * operand must have an `epsilon` member (a floating-point literal, a
+     * `to_f`, `to_d`, or `to_ld` wrapper, or `approx()`).
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
@@ -266,8 +266,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * This base struct stores two operands (left-hand and right-hand) along
      * with the pre-computed boolean result of a binary comparison. Derived
-     * structs such as `eq_op`, `lt_op`, and others inherit from this to
-     * provide relational and logical operations. The comparison result is
+     * structs such as `compare_op`, `and_op`, and `or_op` inherit from this
+     * to provide relational and logical operations. The comparison result is
      * computed at construction time and cached, enabling efficient
      * reporting and composition of complex assertions without repeated
      * computation.
@@ -349,234 +349,349 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief Equality comparator struct template.
+     * @brief Equality tag for `compare_op`.
      *
      * @details
-     * Derived from `binary_op`, this struct checks whether the left-hand
-     * operand is equal to the right-hand operand. It is used within test
-     * expressions to provide human-readable equality assertions with
-     * enhanced reporting of the actual and expected values upon failure.
-     *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
+     * Defines the operator applied by `compare_op`, its symbol in the
+     * failure reports, and the result when the operands are within the
+     * tolerance of the floating-point wrappers.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    template <class Lhs_T, class Rhs_T>
-    struct eq_op : binary_op<Lhs_T, Rhs_T>
+    struct equal_to
     {
       /**
-       * @brief Constructs an equality comparator for the given operands.
+       * @brief The operator symbol, as displayed in the failure reports.
+       *
+       * @details
+       * Includes the surrounding spaces, so that the formatter appends it
+       * with a single call; a C string, not a `std::string_view`, which
+       * would take two registers at each call site and enlarge the code.
+       */
+      static constexpr const char* symbol = " == ";
+
+      /**
+       * @brief The result when the operands are within the tolerance.
+       *
+       * @details
+       * Values within the tolerance are equal.
+       */
+      static constexpr bool within_tolerance_result = true;
+
+      /**
+       * @brief Compares the operands with `==`.
+       *
+       * @details
+       * Always inlined, also at `-O0`, so that the debug builds do not
+       * get one more function for each combination of operand types.
+       *
+       * @tparam Lhs_T The type of the left-hand operand.
+       * @tparam Rhs_T The type of the right-hand operand.
        *
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
+       * @return The result of `lhs == rhs`, converted to `bool`.
        */
-      constexpr eq_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      template <class Lhs_T, class Rhs_T>
+      [[nodiscard, gnu::always_inline]] static constexpr bool
+      apply (const Lhs_T& lhs, const Rhs_T& rhs);
     };
 
     /**
-     * @brief Deduction guide for the equality comparator.
+     * @brief Non-equality tag for `compare_op`.
      *
      * @details
-     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `eq_op{ lhs, rhs }` can be written without explicit template arguments.
+     * Defines the operator applied by `compare_op`, its symbol in the
+     * failure reports, and the result when the operands are within the
+     * tolerance of the floating-point wrappers.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    template <typename Lhs_T, typename Rhs_T>
-    eq_op (const Lhs_T&, const Rhs_T&) -> eq_op<Lhs_T, Rhs_T>;
+    struct not_equal_to
+    {
+      /**
+       * @brief The operator symbol, as displayed in the failure reports.
+       *
+       * @details
+       * Includes the surrounding spaces, so that the formatter appends it
+       * with a single call; a C string, not a `std::string_view`, which
+       * would take two registers at each call site and enlarge the code.
+       */
+      static constexpr const char* symbol = " != ";
+
+      /**
+       * @brief The result when the operands are within the tolerance.
+       *
+       * @details
+       * Values within the tolerance are equal.
+       */
+      static constexpr bool within_tolerance_result = false;
+
+      /**
+       * @brief Compares the operands with `!=`.
+       *
+       * @details
+       * Always inlined, also at `-O0`, so that the debug builds do not
+       * get one more function for each combination of operand types.
+       *
+       * @tparam Lhs_T The type of the left-hand operand.
+       * @tparam Rhs_T The type of the right-hand operand.
+       *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       * @return The result of `lhs != rhs`, converted to `bool`.
+       */
+      template <class Lhs_T, class Rhs_T>
+      [[nodiscard, gnu::always_inline]] static constexpr bool
+      apply (const Lhs_T& lhs, const Rhs_T& rhs);
+    };
+
+    /**
+     * @brief Greater than tag for `compare_op`.
+     *
+     * @details
+     * Defines the operator applied by `compare_op`, its symbol in the
+     * failure reports, and the result when the operands are within the
+     * tolerance of the floating-point wrappers.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    struct greater
+    {
+      /**
+       * @brief The operator symbol, as displayed in the failure reports.
+       *
+       * @details
+       * Includes the surrounding spaces, so that the formatter appends it
+       * with a single call; a C string, not a `std::string_view`, which
+       * would take two registers at each call site and enlarge the code.
+       */
+      static constexpr const char* symbol = " > ";
+
+      /**
+       * @brief The result when the operands are within the tolerance.
+       *
+       * @details
+       * Values within the tolerance are equal, not ordered.
+       */
+      static constexpr bool within_tolerance_result = false;
+
+      /**
+       * @brief Compares the operands with `>`.
+       *
+       * @details
+       * Always inlined, also at `-O0`, so that the debug builds do not
+       * get one more function for each combination of operand types.
+       *
+       * @tparam Lhs_T The type of the left-hand operand.
+       * @tparam Rhs_T The type of the right-hand operand.
+       *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       * @return The result of `lhs > rhs`, converted to `bool`.
+       */
+      template <class Lhs_T, class Rhs_T>
+      [[nodiscard, gnu::always_inline]] static constexpr bool
+      apply (const Lhs_T& lhs, const Rhs_T& rhs);
+    };
+
+    /**
+     * @brief Greater than or equal tag for `compare_op`.
+     *
+     * @details
+     * Defines the operator applied by `compare_op`, its symbol in the
+     * failure reports, and the result when the operands are within the
+     * tolerance of the floating-point wrappers.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    struct greater_equal
+    {
+      /**
+       * @brief The operator symbol, as displayed in the failure reports.
+       *
+       * @details
+       * Includes the surrounding spaces, so that the formatter appends it
+       * with a single call; a C string, not a `std::string_view`, which
+       * would take two registers at each call site and enlarge the code.
+       */
+      static constexpr const char* symbol = " >= ";
+
+      /**
+       * @brief The result when the operands are within the tolerance.
+       *
+       * @details
+       * Values within the tolerance are equal.
+       */
+      static constexpr bool within_tolerance_result = true;
+
+      /**
+       * @brief Compares the operands with `>=`.
+       *
+       * @details
+       * Always inlined, also at `-O0`, so that the debug builds do not
+       * get one more function for each combination of operand types.
+       *
+       * @tparam Lhs_T The type of the left-hand operand.
+       * @tparam Rhs_T The type of the right-hand operand.
+       *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       * @return The result of `lhs >= rhs`, converted to `bool`.
+       */
+      template <class Lhs_T, class Rhs_T>
+      [[nodiscard, gnu::always_inline]] static constexpr bool
+      apply (const Lhs_T& lhs, const Rhs_T& rhs);
+    };
+
+    /**
+     * @brief Less than tag for `compare_op`.
+     *
+     * @details
+     * Defines the operator applied by `compare_op`, its symbol in the
+     * failure reports, and the result when the operands are within the
+     * tolerance of the floating-point wrappers.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    struct less
+    {
+      /**
+       * @brief The operator symbol, as displayed in the failure reports.
+       *
+       * @details
+       * Includes the surrounding spaces, so that the formatter appends it
+       * with a single call; a C string, not a `std::string_view`, which
+       * would take two registers at each call site and enlarge the code.
+       */
+      static constexpr const char* symbol = " < ";
+
+      /**
+       * @brief The result when the operands are within the tolerance.
+       *
+       * @details
+       * Values within the tolerance are equal, not ordered.
+       */
+      static constexpr bool within_tolerance_result = false;
+
+      /**
+       * @brief Compares the operands with `<`.
+       *
+       * @details
+       * Always inlined, also at `-O0`, so that the debug builds do not
+       * get one more function for each combination of operand types.
+       *
+       * @tparam Lhs_T The type of the left-hand operand.
+       * @tparam Rhs_T The type of the right-hand operand.
+       *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       * @return The result of `lhs < rhs`, converted to `bool`.
+       */
+      template <class Lhs_T, class Rhs_T>
+      [[nodiscard, gnu::always_inline]] static constexpr bool
+      apply (const Lhs_T& lhs, const Rhs_T& rhs);
+    };
+
+    /**
+     * @brief Less than or equal tag for `compare_op`.
+     *
+     * @details
+     * Defines the operator applied by `compare_op`, its symbol in the
+     * failure reports, and the result when the operands are within the
+     * tolerance of the floating-point wrappers.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    struct less_equal
+    {
+      /**
+       * @brief The operator symbol, as displayed in the failure reports.
+       *
+       * @details
+       * Includes the surrounding spaces, so that the formatter appends it
+       * with a single call; a C string, not a `std::string_view`, which
+       * would take two registers at each call site and enlarge the code.
+       */
+      static constexpr const char* symbol = " <= ";
+
+      /**
+       * @brief The result when the operands are within the tolerance.
+       *
+       * @details
+       * Values within the tolerance are equal.
+       */
+      static constexpr bool within_tolerance_result = true;
+
+      /**
+       * @brief Compares the operands with `<=`.
+       *
+       * @details
+       * Always inlined, also at `-O0`, so that the debug builds do not
+       * get one more function for each combination of operand types.
+       *
+       * @tparam Lhs_T The type of the left-hand operand.
+       * @tparam Rhs_T The type of the right-hand operand.
+       *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       * @return The result of `lhs <= rhs`, converted to `bool`.
+       */
+      template <class Lhs_T, class Rhs_T>
+      [[nodiscard, gnu::always_inline]] static constexpr bool
+      apply (const Lhs_T& lhs, const Rhs_T& rhs);
+    };
 
     // ========================================================================
 
     /**
-     * @brief Non-equality comparator struct template.
+     * @brief Relational comparator struct template.
      *
      * @details
-     * Derived from `binary_op`, this struct checks whether the left-hand
-     * operand is not equal to the right-hand operand. It is used within test
-     * expressions to provide human-readable inequality assertions with
-     * enhanced reporting of the actual and expected values upon failure.
+     * Derived from `binary_op`, this struct compares the left-hand operand
+     * with the right-hand operand, using the operator defined by the tag
+     * `Compare_T` (`equal_to`, `not_equal_to`, `greater`, `greater_equal`,
+     * `less`, or `less_equal`). It is used within test expressions to
+     * provide human-readable relational assertions, with the actual and
+     * expected values, and the symbol of the tag, reported upon failure.
+     *
+     * The tag is passed as an empty constructor argument, so that all
+     * three template arguments are deduced, for example
+     * `compare_op{ lhs, rhs, equal_to{} }`. A factory function would do the
+     * same, but at `-O0` it adds one function per instantiation.
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
+     * @tparam Compare_T The tag that defines the comparison.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    template <class Lhs_T, class Rhs_T>
-    struct ne_op : binary_op<Lhs_T, Rhs_T>
+    template <class Lhs_T, class Rhs_T, class Compare_T>
+    struct compare_op : binary_op<Lhs_T, Rhs_T>
     {
       /**
-       * @brief Constructs a non-equality comparator for the given operands.
+       * @brief Constructs a comparator for the given operands.
+       *
+       * @details
+       * The tag argument is used only to deduce `Compare_T`.
        *
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr ne_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      constexpr compare_op (const Lhs_T& lhs, const Rhs_T& rhs, Compare_T);
     };
 
     /**
-     * @brief Deduction guide for the non-equality comparator.
+     * @brief Deduction guide for the relational comparator.
      *
      * @details
-     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `ne_op{ lhs, rhs }` can be written without explicit template arguments.
+     * Deduces `Lhs_T`, `Rhs_T`, and `Compare_T` from the constructor
+     * arguments, so that `compare_op{ lhs, rhs, equal_to{} }` can be written
+     * without explicit template arguments.
      */
-    template <typename Lhs_T, typename Rhs_T>
-    ne_op (const Lhs_T&, const Rhs_T&) -> ne_op<Lhs_T, Rhs_T>;
-
-    // ========================================================================
-
-    /**
-     * @brief Greater than comparator struct template.
-     *
-     * @details
-     * Derived from `binary_op`, this struct checks whether the left-hand
-     * operand is greater than the right-hand operand. It is used within test
-     * expressions to provide human-readable relational assertions with
-     * enhanced reporting of the actual and expected values upon failure.
-     *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
-     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-     */
-    template <class Lhs_T, class Rhs_T>
-    struct gt_op : binary_op<Lhs_T, Rhs_T>
-    {
-      /**
-       * @brief Constructs a greater than comparator for the given operands.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
-       */
-      constexpr gt_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
-    };
-
-    /**
-     * @brief Deduction guide for the greater than comparator.
-     *
-     * @details
-     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `gt_op{ lhs, rhs }` can be written without explicit template arguments.
-     */
-    template <typename Lhs_T, typename Rhs_T>
-    gt_op (const Lhs_T&, const Rhs_T&) -> gt_op<Lhs_T, Rhs_T>;
-
-    // ========================================================================
-
-    /**
-     * @brief Greater than or equal comparator struct template.
-     *
-     * @details
-     * Derived from `binary_op`, this struct checks whether the left-hand
-     * operand is greater than or equal to the right-hand operand. It is used
-     * within test expressions to provide human-readable relational
-     * assertions with enhanced reporting of the actual and expected values
-     * upon failure.
-     *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
-     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-     */
-    template <class Lhs_T, class Rhs_T>
-    struct ge_op : binary_op<Lhs_T, Rhs_T>
-    {
-      /**
-       * @brief Constructs a greater than or equal comparator for the given
-       * operands.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
-       */
-      constexpr ge_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
-    };
-
-    /**
-     * @brief Deduction guide for the greater than or equal comparator.
-     *
-     * @details
-     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `ge_op{ lhs, rhs }` can be written without explicit template arguments.
-     */
-    template <typename Lhs_T, typename Rhs_T>
-    ge_op (const Lhs_T&, const Rhs_T&) -> ge_op<Lhs_T, Rhs_T>;
-
-    // ========================================================================
-
-    /**
-     * @brief Less than comparator struct template.
-     *
-     * @details
-     * Derived from `binary_op`, this struct checks whether the left-hand
-     * operand is less than the right-hand operand. It is used within test
-     * expressions to provide human-readable relational assertions with
-     * enhanced reporting of the actual and expected values upon failure.
-     *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
-     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-     */
-    template <class Lhs_T, class Rhs_T>
-    struct lt_op : binary_op<Lhs_T, Rhs_T>
-    {
-      /**
-       * @brief Constructs a less than comparator for the given operands.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
-       */
-      constexpr lt_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
-    };
-
-    /**
-     * @brief Deduction guide for the less than comparator.
-     *
-     * @details
-     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `lt_op{ lhs, rhs }` can be written without explicit template arguments.
-     */
-    template <typename Lhs_T, typename Rhs_T>
-    lt_op (const Lhs_T&, const Rhs_T&) -> lt_op<Lhs_T, Rhs_T>;
-
-    // ========================================================================
-
-    /**
-     * @brief Less than or equal comparator struct template.
-     *
-     * @details
-     * Derived from `binary_op`, this struct checks whether the left-hand
-     * operand is less than or equal to the right-hand operand. It is used
-     * within test expressions to provide human-readable relational
-     * assertions with enhanced reporting of the actual and expected values
-     * upon failure.
-     *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
-     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-     */
-    template <class Lhs_T, class Rhs_T>
-    struct le_op : binary_op<Lhs_T, Rhs_T>
-    {
-      /**
-       * @brief Constructs a less than or equal comparator for the given
-       * operands.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
-       */
-      constexpr le_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
-    };
-
-    /**
-     * @brief Deduction guide for the less than or equal comparator.
-     *
-     * @details
-     * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
-     * `le_op{ lhs, rhs }` can be written without explicit template arguments.
-     */
-    template <typename Lhs_T, typename Rhs_T>
-    le_op (const Lhs_T&, const Rhs_T&) -> le_op<Lhs_T, Rhs_T>;
+    template <class Lhs_T, class Rhs_T, class Compare_T>
+    compare_op (const Lhs_T&, const Rhs_T&, Compare_T)
+        -> compare_op<Lhs_T, Rhs_T, Compare_T>;
 
     // ========================================================================
 

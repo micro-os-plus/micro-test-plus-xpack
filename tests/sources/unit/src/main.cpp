@@ -558,6 +558,14 @@ main (int argc, char* argv[])
           << "0.1f + 0.2f == approx (0.3f, 1e-6f)";
       local_counts.successful_checks += 5;
 
+      // A zero tolerance compares the values exactly (API-REVIEW.md #49).
+      t.expect (eq (1.5, approx (1.5, 0.0))) << "1.5 == approx (1.5, 0.0)";
+      t.expect (negate (ne (1.5, approx (1.5, 0.0))))
+          << "not 1.5 != approx (1.5, 0.0)";
+      t.expect (le (1.5, approx (1.5, 0.0))) << "1.5 <= approx (1.5, 0.0)";
+      t.expect (ge (1.5, approx (1.5, 0.0))) << "1.5 >= approx (1.5, 0.0)";
+      local_counts.successful_checks += 4;
+
       local_counts.executed_test_cases++;
     });
 

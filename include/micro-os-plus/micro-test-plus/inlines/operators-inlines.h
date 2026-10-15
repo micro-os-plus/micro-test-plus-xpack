@@ -69,33 +69,33 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Constructs an `eq_op` comparator object from the two `string_view`
-     * operands and returns it. The comparator evaluates to `true` if the
-     * string views are equal.
+     * Constructs a comparator object, with the `equal_to` tag, from the two
+     * `string_view` operands and returns it. The comparator evaluates to
+     * `true` if the string views are equal.
      */
     constexpr auto
     operator== (std::string_view lhs, std::string_view rhs)
     {
-      return detail::eq_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::equal_to{} };
     }
 
     /**
      * @details
-     * Constructs an `ne_op` comparator object from the two `string_view`
-     * operands and returns it. The comparator evaluates to `true` if the
-     * string views are not equal.
+     * Constructs a comparator object, with the `not_equal_to` tag, from the
+     * two `string_view` operands and returns it. The comparator evaluates to
+     * `true` if the string views are not equal.
      */
     constexpr auto
     operator!= (std::string_view lhs, std::string_view rhs)
     {
-      return detail::ne_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::not_equal_to{} };
     }
 
     /**
      * @details
-     * Constructs an `eq_op` comparator object from the two container
-     * operands and returns it. The comparator evaluates to `true` if the
-     * containers are equal in content and order.
+     * Constructs a comparator object, with the `equal_to` tag, from the two
+     * container operands and returns it. The comparator evaluates to `true` if
+     * the containers are equal in content and order.
      *
      * The operator is enabled only for types recognised as containers by the
      * framework's type traits.
@@ -106,14 +106,14 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::eq_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::equal_to{} };
     }
 
     /**
      * @details
-     * Constructs an `ne_op` comparator object from the two container
-     * operands and returns it. The comparator evaluates to `true` if the
-     * containers are not equal in content or order.
+     * Constructs a comparator object, with the `not_equal_to` tag, from the
+     * two container operands and returns it. The comparator evaluates to
+     * `true` if the containers are not equal in content or order.
      *
      * The operator is enabled only for types recognised as containers by the
      * framework's type traits.
@@ -124,93 +124,97 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::ne_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::not_equal_to{} };
     }
 
     /**
      * @details
-     * Constructs an `eq_op` comparator object from the two operands and
-     * returns it. The comparator evaluates to `true` if the operands are
-     * equal. At least one operand must derive from the local `op` base.
+     * Constructs a comparator object, with the `equal_to` tag, from the two
+     * operands and returns it. The comparator evaluates to `true` if the
+     * operands are equal. At least one operand must derive from the local `op`
+     * base.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::eq_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::equal_to{} };
     }
 
     /**
      * @details
-     * Constructs an `ne_op` comparator object from the two operands and
-     * returns it. The comparator evaluates to `true` if the operands are
-     * not equal. At least one operand must derive from the local `op` base.
+     * Constructs a comparator object, with the `not_equal_to` tag, from the
+     * two operands and returns it. The comparator evaluates to `true` if the
+     * operands are not equal. At least one operand must derive from the local
+     * `op` base.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::ne_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::not_equal_to{} };
     }
 
     /**
      * @details
-     * Constructs a `gt_op` comparator object from the two operands and
-     * returns it. The comparator evaluates to `true` if `lhs` is greater
-     * than `rhs`. At least one operand must derive from the local `op` base.
+     * Constructs a comparator object, with the `greater` tag, from the two
+     * operands and returns it. The comparator evaluates to `true` if `lhs` is
+     * greater than `rhs`. At least one operand must derive from the local `op`
+     * base.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator> (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::gt_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::greater{} };
     }
 
     /**
      * @details
-     * Constructs a `ge_op` comparator object from the two operands and
-     * returns it. The comparator evaluates to `true` if `lhs` is greater
-     * than or equal to `rhs`. At least one operand must derive from the
-     * local `op` base.
+     * Constructs a comparator object, with the `greater_equal` tag, from the
+     * two operands and returns it. The comparator evaluates to `true` if `lhs`
+     * is greater than or equal to `rhs`. At least one operand must derive from
+     * the local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator>= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::ge_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::greater_equal{} };
     }
 
     /**
      * @details
-     * Constructs an `lt_op` comparator object from the two operands and
-     * returns it. The comparator evaluates to `true` if `lhs` is less
-     * than `rhs`. At least one operand must derive from the local `op` base.
+     * Constructs a comparator object, with the `less` tag, from the two
+     * operands and returns it. The comparator evaluates to `true` if `lhs` is
+     * less than `rhs`. At least one operand must derive from the local `op`
+     * base.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator< (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::lt_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::less{} };
     }
 
     /**
      * @details
-     * Constructs an `le_op` comparator object from the two operands and
-     * returns it. The comparator evaluates to `true` if `lhs` is less than
-     * or equal to `rhs`. At least one operand must derive from the local
-     * `op` base.
+     * Constructs a comparator object, with the `less_equal` tag, from the two
+     * operands and returns it. The comparator evaluates to `true` if `lhs` is
+     * less than or equal to `rhs`. At least one operand must derive from the
+     * local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator<= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::le_op{ lhs, rhs };
+      return detail::compare_op{ lhs, rhs, detail::less_equal{} };
     }
 
     /**

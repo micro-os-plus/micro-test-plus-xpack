@@ -477,76 +477,21 @@ namespace micro_os_plus::micro_test_plus
       // Compound expression operator<< overloads (with pass/fail colours).
 
       /**
-       * @brief Formats an equality comparison as `lhs == rhs`.
+       * @brief Formats a relational comparison as `lhs op rhs`.
+       *
+       * @details
+       * The operator symbol is taken from the tag (for example `==` for
+       * `detail::equal_to`).
        *
        * @tparam Lhs_T Left-hand operand type.
        * @tparam Rhs_T Right-hand operand type.
-       * @param op The equality expression.
+       * @tparam Compare_T The tag that defines the comparison.
+       * @param op The comparison expression.
        * @return Reference to this instance.
        */
-      template <class Lhs_T, class Rhs_T>
+      template <class Lhs_T, class Rhs_T, class Compare_T>
       expression_formatter&
-      operator<< (const detail::eq_op<Lhs_T, Rhs_T>& op);
-
-      /**
-       * @brief Formats an inequality comparison as `lhs != rhs`.
-       *
-       * @tparam Lhs_T Left-hand operand type.
-       * @tparam Rhs_T Right-hand operand type.
-       * @param op The inequality expression.
-       * @return Reference to this instance.
-       */
-      template <class Lhs_T, class Rhs_T>
-      expression_formatter&
-      operator<< (const detail::ne_op<Lhs_T, Rhs_T>& op);
-
-      /**
-       * @brief Formats a greater-than comparison as `lhs > rhs`.
-       *
-       * @tparam Lhs_T Left-hand operand type.
-       * @tparam Rhs_T Right-hand operand type.
-       * @param op The greater-than expression.
-       * @return Reference to this instance.
-       */
-      template <class Lhs_T, class Rhs_T>
-      expression_formatter&
-      operator<< (const detail::gt_op<Lhs_T, Rhs_T>& op);
-
-      /**
-       * @brief Formats a greater-than-or-equal comparison as `lhs >= rhs`.
-       *
-       * @tparam Lhs_T Left-hand operand type.
-       * @tparam Rhs_T Right-hand operand type.
-       * @param op The greater-than-or-equal expression.
-       * @return Reference to this instance.
-       */
-      template <class Lhs_T, class Rhs_T>
-      expression_formatter&
-      operator<< (const detail::ge_op<Lhs_T, Rhs_T>& op);
-
-      /**
-       * @brief Formats a less-than comparison as `lhs < rhs`.
-       *
-       * @tparam Lhs_T Left-hand operand type.
-       * @tparam Rhs_T Right-hand operand type.
-       * @param op The less-than expression.
-       * @return Reference to this instance.
-       */
-      template <class Lhs_T, class Rhs_T>
-      expression_formatter&
-      operator<< (const detail::lt_op<Rhs_T, Lhs_T>& op);
-
-      /**
-       * @brief Formats a less-than-or-equal comparison as `lhs <= rhs`.
-       *
-       * @tparam Lhs_T Left-hand operand type.
-       * @tparam Rhs_T Right-hand operand type.
-       * @param op The less-than-or-equal expression.
-       * @return Reference to this instance.
-       */
-      template <class Lhs_T, class Rhs_T>
-      expression_formatter&
-      operator<< (const detail::le_op<Rhs_T, Lhs_T>& op);
+      operator<< (const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op);
 
       /**
        * @brief Formats a logical AND as `(lhs and rhs)`.

@@ -235,122 +235,23 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This operator overload enables the `reporter` to output equality
+   * This operator overload enables the `reporter` to output relational
    * comparison expressions in a clear and expressive format.
    *
    * The left-hand side and right-hand side values are formatted and separated
-   * by the equality operator (`==`), with appropriate colour highlighting
-   * applied for improved readability in test reports and diagnostics. This
-   * structured output assists in quickly identifying the values involved in
-   * equality assertions and facilitates efficient debugging of test failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  expression_formatter&
-  expression_formatter::operator<< (const detail::eq_op<Lhs_T, Rhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " == " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output inequality
-   * comparison expressions in a clear and expressive format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the inequality operator (`!=`), with appropriate colour highlighting
-   * applied for improved readability in test reports and diagnostics. This
-   * structured output assists in quickly identifying the values involved in
-   * inequality assertions and facilitates efficient debugging of test
-   * failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  expression_formatter&
-  expression_formatter::operator<< (const detail::ne_op<Lhs_T, Rhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " != " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output greater-than
-   * comparison expressions in a clear and expressive format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the greater-than operator (`>`), with appropriate colour highlighting
-   * applied for improved readability in test reports and diagnostics. This
-   * structured output assists in quickly identifying the values involved in
-   * greater-than assertions and facilitates efficient debugging of test
-   * failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  expression_formatter&
-  expression_formatter::operator<< (const detail::gt_op<Lhs_T, Rhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " > " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output
-   * greater-than-or-equal-to comparison expressions in a clear and expressive
-   * format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the greater-than-or-equal-to operator (`>=`), with appropriate colour
-   * highlighting applied for improved readability in test reports and
-   * diagnostics. This structured output assists in quickly identifying the
-   * values involved in greater-than-or-equal-to assertions and facilitates
+   * by the operator symbol of the tag (`==`, `!=`, `>`, `>=`, `<`, or `<=`),
+   * with appropriate colour highlighting applied for improved readability in
+   * test reports and diagnostics. This structured output assists in quickly
+   * identifying the values involved in the assertions and facilitates
    * efficient debugging of test failures.
    */
-  template <class Lhs_T, class Rhs_T>
+  template <class Lhs_T, class Rhs_T, class Compare_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::ge_op<Lhs_T, Rhs_T>& op)
+  expression_formatter::operator<< (
+      const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op)
   {
-    return (*this << colour_ (op) << op.lhs () << " >= " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output less-than
-   * comparison expressions in a clear and expressive format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the less-than operator (`<`), with appropriate colour highlighting
-   * applied for improved readability in test reports and diagnostics. This
-   * structured output assists in quickly identifying the values involved in
-   * less-than assertions and facilitates efficient debugging of test failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  expression_formatter&
-  expression_formatter::operator<< (const detail::lt_op<Rhs_T, Lhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " < " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output
-   * less-than-or-equal-to comparison expressions in a clear and expressive
-   * format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the less-than-or-equal-to operator (`<=`), with appropriate colour
-   * highlighting applied for improved readability in test reports and
-   * diagnostics. This structured output assists in quickly identifying the
-   * values involved in less-than-or-equal-to assertions and facilitates
-   * efficient debugging of test failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  expression_formatter&
-  expression_formatter::operator<< (const detail::le_op<Rhs_T, Lhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " <= " << op.rhs ()
-                  << colours_.none);
+    return (*this << colour_ (op) << op.lhs () << Compare_T::symbol
+                  << op.rhs () << colours_.none);
   }
 
   /**
