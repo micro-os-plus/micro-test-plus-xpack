@@ -310,7 +310,9 @@ main (int argc, char* argv[])
   ts.test ("Check containers", [] (auto& t)
     {
       // Containers are iterated and each value compared with
-      // `eq()` or `ne()`.
+      // `eq()` or `ne()`. There are no custom operators for containers,
+      // since the standard `==` and `!=` would be selected, and these
+      // cannot show the values in case of failures.
 
       t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
           << "vector{ 1, 2 } eq vector{ 1, 2 }";
@@ -318,19 +320,6 @@ main (int argc, char* argv[])
       t.expect (
           mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
           << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
-    });
-
-  ts.test ("Check containers with operators", [] (auto& t)
-    {
-      // Containers are iterated and each value compared with `==` or `!=`.
-
-      using namespace mt::operators;
-
-      t.expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
-          << "vector{ 1, 2 } == vector{ 1, 2 }";
-
-      t.expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
-          << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
     });
 
   // --------------------------------------------------------------------------

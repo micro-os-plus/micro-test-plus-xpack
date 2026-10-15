@@ -626,27 +626,28 @@ namespace operators {
 }
 ```
 
+These operators are selected only when at least one operand is a
+`std::string_view`; the other one may be a `std::string`, a string
+literal, or a `char` pointer. When neither operand is a
+`std::string_view` (e.g. two `std::string` objects), the standard
+operators are selected; they return a plain `bool`, so a failed check
+cannot show the operands. Use `eq()` and `ne()` in such cases.
+
 Refer to the [String Operators](/docs/api/groups/micro-os-plus-micro-test-plus-string-operators/) reference page.
 
-### Container operators
+### Containers
 
-Equality operators are provided for iterable containers:
+There are no operators for containers: the standard `==` and `!=`
+operators would be selected, and they return a plain `bool`, so a
+failed check could not show the containers. Use `eq()` and `ne()`,
+which compare the containers with the standard operators, and show
+their elements when the check fails. The containers must be of the
+same type, as for the standard operators:
 
 ```cpp
-namespace operators {
-  template <class Lhs_T, class Rhs_T>
-    requires (type_traits::container_like<Lhs_T>
-              and type_traits::container_like<Rhs_T>)
-  auto operator== (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  template <class Lhs_T, class Rhs_T>
-    requires (type_traits::container_like<Lhs_T>
-              and type_traits::container_like<Rhs_T>)
-  auto operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
-}
+t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+    << "vector{ 1, 2 } eq vector{ 1, 2 }";
 ```
-
-Refer to the [Container Operators](/docs/api/groups/micro-os-plus-micro-test-plus-container-operators/) reference page.
 
 ### Literals and wrappers
 

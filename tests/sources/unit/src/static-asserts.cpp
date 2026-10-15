@@ -26,6 +26,23 @@ using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
+namespace with_operators
+{
+  using namespace micro_os_plus::micro_test_plus::operators;
+
+  // Satisfied when `==` is valid with the framework operators in scope.
+  template <class Lhs_T, class Rhs_T>
+  concept equality_comparable
+      = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs == rhs; };
+
+  // The type of `lhs == rhs` with the framework operators in scope.
+  template <class Lhs_T, class Rhs_T>
+  using equal_t = decltype (std::declval<const Lhs_T&> ()
+                            == std::declval<const Rhs_T&> ());
+} // namespace with_operators
+
+// ----------------------------------------------------------------------------
+
 [[maybe_unused]] static void
 static_asserts ()
 {
@@ -235,6 +252,30 @@ static_asserts ()
       // Generic to_t<T> wrapper (since 3.2.0).
       static_assert (to_t<int>{ 42 }.get () == 42);
       static_assert (to_t<bool>{ true }.get ());
+    }
+
+    {
+      using namespace with_operators;
+
+      // The string_view operators are selected when at least one operand
+      // is a std::string_view.
+      static_assert (
+          not std::is_same_v<equal_t<std::string_view, std::string_view>,
+                             bool>);
+      static_assert (
+          not std::is_same_v<equal_t<std::string, std::string_view>, bool>);
+      static_assert (
+          not std::is_same_v<equal_t<std::string_view, const char*>, bool>);
+      static_assert (std::is_same_v<equal_t<std::string, std::string>, bool>);
+
+      // There are no container operators; the standard ones compare
+      // containers of the same type, and mixed containers do not compile.
+      static_assert (
+          std::is_same_v<equal_t<std::vector<int>, std::vector<int>>, bool>);
+      static_assert (
+          not equality_comparable<std::vector<int>, std::vector<long>>);
+      static_assert (
+          not equality_comparable<std::vector<int>, std::array<int, 1>>);
     }
   }
 }

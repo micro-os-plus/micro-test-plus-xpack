@@ -94,42 +94,6 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Constructs a comparator object, with the `equal_to` tag, from the two
-     * container operands and returns it. The comparator evaluates to `true` if
-     * the containers are equal in content and order.
-     *
-     * The operator is enabled only for types recognised as containers by the
-     * framework's type traits.
-     */
-    template <class Lhs_T, class Rhs_T>
-      requires (type_traits::container_like<Lhs_T>
-                and type_traits::container_like<Rhs_T>)
-    constexpr auto
-    operator== (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::compare_op{ lhs, rhs, detail::equal_to{} };
-    }
-
-    /**
-     * @details
-     * Constructs a comparator object, with the `not_equal_to` tag, from the
-     * two container operands and returns it. The comparator evaluates to
-     * `true` if the containers are not equal in content or order.
-     *
-     * The operator is enabled only for types recognised as containers by the
-     * framework's type traits.
-     */
-    template <class Lhs_T, class Rhs_T>
-      requires (type_traits::container_like<Lhs_T>
-                and type_traits::container_like<Rhs_T>)
-    constexpr auto
-    operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::compare_op{ lhs, rhs, detail::not_equal_to{} };
-    }
-
-    /**
-     * @details
-     * Constructs a comparator object, with the `equal_to` tag, from the two
      * operands and returns it. The comparator evaluates to `true` if the
      * operands are equal. At least one operand must derive from the local `op`
      * base.

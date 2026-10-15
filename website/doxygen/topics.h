@@ -48,7 +48,6 @@
     @include{doc} topics/cpp-api/exceptions.dox
     @include{doc} topics/cpp-api/operators.dox
     @include{doc} topics/cpp-api/string-operators.dox
-    @include{doc} topics/cpp-api/container-operators.dox
     @include{doc} topics/cpp-api/literals.dox
     @include{doc} topics/cpp-api/utility-functions.dox
     @include{doc} topics/cpp-api/test-suites.dox

@@ -11,8 +11,8 @@ Using these comparators ensures that failed checks report both actual and
 expected values, making issues easier to diagnose.
 
 Comparators are available for both fundamental types and standard
-containers. When comparing containers, each element is assessed
-individually, and the results are reported in detail.
+containers. When a container comparison fails, the elements of both
+containers are shown.
 
 @par Examples
 
@@ -51,8 +51,11 @@ arrays (including `uint8_t` buffers) are compared by address.
 @par Comparing Containers
 
 Containers can be compared for equality or inequality using the same
-comparator functions. Comparison is performed by iterating through each
-element and evaluating it individually.
+comparator functions. The comparison is performed with the standard
+`==` operator, so the containers must be of the same type. There are no
+`==` and `!=` operators for containers in the `operators` namespace,
+since the standard ones would be selected, and these return a plain
+`bool`.
 
 @par Examples
 

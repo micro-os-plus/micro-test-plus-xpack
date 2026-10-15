@@ -13,7 +13,6 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Check if exceptions are thrown
     • Check if exceptions are not thrown
     • Check containers
-    • Check containers with operators
     • args
     • Check one
     • Check two

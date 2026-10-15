@@ -58,13 +58,8 @@ TAP version 14
         ok 2 - vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
         1..2
     ok 10 - Check containers # { passed, 2 checks }
-    # Subtest: Check containers with operators
-        ok 1 - vector{ 1, 2 } == vector{ 1, 2 }
-        ok 2 - vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
-        1..2
-    ok 11 - Check containers with operators # { passed, 2 checks }
-    1..11
-ok 1 - Sample # { passed, 28 checks in 11 test cases }
+    1..10
+ok 1 - Sample # { passed, 26 checks in 10 test cases }
 # Subtest: Args suite
     # Subtest: args
         ok 1 - ic is 42
@@ -99,4 +94,4 @@ ok 3 - Explicit namespace suite # { passed, 2 checks in 2 test cases }
     1..2
 ok 4 - Implicit namespace suite # { passed, 2 checks in 2 test cases }
 1..4
-# { total: 37 checks passed, 0 failed, in 16 test cases, 4 test suites }
+# { total: 35 checks passed, 0 failed, in 15 test cases, 4 test suites }

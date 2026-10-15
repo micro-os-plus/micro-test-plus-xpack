@@ -55,11 +55,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ vector{ 1, 2 } eq vector{ 1, 2 }
         ✓ vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
     ✓ Check containers - passed (2 checks)
-    • Check containers with operators
-        ✓ vector{ 1, 2 } == vector{ 1, 2 }
-        ✓ vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
-    ✓ Check containers with operators - passed (2 checks)
-✓ Sample - passed (31 checks in 13 test cases), time: 0.398 ms
+✓ Sample - passed (29 checks in 12 test cases), time: 0.398 ms
 • Args suite
     • args
         ✓ ic is 42
@@ -85,4 +81,4 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ Passed
     ✓ Check two - passed (1 check)
 ✓ Implicit namespace suite - passed (2 checks in 2 test cases), time: 0.031 ms
-✓ Total: 40 checks passed, 0 failed, in 18 test cases, 4 test suites, time: 0.546 ms
+✓ Total: 38 checks passed, 0 failed, in 17 test cases, 4 test suites, time: 0.546 ms

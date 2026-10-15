@@ -23,8 +23,7 @@
  * This header provides the declarations for the custom operator overloads used
  * within the µTest++ framework. It defines interfaces for equality,
  * inequality, relational, and logical operators tailored for use with the
- * framework’s strongly-typed constants, wrappers, containers, and string
- * views.
+ * framework’s strongly-typed constants, wrappers, and string views.
  *
  * These operator overloads enable expressive, concise, and type-safe test
  * assertions, supporting both compile-time and run-time evaluation. The
@@ -94,8 +93,8 @@ namespace micro_os_plus::micro_test_plus
    * framework.
    *
    * This namespace includes equality, inequality, relational, and logical
-   * operators tailored for use with the framework’s custom types, containers,
-   * and string views. These operators facilitate the creation of clear and
+   * operators tailored for use with the framework’s custom types and string
+   * views. These operators facilitate the creation of clear and
    * readable test expressions, supporting both strongly-typed constants (via
    * user-defined literals) and dynamic values (via wrappers).
    *
@@ -105,10 +104,15 @@ namespace micro_os_plus::micro_test_plus
    *
    * To minimise conflicts with application-defined operators, these overloads
    * are enabled only for specific types recognised by the framework, such as
-   * those derived from the local `op` base type or identified as containers or
-   * string views. Constants typically require a literal suffix (e.g., `1_i`),
-   * while dynamic values should be wrapped using the provided casting
-   * utilities (e.g., `mt::to_i{...}`).
+   * those derived from the local `op` base type, or string views. Constants
+   * typically require a literal suffix (e.g., `1_i`), while dynamic values
+   * should be wrapped using the provided casting utilities (e.g.,
+   * `mt::to_i{...}`).
+   *
+   * There are no operators for containers: the standard operators are
+   * selected for containers of the same type, and return a plain `bool`,
+   * so a failed check cannot show the operands. Use `mt::eq()` and
+   * `mt::ne()` to compare containers.
    *
    * All definitions within this namespace are implemented in the
    * `include/micro-os-plus/micro-test-plus` folder, ensuring a modular and
@@ -119,6 +123,14 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @ingroup micro-os-plus-micro-test-plus-string-operators
      * @brief Equality operator for `string_view` objects.
+     *
+     * @details
+     * The operator is selected only when at least one operand is exactly a
+     * `std::string_view`; the other one may be a `std::string`, a string
+     * literal, or a `char` pointer. When neither operand is a
+     * `std::string_view` (e.g. two `std::string` objects), the standard
+     * operator is selected and returns a plain `bool`; use `mt::eq()` to
+     * have the operands shown in the failure report.
      *
      * @param lhs The left hand side `std::string_view` operand.
      * @param rhs The right hand side `std::string_view` operand.
@@ -132,6 +144,14 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-os-plus-micro-test-plus-string-operators
      * @brief Non-equality operator for `string_view` objects.
      *
+     * @details
+     * The operator is selected only when at least one operand is exactly a
+     * `std::string_view`; the other one may be a `std::string`, a string
+     * literal, or a `char` pointer. When neither operand is a
+     * `std::string_view` (e.g. two `std::string` objects), the standard
+     * operator is selected and returns a plain `bool`; use `mt::ne()` to
+     * have the operands shown in the failure report.
+     *
      * @param lhs The left hand side `std::string_view` operand.
      * @param rhs The right hand side `std::string_view` operand.
      * @return A comparator object that evaluates to true if the string views
@@ -139,46 +159,6 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] constexpr auto
     operator!= (std::string_view lhs, std::string_view rhs);
-
-    /**
-     * @ingroup micro-os-plus-micro-test-plus-container-operators
-     * @brief Equality operator for containers.
-     *
-     * @tparam Lhs_T The left-hand container type, constrained to recognised
-     * container types.
-     * @tparam Rhs_T The right-hand container type, constrained to recognised
-     * container types.
-     *
-     * @param lhs The left hand side container operand.
-     * @param rhs The right hand side container operand.
-     * @return A comparator object that evaluates to true if the containers are
-     * equal.
-     */
-    template <class Lhs_T, class Rhs_T>
-      requires (type_traits::container_like<Lhs_T>
-                and type_traits::container_like<Rhs_T>)
-    [[nodiscard]] constexpr auto
-    operator== (const Lhs_T& lhs, const Rhs_T& rhs);
-
-    /**
-     * @ingroup micro-os-plus-micro-test-plus-container-operators
-     * @brief Non-equality operator for containers.
-     *
-     * @tparam Lhs_T The left-hand container type, constrained to recognised
-     * container types.
-     * @tparam Rhs_T The right-hand container type, constrained to recognised
-     * container types.
-     *
-     * @param lhs The left hand side container operand.
-     * @param rhs The right hand side container operand.
-     * @return A comparator object that evaluates to true if the containers are
-     * not equal.
-     */
-    template <class Lhs_T, class Rhs_T>
-      requires (type_traits::container_like<Lhs_T>
-                and type_traits::container_like<Rhs_T>)
-    [[nodiscard]] constexpr auto
-    operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
