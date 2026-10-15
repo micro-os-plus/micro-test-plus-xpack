@@ -175,6 +175,14 @@ becomes `mt::to_i (expr)`, and `mt::_t<T>{ expr }` becomes
 `mt::to_t<T>{ expr }`. The literals with the same suffixes (`42_i`,
 `1.5_d`) are unchanged.
 
+The `get()` function of the `to_*` wrappers and of the integer literals
+now returns a `const` reference to the wrapped value, instead of a copy,
+so that the comparators no longer copy the operands each time they
+compare or report them. A reference that stores its result is valid
+only as long as the wrapper: in
+`const auto& s = mt::to_t<std::string>{ str }.get ();`, `s` refers to a
+destroyed temporary. Store the result by value (`auto s = ...`) instead.
+
 The deprecated entities, previously marked as such only in the
 documentation, now carry the `[[deprecated]]` attribute, so the
 compiler warns where they are used: the runner constructor with the top
