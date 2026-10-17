@@ -913,9 +913,10 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ top suite filtered
         ✓ top suite test case matching the second pattern runs
         ✓ partial name does not match
+        ✓ patterns copied by initialise()
         ✓ nothing skipped without patterns
         ✓ missing pattern
-    ✓ Runner filter - passed (14 checks)
+    ✓ Runner filter - passed (15 checks)
     • Callable arguments
         ✓ reference parameter refers to a copy
         ✓ std::ref() refers to the object
@@ -939,7 +940,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ handler called
         ✓ previous handler returned
     ✓ Abort handler - passed (3 checks)
-✗ Miscellaneous suite - FAILED (83 checks passed, 13 failed, in 17 test cases), time: 0.757 ms
+✗ Miscellaneous suite - FAILED (84 checks passed, 13 failed, in 17 test cases), time: 0.757 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1035,4 +1036,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 475 checks passed, 341 failed, in 96 test cases, 13 test suites, time: 5.050 ms
+✗ Total: 476 checks passed, 341 failed, in 96 test cases, 13 test suites, time: 5.050 ms

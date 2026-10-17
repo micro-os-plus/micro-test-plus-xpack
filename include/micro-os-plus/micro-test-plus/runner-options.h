@@ -142,8 +142,7 @@ namespace micro_os_plus::micro_test_plus
    * @endcode
    *
    * The structure only refers to the strings it uses; they must remain
-   * valid until `initialise()` returns, except the filter patterns, which
-   * must remain valid until `run()` returns.
+   * valid until `initialise()` returns, which copies what it keeps.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    *

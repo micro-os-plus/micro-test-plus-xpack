@@ -249,14 +249,15 @@ namespace micro_os_plus::micro_test_plus
         has_option_errors_ = true;
       }
 
-    // The views are copied, not the strings; they must remain valid until
-    // run() returns. Copy them one by one, since the vector assignment
-    // uses std::copy, which triggers -Waggregate-return in the standard
-    // library headers on some targets.
+    // Copy the strings, not only the views, since the patterns are used
+    // by run(), after the caller's strings may have been destroyed. Copy
+    // them one by one, since the vector assignment uses std::copy, which
+    // triggers -Waggregate-return in the standard library headers on some
+    // targets.
     filter_patterns_.reserve (options.filter_patterns.size ());
     for (const std::string_view pattern : options.filter_patterns)
       {
-        filter_patterns_.push_back (pattern);
+        filter_patterns_.emplace_back (pattern);
       }
 
     // ------------------------------------------------------------------------

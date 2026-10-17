@@ -284,8 +284,7 @@ namespace micro_os_plus::micro_test_plus
      * are still run, but `run()` returns 2.
      *
      * @param options The session options; the strings they refer to must
-     * remain valid until the call returns, and the filter patterns until
-     * `run()` returns.
+     * remain valid until the call returns.
      * @param top_suite_name The name given to the implicit top suite. Defaults
      * to an empty string.
      * @return Reference to the top-level test suite.
@@ -655,11 +654,11 @@ namespace micro_os_plus::micro_test_plus
      * @brief The patterns that select the suites to run.
      *
      * @details
-     * Copied by `initialise()` from `runner_options::filter_patterns`;
-     * the strings they refer to are not copied. Empty when all the suites
-     * must run.
+     * Copied by `initialise()` from `runner_options::filter_patterns`,
+     * including the characters, so the caller's strings need not outlive
+     * the call. Empty when all the suites must run.
      */
-    std::vector<std::string_view> filter_patterns_;
+    std::vector<std::string> filter_patterns_;
 
     /**
      * @brief The number of suites skipped by the filter.

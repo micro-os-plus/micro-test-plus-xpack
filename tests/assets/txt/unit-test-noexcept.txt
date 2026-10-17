@@ -867,9 +867,10 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ top suite filtered
         ✓ top suite test case matching the second pattern runs
         ✓ partial name does not match
+        ✓ patterns copied by initialise()
         ✓ nothing skipped without patterns
         ✓ missing pattern
-    ✓ Runner filter - passed (14 checks)
+    ✓ Runner filter - passed (15 checks)
     • Callable arguments
         ✓ reference parameter refers to a copy
         ✓ std::ref() refers to the object
@@ -892,7 +893,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ no initial handler
         ✓ previous handler returned
     ✓ Abort handler - passed (2 checks)
-✗ Miscellaneous suite - FAILED (82 checks passed, 13 failed, in 17 test cases)
+✗ Miscellaneous suite - FAILED (83 checks passed, 13 failed, in 17 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -988,4 +989,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 467 checks passed, 330 failed, in 83 test cases, 12 test suites
+✗ Total: 468 checks passed, 330 failed, in 83 test cases, 12 test suites

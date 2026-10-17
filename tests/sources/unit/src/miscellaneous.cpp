@@ -14,6 +14,7 @@
 #include "unit-test.h"
 
 #include <limits>
+#include <string>
 
 using namespace micro_os_plus::micro_test_plus;
 
@@ -858,6 +859,24 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                   and eq (partial_runner.totals ().skipped_test_cases (), 2u)
                   and eq (runs.first, 0) and eq (runs.second, 0))
             << "partial name does not match";
+        local_counts.successful_checks++;
+
+        // The patterns are copied by initialise(); changing the caller's
+        // string afterwards does not change the selection.
+        std::string copied_pattern{ "Beta" };
+        runner_options copied_options{};
+        copied_options.verbosity_level = verbosity::silent;
+        copied_options.filter_patterns = { copied_pattern };
+
+        runs = runs_t{};
+        runner copied_runner;
+        copied_runner.initialise (copied_options);
+        copied_pattern = "Zeta";
+        add_suites (copied_runner);
+
+        t.expect (eq (copied_runner.run (), 0) and eq (runs.beta, 1)
+                  and eq (runs.alpha_one, 0) and eq (runs.alpha_two, 0))
+            << "patterns copied by initialise()";
         local_counts.successful_checks++;
 
         // Without patterns, everything runs.
