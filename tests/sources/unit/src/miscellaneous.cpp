@@ -631,6 +631,13 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         options.verbosity_level = verbosity::silent;
 
         runner named_runner;
+
+        // The verbosity is kept by the runner, not by the reporter, which
+        // does not exist yet (API-REVIEW.md #2).
+        t.expect (named_runner.verbosity () == verbosity::normal)
+            << "default verbosity before initialise()";
+        local_counts.successful_checks++;
+
         auto& named_ts = named_runner.initialise (options, "Local");
 
         t.expect (eq (named_ts.name (), "Local")) << "given name";

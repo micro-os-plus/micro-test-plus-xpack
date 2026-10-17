@@ -842,11 +842,12 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ same const object
     ✓ Pointers to const - passed (2 checks)
     • Runner options
+        ✓ default verbosity before initialise()
         ✓ given name
         ✓ given verbosity
         ✓ local session passed
         ✓ default name without arguments
-    ✓ Runner options - passed (4 checks)
+    ✓ Runner options - passed (5 checks)
     • Runner option errors
         ✓ valid options still applied
         ✓ unknown reporter
@@ -891,7 +892,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ no initial handler
         ✓ previous handler returned
     ✓ Abort handler - passed (2 checks)
-✗ Miscellaneous suite - FAILED (81 checks passed, 13 failed, in 17 test cases)
+✗ Miscellaneous suite - FAILED (82 checks passed, 13 failed, in 17 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -987,4 +988,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 466 checks passed, 330 failed, in 83 test cases, 12 test suites
+✗ Total: 467 checks passed, 330 failed, in 83 test cases, 12 test suites

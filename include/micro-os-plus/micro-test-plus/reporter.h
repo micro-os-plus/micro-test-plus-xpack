@@ -557,16 +557,6 @@ namespace micro_os_plus::micro_test_plus
       comment_prefix (void) const
           = 0;
 
-      /**
-       * @brief Returns the current verbosity level.
-       *
-       * @par Parameters
-       *   None.
-       * @return The active `verbosity` value.
-       */
-      auto
-      verbosity (void) const -> micro_test_plus::verbosity;
-
       // ----------------------------------------------------------------------
 
     protected:
@@ -772,9 +762,11 @@ namespace micro_os_plus::micro_test_plus
        * @brief The verbosity level for test reporting.
        *
        * @details
-       * Set by the constructor from the session options.
+       * A copy of the level kept by the runner, set by the constructor from
+       * the same session options and not changed afterwards. The public
+       * accessor is `runner::verbosity()`.
        */
-      enum verbosity verbosity_ = verbosity::normal;
+      const micro_test_plus::verbosity verbosity_;
 
       /**
        * @brief ANSI colour codes for output formatting.

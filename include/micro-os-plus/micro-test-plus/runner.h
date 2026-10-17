@@ -440,8 +440,8 @@ namespace micro_os_plus::micro_test_plus
      * The level is selected with the `--silent`, `--quiet`, and
      * `--verbose` command-line options, or with
      * `runner_options::verbosity_level`; the tests can use it to decide
-     * whether to display their own messages. Valid only after
-     * `initialise()` has been called.
+     * whether to display their own messages. Before `initialise()` is
+     * called, it is `verbosity::normal`.
      *
      * @par Parameters
      *   None.
@@ -640,6 +640,16 @@ namespace micro_os_plus::micro_test_plus
      * `argv[0]`, as kept in the session options.
      */
     std::string top_suite_name_;
+
+    /**
+     * @brief The verbosity level of the console output.
+     *
+     * @details
+     * Copied by `initialise()` from `runner_options::verbosity_level`,
+     * before the reporter is created, which keeps its own constant copy;
+     * returned by `verbosity()`. `verbosity::normal` until then.
+     */
+    micro_test_plus::verbosity verbosity_ = verbosity::normal;
 
     /**
      * @brief The patterns that select the suites to run.

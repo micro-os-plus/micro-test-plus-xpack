@@ -170,8 +170,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Creates the reporter selected by the options, keeps a copy of the
-   * filter patterns, starts session timing, and emits the initial
+   * Keeps a copy of the verbosity, creates the reporter selected by the
+   * options, keeps a copy of the filter patterns, starts session timing, and emits the initial
    * reporter notifications for the session and top suite.
    *
    * If the top suite name is not provided, here or by the deprecated
@@ -231,7 +231,10 @@ namespace micro_os_plus::micro_test_plus
         top_suite_.name (top_suite_name_.c_str ());
       }
 
-    // Initialise and configure the reporter.
+    verbosity_ = options.verbosity_level;
+
+    // Initialise and configure the reporter; it keeps its own copy of the
+    // verbosity, taken from the same options.
     if (options.selected_reporter == reporter_kind::human)
       {
         reporter_ = std::make_unique<detail::reporter_human> (options);

@@ -78,18 +78,6 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Returns the verbosity level stored in `verbosity_`.
-   */
-  inline auto
-  reporter::verbosity (void) const -> micro_test_plus::verbosity
-  {
-    return verbosity_;
-  }
-
-  // --------------------------------------------------------------------------
-
-  /**
-   * @details
    * The address is formatted by the `detail::append_pointer()` helper,
    * shared with the `detail::expression_formatter`, so that the pointers
    * are displayed identically in the expressions and in the messages.

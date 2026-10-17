@@ -73,12 +73,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the verbosity parsed by the reporter from the command line.
+   * Returns the level stored in `verbosity_`, which does not depend on
+   * the reporter, so the call is safe before `initialise()`.
    */
   inline auto
   runner::verbosity (void) const noexcept -> micro_test_plus::verbosity
   {
-    return reporter_->verbosity ();
+    return verbosity_;
   }
 
   /**
