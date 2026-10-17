@@ -29,8 +29,10 @@ prepend_compile_common_private_options (
 
 # -----------------------------------------------------------------------------
 
-set (XPACK_OPENOCD_INTERFACE "stlink-dap.cfg")
+set (XPACK_OPENOCD_INTERFACE "stlink.cfg")
 set (XPACK_OPENOCD_TARGET "stm32h5x.cfg")
+
+set(USE_STM_OPENOCD true)
 
 # Running successive OpenOCD/CMSIS-DAP sessions back-to-back has been observed
 # to intermittently fail the "verify" step of the next session with USB
@@ -76,21 +78,35 @@ function (add_openocd_test)
   # Use `reset halt` + `resume`, not `reset`: an early semihosting call may halt
   # the core while OpenOCD is still in the reset procedure, and remain
   # unserviced.
-  add_test (
-    NAME "${arg_NAME}"
-    COMMAND
-      # ST openocd uses the old syntax, different from the upstream one.
-      /Users/ilg/.local/st-openocd/bin/openocd${extension} -s
-      /Users/ilg/.local/st-openocd/openocd/scripts
-      # -d3
-      #
-      # -c "gdb port disabled" -c "tcl port disabled" -c "telnet port disabled"
-      -c "gdb_port disabled" -c "tcl_port disabled" -c "telnet_port disabled"
-      -f "interface/${XPACK_OPENOCD_INTERFACE}" -f
-      "target/${XPACK_OPENOCD_TARGET}" -c "program ${name}.elf verify" -c
-      "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset halt" -c
-      "resume"
-  )
+  if (NOT USE_STM_OPENOCD)
+    add_test (
+      NAME "${arg_NAME}"
+      COMMAND
+        /Users/ilg/Work/xpack-dev-tools-build/openocd-0.12.0-8/darwin-x64/application/bin/openocd
+        # -d3
+        #
+        -c "gdb port disabled" -c "tcl port disabled" -c "telnet port disabled"
+        -f "interface/${XPACK_OPENOCD_INTERFACE}" -c "transport select swd" -f
+        "target/${XPACK_OPENOCD_TARGET}" -c "program ${name}.elf verify" -c
+        "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset halt" -c
+        "resume"
+    )
+  else()
+    add_test (
+      NAME "${arg_NAME}"
+      COMMAND
+        # ST openocd uses the old syntax, different from the upstream one.
+        /Users/ilg/.local/st-openocd/bin/openocd${extension} -s
+        /Users/ilg/.local/st-openocd/openocd/scripts
+        # -d3
+        #
+        -c "gdb_port disabled" -c "tcl_port disabled" -c "telnet_port disabled"
+        -f "interface/stlink-dap.cfg" -f "target/stm32h5x.cfg" -c
+        "program ${name}.elf verify" -c
+        "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset halt" -c
+        "resume"
+    )
+  endif ()
 
   if (openocd_depends)
     set_tests_properties ("${arg_NAME}" PROPERTIES DEPENDS "${openocd_depends}")
