@@ -63,6 +63,10 @@
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include <string_view>
+// Defines `__cpp_lib_source_location` regardless of the headers included
+// before this one, so that all translation units choose the same
+// `source_location` type.
+#include <version>
 
 #if defined(__cpp_lib_source_location)
 #include <source_location>

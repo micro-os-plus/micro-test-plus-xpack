@@ -13,6 +13,8 @@
 
 #include "unit-test.h"
 
+#include <version>
+
 using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
@@ -273,6 +275,17 @@ static_asserts ()
           not equality_comparable<std::vector<int>, std::vector<long>>);
       static_assert (
           not equality_comparable<std::vector<int>, std::array<int, 1>>);
+    }
+
+    {
+      // The choice of the `source_location` type does not depend on the
+      // headers included before µTest++; `<version>`, included after it,
+      // must not reveal a standard implementation that it did not choose
+      // (API-REVIEW.md #1).
+#if defined(__cpp_lib_source_location)
+      static_assert (
+          std::is_same_v<reflection::source_location, std::source_location>);
+#endif // defined(__cpp_lib_source_location)
     }
   }
 }
