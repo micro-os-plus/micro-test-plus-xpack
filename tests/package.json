@@ -84,9 +84,10 @@
         "synthetic-posix-meson-clang",
         "qemu-cortex-m0-cmake-gcc",
         "qemu-cortex-m7f-cmake-gcc",
+        "qemu-cortex-m33-cmake-gcc",
+        "qemu-cortex-m33-meson-gcc",
         "qemu-aarch64-a72-cmake-gcc",
-        "qemu-riscv-rv32imac-cmake-gcc",
-        "qemu-cortex-m0-meson-gcc"
+        "qemu-riscv-rv32imac-cmake-gcc"
       ],
       "configs-selected-non-darwin": [
         "synthetic-posix-cmake-gcc",
@@ -94,15 +95,9 @@
       ],
       "configs-selected": [
         "synthetic-posix-cmake-clang",
-        "synthetic-posix-meson-clang",
-        "qemu-cortex-m0-cmake-gcc",
-        "qemu-cortex-m0-meson-gcc",
-        "qemu-cortex-m4f-cmake-gcc",
-        "qemu-cortex-m4f-meson-gcc",
+        "qemu-cortex-m33-cmake-gcc",
         "qemu-aarch64-a72-cmake-gcc",
-        "qemu-aarch64-a72-meson-gcc",
-        "qemu-riscv-rv32imac-cmake-gcc",
-        "qemu-riscv-rv32imac-meson-gcc"
+        "qemu-riscv-rv32imac-cmake-gcc"
       ],
       "$configs-boards": [
         "Template, define configs-boards and select only the platforms in use",
