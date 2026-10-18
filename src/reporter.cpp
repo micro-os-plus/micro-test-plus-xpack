@@ -113,8 +113,9 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * If an output file was opened, it is flushed and closed, and a
-   * confirmation message naming the output file is written to `stdout`.
-   * If tracing is enabled, the function signature is output for
+   * confirmation message naming the output file is written to `stdout`,
+   * except with the `silent` verbosity, which writes nothing to the
+   * console. If tracing is enabled, the function signature is output for
    * diagnostic purposes.
    */
   reporter::~reporter ()
@@ -128,8 +129,11 @@ namespace micro_os_plus::micro_test_plus::detail
         fflush (output_file_);
         fclose (output_file_);
 
-        write_console_ ("Test output written to '%s'.\n",
-                        output_file_path_.c_str ());
+        if (verbosity_ != verbosity::silent)
+          {
+            write_console_ ("Test output written to '%s'.\n",
+                            output_file_path_.c_str ());
+          }
 
         output_file_ = nullptr;
         output_file_path_.clear ();

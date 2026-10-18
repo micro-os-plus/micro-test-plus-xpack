@@ -876,7 +876,7 @@ namespace micro_os_plus::micro_test_plus
        * Copied by the constructor from the session options, so that the
        * caller's string need not outlive `runner::initialise()`. Used to
        * name the file in the confirmation message displayed when the file
-       * is closed.
+       * is closed (not displayed with the `silent` verbosity).
        */
       std::string output_file_path_{};
 
