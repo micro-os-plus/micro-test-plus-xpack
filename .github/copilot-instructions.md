@@ -144,13 +144,16 @@ powered up.
 
 When making changes to the codebase, follow these guidelines for version control:
 
-- Use the imperative mood in the subject line (e.g., "Fix bug" instead of "Fixed bug" or "Fixes bug").
+- Use the imperative mood in the subject line (e.g., "Fix bug" instead of 
+  "Fixed bug" or "Fixes bug").
 - Limit the subject line to 50 characters.
 - Capitalise the subject line.
 - Do not end the subject line with a period.
 - Use the body to explain what and why vs. how.
 - Wrap the body at 72 characters.
 - Include references to relevant issues or pull requests if applicable.
+- Start the subject line with the GitHub issue number (as `#N:`) followed by 
+  a capital letter.
 - Do not commit without user review and approval.
 
 ## Issue Updates
