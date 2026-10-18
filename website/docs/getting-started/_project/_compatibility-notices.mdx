@@ -24,6 +24,12 @@ is the `std::uint8_t` value 255, and `mt::eq (-1_u8, -1)` now fails.
 The negation of the minimum of a signed type (`-(-128_i8)`) is a
 compilation error.
 
+With `--quiet`, the TAP reporter now displays one `ok`/`not ok` line per
+test suite, followed by the plan of the session (`1..N`) and the totals.
+The plan was previously `1..0`, which the TAP consumers (for example
+node-tap) read as a run with all tests skipped, so as successful, even
+when tests failed.
+
 The relational comparisons (`<`, `<=`, `>`, `>=`, `lt()`, `le()`, `gt()`,
 `ge()`) now apply the tolerance of the floating-point literals and
 wrappers, as `==` and `!=` already did: values within the tolerance are

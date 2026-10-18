@@ -1259,7 +1259,7 @@ By default, µTest++ displays only **test case summaries for passing tests** (fo
 To adjust the verbosity, one of the following command-line options may be specified:
 
 - `--verbose` – display **all expectations**, irrespective of their outcome
-- `--quiet` – display only the **runner totals**
+- `--quiet` – display only the **runner totals**; the TAP reporter also displays one `ok`/`not ok` line per test suite, with the plan counting them, so that the output remains a valid TAP document, which node-tap and the other TAP consumers read as failed when a suite failed
 - `--silent` – suppress all output and return **solely the exit code**
 
 When exceptions are not enabled and a failed requirement aborts the test

@@ -140,10 +140,11 @@ namespace micro_os_plus::micro_test_plus::detail
    * The numbers of test cases and of suites skipped by the filter follow
    * the respective counts, only when not zero.
    * Both lines are written to the output file when one is open, and,
-   * unless verbosity is silent, to `stdout`. When verbosity is set to
-   * quiet, the plan written to `stdout` is replaced by `1..0`, since no
-   * `ok`/`not ok` lines were displayed, producing a valid skipped-test TAP
-   * document.
+   * unless verbosity is silent, to `stdout`. With quiet verbosity, the
+   * plan matches the `ok`/`not ok` lines of the suites displayed by
+   * `end_suite()` and `skip_suite()`, so that the console output is a
+   * complete TAP document, which node-tap and the other TAP consumers
+   * read as failed when a suite failed; no empty line precedes it.
    */
   void
   reporter_tap::end_session (const runner& runner)
@@ -193,23 +194,13 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (verbosity_ != verbosity::silent)
       {
-        if (add_empty_line_)
+        if (add_empty_line_ && verbosity_ != verbosity::quiet)
           {
             write_console_ ("\n");
           }
 
-        if (verbosity_ != verbosity::quiet)
-          {
-            write_console_ ("%s\n", message_summary);
-          }
-        else
-          {
-            // With quiet verbosity, there are no ok/not ok lines, so the TAP
-            // plan should look like a skipped test.
-            write_console_ ("1..0\n");
-          }
-
-        write_console_ ("# { %s%s }\n", message_totals, message_time);
+        write_console_ ("%s\n# { %s%s }\n", message_summary, message_totals,
+                        message_time);
 
         flush_streams ();
       }
@@ -258,8 +249,11 @@ namespace micro_os_plus::micro_test_plus::detail
    * Any output accumulated in `buffer_` is written to the output file
    * and, with normal or verbose verbosity, when verbosity is verbose or
    * the suite failed, to `stdout` as well; the plan and result lines are
-   * written to `stdout` only with normal or verbose verbosity. The buffer
-   * is cleared on exit.
+   * written to `stdout` with normal or verbose verbosity. With quiet
+   * verbosity, only the result line is written to `stdout`, without the
+   * plan and without an empty line, so that the session plan written by
+   * `end_session()` counts the displayed lines. The buffer is cleared on
+   * exit.
    */
   void
   reporter_tap::end_suite (const suite& suite)
@@ -358,6 +352,14 @@ namespace micro_os_plus::micro_test_plus::detail
 
         flush_streams ();
       }
+    else if (verbosity_ == verbosity::quiet)
+      {
+        // Only the test point of the suite, counted by the session plan.
+        write_console_ ("%s %zu - %s %s%s }\n", result, suite.own_index (),
+                        suite.name (), message_totals, message_time);
+
+        flush_streams ();
+      }
 
     clear_buffer_ ();
 
@@ -369,8 +371,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * Emits an `ok <index> - <name> # SKIP filtered` line, without a
    * test case block, so that the suite keeps its place in the TAP plan of
    * the session. The line is written to the output file when one is
-   * open. Under normal or verbose verbosity, it is also written to
-   * `stdout`, preceded by a blank line when `add_empty_line_` is set.
+   * open. Unless verbosity is silent, it is also written to `stdout`;
+   * under normal or verbose verbosity, it is preceded by a blank line when
+   * `add_empty_line_` is set. With quiet verbosity, it is written as the
+   * result lines of `end_suite()`, which the session plan counts.
    */
   void
   reporter_tap::skip_suite (const suite& suite)
@@ -382,9 +386,9 @@ namespace micro_os_plus::micro_test_plus::detail
     write_file_ ("ok %zu - %s # SKIP filtered\n", suite.own_index (),
                  suite.name ());
 
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+    if (verbosity_ != verbosity::silent)
       {
-        if (add_empty_line_)
+        if (add_empty_line_ && verbosity_ != verbosity::quiet)
           {
             write_console_ ("\n");
           }

@@ -450,6 +450,13 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_test (NAME "sample-test-quiet" COMMAND sample-test one two --output-file
                                              sample-test-quiet.tap --quiet
   )
+  # The console must show one line per suite, counted by the plan, which
+  # was previously 1..0 (the exit code is checked by "sample-test").
+  set_tests_properties (
+    "sample-test-quiet"
+    PROPERTIES PASS_REGULAR_EXPRESSION
+               "\nok 4 - Implicit namespace suite # [^\n]*\n1\\.\\.4\r?\n"
+  )
   message (VERBOSE "T> sample-test-quiet")
   add_compare_files_test (
     NAME "sample-test-quiet-compare"

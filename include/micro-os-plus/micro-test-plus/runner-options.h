@@ -95,7 +95,9 @@ namespace micro_os_plus::micro_test_plus
   enum class verbosity
   {
     silent = 0, /**< No console output; only the exit code is returned. */
-    quiet = 1, /**< Displays only the overall session summary. */
+    quiet = 1, /**< Displays only the overall session summary; the TAP
+                  reporter also displays one result line per test suite,
+                  counted by the plan. */
     normal = 2, /**< Displays test suite and test case results; the
                    individual checks are shown only for failures. */
     verbose = 3 /**< Displays all results, including passed checks, for maximum
