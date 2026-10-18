@@ -555,6 +555,21 @@ main (int argc, char* argv[])
       t.expect (lt (0.009, to_d{ 0.011 })) << "0.009 < to_d{ 0.011 }";
       local_counts.successful_checks += 3;
 
+      // The leading zeros of a small wrapper value are counted, so its
+      // tolerance is not 0.1, a zero wrapper compares exactly, and a
+      // whole value keeps one decimal, as `42.0_d` (API-REVIEW.md #9).
+      t.expect (ne (to_d{ 1e-12 }, 0.05)) << "to_d{ 1e-12 } != 0.05";
+      t.expect (lt (to_d{ 1e-12 }, 2.5e-12)) << "to_d{ 1e-12 } < 2.5e-12";
+      t.expect (eq (to_d{ 1e-12 }, 1.5e-12)) << "to_d{ 1e-12 } == 1.5e-12";
+      t.expect (ne (to_d{ 1e-9 }, 0.05)) << "to_d{ 1e-9 } != 0.05";
+      t.expect (ne (to_d{ 0.0 }, 0.09)) << "to_d{ 0.0 } != 0.09";
+      t.expect (lt (to_d{ 0.0 }, 0.09)) << "to_d{ 0.0 } < 0.09";
+      t.expect (lt (to_d{ 0.0 }, 1e-300)) << "to_d{ 0.0 } < 1e-300";
+      t.expect (eq (to_d{ 0.0 }, 0.0)) << "to_d{ 0.0 } == 0.0";
+      t.expect (eq (to_d{ 0.0 }, -0.0)) << "to_d{ 0.0 } == -0.0";
+      t.expect (eq (to_d{ 42.0 }, 42.09)) << "to_d{ 42.0 } == 42.09";
+      local_counts.successful_checks += 10;
+
       // An explicit tolerance of 0.01.
       t.expect (ne (1.45, approx (1.5, 0.01))) << "1.45 != approx (1.5, 0.01)";
       t.expect (lt (1.45, approx (1.5, 0.01))) << "1.45 < approx (1.5, 0.01)";

@@ -309,12 +309,20 @@ namespace micro_os_plus::micro_test_plus
      * noise of a value just below an integer (e.g. 2674.9999999999995) from
      * being taken as more decimals.
      *
+     * The nearest integer is never zero: while the scaled value is below
+     * one, its distance to one is used, so that the leading zeros of a
+     * small value are counted as decimals, as in its notation (12 for
+     * `1e-12`), instead of the count stopping as soon as the scaled value
+     * is below the threshold. A zero value has no significant digit, and
+     * the result is zero.
+     *
      * The loop also stops when the value reaches the magnitude from which
      * the type can represent only integers (2^23 for `float`, 2^52 for
      * `double`), limited to 2^63 so that the conversion to
      * `unsigned long long` is always defined. This bounds the number of
      * steps for large values, infinities, and NaNs, for which the result
-     * is one.
+     * is one; for small values, the number of steps is bounded by the
+     * decimal exponent of the smallest value of the type.
      *
      * This utility is particularly useful for user-defined literals and
      * compile-time constant expressions, enabling efficient and type-safe
@@ -331,6 +339,20 @@ namespace micro_os_plus::micro_test_plus
                        Value_T (1ULL << 63));
 
       value = abs (value);
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wfloat-equal"
+#endif // defined(__GNUC__)
+      if (value == Value_T (0))
+        {
+          // A zero has no decimals.
+          return T{};
+        }
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+
       T result{};
       for (;;)
         {
@@ -346,13 +368,46 @@ namespace micro_os_plus::micro_test_plus
           const auto fraction = value
                                 - static_cast<Value_T> (
                                     static_cast<unsigned long long> (value));
-          if (min_value (fraction, Value_T (1) - fraction) <= precision)
+          // Below one, the distance is to one, not to zero, so that the
+          // leading zeros of a small value are counted.
+          const auto distance
+              = (value < Value_T (1))
+                    ? Value_T (1) - fraction
+                    : min_value (fraction, Value_T (1) - fraction);
+          if (distance <= precision)
             {
               break;
             }
         }
 
       return result;
+    }
+
+    /**
+     * @details
+     * The number of decimal places is computed by `den_size()`, and the
+     * tolerance is one divided by ten raised to that number, as for the
+     * floating-point literals, which use the decimals written.
+     *
+     * A zero value has no decimals, and gets a zero tolerance, so that it
+     * is compared exactly; a tolerance of one unit of an arbitrary decimal
+     * would make the zero equal to unrelated small values. A zero
+     * tolerance is also returned when ten raised to the number of decimals
+     * would exceed the range of `Value_T` (values below about `1e-308` for
+     * `double`), instead of computing an infinite power.
+     */
+    template <class Value_T>
+    constexpr auto
+    decimal_epsilon (Value_T value) -> Value_T
+    {
+      const auto decimals = den_size<unsigned long long> (value);
+      if (decimals == 0
+          or decimals > static_cast<unsigned long long> (
+                 std::numeric_limits<Value_T>::max_exponent10))
+        {
+          return Value_T{};
+        }
+      return Value_T (1) / pow (Value_T (10), decimals);
     }
 
     /**

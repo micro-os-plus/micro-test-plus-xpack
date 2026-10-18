@@ -56,7 +56,7 @@ When needed to silence warnings, use separate groups of pragmas for each compile
 Always use `__GNUC__` guards, and, if necessary, `__clang__` guards to apply
 compiler-specific pragmas.
 
-```c
+```c++
 #if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
@@ -158,9 +158,9 @@ When making changes to the codebase, follow these guidelines for version control
 After committing a fix for a GitHub issue (referenced in the commit
 message with `Fixes #N`), add a comment to that issue:
 
-- briefly explain the changes made, and mention the commit hash;
-- end with a line `Fixed on YYYY-MM-DD.`, with the date of the commit;
-- do not close the issue; it is closed when the commit reaches the
+- Briefly explain the changes made, and mention the commit hash;
+- End with a line `Fixed on YYYY-MM-DD.`, with the date of the commit;
+- Do not close the issue; it is closed when the commit reaches the
   default branch.
 
 If the fix has no corresponding issue, ask for its number before

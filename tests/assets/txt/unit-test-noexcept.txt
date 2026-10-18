@@ -89,6 +89,16 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ -1.45 == to_d{ -1.5 }
         ✓ 0.0111 == to_d{ 0.011 }
         ✓ 0.009 < to_d{ 0.011 }
+        ✓ to_d{ 1e-12 } != 0.05
+        ✓ to_d{ 1e-12 } < 2.5e-12
+        ✓ to_d{ 1e-12 } == 1.5e-12
+        ✓ to_d{ 1e-9 } != 0.05
+        ✓ to_d{ 0.0 } != 0.09
+        ✓ to_d{ 0.0 } < 0.09
+        ✓ to_d{ 0.0 } < 1e-300
+        ✓ to_d{ 0.0 } == 0.0
+        ✓ to_d{ 0.0 } == -0.0
+        ✓ to_d{ 42.0 } == 42.09
         ✓ 1.45 != approx (1.5, 0.01)
         ✓ 1.45 < approx (1.5, 0.01)
         ✓ 1.495 == approx (1.5, 0.01)
@@ -98,8 +108,8 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ not 1.5 != approx (1.5, 0.0)
         ✓ 1.5 <= approx (1.5, 0.0)
         ✓ 1.5 >= approx (1.5, 0.0)
-    ✓ Floating-point tolerance - passed (18 checks)
-✗ Static top suite - FAILED (55 checks passed, 4 failed, in 19 test cases)
+    ✓ Floating-point tolerance - passed (28 checks)
+✗ Static top suite - FAILED (65 checks passed, 4 failed, in 19 test cases)
 • Combinatorial floats suite
     • Combinatorial floats
         ✓ 42.0 == 42 signed long long
@@ -1015,4 +1025,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 481 checks passed, 335 failed, in 87 test cases, 12 test suites
+✗ Total: 491 checks passed, 335 failed, in 87 test cases, 12 test suites

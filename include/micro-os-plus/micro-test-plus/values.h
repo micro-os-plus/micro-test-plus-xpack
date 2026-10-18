@@ -433,14 +433,14 @@ namespace micro_os_plus::micro_test_plus
        * @param val The floating point value to be stored.
        *
        * @details
-       * The epsilon is computed as 1 divided by 10 raised to the number of
-       * decimal digits in the value.
+       * The epsilon is computed by `math::decimal_epsilon()` as 1 divided
+       * by 10 raised to the number of decimal digits in the value, with
+       * the leading zeros of a value below one counted (1e-12 for
+       * `1e-12`); a zero value gets a zero epsilon, so that it is compared
+       * exactly.
        */
       constexpr value (const T& val)
-          : value{ val,
-                   T (1)
-                       / math::pow (T (10),
-                                    math::den_size<unsigned long long> (val)) }
+          : value{ val, math::decimal_epsilon (val) }
       {
       }
     };

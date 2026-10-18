@@ -238,12 +238,30 @@ namespace micro_os_plus::micro_test_plus
      * @param value The value whose decimal precision is to be determined;
      * it may be negative, infinite, or a NaN.
      * @return The number of decimal places, as a value of type \c T, at
-     * least one; it is limited by the magnitude from which `Value_T`
-     * represents only integers.
+     * least one, or zero for a zero value; the leading zeros of a value
+     * below one are counted; it is limited by the magnitude from which
+     * `Value_T` represents only integers.
      */
     template <class T, class Value_T>
     [[nodiscard]] constexpr auto
     den_size (Value_T value) -> T;
+
+    /**
+     * @brief Computes the default comparison tolerance of a floating-point
+     * value, one unit of its last decimal.
+     *
+     * @tparam Value_T The type of the value, a floating-point type.
+     *
+     * @param value The value whose tolerance is to be determined; it may
+     * be negative, infinite, or a NaN.
+     * @return Ten raised to minus the number of decimal places returned by
+     * `den_size()` (0.01 for `1.25`, 1e-12 for `1e-12`), or zero, which
+     * means an exact comparison, for a zero value and for a value whose
+     * tolerance would be below the range of `Value_T`.
+     */
+    template <class Value_T>
+    [[nodiscard]] constexpr auto
+    decimal_epsilon (Value_T value) -> Value_T;
 
     /**
      * @brief The result of parsing the characters of an integer literal.

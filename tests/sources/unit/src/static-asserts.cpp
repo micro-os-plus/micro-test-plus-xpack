@@ -133,6 +133,25 @@ static_asserts ()
       static_assert (detail::math::den_size<ull> (
                          std::numeric_limits<double>::infinity ())
                      == 1);
+
+      // The leading zeros of a small value are counted as decimals, and a
+      // zero has none, so its tolerance is zero, an exact comparison
+      // (API-REVIEW.md #9).
+      static_assert (detail::math::den_size<ull> (1e-8) == 8);
+      static_assert (detail::math::den_size<ull> (1e-12) == 12);
+      static_assert (detail::math::den_size<ull> (-2.5e-9) == 10);
+      static_assert (detail::math::den_size<ull> (1e-300) == 300);
+      static_assert (detail::math::den_size<ull> (1e-12L) == 12);
+      static_assert (detail::math::den_size<ull> (0.0) == 0);
+      static_assert (detail::math::den_size<ull> (-0.0f) == 0);
+      static_assert (detail::math::decimal_epsilon (1.25) > 0.0099
+                     and detail::math::decimal_epsilon (1.25) < 0.0101);
+      static_assert (detail::math::decimal_epsilon (1e-12) > 0.99e-12
+                     and detail::math::decimal_epsilon (1e-12) < 1.01e-12);
+      static_assert (detail::math::decimal_epsilon (0.0) <= 0.0);
+      static_assert (detail::math::decimal_epsilon (
+                         std::numeric_limits<double>::denorm_min ())
+                     <= 0.0);
     }
 
     {
