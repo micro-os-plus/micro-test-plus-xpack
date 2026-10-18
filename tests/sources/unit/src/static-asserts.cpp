@@ -476,6 +476,16 @@ static_asserts ()
           std::is_same_v<reflection::source_location, std::source_location>);
 #endif // defined(__cpp_lib_source_location)
     }
+
+    {
+      // The counters are a value type, so that a test can take a snapshot
+      // of them (API-REVIEW.md #29).
+      static_assert (std::is_trivially_copyable_v<counters>);
+      static_assert (std::is_nothrow_copy_constructible_v<counters>);
+      static_assert (std::is_nothrow_copy_assignable_v<counters>);
+      static_assert (std::is_nothrow_move_constructible_v<counters>);
+      static_assert (std::is_nothrow_move_assignable_v<counters>);
+    }
   }
 }
 

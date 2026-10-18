@@ -361,6 +361,10 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     local_counts = {};
 
+    // A copy of the counters is a snapshot, which is not updated by the
+    // later checks (API-REVIEW.md #29).
+    const counters before = ts.totals ();
+
     ts.test ("Arrays", [] (auto& t)
       {
         t.expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
@@ -388,6 +392,18 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
+
+    test_assert (before.successful_checks () == 0);
+    test_assert (before.executed_test_cases () == 0);
+    test_assert (current_suite_totals.successful_checks ()
+                 > before.successful_checks ());
+
+    counters after{};
+    after = current_suite_totals;
+    test_assert (after.successful_checks ()
+                 == current_suite_totals.successful_checks ());
+    test_assert (after.executed_test_cases ()
+                 == current_suite_totals.executed_test_cases ());
 
     ts.test ("Arrays bad", [] (auto& t)
       {

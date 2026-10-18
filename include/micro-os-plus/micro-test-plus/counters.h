@@ -98,8 +98,13 @@ namespace micro_os_plus::micro_test_plus
    * The tests can read the counters of the runner, of a suite, or of a
    * test case through the read-only `totals()` accessor.
    *
-   * The class is non-copyable and non-movable to prevent accidental
-   * duplication of live counters.
+   * The class is a copyable value type, so that a test can take a
+   * snapshot of the counters (`counters before = ts.totals ();`) and
+   * compare it later with the current values. The copy is independent:
+   * it is not updated when the original counters change. The nodes that
+   * own the live counters are themselves neither copyable nor movable,
+   * and `totals()` returns only a `const` reference, so a copy cannot
+   * replace or alter the counters of a node.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
@@ -115,41 +120,69 @@ namespace micro_os_plus::micro_test_plus
     counters (void) = default;
 
     /**
-     * @brief Deleted copy constructor to prevent copying.
+     * @brief Copy constructor.
      *
      * @details
-     * The counters belong to a single node of the test tree; a copy would
-     * be updated independently and the results would diverge.
+     * Copies the values of all the counters. The new instance is
+     * independent of the original, which may continue to be updated.
+     *
+     * @param other The instance to copy.
+     *
+     * @since 5.1.0
      */
-    counters (const counters&) = delete;
+    counters (const counters& other) = default;
 
     /**
-     * @brief Deleted move constructor to prevent moving.
+     * @brief Move constructor.
      *
      * @details
-     * The instance is a member of a node that is itself non-movable.
+     * Equivalent to the copy constructor, since the counters are plain
+     * integral values.
+     *
+     * @param other The instance to move from.
+     *
+     * @since 5.1.0
      */
-    counters (counters&&) = delete;
+    counters (counters&& other) = default;
 
     /**
-     * @brief Deleted copy assignment operator to prevent copying.
+     * @brief Copy assignment operator.
      *
      * @details
-     * Totals are combined explicitly with `operator+=`, never replaced.
+     * Replaces the values of all the counters with those of `other`.
+     *
+     * @param other The instance to copy.
+     * @return Reference to this instance.
+     *
+     * @since 5.1.0
      */
     counters&
-    operator= (const counters&)
-        = delete;
+    operator= (const counters& other)
+        = default;
 
     /**
-     * @brief Deleted move assignment operator to prevent moving.
+     * @brief Move assignment operator.
      *
      * @details
-     * Totals are combined explicitly with `operator+=`, never replaced.
+     * Equivalent to the copy assignment operator, since the counters are
+     * plain integral values.
+     *
+     * @param other The instance to move from.
+     * @return Reference to this instance.
+     *
+     * @since 5.1.0
      */
     counters&
-    operator= (counters&&)
-        = delete;
+    operator= (counters&& other)
+        = default;
+
+    /**
+     * @brief Destructor.
+     *
+     * @details
+     * Trivial; the counters own no resources.
+     */
+    ~counters () = default;
 
     /**
      * @brief Accumulates the totals from another instance into this one.
