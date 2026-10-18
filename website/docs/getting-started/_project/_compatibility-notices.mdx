@@ -223,6 +223,15 @@ they are no longer displayed with silent verbosity. The TAP reporter
 now ends the output with a
 `Bail out! Requirement failed at <file>:<line>` line.
 
+A failed requirement is no longer marked as `aborted...`, which was
+inaccurate with exceptions, since only the test case is stopped. The
+human reporter now names the effect that follows, `- test case stopped`
+or, without exceptions, `- test execution aborted`. The TAP reporter
+reports it like any other failed check, as node-tap does: the marker
+was written inside the YAML diagnostics block, either after the
+opening `---`, which the TAP consumers then did not recognise, or at
+the end of the `condition:` value.
+
 The runner no longer derives from the internal `detail::test_node`
 class, since it is not a node of the test tree: `runner::name()`, which
 always returned `"runner"`, was removed; the name shown in the reports

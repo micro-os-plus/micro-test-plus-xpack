@@ -790,20 +790,26 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Completes TAP14 YAML diagnostics for a failing check, appends an
-   * "aborted..." marker if the check is a requirement, emits source
-   * filename/line fields, closes the YAML block, and flushes the stream.
+   * Completes the TAP 14 YAML diagnostics block of a failing check, by
+   * ending the line opened by the prefix (the `---` line, or the
+   * `condition:` field), adding the `at:` field with the file name and
+   * the line number, and closing the block (`...`); the stream is then
+   * flushed.
+   *
+   * A failed requirement is reported like any other failed check, as
+   * node-tap does for a failed assertion followed by a throw; no marker
+   * is added, since any text after `---` or after the condition would
+   * make the block, or the value, invalid. That the test case stopped is
+   * shown by the plan, which follows this test point; without
+   * exceptions, the abort of the test execution is reported by the
+   * `Bail out!` line written by `abort_test_case()`.
    */
   void
   reporter_tap::output_fail_suffix_ (
-      const reflection::source_location& location, check_kind kind,
-      const test_case& test_case)
+      const reflection::source_location& location,
+      [[maybe_unused]] check_kind kind, const test_case& test_case)
   {
     size_t level = test_case.nesting_depth ();
-    if (kind == check_kind::requirement)
-      {
-        *this << " aborted...";
-      }
     *this << endl;
 
     // https://testanything.org/tap-version-14-specification.html

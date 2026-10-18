@@ -732,9 +732,14 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * This method outputs the suffix for a failing check result by closing the
-   * parenthesis, appending an "aborted..." message if the check is a
-   * requirement, and then appending `endl`, which adds a line ending, and
+   * parenthesis, appending, if the check is a requirement, the effect
+   * that follows, and then appending `endl`, which adds a line ending, and
    * flushes the output streams.
+   *
+   * The effect depends on the build, as in `check_result`: with
+   * exceptions, only the test case is stopped (`" - test case stopped"`),
+   * and the run continues with the next test case; without, the test
+   * execution is aborted (`" - test execution aborted"`).
    */
   void
   reporter_human::output_fail_suffix_ (
@@ -744,7 +749,11 @@ namespace micro_os_plus::micro_test_plus::detail
     *this << ")";
     if (kind == check_kind::requirement)
       {
-        *this << " aborted...";
+#if defined(__cpp_exceptions)
+        *this << " - test case stopped";
+#else
+        *this << " - test execution aborted";
+#endif // defined(__cpp_exceptions)
       }
     *this << endl;
 

@@ -545,19 +545,19 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     ✗ Unexpected exception in nested test case - FAILED (1 check passed, 0 failed, 1 test case failed)
     • Failed require
         ✓ check before the requirement
-        ✗ failed requirement FAILED (exceptions.cpp:248) aborted...
+        ✗ failed requirement FAILED (exceptions.cpp:248) - test case stopped
     ✗ Failed require - FAILED (1 check passed, 1 failed)
     • Failed deprecated assume
-        ✗ failed assumption FAILED (exceptions.cpp:263) aborted...
+        ✗ failed assumption FAILED (exceptions.cpp:263) - test case stopped
     ✗ Failed deprecated assume - FAILED (0 checks passed, 1 failed)
     • Failed require in nested test case
         • nested test case
-            ✗ failed nested requirement FAILED (exceptions.cpp:276) aborted...
+            ✗ failed nested requirement FAILED (exceptions.cpp:276) - test case stopped
         ✗ nested test case - FAILED (0 checks passed, 1 failed)
         ✓ check after the nested test case
     ✗ Failed require in nested test case - FAILED (1 check passed, 0 failed, 1 test case failed)
     • Failed require during unwinding
-        ✗ failed kept requirement FAILED (exceptions.cpp:293) aborted...
+        ✗ failed kept requirement FAILED (exceptions.cpp:293) - test case stopped
         ✗ unexpected exception: boom FAILED (exceptions.cpp:289)
     ✗ Failed require during unwinding - FAILED (0 checks passed, 2 failed)
     • Exception in a suite body

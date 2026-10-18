@@ -1003,7 +1003,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
     # Subtest: Failed require
         ok 1 - check before the requirement
         not ok 2 - failed requirement
-          --- aborted...
+          ---
           at:
             filename: exceptions.cpp
             line: 248
@@ -1012,7 +1012,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
     not ok 8 - Failed require # { FAILED, 1 check passed, 1 failed }
     # Subtest: Failed deprecated assume
         not ok 1 - failed assumption
-          --- aborted...
+          ---
           at:
             filename: exceptions.cpp
             line: 263
@@ -1022,7 +1022,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
     # Subtest: Failed require in nested test case
         # Subtest: nested test case
             not ok 1 - failed nested requirement
-              --- aborted...
+              ---
               at:
                 filename: exceptions.cpp
                 line: 276
@@ -1034,7 +1034,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
     not ok 10 - Failed require in nested test case # { FAILED, 1 check passed, 0 failed, 1 test case failed }
     # Subtest: Failed require during unwinding
         not ok 1 - failed kept requirement
-          --- aborted...
+          ---
           at:
             filename: exceptions.cpp
             line: 293

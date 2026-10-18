@@ -29,8 +29,9 @@ A failure then also reports the operands, for example
 <details>
 <summary>What happens when a requirement fails?</summary>
 
-The failure is reported like a failed expectation, marked as aborted,
-and then, when exceptions are enabled, the **current test case is
+The failure is reported like a failed expectation, marked by the human
+reporter with the effect that follows, and then, when exceptions are
+enabled, the **current test case is
 stopped**: the rest of its body is skipped, and the run continues with
 the next test case. This is how the fatal assertions of most other
 frameworks behave (`ASSERT_*` in GoogleTest, `REQUIRE()` in Catch2 and

@@ -346,7 +346,7 @@ The result is 0 if all checks passed, and 1 otherwise, including when a suite wa
 
 When exceptions are not enabled, a failed requirement cannot stop only its test case (see [Requirements](#requirements)), so it aborts the whole test execution: the remaining test cases and suites do not run, `run()` does not return, and no totals are written. Before the process is terminated:
 
-1. the reporter displays the results of the current test case, ending with the failed requirement, which is marked as `aborted...`; they are preceded by the name of the test case, and by those of the outer test cases, unless already displayed, so that the failure cannot be attributed to the previous test case;
+1. the reporter displays the results of the current test case, ending with the failed requirement, which is marked as `test execution aborted` (the TAP reporter adds no marker, since its `Bail out!` line, below, reports the abort); they are preceded by the name of the test case, and by those of the outer test cases, unless already displayed, so that the failure cannot be attributed to the previous test case;
 2. the TAP reporter adds a `Bail out! Requirement failed at <file>:<line>` line, which tells the TAP consumers that the run stopped early, not that the output was truncated;
 3. `runner::abort()` writes `error: test execution aborted at <file>:<line>` to `stderr`, flushes the standard streams, calls the abort handler, if one was set (see below), and then `::abort()`.
 
@@ -359,7 +359,7 @@ For example, with the human reporter, the end of the output is:
 
     • Parse configuration
         ✓ file found
-        ✗ sections parsed FAILED (main.cpp:42, 0 > 0) aborted...
+        ✗ sections parsed FAILED (main.cpp:42, 0 > 0) - test execution aborted
 
 error: test execution aborted at main.cpp:42
 ```
@@ -371,7 +371,7 @@ and with the TAP reporter:
         ok 1 - file found
         not ok 2 - sections parsed
           ---
-          condition: 0 > 0 aborted...
+          condition: 0 > 0
           at:
             filename: main.cpp
             line: 42
@@ -503,6 +503,16 @@ statement, after the message was appended. It is not derived from
 body does not intercept it; a `catch (...)` does, and must rethrow it
 with `throw;`. The test case body must not be `noexcept`, since the
 exception would call `std::terminate()`.
+
+The human reporter marks the failed requirement with
+`- test case stopped`, after the location; the TAP reporter reports it
+like any other failed check, as node-tap does, and the stop is shown by
+the plan of the test case, which follows it:
+
+```
+    • Parse configuration
+        ✗ configuration parsed FAILED (main.cpp:4) - test case stopped
+```
 
 Without exceptions (for example with `-fno-exceptions`, common on
 embedded targets), the test case cannot be stopped, and a failed

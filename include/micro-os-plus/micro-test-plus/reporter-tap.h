@@ -327,8 +327,8 @@ namespace micro_os_plus::micro_test_plus::detail
      * @brief Outputs the suffix for a failing condition.
      *
      * @param location The source location of the failure.
-     * @param kind The kind of the check; for `check_kind::requirement`,
-     * the abort notice is displayed.
+     * @param kind The kind of the check; not used, since a failed
+     * requirement is reported like any other failed check.
      * @param test_case The test case that owns this check.
      * @par Returns
      *   Nothing.

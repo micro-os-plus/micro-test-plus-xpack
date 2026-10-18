@@ -340,7 +340,8 @@ namespace micro_os_plus::micro_test_plus::detail
      *
      * @param location The source location of the failure.
      * @param kind The kind of the check; for `check_kind::requirement`,
-     * the abort notice is displayed.
+     * the effect that follows (the test case is stopped, or the test
+     * execution is aborted) is displayed.
      * @param test_case The test case that owns this check.
      * @par Returns
      *   Nothing.
