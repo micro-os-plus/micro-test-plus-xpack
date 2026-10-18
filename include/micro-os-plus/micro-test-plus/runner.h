@@ -121,6 +121,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   class suite;
+  class test_case;
   class top_suite;
 
   // ==========================================================================
@@ -744,6 +745,17 @@ namespace micro_os_plus::micro_test_plus
      * Set by `set_abort_handler()`.
      */
     abort_handler_t abort_handler_ = nullptr;
+
+    /**
+     * @brief The innermost test case being run, if any.
+     *
+     * @details
+     * Set by `detail::runnable_base`, a friend, while a test case runs,
+     * and restored when it ends, so that `suite::test()`, when called
+     * from the body of a test case (for example via a captured suite
+     * reference), runs the new test case nested in it.
+     */
+    test_case* running_test_case_ = nullptr;
   };
 
   // ==========================================================================

@@ -69,6 +69,12 @@ it previously ended the program, without the final totals. As for the
 test cases, the suite body must not be `noexcept` for the exception to
 be caught.
 
+A test case started on the suite (`ts.test()`) from the body of a
+running test case, for example via a captured suite reference, now runs
+nested in the running test case, as if started with `t.test()`. After a
+check, it previously aborted the program; before any check, the report
+was malformed.
+
 The counters and the indices of the runner, the suites, and the test
 cases can no longer be modified by the user code: `totals()` now
 returns only a `const` reference, so a reference that stores its result

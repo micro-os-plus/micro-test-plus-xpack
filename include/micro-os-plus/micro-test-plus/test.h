@@ -405,6 +405,23 @@ namespace micro_os_plus::micro_test_plus
       reporter_ (void) const noexcept;
 
       /**
+       * @brief Gets the innermost test case being run by the owning
+       * runner, if any.
+       *
+       * @details
+       * Protected, since it is used only by `suite::test()`, to run a
+       * test case started on the suite from inside a running test case
+       * as a nested test case of it.
+       *
+       * @par Parameters
+       *   None.
+       * @return A pointer to the running test case, or `nullptr` when no
+       * test case is running.
+       */
+      [[nodiscard]] class test_case*
+      running_test_case_ (void) const noexcept;
+
+      /**
        * @brief Advances to the next child test point, and returns its
        * number.
        *

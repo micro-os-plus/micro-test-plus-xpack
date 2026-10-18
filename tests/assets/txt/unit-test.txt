@@ -935,6 +935,13 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ session passed
         ✓ suite added after run() rejected
     ✓ Late suites - passed (5 checks)
+    • Test case started on the suite
+        ✓ check before the test case
+        • test case started on the suite
+            ✓ check in the test case
+        ✓ test case started on the suite - passed (1 check)
+        ✓ run nested
+    ✓ Test case started on the suite - passed (2 checks)
     • Callable arguments
         ✓ reference parameter refers to a copy
         ✓ std::ref() refers to the object
@@ -958,7 +965,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ handler called
         ✓ previous handler returned
     ✓ Abort handler - passed (3 checks)
-✗ Miscellaneous suite - FAILED (89 checks passed, 13 failed, in 18 test cases), time: 0.757 ms
+✗ Miscellaneous suite - FAILED (92 checks passed, 13 failed, in 20 test cases), time: 3.653 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1054,4 +1061,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 485 checks passed, 342 failed, in 99 test cases, 14 test suites, time: 12.188 ms
+✗ Total: 488 checks passed, 342 failed, in 101 test cases, 14 test suites, time: 20.942 ms

@@ -120,6 +120,17 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Returns the pointer kept by the owning runner, set by
+     * `after_test_case_create_()` while a test case runs.
+     */
+    [[nodiscard]] test_case*
+    runnable_base::running_test_case_ (void) const noexcept
+    {
+      return runner_.running_test_case_;
+    }
+
+    /**
+     * @details
      * Delegates immediately to `runner_.abort()`, passing the supplied
      * source location so that the error message identifies the call site
      * before the process is terminated via `::abort()`.
@@ -145,7 +156,9 @@ namespace micro_os_plus::micro_test_plus
      * incremented. The test case keeps its index and its place among the
      * children, so the TAP plan of the parent remains complete.
      *
-     * Otherwise, the parent's executed test cases counter is incremented
+     * Otherwise, while the test case runs, the runner keeps it as its
+     * innermost running test case (see `suite::test()`).
+     * The parent's executed test cases counter is incremented
      * after the run, and, if the child failed (a failed check, or a failed
      * nested test case), its failed test cases counter too, so that the
      * parent fails as well, as in node-tap. The child's check counters are
@@ -171,8 +184,25 @@ namespace micro_os_plus::micro_test_plus
           return;
         }
 
-      // Run the child test case immediately.
-      test_case.run ();
+      // Run the child test case immediately, as the innermost running test
+      // case of the runner. The outer one is restored by the guard, also
+      // when an exception leaves run() (for example thrown by an abort
+      // handler), so that the runner never keeps a destroyed test case.
+      {
+        struct running_guard
+        {
+          class test_case*& running;
+          class test_case* outer;
+
+          ~running_guard ()
+          {
+            running = outer;
+          }
+        } guard{ runner_.running_test_case_, runner_.running_test_case_ };
+
+        runner_.running_test_case_ = &test_case;
+        test_case.run ();
+      }
 
       // This test executed one more test case.
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)

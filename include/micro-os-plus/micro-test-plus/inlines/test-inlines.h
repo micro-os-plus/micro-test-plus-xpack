@@ -433,7 +433,13 @@ namespace micro_os_plus::micro_test_plus
    * succeeds or fails, and the suite totals count the successful and failed
    * checks.
    *
-   * It is typically invoked within the body of a suite.
+   * It is typically invoked within the body of a suite. When invoked
+   * from the body of a running test case (for example via a captured
+   * suite reference), the new test case could not be reported as a
+   * sibling of the running one, which has not ended; it is therefore
+   * created by the innermost running test case, with `test_case::test()`,
+   * and runs nested in it, as if `test()` had been called on that test
+   * case.
    *
    * @par Example
    *
@@ -454,6 +460,14 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    // Called from inside a running test case; run nested in it.
+    if (class test_case* running = running_test_case_ (); running != nullptr)
+      {
+        running->test (name, std::forward<Callable_T> (callable),
+                       std::forward<Args_T> (arguments)...);
+        return;
+      }
 
     size_t own_index = next_test_point_number_ ();
     test_case child_test_case{ name,

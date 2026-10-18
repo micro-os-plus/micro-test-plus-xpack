@@ -517,6 +517,28 @@ and [Requirements](/docs/api/groups/micro-os-plus-micro-test-plus-requirements/)
 
 Test cases can be defined in a nested manner, i.e., a test case can include not only checks, but also other test cases, at any nesting level.
 
+A nested test case is created by calling `test()` on the outer test
+case, and runs immediately; a failed nested test case also fails the
+outer one:
+
+```cpp
+ts.test ("Parse configuration", [] (auto& t)
+  {
+    t.expect (parse ("config.json")) << "configuration parsed";
+
+    t.test ("Defaults", [] (auto& nt)
+      {
+        nt.expect (default_port () == 80) << "default port";
+      });
+  });
+```
+
+A test case started on the suite, with `ts.test()`, from the body of a
+running test case (for example via a captured suite reference), cannot
+follow it in the report, since the running test case has not ended; it
+runs nested in the innermost running test case, as if `t.test()` had
+been called.
+
 ### Function comparators
 
 To facilitate clear reporting of differences between expected and

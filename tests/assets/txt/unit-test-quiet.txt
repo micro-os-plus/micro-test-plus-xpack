@@ -86,6 +86,8 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Runner option errors
     • Runner filter
     • Late suites
+    • Test case started on the suite
+        • test case started on the suite
     • Callable arguments
     • Operand copies
     • Test case lifetime
@@ -100,4 +102,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 485 checks passed, 342 failed, in 99 test cases, 14 test suites, time: 10.299 ms
+✗ Total: 488 checks passed, 342 failed, in 101 test cases, 14 test suites, time: 12.371 ms

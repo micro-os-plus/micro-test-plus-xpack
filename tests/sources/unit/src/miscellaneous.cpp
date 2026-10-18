@@ -968,6 +968,28 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // A test case started on the suite from inside a running test case,
+    // after a check, runs nested in the running test case, instead of
+    // aborting the program (API-REVIEW.md #6).
+    ts.test ("Test case started on the suite", [&ts] (auto& t)
+      {
+        t.expect (true) << "check before the test case";
+        local_counts.successful_checks++;
+
+        ts.test ("test case started on the suite", [] (auto& it)
+          {
+            it.expect (true) << "check in the test case";
+            local_counts.successful_checks++;
+          });
+        local_counts.executed_test_cases++; // nested
+
+        t.expect (eq (t.totals ().executed_test_cases (), 1u))
+            << "run nested";
+        local_counts.successful_checks++;
+
+        local_counts.executed_test_cases++; // outer
+      });
+
     // The additional arguments of `test()` and `suite()` are copied, so a
     // reference parameter refers to the copy, unless `std::ref()` is
     // passed, and a deferred suite receives the values of the call

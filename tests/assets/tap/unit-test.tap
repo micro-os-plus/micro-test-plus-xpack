@@ -2970,6 +2970,15 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 5 - suite added after run() rejected
         1..5
     ok 14 - Late suites # { passed, 5 checks }
+    # Subtest: Test case started on the suite
+        ok 1 - check before the test case
+        # Subtest: test case started on the suite
+            ok 1 - check in the test case
+            1..1
+        ok 2 - test case started on the suite # { passed, 1 check }
+        ok 3 - run nested
+        1..3
+    ok 15 - Test case started on the suite # { passed, 2 checks }
     # Subtest: Callable arguments
         ok 1 - reference parameter refers to a copy
         ok 2 - std::ref() refers to the object
@@ -2977,28 +2986,28 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 4 - local session passed
         ok 5 - deferred suite received the copy
         1..5
-    ok 15 - Callable arguments # { passed, 5 checks }
+    ok 16 - Callable arguments # { passed, 5 checks }
     # Subtest: Operand copies
         ok 1 - plain operands
         ok 2 - plain operands copied once
         ok 3 - wrapped operand
         ok 4 - wrapped operand copied once
         1..4
-    ok 16 - Operand copies # { passed, 4 checks }
+    ok 17 - Operand copies # { passed, 4 checks }
     # Subtest: Test case lifetime
         ok 1 - test cases destroyed
         ok 2 - test cases counted
         ok 3 - local session passed
         1..3
-    ok 17 - Test case lifetime # { passed, 3 checks }
+    ok 18 - Test case lifetime # { passed, 3 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - handler called
         ok 3 - previous handler returned
         1..3
-    ok 18 - Abort handler # { passed, 3 checks }
-    1..18
-not ok 11 - Miscellaneous suite # { FAILED, 89 checks passed, 13 failed, in 18 test cases, time: 2.586 ms }
+    ok 19 - Abort handler # { passed, 3 checks }
+    1..19
+not ok 11 - Miscellaneous suite # { FAILED, 92 checks passed, 13 failed, in 20 test cases, time: 3.571 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3198,4 +3207,4 @@ ok 13 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.279 ms }
     1..3
 not ok 14 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.255 ms }
 1..14
-# { total: 485 checks passed, 342 failed, in 99 test cases, 14 test suites, time: 12.722 ms }
+# { total: 488 checks passed, 342 failed, in 101 test cases, 14 test suites, time: 16.336 ms }
