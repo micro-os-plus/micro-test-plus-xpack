@@ -307,13 +307,16 @@ namespace micro_os_plus::micro_test_plus
      * skipped, without being run.
      *
      * The session runs only once; later calls return the same exit code
-     * without running anything again.
+     * without running anything again. A call made while the session runs,
+     * for example from a suite body, is reported on `stderr` and returns
+     * 1, without other effects.
      *
      * @par Parameters
      *   None.
-     * @return 0 if all checks were successful, 1 otherwise, or if the runner
-     * was not initialised, and 2 if `initialise()` reported an option
-     * error, regardless of the checks.
+     * @return 0 if all checks were successful, 1 otherwise, if a suite was
+     * rejected by `suite()`, or if the runner was not initialised, and 2
+     * if `initialise()` reported an option error, regardless of the
+     * checks.
      *
      * @since 5.1.0
      */
@@ -344,6 +347,12 @@ namespace micro_os_plus::micro_test_plus
      * immediately, the suite is only stored; `run()` runs it later,
      * together with the static suites that refer to this runner, sorted
      * by name.
+     *
+     * The suites must be added before `run()` is called. A suite added
+     * while `run()` runs (for example from the body of another suite), or
+     * after it returned, would never run; it is rejected, the error is
+     * reported on `stderr`, and the exit code is not 0, so that the
+     * omission cannot pass unnoticed.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -534,6 +543,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Registers a test suite with the runner.
      *
+     * @details
+     * Called by `suite()`. Once `run()` has started, the suite is
+     * rejected: it is destroyed, the error is reported on `stderr`, and
+     * `has_rejected_suites_` is set.
+     *
      * @param suite Owning pointer to the test suite to register.
      * @par Returns
      *   Nothing.
@@ -676,13 +690,14 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The session moves only forwards, from `created` to `initialised`
-     * (by `initialise()`) and to `finished` (by `run()`); the calls made in
-     * another state are reported or ignored.
+     * (by `initialise()`), to `running`, and to `finished` (both by
+     * `run()`); the calls made in another state are reported or ignored.
      */
     enum class session_state
     {
       created, /**< Constructed; `initialise()` not yet called. */
       initialised, /**< Initialised; test cases may be added and run. */
+      running, /**< `run()` is running the suites; no suite may be added. */
       finished /**< All suites run and the session ended. */
     };
 
@@ -690,7 +705,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief The current state of the test session.
      *
      * @details
-     * Set by `initialise()` and `run()`.
+     * Set by `initialise()` and `run()`; read by `register_suite_()`, to
+     * reject the suites added too late.
      */
     session_state session_state_ = session_state::created;
 
@@ -711,6 +727,15 @@ namespace micro_os_plus::micro_test_plus
      * output file that cannot be opened; `run()` then returns 2.
      */
     bool has_option_errors_ = false;
+
+    /**
+     * @brief Whether a suite was added after `run()` had started.
+     *
+     * @details
+     * Set by `register_suite_()`, which rejects such a suite; `run()`
+     * then returns 1, unless an option error requires 2.
+     */
+    bool has_rejected_suites_ = false;
 
     /**
      * @brief The function called by `abort()`, if not null.

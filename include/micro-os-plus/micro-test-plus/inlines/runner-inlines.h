@@ -100,7 +100,8 @@ namespace micro_os_plus::micro_test_plus
    * additional arguments, then transfers ownership to the runner via
    * `register_suite_()`. The suite is not run here; all registered suites
    * are run later by `run()`, together with the static suites, sorted by
-   * name.
+   * name. A suite added once `run()` has started is rejected by
+   * `register_suite_()`.
    */
   template <typename Callable_T, typename... Args_T>
   void

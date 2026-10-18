@@ -907,6 +907,62 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The suites added once run() has started would never run; they are
+    // rejected, and the exit code is not 0. A call of run() from a suite
+    // body is rejected too (API-REVIEW.md #4).
+    ts.test ("Late suites", [] (auto& t)
+      {
+        runner_options options{};
+        options.selected_reporter = reporter_kind::human;
+        options.verbosity_level = verbosity::silent;
+
+        int late_runs = 0;
+        int nested_run_code = 0;
+
+        runner during_runner;
+        during_runner.initialise (options, "Local");
+        during_runner.suite ("Outer", [&] (suite& s)
+          {
+            during_runner.suite ("Inner", [&late_runs] (suite& is)
+              {
+                ++late_runs;
+                is.test ("Local test", [] (auto& lt) { lt.expect (false); });
+              });
+            nested_run_code = during_runner.run ();
+            s.test ("Local test", [] (auto& lt) { lt.expect (true); });
+          });
+
+        t.expect (eq (during_runner.run (), 1))
+            << "suite added during run() rejected";
+        local_counts.successful_checks++;
+
+        t.expect (eq (late_runs, 0) and eq (during_runner.suites_count (), 2u)
+                  and eq (during_runner.totals ().failed_checks (), 0u))
+            << "rejected suite neither run nor counted";
+        local_counts.successful_checks++;
+
+        t.expect (eq (nested_run_code, 1)) << "nested run() rejected";
+        local_counts.successful_checks++;
+
+        runner after_runner;
+        after_runner.initialise (options, "Local");
+        after_runner.suite ("Early", [] (suite& s)
+          { s.test ("Local test", [] (auto& lt) { lt.expect (true); }); });
+
+        t.expect (eq (after_runner.run (), 0)) << "session passed";
+        local_counts.successful_checks++;
+
+        after_runner.suite ("After",
+                            [&late_runs] (suite&) noexcept { ++late_runs; });
+
+        t.expect (eq (after_runner.run (), 1) and eq (late_runs, 0)
+                  and eq (after_runner.suites_count (), 2u))
+            << "suite added after run() rejected";
+        local_counts.successful_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     // The additional arguments of `test()` and `suite()` are copied, so a
     // reference parameter refers to the copy, unless `std::ref()` is
     // passed, and a deferred suite receives the values of the call

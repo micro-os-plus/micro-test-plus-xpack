@@ -338,7 +338,7 @@ To run the registered suites, end the session, and return the test result as the
 return tr.run ();
 ```
 
-The result is 0 if all checks passed, and 1 otherwise. If the command-line options, or the `runner_options`, were not valid (an unknown reporter name, a missing option argument, or an output file that cannot be opened), the error is reported on `stderr` when the runner is initialised, the option is ignored, and the tests are still run, but the result is 2.
+The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)). If the command-line options, or the `runner_options`, were not valid (an unknown reporter name, a missing option argument, or an output file that cannot be opened), the error is reported on `stderr` when the runner is initialised, the option is ignored, and the tests are still run, but the result is 2.
 
 #### Aborting the test execution
 
@@ -945,6 +945,11 @@ main(int argc, char* argv[])
   return tr.run ();
 }
 ```
+
+The suites must be added before `run()` is called. A suite added while
+`run()` runs, for example from the body of another suite, or after it
+returned, would never run; it is rejected, the error is reported on
+`stderr`, and the result is not 0.
 
 #### Example
 

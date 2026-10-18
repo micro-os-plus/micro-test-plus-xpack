@@ -433,6 +433,14 @@ namespace micro_os_plus::micro_test_plus
    * it to the internal `children_suites_` vector, deferring execution
    * until `run_suites_()` is called. If tracing is enabled, the suite
    * name is logged for diagnostic purposes.
+   *
+   * Once `run()` has started, the suite is rejected, since it would
+   * never run: `run_suites_()` takes the number of suites only once,
+   * before running them, and after the session has ended nothing runs.
+   * The error is reported on `stderr`, the suite is destroyed when the
+   * pointer goes out of scope, and `has_rejected_suites_` is set, so that
+   * the exit code is not 0; if the session has already ended, the stored
+   * exit code is updated, for the later calls of `run()`.
    */
   void
   runner::register_suite_ (std::unique_ptr<class suite> suite)
@@ -440,6 +448,20 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite->name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (session_state_ == session_state::running
+        || session_state_ == session_state::finished)
+      {
+        fprintf (stderr,
+                 "error: suite '%s' added after run() started, rejected\n",
+                 suite->name ());
+        has_rejected_suites_ = true;
+        if (session_state_ == session_state::finished && exit_code_ == 0)
+          {
+            exit_code_ = 1;
+          }
+        return;
+      }
 
     children_suites_.push_back (std::move (suite));
   }
@@ -546,11 +568,16 @@ namespace micro_os_plus::micro_test_plus
    * Subsequently invokes `run_suites_()` to execute, sorted by name, and
    * accumulate the registered and the static child suites. Finally,
    * stops the session stopwatch, notifies the reporter, and returns `0`
-   * if all checks passed or `1` otherwise; if `initialise()` reported an
-   * option error, `2` is returned, regardless of the checks.
+   * if all checks passed or `1` otherwise, or if a suite was rejected by
+   * `register_suite_()`; if `initialise()` reported an option error, `2`
+   * is returned, regardless of the checks.
+   *
+   * While the suites run, the session is in the `running` state, so that
+   * the suites added by them are rejected.
    *
    * The result is stored, and the later calls return it without running
-   * anything again. If the runner was not initialised, an error is
+   * anything again. If the runner was not initialised, or if it is
+   * already running (a call from a suite or a test case), an error is
    * reported on `stderr` and `1` is returned.
    */
   int
@@ -566,11 +593,19 @@ namespace micro_os_plus::micro_test_plus
         return exit_code_;
       }
 
+    if (session_state_ == session_state::running)
+      {
+        fprintf (stderr, "error: test runner already running\n");
+        return 1;
+      }
+
     if (session_state_ != session_state::initialised)
       {
         fprintf (stderr, "error: test runner not initialised\n");
         return 1;
       }
+
+    session_state_ = session_state::running;
 
     top_suite_.stopwatch_.stop ();
     reporter_->end_suite (top_suite_);
@@ -587,7 +622,7 @@ namespace micro_os_plus::micro_test_plus
       }
     else
       {
-        exit_code_ = totals_.passed () ? 0 : 1;
+        exit_code_ = (totals_.passed () && !has_rejected_suites_) ? 0 : 1;
       }
     session_state_ = session_state::finished;
 
