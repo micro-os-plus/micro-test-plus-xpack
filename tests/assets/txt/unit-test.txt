@@ -933,6 +933,14 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ different const objects
         ✓ same const object
     ✓ Pointers to const - passed (2 checks)
+    • TAP escapes # TODO in names \ messages
+        ✓ message with # hash and \ backslash
+        ✓ a # b == a # b
+        ✓ first line
+second line
+        ✗ failed # TODO not a directive
+next line FAILED (miscellaneous.cpp:712)
+    ✗ TAP escapes # TODO in names \ messages - FAILED (3 checks passed, 1 failed)
     • Runner options
         ✓ default verbosity before initialise()
         ✓ given name
@@ -1000,7 +1008,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ handler called
         ✓ previous handler returned
     ✓ Abort handler - passed (3 checks)
-✗ Miscellaneous suite - FAILED (102 checks passed, 13 failed, in 21 test cases), time: 2.845 ms
+✗ Miscellaneous suite - FAILED (105 checks passed, 14 failed, in 22 test cases), time: 2.836 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1108,4 +1116,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 520 checks passed, 349 failed, in 105 test cases, 14 test suites, time: 13.110 ms
+✗ Total: 523 checks passed, 350 failed, in 106 test cases, 14 test suites, time: 13.180 ms

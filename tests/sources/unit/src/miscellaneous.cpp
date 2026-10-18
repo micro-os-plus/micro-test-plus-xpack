@@ -693,6 +693,35 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // In the TAP output, the `\` and `#` characters of the names, the
+    // messages, and the expressions are escaped, and the line breaks are
+    // replaced by spaces, so that the failed test case below is not read as
+    // a TODO (API-REVIEW.md #16).
+    ts.test ("TAP escapes # TODO in names \\ messages", [] (auto& t)
+      {
+        t.expect (true) << "message with # hash and \\ backslash";
+        local_counts.successful_checks++;
+
+        t.expect (
+            eq (std::string_view{ "a # b" }, std::string_view{ "a # b" }));
+        local_counts.successful_checks++;
+
+        t.expect (true) << "first line\nsecond line";
+        local_counts.successful_checks++;
+
+        t.expect (false) << "failed # TODO not a directive\nnext line";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
     // A runner can be initialised without a command line, with the options
     // set by the application (API-REVIEW.md #20). The local runners are
     // silent, so that they do not write to the test output.
@@ -1049,8 +1078,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           });
         local_counts.executed_test_cases++; // nested
 
-        t.expect (eq (t.totals ().executed_test_cases (), 1u))
-            << "run nested";
+        t.expect (eq (t.totals ().executed_test_cases (), 1u)) << "run nested";
         local_counts.successful_checks++;
 
         local_counts.executed_test_cases++; // outer

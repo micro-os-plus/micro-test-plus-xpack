@@ -352,6 +352,17 @@ namespace micro_os_plus::micro_test_plus::detail
      */
     void
     commit_buffer_ (void);
+
+    /**
+     * @brief The position in the buffer where the description of a
+     * passed check begins.
+     *
+     * @details
+     * Set by `output_pass_prefix_()` and used by `output_pass_suffix_()`
+     * to escape the description, which is the message, or the expression
+     * appended between the two calls when there is no message.
+     */
+    size_t description_begin_ = 0;
   };
 
   // --------------------------------------------------------------------------

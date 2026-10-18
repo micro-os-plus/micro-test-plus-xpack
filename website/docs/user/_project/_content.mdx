@@ -106,6 +106,8 @@ ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
 # { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
 ```
 
+In the `ok`/`not ok` lines, the names of the suites and test cases, the messages, and the expressions are escaped as the specification recommends: each `#` is written as `\#`, and each `\` as `\\`, so that a `#` in a name (for example `parser # TODO rework`) is not read as a `TODO` or `SKIP` directive, which would hide a failure; the TAP consumers remove the escapes. The line breaks are replaced by spaces, so that a name or a message always fits on its line. The `# Subtest:` lines, which are comments, show the names as they are, with only the line breaks replaced.
+
 ### Testing a computed value
 
 A slightly more practical example would verify the result of a computed value; for instance:

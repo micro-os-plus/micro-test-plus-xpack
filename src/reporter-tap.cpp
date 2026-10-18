@@ -45,6 +45,9 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
+#include <string>
+#include <string_view>
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -65,6 +68,61 @@
 
 namespace micro_os_plus::micro_test_plus::detail
 {
+  // --------------------------------------------------------------------------
+
+  namespace
+  {
+    /**
+     * @brief Prepares a text for a single TAP line.
+     *
+     * @details
+     * Each line break (`\\n`, `\\r`, or the `\\r\\n` pair) is replaced by
+     * a space, so that the text does not end the line. When @p escape is
+     * true, each `\\` is written as `\\\\` and each `#` as `\\#`, as the
+     * TAP 14 specification recommends for the test point descriptions and
+     * the reasons, so that a `#` in the text does not start a directive
+     * (for example `# TODO`, which would hide a failure). The
+     * `# Subtest:` comments are not escaped, since the specification
+     * defines no escapes in comments, and the node-tap parser uses their
+     * text as it is.
+     *
+     * @param text The text to prepare.
+     * @param escape Whether to escape the `\\` and `#` characters.
+     * @return The text, without line breaks, and escaped if requested.
+     */
+    std::string
+    tap_text (std::string_view text, bool escape)
+    {
+      std::string result;
+      result.reserve (text.size ());
+
+      for (size_t i = 0; i < text.size (); ++i)
+        {
+          const char c = text[i];
+          if (c == '\n' || c == '\r')
+            {
+              // The `\r\n` pair is a single line break.
+              if (c == '\r' && i + 1 < text.size () && text[i + 1] == '\n')
+                {
+                  ++i;
+                }
+              result.push_back (' ');
+            }
+          else if (escape && (c == '\\' || c == '#'))
+            {
+              result.push_back ('\\');
+              result.push_back (c);
+            }
+          else
+            {
+              result.push_back (c);
+            }
+        }
+
+      return result;
+    }
+  } // namespace
+
   // --------------------------------------------------------------------------
 
   /**
@@ -211,10 +269,11 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Emits a `"# Subtest: <name>"` comment line to mark the start of a
-   * TAP test case block for the suite. The line is written to the output
-   * file when one is open. Under normal or verbose verbosity, it is also
-   * written to `stdout`, preceded by a blank line when `add_empty_line_`
-   * is set.
+   * TAP test case block for the suite; the line breaks in the name are
+   * replaced by spaces (see `tap_text()`). The line is written to the
+   * output file when one is open. Under normal or verbose verbosity, it is
+   * also written to `stdout`, preceded by a blank line when
+   * `add_empty_line_` is set.
    */
   void
   reporter_tap::begin_suite (const suite& suite)
@@ -223,7 +282,9 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    write_file_ ("# Subtest: %s\n", suite.name ());
+    const std::string name = tap_text (suite.name (), false);
+
+    write_file_ ("# Subtest: %s\n", name.c_str ());
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
@@ -232,7 +293,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        write_console_ ("# Subtest: %s\n", suite.name ());
+        write_console_ ("# Subtest: %s\n", name.c_str ());
 
         flush_streams ();
 
@@ -245,15 +306,15 @@ namespace micro_os_plus::micro_test_plus::detail
    * Emits the TAP plan line for the suite's test cases, and for the
    * failure of the suite body, if any (see `fail_suite()`), followed by an
    * `ok`/`not ok` result line that includes the suite index, name,
-   * pass/fail status, check counts, test case count, and elapsed time.
-   * Any output accumulated in `buffer_` is written to the output file
-   * and, with normal or verbose verbosity, when verbosity is verbose or
-   * the suite failed, to `stdout` as well; the plan and result lines are
-   * written to `stdout` with normal or verbose verbosity. With quiet
-   * verbosity, only the result line is written to `stdout`, without the
-   * plan and without an empty line, so that the session plan written by
-   * `end_session()` counts the displayed lines. The buffer is cleared on
-   * exit.
+   * pass/fail status, check counts, test case count, and elapsed time;
+   * the name is escaped (see `tap_text()`). Any output accumulated in
+   * `buffer_` is written to the output file and, with normal or verbose
+   * verbosity, when verbosity is verbose or the suite failed, to `stdout`
+   * as well; the plan and result lines are written to `stdout` with
+   * normal or verbose verbosity. With quiet verbosity, only the result
+   * line is written to `stdout`, without the plan and without an empty
+   * line, so that the session plan written by `end_session()` counts the
+   * displayed lines. The buffer is cleared on exit.
    */
   void
   reporter_tap::end_suite (const suite& suite)
@@ -309,13 +370,15 @@ namespace micro_os_plus::micro_test_plus::detail
     char message_time[elapsed_time_size_];
     format_elapsed_time_ (suite.stopwatch_, message_time);
 
+    const std::string name = tap_text (suite.name (), true);
+
     write_buffer_to_file_ ();
 
     // The plan counts the test cases and the failure of the suite body,
     // if any, which is numbered after them.
     write_file_ ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
                  suite.test_point_number (), result, suite.own_index (),
-                 suite.name (), message_totals, message_time);
+                 name.c_str (), message_totals, message_time);
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
@@ -348,7 +411,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
         write_console_ ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
                         suite.test_point_number (), result, suite.own_index (),
-                        suite.name (), message_totals, message_time);
+                        name.c_str (), message_totals, message_time);
 
         flush_streams ();
       }
@@ -356,7 +419,7 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         // Only the test point of the suite, counted by the session plan.
         write_console_ ("%s %zu - %s %s%s }\n", result, suite.own_index (),
-                        suite.name (), message_totals, message_time);
+                        name.c_str (), message_totals, message_time);
 
         flush_streams ();
       }
@@ -368,13 +431,14 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Emits an `ok <index> - <name> # SKIP filtered` line, without a
-   * test case block, so that the suite keeps its place in the TAP plan of
-   * the session. The line is written to the output file when one is
-   * open. Unless verbosity is silent, it is also written to `stdout`;
-   * under normal or verbose verbosity, it is preceded by a blank line when
-   * `add_empty_line_` is set. With quiet verbosity, it is written as the
-   * result lines of `end_suite()`, which the session plan counts.
+   * Emits an `ok <index> - <name> # SKIP filtered` line, with the name
+   * escaped (see `tap_text()`), without a test case block, so that the
+   * suite keeps its place in the TAP plan of the session. The line is
+   * written to the output file when one is open. Unless verbosity is
+   * silent, it is also written to `stdout`; under normal or verbose
+   * verbosity, it is preceded by a blank line when `add_empty_line_` is
+   * set. With quiet verbosity, it is written as the result lines of
+   * `end_suite()`, which the session plan counts.
    */
   void
   reporter_tap::skip_suite (const suite& suite)
@@ -383,8 +447,10 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
+    const std::string name = tap_text (suite.name (), true);
+
     write_file_ ("ok %zu - %s # SKIP filtered\n", suite.own_index (),
-                 suite.name ());
+                 name.c_str ());
 
     if (verbosity_ != verbosity::silent)
       {
@@ -394,7 +460,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
 
         write_console_ ("ok %zu - %s # SKIP filtered\n", suite.own_index (),
-                        suite.name ());
+                        name.c_str ());
 
         flush_streams ();
       }
@@ -404,10 +470,11 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Adds a `not ok <n> - <message>` line to the output buffer, indented
-   * as the test cases of the suite, where `<n>` is the current test point
-   * number of the suite, which follows the test cases already run, and is
-   * therefore counted in the plan of the suite. Since there is no source
+   * Adds a `not ok <n> - <message>` line, with the message escaped (see
+   * `tap_text()`), to the output buffer, indented as the test cases of the
+   * suite, where `<n>` is the current test point number of the suite,
+   * which follows the test cases already run, and is therefore counted in
+   * the plan of the suite. Since there is no source
    * location, no YAML diagnostics block follows. The line is displayed by
    * `end_suite()`, with the other buffered output of the failed suite.
    */
@@ -419,7 +486,7 @@ namespace micro_os_plus::micro_test_plus::detail
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     *this << indent (1) << "not ok " << suite.test_point_number () << " - "
-          << message << endl;
+          << tap_text (message, true) << endl;
 
     buffer_has_failures_ = true;
   }
@@ -437,8 +504,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * `runner::set_abort_handler()`, if any.
    *
    * A `"# Subtest: <name>"` comment line (indented according to nesting
-   * depth) is then written to the output file and, under normal or
-   * verbose verbosity, to `stdout` as well.
+   * depth), with the line breaks in the name replaced by spaces, is then
+   * written to the output file and, under normal or verbose verbosity, to
+   * `stdout` as well.
    */
   void
   reporter_tap::begin_test_case (const test_case& test_case)
@@ -465,7 +533,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
-    write_file_ ("%s# Subtest: %s\n", indent.c_str (), test_case.name ());
+    const std::string name = tap_text (test_case.name (), false);
+
+    write_file_ ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
@@ -474,8 +544,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        write_console_ ("%s# Subtest: %s\n", indent.c_str (),
-                        test_case.name ());
+        write_console_ ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
 
         flush_streams ();
 
@@ -487,15 +556,15 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Emits the TAP plan line for the test case's checks and nested test cases,
    * followed by an `ok`/`not ok` result line that includes the test case
-   * index, name, pass/fail status, and check counts. As in node-tap, the
-   * result is `not ok` when a check or a nested test case failed; the number
-   * of failed nested test cases is added when it is not zero. Any output
-   * accumulated in `buffer_` is written to the output file and, with
-   * normal or verbose verbosity, when verbosity is verbose or the test case
-   * failed, to `stdout` as well. With normal verbosity, for a passing
-   * test case, the plan written to `stdout` counts only the nested test cases,
-   * since the individual check lines are not displayed. The buffer is
-   * cleared on exit.
+   * index, escaped name, pass/fail status, and check counts. As in
+   * node-tap, the result is `not ok` when a check or a nested test case
+   * failed; the number of failed nested test cases is added when it is
+   * not zero. Any output accumulated in `buffer_` is written to the
+   * output file and, with normal or verbose verbosity, when verbosity is
+   * verbose or the test case failed, to `stdout` as well. With normal
+   * verbosity, for a passing test case, the plan written to `stdout`
+   * counts only the nested test cases, since the individual check lines
+   * are not displayed. The buffer is cleared on exit.
    */
   void
   reporter_tap::end_test_case (const test_case& test_case)
@@ -554,11 +623,13 @@ namespace micro_os_plus::micro_test_plus::detail
                   test_case.totals ().failed_checks (), message_test_cases);
       }
 
+    const std::string name = tap_text (test_case.name (), true);
+
     write_buffer_to_file_ ();
 
     write_file_ ("%s1..%zu\n%s%s %zu - %s %s\n", indent2.c_str (), plan_count,
                  indent.c_str (), result, test_case.own_index (),
-                 test_case.name (), message_totals);
+                 name.c_str (), message_totals);
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
@@ -604,8 +675,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
 
         write_console_ ("%s%s %zu - %s %s\n", indent.c_str (), result,
-                        test_case.own_index (), test_case.name (),
-                        message_totals);
+                        test_case.own_index (), name.c_str (), message_totals);
 
         flush_streams ();
       }
@@ -636,6 +706,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * test case, indented one level deeper than the test case, followed by the
    * message, if provided. No colours are used.
    *
+   * The position where the description begins is kept in
+   * `description_begin_`, since, when there is no message, the caller
+   * appends the expression after this method returns.
+   *
    * The prefix/suffix methods help shorten the code
    * generated by the template methods.
    */
@@ -646,6 +720,7 @@ namespace micro_os_plus::micro_test_plus::detail
     size_t level = test_case.nesting_depth ();
     *this << indent (level + 1) << "ok " << test_case.test_point_number ()
           << " - ";
+    description_begin_ = buffer_.size ();
     if (!message.empty ())
       {
         *this << message;
@@ -654,8 +729,12 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Completes the pass output by appending `endl`, which adds a line
-   * ending to the buffer, and flushes the output streams.
+   * The description, either the message or the expression, which follows
+   * `description_begin_` in the buffer, is replaced by its escaped form
+   * (see `tap_text()`), so that a `#` does not start a directive and a
+   * line break does not end the test point line. The pass output is then
+   * completed by appending `endl`, which adds a line ending to the
+   * buffer, and the output streams are flushed.
    *
    * The prefix/suffix methods help shorten the code
    * generated by the template methods.
@@ -664,6 +743,10 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter_tap::output_pass_suffix_ (
       [[maybe_unused]] const test_case& test_case)
   {
+    const std::string description = tap_text (
+        std::string_view{ buffer_ }.substr (description_begin_), true);
+    buffer_.replace (description_begin_, std::string::npos, description);
+
     *this << endl;
 
     flush_streams ();
@@ -673,7 +756,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * This method outputs the prefix for a failing check result, as a TAP
    * `"not ok <n>"` line, indented one level deeper than the test case,
-   * followed by the message, if provided. It then opens the TAP 14 YAML
+   * followed by the message, if provided, escaped (see `tap_text()`), so
+   * that a `#` does not start a directive and a line break does not end
+   * the test point line. It then opens the TAP 14 YAML
    * diagnostics block (`---`) and, when the failure has an expression,
    * starts a `condition:` field, so that the expression follows on the
    * same line. No colours are used.
@@ -689,7 +774,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (!message.empty ())
       {
-        *this << " - " << message;
+        *this << " - " << tap_text (message, true);
       }
     *this << endl;
 
@@ -742,10 +827,11 @@ namespace micro_os_plus::micro_test_plus::detail
    * execution order; for a top-level test case, the output buffer must be
    * empty, otherwise execution is aborted.
    *
-   * An `ok <index> - <name> # SKIP filtered` line, indented according to
-   * the nesting depth, without a test case block, is then written to the
-   * output file and, under normal or verbose verbosity, to `stdout`,
-   * preceded by a blank line when `add_empty_line_` is set.
+   * An `ok <index> - <name> # SKIP filtered` line, with the name escaped,
+   * indented according to the nesting depth, without a test case block,
+   * is then written to the output file and, under normal or verbose
+   * verbosity, to `stdout`, preceded by a blank line when
+   * `add_empty_line_` is set.
    */
   void
   reporter_tap::skip_test_case (const test_case& test_case)
@@ -772,8 +858,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
+    const std::string name = tap_text (test_case.name (), true);
+
     write_file_ ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
-                 test_case.own_index (), test_case.name ());
+                 test_case.own_index (), name.c_str ());
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
@@ -783,7 +871,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
 
         write_console_ ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
-                        test_case.own_index (), test_case.name ());
+                        test_case.own_index (), name.c_str ());
 
         flush_streams ();
       }
@@ -796,9 +884,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * Since `end_test_case()` is not called for the stopped test case, this
    * method writes the buffered lines, which end with the failed
    * requirement, in its place, followed by an unindented
-   * `Bail out! Requirement failed at <file>:<line>` line, which tells the
-   * TAP consumers that the run stopped early (see the TAP 14
-   * specification), not that the output was truncated.
+   * `Bail out! Requirement failed at <file>:<line>` line, with the file
+   * name escaped as the reason, which tells the TAP consumers that the
+   * run stopped early (see the TAP 14 specification), not that the output
+   * was truncated.
    *
    * Both are always written to the output file, as in `end_test_case()`,
    * and, unless the verbosity is silent, to `stdout`, preceded by an empty
@@ -818,11 +907,14 @@ namespace micro_os_plus::micro_test_plus::detail
     // `std::source_location`); widen it implicitly, without a cast that
     // would be useless on some platforms.
     const unsigned long line = location.line ();
-    const char* file_name = utility::extract_file_name (location.file_name ());
+    // The reason is escaped, as the descriptions.
+    const std::string file_name
+        = tap_text (utility::extract_file_name (location.file_name ()), true);
 
     write_buffer_to_file_ ();
 
-    write_file_ ("Bail out! Requirement failed at %s:%lu\n", file_name, line);
+    write_file_ ("Bail out! Requirement failed at %s:%lu\n",
+                 file_name.c_str (), line);
 
     if (verbosity_ != verbosity::silent)
       {
@@ -833,8 +925,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
         write_buffer_to_console ();
 
-        write_console_ ("Bail out! Requirement failed at %s:%lu\n", file_name,
-                        line);
+        write_console_ ("Bail out! Requirement failed at %s:%lu\n",
+                        file_name.c_str (), line);
       }
 
     flush_streams ();

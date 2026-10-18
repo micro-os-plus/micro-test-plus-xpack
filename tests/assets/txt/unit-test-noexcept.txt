@@ -876,6 +876,14 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ different const objects
         ✓ same const object
     ✓ Pointers to const - passed (2 checks)
+    • TAP escapes # TODO in names \ messages
+        ✓ message with # hash and \ backslash
+        ✓ a # b == a # b
+        ✓ first line
+second line
+        ✗ failed # TODO not a directive
+next line FAILED (miscellaneous.cpp:712)
+    ✗ TAP escapes # TODO in names \ messages - FAILED (3 checks passed, 1 failed)
     • Runner options
         ✓ default verbosity before initialise()
         ✓ given name
@@ -942,7 +950,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ no initial handler
         ✓ previous handler returned
     ✓ Abort handler - passed (2 checks)
-✗ Miscellaneous suite - FAILED (101 checks passed, 13 failed, in 21 test cases)
+✗ Miscellaneous suite - FAILED (104 checks passed, 14 failed, in 22 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1050,4 +1058,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 508 checks passed, 337 failed, in 90 test cases, 12 test suites
+✗ Total: 511 checks passed, 338 failed, in 91 test cases, 12 test suites

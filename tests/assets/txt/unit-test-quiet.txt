@@ -85,6 +85,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Formatter number suffixes
     • Formatter characters
     • Pointers to const
+    • TAP escapes # TODO in names \ messages
     • Runner options
     • Runner option errors
     • Runner filter
@@ -106,4 +107,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 520 checks passed, 349 failed, in 105 test cases, 14 test suites, time: 10.804 ms
+✗ Total: 523 checks passed, 350 failed, in 106 test cases, 14 test suites, time: 10.988 ms

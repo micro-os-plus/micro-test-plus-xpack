@@ -30,6 +30,17 @@ The plan was previously `1..0`, which the TAP consumers (for example
 node-tap) read as a run with all tests skipped, so as successful, even
 when tests failed.
 
+In the `ok`/`not ok` lines of the TAP output, the `#` and `\`
+characters of the names, the messages, and the expressions are now
+escaped (`\#` and `\\`), as the TAP 14 specification recommends, and
+the line breaks are replaced by spaces. Previously, a `#` in a name
+could start a directive, so a failed test case named
+`parser # TODO rework` was read by the TAP consumers as a `TODO`, and
+not counted as failed, and a line break in a message broke the line.
+The consumers remove the escapes, so the names they report are
+unchanged; tools that read the TAP lines as plain text now see the
+escapes.
+
 The relational comparisons (`<`, `<=`, `>`, `>=`, `lt()`, `le()`, `gt()`,
 `ge()`) now apply the tolerance of the floating-point literals and
 wrappers, as `==` and `!=` already did: values within the tolerance are
