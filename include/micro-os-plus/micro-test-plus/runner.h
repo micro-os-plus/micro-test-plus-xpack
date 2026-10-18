@@ -651,12 +651,14 @@ namespace micro_os_plus::micro_test_plus
     micro_test_plus::verbosity verbosity_ = verbosity::normal;
 
     /**
-     * @brief The patterns that select the suites to run.
+     * @brief The patterns that select the suites and the test cases to
+     * run, one per nesting level.
      *
      * @details
      * Copied by `initialise()` from `runner_options::filter_patterns`,
      * including the characters, so the caller's strings need not outlive
-     * the call. Empty when all the suites must run.
+     * the call, and read by `is_selected_()`. Empty when everything must
+     * run.
      */
     std::vector<std::string> filter_patterns_;
 
