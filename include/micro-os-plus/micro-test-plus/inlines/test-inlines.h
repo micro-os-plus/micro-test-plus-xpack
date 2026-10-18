@@ -169,27 +169,6 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns the one-based positional index of this object within its parent.
-     */
-    inline size_t
-    runnable_base::own_index (void) const noexcept
-    {
-      return own_index_;
-    }
-
-    /**
-     * @details
-     * Returns the number of the most recent child test point (check or
-     * nested test case).
-     */
-    inline size_t
-    runnable_base::test_point_number (void) const noexcept
-    {
-      return test_point_number_;
-    }
-
-    /**
-     * @details
      * Each call to `test()` invokes this method before constructing the new
      * `test_case`, and each check invokes it from the check result
      * destructor, when the check is reported, so the numbers form a
@@ -200,17 +179,6 @@ namespace micro_os_plus::micro_test_plus
     runnable_base::next_test_point_number_ (void) noexcept
     {
       return ++test_point_number_;
-    }
-
-    /**
-     * @details
-     * Returns the number of child test cases created by this node,
-     * counted by `after_test_case_create_()`.
-     */
-    inline size_t
-    runnable_base::child_test_cases_count (void) const noexcept
-    {
-      return child_test_cases_count_;
     }
 
     /**
@@ -339,7 +307,7 @@ namespace micro_os_plus::micro_test_plus
    * `detail::check_kind::requirement`. The check result evaluates the
    * condition when constructed, records a pass or fail when it is
    * destroyed, and, if the condition is false, stops the test case by
-   * throwing `detail::failed_requirement` (caught by `test_case::run()`),
+   * throwing `detail::failed_requirement` (caught by `test_case::run_()`),
    * or, without exceptions, aborts the test execution.
    */
   template <class Expr_T>
@@ -479,21 +447,6 @@ namespace micro_os_plus::micro_test_plus
                                std::forward<Args_T> (arguments)... };
 
     after_test_case_create_ (child_test_case, *this);
-  }
-
-  // ==========================================================================
-
-  /**
-   * @details
-   * Stores the pointer; the string is not copied.
-   *
-   * Used internally by the runner to set the name of the top suite after
-   * initialisation.
-   */
-  inline void
-  top_suite::name (const char* new_name) noexcept
-  {
-    name_ = new_name;
   }
 
   // ==========================================================================

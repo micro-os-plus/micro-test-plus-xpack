@@ -410,8 +410,7 @@ namespace micro_os_plus::micro_test_plus::detail
         "%s '%s' +%zu -%zu in xc%zu, xs%zu | cs%zu\n", __PRETTY_FUNCTION__,
         suite.name (), suite.totals ().successful_checks (),
         suite.totals ().failed_checks (), suite.totals ().executed_checks (),
-        suite.totals ().executed_test_cases (),
-        suite.child_test_cases_count ());
+        suite.totals ().executed_test_cases (), suite.child_test_cases_count_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     std::string indent (indent_size_, ' ');
@@ -463,7 +462,7 @@ namespace micro_os_plus::micro_test_plus::detail
     // The plan counts the test cases and the failure of the suite body,
     // if any, which is numbered after them.
     write_file_ ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
-                 suite.test_point_number (), result, suite.own_index (),
+                 suite.test_point_number_, result, suite.own_index_,
                  name.c_str (), message_totals, message_time);
 
     // At this point, the buffer may contain output from the test case, which
@@ -496,7 +495,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
 
         write_console_ ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
-                        suite.test_point_number (), result, suite.own_index (),
+                        suite.test_point_number_, result, suite.own_index_,
                         name.c_str (), message_totals, message_time);
 
         flush_streams ();
@@ -504,7 +503,7 @@ namespace micro_os_plus::micro_test_plus::detail
     else if (verbosity_ == verbosity::quiet)
       {
         // Only the test point of the suite, counted by the session plan.
-        write_console_ ("%s %zu - %s %s%s }\n", result, suite.own_index (),
+        write_console_ ("%s %zu - %s %s%s }\n", result, suite.own_index_,
                         name.c_str (), message_totals, message_time);
 
         flush_streams ();
@@ -535,7 +534,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (suite.name (), true);
 
-    write_file_ ("ok %zu - %s # SKIP filtered\n", suite.own_index (),
+    write_file_ ("ok %zu - %s # SKIP filtered\n", suite.own_index_,
                  name.c_str ());
 
     if (verbosity_ != verbosity::silent)
@@ -545,7 +544,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console_ ("\n");
           }
 
-        write_console_ ("ok %zu - %s # SKIP filtered\n", suite.own_index (),
+        write_console_ ("ok %zu - %s # SKIP filtered\n", suite.own_index_,
                         name.c_str ());
 
         flush_streams ();
@@ -571,7 +570,7 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    *this << indent (1) << "not ok " << suite.test_point_number () << " - "
+    *this << indent (1) << "not ok " << suite.test_point_number_ << " - "
           << tap_text (message, true) << endl;
 
     buffer_has_failures_ = true;
@@ -613,7 +612,7 @@ namespace micro_os_plus::micro_test_plus::detail
             // Each top-level test case should start with an empty buffer.
             write_buffer_to_console ();
             flush_streams ();
-            test_case.abort ();
+            test_case.abort_ ();
           }
       }
 
@@ -663,7 +662,7 @@ namespace micro_os_plus::micro_test_plus::detail
                    test_case.totals ().failed_checks (),
                    test_case.totals ().executed_checks (),
                    test_case.totals ().executed_test_cases (),
-                   test_case.child_test_cases_count ());
+                   test_case.child_test_cases_count_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
@@ -714,8 +713,8 @@ namespace micro_os_plus::micro_test_plus::detail
     write_buffer_to_file_ ();
 
     write_file_ ("%s1..%zu\n%s%s %zu - %s %s\n", indent2.c_str (), plan_count,
-                 indent.c_str (), result, test_case.own_index (),
-                 name.c_str (), message_totals);
+                 indent.c_str (), result, test_case.own_index_, name.c_str (),
+                 message_totals);
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
@@ -761,7 +760,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
 
         write_console_ ("%s%s %zu - %s %s\n", indent.c_str (), result,
-                        test_case.own_index (), name.c_str (), message_totals);
+                        test_case.own_index_, name.c_str (), message_totals);
 
         flush_streams ();
       }
@@ -804,7 +803,7 @@ namespace micro_os_plus::micro_test_plus::detail
                                      const test_case& test_case)
   {
     size_t level = test_case.nesting_depth ();
-    *this << indent (level + 1) << "ok " << test_case.test_point_number ()
+    *this << indent (level + 1) << "ok " << test_case.test_point_number_
           << " - ";
     description_begin_ = buffer_.size ();
     if (!message.empty ())
@@ -859,7 +858,7 @@ namespace micro_os_plus::micro_test_plus::detail
       const test_case& test_case)
   {
     size_t level = test_case.nesting_depth ();
-    *this << indent (level + 1) << "not ok " << test_case.test_point_number ();
+    *this << indent (level + 1) << "not ok " << test_case.test_point_number_;
 
     if (!message.empty ())
       {
@@ -971,7 +970,7 @@ namespace micro_os_plus::micro_test_plus::detail
             // Each top-level test case should start with an empty buffer.
             write_buffer_to_console ();
             flush_streams ();
-            test_case.abort ();
+            test_case.abort_ ();
           }
       }
 
@@ -980,7 +979,7 @@ namespace micro_os_plus::micro_test_plus::detail
     const std::string name = tap_text (test_case.name (), true);
 
     write_file_ ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
-                 test_case.own_index (), name.c_str ());
+                 test_case.own_index_, name.c_str ());
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
@@ -990,7 +989,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
 
         write_console_ ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
-                        test_case.own_index (), name.c_str ());
+                        test_case.own_index_, name.c_str ());
 
         flush_streams ();
       }

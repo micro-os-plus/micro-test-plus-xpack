@@ -1384,7 +1384,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (eq (live_instances, 0)) << "test cases destroyed";
         local_counts.successful_checks++;
 
-        t.expect (eq (local_ts.child_test_cases_count (), 2U))
+        t.expect (eq (local_ts.totals ().executed_test_cases (), 2U))
             << "test cases counted";
         local_counts.successful_checks++;
 

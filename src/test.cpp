@@ -23,7 +23,7 @@
  * @details
  * This source file contains the non-template implementations for the test
  * hierarchy of the µTest++ framework: the constructors and destructors, the
- * `run()` methods of the test cases and suites, which call the reporter
+ * `run_()` methods of the test cases and suites, which call the reporter
  * before and after invoking the stored callable, and the registration of
  * the child test cases, including the accumulation of their totals.
  *
@@ -136,7 +136,7 @@ namespace micro_os_plus::micro_test_plus
      * before the process is terminated via `::abort()`.
      */
     [[noreturn]] void
-    runnable_base::abort (const reflection::source_location& sl) const
+    runnable_base::abort_ (const reflection::source_location& sl) const
     {
       runner_.abort (sl);
     }
@@ -144,7 +144,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Counts @p test_case, which is a local object of the calling
-     * `test()`, and immediately invokes `test_case::run()` on it. The test
+     * `test()`, and immediately invokes `test_case::run_()` on it. The test
      * case is not kept; only `child_test_cases_count_` is needed later,
      * for the TAP plan.
      *
@@ -186,7 +186,7 @@ namespace micro_os_plus::micro_test_plus
 
       // Run the child test case immediately, as the innermost running test
       // case of the runner. The outer one is restored by the guard, also
-      // when an exception leaves run() (for example thrown by an abort
+      // when an exception leaves run_() (for example thrown by an abort
       // handler), so that the runner never keeps a destroyed test case.
       {
         struct running_guard
@@ -201,7 +201,7 @@ namespace micro_os_plus::micro_test_plus
         } guard{ runner_.running_test_case_, runner_.running_test_case_ };
 
         runner_.running_test_case_ = &test_case;
-        test_case.run ();
+        test_case.run_ ();
       }
 
       // This test executed one more test case.
@@ -263,7 +263,7 @@ namespace micro_os_plus::micro_test_plus
    * and counted.
    */
   void
-  test_case::run (void)
+  test_case::run_ (void)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
@@ -374,7 +374,7 @@ namespace micro_os_plus::micro_test_plus
    * terminated before it reaches this function.
    */
   void
-  suite::run (void)
+  suite::run_ (void)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);

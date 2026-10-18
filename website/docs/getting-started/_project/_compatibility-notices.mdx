@@ -162,9 +162,18 @@ cases can no longer be modified by the user code: `totals()` now
 returns only a `const` reference, so a reference that stores its result
 must be `const`, and the `own_index (size_t)` setter and
 `increment_subtest_index()` are no longer public. The read-only
-functions (`totals()`, `own_index()`, `test_point_number()`, and
-`child_test_cases_count()`, see below for their new names) are still
-available.
+`totals()` is still available.
+
+The functions of the suites and the test cases that serve only the
+runner and the reporters are no longer public: `run()`, which ran the
+node again and reported it twice, `abort()`, and the read-only
+`own_index()`, `children_subtests_count()`, and
+`current_subtest_index()`, used only for the TAP output. The
+`name (const char*)` setter of the top suite, which could not be
+reached, since `initialise()` returns a `suite&`, was removed. Call
+`runner::abort()` to abort the test execution, and `totals()` to read
+the counters of a node; the name of a node is still returned by
+`name()`.
 
 The constructors of `test_case`, `suite`, and `top_suite` are no longer
 public, since a suite or a test case constructed directly was neither
@@ -295,13 +304,8 @@ renamed accordingly; the old names are not kept. Replace `mt::subtest`
 with `mt::test_case`; the lambdas with an `auto&` parameter need no
 change. In `counters`, `executed_subtests()` is now
 `executed_test_cases()`, next to the new `failed_test_cases()` and
-`skipped_test_cases()`; in the suites and the test cases,
-`children_subtests_count()` is now
-`child_test_cases_count()`, and `current_subtest_index()`, which
-returns the number of the most recent check or nested test case, as
-printed in the TAP output, is now `test_point_number()`. The output of
-the reporters is unchanged; the TAP reporter still introduces each test
-case with a `# Subtest:` line.
+`skipped_test_cases()`. The output of the reporters is unchanged; the
+TAP reporter still introduces each test case with a `# Subtest:` line.
 
 The logical functions `_and()`, `_or()`, and `_not()` are renamed
 `both()`, `either()`, and `negate()`, since a leading underscore is not

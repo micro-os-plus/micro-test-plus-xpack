@@ -462,7 +462,7 @@ namespace micro_os_plus::micro_test_plus::detail
             fwrite (buffer_.data (), 1, buffer_.size (), stderr);
             fputs ("\n", stderr);
             flush_streams ();
-            test_case.abort ();
+            test_case.abort_ ();
           }
       }
 
@@ -796,7 +796,7 @@ namespace micro_os_plus::micro_test_plus::detail
             fwrite (buffer_.data (), 1, buffer_.size (), stderr);
             fputs ("\n", stderr);
             flush_streams ();
-            test_case.abort ();
+            test_case.abort_ ();
           }
       }
 

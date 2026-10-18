@@ -446,7 +446,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the beginning of a test suite.
        *
        * @details
-       * Called by `suite::run()` before the suite body, for the suites
+       * Called by `suite::run_()` before the suite body, for the suites
        * registered with `runner::suite()` and for the static suites, and
        * by `runner::initialise()` for the top suite.
        *
@@ -462,7 +462,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the end of a test suite.
        *
        * @details
-       * Called by `suite::run()` after the suite body, also when an
+       * Called by `suite::run_()` after the suite body, also when an
        * exception escaped it, for the suites registered with
        * `runner::suite()` and for the static suites, and by
        * `runner::run()` for the top suite; implementations display the
@@ -499,7 +499,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Report a failure of a test suite outside its test cases.
        *
        * @details
-       * Called by `suite::run()` when an exception escapes the suite body,
+       * Called by `suite::run_()` when an exception escapes the suite body,
        * between `begin_suite()` and `end_suite()`; the suite has already
        * advanced to its next test point, which numbers the failure after
        * the test cases already run. Implementations add a failed line to
@@ -520,7 +520,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the beginning of a test case.
        *
        * @details
-       * Called by `test_case::run()` before the test case body; the output
+       * Called by `test_case::run_()` before the test case body; the output
        * buffer is expected to be empty at this point.
        *
        * @param test_case Reference to the test case.
@@ -535,7 +535,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the end of a test case.
        *
        * @details
-       * Called by `test_case::run()` after the test case body; implementations
+       * Called by `test_case::run_()` after the test case body; implementations
        * display the test case results and clear the output buffer.
        *
        * @param test_case Reference to the test case.

@@ -93,7 +93,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Thrown by the destructor of `check_result`, after the
      * failure was reported and counted, when exceptions are enabled, and
-     * caught by `test_case::run()`, which ends the test case normally; the
+     * caught by `test_case::run_()`, which ends the test case normally; the
      * run continues with the next test case.
      *
      * It is deliberately not derived from `std::exception`, so that a

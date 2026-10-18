@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * If the check is a `require()` and the test expression has failed,
      * the test case is stopped: when exceptions are enabled, by throwing
-     * `failed_requirement`, caught by `test_case::run()`, as the fatal
+     * `failed_requirement`, caught by `test_case::run_()`, as the fatal
      * assertions of most C++ test frameworks do; the run then continues
      * with the next test case. If the destructor runs during stack
      * unwinding (for a result kept in a variable), it does not throw,
@@ -164,7 +164,7 @@ namespace micro_os_plus::micro_test_plus
             }
 #else
           test_case_.reporter_ ().abort_test_case (info_.location, test_case_);
-          test_case_.abort (info_.location);
+          test_case_.abort_ (info_.location);
 #endif // defined(__cpp_exceptions)
         }
     }

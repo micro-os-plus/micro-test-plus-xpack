@@ -197,14 +197,15 @@ namespace micro_os_plus::micro_test_plus
      *
      * The concrete runnable classes (`suite`, `test_case`) derive from
      * `runnable_base`; each stores its body in a `std::function` that
-     * receives a reference to its own class, and implements `run()`, which
+     * receives a reference to its own class, and implements `run_()`, which
      * invokes the body between the reporter notifications.
      *
-     * The indices and the totals can be read by the user code and by the
-     * reporters, but they are modified only by the framework: the setters
-     * are protected, and the classes that update the nodes from outside
-     * (the runners, which number the suites, and the check result,
-     * which counts the checks) are friends.
+     * The user code can read only the name and the totals; the rest of
+     * the state, and the functions that run and abort the nodes, are the
+     * protocol between the nodes, the runner, the check result, and the
+     * reporters, which are friends. The runner numbers and runs the
+     * suites, the check result numbers and counts the checks, and the
+     * reporters read the indices and the test point numbers.
      *
      * The class is non-copyable and non-movable to preserve unique ownership
      * and consistent state throughout the test session.
@@ -219,6 +220,11 @@ namespace micro_os_plus::micro_test_plus
 
       // Number and count the checks of the test cases, and report them.
       friend class check_result;
+
+      // Display the indices and the test point numbers, and abort on
+      // an inconsistent report.
+      friend class reporter_human;
+      friend class reporter_tap;
 
     public:
       /**
@@ -303,45 +309,7 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] const counters&
       totals (void) const noexcept;
 
-      /**
-       * @brief Returns the positional index of this object within its parent.
-       *
-       * @par Parameters
-       *   None.
-       * @return The one-based own index.
-       */
-      [[nodiscard]] size_t
-      own_index (void) const noexcept;
-
-      /**
-       * @brief Returns the number of the most recent child test point
-       * (check or nested test case).
-       *
-       * @details
-       * The TAP reporter prints it in the `ok`/`not ok` lines.
-       *
-       * @par Parameters
-       *   None.
-       * @return The one-based test point number, or 0 before the first
-       * test point.
-       */
-      [[nodiscard]] size_t
-      test_point_number (void) const noexcept;
-
-      /**
-       * @brief Returns the number of direct child test cases of this node.
-       *
-       * @details
-       * The test cases skipped by the filter are included, since they keep
-       * their index; the TAP reporter prints this number in the plan.
-       *
-       * @par Parameters
-       *   None.
-       * @return The number of child test cases.
-       */
-      [[nodiscard]] size_t
-      child_test_cases_count (void) const noexcept;
-
+    private:
       /**
        * @brief Runs the body of the test case or suite.
        *
@@ -349,25 +317,36 @@ namespace micro_os_plus::micro_test_plus
        * Implemented by `test_case` and `suite`, which invoke the stored
        * callable surrounded by the reporter notifications.
        *
+       * Private, since the nodes are run only by the framework: the
+       * test cases by `after_test_case_create_()`, when they are created,
+       * and the suites by the runner, which is a friend; a second run
+       * would report the node twice.
+       *
        * @par Parameters
        *   None.
        * @par Returns
        *   Nothing.
        */
       virtual void
-      run (void)
+      run_ (void)
           = 0;
 
       /**
        * @brief Aborts test execution via the owning runner.
+       *
+       * @details
+       * Private, since it is used only by the check result, for a failed
+       * requirement without exceptions, and by the reporters, for an
+       * inconsistent report, which are friends; the user code calls
+       * `runner::abort()`.
        *
        * @param sl The source location from which the abort is triggered.
        * @par Returns
        *   Does not return.
        */
       [[noreturn]] void
-      abort (const reflection::source_location& sl
-             = reflection::source_location::current ()) const;
+      abort_ (const reflection::source_location& sl
+              = reflection::source_location::current ()) const;
 
     protected:
       /**
@@ -560,7 +539,7 @@ namespace micro_os_plus::micro_test_plus
    * `test_case` represents a single, named test case or a nested group of
    * checks within a parent `suite` or `test_case`. It is constructed by
    * calling `suite::test()` or `test_case::test()`, both of which create
-   * the object, immediately execute its callable body via `run()`, and
+   * the object, immediately execute its callable body via `run_()`, and
    * register the result with the parent node. The object is local to the
    * `test()` call, and is destroyed when it returns, together with the
    * stored body and its bound arguments.
@@ -583,6 +562,9 @@ namespace micro_os_plus::micro_test_plus
   {
     // Create the top-level test cases.
     friend class suite;
+
+    // Run the test cases after their creation.
+    friend class detail::runnable_base;
 
   private:
     /**
@@ -766,17 +748,6 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Executes the test case body by invoking the stored callable.
-     *
-     * @par Parameters
-     *   None.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    run (void) override;
-
-    /**
      * @brief Returns the nesting depth of this test case.
      *
      * @par Parameters
@@ -785,6 +756,22 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] size_t
     nesting_depth (void) const noexcept;
+
+  private:
+    /**
+     * @brief Executes the test case body by invoking the stored callable.
+     *
+     * @details
+     * Private, since the test case is run only once, by
+     * `after_test_case_create_()`, right after its creation.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    run_ (void) override;
 
   protected:
 #if defined(__cpp_exceptions)
@@ -811,7 +798,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Callable storing the test case body and any bound arguments.
      *
      * @details
-     * Invoked by `run()` with a reference to this test case.
+     * Invoked by `run_()` with a reference to this test case.
      */
     std::function<void (test_case&)> callable_;
 
@@ -975,10 +962,13 @@ namespace micro_os_plus::micro_test_plus
     test (const detail::test_name& name, Callable_T&& callable,
           Args_T&&... arguments);
 
-    // ------------------------------------------------------------------------
-
+  private:
     /**
      * @brief Executes the suite body by invoking the stored callable.
+     *
+     * @details
+     * Private, since the suites are run only once, by the runner, which
+     * is a friend.
      *
      * @par Parameters
      *   None.
@@ -986,7 +976,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    run (void) override;
+    run_ (void) override;
 
   protected:
 #if defined(__cpp_exceptions)
@@ -1014,7 +1004,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Callable storing the suite body and any bound arguments.
      *
      * @details
-     * Invoked by `run()` with a reference to this suite; a
+     * Invoked by `run_()` with a reference to this suite; a
      * `static_suite` also stores its body here, so all suite callables
      * receive a `suite&` reference.
      */
@@ -1025,7 +1015,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Measures the duration of the suite; started and stopped by
-     * `run()` (by the runner, for the top suite), and read by the
+     * `run_()` (by the runner, for the top suite), and read by the
      * reporters, which are friends.
      */
     detail::stopwatch stopwatch_;
@@ -1080,11 +1070,6 @@ namespace micro_os_plus::micro_test_plus
     top_suite (const char* name, runner& test_runner);
 
   public:
-    // Expose the accessor for the suite name from the base runnable_base
-    // class, which the setter below would otherwise hide, since the
-    // top_suite may need to change its name after construction.
-    using detail::runnable_base::name;
-
     /**
      * @brief Deleted copy constructor to prevent copying.
      *
@@ -1130,17 +1115,6 @@ namespace micro_os_plus::micro_test_plus
      * Destroys the owned test cases.
      */
     ~top_suite () override;
-
-    /**
-     * @brief Sets the name of the top-level suite.
-     *
-     * @param new_name The new name for the top-level suite; the string
-     * must outlive the suite.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    name (const char* new_name) noexcept;
   };
 
   // ==========================================================================
@@ -1168,7 +1142,7 @@ namespace micro_os_plus::micro_test_plus
    * itself from the list.
    *
    * The body is stored in the callable inherited from `suite`, and is run
-   * by `suite::run()`; the user callable receives a `suite&` reference,
+   * by `suite::run_()`; the user callable receives a `suite&` reference,
    * as for the suites registered with `runner::suite()`, so the same
    * function can serve both kinds of suites.
    *

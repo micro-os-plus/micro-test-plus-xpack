@@ -204,7 +204,7 @@ namespace micro_os_plus::micro_test_plus
         // If provided by this call, use it, possibly override the
         // deprecated constructor.
         top_suite_name_ = top_suite_name;
-        top_suite_.name (top_suite_name_.c_str ());
+        top_suite_.name_ = top_suite_name_.c_str ();
       }
     else if (strlen (top_suite_.name ()) == 0)
       {
@@ -228,7 +228,7 @@ namespace micro_os_plus::micro_test_plus
           {
             top_suite_name_ = "default suite";
           }
-        top_suite_.name (top_suite_name_.c_str ());
+        top_suite_.name_ = top_suite_name_.c_str ();
       }
 
     verbosity_ = options.verbosity_level;
@@ -485,7 +485,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * Each suite is assigned a 1-based index, following the top suite, in
    * the order of execution. If the first filter pattern selects it, it is
-   * executed via `suite::run()`, and its totals are accumulated into the
+   * executed via `suite::run_()`, and its totals are accumulated into the
    * runner totals; otherwise, it is reported as skipped and counted in
    * `skipped_suites_count_`, keeping its index, so that the TAP plan
    * remains complete. The executed test cases counter is not incremented;
@@ -552,7 +552,7 @@ namespace micro_os_plus::micro_test_plus
             continue;
           }
 
-        suite_ptr->run ();
+        suite_ptr->run_ ();
 
         // Accumulate the totals from the child suite into the runner
         // totals.
