@@ -58,6 +58,8 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Failed require in nested test case
         • nested test case
     • Failed require during unwinding
+    • Exception in a suite body
+    • Test case before the exception
     • Combinatorial floats
     • Combinatorial doubles
     • Combinatorial integrals with signed long long
@@ -98,4 +100,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 481 checks passed, 341 failed, in 97 test cases, 13 test suites, time: 3.209 ms
+✗ Total: 485 checks passed, 342 failed, in 99 test cases, 14 test suites, time: 10.299 ms

@@ -1010,8 +1010,22 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
           ...
         1..2
     not ok 11 - Failed require during unwinding # { FAILED, 0 checks passed, 2 failed }
-    1..11
-not ok 7 - Exceptions suite # { FAILED, 7 checks passed, 11 failed, in 13 test cases, time: 1.184 ms }
+    # Subtest: Exception in a suite body
+        ok 1 - session failed
+        ok 2 - later suite run
+        ok 3 - exception counted as a failed check
+        1..3
+    ok 12 - Exception in a suite body # { passed, 3 checks }
+    1..12
+not ok 7 - Exceptions suite # { FAILED, 10 checks passed, 11 failed, in 14 test cases, time: 1.389 ms }
+# Subtest: Exceptions suite body
+    # Subtest: Test case before the exception
+        ok 1 - check before the exception
+        1..1
+    ok 1 - Test case before the exception # { passed, 1 check }
+    not ok 2 - unexpected exception in the suite body: boom
+    1..2
+not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test case, time: 0.090 ms }
 # Subtest: Failed combinatorial floats suite
     # Subtest: Combinatorial floats
         not ok 1 - 42.0 == 42 signed long long
@@ -1314,7 +1328,7 @@ not ok 7 - Exceptions suite # { FAILED, 7 checks passed, 11 failed, in 13 test c
         1..21
     not ok 2 - Combinatorial doubles # { FAILED, 0 checks passed, 21 failed }
     1..2
-not ok 8 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.406 ms }
+not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.451 ms }
 # Subtest: Failed combinatorial integrals suite
     # Subtest: Combinatorial integrals with signed long long
         not ok 1 - ne matches signed long long
@@ -2747,7 +2761,7 @@ not ok 8 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 fai
         1..20
     not ok 10 - Combinatorial integrals with unsigned char # { FAILED, 0 checks passed, 20 failed }
     1..10
-not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 1.970 ms }
+not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 2.034 ms }
 # Subtest: Miscellaneous suite
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
@@ -2984,7 +2998,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         1..3
     ok 18 - Abort handler # { passed, 3 checks }
     1..18
-not ok 10 - Miscellaneous suite # { FAILED, 89 checks passed, 13 failed, in 18 test cases, time: 0.711 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 89 checks passed, 13 failed, in 18 test cases, time: 2.586 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3083,7 +3097,7 @@ not ok 10 - Miscellaneous suite # { FAILED, 89 checks passed, 13 failed, in 18 t
         1..4
     not ok 2 - String view operators # { FAILED, 2 checks passed, 2 failed }
     1..2
-not ok 11 - Operators suite # { FAILED, 14 checks passed, 11 failed, in 2 test cases, time: 0.332 ms }
+not ok 12 - Operators suite # { FAILED, 14 checks passed, 11 failed, in 2 test cases, time: 0.277 ms }
 # Subtest: Stopwatch suite
     # Subtest: stopwatch::start() and stop()
         ok 1 - fresh: has_elapsed false
@@ -3119,7 +3133,7 @@ not ok 11 - Operators suite # { FAILED, 14 checks passed, 11 failed, in 2 test c
         1..7
     ok 5 - stopwatch::elapsed() # { passed, 7 checks }
     1..5
-ok 12 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.330 ms }
+ok 13 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.279 ms }
 # Subtest: Utility suite
     # Subtest: utility::extract_file_name()
         ok 1 - Unix path returns filename
@@ -3182,6 +3196,6 @@ ok 12 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.330 ms }
         1..5
     not ok 3 - utility::is_match() — failing # { FAILED, 0 checks passed, 5 failed }
     1..3
-not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.261 ms }
-1..13
-# { total: 481 checks passed, 341 failed, in 97 test cases, 13 test suites, time: 4.661 ms }
+not ok 14 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.255 ms }
+1..14
+# { total: 485 checks passed, 342 failed, in 99 test cases, 14 test suites, time: 12.722 ms }

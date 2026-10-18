@@ -972,6 +972,27 @@ namespace micro_os_plus::micro_test_plus
     run (void) override;
 
   protected:
+#if defined(__cpp_exceptions)
+    /**
+     * @brief Reports an exception that escaped the suite body as a failed
+     * check of the suite.
+     *
+     * @details
+     * The suite body may throw outside its test cases, for example in a
+     * set-up step; the test cases catch their own exceptions. The failure
+     * is reported without a source location, since the suites do not
+     * record one, and the location of the `throw` is not known.
+     *
+     * @param what The explanatory string of a `std::exception`, or
+     * `nullptr` for an exception of another type.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    fail_unexpected_exception_ (const char* what);
+#endif // defined(__cpp_exceptions)
+
+  protected:
     /**
      * @brief Callable storing the suite body and any bound arguments.
      *

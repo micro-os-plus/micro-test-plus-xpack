@@ -493,6 +493,27 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
+       * @brief Report a failure of a test suite outside its test cases.
+       *
+       * @details
+       * Called by `suite::run()` when an exception escapes the suite body,
+       * between `begin_suite()` and `end_suite()`; the suite has already
+       * advanced to its next test point, which numbers the failure after
+       * the test cases already run. Implementations add a failed line to
+       * the output buffer, at the indentation of the test cases, which
+       * `end_suite()` displays; there is no source location to show.
+       *
+       * @param message The message to display.
+       * @param suite Reference to the test suite.
+       * @par Returns
+       *   Nothing.
+       * @since 5.1.0
+       */
+      virtual void
+      fail_suite (const std::string& message, const suite& suite)
+          = 0;
+
+      /**
        * @brief Mark the beginning of a test case.
        *
        * @details

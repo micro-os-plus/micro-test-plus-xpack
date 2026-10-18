@@ -391,8 +391,25 @@ case; the message includes the result of `what()` for a
     ✗ Parse configuration - FAILED (1 check passed, 1 failed)
 ```
 
-An exception that escapes the body of a test suite, outside its test
-cases, is not caught, and ends the run.
+Similarly, an exception that escapes the body of a test suite, outside
+its test cases (for example from a set-up step), is reported as a
+failed check of that suite, after the test cases already run; the
+rest of the suite body is skipped, and the run continues with the next
+suite. Since the suites do not record a source location, none is
+shown:
+
+```console
+• Configuration suite
+
+    ✓ Parse configuration - passed (1 check)
+
+    ✗ unexpected exception in the suite body: no such file FAILED
+✗ Configuration suite - FAILED (1 check passed, 1 failed, in 1 test case)
+```
+
+For the exception to reach the framework, the body, of a test case or
+of a test suite, must not be declared `noexcept`; otherwise the
+exception calls `std::terminate()`, and ends the program.
 
 Refer to the [Test Cases](/docs/api/groups/micro-os-plus-micro-test-plus-test-case/) reference page.
 

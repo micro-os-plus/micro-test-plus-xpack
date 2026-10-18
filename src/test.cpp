@@ -333,6 +333,15 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Invokes the stored callable with this suite, surrounded by
    * reporter calls to begin and end the suite.
+   *
+   * When exceptions are enabled, an exception that escapes the callable,
+   * which can be thrown only outside the test cases, since they catch
+   * their own exceptions, is caught and reported as a failed check of
+   * this suite, and the suite ends normally, so that the run continues
+   * with the next suite; the test cases run before the exception remain
+   * reported, and the following ones are not run. A body declared
+   * `noexcept` cannot pass the exception on; the program is then
+   * terminated before it reaches this function.
    */
   void
   suite::run (void)
@@ -346,13 +355,65 @@ namespace micro_os_plus::micro_test_plus
     this->stopwatch_.start ();
     reporter.begin_suite (*this);
 
+#if defined(__cpp_exceptions)
+    try
+      {
+        // Invoke the callable, passing the self reference followed by the
+        // variadic arguments.
+        callable_ (*this);
+      }
+    catch (const std::exception& e)
+      {
+        fail_unexpected_exception_ (e.what ());
+      }
+    catch (...)
+      {
+        fail_unexpected_exception_ (nullptr);
+      }
+#else
     // Invoke the callable, passing the self reference followed by the variadic
     // arguments.
     callable_ (*this);
+#endif // defined(__cpp_exceptions)
 
     this->stopwatch_.stop ();
     reporter.end_suite (*this);
   }
+
+#if defined(__cpp_exceptions)
+  /**
+   * @details
+   * The failure is reported as a check of the suite: the test point
+   * number is incremented first, so that the TAP output numbers it after
+   * the test cases already run, and counts it in the plan of the suite,
+   * and the failed checks counter is incremented, so that the suite, and
+   * through it the session, fail.
+   *
+   * The message is `unexpected exception in the suite body: ` followed
+   * by @p what, or `unexpected exception of unknown type in the suite
+   * body` when @p what is `nullptr`; as for the test cases, the type of
+   * a `std::exception` is not shown.
+   */
+  void
+  suite::fail_unexpected_exception_ (const char* what)
+  {
+    next_test_point_number_ ();
+
+    std::string message{ "unexpected exception" };
+    if (what != nullptr)
+      {
+        message.append (" in the suite body: ");
+        message.append (what);
+      }
+    else
+      {
+        message.append (" of unknown type in the suite body");
+      }
+
+    reporter_ ().fail_suite (message, *this);
+    totals_.increment_failed_checks ();
+  }
+#endif // defined(__cpp_exceptions)
 
   // ==========================================================================
 

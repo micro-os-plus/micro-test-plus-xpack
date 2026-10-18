@@ -401,6 +401,29 @@ namespace micro_os_plus::micro_test_plus::detail
       }
   }
 
+  /**
+   * @details
+   * Adds a `"✗ <message> FAILED"` line to the output buffer, indented as
+   * the test cases of the suite, with the same colours as the failed
+   * checks; since there is no source location, no parenthesised location
+   * follows. The line is displayed by `end_suite()`, with the other
+   * buffered output of the failed suite.
+   */
+  void
+  reporter_human::fail_suite (const std::string& message,
+                              [[maybe_unused]] const suite& suite)
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    *this << indent (1) << colours_.fail << "✗" << colours_.none << " "
+          << message.c_str () << " " << colours_.fail << "FAILED"
+          << colours_.none << endl;
+
+    buffer_has_failures_ = true;
+  }
+
   // --------------------------------------------------------------------------
 
   /**

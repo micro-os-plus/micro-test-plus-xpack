@@ -189,6 +189,11 @@ namespace
     }
 
     void
+    fail_suite (const std::string&, const suite&) override
+    {
+    }
+
+    void
     begin_test_case (const test_case&) override
     {
     }

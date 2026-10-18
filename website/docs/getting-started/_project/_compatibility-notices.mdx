@@ -62,6 +62,13 @@ from a string literal or a `const char*`; an argument that converts to
 converted explicitly. As for `expect()`, GCC with `-Waggregate-return`
 now warns at the `test()` calls too.
 
+Likewise, an exception that escapes the body of a test suite, outside
+its test cases, is now reported as a failed check of that suite,
+without a source location, and the run continues with the next suite;
+it previously ended the program, without the final totals. As for the
+test cases, the suite body must not be `noexcept` for the exception to
+be caught.
+
 The counters and the indices of the runner, the suites, and the test
 cases can no longer be modified by the user code: `totals()` now
 returns only a `const` reference, so a reference that stores its result

@@ -307,6 +307,46 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       local_counts.failed_checks++; // the exception
       local_counts.executed_test_cases++;
 
+      // An exception that escapes a suite body, outside its test cases, is
+      // reported as a failed check of the suite, and the following suites
+      // still run (API-REVIEW.md #5).
+      ts.test ("Exception in a suite body", [] (auto& t)
+        {
+          runner_options options{};
+          options.selected_reporter = reporter_kind::human;
+          options.verbosity_level = verbosity::silent;
+
+          int later_runs = 0;
+
+          // The suites run sorted by name.
+          runner local_runner;
+          local_runner.initialise (options, "Local");
+          local_runner.suite ("A throwing suite", [] (suite& s)
+            {
+              s.test ("Local test", [] (auto& lt) { lt.expect (true); });
+              throw 42;
+            });
+          local_runner.suite ("B later suite", [&later_runs] (suite& s)
+            {
+              ++later_runs;
+              s.test ("Local test", [] (auto& lt) { lt.expect (true); });
+            });
+
+          t.expect (eq (local_runner.run (), 1)) << "session failed";
+          local_counts.successful_checks++;
+
+          t.expect (eq (later_runs, 1)) << "later suite run";
+          local_counts.successful_checks++;
+
+          t.expect (eq (local_runner.totals ().successful_checks (), 2u)
+                    and eq (local_runner.totals ().failed_checks (), 1u)
+                    and eq (local_runner.totals ().executed_test_cases (),
+                            2u))
+              << "exception counted as a failed check";
+          local_counts.successful_checks++;
+        });
+      local_counts.executed_test_cases++;
+
       test_assert (current_suite_totals.successful_checks ()
                    == local_counts.successful_checks);
       test_assert (current_suite_totals.failed_checks ()
@@ -317,6 +357,23 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       test_assert (current_suite_totals.failed_test_cases ()
                    == failed_test_cases_before + 5);
     }
+  } };
+
+// An exception that escapes the suite body, outside its test cases, is
+// reported as `unexpected exception in the suite body: boom`, after the
+// test cases already run; the following test cases are not run, and the
+// session continues with the next suite (API-REVIEW.md #5). The body must
+// not be declared `noexcept`, which would terminate the program.
+static static_suite ts_exceptions_body{ "Exceptions suite body", tr,
+                                        [] (auto& ts)
+  {
+    ts.test ("Test case before the exception", [] (auto& t)
+      { t.expect (true) << "check before the exception"; });
+
+    exercise_throw_runtime_error (true);
+
+    ts.test ("Test case after the exception", [] (auto& t)
+      { t.expect (false) << "check after the exception"; });
   } };
 
 #endif // __EXCEPTIONS

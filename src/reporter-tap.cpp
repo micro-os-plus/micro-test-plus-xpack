@@ -251,7 +251,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Emits the TAP plan line for the suite's test cases followed by an
+   * Emits the TAP plan line for the suite's test cases, and for the
+   * failure of the suite body, if any (see `fail_suite()`), followed by an
    * `ok`/`not ok` result line that includes the suite index, name,
    * pass/fail status, check counts, test case count, and elapsed time.
    * Any output accumulated in `buffer_` is written to the output file
@@ -316,8 +317,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_buffer_to_file_ ();
 
+    // The plan counts the test cases and the failure of the suite body,
+    // if any, which is numbered after them.
     write_file_ ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
-                 suite.child_test_cases_count (), result, suite.own_index (),
+                 suite.test_point_number (), result, suite.own_index (),
                  suite.name (), message_totals, message_time);
 
     // At this point, the buffer may contain output from the test case, which
@@ -350,9 +353,8 @@ namespace micro_os_plus::micro_test_plus::detail
           }
 
         write_console_ ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
-                        suite.child_test_cases_count (), result,
-                        suite.own_index (), suite.name (), message_totals,
-                        message_time);
+                        suite.test_point_number (), result, suite.own_index (),
+                        suite.name (), message_totals, message_time);
 
         flush_streams ();
       }
@@ -394,6 +396,28 @@ namespace micro_os_plus::micro_test_plus::detail
       }
 
     add_empty_line_ = true;
+  }
+
+  /**
+   * @details
+   * Adds a `not ok <n> - <message>` line to the output buffer, indented
+   * as the test cases of the suite, where `<n>` is the current test point
+   * number of the suite, which follows the test cases already run, and is
+   * therefore counted in the plan of the suite. Since there is no source
+   * location, no YAML diagnostics block follows. The line is displayed by
+   * `end_suite()`, with the other buffered output of the failed suite.
+   */
+  void
+  reporter_tap::fail_suite (const std::string& message, const suite& suite)
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    *this << indent (1) << "not ok " << suite.test_point_number () << " - "
+          << message.c_str () << endl;
+
+    buffer_has_failures_ = true;
   }
 
   // --------------------------------------------------------------------------

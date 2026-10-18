@@ -209,6 +209,21 @@ namespace micro_os_plus::micro_test_plus::detail
     skip_suite (const suite& suite) override;
 
     /**
+     * @brief Report a failure of a test suite outside its test cases.
+     *
+     * @details
+     * Adds a `not ok <n> - <message>` test point, at the indentation of
+     * the test cases, to the output buffer, which `end_suite()` displays.
+     *
+     * @param message The message to display.
+     * @param suite Reference to the test suite.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    fail_suite (const std::string& message, const suite& suite) override;
+
+    /**
      * @brief Mark the beginning of a test case.
      *
      * @param test_case Reference to the test case.
