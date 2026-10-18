@@ -78,7 +78,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * If the type `T` is a framework type (see `type_traits::is_op`)
+     * If the type `T` is a framework type (see `extension::is_op`)
      * that provides a `get()` member function, it is invoked and its result
      * returned. Otherwise a reference to the argument itself is returned,
      * so that the types of the application, even those with a `get()`
@@ -91,7 +91,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr decltype (auto)
     unwrap (const T& t)
     {
-      if constexpr (type_traits::is_op<T> && requires { t.get (); })
+      if constexpr (extension::is_op<T> && requires { t.get (); })
         return t.get ();
       else
         return t;
@@ -196,8 +196,7 @@ namespace micro_os_plus::micro_test_plus
      * less than the tolerance.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::has_epsilon<Lhs_T>
-                or type_traits::has_epsilon<Rhs_T>)
+      requires (extension::has_epsilon<Lhs_T> or extension::has_epsilon<Rhs_T>)
     constexpr bool
     within_tolerance (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -214,13 +213,13 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__GNUC__)
       const auto difference
           = math::abs (detail::unwrap (lhs) - detail::unwrap (rhs));
-      if constexpr (type_traits::has_epsilon<Lhs_T>
-                    and type_traits::has_epsilon<Rhs_T>)
+      if constexpr (extension::has_epsilon<Lhs_T>
+                    and extension::has_epsilon<Rhs_T>)
         {
           // If both values have precision, use the smallest one.
           return difference < math::min_value (lhs.epsilon, rhs.epsilon);
         }
-      else if constexpr (type_traits::has_epsilon<Lhs_T>)
+      else if constexpr (extension::has_epsilon<Lhs_T>)
         {
           return difference < lhs.epsilon;
         }
@@ -361,13 +360,12 @@ namespace micro_os_plus::micro_test_plus
         const Lhs_T& lhs, const Rhs_T& rhs, Compare_T)
         : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
       {
-        if constexpr (type_traits::has_value<Lhs_T>
-                      and type_traits::has_value<Rhs_T>)
+        if constexpr (detail::has_value<Lhs_T> and detail::has_value<Rhs_T>)
           {
             return Compare_T::apply (Lhs_T::value, Rhs_T::value);
           }
-        else if constexpr (type_traits::has_epsilon<Lhs_T>
-                           or type_traits::has_epsilon<Rhs_T>)
+        else if constexpr (extension::has_epsilon<Lhs_T>
+                           or extension::has_epsilon<Rhs_T>)
           {
             return detail::within_tolerance (lhs, rhs)
                        ? Compare_T::within_tolerance_result

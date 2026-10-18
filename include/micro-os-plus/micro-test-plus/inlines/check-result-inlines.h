@@ -96,7 +96,7 @@ namespace micro_os_plus::micro_test_plus
                                 test_case& test_case,
                                 expression_formatter& expression)
         : check_result{ static_cast<bool> (expr), kind,
-                        type_traits::is_op<Expr_T>, location, test_case }
+                        extension::is_op<Expr_T>, location, test_case }
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -146,7 +146,7 @@ namespace micro_os_plus::micro_test_plus
      * appended directly.
      */
     template <class T>
-      requires type_traits::printable<T>
+      requires extension::printable<T>
     auto&
     check_result::operator<< (const T& msg)
     {

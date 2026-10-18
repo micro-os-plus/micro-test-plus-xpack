@@ -482,11 +482,11 @@ reported at the end of the statement:
 
 ```cpp
 template <class Expr_T>
-  requires type_traits::checkable<Expr_T>
+  requires extension::checkable<Expr_T>
 auto expect (const Expr_T& expr);
 
 template <class Expr_T>
-  requires type_traits::checkable<Expr_T>
+  requires extension::checkable<Expr_T>
 auto require (const Expr_T& expr);
 ```
 
@@ -692,39 +692,39 @@ For convenience, it is also possible to overload the
 ```cpp
 namespace operators {
   template <class Lhs_T, class Rhs_T>
-    requires type_traits::any_op<Lhs_T, Rhs_T>
+    requires extension::any_op<Lhs_T, Rhs_T>
   auto operator== (const Lhs_T& lhs, const Rhs_T& rhs);
 
   template <class Lhs_T, class Rhs_T>
-    requires type_traits::any_op<Lhs_T, Rhs_T>
+    requires extension::any_op<Lhs_T, Rhs_T>
   auto operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 
   template <class Lhs_T, class Rhs_T>
-    requires type_traits::any_op<Lhs_T, Rhs_T>
+    requires extension::any_op<Lhs_T, Rhs_T>
   auto operator< (const Lhs_T& lhs, const Rhs_T& rhs);
 
   template <class Lhs_T, class Rhs_T>
-    requires type_traits::any_op<Lhs_T, Rhs_T>
+    requires extension::any_op<Lhs_T, Rhs_T>
   auto operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
 
   template <class Lhs_T, class Rhs_T>
-    requires type_traits::any_op<Lhs_T, Rhs_T>
+    requires extension::any_op<Lhs_T, Rhs_T>
   auto operator> (const Lhs_T& lhs, const Rhs_T& rhs);
 
   template <class Lhs_T, class Rhs_T>
-    requires type_traits::any_op<Lhs_T, Rhs_T>
+    requires extension::any_op<Lhs_T, Rhs_T>
   auto operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
 
   template <class Lhs_T, class Rhs_T>
-    requires type_traits::any_op<Lhs_T, Rhs_T>
+    requires extension::any_op<Lhs_T, Rhs_T>
   auto operator and (const Lhs_T& lhs, const Rhs_T& rhs);
 
   template <class Lhs_T, class Rhs_T>
-    requires type_traits::any_op<Lhs_T, Rhs_T>
+    requires extension::any_op<Lhs_T, Rhs_T>
   auto operator or (const Lhs_T& lhs, const Rhs_T& rhs);
 
   template <class T>
-    requires type_traits::is_op<T>
+    requires extension::is_op<T>
   auto operator not (const T& t);
 }
 ```

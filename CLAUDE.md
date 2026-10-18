@@ -26,7 +26,7 @@ programs against it on many toolchains and platforms.
   concern (`runner.h`, `test.h`, `reporter.h`, `reporter-human.h`,
   `reporter-tap.h`, `check-result.h`, `operators.h`,
   `function-comparators.h`, `expression-formatter.h`, `reflection.h`,
-  `type-traits.h`, `stopwatch.h`, `counters.h`, `literals.h`,
+  `extension.h`, `stopwatch.h`, `counters.h`, `literals.h`,
   `math.h`, `utility.h`, `exceptions.h`, `detail.h`).
 - `include/micro-os-plus/micro-test-plus/inlines/*.h` — inline/template
   definitions for the above headers (kept separate from the declarations).
@@ -85,7 +85,9 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace.
   print the actual operands and operator, not just "assertion failed".
 - `operators.h` and `function-comparators.h` supply the comparison
   operators and function-based comparators used inside `expect (...)`
-  expressions; `type-traits.h` and `math.h` support their SFINAE/
+  expressions; `extension.h` (the `extension` namespace: the concepts
+  that constrain them, public so that applications can write their own
+  comparators and operators) and `math.h` support their constraints and
   floating-point-comparison needs.
 - `literals.h` defines user-defined literals (e.g. for naming tests).
 - Headers declare, `inlines/*.h` hold template/inline bodies, `src/*.cpp`

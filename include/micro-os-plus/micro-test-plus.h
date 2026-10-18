@@ -95,15 +95,15 @@
 #include "micro-test-plus/values.h"
 
 // Requires values.h.
-#include "micro-test-plus/type-traits.h"
+#include "micro-test-plus/extension.h"
 
 // No deps.
 #include "micro-test-plus/reflection.h"
 
-// Requires type-traits.h, reflection.h.
+// Requires extension.h, reflection.h.
 #include "micro-test-plus/detail.h"
 
-// Requires type-traits.h, math.h.
+// Requires extension.h, math.h.
 #include "micro-test-plus/literals.h"
 
 // No deps.
@@ -112,20 +112,20 @@
 // No deps.
 #include "micro-test-plus/exceptions.h"
 
-// Requires type-traits.h + detail.h,
+// Requires extension.h + detail.h,
 #include "micro-test-plus/operators.h"
 
-// Requires type-traits.h, detail.h + reflection.h.
+// Requires extension.h, detail.h + reflection.h.
 #include "micro-test-plus/expression-formatter.h"
 
 // No deps.
 #include "micro-test-plus/runner-options.h"
 
-// Requires type-traits.h, detail.h, expression-formatter.h, reflection.h,
+// Requires extension.h, detail.h, expression-formatter.h, reflection.h,
 // runner-options.h.
 #include "micro-test-plus/reporter.h"
 
-// Requires type-traits.h, reflection.h, expression-formatter.h.
+// Requires extension.h, reflection.h, expression-formatter.h.
 #include "micro-test-plus/check-result.h"
 
 // No deps.
@@ -140,7 +140,7 @@
 // No deps.
 #include "micro-test-plus/utility.h"
 
-// Requires reporter.h, counters.h, reflection.h, type-traits.h and
+// Requires reporter.h, counters.h, reflection.h, extension.h and
 // stopwatch.h + check-result.h, reporter.h.
 #include "micro-test-plus/test.h"
 

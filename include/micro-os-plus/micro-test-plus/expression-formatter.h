@@ -26,7 +26,7 @@
  * a `std::string` buffer and exposes `operator<<` overloads for every
  * standard arithmetic type, character type, string, pointer, container,
  * scoped enumeration, pair, tuple, optional, and framework expression
- * type (see `type_traits::is_op`).
+ * type (see `extension::is_op`).
  *
  * By consolidating the formatting operators into a single class (using the
  * shared `detail::append_number()` helper for numbers), the `reporter` is
@@ -63,8 +63,8 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include "type-traits.h"
 #include "detail.h"
+#include "extension.h"
 
 #include <charconv>
 #include <cstdio>
@@ -161,7 +161,7 @@ namespace micro_os_plus::micro_test_plus
      * `operator<<` overloads for all standard arithmetic types, character
      * types, strings, pointers, containers, scoped enumerations (including
      * `std::byte`), pairs, tuples, optionals, and framework expression
-     * types (see `type_traits::is_op`).
+     * types (see `extension::is_op`).
      *
      * The numeric overloads append a type suffix named after the µTest++
      * literals (e.g., `42u`, `3l`, `5sc`, `1.5f`, `1.5ld`); `int` and
@@ -484,12 +484,12 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Appends the value of an op expression via `detail::unwrap()`.
        *
-       * @tparam T An expression type satisfying `type_traits::is_op<T>`.
+       * @tparam T An expression type satisfying `extension::is_op<T>`.
        * @param t The expression object.
        * @return Reference to this instance.
        */
       template <class T>
-        requires type_traits::is_op<T>
+        requires extension::is_op<T>
       expression_formatter&
       operator<< (const T& t);
 
@@ -500,14 +500,13 @@ namespace micro_os_plus::micro_test_plus
        * Elements are formatted as `{ e1, e2, … }` by iterating the
        * container and recursing through `operator<<` for each element.
        *
-       * @tparam T A container type satisfying `type_traits::container_like`
+       * @tparam T A container type satisfying `detail::container_like`
        * that does not have `npos`.
        * @param t The container.
        * @return Reference to this instance.
        */
       template <class T>
-        requires (type_traits::container_like<T>
-                  and not type_traits::has_npos<T>)
+        requires (detail::container_like<T> and not detail::has_npos<T>)
       expression_formatter&
       operator<< (const T& t);
 

@@ -17,26 +17,27 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ type trait
- * utilities and metaprogramming support.
+ * @brief C++ header file with declarations for the µTest++ extension
+ * concepts.
  *
  * @details
- * This header provides the declarations for the type trait utilities and
- * metaprogramming constructs used within the µTest++ framework. It defines
- * the concepts that detect containers, strings, the framework value
- * wrappers and comparators, and the types accepted by `expect()` and by the
- * message operator.
+ * This header provides the C++20 concepts that the applications use to
+ * extend the framework with their own comparators, operators, and helpers:
+ * the concepts that detect the framework expressions and value wrappers,
+ * their floating-point tolerance, and the types accepted by `expect()`,
+ * `require()`, and the message operator.
+ *
+ * The public concepts reside within the
+ * `micro_os_plus::micro_test_plus::extension` namespace, separate from the
+ * top namespace, so that `using namespace` on the top namespace does not
+ * bring their generic names into the application code.
+ *
+ * The concepts used only by the implementation, which detect the framework
+ * constants, the containers, and the strings, reside within the `detail`
+ * namespace.
  *
  * The value wrappers themselves are declared in `values.h`, in the `detail`
  * namespace.
- *
- * These utilities underpin advanced template programming, type deduction, and
- * compile-time introspection, supporting the flexible and type-safe design of
- * the framework.
- *
- * All definitions reside within the
- * `micro_os_plus::micro_test_plus::type_traits` namespace, ensuring clear
- * separation from user code and minimising the risk of naming conflicts.
  *
  * All header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -46,8 +47,8 @@
  * be included directly by user code.
  */
 
-#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_TYPE_TRAITS_H_
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TYPE_TRAITS_H_
+#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_EXTENSION_H_
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_EXTENSION_H_
 
 // ----------------------------------------------------------------------------
 
@@ -87,31 +88,139 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus::type_traits
-   * @brief Type trait utilities and metaprogramming support for the µTest++
-   * testing framework.
+   * @namespace micro_os_plus::micro_test_plus::extension
+   * @brief The concepts for extending the µTest++ testing framework.
    *
    * @details
-   * The `type_traits` namespace offers a comprehensive suite of type trait
-   * templates and metaprogramming utilities employed throughout the µTest++
-   * framework.
+   * The `extension` namespace holds the C++20 concepts that the
+   * applications use to write their own comparators, operators, and
+   * helpers, with the same constraints as the framework itself: whether a
+   * type is a framework expression or value wrapper (`is_op`, `any_op`),
+   * whether it carries a floating-point tolerance (`has_epsilon`), and
+   * whether it is accepted by `expect()` and `require()` (`checkable`) or
+   * by the message operator (`printable`).
    *
-   * This includes the C++20 concepts that detect container and string
-   * types, the framework value wrappers and comparators, and the types
-   * accepted by `expect()`, `require()`, and the message operator.
-   *
-   * These utilities facilitate advanced template programming, type deduction,
-   * and compile-time introspection, supporting the flexible and type-safe
-   * design of the framework.
-   *
-   * All definitions within this namespace are implemented in the
-   * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
-   * and modular codebase.
+   * The namespace is separate from the top namespace, so that
+   * `using namespace micro_os_plus::micro_test_plus` does not bring these
+   * generic names into the application code; refer to them qualified, as
+   * `mt::extension::is_op<T>`.
    */
-  namespace type_traits
+  namespace extension
   {
     // ------------------------------------------------------------------------
     // Concepts.
+
+    /**
+     * @brief C++20 concept satisfied when a type is a framework expression
+     * type.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `is_op` concept is satisfied when `T` has the `op_type` member
+     * type alias of `detail::op`, either inherited from the `detail::op`
+     * base struct, or declared directly, like in `detail::value_base`,
+     * which avoids the empty base. It is used throughout the framework,
+     * both as a constraint and as a boolean expression in `if constexpr`
+     * contexts.
+     *
+     * A custom comparator or operator uses it to tell the framework
+     * operands, like `to_i` or the `_i` literals, from the types of the
+     * application.
+     */
+    template <class T>
+    concept is_op
+        = requires { requires std::same_as<typename T::op_type, detail::op>; };
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a framework floating-point
+     * wrapper with a tolerance.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `has_epsilon` concept is satisfied when `T` is a framework
+     * expression type (see `is_op`) with an `epsilon` member, like
+     * `floating_point_constant` and the floating-point specialisation of
+     * `value<T>`. The comparators treat the operands within this tolerance
+     * as equal; a custom comparator uses it to do the same.
+     *
+     * The types of the application are excluded, even if they have a
+     * member named `epsilon`, so that they are compared with their own
+     * operators.
+     */
+    template <class T>
+    concept has_epsilon = is_op<T> and requires (const T& t) { t.epsilon; };
+
+    /**
+     * @brief C++20 concept satisfied when at least one of two types is a
+     * framework expression type.
+     *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
+     * @details
+     * The `any_op` concept is satisfied when `Lhs_T` or `Rhs_T` (or both)
+     * are framework expression types (see `is_op`). It is used to
+     * constrain binary operator overloads in the `operators` namespace so
+     * that they are enabled only when at least one operand is a framework
+     * type, avoiding unintended conflicts with user-defined operators.
+     *
+     * A custom operator uses it in the same way, so that it does not
+     * compete with the operators of the application types.
+     */
+    template <class Lhs_T, class Rhs_T>
+    concept any_op = is_op<Lhs_T> or is_op<Rhs_T>;
+
+    /**
+     * @brief C++20 concept satisfied when a type can be used as a test
+     * expression in `expect()` or `require()`.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `checkable` concept is satisfied when `T` is either a
+     * framework expression type (see `is_op`) or is implicitly
+     * convertible to `bool`. It is used to constrain the `expect()` and
+     * `require()` function templates, ensuring that only sensible
+     * expression types are accepted; an application helper that forwards
+     * its argument to them uses it for the same constraint.
+     */
+    template <class T>
+    concept checkable = is_op<T> or std::convertible_to<T, bool>;
+
+    /**
+     * @brief C++20 concept satisfied when a type can be appended to the
+     * message of a check result via `operator<<`.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `printable` concept is satisfied when `T` is an arithmetic
+     * type, `std::nullptr_t`, or is implicitly convertible to
+     * `std::string_view`. It constrains the `operator<<` overload of
+     * `check_result`, ensuring that only types that can be
+     * meaningfully appended to the output message are accepted; an
+     * application helper that forwards its argument to the message uses
+     * it for the same constraint.
+     *
+     * `std::nullptr_t` is listed explicitly since it is convertible to
+     * `std::string_view` in C++20, but not in C++23, where the
+     * corresponding constructor is deleted.
+     */
+    template <class T>
+    concept printable = std::is_arithmetic_v<T> or std::is_null_pointer_v<T>
+                        or std::is_convertible_v<T, std::string_view>;
+
+    // ------------------------------------------------------------------------
+  } // namespace extension
+
+  // --------------------------------------------------------------------------
+
+  namespace detail
+  {
+    // ------------------------------------------------------------------------
+    // Concepts used only by the implementation.
 
     /**
      * @brief C++20 concept satisfied when `T` provides both `begin()` and
@@ -146,25 +255,6 @@ namespace micro_os_plus::micro_test_plus
     concept has_npos = requires { T::npos; };
 
     /**
-     * @brief C++20 concept satisfied when a type is a framework expression
-     * type.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `is_op` concept is satisfied when `T` has the `op_type` member
-     * type alias of `detail::op`, either inherited from the `detail::op`
-     * base struct, or declared directly, like in `detail::value_base`,
-     * which avoids the empty base. It is used throughout the framework,
-     * both as a constraint and as a boolean expression in `if constexpr`
-     * contexts.
-     */
-    template <class T>
-    concept is_op = requires {
-      requires std::same_as<typename T::op_type, detail::op>;
-    };
-
-    /**
      * @brief C++20 concept satisfied when `T` is a framework compile-time
      * constant.
      *
@@ -172,95 +262,20 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `has_value` concept is satisfied when `T` is a framework
-     * expression type (see `is_op`) with a static `value` member, like
-     * `integral_constant` and `floating_point_constant`, the types of the
-     * numeric literals. The comparators compare such operands by their
-     * `T::value` constants.
+     * expression type (see `extension::is_op`) with a static `value`
+     * member, like `integral_constant` and `floating_point_constant`, the
+     * types of the numeric literals. The comparators compare such operands
+     * by their `T::value` constants.
      *
      * The types of the application are excluded, even if they have a
      * member named `value`, so that they are compared with their own
      * operators.
      */
     template <class T>
-    concept has_value = is_op<T> and requires { T::value; };
-
-    /**
-     * @brief C++20 concept satisfied when `T` is a framework floating-point
-     * wrapper with a tolerance.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `has_epsilon` concept is satisfied when `T` is a framework
-     * expression type (see `is_op`) with an `epsilon` member, like
-     * `floating_point_constant` and the floating-point specialisation of
-     * `value<T>`. The comparators treat the operands within this tolerance
-     * as equal.
-     *
-     * The types of the application are excluded, even if they have a
-     * member named `epsilon`, so that they are compared with their own
-     * operators.
-     */
-    template <class T>
-    concept has_epsilon
-        = is_op<T> and requires (const T& t) { t.epsilon; };
-
-    /**
-     * @brief C++20 concept satisfied when at least one of two types is a
-     * framework expression type.
-     *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
-     * @details
-     * The `any_op` concept is satisfied when `Lhs_T` or `Rhs_T` (or both)
-     * are framework expression types (see `is_op`). It is used to
-     * constrain binary operator overloads in the `operators` namespace so
-     * that they are enabled only when at least one operand is a framework
-     * type, avoiding unintended conflicts with user-defined operators.
-     */
-    template <class Lhs_T, class Rhs_T>
-    concept any_op = is_op<Lhs_T> or is_op<Rhs_T>;
-
-    /**
-     * @brief C++20 concept satisfied when a type can be used as a test
-     * expression in `expect()` or `require()`.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `checkable` concept is satisfied when `T` is either a
-     * framework expression type (see `is_op`) or is implicitly
-     * convertible to `bool`. It is used to constrain the `expect()` and
-     * `require()` function templates, ensuring that only sensible
-     * expression types are accepted.
-     */
-    template <class T>
-    concept checkable = is_op<T> or std::convertible_to<T, bool>;
-
-    /**
-     * @brief C++20 concept satisfied when a type can be appended to the
-     * message of a check result via `operator<<`.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `printable` concept is satisfied when `T` is an arithmetic
-     * type, `std::nullptr_t`, or is implicitly convertible to
-     * `std::string_view`. It constrains the `operator<<` overload of
-     * `check_result`, ensuring that only types that can be
-     * meaningfully appended to the output message are accepted.
-     *
-     * `std::nullptr_t` is listed explicitly since it is convertible to
-     * `std::string_view` in C++20, but not in C++23, where the
-     * corresponding constructor is deleted.
-     */
-    template <class T>
-    concept printable = std::is_arithmetic_v<T> or std::is_null_pointer_v<T>
-                        or std::is_convertible_v<T, std::string_view>;
+    concept has_value = extension::is_op<T> and requires { T::value; };
 
     // ------------------------------------------------------------------------
-  } // namespace type_traits
+  } // namespace detail
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
@@ -275,6 +290,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TYPE_TRAITS_H_
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_EXTENSION_H_
 
 // ----------------------------------------------------------------------------

@@ -55,9 +55,9 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include "type-traits.h"
-#include "reflection.h"
 #include "expression-formatter.h"
+#include "extension.h"
+#include "reflection.h"
 
 #include <cstdio>
 #include <string>
@@ -288,7 +288,7 @@ namespace micro_os_plus::micro_test_plus
        * @return Reference to the current check result.
        */
       template <class T>
-        requires type_traits::printable<T>
+        requires extension::printable<T>
       auto&
       operator<< (const T& msg);
 

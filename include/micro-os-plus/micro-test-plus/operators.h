@@ -59,7 +59,7 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include "type-traits.h"
+#include "extension.h"
 
 // ----------------------------------------------------------------------------
 
@@ -135,7 +135,7 @@ namespace micro_os_plus::micro_test_plus
      * equal.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs);
 
@@ -153,7 +153,7 @@ namespace micro_os_plus::micro_test_plus
      * not equal.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 
@@ -171,7 +171,7 @@ namespace micro_os_plus::micro_test_plus
      * operand is greater than the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator> (const Lhs_T& lhs, const Rhs_T& rhs);
 
@@ -189,7 +189,7 @@ namespace micro_os_plus::micro_test_plus
      * operand is greater than or equal to the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
 
@@ -207,7 +207,7 @@ namespace micro_os_plus::micro_test_plus
      * operand is less than the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator< (const Lhs_T& lhs, const Rhs_T& rhs);
 
@@ -225,7 +225,7 @@ namespace micro_os_plus::micro_test_plus
      * operand is less than or equal to the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
 
@@ -243,7 +243,7 @@ namespace micro_os_plus::micro_test_plus
      * operands are true.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator and (const Lhs_T& lhs, const Rhs_T& rhs);
 
@@ -261,7 +261,7 @@ namespace micro_os_plus::micro_test_plus
      * one operand is true.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator or (const Lhs_T& lhs, const Rhs_T& rhs);
 
@@ -278,7 +278,7 @@ namespace micro_os_plus::micro_test_plus
      * is false.
      */
     template <class T>
-      requires type_traits::is_op<T>
+      requires extension::is_op<T>
     [[nodiscard]] constexpr auto
     operator not(const T& t);
 

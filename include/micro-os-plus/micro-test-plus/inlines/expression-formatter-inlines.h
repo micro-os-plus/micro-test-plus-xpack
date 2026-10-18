@@ -131,7 +131,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * format it into the buffer.
    */
   template <class T>
-    requires type_traits::is_op<T>
+    requires extension::is_op<T>
   expression_formatter&
   expression_formatter::operator<< (const T& t)
   {
@@ -146,7 +146,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * through `operator<<`, which recurses as needed for nested types.
    */
   template <class T>
-    requires (type_traits::container_like<T> and not type_traits::has_npos<T>)
+    requires (detail::container_like<T> and not detail::has_npos<T>)
   expression_formatter&
   expression_formatter::operator<< (const T& t)
   {

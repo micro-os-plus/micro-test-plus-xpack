@@ -56,7 +56,7 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include "type-traits.h"
+#include "extension.h"
 
 #include <compare>
 #include <cstddef>
@@ -152,8 +152,7 @@ namespace micro_os_plus::micro_test_plus
      * @retval false Otherwise.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::has_epsilon<Lhs_T>
-                or type_traits::has_epsilon<Rhs_T>)
+      requires (extension::has_epsilon<Lhs_T> or extension::has_epsilon<Rhs_T>)
     [[nodiscard]] constexpr bool
     within_tolerance (const Lhs_T& lhs, const Rhs_T& rhs);
 

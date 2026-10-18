@@ -300,9 +300,9 @@ The completeness list of Step 3; one item per missing subject.
 ### 3. Structure and presentation
 
 - depth of the topic tree and collapsed categories;
-- internal entities (`detail`, `type_traits`, `math`, `reflection`,
-  `inlines/`, `src/`) mixed with the public ones in the indices, with
-  the options to separate them;
+- internal entities (`detail`, `math`, `reflection`, `inlines/`,
+  `src/`) mixed with the public ones in the indices, with the options
+  to separate them;
 - page size and the configuration options behind it;
 - documentation-only files (`top-common.h`, `topics.h`) published as
   library files;

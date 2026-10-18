@@ -62,7 +62,7 @@
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include "counters.h"
-#include "type-traits.h"
+#include "extension.h"
 #include "stopwatch.h"
 #include "reflection.h"
 
@@ -728,7 +728,7 @@ namespace micro_os_plus::micro_test_plus
      * @return An output stream to write optional messages.
      */
     template <class Expr_T>
-      requires type_traits::checkable<Expr_T>
+      requires extension::checkable<Expr_T>
     auto
     expect (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ());
@@ -761,7 +761,7 @@ namespace micro_os_plus::micro_test_plus
      * @return An output stream to write optional messages.
      */
     template <class Expr_T>
-      requires type_traits::checkable<Expr_T>
+      requires extension::checkable<Expr_T>
     auto
     require (const Expr_T& expr, const reflection::source_location& sl
                                  = reflection::source_location::current ());
@@ -784,7 +784,7 @@ namespace micro_os_plus::micro_test_plus
      * @return An output stream to write optional messages.
      */
     template <class Expr_T>
-      requires type_traits::checkable<Expr_T>
+      requires extension::checkable<Expr_T>
     [[deprecated ("use require()")]] auto
     assume (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ());

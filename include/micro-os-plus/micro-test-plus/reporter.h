@@ -61,10 +61,10 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include "type-traits.h"
 #include "check-result.h"
 #include "detail.h"
 #include "expression-formatter.h"
+#include "extension.h"
 #include "reflection.h"
 #include "runner-options.h"
 

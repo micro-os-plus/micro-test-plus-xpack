@@ -364,6 +364,18 @@ define its own equivalents; `mt::mut (x)` is `const_cast<T&> (x)`, and
 utility functions `utility::is_match()` and `utility::split()` are
 unchanged.
 
+The `type_traits` namespace, which held only concepts, was renamed
+`extension`, after its purpose: it holds the concepts that the
+applications use to write their own comparators, operators, and
+helpers (`is_op`, `any_op`, `has_epsilon`, `checkable`, and
+`printable`). Replace `type_traits::` with `extension::`. The concepts
+used only by the framework, `has_value`, `container_like`, and
+`has_npos`, moved to the `detail` namespace; to detect containers and
+strings, use the standard concepts and types, like
+`std::ranges::range` and `std::string_view`. The `type-traits.h`
+header is now `extension.h`; it is included by `micro-test-plus.h`,
+as before.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

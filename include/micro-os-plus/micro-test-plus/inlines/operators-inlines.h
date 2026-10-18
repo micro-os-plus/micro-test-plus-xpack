@@ -75,7 +75,7 @@ namespace micro_os_plus::micro_test_plus
      * base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -90,7 +90,7 @@ namespace micro_os_plus::micro_test_plus
      * `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -105,7 +105,7 @@ namespace micro_os_plus::micro_test_plus
      * base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator> (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -120,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
      * the local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator>= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -135,7 +135,7 @@ namespace micro_os_plus::micro_test_plus
      * base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator< (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -150,7 +150,7 @@ namespace micro_os_plus::micro_test_plus
      * local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator<= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -164,7 +164,7 @@ namespace micro_os_plus::micro_test_plus
      * true. At least one operand must derive from the local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator and (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -178,7 +178,7 @@ namespace micro_os_plus::micro_test_plus
      * is true. At least one operand must derive from the local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires type_traits::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
     constexpr auto
     operator or (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -192,7 +192,7 @@ namespace micro_os_plus::micro_test_plus
      * The operand must derive from the local `op` base.
      */
     template <class T>
-      requires type_traits::is_op<T>
+      requires extension::is_op<T>
     constexpr auto
     operator not(const T& t)
     {

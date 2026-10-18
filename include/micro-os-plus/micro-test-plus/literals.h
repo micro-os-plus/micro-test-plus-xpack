@@ -66,7 +66,7 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include "type-traits.h"
+#include "extension.h"
 #include "math.h"
 
 #include <cstdint>

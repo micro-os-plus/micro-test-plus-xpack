@@ -97,8 +97,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `op` struct is the common base of the comparators defined in
      * `detail.h` and of `floating_point_constant`. It provides the
-     * `op_type` marker, which the `type_traits::is_op` and
-     * `type_traits::any_op` concepts use to distinguish the framework
+     * `op_type` marker, which the `extension::is_op` and
+     * `extension::any_op` concepts use to distinguish the framework
      * types from the user types, so that `expect()`, `require()`, and the
      * operators in the `operators` namespace accept them.
      *
@@ -114,7 +114,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Marker identifying the framework expression types.
        *
        * @details
-       * Detected by the `type_traits::is_op` concept, and inherited by
+       * Detected by the `extension::is_op` concept, and inherited by
        * all types derived from `op`.
        */
       using op_type = op;
@@ -135,7 +135,7 @@ namespace micro_os_plus::micro_test_plus
      * floating point specialisation of `value<T>`.
      *
      * It declares the `op_type` marker, so that all derived types satisfy
-     * the `type_traits::is_op` concept without each struct needing to
+     * the `extension::is_op` concept without each struct needing to
      * declare it.
      *
      * It does not derive from the empty `op` struct: on AArch64, a type
@@ -155,7 +155,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Declared directly rather than inherited from `op`, to avoid the
-       * empty base; detected by the `type_traits::is_op` concept.
+       * empty base; detected by the `extension::is_op` concept.
        */
       using op_type = op;
 

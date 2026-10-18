@@ -309,7 +309,7 @@ namespace micro_os_plus::micro_test_plus
    * destroyed, at the end of the expression statement.
    */
   template <class Expr_T>
-    requires type_traits::checkable<Expr_T>
+    requires extension::checkable<Expr_T>
   auto
   test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
   {
@@ -327,7 +327,7 @@ namespace micro_os_plus::micro_test_plus
    * or, without exceptions, aborts the test execution.
    */
   template <class Expr_T>
-    requires type_traits::checkable<Expr_T>
+    requires extension::checkable<Expr_T>
   auto
   test_case::require (const Expr_T& expr,
                       const reflection::source_location& sl)
@@ -342,7 +342,7 @@ namespace micro_os_plus::micro_test_plus
    * moved, since a prvalue is returned (guaranteed copy elision).
    */
   template <class Expr_T>
-    requires type_traits::checkable<Expr_T>
+    requires extension::checkable<Expr_T>
   auto
   test_case::assume (const Expr_T& expr, const reflection::source_location& sl)
   {

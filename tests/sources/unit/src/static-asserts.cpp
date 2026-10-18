@@ -74,13 +74,13 @@ static_asserts ()
 
       // Only the framework constants are detected, not the types of the
       // application with a member named `value` (API-REVIEW.md #10).
-      static_assert (not type_traits::has_value<foo>);
-      static_assert (not type_traits::has_value<bar>);
-      static_assert (not type_traits::has_value<int>);
-      static_assert (not type_traits::has_value<void>);
-      static_assert (type_traits::has_value<decltype (42_i)>);
-      static_assert (type_traits::has_value<decltype (1.5_d)>);
-      static_assert (not type_traits::has_value<to_i>);
+      static_assert (not detail::has_value<foo>);
+      static_assert (not detail::has_value<bar>);
+      static_assert (not detail::has_value<int>);
+      static_assert (not detail::has_value<void>);
+      static_assert (detail::has_value<decltype (42_i)>);
+      static_assert (detail::has_value<decltype (1.5_d)>);
+      static_assert (not detail::has_value<to_i>);
     }
 
     {
@@ -88,36 +88,36 @@ static_asserts ()
       {
       };
 
-      static_assert (type_traits::container_like<std::vector<int>>);
-      static_assert (type_traits::container_like<std::array<bool, 0>>);
-      static_assert (type_traits::container_like<std::string>);
-      static_assert (type_traits::container_like<std::string_view>);
-      // static_assert (type_traits::container_like<std::map<int, int>>);
-      static_assert (not type_traits::container_like<int>);
-      static_assert (not type_traits::container_like<foo>);
-      static_assert (not type_traits::container_like<void>);
+      static_assert (detail::container_like<std::vector<int>>);
+      static_assert (detail::container_like<std::array<bool, 0>>);
+      static_assert (detail::container_like<std::string>);
+      static_assert (detail::container_like<std::string_view>);
+      // static_assert (detail::container_like<std::map<int, int>>);
+      static_assert (not detail::container_like<int>);
+      static_assert (not detail::container_like<foo>);
+      static_assert (not detail::container_like<void>);
     }
 
     {
       using namespace literals;
 
-      // The value wrappers are in `detail`, not in `type_traits`.
+      // The value wrappers are in `detail`, not in `extension`.
       static_assert (std::is_same_v<to_i, detail::value<int>>);
       static_assert (std::is_base_of_v<detail::value<double>, to_t<double>>);
       static_assert (
           std::is_same_v<decltype (42_i), detail::integral_constant<42>>);
-      static_assert (type_traits::is_op<to_i>);
-      static_assert (type_traits::is_op<decltype (42_i)>);
-      static_assert (type_traits::is_op<decltype (1.5_d)>);
-      static_assert (type_traits::is_op<to_f>);
-      static_assert (not type_traits::is_op<int>);
+      static_assert (extension::is_op<to_i>);
+      static_assert (extension::is_op<decltype (42_i)>);
+      static_assert (extension::is_op<decltype (1.5_d)>);
+      static_assert (extension::is_op<to_f>);
+      static_assert (not extension::is_op<int>);
       // The value wrappers must not have an empty base, which would
       // trigger the AArch64 GCC 10.1 `-Wpsabi` note for `approx()`.
       static_assert (not std::is_base_of_v<detail::op, to_f>);
-      static_assert (type_traits::has_epsilon<to_d>);
-      static_assert (type_traits::has_epsilon<decltype (1.5_d)>);
-      static_assert (not type_traits::has_epsilon<to_i>);
-      static_assert (not type_traits::has_epsilon<decltype (42_i)>);
+      static_assert (extension::has_epsilon<to_d>);
+      static_assert (extension::has_epsilon<decltype (1.5_d)>);
+      static_assert (not extension::has_epsilon<to_i>);
+      static_assert (not extension::has_epsilon<decltype (42_i)>);
 
       // Only the framework floating-point wrappers are detected, not the
       // types of the application with a member named `epsilon`
@@ -126,7 +126,7 @@ static_asserts ()
       {
         double epsilon;
       };
-      static_assert (not type_traits::has_epsilon<gauge>);
+      static_assert (not extension::has_epsilon<gauge>);
     }
 
     {
