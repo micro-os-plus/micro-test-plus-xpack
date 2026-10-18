@@ -78,6 +78,32 @@ semihosting.
 </details>
 
 <details>
+<summary>Why does `--quiet` not show which checks failed?</summary>
+
+By design, `--quiet` tells whether the run failed, not what failed. It
+displays the totals, and, with the TAP reporter, one `ok`/`not ok` line
+per test suite, but not the failed checks, their locations, or their
+test cases. Showing the details of the failures, and only them, is what
+the default (normal) verbosity does: the passed test cases are only
+summarised, and the failed ones are displayed in full. A quiet level
+that did the same would hardly differ from it.
+
+To learn what failed, run the tests again without `--quiet`, or, to
+avoid running them twice, keep `--quiet` and add `--output-file` with
+the TAP reporter (the default), whose file always receives every check,
+with the location of each failure:
+
+```sh
+sample-test --quiet --output-file=sample-test.tap
+```
+
+The human reporter has no such file: with `--quiet`, it displays only
+the totals, and its output file is incomplete as well. See
+[Verbosity](/docs/user/#verbosity).
+
+</details>
+
+<details>
 <summary>How can the human-readable output be selected?</summary>
 
 Use `--reporter=human` or `--reporter human`. The default is

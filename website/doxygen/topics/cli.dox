@@ -48,7 +48,8 @@ By default, µTest++ displays a summary line for each passing test case and full
 To adjust the verbosity, the following command-line options are available:
 
 - `--verbose` – display all expectations, regardless of outcome
-- `--quiet` – display only the test suite totals
+- `--quiet` – display only the session totals and, with the TAP reporter,
+  one result line per test suite; the failed checks are not displayed
 - `--silent` – suppress all output and return only the exit code
 
 These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.
@@ -87,7 +88,10 @@ ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
 @subsection cli-verbosity-quiet Quiet mode
 
 In quiet mode, the µTest++ reporter displays only the overall session
-totals.
+totals. The TAP reporter also displays one `ok`/`not ok` line per test
+suite, with the plan counting them, so that the output remains a valid
+TAP document, which the TAP consumers read as failed when a suite
+failed.
 
 @par Example
 
@@ -95,10 +99,29 @@ totals.
 $ minimal-test one two --quiet --reporter=tap
 
 TAP version 14
-
-1..0
+ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
+1..1
 # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
 @endcode
+
+Quiet mode tells whether the run failed, not what failed: the failed
+checks, their locations, and their test cases are not displayed. This is
+by design, since displaying in full only the failed test cases is what
+the default mode does. To learn what failed, run without `--quiet`, or
+keep `--quiet` and add `--output-file` with the TAP reporter, whose file
+always receives the complete report, whatever the verbosity:
+
+@code{.console}
+$ sample-test --quiet --output-file=sample-test.tap
+@endcode
+
+With the human reporter, the output file is complete only in the default
+and verbose modes, so in quiet mode neither the console nor the file
+shows the failures.
+
+When exceptions are not enabled and a failed requirement aborts the test
+execution, the results of the aborted test case are displayed in quiet
+mode as well, since the totals are never reached.
 
 @subsection cli-verbosity-silent Silent mode
 

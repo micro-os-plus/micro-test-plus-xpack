@@ -95,6 +95,15 @@ namespace micro_os_plus::micro_test_plus
    * console; its output file receives the full report only with the
    * `normal` and `verbose` levels, and is incomplete otherwise.
    *
+   * The `quiet` level tells whether the run failed, but not what
+   * failed: the failed checks, their locations, and their test cases
+   * are not displayed (except for a test case that aborts the test
+   * execution, when exceptions are not enabled, since the summary is
+   * never reached). To learn what failed, use the `normal` level,
+   * which displays in full only the failed test cases, or keep
+   * `quiet` and use the TAP reporter with an output file, which
+   * receives them.
+   *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   enum class verbosity
@@ -102,7 +111,8 @@ namespace micro_os_plus::micro_test_plus
     silent = 0, /**< No console output; only the exit code is returned. */
     quiet = 1, /**< Displays only the overall session summary; the TAP
                   reporter also displays one result line per test suite,
-                  counted by the plan. */
+                  counted by the plan. The failed checks are not
+                  displayed. */
     normal = 2, /**< Displays test suite and test case results; the
                    individual checks are shown only for failures. */
     verbose = 3 /**< Displays all results, including passed checks, for maximum
