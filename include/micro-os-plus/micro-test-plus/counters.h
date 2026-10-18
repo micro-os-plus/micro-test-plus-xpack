@@ -322,7 +322,7 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] bool
     passed (void) const noexcept;
 
-  protected:
+  private:
     /**
      * @brief Total number of successful checks.
      *

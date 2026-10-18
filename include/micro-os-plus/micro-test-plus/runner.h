@@ -551,7 +551,7 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] const counters&
     totals (void) const noexcept;
 
-  protected:
+  private:
     /**
      * @brief Runs all registered test suites.
      *
@@ -641,7 +641,7 @@ namespace micro_os_plus::micro_test_plus
     abort_ (const reflection::source_location& sl, bool is_requirement);
 
     // ------------------------------------------------------------------------
-  protected:
+  private:
     /**
      * @brief The implicit top-level suite; always present and executed first.
      *

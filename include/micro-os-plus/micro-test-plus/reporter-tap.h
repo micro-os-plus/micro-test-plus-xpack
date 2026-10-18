@@ -287,7 +287,7 @@ namespace micro_os_plus::micro_test_plus::detail
     const char*
     comment_prefix (void) const override;
 
-  protected:
+  private:
     /**
      * @brief Outputs the prefix for a passing condition.
      *

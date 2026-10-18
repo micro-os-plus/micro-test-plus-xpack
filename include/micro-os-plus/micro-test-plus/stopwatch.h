@@ -102,6 +102,10 @@ namespace micro_os_plus::micro_test_plus
      * The class is non-copyable and non-movable to prevent accidental
      * sharing of live timing state.
      *
+     * The non-public members are `protected`, not `private`, only so that
+     * the unit tests can derive from the class and set known readings;
+     * the class is not meant to be extended otherwise.
+     *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     class stopwatch
