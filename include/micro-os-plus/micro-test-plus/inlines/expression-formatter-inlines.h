@@ -216,6 +216,81 @@ namespace micro_os_plus::micro_test_plus::detail
     return *this;
   }
 
+  /**
+   * @details
+   * Converts the value with `static_cast` to the underlying type, and
+   * streams the result through `operator<<`, which selects the overload
+   * of that type.
+   */
+  template <class T>
+    requires (std::is_enum_v<T>
+              and not std::is_convertible_v<T, std::underlying_type_t<T>>)
+  expression_formatter&
+  expression_formatter::operator<< (T v)
+  {
+    return *this << static_cast<std::underlying_type_t<T>> (v);
+  }
+
+  /**
+   * @details
+   * Writes the opening parenthesis, the two members through
+   * `append_elements_()`, and the closing parenthesis.
+   */
+  template <class T1, class T2>
+  expression_formatter&
+  expression_formatter::operator<< (const std::pair<T1, T2>& p)
+  {
+    *this << "(";
+    append_elements_ (p, std::index_sequence_for<T1, T2>{});
+    *this << ")";
+    return *this;
+  }
+
+  /**
+   * @details
+   * Writes the opening parenthesis, the elements through
+   * `append_elements_()`, and the closing parenthesis.
+   */
+  template <class... Ts>
+  expression_formatter&
+  expression_formatter::operator<< (const std::tuple<Ts...>& t)
+  {
+    *this << "(";
+    append_elements_ (t, std::index_sequence_for<Ts...>{});
+    *this << ")";
+    return *this;
+  }
+
+  /**
+   * @details
+   * Streams the contained value through `operator<<` if there is one,
+   * otherwise streams `std::nullopt`.
+   */
+  template <class T>
+  expression_formatter&
+  expression_formatter::operator<< (const std::optional<T>& o)
+  {
+    if (o.has_value ())
+      {
+        return *this << *o;
+      }
+    return *this << std::nullopt;
+  }
+
+  /**
+   * @details
+   * Expands the indices in a fold expression over the comma operator,
+   * so the elements are written in order; the separator is omitted
+   * before the first element. For an empty tuple, nothing is written.
+   */
+  template <class Tuple_T, std::size_t... Is>
+  void
+  expression_formatter::append_elements_ ([[maybe_unused]] const Tuple_T& t,
+                                          std::index_sequence<Is...>)
+  {
+    ((*this << (Is == 0 ? "" : ", ") << std::get<Is> (t)), ...);
+  }
+
   // --------------------------------------------------------------------------
   // Compound expression operators (with pass/fail colour codes).
 

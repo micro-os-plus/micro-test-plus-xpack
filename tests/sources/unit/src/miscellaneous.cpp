@@ -13,8 +13,14 @@
 
 #include "unit-test.h"
 
+#include <cstddef>
+#include <cstdint>
 #include <limits>
+#include <optional>
 #include <string>
+#include <tuple>
+#include <utility>
+#include <vector>
 
 using namespace micro_os_plus::micro_test_plus;
 
@@ -52,6 +58,34 @@ namespace
   operator<< (expression_formatter& formatter, const point& p)
   {
     return formatter << "{ " << p.x << ", " << p.y << " }";
+  }
+
+  // Scoped enumerations, formatted by their underlying value
+  // (API-REVIEW.md #18).
+  enum class colour
+  {
+    red,
+    green
+  };
+
+  enum class level : std::uint8_t
+  {
+    low = 1,
+    high = 2
+  };
+
+  // A scoped enumeration with its own formatter, which is preferred to
+  // the one of the framework.
+  enum class state
+  {
+    off,
+    on
+  };
+
+  expression_formatter&
+  operator<< (expression_formatter& formatter, state s)
+  {
+    return formatter << (s == state::on ? "on" : "off");
   }
 
   // A user-defined type that counts its copies, to check that the
@@ -666,6 +700,146 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         f << static_cast<char> (0xC3);
         check ("'\\xc3'", "non-ASCII byte");
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The scoped enumerations and `std::byte` are written by the
+    // `expression_formatter` by their underlying value, the pairs and the
+    // tuples as `(a, b)`, and the optionals by their value, or as
+    // `nullopt` (API-REVIEW.md #18).
+    ts.test ("Formatter standard types", [] (auto& t)
+      {
+        detail::colours no_colours{};
+        expression_formatter f{ no_colours };
+
+        // Compares the accumulated text, then clears it.
+        auto check = [&] (std::string_view expected, const char* message)
+          {
+            t.expect (eq (std::string_view{ f.str () }, expected)) << message;
+            local_counts.successful_checks++;
+            f.clear ();
+          };
+
+        f << colour::green;
+        check ("1", "scoped enumeration");
+
+        f << level::high;
+        check ("2uc", "scoped enumeration with underlying type");
+
+        f << state::on;
+        check ("on", "scoped enumeration with formatter");
+
+        f << std::byte{ 0x2a };
+        check ("42uc", "std::byte");
+
+        f << std::pair{ 1, 'a' };
+        check ("(1, 'a')", "pair");
+
+        f << std::tuple{ 1, 2u, "three" };
+        check ("(1, 2u, three)", "tuple");
+
+        f << std::tuple<>{};
+        check ("()", "empty tuple");
+
+        f << std::vector<std::pair<int, int>>{ { 1, 2 }, { 3, 4 } };
+        check ("{(1, 2), (3, 4)}", "container of pairs");
+
+        f << std::optional<int>{ 42 };
+        check ("42", "optional with value");
+
+        f << std::optional<int>{};
+        check ("nullopt", "optional without value");
+
+        f << std::nullopt;
+        check ("nullopt", "nullopt");
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The comparators accept the standard types that the formatter writes
+    // (API-REVIEW.md #18).
+    ts.test ("Standard types", [] (auto& t)
+      {
+        t.expect (eq (colour::red, colour::red)) << "colour::red == colour::red";
+        local_counts.successful_checks++;
+
+        t.expect (ne (colour::red, colour::green))
+            << "colour::red != colour::green";
+        local_counts.successful_checks++;
+
+        t.expect (lt (level::low, level::high)) << "level::low < level::high";
+        local_counts.successful_checks++;
+
+        t.expect (ne (state::off, state::on)) << "state::off != state::on";
+        local_counts.successful_checks++;
+
+        t.expect (ne (std::byte{ 1 }, std::byte{ 2 }))
+            << "std::byte{ 1 } != std::byte{ 2 }";
+        local_counts.successful_checks++;
+
+        t.expect (eq (std::pair{ 1, 2 }, std::pair{ 1, 2 }))
+            << "pair{ 1, 2 } == pair{ 1, 2 }";
+        local_counts.successful_checks++;
+
+        t.expect (ne (std::tuple{ 1, 'a' }, std::tuple{ 1, 'b' }))
+            << "tuple{ 1, 'a' } != tuple{ 1, 'b' }";
+        local_counts.successful_checks++;
+
+        std::vector<std::pair<int, int>> pairs1{ { 1, 2 } };
+        std::vector<std::pair<int, int>> pairs2{ { 1, 3 } };
+        t.expect (ne (pairs1, pairs2)) << "pairs1 != pairs2";
+        local_counts.successful_checks++;
+
+        std::optional<int> optional{ 42 };
+        t.expect (eq (optional, 42)) << "optional == 42";
+        local_counts.successful_checks++;
+
+        t.expect (ne (optional, std::nullopt)) << "optional != nullopt";
+        local_counts.successful_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Standard types bad", [] (auto& t)
+      {
+        t.expect (eq (colour::red, colour::green))
+            << "colour::red == colour::green";
+        local_counts.failed_checks++;
+
+        t.expect (eq (std::byte{ 1 }, std::byte{ 2 }))
+            << "std::byte{ 1 } == std::byte{ 2 }";
+        local_counts.failed_checks++;
+
+        std::vector<std::pair<int, int>> pairs1{ { 1, 2 } };
+        std::vector<std::pair<int, int>> pairs2{ { 1, 3 } };
+        t.expect (eq (pairs1, pairs2)) << "pairs1 == pairs2";
+        local_counts.failed_checks++;
+
+        t.expect (eq (std::optional<int>{ 42 }, std::nullopt))
+            << "optional == nullopt";
+        local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
       });

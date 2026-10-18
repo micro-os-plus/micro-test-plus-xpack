@@ -217,6 +217,18 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Appends the string `"nullopt"` to the internal buffer; also used by
+   * the `std::optional` template for the optionals without a value.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (std::nullopt_t)
+  {
+    buffer_.append ("nullopt");
+    return *this;
+  }
+
+  /**
+   * @details
    * Converts @p c to its decimal string representation via
    * `append_number()` and appends the type suffix `"sc"`, the name of
    * the `_sc` literal; the suffix `"c"` would suggest `char`, which is

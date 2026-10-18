@@ -733,6 +733,28 @@ t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
     << "vector{ 1, 2 } eq vector{ 1, 2 }";
 ```
 
+### Other standard types
+
+The function comparators also accept the scoped enumerations
+(including `std::byte`), and the `std::pair`, `std::tuple`, and
+`std::optional` objects, so also the maps, whose elements are pairs.
+When a check fails, they are shown as follows:
+
+- a scoped enumeration by its underlying value, with the suffix of its
+  type, for example `1` for `int` and `1uc` for `std::byte`, whose
+  underlying type is `unsigned char`; to show the names of the
+  enumerators instead, define an `operator<<` for the enumeration, as
+  for the [custom types](#custom-types);
+- a pair or a tuple as `(a, b)`, and a map as `{(1, 2), (3, 4)}`;
+- an optional by its value, or as `nullopt` when it has no value.
+
+```cpp
+enum class colour { red, green };
+
+t.expect (mt::eq (paint (), colour::red)) << "colour is red";
+t.expect (mt::ne (find (42), std::nullopt)) << "42 is found";
+```
+
 ### Literals and wrappers
 
 To convert constants into recognised typed operands, the following
@@ -894,7 +916,8 @@ check fails, they also need to know how to print the type. For this, the
 application must define an `operator<<` that writes the value to an
 `mt::expression_formatter`, in the namespace of the type, so that it is
 found by argument-dependent lookup. Without it, the comparators do not
-compile for that type.
+compile for that type; only the scoped enumerations are shown without
+it, by their underlying value.
 
 ```cpp showLineNumbers
 #include "micro-os-plus/micro-test-plus.h"
@@ -951,7 +974,8 @@ The failed check reports both values:
 ```
 
 The formatter accepts the standard arithmetic types, characters,
-strings, pointers, and containers, so the members can usually be written
+strings, pointers, containers, scoped enumerations, pairs, tuples, and
+optionals, so the members can usually be written
 directly, as above. The `char` pointers and arrays, also when not
 `const`, are written as strings (a null pointer as `nullptr`); the other
 pointers, including the `signed char` and `unsigned char` (`uint8_t`)

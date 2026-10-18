@@ -872,6 +872,37 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ other control characters
         ✓ non-ASCII byte
     ✓ Formatter characters - passed (8 checks)
+    • Formatter standard types
+        ✓ scoped enumeration
+        ✓ scoped enumeration with underlying type
+        ✓ scoped enumeration with formatter
+        ✓ std::byte
+        ✓ pair
+        ✓ tuple
+        ✓ empty tuple
+        ✓ container of pairs
+        ✓ optional with value
+        ✓ optional without value
+        ✓ nullopt
+    ✓ Formatter standard types - passed (11 checks)
+    • Standard types
+        ✓ colour::red == colour::red
+        ✓ colour::red != colour::green
+        ✓ level::low < level::high
+        ✓ state::off != state::on
+        ✓ std::byte{ 1 } != std::byte{ 2 }
+        ✓ pair{ 1, 2 } == pair{ 1, 2 }
+        ✓ tuple{ 1, 'a' } != tuple{ 1, 'b' }
+        ✓ pairs1 != pairs2
+        ✓ optional == 42
+        ✓ optional != nullopt
+    ✓ Standard types - passed (10 checks)
+    • Standard types bad
+        ✗ colour::red == colour::green FAILED (miscellaneous.cpp:827, 0 == 1)
+        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (miscellaneous.cpp:831, 1uc == 2uc)
+        ✗ pairs1 == pairs2 FAILED (miscellaneous.cpp:837, {(1, 2)} == {(1, 3)})
+        ✗ optional == nullopt FAILED (miscellaneous.cpp:840, 42 == nullopt)
+    ✗ Standard types bad - FAILED (0 checks passed, 4 failed)
     • Pointers to const
         ✓ different const objects
         ✓ same const object
@@ -950,7 +981,7 @@ next line FAILED (miscellaneous.cpp:712)
         ✓ no initial handler
         ✓ previous handler returned
     ✓ Abort handler - passed (2 checks)
-✗ Miscellaneous suite - FAILED (104 checks passed, 14 failed, in 22 test cases)
+✗ Miscellaneous suite - FAILED (125 checks passed, 18 failed, in 25 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1058,4 +1089,4 @@ next line FAILED (miscellaneous.cpp:712)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 511 checks passed, 338 failed, in 91 test cases, 12 test suites
+✗ Total: 532 checks passed, 342 failed, in 94 test cases, 12 test suites

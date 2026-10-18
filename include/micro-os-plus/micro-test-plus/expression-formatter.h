@@ -25,7 +25,8 @@
  * all value-formatting logic used by the µTest++ framework. The class owns
  * a `std::string` buffer and exposes `operator<<` overloads for every
  * standard arithmetic type, character type, string, pointer, container,
- * and framework expression type (see `type_traits::is_op`).
+ * scoped enumeration, pair, tuple, optional, and framework expression
+ * type (see `type_traits::is_op`).
  *
  * By consolidating the formatting operators into a single class (using the
  * shared `detail::append_number()` helper for numbers), the `reporter` is
@@ -67,7 +68,10 @@
 
 #include <charconv>
 #include <cstdio>
+#include <optional>
 #include <string>
+#include <tuple>
+#include <type_traits>
 #include <utility>
 #include <vector>
 #include <string_view>
@@ -152,8 +156,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * `expression_formatter` owns a `std::string` buffer and provides
      * `operator<<` overloads for all standard arithmetic types, character
-     * types, strings, pointers, containers, and framework expression types
-     * (see `type_traits::is_op`).
+     * types, strings, pointers, containers, scoped enumerations (including
+     * `std::byte`), pairs, tuples, optionals, and framework expression
+     * types (see `type_traits::is_op`).
      *
      * The numeric overloads append a type suffix named after the µTest++
      * literals (e.g., `42u`, `3l`, `5sc`, `1.5f`, `1.5ld`); `int` and
@@ -299,6 +304,17 @@ namespace micro_os_plus::micro_test_plus
        * @return Reference to this instance.
        */
       expression_formatter& operator<< (std::nullptr_t);
+
+      /**
+       * @brief Appends the string `"nullopt"`.
+       *
+       * @details
+       * Selected for `std::nullopt`, so that an optional value can be
+       * compared with it (`eq (opt, std::nullopt)`).
+       *
+       * @return Reference to this instance.
+       */
+      expression_formatter& operator<< (std::nullopt_t);
 
       /**
        * @brief Appends a signed char value with type suffix `"sc"`.
@@ -480,6 +496,78 @@ namespace micro_os_plus::micro_test_plus
                   and not type_traits::has_npos<T>)
       expression_formatter&
       operator<< (const T& t);
+
+      /**
+       * @brief Appends the underlying value of a scoped enumeration.
+       *
+       * @details
+       * The value is converted to the underlying type and formatted as
+       * that type, with its suffix (for example `1` for an `int` and
+       * `1uc` for `std::byte`, whose underlying type is `unsigned char`).
+       *
+       * The unscoped enumerations are not selected, since they convert
+       * implicitly to an integer, and are formatted as one.
+       *
+       * An `operator<<` defined by the application for an enumeration,
+       * for example to write the names of the enumerators, is preferred
+       * to this template.
+       *
+       * @tparam T A scoped enumeration type.
+       * @param v The enumeration value.
+       * @return Reference to this instance.
+       */
+      template <class T>
+        requires (std::is_enum_v<T>
+                  and not std::is_convertible_v<T, std::underlying_type_t<T>>)
+      expression_formatter&
+      operator<< (T v);
+
+      /**
+       * @brief Appends the members of a pair, as `(first, second)`.
+       *
+       * @details
+       * Each member is formatted through `operator<<`, so the pairs
+       * stored in the maps are also formatted, as `{(1, 2), (3, 4)}`.
+       *
+       * @tparam T1 The type of the first member.
+       * @tparam T2 The type of the second member.
+       * @param p The pair.
+       * @return Reference to this instance.
+       */
+      template <class T1, class T2>
+      expression_formatter&
+      operator<< (const std::pair<T1, T2>& p);
+
+      /**
+       * @brief Appends the elements of a tuple, as `(e1, e2, …)`.
+       *
+       * @details
+       * Each element is formatted through `operator<<`; an empty tuple is
+       * written as `()`.
+       *
+       * @tparam Ts The types of the elements.
+       * @param t The tuple.
+       * @return Reference to this instance.
+       */
+      template <class... Ts>
+      expression_formatter&
+      operator<< (const std::tuple<Ts...>& t);
+
+      /**
+       * @brief Appends the value of an optional, or `nullopt`.
+       *
+       * @details
+       * A value is formatted through `operator<<`, as the contained type,
+       * so an optional with a value is written as the value alone; an
+       * optional without a value is written as `nullopt`.
+       *
+       * @tparam T The type of the contained value.
+       * @param o The optional.
+       * @return Reference to this instance.
+       */
+      template <class T>
+      expression_formatter&
+      operator<< (const std::optional<T>& o);
 
       // ----------------------------------------------------------------------
       // Compound expression operator<< overloads (with pass/fail colours).
@@ -709,6 +797,25 @@ namespace micro_os_plus::micro_test_plus
       append_decimal_point_ (std::size_t start);
 
       /**
+       * @brief Appends the elements of a tuple-like object, separated by
+       * commas.
+       *
+       * @details
+       * Shared by the pair and tuple overloads; the elements are obtained
+       * with `std::get<Is>()` and formatted through `operator<<`, without
+       * the enclosing parentheses.
+       *
+       * @tparam Tuple_T A type accepted by `std::get` (a pair or a tuple).
+       * @tparam Is The indices of the elements.
+       * @param t The tuple-like object.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class Tuple_T, std::size_t... Is>
+      void
+      append_elements_ (const Tuple_T& t, std::index_sequence<Is...>);
+
+      /**
        * @brief ANSI colour codes for output formatting.
        *
        * @details
@@ -789,7 +896,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * Without such an operator, comparators such as `eq()` do not compile
    * for user-defined types, since the operand values cannot be
-   * formatted. Plain boolean checks, such as `expect (a == b)`, do not
+   * formatted; only the scoped enumerations are formatted without it,
+   * by their underlying value. Plain boolean checks, such as `expect (a == b)`, do not
    * need it, but they report only the source location on failure.
    *
    * Only the public `operator<<` overloads of the formatter are intended
