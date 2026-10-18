@@ -996,7 +996,19 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ unequal string views with !=
         ✗ equal string views with != FAILED (operators.cpp:155, hello != hello)
     ✗ String view operators - FAILED (2 checks passed, 2 failed)
-✗ Operators suite - FAILED (14 checks passed, 11 failed, in 2 test cases), time: 0.412 ms
+    • Named boolean literals
+        ✓ named alone
+        ✓ eq with true
+        ✗ eq with false FAILED (operators.cpp:185, disabled == false)
+        ✓ ne with false
+        ✓ == with true
+        ✗ == with false FAILED (operators.cpp:197, disabled == false)
+        ✗ reversed == with false FAILED (operators.cpp:200, false == disabled)
+        ✗ != with true FAILED (operators.cpp:203, enabled != true)
+        ✗ not FAILED (operators.cpp:206, not named)
+        ✓ two named literals
+    ✗ Named boolean literals - FAILED (5 checks passed, 5 failed)
+✗ Operators suite - FAILED (19 checks passed, 16 failed, in 3 test cases), time: 0.463 ms
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -1061,4 +1073,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 488 checks passed, 342 failed, in 101 test cases, 14 test suites, time: 20.942 ms
+✗ Total: 493 checks passed, 347 failed, in 102 test cases, 14 test suites, time: 22.081 ms

@@ -266,6 +266,19 @@ namespace micro_os_plus::micro_test_plus
       operator<< (const c_string& s);
 
       /**
+       * @brief Appends the name of a named boolean constant.
+       *
+       * @details
+       * The constant, created by the `_b` literal, is reported by its
+       * name, not by its value, which is always `true`.
+       *
+       * @param b The named boolean constant.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (const named_bool& b);
+
+      /**
        * @brief Appends the string representation of a boolean value.
        *
        * @param v The boolean value.

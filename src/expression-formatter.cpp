@@ -124,6 +124,18 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Appends the name, as the `std::string_view` overload does, so that
+   * the comparison is reported with the name instead of `true`.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (const named_bool& b)
+  {
+    buffer_.append (b.name ());
+    return *this;
+  }
+
+  /**
+   * @details
    * Appends the string `"true"` or `"false"` to the internal buffer
    * based on the value of @p v.
    */

@@ -165,6 +165,60 @@ static static_suite ts_operators{ "Operators suite", tr, [] (auto& ts)
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
+
+    // The named boolean constants are reported by their names; they
+    // previously recursed in the expression formatter, until the stack
+    // overflowed.
+    ts.test ("Named boolean literals", [] (auto& t)
+      {
+        using namespace literals;
+
+        bool enabled = true;
+        bool disabled = false;
+
+        t.expect ("named"_b) << "named alone";
+        local_counts.successful_checks++;
+
+        t.expect (eq ("enabled"_b, enabled)) << "eq with true";
+        local_counts.successful_checks++;
+
+        t.expect (eq ("disabled"_b, disabled)) << "eq with false";
+        local_counts.failed_checks++;
+
+        t.expect (ne ("disabled"_b, disabled)) << "ne with false";
+        local_counts.successful_checks++;
+
+        {
+          using namespace operators;
+
+          t.expect ("enabled"_b == enabled) << "== with true";
+          local_counts.successful_checks++;
+
+          t.expect ("disabled"_b == disabled) << "== with false";
+          local_counts.failed_checks++;
+
+          t.expect (disabled == "disabled"_b) << "reversed == with false";
+          local_counts.failed_checks++;
+
+          t.expect ("enabled"_b != enabled) << "!= with true";
+          local_counts.failed_checks++;
+
+          t.expect (not "named"_b) << "not";
+          local_counts.failed_checks++;
+
+          t.expect ("first"_b == "second"_b) << "two named literals";
+          local_counts.successful_checks++;
+        }
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
   } };
 
 // ----------------------------------------------------------------------------

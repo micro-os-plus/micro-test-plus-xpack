@@ -25,7 +25,8 @@
  * for all methods declared in the value wrapper struct templates in
  * `values.h`. It defines the bodies of the constructors, conversion
  * operators, and accessor methods for `value_base`, `integral_constant`,
- * `floating_point_constant`, and the primary `value<T>` template. The
+ * `floating_point_constant`, the primary `value<T>` template, and
+ * `named_bool`. The
  * constructors of the floating point specialisation of `value<T>` are
  * defined in the class body, to work around a Clang 16 limitation with
  * constrained partial specialisations.
@@ -54,6 +55,7 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
@@ -166,6 +168,37 @@ namespace micro_os_plus::micro_test_plus
     constexpr value<T>::value (const T& _value) noexcept
         : value_base<T>{ _value }
     {
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
+     * Stores the view of the name; the characters are not copied.
+     */
+    constexpr named_bool::named_bool (std::string_view name) noexcept
+        : name_{ name }
+    {
+    }
+
+    /**
+     * @details
+     * Always returns `true`, the value of all named boolean constants.
+     */
+    constexpr named_bool::
+    operator value_type () const noexcept
+    {
+      return true;
+    }
+
+    /**
+     * @details
+     * Returns the stored view of the name.
+     */
+    constexpr std::string_view
+    named_bool::name (void) const noexcept
+    {
+      return name_;
     }
 
     // ------------------------------------------------------------------------

@@ -24,8 +24,9 @@
  * within the µTest++ framework: the `op` base struct, shared by all the
  * framework expression types, the `value_base` common base, the
  * compile-time `integral_constant` and `floating_point_constant` types,
- * created by the literals, and the run-time `value<T>` type, named by the
- * `to_*` and `_*` aliases.
+ * created by the literals, the run-time `value<T>` type, named by the
+ * `to_*` and `_*` aliases, and the `named_bool` type, created by the `_b`
+ * literal.
  *
  * The wrappers carry the operands of the comparisons, so that the
  * comparators can apply the type-specific rules (for example the
@@ -64,6 +65,7 @@
 #include "math.h"
 
 #include <concepts>
+#include <string_view>
 
 // ----------------------------------------------------------------------------
 
@@ -441,6 +443,78 @@ namespace micro_os_plus::micro_test_plus
                                     math::den_size<unsigned long long> (val)) }
       {
       }
+    };
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Struct representing a named boolean constant, created by the
+     * `_b` literal.
+     *
+     * @details
+     * The `named_bool` struct holds the constant `true`, together with a
+     * name, which the expression formatter prints instead of the value, so
+     * that a failed comparison like `"flag"_b == flag`, with the operators
+     * in the `operators` namespace, is reported as `flag == false`.
+     *
+     * The value is available only via the implicit conversion to `bool`,
+     * and the struct has neither a `get()` accessor nor comparison
+     * operators. Thus `detail::unwrap()` returns the object itself, so that
+     * the formatter receives the name, the comparators compare it as the
+     * `bool` value `true`, and the generic operators in the `operators`
+     * namespace, not a better matching operator of this struct, are
+     * selected for it.
+     *
+     * The name is not owned; it refers to the string literal, which has
+     * static storage duration.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    struct named_bool : op
+    {
+      /**
+       * @brief The type of the value.
+       *
+       * @details
+       * The named literal behaves as a boolean value.
+       */
+      using value_type = bool;
+
+      /**
+       * @brief Constructs a named boolean constant with the given name.
+       *
+       * @param name The name, printed in place of the value.
+       */
+      constexpr explicit named_bool (std::string_view name) noexcept;
+
+      /**
+       * @brief Conversion operator to `bool`.
+       *
+       * @par Parameters
+       *   None.
+       * @return `true`.
+       */
+      [[nodiscard]] constexpr
+      operator value_type () const noexcept;
+
+      /**
+       * @brief Returns the name of the constant.
+       *
+       * @par Parameters
+       *   None.
+       * @return The name passed to the constructor.
+       */
+      [[nodiscard]] constexpr std::string_view
+      name (void) const noexcept;
+
+    private:
+      /**
+       * @brief The name of the constant.
+       *
+       * @details
+       * Not owned; refers to the characters of the string literal.
+       */
+      std::string_view name_;
     };
 
     // ------------------------------------------------------------------------

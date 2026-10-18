@@ -506,89 +506,23 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed boolean constants from character sequences at compile
-     * time.
+     * This user-defined literal operator creates a named boolean constant,
+     * with the value `true`, from a string literal (for example,
+     * `"feature_enabled"_b`).
      *
-     * The operator is particularly useful in test expressions, allowing string
-     * literals to be suffixed with `_b` (for example, `"feature_enabled"_b`)
-     * to produce a type-safe value that integrates seamlessly with the µTest++
-     * comparators and reporting mechanisms.
-     *
-     * The returned type is a lightweight wrapper that behaves as a `bool` and
-     * supports equality comparison with both other named instances and boolean
-     * values. This operator is intended to facilitate expressive and type-safe
-     * test conditions.
+     * The returned `detail::named_bool` converts implicitly to `bool`, and
+     * the expression formatter prints its name instead of its value. With
+     * the operators in the `operators` namespace, a comparison like
+     * `"feature_enabled"_b == flag` is true when `flag` is true, and, when
+     * it fails, it is reported as `feature_enabled == false`; the same
+     * applies to `eq ("feature_enabled"_b, flag)`. Without these
+     * operators, the comparison is a plain `bool` expression, and its
+     * operands are not reported.
      */
     constexpr auto
     operator""_b (const char* name, decltype (sizeof ("")) size)
     {
-      /**
-       * @brief Wrapper type for named boolean literals.
-       *
-       * @details
-       * This structure inherits from `std::string_view` and `detail::op`,
-       * providing a strongly-typed boolean value for use in test expressions.
-       * It defines conversion to `bool` and equality operators for comparison
-       * with other named instances and boolean values.
-       */
-      struct named : std::string_view, detail::op
-      {
-        /**
-         * @brief The underlying value type.
-         *
-         * @details
-         * The named literal behaves as a boolean value.
-         */
-        using value_type = bool;
-
-        /**
-         * @brief Conversion operator to `bool`.
-         *
-         * @return `true`
-         *
-         * @details
-         * Always returns `true`, representing the presence of the named
-         * literal in a test context.
-         */
-        constexpr
-        operator value_type () const
-        {
-          return true;
-        }
-
-        /**
-         * @brief Equality comparison with another named instance.
-         *
-         * @return `true`
-         *
-         * @details
-         * Always returns `true`, indicating that any two named literals are
-         * considered equal in this context.
-         */
-        constexpr auto
-        operator== (const named&) const
-        {
-          return true;
-        }
-
-        /**
-         * @brief Equality comparison with a boolean value.
-         *
-         * @return The value of @p other.
-         *
-         * @details
-         * Returns the value of the boolean operand, allowing the named literal
-         * to be compared directly with a boolean.
-         */
-        constexpr auto
-        operator== (const bool other) const
-        {
-          return other;
-        }
-      };
-
-      return named{ { name, size }, {} };
+      return detail::named_bool{ std::string_view{ name, size } };
     }
 
     // ------------------------------------------------------------------------

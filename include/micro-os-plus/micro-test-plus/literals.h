@@ -426,14 +426,15 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `bool`.
+     * @brief User-defined literal operator to create a named boolean
+     * constant.
      *
      * @param name Pointer to the character sequence representing the literal.
      * @param size The size of the character sequence.
-     * @return An instance of a wrapper type convertible to `bool` and
-     * supporting equality comparisons.
+     * @return A `detail::named_bool` instance, with the value `true`,
+     * reported by its name.
      */
-    constexpr auto
+    [[nodiscard]] constexpr auto
     operator""_b (const char* name, decltype (sizeof ("")) size);
 
     // ------------------------------------------------------------------------

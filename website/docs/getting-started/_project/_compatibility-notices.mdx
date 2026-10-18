@@ -52,6 +52,15 @@ decimal point (`42.0`, `42.0f`, `42.0ld`), so that they can be
 distinguished from the integers; they were previously written as `42`
 and `42f`. The messages added with `<<` are unchanged.
 
+The named boolean constants created by the `_b` literal can now be
+used in the checks; any check that used them previously overflowed
+the stack. They are reported by their name (`"flag"_b == flag` fails
+as `flag == false`), and, with the operators in the `operators`
+namespace, `==` and `!=` now return a comparator, as for the other
+literals, instead of a plain `bool`. The literal now returns a
+`detail::named_bool`, which no longer derives from `std::string_view`;
+`name()` returns the name.
+
 An exception that escapes the body of a test case is now reported as a
 failed check, at the location of the `test()` call, and the run
 continues with the next test case; it previously ended the program. To

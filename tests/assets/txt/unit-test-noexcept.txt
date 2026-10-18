@@ -938,7 +938,19 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ unequal string views with !=
         ✗ equal string views with != FAILED (operators.cpp:155, hello != hello)
     ✗ String view operators - FAILED (2 checks passed, 2 failed)
-✗ Operators suite - FAILED (14 checks passed, 11 failed, in 2 test cases)
+    • Named boolean literals
+        ✓ named alone
+        ✓ eq with true
+        ✗ eq with false FAILED (operators.cpp:185, disabled == false)
+        ✓ ne with false
+        ✓ == with true
+        ✗ == with false FAILED (operators.cpp:197, disabled == false)
+        ✗ reversed == with false FAILED (operators.cpp:200, false == disabled)
+        ✗ != with true FAILED (operators.cpp:203, enabled != true)
+        ✗ not FAILED (operators.cpp:206, not named)
+        ✓ two named literals
+    ✗ Named boolean literals - FAILED (5 checks passed, 5 failed)
+✗ Operators suite - FAILED (19 checks passed, 16 failed, in 3 test cases)
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -1003,4 +1015,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 476 checks passed, 330 failed, in 86 test cases, 12 test suites
+✗ Total: 481 checks passed, 335 failed, in 87 test cases, 12 test suites
