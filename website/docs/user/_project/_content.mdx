@@ -1478,6 +1478,29 @@ destination. Platforms that redirect only `printf()` (for example via
 `-Wl,--wrap=printf`) to a separate channel may interleave the test and
 reporter output out of order.
 
+µTest++ has no output hook of its own: the output is redirected by the
+C library, not by the framework. On the µOS++ platforms, which provide
+the C library back end, `stdout`, `stderr`, and the file operations
+(`fopen()`) are forwarded to the host through Arm semihosting, so the
+console output, the error messages, and the
+[output file](#output-file) all reach the host without any further
+configuration. In other environments, to send the output to a serial
+port, RTT, or another debug channel, retarget the C library (for
+example, with newlib, implement `_write()`); `stdout` and `stderr` are
+then forwarded together with the `printf()` family.
+
+The configuration errors (a missing option argument, an unknown
+reporter, an output file that cannot be opened, a suite added too
+late) are written to `stderr`, not through the reporter, so the
+platform should forward `stderr` as well; these errors are not
+written to the output file.
+
+Semihosting requires a debugger or an emulator (such as QEMU) connected
+to the target; without one, the first semihosting call faults, and the
+program stops before reporting anything. Tests that run on a board
+without a debugger must therefore retarget the C library to another
+channel.
+
 ## C API
 
 Whilst µTest++ can be used to test C code, its implementation relies
