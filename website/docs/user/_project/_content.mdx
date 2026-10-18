@@ -1196,6 +1196,8 @@ static mt::static_suite suite = { "Static suite", sr, suite_function };
 
 The implementation uses the C++ static constructors that are performed before the `main()` function is called. The order of registration is not defined; to provide a certain degree of predictability, the framework runs all suites when the `run()` method is called, after **ordering them by name**.
 
+The names are compared byte by byte, as with `strcmp()`: the comparison is case-sensitive (`"Zeta"` runs before `"alpha"`), and numbers are not compared by value (`"Suite 10"` runs before `"Suite 2"`). To run the suites in a given order, start their names with zero-padded numbers (`"01 - Init"`, `"02 - Run"`), and use the same case.
+
 #### Non-static test suites
 
 Static test suites are just a convenience, since they automatically register themselves with the runner, and not including the source file with the test suite in the build automatically disables the tests.
@@ -1227,6 +1229,11 @@ main(int argc, char* argv[])
   return tr.run ();
 }
 ```
+
+The added suites do not run in the order of the calls to `suite()`;
+they run when `run()` is called, together with the static suites, in
+the same order, by name (see above); for equal names, they run before
+the static suites, in the order of the calls.
 
 The suites must be added before `run()` is called. A suite added while
 `run()` runs, for example from the body of another suite, or after it

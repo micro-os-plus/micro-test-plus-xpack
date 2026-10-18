@@ -141,7 +141,11 @@ namespace micro_os_plus::micro_test_plus
    * may be constructed before it. `run()` runs the suites added with
    * `suite()` and the static suites together, in a single order, sorted
    * by name; for equal names, the suites added with `suite()` run first,
-   * in the order of their addition.
+   * in the order of their addition. The names are compared byte by byte,
+   * as by `std::strcmp()`, not in the order of addition: the comparison
+   * is case-sensitive (`"Zeta"` before `"alpha"`) and does not compare
+   * numbers by value (`"Suite 10"` before `"Suite 2"`); zero-padded
+   * numeric prefixes (`"01 - Init"`) give an explicit order.
    *
    * The test runner provides methods for initialising the test environment
    * (including the creation of the reporter selected on the command line,

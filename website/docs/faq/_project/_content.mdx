@@ -132,7 +132,15 @@ The test cases added to the top suite in `main()`, with `ts.test (…)`,
 run immediately, in the order of the calls. The suites registered with
 the runner and the static suites run later, when `run()` is called,
 together, sorted by name; for equal names, the suites registered with
-the runner run first.
+the runner run first, in the order of their registration.
+
+The names are compared byte by byte, as with `strcmp()`, not in the
+order of registration and not alphabetically: the comparison is
+case-sensitive, so `"Zeta"` runs before `"alpha"`, and the digits are
+compared one at a time, so `"Suite 10"` runs before `"Suite 2"`. To
+run the suites in a given order, start their names with zero-padded
+numbers (`"01 - Init"`, `"02 - Run"`), and use the same case.
+
 The test cases within a suite run in the order in which they are
 defined.
 

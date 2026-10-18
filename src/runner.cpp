@@ -481,7 +481,8 @@ namespace micro_os_plus::micro_test_plus
    * suites, which is already sorted by name; the static suites of other
    * runners are skipped. For equal names, the registered suite runs
    * first. The names are compared with `std::strcmp()`, as when the list
-   * of static suites is built.
+   * of static suites is built, so in byte order, case-sensitively, and
+   * without comparing the numbers by value.
    *
    * Each suite is assigned a 1-based index, following the top suite, in
    * the order of execution. If the first filter pattern selects it, it is
