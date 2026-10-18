@@ -342,7 +342,46 @@ The result is 0 if all checks passed, and 1 otherwise, including when a suite wa
 
 #### Aborting the test execution
 
-When exceptions are not enabled, a failed requirement aborts the test execution (see [Requirements](#requirements)): the location is reported on `stderr`, and the process is terminated with `::abort()`. On embedded targets, where terminating the process is not meaningful, the application can set a handler, called before `::abort()`, for example to reset the target or to signal the result to the debugger:
+When exceptions are not enabled, a failed requirement cannot stop only its test case (see [Requirements](#requirements)), so it aborts the whole test execution: the remaining test cases and suites do not run, `run()` does not return, and no totals are written. Before the process is terminated:
+
+1. the reporter displays the results of the current test case, ending with the failed requirement, which is marked as `aborted...`; they are preceded by the name of the test case, and by those of the outer test cases, unless already displayed, so that the failure cannot be attributed to the previous test case;
+2. the TAP reporter adds a `Bail out! Requirement failed at <file>:<line>` line, which tells the TAP consumers that the run stopped early, not that the output was truncated;
+3. `runner::abort()` writes `error: test execution aborted at <file>:<line>` to `stderr`, flushes the standard streams, calls the abort handler, if one was set (see below), and then `::abort()`.
+
+With `--quiet`, which otherwise displays only the totals, the results of the aborted test case are displayed as well, since the totals are never reached; the passed checks are included, as the context of the failure. With `--silent`, nothing is displayed, but the `stderr` line is still written. If an output file is used, the results are written to it too (with the human reporter, only with normal or verbose verbosity, as for the other test cases).
+
+For example, with the human reporter, the end of the output is:
+
+```
+    ✓ Check various conditions - passed (2 checks)
+
+    • Parse configuration
+        ✓ file found
+        ✗ sections parsed FAILED (main.cpp:42, 0 > 0) aborted...
+
+error: test execution aborted at main.cpp:42
+```
+
+and with the TAP reporter:
+
+```
+    # Subtest: Parse configuration
+        ok 1 - file found
+        not ok 2 - sections parsed
+          ---
+          condition: 0 > 0 aborted...
+          at:
+            filename: main.cpp
+            line: 42
+          ...
+Bail out! Requirement failed at main.cpp:42
+
+error: test execution aborted at main.cpp:42
+```
+
+Unless the abort handler ends the program otherwise, the process ends with `SIGABRT`, so a test harness sees a terminated process, not an exit code returned by `run()`.
+
+On embedded targets, where terminating the process is not meaningful, the application can set a handler, called before `::abort()`, for example to reset the target or to signal the result to the debugger:
 
 ```cpp
 tr.set_abort_handler ([] (const mt::reflection::source_location& sl)
@@ -466,8 +505,10 @@ exception would call `std::terminate()`.
 Without exceptions (for example with `-fno-exceptions`, common on
 embedded targets), the test case cannot be stopped, and a failed
 requirement aborts the whole test execution, as described in
-[Aborting the test execution](#aborting-the-test-execution); the
-remaining test cases do not run and no totals are written.
+[Aborting the test execution](#aborting-the-test-execution): the
+results of the test case are displayed, ending with the failed
+requirement, but the remaining test cases do not run and no totals are
+written.
 
 `assume()` is a deprecated alias of `require()`. The name was
 misleading: in JUnit and Hypothesis, an unmet assumption **skips** the
@@ -1196,6 +1237,11 @@ To adjust the verbosity, one of the following command-line options may be specif
 - `--verbose` – display **all expectations**, irrespective of their outcome
 - `--quiet` – display only the **runner totals**
 - `--silent` – suppress all output and return **solely the exit code**
+
+When exceptions are not enabled and a failed requirement aborts the test
+execution, the results of the aborted test case are displayed also with
+`--quiet`, since the totals are never reached; see
+[Aborting the test execution](#aborting-the-test-execution).
 
 Refer to the [Command Line Options](/docs/api/groups/micro-os-plus-micro-test-plus-cli/) reference page.
 

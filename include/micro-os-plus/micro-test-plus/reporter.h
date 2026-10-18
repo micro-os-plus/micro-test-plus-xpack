@@ -567,6 +567,30 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
+       * @brief Report a test case stopped by a failed requirement.
+       *
+       * @details
+       * Called by the result of a failed `require()` when exceptions are
+       * disabled, after the failure was added to the output buffer and
+       * before `runner::abort()` terminates the process; neither
+       * `end_test_case()` nor `end_session()` are called afterwards.
+       * Implementations display the buffered results with the context
+       * that identifies the test case, unless the verbosity is silent,
+       * and write them to the output file, if open.
+       *
+       * @param location The source location of the failed requirement.
+       * @param test_case Reference to the stopped test case.
+       * @par Returns
+       *   Nothing.
+       *
+       * @since 5.1.0
+       */
+      virtual void
+      abort_test_case (const reflection::source_location& location,
+                       const test_case& test_case)
+          = 0;
+
+      /**
        * @brief Returns the comment-prefix string used by this reporter format.
        *
        * @details

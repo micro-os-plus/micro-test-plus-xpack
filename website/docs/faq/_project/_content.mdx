@@ -37,12 +37,17 @@ frameworks behave (`ASSERT_*` in GoogleTest, `REQUIRE()` in Catch2 and
 doctest, `BOOST_REQUIRE()` in Boost.Test); see the comparison in the
 [User's Guide](/docs/user/#comparison-with-other-frameworks).
 
-Without exceptions, the test case cannot be stopped, and the **whole
-test execution is aborted**: `runner::abort()` writes
+Without exceptions, the test case cannot be stopped alone, so the
+**whole test execution is aborted**. The results of the test case,
+ending with the failed requirement, are first displayed after its name
+(also with `--quiet`, but not with `--silent`) and written to the
+output file; the TAP reporter adds a `Bail out!` line. Then
+`runner::abort()` writes
 `error: test execution aborted at <file>:<line>` to `stderr`, calls the
 handler set with `runner::set_abort_handler()`, if any, and then
 `abort()`. The remaining test cases and suites do not run, and no final
-totals are written.
+totals are written; see
+[Aborting the test execution](/docs/user/#aborting-the-test-execution).
 
 Use `require()` only for conditions without which the following checks
 are meaningless, and `expect()` for everything else. `assume()` is a

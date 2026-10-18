@@ -122,9 +122,9 @@ namespace micro_os_plus::micro_test_plus
      * unwinding (for a result kept in a variable), it does not throw,
      * since the test case is already being stopped.
      *
-     * Without exceptions, the buffered test output is written to the
-     * console and flushed, and the test execution is aborted via
-     * `runner::abort()`.
+     * Without exceptions, the reporter writes the buffered test output with
+     * `abort_test_case()`, in place of the `end_test_case()` that is never
+     * reached, and the test execution is aborted via `runner::abort()`.
      */
     check_result::~check_result () noexcept (false)
     {
@@ -163,8 +163,7 @@ namespace micro_os_plus::micro_test_plus
               throw failed_requirement{};
             }
 #else
-          test_case_.reporter_ ().write_buffer_to_console ();
-          test_case_.reporter_ ().flush_streams ();
+          test_case_.reporter_ ().abort_test_case (info_.location, test_case_);
           test_case_.abort (info_.location);
 #endif // defined(__cpp_exceptions)
         }

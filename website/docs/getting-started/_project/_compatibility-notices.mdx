@@ -131,7 +131,15 @@ test case; it previously aborted the program, without the final
 totals. The test case is stopped with an exception not derived from
 `std::exception`, so a test case body that calls `require()` must not
 be `noexcept`, and a `catch (...)` in it must rethrow. Without
-exceptions, a failed `require()` still aborts the test execution.
+exceptions, a failed `require()` still aborts the test execution, but
+the report written before the abort is now complete: the results of
+the aborted test case are displayed after its name, which the human
+reporter previously omitted with normal and quiet verbosity, so that
+the failure appeared under the previous test case; they are now also
+written to the output file, which previously ended before them, and
+they are no longer displayed with silent verbosity. The TAP reporter
+now ends the output with a
+`Bail out! Requirement failed at <file>:<line>` line.
 
 The runner no longer derives from the internal `detail::test_node`
 class, since it is not a node of the test tree: `runner::name()`, which

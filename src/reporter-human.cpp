@@ -815,6 +815,53 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Since `end_test_case()` is not called for the stopped test case, this
+   * method writes the buffered results, which end with the failed
+   * requirement, in its place. As in `end_test_case()`, they are written
+   * to the output file only with normal or verbose verbosity.
+   *
+   * Unless the verbosity is silent, the names of the open test cases that
+   * were not displayed yet (all of them, with normal or quiet verbosity)
+   * are written to `stdout`, followed by the buffered results, so that the
+   * failure is not attributed to the previous test case. With quiet
+   * verbosity, which otherwise displays only the summary, the results are
+   * displayed as well, since the summary is never reached; this includes
+   * the passed checks, which give the context of the failure.
+   *
+   * The location is not displayed again, since it is part of the failure
+   * line, and `runner::abort()` also writes it to `stderr`.
+   */
+  void
+  reporter_human::abort_test_case (
+      [[maybe_unused]] const reflection::source_location& location,
+      [[maybe_unused]] const test_case& test_case)
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+      {
+        write_buffer_to_file_ ();
+      }
+
+    if (verbosity_ != verbosity::silent)
+      {
+        if (add_empty_line_)
+          {
+            write_console_ ("\n");
+          }
+
+        display_open_names_ ();
+
+        write_buffer_to_console ();
+      }
+
+    flush_streams ();
+  }
+
+  /**
+   * @details
    * The buffered results of the outer test case are written to the output
    * file, with normal or verbose verbosity (as `end_test_case()` does), and,
    * with verbose verbosity, to `stdout`. With normal verbosity,

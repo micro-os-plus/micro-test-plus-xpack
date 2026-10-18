@@ -789,6 +789,55 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Since `end_test_case()` is not called for the stopped test case, this
+   * method writes the buffered lines, which end with the failed
+   * requirement, in its place, followed by an unindented
+   * `Bail out! Requirement failed at <file>:<line>` line, which tells the
+   * TAP consumers that the run stopped early (see the TAP 14
+   * specification), not that the output was truncated.
+   *
+   * Both are always written to the output file, as in `end_test_case()`,
+   * and, unless the verbosity is silent, to `stdout`, preceded by an empty
+   * line when `add_empty_line_` is set. With quiet verbosity, which
+   * otherwise displays only the summary, they are displayed as well, since
+   * the summary is never reached.
+   */
+  void
+  reporter_tap::abort_test_case (const reflection::source_location& location,
+                                 [[maybe_unused]] const test_case& test_case)
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    // The type of `line()` depends on the toolchain (`uint_least32_t` for
+    // `std::source_location`); widen it implicitly, without a cast that
+    // would be useless on some platforms.
+    const unsigned long line = location.line ();
+    const char* file_name = utility::extract_file_name (location.file_name ());
+
+    write_buffer_to_file_ ();
+
+    write_file_ ("Bail out! Requirement failed at %s:%lu\n", file_name, line);
+
+    if (verbosity_ != verbosity::silent)
+      {
+        if (add_empty_line_)
+          {
+            write_console_ ("\n");
+          }
+
+        write_buffer_to_console ();
+
+        write_console_ ("Bail out! Requirement failed at %s:%lu\n", file_name,
+                        line);
+      }
+
+    flush_streams ();
+  }
+
+  /**
+   * @details
    * The buffered `ok`/`not ok` lines of the outer test case are written to
    * the output file and, with verbose verbosity, or with normal verbosity
    * when they include a failure, to `stdout`, preceded by an empty line

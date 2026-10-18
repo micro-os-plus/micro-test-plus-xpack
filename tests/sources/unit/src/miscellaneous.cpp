@@ -208,6 +208,12 @@ namespace
     {
     }
 
+    void
+    abort_test_case (const reflection::source_location&,
+                     const test_case&) override
+    {
+    }
+
     const char*
     comment_prefix (void) const override
     {
