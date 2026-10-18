@@ -342,12 +342,12 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Evaluates the comparison inside an immediately invoked lambda and
      * passes the boolean result to the `binary_op` base class constructor:
-     * - for types with static `value` members (the integral constants),
-     *   the two values are compared directly;
-     * - if at least one operand has an `epsilon` member (the floating-point
-     *   wrappers), operands within the tolerance are equal, and the result
-     *   is `Compare_T::within_tolerance_result`; otherwise the unwrapped
-     *   values are compared;
+     * - for the framework constants with static `value` members (the
+     *   numeric literals), the two values are compared directly;
+     * - if at least one operand is a framework floating-point wrapper with
+     *   an `epsilon` member, operands within the tolerance are equal, and
+     *   the result is `Compare_T::within_tolerance_result`; otherwise the
+     *   unwrapped values are compared;
      * - for all other types, the framework wrappers are unwrapped, and the
      *   values, including the types of the application, are compared as
      *   they are.

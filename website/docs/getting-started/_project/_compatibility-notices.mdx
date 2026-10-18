@@ -40,6 +40,13 @@ exactly, so `mt::eq (mt::to_d{ 0.0 }, 0.09)` fails; the literal
 such values may now fail; to keep a wider tolerance, use
 `mt::approx()`.
 
+The comparators now ignore the members named `value` and `epsilon` of
+the application types, which only identify the numeric literals and
+the floating-point wrappers of the framework, and compare such types
+with their own operators. Previously, a type with a data member named
+`value` could not be compared (a compilation error), and a type with a
+member named `epsilon` was compared with that member as a tolerance.
+
 The comparators now compare the C strings (`char` arrays, string
 literals, and `char` pointers) by content, as `std::string_view`, also
 with `std::string`; two `const char*` holding equal strings were

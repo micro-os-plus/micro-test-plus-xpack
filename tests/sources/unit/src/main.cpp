@@ -75,6 +75,29 @@ namespace user_types
     }
   };
 
+  // A type with a data member named `value`, like the framework
+  // constants.
+  struct reading
+  {
+    int value;
+
+    bool
+    operator== (const reading&) const
+        = default;
+  };
+
+  // A type with a data member named `epsilon`, like the framework
+  // floating-point wrappers.
+  struct gauge
+  {
+    int level;
+    int epsilon;
+
+    bool
+    operator== (const gauge&) const
+        = default;
+  };
+
   inline expression_formatter&
   operator<< (expression_formatter& formatter, const wrapped& w)
   {
@@ -85,6 +108,18 @@ namespace user_types
   operator<< (expression_formatter& formatter, const handle& h)
   {
     return formatter << "handle{ " << h.id << " }";
+  }
+
+  inline expression_formatter&
+  operator<< (expression_formatter& formatter, const reading& r)
+  {
+    return formatter << "reading{ " << r.value << " }";
+  }
+
+  inline expression_formatter&
+  operator<< (expression_formatter& formatter, const gauge& g)
+  {
+    return formatter << "gauge{ " << g.level << " }";
   }
 } // namespace user_types
 
@@ -485,6 +520,51 @@ main (int argc, char* argv[])
 
       // The framework wrappers are still unwrapped.
       t.expect (eq (to_i{ 42 }, 42)) << "to_i{ 42 } == 42";
+      local_counts.successful_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  // The comparators compare the application types with their own
+  // operators, ignoring their members named `value` and `epsilon`, which
+  // only identify the framework constants and floating-point wrappers
+  // (API-REVIEW.md #10).
+  ts.test ("Application types with value and epsilon", [] (auto& t)
+    {
+      using namespace literals;
+
+      t.expect (ne (user_types::reading{ 1 }, user_types::reading{ 2 }))
+          << "readings differ";
+      local_counts.successful_checks++;
+
+      t.expect (eq (user_types::reading{ 3 }, user_types::reading{ 3 }))
+          << "readings are equal";
+      local_counts.successful_checks++;
+
+      t.expect (
+          ne (user_types::gauge{ 1, 5 }, user_types::gauge{ 2, 5 }))
+          << "gauges differ";
+      local_counts.successful_checks++;
+
+      t.expect (
+          eq (user_types::gauge{ 3, 5 }, user_types::gauge{ 3, 5 }))
+          << "gauges are equal";
+      local_counts.successful_checks++;
+
+      // The framework constants and wrappers keep their comparisons.
+      t.expect (eq (42_i, 42_i)) << "42_i == 42_i";
+      local_counts.successful_checks++;
+
+      t.expect (eq (to_d{ 1.5 }, 1.54)) << "to_d{ 1.5 } == 1.54";
       local_counts.successful_checks++;
 
       local_counts.executed_test_cases++;

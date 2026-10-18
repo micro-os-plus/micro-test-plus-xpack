@@ -146,34 +146,6 @@ namespace micro_os_plus::micro_test_plus
     concept has_npos = requires { T::npos; };
 
     /**
-     * @brief C++20 concept satisfied when `T` provides a `value` member.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `has_value` concept is satisfied when an instance of `T` exposes
-     * a `value` member. It is used to detect framework value-wrapper types
-     * such as `integral_constant`, `floating_point_constant`, and `value<T>`,
-     * enabling specialised comparison and reporting.
-     */
-    template <class T>
-    concept has_value = requires (const T& t) { t.value; };
-
-    /**
-     * @brief C++20 concept satisfied when `T` provides an `epsilon` member.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `has_epsilon` concept is satisfied when an instance of `T` exposes
-     * an `epsilon` member. It is used to detect floating point value-wrapper
-     * types such as `floating_point_constant` and the floating point
-     * specialisation of `value<T>`, enabling precision-aware comparisons.
-     */
-    template <class T>
-    concept has_epsilon = requires (const T& t) { t.epsilon; };
-
-    /**
      * @brief C++20 concept satisfied when a type is a framework expression
      * type.
      *
@@ -191,6 +163,47 @@ namespace micro_os_plus::micro_test_plus
     concept is_op = requires {
       requires std::same_as<typename T::op_type, detail::op>;
     };
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a framework compile-time
+     * constant.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `has_value` concept is satisfied when `T` is a framework
+     * expression type (see `is_op`) with a static `value` member, like
+     * `integral_constant` and `floating_point_constant`, the types of the
+     * numeric literals. The comparators compare such operands by their
+     * `T::value` constants.
+     *
+     * The types of the application are excluded, even if they have a
+     * member named `value`, so that they are compared with their own
+     * operators.
+     */
+    template <class T>
+    concept has_value = is_op<T> and requires { T::value; };
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a framework floating-point
+     * wrapper with a tolerance.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `has_epsilon` concept is satisfied when `T` is a framework
+     * expression type (see `is_op`) with an `epsilon` member, like
+     * `floating_point_constant` and the floating-point specialisation of
+     * `value<T>`. The comparators treat the operands within this tolerance
+     * as equal.
+     *
+     * The types of the application are excluded, even if they have a
+     * member named `epsilon`, so that they are compared with their own
+     * operators.
+     */
+    template <class T>
+    concept has_epsilon
+        = is_op<T> and requires (const T& t) { t.epsilon; };
 
     /**
      * @brief C++20 concept satisfied when at least one of two types is a

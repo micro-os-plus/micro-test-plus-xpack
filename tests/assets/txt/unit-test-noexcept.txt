@@ -74,6 +74,14 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ handles differ
         ✓ to_i{ 42 } == 42
     ✓ Application types with get() - passed (4 checks)
+    • Application types with value and epsilon
+        ✓ readings differ
+        ✓ readings are equal
+        ✓ gauges differ
+        ✓ gauges are equal
+        ✓ 42_i == 42_i
+        ✓ to_d{ 1.5 } == 1.54
+    ✓ Application types with value and epsilon - passed (6 checks)
     • Message values
         ✓ flag is true, not false
         ✓ int 42, char x, double 1.25
@@ -109,7 +117,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ 1.5 <= approx (1.5, 0.0)
         ✓ 1.5 >= approx (1.5, 0.0)
     ✓ Floating-point tolerance - passed (28 checks)
-✗ Static top suite - FAILED (65 checks passed, 4 failed, in 19 test cases)
+✗ Static top suite - FAILED (71 checks passed, 4 failed, in 20 test cases)
 • Combinatorial floats suite
     • Combinatorial floats
         ✓ 42.0 == 42 signed long long
@@ -1025,4 +1033,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 491 checks passed, 335 failed, in 87 test cases, 12 test suites
+✗ Total: 497 checks passed, 335 failed, in 88 test cases, 12 test suites

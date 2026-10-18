@@ -67,10 +67,17 @@ static_asserts ()
       {
       };
 
-      static_assert (type_traits::has_value<foo>);
+      using namespace literals;
+
+      // Only the framework constants are detected, not the types of the
+      // application with a member named `value` (API-REVIEW.md #10).
+      static_assert (not type_traits::has_value<foo>);
       static_assert (not type_traits::has_value<bar>);
       static_assert (not type_traits::has_value<int>);
       static_assert (not type_traits::has_value<void>);
+      static_assert (type_traits::has_value<decltype (42_i)>);
+      static_assert (type_traits::has_value<decltype (1.5_d)>);
+      static_assert (not type_traits::has_value<to_i>);
     }
 
     {
@@ -105,7 +112,18 @@ static_asserts ()
       // trigger the AArch64 GCC 10.1 `-Wpsabi` note for `approx()`.
       static_assert (not std::is_base_of_v<detail::op, to_f>);
       static_assert (type_traits::has_epsilon<to_d>);
+      static_assert (type_traits::has_epsilon<decltype (1.5_d)>);
       static_assert (not type_traits::has_epsilon<to_i>);
+      static_assert (not type_traits::has_epsilon<decltype (42_i)>);
+
+      // Only the framework floating-point wrappers are detected, not the
+      // types of the application with a member named `epsilon`
+      // (API-REVIEW.md #10).
+      struct gauge
+      {
+        double epsilon;
+      };
+      static_assert (not type_traits::has_epsilon<gauge>);
     }
 
     {

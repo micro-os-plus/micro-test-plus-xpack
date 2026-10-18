@@ -18,6 +18,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
             • inner subtest
     • Stored check result
     • Application types with get()
+    • Application types with value and epsilon
     • Message values
     • Floating-point tolerance
     • Combinatorial floats
