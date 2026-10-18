@@ -23,7 +23,7 @@
  * This header provides the declarations for the custom operator overloads used
  * within the µTest++ framework. It defines interfaces for equality,
  * inequality, relational, and logical operators tailored for use with the
- * framework’s strongly-typed constants, wrappers, and string views.
+ * framework’s strongly-typed constants and wrappers.
  *
  * These operator overloads enable expressive, concise, and type-safe test
  * assertions, supporting both compile-time and run-time evaluation. The
@@ -61,8 +61,6 @@
 
 #include "type-traits.h"
 
-#include <string_view>
-
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -93,26 +91,29 @@ namespace micro_os_plus::micro_test_plus
    * framework.
    *
    * This namespace includes equality, inequality, relational, and logical
-   * operators tailored for use with the framework’s custom types and string
-   * views. These operators facilitate the creation of clear and
-   * readable test expressions, supporting both strongly-typed constants (via
-   * user-defined literals) and dynamic values (via wrappers).
+   * operators tailored for use with the framework’s custom types. These
+   * operators facilitate the creation of clear and readable test
+   * expressions, supporting both strongly-typed constants (via user-defined
+   * literals) and dynamic values (via wrappers).
    *
    * @warning Please be aware that these operators
    * may conflict with other operators defined within the application under
    * test.
    *
-   * To minimise conflicts with application-defined operators, these overloads
-   * are enabled only for specific types recognised by the framework, such as
-   * those derived from the local `op` base type, or string views. Constants
-   * typically require a literal suffix (e.g., `1_i`), while dynamic values
-   * should be wrapped using the provided casting utilities (e.g.,
-   * `mt::to_i{...}`).
+   * To minimise conflicts with application-defined operators, these
+   * overloads are enabled only for operands of types derived from the local
+   * `op` base type. Constants typically require a literal suffix (e.g.,
+   * `1_i`), while dynamic values should be wrapped using the provided
+   * casting utilities (e.g., `mt::to_i{...}`). When neither operand is of
+   * such a type, the standard operators are selected; they return a plain
+   * `bool`, so a failed check cannot show the operands.
    *
-   * There are no operators for containers: the standard operators are
-   * selected for containers of the same type, and return a plain `bool`,
-   * so a failed check cannot show the operands. Use `mt::eq()` and
-   * `mt::ne()` to compare containers.
+   * There are no operators for strings and containers: the standard
+   * operators would be selected for `std::string` objects and for
+   * containers of the same type, and the framework operators for
+   * `std::string_view` objects would also replace the standard ones in the
+   * application code that follows the using directive. Use `mt::eq()` and
+   * `mt::ne()` to compare strings and containers.
    *
    * All definitions within this namespace are implemented in the
    * `include/micro-os-plus/micro-test-plus` folder, ensuring a modular and
@@ -120,46 +121,6 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace operators
   {
-    /**
-     * @ingroup micro-os-plus-micro-test-plus-string-operators
-     * @brief Equality operator for `string_view` objects.
-     *
-     * @details
-     * The operator is selected only when at least one operand is exactly a
-     * `std::string_view`; the other one may be a `std::string`, a string
-     * literal, or a `char` pointer. When neither operand is a
-     * `std::string_view` (e.g. two `std::string` objects), the standard
-     * operator is selected and returns a plain `bool`; use `mt::eq()` to
-     * have the operands shown in the failure report.
-     *
-     * @param lhs The left hand side `std::string_view` operand.
-     * @param rhs The right hand side `std::string_view` operand.
-     * @return A comparator object that evaluates to true if the string views
-     * are equal.
-     */
-    [[nodiscard]] constexpr auto
-    operator== (std::string_view lhs, std::string_view rhs);
-
-    /**
-     * @ingroup micro-os-plus-micro-test-plus-string-operators
-     * @brief Non-equality operator for `string_view` objects.
-     *
-     * @details
-     * The operator is selected only when at least one operand is exactly a
-     * `std::string_view`; the other one may be a `std::string`, a string
-     * literal, or a `char` pointer. When neither operand is a
-     * `std::string_view` (e.g. two `std::string` objects), the standard
-     * operator is selected and returns a plain `bool`; use `mt::ne()` to
-     * have the operands shown in the failure report.
-     *
-     * @param lhs The left hand side `std::string_view` operand.
-     * @param rhs The right hand side `std::string_view` operand.
-     * @return A comparator object that evaluates to true if the string views
-     * are not equal.
-     */
-    [[nodiscard]] constexpr auto
-    operator!= (std::string_view lhs, std::string_view rhs);
-
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Equality operator for custom types. Matches only if at least one

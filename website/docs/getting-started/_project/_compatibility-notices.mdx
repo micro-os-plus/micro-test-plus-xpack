@@ -124,6 +124,16 @@ literals, instead of a plain `bool`. The literal now returns a
 `detail::named_bool`, which no longer derives from `std::string_view`;
 `name()` returns the name.
 
+The `==` and `!=` operators for `std::string_view` were removed from
+the `operators` namespace; the standard operators are now selected, and
+return a plain `bool`, so a failed `t.expect (sv == "abc"sv)` no longer
+shows the operands. Previously, after `using namespace mt::operators`,
+every comparison of a `std::string_view` with a `std::string_view`, a
+`std::string`, or a C string, also in the application code, returned a
+comparator instead of a `bool`, while the comparisons of two
+`std::string` objects, or of a `std::string` and a C string, returned a
+`bool`. Use `mt::eq()` and `mt::ne()` to compare strings.
+
 An exception that escapes the body of a test case is now reported as a
 failed check, at the location of the `test()` call, and the run
 continues with the next test case; it previously ended the program. To

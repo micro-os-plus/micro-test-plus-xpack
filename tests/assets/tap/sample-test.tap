@@ -26,49 +26,45 @@ TAP version 14
         ok 1 - ultimate answer is 'fortytwo'
         1..1
     ok 3 - Check strings # { passed, 1 check }
-    # Subtest: Check strings with operators
-        ok 1 - ultimate answer == 'fortytwo'
-        1..1
-    ok 4 - Check strings with operators # { passed, 1 check }
     # Subtest: Check compound conditions
         ok 1 - logical 'and' expression
         1..1
-    ok 5 - Check compound conditions # { passed, 1 check }
+    ok 4 - Check compound conditions # { passed, 1 check }
     # Subtest: Check compound conditions with operators
         ok 1 - logical 'and' expression with operators
         1..1
-    ok 6 - Check compound conditions with operators # { passed, 1 check }
+    ok 5 - Check compound conditions with operators # { passed, 1 check }
     # Subtest: Check multiple function invocations
         ok 1 - lambda returns 42
         ok 2 - lambda returns 43
         1..2
-    ok 7 - Check multiple function invocations # { passed, 2 checks }
+    ok 6 - Check multiple function invocations # { passed, 2 checks }
     # Subtest: Check args
         ok 1 - argc >= 2
         ok 2 - argv[1] is 'one'
         ok 3 - argv[2] is 'two'
         1..3
-    ok 8 - Check args # { passed, 3 checks }
+    ok 7 - Check args # { passed, 3 checks }
     # Subtest: Check complex logic
         ok 1 - xyz passed
         1..1
-    ok 9 - Check complex logic # { passed, 1 check }
+    ok 8 - Check complex logic # { passed, 1 check }
     # Subtest: Check if exceptions are thrown
         ok 1 - exception thrown
         ok 2 - std::runtime_error thrown
         1..2
-    ok 10 - Check if exceptions are thrown # { passed, 2 checks }
+    ok 9 - Check if exceptions are thrown # { passed, 2 checks }
     # Subtest: Check if exceptions are not thrown
         ok 1 - exception not thrown
         1..1
-    ok 11 - Check if exceptions are not thrown # { passed, 1 check }
+    ok 10 - Check if exceptions are not thrown # { passed, 1 check }
     # Subtest: Check containers
         ok 1 - vector{ 1, 2 } eq vector{ 1, 2 }
         ok 2 - vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
         1..2
-    ok 12 - Check containers # { passed, 2 checks }
-    1..12
-ok 1 - Sample # { passed, 29 checks in 12 test cases, time: 0.707 ms }
+    ok 11 - Check containers # { passed, 2 checks }
+    1..11
+ok 1 - Sample # { passed, 28 checks in 11 test cases, time: 0.707 ms }
 # Subtest: Args suite
     # Subtest: args
         ok 1 - ic is 42
@@ -103,4 +99,4 @@ ok 3 - Explicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.11
     1..2
 ok 4 - Implicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.121 ms }
 1..4
-# { total: 38 checks passed, 0 failed, in 17 test cases, 4 test suites, time: 1.139 ms }
+# { total: 37 checks passed, 0 failed, in 16 test cases, 4 test suites, time: 1.139 ms }

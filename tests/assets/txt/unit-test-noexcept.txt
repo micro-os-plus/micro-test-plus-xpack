@@ -977,9 +977,9 @@ next line FAILED (miscellaneous.cpp:712)
     ✗ Operators - FAILED (12 checks passed, 9 failed)
     • String view operators
         ✓ equal string views with ==
-        ✗ unequal string views with == FAILED (operators.cpp:147, hello == world)
+        ✗ unequal string views with == FAILED (operators.cpp:149)
         ✓ unequal string views with !=
-        ✗ equal string views with != FAILED (operators.cpp:155, hello != hello)
+        ✗ equal string views with != FAILED (operators.cpp:157)
     ✗ String view operators - FAILED (2 checks passed, 2 failed)
     • Named boolean literals
         ✓ named alone

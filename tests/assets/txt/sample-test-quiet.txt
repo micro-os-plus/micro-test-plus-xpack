@@ -4,7 +4,6 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Check various conditions
     • Check various conditions with operators
     • Check strings
-    • Check strings with operators
     • Check compound conditions
     • Check compound conditions with operators
     • Check multiple function invocations
@@ -18,4 +17,4 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Check two
     • Check one
     • Check two
-✓ Total: 38 checks passed, 0 failed, in 17 test cases, 4 test suites, time: 0.328 ms
+✓ Total: 37 checks passed, 0 failed, in 16 test cases, 4 test suites, time: 0.328 ms

@@ -704,26 +704,20 @@ namespace operators {
 
 Refer to the [Operators](/docs/api/groups/micro-os-plus-micro-test-plus-operators/) reference page.
 
-### String operators
+### Strings
 
-Equality operators are provided for `string_view`
-objects:
+There are no operators for strings: the standard `==` and `!=`
+operators would be selected for `std::string` objects, and they return
+a plain `bool`, so a failed check could not show the strings; operators
+for `std::string_view` objects would also replace the standard ones in
+the application code that follows the `using namespace` directive. Use
+`eq()` and `ne()`, which compare the strings by content, and show them
+when the check fails:
 
 ```cpp
-namespace operators {
-  auto operator== (std::string_view lhs, std::string_view rhs);
-  auto operator!= (std::string_view lhs, std::string_view rhs);
-}
+t.expect (mt::eq (actual, "fortytwo"sv))
+    << "actual eq 'fortytwo'";
 ```
-
-These operators are selected only when at least one operand is a
-`std::string_view`; the other one may be a `std::string`, a string
-literal, or a `char` pointer. When neither operand is a
-`std::string_view` (e.g. two `std::string` objects), the standard
-operators are selected; they return a plain `bool`, so a failed check
-cannot show the operands. Use `eq()` and `ne()` in such cases.
-
-Refer to the [String Operators](/docs/api/groups/micro-os-plus-micro-test-plus-string-operators/) reference page.
 
 ### Containers
 

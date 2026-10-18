@@ -158,24 +158,13 @@ main (int argc, char* argv[])
 
   ts.test ("Check strings", [] (auto& tc)
     {
-      // String can also be compared, but only as `string_view` objects,
-      // otherwise the comparison is done on
-      // the memory addresses, not on the content.
+      // Strings are compared with `eq()` or `ne()`. There are no custom
+      // operators for strings, since the standard `==` and `!=` would be
+      // selected, and these cannot show the values in case of failures.
 
       tc.expect (mt::eq (std::string_view{ compute_ultimate_answer () },
                          "fortytwo"sv))
           << "ultimate answer is 'fortytwo'";
-    });
-
-  ts.test ("Check strings with operators", [] (auto& t)
-    {
-      // There are also custom == and != operators for
-      // `string_view` comparisons.
-
-      using namespace mt::operators;
-
-      t.expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv)
-          << "ultimate answer == 'fortytwo'";
     });
 
   ts.test ("Check compound conditions", [] (auto& t)
@@ -192,14 +181,15 @@ main (int argc, char* argv[])
 
   ts.test ("Check compound conditions with operators", [] (auto& t)
     {
-      // There are also operators for logical expressions.
+      // There are also operators for logical expressions; their operands
+      // may also be function comparators.
 
       using namespace mt::operators;
       using namespace mt::literals;
 
-      t.expect (
-          (compute_answer () == 42_i)
-          and (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv))
+      t.expect ((compute_answer () == 42_i)
+                and mt::eq (std::string_view{ compute_ultimate_answer () },
+                            "fortytwo"sv))
           << "logical 'and' expression with operators";
     });
 

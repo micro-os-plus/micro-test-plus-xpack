@@ -70,30 +70,6 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Constructs a comparator object, with the `equal_to` tag, from the two
-     * `string_view` operands and returns it. The comparator evaluates to
-     * `true` if the string views are equal.
-     */
-    constexpr auto
-    operator== (std::string_view lhs, std::string_view rhs)
-    {
-      return detail::compare_op{ lhs, rhs, detail::equal_to{} };
-    }
-
-    /**
-     * @details
-     * Constructs a comparator object, with the `not_equal_to` tag, from the
-     * two `string_view` operands and returns it. The comparator evaluates to
-     * `true` if the string views are not equal.
-     */
-    constexpr auto
-    operator!= (std::string_view lhs, std::string_view rhs)
-    {
-      return detail::compare_op{ lhs, rhs, detail::not_equal_to{} };
-    }
-
-    /**
-     * @details
-     * Constructs a comparator object, with the `equal_to` tag, from the two
      * operands and returns it. The comparator evaluates to `true` if the
      * operands are equal. At least one operand must derive from the local `op`
      * base.

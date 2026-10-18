@@ -136,6 +136,8 @@ static static_suite ts_operators{ "Operators suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
+    // There are no string view operators; the standard ones are selected,
+    // so the failed checks show no operands (API-REVIEW.md #17).
     ts.test ("String view operators", [] (auto& t)
       {
         using namespace operators;

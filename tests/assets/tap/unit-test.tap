@@ -3152,18 +3152,16 @@ not ok 11 - Miscellaneous suite # { FAILED, 105 checks passed, 14 failed, in 22 
         ok 1 - equal string views with ==
         not ok 2 - unequal string views with ==
           ---
-          condition: hello == world
           at:
             filename: operators.cpp
-            line: 147
+            line: 149
           ...
         ok 3 - unequal string views with !=
         not ok 4 - equal string views with !=
           ---
-          condition: hello != hello
           at:
             filename: operators.cpp
-            line: 155
+            line: 157
           ...
         1..4
     not ok 2 - String view operators # { FAILED, 2 checks passed, 2 failed }

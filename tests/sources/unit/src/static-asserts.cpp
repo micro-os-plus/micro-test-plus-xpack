@@ -334,16 +334,17 @@ static_asserts ()
     {
       using namespace with_operators;
 
-      // The string_view operators are selected when at least one operand
-      // is a std::string_view.
+      // There are no string operators; the standard ones compare strings,
+      // also in the application code that follows the using directive
+      // (API-REVIEW.md #17).
       static_assert (
-          not std::is_same_v<equal_t<std::string_view, std::string_view>,
-                             bool>);
+          std::is_same_v<equal_t<std::string_view, std::string_view>, bool>);
       static_assert (
-          not std::is_same_v<equal_t<std::string, std::string_view>, bool>);
+          std::is_same_v<equal_t<std::string, std::string_view>, bool>);
       static_assert (
-          not std::is_same_v<equal_t<std::string_view, const char*>, bool>);
+          std::is_same_v<equal_t<std::string_view, const char*>, bool>);
       static_assert (std::is_same_v<equal_t<std::string, std::string>, bool>);
+      static_assert (std::is_same_v<equal_t<std::string, const char*>, bool>);
 
       // There are no container operators; the standard ones compare
       // containers of the same type, and mixed containers do not compile.

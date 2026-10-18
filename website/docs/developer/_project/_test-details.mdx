@@ -169,58 +169,53 @@ test 39
 39:         1..1
 39:     ok 3 - Check strings # { passed, 1 check }
 39:
-39:     # Subtest: Check strings with operators
-39:         ok 1 - ultimate answer == 'fortytwo'
-39:         1..1
-39:     ok 4 - Check strings with operators # { passed, 1 check }
-39:
 39:     # Subtest: Check compound conditions
 39:         ok 1 - logical 'and' expression
 39:         1..1
-39:     ok 5 - Check compound conditions # { passed, 1 check }
+39:     ok 4 - Check compound conditions # { passed, 1 check }
 39:
 39:     # Subtest: Check compound conditions with operators
 39:         ok 1 - logical 'and' expression with operators
 39:         1..1
-39:     ok 6 - Check compound conditions with operators # { passed, 1 check }
+39:     ok 5 - Check compound conditions with operators # { passed, 1 check }
 39:
 39:     # Subtest: Check multiple function invocations
 39:         ok 1 - lambda returns 42
 39:         ok 2 - lambda returns 43
 39:         1..2
-39:     ok 7 - Check multiple function invocations # { passed, 2 checks }
+39:     ok 6 - Check multiple function invocations # { passed, 2 checks }
 39:
 39:     # Subtest: Check args
 39:         ok 1 - argc >= 2
 39:         ok 2 - argv[1] is 'one'
 39:         ok 3 - argv[2] is 'two'
 39:         1..3
-39:     ok 8 - Check args # { passed, 3 checks }
+39:     ok 7 - Check args # { passed, 3 checks }
 39:
 39:     # Subtest: Check complex logic
 39:         ok 1 - xyz passed
 39:         1..1
-39:     ok 9 - Check complex logic # { passed, 1 check }
+39:     ok 8 - Check complex logic # { passed, 1 check }
 39:
 39:     # Subtest: Check if exceptions are thrown
 39:         ok 1 - exception thrown
 39:         ok 2 - std::runtime_error thrown
 39:         1..2
-39:     ok 10 - Check if exceptions are thrown # { passed, 2 checks }
+39:     ok 9 - Check if exceptions are thrown # { passed, 2 checks }
 39:
 39:     # Subtest: Check if exceptions are not thrown
 39:         ok 1 - exception not thrown
 39:         1..1
-39:     ok 11 - Check if exceptions are not thrown # { passed, 1 check }
+39:     ok 10 - Check if exceptions are not thrown # { passed, 1 check }
 39:
 39:     # Subtest: Check containers
 39:         ok 1 - vector{ 1, 2 } eq vector{ 1, 2 }
 39:         ok 2 - vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
 39:         1..2
-39:     ok 12 - Check containers # { passed, 2 checks }
+39:     ok 11 - Check containers # { passed, 2 checks }
 39:
-39:     1..12
-39: ok 1 - Sample # { passed, 29 checks in 12 test cases, time: 0.295 ms }
+39:     1..11
+39: ok 1 - Sample # { passed, 28 checks in 11 test cases, time: 0.295 ms }
 39:
 39: # Subtest: Args suite
 39:
@@ -267,7 +262,7 @@ test 39
 39: ok 4 - Implicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.026 ms }
 39:
 39: 1..4
-39: # { total: 38 checks passed, 0 failed, in 17 test cases, 4 test suites, time: 0.438 ms }
+39: # { total: 37 checks passed, 0 failed, in 16 test cases, 4 test suites, time: 0.438 ms }
 39: Test output written to 'sample-test-verbose.tap'.
 39/63 Test #39: sample-test-reporter-tap-verbose ............   Passed    0.00 sec
 ```

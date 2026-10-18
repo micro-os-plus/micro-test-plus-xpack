@@ -15,7 +15,16 @@ greatly improving report clarity.
 These operators are restricted to operands derived from the local
 `detail::op` type. For constant values, this is achieved with provided
 literals (for example, `1_i`), whilst dynamic values can be wrapped with
-converters such as `mt::to_i{expression}`.
+converters such as `mt::to_i{expression}`. When neither operand is of
+such a type, the standard operators are selected; they return a plain
+`bool`, so a failed check cannot show the operands.
+
+There are no operators for strings and containers: the standard
+operators would be selected for `std::string` objects and for containers
+of the same type, and operators for `std::string_view` objects would
+also replace the standard ones in the application code that follows the
+`using namespace` directive. Use `mt::eq()` and `mt::ne()` to compare
+strings and containers.
 
 Logical operators (`&&`, `||`, `!`) are also supported and provide enhanced
 functionality when used with typed operands, allowing complex test
