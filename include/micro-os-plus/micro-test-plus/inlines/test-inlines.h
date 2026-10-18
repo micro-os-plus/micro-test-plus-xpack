@@ -110,41 +110,57 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // ==========================================================================
+
+  /**
+   * @details
+   * Stores the name pointer and the location; when called implicitly,
+   * the location is the place of the conversion, in the user code.
+   */
+  inline test_case_name::test_case_name (
+      const char* name, const reflection::source_location& location) noexcept
+      : name_{ name }, location_{ location }
+  {
+  }
+
+  /**
+   * @details
+   * Stores the pointer returned by `name.c_str()`, which remains valid
+   * while the string is neither destroyed nor modified, and the location;
+   * when called implicitly, the location is the place of the conversion,
+   * in the user code.
+   */
+  inline test_case_name::test_case_name (
+      const std::string& name,
+      const reflection::source_location& location) noexcept
+      : name_{ name.c_str () }, location_{ location }
+  {
+  }
+
+  /**
+   * @details
+   * Returns the pointer stored in `name_`.
+   */
+  inline const char*
+  test_case_name::name (void) const noexcept
+  {
+    return name_;
+  }
+
+  /**
+   * @details
+   * Returns a reference to the location stored in `location_`.
+   */
+  inline const reflection::source_location&
+  test_case_name::location (void) const noexcept
+  {
+    return location_;
+  }
+
+  // --------------------------------------------------------------------------
+
   namespace detail
   {
-    // ========================================================================
-
-    /**
-     * @details
-     * Stores the name pointer and the location; when called implicitly,
-     * the location is the place of the conversion, in the user code.
-     */
-    inline test_name::test_name (
-        const char* name, const reflection::source_location& location) noexcept
-        : name_{ name }, location_{ location }
-    {
-    }
-
-    /**
-     * @details
-     * Returns the pointer stored in `name_`.
-     */
-    inline const char*
-    test_name::name (void) const noexcept
-    {
-      return name_;
-    }
-
-    /**
-     * @details
-     * Returns a reference to the location stored in `location_`.
-     */
-    inline const reflection::source_location&
-    test_name::location (void) const noexcept
-    {
-      return location_;
-    }
-
     // ========================================================================
 
     /**
@@ -234,7 +250,7 @@ namespace micro_os_plus::micro_test_plus
    * of the call to `test()`, the parent suite, and the nesting depth.
    */
   template <typename Callable_T, typename... Args_T>
-  test_case::test_case (const detail::test_name& name, runner& test_runner,
+  test_case::test_case (const test_case_name& name, runner& test_runner,
                         suite& parent_suite, size_t own_index,
                         size_t nesting_depth, Callable_T&& callable,
                         Args_T&&... arguments)
@@ -266,7 +282,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
   void
-  test_case::test (const detail::test_name& name, Callable_T&& callable,
+  test_case::test (const test_case_name& name, Callable_T&& callable,
                    Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
@@ -354,12 +370,14 @@ namespace micro_os_plus::micro_test_plus
    *
    * The name is copied into `owned_name_`, and the node name points to the
    * copy, since the suite may run after the string passed by the caller
-   * was destroyed.
+   * was destroyed; the base is constructed with an empty name, since the
+   * copy does not exist yet. The copy is null-terminated, also when the
+   * view passed by the caller is not.
    */
   template <typename Callable_T, typename... Args_T>
-  suite::suite (const char* name, runner& test_runner, Callable_T&& callable,
-                Args_T&&... arguments)
-      : runnable_base{ name, test_runner, 0 },
+  suite::suite (std::string_view name, runner& test_runner,
+                Callable_T&& callable, Args_T&&... arguments)
+      : runnable_base{ "", test_runner, 0 },
         callable_{ detail::bind_callable<suite> (
             std::forward<Callable_T> (callable),
             std::forward<Args_T> (arguments)...) },
@@ -369,7 +387,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
-                   __PRETTY_FUNCTION__, name, own_index_);
+                   __PRETTY_FUNCTION__, name_, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -422,7 +440,7 @@ namespace micro_os_plus::micro_test_plus
 
   template <typename Callable_T, typename... Args_T>
   void
-  suite::test (const detail::test_name& name, Callable_T&& callable,
+  suite::test (const test_case_name& name, Callable_T&& callable,
                Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)

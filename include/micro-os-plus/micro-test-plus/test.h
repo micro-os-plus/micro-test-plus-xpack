@@ -68,6 +68,7 @@
 
 #include <functional>
 #include <string>
+#include <string_view>
 #include <type_traits>
 
 // ----------------------------------------------------------------------------
@@ -96,86 +97,128 @@ namespace micro_os_plus::micro_test_plus
   class test_case;
   class suite;
 
+  // --------------------------------------------------------------------------
+
+  /**
+   * @brief The name of a test case, with the location of its definition.
+   *
+   * @details
+   * The first parameter of `suite::test()` and `test_case::test()`. The
+   * constructors are not explicit, so a string literal, a `const char*`,
+   * or a `std::string` passed as the test case name converts implicitly;
+   * the default argument of the constructors is evaluated at the place of
+   * the conversion, which is the call to `test()` in the user code, so the
+   * location of the test case is captured without an additional argument
+   * (which could not follow the variadic arguments of `test()`).
+   *
+   * The location is used to report a failure that is not associated with
+   * a check, such as an exception escaping the test case body.
+   *
+   * The name is not copied. Since the test cases run immediately, within
+   * the call to `test()`, a temporary string passed as the argument, which
+   * lives until the end of the full expression, remains valid while the
+   * test case runs; a named `test_case_name` object must not outlive the
+   * string it was constructed from.
+   *
+   * A `std::string_view` is not accepted, since it is not guaranteed to be
+   * null-terminated; pass `std::string (sv)` instead.
+   *
+   * Since a conversion sequence may include only one user-defined
+   * conversion, an argument that converts to `const char*` or to
+   * `std::string` via a user-defined conversion operator must be
+   * converted explicitly.
+   *
+   * A helper function that adds test cases on behalf of its caller can
+   * take a `const test_case_name&` parameter and pass it to `test()`, so
+   * that the reported location is that of the call to the helper, not
+   * that of the call to `test()` inside the helper.
+   *
+   * @par Example
+   *
+   * @code{.cpp}
+   *   namespace mt = micro_os_plus::micro_test_plus;
+   *
+   *   void
+   *   check_answer (mt::suite& ts, const mt::test_case_name& name, int v)
+   *   {
+   *     ts.test (name, [v] (auto& t) { t.expect (mt::eq (v, 42)); });
+   *   }
+   * @endcode
+   *
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+   */
+  class test_case_name
+  {
+  public:
+    /**
+     * @brief Constructs the name from a C string, capturing the location
+     * of the caller.
+     *
+     * @param name The test case name or description, used in reports;
+     * it must remain valid while the test case runs.
+     * @param location The location of the conversion, defaulting to the
+     * call to `test()` in the user code.
+     */
+    test_case_name (const char* name,
+                    const reflection::source_location& location
+                    = reflection::source_location::current ()) noexcept;
+
+    /**
+     * @brief Constructs the name from a standard string, capturing the
+     * location of the caller.
+     *
+     * @param name The test case name or description, used in reports;
+     * it must remain valid, and not be modified, while the test case runs.
+     * @param location The location of the conversion, defaulting to the
+     * call to `test()` in the user code.
+     */
+    test_case_name (const std::string& name,
+                    const reflection::source_location& location
+                    = reflection::source_location::current ()) noexcept;
+
+    /**
+     * @brief Gets the test case name.
+     *
+     * @par Parameters
+     *   None.
+     * @return A pointer to the null-terminated test case name.
+     */
+    [[nodiscard]] const char*
+    name (void) const noexcept;
+
+    /**
+     * @brief Gets the location of the call to `test()`.
+     *
+     * @par Parameters
+     *   None.
+     * @return A reference to the stored source location.
+     */
+    [[nodiscard]] const reflection::source_location&
+    location (void) const noexcept;
+
+  private:
+    /**
+     * @brief The test case name.
+     *
+     * @details
+     * Not owned; test cases run immediately, while the name is valid.
+     */
+    const char* name_;
+
+    /**
+     * @brief The location of the call to `test()`.
+     */
+    reflection::source_location location_;
+  };
+
+  // --------------------------------------------------------------------------
+
   namespace detail
   {
     class check_result;
     class reporter;
     class reporter_human;
     class reporter_tap;
-
-    // ========================================================================
-
-    /**
-     * @brief The name of a test case, with the location of its definition.
-     *
-     * @details
-     * The first parameter of `suite::test()` and `test_case::test()`. The
-     * constructor is not explicit, so a string literal or a `const char*`
-     * passed as the test case name converts implicitly; the default
-     * argument of the constructor is evaluated at the place of the
-     * conversion, which is the call to `test()` in the user code, so the
-     * location of the test case is captured without an additional
-     * argument (which could not follow the variadic arguments of
-     * `test()`).
-     *
-     * The location is used to report a failure that is not associated with
-     * a check, such as an exception escaping the test case body.
-     *
-     * Since a conversion sequence may include only one user-defined
-     * conversion, an argument that converts to `const char*` via a
-     * user-defined conversion operator must be converted explicitly.
-     *
-     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-     */
-    class test_name
-    {
-    public:
-      /**
-       * @brief Constructs the name, capturing the location of the caller.
-       *
-       * @param name The test case name or description, used in reports;
-       * it must remain valid while the test case runs.
-       * @param location The location of the conversion, defaulting to the
-       * call to `test()` in the user code.
-       */
-      test_name (const char* name,
-                 const reflection::source_location& location
-                 = reflection::source_location::current ()) noexcept;
-
-      /**
-       * @brief Gets the test case name.
-       *
-       * @par Parameters
-       *   None.
-       * @return A pointer to the null-terminated test case name.
-       */
-      [[nodiscard]] const char*
-      name (void) const noexcept;
-
-      /**
-       * @brief Gets the location of the call to `test()`.
-       *
-       * @par Parameters
-       *   None.
-       * @return A reference to the stored source location.
-       */
-      [[nodiscard]] const reflection::source_location&
-      location (void) const noexcept;
-
-    private:
-      /**
-       * @brief The test case name.
-       *
-       * @details
-       * Not owned; test cases run immediately, while the name is valid.
-       */
-      const char* name_;
-
-      /**
-       * @brief The location of the call to `test()`.
-       */
-      reflection::source_location location_;
-    };
 
     // ========================================================================
 
@@ -592,7 +635,7 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `test_case&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-    test_case (const detail::test_name& name, runner& test_runner,
+    test_case (const test_case_name& name, runner& test_runner,
                suite& parent_suite, size_t own_index, size_t nesting_depth,
                Callable_T&& callable, Args_T&&... arguments);
 
@@ -653,8 +696,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Args_T The types of the callable arguments.
      *
      * @param name The test case name or description, used in reports; a
-     * string literal or a `const char*`, converted implicitly to
-     * `detail::test_name`, which also captures the location of the call.
+     * string literal, a `const char*`, or a `std::string`, converted
+     * implicitly to `test_case_name`, which also captures the location of
+     * the call; it must remain valid while the test case runs.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test.
      * @param arguments A possibly empty list of arguments to be passed to
@@ -664,7 +708,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
     void
-    test (const detail::test_name& name, Callable_T&& callable,
+    test (const test_case_name& name, Callable_T&& callable,
           Args_T&&... arguments);
 
     // ------------------------------------------------------------------------
@@ -889,7 +933,7 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `suite&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-    suite (const char* name, runner& test_runner, Callable_T&& callable,
+    suite (std::string_view name, runner& test_runner, Callable_T&& callable,
            Args_T&&... arguments);
 
   public:
@@ -948,8 +992,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Args_T The types of the callable arguments.
      *
      * @param name The test case name or description, used in reports; a
-     * string literal or a `const char*`, converted implicitly to
-     * `detail::test_name`, which also captures the location of the call.
+     * string literal, a `const char*`, or a `std::string`, converted
+     * implicitly to `test_case_name`, which also captures the location of
+     * the call; it must remain valid while the test case runs.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test.
      * @param arguments A possibly empty list of arguments to be passed to
@@ -959,7 +1004,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
     void
-    test (const detail::test_name& name, Callable_T&& callable,
+    test (const test_case_name& name, Callable_T&& callable,
           Args_T&&... arguments);
 
   private:

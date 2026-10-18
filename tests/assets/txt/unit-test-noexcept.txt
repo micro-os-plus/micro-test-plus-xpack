@@ -986,7 +986,16 @@ break	tab == x)
         ✓ no initial handler
         ✓ previous handler returned
     ✓ Abort handler - passed (2 checks)
-✗ Miscellaneous suite - FAILED (125 checks passed, 20 failed, in 26 test cases)
+    • Test case and suite names
+        ✓ temporary string name
+        ✓ string name
+        ✓ helper test cases run
+        ✓ location of the caller
+        ✓ local session passed
+        ✓ string suite name copied
+        ✓ string view suite name copied
+    ✓ Test case and suite names - passed (7 checks)
+✗ Miscellaneous suite - FAILED (132 checks passed, 20 failed, in 27 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1094,4 +1103,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 532 checks passed, 344 failed, in 95 test cases, 12 test suites
+✗ Total: 539 checks passed, 344 failed, in 96 test cases, 12 test suites

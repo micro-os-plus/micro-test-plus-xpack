@@ -358,8 +358,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param name The test suite name or description, used in reports; it
-     * is copied, so the string need not outlive the call.
+     * @param name The test suite name or description, used in reports; a
+     * string literal, a `const char*`, a `std::string`, or a
+     * `std::string_view`. It is copied, so the string need not outlive the
+     * call, nor be null-terminated.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test suite.
      * @param arguments A possibly empty list of arguments to be passed to
@@ -369,7 +371,8 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
     void
-    suite (const char* name, Callable_T&& callable, Args_T&&... arguments);
+    suite (std::string_view name, Callable_T&& callable,
+           Args_T&&... arguments);
 
     // ------------------------------------------------------------------------
 

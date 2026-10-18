@@ -105,11 +105,12 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
   void
-  runner::suite (const char* name, Callable_T&& callable,
+  runner::suite (std::string_view name, Callable_T&& callable,
                  Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+    trace::printf ("%s '%.*s'\n", __PRETTY_FUNCTION__,
+                   static_cast<int> (name.size ()), name.data ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     // Not std::make_unique(), which cannot access the protected constructor.

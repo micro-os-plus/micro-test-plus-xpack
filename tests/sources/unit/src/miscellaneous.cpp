@@ -18,7 +18,9 @@
 #include <limits>
 #include <optional>
 #include <string>
+#include <string_view>
 #include <tuple>
+#include <type_traits>
 #include <utility>
 #include <vector>
 
@@ -278,6 +280,25 @@ namespace
     {
     }
   };
+
+  // Adds a test case on behalf of its caller; the location of the test
+  // case is that of the call to the helper (API-REVIEW.md #21).
+  void
+  add_named_test_case (suite& s, const test_case_name& name, int* runs)
+  {
+    s.test (name, [runs] (auto& lt)
+      {
+        ++*runs;
+        lt.expect (true);
+      });
+  }
+
+  // Returns the line captured when the argument was converted.
+  auto
+  converted_line (const test_case_name& name)
+  {
+    return name.location ().line ();
+  }
 } // namespace
 
 // ----------------------------------------------------------------------------
@@ -1424,6 +1445,97 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (local_runner.set_abort_handler (nullptr)
                   == &test_abort_handler)
             << "previous handler returned";
+        local_counts.successful_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The test case names can be standard strings, also temporary ones,
+    // and the suite names can also be string views; a helper can forward
+    // a test case name with the location of its caller (API-REVIEW.md
+    // #21).
+    ts.test ("Test case and suite names", [] (auto& t)
+      {
+        static_assert (std::is_convertible_v<const char*, test_case_name>);
+        static_assert (std::is_convertible_v<std::string, test_case_name>);
+        // Not null-terminated, so not accepted.
+        static_assert (
+            !std::is_convertible_v<std::string_view, test_case_name>);
+
+        runner_options options{};
+        options.selected_reporter = reporter_kind::human;
+        options.verbosity_level = verbosity::silent;
+
+        runner local_runner;
+        auto& local_ts = local_runner.initialise (options, "Local");
+
+        std::string reported;
+
+        const std::string prefix = "Name";
+        local_ts.test (prefix + " from temporary", [&reported] (auto& lt)
+          {
+            reported = lt.name ();
+            lt.expect (true);
+          });
+
+        t.expect (eq (reported, std::string{ "Name from temporary" }))
+            << "temporary string name";
+        local_counts.successful_checks++;
+
+        const std::string named = "Name from string";
+        local_ts.test (named, [&reported] (auto& lt)
+          {
+            reported = lt.name ();
+            lt.expect (true);
+          });
+
+        t.expect (eq (reported, named)) << "string name";
+        local_counts.successful_checks++;
+
+        int runs = 0;
+        add_named_test_case (local_ts, "Name via helper", &runs);
+        add_named_test_case (local_ts, prefix + " via helper", &runs);
+
+        t.expect (eq (runs, 2)) << "helper test cases run";
+        local_counts.successful_checks++;
+
+        const auto line = converted_line ("Converted name");
+        const decltype (line) expected_line = __LINE__ - 1;
+
+        t.expect (eq (line, expected_line)) << "location of the caller";
+        local_counts.successful_checks++;
+
+        std::string from_string;
+        std::string from_view;
+
+        {
+          // Destroyed before the suite runs.
+          std::string suite_name = "Suite from string";
+          local_runner.suite (suite_name, [&from_string] (suite& s)
+            {
+              from_string = s.name ();
+              s.test ("Local test", [] (auto& lt) { lt.expect (true); });
+            });
+          suite_name = "Changed";
+        }
+
+        // Not null-terminated after the first 15 characters.
+        const std::string_view view = "Suite from view, truncated";
+        local_runner.suite (view.substr (0, 15), [&from_view] (suite& s)
+          {
+            from_view = s.name ();
+            s.test ("Local test", [] (auto& lt) { lt.expect (true); });
+          });
+
+        t.expect (eq (local_runner.run (), 0)) << "local session passed";
+        local_counts.successful_checks++;
+
+        t.expect (eq (from_string, std::string{ "Suite from string" }))
+            << "string suite name copied";
+        local_counts.successful_checks++;
+
+        t.expect (eq (from_view, std::string{ "Suite from view" }))
+            << "string view suite name copied";
         local_counts.successful_checks++;
 
         local_counts.executed_test_cases++;

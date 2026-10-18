@@ -404,12 +404,29 @@ Test case objects can be created using the `test()` method provided by the test 
 
 ```cpp
 template <typename Callable_T, typename... Args_T>
-void test (const detail::test_name& name, Callable_T&& func, Args_T&&... arguments);
+void test (const test_case_name& name, Callable_T&& func, Args_T&&... arguments);
 ```
 
-The name is a string literal or a `const char*`, converted implicitly to
-`detail::test_name`, which also records the location of the `test()`
-call.
+The name is a string literal, a `const char*`, or a `std::string`,
+converted implicitly to `test_case_name`, which also records the
+location of the `test()` call. The name is not copied; since the test
+case runs within the call to `test()`, a temporary string, such as
+`prefix + " overflow"`, can be passed. A `std::string_view` is not
+accepted, since it may not be null-terminated; pass
+`std::string (view)` instead.
+
+A helper function that adds test cases on behalf of its caller can take
+a `const mt::test_case_name&` parameter and pass it to `test()`, so that
+the location reported for the test case is that of the call to the
+helper:
+
+```cpp
+void
+check_answer (mt::suite& ts, const mt::test_case_name& name, int value)
+{
+  ts.test (name, [value] (auto& t) { t.expect (mt::eq (value, 42)); });
+}
+```
 
 The additional arguments, if any, are passed to the callable after the
 test case reference. They are copied when `test()` is called, as they
@@ -1084,6 +1101,10 @@ The suites must be added before `run()` is called. A suite added while
 `run()` runs, for example from the body of another suite, or after it
 returned, would never run; it is rejected, the error is reported on
 `stderr`, and the result is not 0.
+
+The suite name can be a string literal, a `const char*`, a
+`std::string`, or a `std::string_view`; it is copied, so the string
+need not outlive the call to `suite()`.
 
 #### Example
 

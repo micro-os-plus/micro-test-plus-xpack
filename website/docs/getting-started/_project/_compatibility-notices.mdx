@@ -138,10 +138,18 @@ An exception that escapes the body of a test case is now reported as a
 failed check, at the location of the `test()` call, and the run
 continues with the next test case; it previously ended the program. To
 capture that location, the name parameter of `suite::test()` and
-`test_case::test()` is now a `detail::test_name`, converted implicitly
-from a string literal or a `const char*`; an argument that converts to
-`const char*` only via a user-defined conversion operator must now be
-converted explicitly. As for `expect()`, GCC with `-Waggregate-return`
+`test_case::test()` is now a `test_case_name`, converted implicitly
+from a string literal, a `const char*`, or a `std::string` (which was
+previously not accepted); an argument that converts to `const char*`
+only via a user-defined conversion operator must now be converted
+explicitly. Helper functions that add test cases can take a
+`const test_case_name&` parameter, so that the reported location is
+that of their caller.
+
+The name parameter of `runner::suite()` is now a `std::string_view`, so
+a `std::string` is also accepted; as for `test()`, an argument that
+converts to `const char*` only via a user-defined conversion operator
+must now be converted explicitly. As for `expect()`, GCC with `-Waggregate-return`
 now warns at the `test()` calls too.
 
 Likewise, an exception that escapes the body of a test suite, outside
