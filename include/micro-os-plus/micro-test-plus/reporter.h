@@ -446,8 +446,9 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the beginning of a test suite.
        *
        * @details
-       * Called by `suite::run()` and `static_suite::run()` before the suite
-       * body, and by `runner::initialise()` for the top suite.
+       * Called by `suite::run()` before the suite body, for the suites
+       * registered with `runner::suite()` and for the static suites, and
+       * by `runner::initialise()` for the top suite.
        *
        * @param suite Reference to the test suite.
        * @par Returns
@@ -461,9 +462,11 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the end of a test suite.
        *
        * @details
-       * Called by `suite::run()` and `static_suite::run()` after the suite
-       * body, and by `runner::run()` for the top suite;
-       * implementations display the suite results.
+       * Called by `suite::run()` after the suite body, also when an
+       * exception escaped it, for the suites registered with
+       * `runner::suite()` and for the static suites, and by
+       * `runner::run()` for the top suite; implementations display the
+       * suite results.
        *
        * @param suite Reference to the test suite.
        * @par Returns
