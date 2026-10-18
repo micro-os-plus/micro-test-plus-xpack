@@ -244,6 +244,15 @@ consumers remove the quotes and the escapes, so the values they report
 are unchanged; tools that read the TAP lines as plain text now see
 them.
 
+In the `at:` field of the YAML diagnostics blocks, the location of a
+failed check is now written as `fileName:` and `lineNumber:`, as
+node-tap writes it; it was previously written as `filename:` and
+`line:`. The node-tap reporters read the file name only from
+`fileName:` (or `file:`), so the file name was lost, for example in the
+JUnit report, where the failed test case had neither the `file` nor
+the `line` attribute that the CI systems use to annotate the failure.
+Tools that read the previous names must be updated.
+
 The runner no longer derives from the internal `detail::test_node`
 class, since it is not a node of the test tree: `runner::name()`, which
 always returned `"runner"`, was removed; the name shown in the reports

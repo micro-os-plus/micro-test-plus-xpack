@@ -887,6 +887,13 @@ namespace micro_os_plus::micro_test_plus::detail
    * the line number, and closing the block (`...`); the stream is then
    * flushed.
    *
+   * The location fields are named `fileName:` and `lineNumber:`, as
+   * written by node-tap; its reporters (for example the JUnit one, used
+   * by the CI systems to annotate the failures) read the file name only
+   * from `fileName:` or `file:`, not from `filename:`. There is no
+   * `columnNumber:`, since `reflection::source_location` does not
+   * provide a column.
+   *
    * The expression, which follows `condition_begin_` in the buffer, is
    * first replaced by its YAML double-quoted form (see
    * `yaml_double_quoted()`), so that the operands that start a YAML flow
@@ -921,9 +928,10 @@ namespace micro_os_plus::micro_test_plus::detail
     // 2-space indentation for YAML diagnostics.
 
     *this << indent (level + 1) << "  at:" << endl;
-    *this << indent (level + 1) << "    filename: "
+    *this << indent (level + 1) << "    fileName: "
           << utility::extract_file_name (location.file_name ()) << endl;
-    *this << indent (level + 1) << "    line: " << location.line () << endl;
+    *this << indent (level + 1) << "    lineNumber: " << location.line ()
+          << endl;
 
     *this << indent (level + 1) << "  ..." << endl;
 
