@@ -97,6 +97,9 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
+    // Forward definitions.
+    class check_result;
+
     // ------------------------------------------------------------------------
 
     /**
@@ -169,10 +172,21 @@ namespace micro_os_plus::micro_test_plus
      * The class is non-copyable and non-movable to avoid accidental copying
      * of the internal buffer.
      *
+     * Apart from the constructor, the public members are the
+     * `operator<<` overloads and the read-only `str()`, so that the
+     * application `operator<<` functions for user-defined types can only
+     * append text. The functions that assign the buffer to a check, and
+     * return and release its text, are private, and called only by
+     * `check_result`, a friend; an application function calling them
+     * would corrupt the texts of the pending checks.
+     *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     class expression_formatter
     {
+      // Assign the buffer to the checks, and report their texts.
+      friend class check_result;
+
     public:
       /**
        * @brief Constructor with colour configuration.
@@ -664,10 +678,15 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__cpp_exceptions)
 
       // ----------------------------------------------------------------------
-      // Buffer accessors.
 
       /**
-       * @brief Returns a const reference to the internal buffer.
+       * @brief Returns the text written to the formatter.
+       *
+       * @details
+       * Intended for testing the application `operator<<` functions with
+       * a formatter constructed for this purpose; since the formatter only
+       * appends, the text of each value starts where the previous one
+       * ended. The text cannot be modified through this reference.
        *
        * @par Parameters
        *   None.
@@ -676,59 +695,7 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] const std::string&
       str (void) const noexcept;
 
-      /**
-       * @brief Returns a pointer to the null-terminated buffer contents.
-       *
-       * @par Parameters
-       *   None.
-       * @return Pointer to the null-terminated character array.
-       */
-      [[nodiscard]] const char*
-      c_str (void) const noexcept;
-
-      /**
-       * @brief Clears the internal buffer.
-       *
-       * @par Parameters
-       *   None.
-       * @par Returns
-       *   Nothing.
-       */
-      void
-      clear (void) noexcept;
-
-      /**
-       * @brief Returns whether the internal buffer is empty.
-       *
-       * @par Parameters
-       *   None.
-       * @retval true  The buffer contains no characters.
-       * @retval false The buffer contains at least one character.
-       */
-      [[nodiscard]] bool
-      empty (void) const noexcept;
-
-      /**
-       * @brief Appends a sequence of identical characters to the buffer.
-       *
-       * @param count The number of characters to append.
-       * @param ch The character to repeat.
-       * @par Returns
-       *   Nothing.
-       */
-      void
-      append (size_t count, char ch);
-
-      /**
-       * @brief Reserves storage in the internal buffer.
-       *
-       * @param capacity The minimum capacity to reserve.
-       * @par Returns
-       *   Nothing.
-       */
-      void
-      reserve (size_t capacity);
-
+    private:
       // ----------------------------------------------------------------------
       // Ownership by the checks.
 
@@ -770,7 +737,8 @@ namespace micro_os_plus::micro_test_plus
       void
       end_check (const void* owner) noexcept;
 
-    protected:
+      // ----------------------------------------------------------------------
+
       /**
        * @brief Selects the appropriate colour code based on a condition.
        *
@@ -828,7 +796,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief The internal output buffer.
        *
        * @details
-       * Accumulates the formatted text; cleared with `clear()`.
+       * Accumulates the formatted text; cleared by `begin_check()`.
        */
       std::string buffer_{};
 
@@ -900,9 +868,9 @@ namespace micro_os_plus::micro_test_plus
    * by their underlying value. Plain boolean checks, such as `expect (a == b)`, do not
    * need it, but they report only the source location on failure.
    *
-   * Only the public `operator<<` overloads of the formatter are intended
-   * for use by applications; the rest of the class is an implementation
-   * detail.
+   * Applications use the `operator<<` overloads, and `str()` to test
+   * their own operators; the functions that manage the buffer are
+   * private to the framework.
    */
   using expression_formatter = detail::expression_formatter;
 

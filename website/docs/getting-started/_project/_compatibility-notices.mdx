@@ -103,6 +103,15 @@ functions to the `expression_formatter`; to write a separator without
 quotes, use a string (`" "` instead of `' '`). A zero character in a
 message added with `<<` no longer ends the message.
 
+The `expression_formatter` can now only be appended to, through its
+`operator<<` overloads, and read, through `str()`. The buffer
+accessors `c_str()`, `clear()`, `empty()`, `append()`, and
+`reserve()`, which the framework did not use, were removed, and the
+functions that assign the buffer to the checks are private, so that an
+application `operator<<` cannot alter the texts of the pending checks.
+Use `str().c_str()` and `str().empty()` instead of the removed
+functions.
+
 Where `long double` is wider than `double` (e.g. x86-64 Linux and
 macOS, AArch64, and RISC-V), the `long double` values are now written
 in the shortest form that reads back as the same value, as the `float`

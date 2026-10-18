@@ -108,61 +108,6 @@ namespace micro_os_plus::micro_test_plus::detail
     return buffer_;
   }
 
-  /**
-   * @details
-   * Returns `buffer_.c_str()`, providing a pointer to the
-   * null-terminated contents of the internal buffer.
-   */
-  inline const char*
-  expression_formatter::c_str (void) const noexcept
-  {
-    return buffer_.c_str ();
-  }
-
-  /**
-   * @details
-   * Calls `buffer_.clear()`, resetting the buffer length to zero
-   * without releasing the allocated storage.
-   */
-  inline void
-  expression_formatter::clear (void) noexcept
-  {
-    buffer_.clear ();
-  }
-
-  /**
-   * @details
-   * Returns `buffer_.empty()`, indicating whether the accumulated
-   * string has zero length.
-   */
-  inline bool
-  expression_formatter::empty (void) const noexcept
-  {
-    return buffer_.empty ();
-  }
-
-  /**
-   * @details
-   * Appends @p count repetitions of @p ch to the internal buffer by
-   * delegating to `buffer_.append(count, ch)`.
-   */
-  inline void
-  expression_formatter::append (size_t count, char ch)
-  {
-    buffer_.append (count, ch);
-  }
-
-  /**
-   * @details
-   * Calls `buffer_.reserve(capacity)` to pre-allocate storage,
-   * reducing subsequent dynamic allocations.
-   */
-  inline void
-  expression_formatter::reserve (size_t capacity)
-  {
-    buffer_.reserve (capacity);
-  }
-
   // --------------------------------------------------------------------------
 
   /**

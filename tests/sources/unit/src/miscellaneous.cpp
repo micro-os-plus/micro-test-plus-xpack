@@ -562,12 +562,15 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         detail::colours no_colours{};
         expression_formatter f{ no_colours };
 
-        // Compares the accumulated text, then clears it.
+        // Compares the text written since the previous check (the
+        // formatter only appends).
+        std::size_t start = 0;
         auto check = [&] (std::string_view expected, const char* message)
           {
-            t.expect (eq (std::string_view{ f.str () }, expected)) << message;
+            std::string_view written{ f.str () };
+            t.expect (eq (written.substr (start), expected)) << message;
             local_counts.successful_checks++;
-            f.clear ();
+            start = written.size ();
           };
 
         char text[] = "mutable";
@@ -591,11 +594,12 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         // platform.
         unsigned char bytes[] = { 'a', 'b', 0 };
         f << bytes;
-        t.expect (not f.str ().empty () && f.str () != "ab"
-                  && f.str () != "0x0")
+        std::string_view written
+            = std::string_view{ f.str () }.substr (start);
+        t.expect (not written.empty () && written != "ab"
+                  && written != "0x0")
             << "unsigned char array";
         local_counts.successful_checks++;
-        f.clear ();
 
         local_counts.executed_test_cases++;
       });
@@ -615,12 +619,15 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         detail::colours no_colours{};
         expression_formatter f{ no_colours };
 
-        // Compares the accumulated text, then clears it.
+        // Compares the text written since the previous check (the
+        // formatter only appends).
+        std::size_t start = 0;
         auto check = [&] (std::string_view expected, const char* message)
           {
-            t.expect (eq (std::string_view{ f.str () }, expected)) << message;
+            std::string_view written{ f.str () };
+            t.expect (eq (written.substr (start), expected)) << message;
             local_counts.successful_checks++;
-            f.clear ();
+            start = written.size ();
           };
 
         f << static_cast<signed char> (5);
@@ -690,12 +697,15 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         detail::colours no_colours{};
         expression_formatter f{ no_colours };
 
-        // Compares the accumulated text, then clears it.
+        // Compares the text written since the previous check (the
+        // formatter only appends).
+        std::size_t start = 0;
         auto check = [&] (std::string_view expected, const char* message)
           {
-            t.expect (eq (std::string_view{ f.str () }, expected)) << message;
+            std::string_view written{ f.str () };
+            t.expect (eq (written.substr (start), expected)) << message;
             local_counts.successful_checks++;
-            f.clear ();
+            start = written.size ();
           };
 
         f << 'a';
@@ -741,12 +751,15 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         detail::colours no_colours{};
         expression_formatter f{ no_colours };
 
-        // Compares the accumulated text, then clears it.
+        // Compares the text written since the previous check (the
+        // formatter only appends).
+        std::size_t start = 0;
         auto check = [&] (std::string_view expected, const char* message)
           {
-            t.expect (eq (std::string_view{ f.str () }, expected)) << message;
+            std::string_view written{ f.str () };
+            t.expect (eq (written.substr (start), expected)) << message;
             local_counts.successful_checks++;
-            f.clear ();
+            start = written.size ();
           };
 
         f << colour::green;
