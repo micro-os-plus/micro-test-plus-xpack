@@ -88,6 +88,12 @@ namespace micro_os_plus::micro_test_plus::detail
    * colour-coded diagnostics (when the output is a terminal) and multiple
    * verbosity levels.
    *
+   * The reporter is intended for the people who read the console output.
+   * Most writes to the optional output file follow the console verbosity,
+   * so the file receives the full report only with normal or verbose
+   * verbosity; for the integration with other tools, the TAP reporter,
+   * whose output file is always complete, is the one to use.
+   *
    * The reporter is created by the runner, as selected by the
    * `--reporter` command-line option. A different output format requires
    * a new class derived from `reporter`, and an extension of the runner

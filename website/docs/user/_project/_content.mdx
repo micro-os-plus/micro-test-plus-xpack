@@ -1282,6 +1282,15 @@ In a pattern, `*` matches any sequence of characters, `?` matches any single cha
 
 The top suite is never skipped as a whole, since its body is `main()`, but its test cases are filtered like those of any other suite.
 
+### Output file
+
+To also write the report to a file, use the `--output-file` option, either as `--output-file=<path>` or as `--output-file <path>`.
+
+The two outputs have different purposes: the console is intended for the people who watch the tests run, and its content is selected with the verbosity options, while the output file is intended for the integration with other tools (for example a CI pipeline, or a TAP consumer such as node-tap).
+
+- With the **TAP** reporter (the default), the output file always receives the **complete report**, whatever the console verbosity; this is the reporter to use for integration.
+- The **human** reporter is intended for the console. Its output file receives the complete report only with the normal or verbose verbosity; with `--quiet` or `--silent`, the file is incomplete (it contains the test case names, and, with `--quiet`, the totals), and should not be relied upon.
+
 ### The _human_ reporter
 
 Starting with v4.x, the default reporter is **TAP**. For compatibility with
@@ -1305,6 +1314,8 @@ The output is slightly more compact, for example:
 
 ✓ Total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.082 ms
 ```
+
+The human reporter is intended for reading the console output. For the integration with other tools, use the TAP reporter, whose output file is always complete (see [Output file](#output-file)).
 
 ## Known problems
 

@@ -87,8 +87,13 @@ namespace micro_os_plus::micro_test_plus
    *
    * The level is selected with the `--silent`, `--quiet`, and `--verbose`
    * command-line options, or with `runner_options::verbosity_level`; the
-   * default is `normal`. It affects only the console output; the optional
-   * output file always receives the full report.
+   * default is `normal`. The console output is intended for the people
+   * who watch the tests run, while the optional output file is intended
+   * for the integration with other tools. With the TAP reporter, the
+   * level affects only the console output, and the output file always
+   * receives the full report. The human reporter is intended for the
+   * console; its output file receives the full report only with the
+   * `normal` and `verbose` levels, and is incomplete otherwise.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
