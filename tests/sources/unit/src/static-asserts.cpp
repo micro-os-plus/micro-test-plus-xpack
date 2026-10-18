@@ -99,6 +99,11 @@ static_asserts ()
       static_assert (type_traits::is_op<to_i>);
       static_assert (type_traits::is_op<decltype (42_i)>);
       static_assert (type_traits::is_op<decltype (1.5_d)>);
+      static_assert (type_traits::is_op<to_f>);
+      static_assert (not type_traits::is_op<int>);
+      // The value wrappers must not have an empty base, which would
+      // trigger the AArch64 GCC 10.1 `-Wpsabi` note for `approx()`.
+      static_assert (not std::is_base_of_v<detail::op, to_f>);
       static_assert (type_traits::has_epsilon<to_d>);
       static_assert (not type_traits::has_epsilon<to_i>);
     }

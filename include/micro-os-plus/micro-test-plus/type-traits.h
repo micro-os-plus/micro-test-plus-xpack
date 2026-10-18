@@ -174,29 +174,34 @@ namespace micro_os_plus::micro_test_plus
     concept has_epsilon = requires (const T& t) { t.epsilon; };
 
     /**
-     * @brief C++20 concept satisfied when a type derives from `op`.
+     * @brief C++20 concept satisfied when a type is a framework expression
+     * type.
      *
      * @tparam T The type to be checked.
      *
      * @details
-     * The `is_op` concept is satisfied when `T` is derived from the
-     * `detail::op` base struct. It is used throughout the framework,
+     * The `is_op` concept is satisfied when `T` has the `op_type` member
+     * type alias of `detail::op`, either inherited from the `detail::op`
+     * base struct, or declared directly, like in `detail::value_base`,
+     * which avoids the empty base. It is used throughout the framework,
      * both as a constraint and as a boolean expression in `if constexpr`
      * contexts.
      */
     template <class T>
-    concept is_op = std::is_base_of_v<detail::op, T>;
+    concept is_op = requires {
+      requires std::same_as<typename T::op_type, detail::op>;
+    };
 
     /**
-     * @brief C++20 concept satisfied when at least one of two types derives
-     * from `op`.
+     * @brief C++20 concept satisfied when at least one of two types is a
+     * framework expression type.
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
      * @details
      * The `any_op` concept is satisfied when `Lhs_T` or `Rhs_T` (or both)
-     * are derived from the `detail::op` base struct. It is used to
+     * are framework expression types (see `is_op`). It is used to
      * constrain binary operator overloads in the `operators` namespace so
      * that they are enabled only when at least one operand is a framework
      * type, avoiding unintended conflicts with user-defined operators.
@@ -212,7 +217,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `checkable` concept is satisfied when `T` is either a
-     * framework operator type (derived from `op`) or is implicitly
+     * framework expression type (see `is_op`) or is implicitly
      * convertible to `bool`. It is used to constrain the `expect()` and
      * `require()` function templates, ensuring that only sensible
      * expression types are accepted.

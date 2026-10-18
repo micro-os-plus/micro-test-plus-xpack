@@ -694,7 +694,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Expr_T The type of the custom expression.
      *
      * @par Constraints
-     *   Enabled only if `Expr_T` is derived from `detail::op` or
+     *   Enabled only if `Expr_T` is a framework expression type or
      *   is convertible to `bool` (enforced via a C++20 `requires` clause).
      *
      * @param expr Logical expression to evaluate.
@@ -727,7 +727,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Expr_T The type of the custom expression.
      *
      * @par Constraints
-     *   Enabled only if `Expr_T` is derived from `detail::op` or
+     *   Enabled only if `Expr_T` is a framework expression type or
      *   is convertible to `bool` (enforced via a C++20 `requires` clause).
      *
      * @param expr Logical expression to evaluate.

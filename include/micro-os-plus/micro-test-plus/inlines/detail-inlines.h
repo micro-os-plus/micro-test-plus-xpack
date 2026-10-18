@@ -74,7 +74,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * If the type `T` is a framework type (derived from `detail::op`)
+     * If the type `T` is a framework type (see `type_traits::is_op`)
      * that provides a `get()` member function, it is invoked and its result
      * returned. Otherwise a reference to the argument itself is returned,
      * so that the types of the application, even those with a `get()`

@@ -87,20 +87,32 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief Empty base struct for all framework expression types.
+     * @brief Empty base struct for the framework expression types.
      *
      * @details
-     * The `op` struct is the common base of the value wrappers defined in
-     * this header and of the comparators defined in `detail.h`. It
-     * provides a unified type hierarchy, which the `type_traits::is_op`
-     * and `type_traits::any_op` concepts use to distinguish the framework
+     * The `op` struct is the common base of the comparators defined in
+     * `detail.h` and of `floating_point_constant`. It provides the
+     * `op_type` marker, which the `type_traits::is_op` and
+     * `type_traits::any_op` concepts use to distinguish the framework
      * types from the user types, so that `expect()`, `require()`, and the
      * operators in the `operators` namespace accept them.
+     *
+     * The types that must not have an empty base, like `value_base`,
+     * declare the `op_type` marker directly instead of deriving from
+     * `op`.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     struct op
     {
+      /**
+       * @brief Marker identifying the framework expression types.
+       *
+       * @details
+       * Detected by the `type_traits::is_op` concept, and inherited by
+       * all types derived from `op`.
+       */
+      using op_type = op;
     };
 
     // ------------------------------------------------------------------------
@@ -117,15 +129,31 @@ namespace micro_os_plus::micro_test_plus
      * `get()` accessor, shared by `integral_constant`, `value<T>`, and the
      * floating point specialisation of `value<T>`.
      *
-     * It inherits from `op` so that all derived types satisfy the
-     * `type_traits::is_op` concept without each struct needing to inherit
-     * from `op` directly.
+     * It declares the `op_type` marker, so that all derived types satisfy
+     * the `type_traits::is_op` concept without each struct needing to
+     * declare it.
+     *
+     * It does not derive from the empty `op` struct: on AArch64, a type
+     * with an empty base and only floating point members, like
+     * `value<float>`, is a homogeneous floating point aggregate whose
+     * parameter passing changed in GCC 10.1, and GCC emits a `-Wpsabi`
+     * note for each function passing or returning it by value, like
+     * `approx()`.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     template <class T>
-    struct value_base : op
+    struct value_base
     {
+      /**
+       * @brief Marker identifying the framework expression types.
+       *
+       * @details
+       * Declared directly rather than inherited from `op`, to avoid the
+       * empty base; detected by the `type_traits::is_op` concept.
+       */
+      using op_type = op;
+
       /**
        * @brief The type of the stored value.
        *
