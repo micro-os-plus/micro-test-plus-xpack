@@ -127,9 +127,13 @@ single `ctest`/`meson test` command from the top level.
 Common commands (run from the repository root):
 
 ```sh
-xpm run test -C tests                                # system compiler
+xpm run test -C tests               # native build with the system compiler
+xpm run test-selected -C tests      # a minimal selection
+xpm run test-latest -C tests        # native and qemu tests with latest compiler versions
+xpm run test-all -C tests           # native and qemu tests with all compiler versions
+
 xpm run test-synthetic-posix-cmake-clang -C tests    # native build with clang
-xpm run test-qemu-cortex-m7f-cmake-gcc -C tests      # cross build run under QEMU (Cortex-M7F)
+xpm run test-qemu-cortex-m33-cmake-gcc -C tests      # cross build run under QEMU (Cortex-M33)
 ```
 
 Other platforms available under `tests/platforms/` (each with its own
@@ -146,7 +150,6 @@ generated action names, e.g.
 `test-qemu-cortex-<variant>-<builder>-gcc<version>`; with the version
 omitted, the latest toolchain is used).
 
-Before considering a change complete, run at minimum the system-compiler
-test and, where the change could affect embedded/cross builds, the
-clang and a QEMU cross-target run as called out in the Copilot
-instructions above.
+Before considering a change complete, run the tests required by the
+Testing section of the Copilot instructions above: `test-selected`
+after major changes, and only `test` after minor ones.

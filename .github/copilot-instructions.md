@@ -53,7 +53,7 @@ This is the **µTest++ Testing Framework** project, part of
 
 When needed to silence warnings, use separate groups of pragmas for each compiler.
 
-Always use __GNUC__ guards, and, if necessary, __clang__ guards to apply 
+Always use `__GNUC__` guards, and, if necessary, `__clang__` guards to apply
 compiler-specific pragmas.
 
 ```c
@@ -62,13 +62,12 @@ compiler-specific pragmas.
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif // defined(__GNUC__)
-#pragma GCC diagnostic ignored "-Wredundant-tags"
 #endif // defined(__clang__)
+#pragma GCC diagnostic ignored "-Wredundant-tags"
 #endif // defined(__GNUC__)
 ```
 
-Brace the whole group of includes by separator lines.
+Brace the whole group of pragmas by separator lines.
 
 ## Documentation
 
@@ -100,8 +99,8 @@ Brace the whole group of includes by separator lines.
 When adding new source files, place them in the appropriate `src` or `include`
 folder, and add corresponding entries in the top CMake and Meson configurations.
 
-Avoid running `find /` commands that search the entire filesystem, as this 
-always timeouts.
+Avoid running `find /` commands that search the entire filesystem, as this
+always times out.
 
 ## Tools binaries
 
@@ -110,11 +109,13 @@ folder within the build folders and the project root.
 
 ## Testing
 
-After making changes, run in a terminal:
+After making major changes, run in a terminal:
 
-- `xpm run test -C tests` to execute the test with the system compiler
-- `xpm run test-synthetic-posix-cmake-clang -C tests` to execute the test with clang
-- `xpm run test-qemu-cortex-m7f-cmake-gcc -C tests` to execute the test with cross gcc
+- `xpm run test-selected -C tests` -- to execute a minimal selection of tests
+
+After minor changes, take a shortcut and run only:
+
+- `xpm run test -C tests` -- to execute the test with the system compiler.
 
 When using linked writable projects, it is necessary to run the linking step to ensure all dependencies are correctly resolved.
 
@@ -125,7 +126,7 @@ When using non-native platforms, run one by one specific actions for the given c
 - `xpm run setup --config <name>`
 - `xpm run build --config <name>`
 
-For non-qemu plaforms, running the tests can be done only after confirming that the board is 
+For non-qemu platforms, running the tests can be done only after confirming that the board is
 powered up, with the command:
 
 - `xpm run test --config <name>`
@@ -136,8 +137,8 @@ powered up.
 ## Code Review
 
 - When asked for a code review, follow the separate instructions in
-`.github/skills/code-review/SKILL.md` for a thorough and uncompromising
-review of the codebase.
+  `.github/skills/code-review/SKILL.md` for a thorough and uncompromising
+  review of the codebase.
 
 ## Commit Message Guidelines
 
@@ -145,7 +146,7 @@ When making changes to the codebase, follow these guidelines for version control
 
 - Use the imperative mood in the subject line (e.g., "Fix bug" instead of "Fixed bug" or "Fixes bug").
 - Limit the subject line to 50 characters.
-- Capitalize the subject line.
+- Capitalise the subject line.
 - Do not end the subject line with a period.
 - Use the body to explain what and why vs. how.
 - Wrap the body at 72 characters.
@@ -163,5 +164,5 @@ entries) are informative only.
 In particular, no `*-defines.h` file is generated, so a commented-out
 `defaultDefine` does not mean that the macro is disabled. Its name
 documents the macro that the application must define itself, either in
-`micro-os-plus/project-config.h` or in project specific header files 
+`micro-os-plus/project-config.h` or in project specific header files
 (e.g., `micro-os-plus/startup-defines.h`).
