@@ -131,14 +131,25 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Delegates immediately to `runner_.abort()`, passing the supplied
-     * source location so that the error message identifies the call site
-     * before the process is terminated via `::abort()`.
+     * Returns the flag kept by the owning runner, set by
+     * `runner::abort()` and never cleared.
+     */
+    [[nodiscard]] bool
+    runnable_base::is_aborted_ (void) const noexcept
+    {
+      return runner_.aborted_;
+    }
+
+    /**
+     * @details
+     * Delegates immediately to `runner_.abort_()`, passing the supplied
+     * source location, so that the report identifies the failed
+     * requirement, before the process is terminated via `::abort()`.
      */
     [[noreturn]] void
     runnable_base::abort_ (const reflection::source_location& sl) const
     {
-      runner_.abort (sl);
+      runner_.abort_ (sl, true);
     }
 
     /**
@@ -166,11 +177,20 @@ namespace micro_os_plus::micro_test_plus
      * reports only its own counters.
      * The child's totals are, however, accumulated into @p suite so that
      * the suite summary reflects all checks performed by its test cases.
+     *
+     * After the test execution was aborted (possible only when the abort
+     * handler threw an exception, which the application caught), the
+     * report is complete, so the test case is neither run nor reported.
      */
     void
     runnable_base::after_test_case_create_ (class test_case& test_case,
                                             suite& suite)
     {
+      if (runner_.aborted_)
+        {
+          return;
+        }
+
       ++child_test_cases_count_;
 
       // Skip the test cases not selected by the filter; the outer test
@@ -261,6 +281,12 @@ namespace micro_os_plus::micro_test_plus
    * The `detail::failed_requirement` exception, thrown after a failed
    * `require()`, only stops the body; the failure was already reported
    * and counted.
+   *
+   * An exception thrown by the abort handler, after the abort of the
+   * test execution was reported, is passed on, without reporting it, and
+   * without ending the test case, since the report is already complete;
+   * it reaches the application, which set the handler to return control
+   * this way.
    */
   void
   test_case::run_ (void)
@@ -288,10 +314,20 @@ namespace micro_os_plus::micro_test_plus
       }
     catch (const std::exception& e)
       {
+        if (is_aborted_ ())
+          {
+            // Thrown by the abort handler; the report is complete.
+            throw;
+          }
         fail_unexpected_exception_ (e.what ());
       }
     catch (...)
       {
+        if (is_aborted_ ())
+          {
+            // Thrown by the abort handler; the report is complete.
+            throw;
+          }
         fail_unexpected_exception_ (nullptr);
       }
 #else
@@ -372,6 +408,9 @@ namespace micro_os_plus::micro_test_plus
    * reported, and the following ones are not run. A body declared
    * `noexcept` cannot pass the exception on; the program is then
    * terminated before it reaches this function.
+   *
+   * As for the test cases, an exception thrown by the abort handler is
+   * passed on, without reporting it, and without ending the suite.
    */
   void
   suite::run_ (void)
@@ -394,10 +433,20 @@ namespace micro_os_plus::micro_test_plus
       }
     catch (const std::exception& e)
       {
+        if (is_aborted_ ())
+          {
+            // Thrown by the abort handler; the report is complete.
+            throw;
+          }
         fail_unexpected_exception_ (e.what ());
       }
     catch (...)
       {
+        if (is_aborted_ ())
+          {
+            // Thrown by the abort handler; the report is complete.
+            throw;
+          }
         fail_unexpected_exception_ (nullptr);
       }
 #else

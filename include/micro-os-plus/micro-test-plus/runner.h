@@ -314,15 +314,16 @@ namespace micro_os_plus::micro_test_plus
      *
      * The session runs only once; later calls return the same exit code
      * without running anything again. A call made while the session runs,
-     * for example from a suite body, is reported on `stderr` and returns
-     * 1, without other effects.
+     * for example from a suite body, or after the test execution was
+     * aborted (see `abort()`), is reported on `stderr` and returns 1,
+     * without other effects.
      *
      * @par Parameters
      *   None.
      * @return 0 if all checks were successful, 1 otherwise, if a suite was
-     * rejected by `suite()`, or if the runner was not initialised, and 2
-     * if `initialise()` reported an option error, regardless of the
-     * checks.
+     * rejected by `suite()`, if the runner was not initialised, or if the
+     * test execution was aborted, and 2 if `initialise()` reported an
+     * option error, regardless of the checks.
      *
      * @since 5.1.0
      */
@@ -388,10 +389,16 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The handler receives the source location from which the abort was
      * triggered. It is not expected to return; it may, for example, reset
-     * an embedded target, signal the test result to a debugger, or throw
-     * an exception (except when called from a check, which reports from a
-     * destructor). If it returns, the process is terminated with
-     * `::abort()`.
+     * an embedded target, or signal the test result to a debugger. If it
+     * returns, the process is terminated with `::abort()`.
+     *
+     * When exceptions are enabled, it may also throw an exception, to
+     * return control to the application without terminating the process.
+     * The test cases and the suites do not catch it, so it leaves the
+     * `test()` call that started a test case of the top suite, or
+     * `run()`, and reaches the application; their remaining code is not
+     * run. The report is complete, but the runner cannot be used
+     * afterwards (see `abort()`).
      *
      * @since 5.1.0
      */
@@ -402,9 +409,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Test execution is aborted by a failed `require()`, when exceptions
-     * are not enabled (otherwise only the test case is stopped), or when
-     * the reporter detects an internal inconsistency. The diagnostic message
-     * is written to `stderr` before the handler is called.
+     * are not enabled (otherwise only the test case is stopped), or by an
+     * explicit call of `abort()`. The abort is reported before the handler
+     * is called (see `abort()`).
      *
      * The handler can be set at any time, before or after `initialise()`.
      *
@@ -421,9 +428,22 @@ namespace micro_os_plus::micro_test_plus
      * @brief Aborts test execution immediately.
      *
      * @details
-     * Writes the source location to `stderr`, and calls the handler set by
-     * `set_abort_handler()`, if any. If there is no handler, or if it
-     * returns, the process is terminated with `::abort()`.
+     * Between `initialise()` and the end of `run()`, the reporter
+     * completes the report, on the console and in the output file: it
+     * writes the results of the running test case, if any, followed by a
+     * line with the source location (a `Bail out!` line with the TAP
+     * reporter), in place of the totals. Before `initialise()` or after
+     * `run()`, when there is no report to complete, the source location
+     * is written to `stderr`.
+     *
+     * The handler set by `set_abort_handler()` is then called, if any. If
+     * there is no handler, or if it returns, the process is terminated
+     * with `::abort()`.
+     *
+     * The abort is final, also when the handler throws an exception: no
+     * test case runs afterwards, `initialise()` and `run()` report an
+     * error on `stderr` (`run()` returns 1), and a later abort is not
+     * reported again.
      *
      * @param sl The source location from which the abort is triggered.
      * @par Returns
@@ -602,6 +622,24 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] bool
     is_selected_ (const char* name, size_t level) const;
 
+    /**
+     * @brief Aborts test execution, telling the reporter why.
+     *
+     * @details
+     * Implements `abort()`, which calls it for an explicit abort; also
+     * called by `detail::runnable_base`, a friend, for a failed
+     * requirement without exceptions, so that the reporter names the
+     * cause.
+     *
+     * @param sl The source location from which the abort is triggered.
+     * @param is_requirement `true` if the abort is caused by a failed
+     * requirement.
+     * @par Returns
+     *   Does not return.
+     */
+    [[noreturn]] void
+    abort_ (const reflection::source_location& sl, bool is_requirement);
+
     // ------------------------------------------------------------------------
   protected:
     /**
@@ -753,6 +791,19 @@ namespace micro_os_plus::micro_test_plus
      * Set by `set_abort_handler()`.
      */
     abort_handler_t abort_handler_ = nullptr;
+
+    /**
+     * @brief Whether the test execution was aborted.
+     *
+     * @details
+     * Set by `abort_()`, before the abort is reported, and never cleared.
+     * Read by `detail::runnable_base`, a friend, so that, when the abort
+     * handler throws an exception, the test cases and the suites pass it
+     * on instead of reporting it, and no test case runs afterwards; read
+     * by `initialise()` and `run()`, which then refuse to start, and by
+     * `abort_()`, so that a later abort is not reported again.
+     */
+    bool aborted_ = false;
 
     /**
      * @brief The innermost test case being run, if any.

@@ -298,8 +298,7 @@ namespace
     }
 
     void
-    abort_test_case (const reflection::source_location&,
-                     const test_case&) override
+    abort_session (const reflection::source_location&, bool) override
     {
     }
 
@@ -1573,6 +1572,68 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                   == &test_abort_handler)
             << "previous handler returned";
         local_counts.successful_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // While the report is open, from `initialise()` to the end of
+    // `run()`, the abort is reported by the reporter, which completes the
+    // report, before the handler is called; an exception thrown by the
+    // handler is not caught by the test cases, and reaches the
+    // application, and the runner cannot be used afterwards
+    // (API-REVIEW.md #27).
+    ts.test ("Abort during the session", [] (auto& t)
+      {
+#if defined(__EXCEPTIONS)
+        for (const reporter_kind kind :
+             { reporter_kind::human, reporter_kind::tap })
+          {
+            const char* prefix
+                = (kind == reporter_kind::human) ? "human " : "tap ";
+
+            runner_options options{};
+            options.selected_reporter = kind;
+            options.verbosity_level = verbosity::silent;
+
+            runner local_runner;
+            auto& local_ts = local_runner.initialise (options, "Local");
+            local_runner.set_abort_handler (test_abort_handler);
+
+            bool caught = false;
+            try
+              {
+                local_ts.test ("Aborting", [&local_runner] (auto& lt)
+                  {
+                    lt.expect (true);
+                    local_runner.abort ();
+                  });
+              }
+            catch (const abort_exception&)
+              {
+                caught = true;
+              }
+
+            t.expect (caught) << prefix << "handler exception passed on";
+            local_counts.successful_checks++;
+
+            bool is_run = false;
+            local_ts.test ("After the abort", [&is_run] (auto& lt)
+              {
+                is_run = true;
+                lt.expect (true);
+              });
+
+            t.expect (!is_run) << prefix << "no test case after the abort";
+            local_counts.successful_checks++;
+
+            t.expect (eq (local_runner.run (), 1))
+                << prefix << "run() refused after the abort";
+            local_counts.successful_checks++;
+          }
+#else
+        t.expect (true) << "skipped without exceptions";
+        local_counts.successful_checks++;
+#endif // defined(__EXCEPTIONS)
 
         local_counts.executed_test_cases++;
       });

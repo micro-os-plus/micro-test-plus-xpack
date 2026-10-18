@@ -336,11 +336,6 @@ namespace micro_os_plus::micro_test_plus
        * The console is the standard output stream; the buffer is written
        * verbatim, without appending a line ending, and is not cleared.
        *
-       * @note Public because `check_result` calls this
-       *   from its destructor when aborting, after the test case
-       *   instance is no longer accessible via the normal
-       *   reporting path.
-       *
        * @par Parameters
        *   None.
        * @par Returns
@@ -567,27 +562,38 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Report a test case stopped by a failed requirement.
+       * @brief Report the abort of the test execution.
        *
        * @details
-       * Called by the result of a failed `require()` when exceptions are
-       * disabled, after the failure was added to the output buffer and
-       * before `runner::abort()` terminates the process; neither
-       * `end_test_case()` nor `end_session()` are called afterwards.
-       * Implementations display the buffered results with the context
-       * that identifies the test case, unless the verbosity is silent,
-       * and write them to the output file, if open.
+       * Called by `runner::abort()` between `begin_session()` and
+       * `end_session()`, before the abort handler and `::abort()`;
+       * neither the `end_test_case()` of the running test cases, if any,
+       * nor `end_session()` are called afterwards. The abort is caused
+       * either by a failed `require()`, when exceptions are disabled,
+       * after the failure was added to the output buffer, or by an
+       * explicit call of `runner::abort()`, from a test case body, from a
+       * suite body, or from the application.
        *
-       * @param location The source location of the failed requirement.
-       * @param test_case Reference to the stopped test case.
+       * Implementations display the buffered results, if any, with the
+       * context that identifies the running test case, followed by a
+       * line with the location of the abort, unless the verbosity is
+       * silent, and write them to the output file, if open, since the
+       * totals are never reached. They then clear the buffer, since the
+       * abort handler may throw an exception that the application
+       * catches, and the results must not be written again.
+       *
+       * @param location The source location of the failed requirement,
+       * or of the `runner::abort()` call.
+       * @param is_requirement `true` if the abort is caused by a failed
+       * requirement.
        * @par Returns
        *   Nothing.
        *
        * @since 5.1.0
        */
       virtual void
-      abort_test_case (const reflection::source_location& location,
-                       const test_case& test_case)
+      abort_session (const reflection::source_location& location,
+                     bool is_requirement)
           = 0;
 
       /**

@@ -432,9 +432,11 @@ namespace micro_os_plus::micro_test_plus::detail
    * case, the results of the checks already performed by the outer test
    * case, if any, are written first (see `commit_buffer_()`), so that the
    * output follows the execution order. For a top-level test case, the
-   * output buffer must be empty; if it is not, its content is written to
-   * `stderr` and execution is aborted with `runner::abort()`, which calls
-   * the handler set by `runner::set_abort_handler()`, if any.
+   * output buffer is expected to be empty, since the checks are performed
+   * only by the test cases, and each one writes its results when it
+   * ends; should it not be, its content is written in the same way,
+   * rather than lost or attributed to this test case, and the run
+   * continues.
    *
    * A `"• <name>"` line, indented according to the nesting depth, is
    * written to the output file (if open) and, with verbose verbosity, to
@@ -449,21 +451,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (!buffer_.empty ())
       {
-        if (test_case.nesting_depth () > 1 && !open_test_cases_.empty ())
-          {
-            // The outer test case performed checks before this nested one.
-            commit_buffer_ ();
-          }
-        else
-          {
-            // Each top-level test case should start with an empty buffer.
-            fputs ("Buffer not empty at the beginning of a test case:\n",
-                   stderr);
-            fwrite (buffer_.data (), 1, buffer_.size (), stderr);
-            fputs ("\n", stderr);
-            flush_streams ();
-            test_case.abort_ ();
-          }
+        // Normally, the outer test case performed checks before this
+        // nested one.
+        commit_buffer_ ();
       }
 
     open_test_cases_.push_back (
@@ -765,8 +755,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * As in `begin_test_case()`, for a nested test case, the results of the
    * checks already performed by the outer test case, if any, are written
    * first (see `commit_buffer_()`), so that the output follows the
-   * execution order; for a top-level test case, the output buffer must be
-   * empty, otherwise execution is aborted.
+   * execution order.
    *
    * With normal or verbose verbosity, a `"• <name> - skipped (filtered)"`
    * line, indented according to the nesting depth, is then written to the
@@ -783,21 +772,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (!buffer_.empty ())
       {
-        if (test_case.nesting_depth () > 1 && !open_test_cases_.empty ())
-          {
-            // The outer test case performed checks before this nested one.
-            commit_buffer_ ();
-          }
-        else
-          {
-            // Each top-level test case should start with an empty buffer.
-            fputs ("Buffer not empty at the beginning of a test case:\n",
-                   stderr);
-            fwrite (buffer_.data (), 1, buffer_.size (), stderr);
-            fputs ("\n", stderr);
-            flush_streams ();
-            test_case.abort_ ();
-          }
+        // Normally, the outer test case performed checks before this
+        // nested one.
+        commit_buffer_ ();
       }
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
@@ -824,29 +801,37 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Since `end_test_case()` is not called for the stopped test case, this
-   * method writes the buffered results, which end with the failed
-   * requirement, in its place. As in `end_test_case()`, they are written
-   * to the output file only with normal or verbose verbosity.
+   * Since `end_test_case()` is not called for the running test cases,
+   * this method writes the buffered results in its place; after a failed
+   * requirement, they end with it. As in `end_test_case()`, they are
+   * written to the output file only with normal or verbose verbosity.
    *
    * Unless the verbosity is silent, the names of the open test cases that
    * were not displayed yet (all of them, with normal or quiet verbosity)
-   * are written to `stdout`, followed by the buffered results, so that the
+   * are written to `stdout`, followed by the buffered results, so that a
    * failure is not attributed to the previous test case. With quiet
    * verbosity, which otherwise displays only the summary, the results are
    * displayed as well, since the summary is never reached; this includes
    * the passed checks, which give the context of the failure.
    *
-   * The location is not displayed again, since it is part of the failure
-   * line, and `runner::abort()` also writes it to `stderr`.
+   * In place of the summary, a `✗ Test execution aborted at
+   * <file>:<line>` line is then written, as the summary is, unless the
+   * verbosity is silent, to the output file and to `stdout`. After a
+   * failed requirement, the location is the same as in the failure
+   * line, which is already marked `- test execution aborted`; for an
+   * explicit call of `runner::abort()`, it is the only report of the
+   * abort.
+   *
+   * The buffer is then cleared, so that its results are not written
+   * again, should the abort handler throw an exception that the
+   * application catches.
    */
   void
-  reporter_human::abort_test_case (
-      [[maybe_unused]] const reflection::source_location& location,
-      [[maybe_unused]] const test_case& test_case)
+  reporter_human::abort_session (const reflection::source_location& location,
+                                 [[maybe_unused]] bool is_requirement)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
@@ -856,6 +841,13 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (verbosity_ != verbosity::silent)
       {
+        // Whether names or results are displayed before the final line.
+        bool has_results = !buffer_.empty ();
+        for (const open_test_case& open : open_test_cases_)
+          {
+            has_results = has_results || !open.name_displayed;
+          }
+
         if (add_empty_line_)
           {
             write_console_ ("\n");
@@ -864,9 +856,30 @@ namespace micro_os_plus::micro_test_plus::detail
         display_open_names_ ();
 
         write_buffer_to_console ();
+
+        // Separate the final line by an empty line, as the summary, unless
+        // it was already written above.
+        if (has_results || !add_empty_line_)
+          {
+            write_console_ ("\n");
+          }
+
+        // The type of `line()` depends on the toolchain (`uint_least32_t`
+        // for `std::source_location`); widen it implicitly, without a cast
+        // that would be useless on some platforms.
+        const unsigned long line = location.line ();
+        const char* file_name
+            = utility::extract_file_name (location.file_name ());
+
+        write_file_ ("✗ Test execution aborted at %s:%lu\n", file_name, line);
+
+        write_console_ ("%s✗%s Test execution aborted at %s:%lu\n",
+                        colours_.fail, colours_.none, file_name, line);
       }
 
     flush_streams ();
+
+    clear_buffer_ ();
   }
 
   /**

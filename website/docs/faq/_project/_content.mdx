@@ -42,9 +42,10 @@ Without exceptions, the test case cannot be stopped alone, so the
 **whole test execution is aborted**. The results of the test case,
 ending with the failed requirement, are first displayed after its name
 (also with `--quiet`, but not with `--silent`) and written to the
-output file; the TAP reporter adds a `Bail out!` line. Then
-`runner::abort()` writes
-`error: test execution aborted at <file>:<line>` to `stderr`, calls the
+output file, followed, in place of the totals, by a line with the
+location of the failure (`✗ Test execution aborted at <file>:<line>`
+with the human reporter, `Bail out! Requirement failed at
+<file>:<line>` with the TAP reporter). Then `runner::abort()` calls the
 handler set with `runner::set_abort_handler()`, if any, and then
 `abort()`. The remaining test cases and suites do not run, and no final
 totals are written; see

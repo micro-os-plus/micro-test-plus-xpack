@@ -245,9 +245,29 @@ the aborted test case are displayed after its name, which the human
 reporter previously omitted with normal and quiet verbosity, so that
 the failure appeared under the previous test case; they are now also
 written to the output file, which previously ended before them, and
-they are no longer displayed with silent verbosity. The TAP reporter
-now ends the output with a
-`Bail out! Requirement failed at <file>:<line>` line.
+they are no longer displayed with silent verbosity. The output now
+ends, in place of the totals, with a line with the location of the
+failure, `✗ Test execution aborted at <file>:<line>` with the human
+reporter, and `Bail out! Requirement failed at <file>:<line>` with the
+TAP reporter; the `error: test execution aborted at <file>:<line>` line
+is no longer written to `stderr`, which may not be connected on
+embedded targets.
+
+An explicit `runner::abort()` now completes the report in the same
+way, with the results of the running test case, if any, and a final
+line with its location (`Bail out! Test execution aborted at
+<file>:<line>` with the TAP reporter); previously, the buffered results
+were lost, and the output file ended without a trace of the abort. Only
+an abort before `initialise()` or after `run()`, when there is no
+report to complete, is still reported on `stderr`. An inconsistent
+state of the reporter no longer aborts the test execution.
+
+An exception thrown by the abort handler is no longer caught by the
+test cases and the suites, which reported it as unexpected, and
+continued the run after the abort; it now reaches the application,
+from `run()`, or from the `test()` call of a test case of the top
+suite. The abort is final: afterwards, no test case runs, and
+`initialise()` and `run()` report an error (`run()` returns 1).
 
 A failed requirement is no longer marked as `aborted...`, which was
 inaccurate with exceptions, since only the test case is stopped. The

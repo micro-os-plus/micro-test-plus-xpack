@@ -1058,6 +1058,14 @@ break	tab == x)
         ✓ handler called
         ✓ previous handler returned
     ✓ Abort handler - passed (3 checks)
+    • Abort during the session
+        ✓ human handler exception passed on
+        ✓ human no test case after the abort
+        ✓ human run() refused after the abort
+        ✓ tap handler exception passed on
+        ✓ tap no test case after the abort
+        ✓ tap run() refused after the abort
+    ✓ Abort during the session - passed (6 checks)
     • Test case and suite names
         ✓ temporary string name
         ✓ string name
@@ -1067,7 +1075,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (138 checks passed, 25 failed, in 29 test cases), time: 4.990 ms
+✗ Miscellaneous suite - FAILED (144 checks passed, 25 failed, in 30 test cases), time: 3.770 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1175,4 +1183,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 556 checks passed, 361 failed, in 113 test cases, 14 test suites, time: 17.780 ms
+✗ Total: 562 checks passed, 361 failed, in 114 test cases, 14 test suites, time: 13.256 ms

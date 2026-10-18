@@ -102,6 +102,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Operand copies
     • Test case lifetime
     • Abort handler
+    • Abort during the session
     • Test case and suite names
     • Operators
     • String view operators

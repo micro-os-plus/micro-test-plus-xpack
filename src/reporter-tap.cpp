@@ -583,10 +583,11 @@ namespace micro_os_plus::micro_test_plus::detail
    * For a nested test case, the results of the checks already performed by
    * the outer test case, if any, are written first (see `commit_buffer_()`),
    * so that the output follows the execution order. For a top-level
-   * test case, the output buffer must be empty; if it is not, the buffer is
-   * written to `stdout`, the stream is flushed, and execution is aborted
-   * with `runner::abort()`, which calls the handler set by
-   * `runner::set_abort_handler()`, if any.
+   * test case, the output buffer is expected to be empty, since the checks
+   * are performed only by the test cases, and each one writes its results
+   * when it ends; should it not be, its content is written in the same
+   * way, rather than lost or attributed to this test case, and the run
+   * continues.
    *
    * A `"# Subtest: <name>"` comment line (indented according to nesting
    * depth), with the line breaks in the name replaced by spaces, is then
@@ -602,18 +603,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (!buffer_.empty ())
       {
-        if (test_case.nesting_depth () > 1)
-          {
-            // The outer test case performed checks before this nested one.
-            commit_buffer_ ();
-          }
-        else
-          {
-            // Each top-level test case should start with an empty buffer.
-            write_buffer_to_console ();
-            flush_streams ();
-            test_case.abort_ ();
-          }
+        // Normally, the outer test case performed checks before this
+        // nested one.
+        commit_buffer_ ();
       }
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
@@ -905,7 +897,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * make the block, or the value, invalid. That the test case stopped is
    * shown by the plan, which follows this test point; without
    * exceptions, the abort of the test execution is reported by the
-   * `Bail out!` line written by `abort_test_case()`.
+   * `Bail out!` line written by `abort_session()`.
    */
   void
   reporter_tap::output_fail_suffix_ (
@@ -942,8 +934,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * As in `begin_test_case()`, for a nested test case, the results of the
    * checks already performed by the outer test case, if any, are written
    * first (see `commit_buffer_()`), so that the output follows the
-   * execution order; for a top-level test case, the output buffer must be
-   * empty, otherwise execution is aborted.
+   * execution order.
    *
    * An `ok <index> - <name> # SKIP filtered` line, with the name escaped,
    * indented according to the nesting depth, without a test case block,
@@ -960,18 +951,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (!buffer_.empty ())
       {
-        if (test_case.nesting_depth () > 1)
-          {
-            // The outer test case performed checks before this nested one.
-            commit_buffer_ ();
-          }
-        else
-          {
-            // Each top-level test case should start with an empty buffer.
-            write_buffer_to_console ();
-            flush_streams ();
-            test_case.abort_ ();
-          }
+        // Normally, the outer test case performed checks before this
+        // nested one.
+        commit_buffer_ ();
       }
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
@@ -999,26 +981,32 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Since `end_test_case()` is not called for the stopped test case, this
-   * method writes the buffered lines, which end with the failed
-   * requirement, in its place, followed by an unindented
-   * `Bail out! Requirement failed at <file>:<line>` line, with the file
-   * name escaped as the reason, which tells the TAP consumers that the
-   * run stopped early (see the TAP 14 specification), not that the output
-   * was truncated.
+   * Since `end_test_case()` is not called for the running test cases,
+   * this method writes the buffered lines, if any, in its place (after a
+   * failed requirement, they end with it), followed by an unindented
+   * `Bail out! <reason> at <file>:<line>` line, with the file name escaped
+   * as the reason, which tells the TAP consumers that the run stopped
+   * early (see the TAP 14 specification), not that the output was
+   * truncated. The reason is `Requirement failed` after a failed
+   * requirement, and `Test execution aborted` for an explicit call of
+   * `runner::abort()`.
    *
    * Both are always written to the output file, as in `end_test_case()`,
    * and, unless the verbosity is silent, to `stdout`, preceded by an empty
    * line when `add_empty_line_` is set. With quiet verbosity, which
    * otherwise displays only the summary, they are displayed as well, since
    * the summary is never reached.
+   *
+   * The buffer is then cleared, so that its lines are not written again,
+   * should the abort handler throw an exception that the application
+   * catches.
    */
   void
-  reporter_tap::abort_test_case (const reflection::source_location& location,
-                                 [[maybe_unused]] const test_case& test_case)
+  reporter_tap::abort_session (const reflection::source_location& location,
+                               bool is_requirement)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     // The type of `line()` depends on the toolchain (`uint_least32_t` for
@@ -1028,11 +1016,12 @@ namespace micro_os_plus::micro_test_plus::detail
     // The reason is escaped, as the descriptions.
     const std::string file_name
         = tap_text (utility::extract_file_name (location.file_name ()), true);
+    const char* reason
+        = is_requirement ? "Requirement failed" : "Test execution aborted";
 
     write_buffer_to_file_ ();
 
-    write_file_ ("Bail out! Requirement failed at %s:%lu\n",
-                 file_name.c_str (), line);
+    write_file_ ("Bail out! %s at %s:%lu\n", reason, file_name.c_str (), line);
 
     if (verbosity_ != verbosity::silent)
       {
@@ -1043,11 +1032,13 @@ namespace micro_os_plus::micro_test_plus::detail
 
         write_buffer_to_console ();
 
-        write_console_ ("Bail out! Requirement failed at %s:%lu\n",
-                        file_name.c_str (), line);
+        write_console_ ("Bail out! %s at %s:%lu\n", reason, file_name.c_str (),
+                        line);
       }
 
     flush_streams ();
+
+    clear_buffer_ ();
   }
 
   /**

@@ -182,8 +182,9 @@ namespace micro_os_plus::micro_test_plus
    * If the output file cannot be opened, the reporter writes only to the
    * console, and `run()` will return 2.
    *
-   * The runner is initialised only once; a later call reports an error on
-   * `stderr` and returns the top suite, without other effects.
+   * The runner is initialised only once; a later call, or a call after
+   * the test execution was aborted, reports an error on `stderr` and
+   * returns the top suite, without other effects.
    */
   suite&
   runner::initialise (const runner_options& options,
@@ -192,6 +193,12 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (aborted_)
+      {
+        fprintf (stderr, "error: test execution aborted\n");
+        return top_suite_;
+      }
 
     if (session_state_ != session_state::created)
       {
@@ -577,9 +584,10 @@ namespace micro_os_plus::micro_test_plus
    * the suites added by them are rejected.
    *
    * The result is stored, and the later calls return it without running
-   * anything again. If the runner was not initialised, or if it is
-   * already running (a call from a suite or a test case), an error is
-   * reported on `stderr` and `1` is returned.
+   * anything again. If the runner was not initialised, if it is
+   * already running (a call from a suite or a test case), or if the test
+   * execution was aborted, an error is reported on `stderr` and `1` is
+   * returned.
    */
   int
   runner::run (void)
@@ -587,6 +595,12 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (aborted_)
+      {
+        fprintf (stderr, "error: test execution aborted\n");
+        return 1;
+      }
 
     if (session_state_ == session_state::finished)
       {
@@ -660,24 +674,61 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Prints the source location of the fatal error to `stderr`, flushes
-   * the standard streams, and calls the handler set by
-   * `set_abort_handler()`, if any. If there is no handler, or if it
-   * returns, the process is terminated via `::abort()`.
+   * Delegates to `abort_()`, as an explicit abort, not caused by a failed
+   * requirement.
    */
   void
   runner::abort (const reflection::source_location& sl)
+  {
+    abort_ (sl, false);
+  }
+
+  /**
+   * @details
+   * While the report is open, from `initialise()`, which begins it (the
+   * test cases of the top suite run from then on), to the end of `run()`,
+   * the reporter writes the buffered results and the location of the
+   * abort, with `abort_session()`, to the console and to the output
+   * file, since the totals are never reached. Otherwise, there is no
+   * report to complete, and the location is written to `stderr`. The
+   * standard streams are then flushed, and the handler set by
+   * `set_abort_handler()` is called, if any. If there is no handler, or
+   * if it returns, the process is terminated via `::abort()`.
+   *
+   * The `aborted_` flag is set first, and never cleared, so that, if the
+   * handler throws an exception, the test cases and the suites pass it
+   * on (see `test_case::run_()`), and the runner refuses to run again.
+   * An abort after another one, for example from the code that caught
+   * the exception, is not reported again, since the report is already
+   * complete; the handler is still called.
+   */
+  void
+  runner::abort_ (const reflection::source_location& sl, bool is_requirement)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    // The type of `line()` depends on the toolchain (`uint_least32_t` for
-    // `std::source_location`); widen it implicitly, without a cast that
-    // would be useless on some platforms.
-    const unsigned long line = sl.line ();
-    fprintf (stderr, "\nerror: test execution aborted at %s:%lu\n",
-             utility::extract_file_name (sl.file_name ()), line);
+    if (!aborted_)
+      {
+        aborted_ = true;
+
+        if (session_state_ == session_state::initialised
+            || session_state_ == session_state::running)
+          {
+            reporter_->abort_session (sl, is_requirement);
+          }
+        else
+          {
+            // The type of `line()` depends on the toolchain
+            // (`uint_least32_t` for `std::source_location`); widen it
+            // implicitly, without a cast that would be useless on some
+            // platforms.
+            const unsigned long line = sl.line ();
+            fprintf (stderr, "error: test execution aborted at %s:%lu\n",
+                     utility::extract_file_name (sl.file_name ()), line);
+          }
+      }
 
     fflush (stdout);
     fflush (stderr);

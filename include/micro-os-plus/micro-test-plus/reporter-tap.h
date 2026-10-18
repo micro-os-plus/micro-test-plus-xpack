@@ -258,20 +258,23 @@ namespace micro_os_plus::micro_test_plus::detail
     skip_test_case (const test_case& test_case) override;
 
     /**
-     * @brief Report a test case stopped by a failed requirement.
+     * @brief Report the abort of the test execution.
      *
      * @details
-     * Displays the buffered check results, followed by a
-     * `Bail out!` line with the location of the failed requirement.
+     * Displays the buffered check results, followed by a `Bail out!`
+     * line with the location of the failed requirement, or of the
+     * `runner::abort()` call.
      *
-     * @param location The source location of the failed requirement.
-     * @param test_case Reference to the stopped test case.
+     * @param location The source location of the failed requirement,
+     * or of the `runner::abort()` call.
+     * @param is_requirement `true` if the abort is caused by a failed
+     * requirement.
      * @par Returns
      *   Nothing.
      */
     void
-    abort_test_case (const reflection::source_location& location,
-                     const test_case& test_case) override;
+    abort_session (const reflection::source_location& location,
+                   bool is_requirement) override;
 
     /**
      * @brief Returns the TAP comment prefix string `"# "`.

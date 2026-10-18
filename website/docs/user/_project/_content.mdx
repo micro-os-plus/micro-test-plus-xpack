@@ -344,13 +344,14 @@ The result is 0 if all checks passed, and 1 otherwise, including when a suite wa
 
 #### Aborting the test execution
 
-When exceptions are not enabled, a failed requirement cannot stop only its test case (see [Requirements](#requirements)), so it aborts the whole test execution: the remaining test cases and suites do not run, `run()` does not return, and no totals are written. Before the process is terminated:
+When exceptions are not enabled, a failed requirement cannot stop only its test case (see [Requirements](#requirements)), so it aborts the whole test execution: the remaining test cases and suites do not run, `run()` does not return, and no totals are written. The test execution can also be aborted explicitly, from a test case, from a suite, or from the application, by calling `tr.abort ()`. Before the process is terminated, the reporter completes the report, in place of the totals:
 
-1. the reporter displays the results of the current test case, ending with the failed requirement, which is marked as `test execution aborted` (the TAP reporter adds no marker, since its `Bail out!` line, below, reports the abort); they are preceded by the name of the test case, and by those of the outer test cases, unless already displayed, so that the failure cannot be attributed to the previous test case;
-2. the TAP reporter adds a `Bail out! Requirement failed at <file>:<line>` line, which tells the TAP consumers that the run stopped early, not that the output was truncated;
-3. `runner::abort()` writes `error: test execution aborted at <file>:<line>` to `stderr`, flushes the standard streams, calls the abort handler, if one was set (see below), and then `::abort()`.
+1. it displays the results of the running test case, if any; after a failed requirement, they end with it, and the human reporter marks it as `test execution aborted` (the TAP reporter adds no marker, since its `Bail out!` line, below, reports the abort); they are preceded by the name of the test case, and by those of the outer test cases, unless already displayed, so that a failure cannot be attributed to the previous test case;
+2. it ends the output with a line with the location of the failed requirement, or of the `abort()` call: `✗ Test execution aborted at <file>:<line>` for the human reporter, and `Bail out! Requirement failed at <file>:<line>` (or `Bail out! Test execution aborted at <file>:<line>`, for an explicit abort) for the TAP reporter, which tells the TAP consumers that the run stopped early, not that the output was truncated.
 
-With `--quiet`, which otherwise displays only the totals, the results of the aborted test case are displayed as well, since the totals are never reached; the passed checks are included, as the context of the failure. With `--silent`, nothing is displayed, but the `stderr` line is still written. If an output file is used, the results are written to it too (with the human reporter, only with normal or verbose verbosity, as for the other test cases).
+Then `runner::abort()` flushes the standard streams, calls the abort handler, if one was set (see below), and then `::abort()`. An abort before `initialise()`, or after `run()`, when there is no report to complete, is reported on `stderr`, as `error: test execution aborted at <file>:<line>`.
+
+With `--quiet`, which otherwise displays only the totals, the results of the aborted test case are displayed as well, since the totals are never reached; the passed checks are included, as the context of the failure. With `--silent`, nothing is displayed. If an output file is used, the results and the final line are written to it too (with the human reporter, as for the other test cases and for the totals, the results only with normal or verbose verbosity, and the final line unless the verbosity is silent).
 
 For example, with the human reporter, the end of the output is:
 
@@ -361,7 +362,7 @@ For example, with the human reporter, the end of the output is:
         ✓ file found
         ✗ sections parsed FAILED (main.cpp:42, 0 > 0) - test execution aborted
 
-error: test execution aborted at main.cpp:42
+✗ Test execution aborted at main.cpp:42
 ```
 
 and with the TAP reporter:
@@ -377,8 +378,33 @@ and with the TAP reporter:
             lineNumber: 42
           ...
 Bail out! Requirement failed at main.cpp:42
+```
 
-error: test execution aborted at main.cpp:42
+An explicit abort is intended for the failures after which running the other tests is pointless, or even harmful, whether exceptions are enabled or not: for example, when the device or the environment that all the tests use cannot be initialised. Unlike a failed `require()` with exceptions, which stops only its test case, `tr.abort ()` always stops the whole test execution. The runner must be reachable from the test case, for example captured by reference:
+
+```cpp
+ts.test ("Open the device", [&tr] (auto& t)
+  {
+    t.expect (device.open ()) << "device opened";
+    if (!device.is_open ())
+      {
+        // No other test can run without the device.
+        tr.abort ();
+      }
+  });
+```
+
+With the TAP reporter, the end of the output is then:
+
+```
+    # Subtest: Open the device
+        not ok 1 - device opened
+          ---
+          at:
+            fileName: main.cpp
+            lineNumber: 57
+          ...
+Bail out! Test execution aborted at main.cpp:61
 ```
 
 Unless the abort handler ends the program otherwise, the process ends with `SIGABRT`, so a test harness sees a terminated process, not an exit code returned by `run()`.
@@ -393,6 +419,27 @@ tr.set_abort_handler ([] (const mt::reflection::source_location& sl)
 ```
 
 If the handler returns, `::abort()` is still called.
+
+When exceptions are enabled, the handler may also throw an exception, to return control to the application without terminating the process, for example when the test runner is only one part of a larger program. The test cases and the suites do not catch it, as they do with the other exceptions, so it leaves `run()`, or the `test()` call that started a test case of the top suite, and reaches the application:
+
+```cpp
+struct test_aborted {};
+
+tr.set_abort_handler ([] (const mt::reflection::source_location&)
+  { throw test_aborted{}; });
+
+int result;
+try
+  {
+    result = tr.run ();
+  }
+catch (const test_aborted&)
+  {
+    result = 3; // The report is already complete.
+  }
+```
+
+The abort is final: the report is complete, no test case runs afterwards, and `initialise()` and `run()` report an error on `stderr` (`run()` returns 1). Without exceptions, the handler must not return.
 
 Refer to the [Test Runners](/docs/api/groups/micro-os-plus-micro-test-plus-runners/) reference page.
 
@@ -1459,6 +1506,8 @@ The verbosity selects only the console output. The table summarises what each le
 | normal | (none) | a summary of each passed test case; all the checks of the failed test cases | complete | complete |
 | quiet | `--quiet` | the totals; with TAP, also one `ok`/`not ok` line per test suite | complete | incomplete |
 | silent | `--silent` | nothing; only the exit code | complete | incomplete |
+
+When the test execution is aborted, the totals are replaced by a line with the location of the abort, also with `--quiet`, and there is no exit code, since `run()` does not return; see [Aborting the test execution](#aborting-the-test-execution).
 
 **`--quiet` does not show which checks failed.** It shows whether the run failed, and, with the TAP reporter, which test suites failed, but not the failed checks, their locations, or their test cases. This is by design: showing the details of the failures, and only them, is what the normal verbosity does, so a quiet level that showed them would hardly differ from it. To learn what failed:
 

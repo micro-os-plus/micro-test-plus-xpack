@@ -3189,6 +3189,15 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 3 - previous handler returned
         1..3
     ok 27 - Abort handler # { passed, 3 checks }
+    # Subtest: Abort during the session
+        ok 1 - human handler exception passed on
+        ok 2 - human no test case after the abort
+        ok 3 - human run() refused after the abort
+        ok 4 - tap handler exception passed on
+        ok 5 - tap no test case after the abort
+        ok 6 - tap run() refused after the abort
+        1..6
+    ok 28 - Abort during the session # { passed, 6 checks }
     # Subtest: Test case and suite names
         ok 1 - temporary string name
         ok 2 - string name
@@ -3198,9 +3207,9 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 6 - string suite name copied
         ok 7 - string view suite name copied
         1..7
-    ok 28 - Test case and suite names # { passed, 7 checks }
-    1..28
-not ok 11 - Miscellaneous suite # { FAILED, 138 checks passed, 25 failed, in 29 test cases, time: 3.578 ms }
+    ok 29 - Test case and suite names # { passed, 7 checks }
+    1..29
+not ok 11 - Miscellaneous suite # { FAILED, 144 checks passed, 25 failed, in 30 test cases, time: 3.827 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3441,4 +3450,4 @@ ok 13 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.279 ms }
     1..3
 not ok 14 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.255 ms }
 1..14
-# { total: 556 checks passed, 361 failed, in 113 test cases, 14 test suites, time: 15.639 ms }
+# { total: 562 checks passed, 361 failed, in 114 test cases, 14 test suites, time: 15.723 ms }

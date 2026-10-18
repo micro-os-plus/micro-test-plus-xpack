@@ -375,12 +375,12 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Aborts test execution via the owning runner.
+       * @brief Aborts test execution via the owning runner, for a failed
+       * requirement.
        *
        * @details
-       * Private, since it is used only by the check result, for a failed
-       * requirement without exceptions, and by the reporters, for an
-       * inconsistent report, which are friends; the user code calls
+       * Private, since it is used only by the check result, a friend, for
+       * a failed requirement without exceptions; the user code calls
        * `runner::abort()`.
        *
        * @param sl The source location from which the abort is triggered.
@@ -442,6 +442,22 @@ namespace micro_os_plus::micro_test_plus
        */
       [[nodiscard]] class test_case*
       running_test_case_ (void) const noexcept;
+
+      /**
+       * @brief Checks whether the test execution was aborted by the
+       * owning runner.
+       *
+       * @details
+       * Protected, since it is used only by `test_case::run_()` and
+       * `suite::run_()`, to pass on an exception thrown by the abort
+       * handler, instead of reporting it as unexpected.
+       *
+       * @par Parameters
+       *   None.
+       * @return `true` once `runner::abort()` was called.
+       */
+      [[nodiscard]] bool
+      is_aborted_ (void) const noexcept;
 
       /**
        * @brief Advances to the next child test point, and returns its
