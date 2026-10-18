@@ -151,6 +151,20 @@ When making changes to the codebase, follow these guidelines for version control
 - Use the body to explain what and why vs. how.
 - Wrap the body at 72 characters.
 - Include references to relevant issues or pull requests if applicable.
+- Do not commit without user review and approval.
+
+## Issue Updates
+
+After committing a fix for a GitHub issue (referenced in the commit
+message with `Fixes #N`), add a comment to that issue:
+
+- briefly explain the changes made, and mention the commit hash;
+- end with a line `Fixed on YYYY-MM-DD.`, with the date of the commit;
+- do not close the issue; it is closed when the commit reaches the
+  default branch.
+
+If the fix has no corresponding issue, ask for its number before
+committing.
 
 ## xcdl
 
