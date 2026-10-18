@@ -62,6 +62,59 @@ namespace
     return formatter << "{ " << p.x << ", " << p.y << " }";
   }
 
+  // A comparator, a predicate, and an operator of the application, built
+  // only with public names, and reported as the built-in ones (#149).
+  struct divides_tag
+  {
+    static constexpr const char* symbol = " divides ";
+
+    template <class Lhs_T, class Rhs_T>
+    static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return rhs % lhs == 0;
+    }
+  };
+
+  struct even_tag
+  {
+    static constexpr const char* symbol = "even ";
+
+    template <class T>
+    static constexpr bool
+    apply (const T& t)
+    {
+      return t % 2 == 0;
+    }
+  };
+
+  template <class Lhs_T, class Rhs_T>
+  constexpr auto
+  divides (const Lhs_T& lhs, const Rhs_T& rhs)
+  {
+    return extension::compare_op{ lhs, rhs, divides_tag{} };
+  }
+
+  template <class T>
+  constexpr auto
+  even (const T& t)
+  {
+    return extension::predicate_op{ t, even_tag{} };
+  }
+
+  namespace custom_operators
+  {
+    // `a | b` reads "a divides b"; enabled only when an operand is a
+    // framework type, as the operators of the framework are.
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
+    constexpr auto
+    operator| (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return extension::compare_op{ lhs, rhs, divides_tag{} };
+    }
+  } // namespace custom_operators
+
   // Scoped enumerations, formatted by their underlying value
   // (API-REVIEW.md #18).
   enum class colour
@@ -469,6 +522,67 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         t.expect (ne (point{ 1, 2 }, point{ 1, 2 }))
             << "point{ 1, 2 } != point{ 1, 2 }";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Custom comparators", [] (auto& t)
+      {
+        using namespace literals;
+        using namespace custom_operators;
+
+        t.expect (divides (3, 12)) << "3 divides 12";
+        local_counts.successful_checks++;
+
+        t.expect (divides (3_i, to_i{ 12 })) << "3_i divides to_i{ 12 }";
+        local_counts.successful_checks++;
+
+        t.expect (even (to_i{ 4 })) << "even to_i{ 4 }";
+        local_counts.successful_checks++;
+
+        t.expect (3_i | 12) << "3_i | 12";
+        local_counts.successful_checks++;
+
+        t.expect (both (divides (3, 12), even (4))) << "combined";
+        local_counts.successful_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Custom comparators bad", [] (auto& t)
+      {
+        using namespace literals;
+        using namespace custom_operators;
+
+        // The operands are reported, with the symbols of the tags.
+        t.expect (divides (5, 12)) << "5 divides 12";
+        local_counts.failed_checks++;
+
+        t.expect (divides (5, 12));
+        local_counts.failed_checks++;
+
+        t.expect (even (to_i{ 7 }));
+        local_counts.failed_checks++;
+
+        t.expect (5_i | 12);
+        local_counts.failed_checks++;
+
+        t.expect (both (divides (3, 12), even (7)));
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

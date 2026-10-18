@@ -482,14 +482,25 @@ namespace micro_os_plus::micro_test_plus
       operator<< (T* v);
 
       /**
-       * @brief Appends the value of an op expression via `detail::unwrap()`.
+       * @brief Appends the value of a framework value wrapper via
+       * `detail::unwrap()`.
        *
-       * @tparam T An expression type satisfying `extension::is_op<T>`.
-       * @param t The expression object.
+       * @details
+       * Only the wrappers with a `get()` accessor (the `to_*` wrappers and
+       * the literals) are accepted. Any other type satisfying
+       * `extension::is_op` must have its own overload, as the built-in
+       * expressions and `extension::compare_op` and
+       * `extension::predicate_op` have; without it, `detail::unwrap()`
+       * would return the expression itself, and this overload would call
+       * itself without end, so such a type is rejected at compile time.
+       *
+       * @tparam T A value wrapper type satisfying `extension::is_op<T>`,
+       * with a `get()` accessor.
+       * @param t The value wrapper.
        * @return Reference to this instance.
        */
       template <class T>
-        requires extension::is_op<T>
+        requires (extension::is_op<T> and requires (const T& v) { v.get (); })
       expression_formatter&
       operator<< (const T& t);
 
@@ -636,6 +647,22 @@ namespace micro_os_plus::micro_test_plus
       template <class T>
       expression_formatter&
       operator<< (const detail::not_op<T>& op);
+
+      /**
+       * @brief Formats a unary predicate as `symbol operand`.
+       *
+       * @details
+       * The symbol is the one of the tag, written as defined by the
+       * application, so it includes the separating space.
+       *
+       * @tparam T The operand type.
+       * @tparam Predicate_T The tag that defines the predicate.
+       * @param op The predicate expression.
+       * @return Reference to this instance.
+       */
+      template <class T, class Predicate_T>
+      expression_formatter&
+      operator<< (const detail::predicate_op<T, Predicate_T>& op);
 
 #if defined(__cpp_exceptions)
 

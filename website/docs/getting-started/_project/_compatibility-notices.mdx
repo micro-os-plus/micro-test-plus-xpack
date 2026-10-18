@@ -376,6 +376,15 @@ strings, use the standard concepts and types, like
 header is now `extension.h`; it is included by `micro-test-plus.h`,
 as before.
 
+The applications can now write their own comparators, predicates, and
+operators that report their operands, as the built-in ones do: they
+return an `extension::compare_op` or an `extension::predicate_op`,
+parametrised by a tag that defines the operation and its symbol (see
+the User's Guide). A type that only declares the `op_type` marker of
+the framework expressions, without its own formatter, is now rejected
+at compile time; it previously compiled, and its failed checks overflowed
+the stack.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

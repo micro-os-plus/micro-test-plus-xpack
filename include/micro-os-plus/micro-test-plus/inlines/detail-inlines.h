@@ -343,14 +343,17 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Evaluates the comparison inside an immediately invoked lambda and
-     * passes the boolean result to the `binary_op` base class constructor:
+     * Evaluates the comparison inside an immediately invoked lambda, which
+     * converts the result of `Compare_T::apply()` to `bool`, and passes it
+     * to the `binary_op` base class constructor:
      * - for the framework constants with static `value` members (the
      *   numeric literals), the two values are compared directly;
      * - if at least one operand is a framework floating-point wrapper with
-     *   an `epsilon` member, operands within the tolerance are equal, and
-     *   the result is `Compare_T::within_tolerance_result`; otherwise the
-     *   unwrapped values are compared;
+     *   an `epsilon` member, and the tag defines a
+     *   `within_tolerance_result` (all the built-in tags do), operands
+     *   within the tolerance give this result; otherwise the unwrapped
+     *   values are compared; the tags of the application without it
+     *   ignore the tolerance;
      * - for all other types, the framework wrappers are unwrapped, and the
      *   values, including the types of the application, are compared as
      *   they are.
@@ -358,14 +361,17 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T, class Compare_T>
     constexpr compare_op<Lhs_T, Rhs_T, Compare_T>::compare_op (
         const Lhs_T& lhs, const Rhs_T& rhs, Compare_T)
-        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&]
+        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&] () -> bool
       {
         if constexpr (detail::has_value<Lhs_T> and detail::has_value<Rhs_T>)
           {
             return Compare_T::apply (Lhs_T::value, Rhs_T::value);
           }
-        else if constexpr (extension::has_epsilon<Lhs_T>
-                           or extension::has_epsilon<Rhs_T>)
+        else if constexpr ((extension::has_epsilon<Lhs_T>
+                            or extension::has_epsilon<Rhs_T>)
+                           and requires {
+                                 Compare_T::within_tolerance_result;
+                               })
           {
             return detail::within_tolerance (lhs, rhs)
                        ? Compare_T::within_tolerance_result
@@ -423,6 +429,21 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
     constexpr not_op<T>::not_op (const T& t)
         : unary_op<T>{ t, not static_cast<bool> (t) }
+    {
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
+     * Applies the predicate of the tag to the unwrapped operand, and passes
+     * the boolean result to the `unary_op` base class constructor.
+     */
+    template <class T, class Predicate_T>
+    constexpr predicate_op<T, Predicate_T>::predicate_op (const T& t,
+                                                          Predicate_T)
+        : unary_op<T>{ t, static_cast<bool> (
+                              Predicate_T::apply (detail::unwrap (t))) }
     {
     }
 

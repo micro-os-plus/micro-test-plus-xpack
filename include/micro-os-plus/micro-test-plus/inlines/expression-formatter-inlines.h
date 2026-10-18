@@ -127,11 +127,13 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Delegates to `detail::unwrap(t)` to obtain the displayable value
-   * of an op expression, then streams it through `operator<<` to
-   * format it into the buffer.
+   * of a value wrapper, then streams it through `operator<<` to
+   * format it into the buffer. The `get()` constraint guarantees that
+   * `detail::unwrap(t)` returns the wrapped value, not the wrapper
+   * itself, which would select this overload again.
    */
   template <class T>
-    requires extension::is_op<T>
+    requires (extension::is_op<T> and requires (const T& v) { v.get (); })
   expression_formatter&
   expression_formatter::operator<< (const T& t)
   {
@@ -313,6 +315,21 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (const detail::not_op<T>& op)
   {
     return (*this << colour_ (op) << "not " << op.operand () << colours_.none);
+  }
+
+  /**
+   * @details
+   * Writes the symbol of the tag, followed by the operand, with the same
+   * colour highlighting as the logical negation, so that the predicates of
+   * the application are reported as the built-in expressions are.
+   */
+  template <class T, class Predicate_T>
+  expression_formatter&
+  expression_formatter::operator<< (
+      const detail::predicate_op<T, Predicate_T>& op)
+  {
+    return (*this << colour_ (op) << Predicate_T::symbol << op.operand ()
+                  << colours_.none);
   }
 
 #if defined(__cpp_exceptions)

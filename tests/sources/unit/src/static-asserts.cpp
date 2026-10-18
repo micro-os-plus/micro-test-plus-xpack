@@ -48,6 +48,82 @@ namespace with_operators
 
 // ----------------------------------------------------------------------------
 
+namespace with_extension
+{
+  // Satisfied when `t` can be written to the expression formatter.
+  template <class T>
+  concept formattable = requires (expression_formatter& formatter,
+                                  const T& t) { formatter << t; };
+
+  // A type with only the expression marker, and no formatter overload,
+  // which the generic overload used to select and call recursively (#149).
+  struct marker_only
+  {
+    using op_type = detail::op;
+
+    constexpr explicit
+    operator bool () const
+    {
+      return false;
+    }
+  };
+
+  // A comparison of the application, without a tolerance.
+  struct divides
+  {
+    static constexpr const char* symbol = " divides ";
+
+    template <class Lhs_T, class Rhs_T>
+    static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return rhs % lhs == 0;
+    }
+  };
+
+  // A comparison of the application, with a tolerance.
+  struct not_greater
+  {
+    static constexpr const char* symbol = " <= ";
+    static constexpr bool within_tolerance_result = true;
+
+    template <class Lhs_T, class Rhs_T>
+    static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return lhs <= rhs;
+    }
+  };
+
+  // The same comparison, without a tolerance.
+  struct exactly_not_greater
+  {
+    static constexpr const char* symbol = " <= ";
+
+    template <class Lhs_T, class Rhs_T>
+    static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return lhs <= rhs;
+    }
+  };
+
+  // A predicate of the application, whose result is converted to `bool`.
+  struct even
+  {
+    static constexpr const char* symbol = "even ";
+
+    template <class T>
+    static constexpr int
+    apply (const T& t)
+    {
+      return t % 2 == 0;
+    }
+  };
+} // namespace with_extension
+
+// ----------------------------------------------------------------------------
+
 [[maybe_unused]] static void
 static_asserts ()
 {
@@ -127,6 +203,40 @@ static_asserts ()
         double epsilon;
       };
       static_assert (not extension::has_epsilon<gauge>);
+    }
+
+    {
+      using namespace literals;
+      using namespace with_extension;
+
+      // The expressions of the application are evaluated as the built-in
+      // ones, on the unwrapped operands, also at compile time (#149).
+      static_assert (extension::compare_op{ 3, 9, divides{} });
+      static_assert (not extension::compare_op{ 2, 9, divides{} });
+      static_assert (extension::compare_op{ 3_i, to_i{ 12 }, divides{} });
+      static_assert (extension::predicate_op{ 4, even{} });
+      static_assert (not extension::predicate_op{ to_i{ 7 }, even{} });
+      static_assert (extension::is_op<decltype (extension::compare_op{
+                         1, 2, divides{} })>);
+      static_assert (
+          extension::is_op<decltype (extension::predicate_op{ 1, even{} })>);
+
+      // The tolerance applies only to the tags that define its result.
+      static_assert (
+          extension::compare_op{ to_d{ 1.05, 0.1 }, 1.0, not_greater{} });
+      static_assert (not extension::compare_op{ to_d{ 1.05, 0.1 }, 1.0,
+                                                exactly_not_greater{} });
+
+      // The formatter writes the expressions and the value wrappers, and
+      // rejects at compile time the types with only the marker (#149).
+      static_assert (
+          formattable<decltype (extension::compare_op{ 1, 2, divides{} })>);
+      static_assert (
+          formattable<decltype (extension::predicate_op{ 1, even{} })>);
+      static_assert (formattable<to_i>);
+      static_assert (formattable<decltype (42_i)>);
+      static_assert (extension::is_op<marker_only>);
+      static_assert (not formattable<marker_only>);
     }
 
     {

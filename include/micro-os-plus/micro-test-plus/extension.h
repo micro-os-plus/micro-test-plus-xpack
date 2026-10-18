@@ -22,7 +22,9 @@
  *
  * @details
  * This header provides the C++20 concepts that the applications use to
- * extend the framework with their own comparators, operators, and helpers:
+ * extend the framework with their own comparators, operators, and helpers
+ * (the expressions they return, `extension::compare_op` and
+ * `extension::predicate_op`, are declared in `detail.h`):
  * the concepts that detect the framework expressions and value wrappers,
  * their floating-point tolerance, and the types accepted by `expect()`,
  * `require()`, and the message operator.
@@ -92,13 +94,18 @@ namespace micro_os_plus::micro_test_plus
    * @brief The concepts for extending the µTest++ testing framework.
    *
    * @details
-   * The `extension` namespace holds the C++20 concepts that the
-   * applications use to write their own comparators, operators, and
-   * helpers, with the same constraints as the framework itself: whether a
-   * type is a framework expression or value wrapper (`is_op`, `any_op`),
-   * whether it carries a floating-point tolerance (`has_epsilon`), and
-   * whether it is accepted by `expect()` and `require()` (`checkable`) or
-   * by the message operator (`printable`).
+   * The `extension` namespace holds what the applications use to write
+   * their own comparators, predicates, operators, and helpers, reported
+   * as the built-in ones are:
+   * - `compare_op` and `predicate_op` (declared in `detail.h`), the
+   *   expressions of the binary comparisons and of the unary predicates,
+   *   parametrised by a tag that defines the operation and its symbol in
+   *   the failure reports;
+   * - the C++20 concepts with the same constraints as the framework
+   *   itself: whether a type is a framework expression or value wrapper
+   *   (`is_op`, `any_op`), whether it carries a floating-point tolerance
+   *   (`has_epsilon`), and whether it is accepted by `expect()` and
+   *   `require()` (`checkable`) or by the message operator (`printable`).
    *
    * The namespace is separate from the top namespace, so that
    * `using namespace micro_os_plus::micro_test_plus` does not bring these
@@ -126,7 +133,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * A custom comparator or operator uses it to tell the framework
      * operands, like `to_i` or the `_i` literals, from the types of the
-     * application.
+     * application. The applications build their own expressions with
+     * `extension::compare_op` and `extension::predicate_op`, not by
+     * declaring the `op_type` marker, which the formatter could not
+     * report.
      */
     template <class T>
     concept is_op

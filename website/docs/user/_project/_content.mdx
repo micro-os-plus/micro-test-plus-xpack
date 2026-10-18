@@ -1010,6 +1010,137 @@ pointers, are written as addresses. A plain boolean check, such as
 `t.expect (p == q)`, needs no formatter, but on failure it reports only
 the source location.
 
+### Custom Comparators and Operators
+
+When the relation to check is not one of the built-in comparisons, a
+function that returns `bool` can be used, but on failure it reports only
+the source location. To report the operands, as the built-in comparators
+do, the function must return a framework expression, built with the
+public templates of the `mt::extension` namespace:
+
+- `extension::compare_op{ lhs, rhs, tag }`, for a comparison of two
+  operands;
+- `extension::predicate_op{ operand, tag }`, for a property of one
+  operand.
+
+The **tag** is an empty structure that defines the operation, with a
+static `apply()` member function template, which receives the operands
+already unwrapped (the values of the `to_*` wrappers and of the
+literals) and returns the result, and a static `symbol`, written in the
+failure reports between the two operands, or before the single one:
+
+```cpp showLineNumbers
+#include "micro-os-plus/micro-test-plus.h"
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+namespace app
+{
+  struct divides_tag
+  {
+    static constexpr const char* symbol = " divides ";
+
+    template <class Lhs_T, class Rhs_T>
+    static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return rhs % lhs == 0;
+    }
+  };
+
+  struct even_tag
+  {
+    static constexpr const char* symbol = "even ";
+
+    template <class T>
+    static constexpr bool
+    apply (const T& t)
+    {
+      return t % 2 == 0;
+    }
+  };
+
+  // A custom comparator.
+  template <class Lhs_T, class Rhs_T>
+  constexpr auto
+  divides (const Lhs_T& lhs, const Rhs_T& rhs)
+  {
+    return mt::extension::compare_op{ lhs, rhs, divides_tag{} };
+  }
+
+  // A custom predicate.
+  template <class T>
+  constexpr auto
+  even (const T& t)
+  {
+    return mt::extension::predicate_op{ t, even_tag{} };
+  }
+
+  namespace operators
+  {
+    // A custom operator: `a | b` reads "a divides b".
+    template <class Lhs_T, class Rhs_T>
+      requires mt::extension::any_op<Lhs_T, Rhs_T>
+    constexpr auto
+    operator| (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return mt::extension::compare_op{ lhs, rhs, divides_tag{} };
+    }
+  } // namespace operators
+} // namespace app
+
+int
+main (int argc, char* argv[])
+{
+  mt::runner tr;
+  auto& ts = tr.initialise (argc, argv);
+
+  ts.test ("Custom", [] (auto& t) {
+    using namespace mt::literals;
+    using namespace app::operators;
+
+    t.expect (app::divides (5, 12));
+    t.expect (app::even (mt::to_i (7)));
+    t.expect (5_i | 12);
+    t.expect (mt::both (app::divides (3, 12), app::even (7)));
+  });
+
+  return tr.run ();
+}
+```
+
+The failed checks report the operands, with the symbols of the tags:
+
+```console
+        ✗ FAILED (main.cpp:70, 5 divides 12)
+        ✗ FAILED (main.cpp:71, even 7)
+        ✗ FAILED (main.cpp:72, 5 divides 12)
+        ✗ FAILED (main.cpp:73, (3 divides 12 and even 7))
+```
+
+The expressions can be combined with the logical comparators and
+operators, and, being `constexpr`, also checked at compile time
+(`static_assert (app::divides (3, 12))`). The operands are written with
+the `operator<<` of the formatter, so the types of the application need
+one, as for the [custom types](#custom-types).
+
+A custom operator should be enabled only when at least one operand is a
+framework type, with the `extension::any_op` concept, as the operators
+of the `operators` namespace are, so that it does not compete with the
+operators of the application types; `extension::is_op` tells whether a
+single type is a framework type.
+
+If an operand may be a floating-point wrapper (`to_f`, `to_d`, or the
+`_f` and `_d` literals), the tag may also define
+`static constexpr bool within_tolerance_result`: when the operands are
+within the tolerance of the wrapper, the comparison gives this result,
+without calling `apply()`, as `eq()` does (`true`) and `ne()` does
+(`false`); without it, the tolerance is ignored.
+
+A helper that passes its argument on to `expect()` or `require()` can be
+constrained with `extension::checkable`, as these functions are, and one
+that passes it on to the message operator with `extension::printable`.
+
 ### Test suites
 
 Test suites are named sequences of test cases.

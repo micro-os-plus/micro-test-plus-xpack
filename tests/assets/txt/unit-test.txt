@@ -880,6 +880,20 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✗ FAILED (miscellaneous.cpp:321, { 1, 2 } == { 1, 3 })
         ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (miscellaneous.cpp:324, { 1, 2 } != { 1, 2 })
     ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
+    • Custom comparators
+        ✓ 3 divides 12
+        ✓ 3_i divides to_i{ 12 }
+        ✓ even to_i{ 4 }
+        ✓ 3_i | 12
+        ✓ combined
+    ✓ Custom comparators - passed (5 checks)
+    • Custom comparators bad
+        ✗ 5 divides 12 FAILED (miscellaneous.cpp:573, 5 divides 12)
+        ✗ FAILED (miscellaneous.cpp:576, 5 divides 12)
+        ✗ FAILED (miscellaneous.cpp:579, even 7)
+        ✗ FAILED (miscellaneous.cpp:582, 5 divides 12)
+        ✗ FAILED (miscellaneous.cpp:585, (3 divides 12 and even 7))
+    ✗ Custom comparators bad - FAILED (0 checks passed, 5 failed)
     • Reporter stream operators
         ✓ const char*
         ✓ std::string_view
@@ -1053,7 +1067,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (133 checks passed, 20 failed, in 27 test cases), time: 5.427 ms
+✗ Miscellaneous suite - FAILED (138 checks passed, 25 failed, in 29 test cases), time: 4.990 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1161,4 +1175,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 551 checks passed, 356 failed, in 111 test cases, 14 test suites, time: 20.026 ms
+✗ Total: 556 checks passed, 361 failed, in 113 test cases, 14 test suites, time: 17.780 ms

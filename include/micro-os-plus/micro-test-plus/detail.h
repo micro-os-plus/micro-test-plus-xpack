@@ -641,6 +641,21 @@ namespace micro_os_plus::micro_test_plus
      * `compare_op{ lhs, rhs, equal_to{} }`. A factory function would do the
      * same, but at `-O0` it adds one function per instantiation.
      *
+     * It is also public, as `extension::compare_op`, so that the
+     * applications can define their own comparisons with their own tags.
+     * A tag is an empty struct with:
+     * - a `static constexpr const char* symbol`, written between the
+     *   operands in the failure reports, with the surrounding spaces
+     *   (for example `" divides "`);
+     * - a static `apply (lhs, rhs)` member function template, which
+     *   receives the unwrapped operands (the values of the `to_*` wrappers
+     *   and of the literals) and returns the result as `bool`;
+     * - optionally, a `static constexpr bool within_tolerance_result`;
+     *   when present, and an operand is a floating-point wrapper (see
+     *   `extension::has_epsilon`), the operands within the tolerance give
+     *   this result, as for the built-in comparators; when absent, the
+     *   tolerance is ignored.
+     *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      * @tparam Compare_T The tag that defines the comparison.
@@ -787,6 +802,61 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename T>
     not_op (const T&) -> not_op<T>;
+
+    // ========================================================================
+
+    /**
+     * @brief Unary predicate struct template.
+     *
+     * @details
+     * Derived from `unary_op`, this struct checks a property of a single
+     * operand, using the predicate defined by the tag `Predicate_T`, and
+     * reports the symbol of the tag followed by the operand upon failure,
+     * as `not_op` reports `not`.
+     *
+     * It is public, as `extension::predicate_op`, so that the applications
+     * can define their own predicates with their own tags. A tag is an
+     * empty struct with:
+     * - a `static constexpr const char* symbol`, written before the
+     *   operand in the failure reports, with the trailing space (for
+     *   example `"even "`);
+     * - a static `apply (operand)` member function template, which
+     *   receives the unwrapped operand (the value of a `to_*` wrapper or of
+     *   a literal) and returns the result as `bool`.
+     *
+     * The tag is passed as an empty constructor argument, so that both
+     * template arguments are deduced, for example
+     * `predicate_op{ value, even{} }`.
+     *
+     * @tparam T The type of the operand.
+     * @tparam Predicate_T The tag that defines the predicate.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <class T, class Predicate_T>
+    struct predicate_op : unary_op<T>
+    {
+      /**
+       * @brief Constructs a predicate for the given operand.
+       *
+       * @details
+       * The tag argument is used only to deduce `Predicate_T`.
+       *
+       * @param t The operand.
+       */
+      constexpr predicate_op (const T& t, Predicate_T);
+    };
+
+    /**
+     * @brief Deduction guide for the unary predicate.
+     *
+     * @details
+     * Deduces `T` and `Predicate_T` from the constructor arguments, so that
+     * `predicate_op{ t, even{} }` can be written without explicit template
+     * arguments.
+     */
+    template <class T, class Predicate_T>
+    predicate_op (const T&, Predicate_T) -> predicate_op<T, Predicate_T>;
 
     // ========================================================================
 
@@ -1125,6 +1195,24 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
   } // namespace detail
+
+  // --------------------------------------------------------------------------
+
+  namespace extension
+  {
+    // ------------------------------------------------------------------------
+    // The expressions of the custom comparators, predicates, and operators.
+
+    // The definitions are in `detail`, with the built-in expressions that
+    // share them; the using-declarations name the same templates, so the
+    // class template argument deduction applies, and the formatter
+    // reports them as the built-in ones.
+
+    using detail::compare_op;
+    using detail::predicate_op;
+
+    // ------------------------------------------------------------------------
+  } // namespace extension
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

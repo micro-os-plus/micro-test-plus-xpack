@@ -49,7 +49,38 @@ programs against it on many toolchains and platforms.
 
 ## Architecture
 
-The public API lives in the `micro_os_plus::micro_test_plus` namespace.
+The public API lives in the `micro_os_plus::micro_test_plus` namespace
+(usually aliased as `mt`) and in four of its sub-namespaces:
+
+- the top namespace: the runner (`runner`, with `runner_options`,
+  `verbosity`, and `reporter_kind`; `static_runner` is a deprecated
+  alias), the test hierarchy (`test_case`, `suite`, `static_suite`,
+  `top_suite`, `test_case_name`), `counters`, the function comparators
+  (`eq()`, `ne()`, `gt()`, `ge()`, `lt()`, `le()`, `negate()`,
+  `both()`, `either()`), `throws()` and `nothrow()` (with exceptions),
+  the value wrappers (`to_i`, `to_f`, ..., `to_t<T>`, `approx()`), and
+  `expression_formatter` (an alias of `detail::expression_formatter`,
+  for the `operator<<` of the application types);
+- `literals` — the user-defined literals (`42_i`, `1.5_d`, `"..."_b`);
+- `operators` — the comparison and logical operators, enabled with
+  `using namespace mt::operators`;
+- `utility` — `is_match()` and `split()`;
+- `extension` — what the applications use to write their own
+  comparators, predicates, operators, and helpers that report their
+  operands as the built-in ones do: the expression templates
+  `compare_op` and `predicate_op`, parametrised by an application tag
+  with `symbol` and `apply()` (using-declarations of the `detail`
+  templates, at the end of `detail.h`), and the concepts `is_op`,
+  `any_op`, `has_epsilon`, `checkable`, and `printable`
+  (`extension.h`). It is deliberately a separate namespace, so that
+  `using namespace mt` does not bring its generic names into the
+  application code.
+
+`reflection::source_location` appears in the public signatures (as a
+defaulted parameter), but users rarely name it. Everything in `detail`
+(including `detail::math`, the reporters, `check_result`, the value
+wrapper templates, and the concepts `has_value`, `container_like`, and
+`has_npos`) is internal; the applications must not need to name it.
 
 - `runner` (in `runner.h`, defined in `src/runner.cpp`) is the top-level
   test session driver: it owns the tree of suites/tests, tracks pass/fail
@@ -70,25 +101,32 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace.
     statically-allocated variant.
   - `test_case` — a named sequence of checks inside a suite; test cases
     may be nested.
-- `reporter` (`reporter.h`) is an abstract base for formatting test
-  results; concrete implementations are `reporter_human`
-  (`reporter-human.h`, human-readable console output) and `reporter_tap`
-  (`reporter-tap.h`, TAP-format output for CI/tooling consumption).
+- `detail::reporter` (`reporter.h`) is the internal abstract base for
+  formatting test results; the concrete implementations are
+  `detail::reporter_human` (`reporter-human.h`, human-readable console
+  output) and `detail::reporter_tap` (`reporter-tap.h`, TAP-format
+  output for CI/tooling consumption). Custom reporters are not
+  supported; the reporter is selected with the `--reporter` option or
+  with `runner_options`.
   `check-result.h` (internal, `detail` namespace) holds the object
-  returned by `expect()`/`assume()`: it stores the result, the source
+  returned by `expect()`/`require()` (`assume()` is a deprecated alias
+  of `require()`): it stores the result, the source
   location, and the message accumulated via `operator<<`, and reports
   the outcome when it is destroyed, at the end of the expression
   statement.
 - `expression-formatter.h`/`src/expression-formatter.cpp` and
-  `reflection.h`/`src/reflection.cpp` provide the machinery behind
-  `expect`/`that` expression decomposition, so failed expectations can
+  `reflection.h`/`src/reflection.cpp` provide the machinery behind the
+  reports of the `expect()`/`require()` expressions, so failed checks
   print the actual operands and operator, not just "assertion failed".
 - `operators.h` and `function-comparators.h` supply the comparison
   operators and function-based comparators used inside `expect (...)`
-  expressions; `extension.h` (the `extension` namespace: the concepts
-  that constrain them, public so that applications can write their own
-  comparators and operators) and `math.h` support their constraints and
-  floating-point-comparison needs.
+  expressions; they return the expression templates of `detail.h`
+  (`detail::compare_op` with the tags `equal_to`, `less`, ..., and the
+  logical `and_op`, `or_op`, `not_op`), which the formatter reports.
+  `extension.h` holds the concepts that constrain them, and `math.h`
+  (`detail::math`) supports the floating-point comparisons. The
+  application extensions reuse the same templates, through the
+  `extension` namespace, so they need no formatter of their own.
 - `literals.h` defines user-defined literals (e.g. for naming tests).
 - Headers declare, `inlines/*.h` hold template/inline bodies, `src/*.cpp`
   hold non-template definitions — keep new code split the same way when
