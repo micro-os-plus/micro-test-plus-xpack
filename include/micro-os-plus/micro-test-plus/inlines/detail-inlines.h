@@ -49,7 +49,11 @@
 
 // ----------------------------------------------------------------------------
 
+#include <cerrno>
+#include <cfloat>
 #include <charconv>
+#include <cstdio>
+#include <cstdlib>
 
 // ----------------------------------------------------------------------------
 
@@ -539,6 +543,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 
+#pragma GCC diagnostic ignored "-Wfloat-equal"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
@@ -556,9 +561,22 @@ namespace micro_os_plus::micro_test_plus
      *   to `double` and formatted with `std::to_chars`.
      * - On all other platforms (e.g. x86-64 Linux/macOS with 80-bit
      *   extended precision, or AArch64 and RISC-V with 128-bit quad
-     *   precision), `snprintf` with `%Lg` is used as a portable fallback,
-     *   because `std::to_chars` for `long double` may be unavailable
-     *   (e.g. when linking with `lld`).
+     *   precision), `snprintf` with `%.*Lg` is used as a portable
+     *   fallback, because `std::to_chars` for `long double` may be
+     *   unavailable (e.g. when linking with `lld`). The precision starts
+     *   at `LDBL_DIG` and is increased until the text reads back, with
+     *   `strtold`, as the same value, up to `LDBL_DECIMAL_DIG`, which
+     *   always reads back exactly. This gives the shortest exact form,
+     *   as `std::to_chars` gives for the other types; a shorter form
+     *   would need fewer than `LDBL_DIG` digits, and `%Lg` removes the
+     *   trailing zeros, so starting at `LDBL_DIG` does not lose it. For
+     *   zero and the subnormal values, which have fewer significant
+     *   digits, the precision starts at 1. The value of `errno`, which
+     *   `strtold` may set for subnormal values, is preserved. If no
+     *   precision reads back exactly, the C library handles `long double`
+     *   with the precision of `double` (e.g. newlib on AArch64 and
+     *   RISC-V), and the value is cast to `double` and formatted with
+     *   `std::to_chars`, as above.
      *
      * For all other numeric types, `std::to_chars` is called directly,
      * providing locale-independent formatting.
@@ -568,7 +586,6 @@ namespace micro_os_plus::micro_test_plus
     void
     append_number (std::string& buffer, const T v)
     {
-      char buf[32];
       if constexpr (std::is_same_v<T, long double>)
         {
 #if defined(_WIN32) \
@@ -580,6 +597,7 @@ namespace micro_os_plus::micro_test_plus
           // double has the same width as double (e.g. 32-bit Arm), the cast
           // is lossless. In both cases, cast to double and use
           // std::to_chars.
+          char buf[32];
           const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf),
                                                 static_cast<double> (v));
           if (ec == std::errc{})
@@ -588,15 +606,51 @@ namespace micro_os_plus::micro_test_plus
           // On other platforms (80-bit extended precision on x86-64,
           // 128-bit quad precision on AArch64 and RISC-V), std::to_chars
           // for long double may be unavailable (e.g., with lld).
-          // Use snprintf as a portable fallback; %Lg is supported correctly
-          // by the C libraries used on these platforms (e.g. glibc, the
-          // macOS libc, and newlib).
-          snprintf (buf, sizeof (buf), "%Lg", v);
-          buffer.append (buf);
+          // Use snprintf as a portable fallback; %Lg is supported by the C
+          // libraries used on these platforms (e.g. glibc, the macOS libc,
+          // and newlib, the latter with the precision of double on AArch64
+          // and RISC-V). Use the smallest precision that reads back as the
+          // same value; the buffer fits the 36 digits of the 128-bit
+          // format, with the sign, the point, and the exponent.
+          char buf[48];
+          const int saved_errno = errno;
+          // The subnormal values have fewer significant digits.
+          const int min_precision
+              = (v > -LDBL_MIN && v < LDBL_MIN) ? 1 : LDBL_DIG;
+          bool is_exact = false;
+          for (int precision = min_precision; precision <= LDBL_DECIMAL_DIG;
+               ++precision)
+            {
+              snprintf (buf, sizeof (buf), "%.*Lg", precision, v);
+              // A NaN is never equal to itself, and has no digits.
+              if (v != v || strtold (buf, nullptr) == v)
+                {
+                  is_exact = true;
+                  break;
+                }
+            }
+          errno = saved_errno;
+          if (is_exact)
+            {
+              buffer.append (buf);
+            }
+          else
+            {
+              // The C library formats or reads long double with the
+              // precision of double (e.g. newlib on AArch64 and RISC-V),
+              // and its long text would only show the error of the
+              // conversion; use the shortest form of the double value,
+              // as on the platforms above.
+              const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf),
+                                                    static_cast<double> (v));
+              if (ec == std::errc{})
+                buffer.append (buf, ptr);
+            }
 #endif // defined(_WIN32) || (defined(__SIZEOF_LONG_DOUBLE__) && __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)
         }
       else
         {
+          char buf[32];
           const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), v);
           if (ec == std::errc{})
             buffer.append (buf, ptr);

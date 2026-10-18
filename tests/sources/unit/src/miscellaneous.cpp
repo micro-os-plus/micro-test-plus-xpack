@@ -598,6 +598,16 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         f << 1.5L;
         check ("1.5ld", "long double");
 
+        // The `long double` values are written in the shortest exact form,
+        // as the other floating-point values, not with six digits
+        // (API-REVIEW.md #12). With at most 15 digits, the text is the
+        // same where `long double` is as wide as `double`.
+        f << 0.1000001L;
+        check ("0.1000001ld", "long double with seven digits");
+
+        f << 3.14159265358979L;
+        check ("3.14159265358979ld", "long double with 15 digits");
+
         f << -2.0;
         check ("-2.0", "negative integral double");
 

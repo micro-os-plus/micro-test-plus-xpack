@@ -2956,11 +2956,13 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 8 - float
         ok 9 - double
         ok 10 - long double
-        ok 11 - negative integral double
-        ok 12 - double with exponent
-        ok 13 - infinite double
-        1..13
-    ok 9 - Formatter number suffixes # { passed, 13 checks }
+        ok 11 - long double with seven digits
+        ok 12 - long double with 15 digits
+        ok 13 - negative integral double
+        ok 14 - double with exponent
+        ok 15 - infinite double
+        1..15
+    ok 9 - Formatter number suffixes # { passed, 15 checks }
     # Subtest: Formatter characters
         ok 1 - letter
         ok 2 - space
@@ -3055,7 +3057,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         1..3
     ok 20 - Abort handler # { passed, 3 checks }
     1..20
-not ok 11 - Miscellaneous suite # { FAILED, 100 checks passed, 13 failed, in 21 test cases, time: 3.052 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 102 checks passed, 13 failed, in 21 test cases, time: 3.052 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3298,4 +3300,4 @@ ok 13 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.279 ms }
     1..3
 not ok 14 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.255 ms }
 1..14
-# { total: 518 checks passed, 349 failed, in 105 test cases, 14 test suites, time: 14.072 ms }
+# { total: 520 checks passed, 349 failed, in 105 test cases, 14 test suites, time: 14.072 ms }

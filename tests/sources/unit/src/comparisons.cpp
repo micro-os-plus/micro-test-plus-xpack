@@ -228,8 +228,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
           t.expect (eq (to_d (42.), 42._d)) << "42. == 42._d";
           local_counts.successful_checks++;
 
-          t.expect (eq (to_ld{ static_cast<long double> (42.42) }, 42.42_ld))
-              << "42.42 == 42.42_ld";
+          t.expect (eq (to_ld (42.42L), 42.42_ld)) << "42.42 == 42.42_ld";
           local_counts.successful_checks++;
 
           t.expect (eq (1234._f, 1234.f)) << "1234._f == 1234.f";
@@ -316,8 +315,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
           t.expect (ne (to_d (42.), 42._d)) << "42. == 42._d";
           local_counts.failed_checks++;
 
-          t.expect (ne (to_ld{ static_cast<long double> (42.42) }, 42.42_ld))
-              << "42.42 == 42.42_ld";
+          t.expect (ne (to_ld (42.42L), 42.42_ld)) << "42.42 == 42.42_ld";
           local_counts.failed_checks++;
 
           t.expect (ne (1234._f, 1234.f)) << "1234._f == 1234.f";

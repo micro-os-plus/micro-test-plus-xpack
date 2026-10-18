@@ -77,6 +77,18 @@ functions to the `expression_formatter`; to write a separator without
 quotes, use a string (`" "` instead of `' '`). A zero character in a
 message added with `<<` no longer ends the message.
 
+Where `long double` is wider than `double` (e.g. x86-64 Linux and
+macOS, AArch64, and RISC-V), the `long double` values are now written
+in the shortest form that reads back as the same value, as the `float`
+and `double` values are; they were previously written with six
+significant digits, so `0.1L` and `0.1000001L` were both written as
+`0.1ld`. A value converted from `double` may now show the digits of
+its conversion error (`static_cast<long double> (42.42)` is written as
+`42.420000000000001705ld` on x86-64). Where the C library formats
+`long double` with the precision of `double` (e.g. newlib on AArch64
+and RISC-V), the values are written in the shortest form of their
+conversion to `double`.
+
 The named boolean constants created by the `_b` literal can now be
 used in the checks; any check that used them previously overflowed
 the stack. They are reported by their name (`"flag"_b == flag` fails

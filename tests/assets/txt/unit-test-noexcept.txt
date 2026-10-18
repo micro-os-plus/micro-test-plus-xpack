@@ -856,10 +856,12 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ float
         ✓ double
         ✓ long double
+        ✓ long double with seven digits
+        ✓ long double with 15 digits
         ✓ negative integral double
         ✓ double with exponent
         ✓ infinite double
-    ✓ Formatter number suffixes - passed (13 checks)
+    ✓ Formatter number suffixes - passed (15 checks)
     • Formatter characters
         ✓ letter
         ✓ space
@@ -940,7 +942,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ no initial handler
         ✓ previous handler returned
     ✓ Abort handler - passed (2 checks)
-✗ Miscellaneous suite - FAILED (99 checks passed, 13 failed, in 21 test cases)
+✗ Miscellaneous suite - FAILED (101 checks passed, 13 failed, in 21 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1048,4 +1050,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 506 checks passed, 337 failed, in 90 test cases, 12 test suites
+✗ Total: 508 checks passed, 337 failed, in 90 test cases, 12 test suites
