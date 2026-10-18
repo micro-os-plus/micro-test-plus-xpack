@@ -121,6 +121,92 @@ namespace micro_os_plus::micro_test_plus::detail
 
       return result;
     }
+
+    /**
+     * @brief Formats a text as a YAML double-quoted scalar.
+     *
+     * @details
+     * The text is enclosed in `"`, with each `\\` written as `\\\\`, each
+     * `"` as `\\"`, and each control character (including the line
+     * breaks, the tab, and `DEL`) as a YAML escape sequence (`\\0`,
+     * `\\t`, `\\n`, `\\r`, `\\e`, and so on, or `\\xHH` for the others),
+     * so that the value is a single line, and is valid YAML whatever it
+     * contains. As plain scalars, the values starting with `{`, `[`,
+     * or `'`, or containing `: ` or ` #`, would be rejected or
+     * truncated by the YAML parsers used by the TAP consumers. The
+     * bytes above `0x7F` are written as they are, since they are
+     * expected to be parts of UTF-8 sequences.
+     *
+     * @param text The text to format.
+     * @return The double-quoted scalar.
+     */
+    std::string
+    yaml_double_quoted (std::string_view text)
+    {
+      constexpr std::string_view digits{ "0123456789ABCDEF" };
+
+      std::string result;
+      result.reserve (text.size () + 2);
+
+      result.push_back ('"');
+      for (const char c : text)
+        {
+          const auto u = static_cast<unsigned char> (c);
+          switch (c)
+            {
+            case '\\':
+              result.append ("\\\\");
+              break;
+            case '"':
+              result.append ("\\\"");
+              break;
+            case '\0':
+              result.append ("\\0");
+              break;
+            case '\a':
+              result.append ("\\a");
+              break;
+            case '\b':
+              result.append ("\\b");
+              break;
+            case '\t':
+              result.append ("\\t");
+              break;
+            case '\n':
+              result.append ("\\n");
+              break;
+            case '\v':
+              result.append ("\\v");
+              break;
+            case '\f':
+              result.append ("\\f");
+              break;
+            case '\r':
+              result.append ("\\r");
+              break;
+            case '\x1B':
+              result.append ("\\e");
+              break;
+            default:
+              if (u < 0x20 || u == 0x7F)
+                {
+                  result.append ("\\x");
+                  result.push_back (
+                      digits[static_cast<std::size_t> (u >> 4)]);
+                  result.push_back (
+                      digits[static_cast<std::size_t> (u & 0x0F)]);
+                }
+              else
+                {
+                  result.push_back (c);
+                }
+              break;
+            }
+        }
+      result.push_back ('"');
+
+      return result;
+    }
   } // namespace
 
   // --------------------------------------------------------------------------
@@ -761,7 +847,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * the test point line. It then opens the TAP 14 YAML
    * diagnostics block (`---`) and, when the failure has an expression,
    * starts a `condition:` field, so that the expression follows on the
-   * same line. No colours are used.
+   * same line; the position where the expression begins is kept in
+   * `condition_begin_`, so that `output_fail_suffix_()` can quote it.
+   * Without an expression, `condition_begin_` is set to
+   * `std::string::npos`. No colours are used.
    */
   void
   reporter_tap::output_fail_prefix_ (
@@ -781,10 +870,12 @@ namespace micro_os_plus::micro_test_plus::detail
     // https://testanything.org/tap-version-14-specification.html
     // 2-space indentation for YAML diagnostics.
     *this << indent (level + 1) << "  ---";
+    condition_begin_ = std::string::npos;
     if (has_expression)
       {
         *this << endl;
         *this << indent (level + 1) << "  condition: ";
+        condition_begin_ = buffer_.size ();
       }
   }
 
@@ -795,6 +886,12 @@ namespace micro_os_plus::micro_test_plus::detail
    * `condition:` field), adding the `at:` field with the file name and
    * the line number, and closing the block (`...`); the stream is then
    * flushed.
+   *
+   * The expression, which follows `condition_begin_` in the buffer, is
+   * first replaced by its YAML double-quoted form (see
+   * `yaml_double_quoted()`), so that the operands that start a YAML flow
+   * collection or a quoted scalar (for example `{1, 2}` or `'a'`), or
+   * contain `: ` or ` #`, do not make the diagnostics block invalid.
    *
    * A failed requirement is reported like any other failed check, as
    * node-tap does for a failed assertion followed by a throw; no marker
@@ -809,6 +906,14 @@ namespace micro_os_plus::micro_test_plus::detail
       const reflection::source_location& location,
       [[maybe_unused]] check_kind kind, const test_case& test_case)
   {
+    if (condition_begin_ != std::string::npos)
+      {
+        const std::string condition = yaml_double_quoted (
+            std::string_view{ buffer_ }.substr (condition_begin_));
+        buffer_.replace (condition_begin_, std::string::npos, condition);
+        condition_begin_ = std::string::npos;
+      }
+
     size_t level = test_case.nesting_depth ();
     *this << endl;
 

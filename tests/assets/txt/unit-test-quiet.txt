@@ -89,6 +89,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Standard types bad
     • Pointers to const
     • TAP escapes # TODO in names \ messages
+    • TAP condition values are quoted
     • Runner options
     • Runner option errors
     • Runner filter
@@ -110,4 +111,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 544 checks passed, 354 failed, in 109 test cases, 14 test suites, time: 10.916 ms
+✗ Total: 544 checks passed, 356 failed, in 110 test cases, 14 test suites, time: 10.763 ms

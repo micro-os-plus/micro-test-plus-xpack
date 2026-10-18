@@ -972,6 +972,11 @@ second line
         ✗ failed # TODO not a directive
 next line FAILED (miscellaneous.cpp:712)
     ✗ TAP escapes # TODO in names \ messages - FAILED (3 checks passed, 1 failed)
+    • TAP condition values are quoted
+        ✗ FAILED (miscellaneous.cpp:897, key: "value" # not a comment == a\b)
+        ✗ FAILED (miscellaneous.cpp:901, line
+break	tab == x)
+    ✗ TAP condition values are quoted - FAILED (0 checks passed, 2 failed)
     • Runner options
         ✓ default verbosity before initialise()
         ✓ given name
@@ -1039,7 +1044,7 @@ next line FAILED (miscellaneous.cpp:712)
         ✓ handler called
         ✓ previous handler returned
     ✓ Abort handler - passed (3 checks)
-✗ Miscellaneous suite - FAILED (126 checks passed, 18 failed, in 25 test cases), time: 3.153 ms
+✗ Miscellaneous suite - FAILED (126 checks passed, 20 failed, in 26 test cases), time: 2.984 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1147,4 +1152,4 @@ next line FAILED (miscellaneous.cpp:712)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 544 checks passed, 354 failed, in 109 test cases, 14 test suites, time: 13.004 ms
+✗ Total: 544 checks passed, 356 failed, in 110 test cases, 14 test suites, time: 12.857 ms

@@ -363,6 +363,18 @@ namespace micro_os_plus::micro_test_plus::detail
      * appended between the two calls when there is no message.
      */
     size_t description_begin_ = 0;
+
+    /**
+     * @brief The position in the buffer where the expression of a
+     * failed check begins.
+     *
+     * @details
+     * Set by `output_fail_prefix_()`, after the `condition:` key, and
+     * used by `output_fail_suffix_()` to write the expression appended
+     * between the two calls as a YAML double-quoted scalar. It is
+     * `std::string::npos` when the failure has no expression.
+     */
+    size_t condition_begin_ = std::string::npos;
   };
 
   // --------------------------------------------------------------------------

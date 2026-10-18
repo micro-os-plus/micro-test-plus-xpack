@@ -889,6 +889,22 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The `condition:` values are YAML double-quoted scalars, so the
+    // operands that contain `: `, ` #`, `"`, or `\` keep the YAML
+    // diagnostics block valid, and are not truncated.
+    ts.test ("TAP condition values are quoted", [] (auto& t)
+      {
+        t.expect (eq (std::string_view{ "key: \"value\" # not a comment" },
+                      std::string_view{ "a\\b" }));
+        local_counts.failed_checks++;
+
+        t.expect (eq (std::string_view{ "line\nbreak\ttab" },
+                      std::string_view{ "x" }));
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
     test_assert (current_suite_totals.failed_checks ()

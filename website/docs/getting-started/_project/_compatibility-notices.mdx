@@ -232,6 +232,18 @@ was written inside the YAML diagnostics block, either after the
 opening `---`, which the TAP consumers then did not recognise, or at
 the end of the `condition:` value.
 
+In the YAML diagnostics blocks of the TAP output, the `condition:`
+values are now written as YAML double-quoted scalars, with `\`, `"`,
+and the control characters escaped (`condition: "1 == 2"`). They were
+previously written as plain scalars, so the values that start with `{`
+or `'` (the container and the `char` operands, e.g. `{1, 2} != {1, 2}`
+or `'\0' == 'a'`), or contain `: `, were rejected by the YAML parsers
+of the TAP consumers, which then reported the failed test point without
+any diagnostics, and a value that contains ` #` was truncated. The
+consumers remove the quotes and the escapes, so the values they report
+are unchanged; tools that read the TAP lines as plain text now see
+them.
+
 The runner no longer derives from the internal `detail::test_node`
 class, since it is not a node of the test tree: `runner::name()`, which
 always returned `"runner"`, was removed; the name shown in the reports
