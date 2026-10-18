@@ -13,6 +13,9 @@
 
 #include "unit-test.h"
 
+#include <cstdint>
+#include <limits>
+#include <type_traits>
 #include <version>
 
 using namespace micro_os_plus::micro_test_plus;
@@ -131,7 +134,7 @@ static_asserts ()
       static_assert (detail::math::abs (-42) == 42);
       static_assert (detail::math::min_value (1, 2) == 1);
       static_assert (detail::math::pow (10, 3) == 1000);
-      static_assert (detail::math::integer<int, '4', '2'> () == 42);
+      static_assert (detail::math::integer_magnitude<int, '4', '2'> () == 42);
       static_assert (detail::math::num<int, '1', '.', '2', '5'> () == 1);
       static_assert (detail::math::den<int, '1', '.', '2', '5'> () == 250);
       static_assert (detail::math::den_size<int, '1', '.', '2', '5'> () == 3);
@@ -210,6 +213,39 @@ static_asserts ()
       static_assert (42 == 42_i);
       static_assert (-42 == -42_i);
       static_assert (-42 == -42_i);
+
+      // The negation keeps the type of the literal, also for the types
+      // narrower than `int`; the negation of an unsigned literal wraps
+      // around, and the minimum of a signed type can be written
+      // (API-REVIEW.md #13). The negation of the minimum is a compilation
+      // error.
+      static_assert (
+          std::is_same_v<decltype (-1_i8)::value_type, std::int8_t>);
+      static_assert (decltype (-1_i8)::value == -1);
+      static_assert (std::is_same_v<decltype (-1_s)::value_type, short>);
+      static_assert (decltype (-1_s)::value == -1);
+      static_assert (
+          std::is_same_v<decltype (-1_u8)::value_type, std::uint8_t>);
+      static_assert (decltype (-1_u8)::value == 255u);
+      static_assert (decltype (-1_us)::value
+                     == std::numeric_limits<unsigned short>::max ());
+      static_assert (decltype (-1_u)::value
+                     == std::numeric_limits<unsigned int>::max ());
+      static_assert (decltype (-1_u64)::value
+                     == std::numeric_limits<std::uint64_t>::max ());
+      static_assert (decltype (-0_u8)::value == 0u);
+      static_assert (decltype (-1_c)::value == static_cast<char> (-1));
+      static_assert (decltype (-(-127_i8))::value == 127);
+      static_assert (-128 == -128_i8);
+      static_assert (-0x80 == -0x80_i8);
+      static_assert (-128 == -128_sc);
+      static_assert (std::numeric_limits<std::int16_t>::min () == -32768_i16);
+      static_assert (std::numeric_limits<std::int32_t>::min ()
+                     == -2147483648_i32);
+      static_assert (std::numeric_limits<std::int64_t>::min ()
+                     == -9223372036854775808_i64);
+      static_assert (
+          std::is_same_v<decltype (-128_i8)::value_type, std::int8_t>);
 
       // The integer literals follow the C++ syntax: hexadecimal, binary, and
       // octal prefixes, and digit separators (API-REVIEW.md #8). A decimal

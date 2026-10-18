@@ -12,8 +12,17 @@ a second `initialise()` is reported and ignored.
 The integer literals now follow the C++ syntax: `0x`, `0b`, and
 leading-`0` (octal) prefixes are parsed, so `010_i` is 8 (it was 10),
 and a decimal point, or a value that does not fit in the type of the
-literal (e.g. `300_u8`, or `-128_i8`, whose absolute value does not
-fit), is now a compilation error.
+literal (e.g. `300_u8`), is now a compilation error. The minimum of a
+signed type can be written with the unary minus (`-128_i8`), but its
+absolute value alone (`128_i8`) cannot be used.
+
+The negation of an integer literal now keeps the type of the literal:
+`-1_i8` and `-1_s` were previously of type `int`, and `-1_u8` was the
+`int` value -1. The negation of an unsigned literal now wraps around
+for all the types, as it already did for `-1_u` (`UINT_MAX`), so `-1_u8`
+is the `std::uint8_t` value 255, and `mt::eq (-1_u8, -1)` now fails.
+The negation of the minimum of a signed type (`-(-128_i8)`) is a
+compilation error.
 
 The relational comparisons (`<`, `<=`, `>`, `>=`, `lt()`, `le()`, `gt()`,
 `ge()`) now apply the tolerance of the floating-point literals and

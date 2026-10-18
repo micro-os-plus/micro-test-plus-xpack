@@ -116,14 +116,76 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns a new `integral_constant` instance representing the negative
-     * of the current value.
+     * The built-in unary minus promotes the types narrower than `int`, so
+     * its result is converted back to the type of `N`. For the unsigned
+     * types, the value is subtracted from zero, which, after the
+     * conversion, gives the value modulo 2^n for all widths. For the signed
+     * types, the minimum is rejected before the negation, which would
+     * otherwise overflow for `int` and the wider types.
      */
     template <auto N>
     constexpr auto
     integral_constant<N>::operator- () const noexcept
     {
-      return integral_constant<-N>{};
+      using value_type = decltype (N);
+
+      if constexpr (!std::is_signed_v<value_type>)
+        {
+          return integral_constant<static_cast<value_type> (value_type{}
+                                                            - N)>{};
+        }
+      else if constexpr (N == std::numeric_limits<value_type>::min ())
+        {
+          static_assert (N != std::numeric_limits<value_type>::min (),
+                         "µTest++: the negation of the minimum value does "
+                         "not fit in the type of the literal");
+          return *this;
+        }
+      else
+        {
+          return integral_constant<static_cast<value_type> (-N)>{};
+        }
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
+     * Returns the minimum of `T`, which is the negation of the absolute
+     * value represented by this type.
+     */
+    template <class T>
+    constexpr auto
+    integral_min_magnitude<T>::operator- () const noexcept
+    {
+      return integral_constant<std::numeric_limits<T>::min ()>{};
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
+     * The value is checked by `math::integer_magnitude()`, which accepts,
+     * for the signed types, the absolute value of the minimum; this
+     * value does not fit in `T`, so it is represented by
+     * `integral_min_magnitude<T>`.
+     */
+    template <class T, char... Cs>
+    constexpr auto
+    integral_literal (void)
+    {
+      constexpr unsigned long long magnitude
+          = math::integer_magnitude<T, Cs...> ();
+
+      if constexpr (magnitude > static_cast<unsigned long long> (
+                        std::numeric_limits<T>::max ()))
+        {
+          return integral_min_magnitude<T>{};
+        }
+      else
+        {
+          return integral_constant<static_cast<T> (magnitude)>{};
+        }
     }
 
     // ------------------------------------------------------------------------

@@ -267,8 +267,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief The result of parsing the characters of an integer literal.
      *
      * @details
-     * Returned by `parse_integer_literal()`; the checks of `integer()` are
-     * based on it.
+     * Returned by `parse_integer_literal()`; the checks of
+     * `integer_magnitude()` are based on it.
      */
     struct integer_literal
     {
@@ -314,19 +314,21 @@ namespace micro_os_plus::micro_test_plus
     parse_integer_literal (void) -> integer_literal;
 
     /**
-     * @brief Computes the value of an integer literal, of type @c T.
+     * @brief Computes the value of an integer literal of type @c T, before
+     * any negation.
      *
-     * @tparam T The integral type of the result.
+     * @tparam T The integral type of the literal.
      * @tparam Cs The characters of the literal, as received by a literal
      * operator template.
      *
      * @par Parameters
      *   None.
-     * @return The value of the literal, as a value of type \c T.
+     * @return The value of the literal, up to `max ()` of \c T, or, for the
+     * signed types, up to `max () + 1`, the absolute value of the minimum.
      */
     template <class T, char... Cs>
     [[nodiscard]] consteval auto
-    integer (void) -> T;
+    integer_magnitude (void) -> unsigned long long;
 
     // ------------------------------------------------------------------------
   } // namespace detail::math

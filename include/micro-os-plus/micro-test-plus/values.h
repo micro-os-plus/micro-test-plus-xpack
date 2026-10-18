@@ -65,13 +65,16 @@
 #include "math.h"
 
 #include <concepts>
+#include <limits>
 #include <string_view>
+#include <type_traits>
 
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
@@ -219,7 +222,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * This struct retains the compile-time `value` constant and provides a
      * unary minus operator to obtain the negative value as a new
-     * `integral_constant` instance.
+     * `integral_constant` instance, of the same type.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -242,11 +245,71 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Unary minus operator.
        *
-       * @return An `integral_constant` with value `-N`.
+       * @details
+       * The result has the type of `N`, not the type promoted by the
+       * built-in unary minus, so `-1_i8` is an `int8_t`. The negation of an
+       * unsigned value wraps around, as for `unsigned int` in C++ (`-1_u8`
+       * is 255). The negation of the minimum of a signed type does not fit
+       * in the type, so it is a compilation error.
+       *
+       * @return An `integral_constant` with value `-N`, converted to the
+       * type of `N`.
        */
       [[nodiscard]] constexpr auto
       operator- () const noexcept;
     };
+
+    /**
+     * @brief Struct template representing the absolute value of the
+     * minimum of a signed integral type, as written in a literal.
+     *
+     * @tparam T The signed integral type of the literal.
+     *
+     * @details
+     * The absolute value of the minimum of a signed type (e.g. 128 for
+     * `int8_t`) does not fit in the type, but the literal must be accepted
+     * to write the minimum with the unary minus (e.g. `-128_i8`). The
+     * literal operators return this type for such a literal; its only
+     * operation is the unary minus, so any other use of the literal fails
+     * to compile.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <class T>
+    struct integral_min_magnitude
+    {
+      /**
+       * @brief Unary minus operator.
+       *
+       * @details
+       * The only operation of the type, the one that makes the literal
+       * valid.
+       *
+       * @return An `integral_constant` with the minimum value of `T`.
+       */
+      [[nodiscard]] constexpr auto
+      operator- () const noexcept;
+    };
+
+    /**
+     * @brief Creates the compile-time constant of an integer literal.
+     *
+     * @tparam T The integral type of the literal.
+     * @tparam Cs The characters of the literal, as received by a literal
+     * operator template.
+     *
+     * @details
+     * Used by the integer literal operators (`_i`, `_u8`, etc.).
+     *
+     * @par Parameters
+     *   None.
+     * @return An `integral_constant` with the value of the literal, or,
+     * when the value is the absolute value of the minimum of a signed `T`,
+     * an `integral_min_magnitude<T>`, valid only when negated.
+     */
+    template <class T, char... Cs>
+    [[nodiscard]] constexpr auto
+    integral_literal (void);
 
     /**
      * @brief Struct template representing a generic floating point constant

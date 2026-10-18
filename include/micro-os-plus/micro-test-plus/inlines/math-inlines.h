@@ -507,29 +507,38 @@ namespace micro_os_plus::micro_test_plus
      * The literal must be an integer literal, in any of the C++ forms
      * (decimal, hexadecimal, binary, or octal, with digit separators), and
      * its value must fit in `T`; otherwise the compilation fails with an
-     * explicit message. Negative values are obtained with the unary minus,
-     * so the literal itself is never negative; the minimum value of a
-     * signed type (e.g. -128 for `int8_t`) cannot be written as a literal of
-     * that type, as its absolute value does not fit.
+     * explicit message.
+     *
+     * Negative values are obtained with the unary minus, so the literal
+     * itself is never negative. For the signed types, the limit is the
+     * absolute value of the minimum, `max () + 1`, so that the minimum can
+     * be written (e.g. `-128_i8`); the caller allows this magnitude only
+     * when it is negated.
+     *
+     * When a check fails, zero is returned, so that the callers report no
+     * further errors.
      */
     template <class T, char... Cs>
     consteval auto
-    integer (void) -> T
+    integer_magnitude (void) -> unsigned long long
     {
       constexpr integer_literal literal = parse_integer_literal<Cs...> ();
+      constexpr unsigned long long max_magnitude
+          = static_cast<unsigned long long> (std::numeric_limits<T>::max ())
+            + (std::numeric_limits<T>::is_signed ? 1u : 0u);
+      constexpr bool fits = literal.is_integer && !literal.is_too_large
+                            && literal.value <= max_magnitude;
 
       static_assert (literal.is_integer,
                      "µTest++: an integer literal must not have a decimal "
                      "point or an exponent");
       static_assert (!literal.is_integer || !literal.is_too_large,
                      "µTest++: the integer literal is too large");
-      static_assert (!literal.is_integer || literal.is_too_large
-                         || literal.value <= static_cast<unsigned long long> (
-                                std::numeric_limits<T>::max ()),
+      static_assert (!literal.is_integer || literal.is_too_large || fits,
                      "µTest++: the integer literal value does not fit in the "
                      "type of the literal");
 
-      return static_cast<T> (literal.value);
+      return fits ? literal.value : 0;
     }
 
     // ------------------------------------------------------------------------

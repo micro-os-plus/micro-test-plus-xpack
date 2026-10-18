@@ -96,7 +96,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i ()
     {
-      return detail::integral_constant<detail::math::integer<int, Cs...> ()>{};
+      return detail::integral_literal<int, Cs...> ();
     }
 
     /**
@@ -114,8 +114,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_s ()
     {
-      return detail::integral_constant<
-          detail::math::integer<short, Cs...> ()>{};
+      return detail::integral_literal<short, Cs...> ();
     }
 
     /**
@@ -133,8 +132,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_c ()
     {
-      return detail::integral_constant<
-          detail::math::integer<char, Cs...> ()>{};
+      return detail::integral_literal<char, Cs...> ();
     }
 
     /**
@@ -152,8 +150,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_sc ()
     {
-      return detail::integral_constant<
-          detail::math::integer<signed char, Cs...> ()>{};
+      return detail::integral_literal<signed char, Cs...> ();
     }
 
     /**
@@ -171,8 +168,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_l ()
     {
-      return detail::integral_constant<
-          detail::math::integer<long, Cs...> ()>{};
+      return detail::integral_literal<long, Cs...> ();
     }
 
     /**
@@ -190,8 +186,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_ll ()
     {
-      return detail::integral_constant<
-          detail::math::integer<long long, Cs...> ()>{};
+      return detail::integral_literal<long long, Cs...> ();
     }
 
     /**
@@ -209,8 +204,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u ()
     {
-      return detail::integral_constant<
-          detail::math::integer<unsigned, Cs...> ()>{};
+      return detail::integral_literal<unsigned, Cs...> ();
     }
 
     /**
@@ -228,8 +222,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_uc ()
     {
-      return detail::integral_constant<
-          detail::math::integer<unsigned char, Cs...> ()>{};
+      return detail::integral_literal<unsigned char, Cs...> ();
     }
 
     /**
@@ -247,8 +240,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_us ()
     {
-      return detail::integral_constant<
-          detail::math::integer<unsigned short, Cs...> ()>{};
+      return detail::integral_literal<unsigned short, Cs...> ();
     }
 
     /**
@@ -266,8 +258,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_ul ()
     {
-      return detail::integral_constant<
-          detail::math::integer<unsigned long, Cs...> ()>{};
+      return detail::integral_literal<unsigned long, Cs...> ();
     }
 
     /**
@@ -285,8 +276,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_ull ()
     {
-      return detail::integral_constant<
-          detail::math::integer<unsigned long long, Cs...> ()>{};
+      return detail::integral_literal<unsigned long long, Cs...> ();
     }
 
     /**
@@ -304,8 +294,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i8 ()
     {
-      return detail::integral_constant<
-          detail::math::integer<std::int8_t, Cs...> ()>{};
+      return detail::integral_literal<std::int8_t, Cs...> ();
     }
 
     /**
@@ -323,8 +312,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i16 ()
     {
-      return detail::integral_constant<
-          detail::math::integer<std::int16_t, Cs...> ()>{};
+      return detail::integral_literal<std::int16_t, Cs...> ();
     }
 
     /**
@@ -342,8 +330,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i32 ()
     {
-      return detail::integral_constant<
-          detail::math::integer<std::int32_t, Cs...> ()>{};
+      return detail::integral_literal<std::int32_t, Cs...> ();
     }
 
     /**
@@ -361,8 +348,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_i64 ()
     {
-      return detail::integral_constant<
-          detail::math::integer<std::int64_t, Cs...> ()>{};
+      return detail::integral_literal<std::int64_t, Cs...> ();
     }
 
     /**
@@ -380,8 +366,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u8 ()
     {
-      return detail::integral_constant<
-          detail::math::integer<std::uint8_t, Cs...> ()>{};
+      return detail::integral_literal<std::uint8_t, Cs...> ();
     }
 
     /**
@@ -399,8 +384,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u16 ()
     {
-      return detail::integral_constant<
-          detail::math::integer<std::uint16_t, Cs...> ()>{};
+      return detail::integral_literal<std::uint16_t, Cs...> ();
     }
 
     /**
@@ -418,8 +402,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u32 ()
     {
-      return detail::integral_constant<
-          detail::math::integer<std::uint32_t, Cs...> ()>{};
+      return detail::integral_literal<std::uint32_t, Cs...> ();
     }
 
     /**
@@ -437,8 +420,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     operator""_u64 ()
     {
-      return detail::integral_constant<
-          detail::math::integer<std::uint64_t, Cs...> ()>{};
+      return detail::integral_literal<std::uint64_t, Cs...> ();
     }
 
     /**

@@ -775,6 +775,12 @@ binary (`0b101_i`), and octal (`010_i`, which is 8), with digit separators
 (`1'000_i`). A decimal point, an exponent, or a value that does not fit in the
 type of the literal (e.g. `300_u8`) is a compilation error.
 
+Negative values are written with the unary minus (`-42_i`), which keeps the
+type of the literal (`-1_i8` is an `int8_t`); the minimum of a signed type can
+be written too (`-128_i8`). As in C++ for `unsigned int`, the negation of an
+unsigned literal wraps around (`-1_u8` is 255). The negation of the minimum of
+a signed type (`-(-128_i8)`) is a compilation error.
+
 The floating-point literals are written with decimal digits and a decimal
 point, optionally with digit separators (`1'000.000'5_d`), but without an
 exponent; they can have up to 19 digits before the decimal point and 18
