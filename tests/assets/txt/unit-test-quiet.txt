@@ -20,6 +20,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Application types with get()
     • Application types with value and epsilon
     • Message values
+    • Character operands
     • Floating-point tolerance
     • Combinatorial floats
     • Combinatorial doubles
@@ -82,6 +83,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Reporter stream operators
     • Formatter character pointers
     • Formatter number suffixes
+    • Formatter characters
     • Pointers to const
     • Runner options
     • Runner option errors
@@ -104,4 +106,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 509 checks passed, 347 failed, in 103 test cases, 14 test suites, time: 17.481 ms
+✗ Total: 518 checks passed, 349 failed, in 105 test cases, 14 test suites, time: 10.804 ms

@@ -128,6 +128,24 @@ TAP version 14
         ok 3 - null strings nullptr, nullptr, nullptr
         1..3
     ok 15 - Message values # { passed, 3 checks }
+    # Subtest: Character operands
+        not ok 1
+          ---
+          condition: '\0' == 'a'
+          at:
+            filename: main.cpp
+            line: 618
+          ...
+        not ok 2 - space is tab
+          ---
+          condition: ' ' == '\t'
+          at:
+            filename: main.cpp
+            line: 621
+          ...
+        ok 3 - 'x' == 'x'
+        1..3
+    not ok 16 - Character operands # { FAILED, 1 check passed, 2 failed }
     # Subtest: Floating-point tolerance
         ok 1 - 1.45 == 1.5_d
         ok 2 - not 1.45 < 1.5_d
@@ -158,9 +176,9 @@ TAP version 14
         ok 27 - 1.5 <= approx (1.5, 0.0)
         ok 28 - 1.5 >= approx (1.5, 0.0)
         1..28
-    ok 16 - Floating-point tolerance # { passed, 28 checks }
-    1..16
-not ok 1 - Static top suite # { FAILED, 71 checks passed, 4 failed, in 20 test cases, time: 1.513 ms }
+    ok 17 - Floating-point tolerance # { passed, 28 checks }
+    1..17
+not ok 1 - Static top suite # { FAILED, 72 checks passed, 6 failed, in 21 test cases, time: 1.782 ms }
 # Subtest: Combinatorial floats suite
     # Subtest: Combinatorial floats
         ok 1 - 42.0 == 42 signed long long
@@ -2943,11 +2961,22 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 13 - infinite double
         1..13
     ok 9 - Formatter number suffixes # { passed, 13 checks }
+    # Subtest: Formatter characters
+        ok 1 - letter
+        ok 2 - space
+        ok 3 - double quote
+        ok 4 - zero
+        ok 5 - control escapes
+        ok 6 - quote and backslash
+        ok 7 - other control characters
+        ok 8 - non-ASCII byte
+        1..8
+    ok 10 - Formatter characters # { passed, 8 checks }
     # Subtest: Pointers to const
         ok 1 - different const objects
         ok 2 - same const object
         1..2
-    ok 10 - Pointers to const # { passed, 2 checks }
+    ok 11 - Pointers to const # { passed, 2 checks }
     # Subtest: Runner options
         ok 1 - default verbosity before initialise()
         ok 2 - given name
@@ -2955,14 +2984,14 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 4 - local session passed
         ok 5 - default name without arguments
         1..5
-    ok 11 - Runner options # { passed, 5 checks }
+    ok 12 - Runner options # { passed, 5 checks }
     # Subtest: Runner option errors
         ok 1 - valid options still applied
         ok 2 - unknown reporter
         ok 3 - missing argument
         ok 4 - output file not opened
         1..4
-    ok 12 - Runner option errors # { passed, 4 checks }
+    ok 13 - Runner option errors # { passed, 4 checks }
     # Subtest: Runner filter
         ok 1 - suite filter passed
         ok 2 - matching suites run
@@ -2980,7 +3009,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 14 - nothing skipped without patterns
         ok 15 - missing pattern
         1..15
-    ok 13 - Runner filter # { passed, 15 checks }
+    ok 14 - Runner filter # { passed, 15 checks }
     # Subtest: Late suites
         ok 1 - suite added during run() rejected
         ok 2 - rejected suite neither run nor counted
@@ -2988,7 +3017,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 4 - session passed
         ok 5 - suite added after run() rejected
         1..5
-    ok 14 - Late suites # { passed, 5 checks }
+    ok 15 - Late suites # { passed, 5 checks }
     # Subtest: Test case started on the suite
         ok 1 - check before the test case
         # Subtest: test case started on the suite
@@ -2997,7 +3026,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 2 - test case started on the suite # { passed, 1 check }
         ok 3 - run nested
         1..3
-    ok 15 - Test case started on the suite # { passed, 2 checks }
+    ok 16 - Test case started on the suite # { passed, 2 checks }
     # Subtest: Callable arguments
         ok 1 - reference parameter refers to a copy
         ok 2 - std::ref() refers to the object
@@ -3005,28 +3034,28 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 4 - local session passed
         ok 5 - deferred suite received the copy
         1..5
-    ok 16 - Callable arguments # { passed, 5 checks }
+    ok 17 - Callable arguments # { passed, 5 checks }
     # Subtest: Operand copies
         ok 1 - plain operands
         ok 2 - plain operands copied once
         ok 3 - wrapped operand
         ok 4 - wrapped operand copied once
         1..4
-    ok 17 - Operand copies # { passed, 4 checks }
+    ok 18 - Operand copies # { passed, 4 checks }
     # Subtest: Test case lifetime
         ok 1 - test cases destroyed
         ok 2 - test cases counted
         ok 3 - local session passed
         1..3
-    ok 18 - Test case lifetime # { passed, 3 checks }
+    ok 19 - Test case lifetime # { passed, 3 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - handler called
         ok 3 - previous handler returned
         1..3
-    ok 19 - Abort handler # { passed, 3 checks }
-    1..19
-not ok 11 - Miscellaneous suite # { FAILED, 92 checks passed, 13 failed, in 20 test cases, time: 3.571 ms }
+    ok 20 - Abort handler # { passed, 3 checks }
+    1..20
+not ok 11 - Miscellaneous suite # { FAILED, 100 checks passed, 13 failed, in 21 test cases, time: 3.052 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3269,4 +3298,4 @@ ok 13 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.279 ms }
     1..3
 not ok 14 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.255 ms }
 1..14
-# { total: 509 checks passed, 347 failed, in 103 test cases, 14 test suites, time: 18.994 ms }
+# { total: 518 checks passed, 349 failed, in 105 test cases, 14 test suites, time: 14.072 ms }

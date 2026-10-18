@@ -71,13 +71,71 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Appends the single character @p c to the internal buffer using
-   * `buffer_.append(1, c)`.
+   * The character is written as a C++ character literal, between single
+   * quotes, so that the spaces and the control characters are visible,
+   * and a zero does not end the text when it is printed as a C string.
+   * The usual escape sequences are used for `'\\0'`, `'\\a'`, `'\\b'`,
+   * `'\\t'`, `'\\n'`, `'\\v'`, `'\\f'`, `'\\r'`, `'\\''`, and `'\\\\'`;
+   * the other control characters, `DEL`, and the values above `0x7F`
+   * (for example the bytes of the UTF-8 sequences) are written as two
+   * hexadecimal digits (`'\\x1b'`). The printable ASCII characters are
+   * written unchanged.
    */
   expression_formatter&
   expression_formatter::operator<< (char c)
   {
-    buffer_.append (1, c);
+    buffer_.push_back ('\'');
+    switch (c)
+      {
+      case '\0':
+        buffer_.append ("\\0");
+        break;
+      case '\a':
+        buffer_.append ("\\a");
+        break;
+      case '\b':
+        buffer_.append ("\\b");
+        break;
+      case '\t':
+        buffer_.append ("\\t");
+        break;
+      case '\n':
+        buffer_.append ("\\n");
+        break;
+      case '\v':
+        buffer_.append ("\\v");
+        break;
+      case '\f':
+        buffer_.append ("\\f");
+        break;
+      case '\r':
+        buffer_.append ("\\r");
+        break;
+      case '\'':
+        buffer_.append ("\\'");
+        break;
+      case '\\':
+        buffer_.append ("\\\\");
+        break;
+      default:
+        {
+          const auto code = static_cast<unsigned char> (c);
+          if (code < 0x20 || code >= 0x7F)
+            {
+              constexpr std::string_view digits{ "0123456789abcdef" };
+              buffer_.append ("\\x");
+              buffer_.push_back (digits[static_cast<std::size_t> (code >> 4)]);
+              buffer_.push_back (
+                  digits[static_cast<std::size_t> (code & 0x0F)]);
+            }
+          else
+            {
+              buffer_.push_back (c);
+            }
+        }
+        break;
+      }
+    buffer_.push_back ('\'');
     return *this;
   }
 

@@ -610,6 +610,32 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
+  // The character operands are reported as quoted literals, and a zero
+  // does not hide the rest of the output, including the next failed
+  // check (API-REVIEW.md #11).
+  ts.test ("Character operands", [] (auto& t)
+    {
+      t.expect (eq ('\0', 'a'));
+      local_counts.failed_checks++;
+
+      t.expect (eq (' ', '\t')) << "space is tab";
+      local_counts.failed_checks++;
+
+      t.expect (eq ('x', 'x'));
+      local_counts.successful_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
   // All six comparisons apply the tolerance of the floating-point literals
   // and wrappers consistently: values within the tolerance are equal, and
   // neither less nor greater; `approx()` makes the tolerance explicit

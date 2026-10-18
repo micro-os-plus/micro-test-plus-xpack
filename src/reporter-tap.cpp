@@ -415,7 +415,7 @@ namespace micro_os_plus::micro_test_plus::detail
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     *this << indent (1) << "not ok " << suite.test_point_number () << " - "
-          << message.c_str () << endl;
+          << message << endl;
 
     buffer_has_failures_ = true;
   }
@@ -644,7 +644,7 @@ namespace micro_os_plus::micro_test_plus::detail
           << " - ";
     if (!message.empty ())
       {
-        *this << message.c_str ();
+        *this << message;
       }
   }
 
@@ -685,7 +685,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (!message.empty ())
       {
-        *this << " - " << message.c_str ();
+        *this << " - " << message;
       }
     *this << endl;
 

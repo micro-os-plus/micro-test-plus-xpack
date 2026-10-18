@@ -87,6 +87,11 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ int 42, char x, double 1.25
         ✓ null strings nullptr, nullptr, nullptr
     ✓ Message values - passed (3 checks)
+    • Character operands
+        ✗ FAILED (main.cpp:618, '\0' == 'a')
+        ✗ space is tab FAILED (main.cpp:621, ' ' == '\t')
+        ✓ 'x' == 'x'
+    ✗ Character operands - FAILED (1 check passed, 2 failed)
     • Floating-point tolerance
         ✓ 1.45 == 1.5_d
         ✓ not 1.45 < 1.5_d
@@ -117,7 +122,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ 1.5 <= approx (1.5, 0.0)
         ✓ 1.5 >= approx (1.5, 0.0)
     ✓ Floating-point tolerance - passed (28 checks)
-✗ Static top suite - FAILED (71 checks passed, 4 failed, in 20 test cases)
+✗ Static top suite - FAILED (72 checks passed, 6 failed, in 21 test cases)
 • Combinatorial floats suite
     • Combinatorial floats
         ✓ 42.0 == 42 signed long long
@@ -855,6 +860,16 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ double with exponent
         ✓ infinite double
     ✓ Formatter number suffixes - passed (13 checks)
+    • Formatter characters
+        ✓ letter
+        ✓ space
+        ✓ double quote
+        ✓ zero
+        ✓ control escapes
+        ✓ quote and backslash
+        ✓ other control characters
+        ✓ non-ASCII byte
+    ✓ Formatter characters - passed (8 checks)
     • Pointers to const
         ✓ different const objects
         ✓ same const object
@@ -925,7 +940,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ no initial handler
         ✓ previous handler returned
     ✓ Abort handler - passed (2 checks)
-✗ Miscellaneous suite - FAILED (91 checks passed, 13 failed, in 20 test cases)
+✗ Miscellaneous suite - FAILED (99 checks passed, 13 failed, in 21 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1033,4 +1048,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 497 checks passed, 335 failed, in 88 test cases, 12 test suites
+✗ Total: 506 checks passed, 337 failed, in 90 test cases, 12 test suites

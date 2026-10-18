@@ -205,14 +205,14 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const T& t)
   {
-    *this << '{';
+    *this << "{";
     auto first = true;
     for (const auto& arg : t)
       {
         *this << (first ? "" : ", ") << arg;
         first = false;
       }
-    *this << '}';
+    *this << "}";
     return *this;
   }
 
@@ -256,8 +256,8 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::and_op<Lhs_T, Rhs_T>& op)
   {
-    return (*this << '(' << op.lhs () << colour_ (op) << " and "
-                  << colours_.none << op.rhs () << ')');
+    return (*this << "(" << op.lhs () << colour_ (op) << " and "
+                  << colours_.none << op.rhs () << ")");
   }
 
   /**
@@ -276,8 +276,8 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::or_op<Lhs_T, Rhs_T>& op)
   {
-    return (*this << '(' << op.lhs () << colour_ (op) << " or "
-                  << colours_.none << op.rhs () << ')');
+    return (*this << "(" << op.lhs () << colour_ (op) << " or "
+                  << colours_.none << op.rhs () << ")");
   }
 
   /**

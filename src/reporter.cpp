@@ -168,12 +168,15 @@ namespace micro_os_plus::micro_test_plus::detail
    * This method writes the contents of the internal output buffer to the
    * console without appending a newline character. The buffer is not
    * cleared; the caller is responsible for clearing it when appropriate.
+   *
+   * The buffer is written with its size, not as a C string, so that a
+   * zero character in a message does not end the output.
    */
   void
   reporter::write_buffer_to_console (void)
   {
     // Pass only the string, do not add an `\n` here.
-    fputs (buffer_.c_str (), stdout);
+    fwrite (buffer_.data (), 1, buffer_.size (), stdout);
   }
 
   /**

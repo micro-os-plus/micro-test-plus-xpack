@@ -68,6 +68,15 @@ decimal point (`42.0`, `42.0f`, `42.0ld`), so that they can be
 distinguished from the integers; they were previously written as `42`
 and `42f`. The messages added with `<<` are unchanged.
 
+The `char` values are now written as quoted character literals, with
+the non-printable characters escaped (`'a'`, `' '`, `'\0'`, `'\x1b'`);
+they were previously written raw, so a space was invisible, and a zero
+character hid the rest of the output of the test case. This also
+applies to the `char` values written by the application `operator<<`
+functions to the `expression_formatter`; to write a separator without
+quotes, use a string (`" "` instead of `' '`). A zero character in a
+message added with `<<` no longer ends the message.
+
 The named boolean constants created by the `_b` literal can now be
 used in the checks; any check that used them previously overflowed
 the stack. They are reported by their name (`"flag"_b == flag` fails

@@ -234,7 +234,13 @@ namespace micro_os_plus::micro_test_plus
       operator<< (std::string_view sv);
 
       /**
-       * @brief Appends a single character to the buffer.
+       * @brief Appends a character, as a quoted literal, to the buffer.
+       *
+       * @details
+       * The character is written between single quotes, with the
+       * non-printable characters escaped (`'a'`, `' '`, `'\\0'`,
+       * `'\\x1b'`), so that it can be identified in the reports. To
+       * write a separator without quotes, use a string (`" "`).
        *
        * @param c The character to append.
        * @return Reference to this instance.

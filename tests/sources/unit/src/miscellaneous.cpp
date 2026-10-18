@@ -527,7 +527,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         f << const_text_pointer;
         check ("mutable", "const char*");
 
-        f << static_cast<char*> (nullptr) << ' '
+        f << static_cast<char*> (nullptr) << " "
           << static_cast<const char*> (nullptr);
         check ("nullptr nullptr", "null char pointers");
 
@@ -606,6 +606,56 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         f << std::numeric_limits<double>::infinity ();
         check ("inf", "infinite double");
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The characters are written by the `expression_formatter` as quoted
+    // literals, with the non-printable ones escaped, so that a zero does
+    // not end the output (API-REVIEW.md #11).
+    ts.test ("Formatter characters", [] (auto& t)
+      {
+        detail::colours no_colours{};
+        expression_formatter f{ no_colours };
+
+        // Compares the accumulated text, then clears it.
+        auto check = [&] (std::string_view expected, const char* message)
+          {
+            t.expect (eq (std::string_view{ f.str () }, expected)) << message;
+            local_counts.successful_checks++;
+            f.clear ();
+          };
+
+        f << 'a';
+        check ("'a'", "letter");
+
+        f << ' ';
+        check ("' '", "space");
+
+        f << '"';
+        check ("'\"'", "double quote");
+
+        f << '\0';
+        check ("'\\0'", "zero");
+
+        f << '\a' << '\b' << '\t' << '\n' << '\v' << '\f' << '\r';
+        check ("'\\a''\\b''\\t''\\n''\\v''\\f''\\r'", "control escapes");
+
+        f << '\'' << '\\';
+        check ("'\\'''\\\\'", "quote and backslash");
+
+        f << '\x1b' << '\x7f';
+        check ("'\\x1b''\\x7f'", "other control characters");
+
+        f << static_cast<char> (0xC3);
+        check ("'\\xc3'", "non-ASCII byte");
 
         local_counts.executed_test_cases++;
       });

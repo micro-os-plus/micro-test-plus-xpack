@@ -418,8 +418,8 @@ namespace micro_os_plus::micro_test_plus::detail
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     *this << indent (1) << colours_.fail << "✗" << colours_.none << " "
-          << message.c_str () << " " << colours_.fail << "FAILED"
-          << colours_.none << endl;
+          << message << " " << colours_.fail << "FAILED" << colours_.none
+          << endl;
 
     buffer_has_failures_ = true;
   }
@@ -457,10 +457,10 @@ namespace micro_os_plus::micro_test_plus::detail
         else
           {
             // Each top-level test case should start with an empty buffer.
-            fprintf (stderr,
-                     "Buffer not empty at the beginning of a test case:\n"
-                     "%s\n",
-                     buffer_.c_str ());
+            fputs ("Buffer not empty at the beginning of a test case:\n",
+                   stderr);
+            fwrite (buffer_.data (), 1, buffer_.size (), stderr);
+            fputs ("\n", stderr);
             flush_streams ();
             test_case.abort ();
           }
@@ -660,7 +660,7 @@ namespace micro_os_plus::micro_test_plus::detail
     *this << colours_.pass << "✓" << colours_.none << " ";
     if (!message.empty ())
       {
-        *this << message.c_str ();
+        *this << message;
       }
   }
 
@@ -713,7 +713,7 @@ namespace micro_os_plus::micro_test_plus::detail
     *this << colours_.fail << "✗" << colours_.none << " ";
     if (!message.empty ())
       {
-        *this << message.c_str ();
+        *this << message;
         *this << " ";
       }
     *this << colours_.fail << "FAILED" << colours_.none;
@@ -782,10 +782,10 @@ namespace micro_os_plus::micro_test_plus::detail
         else
           {
             // Each top-level test case should start with an empty buffer.
-            fprintf (stderr,
-                     "Buffer not empty at the beginning of a test case:\n"
-                     "%s\n",
-                     buffer_.c_str ());
+            fputs ("Buffer not empty at the beginning of a test case:\n",
+                   stderr);
+            fwrite (buffer_.data (), 1, buffer_.size (), stderr);
+            fputs ("\n", stderr);
             flush_streams ();
             test_case.abort ();
           }
