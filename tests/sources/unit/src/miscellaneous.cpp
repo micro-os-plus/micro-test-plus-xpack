@@ -723,10 +723,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         // platform.
         unsigned char bytes[] = { 'a', 'b', 0 };
         f << bytes;
-        std::string_view written
-            = std::string_view{ f.str () }.substr (start);
-        t.expect (not written.empty () && written != "ab"
-                  && written != "0x0")
+        std::string_view written = std::string_view{ f.str () }.substr (start);
+        t.expect (not written.empty () && written != "ab" && written != "0x0")
             << "unsigned char array";
         local_counts.successful_checks++;
 
@@ -938,7 +936,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     // (API-REVIEW.md #18).
     ts.test ("Standard types", [] (auto& t)
       {
-        t.expect (eq (colour::red, colour::red)) << "colour::red == colour::red";
+        t.expect (eq (colour::red, colour::red))
+            << "colour::red == colour::red";
         local_counts.successful_checks++;
 
         t.expect (ne (colour::red, colour::green))
@@ -1427,8 +1426,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (eq (after_runner.run (), 0)) << "session passed";
         local_counts.successful_checks++;
 
-        after_runner.add_suite (
-            "After", [&late_runs] (suite&) noexcept { ++late_runs; });
+        after_runner.add_suite ("After", [&late_runs] (suite&) noexcept
+          { ++late_runs; });
 
         t.expect (eq (after_runner.run (), 1) and eq (late_runs, 0)
                   and eq (after_runner.suites_count (), 2u))

@@ -550,13 +550,11 @@ main (int argc, char* argv[])
           << "readings are equal";
       local_counts.successful_checks++;
 
-      t.expect (
-          ne (user_types::gauge{ 1, 5 }, user_types::gauge{ 2, 5 }))
+      t.expect (ne (user_types::gauge{ 1, 5 }, user_types::gauge{ 2, 5 }))
           << "gauges differ";
       local_counts.successful_checks++;
 
-      t.expect (
-          eq (user_types::gauge{ 3, 5 }, user_types::gauge{ 3, 5 }))
+      t.expect (eq (user_types::gauge{ 3, 5 }, user_types::gauge{ 3, 5 }))
           << "gauges are equal";
       local_counts.successful_checks++;
 

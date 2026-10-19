@@ -191,8 +191,7 @@ namespace micro_os_plus::micro_test_plus::detail
               if (u < 0x20 || u == 0x7F)
                 {
                   result.append ("\\x");
-                  result.push_back (
-                      digits[static_cast<std::size_t> (u >> 4)]);
+                  result.push_back (digits[static_cast<std::size_t> (u >> 4)]);
                   result.push_back (
                       digits[static_cast<std::size_t> (u & 0x0F)]);
                 }

@@ -206,8 +206,8 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       // case continues, and fails because of the failed nested test case.
       ts.test ("Unexpected exception in nested test case", [] (auto& t)
         {
-          t.test ("nested test case", [] (auto&)
-            { exercise_throw_runtime_error (true); });
+          t.test ("nested test case",
+                  [] (auto&) { exercise_throw_runtime_error (true); });
           local_counts.failed_checks++;
           local_counts.executed_test_cases++; // nested
 
@@ -340,8 +340,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
           t.expect (eq (local_runner.totals ().successful_checks (), 2u)
                     and eq (local_runner.totals ().failed_checks (), 1u)
-                    and eq (local_runner.totals ().executed_test_cases (),
-                            2u))
+                    and eq (local_runner.totals ().executed_test_cases (), 2u))
               << "exception counted as a failed check";
           local_counts.successful_checks++;
         });
