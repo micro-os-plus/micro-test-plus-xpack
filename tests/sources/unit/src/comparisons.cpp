@@ -72,39 +72,39 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     ts.test ("Integer comparisons", [] (auto& t)
       {
         t.expect (eq (my_actual_integral (), 42)) << "actual == 42";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (my_actual_integral_more<int> (), 42))
             << "actual+1 != 42";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (lt (my_actual_integral_less<int> (), 42)) << "actual-1 < 42";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (le (my_actual_integral (), 42)) << "actual <= 42";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (gt (my_actual_integral_more<int> (), 42)) << "actual+1 > 42";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ge (my_actual_integral (), 42)) << "actual >= 42";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         {
           using namespace literals;
 
           t.expect (eq (42_i, 42_i));
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (42, 42_i)) << "42 == 42_i";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
         }
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -148,8 +148,8 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         }
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -160,101 +160,101 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     ts.test ("Float comparisons", [] (auto& t)
       {
         t.expect (eq (my_actual_float<float> (), 42.0f)) << "actual == 42.0f";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (my_actual_float<float> (), 43.0f)) << "actual != 43.0f";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (my_actual_float<double> (), 42.0)) << "actual == 42.0";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (my_actual_float<double> (), 43.0)) << "actual != 43.0";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (my_actual_float<float> (), 42.0)) << "actual == 42.0";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (my_actual_float<double> (), 43.0)) << "actual != 43.0";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (my_actual_float<double> (), 42.0f)) << "actual == 42.0f";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (my_actual_float<float> (), 43.0f)) << "actual != 43.0f";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (my_actual_float<float> (), 42)) << "actual == 42";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (my_actual_float<float> (), 43)) << "actual != 43";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         {
           using namespace literals;
 
           t.expect (eq (to_f (42.101f), 42.101_f)) << "42.101f == 42.101_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (to_f (42.101f, 0.01f), 42.10_f))
               << "42.101f epsilon 0.01f == 42.10_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (ne (to_f (42.101f, 0.1f), 42.1000_f))
               << "42.101f epsilon 0.1f != 42.10_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (to_f (42.1010001f, 0.1f), 42.1_f))
               << "42.1010001f epsilon 0.1f == 42.1_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (ne (to_f (42.101f), 42.10_f)) << "42.101f != 42.10_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (ne (to_f (42.101f), 42.100_f)) << "42.101f != 42.100_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (to_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (to_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (to_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (to_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (to_d (42.), 42._d)) << "42. == 42._d";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (to_ld (42.42L), 42.42_ld)) << "42.42 == 42.42_ld";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (1234._f, 1234.f)) << "1234._f == 1234.f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (1234.56_f, 1234.56f)) << "1234.56_f == 1234.56f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (12345678.9f, 12345678.9_f))
               << "12345678.9f == 12345678.9_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (111111.42f, 111111.42_f))
               << "111111.42f == 111111.42_f";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (1111111111.42, 1111111111.42_d))
               << "1111111111.42 == 1111111111.42_d";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
         }
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -340,8 +340,8 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -355,33 +355,33 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
       {
         t.expect (eq (std::string_view{ compute_abc () }, "abc"sv))
             << "actual_sv == abc_sv";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (std::string_view{ compute_abc () }, "abx"sv))
             << "actual_sv != abx_sv";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (lt (std::string_view{ compute_abc () }, "abd"sv))
             << "actual_sv < abd_sv";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (le (std::string_view{ compute_abc () }, "abc"sv))
             << "actual_sv <= abc_sv";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (gt (std::string_view{ compute_abc () }, "abb"sv))
             << "actual_sv > abb_sv";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ge (std::string_view{ compute_abc () }, "abc"sv))
             << "actual_sv >= abc_sv";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -418,8 +418,8 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -447,22 +447,22 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (le (actual, "abc")) << "actual <= \"abc\"";
         t.expect (gt (actual, "abb")) << "actual > \"abb\"";
         t.expect (ge (actual, "abc")) << "actual >= \"abc\"";
-        local_counts.successful_checks += 10;
+        local_counts.passed_checks += 10;
 
         t.expect (eq (null_string, nullptr)) << "null_string == nullptr";
         t.expect (ne (null_string, "")) << "null_string != \"\"";
         t.expect (lt (null_string, "")) << "null_string < \"\"";
-        local_counts.successful_checks += 3;
+        local_counts.passed_checks += 3;
 
         // An array without a terminator is not read beyond its end.
         t.expect (eq (unterminated, "abc")) << "unterminated == \"abc\"";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -485,8 +485,8 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -504,25 +504,25 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         void (*pfunc) (void) = a_func;
 
         t.expect (eq (ptr1, &one)) << "ptr1 == &one";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (ptr1, ptr2)) << "ptr1 == ptr2";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (le (ptr1, ptr2)) << "ptr1 <= ptr2";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ge (ptr1, ptr2)) << "ptr1 >= ptr2";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (ptr1, a_non_nullptr)) << "ptr1 != a_non_nullptr";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (pfunc, a_func)) << "pfunc == afunc";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (pfunc, a_non_nullptr)) << "pfunc != a_non_nullptr";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         struct
         {
@@ -534,16 +534,16 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         int* ptwo = &pair.two;
 
         t.expect (lt (pone, ptwo)) << "pone < ptwo";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (gt (ptwo, pone)) << "ptwo > pone";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -599,8 +599,8 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -615,19 +615,19 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         void (*pfunc) (void) = nullptr;
 
         t.expect (eq (a_nullptr, nullptr)) << "a_nullptr == nullptr";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (a_non_nullptr, nullptr)) << "a_non_nullptr != nullptr";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (pfunc, nullptr)) << "pfunc == nullptr";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -653,8 +653,8 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -666,7 +666,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
       {
         t.expect (negate (ne (my_actual_integral (), 42)))
             << "not (actual != 42)";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (negate (eq (my_actual_integral (), 42)))
             << "not (actual == 42)";
@@ -675,7 +675,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (both (eq (my_actual_integral (), 42),
                         eq (my_actual_float<float> (), 42.0)))
             << "(actual == 42) and (actual == 42.0)";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (both (eq (my_actual_integral (), 42),
                         ne (my_actual_float<float> (), 42.0)))
@@ -694,7 +694,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
         t.expect (both (eq (my_actual_integral (), 42),
                         eq (my_actual_float<float> (), 42.0)));
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (both (eq (my_actual_integral (), 42),
                         ne (my_actual_float<float> (), 42.0)));
@@ -703,17 +703,17 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (either (eq (my_actual_integral (), 42),
                           eq (my_actual_float<float> (), 42.0)))
             << "(actual == 42) or (actual == 42.0)";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (either (eq (my_actual_integral (), 42),
                           ne (my_actual_float<float> (), 42.0)))
             << "(actual == 42) or (actual != 42.0)";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (either (ne (my_actual_integral (), 42),
                           eq (my_actual_float<float> (), 42.0)))
             << "(actual != 42) or (actual == 42.0)";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (either (ne (my_actual_integral (), 42),
                           ne (my_actual_float<float> (), 42.0)))
@@ -723,8 +723,8 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()

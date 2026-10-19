@@ -487,10 +487,12 @@ namespace micro_os_plus::micro_test_plus
     // Getters.
 
     /**
-     * @brief Returns the total count of registered test suites.
+     * @brief Returns the count of all the test suites.
      *
      * @details
-     * The sum of `suites_count()` and `static_suites_count()`.
+     * One, for the top suite, plus `added_suites_count()` plus
+     * `static_suites_count()`; this is the number of suites printed by
+     * the reporters.
      *
      * @par Parameters
      *   None.
@@ -536,13 +538,44 @@ namespace micro_os_plus::micro_test_plus
     verbosity (void) const noexcept -> micro_test_plus::verbosity;
 
     /**
-     * @brief Returns the count of test suites.
+     * @brief Returns the count of the test suites added with
+     * `add_suite()`.
+     *
+     * @details
+     * The count includes neither the top suite nor the static suites,
+     * which are counted by `static_suites_count()`; add one for the top
+     * suite when needed, or use `total_suites_count()`, which counts all
+     * of them. The suites that `add_suite()` rejects, once `run()` has
+     * started, are not counted.
      *
      * @par Parameters
      *   None.
-     * @return The number of test suites, including the top one.
+     * @return The number of test suites added with `add_suite()`.
+     *
+     * @since 5.1.0
      */
     [[nodiscard]] size_t
+    added_suites_count (void) const noexcept;
+
+    /**
+     * @brief Deprecated count of the test suites added with
+     * `add_suite()`, plus the top suite.
+     *
+     * @details
+     * Returns `added_suites_count()` plus one, for the top suite. The
+     * name suggested that all the suites are counted, while the static
+     * suites are not.
+     *
+     * @par Parameters
+     *   None.
+     * @return The number of test suites added with `add_suite()`, plus
+     * one.
+     *
+     * @deprecated Use `added_suites_count()`, plus one for the top suite,
+     * or `total_suites_count()` (since 5.1.0).
+     */
+    [[deprecated ("use added_suites_count() or total_suites_count()"),
+      nodiscard]] size_t
     suites_count (void) const noexcept;
 
     /**
@@ -567,7 +600,7 @@ namespace micro_os_plus::micro_test_plus
      * the first filter pattern (`--filter` or
      * `runner_options::filter_patterns`); it is complete only after
      * `run()` has returned, and is zero when there are no patterns. The
-     * skipped suites are included in `suites_count()` and
+     * skipped suites are included in `added_suites_count()` and
      * `static_suites_count()`; the skipped test cases are counted by
      * `counters::skipped_test_cases()`.
      *

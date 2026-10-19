@@ -369,39 +369,39 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
       {
         t.expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
             << "array{ 42 } == array{ 42 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }))
             << "array{ 42 } != array{ 43 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (std::array{ 1, 2 }, std::array{ 1, 2 }))
             << "array{ 1, 2 } == array{ 1, 2 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }))
             << "array{ 1, 2, 3 } != array{ 1, 2, 4 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    test_assert (before.successful_checks () == 0);
+    test_assert (before.passed_checks () == 0);
     test_assert (before.executed_test_cases () == 0);
-    test_assert (current_suite_totals.successful_checks ()
-                 > before.successful_checks ());
+    test_assert (current_suite_totals.passed_checks ()
+                 > before.passed_checks ());
 
     counters after{};
     after = current_suite_totals;
-    test_assert (after.successful_checks ()
-                 == current_suite_totals.successful_checks ());
+    test_assert (after.passed_checks ()
+                 == current_suite_totals.passed_checks ());
     test_assert (after.executed_test_cases ()
                  == current_suite_totals.executed_test_cases ());
 
@@ -426,8 +426,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -437,33 +437,33 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
       {
         t.expect (eq (std::vector<int>{}, std::vector<int>{}))
             << "vector{ } == vector{ }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (std::vector<int>{}, std::vector<int>{}));
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (std::vector<int>{ 42 }, std::vector<int>{ 42 }))
             << "vector{ 42 } == vector{ 42 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (std::vector<int>{ 42 }, std::vector<int>{ 43 }))
             << "vector{ 42 } != vector{ 43 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
             << "vector{ 1, 2 } == vector{ 1, 2 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (
             ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
             << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -498,8 +498,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -509,17 +509,17 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
       {
         t.expect (eq (point{ 1, 2 }, point{ 1, 2 }))
             << "point{ 1, 2 } == point{ 1, 2 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (point{ 1, 2 }, point{ 1, 3 }))
             << "point{ 1, 2 } != point{ 1, 3 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -542,8 +542,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -555,25 +555,25 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         using namespace custom_operators;
 
         t.expect (divides (3, 12)) << "3 divides 12";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (divides (3_i, to_i{ 12 })) << "3_i divides to_i{ 12 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (even (to_i{ 4 })) << "even to_i{ 4 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (3_i | 12) << "3_i | 12";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (both (divides (3, 12), even (4))) << "combined";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -603,8 +603,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -620,7 +620,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         auto check = [&] (std::string_view expected, const char* message)
           {
             t.expect (eq (std::string_view{ r.text () }, expected)) << message;
-            local_counts.successful_checks++;
+            local_counts.passed_checks++;
             r.clear ();
           };
 
@@ -671,14 +671,14 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         r << &constant;
         t.expect (not r.text ().empty () && r.text () != "0x0")
             << "pointer to const";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
         r.clear ();
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -698,7 +698,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           {
             std::string_view written{ f.str () };
             t.expect (eq (written.substr (start), expected)) << message;
-            local_counts.successful_checks++;
+            local_counts.passed_checks++;
             start = written.size ();
           };
 
@@ -726,13 +726,13 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         std::string_view written = std::string_view{ f.str () }.substr (start);
         t.expect (not written.empty () && written != "ab" && written != "0x0")
             << "unsigned char array";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -753,7 +753,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           {
             std::string_view written{ f.str () };
             t.expect (eq (written.substr (start), expected)) << message;
-            local_counts.successful_checks++;
+            local_counts.passed_checks++;
             start = written.size ();
           };
 
@@ -809,8 +809,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -831,7 +831,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           {
             std::string_view written{ f.str () };
             t.expect (eq (written.substr (start), expected)) << message;
-            local_counts.successful_checks++;
+            local_counts.passed_checks++;
             start = written.size ();
           };
 
@@ -862,8 +862,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -885,7 +885,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           {
             std::string_view written{ f.str () };
             t.expect (eq (written.substr (start), expected)) << message;
-            local_counts.successful_checks++;
+            local_counts.passed_checks++;
             start = written.size ();
           };
 
@@ -925,8 +925,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -938,47 +938,47 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
       {
         t.expect (eq (colour::red, colour::red))
             << "colour::red == colour::red";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (colour::red, colour::green))
             << "colour::red != colour::green";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (lt (level::low, level::high)) << "level::low < level::high";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (state::off, state::on)) << "state::off != state::on";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (std::byte{ 1 }, std::byte{ 2 }))
             << "std::byte{ 1 } != std::byte{ 2 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (std::pair{ 1, 2 }, std::pair{ 1, 2 }))
             << "pair{ 1, 2 } == pair{ 1, 2 }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (std::tuple{ 1, 'a' }, std::tuple{ 1, 'b' }))
             << "tuple{ 1, 'a' } != tuple{ 1, 'b' }";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         std::vector<std::pair<int, int>> pairs1{ { 1, 2 } };
         std::vector<std::pair<int, int>> pairs2{ { 1, 3 } };
         t.expect (ne (pairs1, pairs2)) << "pairs1 != pairs2";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         std::optional<int> optional{ 42 };
         t.expect (eq (optional, 42)) << "optional == 42";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (ne (optional, std::nullopt)) << "optional != nullopt";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -1006,8 +1006,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -1021,10 +1021,10 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         static const int second = 2;
 
         t.expect (ne (&first, &second)) << "different const objects";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (&first, &first)) << "same const object";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
@@ -1036,14 +1036,14 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     ts.test ("TAP escapes # TODO in names \\ messages", [] (auto& t)
       {
         t.expect (true) << "message with # hash and \\ backslash";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (
             eq (std::string_view{ "a # b" }, std::string_view{ "a # b" }));
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (true) << "first line\nsecond line";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (false) << "failed # TODO not a directive\nnext line";
         local_counts.failed_checks++;
@@ -1067,8 +1067,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -1089,16 +1089,16 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         // does not exist yet (API-REVIEW.md #2).
         t.expect (named_runner.verbosity_level () == verbosity::normal)
             << "default verbosity before initialise()";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         auto& named_ts = named_runner.initialise (options, "Local");
 
         t.expect (eq (named_ts.name (), "Local")) << "given name";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (named_runner.verbosity_level () == verbosity::silent)
             << "given verbosity";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         // The deprecated names of `verbosity_level()` and `add_suite()`
         // still work (API-REVIEW.md #31).
@@ -1117,22 +1117,50 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         named_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
         t.expect (eq (named_runner.run (), 0)) << "local session passed";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (deprecated_suite_ran) << "deprecated suite() ran";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
+
+        // The deprecated `suites_count()` still counts the top suite, and
+        // the deprecated names of `passed_checks()` and
+        // `increment_passed_checks()` still work (API-REVIEW.md #32).
+        counters snapshot = named_runner.totals ();
+        const size_t passed_before = snapshot.passed_checks ();
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
+        const size_t deprecated_suites_count = named_runner.suites_count ();
+        const size_t deprecated_passed_checks = snapshot.successful_checks ();
+        snapshot.increment_successful_checks (2);
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+        t.expect (eq (named_runner.added_suites_count (), 1u)
+                  and eq (deprecated_suites_count, 2u)
+                  and eq (named_runner.total_suites_count (),
+                          deprecated_suites_count
+                              + named_runner.static_suites_count ()))
+            << "deprecated suites_count() counts the top suite";
+        local_counts.passed_checks++;
+
+        t.expect (eq (deprecated_passed_checks, passed_before)
+                  and eq (snapshot.passed_checks (), passed_before + 2))
+            << "deprecated successful_checks() names";
+        local_counts.passed_checks++;
 
         runner unnamed_runner;
         auto& unnamed_ts = unnamed_runner.initialise (options);
 
         t.expect (eq (unnamed_ts.name (), "default suite"))
             << "default name without arguments";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
@@ -1157,10 +1185,10 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         t.expect (bad_reporter_runner.verbosity_level () == verbosity::silent)
             << "valid options still applied";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (bad_reporter_runner.run (), 2)) << "unknown reporter";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         char* missing_argv[] = { arg_name, arg_silent, arg_reporter, nullptr };
         runner missing_runner;
@@ -1168,7 +1196,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         missing_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
         t.expect (eq (missing_runner.run (), 2)) << "missing argument";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         runner_options options{};
         options.verbosity_level = verbosity::silent;
@@ -1179,7 +1207,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         file_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
         t.expect (eq (file_runner.run (), 2)) << "output file not opened";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
@@ -1248,22 +1276,22 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         add_suites (suites_runner);
 
         t.expect (eq (suites_runner.run (), 0)) << "suite filter passed";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (runs.alpha_one, 1) and eq (runs.alpha_two, 1)
                   and eq (runs.beta, 0))
             << "matching suites run";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (runs.first, 2) and eq (runs.second, 2)
                   and eq (runs.inner, 2) and eq (runs.other, 2))
             << "all their test cases run";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (suites_runner.skipped_suites_count (), 1u)
                   and eq (suites_runner.totals ().skipped_test_cases (), 0u))
             << "one suite skipped";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         // Patterns parsed from the command line, in both forms, one per
         // level: the suites, the test cases, and the nested test cases.
@@ -1284,25 +1312,25 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         add_suites (levels_runner);
 
         t.expect (eq (levels_runner.run (), 0)) << "level filters passed";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (runs.alpha_one, 0) and eq (runs.alpha_two, 1)
                   and eq (runs.beta, 1))
             << "suites matching an alternative run";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (runs.first, 0) and eq (runs.second, 2))
             << "test cases matching the second pattern run";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (runs.inner, 2) and eq (runs.other, 0))
             << "nested test cases matching the third pattern run";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (levels_runner.skipped_suites_count (), 1u)
                   and eq (levels_runner.totals ().skipped_test_cases (), 4u))
             << "skipped suites and test cases counted";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         // The top suite is never skipped, but its test cases are filtered
         // too, including by its name; a pattern must match the whole name.
@@ -1317,11 +1345,11 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (eq (top_runner.run (), 0)
                   and eq (top_runner.totals ().skipped_test_cases (), 1u))
             << "top suite filtered";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (runs.first, 1) and eq (runs.second, 0))
             << "top suite test case matching the second pattern runs";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         top_options.filter_patterns = { "Loc" };
 
@@ -1333,7 +1361,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                   and eq (partial_runner.totals ().skipped_test_cases (), 2u)
                   and eq (runs.first, 0) and eq (runs.second, 0))
             << "partial name does not match";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         // The patterns are copied by initialise(); changing the caller's
         // string afterwards does not change the selection.
@@ -1351,7 +1379,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (eq (copied_runner.run (), 0) and eq (runs.beta, 1)
                   and eq (runs.alpha_one, 0) and eq (runs.alpha_two, 0))
             << "patterns copied by initialise()";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         // Without patterns, everything runs.
         runner_options all_options{};
@@ -1367,7 +1395,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                   and eq (all_runner.totals ().skipped_test_cases (), 0u)
                   and eq (runs.first, 3) and eq (runs.other, 3))
             << "nothing skipped without patterns";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         // A missing pattern is an option error.
         char* missing_argv[] = { arg_name, arg_silent, arg_filter, nullptr };
@@ -1376,7 +1404,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         missing_runner.initialise (3, missing_argv);
 
         t.expect (eq (missing_runner.run (), 2)) << "missing pattern";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
@@ -1408,15 +1436,16 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         t.expect (eq (during_runner.run (), 1))
             << "suite added during run() rejected";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
-        t.expect (eq (late_runs, 0) and eq (during_runner.suites_count (), 2u)
+        t.expect (eq (late_runs, 0)
+                  and eq (during_runner.added_suites_count (), 1u)
                   and eq (during_runner.totals ().failed_checks (), 0u))
             << "rejected suite neither run nor counted";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (nested_run_code, 1)) << "nested run() rejected";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         runner after_runner;
         after_runner.initialise (options, "Local");
@@ -1424,15 +1453,15 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           { s.test ("Local test", [] (auto& lt) { lt.expect (true); }); });
 
         t.expect (eq (after_runner.run (), 0)) << "session passed";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         after_runner.add_suite ("After", [&late_runs] (suite&) noexcept
           { ++late_runs; });
 
         t.expect (eq (after_runner.run (), 1) and eq (late_runs, 0)
-                  and eq (after_runner.suites_count (), 2u))
+                  and eq (after_runner.added_suites_count (), 1u))
             << "suite added after run() rejected";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
@@ -1443,17 +1472,17 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     ts.test ("Test case started on the suite", [&ts] (auto& t)
       {
         t.expect (true) << "check before the test case";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         ts.test ("test case started on the suite", [] (auto& it)
           {
             it.expect (true) << "check in the test case";
-            local_counts.successful_checks++;
+            local_counts.passed_checks++;
           });
         local_counts.executed_test_cases++; // nested
 
         t.expect (eq (t.totals ().executed_test_cases (), 1u)) << "run nested";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++; // outer
       });
@@ -1487,13 +1516,13 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                        2, copied, std::ref (referred), &pointed);
 
         t.expect (eq (copied, 1)) << "reference parameter refers to a copy";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (referred, 2)) << "std::ref() refers to the object";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (pointed, 2)) << "pointer refers to the object";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         int value = 3;
         int received = 0;
@@ -1506,10 +1535,10 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         value = 4;
 
         t.expect (eq (local_runner.run (), 0)) << "local session passed";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (received, 3)) << "deferred suite received the copy";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
@@ -1523,21 +1552,21 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         counted_copies = 0;
         t.expect (eq (a, b)) << "plain operands";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
         int copies = counted_copies;
 
         t.expect (eq (copies, 2)) << "plain operands copied once";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         const to_t<counted> wrapped{ a };
 
         counted_copies = 0;
         t.expect (eq (wrapped, b)) << "wrapped operand";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
         copies = counted_copies;
 
         t.expect (eq (copies, 2)) << "wrapped operand copied once";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
@@ -1566,14 +1595,14 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           { lt.expect (true); }, instance_counter{});
 
         t.expect (eq (live_instances, 0)) << "test cases destroyed";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (local_ts.totals ().executed_test_cases (), 2U))
             << "test cases counted";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (local_runner.run (), 0)) << "local session passed";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
@@ -1588,7 +1617,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (local_runner.set_abort_handler (test_abort_handler)
                   == nullptr)
             << "no initial handler";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
 #if defined(__EXCEPTIONS)
         bool caught = false;
@@ -1602,13 +1631,13 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           }
 
         t.expect (caught) << "handler called";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 #endif // defined(__EXCEPTIONS)
 
         t.expect (local_runner.set_abort_handler (nullptr)
                   == &test_abort_handler)
             << "previous handler returned";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
@@ -1651,7 +1680,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
               }
 
             t.expect (caught) << prefix << "handler exception passed on";
-            local_counts.successful_checks++;
+            local_counts.passed_checks++;
 
             bool is_run = false;
             local_ts.test ("After the abort", [&is_run] (auto& lt)
@@ -1661,15 +1690,15 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
               });
 
             t.expect (!is_run) << prefix << "no test case after the abort";
-            local_counts.successful_checks++;
+            local_counts.passed_checks++;
 
             t.expect (eq (local_runner.run (), 1))
                 << prefix << "run() refused after the abort";
-            local_counts.successful_checks++;
+            local_counts.passed_checks++;
           }
 #else
         t.expect (true) << "skipped without exceptions";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 #endif // defined(__EXCEPTIONS)
 
         local_counts.executed_test_cases++;
@@ -1705,7 +1734,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         t.expect (eq (reported, std::string{ "Name from temporary" }))
             << "temporary string name";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         const std::string named = "Name from string";
         local_ts.test (named, [&reported] (auto& lt)
@@ -1715,20 +1744,20 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           });
 
         t.expect (eq (reported, named)) << "string name";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         int runs = 0;
         add_named_test_case (local_ts, "Name via helper", &runs);
         add_named_test_case (local_ts, prefix + " via helper", &runs);
 
         t.expect (eq (runs, 2)) << "helper test cases run";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         const auto line = converted_line ("Converted name");
         const decltype (line) expected_line = __LINE__ - 1;
 
         t.expect (eq (line, expected_line)) << "location of the caller";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         std::string from_string;
         std::string from_view;
@@ -1753,21 +1782,21 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           });
 
         t.expect (eq (local_runner.run (), 0)) << "local session passed";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (from_string, std::string{ "Suite from string" }))
             << "string suite name copied";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.expect (eq (from_view, std::string{ "Suite from view" }))
             << "string view suite name copied";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()

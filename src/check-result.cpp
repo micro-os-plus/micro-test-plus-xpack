@@ -104,7 +104,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * If the evaluated expression is true, the reporter records a
      * successful outcome along with any accumulated message, and the
-     * successful checks counter of the test case is incremented. If the
+     * passed checks counter of the test case is incremented. If the
      * expression is false, the reporter records a failure, with the
      * failure details (the kind of the check, the message, and the source
      * location) and the expression, and the failed checks counter is
@@ -145,7 +145,7 @@ namespace micro_os_plus::micro_test_plus
         {
           test_case_.reporter_ ().pass (info_.message, expression_str,
                                         test_case_);
-          test_case_.totals_.increment_successful_checks ();
+          test_case_.totals_.increment_passed_checks ();
         }
       else
         {

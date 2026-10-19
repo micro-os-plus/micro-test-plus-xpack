@@ -192,8 +192,8 @@ namespace micro_os_plus::micro_test_plus::detail
         snprintf (message_totals, sizeof (message_totals),
                   "Total: %zu check%s passed, %zu failed, in %zu test "
                   "case%s%s, %zu test suite%s%s",
-                  runner.totals ().successful_checks (),
-                  runner.totals ().successful_checks () == 1 ? "" : "s",
+                  runner.totals ().passed_checks (),
+                  runner.totals ().passed_checks () == 1 ? "" : "s",
                   runner.totals ().failed_checks (),
                   runner.totals ().executed_test_cases (),
                   runner.totals ().executed_test_cases () == 1 ? "" : "s",
@@ -309,8 +309,8 @@ namespace micro_os_plus::micro_test_plus::detail
             char message_totals[300];
             snprintf (message_totals, sizeof (message_totals),
                       "(%zu check%s in %zu test case%s%s)",
-                      suite.totals ().successful_checks (),
-                      suite.totals ().successful_checks () == 1 ? "" : "s",
+                      suite.totals ().passed_checks (),
+                      suite.totals ().passed_checks () == 1 ? "" : "s",
                       suite.totals ().executed_test_cases (),
                       suite.totals ().executed_test_cases () == 1 ? "" : "s",
                       message_skipped);
@@ -339,8 +339,8 @@ namespace micro_os_plus::micro_test_plus::detail
             snprintf (message_totals, sizeof (message_totals),
                       "(%zu check%s passed, %zu "
                       "failed, in %zu test case%s%s)",
-                      suite.totals ().successful_checks (),
-                      suite.totals ().successful_checks () == 1 ? "" : "s",
+                      suite.totals ().passed_checks (),
+                      suite.totals ().passed_checks () == 1 ? "" : "s",
                       suite.totals ().failed_checks (),
                       suite.totals ().executed_test_cases (),
                       suite.totals ().executed_test_cases () == 1 ? "" : "s",
@@ -526,9 +526,8 @@ namespace micro_os_plus::micro_test_plus::detail
             // it is passed to each write.
             char message_totals[300];
             snprintf (message_totals, sizeof (message_totals), "(%zu check%s)",
-                      test_case.totals ().successful_checks (),
-                      test_case.totals ().successful_checks () == 1 ? ""
-                                                                    : "s");
+                      test_case.totals ().passed_checks (),
+                      test_case.totals ().passed_checks () == 1 ? "" : "s");
 
             write_buffer_to_file_ ();
 
@@ -575,8 +574,8 @@ namespace micro_os_plus::micro_test_plus::detail
             char message_totals[300];
             snprintf (message_totals, sizeof (message_totals),
                       "(%zu check%s passed, %zu failed%s)",
-                      test_case.totals ().successful_checks (),
-                      test_case.totals ().successful_checks () == 1 ? "" : "s",
+                      test_case.totals ().passed_checks (),
+                      test_case.totals ().passed_checks () == 1 ? "" : "s",
                       test_case.totals ().failed_checks (),
                       message_test_cases);
 

@@ -3119,9 +3119,11 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 4 - deprecated verbosity()
         ok 5 - local session passed
         ok 6 - deprecated suite() ran
-        ok 7 - default name without arguments
-        1..7
-    ok 19 - Runner options # { passed, 7 checks }
+        ok 7 - deprecated suites_count() counts the top suite
+        ok 8 - deprecated successful_checks() names
+        ok 9 - default name without arguments
+        1..9
+    ok 19 - Runner options # { passed, 9 checks }
     # Subtest: Runner option errors
         ok 1 - valid options still applied
         ok 2 - unknown reporter
@@ -3211,7 +3213,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         1..7
     ok 29 - Test case and suite names # { passed, 7 checks }
     1..29
-not ok 11 - Miscellaneous suite # { FAILED, 146 checks passed, 25 failed, in 30 test cases, time: 3.827 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 148 checks passed, 25 failed, in 30 test cases, time: 3.827 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3452,4 +3454,4 @@ ok 13 - Stopwatch suite # { passed, 18 checks in 5 test cases, time: 0.279 ms }
     1..3
 not ok 14 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.255 ms }
 1..14
-# { total: 564 checks passed, 361 failed, in 114 test cases, 14 test suites, time: 15.723 ms }
+# { total: 566 checks passed, 361 failed, in 114 test cases, 14 test suites, time: 15.723 ms }

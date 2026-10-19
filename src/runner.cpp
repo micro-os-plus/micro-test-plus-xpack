@@ -743,13 +743,24 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the number of registered child suites plus one, accounting
-   * for the top suite.
+   * Returns the number of suites stored by `register_suite_()`; the top
+   * suite and the static suites are not in `children_suites_`.
+   */
+  size_t
+  runner::added_suites_count (void) const noexcept
+  {
+    return children_suites_.size ();
+  }
+
+  /**
+   * @details
+   * Returns `added_suites_count()` plus one, for the top suite, as
+   * before the rename.
    */
   size_t
   runner::suites_count (void) const noexcept
   {
-    return children_suites_.size () + 1;
+    return added_suites_count () + 1;
   }
 
   /**
@@ -774,13 +785,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the combined count of the registered suites, including the
-   * top suite, and of the static suites.
+   * Returns one, for the top suite, plus the count of the suites added
+   * with `add_suite()`, plus the count of the static suites.
    */
   size_t
   runner::total_suites_count (void) const noexcept
   {
-    return suites_count () + static_suites_count ();
+    return 1 + added_suites_count () + static_suites_count ();
   }
 
   /**

@@ -278,7 +278,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Emits the TAP plan line (`1..N`, where N is the total number of test
-   * suites) followed by a comment line summarising successful checks,
+   * suites) followed by a comment line summarising passed checks,
    * failed checks, executed test cases, suite count, and elapsed time.
    * The numbers of test cases and of suites skipped by the filter follow
    * the respective counts, only when not zero.
@@ -321,8 +321,8 @@ namespace micro_os_plus::micro_test_plus::detail
     snprintf (message_totals, sizeof (message_totals),
               "total: %zu check%s passed, %zu failed, in %zu test "
               "case%s%s, %zu test suite%s%s",
-              runner.totals ().successful_checks (),
-              runner.totals ().successful_checks () == 1 ? "" : "s",
+              runner.totals ().passed_checks (),
+              runner.totals ().passed_checks () == 1 ? "" : "s",
               runner.totals ().failed_checks (),
               runner.totals ().executed_test_cases (),
               runner.totals ().executed_test_cases () == 1 ? "" : "s",
@@ -407,7 +407,7 @@ namespace micro_os_plus::micro_test_plus::detail
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf (
         "%s '%s' +%zu -%zu in xc%zu, xs%zu | cs%zu\n", __PRETTY_FUNCTION__,
-        suite.name (), suite.totals ().successful_checks (),
+        suite.name (), suite.totals ().passed_checks (),
         suite.totals ().failed_checks (), suite.totals ().executed_checks (),
         suite.totals ().executed_test_cases (), suite.child_test_cases_count_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
@@ -431,8 +431,8 @@ namespace micro_os_plus::micro_test_plus::detail
         result = "ok";
         snprintf (message_totals, sizeof (message_totals),
                   "# { passed, %zu check%s in %zu test case%s%s",
-                  suite.totals ().successful_checks (),
-                  suite.totals ().successful_checks () == 1 ? "" : "s",
+                  suite.totals ().passed_checks (),
+                  suite.totals ().passed_checks () == 1 ? "" : "s",
                   suite.totals ().executed_test_cases (),
                   suite.totals ().executed_test_cases () == 1 ? "" : "s",
                   message_skipped);
@@ -443,8 +443,8 @@ namespace micro_os_plus::micro_test_plus::detail
         snprintf (message_totals, sizeof (message_totals),
                   "# { FAILED, %zu check%s passed, %zu failed, in %zu "
                   "test case%s%s",
-                  suite.totals ().successful_checks (),
-                  suite.totals ().successful_checks () == 1 ? "" : "s",
+                  suite.totals ().passed_checks (),
+                  suite.totals ().passed_checks () == 1 ? "" : "s",
                   suite.totals ().failed_checks (),
                   suite.totals ().executed_test_cases (),
                   suite.totals ().executed_test_cases () == 1 ? "" : "s",
@@ -649,7 +649,7 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s' i%zu +%zu -%zu in xc%zu, xs%zu | cs%zu\n",
                    __PRETTY_FUNCTION__, test_case.name (),
                    test_case.nesting_depth (),
-                   test_case.totals ().successful_checks (),
+                   test_case.totals ().passed_checks (),
                    test_case.totals ().failed_checks (),
                    test_case.totals ().executed_checks (),
                    test_case.totals ().executed_test_cases (),
@@ -674,8 +674,8 @@ namespace micro_os_plus::micro_test_plus::detail
         result = "ok";
         snprintf (message_totals, sizeof (message_totals),
                   "# { passed, %zu check%s }",
-                  test_case.totals ().successful_checks (),
-                  test_case.totals ().successful_checks () == 1 ? "" : "s");
+                  test_case.totals ().passed_checks (),
+                  test_case.totals ().passed_checks () == 1 ? "" : "s");
       }
     else
       {
@@ -694,8 +694,8 @@ namespace micro_os_plus::micro_test_plus::detail
         result = "not ok";
         snprintf (message_totals, sizeof (message_totals),
                   "# { FAILED, %zu check%s passed, %zu failed%s }",
-                  test_case.totals ().successful_checks (),
-                  test_case.totals ().successful_checks () == 1 ? "" : "s",
+                  test_case.totals ().passed_checks (),
+                  test_case.totals ().passed_checks () == 1 ? "" : "s",
                   test_case.totals ().failed_checks (), message_test_cases);
       }
 

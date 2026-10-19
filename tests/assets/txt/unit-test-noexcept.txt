@@ -941,8 +941,10 @@ break	tab == x)
         ✓ deprecated verbosity()
         ✓ local session passed
         ✓ deprecated suite() ran
+        ✓ deprecated suites_count() counts the top suite
+        ✓ deprecated successful_checks() names
         ✓ default name without arguments
-    ✓ Runner options - passed (7 checks)
+    ✓ Runner options - passed (9 checks)
     • Runner option errors
         ✓ valid options still applied
         ✓ unknown reporter
@@ -1014,7 +1016,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (140 checks passed, 25 failed, in 30 test cases)
+✗ Miscellaneous suite - FAILED (142 checks passed, 25 failed, in 30 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1122,4 +1124,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 547 checks passed, 349 failed, in 99 test cases, 12 test suites
+✗ Total: 549 checks passed, 349 failed, in 99 test cases, 12 test suites

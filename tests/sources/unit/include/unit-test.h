@@ -122,7 +122,7 @@ extern micro_os_plus::micro_test_plus::runner tr;
 typedef struct local_counts_s
 {
   int executed_test_cases;
-  int successful_checks;
+  int passed_checks;
   int failed_checks;
 } local_counts_t;
 

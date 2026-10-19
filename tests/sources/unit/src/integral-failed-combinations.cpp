@@ -148,8 +148,8 @@ static static_suite ts_failed_integrals{
     ts.test ("Combinatorial integrals with signed long long",
              test_case_expect_integrals_failed_combinations<signed long long>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -159,8 +159,8 @@ static static_suite ts_failed_integrals{
         "Combinatorial integrals unsigned long long",
         test_case_expect_integrals_failed_combinations<unsigned long long>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -169,8 +169,8 @@ static static_suite ts_failed_integrals{
     ts.test ("Combinatorial integrals with signed int",
              test_case_expect_integrals_failed_combinations<signed int>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -179,8 +179,8 @@ static static_suite ts_failed_integrals{
     ts.test ("Combinatorial integrals with unsigned int",
              test_case_expect_integrals_failed_combinations<unsigned int>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -189,8 +189,8 @@ static static_suite ts_failed_integrals{
     ts.test ("Combinatorial integrals with signed short",
              test_case_expect_integrals_failed_combinations<signed int>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -199,8 +199,8 @@ static static_suite ts_failed_integrals{
     ts.test ("Combinatorial integrals with unsigned short",
              test_case_expect_integrals_failed_combinations<unsigned int>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -209,8 +209,8 @@ static static_suite ts_failed_integrals{
     ts.test ("Combinatorial integrals with signed short",
              test_case_expect_integrals_failed_combinations<signed short>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -219,8 +219,8 @@ static static_suite ts_failed_integrals{
     ts.test ("Combinatorial integrals with unsigned short",
              test_case_expect_integrals_failed_combinations<unsigned short>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -229,8 +229,8 @@ static static_suite ts_failed_integrals{
     ts.test ("Combinatorial integrals with signed char",
              test_case_expect_integrals_failed_combinations<signed char>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -239,8 +239,8 @@ static static_suite ts_failed_integrals{
     ts.test ("Combinatorial integrals with unsigned char",
              test_case_expect_integrals_failed_combinations<unsigned char>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()

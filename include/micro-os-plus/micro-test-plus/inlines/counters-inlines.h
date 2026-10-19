@@ -56,12 +56,22 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Adds `count` to the `successful_checks_` counter.
+   * Adds `count` to the `passed_checks_` counter.
+   */
+  inline void
+  counters::increment_passed_checks (size_t count) noexcept
+  {
+    passed_checks_ += count;
+  }
+
+  /**
+   * @details
+   * Forwards to `increment_passed_checks()`.
    */
   inline void
   counters::increment_successful_checks (size_t count) noexcept
   {
-    successful_checks_ += count;
+    increment_passed_checks (count);
   }
 
   /**
@@ -106,12 +116,22 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the value of the `successful_checks_` counter.
+   * Returns the value of the `passed_checks_` counter.
+   */
+  inline size_t
+  counters::passed_checks (void) const noexcept
+  {
+    return passed_checks_;
+  }
+
+  /**
+   * @details
+   * Forwards to `passed_checks()`.
    */
   inline size_t
   counters::successful_checks (void) const noexcept
   {
-    return successful_checks_;
+    return passed_checks ();
   }
 
   /**
@@ -126,12 +146,12 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the sum of `successful_checks_` and `failed_checks_`.
+   * Returns the sum of `passed_checks_` and `failed_checks_`.
    */
   inline size_t
   counters::executed_checks (void) const noexcept
   {
-    return successful_checks_ + failed_checks_;
+    return passed_checks_ + failed_checks_;
   }
 
   /**

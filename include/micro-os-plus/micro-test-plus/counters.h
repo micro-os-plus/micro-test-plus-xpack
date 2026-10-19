@@ -21,7 +21,7 @@
  *
  * @details
  * This header provides the `counters` class, which aggregates the
- * counts of successful checks, failed checks, and executed test cases for a
+ * counts of passed checks, failed checks, and executed test cases for a
  * test runner, test suite, or test case. Instances of this class are embedded
  * inside the runner and every node of the test tree, and updated in place
  * as the test session progresses.
@@ -78,7 +78,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * `counters` records five counters that are maintained throughout a
    * test session:
-   * - the number of checks that passed (`successful_checks_`),
+   * - the number of checks that passed (`passed_checks_`),
    * - the number of checks that failed (`failed_checks_`),
    * - the number of test cases that were executed (`executed_test_cases_`),
    * - the number of those test cases that failed (`failed_test_cases_`),
@@ -194,13 +194,35 @@ namespace micro_os_plus::micro_test_plus
     operator+= (const counters& other) noexcept;
 
     /**
-     * @brief Increments the successful-checks counter.
+     * @brief Increments the passed-checks counter.
      *
-     * @param count The number of successful checks to add (default 1).
+     * @details
+     * Called for each check that passed; the opposite count is
+     * incremented by `increment_failed_checks()`.
+     *
+     * @param count The number of passed checks to add (default 1).
      * @par Returns
      *   Nothing.
+     *
+     * @since 5.1.0
      */
     void
+    increment_passed_checks (size_t count = 1) noexcept;
+
+    /**
+     * @brief Deprecated name of `increment_passed_checks()`.
+     *
+     * @details
+     * Calls `increment_passed_checks()`. The old name called the checks
+     * "successful", while the reporters print them as "passed".
+     *
+     * @param count The number of passed checks to add (default 1).
+     * @par Returns
+     *   Nothing.
+     *
+     * @deprecated Use `increment_passed_checks()` (since 5.1.0).
+     */
+    [[deprecated ("use increment_passed_checks()")]] void
     increment_successful_checks (size_t count = 1) noexcept;
 
     /**
@@ -248,11 +270,33 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Returns the number of checks that passed.
      *
+     * @details
+     * The opposite count is returned by `failed_checks()`, and their
+     * sum by `executed_checks()`.
+     *
      * @par Parameters
      *   None.
-     * @return The cumulative count of successful checks.
+     * @return The cumulative count of passed checks.
+     *
+     * @since 5.1.0
      */
     [[nodiscard]] size_t
+    passed_checks (void) const noexcept;
+
+    /**
+     * @brief Deprecated name of `passed_checks()`.
+     *
+     * @details
+     * Calls `passed_checks()`. The old name called the checks
+     * "successful", while the reporters print them as "passed".
+     *
+     * @par Parameters
+     *   None.
+     * @return The value returned by `passed_checks()`.
+     *
+     * @deprecated Use `passed_checks()` (since 5.1.0).
+     */
+    [[deprecated ("use passed_checks()"), nodiscard]] size_t
     successful_checks (void) const noexcept;
 
     /**
@@ -270,7 +314,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *   None.
-     * @return The sum of successful and failed checks.
+     * @return The sum of passed and failed checks.
      */
     [[nodiscard]] size_t
     executed_checks (void) const noexcept;
@@ -324,13 +368,12 @@ namespace micro_os_plus::micro_test_plus
 
   private:
     /**
-     * @brief Total number of successful checks.
+     * @brief Total number of passed checks.
      *
      * @details
-     * Incremented by `increment_successful_checks()` and by
-     * `operator+=`.
+     * Incremented by `increment_passed_checks()` and by `operator+=`.
      */
-    size_t successful_checks_ = 0;
+    size_t passed_checks_ = 0;
 
     /**
      * @brief Total number of failed checks.

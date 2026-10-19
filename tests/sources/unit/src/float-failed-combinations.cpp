@@ -148,8 +148,8 @@ static static_suite ts_failed_floats{ "Failed combinatorial floats suite", tr,
     ts.test ("Combinatorial floats",
              test_case_expect_floats_failed_combinatorial<float>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -158,8 +158,8 @@ static static_suite ts_failed_floats{ "Failed combinatorial floats suite", tr,
     ts.test ("Combinatorial doubles",
              test_case_expect_floats_failed_combinatorial<double>);
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()

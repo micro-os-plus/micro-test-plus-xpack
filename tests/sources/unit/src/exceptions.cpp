@@ -67,7 +67,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       {
         t.expect (throws ([] { exercise_throw (true); }))
             << "exception thrown";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -85,13 +85,13 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
 
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -126,8 +126,8 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -139,13 +139,13 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       {
         t.expect (nothrow ([] { exercise_throw (false); }))
             << "exception not thrown";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -162,8 +162,8 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
         local_counts.executed_test_cases++;
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -181,7 +181,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       ts.test ("Unexpected std::exception", [] (auto& t)
         {
           t.expect (true) << "check before the exception";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           // Reported as `unexpected exception: boom`.
           exercise_throw_runtime_error (true);
@@ -212,12 +212,12 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
           local_counts.executed_test_cases++; // nested
 
           t.expect (true) << "check after the nested test case";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
         });
       local_counts.executed_test_cases++; // outer
 
-      test_assert (current_suite_totals.successful_checks ()
-                   == local_counts.successful_checks);
+      test_assert (current_suite_totals.passed_checks ()
+                   == local_counts.passed_checks);
       test_assert (current_suite_totals.failed_checks ()
                    == local_counts.failed_checks);
       test_assert (current_suite_totals.executed_test_cases ()
@@ -239,7 +239,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       ts.test ("Failed require", [] (auto& t)
         {
           t.expect (true) << "check before the requirement";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           try
             {
@@ -287,7 +287,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
           local_counts.executed_test_cases++; // nested
 
           t.expect (true) << "check after the nested test case";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
         });
       local_counts.executed_test_cases++; // outer
 
@@ -333,21 +333,21 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
             });
 
           t.expect (eq (local_runner.run (), 1)) << "session failed";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
           t.expect (eq (later_runs, 1)) << "later suite run";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
 
-          t.expect (eq (local_runner.totals ().successful_checks (), 2u)
+          t.expect (eq (local_runner.totals ().passed_checks (), 2u)
                     and eq (local_runner.totals ().failed_checks (), 1u)
                     and eq (local_runner.totals ().executed_test_cases (), 2u))
               << "exception counted as a failed check";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
         });
       local_counts.executed_test_cases++;
 
-      test_assert (current_suite_totals.successful_checks ()
-                   == local_counts.successful_checks);
+      test_assert (current_suite_totals.passed_checks ()
+                   == local_counts.passed_checks);
       test_assert (current_suite_totals.failed_checks ()
                    == local_counts.failed_checks);
       test_assert (current_suite_totals.executed_test_cases ()

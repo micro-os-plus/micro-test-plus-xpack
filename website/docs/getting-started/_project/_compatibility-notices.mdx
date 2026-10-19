@@ -332,6 +332,19 @@ as aliases, but marked `[[deprecated]]`, so the compiler warns where
 they are used; replace `tr.suite (...)` with `tr.add_suite (...)`, and
 `tr.verbosity ()` with `tr.verbosity_level ()`.
 
+The runner function `suites_count()` is deprecated in favour of
+`added_suites_count()`, which counts only the suites added with
+`add_suite()`; the old function also counted the top suite, but not
+the static suites, while its name suggested that all the suites are
+counted. Replace `tr.suites_count ()` with
+`tr.added_suites_count () + 1`, or, to count all the suites, including
+the static ones, with `tr.total_suites_count ()`. Likewise, in
+`counters`, `successful_checks()` and `increment_successful_checks()`
+are deprecated in favour of `passed_checks()` and
+`increment_passed_checks()`, the word used by the reports and by
+`failed_checks()`. The old names are still available, as aliases, but
+marked `[[deprecated]]`.
+
 The `static_runner` class is deprecated, and is now an alias of
 `runner`, since any runner also runs the `static_suite` objects that
 refer to it; the static suites are kept in a list independent of the

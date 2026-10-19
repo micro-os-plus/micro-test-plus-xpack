@@ -155,7 +155,7 @@ main (int argc, char* argv[])
   ts.test ("require", [] (auto& t)
     {
       t.require (true) << "Requirement 1";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -166,15 +166,15 @@ main (int argc, char* argv[])
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       // The failed requirements are checked in exceptions.cpp; without
       // exceptions, they abort the test execution.
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -183,8 +183,8 @@ main (int argc, char* argv[])
   ts.test ("Initial counters", [] ([[maybe_unused]] auto& t) noexcept
     { local_counts.executed_test_cases++; });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -195,27 +195,27 @@ main (int argc, char* argv[])
   ts.test ("expect(true)", [] (auto& t)
     {
       t.expect (true);
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.require (true) << "Requirement 2";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (true) << "TRUE";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       // char branch in check_result::operator<<.
       t.expect (true) << 'P';
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       // Arithmetic (non-char) branch in check_result::operator<<.
       t.expect (true) << 42;
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -234,8 +234,8 @@ main (int argc, char* argv[])
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -253,22 +253,22 @@ main (int argc, char* argv[])
 #endif // 0-1
 
       t.expect (eq (reflection::type_name<void> (), "void"sv));
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (eq (reflection::type_name<int> (), "int"sv));
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (eq (reflection::type_name<unsigned int> (), "unsigned int"sv));
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (eq (reflection::type_name<float> (), "float"sv));
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -281,48 +281,48 @@ main (int argc, char* argv[])
       t.expect (std::vector<std::string_view>{}
                 == utility::split<std::string_view> ("", "."))
           << "empty splits into []";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a" }
                 == utility::split<std::string_view> ("a.", "."))
           << "a. splits into [a]";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a", "b" }
                 == utility::split<std::string_view> ("a.b", "."))
           << "a.b splits into [a,b]";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a", "b", "cde" }
                 == utility::split<std::string_view> ("a.b.cde", "."))
           << "a.b.cde splits into [a, b, cde]";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "abc" }
                 == utility::split<std::string_view> ("abc", "."))
           << "abc (no delimiter) splits into [abc]";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{}
                 == utility::split<std::string_view> (".", "."))
           << ". (only delimiter) splits into []";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a" }
                 == utility::split<std::string_view> (".a", "."))
           << ".a (leading delimiter) splits into [a]";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a", "b" }
                 == utility::split<std::string_view> ("a..b", "."))
           << "a..b (consecutive delimiters) splits into [a, b]";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -335,22 +335,22 @@ main (int argc, char* argv[])
       // Verify runtime wrapping of floating-point values.
       float f = 42.0f;
       t.expect (eq (to_f{ f }, 42.0f)) << "to_f wraps float for eq";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       double d = 42.0;
       t.expect (eq (to_d{ d }, 42.0)) << "to_d wraps double for eq";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       // Generic to_t<T> wrapper in a runtime expectation.
       int x = 42;
       t.expect (eq (to_t<int>{ x }, 42)) << "to_t<int> generic wrapper";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -364,25 +364,25 @@ main (int argc, char* argv[])
       t.expect (eq (
           std::string_view{ reflection::short_name ("/some/path/file.cpp") },
           "file.cpp"sv));
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       // Path without slash — returns original.
       t.expect (eq (std::string_view{ reflection::short_name ("file.cpp") },
                     "file.cpp"sv));
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       // Windows-style path — returns filename component, as
       // utility::extract_file_name() does.
       t.expect (eq (std::string_view{ reflection::short_name (
                         "C:\\some\\path\\file.cpp") },
                     "file.cpp"sv));
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -395,14 +395,14 @@ main (int argc, char* argv[])
       t.test ("inner subtest", [] (auto& t2)
         {
           t2.expect (eq (1, 1));
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
           local_counts.executed_test_cases++; // inner
         });
       local_counts.executed_test_cases++; // outer
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -416,19 +416,19 @@ main (int argc, char* argv[])
   ts.test ("Nested subtest after a check", [] (auto& t)
     {
       t.expect (eq (1, 1)) << "outer check before the nested subtest";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.test ("inner subtest after a check", [] (auto& t2)
         {
           t2.expect (eq (2, 2)) << "inner check";
-          local_counts.successful_checks++;
+          local_counts.passed_checks++;
           local_counts.executed_test_cases++; // inner
         });
       local_counts.executed_test_cases++; // outer
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -446,7 +446,7 @@ main (int argc, char* argv[])
     ts.test ("Failed nested subtest", [] (auto& t)
       {
         t.expect (eq (1, 1)) << "outer check passes";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
 
         t.test ("middle subtest", [] (auto& t2)
           {
@@ -461,8 +461,8 @@ main (int argc, char* argv[])
         local_counts.executed_test_cases++; // outer
       });
 
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
@@ -486,14 +486,14 @@ main (int argc, char* argv[])
         local_counts.failed_checks++;
 
         t.expect (eq (3, 3)) << "later check passes";
-        local_counts.successful_checks++;
+        local_counts.passed_checks++;
       } // The stored check is reported here.
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -508,25 +508,25 @@ main (int argc, char* argv[])
     {
       t.expect (ne (user_types::wrapped{ 1 }, user_types::wrapped{ 2 }))
           << "wrapped values differ";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (eq (user_types::wrapped{ 3 }, user_types::wrapped{ 3 }))
           << "wrapped values are equal";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (ne (user_types::handle{ 1 }, user_types::handle{ 2 }))
           << "handles differ";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       // The framework wrappers are still unwrapped.
       t.expect (eq (to_i{ 42 }, 42)) << "to_i{ 42 } == 42";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -544,32 +544,32 @@ main (int argc, char* argv[])
 
       t.expect (ne (user_types::reading{ 1 }, user_types::reading{ 2 }))
           << "readings differ";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (eq (user_types::reading{ 3 }, user_types::reading{ 3 }))
           << "readings are equal";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (ne (user_types::gauge{ 1, 5 }, user_types::gauge{ 2, 5 }))
           << "gauges differ";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (eq (user_types::gauge{ 3, 5 }, user_types::gauge{ 3, 5 }))
           << "gauges are equal";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       // The framework constants and wrappers keep their comparisons.
       t.expect (eq (42_i, 42_i)) << "42_i == 42_i";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (eq (to_d{ 1.5 }, 1.54)) << "to_d{ 1.5 } == 1.54";
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -583,24 +583,24 @@ main (int argc, char* argv[])
     {
       const bool flag = true;
       t.expect (flag) << "flag is " << flag << ", not " << !flag;
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       t.expect (true) << "int " << 42 << ", char " << 'x' << ", double "
                       << 1.25;
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       // Null C strings are written as `"nullptr"` (API-REVIEW.md #63).
       char* null_string = nullptr;
       const char* null_const_string = nullptr;
       t.expect (true) << "null strings " << null_string << ", "
                       << null_const_string << ", " << nullptr;
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -620,13 +620,13 @@ main (int argc, char* argv[])
       local_counts.failed_checks++;
 
       t.expect (eq ('x', 'x'));
-      local_counts.successful_checks++;
+      local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -649,7 +649,7 @@ main (int argc, char* argv[])
       t.expect (negate (gt (1.45, 1.5_d))) << "not 1.45 > 1.5_d";
       t.expect (ge (1.45, 1.5_d)) << "1.45 >= 1.5_d";
       t.expect (lt (1.3, 1.5_d)) << "1.3 < 1.5_d (outside the tolerance)";
-      local_counts.successful_checks += 6;
+      local_counts.passed_checks += 6;
 
       // The tolerance of a wrapper is also derived from the number of
       // decimals, for negative values too, and the rounding noise of 0.011
@@ -657,7 +657,7 @@ main (int argc, char* argv[])
       t.expect (eq (-1.45, to_d{ -1.5 })) << "-1.45 == to_d{ -1.5 }";
       t.expect (eq (0.0111, to_d{ 0.011 })) << "0.0111 == to_d{ 0.011 }";
       t.expect (lt (0.009, to_d{ 0.011 })) << "0.009 < to_d{ 0.011 }";
-      local_counts.successful_checks += 3;
+      local_counts.passed_checks += 3;
 
       // The leading zeros of a small wrapper value are counted, so its
       // tolerance is not 0.1, a zero wrapper compares exactly, and a
@@ -672,7 +672,7 @@ main (int argc, char* argv[])
       t.expect (eq (to_d{ 0.0 }, 0.0)) << "to_d{ 0.0 } == 0.0";
       t.expect (eq (to_d{ 0.0 }, -0.0)) << "to_d{ 0.0 } == -0.0";
       t.expect (eq (to_d{ 42.0 }, 42.09)) << "to_d{ 42.0 } == 42.09";
-      local_counts.successful_checks += 10;
+      local_counts.passed_checks += 10;
 
       // An explicit tolerance of 0.01.
       t.expect (ne (1.45, approx (1.5, 0.01))) << "1.45 != approx (1.5, 0.01)";
@@ -683,7 +683,7 @@ main (int argc, char* argv[])
           << "not 1.495 < approx (1.5, 0.01)";
       t.expect (eq (0.1f + 0.2f, approx (0.3f, 1e-6f)))
           << "0.1f + 0.2f == approx (0.3f, 1e-6f)";
-      local_counts.successful_checks += 5;
+      local_counts.passed_checks += 5;
 
       // A zero tolerance compares the values exactly (API-REVIEW.md #49).
       t.expect (eq (1.5, approx (1.5, 0.0))) << "1.5 == approx (1.5, 0.0)";
@@ -691,13 +691,13 @@ main (int argc, char* argv[])
           << "not 1.5 != approx (1.5, 0.0)";
       t.expect (le (1.5, approx (1.5, 0.0))) << "1.5 <= approx (1.5, 0.0)";
       t.expect (ge (1.5, approx (1.5, 0.0))) << "1.5 >= approx (1.5, 0.0)";
-      local_counts.successful_checks += 4;
+      local_counts.passed_checks += 4;
 
       local_counts.executed_test_cases++;
     });
 
-  test_assert (current_suite_totals.successful_checks ()
-               == local_counts.successful_checks);
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
   test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_suite_totals.executed_test_cases ()
@@ -713,19 +713,19 @@ main (int argc, char* argv[])
 
   // After a test case runs:
   test_assert (current_suite_totals.executed_checks ()
-               == local_counts.successful_checks + local_counts.failed_checks);
+               == local_counts.passed_checks + local_counts.failed_checks);
 
   // --------------------------------------------------------------------------
 
   // Exercise the dynamic runner::add_suite() path (registers a child suite
   // that is run lazily inside run()).
-  test_assert (tr.suites_count () == 1);
+  test_assert (tr.added_suites_count () == 0);
   tr.add_suite ("Dynamic suite", [] (auto& s)
     {
       s.test ("check in dynamic suite", [] (auto& t)
         { t.expect (eq (1, 1)) << "1 == 1 in dynamic suite"; });
     });
-  test_assert (tr.suites_count () == 2);
+  test_assert (tr.added_suites_count () == 1);
 
   // The name of a dynamic suite is copied, so it can be a temporary string,
   // destroyed before the suite runs; the name is longer than the short
@@ -739,7 +739,7 @@ main (int argc, char* argv[])
           t.expect (eq (2, 2)) << "2 == 2 in the suite with a temporary name";
         });
     });
-  test_assert (tr.suites_count () == 3);
+  test_assert (tr.added_suites_count () == 2);
 
   // --------------------------------------------------------------------------
 
@@ -750,7 +750,7 @@ main (int argc, char* argv[])
     const size_t static_suites_count = tr.static_suites_count ();
     test_assert (static_suites_count > 0);
     test_assert (tr.total_suites_count ()
-                 == tr.suites_count () + static_suites_count);
+                 == 1 + tr.added_suites_count () + static_suites_count);
 
     test_assert (other_runner.static_suites_count () == 1);
     {
