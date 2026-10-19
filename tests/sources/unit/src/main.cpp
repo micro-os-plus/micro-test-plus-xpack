@@ -143,7 +143,7 @@ main (int argc, char* argv[])
 {
   auto& ts = tr.initialise (argc, argv, "Static top suite");
 
-  if (tr.verbosity () > verbosity::quiet)
+  if (tr.verbosity_level () > verbosity::quiet)
     {
       printf ("\nµTest++ unit tests; some checks are expected to fail.\n");
     }
@@ -719,10 +719,10 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  // Exercise the dynamic runner::suite() path (registers a child suite
+  // Exercise the dynamic runner::add_suite() path (registers a child suite
   // that is run lazily inside run()).
   test_assert (tr.suites_count () == 1);
-  tr.suite ("Dynamic suite", [] (auto& s)
+  tr.add_suite ("Dynamic suite", [] (auto& s)
     {
       s.test ("check in dynamic suite", [] (auto& t)
         { t.expect (eq (1, 1)) << "1 == 1 in dynamic suite"; });
@@ -733,7 +733,7 @@ main (int argc, char* argv[])
   // destroyed before the suite runs; the name is longer than the short
   // string buffer, so that AddressSanitizer would report a use after free
   // (API-REVIEW.md #11).
-  tr.suite (
+  tr.add_suite (
       std::string ("Dynamic suite with a ").append ("temporary name").c_str (),
       [] (auto& s)
     {
@@ -795,7 +795,7 @@ main (int argc, char* argv[])
     test_assert (tr.totals ().executed_test_cases () == executed_test_cases);
   }
 
-  if (tr.verbosity () > verbosity::quiet)
+  if (tr.verbosity_level () > verbosity::quiet)
     {
       // On failure it aborts before reaching this point.
       printf ("Overall, the µTest++ unit tests were successful!\n\n");

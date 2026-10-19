@@ -897,8 +897,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @details
    * `suite` represents a top-level named group of related test cases within
-   * the µTest++ framework. It is created by calling `runner::suite()`, which
-   * constructs the object and stores it in the runner's collection; the
+   * the µTest++ framework. It is created by calling `runner::add_suite()`,
+   * which constructs the object and stores it in the runner's collection; the
    * stored suites are run later by `runner::run()`, together with the
    * static suites, sorted by name.
    * Each suite records its own timing information and propagates its
@@ -910,7 +910,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * The constructor is protected, since a suite constructed elsewhere
    * would not be registered with the runner; the suites are created only
-   * by `runner::suite()`, by the derived `static_suite`, which registers
+   * by `runner::add_suite()`, by the derived `static_suite`, which registers
    * itself, and by the runner, for its `top_suite`.
    *
    * The class is non-copyable and non-movable to preserve unique ownership
@@ -933,7 +933,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Protected, since the suite must be registered with the runner,
-     * which only `runner::suite()` and the `static_suite` constructor
+     * which only `runner::add_suite()` and the `static_suite` constructor
      * do.
      *
      * @tparam Callable_T The type of the callable object.
@@ -1085,7 +1085,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief A copy of the suite name.
      *
      * @details
-     * The suites registered with `runner::suite()`, and the static suites,
+     * The suites registered with `runner::add_suite()`, and the static suites,
      * run later, when the string passed to the constructor may no longer
      * exist; the name is therefore copied here, and the name of the node
      * points to this copy. The test cases, which run immediately, do not
@@ -1198,13 +1198,13 @@ namespace micro_os_plus::micro_test_plus
    * runner is only referred to, not accessed, so it may be constructed
    * later. When `runner::run()` is called, the runner runs the static
    * suites that refer to it, in the order of the list, merged by name
-   * with the suites registered with `runner::suite()`; for equal names,
+   * with the suites registered with `runner::add_suite()`; for equal names,
    * the registered suites run first. Upon destruction, the suite removes
    * itself from the list.
    *
    * The body is stored in the callable inherited from `suite`, and is run
    * by `suite::run_()`; the user callable receives a `suite&` reference,
-   * as for the suites registered with `runner::suite()`, so the same
+   * as for the suites registered with `runner::add_suite()`, so the same
    * function can serve both kinds of suites.
    *
    * The class is non-copyable and non-movable to preserve unique ownership

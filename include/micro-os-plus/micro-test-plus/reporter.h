@@ -182,7 +182,7 @@ namespace micro_os_plus::micro_test_plus
      * the protocol between the runner, the test nodes, the checks, and the
      * reporter, and custom reporters are not supported. The applications
      * select a reporter with the `--reporter` command-line option, and read
-     * the verbosity with `runner::verbosity()`.
+     * the verbosity with `runner::verbosity_level()`.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -442,7 +442,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Called by `suite::run_()` before the suite body, for the suites
-       * registered with `runner::suite()` and for the static suites, and
+       * registered with `runner::add_suite()` and for the static suites, and
        * by `runner::initialise()` for the top suite.
        *
        * @param suite Reference to the test suite.
@@ -459,7 +459,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Called by `suite::run_()` after the suite body, also when an
        * exception escaped it, for the suites registered with
-       * `runner::suite()` and for the static suites, and by
+       * `runner::add_suite()` and for the static suites, and by
        * `runner::run()` for the top suite; implementations display the
        * suite results.
        *
@@ -818,7 +818,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * A copy of the level kept by the runner, set by the constructor from
        * the same session options and not changed afterwards. The public
-       * accessor is `runner::verbosity()`.
+       * accessor is `runner::verbosity_level()`.
        */
       const micro_test_plus::verbosity verbosity_;
 

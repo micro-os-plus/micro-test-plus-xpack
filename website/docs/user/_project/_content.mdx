@@ -477,7 +477,7 @@ check_answer (mt::suite& ts, const mt::test_case_name& name, int value)
 
 The additional arguments, if any, are passed to the callable after the
 test case reference. They are copied when `test()` is called, as they
-are by `runner::suite()` and by the `static_suite` constructor, whose
+are by `runner::add_suite()` and by the `static_suite` constructor, whose
 suites run later, so a reference parameter refers to the copy. To
 refer to the caller's object, pass a pointer, or `std::ref (object)`
 for a parameter of type `T&`. A lambda can also capture the values
@@ -1271,13 +1271,13 @@ main(int argc, char* argv[])
     t.expect (true);
   });
 
-  tr.suite("External suite", suite_function);
+  tr.add_suite("External suite", suite_function);
 
   return tr.run ();
 }
 ```
 
-The added suites do not run in the order of the calls to `suite()`;
+The added suites do not run in the order of the calls to `add_suite()`;
 they run when `run()` is called, together with the static suites, in
 the same order, by name (see above); for equal names, they run before
 the static suites, in the order of the calls.
@@ -1289,7 +1289,7 @@ returned, would never run; it is rejected, the error is reported on
 
 The suite name can be a string literal, a `const char*`, a
 `std::string`, or a `std::string_view`; it is copied, so the string
-need not outlive the call to `suite()`.
+need not outlive the call to `add_suite()`.
 
 #### Example
 

@@ -135,17 +135,17 @@ namespace micro_os_plus::micro_test_plus
    * The `runner` class is responsible for managing the registration and
    * execution of test suites within the µTest++ framework. It owns the
    * implicit top suite, whose test cases are added after `initialise()`,
-   * and a collection of test suites added with `suite()`, which are run
-   * later, by `run()`. The `static_suite` objects that refer to the
+   * and a collection of test suites added with `add_suite()`, which are
+   * run later, by `run()`. The `static_suite` objects that refer to the
    * runner are kept in a list independent of the runner object, so they
    * may be constructed before it. `run()` runs the suites added with
-   * `suite()` and the static suites together, in a single order, sorted
-   * by name; for equal names, the suites added with `suite()` run first,
-   * in the order of their addition. The names are compared byte by byte,
-   * as by `std::strcmp()`, not in the order of addition: the comparison
-   * is case-sensitive (`"Zeta"` before `"alpha"`) and does not compare
-   * numbers by value (`"Suite 10"` before `"Suite 2"`); zero-padded
-   * numeric prefixes (`"01 - Init"`) give an explicit order.
+   * `add_suite()` and the static suites together, in a single order,
+   * sorted by name; for equal names, the suites added with `add_suite()`
+   * run first, in the order of their addition. The names are compared
+   * byte by byte, as by `std::strcmp()`, not in the order of addition: the
+   * comparison is case-sensitive (`"Zeta"` before `"alpha"`) and does not
+   * compare numbers by value (`"Suite 10"` before `"Suite 2"`);
+   * zero-padded numeric prefixes (`"01 - Init"`) give an explicit order.
    *
    * The test runner provides methods for initialising the test environment
    * (including the creation of the reporter selected on the command line,
@@ -306,7 +306,7 @@ namespace micro_os_plus::micro_test_plus
      * exit code.
      *
      * @details
-     * Completes the top suite, runs the suites registered with `suite()`
+     * Completes the top suite, runs the suites registered with `add_suite()`
      * and the static suites that refer to this runner, together, sorted
      * by name, and ends the session. When filter patterns are given, the
      * suites whose names do not match the first pattern are reported as
@@ -321,7 +321,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return 0 if all checks were successful, 1 otherwise, if a suite was
-     * rejected by `suite()`, if the runner was not initialised, or if the
+     * rejected by `add_suite()`, if the runner was not initialised, or if the
      * test execution was aborted, and 2 if `initialise()` reported an
      * option error, regardless of the checks.
      *
@@ -374,9 +374,39 @@ namespace micro_os_plus::micro_test_plus
      * the callable.
      * @par Returns
      *   Nothing.
+     *
+     * @since 5.1.0
      */
     template <typename Callable_T, typename... Args_T>
     void
+    add_suite (std::string_view name, Callable_T&& callable,
+               Args_T&&... arguments);
+
+    /**
+     * @brief Deprecated name of `add_suite()`.
+     *
+     * @details
+     * Calls `add_suite()`. The old name did not show that the suite is
+     * only stored, to be run later by `run()`, unlike the test cases,
+     * which run immediately; it also hid the `suite` class inside the
+     * runner.
+     *
+     * @tparam Callable_T The type of a callable object.
+     * @tparam Args_T The types of the callable arguments.
+     *
+     * @param name The test suite name or description, as for
+     * `add_suite()`.
+     * @param callable A generic callable object, usually a lambda,
+     * invoked to perform the test suite.
+     * @param arguments A possibly empty list of arguments to be passed to
+     * the callable.
+     * @par Returns
+     *   Nothing.
+     *
+     * @deprecated Use `add_suite()` (since 5.1.0).
+     */
+    template <typename Callable_T, typename... Args_T>
+    [[deprecated ("use add_suite()")]] void
     suite (std::string_view name, Callable_T&& callable,
            Args_T&&... arguments);
 
@@ -487,6 +517,22 @@ namespace micro_os_plus::micro_test_plus
      * @since 5.1.0
      */
     [[nodiscard]] auto
+    verbosity_level (void) const noexcept -> micro_test_plus::verbosity;
+
+    /**
+     * @brief Deprecated name of `verbosity_level()`.
+     *
+     * @details
+     * Calls `verbosity_level()`. The old name hid the `verbosity`
+     * enumeration inside the runner.
+     *
+     * @par Parameters
+     *   None.
+     * @return The value returned by `verbosity_level()`.
+     *
+     * @deprecated Use `verbosity_level()` (since 5.1.0).
+     */
+    [[deprecated ("use verbosity_level()"), nodiscard]] auto
     verbosity (void) const noexcept -> micro_test_plus::verbosity;
 
     /**
@@ -556,7 +602,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Runs all registered test suites.
      *
      * @details
-     * Runs the suites registered with `suite()` and the static suites
+     * Runs the suites registered with `add_suite()` and the static suites
      * that refer to this runner in a single order, sorted by name; for
      * equal names, the registered suites run first. The suites not
      * selected by the first filter pattern are reported as skipped.
@@ -573,7 +619,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Registers a test suite with the runner.
      *
      * @details
-     * Called by `suite()`. Once `run()` has started, the suite is
+     * Called by `add_suite()`. Once `run()` has started, the suite is
      * rejected: it is destroyed, the error is reported on `stderr`, and
      * `has_rejected_suites_` is set.
      *
@@ -655,7 +701,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Owning collection of dynamically registered child suites.
      *
      * @details
-     * Each call to `runner::suite()` appends a new `suite` to this vector;
+     * Each call to `add_suite()` appends a new `suite` to this vector;
      * the suites are run later, by `run()`. The vector retains
      * ownership of all suites for the lifetime of the runner.
      */
@@ -707,7 +753,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Copied by `initialise()` from `runner_options::verbosity_level`,
      * before the reporter is created, which keeps its own constant copy;
-     * returned by `verbosity()`. `verbosity::normal` until then.
+     * returned by `verbosity_level()`. `verbosity::normal` until then.
      */
     micro_test_plus::verbosity verbosity_ = verbosity::normal;
 

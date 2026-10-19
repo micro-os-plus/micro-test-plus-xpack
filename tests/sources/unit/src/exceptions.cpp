@@ -321,12 +321,12 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
           // The suites run sorted by name.
           runner local_runner;
           local_runner.initialise (options, "Local");
-          local_runner.suite ("A throwing suite", [] (suite& s)
+          local_runner.add_suite ("A throwing suite", [] (suite& s)
             {
               s.test ("Local test", [] (auto& lt) { lt.expect (true); });
               throw 42;
             });
-          local_runner.suite ("B later suite", [&later_runs] (suite& s)
+          local_runner.add_suite ("B later suite", [&later_runs] (suite& s)
             {
               ++later_runs;
               s.test ("Local test", [] (auto& lt) { lt.expect (true); });

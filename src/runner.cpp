@@ -475,7 +475,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Runs the suites registered with `suite()` and the static suites that
+   * Runs the suites registered with `add_suite()` and the static suites that
    * refer to this runner in a single order, sorted by name.
    *
    * First, `children_suites_` is sorted by name with an insertion sort

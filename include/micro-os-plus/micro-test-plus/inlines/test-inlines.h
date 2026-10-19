@@ -473,7 +473,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Delegates to `suite`, which stores the callable and binds its
    * arguments, if any; the callable receives a `suite&` reference, as
-   * for the suites registered with `runner::suite()`. After
+   * for the suites registered with `runner::add_suite()`. After
    * construction, the suite is inserted into the list of static suites,
    * to be run by its runner; the runner itself is not accessed.
    */

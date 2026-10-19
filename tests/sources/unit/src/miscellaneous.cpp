@@ -1088,7 +1088,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         // The verbosity is kept by the runner, not by the reporter, which
         // does not exist yet (API-REVIEW.md #2).
-        t.expect (named_runner.verbosity () == verbosity::normal)
+        t.expect (named_runner.verbosity_level () == verbosity::normal)
             << "default verbosity before initialise()";
         local_counts.successful_checks++;
 
@@ -1097,13 +1097,35 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (eq (named_ts.name (), "Local")) << "given name";
         local_counts.successful_checks++;
 
-        t.expect (named_runner.verbosity () == verbosity::silent)
+        t.expect (named_runner.verbosity_level () == verbosity::silent)
             << "given verbosity";
+        local_counts.successful_checks++;
+
+        // The deprecated names of `verbosity_level()` and `add_suite()`
+        // still work (API-REVIEW.md #31).
+        bool deprecated_suite_ran = false;
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
+        t.expect (named_runner.verbosity () == verbosity::silent)
+            << "deprecated verbosity()";
+        named_runner.suite ("Deprecated", [&deprecated_suite_ran] (suite& s)
+          {
+            deprecated_suite_ran = true;
+            s.test ("Deprecated test", [] (auto& lt) { lt.expect (true); });
+          });
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
         local_counts.successful_checks++;
 
         named_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
         t.expect (eq (named_runner.run (), 0)) << "local session passed";
+        local_counts.successful_checks++;
+
+        t.expect (deprecated_suite_ran) << "deprecated suite() ran";
         local_counts.successful_checks++;
 
         runner unnamed_runner;
@@ -1134,7 +1156,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         bad_reporter_ts.test ("Local test",
                               [] (auto& lt) { lt.expect (true); });
 
-        t.expect (bad_reporter_runner.verbosity () == verbosity::silent)
+        t.expect (bad_reporter_runner.verbosity_level () == verbosity::silent)
             << "valid options still applied";
         local_counts.successful_checks++;
 
@@ -1199,17 +1221,17 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         auto add_suites = [&runs, &body] (runner& r)
           {
-            r.suite ("Alpha one", [&runs, &body] (suite& s)
+            r.add_suite ("Alpha one", [&runs, &body] (suite& s)
               {
                 ++runs.alpha_one;
                 body (s);
               });
-            r.suite ("Beta", [&runs, &body] (suite& s)
+            r.add_suite ("Beta", [&runs, &body] (suite& s)
               {
                 ++runs.beta;
                 body (s);
               });
-            r.suite ("Alpha two", [&runs, &body] (suite& s)
+            r.add_suite ("Alpha two", [&runs, &body] (suite& s)
               {
                 ++runs.alpha_two;
                 body (s);
@@ -1374,9 +1396,9 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         runner during_runner;
         during_runner.initialise (options, "Local");
-        during_runner.suite ("Outer", [&] (suite& s)
+        during_runner.add_suite ("Outer", [&] (suite& s)
           {
-            during_runner.suite ("Inner", [&late_runs] (suite& is)
+            during_runner.add_suite ("Inner", [&late_runs] (suite& is)
               {
                 ++late_runs;
                 is.test ("Local test", [] (auto& lt) { lt.expect (false); });
@@ -1399,14 +1421,14 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         runner after_runner;
         after_runner.initialise (options, "Local");
-        after_runner.suite ("Early", [] (suite& s)
+        after_runner.add_suite ("Early", [] (suite& s)
           { s.test ("Local test", [] (auto& lt) { lt.expect (true); }); });
 
         t.expect (eq (after_runner.run (), 0)) << "session passed";
         local_counts.successful_checks++;
 
-        after_runner.suite ("After",
-                            [&late_runs] (suite&) noexcept { ++late_runs; });
+        after_runner.add_suite (
+            "After", [&late_runs] (suite&) noexcept { ++late_runs; });
 
         t.expect (eq (after_runner.run (), 1) and eq (late_runs, 0)
                   and eq (after_runner.suites_count (), 2u))
@@ -1437,7 +1459,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++; // outer
       });
 
-    // The additional arguments of `test()` and `suite()` are copied, so a
+    // The additional arguments of `test()` and `add_suite()` are copied, so a
     // reference parameter refers to the copy, unless `std::ref()` is
     // passed, and a deferred suite receives the values of the call
     // (API-REVIEW.md #52).
@@ -1477,7 +1499,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         int value = 3;
         int received = 0;
 
-        local_runner.suite ("Deferred", [] (suite& s, int v, int* out)
+        local_runner.add_suite ("Deferred", [] (suite& s, int v, int* out)
           {
             *out = v;
             s.test ("Local test", [] (auto& lt) { lt.expect (true); });
@@ -1715,7 +1737,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         {
           // Destroyed before the suite runs.
           std::string suite_name = "Suite from string";
-          local_runner.suite (suite_name, [&from_string] (suite& s)
+          local_runner.add_suite (suite_name, [&from_string] (suite& s)
             {
               from_string = s.name ();
               s.test ("Local test", [] (auto& lt) { lt.expect (true); });
@@ -1725,7 +1747,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         // Not null-terminated after the first 15 characters.
         const std::string_view view = "Suite from view, truncated";
-        local_runner.suite (view.substr (0, 15), [&from_view] (suite& s)
+        local_runner.add_suite (view.substr (0, 15), [&from_view] (suite& s)
           {
             from_view = s.name ();
             s.test ("Local test", [] (auto& lt) { lt.expect (true); });

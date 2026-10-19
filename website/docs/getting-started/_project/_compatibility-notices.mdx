@@ -155,7 +155,7 @@ explicitly. Helper functions that add test cases can take a
 `const test_case_name&` parameter, so that the reported location is
 that of their caller.
 
-The name parameter of `runner::suite()` is now a `std::string_view`, so
+The name parameter of `runner::add_suite()` is now a `std::string_view`, so
 a `std::string` is also accepted; as for `test()`, an argument that
 converts to `const char*` only via a user-defined conversion operator
 must now be converted explicitly. As for `expect()`, GCC with `-Waggregate-return`
@@ -194,7 +194,7 @@ the counters of a node; the name of a node is still returned by
 
 The constructors of `test_case`, `suite`, and `top_suite` are no longer
 public, since a suite or a test case constructed directly was neither
-registered nor run. Create the suites with `runner::suite()` or as
+registered nor run. Create the suites with `runner::add_suite()` or as
 `static_suite` objects, and the test cases with `test()`.
 
 The `detail::runner_totals` class, returned by `totals()`, is now
@@ -212,7 +212,8 @@ The reporters (`reporter`, `reporter_human`, and `reporter_tap`) and the
 since they are internal to the framework and custom reporters are not
 supported; the reporter is still selected with the `--reporter`
 command-line option. `runner::reporter()` was removed; replace
-`runner.reporter ().verbosity ()` with the new `runner.verbosity ()`.
+`runner.reporter ().verbosity ()` with the new
+`runner.verbosity_level ()`.
 
 The runner can now be initialised without a command line, with a new
 `initialise (options, name)` overload taking a `runner_options`
@@ -306,19 +307,30 @@ is that of the top suite, returned by `initialise()`. The session
 totals are still available, via `runner::totals()`.
 
 The callable of a `static_suite` now receives a `suite&` reference, as
-the callable of a suite registered with `runner::suite()` does, so the
+the callable of a suite registered with `runner::add_suite()` does, so the
 same function can serve both kinds of suites; it previously received a
 `static_suite&`. Replace `mt::static_suite&` with `mt::suite&` in the
 parameter lists of the suite functions; the lambdas with an `auto&`
 parameter need no change.
 
-The additional arguments of `test()`, `runner::suite()`, and the
+The additional arguments of `test()`, `runner::add_suite()`, and the
 `static_suite` constructor are now stored by a lambda, instead of
 `std::bind`, which adds less code. They are still copied, so a
 reference parameter refers to the copy, but a `std::ref()` argument is
 no longer unwrapped: it still converts to a parameter of type `T&`, but
 an `auto&` parameter now receives the `std::reference_wrapper` itself;
 call its `get()` function, or pass a pointer instead.
+
+The runner function `suite()` is deprecated in favour of `add_suite()`,
+which does the same; the new name shows that the suite is only added
+to a list, to be run later by `run()`, unlike the test cases started
+with `test()`, which run immediately. Likewise, `runner::verbosity()`
+is deprecated in favour of `verbosity_level()`, the name of the
+`runner_options` field. The old names also hid, inside the runner, the
+`suite` class and the `verbosity` enumeration. Both are still available,
+as aliases, but marked `[[deprecated]]`, so the compiler warns where
+they are used; replace `tr.suite (...)` with `tr.add_suite (...)`, and
+`tr.verbosity ()` with `tr.verbosity_level ()`.
 
 The `static_runner` class is deprecated, and is now an alias of
 `runner`, since any runner also runs the `static_suite` objects that

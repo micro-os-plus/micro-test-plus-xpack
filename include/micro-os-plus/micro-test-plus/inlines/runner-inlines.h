@@ -22,11 +22,12 @@
  *
  * @details
  * This header provides the inline accessors of the `runner` class and the
- * inline template implementation for `runner::suite()`, the method used to
- * create and register a named test suite with a `runner` instance. The
- * method constructs a `suite` object on the heap (wrapped in
- * `std::unique_ptr`) and transfers ownership to the runner via
- * `register_suite_()`; the suite is run later, by `run()`.
+ * inline template implementation for `runner::add_suite()`, the member
+ * function used to create and register a named test suite with a `runner`
+ * instance, and for its deprecated alias `runner::suite()`. It constructs
+ * a `suite` object on the heap (wrapped in `std::unique_ptr`) and
+ * transfers ownership to the runner via `register_suite_()`; the suite is
+ * run later, by `run()`.
  *
  * The implementation is separated into this inline header so that the
  * template definition is visible at every call site without cluttering the
@@ -77,9 +78,19 @@ namespace micro_os_plus::micro_test_plus
    * the reporter, so the call is safe before `initialise()`.
    */
   inline auto
-  runner::verbosity (void) const noexcept -> micro_test_plus::verbosity
+  runner::verbosity_level (void) const noexcept -> micro_test_plus::verbosity
   {
     return verbosity_;
+  }
+
+  /**
+   * @details
+   * Forwards to `verbosity_level()`.
+   */
+  inline auto
+  runner::verbosity (void) const noexcept -> micro_test_plus::verbosity
+  {
+    return verbosity_level ();
   }
 
   /**
@@ -105,8 +116,8 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
   void
-  runner::suite (std::string_view name, Callable_T&& callable,
-                 Args_T&&... arguments)
+  runner::add_suite (std::string_view name, Callable_T&& callable,
+                     Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%.*s'\n", __PRETTY_FUNCTION__,
@@ -119,6 +130,19 @@ namespace micro_os_plus::micro_test_plus
         std::forward<Args_T> (arguments)...) };
 
     register_suite_ (std::move (child_suite));
+  }
+
+  /**
+   * @details
+   * Forwards the name, the callable, and the arguments to `add_suite()`.
+   */
+  template <typename Callable_T, typename... Args_T>
+  void
+  runner::suite (std::string_view name, Callable_T&& callable,
+                 Args_T&&... arguments)
+  {
+    add_suite (name, std::forward<Callable_T> (callable),
+               std::forward<Args_T> (arguments)...);
   }
 
   // --------------------------------------------------------------------------
