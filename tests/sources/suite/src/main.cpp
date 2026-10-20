@@ -64,15 +64,7 @@ suite_function (mt::suite& t)
 
 // ----------------------------------------------------------------------------
 
-// Test if initialise() overrides this.
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // defined(__GNUC__)
-mt::runner sr{ "Overriden" };
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
+mt::runner sr;
 
 int
 main (int argc, char* argv[])
@@ -110,7 +102,6 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   {
-    // Should override the name given in the runner constructor.
     auto& ts = sr.initialise (argc, argv, "Static top suite");
     ts.test ("Check various conditions 2.1", [] (auto& t)
       {

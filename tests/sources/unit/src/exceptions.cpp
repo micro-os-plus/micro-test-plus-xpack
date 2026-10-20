@@ -257,22 +257,6 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
         });
       local_counts.executed_test_cases++;
 
-      ts.test ("Failed deprecated assume", [] (auto& t)
-        {
-          local_counts.failed_checks++;
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // defined(__GNUC__)
-          t.assume (false) << "failed assumption";
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-
-          t.expect (false) << "check after the assumption";
-        });
-      local_counts.executed_test_cases++;
-
       // The nested test case is stopped; the outer test case continues,
       // and fails because of the failed nested test case.
       ts.test ("Failed require in nested test case", [] (auto& t)
@@ -352,9 +336,9 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
                    == local_counts.failed_checks);
       test_assert (current_suite_totals.executed_test_cases ()
                    == local_counts.executed_test_cases);
-      // Three test cases, and the nested and the outer test cases.
+      // Two test cases, and the nested and the outer test cases.
       test_assert (current_suite_totals.failed_test_cases ()
-                   == failed_test_cases_before + 5);
+                   == failed_test_cases_before + 4);
     }
   } };
 

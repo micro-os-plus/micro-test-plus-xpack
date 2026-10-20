@@ -53,6 +53,7 @@ _local_include_directories += [
 _local_sources += [
   'src/main.cpp',
   'src/comparisons.cpp',
+  'src/deprecated.cpp',
   'src/exceptions.cpp',
   'src/float-failed-combinations.cpp',
   'src/float-passed-combinations.cpp',

@@ -1236,59 +1236,27 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
             << "given verbosity";
         local_counts.passed_checks++;
 
-        // The deprecated names of `verbosity_level()` and `add_suite()`
-        // still work.
-        bool deprecated_suite_ran = false;
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // defined(__GNUC__)
-        t.expect (named_runner.verbosity () == verbosity::silent)
-            << "deprecated verbosity()";
-        named_runner.suite ("Deprecated", [&deprecated_suite_ran] (suite& s)
+        bool added_suite_ran = false;
+        named_runner.add_suite ("Added", [&added_suite_ran] (suite& s)
           {
-            deprecated_suite_ran = true;
-            s.test ("Deprecated test", [] (auto& lt) { lt.expect (true); });
+            added_suite_ran = true;
+            s.test ("Added test", [] (auto& lt) { lt.expect (true); });
           });
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-        local_counts.passed_checks++;
 
         named_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
         t.expect (eq (named_runner.run (), 0)) << "local session passed";
         local_counts.passed_checks++;
 
-        t.expect (deprecated_suite_ran) << "deprecated suite() ran";
+        t.expect (added_suite_ran) << "added suite ran";
         local_counts.passed_checks++;
 
-        // The deprecated `suites_count()` still counts the top suite, and
-        // the deprecated names of `passed_checks()` and
-        // `increment_passed_checks()` still work.
-        counters snapshot = named_runner.totals ();
-        const size_t passed_before = snapshot.passed_checks ();
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // defined(__GNUC__)
-        const size_t deprecated_suites_count = named_runner.suites_count ();
-        const size_t deprecated_passed_checks = snapshot.successful_checks ();
-        snapshot.increment_successful_checks (2);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
+        // The total also counts the top suite.
         t.expect (eq (named_runner.added_suites_count (), 1u)
-                  and eq (deprecated_suites_count, 2u)
                   and eq (named_runner.total_suites_count (),
-                          deprecated_suites_count
+                          1 + named_runner.added_suites_count ()
                               + named_runner.static_suites_count ()))
-            << "deprecated suites_count() counts the top suite";
-        local_counts.passed_checks++;
-
-        t.expect (eq (deprecated_passed_checks, passed_before)
-                  and eq (snapshot.passed_checks (), passed_before + 2))
-            << "deprecated successful_checks() names";
+            << "total_suites_count() counts the top suite";
         local_counts.passed_checks++;
 
         runner unnamed_runner;

@@ -157,17 +157,6 @@ main (int argc, char* argv[])
       t.require (true) << "Requirement 1";
       local_counts.passed_checks++;
 
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // defined(__GNUC__)
-      // The deprecated alias.
-      t.assume (true) << "Assumption 1";
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
-      local_counts.passed_checks++;
-
       // The failed requirements are checked in exceptions.cpp; without
       // exceptions, they abort the test execution.
       local_counts.executed_test_cases++;
@@ -345,47 +334,6 @@ main (int argc, char* argv[])
       int x = 42;
       t.expect (eq (to_t<int>{ x }, 42)) << "to_t<int> generic wrapper";
       local_counts.passed_checks++;
-
-      local_counts.executed_test_cases++;
-    });
-
-  test_assert (current_suite_totals.passed_checks ()
-               == local_counts.passed_checks);
-  test_assert (current_suite_totals.failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_test_cases ()
-               == local_counts.executed_test_cases);
-
-  // --------------------------------------------------------------------------
-
-  ts.test ("reflection::short_name()", [] (auto& t)
-    {
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // defined(__GNUC__)
-      // The deprecated alias of utility::extract_file_name().
-      // Path with slash — returns filename component.
-      t.expect (eq (
-          std::string_view{ reflection::short_name ("/some/path/file.cpp") },
-          "file.cpp"sv));
-      local_counts.passed_checks++;
-
-      // Path without slash — returns original.
-      t.expect (eq (std::string_view{ reflection::short_name ("file.cpp") },
-                    "file.cpp"sv));
-      local_counts.passed_checks++;
-
-      // Windows-style path — returns filename component, as
-      // utility::extract_file_name() does.
-      t.expect (eq (std::string_view{ reflection::short_name (
-                        "C:\\some\\path\\file.cpp") },
-                    "file.cpp"sv));
-      local_counts.passed_checks++;
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 
       local_counts.executed_test_cases++;
     });
@@ -773,22 +721,14 @@ main (int argc, char* argv[])
   int code = tr.run ();
   test_assert (code != 0);
 
-  // The session runs only once; the later calls of run(), and of the
-  // deprecated exit_code(), return the same code without running the
-  // suites again, and a second initialise() changes nothing.
+  // The session runs only once; the later calls of run() return the same
+  // code without running the suites again, and a second initialise()
+  // changes nothing.
   {
     const size_t executed_checks = tr.totals ().executed_checks ();
     const size_t executed_test_cases = tr.totals ().executed_test_cases ();
 
     test_assert (tr.run () == code);
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // defined(__GNUC__)
-    test_assert (tr.exit_code () == code);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
     test_assert (&tr.initialise (argc, argv) == &ts);
 
     test_assert (tr.totals ().executed_checks () == executed_checks);

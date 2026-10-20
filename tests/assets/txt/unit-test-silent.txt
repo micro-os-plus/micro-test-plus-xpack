@@ -8,7 +8,6 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • reflection::type_name()
     • Splits
     • to_* modern wrappers
-    • reflection::short_name()
     • Nested subtests
         • inner subtest
     • Nested subtest after a check
@@ -45,6 +44,14 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Null pointer comparisons
     • Failed null pointer comparisons
     • Logical operations
+    • runner (const char*)
+    • static_runner
+    • runner::exit_code()
+    • runner::suite()
+    • counters
+    • assume()
+    • Failed assume()
+    • reflection::short_name()
     • check in dynamic suite
     • check in dynamic suite with a temporary name
     • thrown exceptions
@@ -56,7 +63,6 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Unexpected exception in nested test case
         • nested test case
     • Failed require
-    • Failed deprecated assume
     • Failed require in nested test case
         • nested test case
     • Failed require during unwinding

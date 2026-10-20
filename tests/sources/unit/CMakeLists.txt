@@ -39,6 +39,7 @@ target_sources (
   tests-unit-interface
   INTERFACE "src/main.cpp"
             "src/comparisons.cpp"
+            "src/deprecated.cpp"
             "src/exceptions.cpp"
             "src/float-failed-combinations.cpp"
             "src/float-passed-combinations.cpp"
