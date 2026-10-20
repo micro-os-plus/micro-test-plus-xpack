@@ -26,6 +26,13 @@ with section("parse"):
                 "FILES": 2,
             }
         },
+        "add_validate_tap_test": {
+            "kwargs": {
+                "NAME": 1,
+                "DEPENDS": 1,
+                "FILE": 1,
+            }
+        },
         "add_qemu_test": {
             "kwargs": {
                 "NAME": 1,
