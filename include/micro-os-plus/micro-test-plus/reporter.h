@@ -673,6 +673,33 @@ namespace micro_os_plus::micro_test_plus
           ;
 
       /**
+       * @brief Write formatted lines to the output file and, when
+       * requested, to the console.
+       *
+       * @details
+       * The text is formatted once, and the same text is written to the
+       * output file, if open, and, when @p to_console is true, to
+       * `stdout`. As in `write_buffer_to_file()`, the ANSI colour
+       * sequences are removed from the file copy, so a console line
+       * with colours and its plain file line are written by one call.
+       * The format normally ends with a line ending; any empty line or
+       * buffered output that precedes the console line is written by the
+       * caller, before this call.
+       *
+       * @param to_console Whether to write the text to `stdout` as well.
+       * @param format A `printf()`-style format string.
+       * @param ... The arguments referred to by the format string.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      write_line (bool to_console, const char* format, ...)
+#if defined(__GNUC__)
+          __attribute__ ((format (printf, 3, 4)))
+#endif // defined(__GNUC__)
+          ;
+
+      /**
        * @brief Writes the informational (non-result) lines to the console
        * and to the output file.
        *

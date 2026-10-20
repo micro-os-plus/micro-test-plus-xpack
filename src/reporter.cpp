@@ -77,6 +77,62 @@ namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
+  namespace
+  {
+    /**
+     * @brief Writes a text to a file, without the ANSI colour sequences.
+     *
+     * @details
+     * The text may contain ANSI colour sequences, added when the console
+     * is a terminal, which must not reach the file. They are removed
+     * while writing: each `ESC [`, followed by any digits and semicolons,
+     * and terminated by `m`, is skipped, and the text between the
+     * sequences is written unchanged. Any other use of `ESC` is written
+     * as is. No line ending is appended.
+     *
+     * @param file The file to write to; must not be null.
+     * @param text The text to write.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    write_without_colours (FILE* file, std::string_view text)
+    {
+      size_t start = 0;
+      size_t pos = text.find ('\033');
+      while (pos != std::string_view::npos)
+        {
+          // Parse `ESC [ <digits and semicolons> m`.
+          size_t end = pos + 1;
+          if (end < text.size () && text[end] == '[')
+            {
+              ++end;
+              while (end < text.size ()
+                     && ((text[end] >= '0' && text[end] <= '9')
+                         || text[end] == ';'))
+                {
+                  ++end;
+                }
+              if (end < text.size () && text[end] == 'm')
+                {
+                  // A colour sequence; write the preceding text and skip
+                  // it.
+                  const std::string_view chunk
+                      = text.substr (start, pos - start);
+                  fwrite (chunk.data (), 1, chunk.size (), file);
+                  start = end + 1;
+                }
+            }
+          pos = text.find ('\033', pos + 1);
+        }
+
+      const std::string_view chunk = text.substr (start);
+      fwrite (chunk.data (), 1, chunk.size (), file);
+    }
+  } // namespace
+
+  // --------------------------------------------------------------------------
+
   /**
    * @details
    * Copies the verbosity and the view of the command-line arguments from
@@ -192,10 +248,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * a newline. If `output_file_` is null, the call is a no-op.
    *
    * The buffer may contain ANSI colour sequences, added when the console
-   * is a terminal, which must not reach the file. They are removed while
-   * writing: each `ESC [`, followed by any digits and semicolons, and
-   * terminated by `m`, is skipped, and the text between the sequences is
-   * written unchanged. Any other use of `ESC` is written as is.
+   * is a terminal, which must not reach the file; they are removed by
+   * `write_without_colours()`.
    */
   void
   reporter::write_buffer_to_file (void)
@@ -206,36 +260,7 @@ namespace micro_os_plus::micro_test_plus::detail
       }
 
     // Pass only the string, do not add an `\n` here.
-    const std::string_view text{ buffer_ };
-    size_t start = 0;
-    size_t pos = text.find ('\033');
-    while (pos != std::string_view::npos)
-      {
-        // Parse `ESC [ <digits and semicolons> m`.
-        size_t end = pos + 1;
-        if (end < text.size () && text[end] == '[')
-          {
-            ++end;
-            while (end < text.size ()
-                   && ((text[end] >= '0' && text[end] <= '9')
-                       || text[end] == ';'))
-              {
-                ++end;
-              }
-            if (end < text.size () && text[end] == 'm')
-              {
-                // A colour sequence; write the preceding text and skip it.
-                const std::string_view chunk
-                    = text.substr (start, pos - start);
-                fwrite (chunk.data (), 1, chunk.size (), output_file_);
-                start = end + 1;
-              }
-          }
-        pos = text.find ('\033', pos + 1);
-      }
-
-    const std::string_view chunk = text.substr (start);
-    fwrite (chunk.data (), 1, chunk.size (), output_file_);
+    write_without_colours (output_file_, buffer_);
   }
 
   /**
@@ -275,6 +300,65 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * The text is formatted with `vsnprintf()` into a local array, which
+   * holds the usual lines without an allocation; a longer text, for
+   * example with a long test name, is formatted again, from a copy of the
+   * arguments, into a string of the exact length. The text is then
+   * written with its length to the output file, without the colour
+   * sequences (see `write_without_colours()`), and, when requested, to
+   * `stdout`, unchanged. When there is nowhere to write, or the
+   * formatting fails, nothing is written.
+   */
+  void
+  reporter::write_line (bool to_console, const char* format, ...)
+  {
+    if (output_file_ == nullptr && !to_console)
+      {
+        return;
+      }
+
+    va_list args;
+    va_start (args, format);
+    va_list args_copy;
+    va_copy (args_copy, args);
+
+    char local_text[256];
+    const int length
+        = vsnprintf (local_text, sizeof (local_text), format, args);
+    va_end (args);
+
+    if (length < 0)
+      {
+        va_end (args_copy);
+        return;
+      }
+
+    const size_t size = static_cast<size_t> (length);
+    std::string long_text;
+    std::string_view text{ local_text, size };
+    if (size >= sizeof (local_text))
+      {
+        // The terminating null character is written over the one kept by
+        // the string after its content.
+        long_text.resize (size);
+        vsnprintf (long_text.data (), size + 1, format, args_copy);
+        text = long_text;
+      }
+    va_end (args_copy);
+
+    if (output_file_ != nullptr)
+      {
+        write_without_colours (output_file_, text);
+      }
+
+    if (to_console)
+      {
+        fwrite (text.data (), 1, text.size (), stdout);
+      }
+  }
+
+  /**
+   * @details
    * Constructs and emits two informational lines, each prefixed by
    * `comment_prefix()`: the first lists the program name (without
    * the path) and any command-line arguments; the second identifies the
@@ -289,6 +373,15 @@ namespace micro_os_plus::micro_test_plus::detail
   void
   reporter::write_info (void)
   {
+#if defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
+    && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
+    // The startup code already displays this information.
+    const bool to_console = false;
+#else
+    const bool to_console = (verbosity_ == verbosity::normal
+                             || verbosity_ == verbosity::verbose);
+#endif // defined(MICRO_OS_PLUS_STARTUP_ENABLED) && ...
+
     if (!arguments_.empty ())
       {
         std::string line;
@@ -306,14 +399,7 @@ namespace micro_os_plus::micro_test_plus::detail
           }
         line.append ("\n");
 
-        write_file ("%s", line.c_str ());
-
-#if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
-      && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
-        if (verbosity_ == verbosity::normal
-            || verbosity_ == verbosity::verbose)
-          write_console ("%s", line.c_str ());
-#endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
+        write_line (to_console, "%s", line.c_str ());
       }
 
     {
@@ -356,15 +442,7 @@ namespace micro_os_plus::micro_test_plus::detail
       line.append (", with MICRO_OS_PLUS_DIAG_TRACE_ENABLED");
 #endif // defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
 
-      write_file ("%s\n", line.c_str ());
-
-#if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
-      && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
-      if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
-        {
-          write_console ("%s\n", line.c_str ());
-        }
-#endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
+      write_line (to_console, "%s\n", line.c_str ());
     }
   }
 

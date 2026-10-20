@@ -262,15 +262,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_info ();
 
-    const char* message = "TAP version 14";
-    write_file ("%s\n", message);
+    write_line (verbosity_ != verbosity::silent, "TAP version 14\n");
 
-    if (verbosity_ != verbosity::silent)
-      {
-        write_console ("%s\n", message);
-
-        flush_streams ();
-      }
+    flush_streams ();
 
     add_empty_line_ = false;
   }
@@ -306,21 +300,17 @@ namespace micro_os_plus::micro_test_plus::detail
     char message_time[elapsed_time_size_];
     format_elapsed_time (runner.stopwatch_, message_time);
 
-    write_file ("%s\n# { total: %s%s }\n", message_summary, message_totals,
-                message_time);
+    const bool to_console = (verbosity_ != verbosity::silent);
 
-    if (verbosity_ != verbosity::silent)
+    if (to_console && add_empty_line_ && verbosity_ != verbosity::quiet)
       {
-        if (add_empty_line_ && verbosity_ != verbosity::quiet)
-          {
-            write_console ("\n");
-          }
-
-        write_console ("%s\n# { total: %s%s }\n", message_summary,
-                       message_totals, message_time);
-
-        flush_streams ();
+        write_console ("\n");
       }
+
+    write_line (to_console, "%s\n# { total: %s%s }\n", message_summary,
+                message_totals, message_time);
+
+    flush_streams ();
   }
 
   // --------------------------------------------------------------------------
@@ -343,19 +333,20 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (suite.name (), false);
 
-    write_file ("# Subtest: %s\n", name.c_str ());
+    const bool to_console = (verbosity_ == verbosity::normal
+                             || verbosity_ == verbosity::verbose);
 
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+    if (to_console && add_empty_line_)
       {
-        if (add_empty_line_)
-          {
-            write_console ("\n");
-          }
+        write_console ("\n");
+      }
 
-        write_console ("# Subtest: %s\n", name.c_str ());
+    write_line (to_console, "# Subtest: %s\n", name.c_str ());
 
-        flush_streams ();
+    flush_streams ();
 
+    if (to_console)
+      {
         add_empty_line_ = true;
       }
   }
@@ -404,15 +395,12 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_buffer_to_file ();
 
-    // The plan counts the test cases and the failure of the suite body,
-    // if any, which is numbered after them.
-    write_file ("%s1..%zu\n%s %zu - %s # { %s, %s%s }\n", indent.c_str (),
-                suite.test_point_number_, result, suite.own_index_,
-                name.c_str (), status, message_totals, message_time);
+    const bool to_console = (verbosity_ == verbosity::normal
+                             || verbosity_ == verbosity::verbose);
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+    if (to_console)
       {
         if (add_empty_line_ && suite.totals ().executed_test_cases () > 0)
           {
@@ -438,23 +426,24 @@ namespace micro_os_plus::micro_test_plus::detail
             // cases, as it may contain useful information about the failure.
             write_buffer_to_console ();
           }
-
-        write_console ("%s1..%zu\n%s %zu - %s # { %s, %s%s }\n",
-                       indent.c_str (), suite.test_point_number_, result,
-                       suite.own_index_, name.c_str (), status, message_totals,
-                       message_time);
-
-        flush_streams ();
       }
-    else if (verbosity_ == verbosity::quiet)
+
+    // The plan counts the test cases and the failure of the suite body,
+    // if any, which is numbered after them.
+    write_line (to_console, "%s1..%zu\n%s %zu - %s # { %s, %s%s }\n",
+                indent.c_str (), suite.test_point_number_, result,
+                suite.own_index_, name.c_str (), status, message_totals,
+                message_time);
+
+    if (verbosity_ == verbosity::quiet)
       {
         // Only the test point of the suite, counted by the session plan.
         write_console ("%s %zu - %s # { %s, %s%s }\n", result,
                        suite.own_index_, name.c_str (), status, message_totals,
                        message_time);
-
-        flush_streams ();
       }
+
+    flush_streams ();
 
     clear_buffer ();
 
@@ -481,21 +470,17 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (suite.name (), true);
 
-    write_file ("ok %zu - %s # SKIP filtered\n", suite.own_index_,
+    const bool to_console = (verbosity_ != verbosity::silent);
+
+    if (to_console && add_empty_line_ && verbosity_ != verbosity::quiet)
+      {
+        write_console ("\n");
+      }
+
+    write_line (to_console, "ok %zu - %s # SKIP filtered\n", suite.own_index_,
                 name.c_str ());
 
-    if (verbosity_ != verbosity::silent)
-      {
-        if (add_empty_line_ && verbosity_ != verbosity::quiet)
-          {
-            write_console ("\n");
-          }
-
-        write_console ("ok %zu - %s # SKIP filtered\n", suite.own_index_,
-                       name.c_str ());
-
-        flush_streams ();
-      }
+    flush_streams ();
 
     add_empty_line_ = true;
   }
@@ -550,19 +535,21 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (test_case.name (), false);
 
-    write_file ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
+    const bool to_console = (verbosity_ == verbosity::normal
+                             || verbosity_ == verbosity::verbose);
 
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+    if (to_console && add_empty_line_)
       {
-        if (add_empty_line_)
-          {
-            write_console ("\n");
-          }
+        write_console ("\n");
+      }
 
-        write_console ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
+    write_line (to_console, "%s# Subtest: %s\n", indent.c_str (),
+                name.c_str ());
 
-        flush_streams ();
+    flush_streams ();
 
+    if (to_console)
+      {
         add_empty_line_ = false;
       }
   }
@@ -617,13 +604,12 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_buffer_to_file ();
 
-    write_file ("%s1..%zu\n%s%s %zu - %s # { %s, %s }\n", indent2.c_str (),
-                plan_count, indent.c_str (), result, test_case.own_index_,
-                name.c_str (), status, message_totals);
+    const bool to_console = (verbosity_ == verbosity::normal
+                             || verbosity_ == verbosity::verbose);
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+    if (to_console)
       {
         if (add_empty_line_)
           {
@@ -638,18 +624,6 @@ namespace micro_os_plus::micro_test_plus::detail
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
                 write_buffer_to_console ();
-
-                write_console ("%s1..%zu\n", indent2.c_str (), plan_count);
-              }
-            else
-              {
-                // Without verbosity, show only the summary line
-                // and count only test cases, not checks, as the TAP output is
-                // not shown.
-                write_console (
-                    "%s1..%zu\n", indent2.c_str (),
-                    test_case.totals ().executed_test_cases ()
-                        + test_case.totals ().skipped_test_cases ());
               }
           }
         else
@@ -660,16 +634,30 @@ namespace micro_os_plus::micro_test_plus::detail
             // test cases, as it may contain useful information about the
             // failure.
             write_buffer_to_console ();
-
-            write_console ("%s1..%zu\n", indent2.c_str (), plan_count);
           }
-
-        write_console ("%s%s %zu - %s # { %s, %s }\n", indent.c_str (), result,
-                       test_case.own_index_, name.c_str (), status,
-                       message_totals);
-
-        flush_streams ();
       }
+
+    if (passed && verbosity_ == verbosity::normal)
+      {
+        // Without verbosity, show only the summary line and count only
+        // test cases, not checks, as the TAP output is not shown; the
+        // output file has all the lines, so its plan counts the checks.
+        write_file ("%s1..%zu\n", indent2.c_str (), plan_count);
+
+        write_console ("%s1..%zu\n", indent2.c_str (),
+                       test_case.totals ().executed_test_cases ()
+                           + test_case.totals ().skipped_test_cases ());
+      }
+    else
+      {
+        write_line (to_console, "%s1..%zu\n", indent2.c_str (), plan_count);
+      }
+
+    write_line (to_console, "%s%s %zu - %s # { %s, %s }\n", indent.c_str (),
+                result, test_case.own_index_, name.c_str (), status,
+                message_totals);
+
+    flush_streams ();
 
     clear_buffer ();
 
@@ -868,21 +856,18 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (test_case.name (), true);
 
-    write_file ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
+    const bool to_console = (verbosity_ == verbosity::normal
+                             || verbosity_ == verbosity::verbose);
+
+    if (to_console && add_empty_line_)
+      {
+        write_console ("\n");
+      }
+
+    write_line (to_console, "%sok %zu - %s # SKIP filtered\n", indent.c_str (),
                 test_case.own_index_, name.c_str ());
 
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
-      {
-        if (add_empty_line_)
-          {
-            write_console ("\n");
-          }
-
-        write_console ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
-                       test_case.own_index_, name.c_str ());
-
-        flush_streams ();
-      }
+    flush_streams ();
 
     add_empty_line_ = true;
   }
@@ -928,9 +913,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_buffer_to_file ();
 
-    write_file ("Bail out! %s at %s:%lu\n", reason, file_name.c_str (), line);
+    const bool to_console = (verbosity_ != verbosity::silent);
 
-    if (verbosity_ != verbosity::silent)
+    if (to_console)
       {
         if (add_empty_line_)
           {
@@ -938,10 +923,10 @@ namespace micro_os_plus::micro_test_plus::detail
           }
 
         write_buffer_to_console ();
-
-        write_console ("Bail out! %s at %s:%lu\n", reason, file_name.c_str (),
-                       line);
       }
+
+    write_line (to_console, "Bail out! %s at %s:%lu\n", reason,
+                file_name.c_str (), line);
 
     flush_streams ();
 

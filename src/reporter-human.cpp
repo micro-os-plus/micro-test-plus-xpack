@@ -133,15 +133,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_info ();
 
-    const char* message = "µTest++ human report";
-    write_file ("%s\n", message);
+    write_line (verbosity_ != verbosity::silent, "µTest++ human report\n");
 
-    if (verbosity_ != verbosity::silent)
-      {
-        write_console ("%s\n", message);
-
-        flush_streams ();
-      }
+    flush_streams ();
 
     add_empty_line_ = true;
   }
@@ -179,17 +173,13 @@ namespace micro_os_plus::micro_test_plus::detail
 
         if (runner.totals ().passed ()) [[likely]]
           {
-            write_file ("✓ Total: %s%s\n", message_totals, message_time);
-
-            write_console ("%s✓%s Total: %s%s\n", colours_.pass, colours_.none,
-                           message_totals, message_time);
+            write_line (true, "%s✓%s Total: %s%s\n", colours_.pass,
+                        colours_.none, message_totals, message_time);
           }
         else
           {
-            write_file ("✗ Total: %s%s\n", message_totals, message_time);
-
-            write_console ("%s✗%s Total: %s%s\n", colours_.fail, colours_.none,
-                           message_totals, message_time);
+            write_line (true, "%s✗%s Total: %s%s\n", colours_.fail,
+                        colours_.none, message_totals, message_time);
           }
 
         flush_streams ();
@@ -220,9 +210,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console ("\n");
           }
 
-        write_file ("• %s\n", suite.name ());
-
-        write_console ("• %s\n", suite.name ());
+        write_line (true, "• %s\n", suite.name ());
 
         flush_streams ();
 
@@ -275,9 +263,6 @@ namespace micro_os_plus::micro_test_plus::detail
 
             write_buffer_to_file ();
 
-            write_file ("✓ %s - passed (%s)%s\n", suite.name (),
-                        message_totals, message_time);
-
             if (verbosity_ == verbosity::verbose)
               {
                 // With verbosity, show full TAP output accumulated in the
@@ -285,9 +270,9 @@ namespace micro_os_plus::micro_test_plus::detail
                 write_buffer_to_console ();
               }
 
-            write_console ("%s✓%s %s - passed (%s)%s\n", colours_.pass,
-                           colours_.none, suite.name (), message_totals,
-                           message_time);
+            write_line (true, "%s✓%s %s - passed (%s)%s\n", colours_.pass,
+                        colours_.none, suite.name (), message_totals,
+                        message_time);
           }
         else
           {
@@ -295,16 +280,13 @@ namespace micro_os_plus::micro_test_plus::detail
 
             write_buffer_to_file ();
 
-            write_file ("✗ %s - FAILED (%s)%s\n", suite.name (),
-                        message_totals, message_time);
-
             // Show full TAP output accumulated in the buffer for failed suite
             // cases, as it may contain useful information about the failure.
             write_buffer_to_console ();
 
-            write_console ("%s✗%s %s - %sFAILED%s (%s)%s\n", colours_.fail,
-                           colours_.none, suite.name (), colours_.fail,
-                           colours_.none, message_totals, message_time);
+            write_line (true, "%s✗%s %s - %sFAILED%s (%s)%s\n", colours_.fail,
+                        colours_.none, suite.name (), colours_.fail,
+                        colours_.none, message_totals, message_time);
           }
       }
 
@@ -338,9 +320,7 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console ("\n");
           }
 
-        write_file ("• %s - skipped (filtered)\n", suite.name ());
-
-        write_console ("• %s - skipped (filtered)\n", suite.name ());
+        write_line (true, "• %s - skipped (filtered)\n", suite.name ());
 
         flush_streams ();
 
@@ -398,17 +378,17 @@ namespace micro_os_plus::micro_test_plus::detail
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
-    write_file ("%s• %s\n", indent.c_str (), test_case.name ());
+    const bool to_console = (verbosity_ == verbosity::verbose);
 
-    if (verbosity_ == verbosity::verbose)
+    if (to_console && add_empty_line_)
       {
-        if (add_empty_line_)
-          {
-            write_console ("\n");
-          }
+        write_console ("\n");
+      }
 
-        write_console ("%s• %s\n", indent.c_str (), test_case.name ());
+    write_line (to_console, "%s• %s\n", indent.c_str (), test_case.name ());
 
+    if (to_console)
+      {
         add_empty_line_ = false;
       }
 
@@ -464,38 +444,24 @@ namespace micro_os_plus::micro_test_plus::detail
 
             write_buffer_to_file ();
 
-            write_file ("%s✓ %s - passed (%s)\n", indent.c_str (),
-                        test_case.name (), message_totals);
-
             if (verbosity_ == verbosity::verbose)
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
                 write_buffer_to_console ();
-
-                write_console ("%s%s✓%s %s - passed (%s)\n", indent.c_str (),
-                               colours_.pass, colours_.none, test_case.name (),
-                               message_totals);
-
-                add_empty_line_ = true;
               }
-            else
-              {
-                write_console ("%s%s✓%s %s - passed (%s)\n", indent.c_str (),
-                               colours_.pass, colours_.none, test_case.name (),
-                               message_totals);
 
-                add_empty_line_ = false;
-              }
+            write_line (true, "%s%s✓%s %s - passed (%s)\n", indent.c_str (),
+                        colours_.pass, colours_.none, test_case.name (),
+                        message_totals);
+
+            add_empty_line_ = (verbosity_ == verbosity::verbose);
           }
         else
           {
             // Failed test case.
 
             write_buffer_to_file ();
-
-            write_file ("%s✗ %s - FAILED (%s)\n", indent.c_str (),
-                        test_case.name (), message_totals);
 
             if (verbosity_ == verbosity::normal)
               {
@@ -510,9 +476,10 @@ namespace micro_os_plus::micro_test_plus::detail
             // failure.
             write_buffer_to_console ();
 
-            write_console ("%s%s✗%s %s - %sFAILED%s (%s)\n", indent.c_str (),
-                           colours_.fail, colours_.none, test_case.name (),
-                           colours_.fail, colours_.none, message_totals);
+            write_line (true, "%s%s✗%s %s - %sFAILED%s (%s)\n",
+                        indent.c_str (), colours_.fail, colours_.none,
+                        test_case.name (), colours_.fail, colours_.none,
+                        message_totals);
 
             add_empty_line_ = true;
           }
@@ -693,11 +660,8 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console ("\n");
           }
 
-        write_file ("%s• %s - skipped (filtered)\n", indent.c_str (),
+        write_line (true, "%s• %s - skipped (filtered)\n", indent.c_str (),
                     test_case.name ());
-
-        write_console ("%s• %s - skipped (filtered)\n", indent.c_str (),
-                       test_case.name ());
 
         // As for a passed test case.
         add_empty_line_ = (verbosity_ == verbosity::verbose);
@@ -778,10 +742,8 @@ namespace micro_os_plus::micro_test_plus::detail
         const char* file_name
             = utility::extract_file_name (location.file_name ());
 
-        write_file ("✗ Test execution aborted at %s:%lu\n", file_name, line);
-
-        write_console ("%s✗%s Test execution aborted at %s:%lu\n",
-                       colours_.fail, colours_.none, file_name, line);
+        write_line (true, "%s✗%s Test execution aborted at %s:%lu\n",
+                    colours_.fail, colours_.none, file_name, line);
       }
 
     flush_streams ();
