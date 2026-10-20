@@ -75,11 +75,14 @@ namespace micro_os_plus::micro_test_plus
      * base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     constexpr auto
-    operator== (const Lhs_T& lhs, const Rhs_T& rhs)
+    operator== (Lhs_T&& lhs, Rhs_T&& rhs)
     {
-      return detail::compare_op{ lhs, rhs, detail::equal_to{} };
+      return detail::compare_op{ std::forward<Lhs_T> (lhs),
+                                 std::forward<Rhs_T> (rhs),
+                                 detail::equal_to{} };
     }
 
     /**
@@ -90,11 +93,14 @@ namespace micro_os_plus::micro_test_plus
      * `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     constexpr auto
-    operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
+    operator!= (Lhs_T&& lhs, Rhs_T&& rhs)
     {
-      return detail::compare_op{ lhs, rhs, detail::not_equal_to{} };
+      return detail::compare_op{ std::forward<Lhs_T> (lhs),
+                                 std::forward<Rhs_T> (rhs),
+                                 detail::not_equal_to{} };
     }
 
     /**
@@ -105,11 +111,14 @@ namespace micro_os_plus::micro_test_plus
      * base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     constexpr auto
-    operator> (const Lhs_T& lhs, const Rhs_T& rhs)
+    operator> (Lhs_T&& lhs, Rhs_T&& rhs)
     {
-      return detail::compare_op{ lhs, rhs, detail::greater{} };
+      return detail::compare_op{ std::forward<Lhs_T> (lhs),
+                                 std::forward<Rhs_T> (rhs),
+                                 detail::greater{} };
     }
 
     /**
@@ -120,11 +129,14 @@ namespace micro_os_plus::micro_test_plus
      * the local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     constexpr auto
-    operator>= (const Lhs_T& lhs, const Rhs_T& rhs)
+    operator>= (Lhs_T&& lhs, Rhs_T&& rhs)
     {
-      return detail::compare_op{ lhs, rhs, detail::greater_equal{} };
+      return detail::compare_op{ std::forward<Lhs_T> (lhs),
+                                 std::forward<Rhs_T> (rhs),
+                                 detail::greater_equal{} };
     }
 
     /**
@@ -135,11 +147,13 @@ namespace micro_os_plus::micro_test_plus
      * base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     constexpr auto
-    operator< (const Lhs_T& lhs, const Rhs_T& rhs)
+    operator< (Lhs_T&& lhs, Rhs_T&& rhs)
     {
-      return detail::compare_op{ lhs, rhs, detail::less{} };
+      return detail::compare_op{ std::forward<Lhs_T> (lhs),
+                                 std::forward<Rhs_T> (rhs), detail::less{} };
     }
 
     /**
@@ -150,11 +164,14 @@ namespace micro_os_plus::micro_test_plus
      * local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     constexpr auto
-    operator<= (const Lhs_T& lhs, const Rhs_T& rhs)
+    operator<= (Lhs_T&& lhs, Rhs_T&& rhs)
     {
-      return detail::compare_op{ lhs, rhs, detail::less_equal{} };
+      return detail::compare_op{ std::forward<Lhs_T> (lhs),
+                                 std::forward<Rhs_T> (rhs),
+                                 detail::less_equal{} };
     }
 
     /**
@@ -164,11 +181,13 @@ namespace micro_os_plus::micro_test_plus
      * true. At least one operand must derive from the local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     constexpr auto
-    operator and (const Lhs_T& lhs, const Rhs_T& rhs)
+    operator and (Lhs_T&& lhs, Rhs_T&& rhs)
     {
-      return detail::and_op{ lhs, rhs };
+      return detail::and_op{ std::forward<Lhs_T> (lhs),
+                             std::forward<Rhs_T> (rhs) };
     }
 
     /**
@@ -178,11 +197,13 @@ namespace micro_os_plus::micro_test_plus
      * is true. At least one operand must derive from the local `op` base.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     constexpr auto
-    operator or (const Lhs_T& lhs, const Rhs_T& rhs)
+    operator or (Lhs_T&& lhs, Rhs_T&& rhs)
     {
-      return detail::or_op{ lhs, rhs };
+      return detail::or_op{ std::forward<Lhs_T> (lhs),
+                            std::forward<Rhs_T> (rhs) };
     }
 
     /**
@@ -192,11 +213,14 @@ namespace micro_os_plus::micro_test_plus
      * The operand must derive from the local `op` base.
      */
     template <class T>
-      requires extension::is_op<T>
+      requires extension::is_op<std::remove_cvref_t<T>>
     constexpr auto
-    operator not(const T& t)
+    operator not(T&& t)
     {
-      return detail::not_op{ t };
+      // Not `not_op{ t }`, which would copy an operand that is itself
+      // a `not_op`, instead of negating it.
+      return detail::not_op<detail::stored_operand_t<T>>{ std::forward<T> (
+          t) };
     }
 
     // ------------------------------------------------------------------------

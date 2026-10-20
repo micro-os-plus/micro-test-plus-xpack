@@ -37,7 +37,7 @@ using namespace micro_os_plus::micro_test_plus;
 // ----------------------------------------------------------------------------
 
 // Application types used to check that the comparators do not use
-// functions of the application named `get` (API-REVIEW.md #5).
+// functions of the application named `get`.
 namespace user_types
 {
   // A type with a free `get()` function in its namespace, which
@@ -128,7 +128,7 @@ namespace user_types
 runner tr;
 
 // A second runner, never initialised. Its static suite is constructed
-// before it, and is neither counted nor run by `tr` (API-REVIEW.md #26).
+// before it, and is neither counted nor run by `tr`.
 extern runner other_runner;
 
 static static_suite other_suite{ "Other runner suite", other_runner,
@@ -420,8 +420,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // A check in the outer test case before the nested one leaves the
-  // outer result in the reporter buffer when the nested test case begins
-  // (API-REVIEW.md #1).
+  // outer result in the reporter buffer when the nested test case begins.
   ts.test ("Nested subtest after a check", [] (auto& t)
     {
       t.expect (eq (1, 1)) << "outer check before the nested subtest";
@@ -446,8 +445,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // A failed check in a nested test case also fails all the outer test
-  // cases, as in node-tap, although their own checks passed
-  // (API-REVIEW.md #2).
+  // cases, as in node-tap, although their own checks passed.
   {
     const size_t failed_test_cases_before
         = current_suite_totals.failed_test_cases ();
@@ -485,8 +483,7 @@ main (int argc, char* argv[])
 
   // The result of a check kept in a variable is reported when the variable
   // goes out of scope, after the later checks, with its own expression
-  // (here `1 == 2`), and numbered in the order of the output
-  // (API-REVIEW.md #4).
+  // (here `1 == 2`), and numbered in the order of the output.
   ts.test ("Stored check result", [] (auto& t)
     {
       {
@@ -512,7 +509,7 @@ main (int argc, char* argv[])
 
   // The comparators compare the application types with their own
   // operators, ignoring the application functions named `get`, both free
-  // (found by argument-dependent lookup) and member (API-REVIEW.md #5).
+  // (found by argument-dependent lookup) and member.
   ts.test ("Application types with get()", [] (auto& t)
     {
       t.expect (ne (user_types::wrapped{ 1 }, user_types::wrapped{ 2 }))
@@ -545,8 +542,7 @@ main (int argc, char* argv[])
 
   // The comparators compare the application types with their own
   // operators, ignoring their members named `value` and `epsilon`, which
-  // only identify the framework constants and floating-point wrappers
-  // (API-REVIEW.md #10).
+  // only identify the framework constants and floating-point wrappers.
   ts.test ("Application types with value and epsilon", [] (auto& t)
     {
       using namespace literals;
@@ -587,7 +583,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // Values of the fundamental types, including `bool`, can be streamed into
-  // the check messages (API-REVIEW.md #6).
+  // the check messages.
   ts.test ("Message values", [] (auto& t)
     {
       const bool flag = true;
@@ -598,7 +594,7 @@ main (int argc, char* argv[])
                       << 1.25;
       local_counts.passed_checks++;
 
-      // Null C strings are written as `"nullptr"` (API-REVIEW.md #63).
+      // Null C strings are written as `"nullptr"`.
       char* null_string = nullptr;
       const char* null_const_string = nullptr;
       t.expect (true) << "null strings " << null_string << ", "
@@ -619,7 +615,7 @@ main (int argc, char* argv[])
 
   // The character operands are reported as quoted literals, and a zero
   // does not hide the rest of the output, including the next failed
-  // check (API-REVIEW.md #11).
+  // check.
   ts.test ("Character operands", [] (auto& t)
     {
       t.expect (eq ('\0', 'a'));
@@ -645,8 +641,7 @@ main (int argc, char* argv[])
 
   // All six comparisons apply the tolerance of the floating-point literals
   // and wrappers consistently: values within the tolerance are equal, and
-  // neither less nor greater; `approx()` makes the tolerance explicit
-  // (API-REVIEW.md #9).
+  // neither less nor greater; `approx()` makes the tolerance explicit.
   ts.test ("Floating-point tolerance", [] (auto& t)
     {
       using namespace literals;
@@ -662,7 +657,7 @@ main (int argc, char* argv[])
 
       // The tolerance of a wrapper is also derived from the number of
       // decimals, for negative values too, and the rounding noise of 0.011
-      // does not make it 1e-18 (API-REVIEW.md #60).
+      // does not make it 1e-18.
       t.expect (eq (-1.45, to_d{ -1.5 })) << "-1.45 == to_d{ -1.5 }";
       t.expect (eq (0.0111, to_d{ 0.011 })) << "0.0111 == to_d{ 0.011 }";
       t.expect (lt (0.009, to_d{ 0.011 })) << "0.009 < to_d{ 0.011 }";
@@ -670,7 +665,7 @@ main (int argc, char* argv[])
 
       // The leading zeros of a small wrapper value are counted, so its
       // tolerance is not 0.1, a zero wrapper compares exactly, and a
-      // whole value keeps one decimal, as `42.0_d` (API-REVIEW.md #9).
+      // whole value keeps one decimal, as `42.0_d`.
       t.expect (ne (to_d{ 1e-12 }, 0.05)) << "to_d{ 1e-12 } != 0.05";
       t.expect (lt (to_d{ 1e-12 }, 2.5e-12)) << "to_d{ 1e-12 } < 2.5e-12";
       t.expect (eq (to_d{ 1e-12 }, 1.5e-12)) << "to_d{ 1e-12 } == 1.5e-12";
@@ -694,7 +689,7 @@ main (int argc, char* argv[])
           << "0.1f + 0.2f == approx (0.3f, 1e-6f)";
       local_counts.passed_checks += 5;
 
-      // A zero tolerance compares the values exactly (API-REVIEW.md #49).
+      // A zero tolerance compares the values exactly.
       t.expect (eq (1.5, approx (1.5, 0.0))) << "1.5 == approx (1.5, 0.0)";
       t.expect (negate (ne (1.5, approx (1.5, 0.0))))
           << "not 1.5 != approx (1.5, 0.0)";
@@ -738,8 +733,7 @@ main (int argc, char* argv[])
 
   // The name of a dynamic suite is copied, so it can be a temporary string,
   // destroyed before the suite runs; the name is longer than the short
-  // string buffer, so that AddressSanitizer would report a use after free
-  // (API-REVIEW.md #11).
+  // string buffer, so that AddressSanitizer would report a use after free.
   tr.add_suite (
       std::string ("Dynamic suite with a ").append ("temporary name").c_str (),
       [] (auto& s)
@@ -754,7 +748,7 @@ main (int argc, char* argv[])
 
   // The static suites are kept in a list independent of the runner
   // objects; each runner counts and runs only its own, and a static suite
-  // leaves the list when it is destroyed (API-REVIEW.md #26).
+  // leaves the list when it is destroyed.
   {
     const size_t static_suites_count = tr.static_suites_count ();
     test_assert (static_suites_count > 0);
@@ -781,8 +775,7 @@ main (int argc, char* argv[])
 
   // The session runs only once; the later calls of run(), and of the
   // deprecated exit_code(), return the same code without running the
-  // suites again, and a second initialise() changes nothing
-  // (API-REVIEW.md #3).
+  // suites again, and a second initialise() changes nothing.
   {
     const size_t executed_checks = tr.totals ().executed_checks ();
     const size_t executed_test_cases = tr.totals ().executed_test_cases ();

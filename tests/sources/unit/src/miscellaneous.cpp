@@ -115,8 +115,7 @@ namespace
     }
   } // namespace custom_operators
 
-  // Scoped enumerations, formatted by their underlying value
-  // (API-REVIEW.md #18).
+  // Scoped enumerations, formatted by their underlying value.
   enum class colour
   {
     red,
@@ -144,8 +143,7 @@ namespace
   }
 
   // A user-defined type that counts its copies, to check that the
-  // comparators do not copy the operands more than needed
-  // (API-REVIEW.md #53).
+  // comparators do not copy the operands more than needed.
   int counted_copies = 0;
 
   struct counted
@@ -183,8 +181,7 @@ namespace
   }
 
   // A type that counts how many times it is formatted, to check that the
-  // passed checks whose lines are not written are not formatted
-  // (API-REVIEW.md #43).
+  // passed checks whose lines are not written are not formatted.
   int format_calls = 0;
 
   struct format_counter
@@ -206,8 +203,7 @@ namespace
   }
 
   // A type that counts its live instances, to check that a test case
-  // and its stored body are destroyed when `test()` returns
-  // (API-REVIEW.md #54).
+  // and its stored body are destroyed when `test()` returns.
   int live_instances = 0;
 
   struct instance_counter
@@ -233,8 +229,7 @@ namespace
   };
 
   // An abort handler which, when exceptions are available, returns
-  // control to the test case, without terminating the process
-  // (API-REVIEW.md #21).
+  // control to the test case, without terminating the process.
 #if defined(__EXCEPTIONS)
   struct abort_exception
   {
@@ -254,7 +249,7 @@ namespace
 
   // A reporter that ignores all events and exposes its output buffer, to
   // check the text written by the `reporter` stream operators, without
-  // writing to the test output (API-REVIEW.md #7).
+  // writing to the test output.
   class buffer_reporter final : public detail::reporter
   {
   public:
@@ -368,7 +363,7 @@ namespace
   };
 
   // Adds a test case on behalf of its caller; the location of the test
-  // case is that of the call to the helper (API-REVIEW.md #21).
+  // case is that of the call to the helper.
   void
   add_named_test_case (suite& s, const test_case_name& name, int* runs)
   {
@@ -396,7 +391,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     local_counts = {};
 
     // A copy of the counters is a snapshot, which is not updated by the
-    // later checks (API-REVIEW.md #29).
+    // later checks.
     const counters before = ts.totals ();
 
     ts.test ("Arrays", [] (auto& t)
@@ -645,7 +640,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                  == local_counts.executed_test_cases);
 
     // The text written by the `reporter` stream operators, for every
-    // supported type (API-REVIEW.md #7).
+    // supported type.
     ts.test ("Reporter stream operators", [] (auto& t)
       {
         buffer_reporter r;
@@ -686,7 +681,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         check ("line\n", "endl");
 
         // The `char` pointers and arrays are displayed as strings, as the
-        // `const char` pointers are (API-REVIEW.md #13).
+        // `const char` pointers are.
         char text[] = "mutable";
         r << text;
         check ("mutable", "char array");
@@ -719,7 +714,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                  == local_counts.executed_test_cases);
 
     // The text written by the `expression_formatter` stream operators for
-    // the character pointers and arrays (API-REVIEW.md #13).
+    // the character pointers and arrays.
     ts.test ("Formatter character pointers", [] (auto& t)
       {
         detail::colours no_colours{};
@@ -773,8 +768,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                  == local_counts.executed_test_cases);
 
     // The type suffixes written by the `expression_formatter` for the
-    // numbers, and the decimal point of the floating-point values
-    // (API-REVIEW.md #44).
+    // numbers, and the decimal point of the floating-point values.
     ts.test ("Formatter number suffixes", [] (auto& t)
       {
         detail::colours no_colours{};
@@ -822,9 +816,9 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         check ("1.5ld", "long double");
 
         // The `long double` values are written in the shortest exact form,
-        // as the other floating-point values, not with six digits
-        // (API-REVIEW.md #12). With at most 15 digits, the text is the
-        // same where `long double` is as wide as `double`.
+        // as the other floating-point values, not with six digits. With at
+        // most 15 digits, the text is the same where `long double` is as
+        // wide as `double`.
         f << 0.1000001L;
         check ("0.1000001ld", "long double with seven digits");
 
@@ -852,7 +846,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // The characters are written by the `expression_formatter` as quoted
     // literals, with the non-printable ones escaped, so that a zero does
-    // not end the output (API-REVIEW.md #11).
+    // not end the output.
     ts.test ("Formatter characters", [] (auto& t)
       {
         detail::colours no_colours{};
@@ -906,7 +900,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     // The scoped enumerations and `std::byte` are written by the
     // `expression_formatter` by their underlying value, the pairs and the
     // tuples as `(a, b)`, and the optionals by their value, or as
-    // `nullopt` (API-REVIEW.md #18).
+    // `nullopt`.
     ts.test ("Formatter standard types", [] (auto& t)
       {
         detail::colours no_colours{};
@@ -966,8 +960,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // The comparators accept the standard types that the formatter writes
-    // (API-REVIEW.md #18).
+    // The comparators accept the standard types that the formatter writes.
     ts.test ("Standard types", [] (auto& t)
       {
         t.expect (eq (colour::red, colour::red))
@@ -1065,7 +1058,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // The messages accept the values of the expressions, written by the
     // formatter without the type suffixes, and with the characters
-    // unquoted (API-REVIEW.md #36).
+    // unquoted.
     ts.test ("Message types", [] (auto& t)
       {
         using namespace literals;
@@ -1100,7 +1093,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     // In the TAP output, the `\` and `#` characters of the names, the
     // messages, and the expressions are escaped, and the line breaks are
     // replaced by spaces, so that the failed test case below is not read as
-    // a TODO (API-REVIEW.md #16).
+    // a TODO.
     ts.test ("TAP escapes # TODO in names \\ messages", [] (auto& t)
       {
         t.expect (true) << "message with # hash and \\ backslash";
@@ -1143,7 +1136,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
                  == local_counts.executed_test_cases);
 
     // A runner can be initialised without a command line, with the options
-    // set by the application (API-REVIEW.md #20). The local runners are
+    // set by the application. The local runners are
     // silent, so that they do not write to the test output.
     ts.test ("Runner options", [] (auto& t)
       {
@@ -1154,7 +1147,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         runner named_runner;
 
         // The verbosity is kept by the runner, not by the reporter, which
-        // does not exist yet (API-REVIEW.md #2).
+        // does not exist yet.
         t.expect (named_runner.verbosity_level () == verbosity::normal)
             << "default verbosity before initialise()";
         local_counts.passed_checks++;
@@ -1169,7 +1162,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         // The deprecated names of `verbosity_level()` and `add_suite()`
-        // still work (API-REVIEW.md #31).
+        // still work.
         bool deprecated_suite_ran = false;
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -1197,7 +1190,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         // The deprecated `suites_count()` still counts the top suite, and
         // the deprecated names of `passed_checks()` and
-        // `increment_passed_checks()` still work (API-REVIEW.md #32).
+        // `increment_passed_checks()` still work.
         counters snapshot = named_runner.totals ();
         const size_t passed_before = snapshot.passed_checks ();
 #if defined(__GNUC__)
@@ -1235,7 +1228,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // An option error does not terminate the process; it is reported on
     // stderr (the messages are expected in the test output), the tests are
-    // still run, and `run()` returns 2 (API-REVIEW.md #21).
+    // still run, and `run()` returns 2.
     ts.test ("Runner option errors", [] (auto& t)
       {
         char arg_name[] = "local";
@@ -1282,7 +1275,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // The --filter option selects the suites and the test cases to run by
     // name, with one pattern per nesting level, as --grep in node-tap;
-    // within a pattern, `|` separates alternatives (API-REVIEW.md #29).
+    // within a pattern, `|` separates alternatives.
     // The local runners are silent.
     ts.test ("Runner filter", [] (auto& t)
       {
@@ -1479,7 +1472,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // The suites added once run() has started would never run; they are
     // rejected, and the exit code is not 0. A call of run() from a suite
-    // body is rejected too (API-REVIEW.md #4).
+    // body is rejected too.
     ts.test ("Late suites", [] (auto& t)
       {
         runner_options options{};
@@ -1536,7 +1529,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // A test case started on the suite from inside a running test case,
     // after a check, runs nested in the running test case, instead of
-    // aborting the program (API-REVIEW.md #6).
+    // aborting the program.
     ts.test ("Test case started on the suite", [&ts] (auto& t)
       {
         t.expect (true) << "check before the test case";
@@ -1557,8 +1550,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // The additional arguments of `test()` and `add_suite()` are copied, so a
     // reference parameter refers to the copy, unless `std::ref()` is
-    // passed, and a deferred suite receives the values of the call
-    // (API-REVIEW.md #52).
+    // passed, and a deferred suite receives the values of the call.
     ts.test ("Callable arguments", [] (auto& t)
       {
         runner_options options{};
@@ -1611,8 +1603,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    // The operands are copied once, when stored in the comparator, and
-    // not again when they are compared or reported (API-REVIEW.md #53).
+    // The named operands are referred to, and the temporaries are moved,
+    // so the comparators do not copy the operands.
     ts.test ("Operand copies", [] (auto& t)
       {
         const counted a{ 1 };
@@ -1623,7 +1615,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
         int copies = counted_copies;
 
-        t.expect (eq (copies, 2)) << "plain operands copied once";
+        t.expect (eq (copies, 0)) << "plain operands not copied";
         local_counts.passed_checks++;
 
         const to_t<counted> wrapped{ a };
@@ -1633,7 +1625,29 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
         copies = counted_copies;
 
-        t.expect (eq (copies, 2)) << "wrapped operand copied once";
+        t.expect (eq (copies, 0)) << "wrapped operand not copied";
+        local_counts.passed_checks++;
+
+        counted_copies = 0;
+        t.expect (both (eq (a, b), negate (ne (a, b))))
+            << "nested comparators";
+        local_counts.passed_checks++;
+        copies = counted_copies;
+
+        t.expect (eq (copies, 0)) << "nested comparators not copied";
+        local_counts.passed_checks++;
+
+        // A comparator that outlives the statement owns its temporary
+        // operands; `counted` has no move constructor, so the temporary
+        // is copied, once.
+        counted_copies = 0;
+        const auto stored = eq (counted{ 1 }, b);
+        copies = counted_copies;
+
+        t.expect (stored) << "stored comparator";
+        local_counts.passed_checks++;
+
+        t.expect (eq (copies, 1)) << "temporary operand stored once";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -1641,7 +1655,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // A test case is destroyed when the `test()` call that created it
     // returns, together with its body and bound arguments; only their
-    // number is kept (API-REVIEW.md #54).
+    // number is kept.
     ts.test ("Test case lifetime", [] (auto& t)
       {
         runner_options options{};
@@ -1677,7 +1691,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // A passed check formats neither its operands nor its messages when
     // the reporter does not write its line; a failed check is always
-    // formatted (API-REVIEW.md #43).
+    // formatted.
     ts.test ("Formatting of passed checks", [] (auto& t)
       {
         const format_counter a{ 1 };
@@ -1728,8 +1742,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
       });
 
     // The abort handler can be replaced, and, when exceptions are
-    // available, it can return control to the application by throwing
-    // (API-REVIEW.md #21).
+    // available, it can return control to the application by throwing.
     ts.test ("Abort handler", [] (auto& t)
       {
         runner local_runner;
@@ -1766,8 +1779,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     // `run()`, the abort is reported by the reporter, which completes the
     // report, before the handler is called; an exception thrown by the
     // handler is not caught by the test cases, and reaches the
-    // application, and the runner cannot be used afterwards
-    // (API-REVIEW.md #27).
+    // application, and the runner cannot be used afterwards.
     ts.test ("Abort during the session", [] (auto& t)
       {
 #if defined(__EXCEPTIONS)
@@ -1826,8 +1838,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // The test case names can be standard strings, also temporary ones,
     // and the suite names can also be string views; a helper can forward
-    // a test case name with the location of its caller (API-REVIEW.md
-    // #21).
+    // a test case name with the location of its caller.
     ts.test ("Test case and suite names", [] (auto& t)
       {
         static_assert (std::is_convertible_v<const char*, test_case_name>);

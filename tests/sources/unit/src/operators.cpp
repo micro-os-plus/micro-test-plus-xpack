@@ -78,6 +78,12 @@ static static_suite ts_operators{ "Operators suite", tr, [] (auto& ts)
         t.expect (!(my_actual_integral () == 42_i)) << "not (actual == 42)";
         local_counts.failed_checks++;
 
+        // A double negation is not reduced to a single one, by copying
+        // the inner negation.
+        t.expect (!!(my_actual_integral () == 42_i))
+            << "not not (actual == 42)";
+        local_counts.passed_checks++;
+
         t.expect (((my_actual_integral () == 42_i)
                    && (my_actual_float<float> () == 42.0_d)))
             << "(actual == 42) and (actual == 42.0)";
@@ -137,7 +143,7 @@ static static_suite ts_operators{ "Operators suite", tr, [] (auto& ts)
                  == local_counts.executed_test_cases);
 
     // There are no string view operators; the standard ones are selected,
-    // so the failed checks show no operands (API-REVIEW.md #17).
+    // so the failed checks show no operands.
     ts.test ("String view operators", [] (auto& t)
       {
         using namespace operators;

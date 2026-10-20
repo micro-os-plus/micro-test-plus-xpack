@@ -153,7 +153,7 @@ static_asserts ()
       using namespace literals;
 
       // Only the framework constants are detected, not the types of the
-      // application with a member named `value` (API-REVIEW.md #10).
+      // application with a member named `value`.
       static_assert (not detail::has_value<foo>);
       static_assert (not detail::has_value<bar>);
       static_assert (not detail::has_value<int>);
@@ -200,8 +200,7 @@ static_asserts ()
       static_assert (not extension::has_epsilon<decltype (42_i)>);
 
       // Only the framework floating-point wrappers are detected, not the
-      // types of the application with a member named `epsilon`
-      // (API-REVIEW.md #10).
+      // types of the application with a member named `epsilon`.
       struct gauge
       {
         double epsilon;
@@ -256,7 +255,7 @@ static_asserts ()
       // The number of decimals of a run-time value is computed without
       // undefined behaviour for negative and large values (a compile-time
       // error in a constant expression), and is not affected by the
-      // rounding noise below an integer (API-REVIEW.md #60).
+      // rounding noise below an integer.
       using ull = unsigned long long;
       static_assert (detail::math::count_decimals<ull> (1.25) == 2);
       static_assert (detail::math::count_decimals<ull> (2.0) == 1);
@@ -270,8 +269,7 @@ static_asserts ()
                      == 1);
 
       // The leading zeros of a small value are counted as decimals, and a
-      // zero has none, so its tolerance is zero, an exact comparison
-      // (API-REVIEW.md #9).
+      // zero has none, so its tolerance is zero, an exact comparison.
       static_assert (detail::math::count_decimals<ull> (1e-8) == 8);
       static_assert (detail::math::count_decimals<ull> (1e-12) == 12);
       static_assert (detail::math::count_decimals<ull> (-2.5e-9) == 10);
@@ -330,8 +328,8 @@ static_asserts ()
 
       // The negation keeps the type of the literal, also for the types
       // narrower than `int`; the negation of an unsigned literal wraps
-      // around, and the minimum of a signed type can be written
-      // (API-REVIEW.md #13). The negation of the minimum is a compilation
+      // around, and the minimum of a signed type can be written.
+      // The negation of the minimum is a compilation
       // error.
       static_assert (
           std::is_same_v<decltype (-1_i8)::value_type, std::int8_t>);
@@ -362,7 +360,7 @@ static_asserts ()
           std::is_same_v<decltype (-128_i8)::value_type, std::int8_t>);
 
       // The integer literals follow the C++ syntax: hexadecimal, binary, and
-      // octal prefixes, and digit separators (API-REVIEW.md #8). A decimal
+      // octal prefixes, and digit separators. A decimal
       // point, or a value that does not fit in the type of the literal (e.g.
       // `300_u8`), is a compilation error.
       static_assert (010 == 010_i);
@@ -377,8 +375,8 @@ static_asserts ()
       static_assert (18446744073709551615ull == 18446744073709551615_ull);
 
       // The floating-point literals are computed with 64-bit integers on all
-      // platforms, and accept digit separators also after the decimal point
-      // (API-REVIEW.md #10). Too many digits, or an exponent, is a
+      // platforms, and accept digit separators also after the decimal point.
+      // Too many digits, or an exponent, is a
       // compilation error.
       static_assert (1.000'5 == 1.000'5_d);
       static_assert (1'000.5 == 1'000.5_d);
@@ -386,7 +384,7 @@ static_asserts ()
       static_assert (1.9999999999 == 1.9999999999_d);
       static_assert (decltype (1.000'5_d)::epsilon > 0.000099
                      && decltype (1.000'5_d)::epsilon < 0.000101);
-      // Without decimals, the epsilon is one unit (API-REVIEW.md #41).
+      // Without decimals, the epsilon is one unit.
       static_assert (decltype (2._d)::epsilon > 0.99
                      && decltype (2._d)::epsilon < 1.01);
 
@@ -452,8 +450,7 @@ static_asserts ()
       using namespace with_operators;
 
       // There are no string operators; the standard ones compare strings,
-      // also in the application code that follows the using directive
-      // (API-REVIEW.md #17).
+      // also in the application code that follows the using directive.
       static_assert (
           std::is_same_v<equal_t<std::string_view, std::string_view>, bool>);
       static_assert (
@@ -476,8 +473,7 @@ static_asserts ()
     {
       // The choice of the `source_location` type does not depend on the
       // headers included before µTest++; `<version>`, included after it,
-      // must not reveal a standard implementation that it did not choose
-      // (API-REVIEW.md #1).
+      // must not reveal a standard implementation that it did not choose.
 #if defined(__cpp_lib_source_location)
       static_assert (
           std::is_same_v<reflection::source_location, std::source_location>);
@@ -486,7 +482,7 @@ static_asserts ()
 
     {
       // The counters are a value type, so that a test can take a snapshot
-      // of them (API-REVIEW.md #29).
+      // of them.
       static_assert (std::is_trivially_copyable_v<counters>);
       static_assert (std::is_nothrow_copy_constructible_v<counters>);
       static_assert (std::is_nothrow_copy_assignable_v<counters>);
@@ -500,7 +496,7 @@ static_asserts ()
       };
 
       // The messages accept the values that the formatter writes, as the
-      // expressions do (API-REVIEW.md #36).
+      // expressions do.
       static_assert (extension::printable<const char*>);
       static_assert (extension::printable<char[4]>);
       static_assert (extension::printable<std::string>);
@@ -517,13 +513,65 @@ static_asserts ()
       static_assert (not extension::printable<with_extension::marker_only>);
     }
 
+    {
+      using namespace literals;
+      using namespace operators;
+
+      [[maybe_unused]] const std::string str{ "abc" };
+      [[maybe_unused]] int number = 1;
+      [[maybe_unused]] const auto wrapped = to_i{ 1 };
+
+      // The comparators refer to the named operands of class type, and
+      // store by value the temporaries, which are moved, and the scalars.
+      static_assert (
+          std::is_same_v<decltype (eq (str, str)),
+                         detail::compare_op<const std::string&,
+                                            const std::string&,
+                                            detail::equal_to>>);
+      static_assert (
+          std::is_same_v<decltype (eq (std::string{}, str)),
+                         detail::compare_op<std::string, const std::string&,
+                                            detail::equal_to>>);
+      static_assert (
+          std::is_same_v<decltype (eq (number, 1)),
+                         detail::compare_op<int, int, detail::equal_to>>);
+      static_assert (
+          std::is_same_v<decltype (eq ("abc", str)),
+                         detail::compare_op<detail::c_string,
+                                            const std::string&,
+                                            detail::equal_to>>);
+      static_assert (
+          std::is_same_v<decltype (wrapped == 1),
+                         detail::compare_op<const to_i&, int,
+                                            detail::equal_to>>);
+      static_assert (
+          std::is_same_v<decltype (to_i{ 1 } == 1_i),
+                         detail::compare_op<to_i, decltype (1_i),
+                                            detail::equal_to>>);
+
+      // The nested expressions are stored as the operands are.
+      using inner_t = decltype (eq (number, 1));
+      static_assert (std::is_same_v<
+                     decltype (both (std::declval<const inner_t&> (),
+                                     eq (number, 2))),
+                     detail::and_op<const inner_t&, inner_t>>);
+
+      // A double negation negates the inner negation, instead of
+      // copying it.
+      static_assert (not not (1_i == 1_i));
+      static_assert (
+          std::is_same_v<decltype (not not (1_i == 1_i)),
+                         detail::not_op<detail::not_op<
+                             decltype (1_i == 1_i)>>>);
+    }
+
 #if defined(__cpp_exceptions)
     {
       [[maybe_unused]] auto returns = [] {};
       [[maybe_unused]] auto returns_int = [] { return 42; };
 
       // The exception checks keep only their result, so their types depend
-      // on the expected exception, not on the callable (API-REVIEW.md #42).
+      // on the expected exception, not on the callable.
       static_assert (std::is_same_v<decltype (throws (returns)),
                                     decltype (throws (returns_int))>);
       static_assert (std::is_same_v<decltype (throws<int> (returns)),

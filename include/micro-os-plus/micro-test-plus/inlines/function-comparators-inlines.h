@@ -81,13 +81,17 @@ namespace micro_os_plus::micro_test_plus
    * within the µTest++ framework to assert that two values are equal. This
    * function is typically used in test expectations and assertions to compare
    * the actual and expected values.
+   *
+   * The operands are forwarded, so that the comparator moves the
+   * temporaries and refers to the named operands, without copying them.
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  eq (const Lhs_T& lhs, const Rhs_T& rhs)
+  eq (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return detail::compare_op{ detail::as_operand (lhs),
-                               detail::as_operand (rhs), detail::equal_to{} };
+    return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
+                               detail::as_operand (std::forward<Rhs_T> (rhs)),
+                               detail::equal_to{} };
   }
 
   /**
@@ -100,10 +104,10 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  ne (const Lhs_T& lhs, const Rhs_T& rhs)
+  ne (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return detail::compare_op{ detail::as_operand (lhs),
-                               detail::as_operand (rhs),
+    return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
+                               detail::as_operand (std::forward<Rhs_T> (rhs)),
                                detail::not_equal_to{} };
   }
 
@@ -117,10 +121,11 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  gt (const Lhs_T& lhs, const Rhs_T& rhs)
+  gt (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return detail::compare_op{ detail::as_operand (lhs),
-                               detail::as_operand (rhs), detail::greater{} };
+    return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
+                               detail::as_operand (std::forward<Rhs_T> (rhs)),
+                               detail::greater{} };
   }
 
   /**
@@ -133,10 +138,10 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  ge (const Lhs_T& lhs, const Rhs_T& rhs)
+  ge (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return detail::compare_op{ detail::as_operand (lhs),
-                               detail::as_operand (rhs),
+    return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
+                               detail::as_operand (std::forward<Rhs_T> (rhs)),
                                detail::greater_equal{} };
   }
 
@@ -150,10 +155,11 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  lt (const Lhs_T& lhs, const Rhs_T& rhs)
+  lt (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return detail::compare_op{ detail::as_operand (lhs),
-                               detail::as_operand (rhs), detail::less{} };
+    return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
+                               detail::as_operand (std::forward<Rhs_T> (rhs)),
+                               detail::less{} };
   }
 
   /**
@@ -166,10 +172,10 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  le (const Lhs_T& lhs, const Rhs_T& rhs)
+  le (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return detail::compare_op{ detail::as_operand (lhs),
-                               detail::as_operand (rhs),
+    return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
+                               detail::as_operand (std::forward<Rhs_T> (rhs)),
                                detail::less_equal{} };
   }
 
@@ -189,9 +195,11 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Expr_T>
   constexpr auto
-  negate (const Expr_T& expr)
+  negate (Expr_T&& expr)
   {
-    return detail::not_op<Expr_T>{ expr };
+    return detail::not_op<detail::stored_operand_t<Expr_T>>{
+      std::forward<Expr_T> (expr)
+    };
   }
 
   /**
@@ -207,9 +215,10 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  both (const Lhs_T& lhs, const Rhs_T& rhs)
+  both (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return detail::and_op<Lhs_T, Rhs_T>{ lhs, rhs };
+    return detail::and_op{ std::forward<Lhs_T> (lhs),
+                           std::forward<Rhs_T> (rhs) };
   }
 
   /**
@@ -227,9 +236,10 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   constexpr auto
-  either (const Lhs_T& lhs, const Rhs_T& rhs)
+  either (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return detail::or_op<Lhs_T, Rhs_T>{ lhs, rhs };
+    return detail::or_op{ std::forward<Lhs_T> (lhs),
+                          std::forward<Rhs_T> (rhs) };
   }
 
   // --------------------------------------------------------------------------

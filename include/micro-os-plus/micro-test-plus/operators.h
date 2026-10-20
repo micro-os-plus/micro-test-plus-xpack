@@ -108,6 +108,11 @@ namespace micro_os_plus::micro_test_plus
    * such a type, the standard operators are selected; they return a plain
    * `bool`, so a failed check cannot show the operands.
    *
+   * The operands are forwarded, as by the function comparators: the
+   * temporaries are moved into the returned expression, and the named
+   * operands of class type, including the nested expressions, are
+   * referred to, without copies.
+   *
    * There are no operators for strings and containers: the standard
    * operators would be selected for `std::string` objects and for
    * containers of the same type, and the framework operators for
@@ -135,9 +140,10 @@ namespace micro_os_plus::micro_test_plus
      * equal.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     [[nodiscard]] constexpr auto
-    operator== (const Lhs_T& lhs, const Rhs_T& rhs);
+    operator== (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
@@ -153,9 +159,10 @@ namespace micro_os_plus::micro_test_plus
      * not equal.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     [[nodiscard]] constexpr auto
-    operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
+    operator!= (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
@@ -171,9 +178,10 @@ namespace micro_os_plus::micro_test_plus
      * operand is greater than the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     [[nodiscard]] constexpr auto
-    operator> (const Lhs_T& lhs, const Rhs_T& rhs);
+    operator> (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
@@ -189,9 +197,10 @@ namespace micro_os_plus::micro_test_plus
      * operand is greater than or equal to the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     [[nodiscard]] constexpr auto
-    operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
+    operator>= (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
@@ -207,9 +216,10 @@ namespace micro_os_plus::micro_test_plus
      * operand is less than the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     [[nodiscard]] constexpr auto
-    operator< (const Lhs_T& lhs, const Rhs_T& rhs);
+    operator< (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
@@ -225,9 +235,10 @@ namespace micro_os_plus::micro_test_plus
      * operand is less than or equal to the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     [[nodiscard]] constexpr auto
-    operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
+    operator<= (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
@@ -243,9 +254,10 @@ namespace micro_os_plus::micro_test_plus
      * operands are true.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     [[nodiscard]] constexpr auto
-    operator and (const Lhs_T& lhs, const Rhs_T& rhs);
+    operator and (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
@@ -261,9 +273,10 @@ namespace micro_os_plus::micro_test_plus
      * one operand is true.
      */
     template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
     [[nodiscard]] constexpr auto
-    operator or (const Lhs_T& lhs, const Rhs_T& rhs);
+    operator or (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
@@ -278,9 +291,9 @@ namespace micro_os_plus::micro_test_plus
      * is false.
      */
     template <class T>
-      requires extension::is_op<T>
+      requires extension::is_op<std::remove_cvref_t<T>>
     [[nodiscard]] constexpr auto
-    operator not(const T& t);
+    operator not(T&& t);
 
     // ------------------------------------------------------------------------
   } // namespace operators

@@ -33,6 +33,10 @@
  * expectations and assertions. The C strings (`char` arrays, including the
  * string literals, and `char` pointers) are compared by content; the other
  * pointers and arrays are compared by address.
+ * The operands are not copied: the temporaries are moved into the
+ * returned expressions, and the named operands of class type are
+ * referred to, so the expressions must be checked before the named
+ * operands are destroyed, as they are in `expect (eq (a, b))`.
  * The logical combinators have descriptive names, since `and`, `or`, and
  * `not` are alternative tokens and cannot be used as identifiers.
  *
@@ -107,7 +111,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  eq (const Lhs_T& lhs, const Rhs_T& rhs);
+  eq (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
@@ -122,7 +126,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ne (const Lhs_T& lhs, const Rhs_T& rhs);
+  ne (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
@@ -137,7 +141,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  gt (const Lhs_T& lhs, const Rhs_T& rhs);
+  gt (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
@@ -153,7 +157,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ge (const Lhs_T& lhs, const Rhs_T& rhs);
+  ge (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
@@ -169,7 +173,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  lt (const Lhs_T& lhs, const Rhs_T& rhs);
+  lt (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-function-comparators
@@ -185,7 +189,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  le (const Lhs_T& lhs, const Rhs_T& rhs);
+  le (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
@@ -198,7 +202,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Expr_T>
   [[nodiscard]] constexpr auto
-  negate (const Expr_T& expr);
+  negate (Expr_T&& expr);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
@@ -214,7 +218,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  both (const Lhs_T& lhs, const Rhs_T& rhs);
+  both (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
@@ -230,7 +234,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  either (const Lhs_T& lhs, const Rhs_T& rhs);
+  either (Lhs_T&& lhs, Rhs_T&& rhs);
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

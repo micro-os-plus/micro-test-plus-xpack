@@ -105,8 +105,9 @@ namespace micro_os_plus::micro_test_plus
      * operation in the corresponding private members.
      */
     template <class T>
-    constexpr unary_op<T>::unary_op (const T& t, bool value)
-        : t_{ t }, value_{ value }
+    template <class U>
+    constexpr unary_op<T>::unary_op (U&& t, bool value)
+        : t_{ std::forward<U> (t) }, value_{ value }
     {
     }
 
@@ -142,9 +143,10 @@ namespace micro_os_plus::micro_test_plus
      * comparison in the corresponding private members.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr binary_op<Lhs_T, Rhs_T>::binary_op (const Lhs_T& lhs,
-                                                  const Rhs_T& rhs, bool value)
-        : lhs_{ lhs }, rhs_{ rhs }, value_{ value }
+    template <class L, class R>
+    constexpr binary_op<Lhs_T, Rhs_T>::binary_op (L&& lhs, R&& rhs, bool value)
+        : lhs_{ std::forward<L> (lhs) }, rhs_{ std::forward<R> (rhs) },
+          value_{ value }
     {
     }
 
@@ -359,16 +361,26 @@ namespace micro_os_plus::micro_test_plus
      *   they are.
      */
     template <class Lhs_T, class Rhs_T, class Compare_T>
-    constexpr compare_op<Lhs_T, Rhs_T, Compare_T>::compare_op (
-        const Lhs_T& lhs, const Rhs_T& rhs, Compare_T)
-        : binary_op<Lhs_T, Rhs_T>{ lhs, rhs, [&] () -> bool
+    template <class L, class R>
+    constexpr compare_op<Lhs_T, Rhs_T, Compare_T>::compare_op (L&& lhs,
+                                                               R&& rhs,
+                                                               Compare_T)
+        : binary_op<Lhs_T, Rhs_T>{ std::forward<L> (lhs),
+                                   std::forward<R> (rhs), [&] () -> bool
       {
-        if constexpr (detail::has_value<Lhs_T> and detail::has_value<Rhs_T>)
+        // The result is computed before the arguments are moved, since
+        // the base constructor is entered only after all its arguments
+        // are evaluated.
+        using lhs_type = std::remove_cvref_t<L>;
+        using rhs_type = std::remove_cvref_t<R>;
+
+        if constexpr (detail::has_value<lhs_type>
+                      and detail::has_value<rhs_type>)
           {
-            return Compare_T::apply (Lhs_T::value, Rhs_T::value);
+            return Compare_T::apply (lhs_type::value, rhs_type::value);
           }
-        else if constexpr ((extension::has_epsilon<Lhs_T>
-                            or extension::has_epsilon<Rhs_T>)
+        else if constexpr ((extension::has_epsilon<lhs_type>
+                            or extension::has_epsilon<rhs_type>)
                            and requires {
                                  Compare_T::within_tolerance_result;
                                })
@@ -396,10 +408,12 @@ namespace micro_os_plus::micro_test_plus
      * base class constructor.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr and_op<Lhs_T, Rhs_T>::and_op (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op<Lhs_T, Rhs_T>{
-            lhs, rhs, static_cast<bool> (lhs) and static_cast<bool> (rhs)
-          }
+    template <class L, class R>
+    constexpr and_op<Lhs_T, Rhs_T>::and_op (L&& lhs, R&& rhs)
+        : binary_op<Lhs_T, Rhs_T>{ std::forward<L> (lhs),
+                                   std::forward<R> (rhs),
+                                   static_cast<bool> (lhs)
+                                       and static_cast<bool> (rhs) }
     {
     }
 
@@ -412,10 +426,12 @@ namespace micro_os_plus::micro_test_plus
      * base class constructor.
      */
     template <class Lhs_T, class Rhs_T>
-    constexpr or_op<Lhs_T, Rhs_T>::or_op (const Lhs_T& lhs, const Rhs_T& rhs)
-        : binary_op<Lhs_T, Rhs_T>{
-            lhs, rhs, static_cast<bool> (lhs) or static_cast<bool> (rhs)
-          }
+    template <class L, class R>
+    constexpr or_op<Lhs_T, Rhs_T>::or_op (L&& lhs, R&& rhs)
+        : binary_op<Lhs_T, Rhs_T>{ std::forward<L> (lhs),
+                                   std::forward<R> (rhs),
+                                   static_cast<bool> (lhs)
+                                       or static_cast<bool> (rhs) }
     {
     }
 
@@ -427,8 +443,10 @@ namespace micro_os_plus::micro_test_plus
      * passes the result to the `unary_op` base class constructor.
      */
     template <class T>
-    constexpr not_op<T>::not_op (const T& t)
-        : unary_op<T>{ t, not static_cast<bool> (t) }
+    template <class U>
+      requires (not std::is_same_v<std::remove_cvref_t<U>, not_op<T>>)
+    constexpr not_op<T>::not_op (U&& t)
+        : unary_op<T>{ std::forward<U> (t), not static_cast<bool> (t) }
     {
     }
 
@@ -440,10 +458,11 @@ namespace micro_os_plus::micro_test_plus
      * the boolean result to the `unary_op` base class constructor.
      */
     template <class T, class Predicate_T>
-    constexpr predicate_op<T, Predicate_T>::predicate_op (const T& t,
-                                                          Predicate_T)
-        : unary_op<T>{ t, static_cast<bool> (
-                              Predicate_T::apply (detail::unwrap (t))) }
+    template <class U>
+    constexpr predicate_op<T, Predicate_T>::predicate_op (U&& t, Predicate_T)
+        : unary_op<T>{ std::forward<U> (t),
+                       static_cast<bool> (
+                           Predicate_T::apply (detail::unwrap (t))) }
     {
     }
 
@@ -855,39 +874,42 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Arrays of `char` are converted using their size as a bound, pointers
      * to `char` using the null terminator; the cv-qualifiers of the
-     * characters are ignored. Every other operand is returned by
-     * reference, unchanged.
+     * characters are ignored. Every other operand is forwarded, unchanged,
+     * as an lvalue or an rvalue reference.
      */
     template <class T>
     constexpr auto
-    as_operand (const T& t) noexcept -> decltype (auto)
+    as_operand (T&& t) noexcept -> decltype (auto)
     {
-      if constexpr (std::is_array_v<T>
+      using type = std::remove_cvref_t<T>;
+
+      if constexpr (std::is_array_v<type>
                     && std::is_same_v<
-                        std::remove_cv_t<std::remove_extent_t<T>>, char>)
+                        std::remove_cv_t<std::remove_extent_t<type>>, char>)
         {
-          return c_string{ t, std::extent_v<T> };
+          return c_string{ t, std::extent_v<type> };
         }
-      else if constexpr (std::is_pointer_v<T>
+      else if constexpr (std::is_pointer_v<type>
                          && std::is_same_v<
-                             std::remove_cv_t<std::remove_pointer_t<T>>, char>)
+                             std::remove_cv_t<std::remove_pointer_t<type>>,
+                             char>)
         {
           return c_string{ t };
         }
-      else if constexpr (std::is_array_v<T>)
+      else if constexpr (std::is_array_v<type>)
         {
           // Other arrays (e.g. byte buffers) are compared by address, as
           // pointers to their first element.
-          return static_cast<const std::remove_extent_t<T>*> (t);
+          return static_cast<const std::remove_extent_t<type>*> (t);
         }
-      else if constexpr (std::is_function_v<T>)
+      else if constexpr (std::is_function_v<type>)
         {
           // Functions are compared by address, as function pointers.
           return &t;
         }
       else
         {
-          return (t);
+          return std::forward<T> (t);
         }
     }
 

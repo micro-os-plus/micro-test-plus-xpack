@@ -3059,11 +3059,15 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
     ok 25 - Callable arguments # { passed, 5 checks }
     # Subtest: Operand copies
         ok 1 - plain operands
-        ok 2 - plain operands copied once
+        ok 2 - plain operands not copied
         ok 3 - wrapped operand
-        ok 4 - wrapped operand copied once
-        1..4
-    ok 26 - Operand copies # { passed, 4 checks }
+        ok 4 - wrapped operand not copied
+        ok 5 - nested comparators
+        ok 6 - nested comparators not copied
+        ok 7 - stored comparator
+        ok 8 - temporary operand stored once
+        1..8
+    ok 26 - Operand copies # { passed, 8 checks }
     # Subtest: Test case lifetime
         ok 1 - test cases destroyed
         ok 2 - test cases counted
@@ -3099,7 +3103,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         1..7
     ok 31 - Test case and suite names # { passed, 7 checks }
     1..31
-not ok 9 - Miscellaneous suite # { FAILED, 154 checks passed, 26 failed, in 32 test cases }
+not ok 9 - Miscellaneous suite # { FAILED, 158 checks passed, 26 failed, in 32 test cases }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3136,48 +3140,49 @@ not ok 9 - Miscellaneous suite # { FAILED, 154 checks passed, 26 failed, in 32 t
             fileName: operators.cpp
             lineNumber: 78
           ...
-        ok 12 - (actual == 42) and (actual == 42.0)
-        not ok 13 - (actual == 42) and (actual != 42.0)
+        ok 12 - not not (actual == 42)
+        ok 13 - (actual == 42) and (actual == 42.0)
+        not ok 14 - (actual == 42) and (actual != 42.0)
           ---
           condition: "(42 == 42 and 42.0f != 42.0)"
           at:
             fileName: operators.cpp
             lineNumber: 86
           ...
-        not ok 14 - (actual != 42) and (actual == 42.0)
+        not ok 15 - (actual != 42) and (actual == 42.0)
           ---
           condition: "(42 != 42 and 42.0f == 42.0)"
           at:
             fileName: operators.cpp
             lineNumber: 91
           ...
-        not ok 15 - (actual != 42) and (actual != 42.0)
+        not ok 16 - (actual != 42) and (actual != 42.0)
           ---
           condition: "(42 != 42 and 42.0f != 42.0)"
           at:
             fileName: operators.cpp
             lineNumber: 96
           ...
-        ok 16 - (42 == 42 and 42.0f == 42.0)
-        not ok 17
+        ok 17 - (42 == 42 and 42.0f == 42.0)
+        not ok 18
           ---
           condition: "(42 == 42 and 42.0f != 42.0)"
           at:
             fileName: operators.cpp
             lineNumber: 105
           ...
-        ok 18 - (actual == 42) or (actual == 42.0)
-        ok 19 - (actual == 42) or (actual != 42.0)
-        ok 20 - (actual != 42) or (actual == 42.0)
-        not ok 21 - (actual != 42) or (actual != 42.0)
+        ok 19 - (actual == 42) or (actual == 42.0)
+        ok 20 - (actual == 42) or (actual != 42.0)
+        ok 21 - (actual != 42) or (actual == 42.0)
+        not ok 22 - (actual != 42) or (actual != 42.0)
           ---
           condition: "(42 != 42 or 42.0f != 42.0f)"
           at:
             fileName: operators.cpp
             lineNumber: 124
           ...
-        1..21
-    not ok 1 - Operators # { FAILED, 12 checks passed, 9 failed }
+        1..22
+    not ok 1 - Operators # { FAILED, 13 checks passed, 9 failed }
     # Subtest: String view operators
         ok 1 - equal string views with ==
         not ok 2 - unequal string views with ==
@@ -3239,7 +3244,7 @@ not ok 9 - Miscellaneous suite # { FAILED, 154 checks passed, 26 failed, in 32 t
         1..10
     not ok 3 - Named boolean literals # { FAILED, 5 checks passed, 5 failed }
     1..3
-not ok 10 - Operators suite # { FAILED, 19 checks passed, 16 failed, in 3 test cases }
+not ok 10 - Operators suite # { FAILED, 20 checks passed, 16 failed, in 3 test cases }
 # Subtest: Stopwatch suite
     # Subtest: stopwatch::start() and stop()
         ok 1 - fresh: has_elapsed false
@@ -3342,4 +3347,4 @@ ok 11 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 12 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..12
-# { total: 563 checks passed, 350 failed, in 101 test cases, 12 test suites }
+# { total: 568 checks passed, 350 failed, in 101 test cases, 12 test suites }

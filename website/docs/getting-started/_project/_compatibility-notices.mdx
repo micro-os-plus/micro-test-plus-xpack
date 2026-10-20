@@ -394,6 +394,25 @@ only as long as the wrapper: in
 `const auto& s = mt::to_t<std::string>{ str }.get ();`, `s` refers to a
 destroyed temporary. Store the result by value (`auto s = ...`) instead.
 
+The comparators no longer copy their operands: `eq()`, `ne()`,
+`gt()`, `ge()`, `lt()`, `le()`, `both()`, `either()`, `negate()`, and
+the operators of the `operators` namespace move the temporaries into the
+returned expression, and refer to the named operands of class type,
+like the strings and the containers, and to the nested expressions;
+the scalars are still copied. The checks are not affected, since an
+expression is evaluated and reported in the statement that builds it.
+An expression kept in a variable, as in `auto op = mt::eq (v, w);`, now
+refers to `v` and `w`, and must be checked before they are destroyed;
+an expression built from a temporary, as in
+`auto op = mt::eq (f (), w);`, owns the result of `f()`. The
+`extension::compare_op` and `extension::predicate_op` templates store
+their operands in the same way, so an expression that the application
+builds from the `const&` parameters of a function refers to the
+arguments of that function. Also, a double negation with the `not`
+operator, as in `not not (x == 1_i)`, was evaluated as a single
+negation, because the inner negation was copied; it is now negated
+twice.
+
 The deprecated entities, previously marked as such only in the
 documentation, now carry the `[[deprecated]]` attribute, so the
 compiler warns where they are used: the runner constructor with the top

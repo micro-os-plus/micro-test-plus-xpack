@@ -173,7 +173,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
     // An exception escaping a test case is reported as a failed check, at
     // the location of the test() call, and the run continues with the next
-    // test case (API-REVIEW.md #14).
+    // test case.
     {
       const size_t failed_test_cases_before
           = current_suite_totals.failed_test_cases ();
@@ -231,7 +231,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
     // A failed require() stops only the current test case, as the fatal
     // assertions of the other frameworks do, and the run continues with the
-    // next test case (API-REVIEW.md #22).
+    // next test case.
     {
       const size_t failed_test_cases_before
           = current_suite_totals.failed_test_cases ();
@@ -309,7 +309,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
       // An exception that escapes a suite body, outside its test cases, is
       // reported as a failed check of the suite, and the following suites
-      // still run (API-REVIEW.md #5).
+      // still run.
       ts.test ("Exception in a suite body", [] (auto& t)
         {
           runner_options options{};
@@ -361,7 +361,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 // An exception that escapes the suite body, outside its test cases, is
 // reported as `unexpected exception in the suite body: boom`, after the
 // test cases already run; the following test cases are not run, and the
-// session continues with the next suite (API-REVIEW.md #5). The body must
+// session continues with the next suite. The body must
 // not be declared `noexcept`, which would terminate the program.
 static static_suite ts_exceptions_body{ "Exceptions suite body", tr,
                                         [] (auto& ts)

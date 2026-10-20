@@ -1197,6 +1197,18 @@ within the tolerance of the wrapper, the comparison gives this result,
 without calling `apply()`, as `eq()` does (`true`) and `ne()` does
 (`false`); without it, the tolerance is ignored.
 
+The expressions do not copy their operands: a temporary is moved into
+the expression, and a named operand of class type is referred to. The
+functions above receive their operands as `const&` parameters, which
+are named, so their expressions refer to the arguments of the call;
+this is safe when the expression is checked in the same statement, as
+in `t.expect (app::divides (5, x))`, but an expression kept in a
+variable, from a call with a temporary argument, would refer to a
+destroyed object. To also store such expressions, take the operands as
+forwarding references (`Lhs_T&& lhs`) and pass them on with
+`std::forward<Lhs_T> (lhs)`, as `eq()` does; the concepts of a custom
+operator then apply to `std::remove_cvref_t<Lhs_T>`.
+
 A helper that passes its argument on to `expect()` or `require()` can be
 constrained with `extension::checkable`, as these functions are, and one
 that passes it on to the message operator with `extension::printable`.

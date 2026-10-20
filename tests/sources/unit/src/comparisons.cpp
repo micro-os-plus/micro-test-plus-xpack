@@ -429,7 +429,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     // The C strings (`char` arrays, string literals, and `char` pointers)
     // are compared by content, also with `std::string`; a null pointer is
-    // equal only to another null pointer (API-REVIEW.md #12).
+    // equal only to another null pointer.
     ts.test ("C string comparisons", [] (auto& t)
       {
         const char* actual = compute_abc ();

@@ -1000,10 +1000,14 @@ break	tab == x)
     ✓ Callable arguments - passed (5 checks)
     • Operand copies
         ✓ plain operands
-        ✓ plain operands copied once
+        ✓ plain operands not copied
         ✓ wrapped operand
-        ✓ wrapped operand copied once
-    ✓ Operand copies - passed (4 checks)
+        ✓ wrapped operand not copied
+        ✓ nested comparators
+        ✓ nested comparators not copied
+        ✓ stored comparator
+        ✓ temporary operand stored once
+    ✓ Operand copies - passed (8 checks)
     • Test case lifetime
         ✓ test cases destroyed
         ✓ test cases counted
@@ -1033,7 +1037,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (154 checks passed, 26 failed, in 32 test cases)
+✗ Miscellaneous suite - FAILED (158 checks passed, 26 failed, in 32 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1047,6 +1051,7 @@ break	tab == x)
         ✓ actual >= 42
         ✓ not (actual != 42)
         ✗ not (actual == 42) FAILED (operators.cpp:78, not 42 == 42)
+        ✓ not not (actual == 42)
         ✓ (actual == 42) and (actual == 42.0)
         ✗ (actual == 42) and (actual != 42.0) FAILED (operators.cpp:86, (42 == 42 and 42.0f != 42.0))
         ✗ (actual != 42) and (actual == 42.0) FAILED (operators.cpp:91, (42 != 42 and 42.0f == 42.0))
@@ -1057,7 +1062,7 @@ break	tab == x)
         ✓ (actual == 42) or (actual != 42.0)
         ✓ (actual != 42) or (actual == 42.0)
         ✗ (actual != 42) or (actual != 42.0) FAILED (operators.cpp:124, (42 != 42 or 42.0f != 42.0f))
-    ✗ Operators - FAILED (12 checks passed, 9 failed)
+    ✗ Operators - FAILED (13 checks passed, 9 failed)
     • String view operators
         ✓ equal string views with ==
         ✗ unequal string views with == FAILED (operators.cpp:149)
@@ -1076,7 +1081,7 @@ break	tab == x)
         ✗ not FAILED (operators.cpp:206, not named)
         ✓ two named literals
     ✗ Named boolean literals - FAILED (5 checks passed, 5 failed)
-✗ Operators suite - FAILED (19 checks passed, 16 failed, in 3 test cases)
+✗ Operators suite - FAILED (20 checks passed, 16 failed, in 3 test cases)
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -1143,4 +1148,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 563 checks passed, 350 failed, in 101 test cases, 12 test suites
+✗ Total: 568 checks passed, 350 failed, in 101 test cases, 12 test suites

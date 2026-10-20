@@ -64,6 +64,7 @@
 #include <string>
 #include <string_view>
 #include <type_traits>
+#include <utility>
 
 // ----------------------------------------------------------------------------
 
@@ -159,6 +160,36 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
+     * @brief The type with which an expression stores an operand.
+     *
+     * @details
+     * Applied by the deduction guides and the factory functions to the
+     * type deduced for a forwarding reference: `X&` (or `const X&`) for
+     * an lvalue, `X` for an rvalue.
+     *
+     * An lvalue of class type is stored as a `const` reference, so that
+     * comparing two named containers does not copy them, and a nested
+     * expression stores a reference to its operand expressions. An
+     * rvalue is moved into the expression, so that an expression that
+     * outlives the statement, like `auto op = eq (f (), 1);`, does not
+     * refer to a destroyed temporary. The scalars are always stored by
+     * value, since a copy is as cheap as a reference.
+     *
+     * A reference remains valid only as long as the named operand; this
+     * is always the case within the statement that checks the
+     * expression.
+     *
+     * @tparam T The type deduced for a forwarding reference.
+     */
+    template <class T>
+    using stored_operand_t = std::conditional_t<
+        std::is_lvalue_reference_v<T>
+            and not std::is_scalar_v<std::remove_cvref_t<T>>,
+        const std::remove_reference_t<T>&, std::remove_cvref_t<T>>;
+
+    // ========================================================================
+
+    /**
      * @brief Common base struct template for unary comparators.
      *
      * @details
@@ -168,7 +199,8 @@ namespace micro_os_plus::micro_test_plus
      * construction time, enabling consistent handling and reporting of
      * operations throughout the assertion framework.
      *
-     * @tparam T The type of the operand.
+     * @tparam T The type of the stored operand, either the operand type,
+     * or a `const` reference to it (see `stored_operand_t`).
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -179,10 +211,17 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs a unary comparator with the given operand and
        * pre-computed result.
        *
+       * @details
+       * The operand is forwarded to the member, so that an rvalue is
+       * moved, not copied.
+       *
+       * @tparam U The type of the operand argument.
+       *
        * @param t The operand.
        * @param value The pre-computed boolean result of the operation.
        */
-      constexpr unary_op (const T& t, bool value);
+      template <class U>
+      constexpr unary_op (U&& t, bool value);
 
       /**
        * @brief Conversion operator to boolean.
@@ -213,10 +252,11 @@ namespace micro_os_plus::micro_test_plus
        * @brief Stores the operand.
        *
        * @details
-       * Stored by value, so that it remains available for reporting after
-       * the original expression goes out of scope.
+       * Either a value, moved from a temporary, or a `const` reference to
+       * a named operand (see `stored_operand_t`). It is not `const`, so
+       * that a temporary expression can be moved into an enclosing one.
        */
-      const T t_{};
+      T t_;
 
       /**
        * @brief Stores the result of the operation.
@@ -241,8 +281,10 @@ namespace micro_os_plus::micro_test_plus
      * reporting and composition of complex assertions without repeated
      * computation.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
+     * @tparam Lhs_T The type of the stored left-hand operand, either the
+     * operand type, or a `const` reference to it (see `stored_operand_t`).
+     * @tparam Rhs_T The type of the stored right-hand operand, either the
+     * operand type, or a `const` reference to it.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -253,11 +295,19 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs a binary comparator with the given operands and
        * pre-computed result.
        *
+       * @details
+       * The operands are forwarded to the members, so that the rvalues are
+       * moved, not copied.
+       *
+       * @tparam L The type of the left-hand operand argument.
+       * @tparam R The type of the right-hand operand argument.
+       *
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        * @param value The pre-computed boolean result of the comparison.
        */
-      constexpr binary_op (const Lhs_T& lhs, const Rhs_T& rhs, bool value);
+      template <class L, class R>
+      constexpr binary_op (L&& lhs, R&& rhs, bool value);
 
       /**
        * @brief Conversion operator to boolean.
@@ -301,22 +351,21 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Stores the left-hand operand.
        *
-       * @note Operands are stored by value, so that an operator may
-       * outlive the expressions it was built from; a large container is
-       * copied into this member, and again when the comparator is nested
-       * in a logical operator.
+       * @details
+       * Either a value, moved from a temporary, or a `const` reference to
+       * a named operand (see `stored_operand_t`), so that a named
+       * container is not copied. It is not `const`, so that a temporary
+       * expression can be moved into an enclosing one.
        */
-      const Lhs_T lhs_{};
+      Lhs_T lhs_;
 
       /**
        * @brief Stores the right-hand operand.
        *
-       * @note Operands are stored by value, so that an operator may
-       * outlive the expressions it was built from; a large container is
-       * copied into this member, and again when the comparator is nested
-       * in a logical operator.
+       * @details
+       * Stored as the left-hand operand is.
        */
-      const Rhs_T rhs_{};
+      Rhs_T rhs_;
 
       /**
        * @brief Stores the result of the comparison.
@@ -656,8 +705,16 @@ namespace micro_os_plus::micro_test_plus
      *   this result, as for the built-in comparators; when absent, the
      *   tolerance is ignored.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
+     * The operands are not copied: the temporaries are moved into the
+     * comparator, and the named operands of class type are referred to
+     * (see `stored_operand_t`). A comparator built in a function from
+     * its `const&` parameters refers to the arguments of that function,
+     * so it must be checked in the statement that calls the function.
+     *
+     * @tparam Lhs_T The type of the stored left-hand operand, either the
+     * operand type, or a `const` reference to it.
+     * @tparam Rhs_T The type of the stored right-hand operand, either the
+     * operand type, or a `const` reference to it.
      * @tparam Compare_T The tag that defines the comparison.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
@@ -669,12 +726,18 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs a comparator for the given operands.
        *
        * @details
-       * The tag argument is used only to deduce `Compare_T`.
+       * The result is computed from the arguments, before they are
+       * forwarded to the base. The tag argument is used only to deduce
+       * `Compare_T`.
+       *
+       * @tparam L The type of the left-hand operand argument.
+       * @tparam R The type of the right-hand operand argument.
        *
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr compare_op (const Lhs_T& lhs, const Rhs_T& rhs, Compare_T);
+      template <class L, class R>
+      constexpr compare_op (L&& lhs, R&& rhs, Compare_T);
     };
 
     /**
@@ -683,11 +746,13 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Deduces `Lhs_T`, `Rhs_T`, and `Compare_T` from the constructor
      * arguments, so that `compare_op{ lhs, rhs, equal_to{} }` can be written
-     * without explicit template arguments.
+     * without explicit template arguments. The operand types are deduced
+     * as forwarding references, and stored as `stored_operand_t` selects.
      */
     template <class Lhs_T, class Rhs_T, class Compare_T>
-    compare_op (const Lhs_T&, const Rhs_T&, Compare_T)
-        -> compare_op<Lhs_T, Rhs_T, Compare_T>;
+    compare_op (Lhs_T&&, Rhs_T&&, Compare_T)
+        -> compare_op<stored_operand_t<Lhs_T>, stored_operand_t<Rhs_T>,
+                      Compare_T>;
 
     // ========================================================================
 
@@ -701,8 +766,14 @@ namespace micro_os_plus::micro_test_plus
      * whole, with reporting that shows the combined result and individual
      * operand outcomes.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
+     * The sub-expressions are not copied: the temporaries are moved into
+     * the comparator, and the named ones are referred to (see
+     * `stored_operand_t`).
+     *
+     * @tparam Lhs_T The type of the stored left-hand sub-expression,
+     * either its type, or a `const` reference to it.
+     * @tparam Rhs_T The type of the stored right-hand sub-expression,
+     * either its type, or a `const` reference to it.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -712,10 +783,18 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a logical AND comparator for the given operands.
        *
+       * @details
+       * The result is computed from the arguments, before they are
+       * forwarded to the base.
+       *
+       * @tparam L The type of the left-hand operand argument.
+       * @tparam R The type of the right-hand operand argument.
+       *
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr and_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      template <class L, class R>
+      constexpr and_op (L&& lhs, R&& rhs);
     };
 
     /**
@@ -724,9 +803,12 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
      * `and_op{ lhs, rhs }` can be written without explicit template arguments.
+     * The operand types are deduced as forwarding references, and stored
+     * as `stored_operand_t` selects.
      */
     template <typename Lhs_T, typename Rhs_T>
-    and_op (const Lhs_T&, const Rhs_T&) -> and_op<Lhs_T, Rhs_T>;
+    and_op (Lhs_T&&, Rhs_T&&)
+        -> and_op<stored_operand_t<Lhs_T>, stored_operand_t<Rhs_T>>;
 
     // ========================================================================
 
@@ -740,8 +822,14 @@ namespace micro_os_plus::micro_test_plus
      * whole, with reporting that shows the combined result and individual
      * operand outcomes.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
+     * The sub-expressions are not copied: the temporaries are moved into
+     * the comparator, and the named ones are referred to (see
+     * `stored_operand_t`).
+     *
+     * @tparam Lhs_T The type of the stored left-hand sub-expression,
+     * either its type, or a `const` reference to it.
+     * @tparam Rhs_T The type of the stored right-hand sub-expression,
+     * either its type, or a `const` reference to it.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -751,10 +839,18 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a logical OR comparator for the given operands.
        *
+       * @details
+       * The result is computed from the arguments, before they are
+       * forwarded to the base.
+       *
+       * @tparam L The type of the left-hand operand argument.
+       * @tparam R The type of the right-hand operand argument.
+       *
        * @param lhs The left-hand operand.
        * @param rhs The right-hand operand.
        */
-      constexpr or_op (const Lhs_T& lhs = {}, const Rhs_T& rhs = {});
+      template <class L, class R>
+      constexpr or_op (L&& lhs, R&& rhs);
     };
 
     /**
@@ -763,9 +859,12 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Deduces `Lhs_T` and `Rhs_T` from the constructor arguments, so that
      * `or_op{ lhs, rhs }` can be written without explicit template arguments.
+     * The operand types are deduced as forwarding references, and stored
+     * as `stored_operand_t` selects.
      */
     template <typename Lhs_T, typename Rhs_T>
-    or_op (const Lhs_T&, const Rhs_T&) -> or_op<Lhs_T, Rhs_T>;
+    or_op (Lhs_T&&, Rhs_T&&)
+        -> or_op<stored_operand_t<Lhs_T>, stored_operand_t<Rhs_T>>;
 
     // ========================================================================
 
@@ -778,7 +877,18 @@ namespace micro_os_plus::micro_test_plus
      * negation result is computed at construction time, ensuring consistent
      * reporting throughout the assertion framework.
      *
-     * @tparam T The type of the operand.
+     * The sub-expression is not copied: a temporary is moved into the
+     * comparator, and a named one is referred to (see
+     * `stored_operand_t`).
+     *
+     * There is no deduction guide: with a single argument that is itself
+     * a `not_op`, the class template argument deduction prefers the copy
+     * deduction candidate, so `not_op{ inner }` would copy `inner`
+     * instead of negating it. Name the template argument instead, as
+     * `not_op<stored_operand_t<T>>{ t }`.
+     *
+     * @tparam T The type of the stored sub-expression, either its type,
+     * or a `const` reference to it.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -788,20 +898,19 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a logical NOT comparator for the given operand.
        *
+       * @details
+       * The result is computed from the argument, before it is forwarded
+       * to the base. The constraint leaves the copies and the moves of a
+       * `not_op` to the implicit constructors.
+       *
+       * @tparam U The type of the operand argument.
+       *
        * @param t The operand to be negated.
        */
-      explicit constexpr not_op (const T& t = {});
+      template <class U>
+        requires (not std::is_same_v<std::remove_cvref_t<U>, not_op<T>>)
+      explicit constexpr not_op (U&& t);
     };
-
-    /**
-     * @brief Deduction guide for the logical NOT comparator.
-     *
-     * @details
-     * Deduces `T` from the constructor argument, so that `not_op{ t }` can be
-     * written without an explicit template argument.
-     */
-    template <typename T>
-    not_op (const T&) -> not_op<T>;
 
     // ========================================================================
 
@@ -828,7 +937,14 @@ namespace micro_os_plus::micro_test_plus
      * template arguments are deduced, for example
      * `predicate_op{ value, even{} }`.
      *
-     * @tparam T The type of the operand.
+     * The operand is not copied: a temporary is moved into the
+     * predicate, and a named operand of class type is referred to (see
+     * `stored_operand_t`). A predicate built in a function from its
+     * `const&` parameter refers to the argument of that function, so it
+     * must be checked in the statement that calls the function.
+     *
+     * @tparam T The type of the stored operand, either the operand type,
+     * or a `const` reference to it.
      * @tparam Predicate_T The tag that defines the predicate.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
@@ -840,11 +956,16 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs a predicate for the given operand.
        *
        * @details
-       * The tag argument is used only to deduce `Predicate_T`.
+       * The result is computed from the argument, before it is forwarded
+       * to the base. The tag argument is used only to deduce
+       * `Predicate_T`.
+       *
+       * @tparam U The type of the operand argument.
        *
        * @param t The operand.
        */
-      constexpr predicate_op (const T& t, Predicate_T);
+      template <class U>
+      constexpr predicate_op (U&& t, Predicate_T);
     };
 
     /**
@@ -853,10 +974,12 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Deduces `T` and `Predicate_T` from the constructor arguments, so that
      * `predicate_op{ t, even{} }` can be written without explicit template
-     * arguments.
+     * arguments. The operand type is deduced as a forwarding reference,
+     * and stored as `stored_operand_t` selects.
      */
     template <class T, class Predicate_T>
-    predicate_op (const T&, Predicate_T) -> predicate_op<T, Predicate_T>;
+    predicate_op (T&&, Predicate_T)
+        -> predicate_op<stored_operand_t<T>, Predicate_T>;
 
     // ========================================================================
 
@@ -1190,15 +1313,17 @@ namespace micro_os_plus::micro_test_plus
      * function pointers, and all other operands are returned unchanged, so
      * the other pointers, arrays, and functions are compared by address.
      *
-     * @tparam T The type of the operand.
+     * The other operands are forwarded, so that the comparator moves a
+     * temporary, and refers to a named operand.
+     *
+     * @tparam T The type deduced for the forwarding reference.
      *
      * @param t The operand.
-     * @return A `c_string` for the C strings, otherwise a reference to
-     * `t`.
+     * @return A `c_string` for the C strings, otherwise `t`, forwarded.
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    as_operand (const T& t) noexcept -> decltype (auto);
+    as_operand (T&& t) noexcept -> decltype (auto);
 
     // ------------------------------------------------------------------------
   } // namespace detail
