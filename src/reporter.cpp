@@ -18,7 +18,7 @@
 /**
  * @file
  * @brief C++ source file with implementations for the µTest++ test reporter
- * methods.
+ * member functions.
  *
  * @details
  * This source file contains the core implementations for the test reporting
@@ -156,10 +156,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This method appends a newline character to the internal output buffer of
-   * the `reporter`. The buffer itself is written later, by the concrete
-   * reporters, at the end of each test case or suite, which then also
-   * flush the streams.
+   * This member function appends a newline character to the internal output
+   * buffer of the `reporter`. The buffer itself is written later, by the
+   * concrete reporters, at the end of each test case or suite, which then
+   * also flush the streams.
    */
   void
   reporter::end_line (void)
@@ -169,8 +169,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This method writes the contents of the internal output buffer to the
-   * console without appending a newline character. The buffer is not
+   * This member function writes the contents of the internal output buffer to
+   * the console without appending a newline character. The buffer is not
    * cleared; the caller is responsible for clearing it when appropriate.
    *
    * The buffer is written with its size, not as a C string, so that a
@@ -367,7 +367,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This method flushes the `stdout` stream and, if open, the output
+   * This member function flushes the `stdout` stream and, if open, the output
    * file, so that everything already written to them becomes visible. It
    * does not write the contents of the internal buffer.
    */

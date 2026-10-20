@@ -318,7 +318,7 @@ After instantiation, the runner **must** be initialised, usually by passing the 
 auto& ts = tr.initialise(argc, argv, "Main");
 ```
 
-The initialisation method returns the default top suite, which is required later to create test cases.
+The `initialise()` member function returns the default top suite, which is required later to create test cases.
 
 On platforms without a command line, such as embedded applications without semihosting arguments, the runner can be initialised with the options set directly, starting from the defaults, instead of the main arguments:
 
@@ -334,7 +334,7 @@ The members of `runner_options` correspond to the command-line options: `selecte
 
 #### Test result
 
-To run the registered suites, end the session, and return the test result as the process exit code, the runner provides the `run()` method; the session runs only once, and later calls return the same result:
+To run the registered suites, end the session, and return the test result as the process exit code, the runner provides the `run()` member function; the session runs only once, and later calls return the same result:
 
 ```cpp
 return tr.run ();
@@ -447,7 +447,7 @@ Refer to the [Test Runners](/docs/api/groups/micro-os-plus-micro-test-plus-runne
 
 Test cases are collections of checks to be executed within the same environment.
 
-Test case objects can be created using the `test()` method provided by the test suite object:
+Test case objects can be created using the `test()` member function provided by the test suite object:
 
 ```cpp
 template <typename Callable_T, typename... Args_T>
@@ -523,7 +523,7 @@ Refer to the [Test Cases](/docs/api/groups/micro-os-plus-micro-test-plus-test-ca
 Expectations and requirements are checks that evaluate expressions
 yielding boolean values; they differ in what happens after a failure.
 
-Both are created with methods of the test case objects, and return an
+Both are created with member functions of the test case objects, and return an
 object to which a message can be appended with `<<`; the check is
 reported at the end of the statement:
 
@@ -1241,7 +1241,7 @@ suite_function (mt::suite& ts)
 static mt::static_suite suite = { "Static suite", sr, suite_function };
 ```
 
-The implementation uses the C++ static constructors that are performed before the `main()` function is called. The order of registration is not defined; to provide a certain degree of predictability, the framework runs all suites when the `run()` method is called, after **ordering them by name**.
+The implementation uses the C++ static constructors that are performed before the `main()` function is called. The order of registration is not defined; to provide a certain degree of predictability, the framework runs all suites when the `run()` member function is called, after **ordering them by name**.
 
 The names are compared byte by byte, as with `strcmp()`: the comparison is case-sensitive (`"Zeta"` runs before `"alpha"`), and numbers are not compared by value (`"Suite 10"` runs before `"Suite 2"`). To run the suites in a given order, start their names with zero-padded numbers (`"01 - Init"`, `"02 - Run"`), and use the same case.
 

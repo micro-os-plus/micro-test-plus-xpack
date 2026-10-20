@@ -22,9 +22,9 @@
  *
  * @details
  * This header provides the out-of-class template and inline implementations
- * for all methods declared in the value wrapper struct templates in
+ * for all member functions declared in the value wrapper struct templates in
  * `values.h`. It defines the bodies of the constructors, conversion
- * operators, and accessor methods for `value_base`, `integral_constant`,
+ * operators, and accessors for `value_base`, `integral_constant`,
  * `floating_point_constant`, the primary `value<T>` template, and
  * `named_bool`. The
  * constructors of the floating point specialisation of `value<T>` are
@@ -32,8 +32,8 @@
  * constrained partial specialisations.
  *
  * Separating the implementations from the declarations keeps `values.h`
- * concise and focused on the interface, whilst grouping all method bodies
- * here for maintainability.
+ * concise and focused on the interface, whilst grouping all member function
+ * bodies here for maintainability.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail` namespace, ensuring clear

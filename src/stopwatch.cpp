@@ -118,7 +118,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts the differences of the seconds and of the nanoseconds
-   * fields to a single nanoseconds duration, so that a negative
+   * members to a single nanoseconds duration, so that a negative
    * nanoseconds difference borrows from the seconds without explicit
    * normalisation, and truncates the result to whole microseconds. If
    * `has_elapsed()` is `false`, the result is zero.

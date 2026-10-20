@@ -18,14 +18,15 @@
 /**
  * @file
  * @brief C++ source file with implementations for the µTest++ test
- * hierarchy methods.
+ * hierarchy member functions.
  *
  * @details
  * This source file contains the non-template implementations for the test
  * hierarchy of the µTest++ framework: the constructors and destructors, the
- * `run()` methods of the test cases and suites, which call the reporter
- * before and after invoking the stored callable, and the registration of
- * the child test cases, including the accumulation of their totals.
+ * `run()` member functions of the test cases and suites, which call the
+ * reporter before and after invoking the stored callable, and the
+ * registration of the child test cases, including the accumulation of their
+ * totals.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk

@@ -115,7 +115,8 @@ extern micro_os_plus::micro_test_plus::runner tr;
 
 // ----------------------------------------------------------------------------
 
-// Each test case exercises a method or a family of methods.
+// Each test case exercises a member function or a family of member
+// functions.
 // After each test case, the caller checks if the counts of
 // passed/failed test conditions matches the local counts.
 

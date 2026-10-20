@@ -21,7 +21,7 @@
  * counters.
  *
  * @details
- * This header provides the inline method bodies for the `counters`
+ * This header provides the inline member function bodies for the `counters`
  * class, separated from the class declaration in `counters.h` to
  * enforce the project convention that declarations reside in headers
  * and implementations reside in inline files.

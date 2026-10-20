@@ -24,8 +24,8 @@
  * This header provides the inline and template implementations for the test
  * hierarchy used within the µTest++ framework: the accessors of the base
  * classes, the constructors that bind the callable objects and their
- * arguments, the `test()` methods that create and run test cases, and the
- * `expect()` and `require()` checks.
+ * arguments, the `test()` member functions that create and run test cases,
+ * and the `expect()` and `require()` checks.
  *
  * When additional arguments are given, a lambda captures copies of them,
  * allowing versatile test initialisation with arbitrary callable types and
@@ -185,11 +185,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Each call to `test()` invokes this method before constructing the new
-     * `test_case`, and each check invokes it from the check result
-     * destructor, when the check is reported, so the numbers form a
-     * strictly increasing, one-based sequence of TAP test points, in output
-     * order.
+     * Each call to `test()` invokes this member function before constructing
+     * the new `test_case`, and each check invokes it from the check result
+     * destructor, when the check is reported, so the numbers form a strictly
+     * increasing, one-based sequence of TAP test points, in output order.
      */
     inline size_t
     runnable_base::next_test_point_number (void) noexcept

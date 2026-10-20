@@ -138,9 +138,9 @@ namespace micro_os_plus::micro_test_plus
      * invocation, supporting enhanced diagnostics and reporting within the
      * µTest++ framework.
      *
-     * The static `current()` method captures the current source location,
-     * using compiler built-ins where available, or defaulting to `"unknown"`
-     * and zero otherwise.
+     * The static member function `current()` captures the current source
+     * location, using compiler built-ins where available, or defaulting to
+     * `"unknown"` and zero otherwise.
      *
      * @since 3.0.0
      *

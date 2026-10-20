@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * a new class derived from `reporter`, and an extension of the runner
    * to create it.
    *
-   * All members and methods are defined within the
+   * All members are defined within the
    * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
    * are internal to the framework.
    *

@@ -147,9 +147,9 @@ namespace micro_os_plus::micro_test_plus
    * compare numbers by value (`"Suite 10"` before `"Suite 2"`);
    * zero-padded numeric prefixes (`"01 - Init"`) give an explicit order.
    *
-   * The test runner provides methods for initialising the test environment
-   * (including the creation of the reporter selected on the command line,
-   * or by the `runner_options` passed to `initialise()`),
+   * The test runner provides member functions for initialising the test
+   * environment (including the creation of the reporter selected on the
+   * command line, or by the `runner_options` passed to `initialise()`),
    * registering test suites, and determining the overall test result via an
    * exit code. It also offers an abort mechanism for terminating test
    * execution in exceptional circumstances.
@@ -158,7 +158,7 @@ namespace micro_os_plus::micro_test_plus
    * (the name shown in the reports belongs to the top suite), and it owns
    * the session totals, which accumulate the totals of all the suites.
    *
-   * All members and methods are defined within the
+   * All members are defined within the
    * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
    * user code and minimising the risk of naming conflicts.
    *

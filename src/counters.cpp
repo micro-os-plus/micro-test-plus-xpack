@@ -18,11 +18,11 @@
 /**
  * @file
  * @brief C++ source file with implementations for the µTest++ counters
- * methods.
+ * member functions.
  *
  * @details
  * This source file contains the implementation of the
- * `counters::operator+=` method, which aggregates test result
+ * `counters::operator+=` member function, which aggregates test result
  * counters from one `counters` instance into another. It
  * accumulates passed checks, failed checks, and the executed, failed,
  * and skipped test cases.

@@ -172,10 +172,10 @@ namespace micro_os_plus::micro_test_plus
      * The class supports multiple verbosity levels and colour-coded output to
      * distinguish between successful and failed checks.
      *
-     * The pure virtual methods report the beginning and end of the session,
-     * the suites, and the test cases, and format the pass and fail results;
-     * they are implemented by `reporter_human` and `reporter_tap`. The
-     * concrete reporter is created by the runner, as selected by the
+     * The pure virtual member functions report the beginning and end of the
+     * session, the suites, and the test cases, and format the pass and fail
+     * results; they are implemented by `reporter_human` and `reporter_tap`.
+     * The concrete reporter is created by the runner, as selected by the
      * `--reporter` command-line option.
      *
      * The reporters are internal to the framework: their public members are

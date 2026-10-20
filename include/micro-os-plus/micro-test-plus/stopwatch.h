@@ -235,8 +235,8 @@ namespace micro_os_plus::micro_test_plus
        * platform has no clock.
        *
        * @param ts The clock reading to check.
-       * @retval true  At least one of the fields is not zero.
-       * @retval false Both fields are zero.
+       * @retval true  At least one of the members is not zero.
+       * @retval false Both members are zero.
        */
       [[nodiscard]] static bool
       is_recorded (const timespec& ts) noexcept;

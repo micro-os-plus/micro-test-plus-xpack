@@ -18,7 +18,7 @@
 /**
  * @file
  * @brief C++ source file with implementations for the µTest++ check
- * result methods.
+ * result member functions.
  *
  * @details
  * This source file contains the non-template members of the

@@ -60,7 +60,7 @@ Match `clock.h`/`clock.c` exactly:
 - C function names: `micro_os_plus_<chip>_gpio_<verb>` (chip level) and
   `micro_os_plus_<board>_led_<verb>` (board level), all `snake_case`,
   with verbs as `_power_up`, `_turn_on`, `_turn_off`, `_toggle`, `_power_down`
-- C++ class name: platform::<board>::led_<colour>, with methods as above verbs.
+- C++ class name: platform::<board>::led_<colour>, with member functions as above verbs.
 - File names: lower-case, dash-separated where multi-word (the existing
   precedent uses single words — `gpio.h`, `led.h` — keep it that way unless
   a board needs to disambiguate more than one LED, e.g. `led-user.h`).

@@ -65,7 +65,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Returns `true` if at least one of the `tv_sec` or `tv_nsec` fields
+   * Returns `true` if at least one of the `tv_sec` or `tv_nsec` members
    * of @p ts is non-zero, indicating that a clock reading was captured.
    */
   inline bool

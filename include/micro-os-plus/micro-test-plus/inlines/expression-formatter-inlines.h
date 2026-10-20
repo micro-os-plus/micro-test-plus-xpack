@@ -21,12 +21,12 @@
  * expression formatter.
  *
  * @details
- * This header provides the inline and template method implementations for
- * `expression_formatter`. The buffer accessors (`str()`, `c_str()`,
- * `clear()`, `empty()`, `append()`, `reserve()`) are defined as inline
- * functions for zero-overhead access. The template operators —
- * `operator<<(T*)`, `operator<<(is_op<T>)`, and `operator<<(container)` —
- * are instantiated per concrete type at each call site.
+ * This header provides the inline and template member function
+ * implementations for `expression_formatter`. The buffer accessors (`str()`,
+ * `c_str()`, `clear()`, `empty()`, `append()`, `reserve()`) are defined as
+ * inline functions for zero-overhead access. The template operators —
+ * `operator<<(T*)`, `operator<<(is_op<T>)`, and `operator<<(container)` — are
+ * instantiated per concrete type at each call site.
  *
  * The compound expression operators format comparator expressions and wrap
  * them in the pass/fail colour codes of the owning reporter.

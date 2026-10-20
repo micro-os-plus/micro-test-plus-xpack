@@ -18,7 +18,7 @@
 /**
  * @file
  * @brief C++ source file with implementations for the µTest++ test runner
- * methods.
+ * member functions.
  *
  * @details
  * This source file contains the core implementations for the test runner

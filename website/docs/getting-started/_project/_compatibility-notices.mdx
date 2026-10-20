@@ -326,7 +326,7 @@ which does the same; the new name shows that the suite is only added
 to a list, to be run later by `run()`, unlike the test cases started
 with `test()`, which run immediately. Likewise, `runner::verbosity()`
 is deprecated in favour of `verbosity_level()`, the name of the
-`runner_options` field. The old names also hid, inside the runner, the
+`runner_options` data member. The old names also hid, inside the runner, the
 `suite` class and the `verbosity` enumeration. Both are still available,
 as aliases, but marked `[[deprecated]]`, so the compiler warns where
 they are used; replace `tr.suite (...)` with `tr.add_suite (...)`, and
