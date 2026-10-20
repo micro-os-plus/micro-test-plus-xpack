@@ -391,14 +391,17 @@ aliases, but marked `[[deprecated]]`; replace `mt::_and (...)` with
 `mt::both (...)`. The overloaded `&&`, `||`, and `!` operators are
 unchanged.
 
-The type wrappers deprecated in v3.2 were removed: the `_b`, `_c`,
-`_sc`, `_s`, `_i`, `_l`, `_ll`, `_u`, `_uc`, `_us`, `_ul`, `_ull`,
-`_i8`, `_i16`, `_i32`, `_i64`, `_u8`, `_u16`, `_u32`, `_u64`, `_f`,
-`_d`, and `_ld` aliases, and the generic `_t<T>` wrapper. Replace them
-with the `to_*` forms, which take the same arguments: `mt::_i (expr)`
-becomes `mt::to_i (expr)`, and `mt::_t<T>{ expr }` becomes
-`mt::to_t<T>{ expr }`. The literals with the same suffixes (`42_i`,
-`1.5_d`) are unchanged.
+The type wrappers deprecated in v3.2, the `_b`, `_c`, `_sc`, `_s`,
+`_i`, `_l`, `_ll`, `_u`, `_uc`, `_us`, `_ul`, `_ull`, `_i8`, `_i16`,
+`_i32`, `_i64`, `_u8`, `_u16`, `_u32`, `_u64`, `_f`, `_d`, and `_ld`
+aliases, and the generic `_t<T>` wrapper, are now marked
+`[[deprecated]]`. They are still available, as aliases of the `to_*`
+forms, which take the same arguments; replace `mt::_i (expr)` with
+`mt::to_i (expr)`, and `mt::_t<T>{ expr }` with `mt::to_t<T>{ expr }`.
+GCC reports the deprecation only when the alias is the type of a
+declaration, not in expressions such as `mt::_i (expr)`, so search the
+sources for these names instead of relying on the warnings. The
+literals with the same suffixes (`42_i`, `1.5_d`) are unchanged.
 
 The `get()` function of the `to_*` wrappers and of the integer literals
 now returns a `const` reference to the wrapped value, instead of a copy,

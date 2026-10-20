@@ -54,6 +54,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Failed assume()
     • reflection::short_name()
     • _and(), _or(), _not()
+    • _i, _f, ..., _t<T>
     • check in dynamic suite
     • check in dynamic suite with a temporary name
     • thrown exceptions

@@ -545,7 +545,13 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ not 1 == 2
         ✓ false results
     ✓ _and(), _or(), _not() - passed (4 checks)
-✗ Deprecated suite - FAILED (24 checks passed, 1 failed, in 10 test cases), time: 0.773 ms
+    • _i, _f, ..., _t<T>
+        ✓ 1 == 1
+        ✓ 0.5 == 0.5
+        ✓ 1 == 1
+        ✓ false results
+    ✓ _i, _f, ..., _t<T> - passed (4 checks)
+✗ Deprecated suite - FAILED (28 checks passed, 1 failed, in 11 test cases), time: 0.773 ms
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1265,4 +1271,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.189 ms
-✗ Total: 617 checks passed, 362 failed, in 126 test cases, 15 test suites, time: 13.353 ms
+✗ Total: 621 checks passed, 362 failed, in 127 test cases, 15 test suites, time: 13.353 ms

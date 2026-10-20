@@ -332,6 +332,56 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The deprecated names of the `to_*` wrappers and of `to_t<T>`; they
+    // are the same types, so they are compared and reported in the same
+    // way.
+    ts.test ("_i, _f, ..., _t<T>", [] (auto& t)
+      {
+        static_assert (std::is_same_v<_b, to_b>);
+        static_assert (std::is_same_v<_c, to_c>);
+        static_assert (std::is_same_v<_sc, to_sc>);
+        static_assert (std::is_same_v<_s, to_s>);
+        static_assert (std::is_same_v<_i, to_i>);
+        static_assert (std::is_same_v<_l, to_l>);
+        static_assert (std::is_same_v<_ll, to_ll>);
+        static_assert (std::is_same_v<_u, to_u>);
+        static_assert (std::is_same_v<_uc, to_uc>);
+        static_assert (std::is_same_v<_us, to_us>);
+        static_assert (std::is_same_v<_ul, to_ul>);
+        static_assert (std::is_same_v<_ull, to_ull>);
+        static_assert (std::is_same_v<_i8, to_i8>);
+        static_assert (std::is_same_v<_i16, to_i16>);
+        static_assert (std::is_same_v<_i32, to_i32>);
+        static_assert (std::is_same_v<_i64, to_i64>);
+        static_assert (std::is_same_v<_u8, to_u8>);
+        static_assert (std::is_same_v<_u16, to_u16>);
+        static_assert (std::is_same_v<_u32, to_u32>);
+        static_assert (std::is_same_v<_u64, to_u64>);
+        static_assert (std::is_same_v<_f, to_f>);
+        static_assert (std::is_same_v<_d, to_d>);
+        static_assert (std::is_same_v<_ld, to_ld>);
+        static_assert (std::is_same_v<_t<int>, to_t<int>>);
+
+        int one = 1;
+        double half = 0.5;
+
+        // The v5.0.1 functional cast notation.
+        t.expect (eq (_i (one), 1));
+        local_counts.passed_checks++;
+
+        t.expect (eq (_d (half), 0.5));
+        local_counts.passed_checks++;
+
+        t.expect (eq (_t<int>{ one }, 1));
+        local_counts.passed_checks++;
+
+        t.expect (!eq (_i (one), 2) and !eq (_t<int>{ one }, 2))
+            << "false results";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     test_assert (current_suite_totals.passed_checks ()
                  == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()

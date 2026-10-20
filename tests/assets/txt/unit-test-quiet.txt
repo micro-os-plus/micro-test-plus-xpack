@@ -54,6 +54,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Failed assume()
     • reflection::short_name()
     • _and(), _or(), _not()
+    • _i, _f, ..., _t<T>
     • check in dynamic suite
     • check in dynamic suite with a temporary name
     • thrown exceptions
@@ -127,4 +128,4 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 617 checks passed, 362 failed, in 126 test cases, 15 test suites, time: 9.300 ms
+✗ Total: 621 checks passed, 362 failed, in 127 test cases, 15 test suites, time: 9.300 ms

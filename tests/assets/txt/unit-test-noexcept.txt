@@ -542,7 +542,13 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ not 1 == 2
         ✓ false results
     ✓ _and(), _or(), _not() - passed (4 checks)
-✓ Deprecated suite - passed (24 checks in 9 test cases)
+    • _i, _f, ..., _t<T>
+        ✓ 1 == 1
+        ✓ 0.5 == 0.5
+        ✓ 1 == 1
+        ✓ false results
+    ✓ _i, _f, ..., _t<T> - passed (4 checks)
+✓ Deprecated suite - passed (28 checks in 10 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1202,4 +1208,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 600 checks passed, 350 failed, in 111 test cases, 13 test suites
+✗ Total: 604 checks passed, 350 failed, in 112 test cases, 13 test suites
