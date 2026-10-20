@@ -2951,6 +2951,21 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 2 - same const object
         1..2
     ok 16 - Pointers to const # { passed, 2 checks }
+    # Subtest: Message types
+        ok 1 - numbers 1 2 3 1.5 2 true
+        ok 2 - pointer 0x4009ef50
+        ok 3 - container {1, 2}
+        ok 4 - standard types (1, a) nullopt 1
+        ok 5 - custom type { 1, 2 } on
+        ok 6 - wrappers 42 1.5
+        not ok 7 - failed {3}
+          ---
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 1060
+          ...
+        1..7
+    not ok 17 - Message types # { FAILED, 6 checks passed, 1 failed }
     # Subtest: TAP escapes # TODO in names \ messages
         ok 1 - message with \# hash and \\ backslash
         ok 2 - a \# b == a \# b
@@ -2962,7 +2977,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
             lineNumber: 712
           ...
         1..4
-    not ok 17 - TAP escapes \# TODO in names \\ messages # { FAILED, 3 checks passed, 1 failed }
+    not ok 18 - TAP escapes \# TODO in names \\ messages # { FAILED, 3 checks passed, 1 failed }
     # Subtest: TAP condition values are quoted
         not ok 1
           ---
@@ -2979,7 +2994,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
             lineNumber: 901
           ...
         1..2
-    not ok 18 - TAP condition values are quoted # { FAILED, 0 checks passed, 2 failed }
+    not ok 19 - TAP condition values are quoted # { FAILED, 0 checks passed, 2 failed }
     # Subtest: Runner options
         ok 1 - default verbosity before initialise()
         ok 2 - given name
@@ -2991,14 +3006,14 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 8 - deprecated successful_checks() names
         ok 9 - default name without arguments
         1..9
-    ok 19 - Runner options # { passed, 9 checks }
+    ok 20 - Runner options # { passed, 9 checks }
     # Subtest: Runner option errors
         ok 1 - valid options still applied
         ok 2 - unknown reporter
         ok 3 - missing argument
         ok 4 - output file not opened
         1..4
-    ok 20 - Runner option errors # { passed, 4 checks }
+    ok 21 - Runner option errors # { passed, 4 checks }
     # Subtest: Runner filter
         ok 1 - suite filter passed
         ok 2 - matching suites run
@@ -3016,7 +3031,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 14 - nothing skipped without patterns
         ok 15 - missing pattern
         1..15
-    ok 21 - Runner filter # { passed, 15 checks }
+    ok 22 - Runner filter # { passed, 15 checks }
     # Subtest: Late suites
         ok 1 - suite added during run() rejected
         ok 2 - rejected suite neither run nor counted
@@ -3024,7 +3039,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 4 - session passed
         ok 5 - suite added after run() rejected
         1..5
-    ok 22 - Late suites # { passed, 5 checks }
+    ok 23 - Late suites # { passed, 5 checks }
     # Subtest: Test case started on the suite
         ok 1 - check before the test case
         # Subtest: test case started on the suite
@@ -3033,7 +3048,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 2 - test case started on the suite # { passed, 1 check }
         ok 3 - run nested
         1..3
-    ok 23 - Test case started on the suite # { passed, 2 checks }
+    ok 24 - Test case started on the suite # { passed, 2 checks }
     # Subtest: Callable arguments
         ok 1 - reference parameter refers to a copy
         ok 2 - std::ref() refers to the object
@@ -3041,29 +3056,29 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 4 - local session passed
         ok 5 - deferred suite received the copy
         1..5
-    ok 24 - Callable arguments # { passed, 5 checks }
+    ok 25 - Callable arguments # { passed, 5 checks }
     # Subtest: Operand copies
         ok 1 - plain operands
         ok 2 - plain operands copied once
         ok 3 - wrapped operand
         ok 4 - wrapped operand copied once
         1..4
-    ok 25 - Operand copies # { passed, 4 checks }
+    ok 26 - Operand copies # { passed, 4 checks }
     # Subtest: Test case lifetime
         ok 1 - test cases destroyed
         ok 2 - test cases counted
         ok 3 - local session passed
         1..3
-    ok 26 - Test case lifetime # { passed, 3 checks }
+    ok 27 - Test case lifetime # { passed, 3 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - previous handler returned
         1..2
-    ok 27 - Abort handler # { passed, 2 checks }
+    ok 28 - Abort handler # { passed, 2 checks }
     # Subtest: Abort during the session
         ok 1 - skipped without exceptions
         1..1
-    ok 28 - Abort during the session # { passed, 1 check }
+    ok 29 - Abort during the session # { passed, 1 check }
     # Subtest: Test case and suite names
         ok 1 - temporary string name
         ok 2 - string name
@@ -3073,9 +3088,9 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 6 - string suite name copied
         ok 7 - string view suite name copied
         1..7
-    ok 29 - Test case and suite names # { passed, 7 checks }
-    1..29
-not ok 9 - Miscellaneous suite # { FAILED, 142 checks passed, 25 failed, in 30 test cases }
+    ok 30 - Test case and suite names # { passed, 7 checks }
+    1..30
+not ok 9 - Miscellaneous suite # { FAILED, 148 checks passed, 26 failed, in 31 test cases }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3318,4 +3333,4 @@ ok 11 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 12 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..12
-# { total: 551 checks passed, 349 failed, in 99 test cases, 12 test suites }
+# { total: 557 checks passed, 350 failed, in 100 test cases, 12 test suites }

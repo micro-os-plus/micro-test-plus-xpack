@@ -978,6 +978,15 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ different const objects
         ✓ same const object
     ✓ Pointers to const - passed (2 checks)
+    • Message types
+        ✓ numbers 1 2 3 1.5 2 true
+        ✓ pointer 0x10a1e1da0
+        ✓ container {1, 2}
+        ✓ standard types (1, a) nullopt 1
+        ✓ custom type { 1, 2 } on
+        ✓ wrappers 42 1.5
+        ✗ failed {3} FAILED (miscellaneous.cpp:1060)
+    ✗ Message types - FAILED (6 checks passed, 1 failed)
     • TAP escapes # TODO in names \ messages
         ✓ message with # hash and \ backslash
         ✓ a # b == a # b
@@ -1079,7 +1088,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (148 checks passed, 25 failed, in 30 test cases), time: 3.770 ms
+✗ Miscellaneous suite - FAILED (154 checks passed, 26 failed, in 31 test cases), time: 4.099 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1189,4 +1198,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 568 checks passed, 361 failed, in 114 test cases, 14 test suites, time: 13.256 ms
+✗ Total: 574 checks passed, 362 failed, in 115 test cases, 14 test suites, time: 14.463 ms

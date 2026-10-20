@@ -23,9 +23,9 @@
  * @details
  * This header provides the inline and template implementations for the
  * check result: the template constructor, the result accessor, and the
- * `operator<<` that accumulates the expectation messages (handling both
- * arithmetic and string-like types). The non-template constructor and the
- * destructor are defined in `src/check-result.cpp`.
+ * `operator<<` that accumulates the expectation messages (written by the
+ * expression formatter, in its plain mode). The non-template constructor
+ * and the destructor are defined in `src/check-result.cpp`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
  * namespace, ensuring clear separation from user code and minimising the risk
@@ -53,6 +53,7 @@
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
 #include <cstdio>
+#include <utility>
 
 // ----------------------------------------------------------------------------
 
@@ -129,51 +130,24 @@ namespace micro_os_plus::micro_test_plus
      * expectation messages by appending the provided value to the internal
      * message string.
      *
-     * If the argument is a `char`, it is appended directly as a character.
-     * If it is a `bool`, `"true"` or `"false"` is appended, as the
-     * expression formatter does (`std::to_chars()` has no `bool`
-     * overload). If it is of another arithmetic type, it is converted by
-     * `detail::append_number()`, the helper also used by the expression
-     * formatter, which uses a fixed-size buffer (avoiding the temporary
-     * string that `std::to_string()` would allocate) and handles the
-     * platforms where `std::to_chars()` is not available for
-     * `long double`. If it is `std::nullptr_t`, `"nullptr"` is appended.
-     * If it is a pointer (the `printable` concept admits only the pointers
-     * to `char`), the string is appended, or `"nullptr"` for a null
-     * pointer, as the expression formatter and the reporter do, since
-     * `std::string::append()` must not be called with a null pointer. For
-     * all other types (convertible to `std::string_view`), the value is
-     * appended directly.
+     * The value is written by the same `operator<<` overloads as the
+     * operands of the expressions, so that both accept the same types,
+     * including the application types with an `operator<<` for the
+     * formatter. The message is moved into a local formatter in the plain
+     * mode, which writes the numbers without the type suffixes and the
+     * `char` values unchanged, and is moved back after the value is
+     * appended, so that no other buffer is allocated. The formatter of the
+     * reporter is not used, since it may hold the expression of this
+     * check, or of a pending one.
      */
     template <class T>
       requires extension::printable<T>
     auto&
     check_result::operator<< (const T& msg)
     {
-      if constexpr (std::is_same_v<T, char>)
-        {
-          info_.message.push_back (msg);
-        }
-      else if constexpr (std::is_same_v<T, bool>)
-        {
-          info_.message.append (msg ? "true" : "false");
-        }
-      else if constexpr (std::is_arithmetic_v<T>)
-        {
-          detail::append_number (info_.message, msg);
-        }
-      else if constexpr (std::is_null_pointer_v<T>)
-        {
-          info_.message.append ("nullptr");
-        }
-      else if constexpr (std::is_pointer_v<T>)
-        {
-          info_.message.append (msg != nullptr ? msg : "nullptr");
-        }
-      else
-        {
-          info_.message.append (msg);
-        }
+      expression_formatter formatter{ std::move (info_.message) };
+      formatter << msg;
+      info_.message = std::move (formatter.buffer_);
       return *this;
     }
 

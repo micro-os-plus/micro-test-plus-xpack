@@ -540,6 +540,18 @@ auto require (const Expr_T& expr);
 A failed **expectation** is reported and counted, and the test case
 continues, so that all its checks are evaluated and reported in one run.
 
+The message accepts the same values as the operands of the
+[function comparators](#function-comparators), including the
+[custom types](#custom-types) with an `operator<<` for the formatter,
+and any number of them can be appended. They are written as in the
+reports of the comparators, except that the numbers have no type
+suffixes and the characters are not quoted, since the message is text:
+
+```cpp
+t.expect (mt::eq (parse (input), expected))
+    << "input " << input << ", " << input.size () << " bytes";
+```
+
 #### Requirements
 
 A failed **requirement** is reported and counted as a failed
@@ -1055,7 +1067,8 @@ directly, as above. The `char` pointers and arrays, also when not
 pointers, including the `signed char` and `unsigned char` (`uint8_t`)
 pointers, are written as addresses. A plain boolean check, such as
 `t.expect (p == q)`, needs no formatter, but on failure it reports only
-the source location.
+the source location. The same `operator<<` also writes the values
+appended to the messages (`t.expect (p == q) << "p is " << p`).
 
 ### Custom Comparators and Operators
 

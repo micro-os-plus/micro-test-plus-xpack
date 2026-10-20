@@ -89,6 +89,14 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  namespace detail
+  {
+    // Forward definitions.
+    class expression_formatter;
+  } // namespace detail
+
+  // --------------------------------------------------------------------------
+
   /**
    * @namespace micro_os_plus::micro_test_plus::extension
    * @brief The concepts for extending the µTest++ testing framework.
@@ -206,21 +214,23 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type to be checked.
      *
      * @details
-     * The `printable` concept is satisfied when `T` is an arithmetic
-     * type, `std::nullptr_t`, or is implicitly convertible to
-     * `std::string_view`. It constrains the `operator<<` overload of
-     * `check_result`, ensuring that only types that can be
-     * meaningfully appended to the output message are accepted; an
-     * application helper that forwards its argument to the message uses
-     * it for the same constraint.
+     * The `printable` concept is satisfied when a value of type `T` can
+     * be written to an `expression_formatter`, so the message of a check
+     * accepts the same values as the operands of the comparators: the
+     * strings, the characters, the arithmetic types, `std::nullptr_t`,
+     * the pointers, the containers, the scoped enumerations, the pairs,
+     * the tuples, the optionals, the value wrappers, and the application
+     * types with an `operator<<` for the formatter, found by
+     * argument-dependent lookup. It constrains the `operator<<` overload
+     * of `check_result`; an application helper that forwards its argument
+     * to the message uses it for the same constraint.
      *
-     * `std::nullptr_t` is listed explicitly since it is convertible to
-     * `std::string_view` in C++20, but not in C++23, where the
-     * corresponding constructor is deleted.
+     * The formatter is only declared here; the concept is checked where
+     * it is used, after `expression-formatter.h` was included.
      */
     template <class T>
-    concept printable = std::is_arithmetic_v<T> or std::is_null_pointer_v<T>
-                        or std::is_convertible_v<T, std::string_view>;
+    concept printable = requires (detail::expression_formatter& formatter,
+                                  const T& value) { formatter << value; };
 
     // ------------------------------------------------------------------------
   } // namespace extension

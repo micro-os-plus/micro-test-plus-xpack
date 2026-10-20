@@ -80,10 +80,19 @@ namespace micro_os_plus::micro_test_plus::detail
    * (for example the bytes of the UTF-8 sequences) are written as two
    * hexadecimal digits (`'\\x1b'`). The printable ASCII characters are
    * written unchanged.
+   *
+   * In the plain mode, used for the messages, the character is appended
+   * unchanged, as text, without quotes and escapes.
    */
   expression_formatter&
   expression_formatter::operator<< (char c)
   {
+    if (plain_)
+      {
+        buffer_.push_back (c);
+        return *this;
+      }
+
     buffer_.push_back ('\'');
     switch (c)
       {
@@ -238,7 +247,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (signed char c)
   {
     detail::append_number (buffer_, c);
-    buffer_.append ("sc");
+    append_suffix ("sc");
     return *this;
   }
 
@@ -251,7 +260,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (unsigned char c)
   {
     detail::append_number (buffer_, c);
-    buffer_.append ("uc");
+    append_suffix ("uc");
     return *this;
   }
 
@@ -264,7 +273,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (signed short v)
   {
     detail::append_number (buffer_, v);
-    buffer_.append ("s");
+    append_suffix ("s");
     return *this;
   }
 
@@ -277,7 +286,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (unsigned short v)
   {
     detail::append_number (buffer_, v);
-    buffer_.append ("us");
+    append_suffix ("us");
     return *this;
   }
 
@@ -302,7 +311,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (unsigned int v)
   {
     detail::append_number (buffer_, v);
-    buffer_.append ("u");
+    append_suffix ("u");
     return *this;
   }
 
@@ -315,7 +324,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (signed long v)
   {
     detail::append_number (buffer_, v);
-    buffer_.append ("l");
+    append_suffix ("l");
     return *this;
   }
 
@@ -328,7 +337,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (unsigned long v)
   {
     detail::append_number (buffer_, v);
-    buffer_.append ("ul");
+    append_suffix ("ul");
     return *this;
   }
 
@@ -341,7 +350,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (signed long long v)
   {
     detail::append_number (buffer_, v);
-    buffer_.append ("ll");
+    append_suffix ("ll");
     return *this;
   }
 
@@ -354,7 +363,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (unsigned long long v)
   {
     detail::append_number (buffer_, v);
-    buffer_.append ("ull");
+    append_suffix ("ull");
     return *this;
   }
 
@@ -370,7 +379,7 @@ namespace micro_os_plus::micro_test_plus::detail
     const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
     append_decimal_point (start);
-    buffer_.append ("f");
+    append_suffix ("f");
     return *this;
   }
 
@@ -402,7 +411,7 @@ namespace micro_os_plus::micro_test_plus::detail
     const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
     append_decimal_point (start);
-    buffer_.append ("ld");
+    append_suffix ("ld");
     return *this;
   }
 
@@ -413,11 +422,16 @@ namespace micro_os_plus::micro_test_plus::detail
    * so it cannot be distinguished from an integer. If the text appended
    * since @p start contains only digits, after an optional sign, `".0"`
    * is appended. The text with a decimal point or an exponent, and the
-   * infinities and NaNs, are left unchanged.
+   * infinities and NaNs, are left unchanged, as is all text in the plain
+   * mode, used for the messages.
    */
   void
   expression_formatter::append_decimal_point (std::size_t start)
   {
+    if (plain_)
+      {
+        return;
+      }
     if (start < buffer_.size ()
         && (buffer_[start] == '-' || buffer_[start] == '+'))
       {
@@ -435,6 +449,20 @@ namespace micro_os_plus::micro_test_plus::detail
           }
       }
     buffer_.append (".0");
+  }
+
+  /**
+   * @details
+   * Appends @p suffix, unless the formatter is in the plain mode, used
+   * for the messages, which writes the numbers without suffixes.
+   */
+  void
+  expression_formatter::append_suffix (const char* suffix)
+  {
+    if (not plain_)
+      {
+        buffer_.append (suffix);
+      }
   }
 
   // --------------------------------------------------------------------------

@@ -13,9 +13,13 @@
 
 #include "unit-test.h"
 
+#include <cstddef>
 #include <cstdint>
 #include <limits>
+#include <string>
 #include <type_traits>
+#include <utility>
+#include <vector>
 #include <version>
 
 using namespace micro_os_plus::micro_test_plus;
@@ -485,6 +489,29 @@ static_asserts ()
       static_assert (std::is_nothrow_copy_assignable_v<counters>);
       static_assert (std::is_nothrow_move_constructible_v<counters>);
       static_assert (std::is_nothrow_move_assignable_v<counters>);
+    }
+
+    {
+      struct unformatted
+      {
+      };
+
+      // The messages accept the values that the formatter writes, as the
+      // expressions do (API-REVIEW.md #36).
+      static_assert (extension::printable<const char*>);
+      static_assert (extension::printable<char[4]>);
+      static_assert (extension::printable<std::string>);
+      static_assert (extension::printable<char>);
+      static_assert (extension::printable<bool>);
+      static_assert (extension::printable<int>);
+      static_assert (extension::printable<long double>);
+      static_assert (extension::printable<std::nullptr_t>);
+      static_assert (extension::printable<int*>);
+      static_assert (extension::printable<std::vector<int>>);
+      static_assert (extension::printable<std::pair<int, char>>);
+      static_assert (extension::printable<to_i>);
+      static_assert (not extension::printable<unformatted>);
+      static_assert (not extension::printable<with_extension::marker_only>);
     }
   }
 }

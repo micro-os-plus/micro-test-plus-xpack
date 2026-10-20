@@ -430,6 +430,18 @@ the framework expressions, without its own formatter, is now rejected
 at compile time; it previously compiled, and its failed checks overflowed
 the stack.
 
+The messages appended to the checks (`t.expect (...) << value`) now
+accept the same values as the operands of the comparators: the
+pointers, the containers, the scoped enumerations, the pairs, the
+tuples, the optionals, the value wrappers, and the application types
+with an `operator<<` for `mt::expression_formatter`; previously only the
+strings, the characters, the arithmetic types, and `nullptr` were
+accepted. The values that were already accepted are written as before,
+the numbers without the type suffixes of the reports (`2`, not `2u`),
+and the characters unquoted. The `extension::printable` concept, which
+constrains the message operator, now tells whether the formatter can
+write a type.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

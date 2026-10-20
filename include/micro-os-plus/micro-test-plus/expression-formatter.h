@@ -151,6 +151,15 @@ namespace micro_os_plus::micro_test_plus
       "\033[31m" /**< @brief Red colour sequence for failing tests. */
     };
 
+    /**
+     * @brief Predefined colour set, without escape sequences.
+     *
+     * @details
+     * Used by the formatters that write the messages of the checks, which
+     * are never coloured; all members are empty strings.
+     */
+    inline constexpr colours colours_none{};
+
     // ========================================================================
 
     /**
@@ -168,6 +177,15 @@ namespace micro_os_plus::micro_test_plus
      * `double` have no suffix, and the floating-point values always have
      * a decimal point or an exponent (`42.0`), so that they can be
      * distinguished from the integers.
+     *
+     * The same overloads also write the messages appended to the checks
+     * (`expect (...) << value`), so that a message accepts the same values
+     * as an expression, including the application types with an
+     * `operator<<` for this formatter. For the messages, `check_result`
+     * uses a formatter in the plain mode, which writes the numbers without
+     * the type suffixes and without the added decimal point (`42`, `1.5`),
+     * and the `char` values unchanged, without quotes, as text; the other
+     * values are written as in the expressions.
      *
      * The class is non-copyable and non-movable to avoid accidental copying
      * of the internal buffer.
@@ -259,7 +277,9 @@ namespace micro_os_plus::micro_test_plus
        * The character is written between single quotes, with the
        * non-printable characters escaped (`'a'`, `' '`, `'\\0'`,
        * `'\\x1b'`), so that it can be identified in the reports. To
-       * write a separator without quotes, use a string (`" "`).
+       * write a separator without quotes, use a string (`" "`). In the
+       * plain mode, used for the messages, the character is appended
+       * unchanged.
        *
        * @param c The character to append.
        * @return Reference to this instance.
@@ -722,6 +742,20 @@ namespace micro_os_plus::micro_test_plus
       str (void) const noexcept;
 
     private:
+      /**
+       * @brief Constructs a formatter in the plain mode, for a message.
+       *
+       * @details
+       * Used only by `check_result`, which moves its message into the
+       * buffer, appends a value, and moves the message back, so that no
+       * other buffer is allocated. The plain mode writes the numbers
+       * without the type suffixes and without the added decimal point,
+       * and the `char` values unchanged; the messages are never coloured.
+       *
+       * @param buffer The text to which the values are appended.
+       */
+      explicit expression_formatter (std::string&& buffer) noexcept;
+
       // ----------------------------------------------------------------------
       // Ownership by the checks.
 
@@ -781,7 +815,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Called after a floating-point value was appended to the buffer;
        * `".0"` is appended only if the value was written with digits
-       * only.
+       * only, and not in the plain mode.
        *
        * @param start The position in the buffer where the value begins.
        * @par Returns
@@ -789,6 +823,21 @@ namespace micro_os_plus::micro_test_plus
        */
       void
       append_decimal_point (std::size_t start);
+
+      /**
+       * @brief Appends the type suffix of a number.
+       *
+       * @details
+       * Called after a number was appended to the buffer; in the plain
+       * mode, used for the messages, nothing is appended.
+       *
+       * @param suffix The suffix, named after the µTest++ literal of the
+       * type (e.g. `"u"`, `"ll"`, `"f"`).
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      append_suffix (const char* suffix);
 
       /**
        * @brief Appends the elements of a tuple-like object, separated by
@@ -847,6 +896,16 @@ namespace micro_os_plus::micro_test_plus
        * a copy, which would increase the stack usage of the test functions.
        */
       std::vector<std::pair<const void*, std::string>> pending_{};
+
+      /**
+       * @brief Whether the formatter writes a message.
+       *
+       * @details
+       * Set only by the private constructor used by `check_result`; in
+       * this mode the numbers have no type suffixes and no added decimal
+       * point, and the `char` values are not quoted.
+       */
+      const bool plain_{ false };
     };
 
     // ------------------------------------------------------------------------
@@ -892,7 +951,9 @@ namespace micro_os_plus::micro_test_plus
    * for user-defined types, since the operand values cannot be
    * formatted; only the scoped enumerations are formatted without it,
    * by their underlying value. Plain boolean checks, such as `expect (a == b)`, do not
-   * need it, but they report only the source location on failure.
+   * need it, but they report only the source location on failure. The
+   * same operator also writes the values appended to the messages of
+   * the checks (`expect (a == b) << "a is " << a`).
    *
    * Applications use the `operator<<` overloads, and `str()` to test
    * their own operators; the functions that manage the buffer are

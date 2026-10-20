@@ -83,6 +83,17 @@ namespace micro_os_plus::micro_test_plus::detail
   {
   }
 
+  /**
+   * @details
+   * Takes over the text of @p buffer, without copying it, refers to the
+   * `colours_none` set, and sets the plain mode.
+   */
+  inline expression_formatter::expression_formatter (
+      std::string&& buffer) noexcept
+      : colours_ (colours_none), buffer_ (std::move (buffer)), plain_ (true)
+  {
+  }
+
   // --------------------------------------------------------------------------
 
   /**

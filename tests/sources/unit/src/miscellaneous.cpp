@@ -1029,6 +1029,40 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The messages accept the values of the expressions, written by the
+    // formatter without the type suffixes, and with the characters
+    // unquoted (API-REVIEW.md #36).
+    ts.test ("Message types", [] (auto& t)
+      {
+        using namespace literals;
+
+        t.expect (true) << "numbers " << 1 << ' ' << 2u << ' ' << 3l << ' '
+                        << 1.5f << ' ' << 2.0 << ' ' << true;
+        local_counts.passed_checks++;
+
+        static const int constant = 42;
+        t.expect (true) << "pointer " << &constant;
+        local_counts.passed_checks++;
+
+        t.expect (true) << "container " << std::vector<int>{ 1, 2 };
+        local_counts.passed_checks++;
+
+        t.expect (true) << "standard types " << std::pair{ 1, 'a' } << ' '
+                        << std::optional<int>{} << ' ' << colour::green;
+        local_counts.passed_checks++;
+
+        t.expect (true) << "custom type " << point{ 1, 2 } << ' ' << state::on;
+        local_counts.passed_checks++;
+
+        t.expect (true) << "wrappers " << 42_i << ' ' << 1.5_d;
+        local_counts.passed_checks++;
+
+        t.expect (false) << "failed " << std::vector<int>{ 3 };
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     // In the TAP output, the `\` and `#` characters of the names, the
     // messages, and the expressions are escaped, and the line breaks are
     // replaced by spaces, so that the failed test case below is not read as
