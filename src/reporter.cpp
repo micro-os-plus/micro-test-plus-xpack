@@ -422,19 +422,19 @@ namespace micro_os_plus::micro_test_plus::detail
       line.append ("an unknown compiler");
 #endif // defined(__clang__)
 #if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \
-      || defined(WIN32))
+      || defined(_WIN32))
       // This is relevant only on bare-metal.
 #if defined(__ARM_PCS_VFP) || defined(__ARM_FP)
       line.append (", with FP");
 #else
       line.append (", no FP");
 #endif // defined(__ARM_PCS_VFP) || defined(__ARM_FP)
-#endif // !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) || defined(WIN32))
-#if defined(__EXCEPTIONS)
+#endif // !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) || defined(_WIN32))
+#if defined(__cpp_exceptions)
       line.append (", with exceptions");
 #else
       line.append (", no exceptions");
-#endif // defined(__EXCEPTIONS)
+#endif // defined(__cpp_exceptions)
 #if defined(MICRO_OS_PLUS_DEBUG_ENABLED)
       line.append (", with MICRO_OS_PLUS_DEBUG_ENABLED");
 #endif // defined(MICRO_OS_PLUS_DEBUG_ENABLED)

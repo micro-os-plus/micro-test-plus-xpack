@@ -230,7 +230,7 @@ namespace
 
   // An abort handler which, when exceptions are available, returns
   // control to the test case, without terminating the process.
-#if defined(__EXCEPTIONS)
+#if defined(__cpp_exceptions)
   struct abort_exception
   {
   };
@@ -245,7 +245,7 @@ namespace
   test_abort_handler (const reflection::source_location&)
   {
   }
-#endif // defined(__EXCEPTIONS)
+#endif // defined(__cpp_exceptions)
 
   // A reporter that ignores all events and exposes its output buffer, to
   // check the text written by the `reporter` stream operators, without
@@ -1803,7 +1803,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
             << "no initial handler";
         local_counts.passed_checks++;
 
-#if defined(__EXCEPTIONS)
+#if defined(__cpp_exceptions)
         bool caught = false;
         try
           {
@@ -1816,7 +1816,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         t.expect (caught) << "handler called";
         local_counts.passed_checks++;
-#endif // defined(__EXCEPTIONS)
+#endif // defined(__cpp_exceptions)
 
         t.expect (local_runner.set_abort_handler (nullptr)
                   == &test_abort_handler)
@@ -1833,7 +1833,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     // application, and the runner cannot be used afterwards.
     ts.test ("Abort during the session", [] (auto& t)
       {
-#if defined(__EXCEPTIONS)
+#if defined(__cpp_exceptions)
         for (const reporter_kind kind :
              { reporter_kind::human, reporter_kind::tap })
           {
@@ -1882,7 +1882,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 #else
         t.expect (true) << "skipped without exceptions";
         local_counts.passed_checks++;
-#endif // defined(__EXCEPTIONS)
+#endif // defined(__cpp_exceptions)
 
         local_counts.executed_test_cases++;
       });

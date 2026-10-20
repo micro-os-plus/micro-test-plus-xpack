@@ -81,7 +81,7 @@ compute_condition (void)
   return true;
 }
 
-#if defined(__EXCEPTIONS)
+#if defined(__cpp_exceptions)
 
 static void
 exercise_throw (bool mustThrow)
@@ -92,7 +92,7 @@ exercise_throw (bool mustThrow)
     }
 }
 
-#endif // defined(__EXCEPTIONS)
+#endif // defined(__cpp_exceptions)
 
 // ----------------------------------------------------------------------------
 
@@ -265,7 +265,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-#if defined(__EXCEPTIONS)
+#if defined(__cpp_exceptions)
 
   ts.test ("Check if exceptions are thrown", [] (auto& t)
     {
@@ -295,7 +295,7 @@ main (int argc, char* argv[])
           << "exception not thrown";
     });
 
-#endif // defined(__EXCEPTIONS)
+#endif // defined(__cpp_exceptions)
 
   ts.test ("Check containers", [] (auto& t)
     {

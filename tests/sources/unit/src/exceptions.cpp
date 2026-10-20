@@ -13,7 +13,7 @@
 
 #include "unit-test.h"
 
-#if defined(__EXCEPTIONS)
+#if defined(__cpp_exceptions)
 
 #include <stdexcept>
 
@@ -375,6 +375,6 @@ static static_suite ts_exceptions_body{ "Exceptions suite body", tr,
       { t.expect (false) << "check after the exception"; });
   } };
 
-#endif // __EXCEPTIONS
+#endif // defined(__cpp_exceptions)
 
 // ----------------------------------------------------------------------------

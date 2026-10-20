@@ -61,11 +61,11 @@ operator new (std::size_t size)
   void* pointer = std::malloc (size == 0 ? 1 : size);
   if (pointer == nullptr)
     {
-#if defined(__EXCEPTIONS)
+#if defined(__cpp_exceptions)
       throw std::bad_alloc{};
 #else
       std::abort ();
-#endif // defined(__EXCEPTIONS)
+#endif // defined(__cpp_exceptions)
     }
   return pointer;
 }
