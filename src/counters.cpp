@@ -36,6 +36,7 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/micro-test-plus/counters.h"
+#include "micro-os-plus/micro-test-plus/detail.h"
 
 #if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
@@ -80,9 +81,12 @@ namespace micro_os_plus::micro_test_plus
     skipped_test_cases_ += other.skipped_test_cases ();
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s -> +%zu -%zu in xs%zu -xs%zu\n", __PRETTY_FUNCTION__,
-                   passed_checks_, failed_checks_, executed_test_cases_,
-                   failed_test_cases_);
+    trace::printf ("%s -> +%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                   " -%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                   " in xs%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                   " -xs%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                   __PRETTY_FUNCTION__, passed_checks_, failed_checks_,
+                   executed_test_cases_, failed_test_cases_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     return *this;

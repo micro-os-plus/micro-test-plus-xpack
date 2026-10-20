@@ -703,7 +703,9 @@ namespace micro_os_plus::micro_test_plus::detail
     {
       if (count > 0)
         {
-          snprintf (message, sizeof (message), ", %zu skipped", count);
+          snprintf (message, sizeof (message),
+                    ", %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE " skipped",
+                    count);
         }
       else
         {
@@ -732,7 +734,10 @@ namespace micro_os_plus::micro_test_plus::detail
     format_skipped (runner.skipped_suites_count (), message_skipped_suites);
 
     snprintf (message, sizeof (message),
-              "%zu check%s passed, %zu failed, in %zu test case%s%s, %zu "
+              "%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+              " check%s passed, %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+              " failed, in %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+              " test case%s%s, %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE " "
               "test suite%s%s",
               totals.passed_checks (), plural (totals.passed_checks ()),
               totals.failed_checks (), totals.executed_test_cases (),
@@ -758,15 +763,20 @@ namespace micro_os_plus::micro_test_plus::detail
     if (totals.passed ()) [[likely]]
       {
         snprintf (message, sizeof (message),
-                  "%zu check%s in %zu test case%s%s", totals.passed_checks (),
-                  plural (totals.passed_checks ()),
+                  "%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                  " check%s in %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                  " test case%s%s",
+                  totals.passed_checks (), plural (totals.passed_checks ()),
                   totals.executed_test_cases (),
                   plural (totals.executed_test_cases ()), message_skipped);
       }
     else
       {
         snprintf (message, sizeof (message),
-                  "%zu check%s passed, %zu failed, in %zu test case%s%s",
+                  "%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                  " check%s passed, %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                  " failed, in %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                  " test case%s%s",
                   totals.passed_checks (), plural (totals.passed_checks ()),
                   totals.failed_checks (), totals.executed_test_cases (),
                   plural (totals.executed_test_cases ()), message_skipped);
@@ -786,7 +796,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (totals.passed ()) [[likely]]
       {
-        snprintf (message, sizeof (message), "%zu check%s",
+        snprintf (message, sizeof (message),
+                  "%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE " check%s",
                   totals.passed_checks (), plural (totals.passed_checks ()));
       }
     else
@@ -795,14 +806,18 @@ namespace micro_os_plus::micro_test_plus::detail
         if (totals.failed_test_cases () > 0)
           {
             snprintf (message_test_cases, sizeof (message_test_cases),
-                      ", %zu test case%s failed", totals.failed_test_cases (),
+                      ", %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                      " test case%s failed",
+                      totals.failed_test_cases (),
                       plural (totals.failed_test_cases ()));
           }
 
         snprintf (message, sizeof (message),
-                  "%zu check%s passed, %zu failed%s", totals.passed_checks (),
-                  plural (totals.passed_checks ()), totals.failed_checks (),
-                  message_test_cases);
+                  "%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                  " check%s passed, %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                  " failed%s",
+                  totals.passed_checks (), plural (totals.passed_checks ()),
+                  totals.failed_checks (), message_test_cases);
       }
   }
 

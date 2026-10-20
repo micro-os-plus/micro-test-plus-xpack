@@ -91,7 +91,8 @@ namespace micro_os_plus::micro_test_plus
         : name_{ name }, runner_{ test_runner }, own_index_{ own_index }
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-      trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
+      trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                     __PRETTY_FUNCTION__, name, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
     }
 

@@ -148,6 +148,10 @@
 // runner-options.h.
 #include "micro-test-plus/runner.h"
 
+// Defined in detail.h for the library formats only; the templates above
+// have already been parsed, so keep it out of the application code.
+#undef MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+
 // ----------------------------------------------------------------------------
 
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)

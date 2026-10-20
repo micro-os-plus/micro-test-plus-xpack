@@ -291,7 +291,8 @@ namespace micro_os_plus::micro_test_plus::detail
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     char message_summary[32];
-    snprintf (message_summary, sizeof (message_summary), "1..%zu",
+    snprintf (message_summary, sizeof (message_summary),
+              "1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE,
               runner.total_suites_count ());
 
     char message_totals[totals_size_];
@@ -371,8 +372,12 @@ namespace micro_os_plus::micro_test_plus::detail
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf (
-        "%s '%s' +%zu -%zu in xc%zu, xs%zu | cs%zu\n", __PRETTY_FUNCTION__,
-        suite.name (), suite.totals ().passed_checks (),
+        "%s '%s' +%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+        " -%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+        " in xc%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+        ", xs%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+        " | cs%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+        __PRETTY_FUNCTION__, suite.name (), suite.totals ().passed_checks (),
         suite.totals ().failed_checks (), suite.totals ().executed_checks (),
         suite.totals ().executed_test_cases (), suite.child_test_cases_count_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
@@ -430,7 +435,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
     // The plan counts the test cases and the failure of the suite body,
     // if any, which is numbered after them.
-    write_line (to_console, "%s1..%zu\n%s %zu - %s # { %s, %s%s }\n",
+    write_line (to_console,
+                "%s1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                "\n%s %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                " - %s # { %s, %s%s }\n",
                 indent.c_str (), suite.test_point_number_, result,
                 suite.own_index_, name.c_str (), status, message_totals,
                 message_time);
@@ -438,9 +446,10 @@ namespace micro_os_plus::micro_test_plus::detail
     if (verbosity_ == verbosity::quiet)
       {
         // Only the test point of the suite, counted by the session plan.
-        write_console ("%s %zu - %s # { %s, %s%s }\n", result,
-                       suite.own_index_, name.c_str (), status, message_totals,
-                       message_time);
+        write_console ("%s %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                       " - %s # { %s, %s%s }\n",
+                       result, suite.own_index_, name.c_str (), status,
+                       message_totals, message_time);
       }
 
     flush_streams ();
@@ -477,8 +486,10 @@ namespace micro_os_plus::micro_test_plus::detail
         write_console ("\n");
       }
 
-    write_line (to_console, "ok %zu - %s # SKIP filtered\n", suite.own_index_,
-                name.c_str ());
+    write_line (to_console,
+                "ok %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                " - %s # SKIP filtered\n",
+                suite.own_index_, name.c_str ());
 
     flush_streams ();
 
@@ -572,7 +583,12 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter_tap::end_test_case (const test_case& test_case)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s' i%zu +%zu -%zu in xc%zu, xs%zu | cs%zu\n",
+    trace::printf ("%s '%s' i%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                   " +%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                   " -%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                   " in xc%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                   ", xs%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                   " | cs%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
                    __PRETTY_FUNCTION__, test_case.name (),
                    test_case.nesting_depth (),
                    test_case.totals ().passed_checks (),
@@ -642,20 +658,26 @@ namespace micro_os_plus::micro_test_plus::detail
         // Without verbosity, show only the summary line and count only
         // test cases, not checks, as the TAP output is not shown; the
         // output file has all the lines, so its plan counts the checks.
-        write_file ("%s1..%zu\n", indent2.c_str (), plan_count);
+        write_file ("%s1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                    indent2.c_str (), plan_count);
 
-        write_console ("%s1..%zu\n", indent2.c_str (),
+        write_console ("%s1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                       indent2.c_str (),
                        test_case.totals ().executed_test_cases ()
                            + test_case.totals ().skipped_test_cases ());
       }
     else
       {
-        write_line (to_console, "%s1..%zu\n", indent2.c_str (), plan_count);
+        write_line (to_console,
+                    "%s1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                    indent2.c_str (), plan_count);
       }
 
-    write_line (to_console, "%s%s %zu - %s # { %s, %s }\n", indent.c_str (),
-                result, test_case.own_index_, name.c_str (), status,
-                message_totals);
+    write_line (to_console,
+                "%s%s %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                " - %s # { %s, %s }\n",
+                indent.c_str (), result, test_case.own_index_, name.c_str (),
+                status, message_totals);
 
     flush_streams ();
 
@@ -878,8 +900,10 @@ namespace micro_os_plus::micro_test_plus::detail
         write_console ("\n");
       }
 
-    write_line (to_console, "%sok %zu - %s # SKIP filtered\n", indent.c_str (),
-                test_case.own_index_, name.c_str ());
+    write_line (to_console,
+                "%sok %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                " - %s # SKIP filtered\n",
+                indent.c_str (), test_case.own_index_, name.c_str ());
 
     flush_streams ();
 

@@ -418,7 +418,8 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter_human::end_test_case (const test_case& test_case)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s' i%zu\n", __PRETTY_FUNCTION__, test_case.name (),
+    trace::printf ("%s '%s' i%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                   __PRETTY_FUNCTION__, test_case.name (),
                    test_case.nesting_depth ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 

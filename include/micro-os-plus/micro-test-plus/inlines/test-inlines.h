@@ -56,35 +56,12 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/micro-test-plus/check-result.h"
+#include "micro-os-plus/micro-test-plus/detail.h"
 #include "micro-os-plus/micro-test-plus/reporter.h"
 
 #if __has_include("micro-os-plus/diag/trace.h")
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
-
-/**
- * @def MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
- * @brief Portable `printf()` conversion for `size_t` values in trace
- * messages.
- *
- * @details
- * Clang's format checker on Windows (the "ms_printf" archetype) rejects the
- * standard `z` modifier, even though the UCRT `printf()` implementation
- * supports it at run time, so the Microsoft-specific `I` modifier is used
- * there instead (`"Iu"`); elsewhere it is `"zu"`. Defined only when
- * `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED` is defined.
- *
- * The string literals are concatenated when the templates are parsed,
- * not when they are instantiated, so the macro is undefined at the end
- * of this header, to keep it out of the user code.
- */
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-#if defined(_WIN32) && defined(__clang__) && !defined(__MINGW32__)
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "Iu"
-#else
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "zu"
-#endif // defined(_WIN32) && defined(__clang__) && !defined(__MINGW32__)
-#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 
 #include <cstdio>
 #include <cstring>
@@ -561,9 +538,6 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
-
-// Used only by the trace messages above; keep it out of the user code.
-#undef MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
 
 // ----------------------------------------------------------------------------
 
