@@ -67,6 +67,7 @@
 #include "reflection.h"
 
 #include <functional>
+#include <memory>
 #include <string>
 #include <string_view>
 #include <type_traits>
@@ -76,6 +77,7 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -239,9 +241,11 @@ namespace micro_os_plus::micro_test_plus
      * - an owning vector of child `test_case` instances.
      *
      * The concrete runnable classes (`suite`, `test_case`) derive from
-     * `runnable_base`; each stores its body in a `std::function` that
-     * receives a reference to its own class, and implements `run()`, which
-     * invokes the body between the reporter notifications.
+     * `runnable_base`; each refers to its body, which receives a
+     * reference to its own class, and implements `run()`, which invokes
+     * the body between the reporter notifications. A suite, which runs
+     * later, stores its body in a `std::function`; a test case, which
+     * runs immediately, refers to a body kept by its creator.
      *
      * The user code can read only the name and the totals; the rest of
      * the state, and the functions that run and abort the nodes, are the
@@ -594,14 +598,20 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief Creates the function object that stores the body of a test
+     * @brief Creates the function object that holds the body of a test
      * case or suite.
      *
      * @details
-     * The callable is stored as is when there are no additional arguments;
-     * otherwise a lambda stores copies of the arguments and passes them
-     * after the leading reference, which is passed when the body is
-     * invoked.
+     * The returned object holds a copy of the callable (decayed, as by
+     * `auto`) when there are no additional arguments; otherwise it is a
+     * lambda that holds copies of the callable and of the arguments, and
+     * passes the arguments after the leading reference, which is passed
+     * when the body is invoked. No memory is allocated, other than by the
+     * copies themselves.
+     *
+     * A suite stores the object in a `std::function`, since it runs
+     * later; a test case, which runs immediately, refers to it with a
+     * `callable_ref`.
      *
      * @tparam Self_T The type referred to by the first parameter of the
      * callable (`test_case` or `suite`).
@@ -611,11 +621,107 @@ namespace micro_os_plus::micro_test_plus
      * @param callable A generic callable object, usually a lambda.
      * @param arguments A possibly empty list of arguments forwarded to the
      * callable after the leading `Self_T&` reference.
-     * @return The function object that invokes the callable.
+     * @return The function object, invocable with a `Self_T&` argument.
      */
     template <typename Self_T, typename Callable_T, typename... Args_T>
-    [[nodiscard]] std::function<void (Self_T&)>
+    [[nodiscard]] auto
     bind_callable (Callable_T&& callable, Args_T&&... arguments);
+
+    // ========================================================================
+
+    /**
+     * @brief Non-owning reference to a callable invoked with a `Self_T&`
+     * argument.
+     *
+     * @details
+     * Holds the address of the callable and a pointer to a function,
+     * instantiated for its type, which converts the address back and
+     * invokes the callable. Unlike a `std::function`, it neither copies
+     * the callable nor allocates memory, so the callable must outlive
+     * the reference.
+     *
+     * A test case refers to its body this way, since the body is a local
+     * object of `runnable_base::create_test_case()`, which runs the test
+     * case and destroys it before returning.
+     *
+     * @tparam Self_T The type referred to by the argument of the
+     * callable (`test_case`).
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <typename Self_T>
+    class callable_ref
+    {
+    public:
+      /**
+       * @brief Constructs a reference to a callable.
+       *
+       * @details
+       * The callable must be invocable with a `Self_T&` argument, and
+       * must outlive the reference.
+       *
+       * @tparam Callable_T The type of the callable object.
+       *
+       * @par Constraints
+       *   `Callable_T` is not a `callable_ref`, so that the copy
+       *   constructor is used for copies.
+       *
+       * @param callable The callable object; a non-`const` lvalue.
+       */
+      template <typename Callable_T>
+        requires (!std::is_same_v<std::remove_cv_t<Callable_T>, callable_ref>)
+      explicit callable_ref (Callable_T& callable) noexcept;
+
+      /**
+       * @brief Invokes the referred callable.
+       *
+       * @details
+       * Not `noexcept`, since a failed `require()` stops the body of a
+       * test case by throwing an exception.
+       *
+       * @param self The reference passed to the callable.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      operator() (Self_T& self) const;
+
+    private:
+      /**
+       * @brief Invokes a callable of a given type, from its address.
+       *
+       * @details
+       * Instantiated by the constructor for the type of the callable;
+       * its address is stored in `invoke_`.
+       *
+       * @tparam Callable_T The type of the callable object.
+       *
+       * @param callable The address of the callable, with its type erased.
+       * @param self The reference passed to the callable.
+       * @par Returns
+       *   Nothing.
+       */
+      template <typename Callable_T>
+      static void
+      invoke_callable (void* callable, Self_T& self);
+
+      /**
+       * @brief The address of the referred callable.
+       *
+       * @details
+       * Its type is erased; only `invoke_` converts it back.
+       */
+      void* callable_;
+
+      /**
+       * @brief The function that invokes the referred callable.
+       *
+       * @details
+       * The `invoke_callable()` instantiation for the type of the
+       * callable; it receives `callable_` and the `Self_T&` argument.
+       */
+      void (*invoke_) (void* callable, Self_T& self);
+    };
 
     // ------------------------------------------------------------------------
   } // namespace detail
@@ -633,7 +739,9 @@ namespace micro_os_plus::micro_test_plus
    * the object, immediately execute its callable body via `run()`, and
    * register the result with the parent node. The object is local to the
    * `test()` call, and is destroyed when it returns, together with the
-   * stored body and its bound arguments.
+   * body and the copies of its arguments, which are also local to that
+   * call; the test case only refers to them, so no memory is allocated
+   * for them.
    *
    * The body of the test case is supplied as a callable (typically a lambda)
    * that receives a `test_case&` reference as its first argument. Inside the
@@ -657,15 +765,12 @@ namespace micro_os_plus::micro_test_plus
   private:
     /**
      * @brief Constructs a test case with a name, runner, parent suite, index,
-     * nesting depth, and callable.
+     * nesting depth, and body.
      *
      * @details
      * Private, since the index, the nesting depth, and the parent suite
      * are internal; a test case constructed elsewhere would not be
      * registered with its parent, and would never run.
-     *
-     * @tparam Callable_T The type of a callable object.
-     * @tparam Args_T The types of the callable arguments.
      *
      * @param name The test case name or description, used in reports, and
      * the location of the call to `test()` that created the test case.
@@ -674,22 +779,20 @@ namespace micro_os_plus::micro_test_plus
      * @param own_index The one-based positional index within the parent.
      * @param nesting_depth The depth of nesting; 1 for top-level
      * test cases.
-     * @param callable A generic callable object, usually a lambda,
-     * invoked when the test case executes.
-     * @param arguments A possibly empty list of arguments forwarded to
-     * the callable after the leading `test_case&` reference.
+     * @param body A reference to the body, with its arguments already
+     * bound, invoked when the test case executes; it must outlive the
+     * test case.
      */
-    template <typename Callable_T, typename... Args_T>
     test_case (const test_case_name& name, runner& test_runner,
                suite& parent_suite, size_t own_index, size_t nesting_depth,
-               Callable_T&& callable, Args_T&&... arguments);
+               detail::callable_ref<test_case> body);
 
   public:
     /**
      * @brief Deleted copy constructor to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the stored body.
+     * A copy would duplicate the counters.
      */
     test_case (const test_case&) = delete;
 
@@ -706,7 +809,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      *
      * @details
-     * A copy would duplicate the counters and the stored body.
+     * A copy would duplicate the counters.
      */
     test_case&
     operator= (const test_case&)
@@ -848,7 +951,8 @@ namespace micro_os_plus::micro_test_plus
 
   private:
     /**
-     * @brief Executes the test case body by invoking the stored callable.
+     * @brief Executes the test case body by invoking the referred
+     * callable.
      *
      * @details
      * Private, since the test case is run only once, by
@@ -884,12 +988,14 @@ namespace micro_os_plus::micro_test_plus
 
   protected:
     /**
-     * @brief Callable storing the test case body and any bound arguments.
+     * @brief Reference to the test case body, with any bound arguments.
      *
      * @details
-     * Invoked by `run()` with a reference to this test case.
+     * Invoked by `run()` with a reference to this test case. The body is
+     * a local object of `runnable_base::create_test_case()`, which
+     * outlives the test case.
      */
-    std::function<void (test_case&)> callable_;
+    detail::callable_ref<test_case> callable_;
 
     /**
      * @brief The location of the call to `test()` that created this

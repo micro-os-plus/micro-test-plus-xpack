@@ -255,10 +255,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * No resources are owned directly by `test_case`; the stored body is
-   * destroyed with the object, when the `test()` call that created it
-   * returns. If tracing is enabled, the name is output for diagnostic
-   * purposes.
+   * No resources are owned by `test_case`; it only refers to its body,
+   * which is destroyed after it, when the `test()` call that created
+   * both returns. If tracing is enabled, the name is output for
+   * diagnostic purposes.
    */
   test_case::~test_case ()
   {
@@ -269,7 +269,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Invokes the stored callable with this test case, surrounded by
+   * Invokes the referred body with this test case, surrounded by
    * reporter calls to begin and end the test case.
    *
    * When exceptions are enabled, an exception that escapes the callable

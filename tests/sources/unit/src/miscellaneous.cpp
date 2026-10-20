@@ -203,7 +203,7 @@ namespace
   }
 
   // A type that counts its live instances, to check that a test case
-  // and its stored body are destroyed when `test()` returns.
+  // and its body are destroyed when `test()` returns.
   int live_instances = 0;
 
   struct instance_counter
@@ -1681,6 +1681,57 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         t.expect (eq (local_ts.totals ().executed_test_cases (), 2U))
             << "test cases counted";
+        local_counts.passed_checks++;
+
+        t.expect (eq (local_runner.run (), 0)) << "local session passed";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // A test case refers to its body, which is a local object of `test()`,
+    // so the body is not allocated, whatever the size of the lambda
+    // captures and of the bound arguments; a test case with a large body
+    // allocates as much as one without captures.
+    ts.test ("Test case bodies", [] (auto& t)
+      {
+        runner_options options{};
+        options.selected_reporter = reporter_kind::human;
+        options.verbosity_level = verbosity::silent;
+
+        runner local_runner;
+        auto& local_ts = local_runner.initialise (options, "Local");
+
+        // Run a first test case, so that the allocations done only once,
+        // if any, are not counted.
+        local_ts.test ("First", [] (auto& lt) { lt.expect (true); });
+
+        std::size_t start_count = allocations_count;
+        local_ts.test ("Small", [] (auto& lt) { lt.expect (true); });
+        const std::size_t small_allocations = allocations_count - start_count;
+
+        std::int64_t a = 1;
+        std::int64_t b = 2;
+        std::int64_t c = 3;
+        std::int64_t d = 4;
+        std::int64_t sum = 0;
+
+        start_count = allocations_count;
+        local_ts.test ("Large",
+                       [&a, &b, &c, &d, &sum] (auto& lt, std::int64_t x,
+                                               std::int64_t y, std::int64_t z)
+          {
+            sum = a + b + c + d + x + y + z;
+            lt.expect (true);
+          },
+                       5, 6, 7);
+        const std::size_t large_allocations = allocations_count - start_count;
+
+        t.expect (eq (sum, 28)) << "large body invoked";
+        local_counts.passed_checks++;
+
+        t.expect (eq (large_allocations, small_allocations))
+            << "large body not allocated";
         local_counts.passed_checks++;
 
         t.expect (eq (local_runner.run (), 0)) << "local session passed";

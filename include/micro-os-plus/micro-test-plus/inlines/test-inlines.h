@@ -29,8 +29,10 @@
  *
  * When additional arguments are given, a lambda captures copies of them,
  * allowing versatile test initialisation with arbitrary callable types and
- * arguments. A `static_suite` additionally inserts itself into the list of
- * suites upon construction.
+ * arguments. The suites store this lambda in a `std::function`, while
+ * the test cases only refer to it, as a local object of the `test()`
+ * call that runs them. A `static_suite` additionally inserts itself into
+ * the list of suites upon construction.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, maintaining a clear separation from user code and minimising the
@@ -208,14 +210,18 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Constructs the child `test_case` as a local object, with the next
-     * test point number of this node as its index, then passes it to
-     * `after_test_case_create()`, which counts and runs it.
+     * Binds the callable and its arguments into a local body, constructs
+     * the child `test_case` as a local object that refers to the body,
+     * with the next test point number of this node as its index, then
+     * passes it to `after_test_case_create()`, which counts and runs it.
      *
-     * The child test case, with its stored body and bound arguments, is
-     * destroyed when this function returns, so the memory used by a
-     * test session does not grow with the number of test cases; the stack
-     * holds one test case for each level of nesting being run.
+     * The child test case and its body, with the copies of the
+     * arguments, are destroyed when this function returns, so the memory
+     * used by a test session does not grow with the number of test cases;
+     * the stack holds one test case and one body for each level of
+     * nesting being run. Since the body is not stored in a
+     * `std::function`, it is never allocated, whatever the size of the
+     * lambda captures and of the arguments.
      */
     template <typename Callable_T, typename... Args_T>
     void
@@ -225,13 +231,13 @@ namespace micro_os_plus::micro_test_plus
                                      Args_T&&... arguments)
     {
       size_t own_index = next_test_point_number ();
-      class test_case child_test_case{ name,
-                                       runner_,
-                                       parent_suite,
-                                       own_index,
-                                       nesting_depth,
-                                       std::forward<Callable_T> (callable),
-                                       std::forward<Args_T> (arguments)... };
+      auto body = bind_callable<class test_case> (
+          std::forward<Callable_T> (callable),
+          std::forward<Args_T> (arguments)...);
+      class test_case child_test_case{
+        name,      runner_,       parent_suite,
+        own_index, nesting_depth, callable_ref<class test_case>{ body }
+      };
 
       after_test_case_create (child_test_case, parent_suite);
     }
@@ -241,7 +247,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Without additional arguments, the callable already has the signature
-     * `void (Self_T&)`, and is stored directly, without a wrapper.
+     * `void (Self_T&)`, and a copy of it is returned, without a wrapper.
      *
      * Otherwise, a lambda captures the callable and copies of the
      * arguments (decayed, as by `auto`), since a suite may run after the
@@ -252,7 +258,7 @@ namespace micro_os_plus::micro_test_plus
      * `auto&` parameter receives the `std::reference_wrapper` itself).
      */
     template <typename Self_T, typename Callable_T, typename... Args_T>
-    std::function<void (Self_T&)>
+    auto
     bind_callable (Callable_T&& callable, Args_T&&... arguments)
     {
       if constexpr (sizeof...(arguments) == 0)
@@ -268,6 +274,48 @@ namespace micro_os_plus::micro_test_plus
         }
     }
 
+    // ========================================================================
+
+    /**
+     * @details
+     * Stores the address of the callable, and the address of the
+     * `invoke_callable()` instantiation for its type.
+     */
+    template <typename Self_T>
+    template <typename Callable_T>
+      requires (!std::is_same_v<std::remove_cv_t<Callable_T>,
+                                callable_ref<Self_T>>)
+    callable_ref<Self_T>::callable_ref (Callable_T& callable) noexcept
+        : callable_{ std::addressof (callable) },
+          invoke_{ &invoke_callable<Callable_T> }
+    {
+    }
+
+    /**
+     * @details
+     * Passes the stored address and @p self to the stored function.
+     */
+    template <typename Self_T>
+    void
+    callable_ref<Self_T>::operator() (Self_T& self) const
+    {
+      invoke_ (callable_, self);
+    }
+
+    /**
+     * @details
+     * Casts @p callable back to `Callable_T*`, the type it had when the
+     * reference was constructed, and invokes the callable through it, as
+     * an lvalue, with @p self.
+     */
+    template <typename Self_T>
+    template <typename Callable_T>
+    void
+    callable_ref<Self_T>::invoke_callable (void* callable, Self_T& self)
+    {
+      std::invoke (*static_cast<Callable_T*> (callable), self);
+    }
+
     // ------------------------------------------------------------------------
   } // namespace detail
 
@@ -275,20 +323,16 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Stores the callable, binding its arguments, if any, and the location
-   * of the call to `test()`, the parent suite, and the nesting depth.
+   * Stores the reference to the body, the location of the call to
+   * `test()`, the parent suite, and the nesting depth.
    */
-  template <typename Callable_T, typename... Args_T>
-  test_case::test_case (const test_case_name& name, runner& test_runner,
-                        suite& parent_suite, size_t own_index,
-                        size_t nesting_depth, Callable_T&& callable,
-                        Args_T&&... arguments)
+  inline test_case::test_case (const test_case_name& name, runner& test_runner,
+                               suite& parent_suite, size_t own_index,
+                               size_t nesting_depth,
+                               detail::callable_ref<test_case> body)
       : runnable_base{ name.name (), test_runner, own_index },
-        callable_{ detail::bind_callable<test_case> (
-            std::forward<Callable_T> (callable),
-            std::forward<Args_T> (arguments)...) },
-        location_{ name.location () }, parent_suite_{ parent_suite },
-        nesting_depth_{ nesting_depth }
+        callable_{ body }, location_{ name.location () },
+        parent_suite_{ parent_suite }, nesting_depth_{ nesting_depth }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE

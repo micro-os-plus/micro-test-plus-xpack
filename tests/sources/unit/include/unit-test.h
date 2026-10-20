@@ -21,6 +21,8 @@
 #include "micro-os-plus/platform.h"
 #include "micro-os-plus/micro-test-plus.h"
 
+#include <cstddef>
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -112,6 +114,10 @@ local_test_assert (const char* failedexpr, const char* file, int line);
 // ----------------------------------------------------------------------------
 
 extern micro_os_plus::micro_test_plus::runner tr;
+
+// The number of calls to the global allocation function, replaced in
+// `support.cpp`, to check that the test cases do not allocate their bodies.
+extern std::size_t allocations_count;
 
 // ----------------------------------------------------------------------------
 

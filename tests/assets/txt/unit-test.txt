@@ -1070,6 +1070,11 @@ break	tab == x)
         ✓ test cases counted
         ✓ local session passed
     ✓ Test case lifetime - passed (3 checks)
+    • Test case bodies
+        ✓ large body invoked
+        ✓ large body not allocated
+        ✓ local session passed
+    ✓ Test case bodies - passed (3 checks)
     • Formatting of passed checks
         ✓ passed check not formatted (human)
         ✓ failed check formatted (human)
@@ -1100,7 +1105,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (164 checks passed, 26 failed, in 32 test cases), time: 4.010 ms
+✗ Miscellaneous suite - FAILED (167 checks passed, 26 failed, in 33 test cases), time: 4.010 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1211,4 +1216,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 585 checks passed, 362 failed, in 116 test cases, 14 test suites, time: 13.891 ms
+✗ Total: 588 checks passed, 362 failed, in 117 test cases, 14 test suites, time: 13.891 ms

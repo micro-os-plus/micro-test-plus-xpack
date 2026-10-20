@@ -3074,6 +3074,12 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 3 - local session passed
         1..3
     ok 27 - Test case lifetime # { passed, 3 checks }
+    # Subtest: Test case bodies
+        ok 1 - large body invoked
+        ok 2 - large body not allocated
+        ok 3 - local session passed
+        1..3
+    ok 28 - Test case bodies # { passed, 3 checks }
     # Subtest: Formatting of passed checks
         ok 1 - passed check not formatted (human)
         ok 2 - failed check formatted (human)
@@ -3082,16 +3088,16 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 5 - failed check formatted (tap)
         ok 6 - both checks counted (tap)
         1..6
-    ok 28 - Formatting of passed checks # { passed, 6 checks }
+    ok 29 - Formatting of passed checks # { passed, 6 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - previous handler returned
         1..2
-    ok 29 - Abort handler # { passed, 2 checks }
+    ok 30 - Abort handler # { passed, 2 checks }
     # Subtest: Abort during the session
         ok 1 - skipped without exceptions
         1..1
-    ok 30 - Abort during the session # { passed, 1 check }
+    ok 31 - Abort during the session # { passed, 1 check }
     # Subtest: Test case and suite names
         ok 1 - temporary string name
         ok 2 - string name
@@ -3101,9 +3107,9 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 6 - string suite name copied
         ok 7 - string view suite name copied
         1..7
-    ok 31 - Test case and suite names # { passed, 7 checks }
-    1..31
-not ok 9 - Miscellaneous suite # { FAILED, 158 checks passed, 26 failed, in 32 test cases }
+    ok 32 - Test case and suite names # { passed, 7 checks }
+    1..32
+not ok 9 - Miscellaneous suite # { FAILED, 161 checks passed, 26 failed, in 33 test cases }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3347,4 +3353,4 @@ ok 11 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 12 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..12
-# { total: 568 checks passed, 350 failed, in 101 test cases, 12 test suites }
+# { total: 571 checks passed, 350 failed, in 102 test cases, 12 test suites }
