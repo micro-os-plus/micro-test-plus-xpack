@@ -242,6 +242,42 @@ namespace micro_os_plus::micro_test_plus
                           std::forward<Rhs_T> (rhs) };
   }
 
+  /**
+   * @details
+   * Forwards to `negate()`, so the returned expression is the same, and
+   * is reported in the same way.
+   */
+  template <class Expr_T>
+  constexpr auto
+  _not (Expr_T&& expr)
+  {
+    return negate (std::forward<Expr_T> (expr));
+  }
+
+  /**
+   * @details
+   * Forwards to `both()`, so the returned expression is the same, and
+   * is reported in the same way.
+   */
+  template <class Lhs_T, class Rhs_T>
+  constexpr auto
+  _and (Lhs_T&& lhs, Rhs_T&& rhs)
+  {
+    return both (std::forward<Lhs_T> (lhs), std::forward<Rhs_T> (rhs));
+  }
+
+  /**
+   * @details
+   * Forwards to `either()`, so the returned expression is the same, and
+   * is reported in the same way.
+   */
+  template <class Lhs_T, class Rhs_T>
+  constexpr auto
+  _or (Lhs_T&& lhs, Rhs_T&& rhs)
+  {
+    return either (std::forward<Lhs_T> (lhs), std::forward<Rhs_T> (rhs));
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 

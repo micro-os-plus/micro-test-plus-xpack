@@ -298,6 +298,40 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The deprecated names of `both()`, `either()`, and `negate()`; they
+    // return the same expressions, so they are reported in the same way.
+    ts.test ("_and(), _or(), _not()", [] (auto& t)
+      {
+        static_assert (std::is_same_v<decltype (_and (eq (1, 1), eq (2, 2))),
+                                      decltype (both (eq (1, 1), eq (2, 2)))>,
+                       "_and() returns the same expression as both()");
+        static_assert (
+            std::is_same_v<decltype (_or (eq (1, 1), eq (2, 2))),
+                           decltype (either (eq (1, 1), eq (2, 2)))>,
+            "_or() returns the same expression as either()");
+        static_assert (std::is_same_v<decltype (_not (eq (1, 1))),
+                                      decltype (negate (eq (1, 1)))>,
+                       "_not() returns the same expression as negate()");
+
+        int one = 1;
+
+        t.expect (_and (eq (one, 1), ne (one, 2)));
+        local_counts.passed_checks++;
+
+        t.expect (_or (eq (one, 2), eq (one, 1)));
+        local_counts.passed_checks++;
+
+        t.expect (_not (eq (one, 2)));
+        local_counts.passed_checks++;
+
+        t.expect (!_and (eq (one, 1), eq (one, 2))
+                  and !_or (eq (one, 2), eq (one, 3)) and !_not (eq (one, 1)))
+            << "false results";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     test_assert (current_suite_totals.passed_checks ()
                  == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()

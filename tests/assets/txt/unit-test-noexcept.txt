@@ -1,5 +1,5 @@
 Running: unit-test one two --reporter human --output-file unit-test-noexcept.txt
-Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Static top suite
     • require
@@ -464,15 +464,15 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:563, 0x43fff81c != 0x43fff81c)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:566, 0x43fff81c != 0x43fff81c)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:569, 0x43fff81c > 0x43fff81c)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:572, 0x43fff81c < 0x43fff81c)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:575, 0x43fff81c == 0x43fff830)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:578, 0x4000c6d0 != 0x4000c6d0)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:581, 0x4000c6d0 == 0x43fff830)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:593, 0x43fff848 >= 0x43fff84c)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:596, 0x43fff84c <= 0x43fff848)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:563, 0x87fff7e8 != 0x87fff7e8)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:566, 0x87fff7e8 != 0x87fff7e8)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:569, 0x87fff7e8 > 0x87fff7e8)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:572, 0x87fff7e8 < 0x87fff7e8)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:575, 0x87fff7e8 == 0x87fff7dc)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:578, 0x8001562c != 0x8001562c)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:581, 0x8001562c == 0x87fff7dc)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:593, 0x87fff7cc >= 0x87fff7d0)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:596, 0x87fff7d0 <= 0x87fff7cc)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -481,7 +481,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:644, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:647, 0x43fff900 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:647, 0x87fff960 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:650, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
@@ -536,7 +536,13 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ file.cpp == file.cpp
         ✓ file.cpp == file.cpp
     ✓ reflection::short_name() - passed (3 checks)
-✓ Deprecated suite - passed (20 checks in 8 test cases)
+    • _and(), _or(), _not()
+        ✓ (1 == 1 and 1 != 2)
+        ✓ (1 == 2 or 1 == 1)
+        ✓ not 1 == 2
+        ✓ false results
+    ✓ _and(), _or(), _not() - passed (4 checks)
+✓ Deprecated suite - passed (24 checks in 9 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -967,7 +973,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     ✓ Pointers to const - passed (2 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x400a5c50
+        ✓ pointer 0x840048f4
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
@@ -1196,4 +1202,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 596 checks passed, 350 failed, in 110 test cases, 13 test suites
+✗ Total: 600 checks passed, 350 failed, in 111 test cases, 13 test suites

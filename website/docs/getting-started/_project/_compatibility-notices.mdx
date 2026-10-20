@@ -383,11 +383,13 @@ change. In `counters`, `executed_subtests()` is now
 `skipped_test_cases()`. The output of the reporters is unchanged; the
 TAP reporter still introduces each test case with a `# Subtest:` line.
 
-The logical functions `_and()`, `_or()`, and `_not()` are renamed
-`both()`, `either()`, and `negate()`, since a leading underscore is not
-used by the other public names, and `and`, `or`, and `not` are
-alternative tokens; the old names are not kept. The overloaded `&&`,
-`||`, and `!` operators are unchanged.
+The logical functions `_and()`, `_or()`, and `_not()` are deprecated
+in favour of `both()`, `either()`, and `negate()`, since a leading
+underscore is not used by the other public names, and `and`, `or`, and
+`not` are alternative tokens. The old names are still available, as
+aliases, but marked `[[deprecated]]`; replace `mt::_and (...)` with
+`mt::both (...)`. The overloaded `&&`, `||`, and `!` operators are
+unchanged.
 
 The type wrappers deprecated in v3.2 were removed: the `_b`, `_c`,
 `_sc`, `_s`, `_i`, `_l`, `_ll`, `_u`, `_uc`, `_us`, `_ul`, `_ull`,

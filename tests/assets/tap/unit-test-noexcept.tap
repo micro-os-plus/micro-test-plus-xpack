@@ -1,5 +1,5 @@
 # Running: unit-test one two --output-file unit-test-noexcept.tap
-# Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+# Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: Static top suite
     # Subtest: require
@@ -764,63 +764,63 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: "0x43fff81c != 0x43fff81c"
+          condition: "0x87fff7e8 != 0x87fff7e8"
           at:
             fileName: comparisons.cpp
             lineNumber: 563
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: "0x43fff81c != 0x43fff81c"
+          condition: "0x87fff7e8 != 0x87fff7e8"
           at:
             fileName: comparisons.cpp
             lineNumber: 566
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: "0x43fff81c > 0x43fff81c"
+          condition: "0x87fff7e8 > 0x87fff7e8"
           at:
             fileName: comparisons.cpp
             lineNumber: 569
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: "0x43fff81c < 0x43fff81c"
+          condition: "0x87fff7e8 < 0x87fff7e8"
           at:
             fileName: comparisons.cpp
             lineNumber: 572
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: "0x43fff81c == 0x43fff830"
+          condition: "0x87fff7e8 == 0x87fff7dc"
           at:
             fileName: comparisons.cpp
             lineNumber: 575
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: "0x4000c6d0 != 0x4000c6d0"
+          condition: "0x8001562c != 0x8001562c"
           at:
             fileName: comparisons.cpp
             lineNumber: 578
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: "0x4000c6d0 == 0x43fff830"
+          condition: "0x8001562c == 0x87fff7dc"
           at:
             fileName: comparisons.cpp
             lineNumber: 581
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: "0x43fff848 >= 0x43fff84c"
+          condition: "0x87fff7cc >= 0x87fff7d0"
           at:
             fileName: comparisons.cpp
             lineNumber: 593
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: "0x43fff84c <= 0x43fff848"
+          condition: "0x87fff7d0 <= 0x87fff7cc"
           at:
             fileName: comparisons.cpp
             lineNumber: 596
@@ -843,7 +843,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: "0x43fff900 == nullptr"
+          condition: "0x87fff960 == nullptr"
           at:
             fileName: comparisons.cpp
             lineNumber: 647
@@ -955,8 +955,15 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
         ok 3 - file.cpp == file.cpp
         1..3
     ok 8 - reflection::short_name() # { passed, 3 checks }
-    1..8
-ok 5 - Deprecated suite # { passed, 20 checks in 8 test cases }
+    # Subtest: _and(), _or(), _not()
+        ok 1 - (1 == 1 and 1 != 2)
+        ok 2 - (1 == 2 or 1 == 1)
+        ok 3 - not 1 == 2
+        ok 4 - false results
+        1..4
+    ok 9 - _and(), _or(), _not() # { passed, 4 checks }
+    1..9
+ok 5 - Deprecated suite # { passed, 24 checks in 9 test cases }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
@@ -3006,7 +3013,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
     ok 17 - Pointers to const # { passed, 2 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
-        ok 2 - pointer 0x400a5c50
+        ok 2 - pointer 0x840048f4
         ok 3 - container {1, 2}
         ok 4 - standard types (1, a) nullopt 1
         ok 5 - custom type { 1, 2 } on
@@ -3405,4 +3412,4 @@ ok 12 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..13
-# { total: 596 checks passed, 350 failed, in 110 test cases, 13 test suites }
+# { total: 600 checks passed, 350 failed, in 111 test cases, 13 test suites }
