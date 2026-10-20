@@ -1137,12 +1137,14 @@ break	tab == x)
         ✓ zero stop: has_elapsed false
         ✓ tv_sec==0, tv_nsec!=0: has_elapsed true
     ✓ stopwatch::has_elapsed() state - passed (4 checks)
-    • stopwatch::start() idempotency
-        ✓ second start ignored: 1000000 µs
-    ✓ stopwatch::start() idempotency - passed (1 check)
-    • stopwatch::stop() idempotency
-        ✓ second stop ignored: 1000000 µs
-    ✓ stopwatch::stop() idempotency - passed (1 check)
+    • stopwatch::start() restart
+        ✓ restarted: has_elapsed false
+        ✓ restarted: elapsed 0 µs
+    ✓ stopwatch::start() restart - passed (2 checks)
+    • stopwatch::stop() replacement
+        ✓ second stop: reading replaced
+        ✓ second stop: has_elapsed if clock
+    ✓ stopwatch::stop() replacement - passed (2 checks)
     • stopwatch::elapsed()
         ✓ 1 s -> 1000000 µs
         ✓ 500 ms -> 500000 µs
@@ -1152,7 +1154,7 @@ break	tab == x)
         ✓ zero elapsed -> 0 µs
         ✓ no stop -> 0 µs
     ✓ stopwatch::elapsed() - passed (7 checks)
-✓ Stopwatch suite - passed (18 checks in 5 test cases), time: 0.540 ms
+✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.540 ms
 • Utility suite
     • utility::extract_file_name()
         ✓ Unix path returns filename
@@ -1187,4 +1189,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 566 checks passed, 361 failed, in 114 test cases, 14 test suites, time: 13.256 ms
+✗ Total: 568 checks passed, 361 failed, in 114 test cases, 14 test suites, time: 13.256 ms

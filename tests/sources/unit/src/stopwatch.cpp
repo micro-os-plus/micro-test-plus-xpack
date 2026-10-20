@@ -42,7 +42,20 @@ public:
     start_time_ = start;
     stop_time_ = stop;
   }
+
+  [[nodiscard]] const timespec&
+  stop_time (void) const noexcept
+  {
+    return stop_time_;
+  }
 };
+
+// Without a clock, the readings remain zero.
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
+static constexpr bool has_clock = true;
+#else
+static constexpr bool has_clock = false;
+#endif // defined(_WIN32) || defined(CLOCK_MONOTONIC)
 
 // ----------------------------------------------------------------------------
 
@@ -70,13 +83,8 @@ static static_suite ts_stopwatch{ "Stopwatch suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         // Stopped: both readings are available only on platforms with a
-        // clock; without a clock, they remain zero.
+        // clock.
         sw.stop ();
-#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
-        constexpr bool has_clock = true;
-#else
-        constexpr bool has_clock = false;
-#endif // defined(_WIN32) || defined(CLOCK_MONOTONIC)
         t.expect (eq (sw.has_elapsed (), has_clock))
             << "started and stopped: has_elapsed if clock";
         local_counts.passed_checks++;
@@ -135,17 +143,19 @@ static static_suite ts_stopwatch{ "Stopwatch suite", tr, [] (auto& ts)
 
     // ------------------------------------------------------------------------
 
-    ts.test ("stopwatch::start() idempotency", [] (auto& t)
+    ts.test ("stopwatch::start() restart", [] (auto& t)
       {
         // Pre-set the readings with known values, then call start() again.
-        // The second call must be a no-op, leaving the start unchanged.
+        // The new start must clear the previous stop reading, on all
+        // platforms, with or without a clock.
         test_stopwatch sw{};
         sw.set_times ({ 1, 0 }, { 2, 0 });
 
-        sw.start (); // must not overwrite the pre-set start time
+        sw.start ();
 
-        t.expect (eq (sw.elapsed ().count (), 1000000))
-            << "second start ignored: 1000000 µs";
+        t.expect (!sw.has_elapsed ()) << "restarted: has_elapsed false";
+        local_counts.passed_checks++;
+        t.expect (eq (sw.elapsed ().count (), 0)) << "restarted: elapsed 0 µs";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -160,17 +170,21 @@ static static_suite ts_stopwatch{ "Stopwatch suite", tr, [] (auto& ts)
 
     // ------------------------------------------------------------------------
 
-    ts.test ("stopwatch::stop() idempotency", [] (auto& t)
+    ts.test ("stopwatch::stop() replacement", [] (auto& t)
       {
         // Pre-set the readings with known values, then call stop() again.
-        // The second call must be a no-op, leaving the stop unchanged.
+        // The new stop must replace the previous reading, with a clock
+        // reading, or with zero on platforms without a clock.
         test_stopwatch sw{};
         sw.set_times ({ 1, 0 }, { 2, 0 });
 
-        sw.stop (); // must not overwrite the pre-set stop time
+        sw.stop ();
 
-        t.expect (eq (sw.elapsed ().count (), 1000000))
-            << "second stop ignored: 1000000 µs";
+        t.expect (sw.stop_time ().tv_sec != 2 || sw.stop_time ().tv_nsec != 0)
+            << "second stop: reading replaced";
+        local_counts.passed_checks++;
+        t.expect (eq (sw.has_elapsed (), has_clock))
+            << "second stop: has_elapsed if clock";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

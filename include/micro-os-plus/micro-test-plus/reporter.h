@@ -608,7 +608,7 @@ namespace micro_os_plus::micro_test_plus
        * @return A null-terminated prefix string.
        */
       virtual const char*
-      comment_prefix (void) const
+      comment_prefix (void) const noexcept
           = 0;
 
       // ----------------------------------------------------------------------

@@ -624,7 +624,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * lines; the `write_info()` output appears as plain text.
    */
   const char*
-  reporter_human::comment_prefix (void) const
+  reporter_human::comment_prefix (void) const noexcept
   {
     return "";
   }

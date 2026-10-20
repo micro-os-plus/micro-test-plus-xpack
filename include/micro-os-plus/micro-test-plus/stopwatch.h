@@ -86,12 +86,13 @@ namespace micro_os_plus::micro_test_plus
      * and `stop()` just after it; when both readings are available,
      * `elapsed()` returns the interval between them.
      *
-     * Each reading is recorded only once; subsequent calls of `start()`
-     * or `stop()` are ignored. A zero reading means that the clock was
-     * not read, either because the stopwatch was not started (or
-     * stopped), or because the platform has no clock; in both cases
-     * `has_elapsed()` returns `false`, so that the reporters can skip the
-     * timing output.
+     * Each call reads the clock again: `start()` restarts the
+     * measurement, discarding both previous readings, and `stop()`
+     * replaces the previous stop reading, if any. A zero reading means
+     * that the clock was not read, either because the stopwatch was not
+     * started (or stopped), or because the platform has no clock; in both
+     * cases `has_elapsed()` returns `false`, so that the reporters can
+     * skip the timing output.
      *
      * Typical usage in the framework:
      * 1. Call `start()` just before the test suite or session body
@@ -168,8 +169,8 @@ namespace micro_os_plus::micro_test_plus
        * @brief Records the start time, from the system clock.
        *
        * @details
-       * Only the first call reads the clock; the subsequent calls are
-       * ignored.
+       * Each call restarts the measurement: the stop reading is cleared,
+       * so `has_elapsed()` is `false` until the next `stop()`.
        *
        * @par Parameters
        *   None.
@@ -183,8 +184,8 @@ namespace micro_os_plus::micro_test_plus
        * @brief Records the stop time, from the system clock.
        *
        * @details
-       * Only the first call reads the clock; the subsequent calls are
-       * ignored.
+       * Each call replaces the previous stop reading, if any, so the
+       * elapsed time is measured from the start to the last `stop()`.
        *
        * @par Parameters
        *   None.
@@ -244,7 +245,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief The clock reading at the start of the measured interval.
        *
        * @details
-       * Zero until `start()` is called; set only once.
+       * Zero until `start()` is called; set again by each `start()`.
        */
       timespec start_time_{};
 
@@ -252,7 +253,8 @@ namespace micro_os_plus::micro_test_plus
        * @brief The clock reading at the end of the measured interval.
        *
        * @details
-       * Zero until `stop()` is called; set only once.
+       * Zero until `stop()` is called; set again by each `stop()`, and
+       * cleared by `start()`.
        */
       timespec stop_time_{};
     };

@@ -303,7 +303,7 @@ namespace
     }
 
     const char*
-    comment_prefix (void) const override
+    comment_prefix (void) const noexcept override
     {
       return "";
     }

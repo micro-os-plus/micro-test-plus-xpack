@@ -89,34 +89,30 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * If the start time has not yet been recorded, the system clock is
-   * read into `start_time_`. Subsequent calls are silently ignored,
-   * ensuring idempotent behaviour.
+   * Clears both readings, then reads the system clock into
+   * `start_time_`. The readings are cleared first because
+   * `read_clock()` leaves its argument unchanged on the platforms
+   * without a clock, where a previous reading would otherwise survive.
    */
   void
   stopwatch::start (void) noexcept
   {
-    // Ensure it is read only once.
-    if (!is_recorded (start_time_))
-      {
-        read_clock (start_time_);
-      }
+    start_time_ = {};
+    stop_time_ = {};
+    read_clock (start_time_);
   }
 
   /**
    * @details
-   * If the stop time has not yet been recorded, the system clock is
-   * read into `stop_time_`. Subsequent calls are silently ignored,
-   * ensuring idempotent behaviour.
+   * Clears the stop reading, then reads the system clock into
+   * `stop_time_`, for the same reason as in `start()`. The start
+   * reading is not changed.
    */
   void
   stopwatch::stop (void) noexcept
   {
-    // Ensure it is read only once.
-    if (!is_recorded (stop_time_))
-      {
-        read_clock (stop_time_);
-      }
+    stop_time_ = {};
+    read_clock (stop_time_);
   }
 
   /**

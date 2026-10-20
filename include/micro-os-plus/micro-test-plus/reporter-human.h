@@ -298,7 +298,7 @@ namespace micro_os_plus::micro_test_plus::detail
      * use a comment prefix.
      */
     const char*
-    comment_prefix (void) const override;
+    comment_prefix (void) const noexcept override;
 
   private:
     /**

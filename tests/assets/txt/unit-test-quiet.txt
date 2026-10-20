@@ -109,10 +109,10 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • Named boolean literals
     • stopwatch::start() and stop()
     • stopwatch::has_elapsed() state
-    • stopwatch::start() idempotency
-    • stopwatch::stop() idempotency
+    • stopwatch::start() restart
+    • stopwatch::stop() replacement
     • stopwatch::elapsed()
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 566 checks passed, 361 failed, in 114 test cases, 14 test suites, time: 11.780 ms
+✗ Total: 568 checks passed, 361 failed, in 114 test cases, 14 test suites, time: 11.780 ms
