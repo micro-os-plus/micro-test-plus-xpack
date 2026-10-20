@@ -943,8 +943,12 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
     # Subtest: counters
         ok 1 - successful_checks()
         ok 2 - increment_successful_checks()
-        1..2
-    ok 6 - counters # { passed, 2 checks }
+        ok 3 - executed_subtests()
+        ok 4 - increment_executed_subtests()
+        ok 5 - was_successful() without failures
+        ok 6 - was_successful() with a failed check
+        1..6
+    ok 6 - counters # { passed, 6 checks }
     # Subtest: assume()
         ok 1 - passed assumption
         1..1
@@ -979,7 +983,7 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
         1..4
     ok 11 - _i, _f, ..., _t<T> # { passed, 4 checks }
     1..11
-not ok 5 - Deprecated suite # { FAILED, 28 checks passed, 1 failed, in 11 test cases, time: 0.773 ms }
+not ok 5 - Deprecated suite # { FAILED, 32 checks passed, 1 failed, in 11 test cases, time: 0.773 ms }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
@@ -3557,4 +3561,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.293 ms }
     1..3
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.226 ms }
 1..15
-# { total: 621 checks passed, 362 failed, in 127 test cases, 15 test suites, time: 15.801 ms }
+# { total: 625 checks passed, 362 failed, in 127 test cases, 15 test suites, time: 15.801 ms }

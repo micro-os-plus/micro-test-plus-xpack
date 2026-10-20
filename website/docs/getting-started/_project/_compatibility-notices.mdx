@@ -211,10 +211,11 @@ registered nor run. Create the suites with `runner::add_suite()` or as
 
 The `detail::runner_totals` class, returned by `totals()`, is now
 `micro_os_plus::micro_test_plus::counters`, since the suites and the
-test cases own one too, not only the runner; its `was_successful()`
-function is now `passed()`. The old names are not kept; replace
-`detail::runner_totals` with `counters`, and `was_successful()` with
-`passed()`. The `timings()` functions
+test cases own one too, not only the runner. The old class name is
+not kept; replace `detail::runner_totals` with `counters`. Its
+`was_successful()` function is deprecated in favour of `passed()`; the
+old name is still available, as an alias, but marked `[[deprecated]]`.
+The `timings()` functions
 of the runner and of the suites, and the `expression()` function of the
 reporters, were removed, since they return internal types and are used
 only by the framework.
@@ -378,9 +379,11 @@ The `subtest` class is renamed `test_case`, the term used by the
 documentation and by the reports, and the functions named after it are
 renamed accordingly; the old names are not kept. Replace `mt::subtest`
 with `mt::test_case`; the lambdas with an `auto&` parameter need no
-change. In `counters`, `executed_subtests()` is now
-`executed_test_cases()`, next to the new `failed_test_cases()` and
-`skipped_test_cases()`. The output of the reporters is unchanged; the
+change. In `counters`, `executed_subtests()` and
+`increment_executed_subtests()` are deprecated in favour of
+`executed_test_cases()` and `increment_executed_test_cases()`, next to
+the new `failed_test_cases()` and `skipped_test_cases()`; the old names
+are still available, as aliases, but marked `[[deprecated]]`. The output of the reporters is unchanged; the
 TAP reporter still introduces each test case with a `# Subtest:` line.
 
 The logical functions `_and()`, `_or()`, and `_not()` are deprecated

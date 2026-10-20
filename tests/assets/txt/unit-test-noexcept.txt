@@ -527,7 +527,11 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
     • counters
         ✓ successful_checks()
         ✓ increment_successful_checks()
-    ✓ counters - passed (2 checks)
+        ✓ executed_subtests()
+        ✓ increment_executed_subtests()
+        ✓ was_successful() without failures
+        ✓ was_successful() with a failed check
+    ✓ counters - passed (6 checks)
     • assume()
         ✓ passed assumption
     ✓ assume() - passed (1 check)
@@ -548,7 +552,7 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ 1 == 1
         ✓ false results
     ✓ _i, _f, ..., _t<T> - passed (4 checks)
-✓ Deprecated suite - passed (28 checks in 10 test cases)
+✓ Deprecated suite - passed (32 checks in 10 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1208,4 +1212,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 604 checks passed, 350 failed, in 112 test cases, 13 test suites
+✗ Total: 608 checks passed, 350 failed, in 112 test cases, 13 test suites

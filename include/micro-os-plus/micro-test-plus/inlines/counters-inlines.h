@@ -96,6 +96,16 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Forwards to `increment_executed_test_cases()`.
+   */
+  inline void
+  counters::increment_executed_subtests (size_t count) noexcept
+  {
+    increment_executed_test_cases (count);
+  }
+
+  /**
+   * @details
    * Adds `count` to the `failed_test_cases_` counter.
    */
   inline void
@@ -166,6 +176,16 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Forwards to `executed_test_cases()`.
+   */
+  inline size_t
+  counters::executed_subtests (void) const noexcept
+  {
+    return executed_test_cases ();
+  }
+
+  /**
+   * @details
    * Returns the value of the `failed_test_cases_` counter.
    */
   inline size_t
@@ -195,6 +215,16 @@ namespace micro_os_plus::micro_test_plus
   counters::passed (void) const noexcept
   {
     return failed_checks_ == 0 && failed_test_cases_ == 0;
+  }
+
+  /**
+   * @details
+   * Forwards to `passed()`.
+   */
+  inline bool
+  counters::was_successful (void) const noexcept
+  {
+    return passed ();
   }
 
   // --------------------------------------------------------------------------

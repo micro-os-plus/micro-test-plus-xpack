@@ -246,6 +246,22 @@ namespace micro_os_plus::micro_test_plus
     increment_executed_test_cases (size_t count = 1) noexcept;
 
     /**
+     * @brief Deprecated name of `increment_executed_test_cases()`.
+     *
+     * @details
+     * Calls `increment_executed_test_cases()`. The old name referred to
+     * the `subtest` class, which is now `test_case`.
+     *
+     * @param count The number of test cases to add (default 1).
+     * @par Returns
+     *   Nothing.
+     *
+     * @deprecated Use `increment_executed_test_cases()` (since 5.1.0).
+     */
+    [[deprecated ("use increment_executed_test_cases()")]] void
+    increment_executed_subtests (size_t count = 1) noexcept;
+
+    /**
      * @brief Increments the failed test cases counter.
      *
      * @param count The number of failed test cases to add (default 1).
@@ -330,6 +346,22 @@ namespace micro_os_plus::micro_test_plus
     executed_test_cases (void) const noexcept;
 
     /**
+     * @brief Deprecated name of `executed_test_cases()`.
+     *
+     * @details
+     * Calls `executed_test_cases()`. The old name referred to the
+     * `subtest` class, which is now `test_case`.
+     *
+     * @par Parameters
+     *   None.
+     * @return The value returned by `executed_test_cases()`.
+     *
+     * @deprecated Use `executed_test_cases()` (since 5.1.0).
+     */
+    [[deprecated ("use executed_test_cases()"), nodiscard]] size_t
+    executed_subtests (void) const noexcept;
+
+    /**
      * @brief Returns the number of executed test cases that failed.
      *
      * @par Parameters
@@ -365,6 +397,22 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] bool
     passed (void) const noexcept;
+
+    /**
+     * @brief Deprecated name of `passed()`.
+     *
+     * @details
+     * Calls `passed()`. The new name matches the word used by the
+     * reports, and by `passed_checks()`.
+     *
+     * @par Parameters
+     *   None.
+     * @return The value returned by `passed()`.
+     *
+     * @deprecated Use `passed()` (since 5.1.0).
+     */
+    [[deprecated ("use passed()"), nodiscard]] bool
+    was_successful (void) const noexcept;
 
   private:
     /**

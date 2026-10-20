@@ -231,8 +231,9 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    // The deprecated names of `passed_checks()` and
-    // `increment_passed_checks()`.
+    // The deprecated names of `passed_checks()`,
+    // `increment_passed_checks()`, `executed_test_cases()`,
+    // `increment_executed_test_cases()`, and `passed()`.
     ts.test ("counters", [] (auto& t)
       {
         counters local_counters{};
@@ -246,6 +247,29 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
 
         t.expect (eq (local_counters.passed_checks (), 5u))
             << "increment_successful_checks()";
+        local_counts.passed_checks++;
+
+        local_counters.increment_executed_test_cases (3);
+
+        t.expect (eq (local_counters.executed_subtests (), 3u))
+            << "executed_subtests()";
+        local_counts.passed_checks++;
+
+        local_counters.increment_executed_subtests (2);
+
+        t.expect (eq (local_counters.executed_test_cases (), 5u))
+            << "increment_executed_subtests()";
+        local_counts.passed_checks++;
+
+        t.expect (local_counters.was_successful ())
+            << "was_successful() without failures";
+        local_counts.passed_checks++;
+
+        local_counters.increment_failed_checks ();
+
+        t.expect (!local_counters.was_successful ()
+                  and !local_counters.passed ())
+            << "was_successful() with a failed check";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
