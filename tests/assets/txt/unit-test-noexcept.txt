@@ -549,6 +549,10 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ start reading only
         ✓ both readings, elapsed time split
     ✓ timestamps::compute_elapsed_time() - passed (3 checks)
+    • runner::reporter()
+        ✓ the verbosity of the session options
+        ✓ the verbosity of the command line
+    ✓ runner::reporter() - passed (2 checks)
     • assume()
         ✓ passed assumption
     ✓ assume() - passed (1 check)
@@ -569,7 +573,7 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ 1 == 1
         ✓ false results
     ✓ _i, _f, ..., _t<T> - passed (4 checks)
-✓ Deprecated suite - passed (43 checks in 13 test cases)
+✓ Deprecated suite - passed (45 checks in 14 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1229,4 +1233,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 619 checks passed, 350 failed, in 115 test cases, 13 test suites
+✗ Total: 621 checks passed, 350 failed, in 116 test cases, 13 test suites

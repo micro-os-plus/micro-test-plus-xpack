@@ -123,6 +123,17 @@ namespace micro_os_plus::micro_test_plus
     return stopwatch_;
   }
 
+  /**
+   * @details
+   * Returns a reference to the reporter owned by the `reporter_` unique
+   * pointer, which is empty before `initialise()`.
+   */
+  inline detail::reporter&
+  runner::reporter (void) const noexcept
+  {
+    return *reporter_;
+  }
+
   // --------------------------------------------------------------------------
 
   /**

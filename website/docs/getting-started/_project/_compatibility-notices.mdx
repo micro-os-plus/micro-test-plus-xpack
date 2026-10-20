@@ -229,7 +229,9 @@ The reporters (`reporter`, `reporter_human`, and `reporter_tap`) and the
 `endl` and `indent()` manipulators moved to the `detail` namespace,
 since they are internal to the framework and custom reporters are not
 supported; the reporter is still selected with the `--reporter`
-command-line option. `runner::reporter()` was removed; replace
+command-line option. `runner::reporter()` is deprecated, for the same
+reason; it now returns the internal `detail::reporter`, on which the
+`verbosity()` function is kept, also deprecated. Replace
 `runner.reporter ().verbosity ()` with the new
 `runner.verbosity_level ()`.
 

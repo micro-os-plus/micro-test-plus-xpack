@@ -468,6 +468,42 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The v5.0.1 reporter of the session, used to read the verbosity;
+    // it is created by `initialise()`, from the session options.
+    ts.test ("runner::reporter()", [] (auto& t)
+      {
+        static_assert (
+            std::is_same_v<decltype (std::declval<const runner&> ()
+                                         .reporter ()),
+                           detail::reporter&>,
+            "runner::reporter() returns a reference");
+
+        runner_options options{};
+        options.verbosity_level = verbosity::silent;
+        options.selected_reporter = reporter_kind::human;
+
+        runner human_runner;
+        human_runner.initialise (options, "Human");
+
+        options.selected_reporter = reporter_kind::tap;
+
+        runner tap_runner;
+        tap_runner.initialise (options, "TAP");
+
+        // The v5.0.1 expression.
+        t.expect (human_runner.reporter ().verbosity () == verbosity::silent
+                  and tap_runner.reporter ().verbosity ()
+                          == verbosity::silent)
+            << "the verbosity of the session options";
+        local_counts.passed_checks++;
+
+        t.expect (tr.reporter ().verbosity () == tr.verbosity_level ())
+            << "the verbosity of the command line";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     // The deprecated name of `require()`.
     ts.test ("assume()", [] (auto& t)
       {

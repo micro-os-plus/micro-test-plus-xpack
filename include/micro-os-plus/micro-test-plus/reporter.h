@@ -376,6 +376,24 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] bool
       has_output_file_error (void) const noexcept;
 
+      /**
+       * @brief Deprecated access to the verbosity level.
+       *
+       * @details
+       * Kept from the v5.0.1 `reporter` class, for the applications that
+       * read it through the deprecated `runner::reporter()`
+       * (`tr.reporter ().verbosity ()`). The level is the one returned by
+       * `runner::verbosity_level()`, from the same session options.
+       *
+       * @par Parameters
+       *   None.
+       * @return The verbosity level of the session.
+       *
+       * @deprecated Use `runner::verbosity_level()` (since 5.1.0).
+       */
+      [[deprecated ("use runner::verbosity_level()"), nodiscard]] auto
+      verbosity (void) const noexcept -> micro_test_plus::verbosity;
+
       // ----------------------------------------------------------------------
 
       /**

@@ -108,6 +108,16 @@ namespace micro_os_plus::micro_test_plus::detail
     return *this;
   }
 
+  /**
+   * @details
+   * Returns the level stored in `verbosity_`, set by the constructor.
+   */
+  inline auto
+  reporter::verbosity (void) const noexcept -> micro_test_plus::verbosity
+  {
+    return verbosity_;
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus::detail
 

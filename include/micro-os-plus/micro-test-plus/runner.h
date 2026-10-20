@@ -673,6 +673,28 @@ namespace micro_os_plus::micro_test_plus
     [[deprecated ("the timings are internal"), nodiscard]] detail::stopwatch&
     timings (void) noexcept;
 
+    /**
+     * @brief Deprecated access to the reporter of the test session.
+     *
+     * @details
+     * Returns the internal reporter, created by `initialise()`, as
+     * selected by the session options; the call is valid only after
+     * `initialise()`. In v5.0.1, the returned class was the top
+     * namespace `reporter`, now `detail::reporter`; of its members, the
+     * applications used only `verbosity()`, kept, deprecated, on
+     * `detail::reporter`.
+     *
+     * @par Parameters
+     *   None.
+     * @return A reference to the reporter of the session.
+     *
+     * @deprecated The reporter is internal; use `verbosity_level()`
+     * (since 5.1.0).
+     */
+    [[deprecated ("the reporter is internal; use verbosity_level()"),
+      nodiscard]] detail::reporter&
+    reporter (void) const noexcept;
+
   private:
     /**
      * @brief Runs all registered test suites.
