@@ -90,6 +90,25 @@ namespace
       stop_time_ = stop;
     }
   };
+
+  // A timestamp with a known value, set through the protected member, as
+  // the v5.0.1 unit tests did.
+  class known_timestamp : public detail::timestamp
+  {
+  public:
+    void
+    set (const timespec& ts) noexcept
+    {
+      value_ = ts;
+    }
+  };
+
+  // A type with a non-static member named `value`, which satisfied the
+  // v5.0.1 `type_traits::has_value`.
+  struct with_value_member
+  {
+    int value;
+  };
 } // namespace
 
 // Without a clock, the readings remain zero.
@@ -505,15 +524,141 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The deprecated writers kept from the v5.0.1 `detail::timestamps`;
+    // unlike `start()` and `stop()`, they record only absent readings.
+    ts.test ("timestamps::timestamp_begin(), timestamp_end()", [] (auto& t)
+      {
+        uint32_t milliseconds = 0;
+        uint32_t microseconds = 0;
+
+        known_stopwatch sw{};
+        sw.timestamp_begin ({ 1, 0 });
+        sw.timestamp_begin ({ 5, 0 });
+
+        t.expect (sw.has_begin () and !sw.has_end ())
+            << "the first start time is kept";
+        local_counts.passed_checks++;
+
+        // 1.5 seconds.
+        sw.timestamp_end ({ 2, 500'000'000 });
+        sw.timestamp_end ({ 9, 0 });
+        sw.compute_elapsed_time (milliseconds, microseconds);
+
+        t.expect (sw.has_timestamps () and eq (milliseconds, 1500u)
+                  and eq (microseconds, 0u))
+            << "the first stop time is kept";
+        local_counts.passed_checks++;
+
+        // Present readings are not replaced by the clock.
+        sw.set_times ({ 1, 0 }, { 2, 0 });
+        sw.timestamp_begin ();
+        sw.timestamp_end ();
+        sw.compute_elapsed_time (milliseconds, microseconds);
+
+        t.expect (eq (milliseconds, 1000u) and eq (microseconds, 0u))
+            << "the clock does not replace the readings";
+        local_counts.passed_checks++;
+
+        // The start reading does not clear the stop reading, as start()
+        // does.
+        sw.set_times ({ 0, 0 }, { 2, 0 });
+        sw.timestamp_begin ({ 1, 0 });
+        sw.compute_elapsed_time (milliseconds, microseconds);
+
+        t.expect (sw.has_end () and eq (milliseconds, 1000u))
+            << "the stop reading is kept";
+        local_counts.passed_checks++;
+
+        // A zero time is not a reading.
+        known_stopwatch zero_sw{};
+        zero_sw.timestamp_begin ({ 0, 0 });
+        zero_sw.timestamp_end ({ 0, 0 });
+
+        t.expect (!zero_sw.has_begin () and !zero_sw.has_end ())
+            << "zero times are not readings";
+        local_counts.passed_checks++;
+
+        detail::stopwatch clock_sw{};
+        clock_sw.timestamp_begin ();
+        clock_sw.timestamp_end ();
+
+        t.expect (eq (clock_sw.has_begin (), has_clock)
+                  and eq (clock_sw.has_end (), has_clock)
+                  and eq (clock_sw.has_timestamps (), has_clock))
+            << "the readings of the clock";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The v5.0.1 `detail::timestamp` class, no longer used by the
+    // framework.
+    ts.test ("detail::timestamp", [] (auto& t)
+      {
+        static_assert (std::is_copy_constructible_v<detail::timestamp>
+                           and std::is_copy_assignable_v<detail::timestamp>,
+                       "timestamp is copyable");
+        static_assert (std::is_convertible_v<timespec, detail::timestamp>,
+                       "a timespec converts to timestamp");
+        static_assert (
+            std::is_same_v<
+                decltype (std::declval<detail::timestamp&> ().value ()),
+                timespec&>,
+            "the non-const value() returns a reference");
+        static_assert (
+            std::is_same_v<
+                decltype (std::declval<const detail::timestamp&> ().value ()),
+                const timespec&>,
+            "the const value() returns a const reference");
+
+        detail::timestamp now{};
+        t.expect (eq (now.has_clock (), has_clock))
+            << "the default constructor reads the clock";
+        local_counts.passed_checks++;
+
+        detail::timestamp given{ { 1, 2 } };
+        t.expect (given.has_clock () and eq (given.value ().tv_sec, 1)
+                  and eq (given.value ().tv_nsec, 2))
+            << "the time given to the constructor";
+        local_counts.passed_checks++;
+
+        detail::timestamp copy{ given };
+        detail::timestamp assigned{};
+        assigned = given;
+        t.expect (eq (copy.value ().tv_sec, 1)
+                  and eq (copy.value ().tv_nsec, 2)
+                  and eq (assigned.value ().tv_sec, 1)
+                  and eq (assigned.value ().tv_nsec, 2))
+            << "copied and assigned";
+        local_counts.passed_checks++;
+
+        given.value () = { 3, 4 };
+        t.expect (eq (std::as_const (given).value ().tv_sec, 3)
+                  and eq (std::as_const (given).value ().tv_nsec, 4))
+            << "modified through value()";
+        local_counts.passed_checks++;
+
+        // The v5.0.1 derived class, which sets the protected member.
+        known_timestamp known{};
+        known.set ({ 0, 0 });
+        t.expect (!known.has_clock ()) << "zero value, no clock";
+        local_counts.passed_checks++;
+
+        known.set ({ 0, 1 });
+        t.expect (known.has_clock ()) << "non-zero nanoseconds, a clock";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     // The v5.0.1 reporter of the session, used to read the verbosity;
     // it is created by `initialise()`, from the session options.
     ts.test ("runner::reporter()", [] (auto& t)
       {
-        static_assert (
-            std::is_same_v<decltype (std::declval<const runner&> ()
-                                         .reporter ()),
-                           detail::reporter&>,
-            "runner::reporter() returns a reference");
+        static_assert (std::is_same_v<decltype (std::declval<const runner&> ()
+                                                    .reporter ()),
+                                      detail::reporter&>,
+                       "runner::reporter() returns a reference");
 
         runner_options options{};
         options.verbosity_level = verbosity::silent;
@@ -529,8 +674,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
 
         // The v5.0.1 expression.
         t.expect (human_runner.reporter ().verbosity () == verbosity::silent
-                  and tap_runner.reporter ().verbosity ()
-                          == verbosity::silent)
+                  and tap_runner.reporter ().verbosity () == verbosity::silent)
             << "the verbosity of the session options";
         local_counts.passed_checks++;
 
@@ -667,6 +811,86 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
 
         t.expect (!eq (_i (one), 2) and !eq (_t<int>{ one }, 2))
             << "false results";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The v5.0.1 `type_traits` namespace; the names that still exist refer
+    // to the current concepts and templates, so they have the current
+    // semantics.
+    ts.test ("type_traits", [] (auto& t)
+      {
+        // The concepts.
+        static_assert (type_traits::is_op<detail::op>);
+        static_assert (type_traits::is_op<to_i>);
+        static_assert (not type_traits::is_op<int>);
+        static_assert (type_traits::any_op<int, to_i>);
+        static_assert (not type_traits::any_op<int, int>);
+        static_assert (type_traits::checkable<bool>);
+        static_assert (type_traits::checkable<to_b>);
+        static_assert (type_traits::printable<int>);
+        static_assert (type_traits::printable<std::string_view>);
+        static_assert (type_traits::has_epsilon<to_d>);
+        static_assert (not type_traits::has_epsilon<to_i>);
+        static_assert (type_traits::container_like<std::string_view>);
+        static_assert (not type_traits::container_like<int>);
+        static_assert (type_traits::has_npos<std::string_view>);
+        static_assert (not type_traits::has_npos<int>);
+        static_assert (type_traits::has_value<detail::integral_constant<42>>);
+        static_assert (not type_traits::has_value<to_i>);
+        // The application types are excluded, unlike in v5.0.1.
+        static_assert (not type_traits::has_value<with_value_member>);
+        static_assert (type_traits::is_floating_point<double>);
+        static_assert (not type_traits::is_floating_point<int>);
+
+        // The restored helpers.
+        static_assert (
+            std::is_same_v<type_traits::identity<int, char>::type, int>);
+        static_assert (
+            std::is_same_v<type_traits::list<>,
+                           type_traits::function_traits<void ()>::args>);
+        static_assert (
+            std::is_same_v<
+                void, type_traits::function_traits<void ()>::result_type>);
+        static_assert (
+            std::is_same_v<
+                type_traits::list<int, const float&>,
+                type_traits::function_traits<void (int, const float&)>::args>);
+        static_assert (std::is_same_v<int, type_traits::function_traits<
+                                               int (*) (char)>::result_type>);
+        // The type of the lambda depends on the parameter of the test case.
+        auto lambda = [] (int, char) { return 1.0; };
+        using lambda_traits = type_traits::function_traits<decltype (lambda)>;
+        static_assert (std::is_same_v<type_traits::list<int, char>,
+                                      typename lambda_traits::args>);
+        static_assert (
+            std::is_same_v<double, typename lambda_traits::result_type>);
+
+        // The base of the expressions and the value wrappers.
+        static_assert (std::is_same_v<type_traits::op, detail::op>);
+        static_assert (
+            std::is_same_v<type_traits::value<int>, detail::value<int>>);
+        static_assert (
+            std::is_same_v<type_traits::value<double>, detail::value<double>>);
+        static_assert (std::is_same_v<type_traits::value_base_<int>,
+                                      detail::value_base<int>>);
+        static_assert (std::is_same_v<type_traits::genuine_integral_value<int>,
+                                      detail::value<int>>);
+        static_assert (std::is_same_v<type_traits::integral_constant<42>,
+                                      detail::integral_constant<42>>);
+        static_assert (std::is_same_v<
+                       type_traits::floating_point_constant<double, 1, 5, 1>,
+                       detail::floating_point_constant<double, 1, 5, 1>>);
+
+        int one = 1;
+
+        t.expect (eq (type_traits::value<int>{ one }, 1)
+                  and eq (type_traits::genuine_integral_value<int>{ one }, 1))
+            << "the wrapped values are compared";
+        local_counts.passed_checks++;
+
+        t.expect (!eq (type_traits::value<int>{ one }, 2)) << "false results";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

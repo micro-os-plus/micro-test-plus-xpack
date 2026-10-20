@@ -138,6 +138,48 @@ namespace micro_os_plus::micro_test_plus::detail
     return std::chrono::duration_cast<std::chrono::microseconds> (delta);
   }
 
+  /**
+   * @details
+   * Reads the system clock into `start_time_` only if `is_recorded()`
+   * reports no start reading; since the reading is zero in that case,
+   * it need not be cleared first, as in `start()`.
+   */
+  void
+  stopwatch::timestamp_begin (void) noexcept
+  {
+    if (!is_recorded (start_time_))
+      {
+        read_clock (start_time_);
+      }
+  }
+
+  /**
+   * @details
+   * Reads the system clock into `stop_time_` only if `is_recorded()`
+   * reports no stop reading, for the same reason as in
+   * `timestamp_begin()`.
+   */
+  void
+  stopwatch::timestamp_end (void) noexcept
+  {
+    if (!is_recorded (stop_time_))
+      {
+        read_clock (stop_time_);
+      }
+  }
+
+  // ==========================================================================
+
+  /**
+   * @details
+   * Reads the system clock into the stored value, with the same clock as
+   * `stopwatch`; without a clock, the value remains zero.
+   */
+  timestamp::timestamp (void) noexcept
+  {
+    read_clock (value_);
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus::detail
 

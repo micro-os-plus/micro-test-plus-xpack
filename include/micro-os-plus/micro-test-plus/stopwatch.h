@@ -108,11 +108,12 @@ namespace micro_os_plus::micro_test_plus
      * the unit tests can derive from the class and set known readings;
      * the class is not meant to be extended otherwise.
      *
-     * The read-only members of the v5.0.1 `detail::timestamps` class
-     * (`has_begin()`, `has_end()`, `has_timestamps()`, and
-     * `compute_elapsed_time()`) are kept, deprecated, for the
-     * applications that used the deprecated `timings()` of the runner and
-     * of the suites, which return a reference to this class.
+     * The public members of the v5.0.1 `detail::timestamps` class
+     * (`timestamp_begin()`, `timestamp_end()`, `has_begin()`, `has_end()`,
+     * `has_timestamps()`, and `compute_elapsed_time()`) are kept,
+     * deprecated, for the applications that used the deprecated
+     * `timings()` of the runner and of the suites, which return a
+     * reference to this class.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -308,6 +309,82 @@ namespace micro_os_plus::micro_test_plus
       compute_elapsed_time (uint32_t& milliseconds,
                             uint32_t& microseconds) const noexcept;
 
+      /**
+       * @brief Deprecated recording of the start time, from the system
+       * clock.
+       *
+       * @details
+       * Kept from the v5.0.1 `detail::timestamps` class. Unlike
+       * `start()`, it reads the clock only if the start reading is absent,
+       * and it does not clear the stop reading. In v5.0.1, a reading taken
+       * without a clock was also kept; here, the next call reads the clock
+       * again.
+       *
+       * @par Parameters
+       *   None.
+       * @par Returns
+       *   Nothing.
+       *
+       * @deprecated Use `start()` (since 5.1.0).
+       */
+      [[deprecated ("use start()")]] void
+      timestamp_begin (void) noexcept;
+
+      /**
+       * @brief Deprecated recording of a given start time.
+       *
+       * @details
+       * Kept from the v5.0.1 `detail::timestamps` class. Stores @p ts as
+       * the start reading, only if the start reading is absent; the stop
+       * reading is not changed. A zero @p ts leaves the reading absent; in
+       * v5.0.1, it was stored, and reported by `has_begin()`.
+       *
+       * @param ts The start time.
+       * @par Returns
+       *   Nothing.
+       *
+       * @deprecated Use `start()` (since 5.1.0).
+       */
+      [[deprecated ("use start()")]] void
+      timestamp_begin (const timespec& ts) noexcept;
+
+      /**
+       * @brief Deprecated recording of the stop time, from the system
+       * clock.
+       *
+       * @details
+       * Kept from the v5.0.1 `detail::timestamps` class. Unlike `stop()`,
+       * it reads the clock only if the stop reading is absent, so the
+       * elapsed time is measured to the first call, not to the last one.
+       *
+       * @par Parameters
+       *   None.
+       * @par Returns
+       *   Nothing.
+       *
+       * @deprecated Use `stop()` (since 5.1.0).
+       */
+      [[deprecated ("use stop()")]] void
+      timestamp_end (void) noexcept;
+
+      /**
+       * @brief Deprecated recording of a given stop time.
+       *
+       * @details
+       * Kept from the v5.0.1 `detail::timestamps` class. Stores @p ts as
+       * the stop reading, only if the stop reading is absent. A zero
+       * @p ts leaves the reading absent; in v5.0.1, it was stored, and
+       * reported by `has_end()`.
+       *
+       * @param ts The stop time.
+       * @par Returns
+       *   Nothing.
+       *
+       * @deprecated Use `stop()` (since 5.1.0).
+       */
+      [[deprecated ("use stop()")]] void
+      timestamp_end (const timespec& ts) noexcept;
+
     protected:
       /**
        * @brief Checks whether a clock reading was recorded.
@@ -349,13 +426,152 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The v5.0.1 name of the class returned by the `timings()` functions
      * of the runner and of the suites, which kept the two timestamps of
-     * the measured interval. Only its read-only members are kept, on
-     * `stopwatch`.
+     * the measured interval. Its public members are kept, on `stopwatch`;
+     * its protected members, the two optional `timestamp` objects, are
+     * not.
      *
      * @deprecated The timings are internal; the elapsed times are shown
      * by the reporters (since 5.1.0).
      */
     using timestamps [[deprecated ("the timings are internal")]] = stopwatch;
+
+    // ========================================================================
+
+    /**
+     * @brief Deprecated clock reading.
+     *
+     * @details
+     * The v5.0.1 class of the two readings kept by `detail::timestamps`,
+     * restored for the applications that used it directly; the framework
+     * no longer uses it, since `stopwatch` keeps the readings as
+     * `timespec` members.
+     *
+     * A zero `timespec` means that the clock was not read, or that the
+     * platform has no clock.
+     *
+     * The data member is `protected`, as in v5.0.1, so that the existing
+     * derived classes can still access it.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     *
+     * @deprecated The timings are internal; use `stopwatch` (since
+     * 5.1.0).
+     */
+    class [[deprecated ("the timings are internal")]] timestamp
+    {
+    public:
+      /**
+       * @brief Constructs a timestamp with the current time.
+       *
+       * @details
+       * Reads the system clock, as `stopwatch::start()` does; without a
+       * clock, the value remains zero.
+       */
+      timestamp (void) noexcept;
+
+      /**
+       * @brief Constructs a timestamp with a given time.
+       *
+       * @details
+       * Not `explicit`, as in v5.0.1, so that a `timespec` converts
+       * implicitly.
+       *
+       * @param ts The time to be stored.
+       */
+      timestamp (const timespec& ts) noexcept;
+
+      /**
+       * @brief Defaulted copy constructor.
+       *
+       * @details
+       * A timestamp is a plain value, so it may be copied.
+       */
+      timestamp (const timestamp&) = default;
+
+      /**
+       * @brief Defaulted move constructor.
+       *
+       * @details
+       * Equivalent to the copy, since the value is trivially copyable.
+       */
+      timestamp (timestamp&&) = default;
+
+      /**
+       * @brief Defaulted copy assignment operator.
+       *
+       * @details
+       * A timestamp is a plain value, so it may be assigned.
+       *
+       * @return A reference to the current object.
+       */
+      timestamp&
+      operator= (const timestamp&)
+          = default;
+
+      /**
+       * @brief Defaulted move assignment operator.
+       *
+       * @details
+       * Equivalent to the copy assignment, since the value is trivially
+       * copyable.
+       *
+       * @return A reference to the current object.
+       */
+      timestamp&
+      operator= (timestamp&&)
+          = default;
+
+      /**
+       * @brief Defaulted destructor.
+       *
+       * @details
+       * No resources are owned, so there is nothing to release.
+       */
+      ~timestamp () = default;
+
+      /**
+       * @brief Checks whether the value is a clock reading.
+       *
+       * @details
+       * The value is not a reading if both its members are zero.
+       *
+       * @par Parameters
+       *   None.
+       * @retval true  At least one of the members is not zero.
+       * @retval false Both members are zero.
+       */
+      [[nodiscard]] bool
+      has_clock (void) const noexcept;
+
+      /**
+       * @brief Gets the stored time, for modification.
+       *
+       * @par Parameters
+       *   None.
+       * @return A reference to the stored `timespec`.
+       */
+      [[nodiscard]] timespec&
+      value (void) noexcept;
+
+      /**
+       * @brief Gets the stored time.
+       *
+       * @par Parameters
+       *   None.
+       * @return A constant reference to the stored `timespec`.
+       */
+      [[nodiscard]] const timespec&
+      value (void) const noexcept;
+
+    protected:
+      /**
+       * @brief The stored time.
+       *
+       * @details
+       * Set by the constructors; zero if the clock was not read.
+       */
+      timespec value_{};
+    };
 
     // ------------------------------------------------------------------------
   } // namespace detail

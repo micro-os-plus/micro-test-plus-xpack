@@ -220,10 +220,12 @@ The `expression()` function of the reporters was removed, since it
 returns an internal type and is used only by the framework. The
 `timings()` functions of the runner and of the suites are deprecated,
 for the same reason; they now return the internal stopwatch, of which
-the old `detail::timestamps` class name is a deprecated alias, and only
-the read-only members of that class are kept, also deprecated:
-`has_begin()`, `has_end()`, `has_timestamps()`, and
-`compute_elapsed_time()`. The elapsed times are shown by the reporters.
+the old `detail::timestamps` class name is a deprecated alias, and the
+public members of that class are kept, also deprecated:
+`timestamp_begin()`, `timestamp_end()`, `has_begin()`, `has_end()`,
+`has_timestamps()`, and `compute_elapsed_time()`. The
+`detail::timestamp` class, no longer used by the framework, is kept,
+deprecated. The elapsed times are shown by the reporters.
 
 The reporters (`reporter`, `reporter_human`, and `reporter_tap`) and the
 `endl` and `indent()` manipulators moved to the `detail` namespace,
@@ -472,25 +474,36 @@ now fails. Replace them with, respectively, the constructor without
 arguments followed by `initialise (argc, argv, name)`, `run()`,
 `require()`, and `runner`.
 
-The helpers not used by the framework were removed: `mut()`, and the
-`type_traits::list`, `type_traits::identity`, and
-`type_traits::function_traits` templates. Code that used them must
-define its own equivalents; `mt::mut (x)` is `const_cast<T&> (x)`, and
-`std::type_identity` (C++20) replaces `type_traits::identity`. The
-utility functions `utility::is_match()` and `utility::split()` are
-unchanged.
+The `mut()` helper, not used by the framework, was removed; code that
+used it must define its own equivalent: `mt::mut (x)` is
+`const_cast<T&> (x)`. The `type_traits::list`,
+`type_traits::identity`, and `type_traits::function_traits` templates,
+also not used by the framework, are deprecated, with their namespace
+(see below); `std::type_identity` (C++20) replaces
+`type_traits::identity`. The utility functions `utility::is_match()`
+and `utility::split()` are unchanged.
 
-The `type_traits` namespace, which held only concepts, was renamed
-`extension`, after its purpose: it holds the concepts that the
-applications use to write their own comparators, operators, and
-helpers (`is_op`, `any_op`, `has_epsilon`, `checkable`, and
+The concepts of the `type_traits` namespace moved to the new
+`extension` namespace, named after its purpose: it holds the concepts
+that the applications use to write their own comparators, operators,
+and helpers (`is_op`, `any_op`, `has_epsilon`, `checkable`, and
 `printable`). Replace `type_traits::` with `extension::`. The concepts
 used only by the framework, `has_value`, `container_like`, and
 `has_npos`, moved to the `detail` namespace; to detect containers and
 strings, use the standard concepts and types, like
-`std::ranges::range` and `std::string_view`. The `type-traits.h`
-header is now `extension.h`; it is included by `micro-test-plus.h`,
-as before.
+`std::ranges::range` and `std::string_view`. The base of the
+expressions and the value wrapper templates (`op`, `value`,
+`value_base_`, now `value_base`, `integral_constant`, and
+`floating_point_constant`) also moved to the `detail` namespace, since
+they are internal; the value stored by the wrappers is now private,
+and is read with `get()`. The `type_traits` namespace is kept,
+deprecated, with the old names referring to the current concepts and
+templates, so with their current semantics: `is_op` detects the
+`op_type` member, not the inheritance from `op`; `has_value` and
+`has_epsilon` are satisfied only by the framework types, not by any
+type with a `value` or an `epsilon` member; and
+`genuine_integral_value` is now `value`. The `type-traits.h` header is
+now `extension.h`; it is included by `micro-test-plus.h`, as before.
 
 The applications can now write their own comparators, predicates, and
 operators that report their operands, as the built-in ones do: they

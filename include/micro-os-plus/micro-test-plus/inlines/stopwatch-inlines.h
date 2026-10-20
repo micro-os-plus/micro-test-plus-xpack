@@ -124,6 +124,74 @@ namespace micro_os_plus::micro_test_plus::detail
     microseconds = static_cast<uint32_t> (count % 1000);
   }
 
+  /**
+   * @details
+   * Stores @p ts only if `is_recorded()` reports no start reading.
+   */
+  inline void
+  stopwatch::timestamp_begin (const timespec& ts) noexcept
+  {
+    if (!is_recorded (start_time_))
+      {
+        start_time_ = ts;
+      }
+  }
+
+  /**
+   * @details
+   * Stores @p ts only if `is_recorded()` reports no stop reading.
+   */
+  inline void
+  stopwatch::timestamp_end (const timespec& ts) noexcept
+  {
+    if (!is_recorded (stop_time_))
+      {
+        stop_time_ = ts;
+      }
+  }
+
+  // ==========================================================================
+
+  /**
+   * @details
+   * Copies @p ts into the stored value.
+   */
+  inline timestamp::timestamp (const timespec& ts) noexcept : value_{ ts }
+  {
+  }
+
+  /**
+   * @details
+   * Returns `true` if either the seconds or the nanoseconds member is
+   * not zero.
+   */
+  inline bool
+  timestamp::has_clock (void) const noexcept
+  {
+    return value_.tv_sec != 0 || value_.tv_nsec != 0;
+  }
+
+  /**
+   * @details
+   * The caller may modify the stored time through the returned
+   * reference.
+   */
+  inline timespec&
+  timestamp::value (void) noexcept
+  {
+    return value_;
+  }
+
+  /**
+   * @details
+   * The returned reference is valid as long as the object exists.
+   */
+  inline const timespec&
+  timestamp::value (void) const noexcept
+  {
+    return value_;
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus::detail
 

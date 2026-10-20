@@ -54,12 +54,15 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • non-const totals(), detail::runner_totals
     • timings(), detail::timestamps
     • timestamps::compute_elapsed_time()
+    • timestamps::timestamp_begin(), timestamp_end()
+    • detail::timestamp
     • runner::reporter()
     • assume()
     • Failed assume()
     • reflection::short_name()
     • _and(), _or(), _not()
     • _i, _f, ..., _t<T>
+    • type_traits
     • check in dynamic suite
     • check in dynamic suite with a temporary name
     • thrown exceptions

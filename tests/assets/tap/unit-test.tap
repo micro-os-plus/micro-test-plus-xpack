@@ -974,15 +974,33 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
         ok 3 - both readings, elapsed time split
         1..3
     ok 10 - timestamps::compute_elapsed_time() # { passed, 3 checks }
+    # Subtest: timestamps::timestamp_begin(), timestamp_end()
+        ok 1 - the first start time is kept
+        ok 2 - the first stop time is kept
+        ok 3 - the clock does not replace the readings
+        ok 4 - the stop reading is kept
+        ok 5 - zero times are not readings
+        ok 6 - the readings of the clock
+        1..6
+    ok 11 - timestamps::timestamp_begin(), timestamp_end() # { passed, 6 checks }
+    # Subtest: detail::timestamp
+        ok 1 - the default constructor reads the clock
+        ok 2 - the time given to the constructor
+        ok 3 - copied and assigned
+        ok 4 - modified through value()
+        ok 5 - zero value, no clock
+        ok 6 - non-zero nanoseconds, a clock
+        1..6
+    ok 12 - detail::timestamp # { passed, 6 checks }
     # Subtest: runner::reporter()
         ok 1 - the verbosity of the session options
         ok 2 - the verbosity of the command line
         1..2
-    ok 11 - runner::reporter() # { passed, 2 checks }
+    ok 13 - runner::reporter() # { passed, 2 checks }
     # Subtest: assume()
         ok 1 - passed assumption
         1..1
-    ok 12 - assume() # { passed, 1 check }
+    ok 14 - assume() # { passed, 1 check }
     # Subtest: Failed assume()
         not ok 1 - failed assumption
           ---
@@ -991,29 +1009,34 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
             lineNumber: 270
           ...
         1..1
-    not ok 13 - Failed assume() # { FAILED, 0 checks passed, 1 failed }
+    not ok 15 - Failed assume() # { FAILED, 0 checks passed, 1 failed }
     # Subtest: reflection::short_name()
         ok 1 - file.cpp == file.cpp
         ok 2 - file.cpp == file.cpp
         ok 3 - file.cpp == file.cpp
         1..3
-    ok 14 - reflection::short_name() # { passed, 3 checks }
+    ok 16 - reflection::short_name() # { passed, 3 checks }
     # Subtest: _and(), _or(), _not()
         ok 1 - (1 == 1 and 1 != 2)
         ok 2 - (1 == 2 or 1 == 1)
         ok 3 - not 1 == 2
         ok 4 - false results
         1..4
-    ok 15 - _and(), _or(), _not() # { passed, 4 checks }
+    ok 17 - _and(), _or(), _not() # { passed, 4 checks }
     # Subtest: _i, _f, ..., _t<T>
         ok 1 - 1 == 1
         ok 2 - 0.5 == 0.5
         ok 3 - 1 == 1
         ok 4 - false results
         1..4
-    ok 16 - _i, _f, ..., _t<T> # { passed, 4 checks }
-    1..16
-not ok 5 - Deprecated suite # { FAILED, 47 checks passed, 1 failed, in 16 test cases, time: 1.489 ms }
+    ok 18 - _i, _f, ..., _t<T> # { passed, 4 checks }
+    # Subtest: type_traits
+        ok 1 - the wrapped values are compared
+        ok 2 - false results
+        1..2
+    ok 19 - type_traits # { passed, 2 checks }
+    1..19
+not ok 5 - Deprecated suite # { FAILED, 61 checks passed, 1 failed, in 19 test cases, time: 1.659 ms }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
@@ -3591,4 +3614,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.293 ms }
     1..3
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.226 ms }
 1..15
-# { total: 640 checks passed, 362 failed, in 132 test cases, 15 test suites, time: 17.620 ms }
+# { total: 654 checks passed, 362 failed, in 135 test cases, 15 test suites, time: 17.905 ms }

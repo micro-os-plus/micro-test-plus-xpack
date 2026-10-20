@@ -41,6 +41,9 @@
  * The value wrappers themselves are declared in `values.h`, in the `detail`
  * namespace.
  *
+ * The deprecated v5.0.1 `type_traits` namespace, which refers to these
+ * concepts and to the value wrappers, is also declared here.
+ *
  * All header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
  * modular codebase.
@@ -296,6 +299,288 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
   } // namespace detail
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @namespace micro_os_plus::micro_test_plus::type_traits
+   * @brief Deprecated v5.0.1 namespace of the concepts and of the value
+   * wrapper templates.
+   *
+   * @details
+   * In v5.0.1, the concepts, the base of the expressions, and the value
+   * wrapper templates were outside `detail`, in the `type_traits`
+   * namespace. The namespace is kept for compatibility with the existing
+   * applications: the names that still exist refer to their current
+   * definitions, in the `extension` and `detail` namespaces, and the
+   * removed helpers are restored here.
+   *
+   * The concepts refer to the current ones, so their semantics are the
+   * current ones: `is_op` detects the `op_type` member, not the
+   * inheritance from `op`; `has_epsilon` and `has_value` also require
+   * `is_op`, and `has_value` a static `value` member; `printable` accepts
+   * everything the formatter can print.
+   *
+   * The concepts cannot be deprecated individually, so the attribute is
+   * on the namespace. Clang reports the deprecation at every qualified
+   * use. GCC reports it only for the names declared in the namespace
+   * itself (the restored helpers and the alias templates), and, for the
+   * alias templates, only when they name the type of a declaration; it
+   * does not report the concepts, nor the names introduced by the
+   * using-declarations.
+   *
+   * @deprecated Use the concepts in the `extension` namespace, and
+   * `extension::compare_op` or `extension::predicate_op` for the
+   * application expressions; the value wrapper templates are internal
+   * (since 5.1.0).
+   */
+
+  // --------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+  // GCC reports the partial specialisations of `function_traits` below,
+  // since they name the deprecated namespace.
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
+
+  // --------------------------------------------------------------------------
+
+  namespace [[deprecated ("use the extension namespace")]] type_traits
+  {
+    // ------------------------------------------------------------------------
+    // Concepts, now in the `extension` and `detail` namespaces.
+
+    using extension::any_op;
+    using extension::checkable;
+    using extension::has_epsilon;
+    using extension::is_op;
+    using extension::printable;
+
+    using detail::container_like;
+    using detail::has_npos;
+    using detail::has_value;
+
+    /**
+     * @brief Deprecated C++20 concept satisfied when `T` is a
+     * floating-point type.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The v5.0.1 name of `std::floating_point`, which the framework now
+     * uses directly.
+     *
+     * @deprecated Use `std::floating_point` (since 5.1.0).
+     */
+    template <class T>
+    concept is_floating_point = std::floating_point<T>;
+
+    // ------------------------------------------------------------------------
+    // Helpers removed from the framework, restored as in v5.0.1.
+
+    /**
+     * @brief Deprecated empty type list.
+     *
+     * @tparam Types The types in the list.
+     *
+     * @details
+     * Used only as the type of `function_traits<>::args`; the framework no
+     * longer uses it.
+     *
+     * @deprecated Not replaced (since 5.1.0).
+     */
+    template <class... Types>
+    struct list
+    {
+    };
+
+    /**
+     * @brief Deprecated identity type.
+     *
+     * @tparam T The type to be exposed.
+     * @tparam Extra Additional types, ignored.
+     *
+     * @details
+     * Exposes `T` as the member type `type`, like `std::type_identity`,
+     * which replaces it.
+     *
+     * @deprecated Use `std::type_identity` (since 5.1.0).
+     */
+    template <class T, class... Extra>
+    struct identity
+    {
+      /**
+       * @brief The type `T`.
+       */
+      using type = T;
+    };
+
+    /**
+     * @brief Deprecated traits of the callable objects.
+     *
+     * @tparam T The type of the callable object; its `operator()` is
+     * inspected.
+     *
+     * @details
+     * The primary template applies to the lambdas and to the function
+     * objects, and forwards to the specialisation for the type of their
+     * `operator()`. The specialisations expose the return type as
+     * `result_type`, and the parameter types as `args`, a `list`.
+     *
+     * @deprecated Not replaced (since 5.1.0).
+     */
+    template <class T>
+    struct function_traits : function_traits<decltype (&T::operator())>
+    {
+    };
+
+    /**
+     * @brief Deprecated traits of the function pointers.
+     *
+     * @tparam R The return type.
+     * @tparam Args_T The parameter types.
+     *
+     * @details
+     * Exposes the return type and the parameter types of a pointer to a
+     * free function.
+     *
+     * @deprecated Not replaced (since 5.1.0).
+     */
+    template <class R, class... Args_T>
+    struct function_traits<R (*) (Args_T...)>
+    {
+      /**
+       * @brief The return type.
+       */
+      using result_type = R;
+
+      /**
+       * @brief The parameter types, as a `list`.
+       */
+      using args = list<Args_T...>;
+    };
+
+    /**
+     * @brief Deprecated traits of the function types.
+     *
+     * @tparam R The return type.
+     * @tparam Args_T The parameter types.
+     *
+     * @details
+     * Exposes the return type and the parameter types of a function type.
+     *
+     * @deprecated Not replaced (since 5.1.0).
+     */
+    template <class R, class... Args_T>
+    struct function_traits<R (Args_T...)>
+    {
+      /**
+       * @brief The return type.
+       */
+      using result_type = R;
+
+      /**
+       * @brief The parameter types, as a `list`.
+       */
+      using args = list<Args_T...>;
+    };
+
+    /**
+     * @brief Deprecated traits of the pointers to member functions.
+     *
+     * @tparam R The return type.
+     * @tparam T The class type.
+     * @tparam Args_T The parameter types.
+     *
+     * @details
+     * Exposes the return type and the parameter types of a pointer to a
+     * non-`const` member function.
+     *
+     * @deprecated Not replaced (since 5.1.0).
+     */
+    template <class R, class T, class... Args_T>
+    struct function_traits<R (T::*) (Args_T...)>
+    {
+      /**
+       * @brief The return type.
+       */
+      using result_type = R;
+
+      /**
+       * @brief The parameter types, as a `list`.
+       */
+      using args = list<Args_T...>;
+    };
+
+    /**
+     * @brief Deprecated traits of the pointers to `const` member
+     * functions.
+     *
+     * @tparam R The return type.
+     * @tparam T The class type.
+     * @tparam Args_T The parameter types.
+     *
+     * @details
+     * Exposes the return type and the parameter types of a pointer to a
+     * `const` member function, like the `operator()` of a lambda.
+     *
+     * @deprecated Not replaced (since 5.1.0).
+     */
+    template <class R, class T, class... Args_T>
+    struct function_traits<R (T::*) (Args_T...) const>
+    {
+      /**
+       * @brief The return type.
+       */
+      using result_type = R;
+
+      /**
+       * @brief The parameter types, as a `list`.
+       */
+      using args = list<Args_T...>;
+    };
+
+    // ------------------------------------------------------------------------
+    // The base of the expressions and the value wrappers, now in `detail`.
+
+    using detail::floating_point_constant;
+    using detail::integral_constant;
+    using detail::op;
+    using detail::value;
+
+    /**
+     * @brief Deprecated name of `detail::value_base`.
+     *
+     * @tparam T The type of the stored value.
+     *
+     * @details
+     * The v5.0.1 name, with a trailing underscore. The stored value is now
+     * private, and `get()` returns a reference; the value is read with
+     * `get()` or with the explicit conversion, not through the v5.0.1
+     * public member `value_`.
+     *
+     * @deprecated The value wrappers are internal (since 5.1.0).
+     */
+    template <class T>
+    using value_base_ = detail::value_base<T>;
+
+    /**
+     * @brief Deprecated integral value wrapper.
+     *
+     * @tparam T The integral type of the stored value.
+     *
+     * @details
+     * In v5.0.1, a separate wrapper with the same members as `value<T>`,
+     * never created by the framework; now `value<T>`, so the values are
+     * compared and reported in the same way.
+     *
+     * @deprecated The value wrappers are internal (since 5.1.0).
+     */
+    template <class T>
+    using genuine_integral_value = detail::value<T>;
+
+    // ------------------------------------------------------------------------
+  } // namespace type_traits
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

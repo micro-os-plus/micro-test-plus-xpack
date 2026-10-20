@@ -553,6 +553,22 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ start reading only
         ✓ both readings, elapsed time split
     ✓ timestamps::compute_elapsed_time() - passed (3 checks)
+    • timestamps::timestamp_begin(), timestamp_end()
+        ✓ the first start time is kept
+        ✓ the first stop time is kept
+        ✓ the clock does not replace the readings
+        ✓ the stop reading is kept
+        ✓ zero times are not readings
+        ✓ the readings of the clock
+    ✓ timestamps::timestamp_begin(), timestamp_end() - passed (6 checks)
+    • detail::timestamp
+        ✓ the default constructor reads the clock
+        ✓ the time given to the constructor
+        ✓ copied and assigned
+        ✓ modified through value()
+        ✓ zero value, no clock
+        ✓ non-zero nanoseconds, a clock
+    ✓ detail::timestamp - passed (6 checks)
     • runner::reporter()
         ✓ the verbosity of the session options
         ✓ the verbosity of the command line
@@ -577,7 +593,11 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ 1 == 1
         ✓ false results
     ✓ _i, _f, ..., _t<T> - passed (4 checks)
-✓ Deprecated suite - passed (47 checks in 15 test cases)
+    • type_traits
+        ✓ the wrapped values are compared
+        ✓ false results
+    ✓ type_traits - passed (2 checks)
+✓ Deprecated suite - passed (61 checks in 18 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1237,4 +1257,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 623 checks passed, 350 failed, in 117 test cases, 13 test suites
+✗ Total: 637 checks passed, 350 failed, in 120 test cases, 13 test suites
