@@ -1009,6 +1009,14 @@ break	tab == x)
         ✓ test cases counted
         ✓ local session passed
     ✓ Test case lifetime - passed (3 checks)
+    • Formatting of passed checks
+        ✓ passed check not formatted (human)
+        ✓ failed check formatted (human)
+        ✓ both checks counted (human)
+        ✓ passed check not formatted (tap)
+        ✓ failed check formatted (tap)
+        ✓ both checks counted (tap)
+    ✓ Formatting of passed checks - passed (6 checks)
     • Abort handler
         ✓ no initial handler
         ✓ previous handler returned
@@ -1025,7 +1033,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (148 checks passed, 26 failed, in 31 test cases)
+✗ Miscellaneous suite - FAILED (154 checks passed, 26 failed, in 32 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1135,4 +1143,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 557 checks passed, 350 failed, in 100 test cases, 12 test suites
+✗ Total: 563 checks passed, 350 failed, in 101 test cases, 12 test suites

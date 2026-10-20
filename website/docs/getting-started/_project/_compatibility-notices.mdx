@@ -246,7 +246,9 @@ the aborted test case are displayed after its name, which the human
 reporter previously omitted with normal and quiet verbosity, so that
 the failure appeared under the previous test case; they are now also
 written to the output file, which previously ended before them, and
-they are no longer displayed with silent verbosity. The output now
+they are no longer displayed with silent verbosity; with quiet
+verbosity, they include only the failed checks, unless the TAP reporter
+writes an output file. The output now
 ends, in place of the totals, with a line with the location of the
 failure, `✗ Test execution aborted at <file>:<line>` with the human
 reporter, and `Bail out! Requirement failed at <file>:<line>` with the

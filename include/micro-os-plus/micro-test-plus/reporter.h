@@ -611,6 +611,26 @@ namespace micro_os_plus::micro_test_plus
       comment_prefix (void) const noexcept
           = 0;
 
+      /**
+       * @brief Returns whether the passed checks are written anywhere.
+       *
+       * @details
+       * Called by `test_case::expect()` and `test_case::require()`, so
+       * that a passed check whose line is never written does not format
+       * its expression, its messages, or its line. The answer depends
+       * only on the verbosity and on the output file, which do not change
+       * during the session. A failed check is always formatted.
+       *
+       * @par Parameters
+       *   None.
+       * @retval true The lines of the passed checks reach the console or
+       * the output file, at least in some cases.
+       * @retval false The lines of the passed checks are never written.
+       */
+      [[nodiscard]] virtual bool
+      writes_passed_checks (void) const noexcept
+          = 0;
+
       // ----------------------------------------------------------------------
 
     protected:

@@ -3202,12 +3202,21 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 3 - local session passed
         1..3
     ok 27 - Test case lifetime # { passed, 3 checks }
+    # Subtest: Formatting of passed checks
+        ok 1 - passed check not formatted (human)
+        ok 2 - failed check formatted (human)
+        ok 3 - both checks counted (human)
+        ok 4 - passed check not formatted (tap)
+        ok 5 - failed check formatted (tap)
+        ok 6 - both checks counted (tap)
+        1..6
+    ok 28 - Formatting of passed checks # { passed, 6 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - handler called
         ok 3 - previous handler returned
         1..3
-    ok 28 - Abort handler # { passed, 3 checks }
+    ok 29 - Abort handler # { passed, 3 checks }
     # Subtest: Abort during the session
         ok 1 - human handler exception passed on
         ok 2 - human no test case after the abort
@@ -3216,7 +3225,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 5 - tap no test case after the abort
         ok 6 - tap run() refused after the abort
         1..6
-    ok 29 - Abort during the session # { passed, 6 checks }
+    ok 30 - Abort during the session # { passed, 6 checks }
     # Subtest: Test case and suite names
         ok 1 - temporary string name
         ok 2 - string name
@@ -3226,9 +3235,9 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 6 - string suite name copied
         ok 7 - string view suite name copied
         1..7
-    ok 30 - Test case and suite names # { passed, 7 checks }
-    1..30
-not ok 11 - Miscellaneous suite # { FAILED, 154 checks passed, 26 failed, in 31 test cases, time: 4.295 ms }
+    ok 31 - Test case and suite names # { passed, 7 checks }
+    1..31
+not ok 11 - Miscellaneous suite # { FAILED, 160 checks passed, 26 failed, in 32 test cases, time: 4.295 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3471,4 +3480,4 @@ ok 13 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.279 ms }
     1..3
 not ok 14 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.255 ms }
 1..14
-# { total: 574 checks passed, 362 failed, in 115 test cases, 14 test suites, time: 17.164 ms }
+# { total: 580 checks passed, 362 failed, in 116 test cases, 14 test suites, time: 17.164 ms }

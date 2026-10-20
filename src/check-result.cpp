@@ -73,8 +73,10 @@ namespace micro_os_plus::micro_test_plus
      * the @p kind of the check, the @p has_expression flag, and the
      * @p location identifying the source line of the assertion, with an
      * empty message; it also stores a reference to the owning
-     * @p test_case. The check number is assigned later, by the destructor,
-     * when the check is reported.
+     * @p test_case. The outcome is written when the check failed, or when
+     * the reporter writes the passed checks (@p writes_passed). The check
+     * number is assigned later, by the destructor, when the check is
+     * reported.
      *
      * When exceptions are enabled, the number of uncaught exceptions is
      * also stored, so that the destructor can tell whether it runs during
@@ -83,9 +85,9 @@ namespace micro_os_plus::micro_test_plus
     check_result::check_result (bool value, check_kind kind,
                                 bool has_expression,
                                 const reflection::source_location& location,
-                                test_case& test_case)
-        : value_{ value }, info_{ kind, {}, has_expression, location },
-          test_case_{ test_case }
+                                test_case& test_case, bool writes_passed)
+        : value_{ value }, is_written_{ !value || writes_passed },
+          info_{ kind, {}, has_expression, location }, test_case_{ test_case }
     {
 #if defined(__cpp_exceptions)
       uncaught_exceptions_ = std::uncaught_exceptions ();
@@ -103,12 +105,12 @@ namespace micro_os_plus::micro_test_plus
      * is kept in a variable and reported after later checks.
      *
      * If the evaluated expression is true, the reporter records a
-     * successful outcome along with any accumulated message, and the
-     * passed checks counter of the test case is incremented. If the
-     * expression is false, the reporter records a failure, with the
-     * failure details (the kind of the check, the message, and the source
-     * location) and the expression, and the failed checks counter is
-     * incremented.
+     * successful outcome along with any accumulated message, unless it
+     * does not write the passed checks, and the passed checks counter of
+     * the test case is incremented. If the expression is false, the
+     * reporter records a failure, with the failure details (the kind of
+     * the check, the message, and the source location) and the
+     * expression, and the failed checks counter is incremented.
      *
      * The expression text is obtained from the expression formatter with
      * `check_text()`, which returns the text of this check even if later
@@ -143,8 +145,11 @@ namespace micro_os_plus::micro_test_plus
 
       if (value_) [[likely]]
         {
-          test_case_.test_reporter ().pass (info_.message, expression_str,
-                                            test_case_);
+          if (is_written_)
+            {
+              test_case_.test_reporter ().pass (info_.message, expression_str,
+                                                test_case_);
+            }
           test_case_.totals_.increment_passed_checks ();
         }
       else

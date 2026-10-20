@@ -351,7 +351,7 @@ When exceptions are not enabled, a failed requirement cannot stop only its test 
 
 Then `runner::abort()` flushes the standard streams, calls the abort handler, if one was set (see below), and then `::abort()`. An abort before `initialise()`, or after `run()`, when there is no report to complete, is reported on `stderr`, as `error: test execution aborted at <file>:<line>`.
 
-With `--quiet`, which otherwise displays only the totals, the results of the aborted test case are displayed as well, since the totals are never reached; the passed checks are included, as the context of the failure. With `--silent`, nothing is displayed. If an output file is used, the results and the final line are written to it too (with the human reporter, as for the other test cases and for the totals, the results only with normal or verbose verbosity, and the final line unless the verbosity is silent).
+With `--quiet`, which otherwise displays only the totals, the results of the aborted test case are displayed as well, since the totals are never reached; only the failed checks are included, since the passed ones are not formatted at this verbosity (except with the TAP reporter and an output file, which receives every check). With `--silent`, nothing is displayed. If an output file is used, the results and the final line are written to it too (with the human reporter, as for the other test cases and for the totals, the results only with normal or verbose verbosity, and the final line unless the verbosity is silent).
 
 For example, with the human reporter, the end of the output is:
 

@@ -182,6 +182,29 @@ namespace
     return formatter << c.number;
   }
 
+  // A type that counts how many times it is formatted, to check that the
+  // passed checks whose lines are not written are not formatted
+  // (API-REVIEW.md #43).
+  int format_calls = 0;
+
+  struct format_counter
+  {
+    int number;
+  };
+
+  constexpr bool
+  operator== (const format_counter& lhs, const format_counter& rhs)
+  {
+    return lhs.number == rhs.number;
+  }
+
+  expression_formatter&
+  operator<< (expression_formatter& formatter, const format_counter& c)
+  {
+    ++format_calls;
+    return formatter << c.number;
+  }
+
   // A type that counts its live instances, to check that a test case
   // and its stored body are destroyed when `test()` returns
   // (API-REVIEW.md #54).
@@ -306,6 +329,12 @@ namespace
     comment_prefix (void) const noexcept override
     {
       return "";
+    }
+
+    bool
+    writes_passed_checks (void) const noexcept override
+    {
+      return false;
     }
 
   protected:
@@ -1642,6 +1671,58 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         t.expect (eq (local_runner.run (), 0)) << "local session passed";
         local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // A passed check formats neither its operands nor its messages when
+    // the reporter does not write its line; a failed check is always
+    // formatted (API-REVIEW.md #43).
+    ts.test ("Formatting of passed checks", [] (auto& t)
+      {
+        const format_counter a{ 1 };
+        const format_counter b{ 2 };
+
+        for (const reporter_kind kind :
+             { reporter_kind::human, reporter_kind::tap })
+          {
+            runner_options options{};
+            options.selected_reporter = kind;
+            options.verbosity_level = verbosity::silent;
+
+            runner local_runner;
+            auto& local_ts = local_runner.initialise (options, "Local");
+
+            int passed_calls = -1;
+            int failed_calls = -1;
+
+            local_ts.test ("Checks", [&] (auto& lt)
+              {
+                format_calls = 0;
+                lt.expect (eq (a, a)) << "passed " << a;
+                passed_calls = format_calls;
+
+                format_calls = 0;
+                lt.expect (eq (a, b)) << "failed " << a;
+                failed_calls = format_calls;
+              });
+
+            const char* name
+                = (kind == reporter_kind::human) ? "human" : "tap";
+
+            t.expect (eq (passed_calls, 0))
+                << "passed check not formatted (" << name << ")";
+            local_counts.passed_checks++;
+
+            t.expect (eq (failed_calls, 3))
+                << "failed check formatted (" << name << ")";
+            local_counts.passed_checks++;
+
+            t.expect (eq (local_ts.totals ().passed_checks (), 1U)
+                      and eq (local_ts.totals ().failed_checks (), 1U))
+                << "both checks counted (" << name << ")";
+            local_counts.passed_checks++;
+          }
 
         local_counts.executed_test_cases++;
       });

@@ -199,6 +199,10 @@ namespace micro_os_plus::micro_test_plus
      * The destructor reports the outcome, updates the counters of the test
      * case, and, after a failed `require()`, stops the test case.
      *
+     * A passed check whose line the reporter never writes (see
+     * `reporter::writes_passed_checks()`) formats neither its expression
+     * nor its messages, and is only counted.
+     *
      * Only the template constructor depends on the type of the expression;
      * it delegates to a private non-template constructor, and the
      * destructor, which does the reporting, is not a template either, so
@@ -214,8 +218,8 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs the result of a check of an expression.
        *
        * @details
-       * The expression is evaluated, and formatted into the expression
-       * formatter.
+       * The expression is evaluated, and, if the outcome is written,
+       * formatted into the expression formatter.
        *
        * @tparam Expr_T The type of the expression.
        *
@@ -226,11 +230,14 @@ namespace micro_os_plus::micro_test_plus
        * @param test_case The test case that owns this check.
        * @param expression The expression formatter to format the expression
        * text.
+       * @param writes_passed Whether the reporter writes the passed checks;
+       * if not, a passed check is not formatted.
        */
       template <class Expr_T>
       check_result (const Expr_T& expr, check_kind kind,
                     const reflection::source_location& location,
-                    test_case& test_case, expression_formatter& expression);
+                    test_case& test_case, expression_formatter& expression,
+                    bool writes_passed);
 
       /**
        * @brief Deleted copy constructor to prevent copying.
@@ -317,10 +324,11 @@ namespace micro_os_plus::micro_test_plus
        * framework comparator, whose text is displayed on failure.
        * @param location The source location of the check.
        * @param test_case The test case that owns this check.
+       * @param writes_passed Whether the reporter writes the passed checks.
        */
       check_result (bool value, check_kind kind, bool has_expression,
                     const reflection::source_location& location,
-                    test_case& test_case);
+                    test_case& test_case, bool writes_passed);
 
       /**
        * @brief Stores the result value of the check.
@@ -330,6 +338,17 @@ namespace micro_os_plus::micro_test_plus
        * template constructor.
        */
       const bool value_;
+
+      /**
+       * @brief Whether the outcome of the check is written.
+       *
+       * @details
+       * Set by the constructor for a failed check, and for a passed one
+       * when the reporter writes the passed checks. When not set, the
+       * expression and the messages are not formatted, and the destructor
+       * only updates the counters.
+       */
+      const bool is_written_;
 
       /**
        * @brief The details displayed when the check fails.

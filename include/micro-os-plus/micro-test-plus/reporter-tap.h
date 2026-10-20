@@ -287,6 +287,19 @@ namespace micro_os_plus::micro_test_plus::detail
     const char*
     comment_prefix (void) const noexcept override;
 
+    /**
+     * @brief Returns whether the passed checks are written anywhere.
+     *
+     * @par Parameters
+     *   None.
+     * @retval true An output file is open, or the verbosity is normal or
+     * verbose.
+     * @retval false There is no output file, and the verbosity is quiet
+     * or silent.
+     */
+    [[nodiscard]] bool
+    writes_passed_checks (void) const noexcept override;
+
   private:
     /**
      * @brief Outputs the prefix for a passing condition.

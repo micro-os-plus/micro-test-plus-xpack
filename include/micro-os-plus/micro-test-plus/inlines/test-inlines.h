@@ -329,8 +329,12 @@ namespace micro_os_plus::micro_test_plus
   auto
   test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
   {
-    return detail::check_result{ expr, detail::check_kind::expectation, sl,
-                                 *this, test_reporter ().expression_ };
+    return detail::check_result{ expr,
+                                 detail::check_kind::expectation,
+                                 sl,
+                                 *this,
+                                 test_reporter ().expression_,
+                                 test_reporter ().writes_passed_checks () };
   }
 
   /**
@@ -348,8 +352,12 @@ namespace micro_os_plus::micro_test_plus
   test_case::require (const Expr_T& expr,
                       const reflection::source_location& sl)
   {
-    return detail::check_result{ expr, detail::check_kind::requirement, sl,
-                                 *this, test_reporter ().expression_ };
+    return detail::check_result{ expr,
+                                 detail::check_kind::requirement,
+                                 sl,
+                                 *this,
+                                 test_reporter ().expression_,
+                                 test_reporter ().writes_passed_checks () };
   }
 
   /**

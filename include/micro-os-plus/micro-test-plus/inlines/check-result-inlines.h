@@ -86,18 +86,29 @@ namespace micro_os_plus::micro_test_plus
      * `check_kind::requirement` for `require()`, determines whether the
      * test case is stopped if the check fails.
      *
-     * The expression is then formatted into the expression formatter of the
-     * reporter, which is shared by all checks; `begin_check()` assigns it
-     * to this check, setting aside the text of a previous check not yet
-     * reported, if any.
+     * The expression formatter of the reporter, which is shared by all
+     * checks, is then assigned to this check by `begin_check()`, which sets
+     * aside the text of a previous check not yet reported, if any. The
+     * expression is formatted into it only when the outcome is written: on
+     * failure, or, if @p writes_passed, also on success. Otherwise the
+     * text of this check stays empty, and the operands, which may be
+     * application types with an expensive `operator<<`, are not formatted.
+     *
+     * The decision is taken here, while the operands are alive; a result
+     * kept in a variable outlives them.
      */
     template <class Expr_T>
     check_result::check_result (const Expr_T& expr, check_kind kind,
                                 const reflection::source_location& location,
                                 test_case& test_case,
-                                expression_formatter& expression)
-        : check_result{ static_cast<bool> (expr), kind,
-                        extension::is_op<Expr_T>, location, test_case }
+                                expression_formatter& expression,
+                                bool writes_passed)
+        : check_result{ static_cast<bool> (expr),
+                        kind,
+                        extension::is_op<Expr_T>,
+                        location,
+                        test_case,
+                        writes_passed }
     {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -107,7 +118,10 @@ namespace micro_os_plus::micro_test_plus
       // even if other checks used the formatter in the meantime.
       expression.begin_check (this);
 
-      expression << expr;
+      if (is_written_)
+        {
+          expression << expr;
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -139,12 +153,20 @@ namespace micro_os_plus::micro_test_plus
      * appended, so that no other buffer is allocated. The formatter of the
      * reporter is not used, since it may hold the expression of this
      * check, or of a pending one.
+     *
+     * When the outcome of the check is not written, the message is not
+     * needed, and the value is not formatted.
      */
     template <class T>
       requires extension::printable<T>
     auto&
     check_result::operator<< (const T& msg)
     {
+      if (!is_written_)
+        {
+          return *this;
+        }
+
       expression_formatter formatter{ std::move (info_.message) };
       formatter << msg;
       info_.message = std::move (formatter.buffer_);
