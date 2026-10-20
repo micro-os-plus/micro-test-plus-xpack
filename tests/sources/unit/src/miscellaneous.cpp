@@ -249,7 +249,7 @@ namespace
     void
     clear () noexcept
     {
-      clear_buffer_ ();
+      clear_buffer ();
     }
 
     void
@@ -310,25 +310,25 @@ namespace
 
   protected:
     void
-    output_pass_prefix_ (const std::string&, const test_case&) override
+    output_pass_prefix (const std::string&, const test_case&) override
     {
     }
 
     void
-    output_pass_suffix_ (const test_case&) override
+    output_pass_suffix (const test_case&) override
     {
     }
 
     void
-    output_fail_prefix_ (const std::string&, const bool,
-                         const reflection::source_location&,
-                         const test_case&) override
+    output_fail_prefix (const std::string&, const bool,
+                        const reflection::source_location&,
+                        const test_case&) override
     {
     }
 
     void
-    output_fail_suffix_ (const reflection::source_location&,
-                         detail::check_kind, const test_case&) override
+    output_fail_suffix (const reflection::source_location&, detail::check_kind,
+                        const test_case&) override
     {
     }
   };

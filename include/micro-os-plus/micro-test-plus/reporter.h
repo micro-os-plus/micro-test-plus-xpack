@@ -441,7 +441,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the beginning of a test suite.
        *
        * @details
-       * Called by `suite::run_()` before the suite body, for the suites
+       * Called by `suite::run()` before the suite body, for the suites
        * registered with `runner::add_suite()` and for the static suites, and
        * by `runner::initialise()` for the top suite.
        *
@@ -457,7 +457,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the end of a test suite.
        *
        * @details
-       * Called by `suite::run_()` after the suite body, also when an
+       * Called by `suite::run()` after the suite body, also when an
        * exception escaped it, for the suites registered with
        * `runner::add_suite()` and for the static suites, and by
        * `runner::run()` for the top suite; implementations display the
@@ -475,7 +475,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Report a test suite skipped by the filter.
        *
        * @details
-       * Called by `runner::run_suites_()`, instead of running the suite,
+       * Called by `runner::run_suites()`, instead of running the suite,
        * when its name does not match the first filter pattern; the suite
        * has already been assigned its index. Implementations display a
        * single line, without the suite body.
@@ -494,7 +494,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Report a failure of a test suite outside its test cases.
        *
        * @details
-       * Called by `suite::run_()` when an exception escapes the suite body,
+       * Called by `suite::run()` when an exception escapes the suite body,
        * between `begin_suite()` and `end_suite()`; the suite has already
        * advanced to its next test point, which numbers the failure after
        * the test cases already run. Implementations add a failed line to
@@ -515,7 +515,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the beginning of a test case.
        *
        * @details
-       * Called by `test_case::run_()` before the test case body; the output
+       * Called by `test_case::run()` before the test case body; the output
        * buffer is expected to be empty at this point.
        *
        * @param test_case Reference to the test case.
@@ -530,7 +530,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Mark the end of a test case.
        *
        * @details
-       * Called by `test_case::run_()` after the test case body; implementations
+       * Called by `test_case::run()` after the test case body; implementations
        * display the test case results and clear the output buffer.
        *
        * @param test_case Reference to the test case.
@@ -600,7 +600,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Returns the comment-prefix string used by this reporter format.
        *
        * @details
-       * Used by `write_info_()` to prefix the informational lines, so that
+       * Used by `write_info()` to prefix the informational lines, so that
        * they are valid comments in the output format.
        *
        * @par Parameters
@@ -629,7 +629,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      write_buffer_to_file_ (void);
+      write_buffer_to_file (void);
 
       /**
        * @brief Write formatted text to the console.
@@ -647,7 +647,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      write_console_ (const char* format, ...)
+      write_console (const char* format, ...)
 #if defined(__GNUC__)
           __attribute__ ((format (printf, 2, 3)))
 #endif // defined(__GNUC__)
@@ -666,7 +666,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      write_file_ (const char* format, ...)
+      write_file (const char* format, ...)
 #if defined(__GNUC__)
           __attribute__ ((format (printf, 2, 3)))
 #endif // defined(__GNUC__)
@@ -682,7 +682,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      write_info_ (void);
+      write_info (void);
 
       /**
        * @brief Clears the output buffer.
@@ -697,14 +697,14 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      clear_buffer_ (void);
+      clear_buffer (void);
 
       /**
        * @brief Size of the array that receives the elapsed time text.
        *
        * @details
        * Large enough for `", time: 4294967295.999 ms"`, the longest text
-       * produced by `format_elapsed_time_()`.
+       * produced by `format_elapsed_time()`.
        */
       static constexpr size_t elapsed_time_size_ = 32;
 
@@ -727,8 +727,8 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       static void
-      format_elapsed_time_ (const stopwatch& stopwatch,
-                            char (&message)[elapsed_time_size_]);
+      format_elapsed_time (const stopwatch& stopwatch,
+                           char (&message)[elapsed_time_size_]);
 
       /**
        * @brief Outputs the prefix for a passing condition.
@@ -743,8 +743,8 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      output_pass_prefix_ (const std::string& message,
-                           const test_case& test_case)
+      output_pass_prefix (const std::string& message,
+                          const test_case& test_case)
           = 0;
 
       /**
@@ -758,7 +758,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      output_pass_suffix_ (const test_case& test_case)
+      output_pass_suffix (const test_case& test_case)
           = 0;
 
       /**
@@ -777,10 +777,10 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      output_fail_prefix_ (const std::string& message,
-                           const bool has_expression,
-                           const reflection::source_location& location,
-                           const test_case& test_case)
+      output_fail_prefix (const std::string& message,
+                          const bool has_expression,
+                          const reflection::source_location& location,
+                          const test_case& test_case)
           = 0;
 
       /**
@@ -798,8 +798,8 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      output_fail_suffix_ (const reflection::source_location& location,
-                           check_kind kind, const test_case& test_case)
+      output_fail_suffix (const reflection::source_location& location,
+                          check_kind kind, const test_case& test_case)
           = 0;
 
     protected:
@@ -837,7 +837,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Accumulates all reporter output until it is written to the
        * console or the output file via `write_buffer_to_console()` or
-       * `write_buffer_to_file_()`.
+       * `write_buffer_to_file()`.
        */
       std::string buffer_{};
 
@@ -845,7 +845,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Whether the output buffer contains a failed check.
        *
        * @details
-       * Set by `fail()` and reset by `clear_buffer_()`. When a nested test
+       * Set by `fail()` and reset by `clear_buffer()`. When a nested test
        * case begins, the concrete reporters use it to decide whether the
        * results already buffered for the outer test case are displayed
        * with normal verbosity.
@@ -910,7 +910,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * A view of the `argv[]` array of `main()`, copied from the
-       * session options by the constructor, and listed by `write_info_()`,
+       * session options by the constructor, and listed by `write_info()`,
        * which is called only by `begin_session()`, within
        * `runner::initialise()`; it is not used afterwards.
        */

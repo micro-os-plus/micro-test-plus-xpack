@@ -646,7 +646,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    run_suites_ (void);
+    run_suites (void);
 
     /**
      * @brief Registers a test suite with the runner.
@@ -661,7 +661,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    register_suite_ (std::unique_ptr<class suite> suite);
+    register_suite (std::unique_ptr<class suite> suite);
 
     /**
      * @brief Parses the command-line options of the test session.
@@ -678,7 +678,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The parsed options.
      */
     [[nodiscard]] runner_options
-    parse_options_ (int argc, char* argv[]);
+    parse_options (int argc, char* argv[]);
 
     /**
      * @brief Checks whether a suite or a test case is selected by the
@@ -699,7 +699,7 @@ namespace micro_os_plus::micro_test_plus
      * @return `true` if it must run, `false` if it must be skipped.
      */
     [[nodiscard]] bool
-    is_selected_ (const char* name, size_t level) const;
+    is_selected (const char* name, size_t level) const;
 
     /**
      * @brief Aborts test execution, telling the reporter why.
@@ -717,7 +717,7 @@ namespace micro_os_plus::micro_test_plus
      *   Does not return.
      */
     [[noreturn]] void
-    abort_ (const reflection::source_location& sl, bool is_requirement);
+    abort (const reflection::source_location& sl, bool is_requirement);
 
     // ------------------------------------------------------------------------
   private:
@@ -747,7 +747,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Created by `initialise()`, as selected by the session options,
      * either given by the caller or parsed from the command line by
-     * `parse_options_()`. Used by the suites and the test cases,
+     * `parse_options()`. Used by the suites and the test cases,
      * through `detail::runnable_base`, which is a friend.
      */
     std::unique_ptr<detail::reporter> reporter_;
@@ -766,7 +766,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Totals of the test session.
      *
      * @details
-     * The totals of each suite are added by `run()` and `run_suites_()`,
+     * The totals of each suite are added by `run()` and `run_suites()`,
      * after the suite was run.
      */
     counters totals_;
@@ -797,7 +797,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Copied by `initialise()` from `runner_options::filter_patterns`,
      * including the characters, so the caller's strings need not outlive
-     * the call, and read by `is_selected_()`. Empty when everything must
+     * the call, and read by `is_selected()`. Empty when everything must
      * run.
      */
     std::vector<std::string> filter_patterns_;
@@ -806,7 +806,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief The number of suites skipped by the filter.
      *
      * @details
-     * Incremented by `run_suites_()`; returned by
+     * Incremented by `run_suites()`; returned by
      * `skipped_suites_count()`.
      */
     size_t skipped_suites_count_ = 0;
@@ -831,7 +831,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief The current state of the test session.
      *
      * @details
-     * Set by `initialise()` and `run()`; read by `register_suite_()`, to
+     * Set by `initialise()` and `run()`; read by `register_suite()`, to
      * reject the suites added too late.
      */
     session_state session_state_ = session_state::created;
@@ -858,7 +858,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Whether a suite was added after `run()` had started.
      *
      * @details
-     * Set by `register_suite_()`, which rejects such a suite; `run()`
+     * Set by `register_suite()`, which rejects such a suite; `run()`
      * then returns 1, unless an option error requires 2.
      */
     bool has_rejected_suites_ = false;
@@ -875,12 +875,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief Whether the test execution was aborted.
      *
      * @details
-     * Set by `abort_()`, before the abort is reported, and never cleared.
+     * Set by `abort()`, before the abort is reported, and never cleared.
      * Read by `detail::runnable_base`, a friend, so that, when the abort
      * handler throws an exception, the test cases and the suites pass it
      * on instead of reporting it, and no test case runs afterwards; read
      * by `initialise()` and `run()`, which then refuse to start, and by
-     * `abort_()`, so that a later abort is not reported again.
+     * `abort()`, so that a later abort is not reported again.
      */
     bool aborted_ = false;
 

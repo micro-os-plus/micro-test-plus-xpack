@@ -26,7 +26,7 @@
  * function used to create and register a named test suite with a `runner`
  * instance, and for its deprecated alias `runner::suite()`. It constructs
  * a `suite` object on the heap (wrapped in `std::unique_ptr`) and
- * transfers ownership to the runner via `register_suite_()`; the suite is
+ * transfers ownership to the runner via `register_suite()`; the suite is
  * run later, by `run()`.
  *
  * The implementation is separated into this inline header so that the
@@ -109,10 +109,10 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Constructs a `suite` object on the heap, binding the callable and any
    * additional arguments, then transfers ownership to the runner via
-   * `register_suite_()`. The suite is not run here; all registered suites
+   * `register_suite()`. The suite is not run here; all registered suites
    * are run later by `run()`, together with the static suites, sorted by
    * name. A suite added once `run()` has started is rejected by
-   * `register_suite_()`.
+   * `register_suite()`.
    */
   template <typename Callable_T, typename... Args_T>
   void
@@ -129,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
         name, *this, std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...) };
 
-    register_suite_ (std::move (child_suite));
+    register_suite (std::move (child_suite));
   }
 
   /**

@@ -241,7 +241,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * If verbosity is not silent, emits a blank line to `stdout` and then
-   * calls `write_info_()` to output build and environment information.
+   * calls `write_info()` to output build and environment information.
    * The TAP version header `"TAP version 14"` is then written to the
    * output file (if open) and, unless verbosity is silent, to `stdout`.
    * The `add_empty_line_` flag
@@ -257,17 +257,17 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (verbosity_ != verbosity::silent)
       {
-        write_console_ ("\n");
+        write_console ("\n");
       }
 
-    write_info_ ();
+    write_info ();
 
     const char* message = "TAP version 14";
-    write_file_ ("%s\n", message);
+    write_file ("%s\n", message);
 
     if (verbosity_ != verbosity::silent)
       {
-        write_console_ ("%s\n", message);
+        write_console ("%s\n", message);
 
         flush_streams ();
       }
@@ -330,20 +330,20 @@ namespace micro_os_plus::micro_test_plus::detail
               total_suites_count == 1 ? "" : "s", message_skipped_suites);
 
     char message_time[elapsed_time_size_];
-    format_elapsed_time_ (runner.stopwatch_, message_time);
+    format_elapsed_time (runner.stopwatch_, message_time);
 
-    write_file_ ("%s\n# { %s%s }\n", message_summary, message_totals,
-                 message_time);
+    write_file ("%s\n# { %s%s }\n", message_summary, message_totals,
+                message_time);
 
     if (verbosity_ != verbosity::silent)
       {
         if (add_empty_line_ && verbosity_ != verbosity::quiet)
           {
-            write_console_ ("\n");
+            write_console ("\n");
           }
 
-        write_console_ ("%s\n# { %s%s }\n", message_summary, message_totals,
-                        message_time);
+        write_console ("%s\n# { %s%s }\n", message_summary, message_totals,
+                       message_time);
 
         flush_streams ();
       }
@@ -369,16 +369,16 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (suite.name (), false);
 
-    write_file_ ("# Subtest: %s\n", name.c_str ());
+    write_file ("# Subtest: %s\n", name.c_str ());
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
-            write_console_ ("\n");
+            write_console ("\n");
           }
 
-        write_console_ ("# Subtest: %s\n", name.c_str ());
+        write_console ("# Subtest: %s\n", name.c_str ());
 
         flush_streams ();
 
@@ -452,17 +452,17 @@ namespace micro_os_plus::micro_test_plus::detail
       }
 
     char message_time[elapsed_time_size_];
-    format_elapsed_time_ (suite.stopwatch_, message_time);
+    format_elapsed_time (suite.stopwatch_, message_time);
 
     const std::string name = tap_text (suite.name (), true);
 
-    write_buffer_to_file_ ();
+    write_buffer_to_file ();
 
     // The plan counts the test cases and the failure of the suite body,
     // if any, which is numbered after them.
-    write_file_ ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
-                 suite.test_point_number_, result, suite.own_index_,
-                 name.c_str (), message_totals, message_time);
+    write_file ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
+                suite.test_point_number_, result, suite.own_index_,
+                name.c_str (), message_totals, message_time);
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
@@ -470,7 +470,7 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         if (add_empty_line_ && suite.totals ().executed_test_cases () > 0)
           {
-            write_console_ ("\n");
+            write_console ("\n");
           }
 
         if (suite.totals ().passed ()) [[likely]]
@@ -493,22 +493,22 @@ namespace micro_os_plus::micro_test_plus::detail
             write_buffer_to_console ();
           }
 
-        write_console_ ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
-                        suite.test_point_number_, result, suite.own_index_,
-                        name.c_str (), message_totals, message_time);
+        write_console ("%s1..%zu\n%s %zu - %s %s%s }\n", indent.c_str (),
+                       suite.test_point_number_, result, suite.own_index_,
+                       name.c_str (), message_totals, message_time);
 
         flush_streams ();
       }
     else if (verbosity_ == verbosity::quiet)
       {
         // Only the test point of the suite, counted by the session plan.
-        write_console_ ("%s %zu - %s %s%s }\n", result, suite.own_index_,
-                        name.c_str (), message_totals, message_time);
+        write_console ("%s %zu - %s %s%s }\n", result, suite.own_index_,
+                       name.c_str (), message_totals, message_time);
 
         flush_streams ();
       }
 
-    clear_buffer_ ();
+    clear_buffer ();
 
     add_empty_line_ = true;
   }
@@ -533,18 +533,18 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (suite.name (), true);
 
-    write_file_ ("ok %zu - %s # SKIP filtered\n", suite.own_index_,
-                 name.c_str ());
+    write_file ("ok %zu - %s # SKIP filtered\n", suite.own_index_,
+                name.c_str ());
 
     if (verbosity_ != verbosity::silent)
       {
         if (add_empty_line_ && verbosity_ != verbosity::quiet)
           {
-            write_console_ ("\n");
+            write_console ("\n");
           }
 
-        write_console_ ("ok %zu - %s # SKIP filtered\n", suite.own_index_,
-                        name.c_str ());
+        write_console ("ok %zu - %s # SKIP filtered\n", suite.own_index_,
+                       name.c_str ());
 
         flush_streams ();
       }
@@ -580,7 +580,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * For a nested test case, the results of the checks already performed by
-   * the outer test case, if any, are written first (see `commit_buffer_()`),
+   * the outer test case, if any, are written first (see `commit_buffer()`),
    * so that the output follows the execution order. For a top-level
    * test case, the output buffer is expected to be empty, since the checks
    * are performed only by the test cases, and each one writes its results
@@ -604,23 +604,23 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         // Normally, the outer test case performed checks before this
         // nested one.
-        commit_buffer_ ();
+        commit_buffer ();
       }
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
     const std::string name = tap_text (test_case.name (), false);
 
-    write_file_ ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
+    write_file ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
-            write_console_ ("\n");
+            write_console ("\n");
           }
 
-        write_console_ ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
+        write_console ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
 
         flush_streams ();
 
@@ -701,11 +701,11 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (test_case.name (), true);
 
-    write_buffer_to_file_ ();
+    write_buffer_to_file ();
 
-    write_file_ ("%s1..%zu\n%s%s %zu - %s %s\n", indent2.c_str (), plan_count,
-                 indent.c_str (), result, test_case.own_index_, name.c_str (),
-                 message_totals);
+    write_file ("%s1..%zu\n%s%s %zu - %s %s\n", indent2.c_str (), plan_count,
+                indent.c_str (), result, test_case.own_index_, name.c_str (),
+                message_totals);
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
@@ -713,7 +713,7 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         if (add_empty_line_)
           {
-            write_console_ ("\n");
+            write_console ("\n");
           }
 
         if (test_case.totals ().passed ()) [[likely]]
@@ -725,14 +725,14 @@ namespace micro_os_plus::micro_test_plus::detail
                 // buffer.
                 write_buffer_to_console ();
 
-                write_console_ ("%s1..%zu\n", indent2.c_str (), plan_count);
+                write_console ("%s1..%zu\n", indent2.c_str (), plan_count);
               }
             else
               {
                 // Without verbosity, show only the summary line
                 // and count only test cases, not checks, as the TAP output is
                 // not shown.
-                write_console_ (
+                write_console (
                     "%s1..%zu\n", indent2.c_str (),
                     test_case.totals ().executed_test_cases ()
                         + test_case.totals ().skipped_test_cases ());
@@ -747,16 +747,16 @@ namespace micro_os_plus::micro_test_plus::detail
             // failure.
             write_buffer_to_console ();
 
-            write_console_ ("%s1..%zu\n", indent2.c_str (), plan_count);
+            write_console ("%s1..%zu\n", indent2.c_str (), plan_count);
           }
 
-        write_console_ ("%s%s %zu - %s %s\n", indent.c_str (), result,
-                        test_case.own_index_, name.c_str (), message_totals);
+        write_console ("%s%s %zu - %s %s\n", indent.c_str (), result,
+                       test_case.own_index_, name.c_str (), message_totals);
 
         flush_streams ();
       }
 
-    clear_buffer_ ();
+    clear_buffer ();
 
     add_empty_line_ = true;
   }
@@ -766,7 +766,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Returns `"# "`. The TAP reporter prefixes all comment lines,
-   * including the informational lines emitted by `write_info_()`, with
+   * including the informational lines emitted by `write_info()`, with
    * the TAP comment marker.
    */
   const char*
@@ -790,8 +790,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * generated by the template methods.
    */
   void
-  reporter_tap::output_pass_prefix_ (const std::string& message,
-                                     const test_case& test_case)
+  reporter_tap::output_pass_prefix (const std::string& message,
+                                    const test_case& test_case)
   {
     size_t level = test_case.nesting_depth ();
     *this << indent (level + 1) << "ok " << test_case.test_point_number_
@@ -816,7 +816,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * generated by the template methods.
    */
   void
-  reporter_tap::output_pass_suffix_ (
+  reporter_tap::output_pass_suffix (
       [[maybe_unused]] const test_case& test_case)
   {
     const std::string description = tap_text (
@@ -838,12 +838,12 @@ namespace micro_os_plus::micro_test_plus::detail
    * diagnostics block (`---`) and, when the failure has an expression,
    * starts a `condition:` field, so that the expression follows on the
    * same line; the position where the expression begins is kept in
-   * `condition_begin_`, so that `output_fail_suffix_()` can quote it.
+   * `condition_begin_`, so that `output_fail_suffix()` can quote it.
    * Without an expression, `condition_begin_` is set to
    * `std::string::npos`. No colours are used.
    */
   void
-  reporter_tap::output_fail_prefix_ (
+  reporter_tap::output_fail_prefix (
       const std::string& message, const bool has_expression,
       [[maybe_unused]] const reflection::source_location& location,
       const test_case& test_case)
@@ -899,7 +899,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * `Bail out!` line written by `abort_session()`.
    */
   void
-  reporter_tap::output_fail_suffix_ (
+  reporter_tap::output_fail_suffix (
       const reflection::source_location& location,
       [[maybe_unused]] check_kind kind, const test_case& test_case)
   {
@@ -932,7 +932,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * As in `begin_test_case()`, for a nested test case, the results of the
    * checks already performed by the outer test case, if any, are written
-   * first (see `commit_buffer_()`), so that the output follows the
+   * first (see `commit_buffer()`), so that the output follows the
    * execution order.
    *
    * An `ok <index> - <name> # SKIP filtered` line, with the name escaped,
@@ -952,25 +952,25 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         // Normally, the outer test case performed checks before this
         // nested one.
-        commit_buffer_ ();
+        commit_buffer ();
       }
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
     const std::string name = tap_text (test_case.name (), true);
 
-    write_file_ ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
-                 test_case.own_index_, name.c_str ());
+    write_file ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
+                test_case.own_index_, name.c_str ());
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
-            write_console_ ("\n");
+            write_console ("\n");
           }
 
-        write_console_ ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
-                        test_case.own_index_, name.c_str ());
+        write_console ("%sok %zu - %s # SKIP filtered\n", indent.c_str (),
+                       test_case.own_index_, name.c_str ());
 
         flush_streams ();
       }
@@ -1018,26 +1018,26 @@ namespace micro_os_plus::micro_test_plus::detail
     const char* reason
         = is_requirement ? "Requirement failed" : "Test execution aborted";
 
-    write_buffer_to_file_ ();
+    write_buffer_to_file ();
 
-    write_file_ ("Bail out! %s at %s:%lu\n", reason, file_name.c_str (), line);
+    write_file ("Bail out! %s at %s:%lu\n", reason, file_name.c_str (), line);
 
     if (verbosity_ != verbosity::silent)
       {
         if (add_empty_line_)
           {
-            write_console_ ("\n");
+            write_console ("\n");
           }
 
         write_buffer_to_console ();
 
-        write_console_ ("Bail out! %s at %s:%lu\n", reason, file_name.c_str (),
-                        line);
+        write_console ("Bail out! %s at %s:%lu\n", reason, file_name.c_str (),
+                       line);
       }
 
     flush_streams ();
 
-    clear_buffer_ ();
+    clear_buffer ();
   }
 
   /**
@@ -1054,16 +1054,16 @@ namespace micro_os_plus::micro_test_plus::detail
    * always contains them.
    */
   void
-  reporter_tap::commit_buffer_ (void)
+  reporter_tap::commit_buffer (void)
   {
-    write_buffer_to_file_ ();
+    write_buffer_to_file ();
 
     if (verbosity_ == verbosity::verbose
         || (verbosity_ == verbosity::normal && buffer_has_failures_))
       {
         if (add_empty_line_)
           {
-            write_console_ ("\n");
+            write_console ("\n");
             add_empty_line_ = false;
           }
 
@@ -1072,7 +1072,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     flush_streams ();
 
-    clear_buffer_ ();
+    clear_buffer ();
   }
 
   // --------------------------------------------------------------------------

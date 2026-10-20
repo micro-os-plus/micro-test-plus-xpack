@@ -772,7 +772,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The corresponding ANSI colour code as a string.
        */
       [[nodiscard]] inline auto
-      colour_ (const bool cond) const;
+      colour (const bool cond) const;
 
       /**
        * @brief Adds a decimal point to a floating-point value formatted
@@ -788,7 +788,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      append_decimal_point_ (std::size_t start);
+      append_decimal_point (std::size_t start);
 
       /**
        * @brief Appends the elements of a tuple-like object, separated by
@@ -807,7 +807,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class Tuple_T, std::size_t... Is>
       void
-      append_elements_ (const Tuple_T& t, std::index_sequence<Is...>);
+      append_elements (const Tuple_T& t, std::index_sequence<Is...>);
 
       /**
        * @brief ANSI colour codes for output formatting.

@@ -125,7 +125,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Parses the command-line options with `parse_options_()`, and passes
+   * Parses the command-line options with `parse_options()`, and passes
    * them to the overload taking the options, which creates the selected
    * reporter (`--reporter=human` or `--reporter=tap`, the default) and
    * starts the session. An option error is reported on `stderr`, the
@@ -165,7 +165,7 @@ namespace micro_os_plus::micro_test_plus
         return initialise (runner_options{}, top_suite_name);
       }
 
-    return initialise (parse_options_ (argc, argv), top_suite_name);
+    return initialise (parse_options (argc, argv), top_suite_name);
   }
 
   /**
@@ -302,7 +302,7 @@ namespace micro_os_plus::micro_test_plus
    * that `run()` returns 2; the parsing continues with the next argument.
    */
   runner_options
-  runner::parse_options_ (int argc, char* argv[])
+  runner::parse_options (int argc, char* argv[])
   {
     runner_options opts{};
 
@@ -409,7 +409,7 @@ namespace micro_os_plus::micro_test_plus
    * until one matches the whole name.
    */
   bool
-  runner::is_selected_ (const char* name, size_t level) const
+  runner::is_selected (const char* name, size_t level) const
   {
     if (level >= filter_patterns_.size ())
       {
@@ -438,11 +438,11 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Takes ownership of the supplied `suite` unique pointer and appends
    * it to the internal `children_suites_` vector, deferring execution
-   * until `run_suites_()` is called. If tracing is enabled, the suite
+   * until `run_suites()` is called. If tracing is enabled, the suite
    * name is logged for diagnostic purposes.
    *
    * Once `run()` has started, the suite is rejected, since it would
-   * never run: `run_suites_()` takes the number of suites only once,
+   * never run: `run_suites()` takes the number of suites only once,
    * before running them, and after the session has ended nothing runs.
    * The error is reported on `stderr`, the suite is destroyed when the
    * pointer goes out of scope, and `has_rejected_suites_` is set, so that
@@ -450,7 +450,7 @@ namespace micro_os_plus::micro_test_plus
    * exit code is updated, for the later calls of `run()`.
    */
   void
-  runner::register_suite_ (std::unique_ptr<class suite> suite)
+  runner::register_suite (std::unique_ptr<class suite> suite)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite->name ());
@@ -493,14 +493,14 @@ namespace micro_os_plus::micro_test_plus
    *
    * Each suite is assigned a 1-based index, following the top suite, in
    * the order of execution. If the first filter pattern selects it, it is
-   * executed via `suite::run_()`, and its totals are accumulated into the
+   * executed via `suite::run()`, and its totals are accumulated into the
    * runner totals; otherwise, it is reported as skipped and counted in
    * `skipped_suites_count_`, keeping its index, so that the TAP plan
    * remains complete. The executed test cases counter is not incremented;
    * suites are not counted as test cases.
    */
   void
-  runner::run_suites_ (void)
+  runner::run_suites (void)
   {
     // Use insertion sort with unique_ptr::swap (returns void) to avoid
     // std::stable_sort triggering -Waggregate-return via
@@ -526,7 +526,7 @@ namespace micro_os_plus::micro_test_plus
     while (true)
       {
         // Skip the static suites run by other runners.
-        while (static_ptr != nullptr && &static_ptr->test_runner_ () != this)
+        while (static_ptr != nullptr && &static_ptr->test_runner () != this)
           {
             static_ptr = static_ptr->next_;
           }
@@ -553,14 +553,14 @@ namespace micro_os_plus::micro_test_plus
 
         suite_ptr->own_index_ = ++own_index;
 
-        if (!is_selected_ (suite_ptr->name (), 0))
+        if (!is_selected (suite_ptr->name (), 0))
           {
             ++skipped_suites_count_;
             reporter_->skip_suite (*suite_ptr);
             continue;
           }
 
-        suite_ptr->run_ ();
+        suite_ptr->run ();
 
         // Accumulate the totals from the child suite into the runner
         // totals.
@@ -573,11 +573,11 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Finalises the top suite by stopping its stopwatch and notifying
    * the reporter, then accumulates its totals into the runner totals.
-   * Subsequently invokes `run_suites_()` to execute, sorted by name, and
+   * Subsequently invokes `run_suites()` to execute, sorted by name, and
    * accumulate the registered and the static child suites. Finally,
    * stops the session stopwatch, notifies the reporter, and returns `0`
    * if all checks passed or `1` otherwise, or if a suite was rejected by
-   * `register_suite_()`; if `initialise()` reported an option error, `2`
+   * `register_suite()`; if `initialise()` reported an option error, `2`
    * is returned, regardless of the checks.
    *
    * While the suites run, the session is in the `running` state, so that
@@ -626,7 +626,7 @@ namespace micro_os_plus::micro_test_plus
     reporter_->end_suite (top_suite_);
     totals_ += top_suite_.totals ();
 
-    run_suites_ ();
+    run_suites ();
 
     stopwatch_.stop ();
     reporter_->end_session (*this);
@@ -674,13 +674,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Delegates to `abort_()`, as an explicit abort, not caused by a failed
+   * Delegates to `abort()`, as an explicit abort, not caused by a failed
    * requirement.
    */
   void
   runner::abort (const reflection::source_location& sl)
   {
-    abort_ (sl, false);
+    abort (sl, false);
   }
 
   /**
@@ -697,13 +697,13 @@ namespace micro_os_plus::micro_test_plus
    *
    * The `aborted_` flag is set first, and never cleared, so that, if the
    * handler throws an exception, the test cases and the suites pass it
-   * on (see `test_case::run_()`), and the runner refuses to run again.
+   * on (see `test_case::run()`), and the runner refuses to run again.
    * An abort after another one, for example from the code that caught
    * the exception, is not reported again, since the report is already
    * complete; the handler is still called.
    */
   void
-  runner::abort_ (const reflection::source_location& sl, bool is_requirement)
+  runner::abort (const reflection::source_location& sl, bool is_requirement)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -743,7 +743,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the number of suites stored by `register_suite_()`; the top
+   * Returns the number of suites stored by `register_suite()`; the top
    * suite and the static suites are not in `children_suites_`.
    */
   size_t
@@ -775,7 +775,7 @@ namespace micro_os_plus::micro_test_plus
     for (const static_suite* suite_ptr = static_suite::first_;
          suite_ptr != nullptr; suite_ptr = suite_ptr->next_)
       {
-        if (&suite_ptr->test_runner_ () == this)
+        if (&suite_ptr->test_runner () == this)
           {
             ++count;
           }
@@ -796,7 +796,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the counter incremented by `run_suites_()`.
+   * Returns the counter incremented by `run_suites()`.
    */
   size_t
   runner::skipped_suites_count (void) const noexcept

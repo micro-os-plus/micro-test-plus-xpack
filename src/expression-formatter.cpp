@@ -361,7 +361,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its string representation via `append_number()`,
-   * adds the decimal point if needed (via `append_decimal_point_()`),
+   * adds the decimal point if needed (via `append_decimal_point()`),
    * and appends the type suffix `"f"`.
    */
   expression_formatter&
@@ -369,7 +369,7 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
-    append_decimal_point_ (start);
+    append_decimal_point (start);
     buffer_.append ("f");
     return *this;
   }
@@ -377,7 +377,7 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p v to its string representation via `append_number()`
-   * and adds the decimal point if needed (via `append_decimal_point_()`),
+   * and adds the decimal point if needed (via `append_decimal_point()`),
    * without a type suffix.
    */
   expression_formatter&
@@ -385,14 +385,14 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
-    append_decimal_point_ (start);
+    append_decimal_point (start);
     return *this;
   }
 
   /**
    * @details
    * Converts @p v to its string representation via `append_number()`,
-   * adds the decimal point if needed (via `append_decimal_point_()`),
+   * adds the decimal point if needed (via `append_decimal_point()`),
    * and appends the type suffix `"ld"`, the name of the `_ld` literal;
    * the C++ suffix `"l"` would suggest `long`.
    */
@@ -401,7 +401,7 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
-    append_decimal_point_ (start);
+    append_decimal_point (start);
     buffer_.append ("ld");
     return *this;
   }
@@ -416,7 +416,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * infinities and NaNs, are left unchanged.
    */
   void
-  expression_formatter::append_decimal_point_ (std::size_t start)
+  expression_formatter::append_decimal_point (std::size_t start)
   {
     if (start < buffer_.size ()
         && (buffer_[start] == '-' || buffer_[start] == '+'))

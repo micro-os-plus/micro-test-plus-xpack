@@ -55,12 +55,12 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Returns `true` only when both the start and the stop readings were
-   * recorded, as determined by `is_recorded_()`.
+   * recorded, as determined by `is_recorded()`.
    */
   inline bool
   stopwatch::has_elapsed (void) const noexcept
   {
-    return is_recorded_ (start_time_) && is_recorded_ (stop_time_);
+    return is_recorded (start_time_) && is_recorded (stop_time_);
   }
 
   /**
@@ -69,7 +69,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * of @p ts is non-zero, indicating that a clock reading was captured.
    */
   inline bool
-  stopwatch::is_recorded_ (const timespec& ts) noexcept
+  stopwatch::is_recorded (const timespec& ts) noexcept
   {
     return ts.tv_sec != 0 || ts.tv_nsec != 0;
   }

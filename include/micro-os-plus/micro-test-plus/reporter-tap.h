@@ -297,8 +297,8 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_pass_prefix_ (const std::string& message,
-                         const test_case& test_case) override;
+    output_pass_prefix (const std::string& message,
+                        const test_case& test_case) override;
 
     /**
      * @brief Outputs the suffix for a passing condition.
@@ -308,7 +308,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_pass_suffix_ (const test_case& test_case) override;
+    output_pass_suffix (const test_case& test_case) override;
 
     /**
      * @brief Outputs the prefix for a failing condition.
@@ -322,9 +322,9 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_fail_prefix_ (const std::string& message, const bool has_expression,
-                         const reflection::source_location& location,
-                         const test_case& test_case) override;
+    output_fail_prefix (const std::string& message, const bool has_expression,
+                        const reflection::source_location& location,
+                        const test_case& test_case) override;
 
     /**
      * @brief Outputs the suffix for a failing condition.
@@ -337,8 +337,8 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_fail_suffix_ (const reflection::source_location& location,
-                         check_kind kind, const test_case& test_case) override;
+    output_fail_suffix (const reflection::source_location& location,
+                        check_kind kind, const test_case& test_case) override;
 
     /**
      * @brief Writes the results buffered for the outer test case before
@@ -354,14 +354,14 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    commit_buffer_ (void);
+    commit_buffer (void);
 
     /**
      * @brief The position in the buffer where the description of a
      * passed check begins.
      *
      * @details
-     * Set by `output_pass_prefix_()` and used by `output_pass_suffix_()`
+     * Set by `output_pass_prefix()` and used by `output_pass_suffix()`
      * to escape the description, which is the message, or the expression
      * appended between the two calls when there is no message.
      */
@@ -372,8 +372,8 @@ namespace micro_os_plus::micro_test_plus::detail
      * failed check begins.
      *
      * @details
-     * Set by `output_fail_prefix_()`, after the `condition:` key, and
-     * used by `output_fail_suffix_()` to write the expression appended
+     * Set by `output_fail_prefix()`, after the `condition:` key, and
+     * used by `output_fail_suffix()` to write the expression appended
      * between the two calls as a YAML double-quoted scalar. It is
      * `std::string::npos` when the failure has no expression.
      */

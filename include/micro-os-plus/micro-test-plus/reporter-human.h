@@ -310,8 +310,8 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_pass_prefix_ (const std::string& message,
-                         const test_case& test_case) override;
+    output_pass_prefix (const std::string& message,
+                        const test_case& test_case) override;
 
     /**
      * @brief Outputs the suffix for a passing condition.
@@ -321,7 +321,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_pass_suffix_ (const test_case& test_case) override;
+    output_pass_suffix (const test_case& test_case) override;
 
     /**
      * @brief Outputs the prefix for a failing condition.
@@ -335,9 +335,9 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_fail_prefix_ (const std::string& message, const bool has_expression,
-                         const reflection::source_location& location,
-                         const test_case& test_case) override;
+    output_fail_prefix (const std::string& message, const bool has_expression,
+                        const reflection::source_location& location,
+                        const test_case& test_case) override;
 
     /**
      * @brief Outputs the suffix for a failing condition.
@@ -351,8 +351,8 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    output_fail_suffix_ (const reflection::source_location& location,
-                         check_kind kind, const test_case& test_case) override;
+    output_fail_suffix (const reflection::source_location& location,
+                        check_kind kind, const test_case& test_case) override;
 
     /**
      * @brief Writes the results buffered for the outer test case before
@@ -368,7 +368,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    commit_buffer_ (void);
+    commit_buffer (void);
 
     /**
      * @brief Displays the names of the open test cases not yet displayed.
@@ -385,7 +385,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    display_open_names_ (void);
+    display_open_names (void);
 
     /**
      * @brief A test case that has begun and not yet ended.

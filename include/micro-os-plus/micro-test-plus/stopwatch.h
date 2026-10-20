@@ -238,7 +238,7 @@ namespace micro_os_plus::micro_test_plus
        * @retval false Both fields are zero.
        */
       [[nodiscard]] static bool
-      is_recorded_ (const timespec& ts) noexcept;
+      is_recorded (const timespec& ts) noexcept;
 
       /**
        * @brief The clock reading at the start of the measured interval.

@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * If the check is a `require()` and the test expression has failed,
      * the test case is stopped: when exceptions are enabled, by throwing
-     * `failed_requirement`, caught by `test_case::run_()`, as the fatal
+     * `failed_requirement`, caught by `test_case::run()`, as the fatal
      * assertions of most C++ test frameworks do; the run then continues
      * with the next test case. If the destructor runs during stack
      * unwinding (for a result kept in a variable), it does not throw,
@@ -134,22 +134,22 @@ namespace micro_os_plus::micro_test_plus
 
       // The index starts at 0; it must be incremented before the check is
       // reported, so that the first check is reported as check #1.
-      test_case_.next_test_point_number_ ();
+      test_case_.next_test_point_number ();
 
       // The text formatted by this check, even if the formatter was used by
       // other checks in the meantime (when this result was kept).
-      auto& expression = test_case_.reporter_ ().expression_;
+      auto& expression = test_case_.test_reporter ().expression_;
       const std::string& expression_str = expression.check_text (this);
 
       if (value_) [[likely]]
         {
-          test_case_.reporter_ ().pass (info_.message, expression_str,
-                                        test_case_);
+          test_case_.test_reporter ().pass (info_.message, expression_str,
+                                            test_case_);
           test_case_.totals_.increment_passed_checks ();
         }
       else
         {
-          test_case_.reporter_ ().fail (info_, expression_str, test_case_);
+          test_case_.test_reporter ().fail (info_, expression_str, test_case_);
           test_case_.totals_.increment_failed_checks ();
         }
 
@@ -163,7 +163,7 @@ namespace micro_os_plus::micro_test_plus
               throw failed_requirement{};
             }
 #else
-          test_case_.abort_ (info_.location);
+          test_case_.abort (info_.location);
 #endif // defined(__cpp_exceptions)
         }
     }

@@ -131,8 +131,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
         if (verbosity_ != verbosity::silent)
           {
-            write_console_ ("Test output written to '%s'.\n",
-                            output_file_path_.c_str ());
+            write_console ("Test output written to '%s'.\n",
+                           output_file_path_.c_str ());
           }
 
         output_file_ = nullptr;
@@ -195,7 +195,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * written unchanged. Any other use of `ESC` is written as is.
    */
   void
-  reporter::write_buffer_to_file_ (void)
+  reporter::write_buffer_to_file (void)
   {
     if (output_file_ == nullptr)
       {
@@ -243,7 +243,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * `FILE`-based path.
    */
   void
-  reporter::write_console_ (const char* format, ...)
+  reporter::write_console (const char* format, ...)
   {
     va_list args;
     va_start (args, format);
@@ -257,7 +257,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * `output_file_` is null, the arguments are ignored.
    */
   void
-  reporter::write_file_ (const char* format, ...)
+  reporter::write_file (const char* format, ...)
   {
     if (output_file_ == nullptr)
       {
@@ -284,7 +284,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * code already displays this information.
    */
   void
-  reporter::write_info_ (void)
+  reporter::write_info (void)
   {
     if (!arguments_.empty ())
       {
@@ -303,13 +303,13 @@ namespace micro_os_plus::micro_test_plus::detail
           }
         line.append ("\n");
 
-        write_file_ ("%s", line.c_str ());
+        write_file ("%s", line.c_str ());
 
 #if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
       && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
         if (verbosity_ == verbosity::normal
             || verbosity_ == verbosity::verbose)
-          write_console_ ("%s", line.c_str ());
+          write_console ("%s", line.c_str ());
 #endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
       }
 
@@ -353,13 +353,13 @@ namespace micro_os_plus::micro_test_plus::detail
       line.append (", with MICRO_OS_PLUS_DIAG_TRACE_ENABLED");
 #endif // defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
 
-      write_file_ ("%s\n", line.c_str ());
+      write_file ("%s\n", line.c_str ());
 
 #if !(defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
       && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED))
       if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
         {
-          write_console_ ("%s\n", line.c_str ());
+          write_console ("%s\n", line.c_str ());
         }
 #endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
     }
@@ -504,14 +504,14 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter::pass (const std::string& message, const std::string& expression,
                   const test_case& test_case)
   {
-    output_pass_prefix_ (message, test_case);
+    output_pass_prefix (message, test_case);
 
     if (message.empty ())
       {
         *this << expression;
       }
 
-    output_pass_suffix_ (test_case);
+    output_pass_suffix (test_case);
   }
 
   /**
@@ -524,15 +524,15 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter::fail (const failure_info& failure, const std::string& expression,
                   const test_case& test_case)
   {
-    output_fail_prefix_ (failure.message, failure.has_expression,
-                         failure.location, test_case);
+    output_fail_prefix (failure.message, failure.has_expression,
+                        failure.location, test_case);
 
     if (failure.has_expression)
       {
         *this << expression;
       }
 
-    output_fail_suffix_ (failure.location, failure.kind, test_case);
+    output_fail_suffix (failure.location, failure.kind, test_case);
 
     buffer_has_failures_ = true;
   }
@@ -543,7 +543,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * `buffer_has_failures_`.
    */
   void
-  reporter::clear_buffer_ (void)
+  reporter::clear_buffer (void)
   {
     buffer_.clear ();
     buffer_has_failures_ = false;
@@ -557,8 +557,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * text is empty.
    */
   void
-  reporter::format_elapsed_time_ (const stopwatch& stopwatch,
-                                  char (&message)[elapsed_time_size_])
+  reporter::format_elapsed_time (const stopwatch& stopwatch,
+                                 char (&message)[elapsed_time_size_])
   {
     const auto elapsed = stopwatch.elapsed ().count ();
     if (elapsed > 0)

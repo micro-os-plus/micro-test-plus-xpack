@@ -23,7 +23,7 @@
  * @details
  * This source file contains the non-template implementations for the test
  * hierarchy of the µTest++ framework: the constructors and destructors, the
- * `run_()` methods of the test cases and suites, which call the reporter
+ * `run()` methods of the test cases and suites, which call the reporter
  * before and after invoking the stored callable, and the registration of
  * the child test cases, including the accumulation of their totals.
  *
@@ -113,7 +113,7 @@ namespace micro_os_plus::micro_test_plus
      * reporter associated with the owning runner instance.
      */
     [[nodiscard]] reporter&
-    runnable_base::reporter_ (void) const noexcept
+    runnable_base::test_reporter (void) const noexcept
     {
       return *runner_.reporter_;
     }
@@ -121,10 +121,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Returns the pointer kept by the owning runner, set by
-     * `after_test_case_create_()` while a test case runs.
+     * `after_test_case_create()` while a test case runs.
      */
     [[nodiscard]] test_case*
-    runnable_base::running_test_case_ (void) const noexcept
+    runnable_base::running_test_case (void) const noexcept
     {
       return runner_.running_test_case_;
     }
@@ -135,27 +135,27 @@ namespace micro_os_plus::micro_test_plus
      * `runner::abort()` and never cleared.
      */
     [[nodiscard]] bool
-    runnable_base::is_aborted_ (void) const noexcept
+    runnable_base::is_aborted (void) const noexcept
     {
       return runner_.aborted_;
     }
 
     /**
      * @details
-     * Delegates immediately to `runner_.abort_()`, passing the supplied
+     * Delegates immediately to `runner_.abort()`, passing the supplied
      * source location, so that the report identifies the failed
      * requirement, before the process is terminated via `::abort()`.
      */
     [[noreturn]] void
-    runnable_base::abort_ (const reflection::source_location& sl) const
+    runnable_base::abort (const reflection::source_location& sl) const
     {
-      runner_.abort_ (sl, true);
+      runner_.abort (sl, true);
     }
 
     /**
      * @details
      * Counts @p test_case, which is a local object of the calling
-     * `test()`, and immediately invokes `test_case::run_()` on it. The test
+     * `test()`, and immediately invokes `test_case::run()` on it. The test
      * case is not kept; only `child_test_cases_count_` is needed later,
      * for the TAP plan.
      *
@@ -183,8 +183,8 @@ namespace micro_os_plus::micro_test_plus
      * report is complete, so the test case is neither run nor reported.
      */
     void
-    runnable_base::after_test_case_create_ (class test_case& test_case,
-                                            suite& suite)
+    runnable_base::after_test_case_create (class test_case& test_case,
+                                           suite& suite)
     {
       if (runner_.aborted_)
         {
@@ -195,18 +195,18 @@ namespace micro_os_plus::micro_test_plus
 
       // Skip the test cases not selected by the filter; the outer test
       // cases, if any, were selected, otherwise this one was not created.
-      if (!runner_.is_selected_ (suite.name (), 0)
-          || !runner_.is_selected_ (test_case.name (),
-                                    test_case.nesting_depth ()))
+      if (!runner_.is_selected (suite.name (), 0)
+          || !runner_.is_selected (test_case.name (),
+                                   test_case.nesting_depth ()))
         {
-          reporter_ ().skip_test_case (test_case);
+          test_reporter ().skip_test_case (test_case);
           totals_.increment_skipped_test_cases ();
           return;
         }
 
       // Run the child test case immediately, as the innermost running test
       // case of the runner. The outer one is restored by the guard, also
-      // when an exception leaves run_() (for example thrown by an abort
+      // when an exception leaves run() (for example thrown by an abort
       // handler), so that the runner never keeps a destroyed test case.
       {
         struct running_guard
@@ -221,7 +221,7 @@ namespace micro_os_plus::micro_test_plus
         } guard{ runner_.running_test_case_, runner_.running_test_case_ };
 
         runner_.running_test_case_ = &test_case;
-        test_case.run_ ();
+        test_case.run ();
       }
 
       // This test executed one more test case.
@@ -289,13 +289,13 @@ namespace micro_os_plus::micro_test_plus
    * this way.
    */
   void
-  test_case::run_ (void)
+  test_case::run (void)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    detail::reporter& reporter = this->reporter_ ();
+    detail::reporter& reporter = this->test_reporter ();
 
     // For now, test cases do not record the time.
     // this->stopwatch_.start ();
@@ -314,21 +314,21 @@ namespace micro_os_plus::micro_test_plus
       }
     catch (const std::exception& e)
       {
-        if (is_aborted_ ())
+        if (is_aborted ())
           {
             // Thrown by the abort handler; the report is complete.
             throw;
           }
-        fail_unexpected_exception_ (e.what ());
+        fail_unexpected_exception (e.what ());
       }
     catch (...)
       {
-        if (is_aborted_ ())
+        if (is_aborted ())
           {
             // Thrown by the abort handler; the report is complete.
             throw;
           }
-        fail_unexpected_exception_ (nullptr);
+        fail_unexpected_exception (nullptr);
       }
 #else
     // Invoke the callable, passing the self reference followed by the variadic
@@ -356,9 +356,9 @@ namespace micro_os_plus::micro_test_plus
    * (usually mangled) form. There is no expression to display.
    */
   void
-  test_case::fail_unexpected_exception_ (const char* what)
+  test_case::fail_unexpected_exception (const char* what)
   {
-    next_test_point_number_ ();
+    next_test_point_number ();
 
     detail::failure_info failure{ .kind = detail::check_kind::expectation,
                                   .message = "unexpected exception",
@@ -375,7 +375,7 @@ namespace micro_os_plus::micro_test_plus
       }
 
     const std::string expression{};
-    reporter_ ().fail (failure, expression, *this);
+    test_reporter ().fail (failure, expression, *this);
     totals_.increment_failed_checks ();
   }
 #endif // defined(__cpp_exceptions)
@@ -413,13 +413,13 @@ namespace micro_os_plus::micro_test_plus
    * passed on, without reporting it, and without ending the suite.
    */
   void
-  suite::run_ (void)
+  suite::run (void)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    detail::reporter& reporter = this->reporter_ ();
+    detail::reporter& reporter = this->test_reporter ();
 
     this->stopwatch_.start ();
     reporter.begin_suite (*this);
@@ -433,21 +433,21 @@ namespace micro_os_plus::micro_test_plus
       }
     catch (const std::exception& e)
       {
-        if (is_aborted_ ())
+        if (is_aborted ())
           {
             // Thrown by the abort handler; the report is complete.
             throw;
           }
-        fail_unexpected_exception_ (e.what ());
+        fail_unexpected_exception (e.what ());
       }
     catch (...)
       {
-        if (is_aborted_ ())
+        if (is_aborted ())
           {
             // Thrown by the abort handler; the report is complete.
             throw;
           }
-        fail_unexpected_exception_ (nullptr);
+        fail_unexpected_exception (nullptr);
       }
 #else
     // Invoke the callable, passing the self reference followed by the variadic
@@ -474,9 +474,9 @@ namespace micro_os_plus::micro_test_plus
    * a `std::exception` is not shown.
    */
   void
-  suite::fail_unexpected_exception_ (const char* what)
+  suite::fail_unexpected_exception (const char* what)
   {
-    next_test_point_number_ ();
+    next_test_point_number ();
 
     std::string message{ "unexpected exception" };
     if (what != nullptr)
@@ -489,7 +489,7 @@ namespace micro_os_plus::micro_test_plus
         message.append (" of unknown type in the suite body");
       }
 
-    reporter_ ().fail_suite (message, *this);
+    test_reporter ().fail_suite (message, *this);
     totals_.increment_failed_checks ();
   }
 #endif // defined(__cpp_exceptions)
@@ -547,7 +547,7 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-    unlink_ ();
+    unlink ();
   }
 
   /**
@@ -558,7 +558,7 @@ namespace micro_os_plus::micro_test_plus
    * allocated.
    */
   void
-  static_suite::link_ (void) noexcept
+  static_suite::link (void) noexcept
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
@@ -566,13 +566,13 @@ namespace micro_os_plus::micro_test_plus
 
     // std::strcmp() compares as unsigned char, like std::string_view,
     // without a temporary object (which triggers -Waggregate-return).
-    static_suite** link = &first_;
-    while (*link != nullptr && std::strcmp ((*link)->name_, name_) <= 0)
+    static_suite** slot = &first_;
+    while (*slot != nullptr && std::strcmp ((*slot)->name_, name_) <= 0)
       {
-        link = &(*link)->next_;
+        slot = &(*slot)->next_;
       }
-    next_ = *link;
-    *link = this;
+    next_ = *slot;
+    *slot = this;
   }
 
   /**
@@ -580,14 +580,14 @@ namespace micro_os_plus::micro_test_plus
    * Searches the list for the suite and, if found, bypasses it.
    */
   void
-  static_suite::unlink_ (void) noexcept
+  static_suite::unlink (void) noexcept
   {
-    for (static_suite** link = &first_; *link != nullptr;
-         link = &(*link)->next_)
+    for (static_suite** slot = &first_; *slot != nullptr;
+         slot = &(*slot)->next_)
       {
-        if (*link == this)
+        if (*slot == this)
           {
-            *link = next_;
+            *slot = next_;
             next_ = nullptr;
             return;
           }

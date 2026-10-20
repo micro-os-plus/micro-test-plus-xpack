@@ -192,7 +192,7 @@ namespace micro_os_plus::micro_test_plus
      * order.
      */
     inline size_t
-    runnable_base::next_test_point_number_ (void) noexcept
+    runnable_base::next_test_point_number (void) noexcept
     {
       return ++test_point_number_;
     }
@@ -202,7 +202,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns a reference to the owning test runner.
      */
     inline runner&
-    runnable_base::test_runner_ (void) const noexcept
+    runnable_base::test_runner (void) const noexcept
     {
       return runner_;
     }
@@ -272,7 +272,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Constructs a child `test_case` as a local object, incrementing the
    * test point index and deepening the nesting level by one relative to
-   * this test case's depth, then passes it to `after_test_case_create_()`,
+   * this test case's depth, then passes it to `after_test_case_create()`,
    * which counts and runs it.
    *
    * The child test case, with its stored body and bound arguments, is
@@ -289,16 +289,16 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    size_t own_index = next_test_point_number_ ();
+    size_t own_index = next_test_point_number ();
     test_case child_test_case{ name,
-                               test_runner_ (),
+                               test_runner (),
                                parent_suite_,
                                own_index,
                                nesting_depth_ + 1,
                                std::forward<Callable_T> (callable),
                                std::forward<Args_T> (arguments)... };
 
-    after_test_case_create_ (child_test_case, parent_suite_);
+    after_test_case_create (child_test_case, parent_suite_);
   }
 
   /**
@@ -314,7 +314,7 @@ namespace micro_os_plus::micro_test_plus
   test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
   {
     return detail::check_result{ expr, detail::check_kind::expectation, sl,
-                                 *this, reporter_ ().expression_ };
+                                 *this, test_reporter ().expression_ };
   }
 
   /**
@@ -323,7 +323,7 @@ namespace micro_os_plus::micro_test_plus
    * `detail::check_kind::requirement`. The check result evaluates the
    * condition when constructed, records a pass or fail when it is
    * destroyed, and, if the condition is false, stops the test case by
-   * throwing `detail::failed_requirement` (caught by `test_case::run_()`),
+   * throwing `detail::failed_requirement` (caught by `test_case::run()`),
    * or, without exceptions, aborts the test execution.
    */
   template <class Expr_T>
@@ -333,7 +333,7 @@ namespace micro_os_plus::micro_test_plus
                       const reflection::source_location& sl)
   {
     return detail::check_result{ expr, detail::check_kind::requirement, sl,
-                                 *this, reporter_ ().expression_ };
+                                 *this, test_reporter ().expression_ };
   }
 
   /**
@@ -448,23 +448,23 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     // Called from inside a running test case; run nested in it.
-    if (class test_case* running = running_test_case_ (); running != nullptr)
+    if (class test_case* running = running_test_case (); running != nullptr)
       {
         running->test (name, std::forward<Callable_T> (callable),
                        std::forward<Args_T> (arguments)...);
         return;
       }
 
-    size_t own_index = next_test_point_number_ ();
+    size_t own_index = next_test_point_number ();
     test_case child_test_case{ name,
-                               test_runner_ (),
+                               test_runner (),
                                *this,
                                own_index,
                                1,
                                std::forward<Callable_T> (callable),
                                std::forward<Args_T> (arguments)... };
 
-    after_test_case_create_ (child_test_case, *this);
+    after_test_case_create (child_test_case, *this);
   }
 
   // ==========================================================================
@@ -488,7 +488,7 @@ namespace micro_os_plus::micro_test_plus
                    __PRETTY_FUNCTION__, name, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-    link_ ();
+    link ();
   }
 
   // --------------------------------------------------------------------------

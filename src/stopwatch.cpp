@@ -97,7 +97,7 @@ namespace micro_os_plus::micro_test_plus::detail
   stopwatch::start (void) noexcept
   {
     // Ensure it is read only once.
-    if (!is_recorded_ (start_time_))
+    if (!is_recorded (start_time_))
       {
         read_clock (start_time_);
       }
@@ -113,7 +113,7 @@ namespace micro_os_plus::micro_test_plus::detail
   stopwatch::stop (void) noexcept
   {
     // Ensure it is read only once.
-    if (!is_recorded_ (stop_time_))
+    if (!is_recorded (stop_time_))
       {
         read_clock (stop_time_);
       }

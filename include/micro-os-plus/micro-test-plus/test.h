@@ -240,7 +240,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * The concrete runnable classes (`suite`, `test_case`) derive from
      * `runnable_base`; each stores its body in a `std::function` that
-     * receives a reference to its own class, and implements `run_()`, which
+     * receives a reference to its own class, and implements `run()`, which
      * invokes the body between the reporter notifications.
      *
      * The user code can read only the name and the totals; the rest of
@@ -361,7 +361,7 @@ namespace micro_os_plus::micro_test_plus
        * callable surrounded by the reporter notifications.
        *
        * Private, since the nodes are run only by the framework: the
-       * test cases by `after_test_case_create_()`, when they are created,
+       * test cases by `after_test_case_create()`, when they are created,
        * and the suites by the runner, which is a friend; a second run
        * would report the node twice.
        *
@@ -371,7 +371,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      run_ (void)
+      run (void)
           = 0;
 
       /**
@@ -388,8 +388,8 @@ namespace micro_os_plus::micro_test_plus
        *   Does not return.
        */
       [[noreturn]] void
-      abort_ (const reflection::source_location& sl
-              = reflection::source_location::current ()) const;
+      abort (const reflection::source_location& sl
+             = reflection::source_location::current ()) const;
 
     protected:
       /**
@@ -401,15 +401,15 @@ namespace micro_os_plus::micro_test_plus
        * class and pass it to their nested test cases, and by the runner,
        * which is a friend and selects the static suites it runs.
        *
-       * Not named `runner_()`, which is the name of the data member it
-       * returns.
+       * Not named `runner()`, which would hide the class `runner` in the
+       * derived classes.
        *
        * @par Parameters
        *   None.
        * @return A reference to the test runner.
        */
       [[nodiscard]] runner&
-      test_runner_ (void) const noexcept;
+      test_runner (void) const noexcept;
 
       /**
        * @brief Gets the test reporter associated with this test runnable.
@@ -419,12 +419,15 @@ namespace micro_os_plus::micro_test_plus
        * used by the suites and the test cases, which derive from this
        * class, and by the check result, which is a friend.
        *
+       * Not named `reporter()`, which would hide the class
+       * `detail::reporter` in the derived classes.
+       *
        * @par Parameters
        *   None.
        * @return A reference to the test reporter.
        */
       [[nodiscard]] class reporter&
-      reporter_ (void) const noexcept;
+      test_reporter (void) const noexcept;
 
       /**
        * @brief Gets the innermost test case being run by the owning
@@ -441,15 +444,15 @@ namespace micro_os_plus::micro_test_plus
        * test case is running.
        */
       [[nodiscard]] class test_case*
-      running_test_case_ (void) const noexcept;
+      running_test_case (void) const noexcept;
 
       /**
        * @brief Checks whether the test execution was aborted by the
        * owning runner.
        *
        * @details
-       * Protected, since it is used only by `test_case::run_()` and
-       * `suite::run_()`, to pass on an exception thrown by the abort
+       * Protected, since it is used only by `test_case::run()` and
+       * `suite::run()`, to pass on an exception thrown by the abort
        * handler, instead of reporting it as unexpected.
        *
        * @par Parameters
@@ -457,7 +460,7 @@ namespace micro_os_plus::micro_test_plus
        * @return `true` once `runner::abort()` was called.
        */
       [[nodiscard]] bool
-      is_aborted_ (void) const noexcept;
+      is_aborted (void) const noexcept;
 
       /**
        * @brief Advances to the next child test point, and returns its
@@ -472,7 +475,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The one-based number of the new test point.
        */
       size_t
-      next_test_point_number_ (void) noexcept;
+      next_test_point_number (void) noexcept;
 
       /**
        * @brief Counts a newly constructed child test case and executes it
@@ -489,7 +492,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       void
-      after_test_case_create_ (class test_case& test_case, suite& suite);
+      after_test_case_create (class test_case& test_case, suite& suite);
 
     protected:
       /**
@@ -598,7 +601,7 @@ namespace micro_os_plus::micro_test_plus
    * `test_case` represents a single, named test case or a nested group of
    * checks within a parent `suite` or `test_case`. It is constructed by
    * calling `suite::test()` or `test_case::test()`, both of which create
-   * the object, immediately execute its callable body via `run_()`, and
+   * the object, immediately execute its callable body via `run()`, and
    * register the result with the parent node. The object is local to the
    * `test()` call, and is destroyed when it returns, together with the
    * stored body and its bound arguments.
@@ -823,7 +826,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Private, since the test case is run only once, by
-     * `after_test_case_create_()`, right after its creation.
+     * `after_test_case_create()`, right after its creation.
      *
      * @par Parameters
      *   None.
@@ -831,7 +834,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    run_ (void) override;
+    run (void) override;
 
   protected:
 #if defined(__cpp_exceptions)
@@ -850,7 +853,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    fail_unexpected_exception_ (const char* what);
+    fail_unexpected_exception (const char* what);
 #endif // defined(__cpp_exceptions)
 
   protected:
@@ -858,7 +861,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Callable storing the test case body and any bound arguments.
      *
      * @details
-     * Invoked by `run_()` with a reference to this test case.
+     * Invoked by `run()` with a reference to this test case.
      */
     std::function<void (test_case&)> callable_;
 
@@ -1037,7 +1040,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    run_ (void) override;
+    run (void) override;
 
   protected:
 #if defined(__cpp_exceptions)
@@ -1057,7 +1060,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    fail_unexpected_exception_ (const char* what);
+    fail_unexpected_exception (const char* what);
 #endif // defined(__cpp_exceptions)
 
   protected:
@@ -1065,7 +1068,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Callable storing the suite body and any bound arguments.
      *
      * @details
-     * Invoked by `run_()` with a reference to this suite; a
+     * Invoked by `run()` with a reference to this suite; a
      * `static_suite` also stores its body here, so all suite callables
      * receive a `suite&` reference.
      */
@@ -1076,7 +1079,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Measures the duration of the suite; started and stopped by
-     * `run_()` (by the runner, for the top suite), and read by the
+     * `run()` (by the runner, for the top suite), and read by the
      * reporters, which are friends.
      */
     detail::stopwatch stopwatch_;
@@ -1203,7 +1206,7 @@ namespace micro_os_plus::micro_test_plus
    * itself from the list.
    *
    * The body is stored in the callable inherited from `suite`, and is run
-   * by `suite::run_()`; the user callable receives a `suite&` reference,
+   * by `suite::run()`; the user callable receives a `suite&` reference,
    * as for the suites registered with `runner::add_suite()`, so the same
    * function can serve both kinds of suites.
    *
@@ -1302,7 +1305,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    link_ (void) noexcept;
+    link (void) noexcept;
 
     /**
      * @brief Removes this suite from the list of static suites.
@@ -1316,13 +1319,13 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    unlink_ (void) noexcept;
+    unlink (void) noexcept;
 
     /**
      * @brief The next suite in the list of static suites.
      *
      * @details
-     * Null for the last suite. Set by `link_()` and `unlink_()`.
+     * Null for the last suite. Set by `link()` and `unlink()`.
      */
     static_suite* next_ = nullptr;
 

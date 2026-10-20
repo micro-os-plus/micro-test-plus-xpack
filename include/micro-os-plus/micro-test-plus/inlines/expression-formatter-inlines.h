@@ -91,7 +91,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * condition provided.
    */
   inline auto
-  expression_formatter::colour_ (const bool cond) const
+  expression_formatter::colour (const bool cond) const
   {
     return cond ? colours_.pass : colours_.fail;
   }
@@ -181,14 +181,14 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Writes the opening parenthesis, the two members through
-   * `append_elements_()`, and the closing parenthesis.
+   * `append_elements()`, and the closing parenthesis.
    */
   template <class T1, class T2>
   expression_formatter&
   expression_formatter::operator<< (const std::pair<T1, T2>& p)
   {
     *this << "(";
-    append_elements_ (p, std::index_sequence_for<T1, T2>{});
+    append_elements (p, std::index_sequence_for<T1, T2>{});
     *this << ")";
     return *this;
   }
@@ -196,14 +196,14 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Writes the opening parenthesis, the elements through
-   * `append_elements_()`, and the closing parenthesis.
+   * `append_elements()`, and the closing parenthesis.
    */
   template <class... Ts>
   expression_formatter&
   expression_formatter::operator<< (const std::tuple<Ts...>& t)
   {
     *this << "(";
-    append_elements_ (t, std::index_sequence_for<Ts...>{});
+    append_elements (t, std::index_sequence_for<Ts...>{});
     *this << ")";
     return *this;
   }
@@ -232,8 +232,8 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Tuple_T, std::size_t... Is>
   void
-  expression_formatter::append_elements_ ([[maybe_unused]] const Tuple_T& t,
-                                          std::index_sequence<Is...>)
+  expression_formatter::append_elements ([[maybe_unused]] const Tuple_T& t,
+                                         std::index_sequence<Is...>)
   {
     ((*this << (Is == 0 ? "" : ", ") << std::get<Is> (t)), ...);
   }
@@ -258,8 +258,8 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (
       const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op)
   {
-    return (*this << colour_ (op) << op.lhs () << Compare_T::symbol
-                  << op.rhs () << colours_.none);
+    return (*this << colour (op) << op.lhs () << Compare_T::symbol << op.rhs ()
+                  << colours_.none);
   }
 
   /**
@@ -278,7 +278,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::and_op<Lhs_T, Rhs_T>& op)
   {
-    return (*this << "(" << op.lhs () << colour_ (op) << " and "
+    return (*this << "(" << op.lhs () << colour (op) << " and "
                   << colours_.none << op.rhs () << ")");
   }
 
@@ -298,8 +298,8 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::or_op<Lhs_T, Rhs_T>& op)
   {
-    return (*this << "(" << op.lhs () << colour_ (op) << " or "
-                  << colours_.none << op.rhs () << ")");
+    return (*this << "(" << op.lhs () << colour (op) << " or " << colours_.none
+                  << op.rhs () << ")");
   }
 
   /**
@@ -314,7 +314,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::not_op<T>& op)
   {
-    return (*this << colour_ (op) << "not " << op.operand () << colours_.none);
+    return (*this << colour (op) << "not " << op.operand () << colours_.none);
   }
 
   /**
@@ -328,7 +328,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (
       const detail::predicate_op<T, Predicate_T>& op)
   {
-    return (*this << colour_ (op) << Predicate_T::symbol << op.operand ()
+    return (*this << colour (op) << Predicate_T::symbol << op.operand ()
                   << colours_.none);
   }
 
@@ -349,7 +349,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (
       const detail::throws_op<Callable_T, Exception_T>& op)
   {
-    return (*this << colour_ (op) << "throws<"
+    return (*this << colour (op) << "throws<"
                   << reflection::type_name<Exception_T> () << ">"
                   << colours_.none);
   }
@@ -368,7 +368,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (
       const detail::throws_op<Callable_T, void>& op)
   {
-    return (*this << colour_ (op) << "throws" << colours_.none);
+    return (*this << colour (op) << "throws" << colours_.none);
   }
 
   /**
@@ -383,7 +383,7 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::nothrow_op<Callable_T>& op)
   {
-    return (*this << colour_ (op) << "nothrow" << colours_.none);
+    return (*this << colour (op) << "nothrow" << colours_.none);
   }
 #endif // defined(__cpp_exceptions)
 
