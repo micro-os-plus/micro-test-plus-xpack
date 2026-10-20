@@ -481,9 +481,9 @@ namespace micro_os_plus::micro_test_plus
      * the result is `false`. The result is passed to the `callable_op`
      * base class constructor.
      */
-    template <class Callable_T, class Exception_T>
-    constexpr throws_op<Callable_T, Exception_T>::throws_op (
-        const Callable_T& func)
+    template <class Exception_T>
+    template <class Callable_T>
+    constexpr throws_op<Exception_T>::throws_op (const Callable_T& func)
         : callable_op{ [&func]
       {
         try
@@ -513,7 +513,7 @@ namespace micro_os_plus::micro_test_plus
      * constructor.
      */
     template <class Callable_T>
-    constexpr throws_op<Callable_T, void>::throws_op (const Callable_T& func)
+    constexpr throws_op<void>::throws_op (const Callable_T& func)
         : callable_op{ [&func]
       {
         try
@@ -539,7 +539,7 @@ namespace micro_os_plus::micro_test_plus
      * constructor.
      */
     template <class Callable_T>
-    constexpr nothrow_op<Callable_T>::nothrow_op (const Callable_T& func)
+    constexpr nothrow_op::nothrow_op (const Callable_T& func)
         : callable_op{ [&func]
       {
         try

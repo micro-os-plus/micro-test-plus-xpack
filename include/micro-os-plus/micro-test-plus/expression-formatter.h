@@ -687,39 +687,26 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__cpp_exceptions)
 
       /**
-       * @brief Formats a typed throws expression as
-       * `throws<TypeName>`.
+       * @brief Formats a throws expression as `throws<TypeName>`, or as
+       * `throws` when any exception is expected.
        *
-       * @tparam Callable_T The callable type.
-       * @tparam Exception_T The expected exception type.
+       * @tparam Exception_T The expected exception type, or `void` for
+       * any exception.
        * @param op The throws expression.
        * @return Reference to this instance.
        */
-      template <class Callable_T, class Exception_T>
+      template <class Exception_T>
       expression_formatter&
-      operator<< (const detail::throws_op<Callable_T, Exception_T>& op);
-
-      /**
-       * @brief Formats an untyped throws expression as `throws`.
-       *
-       * @tparam Callable_T The callable type.
-       * @param op The throws expression.
-       * @return Reference to this instance.
-       */
-      template <class Callable_T>
-      expression_formatter&
-      operator<< (const detail::throws_op<Callable_T, void>& op);
+      operator<< (const detail::throws_op<Exception_T>& op);
 
       /**
        * @brief Formats a nothrow expression as `nothrow`.
        *
-       * @tparam Callable_T The callable type.
        * @param op The nothrow expression.
        * @return Reference to this instance.
        */
-      template <class Callable_T>
       expression_formatter&
-      operator<< (const detail::nothrow_op<Callable_T>& op);
+      operator<< (const detail::nothrow_op& op);
 
 #endif // defined(__cpp_exceptions)
 

@@ -516,6 +516,28 @@ static_asserts ()
       static_assert (not extension::printable<unformatted>);
       static_assert (not extension::printable<with_extension::marker_only>);
     }
+
+#if defined(__cpp_exceptions)
+    {
+      [[maybe_unused]] auto returns = [] {};
+      [[maybe_unused]] auto returns_int = [] { return 42; };
+
+      // The exception checks keep only their result, so their types depend
+      // on the expected exception, not on the callable (API-REVIEW.md #42).
+      static_assert (std::is_same_v<decltype (throws (returns)),
+                                    decltype (throws (returns_int))>);
+      static_assert (std::is_same_v<decltype (throws<int> (returns)),
+                                    decltype (throws<int> (returns_int))>);
+      static_assert (std::is_same_v<decltype (nothrow (returns)),
+                                    decltype (nothrow (returns_int))>);
+      static_assert (not std::is_same_v<decltype (throws (returns)),
+                                        decltype (throws<int> (returns))>);
+
+      static_assert (extension::printable<decltype (throws (returns))>);
+      static_assert (extension::printable<decltype (throws<int> (returns))>);
+      static_assert (extension::printable<decltype (nothrow (returns))>);
+    }
+#endif // defined(__cpp_exceptions)
   }
 }
 

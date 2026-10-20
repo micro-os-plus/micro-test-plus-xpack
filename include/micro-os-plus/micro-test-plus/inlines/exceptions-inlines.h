@@ -81,7 +81,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   throws (const Callable_T& func)
   {
-    return detail::throws_op<Callable_T, Exception_T>{ func };
+    return detail::throws_op<Exception_T>{ func };
   }
 
   /**
@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   throws (const Callable_T& func)
   {
-    return detail::throws_op<Callable_T>{ func };
+    return detail::throws_op<>{ func };
   }
 
   /**
@@ -117,7 +117,7 @@ namespace micro_os_plus::micro_test_plus
   constexpr auto
   nothrow (const Callable_T& func)
   {
-    return detail::nothrow_op<Callable_T>{ func };
+    return detail::nothrow_op{ func };
   }
 
 #endif // defined(__cpp_exceptions)

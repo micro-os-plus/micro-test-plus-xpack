@@ -919,57 +919,62 @@ namespace micro_os_plus::micro_test_plus
      * composition. Use this when a test must verify that an operation raises
      * an expected exception of a particular type.
      *
-     * @tparam Callable_T The type of the callable object to be invoked.
+     * The callable is used only by the constructor, so it is a parameter
+     * of the constructor, not of the struct; all checks of the same
+     * exception type share one struct, and one formatter instantiation.
+     *
      * @tparam Exception_T The type of the exception to check for (defaults to
      * `void` for any exception).
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    template <class Callable_T, class Exception_T = void>
+    template <class Exception_T = void>
     struct throws_op : callable_op
     {
       /**
        * @brief Constructs an exception checking operator for the given
        * callable.
        *
+       * @tparam Callable_T The type of the callable object to be invoked.
        * @param func The callable object to be invoked.
        */
+      template <class Callable_T>
       constexpr explicit throws_op (const Callable_T& func);
     };
 
     // ========================================================================
 
     /**
-     * @brief Operator struct template to check if an expression throws any
+     * @brief Operator struct to check if an expression throws any
      * exception.
      *
      * @details
-     * This partial specialisation checks whether invoking the given callable
-     * throws any exception, regardless of type. The check is performed at
-     * construction time, with the result cached for reporting and
-     * composition. Use this when a test must verify that an operation raises
-     * an exception without caring about the specific exception type.
-     *
-     * @tparam Callable_T The type of the callable object to be invoked.
+     * This explicit specialisation checks whether invoking the given
+     * callable throws any exception, regardless of type. The check is
+     * performed at construction time, with the result cached for reporting
+     * and composition. Use this when a test must verify that an operation
+     * raises an exception without caring about the specific exception type.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    template <class Callable_T>
-    struct throws_op<Callable_T, void> : callable_op
+    template <>
+    struct throws_op<void> : callable_op
     {
       /**
        * @brief Constructs an exception checking operator for the given
        * callable.
        *
+       * @tparam Callable_T The type of the callable object to be invoked.
        * @param func The callable object to be invoked.
        */
+      template <class Callable_T>
       constexpr explicit throws_op (const Callable_T& func);
     };
 
     // ========================================================================
 
     /**
-     * @brief Operator struct template to check if an expression does not throw
+     * @brief Operator struct to check if an expression does not throw
      * any exception.
      *
      * @details
@@ -978,19 +983,21 @@ namespace micro_os_plus::micro_test_plus
      * time, with the result cached for reporting and composition. Use this
      * when a test must verify that an operation does not throw.
      *
-     * @tparam Callable_T The type of the callable object to be invoked.
+     * The callable is a parameter of the constructor only, so all the
+     * checks share one struct, and one formatter overload.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    template <class Callable_T>
     struct nothrow_op : callable_op
     {
       /**
        * @brief Constructs a nothrow checking operator for the given
        * callable.
        *
+       * @tparam Callable_T The type of the callable object to be invoked.
        * @param func The callable object to be invoked.
        */
+      template <class Callable_T>
       constexpr explicit nothrow_op (const Callable_T& func);
     };
 

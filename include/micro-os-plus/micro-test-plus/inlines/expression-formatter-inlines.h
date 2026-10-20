@@ -347,39 +347,29 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * This operator overload provides structured output for expressions that may
-   * throw exceptions. It applies colour styling for clarity and includes the
-   * exception type name for precise identification.
+   * throw exceptions. It applies colour styling for clarity and, when a
+   * specific exception is expected, includes its type name for precise
+   * identification.
    *
-   * When invoked, the output highlights the `throws` qualifier along with the
-   * specific exception type, making it immediately apparent which exception is
-   * expected, and assists in the precise identification and debugging of
-   * exception-related test cases.
+   * When invoked, the output highlights the `throws` qualifier, along with
+   * the expected exception type, if any, making it immediately apparent
+   * which exception is expected, and assists in the precise identification
+   * and debugging of exception-related test cases.
    */
-  template <class Callable_T, class Exception_T>
+  template <class Exception_T>
   expression_formatter&
-  expression_formatter::operator<< (
-      const detail::throws_op<Callable_T, Exception_T>& op)
+  expression_formatter::operator<< (const detail::throws_op<Exception_T>& op)
   {
-    return (*this << colour (op) << "throws<"
-                  << reflection::type_name<Exception_T> () << ">"
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload formats output for expressions that may throw
-   * exceptions. It applies colour styling for clarity and ensures a structured
-   * representation of the exception handling mechanism.
-   *
-   * When invoked, the output highlights the `throws` qualifier, making it
-   * immediately apparent when an expression is expected to throw.
-   */
-  template <class Callable_T>
-  expression_formatter&
-  expression_formatter::operator<< (
-      const detail::throws_op<Callable_T, void>& op)
-  {
-    return (*this << colour (op) << "throws" << colours_.none);
+    if constexpr (std::is_void_v<Exception_T>)
+      {
+        return (*this << colour (op) << "throws" << colours_.none);
+      }
+    else
+      {
+        return (*this << colour (op) << "throws<"
+                      << reflection::type_name<Exception_T> () << ">"
+                      << colours_.none);
+      }
   }
 
   /**
@@ -389,10 +379,13 @@ namespace micro_os_plus::micro_test_plus::detail
    *
    * The output highlights the `nothrow` qualifier, making it immediately
    * apparent when an expression is expected not to throw.
+   *
+   * It is defined inline, not in the library sources, so that it is
+   * available to the applications built with exceptions even when the
+   * library is built without them.
    */
-  template <class Callable_T>
-  expression_formatter&
-  expression_formatter::operator<< (const detail::nothrow_op<Callable_T>& op)
+  inline expression_formatter&
+  expression_formatter::operator<< (const detail::nothrow_op& op)
   {
     return (*this << colour (op) << "nothrow" << colours_.none);
   }
