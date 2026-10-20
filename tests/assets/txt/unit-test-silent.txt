@@ -50,6 +50,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • runner::suite()
     • static_suite& suite functions
     • counters
+    • non-const totals(), detail::runner_totals
     • assume()
     • Failed assume()
     • reflection::short_name()

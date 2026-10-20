@@ -23,6 +23,7 @@
 
 #include <string_view>
 #include <type_traits>
+#include <utility>
 
 using namespace std::literals;
 using namespace micro_os_plus::micro_test_plus;
@@ -270,6 +271,55 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         t.expect (!local_counters.was_successful ()
                   and !local_counters.passed ())
             << "was_successful() with a failed check";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The v5.0.1 non-`const` reference to the totals of a node, with the
+    // deprecated class name; the modifications reach the live totals, and
+    // decide the exit code, as in v5.0.1.
+    ts.test ("non-const totals(), detail::runner_totals", [] (auto& t)
+      {
+        static_assert (std::is_same_v<detail::runner_totals, counters>,
+                       "runner_totals is an alias of counters");
+        static_assert (std::is_same_v<decltype (t.totals ()), counters&>,
+                       "the non-const totals() returns a reference");
+        static_assert (std::is_same_v<decltype (std::as_const (t).totals ()),
+                                      const counters&>,
+                       "the const totals() returns a const reference");
+
+        runner_options options{};
+        options.verbosity_level = verbosity::silent;
+
+        runner local_runner;
+        auto& local_ts = local_runner.initialise (options, "Local");
+        local_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        // The v5.0.1 binding.
+        detail::runner_totals& local_totals = local_ts.totals ();
+
+        t.expect (&local_totals == &std::as_const (local_ts).totals ()
+                  and eq (local_totals.passed_checks (), 1u)
+                  and eq (local_totals.executed_test_cases (), 1u))
+            << "runner_totals& refers to the live totals";
+        local_counts.passed_checks++;
+
+        // The modifications through the v5.0.1 reference.
+        local_totals.increment_passed_checks (2);
+        local_totals.increment_executed_test_cases ();
+
+        t.expect (eq (local_ts.totals ().passed_checks (), 3u)
+                  and eq (local_ts.totals ().executed_test_cases (), 2u)
+                  and local_ts.totals ().passed ())
+            << "runner_totals& modifies the live totals";
+        local_counts.passed_checks++;
+
+        local_totals.increment_failed_checks ();
+
+        t.expect (eq (local_runner.run (), 1)
+                  and eq (local_runner.totals ().failed_checks (), 1u))
+            << "a failed check added to the totals fails the session";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

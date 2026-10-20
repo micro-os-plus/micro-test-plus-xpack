@@ -165,6 +165,16 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Returns a reference to the `counters` member.
+     */
+    inline counters&
+    runnable_base::totals (void) noexcept
+    {
+      return totals_;
+    }
+
+    /**
+     * @details
      * Each call to `test()` invokes this member function before constructing
      * the new `test_case`, and each check invokes it from the check result
      * destructor, when the check is reported, so the numbers form a strictly

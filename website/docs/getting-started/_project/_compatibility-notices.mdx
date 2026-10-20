@@ -186,12 +186,13 @@ nested in the running test case, as if started with `t.test()`. After a
 check, it previously aborted the program; before any check, the report
 was malformed.
 
-The counters and the indices of the runner, the suites, and the test
-cases can no longer be modified by the user code: `totals()` now
-returns only a `const` reference, so a reference that stores its result
-must be `const`, and the `own_index (size_t)` setter and
-`increment_subtest_index()` are no longer public. The read-only
-`totals()` is still available.
+The counters of the suites and of the test cases are meant to be read
+only. A non-`const` reference to the result of `totals()`
+(`detail::runner_totals& t = ts.totals ();`) is still accepted, for
+compatibility, but store it in a `const counters&` reference, or copy
+it into a `counters` object to modify the copy, since the live
+counters decide the exit code. The `own_index (size_t)` setter and
+`increment_subtest_index()` are no longer public.
 
 The functions of the suites and the test cases that serve only the
 runner and the reporters are no longer public: `run()`, which ran the
@@ -212,9 +213,9 @@ registered nor run. Create the suites with `runner::add_suite()` or as
 The `detail::runner_totals` class, returned by `totals()`, is now
 `micro_os_plus::micro_test_plus::counters`, since the suites and the
 test cases own one too, not only the runner. The old class name is
-not kept; replace `detail::runner_totals` with `counters`. Its
+deprecated; replace `detail::runner_totals` with `counters`. Its
 `was_successful()` function is deprecated in favour of `passed()`; the
-old name is still available, as an alias, but marked `[[deprecated]]`.
+old names are still available, as aliases, but marked `[[deprecated]]`.
 The `timings()` functions
 of the runner and of the suites, and the `expression()` function of the
 reporters, were removed, since they return internal types and are used

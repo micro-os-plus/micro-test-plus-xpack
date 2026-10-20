@@ -96,15 +96,16 @@ namespace micro_os_plus::micro_test_plus
    * totals up to the parent node, or to the runner.
    *
    * The tests can read the counters of the runner, of a suite, or of a
-   * test case through the read-only `totals()` accessor.
+   * test case through the `totals()` accessor.
    *
    * The class is a copyable value type, so that a test can take a
    * snapshot of the counters (`counters before = ts.totals ();`) and
    * compare it later with the current values. The copy is independent:
    * it is not updated when the original counters change. The nodes that
-   * own the live counters are themselves neither copyable nor movable,
-   * and `totals()` returns only a `const` reference, so a copy cannot
-   * replace or alter the counters of a node.
+   * own the live counters are themselves neither copyable nor movable.
+   * The runner returns only a `const` reference; the suites and the test
+   * cases also have a non-`const` overload, kept for v5.0.1, but the
+   * counters of the nodes are meant to be read only.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
@@ -462,6 +463,26 @@ namespace micro_os_plus::micro_test_plus
      */
     size_t skipped_test_cases_ = 0;
   };
+
+  // --------------------------------------------------------------------------
+
+  namespace detail
+  {
+    // ========================================================================
+
+    /**
+     * @brief Deprecated name of `counters`.
+     *
+     * @details
+     * The v5.0.1 name of the class returned by `totals()`, renamed since
+     * the suites and the test cases own one too, not only the runner.
+     *
+     * @deprecated Use `counters` (since 5.1.0).
+     */
+    using runner_totals [[deprecated ("use counters")]] = counters;
+
+    // ========================================================================
+  } // namespace detail
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
