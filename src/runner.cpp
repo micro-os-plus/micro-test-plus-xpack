@@ -162,6 +162,9 @@ namespace micro_os_plus::micro_test_plus
 
     if (session_state_ != session_state::created)
       {
+        // Do not parse the options, since an option error would change
+        // the exit code of the running session; the other overload
+        // reports the error.
         return initialise (runner_options{}, top_suite_name);
       }
 
