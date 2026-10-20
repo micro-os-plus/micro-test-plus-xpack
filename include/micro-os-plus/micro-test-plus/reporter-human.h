@@ -368,7 +368,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    commit_buffer (void);
+    commit_buffer (void) override;
 
     /**
      * @brief Displays the names of the open test cases not yet displayed.

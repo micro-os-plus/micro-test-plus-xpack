@@ -731,6 +731,115 @@ namespace micro_os_plus::micro_test_plus
                            char (&message)[elapsed_time_size_]);
 
       /**
+       * @brief Size of the array that receives the totals text.
+       *
+       * @details
+       * Large enough for the longest text produced by
+       * `format_session_totals()`, with all the counts of 20 digits
+       * (193 characters), which is longer than the texts of the suites
+       * and of the test cases.
+       */
+      static constexpr size_t totals_size_ = 256;
+
+      /**
+       * @brief Formats the totals of the test session.
+       *
+       * @details
+       * The text is the part of the session summary line common to the
+       * concrete reporters, in the form `"7 checks passed, 1 failed, in
+       * 3 test cases, 2 test suites"`; the numbers of test cases and of
+       * suites skipped by the filter follow the respective counts, as
+       * `", 1 skipped"`, only when not zero. The label (`Total:` or
+       * `total:`), the markers, and the elapsed time are added by the
+       * callers.
+       *
+       * @param runner The runner of the test session.
+       * @param message The character array that receives the
+       * null-terminated text.
+       * @par Returns
+       *   Nothing.
+       */
+      static void
+      format_session_totals (const runner& runner,
+                             char (&message)[totals_size_]);
+
+      /**
+       * @brief Formats the totals of a suite.
+       *
+       * @details
+       * The text is the part of the suite result line common to the
+       * concrete reporters: `"7 checks in 3 test cases"` for a passed
+       * suite, and `"6 checks passed, 1 failed, in 3 test cases"` for a
+       * failed one; the number of test cases skipped by the filter
+       * follows, as `", 1 skipped"`, only when not zero. The status, the
+       * enclosing markers, and the elapsed time are added by the callers.
+       *
+       * @param suite The suite that ended.
+       * @param message The character array that receives the
+       * null-terminated text.
+       * @par Returns
+       *   Nothing.
+       */
+      static void
+      format_suite_totals (const suite& suite, char (&message)[totals_size_]);
+
+      /**
+       * @brief Formats the totals of a test case.
+       *
+       * @details
+       * The text is the part of the test case result line common to the
+       * concrete reporters: `"7 checks"` for a passed test case, and
+       * `"6 checks passed, 1 failed"` for a failed one, followed by the
+       * number of failed nested test cases, as `", 1 test case failed"`,
+       * only when not zero, since a test case may fail because of a
+       * nested one alone. The status and the enclosing markers are added
+       * by the callers.
+       *
+       * @param test_case The test case that ended.
+       * @param message The character array that receives the
+       * null-terminated text.
+       * @par Returns
+       *   Nothing.
+       */
+      static void
+      format_test_case_totals (const test_case& test_case,
+                               char (&message)[totals_size_]);
+
+      /**
+       * @brief Writes the results buffered for the outer test case
+       * before a nested test case begins or is skipped.
+       *
+       * @details
+       * The concrete reporters decide where the results are written, and
+       * with which verbosity levels; the buffer is cleared.
+       *
+       * @par Parameters
+       *   None.
+       * @par Returns
+       *   Nothing.
+       */
+      virtual void
+      commit_buffer (void)
+          = 0;
+
+      /**
+       * @brief Writes the results of the outer test case, if any, before
+       * a nested test case begins or is skipped.
+       *
+       * @details
+       * Called by `begin_test_case()` and `skip_test_case()` of the
+       * concrete reporters, so that the output follows the execution
+       * order.
+       *
+       * @par Parameters
+       *   None.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      commit_outer_results (void);
+
+      /**
        * @brief Outputs the prefix for a passing condition.
        *
        * @details

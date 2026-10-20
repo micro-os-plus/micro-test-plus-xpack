@@ -171,50 +171,24 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console ("\n");
           }
 
-        size_t total_suites_count = runner.total_suites_count ();
-
-        char message_skipped_test_cases[40] = "";
-        if (runner.totals ().skipped_test_cases () > 0)
-          {
-            snprintf (message_skipped_test_cases,
-                      sizeof (message_skipped_test_cases), ", %zu skipped",
-                      runner.totals ().skipped_test_cases ());
-          }
-
-        char message_skipped_suites[40] = "";
-        if (runner.skipped_suites_count () > 0)
-          {
-            snprintf (message_skipped_suites, sizeof (message_skipped_suites),
-                      ", %zu skipped", runner.skipped_suites_count ());
-          }
-
-        char message_totals[300];
-        snprintf (message_totals, sizeof (message_totals),
-                  "Total: %zu check%s passed, %zu failed, in %zu test "
-                  "case%s%s, %zu test suite%s%s",
-                  runner.totals ().passed_checks (),
-                  runner.totals ().passed_checks () == 1 ? "" : "s",
-                  runner.totals ().failed_checks (),
-                  runner.totals ().executed_test_cases (),
-                  runner.totals ().executed_test_cases () == 1 ? "" : "s",
-                  message_skipped_test_cases, total_suites_count,
-                  total_suites_count == 1 ? "" : "s", message_skipped_suites);
+        char message_totals[totals_size_];
+        format_session_totals (runner, message_totals);
 
         char message_time[elapsed_time_size_];
         format_elapsed_time (runner.stopwatch_, message_time);
 
         if (runner.totals ().passed ()) [[likely]]
           {
-            write_file ("✓ %s%s\n", message_totals, message_time);
+            write_file ("✓ Total: %s%s\n", message_totals, message_time);
 
-            write_console ("%s✓%s %s%s\n", colours_.pass, colours_.none,
+            write_console ("%s✓%s Total: %s%s\n", colours_.pass, colours_.none,
                            message_totals, message_time);
           }
         else
           {
-            write_file ("✗ %s%s\n", message_totals, message_time);
+            write_file ("✗ Total: %s%s\n", message_totals, message_time);
 
-            write_console ("%s✗%s %s%s\n", colours_.fail, colours_.none,
+            write_console ("%s✗%s Total: %s%s\n", colours_.fail, colours_.none,
                            message_totals, message_time);
           }
 
@@ -287,15 +261,8 @@ namespace micro_os_plus::micro_test_plus::detail
     // should be displayed.
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
-        std::string indent (indent_size_, ' ');
-
-        // The test cases skipped by the filter, only when not zero.
-        char message_skipped[40] = "";
-        if (suite.totals ().skipped_test_cases () > 0)
-          {
-            snprintf (message_skipped, sizeof (message_skipped),
-                      ", %zu skipped", suite.totals ().skipped_test_cases ());
-          }
+        char message_totals[totals_size_];
+        format_suite_totals (suite, message_totals);
 
         if (suite.totals ().executed_test_cases () > 0)
           {
@@ -306,19 +273,10 @@ namespace micro_os_plus::micro_test_plus::detail
           {
             // Successful test suite.
 
-            char message_totals[300];
-            snprintf (message_totals, sizeof (message_totals),
-                      "(%zu check%s in %zu test case%s%s)",
-                      suite.totals ().passed_checks (),
-                      suite.totals ().passed_checks () == 1 ? "" : "s",
-                      suite.totals ().executed_test_cases (),
-                      suite.totals ().executed_test_cases () == 1 ? "" : "s",
-                      message_skipped);
-
             write_buffer_to_file ();
 
-            write_file ("✓ %s - passed %s%s\n", suite.name (), message_totals,
-                        message_time);
+            write_file ("✓ %s - passed (%s)%s\n", suite.name (),
+                        message_totals, message_time);
 
             if (verbosity_ == verbosity::verbose)
               {
@@ -327,7 +285,7 @@ namespace micro_os_plus::micro_test_plus::detail
                 write_buffer_to_console ();
               }
 
-            write_console ("%s✓%s %s - passed %s%s\n", colours_.pass,
+            write_console ("%s✓%s %s - passed (%s)%s\n", colours_.pass,
                            colours_.none, suite.name (), message_totals,
                            message_time);
           }
@@ -335,27 +293,16 @@ namespace micro_os_plus::micro_test_plus::detail
           {
             // Failed test suite.
 
-            char message_totals[300];
-            snprintf (message_totals, sizeof (message_totals),
-                      "(%zu check%s passed, %zu "
-                      "failed, in %zu test case%s%s)",
-                      suite.totals ().passed_checks (),
-                      suite.totals ().passed_checks () == 1 ? "" : "s",
-                      suite.totals ().failed_checks (),
-                      suite.totals ().executed_test_cases (),
-                      suite.totals ().executed_test_cases () == 1 ? "" : "s",
-                      message_skipped);
-
             write_buffer_to_file ();
 
-            write_file ("✗ %s - FAILED %s%s\n", suite.name (), message_totals,
-                        message_time);
+            write_file ("✗ %s - FAILED (%s)%s\n", suite.name (),
+                        message_totals, message_time);
 
             // Show full TAP output accumulated in the buffer for failed suite
             // cases, as it may contain useful information about the failure.
             write_buffer_to_console ();
 
-            write_console ("%s✗%s %s - %sFAILED%s %s%s\n", colours_.fail,
+            write_console ("%s✗%s %s - %sFAILED%s (%s)%s\n", colours_.fail,
                            colours_.none, suite.name (), colours_.fail,
                            colours_.none, message_totals, message_time);
           }
@@ -430,13 +377,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * This member function marks the beginning of a test case. For a nested test
    * case, the results of the checks already performed by the outer test
-   * case, if any, are written first (see `commit_buffer()`), so that the
-   * output follows the execution order. For a top-level test case, the
-   * output buffer is expected to be empty, since the checks are performed
-   * only by the test cases, and each one writes its results when it
-   * ends; should it not be, its content is written in the same way,
-   * rather than lost or attributed to this test case, and the run
-   * continues.
+   * case, if any, are written first (see `commit_outer_results()`), so that
+   * the output follows the execution order.
    *
    * A `"• <name>"` line, indented according to the nesting depth, is
    * written to the output file (if open) and, with verbose verbosity, to
@@ -449,12 +391,7 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (!buffer_.empty ())
-      {
-        // Normally, the outer test case performed checks before this
-        // nested one.
-        commit_buffer ();
-      }
+    commit_outer_results ();
 
     open_test_cases_.push_back (
         { &test_case, verbosity_ == verbosity::verbose });
@@ -510,8 +447,11 @@ namespace micro_os_plus::micro_test_plus::detail
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
-        std::string indent2 (indent_size_ * (test_case.nesting_depth () + 1),
-                             ' ');
+
+        // The name is not included, since its length is not bounded;
+        // it is passed to each write.
+        char message_totals[totals_size_];
+        format_test_case_totals (test_case, message_totals);
 
         if (add_empty_line_)
           {
@@ -522,16 +462,9 @@ namespace micro_os_plus::micro_test_plus::detail
           {
             // Successful test case.
 
-            // The name is not included, since its length is not bounded;
-            // it is passed to each write.
-            char message_totals[300];
-            snprintf (message_totals, sizeof (message_totals), "(%zu check%s)",
-                      test_case.totals ().passed_checks (),
-                      test_case.totals ().passed_checks () == 1 ? "" : "s");
-
             write_buffer_to_file ();
 
-            write_file ("%s✓ %s - passed %s\n", indent.c_str (),
+            write_file ("%s✓ %s - passed (%s)\n", indent.c_str (),
                         test_case.name (), message_totals);
 
             if (verbosity_ == verbosity::verbose)
@@ -540,7 +473,7 @@ namespace micro_os_plus::micro_test_plus::detail
                 // buffer.
                 write_buffer_to_console ();
 
-                write_console ("%s%s✓%s %s - passed %s\n", indent.c_str (),
+                write_console ("%s%s✓%s %s - passed (%s)\n", indent.c_str (),
                                colours_.pass, colours_.none, test_case.name (),
                                message_totals);
 
@@ -548,7 +481,7 @@ namespace micro_os_plus::micro_test_plus::detail
               }
             else
               {
-                write_console ("%s%s✓%s %s - passed %s\n", indent.c_str (),
+                write_console ("%s%s✓%s %s - passed (%s)\n", indent.c_str (),
                                colours_.pass, colours_.none, test_case.name (),
                                message_totals);
 
@@ -559,29 +492,9 @@ namespace micro_os_plus::micro_test_plus::detail
           {
             // Failed test case.
 
-            // The nested failures are mentioned only when present, since a
-            // test case may fail because of a nested one alone.
-            char message_test_cases[48] = "";
-            if (test_case.totals ().failed_test_cases () > 0)
-              {
-                snprintf (message_test_cases, sizeof (message_test_cases),
-                          ", %zu test case%s failed",
-                          test_case.totals ().failed_test_cases (),
-                          test_case.totals ().failed_test_cases () == 1 ? ""
-                                                                        : "s");
-              }
-
-            char message_totals[300];
-            snprintf (message_totals, sizeof (message_totals),
-                      "(%zu check%s passed, %zu failed%s)",
-                      test_case.totals ().passed_checks (),
-                      test_case.totals ().passed_checks () == 1 ? "" : "s",
-                      test_case.totals ().failed_checks (),
-                      message_test_cases);
-
             write_buffer_to_file ();
 
-            write_file ("%s✗ %s - FAILED %s\n", indent.c_str (),
+            write_file ("%s✗ %s - FAILED (%s)\n", indent.c_str (),
                         test_case.name (), message_totals);
 
             if (verbosity_ == verbosity::normal)
@@ -597,7 +510,7 @@ namespace micro_os_plus::micro_test_plus::detail
             // failure.
             write_buffer_to_console ();
 
-            write_console ("%s%s✗%s %s - %sFAILED%s %s\n", indent.c_str (),
+            write_console ("%s%s✗%s %s - %sFAILED%s (%s)\n", indent.c_str (),
                            colours_.fail, colours_.none, test_case.name (),
                            colours_.fail, colours_.none, message_totals);
 
@@ -753,7 +666,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * As in `begin_test_case()`, for a nested test case, the results of the
    * checks already performed by the outer test case, if any, are written
-   * first (see `commit_buffer()`), so that the output follows the
+   * first (see `commit_outer_results()`), so that the output follows the
    * execution order.
    *
    * With normal or verbose verbosity, a `"• <name> - skipped (filtered)"`
@@ -769,12 +682,7 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_case.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (!buffer_.empty ())
-      {
-        // Normally, the outer test case performed checks before this
-        // nested one.
-        commit_buffer ();
-      }
+    commit_outer_results ();
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {

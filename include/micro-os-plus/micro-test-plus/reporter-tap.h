@@ -354,7 +354,7 @@ namespace micro_os_plus::micro_test_plus::detail
      *   Nothing.
      */
     void
-    commit_buffer (void);
+    commit_buffer (void) override;
 
     /**
      * @brief The position in the buffer where the description of a

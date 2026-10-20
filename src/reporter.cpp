@@ -40,8 +40,11 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/micro-test-plus/counters.h"
 #include "micro-os-plus/micro-test-plus/reporter.h"
+#include "micro-os-plus/micro-test-plus/runner.h"
 #include "micro-os-plus/micro-test-plus/stopwatch.h"
+#include "micro-os-plus/micro-test-plus/test.h"
 #include "micro-os-plus/micro-test-plus/utility.h"
 
 #if __has_include("micro-os-plus/diag/trace.h")
@@ -571,6 +574,176 @@ namespace micro_os_plus::micro_test_plus::detail
     else
       {
         message[0] = '\0';
+      }
+  }
+
+  // --------------------------------------------------------------------------
+
+  namespace
+  {
+    /**
+     * @brief Size of the array that receives a fragment of the totals.
+     *
+     * @details
+     * Large enough for `", 18446744073709551615 test cases failed"`, the
+     * longest fragment, with a count of 20 digits.
+     */
+    constexpr size_t fragment_size = 48;
+
+    /**
+     * @brief Returns the plural suffix for a count.
+     *
+     * @details
+     * The totals lines are in English, where only the count 1 takes the
+     * singular form.
+     *
+     * @param count The count that precedes the noun.
+     * @return `""` for 1, and `"s"` otherwise.
+     */
+    constexpr const char*
+    plural (size_t count) noexcept
+    {
+      return count == 1 ? "" : "s";
+    }
+
+    /**
+     * @brief Formats the number of items skipped by the filter.
+     *
+     * @details
+     * The text is `", <count> skipped"`, appended to the count of the
+     * items, or empty when no item was skipped, so that the totals lines
+     * of the runs without a filter are not longer.
+     *
+     * @param count The number of skipped items.
+     * @param message The character array that receives the
+     * null-terminated text.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    format_skipped (size_t count, char (&message)[fragment_size])
+    {
+      if (count > 0)
+        {
+          snprintf (message, sizeof (message), ", %zu skipped", count);
+        }
+      else
+        {
+          message[0] = '\0';
+        }
+    }
+  } // namespace
+
+  /**
+   * @details
+   * The suites are counted by `runner::total_suites_count()`, which
+   * includes the suites skipped by the filter, counted separately by
+   * `runner::skipped_suites_count()`.
+   */
+  void
+  reporter::format_session_totals (const runner& runner,
+                                   char (&message)[totals_size_])
+  {
+    const counters& totals = runner.totals ();
+    const size_t suites_count = runner.total_suites_count ();
+
+    char message_skipped_test_cases[fragment_size];
+    format_skipped (totals.skipped_test_cases (), message_skipped_test_cases);
+
+    char message_skipped_suites[fragment_size];
+    format_skipped (runner.skipped_suites_count (), message_skipped_suites);
+
+    snprintf (message, sizeof (message),
+              "%zu check%s passed, %zu failed, in %zu test case%s%s, %zu "
+              "test suite%s%s",
+              totals.passed_checks (), plural (totals.passed_checks ()),
+              totals.failed_checks (), totals.executed_test_cases (),
+              plural (totals.executed_test_cases ()),
+              message_skipped_test_cases, suites_count, plural (suites_count),
+              message_skipped_suites);
+  }
+
+  /**
+   * @details
+   * A passed suite has no failed checks, so only the number of checks is
+   * shown.
+   */
+  void
+  reporter::format_suite_totals (const suite& suite,
+                                 char (&message)[totals_size_])
+  {
+    const counters& totals = suite.totals ();
+
+    char message_skipped[fragment_size];
+    format_skipped (totals.skipped_test_cases (), message_skipped);
+
+    if (totals.passed ()) [[likely]]
+      {
+        snprintf (message, sizeof (message),
+                  "%zu check%s in %zu test case%s%s", totals.passed_checks (),
+                  plural (totals.passed_checks ()),
+                  totals.executed_test_cases (),
+                  plural (totals.executed_test_cases ()), message_skipped);
+      }
+    else
+      {
+        snprintf (message, sizeof (message),
+                  "%zu check%s passed, %zu failed, in %zu test case%s%s",
+                  totals.passed_checks (), plural (totals.passed_checks ()),
+                  totals.failed_checks (), totals.executed_test_cases (),
+                  plural (totals.executed_test_cases ()), message_skipped);
+      }
+  }
+
+  /**
+   * @details
+   * A passed test case has no failed checks and no failed nested test
+   * cases, so only the number of checks is shown.
+   */
+  void
+  reporter::format_test_case_totals (const test_case& test_case,
+                                     char (&message)[totals_size_])
+  {
+    const counters& totals = test_case.totals ();
+
+    if (totals.passed ()) [[likely]]
+      {
+        snprintf (message, sizeof (message), "%zu check%s",
+                  totals.passed_checks (), plural (totals.passed_checks ()));
+      }
+    else
+      {
+        char message_test_cases[fragment_size] = "";
+        if (totals.failed_test_cases () > 0)
+          {
+            snprintf (message_test_cases, sizeof (message_test_cases),
+                      ", %zu test case%s failed", totals.failed_test_cases (),
+                      plural (totals.failed_test_cases ()));
+          }
+
+        snprintf (message, sizeof (message),
+                  "%zu check%s passed, %zu failed%s", totals.passed_checks (),
+                  plural (totals.passed_checks ()), totals.failed_checks (),
+                  message_test_cases);
+      }
+  }
+
+  /**
+   * @details
+   * For a nested test case, the outer test case may have performed
+   * checks before it; their results are written first, by
+   * `commit_buffer()`. For a top-level test case, the buffer is expected
+   * to be empty, since the checks are performed only by the test cases,
+   * and each one writes its results when it ends; should it not be, its
+   * content is written in the same way, rather than lost or attributed
+   * to the next test case, and the run continues.
+   */
+  void
+  reporter::commit_outer_results (void)
+  {
+    if (!buffer_.empty ())
+      {
+        commit_buffer ();
       }
   }
 

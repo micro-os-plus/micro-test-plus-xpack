@@ -310,6 +310,11 @@ namespace
 
   protected:
     void
+    commit_buffer (void) override
+    {
+    }
+
+    void
     output_pass_prefix (const std::string&, const test_case&) override
     {
     }
