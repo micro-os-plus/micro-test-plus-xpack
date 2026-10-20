@@ -524,6 +524,10 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ function with arguments, which are copies
         ✓ the test cases of both suites ran
     ✓ static_suite& suite functions - passed (4 checks)
+    • subtest
+        ✓ local session passed
+        ✓ the function ran in the suite and in the lambda
+    ✓ subtest - passed (2 checks)
     • counters
         ✓ successful_checks()
         ✓ increment_successful_checks()
@@ -573,7 +577,7 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ 1 == 1
         ✓ false results
     ✓ _i, _f, ..., _t<T> - passed (4 checks)
-✓ Deprecated suite - passed (45 checks in 14 test cases)
+✓ Deprecated suite - passed (47 checks in 15 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1233,4 +1237,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 621 checks passed, 350 failed, in 116 test cases, 13 test suites
+✗ Total: 623 checks passed, 350 failed, in 117 test cases, 13 test suites

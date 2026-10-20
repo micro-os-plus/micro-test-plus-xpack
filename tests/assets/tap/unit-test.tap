@@ -940,6 +940,11 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
         ok 4 - the test cases of both suites ran
         1..4
     ok 5 - static_suite& suite functions # { passed, 4 checks }
+    # Subtest: subtest
+        ok 1 - local session passed
+        ok 2 - the function ran in the suite and in the lambda
+        1..2
+    ok 6 - subtest # { passed, 2 checks }
     # Subtest: counters
         ok 1 - successful_checks()
         ok 2 - increment_successful_checks()
@@ -948,13 +953,13 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
         ok 5 - was_successful() without failures
         ok 6 - was_successful() with a failed check
         1..6
-    ok 6 - counters # { passed, 6 checks }
+    ok 7 - counters # { passed, 6 checks }
     # Subtest: non-const totals(), detail::runner_totals
         ok 1 - runner_totals& refers to the live totals
         ok 2 - runner_totals& modifies the live totals
         ok 3 - a failed check added to the totals fails the session
         1..3
-    ok 7 - non-const totals(), detail::runner_totals # { passed, 3 checks }
+    ok 8 - non-const totals(), detail::runner_totals # { passed, 3 checks }
     # Subtest: timings(), detail::timestamps
         ok 1 - both overloads refer to the same timings
         ok 2 - the timings are started by initialise()
@@ -962,22 +967,22 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
         ok 4 - the suite timings are started
         ok 5 - the timings are stopped by run()
         1..5
-    ok 8 - timings(), detail::timestamps # { passed, 5 checks }
+    ok 9 - timings(), detail::timestamps # { passed, 5 checks }
     # Subtest: timestamps::compute_elapsed_time()
         ok 1 - no readings, zero elapsed time
         ok 2 - start reading only
         ok 3 - both readings, elapsed time split
         1..3
-    ok 9 - timestamps::compute_elapsed_time() # { passed, 3 checks }
+    ok 10 - timestamps::compute_elapsed_time() # { passed, 3 checks }
     # Subtest: runner::reporter()
         ok 1 - the verbosity of the session options
         ok 2 - the verbosity of the command line
         1..2
-    ok 10 - runner::reporter() # { passed, 2 checks }
+    ok 11 - runner::reporter() # { passed, 2 checks }
     # Subtest: assume()
         ok 1 - passed assumption
         1..1
-    ok 11 - assume() # { passed, 1 check }
+    ok 12 - assume() # { passed, 1 check }
     # Subtest: Failed assume()
         not ok 1 - failed assumption
           ---
@@ -986,29 +991,29 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
             lineNumber: 270
           ...
         1..1
-    not ok 12 - Failed assume() # { FAILED, 0 checks passed, 1 failed }
+    not ok 13 - Failed assume() # { FAILED, 0 checks passed, 1 failed }
     # Subtest: reflection::short_name()
         ok 1 - file.cpp == file.cpp
         ok 2 - file.cpp == file.cpp
         ok 3 - file.cpp == file.cpp
         1..3
-    ok 13 - reflection::short_name() # { passed, 3 checks }
+    ok 14 - reflection::short_name() # { passed, 3 checks }
     # Subtest: _and(), _or(), _not()
         ok 1 - (1 == 1 and 1 != 2)
         ok 2 - (1 == 2 or 1 == 1)
         ok 3 - not 1 == 2
         ok 4 - false results
         1..4
-    ok 14 - _and(), _or(), _not() # { passed, 4 checks }
+    ok 15 - _and(), _or(), _not() # { passed, 4 checks }
     # Subtest: _i, _f, ..., _t<T>
         ok 1 - 1 == 1
         ok 2 - 0.5 == 0.5
         ok 3 - 1 == 1
         ok 4 - false results
         1..4
-    ok 15 - _i, _f, ..., _t<T> # { passed, 4 checks }
-    1..15
-not ok 5 - Deprecated suite # { FAILED, 45 checks passed, 1 failed, in 15 test cases, time: 0.773 ms }
+    ok 16 - _i, _f, ..., _t<T> # { passed, 4 checks }
+    1..16
+not ok 5 - Deprecated suite # { FAILED, 47 checks passed, 1 failed, in 16 test cases, time: 1.489 ms }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
@@ -3586,4 +3591,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.293 ms }
     1..3
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.226 ms }
 1..15
-# { total: 638 checks passed, 362 failed, in 131 test cases, 15 test suites, time: 15.801 ms }
+# { total: 640 checks passed, 362 failed, in 132 test cases, 15 test suites, time: 17.620 ms }

@@ -405,14 +405,16 @@ the runner can capture it, or receive it as an argument.
 
 The `subtest` class is renamed `test_case`, the term used by the
 documentation and by the reports, and the functions named after it are
-renamed accordingly; the old names are not kept. Replace `mt::subtest`
-with `mt::test_case`; the lambdas with an `auto&` parameter need no
+renamed accordingly. The old class name is still available, as an
+alias, but marked `[[deprecated]]`; replace `mt::subtest` with
+`mt::test_case`; the lambdas with an `auto&` parameter need no
 change. In `counters`, `executed_subtests()` and
 `increment_executed_subtests()` are deprecated in favour of
 `executed_test_cases()` and `increment_executed_test_cases()`, next to
 the new `failed_test_cases()` and `skipped_test_cases()`; the old names
-are still available, as aliases, but marked `[[deprecated]]`. The output of the reporters is unchanged; the
-TAP reporter still introduces each test case with a `# Subtest:` line.
+are also still available, as aliases, but marked `[[deprecated]]`.
+The output of the reporters is unchanged; the TAP reporter still
+introduces each test case with a `# Subtest:` line.
 
 The logical functions `_and()`, `_or()`, and `_not()` are deprecated
 in favour of `both()`, `either()`, and `negate()`, since a leading

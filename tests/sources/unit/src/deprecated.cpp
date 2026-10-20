@@ -67,6 +67,13 @@ static_suite_function_with_arguments (static_suite& ss, int value, int& copy,
   ss.test ("Local test", [] (auto& lt) { lt.expect (true); });
 }
 
+// A test case function with a `subtest&` parameter, as in v5.0.1.
+static void
+subtest_function (subtest& t)
+{
+  t.expect (true);
+}
+
 // ----------------------------------------------------------------------------
 
 namespace
@@ -256,6 +263,36 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
 
         t.expect (eq (local_runner.totals ().executed_test_cases (), 2u))
             << "the test cases of both suites ran";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The deprecated `subtest` is an alias of `test_case`, so the
+    // functions and the lambdas with a `subtest&` parameter are test case
+    // bodies, in suites and in test cases.
+    ts.test ("subtest", [] (auto& t)
+      {
+        static_assert (std::is_same_v<subtest, test_case>,
+                       "subtest is an alias of test_case");
+
+        runner_options options{};
+        options.verbosity_level = verbosity::silent;
+
+        runner local_runner;
+        auto& local_ts = local_runner.initialise (options, "Local");
+
+        // A function passed directly, as the v5.0.1 unit tests did.
+        local_ts.test ("Function", subtest_function);
+        local_ts.test ("Lambda", [] (subtest& lt)
+          { lt.test ("Nested function", subtest_function); });
+
+        t.expect (eq (local_runner.run (), 0)) << "local session passed";
+        local_counts.passed_checks++;
+
+        t.expect (eq (local_runner.totals ().executed_test_cases (), 3u)
+                  and eq (local_runner.totals ().passed_checks (), 2u))
+            << "the function ran in the suite and in the lambda";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

@@ -524,6 +524,10 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ function with arguments, which are copies
         ✓ the test cases of both suites ran
     ✓ static_suite& suite functions - passed (4 checks)
+    • subtest
+        ✓ local session passed
+        ✓ the function ran in the suite and in the lambda
+    ✓ subtest - passed (2 checks)
     • counters
         ✓ successful_checks()
         ✓ increment_successful_checks()
@@ -576,7 +580,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ 1 == 1
         ✓ false results
     ✓ _i, _f, ..., _t<T> - passed (4 checks)
-✗ Deprecated suite - FAILED (45 checks passed, 1 failed, in 15 test cases), time: 0.773 ms
+✗ Deprecated suite - FAILED (47 checks passed, 1 failed, in 16 test cases), time: 1.178 ms
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1296,4 +1300,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.189 ms
-✗ Total: 638 checks passed, 362 failed, in 131 test cases, 15 test suites, time: 13.353 ms
+✗ Total: 640 checks passed, 362 failed, in 132 test cases, 15 test suites, time: 13.545 ms
