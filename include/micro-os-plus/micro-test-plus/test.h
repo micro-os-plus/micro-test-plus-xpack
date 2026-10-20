@@ -482,8 +482,8 @@ namespace micro_os_plus::micro_test_plus
        * immediately.
        *
        * @details
-       * The child test case is a local object of the `test()` function
-       * that created it, and is destroyed when that function returns.
+       * The child test case is a local object of `create_test_case()`,
+       * and is destroyed when that function returns.
        *
        * @param test_case The newly created `test_case`.
        * @param suite The parent `suite` to which execution results are
@@ -493,6 +493,35 @@ namespace micro_os_plus::micro_test_plus
        */
       void
       after_test_case_create (class test_case& test_case, suite& suite);
+
+      /**
+       * @brief Creates a child test case, and runs it.
+       *
+       * @details
+       * The common body of `suite::test()` and `test_case::test()`, which
+       * differ only in the parent suite and the nesting depth of the
+       * test cases they create.
+       *
+       * @tparam Callable_T The type of a callable object.
+       * @tparam Args_T The types of the callable arguments.
+       *
+       * @param name The test case name or description, used in reports,
+       * and the location of the call to `test()`.
+       * @param parent_suite The suite to which the test case belongs.
+       * @param nesting_depth The depth of nesting of the test case; 1 for
+       * the direct children of a suite.
+       * @param callable A generic callable object, usually a lambda,
+       * invoked to perform the test.
+       * @param arguments A possibly empty list of arguments to be passed to
+       * the callable.
+       * @par Returns
+       *   Nothing.
+       */
+      template <typename Callable_T, typename... Args_T>
+      void
+      create_test_case (const test_case_name& name, suite& parent_suite,
+                        size_t nesting_depth, Callable_T&& callable,
+                        Args_T&&... arguments);
 
     protected:
       /**
@@ -622,10 +651,7 @@ namespace micro_os_plus::micro_test_plus
    */
   class test_case : public detail::runnable_base
   {
-    // Create the top-level test cases.
-    friend class suite;
-
-    // Run the test cases after their creation.
+    // Create the test cases, and run them after their creation.
     friend class detail::runnable_base;
 
   private:

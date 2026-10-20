@@ -156,9 +156,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Counts @p test_case, which is a local object of the calling
-     * `test()`, and immediately invokes `test_case::run()` on it. The test
-     * case is not kept; only `child_test_cases_count_` is needed later,
-     * for the TAP plan.
+     * `create_test_case()`, and immediately invokes `test_case::run()` on
+     * it. The test case is not kept; only `child_test_cases_count_` is
+     * needed later, for the TAP plan.
      *
      * If the filter patterns do not select the test case (its own name at
      * its nesting level, or the name of @p suite at level 0, which

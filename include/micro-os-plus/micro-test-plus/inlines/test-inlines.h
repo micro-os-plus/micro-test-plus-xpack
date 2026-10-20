@@ -206,6 +206,36 @@ namespace micro_os_plus::micro_test_plus
       return runner_;
     }
 
+    /**
+     * @details
+     * Constructs the child `test_case` as a local object, with the next
+     * test point number of this node as its index, then passes it to
+     * `after_test_case_create()`, which counts and runs it.
+     *
+     * The child test case, with its stored body and bound arguments, is
+     * destroyed when this function returns, so the memory used by a
+     * test session does not grow with the number of test cases; the stack
+     * holds one test case for each level of nesting being run.
+     */
+    template <typename Callable_T, typename... Args_T>
+    void
+    runnable_base::create_test_case (const test_case_name& name,
+                                     suite& parent_suite, size_t nesting_depth,
+                                     Callable_T&& callable,
+                                     Args_T&&... arguments)
+    {
+      size_t own_index = next_test_point_number ();
+      class test_case child_test_case{ name,
+                                       runner_,
+                                       parent_suite,
+                                       own_index,
+                                       nesting_depth,
+                                       std::forward<Callable_T> (callable),
+                                       std::forward<Args_T> (arguments)... };
+
+      after_test_case_create (child_test_case, parent_suite);
+    }
+
     // ========================================================================
 
     /**
@@ -269,15 +299,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Constructs a child `test_case` as a local object, incrementing the
-   * test point index and deepening the nesting level by one relative to
-   * this test case's depth, then passes it to `after_test_case_create()`,
-   * which counts and runs it.
-   *
-   * The child test case, with its stored body and bound arguments, is
-   * destroyed when this function returns, so the memory used by a
-   * test session does not grow with the number of test cases; the stack
-   * holds one test case for each level of nesting being run.
+   * Creates and runs the child test case with `create_test_case()`, in
+   * the parent suite of this test case, one level of nesting deeper than
+   * this test case.
    */
   template <typename Callable_T, typename... Args_T>
   void
@@ -288,16 +312,9 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    size_t own_index = next_test_point_number ();
-    test_case child_test_case{ name,
-                               test_runner (),
-                               parent_suite_,
-                               own_index,
-                               nesting_depth_ + 1,
-                               std::forward<Callable_T> (callable),
-                               std::forward<Args_T> (arguments)... };
-
-    after_test_case_create (child_test_case, parent_suite_);
+    create_test_case (name, parent_suite_, nesting_depth_ + 1,
+                      std::forward<Callable_T> (callable),
+                      std::forward<Args_T> (arguments)...);
   }
 
   /**
@@ -407,9 +424,10 @@ namespace micro_os_plus::micro_test_plus
    * leading `test_case&` reference. The test case is reported using the
    * provided name.
    *
-   * The test case is a local object of this function, destroyed when it
-   * returns, together with its stored body and bound arguments; only the
-   * number of test cases is kept, for the TAP plan.
+   * The test case is created and run by `create_test_case()`, as a
+   * local object destroyed when it returns, together with its stored
+   * body and bound arguments; only the number of test cases is kept, for
+   * the TAP plan.
    *
    * Each test case typically involves evaluating logical expressions, such
    * as comparing a computed result to an expected value, with `expect()` or
@@ -454,16 +472,8 @@ namespace micro_os_plus::micro_test_plus
         return;
       }
 
-    size_t own_index = next_test_point_number ();
-    test_case child_test_case{ name,
-                               test_runner (),
-                               *this,
-                               own_index,
-                               1,
-                               std::forward<Callable_T> (callable),
-                               std::forward<Args_T> (arguments)... };
-
-    after_test_case_create (child_test_case, *this);
+    create_test_case (name, *this, 1, std::forward<Callable_T> (callable),
+                      std::forward<Args_T> (arguments)...);
   }
 
   // ==========================================================================
