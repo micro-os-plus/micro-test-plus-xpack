@@ -360,6 +360,11 @@ main (int argc, char* argv[])
 
   ts.test ("reflection::short_name()", [] (auto& t)
     {
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
+      // The deprecated alias of utility::extract_file_name().
       // Path with slash — returns filename component.
       t.expect (eq (
           std::string_view{ reflection::short_name ("/some/path/file.cpp") },
@@ -377,6 +382,10 @@ main (int argc, char* argv[])
                         "C:\\some\\path\\file.cpp") },
                     "file.cpp"sv));
       local_counts.passed_checks++;
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
       local_counts.executed_test_cases++;
     });

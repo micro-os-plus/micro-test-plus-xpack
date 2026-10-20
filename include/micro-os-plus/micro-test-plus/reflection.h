@@ -210,15 +210,18 @@ namespace micro_os_plus::micro_test_plus
      * @brief Extract the file name from a path.
      *
      * @details
-     * Equivalent to `utility::extract_file_name()`, which the framework
-     * uses internally.
+     * Forwards to `utility::extract_file_name()`, which the framework
+     * uses internally; it is kept only for compatibility with the
+     * existing applications.
      *
      * @param name The path, as a C-string.
      * @return A pointer to the file name within the input string, after
      * the last `/` or `\` separator, or the string itself if there is
      * no separator.
+     *
+     * @deprecated Use `utility::extract_file_name()` (since 5.1.0).
      */
-    const char*
+    [[deprecated ("use utility::extract_file_name()"), nodiscard]] const char*
     short_name (const char* name) noexcept;
 
     /**

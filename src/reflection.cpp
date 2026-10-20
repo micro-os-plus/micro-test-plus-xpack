@@ -21,7 +21,7 @@
  * utilities.
  *
  * @details
- * This source file contains the implementation of
+ * This source file contains the implementation of the deprecated
  * `reflection::short_name()`, which extracts the base file name from a
  * fully qualified path, by delegating to `utility::extract_file_name()`.
  *
@@ -66,6 +66,8 @@ namespace micro_os_plus::micro_test_plus
      * implementation used by the framework, so both the `/` and the `\`
      * separators are recognised. If no separator is present, the original
      * input string is returned.
+     *
+     * @deprecated Use `utility::extract_file_name()` (since 5.1.0).
      */
     const char*
     short_name (const char* name) noexcept
