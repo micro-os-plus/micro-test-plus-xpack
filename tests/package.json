@@ -14,7 +14,8 @@
     "del-cli": "https://www.npmjs.com/package/del-cli",
     "json": "https://www.npmjs.com/package/json",
     "json5": "https://www.npmjs.com/package/json5",
-    "liquidjs": "https://www.npmjs.com/package/liquidjs"
+    "liquidjs": "https://www.npmjs.com/package/liquidjs",
+    "tap-parser": "https://www.npmjs.com/package/tap-parser"
   },
   "dependencies": {},
   "devDependencies": {
@@ -23,7 +24,8 @@
     "del-cli": "^7.0.0",
     "json": "^11.0.0",
     "json5": "^2.2.3",
-    "liquidjs": "^10.28.0"
+    "liquidjs": "^10.28.0",
+    "tap-parser": "^18.3.4"
   },
   "scripts": {
     "generate-tests-commons": "node node_modules/@micro-os-plus/build-helper/maintenance/scripts/generate-tests-commons.mjs --micro-os-plus",
@@ -84,10 +86,9 @@
         "synthetic-posix-meson-clang",
         "qemu-cortex-m0-cmake-gcc",
         "qemu-cortex-m7f-cmake-gcc",
-        "qemu-cortex-m33-cmake-gcc",
-        "qemu-cortex-m33-meson-gcc",
         "qemu-aarch64-a72-cmake-gcc",
-        "qemu-riscv-rv32imac-cmake-gcc"
+        "qemu-riscv-rv32imac-cmake-gcc",
+        "qemu-cortex-m0-meson-gcc"
       ],
       "configs-selected-non-darwin": [
         "synthetic-posix-cmake-gcc",
@@ -95,9 +96,15 @@
       ],
       "configs-selected": [
         "synthetic-posix-cmake-clang",
-        "qemu-cortex-m33-cmake-gcc",
+        "synthetic-posix-meson-clang",
+        "qemu-cortex-m0-cmake-gcc",
+        "qemu-cortex-m0-meson-gcc",
+        "qemu-cortex-m4f-cmake-gcc",
+        "qemu-cortex-m4f-meson-gcc",
         "qemu-aarch64-a72-cmake-gcc",
-        "qemu-riscv-rv32imac-cmake-gcc"
+        "qemu-aarch64-a72-meson-gcc",
+        "qemu-riscv-rv32imac-cmake-gcc",
+        "qemu-riscv-rv32imac-meson-gcc"
       ],
       "$configs-boards": [
         "Template, define configs-boards and select only the platforms in use",
