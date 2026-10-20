@@ -74,7 +74,7 @@ inwards:
    `assume()` return and do);
 4. `function-comparators.h`, `operators.h`, `exceptions.h`,
    `detail.h` (the checks and the comparison structures);
-5. `values.h`, `literals.h`, `type-traits.h`, `math.h` (the wrappers
+5. `values.h`, `literals.h`, `extension.h`, `math.h` (the wrappers
    and the literals);
 6. `expression-formatter.h`, `reflection.h` (the failure messages);
 7. `reporter.h`, `reporter-human.h`, `reporter-tap.h`, and their
@@ -225,7 +225,7 @@ The questions that found real defects in this code base:
   spellings for one entity (`_i`, `to_i`, the `_i` literal). When
   there are many, add a consistency table to the report.
 - Naming conventions with several meanings (the trailing underscore
-  for non-public members and functions.
+  for non-public members).
 - Deprecated entities without `[[deprecated]]`.
 - Accessor style (`name()` versus `get_name()`), `(void)` versus `()`,
   `virtual` repeated on overrides, `final` on members of `final`
