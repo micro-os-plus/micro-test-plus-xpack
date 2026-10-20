@@ -54,6 +54,7 @@
 #include <cstdarg>
 // For the PRIu32 macro used in snprintf() formatting of uint32_t values.
 #include <cinttypes>
+#include <limits>
 
 // ----------------------------------------------------------------------------
 
@@ -303,7 +304,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * The text is formatted with `vsnprintf()` into a local array, which
    * holds the usual lines without an allocation; a longer text, for
    * example with a long test name, is formatted again, from a copy of the
-   * arguments, into a string of the exact length. The text is then
+   * arguments, into a string of the exact length. The array is kept
+   * small, since the lines that end the nested test cases are written at
+   * the deepest point of the stack. The text is then
    * written with its length to the output file, without the colour
    * sequences (see `write_without_colours()`), and, when requested, to
    * `stdout`, unchanged. When there is nowhere to write, or the
@@ -322,7 +325,7 @@ namespace micro_os_plus::micro_test_plus::detail
     va_list args_copy;
     va_copy (args_copy, args);
 
-    char local_text[256];
+    char local_text[128];
     const int length
         = vsnprintf (local_text, sizeof (local_text), format, args);
     va_end (args);
@@ -663,10 +666,13 @@ namespace micro_os_plus::micro_test_plus::detail
      * @brief Size of the array that receives a fragment of the totals.
      *
      * @details
-     * Large enough for `", 18446744073709551615 test cases failed"`, the
-     * longest fragment, with a count of 20 digits.
+     * Large enough for `", N test cases failed"`, the longest fragment
+     * (20 characters and the count), and the terminator, with the count of
+     * the largest `size_t` value (10 digits on 32-bit targets, 20 on
+     * 64-bit ones, as in `", 18446744073709551615 test cases failed"`).
      */
-    constexpr size_t fragment_size = 48;
+    constexpr size_t fragment_size
+        = 21 + (std::numeric_limits<size_t>::digits10 + 1);
 
     /**
      * @brief Returns the plural suffix for a count.
@@ -724,6 +730,12 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter::format_session_totals (const runner& runner,
                                    char (&message)[totals_size_])
   {
+    // The fixed text, four counts, two fragments, and the terminator.
+    static_assert (totals_size_
+                       >= 54 + 4 * (std::numeric_limits<size_t>::digits10 + 1)
+                              + 2 * (fragment_size - 1),
+                   "totals_size_ too small for the session totals");
+
     const counters& totals = runner.totals ();
     const size_t suites_count = runner.total_suites_count ();
 

@@ -66,11 +66,14 @@
 #include "stopwatch.h"
 #include "reflection.h"
 
+#include <cstddef>
 #include <functional>
 #include <memory>
 #include <string>
 #include <string_view>
+#include <tuple>
 #include <type_traits>
+#include <utility>
 
 // ----------------------------------------------------------------------------
 
@@ -506,6 +509,10 @@ namespace micro_os_plus::micro_test_plus
        * differ only in the parent suite and the nesting depth of the
        * test cases they create.
        *
+       * Always inlined into them, even without optimisations, since each
+       * nested test case adds one call chain to the stack, and a separate
+       * frame for this function would make it longer.
+       *
        * @tparam Callable_T The type of a callable object.
        * @tparam Args_T The types of the callable arguments.
        *
@@ -522,7 +529,7 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       template <typename Callable_T, typename... Args_T>
-      void
+      [[gnu::always_inline]] void
       create_test_case (const test_case_name& name, suite& parent_suite,
                         size_t nesting_depth, Callable_T&& callable,
                         Args_T&&... arguments);
@@ -604,10 +611,10 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The returned object holds a copy of the callable (decayed, as by
      * `auto`) when there are no additional arguments; otherwise it is a
-     * lambda that holds copies of the callable and of the arguments, and
-     * passes the arguments after the leading reference, which is passed
-     * when the body is invoked. No memory is allocated, other than by the
-     * copies themselves.
+     * `bound_callable` that holds copies of the callable and of the
+     * arguments, and passes the arguments after the leading reference,
+     * which is passed when the body is invoked. No memory is allocated,
+     * other than by the copies themselves.
      *
      * A suite stores the object in a `std::function`, since it runs
      * later; a test case, which runs immediately, refers to it with a
@@ -626,6 +633,108 @@ namespace micro_os_plus::micro_test_plus
     template <typename Self_T, typename Callable_T, typename... Args_T>
     [[nodiscard]] auto
     bind_callable (Callable_T&& callable, Args_T&&... arguments);
+
+    // ========================================================================
+
+    /**
+     * @brief Function object that holds a callable and the additional
+     * arguments it is invoked with.
+     *
+     * @details
+     * Returned by `bind_callable()` when there are additional arguments.
+     * When invoked with a `Self_T&` reference, it invokes the stored
+     * callable with that reference, followed by the stored arguments,
+     * as non-`const` lvalues.
+     *
+     * It replaces a lambda, since the function call operator of a lambda
+     * cannot be marked as always inlined in a way accepted by all the
+     * supported compilers; without optimisations, a separate frame for
+     * it would make the call chain of each nested test case longer.
+     *
+     * @tparam Self_T The type referred to by the first parameter of the
+     * callable (`test_case` or `suite`).
+     * @tparam Callable_T The type of the stored callable (decayed).
+     * @tparam Args_T The types of the stored arguments (decayed).
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <typename Self_T, typename Callable_T, typename... Args_T>
+    class bound_callable
+    {
+    public:
+      /**
+       * @brief Constructs the function object from a callable and the
+       * arguments.
+       *
+       * @details
+       * Copies (or moves) the callable and the arguments into the object.
+       *
+       * @tparam C The type of the callable, as passed.
+       * @tparam A The types of the arguments, as passed.
+       *
+       * @par Constraints
+       *   One argument for each stored argument, so that the copy and
+       *   move constructors are used for copies (there is always at
+       *   least one stored argument).
+       *
+       * @param callable The callable object.
+       * @param arguments The arguments passed to the callable after the
+       * leading reference.
+       */
+      template <typename C, typename... A>
+        requires (sizeof...(A) == sizeof...(Args_T))
+      constexpr explicit bound_callable (C&& callable, A&&... arguments);
+
+      /**
+       * @brief Invokes the stored callable.
+       *
+       * @details
+       * Always inlined, so that, without optimisations, it adds no frame
+       * between `callable_ref::invoke_callable()` and the callable.
+       *
+       * @param self The reference passed as the first argument.
+       * @par Returns
+       *   Nothing.
+       */
+      [[gnu::always_inline]] void
+      operator() (Self_T& self);
+
+    private:
+      /**
+       * @brief Invokes the stored callable with the stored arguments,
+       * unpacked by their indices.
+       *
+       * @details
+       * Always inlined, as the function call operator.
+       *
+       * @tparam Is The indices of the stored arguments.
+       *
+       * @param self The reference passed as the first argument.
+       * @par Returns
+       *   Nothing.
+       */
+      template <std::size_t... Is>
+      [[gnu::always_inline]] void
+      invoke (Self_T& self, std::index_sequence<Is...>);
+
+      /**
+       * @brief The stored callable.
+       *
+       * @details
+       * A copy of the callable passed to `bind_callable()`, decayed, so a
+       * function is stored as a pointer.
+       */
+      Callable_T callable_;
+
+      /**
+       * @brief The stored arguments.
+       *
+       * @details
+       * Copies of the arguments passed to `bind_callable()`, decayed; a
+       * reference parameter of the callable refers to the copy.
+       */
+      std::tuple<Args_T...> arguments_;
+    };
 
     // ========================================================================
 
@@ -679,11 +788,14 @@ namespace micro_os_plus::micro_test_plus
        * Not `noexcept`, since a failed `require()` stops the body of a
        * test case by throwing an exception.
        *
+       * Always inlined, so that, without optimisations, it adds no frame
+       * between `test_case::run()` and `invoke_callable()`.
+       *
        * @param self The reference passed to the callable.
        * @par Returns
        *   Nothing.
        */
-      void
+      [[gnu::always_inline]] void
       operator() (Self_T& self) const;
 
     private:
@@ -958,12 +1070,17 @@ namespace micro_os_plus::micro_test_plus
      * Private, since the test case is run only once, by
      * `after_test_case_create()`, right after its creation.
      *
+     * Always inlined there, with a non-virtual call, so that, without
+     * optimisations, it adds no frame to the call chain of each nested
+     * test case; the out-of-line copy is used only through the virtual
+     * table.
+     *
      * @par Parameters
      *   None.
      * @par Returns
      *   Nothing.
      */
-    void
+    [[gnu::always_inline]] void
     run (void) override;
 
   protected:

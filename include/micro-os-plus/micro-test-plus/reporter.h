@@ -69,6 +69,7 @@
 #include "runner-options.h"
 
 #include <cstdio>
+#include <limits>
 #include <string_view>
 #include <string>
 #include <memory>
@@ -782,11 +783,21 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Large enough for the longest text produced by
-       * `format_session_totals()`, with all the counts of 20 digits
-       * (193 characters), which is longer than the texts of the suites
-       * and of the test cases.
+       * `format_session_totals()`, which is longer than the texts of the
+       * suites and of the test cases: 53 characters, four counts, two
+       * fragments of up to 20 characters and a count each (the longest
+       * fragment is `", N test cases failed"`), and the terminator, with
+       * the counts of the largest `size_t` value (10 digits on 32-bit
+       * targets, 20 on 64-bit ones). The fragments are counted at their
+       * maximum length, as the compiler does when it checks for
+       * truncation.
+       *
+       * The array is a local variable of the functions that end the test
+       * cases, which run at the deepest point of the stack, so it is not
+       * larger than needed on the 32-bit embedded targets.
        */
-      static constexpr size_t totals_size_ = 256;
+      static constexpr size_t totals_size_
+          = 94 + 6 * (std::numeric_limits<size_t>::digits10 + 1);
 
       /**
        * @brief Formats the totals of the test session.

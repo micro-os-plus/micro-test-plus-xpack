@@ -65,6 +65,7 @@
 
 #include <cstdio>
 #include <cstring>
+#include <exception>
 
 // ----------------------------------------------------------------------------
 
@@ -201,7 +202,7 @@ namespace micro_os_plus::micro_test_plus
      * lambda captures and of the arguments.
      */
     template <typename Callable_T, typename... Args_T>
-    void
+    inline void
     runnable_base::create_test_case (const test_case_name& name,
                                      suite& parent_suite, size_t nesting_depth,
                                      Callable_T&& callable,
@@ -226,13 +227,13 @@ namespace micro_os_plus::micro_test_plus
      * Without additional arguments, the callable already has the signature
      * `void (Self_T&)`, and a copy of it is returned, without a wrapper.
      *
-     * Otherwise, a lambda captures the callable and copies of the
-     * arguments (decayed, as by `auto`), since a suite may run after the
-     * caller's temporaries are gone; it is `mutable`, so the callable
-     * receives the copies as non-`const` lvalues. A reference parameter
-     * thus refers to the copy; to refer to the caller's object, pass a
-     * pointer, or `std::ref()`, which converts to a `T&` parameter (an
-     * `auto&` parameter receives the `std::reference_wrapper` itself).
+     * Otherwise, a `bound_callable` stores copies of the callable and of
+     * the arguments (decayed, as by `auto`), since a suite may run after
+     * the caller's temporaries are gone; the callable receives the copies
+     * as non-`const` lvalues. A reference parameter thus refers to the
+     * copy; to refer to the caller's object, pass a pointer, or
+     * `std::ref()`, which converts to a `T&` parameter (an `auto&`
+     * parameter receives the `std::reference_wrapper` itself).
      */
     template <typename Self_T, typename Callable_T, typename... Args_T>
     auto
@@ -244,10 +245,63 @@ namespace micro_os_plus::micro_test_plus
         }
       else
         {
-          return [stored_callable = std::forward<Callable_T> (callable),
-                  ... stored_arguments
-                  = std::forward<Args_T> (arguments)] (Self_T& self) mutable
-            { std::invoke (stored_callable, self, stored_arguments...); };
+          return bound_callable<Self_T, std::decay_t<Callable_T>,
+                                std::decay_t<Args_T>...>{
+            std::forward<Callable_T> (callable),
+            std::forward<Args_T> (arguments)...
+          };
+        }
+    }
+
+    // ========================================================================
+
+    /**
+     * @details
+     * The callable and the arguments are forwarded to the constructors of
+     * the members, which store decayed copies.
+     */
+    template <typename Self_T, typename Callable_T, typename... Args_T>
+    template <typename C, typename... A>
+      requires (sizeof...(A) == sizeof...(Args_T))
+    constexpr bound_callable<Self_T, Callable_T, Args_T...>::bound_callable (
+        C&& callable, A&&... arguments)
+        : callable_ (std::forward<C> (callable)),
+          arguments_ (std::forward<A> (arguments)...)
+    {
+    }
+
+    /**
+     * @details
+     * Unpacks the stored arguments by their indices.
+     */
+    template <typename Self_T, typename Callable_T, typename... Args_T>
+    inline void
+    bound_callable<Self_T, Callable_T, Args_T...>::operator() (Self_T& self)
+    {
+      invoke (self, std::index_sequence_for<Args_T...>{});
+    }
+
+    /**
+     * @details
+     * A function, a function pointer, or a function object is called
+     * directly, not through `std::invoke()`, which, without
+     * optimisations, adds three frames to the call chain; a pointer to a
+     * member, which only `std::invoke()` can call, is still passed to
+     * it.
+     */
+    template <typename Self_T, typename Callable_T, typename... Args_T>
+    template <std::size_t... Is>
+    inline void
+    bound_callable<Self_T, Callable_T, Args_T...>::invoke (
+        Self_T& self, std::index_sequence<Is...>)
+    {
+      if constexpr (std::is_member_pointer_v<Callable_T>)
+        {
+          std::invoke (callable_, self, std::get<Is> (arguments_)...);
+        }
+      else
+        {
+          callable_ (self, std::get<Is> (arguments_)...);
         }
     }
 
@@ -273,7 +327,7 @@ namespace micro_os_plus::micro_test_plus
      * Passes the stored address and @p self to the stored function.
      */
     template <typename Self_T>
-    void
+    inline void
     callable_ref<Self_T>::operator() (Self_T& self) const
     {
       invoke_ (callable_, self);
@@ -284,13 +338,25 @@ namespace micro_os_plus::micro_test_plus
      * Casts @p callable back to `Callable_T*`, the type it had when the
      * reference was constructed, and invokes the callable through it, as
      * an lvalue, with @p self.
+     *
+     * A function pointer or a function object is called directly, not
+     * through `std::invoke()`, which, without optimisations, adds three
+     * frames to the call chain; a pointer to a member, which only
+     * `std::invoke()` can call, is still passed to it.
      */
     template <typename Self_T>
     template <typename Callable_T>
     void
     callable_ref<Self_T>::invoke_callable (void* callable, Self_T& self)
     {
-      std::invoke (*static_cast<Callable_T*> (callable), self);
+      if constexpr (std::is_member_pointer_v<Callable_T>)
+        {
+          std::invoke (*static_cast<Callable_T*> (callable), self);
+        }
+      else
+        {
+          (*static_cast<Callable_T*> (callable)) (self);
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -403,6 +469,83 @@ namespace micro_os_plus::micro_test_plus
   test_case::nesting_depth (void) const noexcept
   {
     return nesting_depth_;
+  }
+
+  /**
+   * @details
+   * Invokes the referred body with this test case, surrounded by
+   * reporter calls to begin and end the test case.
+   *
+   * When exceptions are enabled, an exception that escapes the callable
+   * is caught and reported as a failed check of this test case, and the
+   * test case ends normally, so that the run continues with the next test
+   * case; the checks performed before the exception remain reported.
+   * Since the nested test cases catch their own exceptions, an exception
+   * is reported by the innermost test case whose body it escapes.
+   *
+   * The `detail::failed_requirement` exception, thrown after a failed
+   * `require()`, only stops the body; the failure was already reported
+   * and counted.
+   *
+   * An exception thrown by the abort handler, after the abort of the
+   * test execution was reported, is passed on, without reporting it, and
+   * without ending the test case, since the report is already complete;
+   * it reaches the application, which set the handler to return control
+   * this way.
+   *
+   * Defined here, as `inline`, so that it can be always inlined into
+   * `after_test_case_create()`.
+   */
+  inline void
+  test_case::run (void)
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    detail::reporter& reporter = this->test_reporter ();
+
+    // For now, test cases do not record the time.
+    // this->stopwatch_.start ();
+    reporter.begin_test_case (*this);
+
+#if defined(__cpp_exceptions)
+    try
+      {
+        // Invoke the callable, passing the self reference followed by the
+        // variadic arguments.
+        callable_ (*this);
+      }
+    catch (const detail::failed_requirement&)
+      {
+        // A failed require() stopped the test case; already reported.
+      }
+    catch (const std::exception& e)
+      {
+        if (is_aborted ())
+          {
+            // Thrown by the abort handler; the report is complete.
+            throw;
+          }
+        fail_unexpected_exception (e.what ());
+      }
+    catch (...)
+      {
+        if (is_aborted ())
+          {
+            // Thrown by the abort handler; the report is complete.
+            throw;
+          }
+        fail_unexpected_exception (nullptr);
+      }
+#else
+    // Invoke the callable, passing the self reference followed by the variadic
+    // arguments.
+    callable_ (*this);
+#endif // defined(__cpp_exceptions)
+
+    // this->stopwatch_.stop ();
+    reporter.end_test_case (*this);
   }
 
   // ==========================================================================

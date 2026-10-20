@@ -670,6 +670,9 @@ follow it in the report, since the running test case has not ended; it
 runs nested in the innermost running test case, as if `t.test()` had
 been called.
 
+Each nesting level adds to the stack used by the test; see
+[Stack usage](#stack-usage).
+
 ### Function comparators
 
 To facilitate clear reporting of differences between expected and
@@ -1476,6 +1479,61 @@ actual values compared are not displayed on failure.
 
 :::info
 The memory footprint in `debug` builds (compiled with `-O0`) is significantly larger than in `release` builds. If required, the optimisation level for the `debug` build may be increased to `-Og` to conserve memory.
+:::
+
+#### Stack usage
+
+The test cases run on the stack of the caller: each call to `test()`
+creates the test case as a local object, and runs its body immediately,
+before returning. A nested test case therefore adds its call chain to the
+stack of the outer one, and the stack needed by a test grows with its
+nesting depth.
+
+The stack needed is approximately the sum of:
+
+- a fixed part, for the runner, the suite, and the start of the first
+  test case;
+- a part for each nesting level, which includes the frame of the test
+  case body;
+- the temporary space used by the reporter at the innermost level, to
+  write the results, plus that of the C library formatting functions.
+
+For example, with GCC 15.2, the values measured with the deeply nested
+test of the `suite` sample were:
+
+| | Cortex-M33 `debug` (`-O0`) | Cortex-M33 `release` (`-Os`) | AArch64 `debug` (`-O0`) | AArch64 `release` (`-Os`) |
+| --- | --- | --- | --- | --- |
+| Fixed part | about 1.1 KB | about 0.7 KB | about 1.3 KB | about 1.3 KB |
+| Each nesting level | 392 bytes | 200 bytes | 512 bytes | 400 bytes |
+
+On Cortex-M33, the reporter uses about 0.5 KB more at the innermost
+level, in both builds, plus the space used by `vsnprintf()`, which
+depends on the C library.
+
+Of each nesting level, 88 bytes (`debug`) and 64 bytes (`release`), on
+Cortex-M33, are the frame of the test case body, which depends on the
+application code: its local variables, and the calls it makes, add to
+these values. The arguments passed to `test()` after the body are copied
+into the frame of the test case.
+
+The values depend on the architecture, the compiler, and the optimisation
+level, so they are only an indication.
+
+On platforms with small stacks, such as the 8 KB of the Cortex-M test
+platforms, deep nesting must be planned: the deeply nested test of the
+`suite` sample, with eleven levels of test cases, uses about 5 KB of the
+stack in a Cortex-M33 `debug` build, before the reporter writes the
+results of the innermost level. If the stack is not large enough,
+increase it, reduce the nesting depth, or build the tests with `-Og`,
+which, on Cortex-M33, needs about 280 bytes for each nesting level.
+
+:::caution
+Most Cortex-M cores do not detect a stack overflow: the stack grows
+silently into the memory below it, usually the heap, and the test fails
+later, in an unrelated place, or not at all. The ARMv8-M Mainline cores
+(for example Cortex-M33) can check the stack limit, and stop with a fault
+when the startup code sets the limit, as on the Cortex-M33 test platform;
+a test that passes there fits in its stack.
 :::
 
 ### Timings

@@ -223,7 +223,9 @@ namespace micro_os_plus::micro_test_plus
         } guard{ runner_.running_test_case_, runner_.running_test_case_ };
 
         runner_.running_test_case_ = &test_case;
-        test_case.run ();
+        // A non-virtual call, so that run() is inlined here; each nested
+        // test case adds this call chain to the stack.
+        test_case.test_case::run ();
       }
 
       // This test executed one more test case.
@@ -266,80 +268,6 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-  }
-
-  /**
-   * @details
-   * Invokes the referred body with this test case, surrounded by
-   * reporter calls to begin and end the test case.
-   *
-   * When exceptions are enabled, an exception that escapes the callable
-   * is caught and reported as a failed check of this test case, and the
-   * test case ends normally, so that the run continues with the next test
-   * case; the checks performed before the exception remain reported.
-   * Since the nested test cases catch their own exceptions, an exception
-   * is reported by the innermost test case whose body it escapes.
-   *
-   * The `detail::failed_requirement` exception, thrown after a failed
-   * `require()`, only stops the body; the failure was already reported
-   * and counted.
-   *
-   * An exception thrown by the abort handler, after the abort of the
-   * test execution was reported, is passed on, without reporting it, and
-   * without ending the test case, since the report is already complete;
-   * it reaches the application, which set the handler to return control
-   * this way.
-   */
-  void
-  test_case::run (void)
-  {
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
-
-    detail::reporter& reporter = this->test_reporter ();
-
-    // For now, test cases do not record the time.
-    // this->stopwatch_.start ();
-    reporter.begin_test_case (*this);
-
-#if defined(__cpp_exceptions)
-    try
-      {
-        // Invoke the callable, passing the self reference followed by the
-        // variadic arguments.
-        callable_ (*this);
-      }
-    catch (const detail::failed_requirement&)
-      {
-        // A failed require() stopped the test case; already reported.
-      }
-    catch (const std::exception& e)
-      {
-        if (is_aborted ())
-          {
-            // Thrown by the abort handler; the report is complete.
-            throw;
-          }
-        fail_unexpected_exception (e.what ());
-      }
-    catch (...)
-      {
-        if (is_aborted ())
-          {
-            // Thrown by the abort handler; the report is complete.
-            throw;
-          }
-        fail_unexpected_exception (nullptr);
-      }
-#else
-    // Invoke the callable, passing the self reference followed by the variadic
-    // arguments.
-    callable_ (*this);
-#endif // defined(__cpp_exceptions)
-
-    // this->stopwatch_.stop ();
-    reporter.end_test_case (*this);
   }
 
 #if defined(__cpp_exceptions)
