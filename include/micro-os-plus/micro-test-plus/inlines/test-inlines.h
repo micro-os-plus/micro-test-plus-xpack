@@ -30,7 +30,7 @@
  * When additional arguments are given, a lambda captures copies of them,
  * allowing versatile test initialisation with arbitrary callable types and
  * arguments. A `static_suite` additionally inserts itself into the list of
- * static suites upon construction.
+ * suites upon construction.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, maintaining a clear separation from user code and minimising the
@@ -473,8 +473,8 @@ namespace micro_os_plus::micro_test_plus
    * Delegates to `suite`, which stores the callable and binds its
    * arguments, if any; the callable receives a `suite&` reference, as
    * for the suites registered with `runner::add_suite()`. After
-   * construction, the suite is inserted into the list of static suites,
-   * to be run by its runner; the runner itself is not accessed.
+   * construction, the suite is inserted into the list of suites, to be
+   * run by its runner; the runner itself is not accessed.
    */
   template <typename Callable_T, typename... Args_T>
   static_suite::static_suite (const char* name, runner& test_runner,

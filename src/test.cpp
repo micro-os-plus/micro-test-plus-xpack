@@ -385,15 +385,17 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * No resources are owned directly by `suite`; the destructor performs
-   * no explicit clean-up. If tracing is enabled, the suite name is
-   * output for diagnostic purposes.
+   * Removes the suite from the list of suites, so that the runners no
+   * longer reach it; the members are destroyed afterwards. If tracing is
+   * enabled, the suite name is output for diagnostic purposes.
    */
   suite::~suite ()
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
+
+    unlink ();
   }
 
   /**
@@ -495,6 +497,58 @@ namespace micro_os_plus::micro_test_plus
   }
 #endif // defined(__cpp_exceptions)
 
+  /**
+   * @details
+   * Constant-initialised, so it is null before any static constructor
+   * runs; the static suites constructed before the runner are therefore
+   * not lost.
+   */
+  constinit suite* suite::first_ = nullptr;
+
+  /**
+   * @details
+   * Inserts the suite after the suites with names less than or equal to
+   * its own, so the list remains sorted by name, and the suites with the
+   * same name remain in the order of their insertion. No memory is
+   * allocated. This is the only place where the names of the suites are
+   * compared; the runners run the suites in the order of the list.
+   */
+  void
+  suite::link (void) noexcept
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    // std::strcmp() compares as unsigned char, like std::string_view,
+    // without a temporary object (which triggers -Waggregate-return).
+    suite** slot = &first_;
+    while (*slot != nullptr && std::strcmp ((*slot)->name_, name_) <= 0)
+      {
+        slot = &(*slot)->next_;
+      }
+    next_ = *slot;
+    *slot = this;
+  }
+
+  /**
+   * @details
+   * Searches the list for the suite and, if found, bypasses it.
+   */
+  void
+  suite::unlink (void) noexcept
+  {
+    for (suite** slot = &first_; *slot != nullptr; slot = &(*slot)->next_)
+      {
+        if (*slot == this)
+          {
+            *slot = next_;
+            next_ = nullptr;
+            return;
+          }
+      }
+  }
+
   // ==========================================================================
 
   /**
@@ -531,68 +585,15 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Constant-initialised, so it is null before any static constructor
-   * runs; the static suites constructed before the runner are therefore
-   * not lost.
-   */
-  constinit static_suite* static_suite::first_ = nullptr;
-
-  /**
-   * @details
-   * Removes the suite from the list of static suites. If tracing is
-   * enabled, the suite name is output for diagnostic purposes.
+   * The suite is removed from the list of suites by the `suite`
+   * destructor. If tracing is enabled, the suite name is output for
+   * diagnostic purposes.
    */
   static_suite::~static_suite ()
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-
-    unlink ();
-  }
-
-  /**
-   * @details
-   * Inserts the suite after the suites with names less than or equal to
-   * its own, so the list remains sorted by name, and the suites with the
-   * same name remain in the order of their construction. No memory is
-   * allocated.
-   */
-  void
-  static_suite::link (void) noexcept
-  {
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
-
-    // std::strcmp() compares as unsigned char, like std::string_view,
-    // without a temporary object (which triggers -Waggregate-return).
-    static_suite** slot = &first_;
-    while (*slot != nullptr && std::strcmp ((*slot)->name_, name_) <= 0)
-      {
-        slot = &(*slot)->next_;
-      }
-    next_ = *slot;
-    *slot = this;
-  }
-
-  /**
-   * @details
-   * Searches the list for the suite and, if found, bypasses it.
-   */
-  void
-  static_suite::unlink (void) noexcept
-  {
-    for (static_suite** slot = &first_; *slot != nullptr;
-         slot = &(*slot)->next_)
-      {
-        if (*slot == this)
-          {
-            *slot = next_;
-            next_ = nullptr;
-            return;
-          }
-      }
   }
 
   // --------------------------------------------------------------------------

@@ -907,6 +907,13 @@ namespace micro_os_plus::micro_test_plus
    * Each suite records its own timing information and propagates its
    * results to the owning `runner`.
    *
+   * The suites to be run, registered or static, are kept in a single
+   * list, sorted by name, which does not depend on the runner object:
+   * its head is a `constinit` pointer, initialised before any
+   * constructor runs, and the links are members of the suites. The list
+   * includes the suites of all runners; each runner runs those that
+   * refer to it, in the order of the list.
+   *
    * The body of a suite is supplied as a callable (typically a lambda) that
    * receives a `suite&` reference as its first argument. Inside the body,
    * `suite::test()` is called to create and run individual test cases.
@@ -998,7 +1005,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      *
      * @details
-     * Destroys the owned test cases.
+     * Removes the suite from the list of suites, if it is there, and
+     * destroys the owned test cases.
      */
     ~suite () override;
 
@@ -1063,6 +1071,41 @@ namespace micro_os_plus::micro_test_plus
     fail_unexpected_exception (const char* what);
 #endif // defined(__cpp_exceptions)
 
+    /**
+     * @brief Inserts this suite into the list of suites.
+     *
+     * @details
+     * Called by `runner::register_suite()` and by the `static_suite`
+     * constructor, after the name was copied. The suite is inserted
+     * after the suites with names less than or equal to its own, so the
+     * list remains sorted by name, and the suites with the same name
+     * remain in the order of their insertion. The top suite is not
+     * inserted, since the runner runs it separately.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    link (void) noexcept;
+
+    /**
+     * @brief Removes this suite from the list of suites.
+     *
+     * @details
+     * Called by the destructor; a suite that is not in the list, such as
+     * the top suite or a suite rejected by the runner, is left
+     * unchanged.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    unlink (void) noexcept;
+
   protected:
     /**
      * @brief Callable storing the suite body and any bound arguments.
@@ -1095,6 +1138,28 @@ namespace micro_os_plus::micro_test_plus
      * copy their names.
      */
     std::string owned_name_{};
+
+    /**
+     * @brief The next suite in the list of suites.
+     *
+     * @details
+     * Null for the last suite, and for the suites not in the list. Set
+     * by `link()` and `unlink()`, and read by the runner, which is a
+     * friend.
+     */
+    suite* next_ = nullptr;
+
+    /**
+     * @brief The first suite in the list of suites.
+     *
+     * @details
+     * The list includes the registered and the static suites of all
+     * runners, sorted by name; each runner selects its own. The pointer
+     * is constant-initialised (`constinit`, in `src/test.cpp`), so it is
+     * null before any constructor runs, whatever the order of the static
+     * initialisation across translation units.
+     */
+    static suite* first_;
   };
 
   // ==========================================================================
@@ -1194,15 +1259,14 @@ namespace micro_os_plus::micro_test_plus
    * or after the `runner` instance, in unspecified static-initialisation
    * order.
    *
-   * Upon construction, the suite inserts itself into a list of all static
-   * suites, kept sorted by name, which does not depend on the runner
-   * object: its head is a `constinit` pointer, initialised before any
-   * constructor runs, and the links are members of the suites. The
-   * runner is only referred to, not accessed, so it may be constructed
-   * later. When `runner::run()` is called, the runner runs the static
-   * suites that refer to it, in the order of the list, merged by name
-   * with the suites registered with `runner::add_suite()`; for equal names,
-   * the registered suites run first. Upon destruction, the suite removes
+   * Upon construction, the suite inserts itself into the list of suites,
+   * kept sorted by name, which does not depend on the runner object (see
+   * `suite`). The runner is only referred to, not accessed, so it may be
+   * constructed later. When `runner::run()` is called, the runner runs
+   * the suites that refer to it, static or registered with
+   * `runner::add_suite()`, in the order of the list; for equal names, in
+   * the order of their insertion, so the static suites constructed
+   * before `main()` run first. Upon destruction, the suite removes
    * itself from the list.
    *
    * The body is stored in the callable inherited from `suite`, and is run
@@ -1217,9 +1281,6 @@ namespace micro_os_plus::micro_test_plus
    */
   class static_suite : public suite
   {
-    // Walk the list of static suites, to count and run them.
-    friend class micro_test_plus::runner;
-
   public:
     /**
      * @brief Class template constructor for static_suite.
@@ -1286,60 +1347,11 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      *
      * @details
-     * Removes the suite from the list of static suites, and destroys the
-     * owned test cases and the stored callable.
+     * The suite is removed from the list of suites by the `suite`
+     * destructor, which also destroys the owned test cases and the
+     * stored callable.
      */
     ~static_suite () override;
-
-  protected:
-    /**
-     * @brief Inserts this suite into the list of static suites.
-     *
-     * @details
-     * Called by the constructor, after the name was copied; the list is
-     * kept sorted by name.
-     *
-     * @par Parameters
-     *   None.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    link (void) noexcept;
-
-    /**
-     * @brief Removes this suite from the list of static suites.
-     *
-     * @details
-     * Called by the destructor.
-     *
-     * @par Parameters
-     *   None.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    unlink (void) noexcept;
-
-    /**
-     * @brief The next suite in the list of static suites.
-     *
-     * @details
-     * Null for the last suite. Set by `link()` and `unlink()`.
-     */
-    static_suite* next_ = nullptr;
-
-    /**
-     * @brief The first suite in the list of static suites.
-     *
-     * @details
-     * The list includes the static suites of all runners, sorted by name;
-     * each runner selects its own. The pointer is constant-initialised
-     * (`constinit`, in `src/test.cpp`), so it is null before any
-     * constructor runs, whatever the order of the static initialisation
-     * across translation units.
-     */
-    static static_suite* first_;
   };
 
   // --------------------------------------------------------------------------

@@ -136,16 +136,18 @@ namespace micro_os_plus::micro_test_plus
    * execution of test suites within the µTest++ framework. It owns the
    * implicit top suite, whose test cases are added after `initialise()`,
    * and a collection of test suites added with `add_suite()`, which are
-   * run later, by `run()`. The `static_suite` objects that refer to the
-   * runner are kept in a list independent of the runner object, so they
-   * may be constructed before it. `run()` runs the suites added with
+   * run later, by `run()`. These suites and the `static_suite` objects
+   * that refer to the runner are kept in a single list, sorted by name,
+   * independent of the runner object, so the static suites may be
+   * constructed before it. `run()` runs the suites added with
    * `add_suite()` and the static suites together, in a single order,
-   * sorted by name; for equal names, the suites added with `add_suite()`
-   * run first, in the order of their addition. The names are compared
-   * byte by byte, as by `std::strcmp()`, not in the order of addition: the
-   * comparison is case-sensitive (`"Zeta"` before `"alpha"`) and does not
-   * compare numbers by value (`"Suite 10"` before `"Suite 2"`);
-   * zero-padded numeric prefixes (`"01 - Init"`) give an explicit order.
+   * sorted by name; for equal names, in the order of their creation, so
+   * the static suites constructed before `main()` run first. The names
+   * are compared byte by byte, as by `std::strcmp()`, not in the order of
+   * addition: the comparison is case-sensitive (`"Zeta"` before
+   * `"alpha"`) and does not compare numbers by value (`"Suite 10"` before
+   * `"Suite 2"`); zero-padded numeric prefixes (`"01 - Init"`) give an
+   * explicit order.
    *
    * The test runner provides member functions for initialising the test
    * environment (including the creation of the reporter selected on the
@@ -734,9 +736,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Owning collection of dynamically registered child suites.
      *
      * @details
-     * Each call to `add_suite()` appends a new `suite` to this vector;
-     * the suites are run later, by `run()`. The vector retains
-     * ownership of all suites for the lifetime of the runner.
+     * Each call to `add_suite()` appends a new `suite` to this vector,
+     * and inserts it into the list of suites, sorted by name; the suites
+     * are run later, by `run()`, in the order of the list. The vector
+     * retains ownership of all suites for the lifetime of the runner.
      */
     std::vector<std::unique_ptr<class suite>> children_suites_;
 

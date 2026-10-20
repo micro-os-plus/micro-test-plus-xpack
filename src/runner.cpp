@@ -437,9 +437,12 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Takes ownership of the supplied `suite` unique pointer and appends
-   * it to the internal `children_suites_` vector, deferring execution
-   * until `run_suites()` is called. If tracing is enabled, the suite
-   * name is logged for diagnostic purposes.
+   * it to the internal `children_suites_` vector, then inserts the suite
+   * into the list of suites, sorted by name, deferring execution until
+   * `run_suites()` is called. The suite is inserted after it is stored,
+   * so that a failed allocation of the vector leaves it out of the list.
+   * If tracing is enabled, the suite name is logged for diagnostic
+   * purposes.
    *
    * Once `run()` has started, the suite is rejected, since it would
    * never run: `run_suites()` takes the number of suites only once,
@@ -471,6 +474,7 @@ namespace micro_os_plus::micro_test_plus
       }
 
     children_suites_.push_back (std::move (suite));
+    children_suites_.back ()->link ();
   }
 
   /**
@@ -478,18 +482,12 @@ namespace micro_os_plus::micro_test_plus
    * Runs the suites registered with `add_suite()` and the static suites that
    * refer to this runner in a single order, sorted by name.
    *
-   * First, `children_suites_` is sorted by name with an insertion sort
-   * on `unique_ptr::swap`, avoiding the `-Waggregate-return` diagnostic
-   * that `std::stable_sort` would trigger on unique-pointer iterators;
-   * the sort is stable, so the registered suites with the same name
-   * remain in the order of their registration.
-   *
-   * The sorted registered suites are then merged with the list of static
-   * suites, which is already sorted by name; the static suites of other
-   * runners are skipped. For equal names, the registered suite runs
-   * first. The names are compared with `std::strcmp()`, as when the list
-   * of static suites is built, so in byte order, case-sensitively, and
-   * without comparing the numbers by value.
+   * Both kinds of suites are in the list of suites, which `suite::link()`
+   * keeps sorted by name, so no sorting is needed here; the suites of
+   * other runners are skipped. The names are compared with
+   * `std::strcmp()`, so in byte order, case-sensitively, and without
+   * comparing the numbers by value; the suites with the same name run in
+   * the order of their insertion into the list.
    *
    * Each suite is assigned a 1-based index, following the top suite, in
    * the order of execution. If the first filter pattern selects it, it is
@@ -498,57 +496,23 @@ namespace micro_os_plus::micro_test_plus
    * `skipped_suites_count_`, keeping its index, so that the TAP plan
    * remains complete. The executed test cases counter is not incremented;
    * suites are not counted as test cases.
+   *
+   * The next suite is read after the current one has run, since the
+   * suites of the local runners created by the current suite are
+   * inserted into the list, and removed again, while it runs.
    */
   void
   runner::run_suites (void)
   {
-    // Use insertion sort with unique_ptr::swap (returns void) to avoid
-    // std::stable_sort triggering -Waggregate-return via
-    // std::move_backward, which returns a class-type iterator when
-    // operating on unique_ptr elements.
-    const size_t n = children_suites_.size ();
-    for (size_t i = 1; i < n; ++i)
-      {
-        for (size_t j = i; j > 0
-                           && std::strcmp (children_suites_[j - 1]->name (),
-                                           children_suites_[j]->name ())
-                                  > 0;
-             --j)
-          {
-            children_suites_[j - 1].swap (children_suites_[j]);
-          }
-      }
-
     // The top suite has index 1.
     size_t own_index = 1;
-    size_t i = 0;
-    static_suite* static_ptr = static_suite::first_;
-    while (true)
+    for (class suite* suite_ptr = suite::first_; suite_ptr != nullptr;
+         suite_ptr = suite_ptr->next_)
       {
-        // Skip the static suites run by other runners.
-        while (static_ptr != nullptr && &static_ptr->test_runner () != this)
+        // Skip the suites run by other runners.
+        if (&suite_ptr->test_runner () != this)
           {
-            static_ptr = static_ptr->next_;
-          }
-
-        class suite* suite_ptr;
-        if (i < n
-            && (static_ptr == nullptr
-                || std::strcmp (children_suites_[i]->name (),
-                                static_ptr->name ())
-                       <= 0))
-          {
-            suite_ptr = children_suites_[i].get ();
-            ++i;
-          }
-        else if (static_ptr != nullptr)
-          {
-            suite_ptr = static_ptr;
-            static_ptr = static_ptr->next_;
-          }
-        else
-          {
-            break;
+            continue;
           }
 
         suite_ptr->own_index_ = ++own_index;
@@ -765,22 +729,23 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Walks the list of static suites, and counts those that refer to this
-   * runner.
+   * Walks the list of suites, counts those that refer to this runner,
+   * and subtracts the suites registered with `add_suite()`, which are
+   * all in the list.
    */
   size_t
   runner::static_suites_count (void) const noexcept
   {
     size_t count = 0;
-    for (const static_suite* suite_ptr = static_suite::first_;
-         suite_ptr != nullptr; suite_ptr = suite_ptr->next_)
+    for (const class suite* suite_ptr = suite::first_; suite_ptr != nullptr;
+         suite_ptr = suite_ptr->next_)
       {
         if (&suite_ptr->test_runner () == this)
           {
             ++count;
           }
       }
-    return count;
+    return count - children_suites_.size ();
   }
 
   /**
