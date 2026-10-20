@@ -317,10 +317,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The floating point type (e.g., float, double).
      * @tparam N The integral part of the constant value.
-     * @tparam D The fractional part of the constant value, scaled as
-     * returned by `math::den()` (e.g. 250 for `1.25`).
-     * @tparam Size The scale of `D`, as returned by `math::den_size()`,
-     * i.e. the number of decimal digits plus one (e.g. 3 for `1.25`).
+     * @tparam D The digits of the fractional part of the constant value,
+     * as returned by `math::den()` (e.g. 25 for `1.25`).
+     * @tparam Size The number of decimal digits, the scale of `D`, as
+     * returned by `math::den_size()` (e.g. 2 for `1.25`).
      * @tparam P The sign of the value (1 for positive, -1 for negative).
      * Defaults to 1.
      *
@@ -360,10 +360,10 @@ namespace micro_os_plus::micro_test_plus
        * @brief The epsilon value used for floating point comparisons.
        *
        * @details
-       * Calculated as 1 divided by 10 raised to the power of (Size - 1),
-       * i.e. one unit of the last decimal digit of the literal.
+       * Calculated as 1 divided by 10 raised to the power of `Size`, i.e.
+       * one unit of the last decimal digit of the literal.
        */
-      static constexpr auto epsilon = T (1) / math::pow (T (10), Size - 1);
+      static constexpr auto epsilon = T (1) / math::pow (T (10), Size);
 
       /**
        * @brief The compile-time constant value.

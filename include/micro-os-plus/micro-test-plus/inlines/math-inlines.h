@@ -227,11 +227,10 @@ namespace micro_os_plus::micro_test_plus
      * The function expects the character sequence to represent a numeric
      * value, where all characters are either digits, a dot (`.`), or an
      * apostrophe (`'`). Parsing begins after the first dot, accumulating the
-     * decimal digits as an integer value and skipping the digit separators;
-     * the result is then multiplied by ten (e.g. `1.25` yields 250),
-     * matching the scale returned by `den_size()`, so that
-     * `den() / 10^den_size()` gives the fraction. If the result could
-     * exceed `T`, the compilation fails with an explicit message.
+     * decimal digits as an integer value and skipping the digit separators
+     * (e.g. `1.25` yields 25), so that `den() / 10^den_size()` gives the
+     * fraction. If the result could exceed `T`, the compilation fails with
+     * an explicit message.
      *
      * This utility is particularly useful for user-defined literals and other
      * compile-time constant expressions, enabling efficient and type-safe
@@ -244,10 +243,10 @@ namespace micro_os_plus::micro_test_plus
     {
       static_assert ((... || (Cs == '.')),
                      "den(): no decimal point in literal");
-      // The result has one more digit than the decimals (it is scaled by
-      // ten), and it must fit in `T`.
+      // The result has as many digits as the decimals, and it must fit in
+      // `T`.
       static_assert (
-          count_literal_digits<true, Cs...> () + 1
+          count_literal_digits<true, Cs...> ()
               <= static_cast<std::size_t> (std::numeric_limits<T>::digits10),
           "µTest++: the floating-point literal has too many "
           "decimals");
@@ -266,7 +265,7 @@ namespace micro_os_plus::micro_test_plus
                                        + static_cast<T> (c - '0'));
             }
         }
-      return static_cast<T> (result * static_cast<T> (10));
+      return result;
     }
 
     /**
@@ -278,9 +277,8 @@ namespace micro_os_plus::micro_test_plus
      * The function expects the character sequence to represent a numeric
      * value, where all characters are either digits, a dot (`.`), or an
      * apostrophe (`'`). It returns the number of digits that follow the
-     * first dot (the digit separators are not counted) plus one (e.g. 3 for
-     * `1.25`), which is the scale used by `den()`; the actual number of
-     * decimal places is one less.
+     * first dot (the digit separators are not counted; e.g. 2 for `1.25`),
+     * which is the scale of the value returned by `den()`.
      *
      * This utility is particularly useful for user-defined literals and other
      * compile-time constant expressions, enabling efficient and type-safe
@@ -292,7 +290,7 @@ namespace micro_os_plus::micro_test_plus
     {
       static_assert ((... || (Cs == '.')),
                      "den_size(): no decimal point in literal");
-      return static_cast<T> (count_literal_digits<true, Cs...> () + 1);
+      return static_cast<T> (count_literal_digits<true, Cs...> ());
     }
 
     /**
@@ -330,7 +328,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T, class Value_T>
     constexpr auto
-    den_size (Value_T value) -> T
+    count_decimals (Value_T value) -> T
     {
       constexpr auto precision = Value_T (1e-7);
       // From this magnitude upwards all values are integers.
@@ -385,8 +383,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * The number of decimal places is computed by `den_size()`, and the
-     * tolerance is one divided by ten raised to that number, as for the
+     * The number of decimal places is computed by `count_decimals()`, and
+     * the tolerance is one divided by ten raised to that number, as for the
      * floating-point literals, which use the decimals written.
      *
      * A zero value has no decimals, and gets a zero tolerance, so that it
@@ -400,7 +398,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     decimal_epsilon (Value_T value) -> Value_T
     {
-      const auto decimals = den_size<unsigned long long> (value);
+      const auto decimals = count_decimals<unsigned long long> (value);
       if (decimals == 0
           or decimals > static_cast<unsigned long long> (
                  std::numeric_limits<Value_T>::max_exponent10))

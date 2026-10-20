@@ -250,35 +250,35 @@ static_asserts ()
       static_assert (detail::math::pow (10, 3) == 1000);
       static_assert (detail::math::integer_magnitude<int, '4', '2'> () == 42);
       static_assert (detail::math::num<int, '1', '.', '2', '5'> () == 1);
-      static_assert (detail::math::den<int, '1', '.', '2', '5'> () == 250);
-      static_assert (detail::math::den_size<int, '1', '.', '2', '5'> () == 3);
+      static_assert (detail::math::den<int, '1', '.', '2', '5'> () == 25);
+      static_assert (detail::math::den_size<int, '1', '.', '2', '5'> () == 2);
 
       // The number of decimals of a run-time value is computed without
       // undefined behaviour for negative and large values (a compile-time
       // error in a constant expression), and is not affected by the
       // rounding noise below an integer (API-REVIEW.md #60).
       using ull = unsigned long long;
-      static_assert (detail::math::den_size<ull> (1.25) == 2);
-      static_assert (detail::math::den_size<ull> (2.0) == 1);
-      static_assert (detail::math::den_size<ull> (-2.25) == 2);
-      static_assert (detail::math::den_size<ull> (0.011) == 3);
-      static_assert (detail::math::den_size<ull> (42.42f) == 2);
-      static_assert (detail::math::den_size<ull> (1.25L) == 2);
-      static_assert (detail::math::den_size<ull> (1e20) == 1);
-      static_assert (detail::math::den_size<ull> (
+      static_assert (detail::math::count_decimals<ull> (1.25) == 2);
+      static_assert (detail::math::count_decimals<ull> (2.0) == 1);
+      static_assert (detail::math::count_decimals<ull> (-2.25) == 2);
+      static_assert (detail::math::count_decimals<ull> (0.011) == 3);
+      static_assert (detail::math::count_decimals<ull> (42.42f) == 2);
+      static_assert (detail::math::count_decimals<ull> (1.25L) == 2);
+      static_assert (detail::math::count_decimals<ull> (1e20) == 1);
+      static_assert (detail::math::count_decimals<ull> (
                          std::numeric_limits<double>::infinity ())
                      == 1);
 
       // The leading zeros of a small value are counted as decimals, and a
       // zero has none, so its tolerance is zero, an exact comparison
       // (API-REVIEW.md #9).
-      static_assert (detail::math::den_size<ull> (1e-8) == 8);
-      static_assert (detail::math::den_size<ull> (1e-12) == 12);
-      static_assert (detail::math::den_size<ull> (-2.5e-9) == 10);
-      static_assert (detail::math::den_size<ull> (1e-300) == 300);
-      static_assert (detail::math::den_size<ull> (1e-12L) == 12);
-      static_assert (detail::math::den_size<ull> (0.0) == 0);
-      static_assert (detail::math::den_size<ull> (-0.0f) == 0);
+      static_assert (detail::math::count_decimals<ull> (1e-8) == 8);
+      static_assert (detail::math::count_decimals<ull> (1e-12) == 12);
+      static_assert (detail::math::count_decimals<ull> (-2.5e-9) == 10);
+      static_assert (detail::math::count_decimals<ull> (1e-300) == 300);
+      static_assert (detail::math::count_decimals<ull> (1e-12L) == 12);
+      static_assert (detail::math::count_decimals<ull> (0.0) == 0);
+      static_assert (detail::math::count_decimals<ull> (-0.0f) == 0);
       static_assert (detail::math::decimal_epsilon (1.25) > 0.0099
                      and detail::math::decimal_epsilon (1.25) < 0.0101);
       static_assert (detail::math::decimal_epsilon (1e-12) > 0.99e-12
@@ -386,6 +386,9 @@ static_asserts ()
       static_assert (1.9999999999 == 1.9999999999_d);
       static_assert (decltype (1.000'5_d)::epsilon > 0.000099
                      && decltype (1.000'5_d)::epsilon < 0.000101);
+      // Without decimals, the epsilon is one unit (API-REVIEW.md #41).
+      static_assert (decltype (2._d)::epsilon > 0.99
+                     && decltype (2._d)::epsilon < 1.01);
 
       static_assert (0. == 0.0_d);
       static_assert (0.f == .0_f);

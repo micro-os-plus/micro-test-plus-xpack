@@ -194,8 +194,8 @@ namespace micro_os_plus::micro_test_plus
     num (void) -> T;
 
     /**
-     * @brief Computes the scaled decimal part of a number represented as an
-     * array of characters.
+     * @brief Computes the decimal part of a number represented as an array
+     * of characters.
      *
      * @tparam T The target integral type for the result.
      * @tparam Cs The character pack representing the numeric value; it must
@@ -204,16 +204,16 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return The digits after the decimal point, as an integral value of
-     * type \c T, multiplied by ten (e.g. 250 for `1.25`), to be divided by
-     * ten raised to the power returned by `den_size()`.
+     * type \c T (e.g. 25 for `1.25`), to be divided by ten raised to the
+     * power returned by `den_size()`.
      */
     template <class T, char... Cs>
     [[nodiscard]] consteval auto
     den (void) -> T;
 
     /**
-     * @brief Computes the scale of the decimal part of a number represented
-     * as an array of characters.
+     * @brief Counts the decimal places of a number represented as an array
+     * of characters.
      *
      * @tparam T The integral type for the result.
      * @tparam Cs The character pack representing the numeric value; it must
@@ -221,8 +221,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *   None.
-     * @return The number of decimal places plus one (e.g. 3 for `1.25`), as
-     * a value of type \c T; it matches the scaling of `den()`.
+     * @return The number of decimal places (e.g. 2 for `1.25`), as a value
+     * of type \c T; it is the scale of the value returned by `den()`.
      */
     template <class T, char... Cs>
     [[nodiscard]] consteval auto
@@ -244,7 +244,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T, class Value_T>
     [[nodiscard]] constexpr auto
-    den_size (Value_T value) -> T;
+    count_decimals (Value_T value) -> T;
 
     /**
      * @brief Computes the default comparison tolerance of a floating-point
@@ -255,7 +255,7 @@ namespace micro_os_plus::micro_test_plus
      * @param value The value whose tolerance is to be determined; it may
      * be negative, infinite, or a NaN.
      * @return Ten raised to minus the number of decimal places returned by
-     * `den_size()` (0.01 for `1.25`, 1e-12 for `1e-12`), or zero, which
+     * `count_decimals()` (0.01 for `1.25`, 1e-12 for `1e-12`), or zero, which
      * means an exact comparison, for a zero value and for a value whose
      * tolerance would be below the range of `Value_T`.
      */
