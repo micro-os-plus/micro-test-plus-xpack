@@ -943,6 +943,18 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ other control characters
         ✓ non-ASCII byte
     ✓ Formatter characters - passed (8 checks)
+    • Formatter wide characters
+        ✓ char8_t ASCII
+        ✓ char8_t code unit
+        ✓ char16_t ASCII
+        ✓ char16_t non-ASCII
+        ✓ char16_t surrogate
+        ✓ char32_t ASCII
+        ✓ char32_t non-ASCII
+        ✓ char32_t not characters
+        ✓ wchar_t
+        ✓ wchar_t negative
+    ✓ Formatter wide characters - passed (10 checks)
     • Formatter standard types
         ✓ scoped enumeration
         ✓ scoped enumeration with underlying type
@@ -985,8 +997,9 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
         ✓ wrappers 42 1.5
+        ✓ wide characters u'x' U'x' L'x'
         ✗ failed {3} FAILED (miscellaneous.cpp:1060)
-    ✗ Message types - FAILED (6 checks passed, 1 failed)
+    ✗ Message types - FAILED (7 checks passed, 1 failed)
     • TAP escapes # TODO in names \ messages
         ✓ message with # hash and \ backslash
         ✓ a # b == a # b
@@ -1105,7 +1118,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (167 checks passed, 26 failed, in 33 test cases), time: 4.010 ms
+✗ Miscellaneous suite - FAILED (178 checks passed, 26 failed, in 34 test cases), time: 3.890 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1216,4 +1229,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:168)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.327 ms
-✗ Total: 588 checks passed, 362 failed, in 117 test cases, 14 test suites, time: 13.891 ms
+✗ Total: 599 checks passed, 362 failed, in 118 test cases, 14 test suites, time: 13.763 ms

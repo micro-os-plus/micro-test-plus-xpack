@@ -57,6 +57,42 @@ namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
+  namespace
+  {
+    /**
+     * @brief Appends an escape and a fixed number of hexadecimal digits.
+     *
+     * @details
+     * Used by `expression_formatter::append_character()`; the digits are
+     * lowercase, the most significant first, and the leading zeros are
+     * kept, so that the number of digits shows the size of the type.
+     *
+     * @param buffer The text to which the escape is appended.
+     * @param code The value to write.
+     * @param escape The escape before the digits (`"\\x"`, `"\\u"`, or
+     * `"\\U"`).
+     * @param count The number of digits.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    append_hex (std::string& buffer, char32_t code, std::string_view escape,
+                std::size_t count)
+    {
+      constexpr std::string_view digits{ "0123456789abcdef" };
+      buffer.append (escape);
+      for (std::size_t i = count; i > 0; --i)
+        {
+          // The promoted type of `code` is `std::size_t` on some
+          // platforms, so a cast would be reported as useless.
+          const auto nibble = (code >> ((i - 1) * 4)) & 0x0Fu;
+          buffer.push_back (digits[nibble]);
+        }
+    }
+  } // namespace
+
+  // --------------------------------------------------------------------------
+
   /**
    * @details
    * Appends the contents of the `std::string_view` directly to the
@@ -72,14 +108,11 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * The character is written as a C++ character literal, between single
-   * quotes, so that the spaces and the control characters are visible,
-   * and a zero does not end the text when it is printed as a C string.
-   * The usual escape sequences are used for `'\\0'`, `'\\a'`, `'\\b'`,
-   * `'\\t'`, `'\\n'`, `'\\v'`, `'\\f'`, `'\\r'`, `'\\''`, and `'\\\\'`;
-   * the other control characters, `DEL`, and the values above `0x7F`
-   * (for example the bytes of the UTF-8 sequences) are written as two
-   * hexadecimal digits (`'\\x1b'`). The printable ASCII characters are
-   * written unchanged.
+   * quotes, by `append_character()`, so that the spaces and the control
+   * characters are visible, and a zero does not end the text when it is
+   * printed as a C string. The values above `0x7F` (for example the
+   * bytes of the UTF-8 sequences) are written as two hexadecimal digits
+   * (`'\\xc3'`).
    *
    * In the plain mode, used for the messages, the character is appended
    * unchanged, as text, without quotes and escapes.
@@ -93,58 +126,60 @@ namespace micro_os_plus::micro_test_plus::detail
         return *this;
       }
 
-    buffer_.push_back ('\'');
-    switch (c)
-      {
-      case '\0':
-        buffer_.append ("\\0");
-        break;
-      case '\a':
-        buffer_.append ("\\a");
-        break;
-      case '\b':
-        buffer_.append ("\\b");
-        break;
-      case '\t':
-        buffer_.append ("\\t");
-        break;
-      case '\n':
-        buffer_.append ("\\n");
-        break;
-      case '\v':
-        buffer_.append ("\\v");
-        break;
-      case '\f':
-        buffer_.append ("\\f");
-        break;
-      case '\r':
-        buffer_.append ("\\r");
-        break;
-      case '\'':
-        buffer_.append ("\\'");
-        break;
-      case '\\':
-        buffer_.append ("\\\\");
-        break;
-      default:
-        {
-          const auto code = static_cast<unsigned char> (c);
-          if (code < 0x20 || code >= 0x7F)
-            {
-              constexpr std::string_view digits{ "0123456789abcdef" };
-              buffer_.append ("\\x");
-              buffer_.push_back (digits[static_cast<std::size_t> (code >> 4)]);
-              buffer_.push_back (
-                  digits[static_cast<std::size_t> (code & 0x0F)]);
-            }
-          else
-            {
-              buffer_.push_back (c);
-            }
-        }
-        break;
-      }
-    buffer_.push_back ('\'');
+    append_character ("", static_cast<unsigned char> (c), sizeof (c));
+    return *this;
+  }
+
+#if defined(__cpp_char8_t)
+  /**
+   * @details
+   * Written by `append_character()` with the `u8` prefix, also in the
+   * plain mode.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (char8_t c)
+  {
+    append_character ("u8", static_cast<char32_t> (c), sizeof (c));
+    return *this;
+  }
+#endif // defined(__cpp_char8_t)
+
+  /**
+   * @details
+   * Written by `append_character()` with the `u` prefix, also in the
+   * plain mode.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (char16_t c)
+  {
+    append_character ("u", static_cast<char32_t> (c), sizeof (c));
+    return *this;
+  }
+
+  /**
+   * @details
+   * Written by `append_character()` with the `U` prefix, also in the
+   * plain mode.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (char32_t c)
+  {
+    append_character ("U", c, sizeof (c));
+    return *this;
+  }
+
+  /**
+   * @details
+   * Written by `append_character()` with the `L` prefix, also in the
+   * plain mode. The value is first converted to the unsigned type of
+   * the same size, so that a negative value is not sign-extended to
+   * 32 bits.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (wchar_t c)
+  {
+    append_character ("L", static_cast<std::make_unsigned_t<wchar_t>> (c),
+                      sizeof (c));
     return *this;
   }
 
@@ -463,6 +498,82 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         buffer_.append (suffix);
       }
+  }
+
+  /**
+   * @details
+   * A value of an 8-bit type above `0x7F` is a part of a multi-byte
+   * sequence; for the wider types, the surrogates (`0xD800` to `0xDFFF`)
+   * and the values above `0x10FFFF` are not Unicode characters, and
+   * cannot be written as universal character names. They are written
+   * with `\\x` and twice as many hexadecimal digits as the bytes of the
+   * type, so that the width of the type is visible. The control
+   * characters keep the two digits of `char`, since they are the same in
+   * all the encodings.
+   */
+  void
+  expression_formatter::append_character (std::string_view prefix,
+                                          char32_t code, std::size_t size)
+  {
+    buffer_.append (prefix);
+    buffer_.push_back ('\'');
+    switch (code)
+      {
+      case U'\0':
+        buffer_.append ("\\0");
+        break;
+      case U'\a':
+        buffer_.append ("\\a");
+        break;
+      case U'\b':
+        buffer_.append ("\\b");
+        break;
+      case U'\t':
+        buffer_.append ("\\t");
+        break;
+      case U'\n':
+        buffer_.append ("\\n");
+        break;
+      case U'\v':
+        buffer_.append ("\\v");
+        break;
+      case U'\f':
+        buffer_.append ("\\f");
+        break;
+      case U'\r':
+        buffer_.append ("\\r");
+        break;
+      case U'\'':
+        buffer_.append ("\\'");
+        break;
+      case U'\\':
+        buffer_.append ("\\\\");
+        break;
+      default:
+        if (code < 0x20 || code == 0x7F)
+          {
+            append_hex (buffer_, code, "\\x", 2);
+          }
+        else if (code < 0x7F)
+          {
+            buffer_.push_back (static_cast<char> (code));
+          }
+        else if (size == 1 || (code >= 0xD800 && code <= 0xDFFF)
+                 || code > 0x10FFFF)
+          {
+            append_hex (buffer_, code, "\\x", size * 2);
+          }
+        else if (code <= 0xFFFF)
+          {
+            append_hex (buffer_, code, "\\u", 4);
+          }
+        else
+          {
+            append_hex (buffer_, code, "\\U", 8);
+          }
+        break;
+      }
+    buffer_.push_back ('\'');
   }
 
   // --------------------------------------------------------------------------

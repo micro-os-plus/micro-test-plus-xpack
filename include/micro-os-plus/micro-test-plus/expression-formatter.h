@@ -287,6 +287,87 @@ namespace micro_os_plus::micro_test_plus
       expression_formatter&
       operator<< (char c);
 
+#if defined(__cpp_char8_t)
+      /**
+       * @brief Appends a UTF-8 code unit, as a quoted `u8` literal, to the
+       * buffer.
+       *
+       * @details
+       * The value is written with the `u8` prefix and the escapes of
+       * `char` (`u8'a'`, `u8'\\n'`); the values above `0x7F`, which are
+       * parts of the multi-byte sequences, not characters, are written
+       * as two hexadecimal digits (`u8'\\xc3'`). Without the overload,
+       * the value would be promoted to `int` and written as a number. The
+       * plain mode, used for the messages, writes it in the same way,
+       * since it cannot be appended unchanged.
+       *
+       * @param c The code unit to append.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (char8_t c);
+#endif // defined(__cpp_char8_t)
+
+      /**
+       * @brief Appends a UTF-16 code unit, as a quoted `u` literal, to the
+       * buffer.
+       *
+       * @details
+       * The value is written with the `u` prefix and the escapes of
+       * `char` (`u'a'`, `u'\\n'`); the other values outside ASCII are
+       * written as universal character names (`u'\\u00e9'`), and the
+       * surrogates, which are halves of the pairs, not characters, as
+       * four hexadecimal digits (`u'\\xd83d'`). Without the overload,
+       * the value would be promoted to `int` and written as a number. The
+       * plain mode, used for the messages, writes it in the same way,
+       * since it cannot be appended unchanged.
+       *
+       * @param c The code unit to append.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (char16_t c);
+
+      /**
+       * @brief Appends a UTF-32 character, as a quoted `U` literal, to the
+       * buffer.
+       *
+       * @details
+       * The value is written with the `U` prefix and the escapes of
+       * `char` (`U'a'`, `U'\\n'`); the other values outside ASCII are
+       * written as universal character names (`U'\\u00e9'`,
+       * `U'\\U0001f600'`), and the values that are not Unicode
+       * characters (the surrogates and the values above `0x10FFFF`) as
+       * eight hexadecimal digits (`U'\\x0000d83d'`). Without the
+       * overload, the value would be promoted to `unsigned int` and
+       * written as a number. The plain mode, used for the messages,
+       * writes it in the same way, since it cannot be appended unchanged.
+       *
+       * @param c The character to append.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (char32_t c);
+
+      /**
+       * @brief Appends a wide character, as a quoted `L` literal, to the
+       * buffer.
+       *
+       * @details
+       * The value is written with the `L` prefix, as a `char16_t` value
+       * where `wchar_t` has 16 bits (Windows), and as a `char32_t` value
+       * elsewhere (`L'a'`, `L'\\u00e9'`); a negative value is written
+       * by its bits. Without the overload, the value would be promoted
+       * to an integer type and written as a number. The plain mode, used
+       * for the messages, writes it in the same way, since it cannot be
+       * appended unchanged.
+       *
+       * @param c The character to append.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (wchar_t c);
+
       /**
        * @brief Appends a null-terminated C string to the buffer.
        *
@@ -825,6 +906,34 @@ namespace micro_os_plus::micro_test_plus
        */
       void
       append_suffix (const char* suffix);
+
+      /**
+       * @brief Appends a character, or a code unit, as a quoted literal.
+       *
+       * @details
+       * Shared by the overloads of all the character types, so that they
+       * escape the values in the same way. The usual escape sequences are
+       * used for `'\\0'`, `'\\a'`, `'\\b'`, `'\\t'`, `'\\n'`, `'\\v'`,
+       * `'\\f'`, `'\\r'`, `'\\''`, and `'\\\\'`, and the other control
+       * characters and `DEL` are written as two hexadecimal digits
+       * (`'\\x1b'`). The values that are not characters by themselves
+       * (the values above `0x7F` of the 8-bit types, the surrogates, and
+       * the values above `0x10FFFF`) are written with `\\x` and all the
+       * hexadecimal digits of their type, and the other values outside
+       * ASCII as universal character names, `\\u` with four digits, or
+       * `\\U` with eight. The printable ASCII characters are written
+       * unchanged. The hexadecimal digits are lowercase.
+       *
+       * @param prefix The prefix of the literal (`""`, `"u8"`, `"u"`,
+       * `"U"`, or `"L"`).
+       * @param code The value, converted without the sign extension.
+       * @param size The size of the character type, in bytes.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      append_character (std::string_view prefix, char32_t code,
+                        std::size_t size);
 
       /**
        * @brief Appends the elements of a tuple-like object, separated by

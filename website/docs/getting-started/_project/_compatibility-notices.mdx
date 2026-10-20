@@ -103,6 +103,18 @@ functions to the `expression_formatter`; to write a separator without
 quotes, use a string (`" "` instead of `' '`). A zero character in a
 message added with `<<` no longer ends the message.
 
+The `char8_t`, `char16_t`, `char32_t`, and `wchar_t` values are now
+written as quoted character literals, with their prefix (`u8'a'`,
+`u'a'`, `U'a'`, `L'a'`), and with the escapes of `char`; the other
+values outside ASCII are written as universal character names
+(`u'\u00e9'`, `U'\U0001f600'`), and the values that are not
+characters by themselves (the UTF-8 code units above `0x7F`, the
+surrogates, and the values above `0x10FFFF`) with `\x` and all the
+hexadecimal digits of their type (`u8'\xc3'`, `u'\xd83d'`). They were
+previously written as numbers (`120`, or `120u` for `char32_t`). Since
+they cannot be appended to the text unchanged, they are written in the
+same way in the messages added with `<<`.
+
 The `expression_formatter` can now only be appended to, through its
 `operator<<` overloads, and read, through `str()`. The buffer
 accessors `c_str()`, `clear()`, `empty()`, `append()`, and

@@ -897,6 +897,77 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
+    // The wide characters are written as quoted literals with their
+    // prefix, not as numbers; the values outside ASCII are written as
+    // universal character names, and the values that are not characters
+    // by themselves with `\x` and all the digits of their type.
+    ts.test ("Formatter wide characters", [] (auto& t)
+      {
+        detail::colours no_colours{};
+        expression_formatter f{ no_colours };
+
+        // Compares the text written since the previous check (the
+        // formatter only appends).
+        std::size_t start = 0;
+        auto check = [&] (std::string_view expected, const char* message)
+          {
+            std::string_view written{ f.str () };
+            t.expect (eq (written.substr (start), expected)) << message;
+            local_counts.passed_checks++;
+            start = written.size ();
+          };
+
+#if defined(__cpp_char8_t)
+        f << u8'a' << u8'\n' << u8'\x1b';
+        check ("u8'a'u8'\\n'u8'\\x1b'", "char8_t ASCII");
+
+        f << static_cast<char8_t> (0xC3);
+        check ("u8'\\xc3'", "char8_t code unit");
+#endif // defined(__cpp_char8_t)
+
+        f << u'x' << u'\0' << u'\'' << u'\x7f';
+        check ("u'x'u'\\0'u'\\''u'\\x7f'", "char16_t ASCII");
+
+        f << u'\u00e9' << static_cast<char16_t> (0xFFFF);
+        check ("u'\\u00e9'u'\\uffff'", "char16_t non-ASCII");
+
+        f << static_cast<char16_t> (0xD83D);
+        check ("u'\\xd83d'", "char16_t surrogate");
+
+        f << U'x' << U'\t';
+        check ("U'x'U'\\t'", "char32_t ASCII");
+
+        f << static_cast<char32_t> (0x80) << U'\U0001f600';
+        check ("U'\\u0080'U'\\U0001f600'", "char32_t non-ASCII");
+
+        f << static_cast<char32_t> (0xDC00)
+          << static_cast<char32_t> (0x110000);
+        check ("U'\\x0000dc00'U'\\x00110000'", "char32_t not characters");
+
+        f << L'x' << L'\u00e9';
+        check ("L'x'L'\\u00e9'", "wchar_t");
+
+        if constexpr (sizeof (wchar_t) == 4)
+          {
+            f << static_cast<wchar_t> (-1);
+            check ("L'\\xffffffff'", "wchar_t negative");
+          }
+        else if constexpr (sizeof (wchar_t) == 2)
+          {
+            f << static_cast<wchar_t> (-1);
+            check ("L'\\uffff'", "wchar_t negative");
+          }
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
     // The scoped enumerations and `std::byte` are written by the
     // `expression_formatter` by their underlying value, the pairs and the
     // tuples as `(a, b)`, and the optionals by their value, or as
@@ -1082,6 +1153,10 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         t.expect (true) << "wrappers " << 42_i << ' ' << 1.5_d;
+        local_counts.passed_checks++;
+
+        t.expect (true) << "wide characters " << u'x' << ' ' << U'x' << ' '
+                        << L'x';
         local_counts.passed_checks++;
 
         t.expect (false) << "failed " << std::vector<int>{ 3 };

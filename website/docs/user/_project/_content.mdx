@@ -545,7 +545,9 @@ The message accepts the same values as the operands of the
 [custom types](#custom-types) with an `operator<<` for the formatter,
 and any number of them can be appended. They are written as in the
 reports of the comparators, except that the numbers have no type
-suffixes and the characters are not quoted, since the message is text:
+suffixes and the `char` values are not quoted, since the message is
+text; the wide characters (`u'x'`, `U'x'`, `L'x'`) are written as in the
+reports, since they cannot be appended to the text unchanged:
 
 ```cpp
 t.expect (mt::eq (parse (input), expected))
