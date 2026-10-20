@@ -1303,6 +1303,47 @@ namespace micro_os_plus::micro_test_plus
     test (const test_case_name& name, Callable_T&& callable,
           Args_T&&... arguments);
 
+    /**
+     * @brief Deprecated access to the timings of the suite.
+     *
+     * @details
+     * Returns the internal stopwatch of the suite, started before its
+     * body runs and stopped after it; for the top suite, it is started by
+     * `runner::initialise()` and stopped by `runner::run()`. In v5.0.1,
+     * the returned class was `detail::timestamps`, now a deprecated
+     * alias; only its read-only members are kept.
+     *
+     * @par Parameters
+     *   None.
+     * @return A const reference to the stopwatch of the suite.
+     *
+     * @deprecated The timings are internal; the elapsed times are shown
+     * by the reporters (since 5.1.0).
+     */
+    [[deprecated ("the timings are internal"),
+      nodiscard]] const detail::stopwatch&
+    timings (void) const noexcept;
+
+    /**
+     * @brief Deprecated access to the timings of the suite, as a
+     * non-`const` reference.
+     *
+     * @details
+     * Kept for the v5.0.1 code that binds a non-`const` reference
+     * (`detail::timestamps& t = ts.timings ();`). The test code must not
+     * start or stop the stopwatch through it, since the reporters show
+     * its elapsed time.
+     *
+     * @par Parameters
+     *   None.
+     * @return A reference to the stopwatch of the suite.
+     *
+     * @deprecated The timings are internal; the elapsed times are shown
+     * by the reporters (since 5.1.0).
+     */
+    [[deprecated ("the timings are internal"), nodiscard]] detail::stopwatch&
+    timings (void) noexcept;
+
   private:
     /**
      * @brief Executes the suite body by invoking the stored callable.

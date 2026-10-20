@@ -55,6 +55,7 @@
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include <chrono>
+#include <cstdint>
 #include <ctime>
 
 // ----------------------------------------------------------------------------
@@ -106,6 +107,12 @@ namespace micro_os_plus::micro_test_plus
      * The non-public members are `protected`, not `private`, only so that
      * the unit tests can derive from the class and set known readings;
      * the class is not meant to be extended otherwise.
+     *
+     * The read-only members of the v5.0.1 `detail::timestamps` class
+     * (`has_begin()`, `has_end()`, `has_timestamps()`, and
+     * `compute_elapsed_time()`) are kept, deprecated, for the
+     * applications that used the deprecated `timings()` of the runner and
+     * of the suites, which return a reference to this class.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -226,6 +233,81 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] std::chrono::microseconds
       elapsed (void) const noexcept;
 
+      /**
+       * @brief Deprecated check of the start reading.
+       *
+       * @details
+       * Kept from the v5.0.1 `detail::timestamps` class. The start
+       * reading is available after `start()`, on a platform with a
+       * clock; in v5.0.1, it was also reported without a clock.
+       *
+       * @par Parameters
+       *   None.
+       * @retval true  The start reading is available.
+       * @retval false The start reading is absent.
+       *
+       * @deprecated Use `has_elapsed()` (since 5.1.0).
+       */
+      [[deprecated ("use has_elapsed()"), nodiscard]] bool
+      has_begin (void) const noexcept;
+
+      /**
+       * @brief Deprecated check of the stop reading.
+       *
+       * @details
+       * Kept from the v5.0.1 `detail::timestamps` class. The stop
+       * reading is available after `stop()`, on a platform with a clock,
+       * until the next `start()`; in v5.0.1, it was also reported
+       * without a clock.
+       *
+       * @par Parameters
+       *   None.
+       * @retval true  The stop reading is available.
+       * @retval false The stop reading is absent.
+       *
+       * @deprecated Use `has_elapsed()` (since 5.1.0).
+       */
+      [[deprecated ("use has_elapsed()"), nodiscard]] bool
+      has_end (void) const noexcept;
+
+      /**
+       * @brief Deprecated name of `has_elapsed()`.
+       *
+       * @details
+       * Kept from the v5.0.1 `detail::timestamps` class; calls
+       * `has_elapsed()`.
+       *
+       * @par Parameters
+       *   None.
+       * @return The value returned by `has_elapsed()`.
+       *
+       * @deprecated Use `has_elapsed()` (since 5.1.0).
+       */
+      [[deprecated ("use has_elapsed()"), nodiscard]] bool
+      has_timestamps (void) const noexcept;
+
+      /**
+       * @brief Deprecated split of the elapsed time.
+       *
+       * @details
+       * Kept from the v5.0.1 `detail::timestamps` class. Splits the value
+       * returned by `elapsed()` into whole milliseconds and the remaining
+       * microseconds. Without both readings, both are zero; in v5.0.1,
+       * the call was not allowed (it asserted).
+       *
+       * @param[out] milliseconds The whole milliseconds of the elapsed
+       * time.
+       * @param[out] microseconds The remaining microseconds, from 0 to
+       * 999.
+       * @par Returns
+       *   Nothing.
+       *
+       * @deprecated Use `elapsed()` (since 5.1.0).
+       */
+      [[deprecated ("use elapsed()")]] void
+      compute_elapsed_time (uint32_t& milliseconds,
+                            uint32_t& microseconds) const noexcept;
+
     protected:
       /**
        * @brief Checks whether a clock reading was recorded.
@@ -258,6 +340,22 @@ namespace micro_os_plus::micro_test_plus
        */
       timespec stop_time_{};
     };
+
+    // ========================================================================
+
+    /**
+     * @brief Deprecated name of `stopwatch`.
+     *
+     * @details
+     * The v5.0.1 name of the class returned by the `timings()` functions
+     * of the runner and of the suites, which kept the two timestamps of
+     * the measured interval. Only its read-only members are kept, on
+     * `stopwatch`.
+     *
+     * @deprecated The timings are internal; the elapsed times are shown
+     * by the reporters (since 5.1.0).
+     */
+    using timestamps [[deprecated ("the timings are internal")]] = stopwatch;
 
     // ------------------------------------------------------------------------
   } // namespace detail

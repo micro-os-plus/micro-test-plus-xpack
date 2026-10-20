@@ -21,6 +21,8 @@
 
 #include "unit-test.h"
 
+#include <cstdint>
+#include <ctime>
 #include <string_view>
 #include <type_traits>
 #include <utility>
@@ -64,6 +66,31 @@ static_suite_function_with_arguments (static_suite& ss, int value, int& copy,
   *out = copy;
   ss.test ("Local test", [] (auto& lt) { lt.expect (true); });
 }
+
+// ----------------------------------------------------------------------------
+
+namespace
+{
+  // A stopwatch with known readings, for the deprecated members kept
+  // from the v5.0.1 `detail::timestamps`.
+  class known_stopwatch : public detail::stopwatch
+  {
+  public:
+    void
+    set_times (const timespec& start, const timespec& stop) noexcept
+    {
+      start_time_ = start;
+      stop_time_ = stop;
+    }
+  };
+} // namespace
+
+// Without a clock, the readings remain zero.
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
+static constexpr bool has_clock = true;
+#else
+static constexpr bool has_clock = false;
+#endif // defined(_WIN32) || defined(CLOCK_MONOTONIC)
 
 // ----------------------------------------------------------------------------
 
@@ -194,9 +221,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         static_assert (
             detail::static_suite_body<decltype (static_suite_function)&>,
             "a static_suite& function selects the deprecated constructor");
-        static_assert (
-            !detail::static_suite_body<void (&) (suite&)>,
-            "a suite& function selects the current constructor");
+        static_assert (!detail::static_suite_body<void (&) (suite&)>,
+                       "a suite& function selects the current constructor");
 
         runner_options options{};
         options.verbosity_level = verbosity::silent;
@@ -210,9 +236,12 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         {
           static_suite without_arguments{ "Without arguments", local_runner,
                                           static_suite_function };
-          static_suite with_arguments{ "With arguments", local_runner,
+          static_suite with_arguments{ "With arguments",
+                                       local_runner,
                                        static_suite_function_with_arguments,
-                                       42, original, &out };
+                                       42,
+                                       original,
+                                       &out };
 
           t.expect (eq (local_runner.run (), 0)) << "local session passed";
           local_counts.passed_checks++;
@@ -320,6 +349,120 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         t.expect (eq (local_runner.run (), 1)
                   and eq (local_runner.totals ().failed_checks (), 1u))
             << "a failed check added to the totals fails the session";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The v5.0.1 timings of the session and of the suites, with the
+    // deprecated class name; they refer to the stopwatches shown by the
+    // reporters, started and stopped by the runner.
+    ts.test ("timings(), detail::timestamps", [] (auto& t)
+      {
+        static_assert (std::is_same_v<detail::timestamps, detail::stopwatch>,
+                       "timestamps is an alias of stopwatch");
+        static_assert (
+            std::is_same_v<decltype (std::declval<runner&> ().timings ()),
+                           detail::stopwatch&>,
+            "the non-const runner::timings() returns a reference");
+        static_assert (std::is_same_v<decltype (std::declval<const runner&> ()
+                                                    .timings ()),
+                                      const detail::stopwatch&>,
+                       "the const runner::timings() returns a const "
+                       "reference");
+        static_assert (
+            std::is_same_v<decltype (std::declval<suite&> ().timings ()),
+                           detail::stopwatch&>,
+            "the non-const suite::timings() returns a reference");
+        static_assert (
+            std::is_same_v<decltype (std::declval<const suite&> ().timings ()),
+                           const detail::stopwatch&>,
+            "the const suite::timings() returns a const "
+            "reference");
+
+        runner_options options{};
+        options.verbosity_level = verbosity::silent;
+
+        runner local_runner;
+        auto& local_ts = local_runner.initialise (options, "Local");
+        local_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        const detail::stopwatch* added_timings = nullptr;
+        bool added_started = false;
+        local_runner.add_suite ("Added", [&] (suite& s)
+          {
+            // The v5.0.1 binding.
+            detail::timestamps& timings = s.timings ();
+            added_timings = &timings;
+            added_started
+                = (timings.has_begin () == has_clock) && !timings.has_end ();
+            s.test ("Added test", [] (auto& lt) { lt.expect (true); });
+          });
+
+        // The v5.0.1 bindings.
+        detail::timestamps& session_timings = local_runner.timings ();
+        const detail::timestamps& top_timings
+            = std::as_const (local_ts).timings ();
+
+        t.expect (&session_timings == &std::as_const (local_runner).timings ()
+                  and &top_timings == &local_ts.timings ())
+            << "both overloads refer to the same timings";
+        local_counts.passed_checks++;
+
+        t.expect (eq (session_timings.has_begin (), has_clock)
+                  and !session_timings.has_end ()
+                  and !session_timings.has_timestamps ()
+                  and eq (top_timings.has_begin (), has_clock)
+                  and !top_timings.has_end ()
+                  and !top_timings.has_timestamps ())
+            << "the timings are started by initialise()";
+        local_counts.passed_checks++;
+
+        t.expect (eq (local_runner.run (), 0)) << "local session passed";
+        local_counts.passed_checks++;
+
+        t.expect (added_started) << "the suite timings are started";
+        local_counts.passed_checks++;
+
+        t.expect (eq (session_timings.has_timestamps (), has_clock)
+                  and eq (session_timings.has_end (), has_clock)
+                  and eq (top_timings.has_timestamps (), has_clock)
+                  and added_timings != nullptr
+                  and eq (added_timings->has_timestamps (), has_clock))
+            << "the timings are stopped by run()";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The deprecated members kept from the v5.0.1 `detail::timestamps`,
+    // with known readings.
+    ts.test ("timestamps::compute_elapsed_time()", [] (auto& t)
+      {
+        known_stopwatch sw{};
+        uint32_t milliseconds = 1;
+        uint32_t microseconds = 1;
+
+        sw.compute_elapsed_time (milliseconds, microseconds);
+
+        t.expect (!sw.has_begin () and !sw.has_end () and !sw.has_timestamps ()
+                  and eq (milliseconds, 0u) and eq (microseconds, 0u))
+            << "no readings, zero elapsed time";
+        local_counts.passed_checks++;
+
+        sw.set_times ({ 1, 0 }, { 0, 0 });
+
+        t.expect (sw.has_begin () and !sw.has_end () and !sw.has_timestamps ())
+            << "start reading only";
+        local_counts.passed_checks++;
+
+        // 1.001235 seconds, with a borrow from the seconds.
+        sw.set_times ({ 1, 999'999'000 }, { 3, 1'234'000 });
+        sw.compute_elapsed_time (milliseconds, microseconds);
+
+        t.expect (sw.has_begin () and sw.has_end () and sw.has_timestamps ()
+                  and eq (milliseconds, 1001u) and eq (microseconds, 235u))
+            << "both readings, elapsed time split";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

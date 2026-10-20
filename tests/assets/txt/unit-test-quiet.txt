@@ -51,6 +51,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • static_suite& suite functions
     • counters
     • non-const totals(), detail::runner_totals
+    • timings(), detail::timestamps
+    • timestamps::compute_elapsed_time()
     • assume()
     • Failed assume()
     • reflection::short_name()
@@ -129,4 +131,4 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 628 checks passed, 362 failed, in 128 test cases, 15 test suites, time: 9.300 ms
+✗ Total: 636 checks passed, 362 failed, in 130 test cases, 15 test suites, time: 9.300 ms

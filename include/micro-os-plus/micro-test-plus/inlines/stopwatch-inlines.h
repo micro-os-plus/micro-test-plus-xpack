@@ -40,6 +40,7 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
@@ -72,6 +73,55 @@ namespace micro_os_plus::micro_test_plus::detail
   stopwatch::is_recorded (const timespec& ts) noexcept
   {
     return ts.tv_sec != 0 || ts.tv_nsec != 0;
+  }
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @details
+   * Returns `true` if the start reading was recorded, as determined by
+   * `is_recorded()`.
+   */
+  inline bool
+  stopwatch::has_begin (void) const noexcept
+  {
+    return is_recorded (start_time_);
+  }
+
+  /**
+   * @details
+   * Returns `true` if the stop reading was recorded, as determined by
+   * `is_recorded()`.
+   */
+  inline bool
+  stopwatch::has_end (void) const noexcept
+  {
+    return is_recorded (stop_time_);
+  }
+
+  /**
+   * @details
+   * Forwards to `has_elapsed()`.
+   */
+  inline bool
+  stopwatch::has_timestamps (void) const noexcept
+  {
+    return has_elapsed ();
+  }
+
+  /**
+   * @details
+   * Divides the microseconds count returned by `elapsed()` by 1000; the
+   * conversions to `uint32_t` truncate the intervals longer than about
+   * 49 days, as in v5.0.1.
+   */
+  inline void
+  stopwatch::compute_elapsed_time (uint32_t& milliseconds,
+                                   uint32_t& microseconds) const noexcept
+  {
+    const auto count = elapsed ().count ();
+    milliseconds = static_cast<uint32_t> (count / 1000);
+    microseconds = static_cast<uint32_t> (count % 1000);
   }
 
   // --------------------------------------------------------------------------

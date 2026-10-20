@@ -658,6 +658,26 @@ namespace micro_os_plus::micro_test_plus
                       std::forward<Args_T> (arguments)...);
   }
 
+  /**
+   * @details
+   * Returns a const reference to the `stopwatch` member.
+   */
+  inline const detail::stopwatch&
+  suite::timings (void) const noexcept
+  {
+    return stopwatch_;
+  }
+
+  /**
+   * @details
+   * Returns a reference to the `stopwatch` member.
+   */
+  inline detail::stopwatch&
+  suite::timings (void) noexcept
+  {
+    return stopwatch_;
+  }
+
   // ==========================================================================
 
   /**

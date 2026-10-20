@@ -537,6 +537,18 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ runner_totals& modifies the live totals
         ✓ a failed check added to the totals fails the session
     ✓ non-const totals(), detail::runner_totals - passed (3 checks)
+    • timings(), detail::timestamps
+        ✓ both overloads refer to the same timings
+        ✓ the timings are started by initialise()
+        ✓ local session passed
+        ✓ the suite timings are started
+        ✓ the timings are stopped by run()
+    ✓ timings(), detail::timestamps - passed (5 checks)
+    • timestamps::compute_elapsed_time()
+        ✓ no readings, zero elapsed time
+        ✓ start reading only
+        ✓ both readings, elapsed time split
+    ✓ timestamps::compute_elapsed_time() - passed (3 checks)
     • assume()
         ✓ passed assumption
     ✓ assume() - passed (1 check)
@@ -560,7 +572,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ 1 == 1
         ✓ false results
     ✓ _i, _f, ..., _t<T> - passed (4 checks)
-✗ Deprecated suite - FAILED (35 checks passed, 1 failed, in 12 test cases), time: 0.773 ms
+✗ Deprecated suite - FAILED (43 checks passed, 1 failed, in 14 test cases), time: 0.773 ms
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1280,4 +1292,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.189 ms
-✗ Total: 628 checks passed, 362 failed, in 128 test cases, 15 test suites, time: 13.353 ms
+✗ Total: 636 checks passed, 362 failed, in 130 test cases, 15 test suites, time: 13.353 ms

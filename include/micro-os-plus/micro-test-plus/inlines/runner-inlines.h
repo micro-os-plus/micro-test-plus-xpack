@@ -103,6 +103,26 @@ namespace micro_os_plus::micro_test_plus
     return totals_;
   }
 
+  /**
+   * @details
+   * Returns a const reference to the `stopwatch` member.
+   */
+  inline const detail::stopwatch&
+  runner::timings (void) const noexcept
+  {
+    return stopwatch_;
+  }
+
+  /**
+   * @details
+   * Returns a reference to the `stopwatch` member.
+   */
+  inline detail::stopwatch&
+  runner::timings (void) noexcept
+  {
+    return stopwatch_;
+  }
+
   // --------------------------------------------------------------------------
 
   /**

@@ -632,6 +632,47 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] const counters&
     totals (void) const noexcept;
 
+    /**
+     * @brief Deprecated access to the timings of the test session.
+     *
+     * @details
+     * Returns the internal stopwatch of the session, started by
+     * `initialise()` and stopped at the end of `run()`; the elapsed time
+     * is complete only after `run()` has returned. In v5.0.1, the
+     * returned class was `detail::timestamps`, now a deprecated alias;
+     * only its read-only members are kept.
+     *
+     * @par Parameters
+     *   None.
+     * @return A const reference to the stopwatch of the session.
+     *
+     * @deprecated The timings are internal; the elapsed times are shown
+     * by the reporters (since 5.1.0).
+     */
+    [[deprecated ("the timings are internal"),
+      nodiscard]] const detail::stopwatch&
+    timings (void) const noexcept;
+
+    /**
+     * @brief Deprecated access to the timings of the test session, as a
+     * non-`const` reference.
+     *
+     * @details
+     * Kept for the v5.0.1 code that binds a non-`const` reference
+     * (`detail::timestamps& t = tr.timings ();`). The test code must not
+     * start or stop the stopwatch through it, since the reporters show
+     * its elapsed time.
+     *
+     * @par Parameters
+     *   None.
+     * @return A reference to the stopwatch of the session.
+     *
+     * @deprecated The timings are internal; the elapsed times are shown
+     * by the reporters (since 5.1.0).
+     */
+    [[deprecated ("the timings are internal"), nodiscard]] detail::stopwatch&
+    timings (void) noexcept;
+
   private:
     /**
      * @brief Runs all registered test suites.

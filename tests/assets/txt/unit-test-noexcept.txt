@@ -537,6 +537,18 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ runner_totals& modifies the live totals
         ✓ a failed check added to the totals fails the session
     ✓ non-const totals(), detail::runner_totals - passed (3 checks)
+    • timings(), detail::timestamps
+        ✓ both overloads refer to the same timings
+        ✓ the timings are started by initialise()
+        ✓ local session passed
+        ✓ the suite timings are started
+        ✓ the timings are stopped by run()
+    ✓ timings(), detail::timestamps - passed (5 checks)
+    • timestamps::compute_elapsed_time()
+        ✓ no readings, zero elapsed time
+        ✓ start reading only
+        ✓ both readings, elapsed time split
+    ✓ timestamps::compute_elapsed_time() - passed (3 checks)
     • assume()
         ✓ passed assumption
     ✓ assume() - passed (1 check)
@@ -557,7 +569,7 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ 1 == 1
         ✓ false results
     ✓ _i, _f, ..., _t<T> - passed (4 checks)
-✓ Deprecated suite - passed (35 checks in 11 test cases)
+✓ Deprecated suite - passed (43 checks in 13 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1217,4 +1229,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 611 checks passed, 350 failed, in 113 test cases, 13 test suites
+✗ Total: 619 checks passed, 350 failed, in 115 test cases, 13 test suites
