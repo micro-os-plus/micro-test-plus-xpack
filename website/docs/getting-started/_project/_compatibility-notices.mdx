@@ -250,6 +250,16 @@ tests are run, and `run()` returns 2. The new
 when the test execution is aborted, for example to reset an embedded
 target.
 
+The runner now also recognises the `--filter` option, which selects
+the suites and the test cases to run by name (see the User's Guide),
+as either `--filter=<pattern>` or `--filter <pattern>`; the latter
+takes the next argument as the pattern. The other unknown arguments
+are still ignored. An application that used its own `--filter` option,
+and passed the whole command line to `initialise()`, now also has its
+tests filtered, and the suites and test cases that do not match its
+value are skipped; rename the application option, or remove it from
+the arguments passed to `initialise()`.
+
 `assume()` is deprecated in favour of `require()`, which does the same:
 in other frameworks (JUnit, Hypothesis), an unmet assumption skips the
 test, while here it fails it. When exceptions are enabled, a failed
@@ -375,6 +385,17 @@ existing code compiles unchanged; replace `mt::static_runner` with
 `mt::runner` in the new code. The public static member
 `static_runner::register_static_suite()` was removed;
 `runner::static_suites_count()` is now available for any runner.
+
+All the suites, those added with `runner::add_suite()` and the
+`static_suite` objects, now run in a single order, by name; for equal
+names, the static suites constructed before `main()` run first, then
+the added suites, in the order of the calls. Previously, the added
+suites ran first, sorted by name, followed by the static suites, sorted
+separately. The two kinds of suites are now interleaved, so the order
+of the reports, and the numbers of the suites in the TAP output, may
+change. To run the suites in a given order, start their names with
+zero-padded numbers (`"01 - Init"`, `"02 - Run"`), as described in the
+User's Guide.
 
 The `runner()` function of the suites and the test cases, which
 returned the runner that owns them, is no longer public, since it is
