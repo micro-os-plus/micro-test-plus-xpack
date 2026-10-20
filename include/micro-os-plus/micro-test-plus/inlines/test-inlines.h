@@ -659,9 +659,41 @@ namespace micro_os_plus::micro_test_plus
    * run by its runner; the runner itself is not accessed.
    */
   template <typename Callable_T, typename... Args_T>
+    requires (!detail::static_suite_body<Callable_T, Args_T...>)
   static_suite::static_suite (const char* name, runner& test_runner,
                               Callable_T&& callable, Args_T&&... arguments)
       : suite{ name, test_runner, std::forward<Callable_T> (callable),
+               std::forward<Args_T> (arguments)... }
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+    trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                   __PRETTY_FUNCTION__, name, own_index_);
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
+
+    link ();
+  }
+
+  /**
+   * @details
+   * Delegates to `suite` with a lambda that holds a copy of the callable
+   * (decayed, so a function is held as a pointer), and invokes it with
+   * the `suite&` reference converted to `static_suite&`, followed by the
+   * stored arguments, which `suite` binds as for the other bodies. The
+   * conversion is valid, since `suite::run()` passes this object. The
+   * extra call happens once for each run of the suite, not for each test
+   * case.
+   */
+  template <typename Callable_T, typename... Args_T>
+    requires (detail::static_suite_body<Callable_T, Args_T...>)
+  static_suite::static_suite (const char* name, runner& test_runner,
+                              Callable_T&& callable, Args_T&&... arguments)
+      : suite{ name, test_runner,
+               [stored_callable = std::forward<Callable_T> (callable)] (
+                   suite& self, auto&... stored_arguments) mutable
+    {
+      stored_callable (static_cast<static_suite&> (self),
+                       stored_arguments...);
+    },
                std::forward<Args_T> (arguments)... }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)

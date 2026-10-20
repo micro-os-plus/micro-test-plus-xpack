@@ -48,6 +48,7 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • static_runner
     • runner::exit_code()
     • runner::suite()
+    • static_suite& suite functions
     • counters
     • assume()
     • Failed assume()
@@ -125,4 +126,4 @@ Built with clang xPack x86_64 Clang 21.1.8 (https://github.com/xpack-dev-tools/c
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 609 checks passed, 362 failed, in 124 test cases, 15 test suites, time: 9.723 ms
+✗ Total: 613 checks passed, 362 failed, in 125 test cases, 15 test suites, time: 9.206 ms

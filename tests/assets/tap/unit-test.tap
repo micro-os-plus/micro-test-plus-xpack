@@ -171,7 +171,7 @@ TAP version 14
         1..28
     ok 16 - Floating-point tolerance # { passed, 28 checks }
     1..16
-not ok 1 - Static top suite # { FAILED, 68 checks passed, 6 failed, in 20 test cases, time: 1.671 ms }
+not ok 1 - Static top suite # { FAILED, 68 checks passed, 6 failed, in 20 test cases, time: 1.476 ms }
 # Subtest: Combinatorial floats suite
     # Subtest: Combinatorial floats
         ok 1 - 42.0 == 42 signed long long
@@ -222,7 +222,7 @@ not ok 1 - Static top suite # { FAILED, 68 checks passed, 6 failed, in 20 test c
         1..21
     ok 2 - Combinatorial doubles # { passed, 21 checks }
     1..2
-ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.578 ms }
+ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.546 ms }
 # Subtest: Combinatorial integrals suite
     # Subtest: Combinatorial integrals with signed long long
         ok 1 - eq matches signed long long
@@ -409,7 +409,7 @@ ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0
         1..20
     ok 8 - Combinatorial integrals with unsigned char # { passed, 20 checks }
     1..8
-ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 2.055 ms }
+ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 2.006 ms }
 # Subtest: Comparisons suite
     # Subtest: Integer comparisons
         ok 1 - actual == 42
@@ -764,63 +764,63 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: "0x7ff7b10c71c0 != 0x7ff7b10c71c0"
+          condition: "0x7ff7b1add280 != 0x7ff7b1add280"
           at:
             fileName: comparisons.cpp
             lineNumber: 563
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: "0x7ff7b10c71c0 != 0x7ff7b10c71c0"
+          condition: "0x7ff7b1add280 != 0x7ff7b1add280"
           at:
             fileName: comparisons.cpp
             lineNumber: 566
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: "0x7ff7b10c71c0 > 0x7ff7b10c71c0"
+          condition: "0x7ff7b1add280 > 0x7ff7b1add280"
           at:
             fileName: comparisons.cpp
             lineNumber: 569
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: "0x7ff7b10c71c0 < 0x7ff7b10c71c0"
+          condition: "0x7ff7b1add280 < 0x7ff7b1add280"
           at:
             fileName: comparisons.cpp
             lineNumber: 572
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: "0x7ff7b10c71c0 == 0x7ff7b10c7210"
+          condition: "0x7ff7b1add280 == 0x7ff7b1add2d0"
           at:
             fileName: comparisons.cpp
             lineNumber: 575
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: "0x10ef31658 != 0x10ef31658"
+          condition: "0x10e527bf8 != 0x10e527bf8"
           at:
             fileName: comparisons.cpp
             lineNumber: 578
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: "0x10ef31658 == 0x7ff7b10c7210"
+          condition: "0x10e527bf8 == 0x7ff7b1add2d0"
           at:
             fileName: comparisons.cpp
             lineNumber: 581
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: "0x7ff7b10c7840 >= 0x7ff7b10c7844"
+          condition: "0x7ff7b1add900 >= 0x7ff7b1add904"
           at:
             fileName: comparisons.cpp
             lineNumber: 593
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: "0x7ff7b10c7844 <= 0x7ff7b10c7840"
+          condition: "0x7ff7b1add904 <= 0x7ff7b1add900"
           at:
             fileName: comparisons.cpp
             lineNumber: 596
@@ -843,7 +843,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: "0x7ff7b10c7860 == nullptr"
+          condition: "0x7ff7b1add920 == nullptr"
           at:
             fileName: comparisons.cpp
             lineNumber: 647
@@ -909,7 +909,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
         1..12
     not ok 13 - Logical operations # { FAILED, 6 checks passed, 6 failed }
     1..13
-not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test cases, time: 1.664 ms }
+not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test cases, time: 1.645 ms }
 # Subtest: Deprecated suite
     # Subtest: runner (const char*)
         ok 1 - name given to the constructor
@@ -933,32 +933,39 @@ not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test
         ok 4 - suite() added the suite
         1..4
     ok 4 - runner::suite() # { passed, 4 checks }
+    # Subtest: static_suite& suite functions
+        ok 1 - local session passed
+        ok 2 - function without arguments
+        ok 3 - function with arguments, which are copies
+        ok 4 - the test cases of both suites ran
+        1..4
+    ok 5 - static_suite& suite functions # { passed, 4 checks }
     # Subtest: counters
         ok 1 - successful_checks()
         ok 2 - increment_successful_checks()
         1..2
-    ok 5 - counters # { passed, 2 checks }
+    ok 6 - counters # { passed, 2 checks }
     # Subtest: assume()
         ok 1 - passed assumption
         1..1
-    ok 6 - assume() # { passed, 1 check }
+    ok 7 - assume() # { passed, 1 check }
     # Subtest: Failed assume()
         not ok 1 - failed assumption
           ---
           at:
             fileName: deprecated.cpp
-            lineNumber: 201
+            lineNumber: 270
           ...
         1..1
-    not ok 7 - Failed assume() # { FAILED, 0 checks passed, 1 failed }
+    not ok 8 - Failed assume() # { FAILED, 0 checks passed, 1 failed }
     # Subtest: reflection::short_name()
         ok 1 - file.cpp == file.cpp
         ok 2 - file.cpp == file.cpp
         ok 3 - file.cpp == file.cpp
         1..3
-    ok 8 - reflection::short_name() # { passed, 3 checks }
-    1..8
-not ok 5 - Deprecated suite # { FAILED, 16 checks passed, 1 failed, in 8 test cases, time: 0.665 ms }
+    ok 9 - reflection::short_name() # { passed, 3 checks }
+    1..9
+not ok 5 - Deprecated suite # { FAILED, 20 checks passed, 1 failed, in 9 test cases, time: 0.704 ms }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
@@ -972,7 +979,7 @@ ok 6 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.055 ms }
         1..1
     ok 1 - check in dynamic suite with a temporary name # { passed, 1 check }
     1..1
-ok 7 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.058 ms }
+ok 7 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.069 ms }
 # Subtest: Exceptions suite
     # Subtest: thrown exceptions
         ok 1 - exception thrown
@@ -1087,7 +1094,7 @@ ok 7 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
         1..3
     ok 11 - Exception in a suite body # { passed, 3 checks }
     1..11
-not ok 8 - Exceptions suite # { FAILED, 10 checks passed, 10 failed, in 13 test cases, time: 1.083 ms }
+not ok 8 - Exceptions suite # { FAILED, 10 checks passed, 10 failed, in 13 test cases, time: 1.047 ms }
 # Subtest: Exceptions suite body
     # Subtest: Test case before the exception
         ok 1 - check before the exception
@@ -1095,7 +1102,7 @@ not ok 8 - Exceptions suite # { FAILED, 10 checks passed, 10 failed, in 13 test 
     ok 1 - Test case before the exception # { passed, 1 check }
     not ok 2 - unexpected exception in the suite body: boom
     1..2
-not ok 9 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test case, time: 0.101 ms }
+not ok 9 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test case, time: 0.096 ms }
 # Subtest: Failed combinatorial floats suite
     # Subtest: Combinatorial floats
         not ok 1 - 42.0 == 42 signed long long
@@ -1398,7 +1405,7 @@ not ok 9 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test
         1..21
     not ok 2 - Combinatorial doubles # { FAILED, 0 checks passed, 21 failed }
     1..2
-not ok 10 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.508 ms }
+not ok 10 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.529 ms }
 # Subtest: Failed combinatorial integrals suite
     # Subtest: Combinatorial integrals with signed long long
         not ok 1 - ne matches signed long long
@@ -2831,7 +2838,7 @@ not ok 10 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 fa
         1..20
     not ok 10 - Combinatorial integrals with unsigned char # { FAILED, 0 checks passed, 20 failed }
     1..10
-not ok 11 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 2.768 ms }
+not ok 11 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 2.486 ms }
 # Subtest: Miscellaneous suite
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
@@ -3131,7 +3138,7 @@ not ok 11 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
     ok 17 - Pointers to const # { passed, 2 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
-        ok 2 - pointer 0x10f3dd160
+        ok 2 - pointer 0x10ea147a0
         ok 3 - container {1, 2}
         ok 4 - standard types (1, a) nullopt 1
         ok 5 - custom type { 1, 2 } on
@@ -3292,7 +3299,7 @@ not ok 11 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         1..7
     ok 33 - Test case and suite names # { passed, 7 checks }
     1..33
-not ok 12 - Miscellaneous suite # { FAILED, 176 checks passed, 26 failed, in 34 test cases, time: 3.810 ms }
+not ok 12 - Miscellaneous suite # { FAILED, 176 checks passed, 26 failed, in 34 test cases, time: 3.852 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3433,7 +3440,7 @@ not ok 12 - Miscellaneous suite # { FAILED, 176 checks passed, 26 failed, in 34 
         1..10
     not ok 3 - Named boolean literals # { FAILED, 5 checks passed, 5 failed }
     1..3
-not ok 13 - Operators suite # { FAILED, 20 checks passed, 16 failed, in 3 test cases, time: 0.395 ms }
+not ok 13 - Operators suite # { FAILED, 20 checks passed, 16 failed, in 3 test cases, time: 0.392 ms }
 # Subtest: Stopwatch suite
     # Subtest: stopwatch::start() and stop()
         ok 1 - fresh: has_elapsed false
@@ -3471,7 +3478,7 @@ not ok 13 - Operators suite # { FAILED, 20 checks passed, 16 failed, in 3 test c
         1..7
     ok 5 - stopwatch::elapsed() # { passed, 7 checks }
     1..5
-ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.271 ms }
+ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.277 ms }
 # Subtest: Utility suite
     # Subtest: utility::extract_file_name()
         ok 1 - Unix path returns filename
@@ -3534,6 +3541,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.271 ms }
         1..5
     not ok 3 - utility::is_match() — failing # { FAILED, 0 checks passed, 5 failed }
     1..3
-not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.221 ms }
+not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.212 ms }
 1..15
-# { total: 609 checks passed, 362 failed, in 124 test cases, 15 test suites, time: 16.274 ms }
+# { total: 613 checks passed, 362 failed, in 125 test cases, 15 test suites, time: 15.835 ms }

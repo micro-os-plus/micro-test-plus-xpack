@@ -1497,6 +1497,35 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
+  class static_suite;
+
+  namespace detail
+  {
+    /**
+     * @brief The body of a static suite written for v5.0.1, whose first
+     * parameter is a `static_suite&` reference.
+     *
+     * @details
+     * Satisfied by a callable that cannot be invoked with a `suite&`
+     * reference, but can be invoked with a `static_suite&` one, followed
+     * by the arguments as stored (decayed, non-`const` lvalues). It
+     * selects the deprecated constructor of `static_suite`; the callables
+     * that accept a `suite&` reference, including the generic lambdas,
+     * do not satisfy it.
+     *
+     * @tparam Callable_T The type of the callable object.
+     * @tparam Args_T The types of the callable arguments.
+     */
+    template <typename Callable_T, typename... Args_T>
+    concept static_suite_body
+        = (!std::is_invocable_v<std::decay_t<Callable_T>&, suite&,
+                                std::decay_t<Args_T>&...>)
+          && std::is_invocable_v<std::decay_t<Callable_T>&, static_suite&,
+                                 std::decay_t<Args_T>&...>;
+  } // namespace detail
+
+  // ==========================================================================
+
   /**
    * @ingroup micro-os-plus-micro-test-plus-test-suites
    * @brief A test suite designed for static (namespace-scope) registration
@@ -1521,7 +1550,9 @@ namespace micro_os_plus::micro_test_plus
    * The body is stored in the callable inherited from `suite`, and is run
    * by `suite::run()`; the user callable receives a `suite&` reference,
    * as for the suites registered with `runner::add_suite()`, so the same
-   * function can serve both kinds of suites.
+   * function can serve both kinds of suites. A function written for
+   * v5.0.1, with a `static_suite&` first parameter, is still accepted,
+   * by a deprecated constructor.
    *
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
@@ -1541,6 +1572,11 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
+     * @par Constraints
+     *   The callable is not a body written for v5.0.1, with a
+     *   `static_suite&` first parameter, which selects the deprecated
+     *   constructor.
+     *
      * @param name The test suite name or description, used in reports; it
      * is copied, so the string need not outlive the call.
      * @param test_runner The test runner that runs this suite.
@@ -1551,6 +1587,45 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `suite&` reference.
      */
     template <typename Callable_T, typename... Args_T>
+      requires (!detail::static_suite_body<Callable_T, Args_T...>)
+    static_suite (const char* name, runner& test_runner, Callable_T&& callable,
+                  Args_T&&... arguments);
+
+    /**
+     * @brief Deprecated constructor, for a body whose first parameter is
+     * `static_suite&`.
+     *
+     * @details
+     * In v5.0.1, the body of a static suite received a `static_suite&`
+     * reference; it now receives a `suite&` one, so that the same
+     * function can serve the suites registered with
+     * `runner::add_suite()`. To keep the functions written for v5.0.1
+     * working, the body is wrapped in a function object that converts
+     * the `suite&` reference back to `static_suite&`, which is always
+     * valid, since the suite that runs the body is this object.
+     *
+     * The deprecation is reported where the suite is declared; to remove
+     * it, change the first parameter of the function to `suite&`.
+     *
+     * @tparam Callable_T The type of a callable object.
+     * @tparam Args_T The types of the callable arguments.
+     *
+     * @par Constraints
+     *   The callable cannot be invoked with a `suite&` first argument,
+     *   but can with a `static_suite&` one.
+     *
+     * @param name The test suite name or description, used in reports; it
+     * is copied, so the string need not outlive the call.
+     * @param test_runner The test runner that runs this suite.
+     * @param callable A function or callable object whose first parameter
+     * is `static_suite&`.
+     * @param arguments A possibly empty list of arguments forwarded to
+     * the callable after the leading `static_suite&` reference.
+     */
+    template <typename Callable_T, typename... Args_T>
+      requires (detail::static_suite_body<Callable_T, Args_T...>)
+    [[deprecated ("declare the suite function with a suite& first "
+                  "parameter")]]
     static_suite (const char* name, runner& test_runner, Callable_T&& callable,
                   Args_T&&... arguments);
 

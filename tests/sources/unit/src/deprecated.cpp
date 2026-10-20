@@ -42,6 +42,30 @@ using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
+// Suite functions with a `static_suite&` first parameter, as in v5.0.1.
+
+static bool static_suite_function_ran = false;
+
+static void
+static_suite_function (static_suite& ss)
+{
+  static_suite_function_ran = true;
+  ss.test ("Local test", [] (auto& lt) { lt.expect (true); });
+}
+
+// The arguments are copies, as in v5.0.1: a reference parameter refers to
+// the copy, not to the caller's object.
+static void
+static_suite_function_with_arguments (static_suite& ss, int value, int& copy,
+                                      int* out)
+{
+  copy = value + 1;
+  *out = copy;
+  ss.test ("Local test", [] (auto& lt) { lt.expect (true); });
+}
+
+// ----------------------------------------------------------------------------
+
 static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
   {
     const counters& current_suite_totals = ts.totals ();
@@ -157,6 +181,51 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         t.expect (suite_ran) << "suite() added the suite";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The suite functions with a `static_suite&` first parameter select
+    // the deprecated constructor, and receive the suite and the arguments.
+    ts.test ("static_suite& suite functions", [] (auto& t)
+      {
+        static_assert (
+            detail::static_suite_body<decltype (static_suite_function)&>,
+            "a static_suite& function selects the deprecated constructor");
+        static_assert (
+            !detail::static_suite_body<void (&) (suite&)>,
+            "a suite& function selects the current constructor");
+
+        runner_options options{};
+        options.verbosity_level = verbosity::silent;
+
+        runner local_runner;
+        local_runner.initialise (options, "Local");
+
+        static_suite_function_ran = false;
+        int original = 0;
+        int out = 0;
+        {
+          static_suite without_arguments{ "Without arguments", local_runner,
+                                          static_suite_function };
+          static_suite with_arguments{ "With arguments", local_runner,
+                                       static_suite_function_with_arguments,
+                                       42, original, &out };
+
+          t.expect (eq (local_runner.run (), 0)) << "local session passed";
+          local_counts.passed_checks++;
+        }
+
+        t.expect (static_suite_function_ran) << "function without arguments";
+        local_counts.passed_checks++;
+
+        t.expect (eq (out, 43) and eq (original, 0))
+            << "function with arguments, which are copies";
+        local_counts.passed_checks++;
+
+        t.expect (eq (local_runner.totals ().executed_test_cases (), 2u))
+            << "the test cases of both suites ran";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
