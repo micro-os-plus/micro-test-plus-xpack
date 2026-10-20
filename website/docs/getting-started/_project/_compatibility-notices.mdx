@@ -499,10 +499,12 @@ they are internal; the value stored by the wrappers is now private,
 and is read with `get()`. The `type_traits` namespace is kept,
 deprecated, with the old names referring to the current concepts and
 templates, so with their current semantics: `is_op` detects the
-`op_type` member, not the inheritance from `op`; `has_value` and
-`has_epsilon` are satisfied only by the framework types, not by any
-type with a `value` or an `epsilon` member; and
-`genuine_integral_value` is now `value`. The `type-traits.h` header is
+`op_type` member, not the inheritance from `op`; `has_epsilon` is
+satisfied only by the framework types, not by any type with an
+`epsilon` member; and `genuine_integral_value` is now `value`. The
+exception is `has_value`, no longer used by the framework, which is
+restored with its v5.0.1 definition, satisfied by any type with a
+`value` member. The `type-traits.h` header is
 now `extension.h`; it is included by `micro-test-plus.h`, as before.
 
 The applications can now write their own comparators, predicates, and

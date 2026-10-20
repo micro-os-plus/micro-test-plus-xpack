@@ -317,9 +317,10 @@ namespace micro_os_plus::micro_test_plus
    *
    * The concepts refer to the current ones, so their semantics are the
    * current ones: `is_op` detects the `op_type` member, not the
-   * inheritance from `op`; `has_epsilon` and `has_value` also require
-   * `is_op`, and `has_value` a static `value` member; `printable` accepts
-   * everything the formatter can print.
+   * inheritance from `op`; `has_epsilon` also requires `is_op`;
+   * `printable` accepts everything the formatter can print. The
+   * exception is `has_value`, which is not used by the framework any
+   * more, and is restored with its v5.0.1 definition.
    *
    * The concepts cannot be deprecated individually, so the attribute is
    * on the namespace. Clang reports the deprecation at every qualified
@@ -358,7 +359,26 @@ namespace micro_os_plus::micro_test_plus
 
     using detail::container_like;
     using detail::has_npos;
-    using detail::has_value;
+
+    /**
+     * @brief Deprecated C++20 concept satisfied when `T` has a member
+     * named `value`.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * Restored with its v5.0.1 definition, satisfied by any type with a
+     * member named `value`, static or not, including the application
+     * types, so that the v5.0.1 code that uses it keeps its result. It
+     * is not the concept used by the framework, `detail::has_value`,
+     * which is satisfied only by the framework types, so that the
+     * application types with a `value` member are compared as values.
+     *
+     * @deprecated There is no replacement; the concept used by the
+     * framework is internal (since 5.1.0).
+     */
+    template <class T>
+    concept has_value = requires (const T& t) { t.value; };
 
     /**
      * @brief Deprecated C++20 concept satisfied when `T` is a

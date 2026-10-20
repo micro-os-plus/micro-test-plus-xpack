@@ -839,8 +839,13 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         static_assert (not type_traits::has_npos<int>);
         static_assert (type_traits::has_value<detail::integral_constant<42>>);
         static_assert (not type_traits::has_value<to_i>);
-        // The application types are excluded, unlike in v5.0.1.
-        static_assert (not type_traits::has_value<with_value_member>);
+        // As in v5.0.1, the application types with a `value` member are
+        // included; the framework uses `detail::has_value`, which
+        // excludes them.
+        static_assert (type_traits::has_value<with_value_member>);
+        static_assert (not detail::has_value<with_value_member>);
+        static_assert (not type_traits::has_value<int>);
+        static_assert (not type_traits::has_value<void>);
         static_assert (type_traits::is_floating_point<double>);
         static_assert (not type_traits::is_floating_point<int>);
 
