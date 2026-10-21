@@ -275,6 +275,21 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Formats the operands of an approximate comparison as
+   * `lhs ~ (rhs +/- epsilon)`, in the colour of the result, as the
+   * relational comparisons are.
+   */
+  template <class Lhs_T, class Rhs_T, class Epsilon_T>
+  expression_formatter&
+  expression_formatter::operator<< (
+      const detail::approx_op<Lhs_T, Rhs_T, Epsilon_T>& op)
+  {
+    return (*this << colour (op) << op.lhs () << " ~ (" << op.rhs () << " +/- "
+                  << op.epsilon () << ")" << colours_.none);
+  }
+
+  /**
+   * @details
    * This operator overload enables the `reporter` to output logical
    * conjunction (AND) expressions in a clear and structured format.
    *

@@ -192,6 +192,47 @@ namespace micro_os_plus::micro_test_plus
   le (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
+   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @brief Approximate equality comparator, with an explicit tolerance.
+   *
+   * @details
+   * The comparison succeeds if the distance between `lhs` and `rhs` is
+   * less than `epsilon`. The operands are numbers, integral or
+   * floating-point, possibly of different types, or the framework value
+   * wrappers and numeric literals, whose own tolerance is not used. For
+   * the integers, the distance is computed exactly, also for operands of
+   * different signedness, so `approx (0u, -1, 2)` succeeds; for the other
+   * types, in their common floating-point type. A failure is reported as
+   * `lhs ~ (rhs +/- epsilon)`.
+   *
+   * @code{.cpp}
+   * t.expect (mt::approx (read_adc (), 512, 3)) << "ADC reading";
+   * t.expect (mt::approx (compute_float (), 42.0f, 0.001f));
+   * @endcode
+   *
+   * The `approx (value, epsilon)` form is a value wrapper instead, which
+   * applies its tolerance to the six comparisons and to the operators;
+   * it accepts only floating-point values.
+   *
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @tparam Epsilon_T Type of the tolerance.
+   *
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
+   * @param epsilon The tolerance; a negative one fails all comparisons.
+   * @return A comparator object that evaluates to true if `lhs` and `rhs`
+   * differ by less than `epsilon`.
+   *
+   * @since 5.1.0
+   */
+  template <class Lhs_T, class Rhs_T, class Epsilon_T>
+    requires (detail::approx_operand<Lhs_T> and detail::approx_operand<Rhs_T>
+              and detail::approx_operand<Epsilon_T>)
+  [[nodiscard]] constexpr auto
+  approx (Lhs_T&& lhs, Rhs_T&& rhs, Epsilon_T&& epsilon);
+
+  /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
    * @brief Generic logical **not** operation.
    *

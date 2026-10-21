@@ -179,6 +179,24 @@ namespace micro_os_plus::micro_test_plus
                                detail::less_equal{} };
   }
 
+  /**
+   * @details
+   * The `approx` function template constructs a `detail::approx_op`
+   * from the forwarded operands and tolerance; the operands are numbers,
+   * so `detail::as_operand()`, which converts the C strings, is not
+   * needed.
+   */
+  template <class Lhs_T, class Rhs_T, class Epsilon_T>
+    requires (detail::approx_operand<Lhs_T> and detail::approx_operand<Rhs_T>
+              and detail::approx_operand<Epsilon_T>)
+  constexpr auto
+  approx (Lhs_T&& lhs, Rhs_T&& rhs, Epsilon_T&& epsilon)
+  {
+    return detail::approx_op{ std::forward<Lhs_T> (lhs),
+                              std::forward<Rhs_T> (rhs),
+                              std::forward<Epsilon_T> (epsilon) };
+  }
+
   // --------------------------------------------------------------------------
   // Logical operators.
 

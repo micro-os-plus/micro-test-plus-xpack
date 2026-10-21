@@ -52,8 +52,10 @@
 #include <cerrno>
 #include <cfloat>
 #include <charconv>
+#include <cstdint>
 #include <cstdio>
 #include <cstdlib>
+#include <limits>
 
 // ----------------------------------------------------------------------------
 
@@ -397,6 +399,102 @@ namespace micro_os_plus::micro_test_plus
           }
       }() }
     {
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
+     * For the integers, the larger value is selected with
+     * `std::cmp_less()`, and the distance is computed in
+     * `std::uintmax_t`: when both values have the same sign, as the
+     * modular difference of their conversions, which is exact; otherwise,
+     * as the sum of the larger value and of the magnitude of the negative
+     * one, saturated at the maximum of the type, which is then larger than
+     * any tolerance, as the true distance is. The tolerance is compared
+     * with `std::cmp_less()`, so a negative one gives `false`.
+     *
+     * For the other types, the values are converted to their common type,
+     * which is a floating-point one, so `std::int64_t` values compared
+     * with a `float` tolerance lose precision; the comparison is strict,
+     * as in the tolerances of the floating-point wrappers.
+     */
+    template <class Lhs_T, class Rhs_T, class Epsilon_T>
+    constexpr bool
+    differ_by_less_than (Lhs_T lhs, Rhs_T rhs, Epsilon_T epsilon)
+    {
+      if constexpr (std::is_integral_v<Lhs_T> and std::is_integral_v<Rhs_T>
+                    and std::is_integral_v<Epsilon_T>)
+        {
+          const auto distance
+              = [] (auto larger, auto smaller) constexpr -> std::uintmax_t
+            {
+              if constexpr (std::is_signed_v<decltype (smaller)>)
+                {
+                  if (smaller < 0 and std::cmp_greater_equal (larger, 0))
+                    {
+                      // The magnitude of the negative value, without
+                      // negating the minimum of its type.
+                      const auto magnitude
+                          = static_cast<std::uintmax_t> (-(smaller + 1)) + 1u;
+                      const auto upper = static_cast<std::uintmax_t> (larger);
+                      if (upper > std::numeric_limits<std::uintmax_t>::max ()
+                                      - magnitude)
+                        {
+                          return std::numeric_limits<std::uintmax_t>::max ();
+                        }
+                      return upper + magnitude;
+                    }
+                }
+              return static_cast<std::uintmax_t> (larger)
+                     - static_cast<std::uintmax_t> (smaller);
+            };
+
+          const std::uintmax_t difference = std::cmp_less (lhs, rhs)
+                                                ? distance (rhs, lhs)
+                                                : distance (lhs, rhs);
+          return std::cmp_less (difference, epsilon);
+        }
+      else
+        {
+          using float_type = std::common_type_t<Lhs_T, Rhs_T, Epsilon_T>;
+          return math::abs (static_cast<float_type> (lhs)
+                            - static_cast<float_type> (rhs))
+                 < static_cast<float_type> (epsilon);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
+     * The result is computed from the unwrapped arguments, with
+     * `detail::differ_by_less_than()`, before the operands are forwarded
+     * to the base and the tolerance to its member.
+     */
+    template <class Lhs_T, class Rhs_T, class Epsilon_T>
+    template <class L, class R, class E>
+    constexpr approx_op<Lhs_T, Rhs_T, Epsilon_T>::approx_op (L&& lhs, R&& rhs,
+                                                             E&& epsilon)
+        : binary_op<Lhs_T, Rhs_T>{ std::forward<L> (lhs),
+                                   std::forward<R> (rhs),
+                                   detail::differ_by_less_than (
+                                       detail::unwrap (lhs),
+                                       detail::unwrap (rhs),
+                                       detail::unwrap (epsilon)) },
+          epsilon_{ std::forward<E> (epsilon) }
+    {
+    }
+
+    /**
+     * @details
+     * Returns the stored tolerance, unwrapped with `detail::unwrap()`.
+     */
+    template <class Lhs_T, class Rhs_T, class Epsilon_T>
+    constexpr decltype (auto)
+    approx_op<Lhs_T, Rhs_T, Epsilon_T>::epsilon (void) const
+    {
+      return detail::unwrap (epsilon_);
     }
 
     // ------------------------------------------------------------------------

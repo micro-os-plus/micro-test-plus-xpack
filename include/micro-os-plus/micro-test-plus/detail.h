@@ -786,6 +786,146 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
+     * @brief The type of an operand, after the framework wrappers are
+     * removed by `detail::unwrap()`.
+     *
+     * @tparam T The type of the operand, possibly a reference.
+     */
+    template <class T>
+    using unwrapped_t = std::remove_cvref_t<decltype (detail::unwrap (
+        std::declval<const std::remove_cvref_t<T>&> ()))>;
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a valid operand of the
+     * approximate comparator.
+     *
+     * @tparam T The type to be checked, possibly a reference.
+     *
+     * @details
+     * The `approx_operand` concept is satisfied when `T`, or the value it
+     * wraps (for the framework value wrappers and the numeric literals), is
+     * an arithmetic type other than `bool` and the character types (`char`,
+     * `wchar_t`, `char8_t`, `char16_t`, and `char32_t`), which are not
+     * numbers; `signed char` and `unsigned char` are accepted, as the
+     * integer types they are.
+     */
+    template <class T>
+    concept approx_operand = std::is_arithmetic_v<unwrapped_t<T>>
+                             and not std::is_same_v<unwrapped_t<T>, bool>
+                             and not std::is_same_v<unwrapped_t<T>, char>
+                             and not std::is_same_v<unwrapped_t<T>, wchar_t>
+                             and not std::is_same_v<unwrapped_t<T>, char8_t>
+                             and not std::is_same_v<unwrapped_t<T>, char16_t>
+                             and not std::is_same_v<unwrapped_t<T>, char32_t>;
+
+    /**
+     * @brief Tells whether two numbers differ by less than a tolerance.
+     *
+     * @details
+     * If the three values are integers, the distance is computed exactly,
+     * as an unsigned value, also for operands of mixed signedness, and
+     * compared with the tolerance with `std::cmp_less()`, so that neither
+     * overflows nor wraps around. Otherwise, the values are converted to
+     * their common floating-point type, and the absolute value of the
+     * difference is compared with the tolerance. A negative tolerance, or
+     * a NaN, makes the result `false`.
+     *
+     * @tparam Lhs_T The arithmetic type of the first value.
+     * @tparam Rhs_T The arithmetic type of the second value.
+     * @tparam Epsilon_T The arithmetic type of the tolerance.
+     *
+     * @param lhs The first value.
+     * @param rhs The second value.
+     * @param epsilon The tolerance.
+     * @retval true The distance between the values is less than the
+     * tolerance.
+     * @retval false Otherwise.
+     */
+    template <class Lhs_T, class Rhs_T, class Epsilon_T>
+    [[nodiscard]] constexpr bool
+    differ_by_less_than (Lhs_T lhs, Rhs_T rhs, Epsilon_T epsilon);
+
+    /**
+     * @brief Approximate comparator struct template.
+     *
+     * @details
+     * Derived from `binary_op`, this struct compares two numbers with an
+     * explicit tolerance, given as a third operand: the comparison
+     * succeeds if the distance between the numbers is less than the
+     * tolerance (see `detail::differ_by_less_than()`). The result is
+     * computed at construction time. It is created by the
+     * `approx (lhs, rhs, epsilon)` function comparator, and reported as
+     * `lhs ~ (rhs +/- epsilon)`.
+     *
+     * The operands may be framework value wrappers or numeric literals,
+     * which are unwrapped; their own tolerance, if any, is not used.
+     *
+     * @tparam Lhs_T The type of the stored left-hand operand, either the
+     * operand type, or a `const` reference to it (see `stored_operand_t`).
+     * @tparam Rhs_T The type of the stored right-hand operand, either the
+     * operand type, or a `const` reference to it.
+     * @tparam Epsilon_T The type of the stored tolerance, either the
+     * operand type, or a `const` reference to it.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <class Lhs_T, class Rhs_T, class Epsilon_T>
+    struct approx_op : binary_op<Lhs_T, Rhs_T>
+    {
+      /**
+       * @brief Constructs an approximate comparator for the given operands.
+       *
+       * @details
+       * The result is computed from the arguments, before they are
+       * forwarded to the members.
+       *
+       * @tparam L The type of the left-hand operand argument.
+       * @tparam R The type of the right-hand operand argument.
+       * @tparam E The type of the tolerance argument.
+       *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       * @param epsilon The tolerance.
+       */
+      template <class L, class R, class E>
+      constexpr approx_op (L&& lhs, R&& rhs, E&& epsilon);
+
+      /**
+       * @brief Retrieves the tolerance.
+       *
+       * @details
+       * The tolerance is unwrapped with `detail::unwrap()`, as the
+       * operands are.
+       *
+       * @par Parameters
+       *   None.
+       * @return The extracted tolerance.
+       */
+      [[nodiscard]] constexpr decltype (auto)
+      epsilon (void) const;
+
+    private:
+      /**
+       * @brief The stored tolerance.
+       */
+      Epsilon_T epsilon_;
+    };
+
+    /**
+     * @brief Deduction guide for the approximate comparator.
+     *
+     * @details
+     * Deduces `Lhs_T`, `Rhs_T`, and `Epsilon_T` from the constructor
+     * arguments, which are stored as `stored_operand_t` selects.
+     */
+    template <class Lhs_T, class Rhs_T, class Epsilon_T>
+    approx_op (Lhs_T&&, Rhs_T&&, Epsilon_T&&)
+        -> approx_op<stored_operand_t<Lhs_T>, stored_operand_t<Rhs_T>,
+                     stored_operand_t<Epsilon_T>>;
+
+    // ========================================================================
+
+    /**
      * @brief Logical AND comparator struct template.
      *
      * @details

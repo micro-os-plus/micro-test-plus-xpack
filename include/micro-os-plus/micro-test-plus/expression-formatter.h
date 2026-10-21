@@ -715,6 +715,24 @@ namespace micro_os_plus::micro_test_plus
       operator<< (const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op);
 
       /**
+       * @brief Formats an approximate comparison as
+       * `lhs ~ (rhs +/- epsilon)`.
+       *
+       * @details
+       * The notation is the one used by Boost UT, in ASCII, so that it is
+       * also valid in the TAP output.
+       *
+       * @tparam Lhs_T Left-hand operand type.
+       * @tparam Rhs_T Right-hand operand type.
+       * @tparam Epsilon_T Tolerance type.
+       * @param op The comparison expression.
+       * @return Reference to this instance.
+       */
+      template <class Lhs_T, class Rhs_T, class Epsilon_T>
+      expression_formatter&
+      operator<< (const detail::approx_op<Lhs_T, Rhs_T, Epsilon_T>& op);
+
+      /**
        * @brief Formats a logical AND as `(lhs and rhs)`.
        *
        * @tparam Lhs_T Left-hand operand type.

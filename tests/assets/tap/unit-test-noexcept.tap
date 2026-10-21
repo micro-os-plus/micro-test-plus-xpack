@@ -661,6 +661,64 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           ...
         1..21
     not ok 4 - Failed float comparisons # { FAILED, 0 checks passed, 21 failed }
+    # Subtest: Approximate comparisons
+        ok 1 - actual ~ 43 +/- 2
+        ok 2 - 510u ~ 512u +/- 3u
+        ok 3 - 0u ~ -1 +/- 2
+        ok 4 - max ~ max - 1 +/- 2
+        ok 5 - actual ~ 42.001f +/- 0.01f
+        ok 6 - 1.5 ~ 1.25f +/- 0.5
+        ok 7 - 10 ~ 10.4 +/- 0.5
+        ok 8 - 42_i ~ 43 +/- 2
+        ok 9 - 500 ~ 512 +/- 13
+        ok 10 - not 10 ~ 20 +/- 5
+        1..10
+    ok 5 - Approximate comparisons # { passed, 10 checks }
+    # Subtest: Failed approximate comparisons
+        not ok 1 - actual ~ 44 +/- 2
+          ---
+          condition: "42 ~ (44 +/- 2)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 411
+          ...
+        not ok 2 - 10 ~ 12 +/- 2
+          ---
+          condition: "10 ~ (12 +/- 2)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 416
+          ...
+        not ok 3 - 3u ~ 5u +/- 1u
+          ---
+          condition: "3u ~ (5u +/- 1u)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 420
+          ...
+        not ok 4 - 1 ~ 1 +/- -1
+          ---
+          condition: "1 ~ (1 +/- -1)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 424
+          ...
+        not ok 5 - actual ~ 42.1f +/- 0.01f
+          ---
+          condition: "42.0f ~ (42.1f +/- 0.01f)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 427
+          ...
+        not ok 6
+          ---
+          condition: "1.0 ~ (1.2 +/- 0.1)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 431
+          ...
+        1..6
+    not ok 6 - Failed approximate comparisons # { FAILED, 0 checks passed, 6 failed }
     # Subtest: String comparisons
         ok 1 - actual_sv == abc_sv
         ok 2 - actual_sv != abx_sv
@@ -669,7 +727,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
         ok 5 - actual_sv > abb_sv
         ok 6 - actual_sv >= abc_sv
         1..6
-    ok 5 - String comparisons # { passed, 6 checks }
+    ok 7 - String comparisons # { passed, 6 checks }
     # Subtest: Failed string comparisons
         not ok 1 - actual_sv != abc_sv
           ---
@@ -714,7 +772,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
             lineNumber: 414
           ...
         1..6
-    not ok 6 - Failed string comparisons # { FAILED, 0 checks passed, 6 failed }
+    not ok 8 - Failed string comparisons # { FAILED, 0 checks passed, 6 failed }
     # Subtest: C string comparisons
         ok 1 - actual == "abc"
         ok 2 - array == actual
@@ -731,7 +789,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
         ok 13 - null_string < ""
         ok 14 - unterminated == "abc"
         1..14
-    ok 7 - C string comparisons # { passed, 14 checks }
+    ok 9 - C string comparisons # { passed, 14 checks }
     # Subtest: Failed C string comparisons
         not ok 1 - actual == "abx"
           ---
@@ -748,7 +806,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
             lineNumber: 482
           ...
         1..2
-    not ok 8 - Failed C string comparisons # { FAILED, 0 checks passed, 2 failed }
+    not ok 10 - Failed C string comparisons # { FAILED, 0 checks passed, 2 failed }
     # Subtest: Pointer comparisons
         ok 1 - ptr1 == &one
         ok 2 - ptr1 == ptr2
@@ -760,7 +818,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
         ok 8 - pone < ptwo
         ok 9 - ptwo > pone
         1..9
-    ok 9 - Pointer comparisons # { passed, 9 checks }
+    ok 11 - Pointer comparisons # { passed, 9 checks }
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
@@ -826,13 +884,13 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
             lineNumber: 596
           ...
         1..9
-    not ok 10 - Failed pointer comparisons # { FAILED, 0 checks passed, 9 failed }
+    not ok 12 - Failed pointer comparisons # { FAILED, 0 checks passed, 9 failed }
     # Subtest: Null pointer comparisons
         ok 1 - a_nullptr == nullptr
         ok 2 - a_non_nullptr != nullptr
         ok 3 - pfunc == nullptr
         1..3
-    ok 11 - Null pointer comparisons # { passed, 3 checks }
+    ok 13 - Null pointer comparisons # { passed, 3 checks }
     # Subtest: Failed null pointer comparisons
         not ok 1 - a_nullptr != nullptr
           ---
@@ -856,7 +914,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
             lineNumber: 650
           ...
         1..3
-    not ok 12 - Failed null pointer comparisons # { FAILED, 0 checks passed, 3 failed }
+    not ok 14 - Failed null pointer comparisons # { FAILED, 0 checks passed, 3 failed }
     # Subtest: Logical operations
         ok 1 - not (actual != 42)
         not ok 2 - not (actual == 42)
@@ -907,9 +965,9 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
             lineNumber: 718
           ...
         1..12
-    not ok 13 - Logical operations # { FAILED, 6 checks passed, 6 failed }
-    1..13
-not ok 4 - Comparisons suite # { FAILED, 73 checks passed, 55 failed, in 13 test cases }
+    not ok 15 - Logical operations # { FAILED, 6 checks passed, 6 failed }
+    1..15
+not ok 4 - Comparisons suite # { FAILED, 83 checks passed, 61 failed, in 15 test cases }
 # Subtest: Deprecated suite
     # Subtest: runner (const char*)
         ok 1 - name given to the constructor
@@ -3536,4 +3594,4 @@ ok 12 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..13
-# { total: 646 checks passed, 357 failed, in 123 test cases, 13 test suites }
+# { total: 656 checks passed, 363 failed, in 125 test cases, 13 test suites }

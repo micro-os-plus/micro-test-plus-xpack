@@ -721,6 +721,9 @@ auto gt(const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class Lhs_T, class Rhs_T>
 auto ge(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, class Epsilon_T>
+auto approx(const Lhs_T& lhs, const Rhs_T& rhs, const Epsilon_T& epsilon);
 ```
 
 The C strings (`char` arrays, including the string literals, and `char`
@@ -729,6 +732,20 @@ pointers) are compared by content, also with `std::string` and
 not the addresses; a null `char` pointer is equal only to another null
 pointer (or `nullptr`), not to an empty string. The other pointers and
 arrays (including `uint8_t` buffers) are compared by address.
+
+The `approx()` comparator succeeds if its first two operands differ by
+less than the third one, the tolerance. The operands are numbers,
+integral or floating-point, possibly of different types, or the value
+wrappers and the numeric literals, whose own tolerance is not used. For
+the integers, the distance is computed exactly, also for operands of
+different signedness, without wrap-around; for the other types, in
+their common floating-point type. A failure is reported as
+`lhs ~ (rhs +/- epsilon)`:
+
+```cpp
+t.expect (mt::approx (read_adc (), 512, 3)) << "ADC reading";
+// When it fails: 509 ~ (512 +/- 3)
+```
 
 Refer to the [Function Comparators](/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/) reference page.
 
@@ -936,6 +953,12 @@ explicitly, independent of how the value is written, use `mt::approx()`:
 ```cpp
 t.expect (mt::eq (compute_float (), mt::approx (42.0f, 0.001f)));
 ```
+
+This form, with two arguments, wraps a floating-point value, and its
+tolerance applies to all six comparisons and to the operators; for a
+single comparison, also of integers, the
+[`approx()` comparator](#function-comparators), with three arguments,
+may be used instead.
 
 The `_b` literal creates a named boolean constant, with the value `true`,
 which is reported by its name instead of its value; it gives a name to a

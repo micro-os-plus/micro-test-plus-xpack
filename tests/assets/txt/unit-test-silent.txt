@@ -35,6 +35,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Failed integer comparisons
     • Float comparisons
     • Failed float comparisons
+    • Approximate comparisons
+    • Failed approximate comparisons
     • String comparisons
     • Failed string comparisons
     • C string comparisons

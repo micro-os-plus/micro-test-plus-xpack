@@ -45,7 +45,10 @@ The relational comparisons (`<`, `<=`, `>`, `>=`, `lt()`, `le()`, `gt()`,
 `ge()`) now apply the tolerance of the floating-point literals and
 wrappers, as `==` and `!=` already did: values within the tolerance are
 equal, so `1.45 < 1.5_d` is now false, and `1.45 <= 1.5_d` true. The new
-`mt::approx (value, epsilon)` sets the tolerance explicitly.
+`mt::approx (value, epsilon)` sets the tolerance explicitly. The new
+function comparator `mt::approx (lhs, rhs, epsilon)`, as in Boost UT,
+compares two numbers, integral or floating-point, with an explicit
+tolerance, and is reported as `lhs ~ (rhs +/- epsilon)`.
 
 The tolerance of the floating-point wrappers (`mt::to_f`, `mt::to_d`,
 and `mt::to_ld`) is now one unit of the last decimal of the value, as

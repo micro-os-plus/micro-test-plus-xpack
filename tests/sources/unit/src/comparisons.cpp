@@ -13,6 +13,9 @@
 
 #include "unit-test.h"
 
+#include <cstdint>
+#include <limits>
+
 using namespace micro_os_plus::micro_test_plus;
 using namespace std::literals;
 
@@ -336,6 +339,97 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
               << "1111111111.42 == 1111111111.42_d";
           local_counts.failed_checks++;
         }
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // --------------------------------------------------------------------------
+
+    // The approximate comparator accepts the integers, the floating-point
+    // values, and the wrappers, of mixed types and signedness.
+    ts.test ("Approximate comparisons", [] (auto& t)
+      {
+        t.expect (approx (my_actual_integral<int> (), 43, 2))
+            << "actual ~ 43 +/- 2";
+        local_counts.passed_checks++;
+
+        t.expect (approx (510u, 512u, 3u)) << "510u ~ 512u +/- 3u";
+        local_counts.passed_checks++;
+
+        t.expect (approx (0u, -1, 2)) << "0u ~ -1 +/- 2";
+        local_counts.passed_checks++;
+
+        t.expect (approx (std::numeric_limits<std::uint64_t>::max (),
+                          std::numeric_limits<std::uint64_t>::max () - 1, 2))
+            << "max ~ max - 1 +/- 2";
+        local_counts.passed_checks++;
+
+        t.expect (approx (my_actual_float<float> (), 42.001f, 0.01f))
+            << "actual ~ 42.001f +/- 0.01f";
+        local_counts.passed_checks++;
+
+        t.expect (approx (1.5, 1.25f, 0.5)) << "1.5 ~ 1.25f +/- 0.5";
+        local_counts.passed_checks++;
+
+        t.expect (approx (10, 10.4, 0.5)) << "10 ~ 10.4 +/- 0.5";
+        local_counts.passed_checks++;
+
+        {
+          using namespace literals;
+
+          t.expect (approx (42_i, 43, 2)) << "42_i ~ 43 +/- 2";
+          local_counts.passed_checks++;
+
+          t.expect (approx (to_u16 (500), 512, 13)) << "500 ~ 512 +/- 13";
+          local_counts.passed_checks++;
+        }
+
+        t.expect (negate (approx (10, 20, 5))) << "not 10 ~ 20 +/- 5";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // --------------------------------------------------------------------------
+
+    ts.test ("Failed approximate comparisons", [] (auto& t)
+      {
+        t.expect (approx (my_actual_integral<int> (), 44, 2))
+            << "actual ~ 44 +/- 2";
+        local_counts.failed_checks++;
+
+        // The distance is less than the tolerance, not equal to it.
+        t.expect (approx (10, 12, 2)) << "10 ~ 12 +/- 2";
+        local_counts.failed_checks++;
+
+        // No wrap around of the unsigned difference.
+        t.expect (approx (3u, 5u, 1u)) << "3u ~ 5u +/- 1u";
+        local_counts.failed_checks++;
+
+        // A negative tolerance fails.
+        t.expect (approx (1, 1, -1)) << "1 ~ 1 +/- -1";
+        local_counts.failed_checks++;
+
+        t.expect (approx (my_actual_float<float> (), 42.1f, 0.01f))
+            << "actual ~ 42.1f +/- 0.01f";
+        local_counts.failed_checks++;
+
+        t.expect (approx (1.0, 1.2, 0.1));
+        local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
       });

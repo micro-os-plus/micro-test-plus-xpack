@@ -788,6 +788,9 @@ namespace micro_os_plus::micro_test_plus
    * t.expect (mt::eq (compute_float (), mt::approx (42.0f, 0.001f)));
    * @endcode
    *
+   * For a single comparison, also of integers, the
+   * `approx (lhs, rhs, epsilon)` function comparator may be used instead.
+   *
    * @tparam T The floating-point type of the value.
    *
    * @param value The expected value.

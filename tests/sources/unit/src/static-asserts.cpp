@@ -605,6 +605,54 @@ static_asserts ()
 
     {
       using namespace literals;
+      using int64_limits = std::numeric_limits<std::int64_t>;
+      using uint64_limits = std::numeric_limits<std::uint64_t>;
+
+      // The approximate comparator succeeds when the distance is less than
+      // the tolerance.
+      static_assert (approx (10, 11, 2));
+      static_assert (approx (12, 10, 3));
+      static_assert (not approx (10, 12, 2));
+      static_assert (approx (1.0, 1.05, 0.1));
+      static_assert (not approx (1.0, 1.2, 0.1));
+      static_assert (approx (10, 10.4, 0.5));
+      static_assert (approx (42_i, 43, 2));
+      static_assert (approx (to_u16 (500), 512, 13));
+      // The integer distance is exact, without wrap around or overflow.
+      static_assert (approx (5u, 3u, 3));
+      static_assert (not approx (3u, 5u, 2u));
+      static_assert (approx (0u, -1, 2));
+      static_assert (not approx (0u, -1, 1));
+      static_assert (not approx (std::uint8_t{ 1 }, std::int8_t{ -128 }, 129));
+      static_assert (approx (std::uint8_t{ 1 }, std::int8_t{ -128 }, 130));
+      static_assert (
+          approx (uint64_limits::max (), uint64_limits::max () - 1, 2));
+      static_assert (approx (int64_limits::max (), int64_limits::min () + 1,
+                             uint64_limits::max ()));
+      static_assert (not approx (int64_limits::min (), int64_limits::max (),
+                                 uint64_limits::max ()));
+      static_assert (not approx (uint64_limits::max (), std::int64_t{ -1 },
+                                 uint64_limits::max ()));
+      // A negative or zero tolerance fails.
+      static_assert (not approx (1, 1, -1));
+      static_assert (not approx (1, 1, 0));
+      static_assert (extension::is_op<decltype (approx (1, 2, 3))>);
+
+      // The operands are numbers or framework wrappers.
+      static_assert (detail::approx_operand<int>);
+      static_assert (detail::approx_operand<const double&>);
+      static_assert (detail::approx_operand<signed char>);
+      static_assert (detail::approx_operand<to_i>);
+      static_assert (detail::approx_operand<decltype (1.5_d)>);
+      static_assert (not detail::approx_operand<bool>);
+      static_assert (not detail::approx_operand<char>);
+      static_assert (not detail::approx_operand<char32_t>);
+      static_assert (not detail::approx_operand<const char*>);
+      static_assert (not detail::approx_operand<std::string>);
+    }
+
+    {
+      using namespace literals;
       using namespace operators;
 
       [[maybe_unused]] const std::string str{ "abc" };
