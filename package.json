@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
-  "version": "5.0.1",
+  "version": "5.1.0-pre",
   "description": "A source code library with µTest++, a lightweight, macro-free C++ testing framework for embedded projects, with TAP output",
   "keywords": [
     "xpack",
