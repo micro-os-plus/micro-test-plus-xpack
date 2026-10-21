@@ -251,15 +251,15 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Parses the µTest++ options from the command line (`--reporter`,
-     * `--silent`, `--quiet`, `--verbose`, `--output-file`, and
-     * `--filter`) into a
+     * `--silent`, `--quiet`, `--verbose`, `--output-file`,
+     * `--color`, `--use-colour`, and `--filter`) into a
      * `runner_options` structure, and continues as the overload taking
      * the options. The other arguments are ignored, since the
      * applications may define their own.
      *
-     * A missing option argument, or an unknown reporter name, is reported
-     * on `stderr` and the option is ignored; the tests are still run, but
-     * `run()` returns 2.
+     * A missing option argument, an unknown reporter name, or an unknown
+     * colour mode, is reported on `stderr` and the option is ignored; the
+     * tests are still run, but `run()` returns 2.
      *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
@@ -730,9 +730,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * All the options are parsed here, once, and passed to the reporter;
      * the arguments not recognised as options are ignored, since the
-     * applications may define their own. A missing option argument, or
-     * an unknown reporter name, is reported on `stderr`, the option is
-     * ignored, and `has_option_errors_` is set.
+     * applications may define their own. A missing option argument, an
+     * unknown reporter name, or an unknown colour mode, is reported on
+     * `stderr`, the option is ignored, and `has_option_errors_` is set.
      *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
@@ -911,8 +911,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Whether `initialise()` reported an option error.
      *
      * @details
-     * Set for a missing option argument, an unknown reporter name, or an
-     * output file that cannot be opened; `run()` then returns 2.
+     * Set for a missing option argument, an unknown reporter name, an
+     * unknown colour mode, or an output file that cannot be opened;
+     * `run()` then returns 2.
      */
     bool has_option_errors_ = false;
 

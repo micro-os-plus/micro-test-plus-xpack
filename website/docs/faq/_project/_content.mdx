@@ -114,6 +114,20 @@ rejected with `error: unknown reporter '<name>'`.
 </details>
 
 <details>
+<summary>Why is the human-readable output not coloured in CI?</summary>
+
+By default, the human reporter uses colours only when `stdout` is a
+terminal, which is not the case in most CI systems, or when the output
+is piped. To force them, for example when the CI log renders the ANSI
+escape sequences, use `--color` (or `--color=always`); to disable
+them, use `--color=never`. The Catch2 and Boost UT form,
+`--use-colour=yes` or `--use-colour=no`, is also accepted. The output
+file never receives colours. See
+[Colours](/docs/user/#colours).
+
+</details>
+
+<details>
 <summary>Why do my static test suites not run?</summary>
 
 Usually because the source files that define them are compiled into a

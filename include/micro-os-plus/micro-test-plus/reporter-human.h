@@ -81,8 +81,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * abstract interface, formatting and presenting test results in a
    * human-readable form. It accumulates output in an internal string
    * buffer and writes it to the standard output stream, supporting
-   * colour-coded diagnostics (when the output is a terminal) and multiple
-   * verbosity levels.
+   * colour-coded diagnostics (when the output is a terminal, or when
+   * forced with `--color`) and multiple verbosity levels.
    *
    * The reporter is intended for the people who read the console output.
    * Most writes to the optional output file follow the console verbosity,

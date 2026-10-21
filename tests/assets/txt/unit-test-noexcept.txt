@@ -1106,8 +1106,11 @@ break	tab == x)
         ✓ valid options still applied
         ✓ unknown reporter
         ✓ missing argument
+        ✓ valid colour modes
+        ✓ --color alone keeps the next argument
+        ✓ unknown colour mode
         ✓ output file not opened
-    ✓ Runner option errors - passed (4 checks)
+    ✓ Runner option errors - passed (7 checks)
     • Runner filter
         ✓ suite filter passed
         ✓ matching suites run
@@ -1243,7 +1246,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (197 checks passed, 34 failed, in 55 test cases)
+✗ Miscellaneous suite - FAILED (200 checks passed, 34 failed, in 55 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1354,4 +1357,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 674 checks passed, 364 failed, in 143 test cases, 13 test suites
+✗ Total: 677 checks passed, 364 failed, in 143 test cases, 13 test suites

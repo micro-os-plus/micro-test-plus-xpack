@@ -330,7 +330,7 @@ options.verbosity_level = mt::verbosity::verbose;
 auto& ts = tr.initialise(options, "Main");
 ```
 
-The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, `output_file_path` to `--output-file`, and `filter_patterns` to `--filter`.
+The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, `output_file_path` to `--output-file`, `colour` to `--color` (or `--use-colour`), and `filter_patterns` to `--filter`.
 
 #### Test result
 
@@ -340,7 +340,7 @@ To run the registered suites, end the session, and return the test result as the
 return tr.run ();
 ```
 
-The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)). If the command-line options, or the `runner_options`, were not valid (an unknown reporter name, a missing option argument, or an output file that cannot be opened), the error is reported on `stderr` when the runner is initialised, the option is ignored, and the tests are still run, but the result is 2.
+The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)). If the command-line options, or the `runner_options`, were not valid (an unknown reporter name, an unknown colour mode, a missing option argument, or an output file that cannot be opened), the error is reported on `stderr` when the runner is initialised, the option is ignored, and the tests are still run, but the result is 2.
 
 #### Aborting the test execution
 
@@ -1775,6 +1775,26 @@ The output is slightly more compact, for example:
 ```
 
 The human reporter is intended for reading the console output. For the integration with other tools, use the TAP reporter, whose output file is always complete (see [Output file](#output-file)).
+
+### Colours
+
+The human reporter highlights the results in colour (green for the passed checks and red for the failed ones). By default, the colours are used only when the standard output is a terminal, which can be detected only on POSIX platforms (Linux, macOS); when the output is redirected to a file or a pipe, and on the other platforms, such as the embedded ones, the output is plain.
+
+To select the colours explicitly, use the `--color` option, as in the GNU tools (`ls`, `grep`, `diff`):
+
+- `--color=auto` – use colours only when the output is a terminal (the default)
+- `--color=always`, or `--color` alone – always use colours, for example in a CI system that renders the ANSI escape sequences but does not provide a terminal, or on an embedded target whose output is displayed by a terminal
+- `--color=never` – never use colours
+
+```sh
+sample-test --reporter=human --color
+```
+
+As in the GNU tools, the value must be attached with `=`; the argument that follows `--color` is never taken as its value. The GNU synonyms are also accepted: `yes` and `force` for `always`, `no` and `none` for `never`, and `tty` and `if-tty` for `auto`.
+
+For compatibility with Catch2 and Boost UT, the alternative `--use-colour` option is also accepted, either as `--use-colour=<mode>` or as `--use-colour <mode>`, with the modes `yes`, `no`, and `auto` (and the other values of `--color`). When both options are given, the last one takes effect.
+
+The TAP reporter never uses colours, since the escape sequences are not part of the TAP syntax, and the output file never receives them, whatever the mode. An unknown mode is reported on `stderr`, the option is ignored, and the program returns 2.
 
 ## Known problems
 

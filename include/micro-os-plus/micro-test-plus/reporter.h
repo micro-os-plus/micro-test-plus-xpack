@@ -1007,8 +1007,10 @@ namespace micro_os_plus::micro_test_plus
        * @brief ANSI colour codes for output formatting.
        *
        * @details
-       * Empty strings by default; the concrete reporters may assign
-       * `detail::colours_red_green` when the console supports colours.
+       * Empty strings by default; the human reporter assigns
+       * `detail::colours_red_green` when colours are enabled by
+       * `runner_options::colour`, explicitly or because the console
+       * is a terminal.
        */
       colours colours_{};
 

@@ -18,8 +18,9 @@
  * @details
  * This header provides the `runner_options` structure, which holds the
  * configuration of a test session (the reporter, the verbosity, the
- * output file, and the suite filter), together with the `reporter_kind`
- * and `verbosity` enumerations used by its members.
+ * output file, the use of colours, and the suite filter), together with
+ * the `reporter_kind`, `verbosity`, and `colour_mode` enumerations used
+ * by its members.
  *
  * The options are usually parsed from the command line by
  * `runner::initialise (argc, argv)`; the applications without a command
@@ -132,6 +133,35 @@ namespace micro_os_plus::micro_test_plus
     human /**< The human-readable reporter, with optional colours. */
   };
 
+  /**
+   * @brief The use of colours in the console output.
+   *
+   * @details
+   * Selected with the `--color` command-line option (or its alternative,
+   * `--use-colour`), or with `runner_options::colour`; the default is
+   * `automatic`. The names follow the values of `--color` in the GNU
+   * tools.
+   *
+   * Only the human reporter uses colours; the TAP reporter never does,
+   * since the ANSI escape sequences are not part of the TAP syntax. The
+   * output file never receives colours, whatever the mode.
+   *
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+   *
+   * @since 5.1.0
+   */
+  enum class colour_mode
+  {
+    automatic, /**< Colours are used when `stdout` is a terminal; on the
+                  platforms without `isatty()`, such as the embedded
+                  ones, they are not used. */
+    always, /**< Colours are always used, for example in the CI systems
+               that render the ANSI escape sequences but do not provide a
+               terminal, or on embedded targets whose output is displayed
+               by a terminal. */
+    never /**< Colours are never used. */
+  };
+
   // ==========================================================================
 
   /**
@@ -194,6 +224,22 @@ namespace micro_os_plus::micro_test_plus
      * with an error message.
      */
     const char* output_file_path{ nullptr };
+
+    /**
+     * @brief Whether the console output uses colours.
+     *
+     * @details
+     * Set by `--color[=<when>]`, as in the GNU tools, where `<when>` is
+     * `always`, `never`, or `auto`, or one of their GNU synonyms (`yes`
+     * and `force`, `no` and `none`, `tty` and `if-tty`), and `--color`
+     * alone means `always`; the value is accepted only after `=`. The
+     * alternative `--use-colour=<mode>` or `--use-colour <mode>`, as in
+     * Catch2 and Boost UT, takes `yes`, `no`, or `auto`, and also accepts
+     * the other values of `--color`. Used only by the human reporter.
+     *
+     * @since 5.1.0
+     */
+    colour_mode colour{ colour_mode::automatic };
 
     /**
      * @brief The complete command line, including `argv[0]`, if any.

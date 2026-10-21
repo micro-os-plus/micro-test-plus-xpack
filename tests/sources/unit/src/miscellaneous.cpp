@@ -1431,6 +1431,66 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (eq (missing_runner.run (), 2)) << "missing argument";
         local_counts.passed_checks++;
 
+        char arg_color[] = "--color";
+        char arg_color_always[] = "--color=always";
+        char arg_color_never[] = "--color=never";
+        char arg_color_auto[] = "--color=auto";
+        char arg_colour_yes[] = "--use-colour=yes";
+        char arg_colour[] = "--use-colour";
+        char arg_colour_no[] = "no";
+        char arg_colour_auto[] = "--use-colour=auto";
+        // The GNU synonyms, accepted by both options.
+        char arg_color_force[] = "--color=force";
+        char arg_color_none[] = "--color=none";
+        char arg_color_if_tty[] = "--color=if-tty";
+        char arg_colour_tty[] = "--use-colour=tty";
+
+        char* colour_argv[]
+            = { arg_name,        arg_silent,     arg_color_always,
+                arg_color_never, arg_color_auto, arg_colour_yes,
+                arg_colour,      arg_colour_no,  arg_colour_auto,
+                arg_color_force, arg_color_none, arg_color_if_tty,
+                arg_colour_tty,  nullptr };
+        runner colour_runner;
+        auto& colour_ts = colour_runner.initialise (13, colour_argv);
+        colour_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        t.expect (eq (colour_runner.run (), 0)) << "valid colour modes";
+        local_counts.passed_checks++;
+
+        // As in the GNU tools, `--color` alone does not take the next
+        // argument as its value.
+        char* color_argv[] = { arg_name, arg_color, arg_silent, nullptr };
+        runner color_runner;
+        auto& color_ts = color_runner.initialise (3, color_argv);
+        color_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        t.expect (color_runner.verbosity_level () == verbosity::silent
+                  and eq (color_runner.run (), 0))
+            << "--color alone keeps the next argument";
+        local_counts.passed_checks++;
+
+        char arg_bad_color[] = "--color=maybe";
+        char arg_bad_colour[] = "--use-colour=maybe";
+
+        char* bad_colour_argv[]
+            = { arg_name, arg_silent, arg_bad_colour, nullptr };
+        runner bad_colour_runner;
+        auto& bad_colour_ts
+            = bad_colour_runner.initialise (3, bad_colour_argv);
+        bad_colour_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        char* bad_color_argv[]
+            = { arg_name, arg_silent, arg_bad_color, nullptr };
+        runner bad_color_runner;
+        auto& bad_color_ts = bad_color_runner.initialise (3, bad_color_argv);
+        bad_color_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        t.expect (eq (bad_colour_runner.run (), 2)
+                  and eq (bad_color_runner.run (), 2))
+            << "unknown colour mode";
+        local_counts.passed_checks++;
+
         runner_options options{};
         options.verbosity_level = verbosity::silent;
         options.output_file_path = "/non-existent-folder/report.txt";

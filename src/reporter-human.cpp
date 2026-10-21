@@ -71,10 +71,11 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Delegates construction to the `reporter` base class with the supplied
-   * options. On POSIX platforms, if `stdout` is connected to a
-   * terminal (`isatty()`), colour output is enabled by selecting the
-   * red/green colour scheme. If tracing is enabled, the function
-   * signature is output for diagnostic purposes.
+   * options. Colour output is enabled, by selecting the red/green colour
+   * scheme, when `opts.colour` is `colour_mode::always`, or when it
+   * is `colour_mode::automatic` and, on POSIX platforms, `stdout` is
+   * connected to a terminal (`isatty()`). If tracing is enabled, the
+   * function signature is output for diagnostic purposes.
    */
   reporter_human::reporter_human (const runner_options& opts)
       : reporter{ opts }
@@ -83,12 +84,19 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
+    bool use_colours = (opts.colour == colour_mode::always);
+
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
-    if (isatty (fileno (stdout)))
+    if (opts.colour == colour_mode::automatic && isatty (fileno (stdout)))
+      {
+        use_colours = true;
+      }
+#endif // defined(__APPLE__) || defined(__linux__) || defined(__unix__)
+
+    if (use_colours)
       {
         colours_ = colours_red_green;
       }
-#endif // defined(__APPLE__) || defined(__linux__) || defined(__unix__)
   }
 
   /**

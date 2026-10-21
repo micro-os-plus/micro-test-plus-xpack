@@ -762,6 +762,25 @@ if (XPACK_ENABLE_UNIT_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
   )
 
+  # --verbose --color
+  # The output file never receives colours, so the console output is
+  # captured instead.
+  add_test (
+    NAME "unit-test-reporter-human-colour"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-test>" -D
+      "OUTPUT=unit-test-colour.txt" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- one two --reporter
+      human --color --verbose
+  )
+  message (VERBOSE "T> unit-test-reporter-human-colour")
+  add_compare_files_test (
+    NAME "unit-test-reporter-human-colour-compare"
+    DEPENDS "unit-test-reporter-human-colour"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-colour.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-colour.txt"
+  )
+
   # default
   add_test (NAME "unit-test-reporter-human"
             COMMAND unit-test one two --reporter human --output-file

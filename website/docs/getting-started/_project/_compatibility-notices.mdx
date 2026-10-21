@@ -290,6 +290,17 @@ tests filtered, and the suites and test cases that do not match its
 value are skipped; rename the application option, or remove it from
 the arguments passed to `initialise()`.
 
+The runner also recognises the `--color` option, as in the GNU tools
+(`--color[=always|never|auto]`, with the GNU synonyms, where `--color`
+alone means `always`),
+and its Catch2 and Boost UT alternative, `--use-colour=<mode>` or
+`--use-colour <mode>`, with `yes`, `no`, or `auto`; they force the
+colours of the human reporter on or off. Previously, the colours were
+used only when `stdout` was a terminal, which remains the default. An
+application that used its own `--color` or `--use-colour` option, and
+passed the whole command line to `initialise()`, now gets an error, and
+`run()` returns 2, when its value is not one of these modes.
+
 `assume()` is deprecated in favour of `require()`, which does the same:
 in other frameworks (JUnit, Hypothesis), an unmet assumption skips the
 test, while here it fails it. When exceptions are enabled, a failed
