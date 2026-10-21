@@ -113,7 +113,7 @@ they are relevant in the text: an earlier decision or change that this
 commit builds on or reverts (`as #61 chose`, `removed by #109`), or a
 follow-up left to another issue (`see #51`). Refer to an item of a
 review document by the document name and the item number, so that it
-is not mistaken for an issue: `(API-REVIEW.md #43)`.
+is not mistaken for an issue: `(API-REVIEW-2.md #43)`.
 
 ### Trailers
 
@@ -176,7 +176,7 @@ already approved posting it together with the commit.
 
 The findings that lead to issues are often recorded in review, change,
 or comparison documents, mainly in `maintenance/docs/` (for example
-`API-REVIEW.md`, `API-COMPATIBILITY.md`, `BOOST-UT-CHANGES.md`), and
+`API-REVIEW-<n>.md`, `API-COMPATIBILITY.md`, `BOOST-UT-CHANGES.md`), and
 in other files named `*-review*`, `*-changes*`, `*-compatibility*`, or
 similar. After the commit, search them for the issue and the finding:
 
@@ -196,7 +196,7 @@ in the format already used by that document, and always mention both
 the GitHub issue number and the short commit hash, for example:
 
 - `` Fixed in `a8733dc2` (#96): <what was done>. `` (the format of
-  `API-REVIEW.md`, under the item, with `(fixed)` added after its
+  `API-REVIEW-<n>.md`, under the item, with `(fixed)` added after its
   tags, such as `[internal] **[confirmed]**`);
 - `` Status: fixed in #155, commit `2933857e`, on 2026-10-21. <what was
   done>. `` (the format of `BOOST-UT-CHANGES.md`, after the verdict).
