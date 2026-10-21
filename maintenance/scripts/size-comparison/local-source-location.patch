@@ -1,0 +1,22 @@
+--- a/include/micro-os-plus/micro-test-plus/reflection.h
++++ b/include/micro-os-plus/micro-test-plus/reflection.h
+@@ -108,7 +108,7 @@
+   {
+     // ------------------------------------------------------------------------
+ 
+-#if defined(__cpp_lib_source_location)
++#if 0 // EXPERIMENT: always the local class
+ 
+     /**
+      * @brief Alias for source location information.
+--- a/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h
++++ b/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h
+@@ -78,7 +78,7 @@
+   {
+     // ------------------------------------------------------------------------
+ 
+-#if !defined(__cpp_lib_source_location)
++#if 1 // EXPERIMENT: always the local class
+ 
+     /**
+      * @details
