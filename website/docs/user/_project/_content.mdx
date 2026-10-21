@@ -865,6 +865,18 @@ t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
     << "vector{ 1, 2 } eq vector{ 1, 2 }";
 ```
 
+The elements are shown as `{1, 2}`, for any type that a range-based
+`for` statement can iterate, with `begin()` and `end()` members, like
+the standard containers, the spans, and the views, or functions, found
+by argument-dependent lookup. The exceptions are the arrays, which are
+compared and shown by address, as the pointers they decay to; the
+strings, which are shown as text; and the types whose elements are of
+their own type, like `std::filesystem::path`, which cannot be shown
+element by element, and are rejected by the comparators; compare
+`p.string ()` instead, or, for an application type, define an
+`operator<<` for it, as for the [custom types](#custom-types). The
+elements must themselves be printable.
+
 ### Other standard types
 
 The function comparators also accept the scoped enumerations

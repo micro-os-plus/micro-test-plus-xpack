@@ -64,6 +64,25 @@ namespace
     return formatter << "{ " << p.x << ", " << p.y << " }";
   }
 
+  // A range with begin() and end() functions, not members, found by
+  // argument-dependent lookup, as by a range-based for statement.
+  struct number_pair
+  {
+    int numbers[2];
+  };
+
+  const int*
+  begin (const number_pair& p)
+  {
+    return std::begin (p.numbers);
+  }
+
+  const int*
+  end (const number_pair& p)
+  {
+    return std::end (p.numbers);
+  }
+
   // A comparator, a predicate, and an operator of the application, built
   // only with public names, and reported as the built-in ones (#149).
   struct divides_tag
@@ -1013,6 +1032,12 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         f << std::vector<std::pair<int, int>>{ { 1, 2 }, { 3, 4 } };
         check ("{(1, 2), (3, 4)}", "container of pairs");
+
+        f << std::vector<std::vector<int>>{ { 1 }, { 2, 3 } };
+        check ("{{1}, {2, 3}}", "container of containers");
+
+        f << number_pair{ { 7, 8 } };
+        check ("{7, 8}", "range with begin() and end() functions");
 
         f << std::optional<int>{ 42 };
         check ("42", "optional with value");

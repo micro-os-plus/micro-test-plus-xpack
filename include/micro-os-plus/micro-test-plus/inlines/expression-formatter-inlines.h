@@ -157,9 +157,13 @@ namespace micro_os_plus::micro_test_plus::detail
    * Iterates the container and formats each element separated by
    * `", "`, surrounded by `{` and `}`. Each element is streamed
    * through `operator<<`, which recurses as needed for nested types.
+   *
+   * The range-based `for` statement uses the `begin()` and `end()`
+   * members, or, if there are none, the functions found by
+   * argument-dependent lookup, as `detail::formattable_range` does.
    */
   template <class T>
-    requires (detail::container_like<T> and not detail::has_npos<T>)
+    requires detail::formattable_range<T>
   expression_formatter&
   expression_formatter::operator<< (const T& t)
   {

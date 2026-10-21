@@ -74,6 +74,7 @@
 #include <concepts>
 #include <string_view>
 #include <type_traits>
+#include <utility>
 
 // ----------------------------------------------------------------------------
 
@@ -287,6 +288,99 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     concept has_npos = requires { T::npos; };
+
+    /**
+     * @brief C++20 concept satisfied when `T` provides `begin()` and
+     * `end()` only as functions found by argument-dependent lookup.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `free_range` concept is satisfied when `T` has no `begin()`
+     * and `end()` members (see `container_like`), but calls of `begin()`
+     * and `end()` with a `const T&` argument are valid, as in a
+     * range-based `for` statement, which then uses them.
+     */
+    template <class T>
+    concept free_range = (not container_like<T>) and requires (const T& t) {
+      begin (t);
+      end (t);
+    };
+
+    /**
+     * @brief The type of the elements of a range, as iterated by a
+     * range-based `for` statement.
+     *
+     * @tparam T The range type, satisfying `container_like` or
+     * `free_range`.
+     */
+    template <class T>
+    struct range_element;
+
+    /**
+     * @brief The type of the elements of a range with `begin()` and
+     * `end()` members.
+     *
+     * @tparam T The range type.
+     */
+    template <class T>
+      requires container_like<T>
+    struct range_element<T>
+    {
+      /**
+       * @brief The element type, without references and qualifiers.
+       */
+      using type = std::remove_cvref_t<
+          decltype (*std::declval<const T&> ().begin ())>;
+    };
+
+    /**
+     * @brief The type of the elements of a range with `begin()` and
+     * `end()` functions.
+     *
+     * @tparam T The range type.
+     */
+    template <class T>
+      requires free_range<T>
+    struct range_element<T>
+    {
+      /**
+       * @brief The element type, without references and qualifiers.
+       */
+      using type
+          = std::remove_cvref_t<decltype (*begin (std::declval<const T&> ()))>;
+    };
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a range that the formatter
+     * writes element by element.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `formattable_range` concept is satisfied when `T` can be
+     * iterated by a range-based `for` statement, with `begin()` and
+     * `end()` members (`container_like`) or functions (`free_range`),
+     * and:
+     * - is not an array, since the arrays are compared by address, and
+     *   are written as addresses, as the pointers they decay to;
+     * - is not a string (see `has_npos`), which is written as text;
+     * - does not have elements of its own type, like
+     *   `std::filesystem::path`, whose elements are paths, so that
+     *   formatting it would recurse without end;
+     * - has elements that satisfy `extension::printable`, so that a range
+     *   of elements that cannot be reported is rejected where it is
+     *   compared, not where its elements are formatted.
+     *
+     * The conditions are tested in this order, so the elements of a
+     * recursive range are not tested.
+     */
+    template <class T>
+    concept formattable_range
+        = (container_like<T> or free_range<T>) and (not std::is_array_v<T>)
+          and (not has_npos<T>)
+          and (not std::is_same_v<typename range_element<T>::type, T>)
+          and extension::printable<typename range_element<T>::type>;
 
     /**
      * @brief C++20 concept satisfied when `T` is a callable object that

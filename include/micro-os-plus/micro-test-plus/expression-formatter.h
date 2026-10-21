@@ -612,13 +612,15 @@ namespace micro_os_plus::micro_test_plus
        * Elements are formatted as `{ e1, e2, … }` by iterating the
        * container and recursing through `operator<<` for each element.
        *
-       * @tparam T A container type satisfying `detail::container_like`
-       * that does not have `npos`.
+       * @tparam T A range type satisfying `detail::formattable_range`:
+       * with `begin()` and `end()` members or functions, not an array,
+       * not a string, without elements of its own type, and with
+       * printable elements.
        * @param t The container.
        * @return Reference to this instance.
        */
       template <class T>
-        requires (detail::container_like<T> and not detail::has_npos<T>)
+        requires detail::formattable_range<T>
       expression_formatter&
       operator<< (const T& t);
 

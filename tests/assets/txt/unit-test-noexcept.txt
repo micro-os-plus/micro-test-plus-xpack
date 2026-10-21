@@ -1020,10 +1020,12 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ tuple
         ✓ empty tuple
         ✓ container of pairs
+        ✓ container of containers
+        ✓ range with begin() and end() functions
         ✓ optional with value
         ✓ optional without value
         ✓ nullopt
-    ✓ Formatter standard types - passed (11 checks)
+    ✓ Formatter standard types - passed (13 checks)
     • Standard types
         ✓ colour::red == colour::red
         ✓ colour::red != colour::green
@@ -1188,7 +1190,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (179 checks passed, 33 failed, in 37 test cases)
+✗ Miscellaneous suite - FAILED (181 checks passed, 33 failed, in 37 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1299,4 +1301,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 656 checks passed, 363 failed, in 125 test cases, 13 test suites
+✗ Total: 658 checks passed, 363 failed, in 125 test cases, 13 test suites

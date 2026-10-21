@@ -1077,10 +1077,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ tuple
         ✓ empty tuple
         ✓ container of pairs
+        ✓ container of containers
+        ✓ range with begin() and end() functions
         ✓ optional with value
         ✓ optional without value
         ✓ nullopt
-    ✓ Formatter standard types - passed (11 checks)
+    ✓ Formatter standard types - passed (13 checks)
     • Standard types
         ✓ colour::red == colour::red
         ✓ colour::red != colour::green
@@ -1251,7 +1253,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (185 checks passed, 33 failed, in 37 test cases), time: 4.494 ms
+✗ Miscellaneous suite - FAILED (187 checks passed, 33 failed, in 37 test cases), time: 4.183 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1362,4 +1364,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.189 ms
-✗ Total: 673 checks passed, 375 failed, in 140 test cases, 15 test suites, time: 14.289 ms
+✗ Total: 675 checks passed, 375 failed, in 140 test cases, 15 test suites, time: 17.535 ms

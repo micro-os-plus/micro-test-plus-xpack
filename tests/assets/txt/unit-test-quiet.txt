@@ -141,4 +141,4 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 673 checks passed, 375 failed, in 140 test cases, 15 test suites, time: 10.344 ms
+✗ Total: 675 checks passed, 375 failed, in 140 test cases, 15 test suites, time: 13.738 ms

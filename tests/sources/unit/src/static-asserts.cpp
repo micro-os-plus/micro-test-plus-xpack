@@ -193,6 +193,35 @@ namespace with_comparators
 
 // ----------------------------------------------------------------------------
 
+namespace with_ranges
+{
+  // A range whose elements are of its own type, like
+  // std::filesystem::path; only declared, as it is not iterated.
+  struct self_range
+  {
+    const self_range*
+    begin (void) const;
+
+    const self_range*
+    end (void) const;
+  };
+
+  // A range with begin() and end() functions, found by argument-dependent
+  // lookup; only declared, as it is not iterated.
+  struct number_pair
+  {
+    int numbers[2];
+  };
+
+  const int*
+  begin (const number_pair& p);
+
+  const int*
+  end (const number_pair& p);
+} // namespace with_ranges
+
+// ----------------------------------------------------------------------------
+
 [[maybe_unused]] static void
 static_asserts ()
 {
@@ -241,6 +270,38 @@ static_asserts ()
       static_assert (not detail::container_like<int>);
       static_assert (not detail::container_like<foo>);
       static_assert (not detail::container_like<void>);
+    }
+
+    {
+      using with_comparators::unreported;
+      using with_ranges::number_pair;
+      using with_ranges::self_range;
+
+      // The formatter writes element by element the ranges with members
+      // or functions, except the arrays, the strings, the ranges of
+      // their own type, and the ranges of elements that cannot be
+      // reported.
+      static_assert (detail::formattable_range<std::vector<int>>);
+      static_assert (detail::formattable_range<std::vector<std::vector<int>>>);
+      static_assert (detail::formattable_range<std::array<bool, 0>>);
+      static_assert (detail::formattable_range<number_pair>);
+      static_assert (detail::free_range<number_pair>);
+      static_assert (not detail::formattable_range<int[2]>);
+      static_assert (not detail::formattable_range<std::string[2]>);
+      static_assert (not detail::formattable_range<std::string>);
+      static_assert (not detail::formattable_range<std::string_view>);
+      static_assert (not detail::formattable_range<self_range>);
+      static_assert (not detail::formattable_range<std::vector<unreported>>);
+      static_assert (not detail::formattable_range<int>);
+
+      // So the ranges that cannot be reported are rejected by the
+      // comparators.
+      static_assert (extension::printable<number_pair>);
+      static_assert (not extension::printable<self_range>);
+      static_assert (not extension::printable<std::vector<unreported>>);
+      static_assert (
+          not with_comparators::any_accepts<std::vector<unreported>,
+                                            std::vector<unreported>>);
     }
 
     {

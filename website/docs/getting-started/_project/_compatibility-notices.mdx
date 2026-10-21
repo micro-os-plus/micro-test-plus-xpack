@@ -59,6 +59,17 @@ such operands that was not checked, for example one used only in a
 `static_assert()`, previously compiled, and is now an error; use the
 comparison operator of the type instead.
 
+The ranges are now detected as by a range-based `for` statement, so the
+types with `begin()` and `end()` functions, found by argument-dependent
+lookup, instead of members, are now shown element by element, and
+accepted by the comparators. The types whose elements are of their own
+type, like `std::filesystem::path`, were previously accepted, and
+formatting them, for a failed check or in the verbose mode, recursed
+until the stack overflowed; they are now rejected at compile time
+(compare `p.string ()` instead, for a path). The ranges of
+elements that cannot be reported, like `std::vector` of an application
+type without an `operator<<`, are now also rejected at the call.
+
 The tolerance of the floating-point wrappers (`mt::to_f`, `mt::to_d`,
 and `mt::to_ld`) is now one unit of the last decimal of the value, as
 documented, for all values. Previously, the rounding of many values
