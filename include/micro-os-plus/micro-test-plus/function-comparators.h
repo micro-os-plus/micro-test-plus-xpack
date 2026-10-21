@@ -100,6 +100,12 @@ namespace micro_os_plus::micro_test_plus
    * `char` pointers) are compared by content, also with `std::string` and
    * `std::string_view`; a null `char` pointer is equal only to another
    * null pointer. The other pointers and arrays are compared by address.
+   *
+   * Both operands must satisfy `extension::printable`, since they are
+   * reported on failure; an application type needs an `operator<<` for
+   * `mt::expression_formatter`, otherwise the call is rejected, with a
+   * diagnostic that names the operand type.
+   *
    * The same rules apply to `ne()`, `gt()`, `ge()`, `lt()`, and `le()`.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -110,6 +116,7 @@ namespace micro_os_plus::micro_test_plus
    * equal.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   [[nodiscard]] constexpr auto
   eq (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -125,6 +132,7 @@ namespace micro_os_plus::micro_test_plus
    * equal.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   [[nodiscard]] constexpr auto
   ne (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -140,6 +148,7 @@ namespace micro_os_plus::micro_test_plus
    * than `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   [[nodiscard]] constexpr auto
   gt (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -156,6 +165,7 @@ namespace micro_os_plus::micro_test_plus
    * than or equal to `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   [[nodiscard]] constexpr auto
   ge (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -172,6 +182,7 @@ namespace micro_os_plus::micro_test_plus
    * `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   [[nodiscard]] constexpr auto
   lt (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -188,6 +199,7 @@ namespace micro_os_plus::micro_test_plus
    * or equal to `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   [[nodiscard]] constexpr auto
   le (Lhs_T&& lhs, Rhs_T&& rhs);
 

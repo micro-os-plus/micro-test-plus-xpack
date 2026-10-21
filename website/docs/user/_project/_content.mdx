@@ -1054,8 +1054,9 @@ check fails, they also need to know how to print the type. For this, the
 application must define an `operator<<` that writes the value to an
 `mt::expression_formatter`, in the namespace of the type, so that it is
 found by argument-dependent lookup. Without it, the comparators do not
-compile for that type; only the scoped enumerations are shown without
-it, by their underlying value.
+compile for that type: the call is rejected, and the diagnostic names
+the type that does not satisfy `extension::printable`; only the scoped
+enumerations are shown without it, by their underlying value.
 
 ```cpp showLineNumbers
 #include "micro-os-plus/micro-test-plus.h"

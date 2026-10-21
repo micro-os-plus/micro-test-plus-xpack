@@ -86,6 +86,7 @@ namespace micro_os_plus::micro_test_plus
    * temporaries and refers to the named operands, without copying them.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   constexpr auto
   eq (Lhs_T&& lhs, Rhs_T&& rhs)
   {
@@ -103,6 +104,7 @@ namespace micro_os_plus::micro_test_plus
    * actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   constexpr auto
   ne (Lhs_T&& lhs, Rhs_T&& rhs)
   {
@@ -120,6 +122,7 @@ namespace micro_os_plus::micro_test_plus
    * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   constexpr auto
   gt (Lhs_T&& lhs, Rhs_T&& rhs)
   {
@@ -137,6 +140,7 @@ namespace micro_os_plus::micro_test_plus
    * and assertions to compare the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   constexpr auto
   ge (Lhs_T&& lhs, Rhs_T&& rhs)
   {
@@ -154,6 +158,7 @@ namespace micro_os_plus::micro_test_plus
    * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   constexpr auto
   lt (Lhs_T&& lhs, Rhs_T&& rhs)
   {
@@ -171,6 +176,7 @@ namespace micro_os_plus::micro_test_plus
    * assertions to compare the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
   constexpr auto
   le (Lhs_T&& lhs, Rhs_T&& rhs)
   {

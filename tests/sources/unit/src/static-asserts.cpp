@@ -156,6 +156,43 @@ namespace with_conversions
 
 // ----------------------------------------------------------------------------
 
+namespace with_comparators
+{
+  // A type that can be compared, but not reported, since it has no
+  // `operator<<` for the formatter.
+  struct unreported
+  {
+    int id;
+
+    constexpr auto
+    operator<=> (const unreported&) const
+        = default;
+  };
+
+  // Satisfied when all the function comparators accept the operands.
+  template <class Lhs_T, class Rhs_T>
+  concept all_accept = requires (const Lhs_T& lhs, const Rhs_T& rhs) {
+    eq (lhs, rhs);
+    ne (lhs, rhs);
+    gt (lhs, rhs);
+    ge (lhs, rhs);
+    lt (lhs, rhs);
+    le (lhs, rhs);
+  };
+
+  // Satisfied when at least one function comparator accepts the operands.
+  template <class Lhs_T, class Rhs_T>
+  concept any_accepts
+      = requires (const Lhs_T& lhs, const Rhs_T& rhs) { eq (lhs, rhs); }
+        or requires (const Lhs_T& lhs, const Rhs_T& rhs) { ne (lhs, rhs); }
+        or requires (const Lhs_T& lhs, const Rhs_T& rhs) { gt (lhs, rhs); }
+        or requires (const Lhs_T& lhs, const Rhs_T& rhs) { ge (lhs, rhs); }
+        or requires (const Lhs_T& lhs, const Rhs_T& rhs) { lt (lhs, rhs); }
+        or requires (const Lhs_T& lhs, const Rhs_T& rhs) { le (lhs, rhs); };
+} // namespace with_comparators
+
+// ----------------------------------------------------------------------------
+
 [[maybe_unused]] static void
 static_asserts ()
 {
@@ -649,6 +686,25 @@ static_asserts ()
       static_assert (not detail::approx_operand<char32_t>);
       static_assert (not detail::approx_operand<const char*>);
       static_assert (not detail::approx_operand<std::string>);
+    }
+
+    {
+      using namespace literals;
+      using with_comparators::all_accept;
+      using with_comparators::any_accepts;
+      using with_comparators::unreported;
+
+      // The function comparators accept only operands that can be
+      // reported, so the others are rejected at the call.
+      static_assert (unreported{ 1 } == unreported{ 1 });
+      static_assert (not any_accepts<unreported, unreported>);
+      static_assert (not any_accepts<unreported, int>);
+      static_assert (not any_accepts<int, unreported>);
+      static_assert (all_accept<int, long>);
+      static_assert (all_accept<double, decltype (1.5_d)>);
+      static_assert (all_accept<std::string, const char*>);
+      static_assert (all_accept<std::vector<int>, std::vector<int>>);
+      static_assert (all_accept<to_i, int>);
     }
 
     {

@@ -50,6 +50,15 @@ function comparator `mt::approx (lhs, rhs, epsilon)`, as in Boost UT,
 compares two numbers, integral or floating-point, with an explicit
 tolerance, and is reported as `lhs ~ (rhs +/- epsilon)`.
 
+The function comparators (`eq()`, `ne()`, `gt()`, `ge()`, `lt()`, and
+`le()`) now require both operands to satisfy `extension::printable`. An
+operand that cannot be reported is now rejected at the call, with a
+short diagnostic that names its type; previously the error was reported
+inside the formatter, in a long instantiation chain. A comparator of
+such operands that was not checked, for example one used only in a
+`static_assert()`, previously compiled, and is now an error; use the
+comparison operator of the type instead.
+
 The tolerance of the floating-point wrappers (`mt::to_f`, `mt::to_d`,
 and `mt::to_ld`) is now one unit of the last decimal of the value, as
 documented, for all values. Previously, the rounding of many values
