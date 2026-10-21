@@ -48,6 +48,7 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
+#include <concepts>
 #include <cstdio>
 #include <utility>
 
@@ -90,6 +91,13 @@ namespace micro_os_plus::micro_test_plus
      * text of this check stays empty, and the operands, which may be
      * application types with an expensive `operator<<`, are not formatted.
      *
+     * An expression that is only explicitly convertible to `bool`, such as
+     * a `std::optional` or a `std::unique_ptr`, is written as the result
+     * of the conversion, `true` or `false`, since that is what the check
+     * tested; its own value (the contents of a `std::optional<bool>`, for
+     * example) could contradict the outcome, and many such types cannot be
+     * formatted at all.
+     *
      * The decision is taken here, while the operands are alive; a result
      * kept in a variable outlives them.
      */
@@ -116,7 +124,15 @@ namespace micro_os_plus::micro_test_plus
 
       if (is_written_)
         {
-          expression << expr;
+          if constexpr (extension::is_op<Expr_T>
+                        or std::convertible_to<Expr_T, bool>)
+            {
+              expression << expr;
+            }
+          else
+            {
+              expression << static_cast<bool> (expr);
+            }
         }
     }
 

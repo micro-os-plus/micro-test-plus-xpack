@@ -537,6 +537,17 @@ template <class Expr_T>
 auto require (const Expr_T& expr);
 ```
 
+The expression is either a framework expression (a comparator, an
+operator, or a logical function), whose operands are reported on
+failure, or any value that the condition of an `if` statement accepts,
+including the types with an `explicit operator bool`, such as
+`std::optional`, `std::unique_ptr`, and `std::function`:
+
+```cpp
+auto buffer = std::make_unique<std::byte[]> (size);
+t.require (buffer) << "buffer allocated";
+```
+
 A failed **expectation** is reported and counted, and the test case
 continues, so that all its checks are evaluated and reported in one run.
 

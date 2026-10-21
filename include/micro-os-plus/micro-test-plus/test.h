@@ -1000,8 +1000,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Expr_T The type of the custom expression.
      *
      * @par Constraints
-     *   Enabled only if `Expr_T` is a framework expression type or
-     *   is convertible to `bool` (enforced via a C++20 `requires` clause).
+     *   Enabled only if `Expr_T` is a framework expression type or is
+     *   contextually convertible to `bool`, including by an
+     *   `explicit operator bool` (enforced via a C++20 `requires` clause,
+     *   with `extension::checkable`).
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.
@@ -1033,8 +1035,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Expr_T The type of the custom expression.
      *
      * @par Constraints
-     *   Enabled only if `Expr_T` is a framework expression type or
-     *   is convertible to `bool` (enforced via a C++20 `requires` clause).
+     *   Enabled only if `Expr_T` is a framework expression type or is
+     *   contextually convertible to `bool`, including by an
+     *   `explicit operator bool` (enforced via a C++20 `requires` clause,
+     *   with `extension::checkable`).
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.

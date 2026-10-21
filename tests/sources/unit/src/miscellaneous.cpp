@@ -15,7 +15,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <functional>
 #include <limits>
+#include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -1099,6 +1101,64 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         t.expect (eq (std::optional<int>{ 42 }, std::nullopt))
             << "optional == nullopt";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The checks accept the types with an `explicit operator bool`. Without
+    // a message, a passed check is written as the result of the conversion,
+    // not as the value of the operand.
+    ts.test ("Explicit conversions to bool", [] (auto& t)
+      {
+        std::optional<int> engaged{ 0 };
+        t.expect (engaged) << "optional with a value";
+        local_counts.passed_checks++;
+
+        // Written as `true`, not as the contained `false`.
+        t.expect (std::optional<bool>{ false });
+        local_counts.passed_checks++;
+
+        auto owner = std::make_unique<int> (42);
+        t.expect (owner) << "unique_ptr not null";
+        local_counts.passed_checks++;
+
+        std::function<int (int)> callable = [] (int i) noexcept { return i; };
+        t.expect (callable) << "function not empty";
+        local_counts.passed_checks++;
+
+        t.require (owner) << "required unique_ptr";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Explicit conversions to bool bad", [] (auto& t)
+      {
+        t.expect (std::optional<int>{}) << "empty optional";
+        local_counts.failed_checks++;
+
+        t.expect (std::unique_ptr<int>{}) << "null unique_ptr";
+        local_counts.failed_checks++;
+
+        t.expect (std::function<void (void)>{}) << "empty function";
+        local_counts.failed_checks++;
+
+        t.expect (std::shared_ptr<int>{});
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

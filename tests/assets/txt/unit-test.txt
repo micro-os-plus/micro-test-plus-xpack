@@ -1079,6 +1079,19 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ pairs1 == pairs2 FAILED (miscellaneous.cpp:1097, {(1, 2)} == {(1, 3)})
         ✗ optional == nullopt FAILED (miscellaneous.cpp:1100, 42 == nullopt)
     ✗ Standard types bad - FAILED (0 checks passed, 4 failed)
+    • Explicit conversions to bool
+        ✓ optional with a value
+        ✓ true
+        ✓ unique_ptr not null
+        ✓ function not empty
+        ✓ required unique_ptr
+    ✓ Explicit conversions to bool - passed (5 checks)
+    • Explicit conversions to bool bad
+        ✗ empty optional FAILED (miscellaneous.cpp:1152)
+        ✗ null unique_ptr FAILED (miscellaneous.cpp:1155)
+        ✗ empty function FAILED (miscellaneous.cpp:1158)
+        ✗ FAILED (miscellaneous.cpp:1161)
+    ✗ Explicit conversions to bool bad - FAILED (0 checks passed, 4 failed)
     • Pointers to const
         ✓ different const objects
         ✓ same const object
@@ -1209,7 +1222,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (176 checks passed, 26 failed, in 34 test cases), time: 3.522 ms
+✗ Miscellaneous suite - FAILED (181 checks passed, 30 failed, in 36 test cases), time: 3.594 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1320,4 +1333,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.189 ms
-✗ Total: 654 checks passed, 362 failed, in 135 test cases, 15 test suites, time: 13.646 ms
+✗ Total: 659 checks passed, 366 failed, in 137 test cases, 15 test suites, time: 13.901 ms

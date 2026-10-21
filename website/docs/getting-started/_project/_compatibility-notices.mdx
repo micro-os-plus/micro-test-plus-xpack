@@ -528,6 +528,16 @@ and the characters unquoted. The `extension::printable` concept, which
 constrains the message operator, now tells whether the formatter can
 write a type.
 
+The checks (`expect()` and `require()`) now also accept the values that
+are only explicitly convertible to `bool`, as the condition of an `if`
+statement does: `std::optional`, `std::unique_ptr`, `std::shared_ptr`,
+`std::function`, and the application types with an
+`explicit operator bool`; previously they had to be converted, for
+example with `has_value()` or `!= nullptr`. A passed check of such a
+value without a message is written as `true`, the result of the
+conversion. The `extension::checkable` concept, and the deprecated
+`type_traits::checkable`, are now satisfied by these types too.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

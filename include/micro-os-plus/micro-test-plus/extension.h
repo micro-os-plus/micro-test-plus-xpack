@@ -201,14 +201,23 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `checkable` concept is satisfied when `T` is either a
-     * framework expression type (see `is_op`) or is implicitly
-     * convertible to `bool`. It is used to constrain the `expect()` and
+     * framework expression type (see `is_op`) or a type contextually
+     * convertible to `bool`, as the condition of an `if` statement is.
+     * This includes the types with an `explicit operator bool`, such as
+     * `std::optional`, `std::unique_ptr`, `std::shared_ptr`, and
+     * `std::function`, but not the scoped enumerations, which only a
+     * cast converts. It is used to constrain the `expect()` and
      * `require()` function templates, ensuring that only sensible
      * expression types are accepted; an application helper that forwards
      * its argument to them uses it for the same constraint.
+     *
+     * The condition of the conditional operator, which cannot be
+     * overloaded, is used to test the contextual conversion, applied to
+     * a `const` value, as `expect()` and `require()` receive it.
      */
     template <class T>
-    concept checkable = is_op<T> or std::convertible_to<T, bool>;
+    concept checkable
+        = is_op<T> or requires (const T& t) { t ? true : false; };
 
     /**
      * @brief C++20 concept satisfied when a type can be appended to the
@@ -318,6 +327,7 @@ namespace micro_os_plus::micro_test_plus
    * The concepts refer to the current ones, so their semantics are the
    * current ones: `is_op` detects the `op_type` member, not the
    * inheritance from `op`; `has_epsilon` also requires `is_op`;
+   * `checkable` also accepts the types with an `explicit operator bool`;
    * `printable` accepts everything the formatter can print. The
    * exception is `has_value`, which is not used by the framework any
    * more, and is restored with its v5.0.1 definition.

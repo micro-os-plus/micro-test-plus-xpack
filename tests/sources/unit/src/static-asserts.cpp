@@ -15,7 +15,10 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <functional>
 #include <limits>
+#include <memory>
+#include <optional>
 #include <string>
 #include <type_traits>
 #include <utility>
@@ -125,6 +128,31 @@ namespace with_extension
     }
   };
 } // namespace with_extension
+
+// ----------------------------------------------------------------------------
+
+namespace with_conversions
+{
+  // A type that converts to `bool` only explicitly.
+  struct explicit_bool
+  {
+    constexpr explicit
+    operator bool (void) const noexcept
+    {
+      return true;
+    }
+  };
+
+  // A type whose explicit conversion to `bool` is not `const`.
+  struct mutable_bool
+  {
+    constexpr explicit
+    operator bool (void) noexcept
+    {
+      return true;
+    }
+  };
+} // namespace with_conversions
 
 // ----------------------------------------------------------------------------
 
@@ -511,6 +539,40 @@ static_asserts ()
       static_assert (extension::printable<to_i>);
       static_assert (not extension::printable<unformatted>);
       static_assert (not extension::printable<with_extension::marker_only>);
+    }
+
+    {
+      using with_conversions::explicit_bool;
+      using with_conversions::mutable_bool;
+
+      struct no_conversion
+      {
+      };
+
+      enum class scoped
+      {
+        zero
+      };
+
+      // The checks accept what an `if` statement accepts, including the
+      // types with an `explicit operator bool`.
+      static_assert (extension::checkable<bool>);
+      static_assert (extension::checkable<int>);
+      static_assert (extension::checkable<double>);
+      static_assert (extension::checkable<int*>);
+      static_assert (extension::checkable<std::nullptr_t>);
+      static_assert (extension::checkable<to_i>);
+      static_assert (extension::checkable<explicit_bool>);
+      static_assert (extension::checkable<std::optional<int>>);
+      static_assert (extension::checkable<std::unique_ptr<int>>);
+      static_assert (extension::checkable<std::shared_ptr<int>>);
+      static_assert (extension::checkable<std::function<void (void)>>);
+      // The argument is `const`, so a non-`const` conversion is not usable.
+      static_assert (not extension::checkable<mutable_bool>);
+      // A scoped enumeration converts only with a cast.
+      static_assert (not extension::checkable<scoped>);
+      static_assert (not extension::checkable<std::string>);
+      static_assert (not extension::checkable<no_conversion>);
     }
 
     {
