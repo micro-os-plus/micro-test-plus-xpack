@@ -132,9 +132,9 @@ extern std::size_t allocations_count;
 
 typedef struct local_counts_s
 {
-  int executed_test_cases;
-  int passed_checks;
-  int failed_checks;
+  std::size_t executed_test_cases;
+  std::size_t passed_checks;
+  std::size_t failed_checks;
 } local_counts_t;
 
 extern local_counts_t local_counts;

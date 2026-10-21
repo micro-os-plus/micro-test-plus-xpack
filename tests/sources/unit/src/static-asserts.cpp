@@ -31,7 +31,6 @@ using namespace micro_os_plus::micro_test_plus;
 
 #if defined(__GNUC__)
 #if defined(__clang__)
-#pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)

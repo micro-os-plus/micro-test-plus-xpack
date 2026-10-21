@@ -24,11 +24,8 @@ using namespace std::literals;
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
-#else // GCC only
-#pragma GCC diagnostic ignored "-Wshadow"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 

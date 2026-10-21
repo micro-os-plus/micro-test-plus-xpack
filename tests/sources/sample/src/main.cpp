@@ -29,11 +29,8 @@ using namespace std::literals;
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
-#else // GCC only
-#pragma GCC diagnostic ignored "-Wshadow"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
@@ -148,14 +145,14 @@ main (int argc, char* argv[])
       // actual values cannot be shown.
     });
 
-  ts.test ("Check strings", [] (auto& tc)
+  ts.test ("Check strings", [] (auto& t)
     {
       // Strings are compared with `eq()` or `ne()`. There are no custom
       // operators for strings, since the standard `==` and `!=` would be
       // selected, and these cannot show the values in case of failures.
 
-      tc.expect (mt::eq (std::string_view{ compute_ultimate_answer () },
-                         "fortytwo"sv))
+      t.expect (mt::eq (std::string_view{ compute_ultimate_answer () },
+                        "fortytwo"sv))
           << "ultimate answer is 'fortytwo'";
     });
 

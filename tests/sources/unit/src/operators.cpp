@@ -19,8 +19,6 @@ using namespace micro_os_plus::micro_test_plus;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
-#pragma GCC diagnostic ignored "-Wsign-compare"
-#pragma GCC diagnostic ignored "-Wdouble-promotion"
 #pragma GCC diagnostic ignored "-Wfloat-equal"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -113,17 +111,17 @@ static static_suite ts_operators{ "Operators suite", tr, [] (auto& ts)
         local_counts.failed_checks++;
 
         t.expect (((my_actual_integral () == 42)
-                   || (my_actual_float<float> () == 42.0)))
+                   || (my_actual_float<float> () == 42.0f)))
             << "(actual == 42) or (actual == 42.0)";
         local_counts.passed_checks++;
 
         t.expect (((my_actual_integral () == 42)
-                   || (my_actual_float<float> () != 42.0)))
+                   || (my_actual_float<float> () != 42.0f)))
             << "(actual == 42) or (actual != 42.0)";
         local_counts.passed_checks++;
 
         t.expect (((my_actual_integral () != 42)
-                   || (my_actual_float<float> () == 42.0)))
+                   || (my_actual_float<float> () == 42.0f)))
             << "(actual != 42) or (actual == 42.0)";
         local_counts.passed_checks++;
 
