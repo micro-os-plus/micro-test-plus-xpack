@@ -411,6 +411,24 @@ namespace micro_os_plus::micro_test_plus::detail
 #endif // defined(__cpp_exceptions)
 
   // --------------------------------------------------------------------------
+
+  /**
+   * @details
+   * The text is moved into a formatter in the plain mode, the value is
+   * appended with the same `operator<<` overloads as the messages, and
+   * the text is moved back.
+   */
+  template <class T>
+    requires extension::printable<T>
+  void
+  plain_text::append (std::string& text, const T& value)
+  {
+    expression_formatter formatter{ std::move (text) };
+    formatter << value;
+    text = std::move (formatter.buffer_);
+  }
+
+  // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus::detail
 
 #if defined(__GNUC__)

@@ -697,6 +697,38 @@ been called.
 Each nesting level adds to the stack used by the test; see
 [Stack usage](#stack-usage).
 
+### Test cases for each value
+
+The same test can be run for several values with `test_each()`, which
+adds and runs a test case for each value, on the suite or, nested, on
+a test case; the callable receives the test case and the value:
+
+```cpp
+ts.test_each ("Buffer sizes", { 1, 16, 512 }, [] (auto& t, int size)
+  {
+    t.expect (mt::eq (make_buffer (size).size (), size));
+  });
+```
+
+The values may be a braced list, a range (a container, an array, a
+span, or a view), or a tuple, whose values may have different types,
+for a generic callable:
+
+```cpp
+ts.test_each ("Serialise", std::tuple{ 42, 1.5, "text" },
+              [] (auto& t, const auto& value)
+  {
+    t.expect (mt::eq (deserialise (serialise (value)), value));
+  });
+```
+
+Each test case is named after the common name, followed by the value
+in parentheses, written as in the messages (`Buffer sizes (16)`,
+`Serialise (text)`); a value that cannot be written, an application
+type without an `operator<<`, is replaced by its position, starting at
+1 (`Records (#2)`). The values are passed to the callable as copies,
+as the arguments of `test()`.
+
 ### Function comparators
 
 To facilitate clear reporting of differences between expected and

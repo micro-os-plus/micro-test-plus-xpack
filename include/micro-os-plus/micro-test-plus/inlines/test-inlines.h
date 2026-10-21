@@ -658,6 +658,120 @@ namespace micro_os_plus::micro_test_plus
                       std::forward<Args_T> (arguments)...);
   }
 
+  // --------------------------------------------------------------------------
+
+  namespace detail
+  {
+    /**
+     * @details
+     * For each value, the name is built in a local string, which lives
+     * while the test case runs, since a test case runs within the call to
+     * `test()`, and the test case is added with `test()`, with the
+     * location of the call to `test_each()`. The values of a range are
+     * iterated by a range-based `for` statement, and those of a tuple are
+     * expanded by `std::apply()`, in order.
+     */
+    template <class Self_T, class Values_T, class Callable_T>
+    void
+    test_each_value (Self_T& self, const test_case_name& name,
+                     Values_T&& values, Callable_T& callable)
+    {
+      std::size_t position = 0;
+
+      const auto run_one
+          = [&self, &name, &callable, &position] (const auto& value)
+        {
+          ++position;
+
+          std::string text{ name.name () };
+          text += " (";
+          if constexpr (extension::printable<
+                            std::remove_cvref_t<decltype (value)>>)
+            {
+              plain_text::append (text, value);
+            }
+          else
+            {
+              text += '#';
+              plain_text::append (text, position);
+            }
+          text += ')';
+
+          self.test (test_case_name{ text, name.location () }, callable,
+                     value);
+        };
+
+      if constexpr (test_values_range<Values_T>)
+        {
+          for (const auto& value : values)
+            {
+              run_one (value);
+            }
+        }
+      else
+        {
+          std::apply ([&run_one] (const auto&... elements)
+            { (run_one (elements), ...); }, values);
+        }
+    }
+  } // namespace detail
+
+  /**
+   * @details
+   * Forwards to `detail::test_each_value()`, which adds the test cases
+   * with `test()`.
+   */
+  template <typename Values_T, typename Callable_T>
+    requires (detail::test_values_range<Values_T>
+              or detail::test_values_tuple<Values_T>)
+  void
+  test_case::test_each (const test_case_name& name, Values_T&& values,
+                        Callable_T&& callable)
+  {
+    detail::test_each_value (*this, name, std::forward<Values_T> (values),
+                             callable);
+  }
+
+  /**
+   * @details
+   * The list is iterated as a range.
+   */
+  template <typename T, typename Callable_T>
+  void
+  test_case::test_each (const test_case_name& name,
+                        std::initializer_list<T> values, Callable_T&& callable)
+  {
+    detail::test_each_value (*this, name, values, callable);
+  }
+
+  /**
+   * @details
+   * Forwards to `detail::test_each_value()`, which adds the test cases
+   * with `test()`, so they are nested in the running test case, if any.
+   */
+  template <typename Values_T, typename Callable_T>
+    requires (detail::test_values_range<Values_T>
+              or detail::test_values_tuple<Values_T>)
+  void
+  suite::test_each (const test_case_name& name, Values_T&& values,
+                    Callable_T&& callable)
+  {
+    detail::test_each_value (*this, name, std::forward<Values_T> (values),
+                             callable);
+  }
+
+  /**
+   * @details
+   * The list is iterated as a range.
+   */
+  template <typename T, typename Callable_T>
+  void
+  suite::test_each (const test_case_name& name,
+                    std::initializer_list<T> values, Callable_T&& callable)
+  {
+    detail::test_each_value (*this, name, values, callable);
+  }
+
   /**
    * @details
    * Returns a const reference to the `stopwatch` member.

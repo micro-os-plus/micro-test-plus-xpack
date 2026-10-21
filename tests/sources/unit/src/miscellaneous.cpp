@@ -1723,6 +1723,85 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     // The additional arguments of `test()` and `add_suite()` are copied, so a
     // reference parameter refers to the copy, unless `std::ref()` is
     // passed, and a deferred suite receives the values of the call.
+    // test_each() adds a test case for each value of a range or a tuple,
+    // named after the value, or after its position if it cannot be
+    // written.
+    ts.test_each ("Each vector value", std::vector<int>{ 1, 2, 3 },
+                  [] (auto& t, int value)
+      {
+        t.expect (gt (value, 0)) << "value " << value << " > 0";
+        local_counts.passed_checks++;
+        local_counts.executed_test_cases++;
+      });
+
+    ts.test_each ("Each list value", { "alpha", "beta" },
+                  [] (auto& t, const char* value)
+      {
+        t.expect (ne (value, nullptr)) << "string not null";
+        local_counts.passed_checks++;
+        local_counts.executed_test_cases++;
+      });
+
+    static constexpr int primes[]{ 2, 3 };
+    ts.test_each ("Each array value", primes, [] (auto& t, int value)
+      {
+        t.expect (gt (value, 1)) << "prime > 1";
+        local_counts.passed_checks++;
+        local_counts.executed_test_cases++;
+      });
+
+    ts.test_each ("Each tuple value", std::tuple{ 42, 1.5, true, 'x' },
+                  [] (auto& t, const auto& value)
+      {
+        t.expect (eq (value, value)) << "equal to itself";
+        local_counts.passed_checks++;
+        local_counts.executed_test_cases++;
+      });
+
+    struct opaque
+    {
+    };
+    ts.test_each ("Each unnamed value", std::vector<opaque>{ {}, {} },
+                  [] (auto& t, const opaque&)
+      {
+        t.expect (true) << "named by position";
+        local_counts.passed_checks++;
+        local_counts.executed_test_cases++;
+      });
+
+    ts.test ("Nested test_each", [] (auto& t)
+      {
+        t.test_each ("Each nested value", { 10, 20 }, [] (auto& nt, int value)
+          {
+            nt.expect (eq (value % 10, 0)) << "multiple of 10";
+            local_counts.passed_checks++;
+            local_counts.executed_test_cases++;
+          });
+
+        local_counts.executed_test_cases++;
+      });
+
+    ts.test_each ("Failed each value", { 1, 2 }, [] (auto& t, int value)
+      {
+        t.expect (eq (value, 1)) << "value " << value << " == 1";
+        if (value == 1)
+          {
+            local_counts.passed_checks++;
+          }
+        else
+          {
+            local_counts.failed_checks++;
+          }
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
     ts.test ("Callable arguments", [] (auto& t)
       {
         runner_options options{};

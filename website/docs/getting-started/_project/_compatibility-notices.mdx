@@ -70,6 +70,11 @@ until the stack overflowed; they are now rejected at compile time
 elements that cannot be reported, like `std::vector` of an application
 type without an `operator<<`, are now also rejected at the call.
 
+The new `test_each()` member functions of the suites and of the test
+cases add and run a test case for each value of a braced list, a
+range, or a tuple, named after the value, as the parametrised tests of
+Boost UT do.
+
 The tolerance of the floating-point wrappers (`mt::to_f`, `mt::to_d`,
 and `mt::to_ld`) is now one unit of the last decimal of the value, as
 documented, for all values. Previously, the rounding of many values

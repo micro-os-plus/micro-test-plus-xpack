@@ -68,6 +68,7 @@
 
 #include <cstddef>
 #include <functional>
+#include <initializer_list>
 #include <memory>
 #include <string>
 #include <string_view>
@@ -856,6 +857,66 @@ namespace micro_os_plus::micro_test_plus
     };
 
     // ------------------------------------------------------------------------
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a range of values for
+     * `test_each()`.
+     *
+     * @tparam T The type to be checked, possibly a reference.
+     *
+     * @details
+     * Satisfied by the types that a range-based `for` statement can
+     * iterate: the arrays, and the types with `begin()` and `end()`
+     * members or functions, like the standard containers, the spans, and
+     * the views.
+     */
+    template <class T>
+    concept test_values_range = std::is_array_v<std::remove_cvref_t<T>>
+                                or container_like<std::remove_cvref_t<T>>
+                                or free_range<std::remove_cvref_t<T>>;
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a tuple of values for
+     * `test_each()`.
+     *
+     * @tparam T The type to be checked, possibly a reference.
+     *
+     * @details
+     * Satisfied by the tuple-like types, like `std::tuple` and
+     * `std::pair`, which are not ranges (`std::array` is iterated as a
+     * range); their values may have different types.
+     */
+    template <class T>
+    concept test_values_tuple = (not test_values_range<T>) and requires {
+      std::tuple_size<std::remove_cvref_t<T>>::value;
+    };
+
+    /**
+     * @brief Adds and runs a test case for each value.
+     *
+     * @details
+     * The common implementation of `test_case::test_each()` and
+     * `suite::test_each()`.
+     *
+     * @tparam Self_T The type of the test case or suite.
+     * @tparam Values_T The type of the range or tuple of values.
+     * @tparam Callable_T The type of the callable object.
+     *
+     * @param self The test case or suite to which the test cases are
+     * added.
+     * @param name The common name of the test cases.
+     * @param values The range or tuple of values.
+     * @param callable The callable object, invoked with the test case and
+     * each value.
+     * @par Returns
+     *   Nothing.
+     */
+    template <class Self_T, class Values_T, class Callable_T>
+    void
+    test_each_value (Self_T& self, const test_case_name& name,
+                     Values_T&& values, Callable_T& callable);
+
+    // ------------------------------------------------------------------------
   } // namespace detail
 
   // ==========================================================================
@@ -990,6 +1051,79 @@ namespace micro_os_plus::micro_test_plus
     void
     test (const test_case_name& name, Callable_T&& callable,
           Args_T&&... arguments);
+
+    /**
+     * @brief Adds a nested test case for each value of a range or a tuple, and runs
+     * them.
+     *
+     * @details
+     * For each value, in order, a test case is added and run, as by
+     * `test()`, with the value as the argument of the callable, which is
+     * called as `callable (test_case, value)`. The values may be a range
+     * (a container, an array, a span, or a view), or a tuple, whose values
+     * may have different types, for a generic callable:
+     *
+     * @code{.cpp}
+     * ts.test_each ("Sizes", std::vector<int>{ 1, 16, 512 },
+     *               [] (auto& t, int size) { t.expect (mt::gt (size, 0)); });
+     * ts.test_each ("Types", std::tuple{ 42, 1.5, "text" },
+     *               [] (auto& t, const auto& value) { ... });
+     * @endcode
+     *
+     * Each test case is named after the common name, followed by the
+     * value in parentheses, written as in the messages of the checks
+     * (`Sizes (16)`); a value that cannot be written (see
+     * `extension::printable`), such as an application type without an
+     * `operator<<`, is replaced by its position, starting at 1
+     * (`Records (#2)`). The location of all the test cases is that of
+     * the call.
+     *
+     * @tparam Values_T The type of the range or tuple of values.
+     * @tparam Callable_T The type of a callable object.
+     *
+     * @param name The common name of the test cases; a string literal, a
+     * `const char*`, or a `std::string`, converted implicitly to
+     * `test_case_name`, which also captures the location of the call.
+     * @param values The range or tuple of values.
+     * @param callable A generic callable object, usually a lambda,
+     * invoked with the test case and each value.
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 5.1.0
+     */
+    template <typename Values_T, typename Callable_T>
+      requires (detail::test_values_range<Values_T>
+                or detail::test_values_tuple<Values_T>)
+    void
+    test_each (const test_case_name& name, Values_T&& values,
+               Callable_T&& callable);
+
+    /**
+     * @brief Adds a nested test case for each value of a braced list, and runs
+     * them.
+     *
+     * @details
+     * As the overload for the ranges, for a list written in place, like
+     * `ts.test_each ("Sizes", { 1, 16, 512 }, ...)`, whose type cannot
+     * be deduced otherwise.
+     *
+     * @tparam T The type of the values.
+     * @tparam Callable_T The type of a callable object.
+     *
+     * @param name The common name of the test cases.
+     * @param values The list of values.
+     * @param callable A generic callable object, usually a lambda,
+     * invoked with the test case and each value.
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 5.1.0
+     */
+    template <typename T, typename Callable_T>
+    void
+    test_each (const test_case_name& name, std::initializer_list<T> values,
+               Callable_T&& callable);
 
     // ------------------------------------------------------------------------
 
@@ -1322,6 +1456,79 @@ namespace micro_os_plus::micro_test_plus
     void
     test (const test_case_name& name, Callable_T&& callable,
           Args_T&&... arguments);
+
+    /**
+     * @brief Adds a test case to the suite for each value of a range or a tuple, and runs
+     * them.
+     *
+     * @details
+     * For each value, in order, a test case is added and run, as by
+     * `test()`, with the value as the argument of the callable, which is
+     * called as `callable (test_case, value)`. The values may be a range
+     * (a container, an array, a span, or a view), or a tuple, whose values
+     * may have different types, for a generic callable:
+     *
+     * @code{.cpp}
+     * ts.test_each ("Sizes", std::vector<int>{ 1, 16, 512 },
+     *               [] (auto& t, int size) { t.expect (mt::gt (size, 0)); });
+     * ts.test_each ("Types", std::tuple{ 42, 1.5, "text" },
+     *               [] (auto& t, const auto& value) { ... });
+     * @endcode
+     *
+     * Each test case is named after the common name, followed by the
+     * value in parentheses, written as in the messages of the checks
+     * (`Sizes (16)`); a value that cannot be written (see
+     * `extension::printable`), such as an application type without an
+     * `operator<<`, is replaced by its position, starting at 1
+     * (`Records (#2)`). The location of all the test cases is that of
+     * the call.
+     *
+     * @tparam Values_T The type of the range or tuple of values.
+     * @tparam Callable_T The type of a callable object.
+     *
+     * @param name The common name of the test cases; a string literal, a
+     * `const char*`, or a `std::string`, converted implicitly to
+     * `test_case_name`, which also captures the location of the call.
+     * @param values The range or tuple of values.
+     * @param callable A generic callable object, usually a lambda,
+     * invoked with the test case and each value.
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 5.1.0
+     */
+    template <typename Values_T, typename Callable_T>
+      requires (detail::test_values_range<Values_T>
+                or detail::test_values_tuple<Values_T>)
+    void
+    test_each (const test_case_name& name, Values_T&& values,
+               Callable_T&& callable);
+
+    /**
+     * @brief Adds a test case to the suite for each value of a braced list, and runs
+     * them.
+     *
+     * @details
+     * As the overload for the ranges, for a list written in place, like
+     * `ts.test_each ("Sizes", { 1, 16, 512 }, ...)`, whose type cannot
+     * be deduced otherwise.
+     *
+     * @tparam T The type of the values.
+     * @tparam Callable_T The type of a callable object.
+     *
+     * @param name The common name of the test cases.
+     * @param values The list of values.
+     * @param callable A generic callable object, usually a lambda,
+     * invoked with the test case and each value.
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 5.1.0
+     */
+    template <typename T, typename Callable_T>
+    void
+    test_each (const test_case_name& name, std::initializer_list<T> values,
+               Callable_T&& callable);
 
     /**
      * @brief Deprecated access to the timings of the suite.

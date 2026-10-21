@@ -1196,6 +1196,59 @@ break	tab == x)
         ✓ test case started on the suite - passed (1 check)
         ✓ run nested
     ✓ Test case started on the suite - passed (2 checks)
+    • Each vector value (1)
+        ✓ value 1 > 0
+    ✓ Each vector value (1) - passed (1 check)
+    • Each vector value (2)
+        ✓ value 2 > 0
+    ✓ Each vector value (2) - passed (1 check)
+    • Each vector value (3)
+        ✓ value 3 > 0
+    ✓ Each vector value (3) - passed (1 check)
+    • Each list value (alpha)
+        ✓ string not null
+    ✓ Each list value (alpha) - passed (1 check)
+    • Each list value (beta)
+        ✓ string not null
+    ✓ Each list value (beta) - passed (1 check)
+    • Each array value (2)
+        ✓ prime > 1
+    ✓ Each array value (2) - passed (1 check)
+    • Each array value (3)
+        ✓ prime > 1
+    ✓ Each array value (3) - passed (1 check)
+    • Each tuple value (42)
+        ✓ equal to itself
+    ✓ Each tuple value (42) - passed (1 check)
+    • Each tuple value (1.5)
+        ✓ equal to itself
+    ✓ Each tuple value (1.5) - passed (1 check)
+    • Each tuple value (true)
+        ✓ equal to itself
+    ✓ Each tuple value (true) - passed (1 check)
+    • Each tuple value (x)
+        ✓ equal to itself
+    ✓ Each tuple value (x) - passed (1 check)
+    • Each unnamed value (#1)
+        ✓ named by position
+    ✓ Each unnamed value (#1) - passed (1 check)
+    • Each unnamed value (#2)
+        ✓ named by position
+    ✓ Each unnamed value (#2) - passed (1 check)
+    • Nested test_each
+        • Each nested value (10)
+            ✓ multiple of 10
+        ✓ Each nested value (10) - passed (1 check)
+        • Each nested value (20)
+            ✓ multiple of 10
+        ✓ Each nested value (20) - passed (1 check)
+    ✓ Nested test_each - passed (0 checks)
+    • Failed each value (1)
+        ✓ value 1 == 1
+    ✓ Failed each value (1) - passed (1 check)
+    • Failed each value (2)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1786, 2 == 1)
+    ✗ Failed each value (2) - FAILED (0 checks passed, 1 failed)
     • Callable arguments
         ✓ reference parameter refers to a copy
         ✓ std::ref() refers to the object
@@ -1253,7 +1306,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (187 checks passed, 33 failed, in 37 test cases), time: 4.183 ms
+✗ Miscellaneous suite - FAILED (203 checks passed, 34 failed, in 55 test cases), time: 8.850 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1364,4 +1417,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.189 ms
-✗ Total: 675 checks passed, 375 failed, in 140 test cases, 15 test suites, time: 17.535 ms
+✗ Total: 691 checks passed, 376 failed, in 158 test cases, 15 test suites, time: 28.692 ms
