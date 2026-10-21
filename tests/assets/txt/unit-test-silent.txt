@@ -111,6 +111,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Explicit conversions to bool bad
     • Pointers to const
     • Message types
+    • Lazy messages
     • TAP escapes # TODO in names \ messages
     • TAP condition values are quoted
     • Runner options

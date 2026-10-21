@@ -285,13 +285,15 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Appends a message to the check.
        *
-       * @tparam T The type of the message to append.
+       * @tparam T The type of the message to append: a value that the
+       * formatter can write, or a callable object that returns one.
        *
-       * @param msg The message to append.
+       * @param msg The message to append, or the callable object that
+       * returns it, called only if the check fails.
        * @return Reference to the current check result.
        */
       template <class T>
-        requires extension::printable<T>
+        requires (extension::printable<T> or detail::lazy_message<T>)
       auto&
       operator<< (const T& msg);
 

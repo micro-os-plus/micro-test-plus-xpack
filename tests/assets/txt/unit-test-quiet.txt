@@ -111,6 +111,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Explicit conversions to bool bad
     • Pointers to const
     • Message types
+    • Lazy messages
     • TAP escapes # TODO in names \ messages
     • TAP condition values are quoted
     • Runner options
@@ -138,4 +139,4 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 659 checks passed, 366 failed, in 137 test cases, 15 test suites, time: 9.366 ms
+✗ Total: 663 checks passed, 369 failed, in 138 test cases, 15 test suites, time: 11.754 ms

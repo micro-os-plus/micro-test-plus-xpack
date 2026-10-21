@@ -50,6 +50,7 @@
 
 #include <concepts>
 #include <cstdio>
+#include <functional>
 #include <utility>
 
 // ----------------------------------------------------------------------------
@@ -168,19 +169,44 @@ namespace micro_os_plus::micro_test_plus
      *
      * When the outcome of the check is not written, the message is not
      * needed, and the value is not formatted.
+     *
+     * A callable object (see `detail::lazy_message`) is called only if the
+     * check failed, and its result is appended as a value; after a
+     * success, even if the outcome is written, it appends nothing, since
+     * its purpose is to describe a failure with values that may not be
+     * valid otherwise, like the error of a `std::expected` that holds a
+     * value. Being a class type, a lambda without captures is called
+     * too, although it is also printable, as a `bool`.
      */
     template <class T>
-      requires extension::printable<T>
+      requires (extension::printable<T> or detail::lazy_message<T>)
     auto&
     check_result::operator<< (const T& msg)
     {
-      if (!is_written_)
+      if constexpr (detail::lazy_message<T>)
         {
-          return *this;
+          if (value_)
+            {
+              return *this;
+            }
+        }
+      else
+        {
+          if (!is_written_)
+            {
+              return *this;
+            }
         }
 
       expression_formatter formatter{ std::move (info_.message) };
-      formatter << msg;
+      if constexpr (detail::lazy_message<T>)
+        {
+          formatter << std::invoke (msg);
+        }
+      else
+        {
+          formatter << msg;
+        }
       info_.message = std::move (formatter.buffer_);
       return *this;
     }

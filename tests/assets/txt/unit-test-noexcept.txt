@@ -1049,6 +1049,15 @@ Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, w
         ✓ wide characters u'x' U'x' L'x'
         ✗ failed {3} FAILED (miscellaneous.cpp:1162)
     ✗ Message types - FAILED (7 checks passed, 1 failed)
+    • Lazy messages
+        ✓ passed
+        ✓ true
+        ✓ not called after a success
+        ✗ failed and appended FAILED (miscellaneous.cpp:1250)
+        ✓ called after a failure
+        ✗ 42 FAILED (miscellaneous.cpp:1261)
+        ✗ from a function FAILED (miscellaneous.cpp:1266)
+    ✗ Lazy messages - FAILED (4 checks passed, 3 failed)
     • TAP escapes # TODO in names \ messages
         ✓ message with # hash and \ backslash
         ✓ a # b == a # b
@@ -1159,7 +1168,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (175 checks passed, 30 failed, in 36 test cases)
+✗ Miscellaneous suite - FAILED (179 checks passed, 33 failed, in 37 test cases)
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1270,4 +1279,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 642 checks passed, 354 failed, in 122 test cases, 13 test suites
+✗ Total: 646 checks passed, 357 failed, in 123 test cases, 13 test suites

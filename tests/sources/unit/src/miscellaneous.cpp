@@ -1225,6 +1225,50 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // A callable object appended to a check is called only if the check
+    // fails, and its result is appended to the message.
+    ts.test ("Lazy messages", [] (auto& t)
+      {
+        int calls = 0;
+
+        t.expect (true) << "passed" << [&calls] () noexcept
+          {
+            ++calls;
+            return " and not appended";
+          };
+        local_counts.passed_checks++;
+
+        // Not called after a success, when it would not be valid.
+        std::optional<int> empty{};
+        t.expect (not empty.has_value ())
+            << [&empty] { return empty.value (); };
+        local_counts.passed_checks++;
+
+        t.expect (eq (calls, 0)) << "not called after a success";
+        local_counts.passed_checks++;
+
+        t.expect (false) << "failed" << [&calls] () noexcept
+          {
+            ++calls;
+            return " and appended";
+          };
+        local_counts.failed_checks++;
+
+        t.expect (eq (calls, 1)) << "called after a failure";
+        local_counts.passed_checks++;
+
+        // Without captures, it converts to `bool`, but it is called.
+        t.expect (false) << [] () noexcept { return 42; };
+        local_counts.failed_checks++;
+
+        std::function<std::string (void)> message
+            = [] { return std::string{ "from a function" }; };
+        t.expect (false) << message;
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     // In the TAP output, the `\` and `#` characters of the names, the
     // messages, and the expressions are escaped, and the line breaks are
     // replaced by spaces, so that the failed test case below is not read as

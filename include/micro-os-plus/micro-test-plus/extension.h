@@ -234,8 +234,10 @@ namespace micro_os_plus::micro_test_plus
      * the tuples, the optionals, the value wrappers, and the application
      * types with an `operator<<` for the formatter, found by
      * argument-dependent lookup. It constrains the `operator<<` overload
-     * of `check_result`; an application helper that forwards its argument
-     * to the message uses it for the same constraint.
+     * of `check_result`, which also accepts the callable objects that
+     * return a printable value, called only if the check fails; an
+     * application helper that forwards a value to the message uses it for
+     * the same constraint.
      *
      * The formatter is only declared here; the concept is checked where
      * it is used, after `expression-formatter.h` was included.
@@ -285,6 +287,33 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     concept has_npos = requires { T::npos; };
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a callable object that
+     * returns a printable message.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `lazy_message` concept is satisfied when `T` is a class type,
+     * such as a lambda or a `std::function`, callable without arguments
+     * as a `const` object, whose result is not `void` and satisfies
+     * `extension::printable`. The message operator of the checks calls
+     * such an object only when the check fails, and appends its result,
+     * so that a message that is valid only after a failure (the error of
+     * a `std::expected`, for example) is not evaluated after a success.
+     *
+     * The function pointers are excluded, since they are printable (as
+     * addresses), and calling them by mistake could have side effects; a
+     * lambda without captures, which converts to a function pointer and
+     * then to `bool`, is printable too, and is called, since it is a
+     * class type.
+     */
+    template <class T>
+    concept lazy_message
+        = std::is_class_v<T> and std::invocable<const T&>
+          and (not std::is_void_v<std::invoke_result_t<const T&>>)
+          and extension::printable<std::invoke_result_t<const T&>>;
 
     /**
      * @brief C++20 concept satisfied when `T` is a framework compile-time

@@ -576,6 +576,34 @@ static_asserts ()
     }
 
     {
+      struct unformatted
+      {
+      };
+
+      int number = 0;
+      [[maybe_unused]] auto captureless = [] () noexcept { return 42; };
+      [[maybe_unused]] auto capturing
+          = [&number] () noexcept { return number; };
+      [[maybe_unused]] auto no_result = [] () noexcept {};
+      [[maybe_unused]] auto unformatted_result
+          = [] () noexcept { return unformatted{}; };
+      [[maybe_unused]] auto with_argument = [] (int i) noexcept { return i; };
+
+      // The messages may be callable objects that return a printable
+      // value, called only if the check fails.
+      static_assert (detail::lazy_message<decltype (captureless)>);
+      static_assert (detail::lazy_message<decltype (capturing)>);
+      static_assert (detail::lazy_message<std::function<std::string (void)>>);
+      static_assert (not detail::lazy_message<decltype (no_result)>);
+      static_assert (not detail::lazy_message<decltype (unformatted_result)>);
+      static_assert (not detail::lazy_message<decltype (with_argument)>);
+      static_assert (not detail::lazy_message<std::function<void (void)>>);
+      // The function pointers are printed, not called.
+      static_assert (not detail::lazy_message<int (*) (void)>);
+      static_assert (extension::printable<int (*) (void)>);
+    }
+
+    {
       using namespace literals;
       using namespace operators;
 

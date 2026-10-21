@@ -565,6 +565,19 @@ t.expect (mt::eq (parse (input), expected))
     << "input " << input << ", " << input.size () << " bytes";
 ```
 
+A part of the message that is valid only after a failure can be given
+as a callable object, such as a lambda, that returns a value accepted
+by the message; it is called only if the check fails, and its result is
+appended, while after a success it appends nothing:
+
+```cpp
+std::expected<config, std::string> result = parse ("config.json");
+t.require (result.has_value ())
+    << "parse failed: " << [&result] { return result.error (); };
+```
+
+The function pointers are not called; they are written as addresses.
+
 #### Requirements
 
 A failed **requirement** is reported and counted as a failed

@@ -3126,6 +3126,31 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
           ...
         1..8
     not ok 20 - Message types # { FAILED, 7 checks passed, 1 failed }
+    # Subtest: Lazy messages
+        ok 1 - passed
+        ok 2 - true
+        ok 3 - not called after a success
+        not ok 4 - failed and appended
+          ---
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 1250
+          ...
+        ok 5 - called after a failure
+        not ok 6 - 42
+          ---
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 1261
+          ...
+        not ok 7 - from a function
+          ---
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 1266
+          ...
+        1..7
+    not ok 21 - Lazy messages # { FAILED, 4 checks passed, 3 failed }
     # Subtest: TAP escapes # TODO in names \ messages
         ok 1 - message with \# hash and \\ backslash
         ok 2 - a \# b == a \# b
@@ -3137,7 +3162,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
             lineNumber: 1184
           ...
         1..4
-    not ok 21 - TAP escapes \# TODO in names \\ messages # { FAILED, 3 checks passed, 1 failed }
+    not ok 22 - TAP escapes \# TODO in names \\ messages # { FAILED, 3 checks passed, 1 failed }
     # Subtest: TAP condition values are quoted
         not ok 1
           ---
@@ -3154,7 +3179,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
             lineNumber: 1199
           ...
         1..2
-    not ok 22 - TAP condition values are quoted # { FAILED, 0 checks passed, 2 failed }
+    not ok 23 - TAP condition values are quoted # { FAILED, 0 checks passed, 2 failed }
     # Subtest: Runner options
         ok 1 - default verbosity before initialise()
         ok 2 - given name
@@ -3164,14 +3189,14 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 6 - total_suites_count() counts the top suite
         ok 7 - default name without arguments
         1..7
-    ok 23 - Runner options # { passed, 7 checks }
+    ok 24 - Runner options # { passed, 7 checks }
     # Subtest: Runner option errors
         ok 1 - valid options still applied
         ok 2 - unknown reporter
         ok 3 - missing argument
         ok 4 - output file not opened
         1..4
-    ok 24 - Runner option errors # { passed, 4 checks }
+    ok 25 - Runner option errors # { passed, 4 checks }
     # Subtest: Runner filter
         ok 1 - suite filter passed
         ok 2 - matching suites run
@@ -3189,7 +3214,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 14 - nothing skipped without patterns
         ok 15 - missing pattern
         1..15
-    ok 25 - Runner filter # { passed, 15 checks }
+    ok 26 - Runner filter # { passed, 15 checks }
     # Subtest: Late suites
         ok 1 - suite added during run() rejected
         ok 2 - rejected suite neither run nor counted
@@ -3197,7 +3222,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 4 - session passed
         ok 5 - suite added after run() rejected
         1..5
-    ok 26 - Late suites # { passed, 5 checks }
+    ok 27 - Late suites # { passed, 5 checks }
     # Subtest: Test case started on the suite
         ok 1 - check before the test case
         # Subtest: test case started on the suite
@@ -3206,7 +3231,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 2 - test case started on the suite # { passed, 1 check }
         ok 3 - run nested
         1..3
-    ok 27 - Test case started on the suite # { passed, 2 checks }
+    ok 28 - Test case started on the suite # { passed, 2 checks }
     # Subtest: Callable arguments
         ok 1 - reference parameter refers to a copy
         ok 2 - std::ref() refers to the object
@@ -3214,7 +3239,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 4 - local session passed
         ok 5 - deferred suite received the copy
         1..5
-    ok 28 - Callable arguments # { passed, 5 checks }
+    ok 29 - Callable arguments # { passed, 5 checks }
     # Subtest: Operand copies
         ok 1 - plain operands
         ok 2 - plain operands not copied
@@ -3225,19 +3250,19 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 7 - stored comparator
         ok 8 - temporary operand stored once
         1..8
-    ok 29 - Operand copies # { passed, 8 checks }
+    ok 30 - Operand copies # { passed, 8 checks }
     # Subtest: Test case lifetime
         ok 1 - test cases destroyed
         ok 2 - test cases counted
         ok 3 - local session passed
         1..3
-    ok 30 - Test case lifetime # { passed, 3 checks }
+    ok 31 - Test case lifetime # { passed, 3 checks }
     # Subtest: Test case bodies
         ok 1 - large body invoked
         ok 2 - large body not allocated
         ok 3 - local session passed
         1..3
-    ok 31 - Test case bodies # { passed, 3 checks }
+    ok 32 - Test case bodies # { passed, 3 checks }
     # Subtest: Formatting of passed checks
         ok 1 - passed check not formatted (human)
         ok 2 - failed check formatted (human)
@@ -3246,16 +3271,16 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 5 - failed check formatted (tap)
         ok 6 - both checks counted (tap)
         1..6
-    ok 32 - Formatting of passed checks # { passed, 6 checks }
+    ok 33 - Formatting of passed checks # { passed, 6 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - previous handler returned
         1..2
-    ok 33 - Abort handler # { passed, 2 checks }
+    ok 34 - Abort handler # { passed, 2 checks }
     # Subtest: Abort during the session
         ok 1 - skipped without exceptions
         1..1
-    ok 34 - Abort during the session # { passed, 1 check }
+    ok 35 - Abort during the session # { passed, 1 check }
     # Subtest: Test case and suite names
         ok 1 - temporary string name
         ok 2 - string name
@@ -3265,9 +3290,9 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 6 - string suite name copied
         ok 7 - string view suite name copied
         1..7
-    ok 35 - Test case and suite names # { passed, 7 checks }
-    1..35
-not ok 10 - Miscellaneous suite # { FAILED, 175 checks passed, 30 failed, in 36 test cases }
+    ok 36 - Test case and suite names # { passed, 7 checks }
+    1..36
+not ok 10 - Miscellaneous suite # { FAILED, 179 checks passed, 33 failed, in 37 test cases }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3511,4 +3536,4 @@ ok 12 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..13
-# { total: 642 checks passed, 354 failed, in 122 test cases, 13 test suites }
+# { total: 646 checks passed, 357 failed, in 123 test cases, 13 test suites }

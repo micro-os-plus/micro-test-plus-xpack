@@ -538,6 +538,15 @@ value without a message is written as `true`, the result of the
 conversion. The `extension::checkable` concept, and the deprecated
 `type_traits::checkable`, are now satisfied by these types too.
 
+The messages now also accept the callable objects, such as the lambdas
+and the `std::function` objects, that return a value accepted by the
+message; they are called only if the check fails, and their result is
+appended, so that a message valid only after a failure (the error of a
+`std::expected`, for example) is not evaluated after a success. A
+lambda without captures was previously accepted, converted to `bool`,
+and written as `true`; it is now called. The function pointers are
+still written as addresses, not called.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in
