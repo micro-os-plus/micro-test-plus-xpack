@@ -512,8 +512,7 @@ namespace micro_os_plus::micro_test_plus
    * written when it differs from the previous one.
    */
   void
-  runner::list_test_case (const class suite& suite,
-                          const test_case& test_case)
+  runner::list_test_case (const class suite& suite, const test_case& test_case)
   {
     if (&suite != listed_suite_)
       {

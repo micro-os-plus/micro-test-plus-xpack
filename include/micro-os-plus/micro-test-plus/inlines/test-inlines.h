@@ -835,8 +835,7 @@ namespace micro_os_plus::micro_test_plus
                [stored_callable = std::forward<Callable_T> (callable)] (
                    suite& self, auto&... stored_arguments) mutable
     {
-      stored_callable (static_cast<static_suite&> (self),
-                       stored_arguments...);
+      stored_callable (static_cast<static_suite&> (self), stored_arguments...);
     },
                std::forward<Args_T> (arguments)... }
   {
