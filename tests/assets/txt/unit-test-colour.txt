@@ -1330,6 +1330,16 @@ break	tab == x[0m)
         [32m✓[0m missing pattern
     [32m✓[0m Runner filter - passed (15 checks)
 
+    • List test cases
+        [32m✓[0m listed, exit code 0
+        [32m✓[0m no test case body run
+        [32m✓[0m suite body run
+        [32m✓[0m all test cases listed
+        [32m✓[0m filtered, exit code 0
+        [32m✓[0m matching test cases listed
+        [32m✓[0m still no test case body run
+    [32m✓[0m List test cases - passed (7 checks)
+
     • Late suites
         [32m✓[0m suite added during run() rejected
         [32m✓[0m rejected suite neither run nor counted
@@ -1483,7 +1493,7 @@ break	tab == x[0m)
         [32m✓[0m string view suite name copied
     [32m✓[0m Test case and suite names - passed (7 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (206 checks passed, 34 failed, in 55 test cases), time: 3.420 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (213 checks passed, 34 failed, in 56 test cases), time: 4.770 ms
 
 • Operators suite
 
@@ -1612,6 +1622,6 @@ break	tab == x[0m)
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.138 ms
 
-[31m✗[0m Total: 694 checks passed, 376 failed, in 158 test cases, 15 test suites, time: 12.162 ms
+[31m✗[0m Total: 701 checks passed, 376 failed, in 159 test cases, 15 test suites, time: 13.259 ms
 Overall, the µTest++ unit tests were successful!
 

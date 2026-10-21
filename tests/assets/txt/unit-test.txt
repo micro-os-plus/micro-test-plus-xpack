@@ -1185,6 +1185,15 @@ break	tab == x)
         ✓ nothing skipped without patterns
         ✓ missing pattern
     ✓ Runner filter - passed (15 checks)
+    • List test cases
+        ✓ listed, exit code 0
+        ✓ no test case body run
+        ✓ suite body run
+        ✓ all test cases listed
+        ✓ filtered, exit code 0
+        ✓ matching test cases listed
+        ✓ still no test case body run
+    ✓ List test cases - passed (7 checks)
     • Late suites
         ✓ suite added during run() rejected
         ✓ rejected suite neither run nor counted
@@ -1309,7 +1318,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (206 checks passed, 34 failed, in 55 test cases), time: 8.850 ms
+✗ Miscellaneous suite - FAILED (213 checks passed, 34 failed, in 56 test cases), time: 5.176 ms
 • Operators suite
     • Operators
         ✓ actual == 42
@@ -1420,4 +1429,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:196)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.189 ms
-✗ Total: 694 checks passed, 376 failed, in 158 test cases, 15 test suites, time: 28.692 ms
+✗ Total: 701 checks passed, 376 failed, in 159 test cases, 15 test suites, time: 15.875 ms

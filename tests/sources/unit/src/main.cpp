@@ -143,7 +143,7 @@ main (int argc, char* argv[])
 {
   auto& ts = tr.initialise (argc, argv, "Static top suite");
 
-  if (tr.verbosity_level () > verbosity::quiet)
+  if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())
     {
       printf ("\nµTest++ unit tests; some checks are expected to fail.\n");
     }
@@ -735,7 +735,7 @@ main (int argc, char* argv[])
     test_assert (tr.totals ().executed_test_cases () == executed_test_cases);
   }
 
-  if (tr.verbosity_level () > verbosity::quiet)
+  if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())
     {
       // On failure it aborts before reaching this point.
       printf ("Overall, the µTest++ unit tests were successful!\n\n");

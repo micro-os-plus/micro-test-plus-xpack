@@ -301,6 +301,14 @@ application that used its own `--color` or `--use-colour` option, and
 passed the whole command line to `initialise()`, now gets an error, and
 `run()` returns 2, when its value is not one of these modes.
 
+The runner now also recognises the `--list-tests` option, or its short
+form `--list`, as in Catch2 and Boost UT, which lists the suites and
+the test cases instead of running them (see the User's Guide). An
+application that used its own `--list` or `--list-tests` option, and
+passed the whole command line to `initialise()`, now gets the list
+instead of the run; rename the application option, or remove it from
+the arguments passed to `initialise()`.
+
 `assume()` is deprecated in favour of `require()`, which does the same:
 in other frameworks (JUnit, Hypothesis), an unmet assumption skips the
 test, while here it fails it. When exceptions are enabled, a failed

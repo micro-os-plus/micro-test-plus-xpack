@@ -268,6 +268,19 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
+    // When listing, the session is not reported; only the header of the
+    // list is written, and the test cases are listed as they are created.
+    list_tests_ = options.list_tests;
+    if (list_tests_)
+      {
+        reporter_->write_line (verbosity_ != verbosity::silent, "%s\n",
+                               filter_patterns_.empty ()
+                                   ? "All available test cases:"
+                                   : "Matching test cases:");
+        session_state_ = session_state::initialised;
+        return top_suite_;
+      }
+
     stopwatch_.start ();
     reporter_->begin_session (*this);
 
@@ -294,7 +307,9 @@ namespace micro_os_plus::micro_test_plus
    * - `--use-colour=<mode>` or `--use-colour <mode>`, the Catch2 and
    *   Boost UT alternative to `--color`, with `yes`, `no`, or `auto`, or
    *   any of the `--color` values;
-   * - `--filter=<pattern>` or `--filter <pattern>`.
+   * - `--filter=<pattern>` or `--filter <pattern>`;
+   * - `--list-tests`, or its short form `--list`, as in Catch2 and
+   *   Boost UT, to list the test cases instead of running them.
    *
    * When an option is repeated, the last one takes effect, except
    * `--filter`, whose patterns are all kept, in order, one per nesting
@@ -399,6 +414,10 @@ namespace micro_os_plus::micro_test_plus
           {
             opts.verbosity_level = verbosity::silent;
           }
+        else if (argument == "--list-tests" || argument == "--list")
+          {
+            opts.list_tests = true;
+          }
         else if (get_value (reporter_option, i, value))
           {
             if (value == "human")
@@ -481,6 +500,32 @@ namespace micro_os_plus::micro_test_plus
           }
         alternatives.remove_prefix (separator + 1);
       }
+  }
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @details
+   * The suites are listed in the order in which their first test cases
+   * are created: the top suite first, during `main()`, then the other
+   * suites, in the order of `run_suites()`; so the name of a suite is
+   * written when it differs from the previous one.
+   */
+  void
+  runner::list_test_case (const class suite& suite,
+                          const test_case& test_case)
+  {
+    if (&suite != listed_suite_)
+      {
+        listed_suite_ = &suite;
+        ++listed_suites_count_;
+        reporter_->write_line (verbosity_ != verbosity::silent, "  %s\n",
+                               suite.name ());
+      }
+
+    ++listed_test_cases_count_;
+    reporter_->write_line (verbosity_ != verbosity::silent, "    %s\n",
+                           test_case.name ());
   }
 
   // --------------------------------------------------------------------------
@@ -571,7 +616,10 @@ namespace micro_os_plus::micro_test_plus
         if (!is_selected (suite_ptr->name (), 0))
           {
             ++skipped_suites_count_;
-            reporter_->skip_suite (*suite_ptr);
+            if (!list_tests_)
+              {
+                reporter_->skip_suite (*suite_ptr);
+              }
             continue;
           }
 
@@ -636,6 +684,25 @@ namespace micro_os_plus::micro_test_plus
       }
 
     session_state_ = session_state::running;
+
+    // When listing, the suites run only to create their test cases, which
+    // are listed, and the number of listed test cases ends the list.
+    if (list_tests_)
+      {
+        run_suites ();
+
+        const unsigned long test_cases = listed_test_cases_count_;
+        const unsigned long suites = listed_suites_count_;
+        reporter_->write_line (verbosity_ != verbosity::silent,
+                               "%lu test case%s in %lu test suite%s\n",
+                               test_cases, (test_cases == 1) ? "" : "s",
+                               suites, (suites == 1) ? "" : "s");
+        reporter_->flush_streams ();
+
+        exit_code_ = has_option_errors_ ? 2 : 0;
+        session_state_ = session_state::finished;
+        return exit_code_;
+      }
 
     top_suite_.stopwatch_.stop ();
     reporter_->end_suite (top_suite_);

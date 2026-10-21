@@ -280,6 +280,38 @@ namespace micro_os_plus::micro_test_plus
      * @since 5.1.0
      */
     std::vector<std::string_view> filter_patterns{};
+
+    /**
+     * @brief Whether the test cases are listed instead of run.
+     *
+     * @details
+     * Set by the `--list-tests` option, or by its short form `--list`.
+     * When set, the suite bodies run, as usual, to create their test
+     * cases, but the bodies of the test cases do not, so no check is
+     * evaluated. The selected test cases (see `filter_patterns`) are
+     * listed under the names of their suites, as Catch2 lists them:
+     *
+     * @code{.txt}
+     * All available test cases:
+     *   Sample
+     *     Check various conditions
+     *     Check strings
+     *   Explicit namespace suite
+     *     Check one
+     * 3 test cases in 2 test suites
+     * @endcode
+     *
+     * The header is `Matching test cases:` when there are filter
+     * patterns, and the suites without selected test cases are not
+     * listed. The nested test cases are not listed, since they are
+     * created by the bodies of their parents, which do not run. The list
+     * is written to the console, unless the verbosity is `silent`, and to
+     * the output file, if any; no report is written, and `run()` returns
+     * 0, or 2 after an option error.
+     *
+     * @since 5.1.0
+     */
+    bool list_tests{ false };
   };
 
   // --------------------------------------------------------------------------

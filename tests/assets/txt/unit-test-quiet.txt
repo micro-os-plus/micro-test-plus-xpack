@@ -119,6 +119,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Runner options
     • Runner option errors
     • Runner filter
+    • List test cases
     • Late suites
     • Test case started on the suite
         • test case started on the suite
@@ -159,4 +160,4 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • utility::extract_file_name()
     • utility::is_match() — passing
     • utility::is_match() — failing
-✗ Total: 694 checks passed, 376 failed, in 158 test cases, 15 test suites, time: 12.003 ms
+✗ Total: 701 checks passed, 376 failed, in 159 test cases, 15 test suites, time: 11.615 ms

@@ -105,8 +105,12 @@ my_expected_float (void)
 // is to use traditional asserts. To have some minimal control and do not
 // depend on NDEBUG, define a custom assert locally.
 
+// While the test cases are only listed (`--list-tests`), their bodies do
+// not run, so the totals checked by the assertions are not reached, and
+// the assertions are not evaluated.
 #define test_assert(EX) \
-  (void)((EX) || (local_test_assert (#EX, __FILE__, __LINE__), 0))
+  (void)(tr.is_listing () || (EX) \
+         || (local_test_assert (#EX, __FILE__, __LINE__), 0))
 
 void __attribute__ ((noreturn))
 local_test_assert (const char* failedexpr, const char* file, int line);

@@ -252,7 +252,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Parses the µTest++ options from the command line (`--reporter`,
      * `--silent`, `--quiet`, `--verbose`, `--output-file`,
-     * `--color`, `--use-colour`, and `--filter`) into a
+     * `--color`, `--use-colour`, `--filter`, and `--list-tests`) into a
      * `runner_options` structure, and continues as the overload taking
      * the options. The other arguments are ignored, since the
      * applications may define their own.
@@ -520,6 +520,28 @@ namespace micro_os_plus::micro_test_plus
     verbosity_level (void) const noexcept -> micro_test_plus::verbosity;
 
     /**
+     * @brief Checks whether the test cases are listed instead of run.
+     *
+     * @details
+     * Set by the `--list-tests` (or `--list`) command-line option, or by
+     * `runner_options::list_tests`. While the test cases are listed, their
+     * bodies do not run, so the code in `main()` or in the suite bodies
+     * that depends on their results (their totals, or the exit code of
+     * `run()`) can use it to skip those parts, and the tests can use it to
+     * keep their own messages out of the list. Before `initialise()` is
+     * called, it is `false`.
+     *
+     * @par Parameters
+     *   None.
+     * @retval true The test cases are listed.
+     * @retval false The test cases are run.
+     *
+     * @since 5.1.0
+     */
+    [[nodiscard]] bool
+    is_listing (void) const noexcept;
+
+    /**
      * @brief Deprecated name of `verbosity_level()`.
      *
      * @details
@@ -763,6 +785,27 @@ namespace micro_os_plus::micro_test_plus
     is_selected (const char* name, size_t level) const;
 
     /**
+     * @brief Lists a test case, instead of running it.
+     *
+     * @details
+     * Called by `detail::runnable_base`, a friend, for each selected test
+     * case created while the test cases are listed (see
+     * `runner_options::list_tests`). The name of the suite is written
+     * before its first listed test case, indented by two spaces, and the
+     * name of the test case after it, indented by four spaces, through the
+     * reporter, to the console, unless the verbosity is `silent`, and to
+     * the output file, if any.
+     *
+     * @param suite The suite of the test case.
+     * @param test_case The test case to list.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    list_test_case (const class suite& suite,
+                    const class test_case& test_case);
+
+    /**
      * @brief Aborts test execution, telling the reporter why.
      *
      * @details
@@ -957,6 +1000,36 @@ namespace micro_os_plus::micro_test_plus
      * reference), runs the new test case nested in it.
      */
     test_case* running_test_case_ = nullptr;
+
+    /**
+     * @brief Whether the test cases are listed instead of run.
+     *
+     * @details
+     * Copied by `initialise()` from `runner_options::list_tests`. When
+     * set, the suite bodies run, to create their test cases, but the test
+     * case bodies do not; the selected test cases are listed by
+     * `list_test_case()`, and `run()` writes their number.
+     */
+    bool list_tests_ = false;
+
+    /**
+     * @brief The suite whose name was listed last, if any.
+     *
+     * @details
+     * Used by `list_test_case()` to write the name of a suite only once,
+     * before its first listed test case.
+     */
+    const class suite* listed_suite_ = nullptr;
+
+    /**
+     * @brief The number of listed test cases.
+     */
+    size_t listed_test_cases_count_ = 0;
+
+    /**
+     * @brief The number of suites with listed test cases.
+     */
+    size_t listed_suites_count_ = 0;
   };
 
   // ==========================================================================

@@ -119,6 +119,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Runner options
     • Runner option errors
     • Runner filter
+    • List test cases
     • Late suites
     • Test case started on the suite
         • test case started on the suite

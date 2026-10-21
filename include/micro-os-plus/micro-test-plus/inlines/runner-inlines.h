@@ -81,6 +81,17 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Returns the flag copied by `initialise()` from
+   * `runner_options::list_tests`.
+   */
+  inline bool
+  runner::is_listing (void) const noexcept
+  {
+    return list_tests_;
+  }
+
+  /**
+   * @details
    * Forwards to `verbosity_level()`.
    */
   inline auto

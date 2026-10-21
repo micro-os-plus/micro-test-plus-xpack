@@ -491,6 +491,22 @@ namespace micro_os_plus::micro_test_plus
       is_aborted (void) const noexcept;
 
       /**
+       * @brief Checks whether the owning runner lists the test cases
+       * instead of running them.
+       *
+       * @details
+       * Protected, since it is used only by `suite::run()`, which then
+       * calls the suite body without reporting the suite, so that its
+       * test cases are created, and listed instead of run.
+       *
+       * @par Parameters
+       *   None.
+       * @return `true` if `runner_options::list_tests` was set.
+       */
+      [[nodiscard]] bool
+      is_listing (void) const noexcept;
+
+      /**
        * @brief Advances to the next child test point, and returns its
        * number.
        *

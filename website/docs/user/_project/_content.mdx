@@ -330,7 +330,7 @@ options.verbosity_level = mt::verbosity::verbose;
 auto& ts = tr.initialise(options, "Main");
 ```
 
-The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, `output_file_path` to `--output-file`, `colour` to `--color` (or `--use-colour`), and `filter_patterns` to `--filter`.
+The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, `output_file_path` to `--output-file`, `colour` to `--color` (or `--use-colour`), `filter_patterns` to `--filter`, and `list_tests` to `--list-tests` (or `--list`).
 
 #### Test result
 
@@ -1740,6 +1740,35 @@ sample-test --filter='*' --filter='Check one'
 In a pattern, `*` matches any sequence of characters, `?` matches any single character, and `|` separates alternatives; the match is case-sensitive, and the pattern must cover the whole name. The suites and test cases that do not match are not run, and are reported as skipped (`ok 2 - Args suite # SKIP filtered` in TAP); the totals lines show how many were skipped.
 
 The top suite is never skipped as a whole, since its body is `main()`, but its test cases are filtered like those of any other suite.
+
+### List test cases
+
+To list the test cases without running them, use the `--list-tests` option, or its short form `--list`, as in Catch2 and Boost UT. The test cases are listed under the names of their suites, followed by their number:
+
+```console
+$ sample-test --list-tests
+All available test cases:
+  Sample
+    Check various conditions
+    Check strings
+  Explicit namespace suite
+    Check one
+    Check two
+4 test cases in 2 test suites
+```
+
+With `--filter`, the header is `Matching test cases:`, and only the selected test cases are listed; the suites without selected test cases are not listed, so the two options together show what a run with the same filter would run.
+
+The suite bodies run, as usual, since they create the test cases, but the bodies of the test cases do not run, so no check is evaluated; for the same reason, the nested test cases, created by the bodies of their parents, are not listed. No report is written: the list is written to the console, unless `--silent` is given, and to the output file, if any, and the exit code is 0 (or 2 after an option error).
+
+The code of `main()` and of the suite bodies also runs while listing, so the parts that depend on the results of the test cases (their totals, or the exit code of `run()`), and the messages of the test program, which would be mixed with the list, should be skipped when `tr.is_listing ()` is true:
+
+```cpp
+if (!tr.is_listing ())
+  {
+    printf ("Starting the tests...\n");
+  }
+```
 
 ### Output file
 

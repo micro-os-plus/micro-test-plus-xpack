@@ -15,6 +15,7 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstdio>
 #include <functional>
 #include <limits>
 #include <memory>
@@ -1697,6 +1698,124 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         missing_runner.initialise (3, missing_argv);
 
         t.expect (eq (missing_runner.run (), 2)) << "missing pattern";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // With --list-tests, the suite bodies run, to create the test cases,
+    // which are listed, but not run; the nested test cases are not listed.
+    // The list is written to the output file, and, unless silent, to the
+    // console.
+    ts.test ("List test cases", [] (auto& t)
+      {
+        // Not `unit-test-list.txt`, the disassembly written by the build.
+        static constexpr const char* list_path = "listed-test-cases.txt";
+
+        // Reads the list into a string passed by reference, since a
+        // returned local string is not always elided (clang `-Wnrvo`).
+        const auto read_list = [] (std::string& text)
+          {
+            text.clear ();
+            if (std::FILE* file = std::fopen (list_path, "r"); file != nullptr)
+              {
+                char buffer[128];
+                std::size_t count;
+                while ((count = std::fread (buffer, 1, sizeof (buffer), file))
+                       > 0)
+                  {
+                    text.append (buffer, count);
+                  }
+                std::fclose (file);
+              }
+            std::remove (list_path);
+          };
+
+        int bodies_run = 0;
+        bool suite_body_run = false;
+
+        // Adds the same suites and test cases to a runner.
+        const auto add_tests
+            = [&bodies_run, &suite_body_run] (runner& r, suite& top)
+          {
+            r.add_suite ("Added", [&bodies_run, &suite_body_run] (suite& s)
+              {
+                suite_body_run = true;
+                s.test ("Added test",
+                        [&bodies_run] (test_case&) noexcept { ++bodies_run; });
+                s.test_each ("Each", { 1, 2 },
+                             [&bodies_run] (test_case&, int) noexcept
+                  { ++bodies_run; });
+              });
+            r.add_suite ("Empty", [] (suite&) noexcept {});
+            top.test ("Local test", [&bodies_run] (test_case& lt)
+              {
+                ++bodies_run;
+                lt.test ("Nested test", [&bodies_run] (test_case&) noexcept
+                  { ++bodies_run; });
+              });
+          };
+
+        {
+          char arg_name[] = "local";
+          char arg_list[] = "--list-tests";
+          char arg_silent[] = "--silent";
+          char arg_output[] = "--output-file=listed-test-cases.txt";
+          char* list_argv[]
+              = { arg_name, arg_list, arg_silent, arg_output, nullptr };
+
+          runner list_runner;
+          auto& list_ts = list_runner.initialise (4, list_argv, "Local");
+          add_tests (list_runner, list_ts);
+
+          t.expect (eq (list_runner.run (), 0)) << "listed, exit code 0";
+          local_counts.passed_checks++;
+        }
+
+        t.expect (eq (bodies_run, 0)) << "no test case body run";
+        local_counts.passed_checks++;
+
+        t.expect (suite_body_run) << "suite body run";
+        local_counts.passed_checks++;
+
+        std::string list;
+        read_list (list);
+        t.expect (eq (list, "All available test cases:\n"
+                            "  Local\n"
+                            "    Local test\n"
+                            "  Added\n"
+                            "    Added test\n"
+                            "    Each (1)\n"
+                            "    Each (2)\n"
+                            "4 test cases in 2 test suites\n"))
+            << "all test cases listed";
+        local_counts.passed_checks++;
+
+        {
+          runner_options options{};
+          options.verbosity_level = verbosity::silent;
+          options.output_file_path = list_path;
+          options.list_tests = true;
+          options.filter_patterns = { "Added", "Each*" };
+
+          runner filtered_runner;
+          auto& filtered_ts = filtered_runner.initialise (options, "Local");
+          add_tests (filtered_runner, filtered_ts);
+
+          t.expect (eq (filtered_runner.run (), 0)) << "filtered, exit code 0";
+          local_counts.passed_checks++;
+        }
+
+        read_list (list);
+        t.expect (eq (list, "Matching test cases:\n"
+                            "  Added\n"
+                            "    Each (1)\n"
+                            "    Each (2)\n"
+                            "2 test cases in 1 test suite\n"))
+            << "matching test cases listed";
+        local_counts.passed_checks++;
+
+        t.expect (eq (bodies_run, 0)) << "still no test case body run";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

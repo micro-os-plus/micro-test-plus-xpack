@@ -189,6 +189,8 @@ namespace micro_os_plus::micro_test_plus
       // expressions.
       friend class micro_test_plus::test_case;
       friend class check_result;
+      // Write the list of the test cases, with `write_line()`.
+      friend class micro_test_plus::runner;
 
     public:
       /**

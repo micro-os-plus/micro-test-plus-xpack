@@ -40,6 +40,7 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
+#include <cstdio>
 #include <cstring>
 #include <exception>
 #include <string>
@@ -140,6 +141,17 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Returns the flag kept by the owning runner, copied by
+     * `runner::initialise()` from `runner_options::list_tests`.
+     */
+    [[nodiscard]] bool
+    runnable_base::is_listing (void) const noexcept
+    {
+      return runner_.list_tests_;
+    }
+
+    /**
+     * @details
      * Delegates immediately to `runner_.abort()`, passing the supplied
      * source location, so that the report identifies the failed
      * requirement, before the process is terminated via `::abort()`.
@@ -190,6 +202,19 @@ namespace micro_os_plus::micro_test_plus
         }
 
       ++child_test_cases_count_;
+
+      // While the test cases are listed, the selected ones are listed and
+      // the others ignored; none is run.
+      if (runner_.list_tests_)
+        {
+          if (runner_.is_selected (suite.name (), 0)
+              && runner_.is_selected (test_case.name (),
+                                      test_case.nesting_depth ()))
+            {
+              runner_.list_test_case (suite, test_case);
+            }
+          return;
+        }
 
       // Skip the test cases not selected by the filter; the outer test
       // cases, if any, were selected, otherwise this one was not created.
@@ -346,6 +371,34 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    // While the test cases are listed, the body only creates them, so
+    // that they are listed; the suite is not reported. An exception
+    // thrown by the body is reported on stderr, and the listing
+    // continues with the next suite.
+    if (is_listing ())
+      {
+#if defined(__cpp_exceptions)
+        try
+          {
+            callable_ (*this);
+          }
+        catch (...)
+          {
+            if (is_aborted ())
+              {
+                throw;
+              }
+            fprintf (stderr,
+                     "error: unexpected exception in the body of suite "
+                     "'%s'\n",
+                     name_);
+          }
+#else
+        callable_ (*this);
+#endif // defined(__cpp_exceptions)
+        return;
+      }
 
     detail::reporter& reporter = this->test_reporter ();
 

@@ -3278,6 +3278,16 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 15 - missing pattern
         1..15
     ok 26 - Runner filter # { passed, 15 checks }
+    # Subtest: List test cases
+        ok 1 - listed, exit code 0
+        ok 2 - no test case body run
+        ok 3 - suite body run
+        ok 4 - all test cases listed
+        ok 5 - filtered, exit code 0
+        ok 6 - matching test cases listed
+        ok 7 - still no test case body run
+        1..7
+    ok 27 - List test cases # { passed, 7 checks }
     # Subtest: Late suites
         ok 1 - suite added during run() rejected
         ok 2 - rejected suite neither run nor counted
@@ -3285,7 +3295,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 4 - session passed
         ok 5 - suite added after run() rejected
         1..5
-    ok 27 - Late suites # { passed, 5 checks }
+    ok 28 - Late suites # { passed, 5 checks }
     # Subtest: Test case started on the suite
         ok 1 - check before the test case
         # Subtest: test case started on the suite
@@ -3294,59 +3304,59 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 2 - test case started on the suite # { passed, 1 check }
         ok 3 - run nested
         1..3
-    ok 28 - Test case started on the suite # { passed, 2 checks }
+    ok 29 - Test case started on the suite # { passed, 2 checks }
     # Subtest: Each vector value (1)
         ok 1 - value 1 > 0
         1..1
-    ok 29 - Each vector value (1) # { passed, 1 check }
+    ok 30 - Each vector value (1) # { passed, 1 check }
     # Subtest: Each vector value (2)
         ok 1 - value 2 > 0
         1..1
-    ok 30 - Each vector value (2) # { passed, 1 check }
+    ok 31 - Each vector value (2) # { passed, 1 check }
     # Subtest: Each vector value (3)
         ok 1 - value 3 > 0
         1..1
-    ok 31 - Each vector value (3) # { passed, 1 check }
+    ok 32 - Each vector value (3) # { passed, 1 check }
     # Subtest: Each list value (alpha)
         ok 1 - string not null
         1..1
-    ok 32 - Each list value (alpha) # { passed, 1 check }
+    ok 33 - Each list value (alpha) # { passed, 1 check }
     # Subtest: Each list value (beta)
         ok 1 - string not null
         1..1
-    ok 33 - Each list value (beta) # { passed, 1 check }
+    ok 34 - Each list value (beta) # { passed, 1 check }
     # Subtest: Each array value (2)
         ok 1 - prime > 1
         1..1
-    ok 34 - Each array value (2) # { passed, 1 check }
+    ok 35 - Each array value (2) # { passed, 1 check }
     # Subtest: Each array value (3)
         ok 1 - prime > 1
         1..1
-    ok 35 - Each array value (3) # { passed, 1 check }
+    ok 36 - Each array value (3) # { passed, 1 check }
     # Subtest: Each tuple value (42)
         ok 1 - equal to itself
         1..1
-    ok 36 - Each tuple value (42) # { passed, 1 check }
+    ok 37 - Each tuple value (42) # { passed, 1 check }
     # Subtest: Each tuple value (1.5)
         ok 1 - equal to itself
         1..1
-    ok 37 - Each tuple value (1.5) # { passed, 1 check }
+    ok 38 - Each tuple value (1.5) # { passed, 1 check }
     # Subtest: Each tuple value (true)
         ok 1 - equal to itself
         1..1
-    ok 38 - Each tuple value (true) # { passed, 1 check }
+    ok 39 - Each tuple value (true) # { passed, 1 check }
     # Subtest: Each tuple value (x)
         ok 1 - equal to itself
         1..1
-    ok 39 - Each tuple value (x) # { passed, 1 check }
+    ok 40 - Each tuple value (x) # { passed, 1 check }
     # Subtest: Each unnamed value (#1)
         ok 1 - named by position
         1..1
-    ok 40 - Each unnamed value (\#1) # { passed, 1 check }
+    ok 41 - Each unnamed value (\#1) # { passed, 1 check }
     # Subtest: Each unnamed value (#2)
         ok 1 - named by position
         1..1
-    ok 41 - Each unnamed value (\#2) # { passed, 1 check }
+    ok 42 - Each unnamed value (\#2) # { passed, 1 check }
     # Subtest: Nested test_each
         # Subtest: Each nested value (10)
             ok 1 - multiple of 10
@@ -3357,11 +3367,11 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
             1..1
         ok 2 - Each nested value (20) # { passed, 1 check }
         1..2
-    ok 42 - Nested test_each # { passed, 0 checks }
+    ok 43 - Nested test_each # { passed, 0 checks }
     # Subtest: Failed each value (1)
         ok 1 - value 1 == 1
         1..1
-    ok 43 - Failed each value (1) # { passed, 1 check }
+    ok 44 - Failed each value (1) # { passed, 1 check }
     # Subtest: Failed each value (2)
         not ok 1 - value 2 == 1
           ---
@@ -3371,7 +3381,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
             lineNumber: 1786
           ...
         1..1
-    not ok 44 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
+    not ok 45 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
     # Subtest: Callable arguments
         ok 1 - reference parameter refers to a copy
         ok 2 - std::ref() refers to the object
@@ -3379,7 +3389,7 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 4 - local session passed
         ok 5 - deferred suite received the copy
         1..5
-    ok 45 - Callable arguments # { passed, 5 checks }
+    ok 46 - Callable arguments # { passed, 5 checks }
     # Subtest: Operand copies
         ok 1 - plain operands
         ok 2 - plain operands not copied
@@ -3390,19 +3400,19 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 7 - stored comparator
         ok 8 - temporary operand stored once
         1..8
-    ok 46 - Operand copies # { passed, 8 checks }
+    ok 47 - Operand copies # { passed, 8 checks }
     # Subtest: Test case lifetime
         ok 1 - test cases destroyed
         ok 2 - test cases counted
         ok 3 - local session passed
         1..3
-    ok 47 - Test case lifetime # { passed, 3 checks }
+    ok 48 - Test case lifetime # { passed, 3 checks }
     # Subtest: Test case bodies
         ok 1 - large body invoked
         ok 2 - large body not allocated
         ok 3 - local session passed
         1..3
-    ok 48 - Test case bodies # { passed, 3 checks }
+    ok 49 - Test case bodies # { passed, 3 checks }
     # Subtest: Formatting of passed checks
         ok 1 - passed check not formatted (human)
         ok 2 - failed check formatted (human)
@@ -3411,16 +3421,16 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 5 - failed check formatted (tap)
         ok 6 - both checks counted (tap)
         1..6
-    ok 49 - Formatting of passed checks # { passed, 6 checks }
+    ok 50 - Formatting of passed checks # { passed, 6 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - previous handler returned
         1..2
-    ok 50 - Abort handler # { passed, 2 checks }
+    ok 51 - Abort handler # { passed, 2 checks }
     # Subtest: Abort during the session
         ok 1 - skipped without exceptions
         1..1
-    ok 51 - Abort during the session # { passed, 1 check }
+    ok 52 - Abort during the session # { passed, 1 check }
     # Subtest: Test case and suite names
         ok 1 - temporary string name
         ok 2 - string name
@@ -3430,9 +3440,9 @@ not ok 9 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 6 - string suite name copied
         ok 7 - string view suite name copied
         1..7
-    ok 52 - Test case and suite names # { passed, 7 checks }
-    1..52
-not ok 10 - Miscellaneous suite # { FAILED, 200 checks passed, 34 failed, in 55 test cases }
+    ok 53 - Test case and suite names # { passed, 7 checks }
+    1..53
+not ok 10 - Miscellaneous suite # { FAILED, 207 checks passed, 34 failed, in 56 test cases }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -3676,4 +3686,4 @@ ok 12 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..13
-# { total: 677 checks passed, 364 failed, in 143 test cases, 13 test suites }
+# { total: 684 checks passed, 364 failed, in 144 test cases, 13 test suites }
