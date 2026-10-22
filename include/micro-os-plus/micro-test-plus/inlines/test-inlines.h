@@ -272,7 +272,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Self_T, typename Callable_T, typename... Args_T>
     template <typename C, typename... A>
-      requires (sizeof...(A) == sizeof...(Args_T))
+      requires (sizeof...(A) > 0)
     constexpr bound_callable<Self_T, Callable_T, Args_T...>::bound_callable (
         C&& callable, A&&... arguments)
         : callable_ (std::forward<C> (callable)),

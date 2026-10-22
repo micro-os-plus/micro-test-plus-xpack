@@ -744,16 +744,19 @@ namespace micro_os_plus::micro_test_plus
        * @tparam A The types of the arguments, as passed.
        *
        * @par Constraints
-       *   One argument for each stored argument, so that the copy and
-       *   move constructors are used for copies (there is always at
-       *   least one stored argument).
+       *   At least one argument, so that the copy and move constructors
+       *   are used for copies (there is always at least one stored
+       *   argument, and the member initialisation requires one argument
+       *   for each of them). The constraint does not refer to `Args_T`,
+       *   since clang 17 and 18 crash on the out-of-line definition of
+       *   a constraint that refers to the pack of the enclosing class.
        *
        * @param callable The callable object.
        * @param arguments The arguments passed to the callable after the
        * leading reference.
        */
       template <typename C, typename... A>
-        requires (sizeof...(A) == sizeof...(Args_T))
+        requires (sizeof...(A) > 0)
       constexpr explicit bound_callable (C&& callable, A&&... arguments);
 
       /**
@@ -849,7 +852,8 @@ namespace micro_os_plus::micro_test_plus
        * @param callable The callable object; a non-`const` lvalue.
        */
       template <typename Callable_T>
-        requires (!std::is_same_v<std::remove_cv_t<Callable_T>, callable_ref>)
+        requires (!std::is_same_v<std::remove_cv_t<Callable_T>,
+                                  callable_ref<Self_T>>)
       explicit callable_ref (Callable_T& callable) noexcept;
 
       /**
