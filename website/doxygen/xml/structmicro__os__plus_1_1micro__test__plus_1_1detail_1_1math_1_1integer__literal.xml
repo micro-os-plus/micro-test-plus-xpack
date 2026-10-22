@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::math::integer_literal</compoundname>
+    <includes refid="math_8h" local="no">math.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1ac09f666f846defca3cb8bd6e1b33c60e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::math::integer_literal::is_integer</definition>
+        <argsstring></argsstring>
+        <name>is_integer</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::integer_literal::is_integer</qualifiedname>
+        <briefdescription>
+<para>Whether the characters form an integer literal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>False for the floating-point literals (with a decimal point or an exponent), which the literal operator templates also receive. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" line="287" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" bodystart="287" bodyend="-1"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="math-inlines_8h" startline="489" endline="508">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" compoundref="math-inlines_8h" startline="395" endline="469">micro_os_plus::micro_test_plus::detail::math::parse_integer_literal</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a94438561fe06662519cf9687cc734fdb" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::math::integer_literal::is_too_large</definition>
+        <argsstring></argsstring>
+        <name>is_too_large</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::integer_literal::is_too_large</qualifiedname>
+        <briefdescription>
+<para>Whether the value exceeds <computeroutput>unsigned long long</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Detected while the digits are accumulated. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" line="295" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" bodystart="295" bodyend="-1"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="math-inlines_8h" startline="489" endline="508">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" compoundref="math-inlines_8h" startline="395" endline="469">micro_os_plus::micro_test_plus::detail::math::parse_integer_literal</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a79fda0403a1ee1c8fafecbab9e80c815" prot="public" static="no" mutable="no">
+        <type>unsigned long long</type>
+        <definition>unsigned long long micro_os_plus::micro_test_plus::detail::math::integer_literal::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::integer_literal::value</qualifiedname>
+        <briefdescription>
+<para>The value of the literal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Valid only if <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1ac09f666f846defca3cb8bd6e1b33c60e" kindref="member">is_integer</ref></computeroutput> is true and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a94438561fe06662519cf9687cc734fdb" kindref="member">is_too_large</ref></computeroutput> is false. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" line="278" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" bodystart="278" bodyend="-1"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="math-inlines_8h" startline="489" endline="508">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" compoundref="math-inlines_8h" startline="395" endline="469">micro_os_plus::micro_test_plus::detail::math::parse_integer_literal</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The result of parsing the characters of an integer literal. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Returned by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" kindref="member">parse_integer_literal()</ref></computeroutput>; the checks of <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kindref="member">integer_magnitude()</ref></computeroutput> are based on it. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" line="270" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" bodystart="271" bodyend="296"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1ac09f666f846defca3cb8bd6e1b33c60e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::math::integer_literal</scope><name>is_integer</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a94438561fe06662519cf9687cc734fdb" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::math::integer_literal</scope><name>is_too_large</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a79fda0403a1ee1c8fafecbab9e80c815" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::math::integer_literal</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

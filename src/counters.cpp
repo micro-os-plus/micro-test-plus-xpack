@@ -64,8 +64,8 @@ namespace micro_os_plus::micro_test_plus
    * Adds the passed check count, failed check count, executed
    * test case count, failed test case count, and skipped test case count of
    * @p other to the corresponding members of this instance. Returns a
-   * reference to `*this` to support chaining. When tracing is enabled, the updated
-   * totals are output for diagnostic purposes.
+   * reference to `*this` to support chaining. When tracing is enabled, the
+   * updated totals are output for diagnostic purposes.
    */
   counters&
   counters::operator+= (const counters& other) noexcept

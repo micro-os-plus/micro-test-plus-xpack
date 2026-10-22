@@ -1,6 +1,7 @@
 @def MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
-@brief Enable trace in class methods in µTest++
+@brief Enables the trace messages of the µTest++ member functions.
 
 @details
-Display trace messages in the µTest++ Testing Framework when 
-MICRO_OS_PLUS_DIAG_TRACE_ENABLED is present.
+Displays trace messages in the member functions of the µTest++ Testing
+Framework, through `trace::printf()`, which writes them only when
+`MICRO_OS_PLUS_DIAG_TRACE_ENABLED` is also defined.

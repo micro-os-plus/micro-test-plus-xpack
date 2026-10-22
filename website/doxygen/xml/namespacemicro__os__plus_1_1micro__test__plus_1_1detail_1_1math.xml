@@ -1,0 +1,663 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::detail::math</compoundname>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal" prot="public">micro_os_plus::micro_test_plus::detail::math::integer_literal</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::math::abs</definition>
+        <argsstring>(const T t) noexcept</argsstring>
+        <name>abs</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::abs</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Computes the absolute value of a given comparable value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template provides a generic, constexpr implementation for obtaining the absolute value of any type that supports comparison and unary negation.</para>
+<para>The function returns the non-negative value of the input. If the input is less than the default-constructed value of its type (typically zero), the negated value is returned; otherwise, the original value is returned.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input value. Must support comparison and unary negation.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value for which the absolute value is to be computed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The absolute value of the input. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="92" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="92" bodyend="95" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="121" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" compoundref="math-inlines_8h" startline="92" endline="95">abs</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" compoundref="math-inlines_8h" startline="92" endline="95">abs</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" compoundref="math-inlines_8h" startline="299" endline="350">count_decimals</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a7ce90ae12eac430cf58becac530b92b2" compoundref="detail-inlines_8h" startline="427" endline="468">micro_os_plus::micro_test_plus::detail::differ_by_less_than</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" compoundref="detail-inlines_8h" startline="208" endline="240">micro_os_plus::micro_test_plus::detail::within_tolerance</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class Value_T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::math::count_decimals</definition>
+        <argsstring>(Value_T value)</argsstring>
+        <name>count_decimals</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::count_decimals</qualifiedname>
+        <param>
+          <type>Value_T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Computes the number of decimal places of a value, with a precision of about seven digits. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template determines the number of decimal (fractional) digits present in a floating-point value, with a precision of about seven digits. Being <computeroutput>constexpr</computeroutput>, it can also be evaluated at compile time.</para>
+<para>The function repeatedly multiplies the absolute value by ten, incrementing a counter until the distance to the nearest integer is at most a defined precision threshold (1e-7). Using the distance to the nearest integer, not the fractional part, prevents the rounding noise of a value just below an integer (e.g. 2674.9999999999995) from being taken as more decimals.</para>
+<para>The nearest integer is never zero: while the scaled value is below one, its distance to one is used, so that the leading zeros of a small value are counted as decimals, as in its notation (12 for <computeroutput>1e-12</computeroutput>), instead of the count stopping as soon as the scaled value is below the threshold. A zero value has no significant digit, and the result is zero.</para>
+<para>The loop also stops when the value reaches the magnitude from which the type can represent only integers (2^23 for <computeroutput>float</computeroutput>, 2^52 for <computeroutput>double</computeroutput>), limited to 2^63 so that the conversion to <computeroutput>unsigned long long</computeroutput> is always defined. This bounds the number of steps for large values, infinities, and NaNs, for which the result is one; for small values, the number of steps is bounded by the decimal exponent of the smallest value of the type.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Value_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input value, a floating-point type.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value whose decimal precision is to be determined; it may be negative, infinite, or a NaN. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of decimal places, as a value of type <computeroutput>T</computeroutput>, at least one, or zero for a zero value; the leading zeros of a value below one are counted; it is limited by the magnitude from which <computeroutput>Value_T</computeroutput> represents only integers. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="299" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="299" bodyend="350" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="244" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" compoundref="math-inlines_8h" startline="92" endline="95">abs</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" compoundref="math-inlines_8h" startline="299" endline="350">count_decimals</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a67e71e2dce0120ad4839635830e80de8" compoundref="math-inlines_8h" startline="109" endline="112">min_value</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" compoundref="math-inlines_8h" startline="299" endline="350">count_decimals</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" compoundref="math-inlines_8h" startline="367" endline="377">decimal_epsilon</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>bool</type>
+            <declname>Fraction</declname>
+            <defname>Fraction</defname>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>std::size_t</type>
+        <definition>std::size_t micro_os_plus::micro_test_plus::detail::math::count_literal_digits</definition>
+        <argsstring>(void)</argsstring>
+        <name>count_literal_digits</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::count_literal_digits</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Counts the decimal digits of a floating-point literal, before or after the decimal point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Walks the characters once, counting the decimal digits before the first decimal point (<computeroutput>Fraction</computeroutput> false) or after it (<computeroutput>Fraction</computeroutput> true); the digit separators are skipped.</para>
+<para>The digit separators (<computeroutput>&apos;</computeroutput>) are not counted.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Fraction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to count the digits after the decimal point, <computeroutput>false</computeroutput> to count those before it. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The characters of the literal.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The number of digits. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="142" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="142" bodyend="158" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="171" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" compoundref="math-inlines_8h" startline="142" endline="158">count_literal_digits</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" compoundref="math-inlines_8h" startline="142" endline="158">count_literal_digits</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="math-inlines_8h" startline="218" endline="245">den</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="math-inlines_8h" startline="261" endline="266">den_size</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="math-inlines_8h" startline="175" endline="200">num</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Value_T</type>
+          </param>
+        </templateparamlist>
+        <type>Value_T</type>
+        <definition>Value_T micro_os_plus::micro_test_plus::detail::math::decimal_epsilon</definition>
+        <argsstring>(Value_T value)</argsstring>
+        <name>decimal_epsilon</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::decimal_epsilon</qualifiedname>
+        <param>
+          <type>Value_T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Computes the default comparison tolerance of a floating-point value, one unit of its last decimal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of decimal places is computed by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" kindref="member">count_decimals()</ref></computeroutput>, and the tolerance is one divided by ten raised to that number, as for the floating-point literals, which use the decimals written.</para>
+<para>A zero value has no decimals, and gets a zero tolerance, so that it is compared exactly; a tolerance of one unit of an arbitrary decimal would make the zero equal to unrelated small values. A zero tolerance is also returned when ten raised to the number of decimals would exceed the range of <computeroutput>Value_T</computeroutput> (values below about <computeroutput>1e-308</computeroutput> for <computeroutput>double</computeroutput>), instead of computing an infinite power.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Value_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value, a floating-point type.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value whose tolerance is to be determined; it may be negative, infinite, or a NaN. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ten raised to minus the number of decimal places returned by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" kindref="member">count_decimals()</ref></computeroutput> (0.01 for <computeroutput>1.25</computeroutput>, 1e-12 for <computeroutput>1e-12</computeroutput>), or zero, which means an exact comparison, for a zero value and for a value whose tolerance would be below the range of <computeroutput>Value_T</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="367" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="367" bodyend="377" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="261" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" compoundref="math-inlines_8h" startline="299" endline="350">count_decimals</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" compoundref="math-inlines_8h" startline="367" endline="377">decimal_epsilon</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" compoundref="math-inlines_8h" startline="126" endline="132">pow</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" compoundref="math-inlines_8h" startline="367" endline="377">decimal_epsilon</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::math::den</definition>
+        <argsstring>(void)</argsstring>
+        <name>den</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::den</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Computes the decimal part of a number represented as an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template performs compile-time extraction of the decimal (fractional) part from a sequence of characters, typically provided as a template parameter pack.</para>
+<para>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<computeroutput>.</computeroutput>), or an apostrophe (<computeroutput>&apos;</computeroutput>). Parsing begins after the first dot, accumulating the decimal digits as an integer value and skipping the digit separators (e.g. <computeroutput>1.25</computeroutput> yields 25), so that <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" kindref="member">den()</ref> / 10^den_size()</computeroutput> gives the fraction. If the result could exceed <computeroutput>T</computeroutput>, the compilation fails with an explicit message.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character pack representing the numeric value; it must contain a decimal point.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The digits after the decimal point, as an integral value of type <computeroutput>T</computeroutput> (e.g. 25 for <computeroutput>1.25</computeroutput>), to be divided by ten raised to the power returned by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" kindref="member">den_size()</ref></computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="218" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="218" bodyend="245" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="209" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" compoundref="math-inlines_8h" startline="142" endline="158">count_literal_digits</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="math-inlines_8h" startline="218" endline="245">den</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="math-inlines_8h" startline="218" endline="245">den</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="378" endline="384">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="360" endline="366">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="396" endline="402">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::math::den_size</definition>
+        <argsstring>(void)</argsstring>
+        <name>den_size</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::den_size</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Counts the decimal places of a number represented as an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template determines, at compile time, the number of decimal (fractional) digits present in a numeric value represented by a character sequence, typically provided as a template parameter pack.</para>
+<para>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<computeroutput>.</computeroutput>), or an apostrophe (<computeroutput>&apos;</computeroutput>). It returns the number of digits that follow the first dot (the digit separators are not counted; e.g. 2 for <computeroutput>1.25</computeroutput>), which is the scale of the value returned by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" kindref="member">den()</ref></computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character pack representing the numeric value; it must contain a decimal point.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The number of decimal places (e.g. 2 for <computeroutput>1.25</computeroutput>), as a value of type <computeroutput>T</computeroutput>; it is the scale of the value returned by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" kindref="member">den()</ref></computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="261" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="261" bodyend="266" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="226" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" compoundref="math-inlines_8h" startline="142" endline="158">count_literal_digits</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="math-inlines_8h" startline="261" endline="266">den_size</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="math-inlines_8h" startline="261" endline="266">den_size</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="378" endline="384">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="360" endline="366">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="396" endline="402">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>unsigned long long</type>
+        <definition>unsigned long long micro_os_plus::micro_test_plus::detail::math::integer_magnitude</definition>
+        <argsstring>(void)</argsstring>
+        <name>integer_magnitude</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::integer_magnitude</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Computes the value of an integer literal of type <computeroutput>T</computeroutput>, before any negation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The literal must be an integer literal, in any of the C++ forms (decimal, hexadecimal, binary, or octal, with digit separators), and its value must fit in <computeroutput>T</computeroutput>; otherwise the compilation fails with an explicit message.</para>
+<para>Negative values are obtained with the unary minus, so the literal itself is never negative. For the signed types, the limit is the absolute value of the minimum, <computeroutput>max () + 1</computeroutput>, so that the minimum can be written (e.g. <computeroutput>-128<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">_i8</ref></computeroutput>); the caller allows this magnitude only when it is negated.</para>
+<para>When a check fails, zero is returned, so that the callers report no further errors.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type of the literal. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The characters of the literal, as received by a literal operator template.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The value of the literal, up to <computeroutput>max ()</computeroutput> of <computeroutput>T</computeroutput>, or, for the signed types, up to <computeroutput>max () + 1</computeroutput>, the absolute value of the minimum. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="489" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="489" bodyend="508" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="328" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="math-inlines_8h" startline="489" endline="508">integer_magnitude</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1ac09f666f846defca3cb8bd6e1b33c60e" compoundref="math_8h" startline="287">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_integer</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a94438561fe06662519cf9687cc734fdb" compoundref="math_8h" startline="295">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_too_large</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" compoundref="math-inlines_8h" startline="395" endline="469">parse_integer_literal</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a79fda0403a1ee1c8fafecbab9e80c815" compoundref="math_8h" startline="278">micro_os_plus::micro_test_plus::detail::math::integer_literal::value</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" compoundref="values-inlines_8h" startline="78" endline="80">micro_os_plus::micro_test_plus::detail::value_base&lt; decltype(N)&gt;::value_base</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="math-inlines_8h" startline="489" endline="508">integer_magnitude</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a67e71e2dce0120ad4839635830e80de8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>const T &amp;</type>
+        <definition>const T &amp; micro_os_plus::micro_test_plus::detail::math::min_value</definition>
+        <argsstring>(const T &amp;lhs, const T &amp;rhs) noexcept</argsstring>
+        <name>min_value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::min_value</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Computes the minimum of two comparable values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template provides a generic, constexpr implementation for determining the minimum of two values of any type that supports comparison.</para>
+<para>The function returns a reference to the lesser of the two input values, as determined by the <computeroutput>&lt;</computeroutput> operator. If the second argument is less than the first, it is returned; otherwise, the first argument is returned.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input values. Must support comparison via the <computeroutput>&lt;</computeroutput> operator.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first value to compare. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second value to compare. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the minimum of the two input values. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="109" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="109" bodyend="112" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="135" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a67e71e2dce0120ad4839635830e80de8" compoundref="math-inlines_8h" startline="109" endline="112">min_value</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" compoundref="math-inlines_8h" startline="299" endline="350">count_decimals</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a67e71e2dce0120ad4839635830e80de8" compoundref="math-inlines_8h" startline="109" endline="112">min_value</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" compoundref="detail-inlines_8h" startline="208" endline="240">micro_os_plus::micro_test_plus::detail::within_tolerance</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::math::num</definition>
+        <argsstring>(void)</argsstring>
+        <name>num</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::num</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Computes the integral part of a decimal floating-point number represented as an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template performs compile-time parsing of a numeric value from a sequence of characters, typically provided as a template parameter pack.</para>
+<para>The characters must be decimal digits, a dot (<computeroutput>.</computeroutput>), or digit separators (<computeroutput>&apos;</computeroutput>), which are skipped; otherwise (e.g. an exponent) the compilation fails with an explicit message, as it does if the integral part has more digits than <computeroutput>T</computeroutput> can always hold. Parsing stops at the first dot, allowing the function to extract only the integral part of the number.</para>
+<para>Used by the floating-point literal operators; the integer literals use <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kindref="member">integer_magnitude()</ref></computeroutput>, which also accepts the C++ prefixes and checks the range.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character pack representing the numeric value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The parsed integral value of type <computeroutput>T</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="175" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="175" bodyend="200" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="191" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" compoundref="math-inlines_8h" startline="142" endline="158">count_literal_digits</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="math-inlines_8h" startline="175" endline="200">num</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="math-inlines_8h" startline="175" endline="200">num</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="378" endline="384">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="360" endline="366">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="396" endline="402">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal" kindref="compound">integer_literal</ref></type>
+        <definition>integer_literal micro_os_plus::micro_test_plus::detail::math::parse_integer_literal</definition>
+        <argsstring>(void)</argsstring>
+        <name>parse_integer_literal</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::parse_integer_literal</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Parses the characters of an integer literal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The characters are those of a valid C++ literal, already checked by the compiler (digits valid for the base, digit separators in valid positions). The base is given by the prefix: <computeroutput>0x</computeroutput> or <computeroutput>0X</computeroutput> for hexadecimal, <computeroutput>0b</computeroutput> or <computeroutput>0B</computeroutput> for binary, a leading <computeroutput>0</computeroutput> for octal, and none for decimal. The digit separators (<computeroutput>&apos;</computeroutput>) are skipped.</para>
+<para>Any other character (a decimal point, an exponent, or a digit not valid for the base, as in the floating-point literal <computeroutput>09.5</computeroutput>) marks the literal as not an integer. The value is accumulated in <computeroutput>unsigned long long</computeroutput>, and the accumulation stops if it would overflow.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The characters of the literal, as received by a literal operator template.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The value, and whether the characters form an integer literal and whether its value fits in <computeroutput>unsigned long long</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="395" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="395" bodyend="469" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="311" declcolumn="5"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1ac09f666f846defca3cb8bd6e1b33c60e" compoundref="math_8h" startline="287">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_integer</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a94438561fe06662519cf9687cc734fdb" compoundref="math_8h" startline="295">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_too_large</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" compoundref="math-inlines_8h" startline="395" endline="469">parse_integer_literal</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a79fda0403a1ee1c8fafecbab9e80c815" compoundref="math_8h" startline="278">micro_os_plus::micro_test_plus::detail::math::integer_literal::value</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="math-inlines_8h" startline="489" endline="508">integer_magnitude</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" compoundref="math-inlines_8h" startline="395" endline="469">parse_integer_literal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class Exp_T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::math::pow</definition>
+        <argsstring>(const T base, const Exp_T exp) noexcept</argsstring>
+        <name>pow</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::math::pow</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>const Exp_T</type>
+          <declname>exp</declname>
+        </param>
+        <briefdescription>
+<para>Generic exponentiation function to compute the power of a base raised to an exponent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template provides a constexpr implementation for raising a base value to a given exponent, supporting any types that allow multiplication.</para>
+<para>The function starts from one and multiplies the result by the base <computeroutput>exp</computeroutput> times. If the exponent is zero (or negative), the function returns one (the multiplicative identity for the type).</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the base value. Must support multiplication assignment and construction from an integer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Exp_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the exponent. Must be default-constructible (to zero), and support the <computeroutput>&lt;</computeroutput> and prefix <computeroutput>++</computeroutput> operators.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base value to be raised to the power of <computeroutput>exp</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exponent value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of raising <computeroutput>base</computeroutput> to the power of <computeroutput>exp</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="126" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="126" bodyend="132" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="152" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" compoundref="math-inlines_8h" startline="126" endline="132">pow</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" compoundref="math-inlines_8h" startline="367" endline="377">decimal_epsilon</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" compoundref="math-inlines_8h" startline="126" endline="132">pow</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Internal mathematical utilities for the µTest++ testing framework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math" kindref="compound">detail::math</ref></computeroutput> namespace offers a suite of constexpr mathematical function templates and utilities, used by the literals and by the floating-point comparisons of the µTest++ framework.</para>
+<para>These functions include generic implementations for absolute value, minimum value, exponentiation, and compile-time parsing of numeric values from character arrays. The utilities are designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</para>
+<para>The names of these functions suggest general mathematical functions, but their scope is limited to the needs of the framework (for example, <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" kindref="member">pow()</ref></computeroutput> accepts only integral exponents); like everything in <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></computeroutput>, they are not part of the public API and may be modified without prior notice. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="76" column="3"/>
+  </compounddef>
+</doxygen>

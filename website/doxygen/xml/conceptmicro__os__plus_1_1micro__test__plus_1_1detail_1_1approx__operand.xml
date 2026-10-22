@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__operand" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::approx_operand</compoundname>
+    <includes refid="detail_8h" local="no">detail.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__operand" kindref="compound">micro_os_plus::micro_test_plus::detail::approx_operand</ref> =  std::is_arithmetic_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kindref="member">unwrapped_t</ref>&lt;T&gt;&gt;
+                             and not std::is_same_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kindref="member">unwrapped_t</ref>&lt;T&gt;, bool&gt;
+                             and not std::is_same_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kindref="member">unwrapped_t</ref>&lt;T&gt;, char&gt;
+                             and not std::is_same_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kindref="member">unwrapped_t</ref>&lt;T&gt;, wchar_t&gt;
+                             and not std::is_same_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kindref="member">unwrapped_t</ref>&lt;T&gt;, char8_t&gt;
+                             and not std::is_same_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kindref="member">unwrapped_t</ref>&lt;T&gt;, char16_t&gt;
+                             and not std::is_same_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kindref="member">unwrapped_t</ref>&lt;T&gt;, char32_t&gt;</initializer>
+    <conceptparts>
+      <codepart line="819">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">approx_operand<sp/>=<sp/>std::is_arithmetic_v&lt;unwrapped_t&lt;T&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>not<sp/>std::is_same_v&lt;unwrapped_t&lt;T&gt;,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>not<sp/>std::is_same_v&lt;unwrapped_t&lt;T&gt;,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>not<sp/>std::is_same_v&lt;unwrapped_t&lt;T&gt;,<sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>not<sp/>std::is_same_v&lt;unwrapped_t&lt;T&gt;,<sp/></highlight><highlight class="keywordtype">char8_t</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>not<sp/>std::is_same_v&lt;unwrapped_t&lt;T&gt;,<sp/></highlight><highlight class="keywordtype">char16_t</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>not<sp/>std::is_same_v&lt;unwrapped_t&lt;T&gt;,<sp/></highlight><highlight class="keywordtype">char32_t</highlight><highlight class="normal">&gt;</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>C++20 concept satisfied when <computeroutput>T</computeroutput> is a valid operand of the approximate comparator. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to be checked, possibly a reference.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput>approx_operand</computeroutput> concept is satisfied when <computeroutput>T</computeroutput>, or the value it wraps (for the framework value wrappers and the numeric literals), is an arithmetic type other than <computeroutput>bool</computeroutput> and the character types (<computeroutput>char</computeroutput>, <computeroutput>wchar_t</computeroutput>, <computeroutput>char8_t</computeroutput>, <computeroutput>char16_t</computeroutput>, and <computeroutput>char32_t</computeroutput>), which are not numbers; <computeroutput>signed char</computeroutput> and <computeroutput>unsigned char</computeroutput> are accepted, as the integer types they are. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="819" column="5"/>
+  </compounddef>
+</doxygen>

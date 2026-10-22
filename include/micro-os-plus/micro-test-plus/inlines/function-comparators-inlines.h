@@ -23,9 +23,10 @@
  * @details
  * This header provides the inline implementations for the function comparator
  * templates used within the µTest++ framework. It defines the logic for
- * generic comparison operators, including equality,
- * non-equality, greater than, less than, and their respective logical
- * variants. Additionally, it implements logical combinators such as
+ * generic comparison functions, including equality, non-equality, greater
+ * than, less than, greater than or equal, less than or equal, and the
+ * approximate comparison. Additionally, it implements logical combinators
+ * such as
  * conjunction (`both`), disjunction (`either`), and negation
  * (`negate`).
  *
@@ -77,10 +78,9 @@ namespace micro_os_plus::micro_test_plus
    * The `eq` function template provides a generic equality comparator for any
    * types. The operands are first passed to `detail::as_operand()`, which
    * converts the C strings to `detail::c_string`, so that they are
-   * compared by content. It constructs a comparator object that can be used
-   * within the µTest++ framework to assert that two values are equal. This
-   * function is typically used in test expectations and assertions to compare
-   * the actual and expected values.
+   * compared by content. It constructs a comparator object, with the
+   * `detail::equal_to` tag, which evaluates to `true` if the two values are
+   * equal, and which is reported with both values if not.
    *
    * The operands are forwarded, so that the comparator moves the
    * temporaries and refers to the named operands, without copying them.
@@ -97,11 +97,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `ne` function template provides a generic non-equality comparator for
-   * any types. It constructs a comparator object that can be used within the
-   * µTest++ framework to assert that two values are not equal. This function
-   * is typically used in test expectations and assertions to compare the
-   * actual and expected values.
+   * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
+   * the C strings are compared by content. It constructs a comparator object,
+   * with the `detail::not_equal_to` tag, which evaluates to `true` if the two
+   * values are not equal, and which is reported with both values if not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
@@ -115,11 +114,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `gt` function template provides a generic greater than comparator for
-   * any types. It constructs a comparator object that can be used within the
-   * µTest++ framework to assert that one value is greater than another. This
-   * function is typically used in test expectations and assertions to compare
-   * the actual and expected values.
+   * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
+   * the C strings are compared by content. It constructs a comparator object,
+   * with the `detail::greater` tag, which evaluates to `true` if `lhs` is
+   * greater than `rhs`, and which is reported with both values if not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
@@ -133,11 +131,11 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `ge` function template provides a generic greater than or equal
-   * comparator for any types. It constructs a comparator object that can be
-   * used within the µTest++ framework to assert that one value is greater than
-   * or equal to another. This function is typically used in test expectations
-   * and assertions to compare the actual and expected values.
+   * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
+   * the C strings are compared by content. It constructs a comparator object,
+   * with the `detail::greater_equal` tag, which evaluates to `true` if `lhs`
+   * is greater than or equal to `rhs`, and which is reported with both values
+   * if not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
@@ -151,11 +149,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `lt` function template provides a generic less than comparator for any
-   * types. It constructs a comparator object that can be used within the
-   * µTest++ framework to assert that one value is less than another. This
-   * function is typically used in test expectations and assertions to compare
-   * the actual and expected values.
+   * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
+   * the C strings are compared by content. It constructs a comparator object,
+   * with the `detail::less` tag, which evaluates to `true` if `lhs` is less
+   * than `rhs`, and which is reported with both values if not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
@@ -169,11 +166,11 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `le` function template provides a generic less than or equal
-   * comparator for any types. It constructs a comparator object that can be
-   * used within the µTest++ framework to assert that one value is less than or
-   * equal to another. This function is typically used in test expectations and
-   * assertions to compare the actual and expected values.
+   * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
+   * the C strings are compared by content. It constructs a comparator object,
+   * with the `detail::less_equal` tag, which evaluates to `true` if `lhs` is
+   * less than or equal to `rhs`, and which is reported with both values if
+   * not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
@@ -209,10 +206,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The `negate` function template provides a generic logical negation for
-   * any expression type. It constructs a logical negator object that can be
-   * used within the µTest++ framework to assert that a given condition is
-   * false. This function is typically used in test expectations and
-   * assertions to invert logical expressions or custom comparators.
+   * any expression type. It constructs a `detail::not_op` logical negator
+   * object, which evaluates to `true` if the operand is false; the template
+   * argument is named, since the class template argument deduction would
+   * copy an operand that is itself a `not_op`, instead of negating it.
    *
    * It is the function form of the `!` operator from the
    * `micro_test_plus::operators` namespace.
@@ -229,10 +226,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The `both` function template provides a generic logical conjunction for
-   * any expression types. It constructs a logical conjunction object that can
-   * be used within the µTest++ framework to assert that both given conditions
-   * are true. This function is typically used in test expectations and
-   * assertions to combine logical expressions or custom comparators.
+   * any expression types. It constructs a `detail::and_op` logical
+   * conjunction object, which evaluates to `true` if both operands are
+   * true.
    *
    * It is the function form of the `&&` operator from the
    * `micro_test_plus::operators` namespace.
@@ -248,11 +244,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The `either` function template provides a generic logical disjunction
-   * for any expression types. It constructs a logical disjunction object that
-   * can be used within the µTest++ framework to assert that at least one of
-   * the given conditions is true. This function is typically used in test
-   * expectations and assertions to combine logical expressions or custom
-   * comparators.
+   * for any expression types. It constructs a `detail::or_op` logical
+   * disjunction object, which evaluates to `true` if at least one of the
+   * operands is true.
    *
    * It is the function form of the `||` operator from the
    * `micro_test_plus::operators` namespace; the disjunction is inclusive, so

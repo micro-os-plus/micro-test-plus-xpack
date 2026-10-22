@@ -25,20 +25,6 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/-t">_t&lt;T&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated generic strongly-typed wrapper for explicit type conversion. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/-t/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t&lt;T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -64,7 +50,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>User-defined literal operator to convert to <span class="doxyComputerOutput">bool</span>. <a href="#gaa2bfc74376f8c110053bfa6e06e40772">More...</a></p>
+<p>User-defined literal operator to create a named boolean constant. <a href="#gaa2bfc74376f8c110053bfa6e06e40772">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -451,356 +437,17 @@ keywords:
 
 <table class="doxyMembersIndex">
 
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
+</tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga6195961d9ece2c2c91e8946d47d84a79">_t</a> (const T &amp;t)</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto </td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (T value, std::type_identity_t&lt; T &gt; epsilon) noexcept -&gt; detail::value&lt; T &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Constructor for the deprecated strongly-typed wrapper. <a href="#ga6195961d9ece2c2c91e8946d47d84a79">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaad9720f2d1e443d77cdfd1eb1151e924">to_t</a> (const T &amp;t)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Constructor for the strongly-typed wrapper. <a href="#gaad9720f2d1e443d77cdfd1eb1151e924">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-</table>
-
-## Deprecated Type Wrappers Index
-
-<table class="doxyMembersIndex">
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga74e6e2bffc2fc2dea47f979b5b55ea64">_b</a> = type_traits::value&lt; bool &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values. <a href="#ga74e6e2bffc2fc2dea47f979b5b55ea64">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gabd2f8b7401162835cb4735e4a7532c36">_c</a> = type_traits::value&lt; char &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values. <a href="#gabd2f8b7401162835cb4735e4a7532c36">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gacf10cd5dca8066e1df77e668b68f3272">_sc</a> = type_traits::value&lt; signed char &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values. <a href="#gacf10cd5dca8066e1df77e668b68f3272">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga102b1f7c41452481e6be2bd8da63e4a0">_s</a> = type_traits::value&lt; short &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values. <a href="#ga102b1f7c41452481e6be2bd8da63e4a0">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga1613ccf081248c601bed0f3022fba652">_i</a> = type_traits::value&lt; int &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values. <a href="#ga1613ccf081248c601bed0f3022fba652">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaaebf2b13e1742a894179deedf8ad82cc">_l</a> = type_traits::value&lt; long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values. <a href="#gaaebf2b13e1742a894179deedf8ad82cc">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">_ll</a> = type_traits::value&lt; long long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values. <a href="#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga74b4ecee40263c6b4ac8a60fc6480fac">_u</a> = type_traits::value&lt; unsigned &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values. <a href="#ga74b4ecee40263c6b4ac8a60fc6480fac">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga1ef97880cc5f2e13eea8b4ebb888886a">_uc</a> = type_traits::value&lt; unsigned char &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values. <a href="#ga1ef97880cc5f2e13eea8b4ebb888886a">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga67992fcc21a60e3dd1fb4c9c5ebc814a">_us</a> = type_traits::value&lt; unsigned short &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values. <a href="#ga67992fcc21a60e3dd1fb4c9c5ebc814a">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9cb69b5dc7c394a57e1b09c919b0f6ab">_ul</a> = type_traits::value&lt; unsigned long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values. <a href="#ga9cb69b5dc7c394a57e1b09c919b0f6ab">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga0b9d74a6595fe7fdefca21255ab59dc8">_ull</a> = type_traits::value&lt; unsigned long long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values. <a href="#ga0b9d74a6595fe7fdefca21255ab59dc8">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga3cb44c2b09802fbee17f324cbdf3f31e">_i8</a> = type_traits::value&lt; std::int8_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values. <a href="#ga3cb44c2b09802fbee17f324cbdf3f31e">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaec10ef24cb02dd0fb7f5e44227562d51">_i16</a> = type_traits::value&lt; std::int16_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values. <a href="#gaec10ef24cb02dd0fb7f5e44227562d51">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5d6deb61637f1d7350a69f62d2971bc3">_i32</a> = type_traits::value&lt; std::int32_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values. <a href="#ga5d6deb61637f1d7350a69f62d2971bc3">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae98aa89157544638f775d2a90a3ec774">_i64</a> = type_traits::value&lt; std::int64_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values. <a href="#gae98aa89157544638f775d2a90a3ec774">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga2e2ad62d8c5d6e3abcfca9a897ae61de">_u8</a> = type_traits::value&lt; std::uint8_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values. <a href="#ga2e2ad62d8c5d6e3abcfca9a897ae61de">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga07f83438e4c0c85efdeacd78668f3543">_u16</a> = type_traits::value&lt; std::uint16_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values. <a href="#ga07f83438e4c0c85efdeacd78668f3543">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaf66382b299dcf814298ae56b75b541d7">_u32</a> = type_traits::value&lt; std::uint32_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values. <a href="#gaf66382b299dcf814298ae56b75b541d7">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gac654508c2894db262cbd0335f76b02bf">_u64</a> = type_traits::value&lt; std::uint64_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values. <a href="#gac654508c2894db262cbd0335f76b02bf">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gadcff4454bf86ea03c0c3d1be42b04e12">_f</a> = type_traits::value&lt; float &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values. <a href="#gadcff4454bf86ea03c0c3d1be42b04e12">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga6ab8b464d71f15f55bd047dbfca50899">_d</a> = type_traits::value&lt; double &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values. <a href="#ga6ab8b464d71f15f55bd047dbfca50899">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga79572e6e73076a155927ff0c3888ce76">_ld</a> = type_traits::value&lt; long double &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values. <a href="#ga79572e6e73076a155927ff0c3888ce76">More...</a></p>
+<p>Wraps a floating-point value with an explicit comparison tolerance. <a href="#gafe47800a219b00fcccf0a1dc596dbe20">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -815,12 +462,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga6bdfe5c187140ee99d0bcabd5bb65156">to_b</a> = type_traits::value&lt; bool &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a> = detail::value&lt; bool &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values. <a href="#ga6bdfe5c187140ee99d0bcabd5bb65156">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values. <a href="#ga5570e36fb3e73be3edf734ac80a23d93">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -829,12 +476,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5d14217f53925b323f4236298e3dcc90">to_c</a> = type_traits::value&lt; char &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a> = detail::value&lt; char &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values. <a href="#ga5d14217f53925b323f4236298e3dcc90">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values. <a href="#ga6ccf42d05ae14c445f602128f8ffd831">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -843,12 +490,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gadb22be8fe019b5cd1ad56cfadea5f4ec">to_sc</a> = type_traits::value&lt; signed char &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a> = detail::value&lt; signed char &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values. <a href="#gadb22be8fe019b5cd1ad56cfadea5f4ec">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values. <a href="#gae3838e23c60edeadbafdd4a22d1b1516">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -857,12 +504,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga1b39571aeebcb8091bd410a9b247a571">to_s</a> = type_traits::value&lt; short &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a> = detail::value&lt; short &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values. <a href="#ga1b39571aeebcb8091bd410a9b247a571">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values. <a href="#gabc8f58b457f42435bcb51f53e6fe6b78">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -871,12 +518,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gab6ddb21470182cbdcf06436cde43718f">to_i</a> = type_traits::value&lt; int &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a> = detail::value&lt; int &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values. <a href="#gab6ddb21470182cbdcf06436cde43718f">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values. <a href="#gaf3ee271cefcffa625e40d476305da62f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -885,12 +532,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaaf580ebebfba7cbe84a89db8574a6aa7">to_l</a> = type_traits::value&lt; long &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a> = detail::value&lt; long &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values. <a href="#gaaf580ebebfba7cbe84a89db8574a6aa7">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values. <a href="#ga09028a1e0e713723257afba48b9ee551">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -899,12 +546,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gab9d11644d3b22e2a9932e64853b5a59d">to_ll</a> = type_traits::value&lt; long long &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a> = detail::value&lt; long long &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values. <a href="#gab9d11644d3b22e2a9932e64853b5a59d">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values. <a href="#ga0d0ae1e784a8a4da6630ab06addcad34">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -913,12 +560,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gac8586b75498097cb06b404399c307960">to_u</a> = type_traits::value&lt; unsigned &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a> = detail::value&lt; unsigned &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values. <a href="#gac8586b75498097cb06b404399c307960">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values. <a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -927,12 +574,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9b60956f6c874e5597cdea6c0323fff1">to_uc</a> = type_traits::value&lt; unsigned char &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a> = detail::value&lt; unsigned char &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values. <a href="#ga9b60956f6c874e5597cdea6c0323fff1">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values. <a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -941,12 +588,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gac9a34848b05859a18794ece696e37f26">to_us</a> = type_traits::value&lt; unsigned short &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a> = detail::value&lt; unsigned short &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values. <a href="#gac9a34848b05859a18794ece696e37f26">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values. <a href="#ga8c22086f0e7e89d753cf7846ef7229d4">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -955,12 +602,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9f6f56950ba8bce6cc49037af83e443b">to_ul</a> = type_traits::value&lt; unsigned long &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a> = detail::value&lt; unsigned long &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values. <a href="#ga9f6f56950ba8bce6cc49037af83e443b">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values. <a href="#ga5d2d6a69c090569866a779672772b48f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -969,12 +616,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga595258f3c1b293284f79a88b2872d43d">to_ull</a> = type_traits::value&lt; unsigned long long &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a> = detail::value&lt; unsigned long long &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values. <a href="#ga595258f3c1b293284f79a88b2872d43d">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values. <a href="#gae1438b74ec39a793d5ad516a7c2c7788">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -983,12 +630,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaa61c255757e915cb05132602baea088b">to_i8</a> = type_traits::value&lt; std::int8_t &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a> = detail::value&lt; std::int8_t &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values. <a href="#gaa61c255757e915cb05132602baea088b">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values. <a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -997,12 +644,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaf22a7774a4b05de9779d9084ed41a02a">to_i16</a> = type_traits::value&lt; std::int16_t &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a> = detail::value&lt; std::int16_t &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values. <a href="#gaf22a7774a4b05de9779d9084ed41a02a">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values. <a href="#ga5cc1961eb074bb0740d8a593c411e0f9">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1011,12 +658,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9ca96b6c6d79560f8186c6206ac4f613">to_i32</a> = type_traits::value&lt; std::int32_t &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a> = detail::value&lt; std::int32_t &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values. <a href="#ga9ca96b6c6d79560f8186c6206ac4f613">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values. <a href="#ga201eeff58867ba58d3312ae56113ef06">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1025,12 +672,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga240591501696d181e105529c1f52b56c">to_i64</a> = type_traits::value&lt; std::int64_t &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a> = detail::value&lt; std::int64_t &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values. <a href="#ga240591501696d181e105529c1f52b56c">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values. <a href="#gaead55f5e265634a742633261f9f2aa3f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1039,12 +686,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga8b683d809d600f5c5210bb16546a832e">to_u8</a> = type_traits::value&lt; std::uint8_t &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a> = detail::value&lt; std::uint8_t &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values. <a href="#ga8b683d809d600f5c5210bb16546a832e">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values. <a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1053,12 +700,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaa60006a01aa94a5fd755aebddd8ceec3">to_u16</a> = type_traits::value&lt; std::uint16_t &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a> = detail::value&lt; std::uint16_t &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values. <a href="#gaa60006a01aa94a5fd755aebddd8ceec3">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values. <a href="#ga87bb08ab5e58f481ee911e872108f8e0">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1067,12 +714,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga3bf9f9c946f16b5e02f9f2c45739df42">to_u32</a> = type_traits::value&lt; std::uint32_t &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a> = detail::value&lt; std::uint32_t &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values. <a href="#ga3bf9f9c946f16b5e02f9f2c45739df42">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values. <a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1081,12 +728,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5fba6fbb12941113aeff430609839ba4">to_u64</a> = type_traits::value&lt; std::uint64_t &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a> = detail::value&lt; std::uint64_t &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values. <a href="#ga5fba6fbb12941113aeff430609839ba4">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values. <a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1095,12 +742,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga3c89dfb65d916dfc34dfdfcb10334b5c">to_f</a> = type_traits::value&lt; float &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a> = detail::value&lt; float &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values. <a href="#ga3c89dfb65d916dfc34dfdfcb10334b5c">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values. <a href="#ga5368740b47e92605914b6c38ea88aebf">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1109,12 +756,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to_d</a> = type_traits::value&lt; double &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a> = detail::value&lt; double &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values. <a href="#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values. <a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1123,12 +770,357 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga33a096960b5dddee322e36c689ecbf47">to_ld</a> = type_traits::value&lt; long double &gt;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a> = detail::value&lt; long double &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values. <a href="#ga33a096960b5dddee322e36c689ecbf47">More...</a></p>
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values. <a href="#gaeba32254fdd8159523b525745b13bfa9">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Deprecated Type Wrappers Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> = to_b</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span>. <a href="#gad4203783cfbe141f41ee8515f7b2ea94">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gafdd897d040f92df9cd42e551ebc88cd8">_c</a> = to_c</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span>. <a href="#gafdd897d040f92df9cd42e551ebc88cd8">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga0cc4baab5f421ac7adee10218d8ee8a2">_sc</a> = to_sc</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span>. <a href="#ga0cc4baab5f421ac7adee10218d8ee8a2">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga461a956b7e308ed6e8c64afa3cf160f2">_s</a> = to_s</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span>. <a href="#ga461a956b7e308ed6e8c64afa3cf160f2">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga8468610e763177a8f569f7d618851288">_i</a> = to_i</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span>. <a href="#ga8468610e763177a8f569f7d618851288">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga429a848542fc4ffafd3dd22bc1832654">_l</a> = to_l</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></span>. <a href="#ga429a848542fc4ffafd3dd22bc1832654">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9c597ca04848620b8570c29a4741e77d">_ll</a> = to_ll</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span>. <a href="#ga9c597ca04848620b8570c29a4741e77d">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaaa486af2418a24076237fbe26940f5ae">_u</a> = to_u</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span>. <a href="#gaaa486af2418a24076237fbe26940f5ae">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaa8bb559065ea34a9645fdfd6339b9b7a">_uc</a> = to_uc</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span>. <a href="#gaa8bb559065ea34a9645fdfd6339b9b7a">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga65aea7fc6324806cc029041a1c785611">_us</a> = to_us</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span>. <a href="#ga65aea7fc6324806cc029041a1c785611">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga32c7eef01fcaef2f1a9478427d951f62">_ul</a> = to_ul</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span>. <a href="#ga32c7eef01fcaef2f1a9478427d951f62">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gada8a165060d3d3b3ab51272b9da58761">_ull</a> = to_ull</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span>. <a href="#gada8a165060d3d3b3ab51272b9da58761">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga265f8609ef3d6ead78c7a66825553e24">_i8</a> = to_i8</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span>. <a href="#ga265f8609ef3d6ead78c7a66825553e24">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gad2d95793c99112ad2889c6663789d1e3">_i16</a> = to_i16</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span>. <a href="#gad2d95793c99112ad2889c6663789d1e3">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga917a1759e37cd0d3fe3786da11729a4b">_i32</a> = to_i32</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span>. <a href="#ga917a1759e37cd0d3fe3786da11729a4b">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga290a150eae030e183ca2e14e9095c93b">_i64</a> = to_i64</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span>. <a href="#ga290a150eae030e183ca2e14e9095c93b">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a> = to_u8</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span>. <a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga97f7bc9a25eb4b7c663bd2388ade01ae">_u16</a> = to_u16</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span>. <a href="#ga97f7bc9a25eb4b7c663bd2388ade01ae">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga4afa32150456241245bfc641a6f17bbc">_u32</a> = to_u32</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span>. <a href="#ga4afa32150456241245bfc641a6f17bbc">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga1241e84fc4457af1b4df5f053eec6aa5">_u64</a> = to_u64</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span>. <a href="#ga1241e84fc4457af1b4df5f053eec6aa5">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga231cd51e76a2f426703275739d605ad4">_f</a> = to_f</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span>. <a href="#ga231cd51e76a2f426703275739d605ad4">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga7c6c0169d894a7dd589d96df49e8df26">_d</a> = to_d</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span>. <a href="#ga7c6c0169d894a7dd589d96df49e8df26">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gacfe28c6fb7bfb47ca8891cb61e7f58d9">_ld</a> = to_ld</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span>. <a href="#gacfe28c6fb7bfb47ca8891cb61e7f58d9">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga15147e343475e219c2e46dce07b4127c">_t</a> = to_t&lt; T &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Generic strongly-typed wrapper, the v5.0.1 name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span>. <a href="#ga15147e343475e219c2e46dce07b4127c">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1142,10 +1134,19 @@ keywords:
 <p>Literal operators and wrappers for typed operands.</p>
 
 
-<p>Within test expressions, literals such as <span class="doxyComputerOutput">1<a href="#ga1613ccf081248c601bed0f3022fba652">_i</a></span> and <span class="doxyComputerOutput">42<a href="#gadcff4454bf86ea03c0c3d1be42b04e12">_f</a></span> create strongly typed operands, whilst wrappers like <span class="doxyComputerOutput">mt::to_i{expression}</span> convert dynamic values. These mechanisms enable clear, type-safe comparisons, improving readability and correctness in test cases.</p>
+<p>Within test expressions, literals such as <span class="doxyComputerOutput">1<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span> and <span class="doxyComputerOutput">42<a href="#ga231cd51e76a2f426703275739d605ad4">_f</a></span> create strongly typed operands, whilst wrappers like <span class="doxyComputerOutput">mt::to_i{expression}</span> convert dynamic values. These mechanisms enable clear, type-safe comparisons, improving readability and correctness in test cases.</p>
 
 
 <p>Literal operators, available in the dedicated <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> namespace, allow constants to be expressed with explicit types, such as integers and floating-point values. For dynamic values, wrappers convert operands into recognised comparison types at run-time.</p>
+
+
+<p>The integer literals follow the C++ syntax: decimal, hexadecimal (<span class="doxyComputerOutput">0x10_i</span>), binary (<span class="doxyComputerOutput">0b101_i</span>), and octal (<span class="doxyComputerOutput">10<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>, which is 8), with digit separators (<span class="doxyComputerOutput">1'000<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>). A decimal point, an exponent, or a value that does not fit in the type of the literal (e.g. <span class="doxyComputerOutput">300<a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a></span>) is a compilation error.</p>
+
+
+<p>The floating-point literals are written with decimal digits and a decimal point, optionally with digit separators (<span class="doxyComputerOutput">1'000.000'5<a href="#ga7c6c0169d894a7dd589d96df49e8df26">_d</a></span>), but without an exponent; they can have up to 19 digits before the decimal point and 19 after it, otherwise the compilation fails.</p>
+
+
+<p>The floating-point literals (<span class="doxyComputerOutput">1.5_d</span>) and wrappers (<span class="doxyComputerOutput">mt::to_d{ 1.5 }</span>) compare with a tolerance of one unit of the last decimal written (0.1 for <span class="doxyComputerOutput">1.5</span>), so that <span class="doxyComputerOutput">1.45 == 1.5_d</span> is true. All six comparisons apply it consistently: values within the tolerance are equal, and neither less nor greater. Plain floating-point values compare exactly. To set the tolerance explicitly, independent of how the value is written, use <span class="doxyComputerOutput">mt::approx (1.5, 0.01)</span>.</p>
 
 
 <p>This approach ensures that both compile-time constants and run-time values can be compared accurately and expressively, supporting robust, maintainable test code.</p>
@@ -1159,12 +1160,14 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ts.test (</span><span class="doxyHighlightStringLiteral">"Check typed operands"</span><span class="doxyHighlight">, [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t) {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">micro_test_plus::operators</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">micro_test_plus::literals</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (mt::to_i {answer} == 42<a href="#ga1613ccf081248c601bed0f3022fba652">_i</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (mt::to_f {expression} == 42<a href="#gadcff4454bf86ea03c0c3d1be42b04e12">_f</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ts.test (</span><span class="doxyHighlightStringLiteral">"Check typed operands"</span><span class="doxyHighlight">, [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t) {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight">mt::operators;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight">mt::literals;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (mt::to_i {answer} == 42<a href="#ga8468610e763177a8f569f7d618851288">_i</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (mt::to_f {expression} == 42<a href="#ga231cd51e76a2f426703275739d605ad4">_f</a>);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">});</span></span></div>
 
 </div>
@@ -1189,6 +1192,7 @@ keywords:
 </td>
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
 <span class="doxyMemberLabel constexpr">constexpr</span>
 </span>
 </td>
@@ -1197,16 +1201,13 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>User-defined literal operator to convert to <span class="doxyComputerOutput">bool</span>.</p>
+<p>User-defined literal operator to create a named boolean constant.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed boolean constants from character sequences at compile time.</p>
+<p>This user-defined literal operator creates a named boolean constant, with the value <span class="doxyComputerOutput">true</span>, from a string literal (for example, <span class="doxyComputerOutput">"feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span>).</p>
 
 
-<p>The operator is particularly useful in test expressions, allowing string literals to be suffixed with <span class="doxyComputerOutput"><a href="#ga74e6e2bffc2fc2dea47f979b5b55ea64">_b</a></span> (for example, <span class="doxyComputerOutput">"feature_enabled"<a href="#ga74e6e2bffc2fc2dea47f979b5b55ea64">_b</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
-
-
-<p>The returned type is a lightweight wrapper that behaves as a <span class="doxyComputerOutput">bool</span> and supports equality comparison with both other named instances and boolean values. This operator is intended to facilitate expressive and type-safe test conditions.</p>
+<p>The returned <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">detail::named_bool</a></span> converts implicitly to <span class="doxyComputerOutput">bool</span>, and the expression formatter prints its name instead of its value. With the operators in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</a></span> namespace, a comparison like <span class="doxyComputerOutput">"feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> == flag</span> is true when <span class="doxyComputerOutput">flag</span> is true, and, when it fails, it is reported as <span class="doxyComputerOutput">feature_enabled == false</span>; the same applies to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq</a> ("feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a>, flag)</span>. Without these operators, the comparison is a plain <span class="doxyComputerOutput">bool</span> expression, and its operands are not reported.</p>
 
 
 <dl class="doxyParamsList">
@@ -1227,42 +1228,19 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>An instance of a wrapper type convertible to <span class="doxyComputerOutput">bool</span> and supporting equality comparisons.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">detail::named_bool</a></span> instance, with the value <span class="doxyComputerOutput">true</span>, reported by its name.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00519">519</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00420">420</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa2bfc74376f8c110053bfa6e06e40772">519</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga74e6e2bffc2fc2dea47f979b5b55ea64">_b</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* name, </span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight"> (</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">)) size)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">520</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">530</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">named : std::string_view, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type_traits::op</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">531</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">538</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight">value_type = bool;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">539</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">549</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeyword">constexpr</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">550</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> value_type ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">551</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">        </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">552</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">553</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">554</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">564</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">565</span><span class="doxyLineContent"><span class="doxyHighlight">        operator== (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> named&amp;)</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">566</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">        </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">567</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">568</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">569</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">579</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">580</span><span class="doxyLineContent"><span class="doxyHighlight">        operator== (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> other)</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">581</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">        </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">582</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> other;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">583</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">584</span><span class="doxyLineContent"><span class="doxyHighlight">      };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">585</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">586</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> named{ { name, size }, {} };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">587</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa2bfc74376f8c110053bfa6e06e40772">420</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* name, </span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight"> (</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">)) size)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">421</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">422</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">detail::named_bool</a>{ std::string_view{ name, size } };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">423</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1297,10 +1275,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">char</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">char</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#gabd2f8b7401162835cb4735e4a7532c36">_c</a></span> (for example, <span class="doxyComputerOutput">65<a href="#gabd2f8b7401162835cb4735e4a7532c36">_c</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">char</span> constant, for example <span class="doxyComputerOutput">65<a href="#gafdd897d040f92df9cd42e551ebc88cd8">_c</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -1317,24 +1292,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">char</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">char</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00133">133</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00121">121</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae521cebfd48332f44d01e4f880b4aafa">133</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gabd2f8b7401162835cb4735e4a7532c36">_c</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">134</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">135</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;char, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">136</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae521cebfd48332f44d01e4f880b4aafa">121</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gafdd897d040f92df9cd42e551ebc88cd8">_c</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">122</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">123</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;char, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">124</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -1367,10 +1342,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">double</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed floating-point constants of type <span class="doxyComputerOutput">double</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga6ab8b464d71f15f55bd047dbfca50899">_d</a></span> (for example, <span class="doxyComputerOutput">2.718_d</span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">double</span> constant, for example <span class="doxyComputerOutput">2.718_d</span>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num()</a></span>, <span class="doxyComputerOutput">den()</span>, and <span class="doxyComputerOutput">den_size()</span>; the comparison tolerance is one unit of the last decimal written.</p>
 
 
 <dl class="doxyParamsList">
@@ -1387,27 +1359,27 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">type_traits::floating_point_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">double</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">double</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00473">473</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00378">378</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9d9b0d77e96cc46e7c9fabbb6cf671da">473</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga6ab8b464d71f15f55bd047dbfca50899">_d</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">474</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">475</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">type_traits::floating_point_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">476</span><span class="doxyLineContent"><span class="doxyHighlight">          double, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">477</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">math::den&lt;unsigned long, Cs...&gt;</a> (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">478</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">479</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9d9b0d77e96cc46e7c9fabbb6cf671da">378</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga7c6c0169d894a7dd589d96df49e8df26">_d</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">379</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">380</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>&lt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">381</span><span class="doxyLineContent"><span class="doxyHighlight">          double, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">382</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">383</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">384</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">micro_os_plus::micro_test_plus::math::den</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">micro_os_plus::micro_test_plus::math::den_size</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">micro_os_plus::micro_test_plus::detail::math::den</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">micro_os_plus::micro_test_plus::detail::math::den_size</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">micro_os_plus::micro_test_plus::detail::math::num</a>.</p>
 
 </div>
 </div>
@@ -1440,10 +1412,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">float</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed floating-point constants of type <span class="doxyComputerOutput">float</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#gadcff4454bf86ea03c0c3d1be42b04e12">_f</a></span> (for example, <span class="doxyComputerOutput">3.14_f</span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">float</span> constant, for example <span class="doxyComputerOutput">3.14_f</span>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num()</a></span>, <span class="doxyComputerOutput">den()</span>, and <span class="doxyComputerOutput">den_size()</span>; the comparison tolerance is one unit of the last decimal written.</p>
 
 
 <dl class="doxyParamsList">
@@ -1460,27 +1429,27 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">type_traits::floating_point_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">float</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">float</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00452">452</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00360">360</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">452</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gadcff4454bf86ea03c0c3d1be42b04e12">_f</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">453</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">454</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">type_traits::floating_point_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">455</span><span class="doxyLineContent"><span class="doxyHighlight">          float, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">456</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">math::den&lt;unsigned long, Cs...&gt;</a> (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">457</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">458</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">360</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga231cd51e76a2f426703275739d605ad4">_f</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">361</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">362</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>&lt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">363</span><span class="doxyLineContent"><span class="doxyHighlight">          float, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">364</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">365</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">366</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">micro_os_plus::micro_test_plus::math::den</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">micro_os_plus::micro_test_plus::math::den_size</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">micro_os_plus::micro_test_plus::detail::math::den</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">micro_os_plus::micro_test_plus::detail::math::den_size</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">micro_os_plus::micro_test_plus::detail::math::num</a>.</p>
 
 </div>
 </div>
@@ -1513,10 +1482,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">int</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">int</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga1613ccf081248c601bed0f3022fba652">_i</a></span> (for example, <span class="doxyComputerOutput">42<a href="#ga1613ccf081248c601bed0f3022fba652">_i</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">int</span> constant, for example <span class="doxyComputerOutput">42<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -1533,24 +1499,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00097">97</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00093">93</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga366a0d47aec3241e659816067c94fcdf">97</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga1613ccf081248c601bed0f3022fba652">_i</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">98</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">99</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;int, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">100</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga366a0d47aec3241e659816067c94fcdf">93</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga8468610e763177a8f569f7d618851288">_i</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">94</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">95</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;int, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">96</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -1583,10 +1549,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">int16_t</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">int16_t</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#gaec10ef24cb02dd0fb7f5e44227562d51">_i16</a></span> (for example, <span class="doxyComputerOutput">32767<a href="#gaec10ef24cb02dd0fb7f5e44227562d51">_i16</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">int16_t</span> constant, for example <span class="doxyComputerOutput">32767<a href="#gad2d95793c99112ad2889c6663789d1e3">_i16</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -1603,25 +1566,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int16_t</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int16_t</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00319">319</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00261">261</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabce6e838737bf25be6e7527f69e75590">319</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaec10ef24cb02dd0fb7f5e44227562d51">_i16</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">320</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">321</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">322</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;std::int16_t, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">323</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabce6e838737bf25be6e7527f69e75590">261</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gad2d95793c99112ad2889c6663789d1e3">_i16</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">262</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">263</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int16_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">264</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -1654,10 +1616,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">int32_t</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">int32_t</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga5d6deb61637f1d7350a69f62d2971bc3">_i32</a></span> (for example, <span class="doxyComputerOutput">2147483647<a href="#ga5d6deb61637f1d7350a69f62d2971bc3">_i32</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">int32_t</span> constant, for example <span class="doxyComputerOutput">2147483647<a href="#ga917a1759e37cd0d3fe3786da11729a4b">_i32</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -1674,25 +1633,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int32_t</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int32_t</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00338">338</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00275">275</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6a192d3dfff5a4a98aa7532d36d1b1bd">338</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga5d6deb61637f1d7350a69f62d2971bc3">_i32</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">339</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">340</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">341</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;std::int32_t, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">342</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6a192d3dfff5a4a98aa7532d36d1b1bd">275</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga917a1759e37cd0d3fe3786da11729a4b">_i32</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">276</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">277</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int32_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">278</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -1725,10 +1683,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">int64_t</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">int64_t</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#gae98aa89157544638f775d2a90a3ec774">_i64</a></span> (for example, <span class="doxyComputerOutput">9223372036854775807<a href="#gae98aa89157544638f775d2a90a3ec774">_i64</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">int64_t</span> constant, for example <span class="doxyComputerOutput">9223372036854775807<a href="#ga290a150eae030e183ca2e14e9095c93b">_i64</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -1745,25 +1700,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int64_t</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int64_t</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00357">357</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00289">289</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab0bb5d1e37cbe8de6477c11ecd60956d">357</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gae98aa89157544638f775d2a90a3ec774">_i64</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">358</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">359</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">360</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;std::int64_t, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">361</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab0bb5d1e37cbe8de6477c11ecd60956d">289</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga290a150eae030e183ca2e14e9095c93b">_i64</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">290</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">291</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int64_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">292</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -1796,10 +1750,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">int8_t</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">int8_t</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga3cb44c2b09802fbee17f324cbdf3f31e">_i8</a></span> (for example, <span class="doxyComputerOutput">127<a href="#ga3cb44c2b09802fbee17f324cbdf3f31e">_i8</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">int8_t</span> constant, for example <span class="doxyComputerOutput">127<a href="#ga265f8609ef3d6ead78c7a66825553e24">_i8</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -1816,25 +1767,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int8_t</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">int8_t</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00300">300</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00247">247</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9ca6fecc72b6da90acee52977eb077d7">300</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga3cb44c2b09802fbee17f324cbdf3f31e">_i8</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">301</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">302</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">303</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;std::int8_t, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">304</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9ca6fecc72b6da90acee52977eb077d7">247</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga265f8609ef3d6ead78c7a66825553e24">_i8</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">248</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">249</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int8_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">250</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -1867,10 +1817,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">long</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">long</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#gaaebf2b13e1742a894179deedf8ad82cc">_l</a></span> (for example, <span class="doxyComputerOutput">123<a href="#gaaebf2b13e1742a894179deedf8ad82cc">_l</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">long</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga429a848542fc4ffafd3dd22bc1832654">_l</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -1887,24 +1834,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">long</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">long</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00170">170</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00149">149</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga96e891b439024e116cb845bc65bc9c4f">170</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaaebf2b13e1742a894179deedf8ad82cc">_l</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">171</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">172</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">173</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga96e891b439024e116cb845bc65bc9c4f">149</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga429a848542fc4ffafd3dd22bc1832654">_l</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">150</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">151</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;long, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">152</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -1937,10 +1884,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">long double</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed floating-point constants of type <span class="doxyComputerOutput">long double</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga79572e6e73076a155927ff0c3888ce76">_ld</a></span> (for example, <span class="doxyComputerOutput">1.618_ld</span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">long double</span> constant, for example <span class="doxyComputerOutput">1.618_ld</span>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num()</a></span>, <span class="doxyComputerOutput">den()</span>, and <span class="doxyComputerOutput">den_size()</span>; the comparison tolerance is one unit of the last decimal written.</p>
 
 
 <dl class="doxyParamsList">
@@ -1957,27 +1901,27 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">type_traits::floating_point_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">long double</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">long double</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00494">494</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00396">396</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaecd8c981d99602a0d0a44ebf6d1d4f75">494</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga79572e6e73076a155927ff0c3888ce76">_ld</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">495</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">496</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">type_traits::floating_point_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">497</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> double, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">498</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">499</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">500</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaecd8c981d99602a0d0a44ebf6d1d4f75">396</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gacfe28c6fb7bfb47ca8891cb61e7f58d9">_ld</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">397</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">398</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>&lt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">399</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> double, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">400</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">401</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">402</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">micro_os_plus::micro_test_plus::math::den</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">micro_os_plus::micro_test_plus::math::den_size</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">micro_os_plus::micro_test_plus::detail::math::den</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">micro_os_plus::micro_test_plus::detail::math::den_size</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">micro_os_plus::micro_test_plus::detail::math::num</a>.</p>
 
 </div>
 </div>
@@ -2010,10 +1954,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">long long</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">long long</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">_ll</a></span> (for example, <span class="doxyComputerOutput">123<a href="#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">_ll</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">long long</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga9c597ca04848620b8570c29a4741e77d">_ll</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2030,24 +1971,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">long long</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">long long</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00188">188</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00163">163</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf5ab66b00c9486ade5d49f34a83783f5">188</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">_ll</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">189</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">190</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;</span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf5ab66b00c9486ade5d49f34a83783f5">163</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga9c597ca04848620b8570c29a4741e77d">_ll</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">165</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">166</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2080,10 +2021,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">short</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">short</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga102b1f7c41452481e6be2bd8da63e4a0">_s</a></span> (for example, <span class="doxyComputerOutput">123<a href="#ga102b1f7c41452481e6be2bd8da63e4a0">_s</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">short</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga461a956b7e308ed6e8c64afa3cf160f2">_s</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2100,24 +2038,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">short</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">short</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00115">115</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00107">107</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga812816a2e9b23de1f8d8b2d86553d96d">115</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga102b1f7c41452481e6be2bd8da63e4a0">_s</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">116</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">117</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;short, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">118</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga812816a2e9b23de1f8d8b2d86553d96d">107</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga461a956b7e308ed6e8c64afa3cf160f2">_s</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">108</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;short, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">110</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2150,10 +2088,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">signed char</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">signed char</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#gacf10cd5dca8066e1df77e668b68f3272">_sc</a></span> (for example, <span class="doxyComputerOutput">65<a href="#gacf10cd5dca8066e1df77e668b68f3272">_sc</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">signed char</span> constant, for example <span class="doxyComputerOutput">65<a href="#ga0cc4baab5f421ac7adee10218d8ee8a2">_sc</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2170,25 +2105,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">signed char</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">signed char</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00151">151</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00135">135</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga57d27f1a76de2d2b2a067134cbe61457">151</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gacf10cd5dca8066e1df77e668b68f3272">_sc</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">152</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">153</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">154</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;</span><span class="doxyHighlightKeywordType">signed</span><span class="doxyHighlight"> char, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">155</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga57d27f1a76de2d2b2a067134cbe61457">135</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga0cc4baab5f421ac7adee10218d8ee8a2">_sc</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">136</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">137</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">signed</span><span class="doxyHighlight"> char, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">138</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2221,10 +2155,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">unsigned</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">unsigned</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga74b4ecee40263c6b4ac8a60fc6480fac">_u</a></span> (for example, <span class="doxyComputerOutput">123<a href="#ga74b4ecee40263c6b4ac8a60fc6480fac">_u</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">unsigned</span> constant, for example <span class="doxyComputerOutput">123<a href="#gaaa486af2418a24076237fbe26940f5ae">_u</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2241,24 +2172,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00206">206</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00177">177</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf45bf641153a462a1ba7c12b908e667f">206</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga74b4ecee40263c6b4ac8a60fc6480fac">_u</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">207</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">208</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;unsigned, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">209</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf45bf641153a462a1ba7c12b908e667f">177</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaaa486af2418a24076237fbe26940f5ae">_u</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">178</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">179</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;unsigned, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">180</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2291,10 +2222,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">uint16_t</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">uint16_t</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga07f83438e4c0c85efdeacd78668f3543">_u16</a></span> (for example, <span class="doxyComputerOutput">65535<a href="#ga07f83438e4c0c85efdeacd78668f3543">_u16</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">uint16_t</span> constant, for example <span class="doxyComputerOutput">65535<a href="#ga97f7bc9a25eb4b7c663bd2388ade01ae">_u16</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2311,25 +2239,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">uint16_t</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">uint16_t</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00395">395</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00317">317</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga96d12d563093f297a73a8b984ae7a3a5">395</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga07f83438e4c0c85efdeacd78668f3543">_u16</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">396</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">397</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">398</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;std::uint16_t, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">399</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga96d12d563093f297a73a8b984ae7a3a5">317</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga97f7bc9a25eb4b7c663bd2388ade01ae">_u16</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">318</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">319</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint16_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">320</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2362,10 +2289,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">uint32_t</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">uint32_t</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#gaf66382b299dcf814298ae56b75b541d7">_u32</a></span> (for example, <span class="doxyComputerOutput">4294967295<a href="#gaf66382b299dcf814298ae56b75b541d7">_u32</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">uint32_t</span> constant, for example <span class="doxyComputerOutput">4294967295<a href="#ga4afa32150456241245bfc641a6f17bbc">_u32</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2382,25 +2306,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">uint32_t</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">uint32_t</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00414">414</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00331">331</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3171e605b5c2e1d9a0e55ae34e904674">414</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaf66382b299dcf814298ae56b75b541d7">_u32</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">415</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">416</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">417</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;std::uint32_t, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">418</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3171e605b5c2e1d9a0e55ae34e904674">331</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga4afa32150456241245bfc641a6f17bbc">_u32</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">332</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">333</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint32_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">334</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2433,10 +2356,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">uint64_t</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">uint64_t</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#gac654508c2894db262cbd0335f76b02bf">_u64</a></span> (for example, <span class="doxyComputerOutput">18446744073709551615<a href="#gac654508c2894db262cbd0335f76b02bf">_u64</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">uint64_t</span> constant, for example <span class="doxyComputerOutput">18446744073709551615<a href="#ga1241e84fc4457af1b4df5f053eec6aa5">_u64</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2453,25 +2373,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">uint64_t</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">uint64_t</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00433">433</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00345">345</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga622b4808b7ebfc26ddf9db9128533f28">433</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gac654508c2894db262cbd0335f76b02bf">_u64</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">434</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">435</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">436</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;std::uint64_t, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">437</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga622b4808b7ebfc26ddf9db9128533f28">345</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga1241e84fc4457af1b4df5f053eec6aa5">_u64</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">346</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">347</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint64_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">348</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2504,10 +2423,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">uint8_t</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">uint8_t</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga2e2ad62d8c5d6e3abcfca9a897ae61de">_u8</a></span> (for example, <span class="doxyComputerOutput">255<a href="#ga2e2ad62d8c5d6e3abcfca9a897ae61de">_u8</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">uint8_t</span> constant, for example <span class="doxyComputerOutput">255<a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2524,25 +2440,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">uint8_t</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">uint8_t</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00376">376</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00303">303</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga80f43260f6a1afd8260355136858df48">376</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga2e2ad62d8c5d6e3abcfca9a897ae61de">_u8</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">377</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">378</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">379</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;std::uint8_t, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">380</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga80f43260f6a1afd8260355136858df48">303</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">304</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">305</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint8_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">306</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2575,10 +2490,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">unsigned char</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">unsigned char</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga1ef97880cc5f2e13eea8b4ebb888886a">_uc</a></span> (for example, <span class="doxyComputerOutput">65<a href="#ga1ef97880cc5f2e13eea8b4ebb888886a">_uc</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">unsigned char</span> constant, for example <span class="doxyComputerOutput">65<a href="#gaa8bb559065ea34a9645fdfd6339b9b7a">_uc</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2595,25 +2507,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned char</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned char</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00224">224</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00191">191</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6c1b46d4b967bdbc573e3192c2d9f98a">224</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga1ef97880cc5f2e13eea8b4ebb888886a">_uc</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">225</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">226</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">227</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> char, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">228</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6c1b46d4b967bdbc573e3192c2d9f98a">191</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaa8bb559065ea34a9645fdfd6339b9b7a">_uc</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">193</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> char, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">194</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2646,10 +2557,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">unsigned long</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">unsigned long</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga9cb69b5dc7c394a57e1b09c919b0f6ab">_ul</a></span> (for example, <span class="doxyComputerOutput">123<a href="#ga9cb69b5dc7c394a57e1b09c919b0f6ab">_ul</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">unsigned long</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga32c7eef01fcaef2f1a9478427d951f62">_ul</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2666,25 +2574,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned long</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned long</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00262">262</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00219">219</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaef96b19b140b5007ec33a944c3b72cae">262</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga9cb69b5dc7c394a57e1b09c919b0f6ab">_ul</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">263</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">264</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">265</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">266</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaef96b19b140b5007ec33a944c3b72cae">219</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga32c7eef01fcaef2f1a9478427d951f62">_ul</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">220</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">221</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> long, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">222</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2717,10 +2624,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">unsigned long long</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">unsigned long long</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga0b9d74a6595fe7fdefca21255ab59dc8">_ull</a></span> (for example, <span class="doxyComputerOutput">123<a href="#ga0b9d74a6595fe7fdefca21255ab59dc8">_ull</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">unsigned long long</span> constant, for example <span class="doxyComputerOutput">123<a href="#gada8a165060d3d3b3ab51272b9da58761">_ull</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2737,25 +2641,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned long long</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned long long</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00281">281</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00233">233</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga01adcd3866da43c393b7fba8a5e72bb2">281</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga0b9d74a6595fe7fdefca21255ab59dc8">_ull</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">282</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">283</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">284</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">285</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga01adcd3866da43c393b7fba8a5e72bb2">233</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gada8a165060d3d3b3ab51272b9da58761">_ull</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">234</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">235</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">236</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2788,10 +2691,7 @@ keywords:
 <p>User-defined literal operator to convert to <span class="doxyComputerOutput">unsigned short</span>.</p>
 
 
-<p>This user-defined literal operator enables the creation of strongly-typed integral constants of type <span class="doxyComputerOutput">unsigned short</span> from character sequences at compile time.</p>
-
-
-<p>The operator is particularly useful in test expressions, allowing constants to be suffixed with <span class="doxyComputerOutput"><a href="#ga67992fcc21a60e3dd1fb4c9c5ebc814a">_us</a></span> (for example, <span class="doxyComputerOutput">123<a href="#ga67992fcc21a60e3dd1fb4c9c5ebc814a">_us</a></span>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</p>
+<p>Creates a compile-time <span class="doxyComputerOutput">unsigned short</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga65aea7fc6324806cc029041a1c785611">_us</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
 <dl class="doxyParamsList">
@@ -2808,25 +2708,24 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned short</span> value.</p></dd>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a></span> instance holding the parsed <span class="doxyComputerOutput">unsigned short</span> value.</p></dd>
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00243">243</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00205">205</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9017debdc1eafd64e3c53c80157ad6f5">243</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga67992fcc21a60e3dd1fb4c9c5ebc814a">_us</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">244</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">245</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">type_traits::integral_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">246</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> short, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">247</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9017debdc1eafd64e3c53c80157ad6f5">205</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga65aea7fc6324806cc029041a1c785611">_us</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">206</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">207</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> short, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">208</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">micro_os_plus::micro_test_plus::math::num</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a>.</p>
 
 </div>
 </div>
@@ -2837,23 +2736,25 @@ keywords:
 
 ## Functions
 
-### \_t() {#ga6195961d9ece2c2c91e8946d47d84a79}
+### approx() {#gafe47800a219b00fcccf0a1dc596dbe20}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::_t&lt; T &gt;::_t (const T &amp; t)</td>
+<td class="doxyMemberName">detail::value&lt; T &gt; micro_os_plus::micro_test_plus::approx (T value, std::type_identity_t&lt; T &gt; epsilon)</td>
 </tr>
 </table>
 </td>
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
-<span class="doxyMemberLabel explicit">explicit</span>
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
 <span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -2861,1154 +2762,80 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Constructor for the deprecated strongly-typed wrapper.</p>
+<p>Wraps a floating-point value with an explicit comparison tolerance.</p>
 
+
+<p>Constructs the floating-point <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>&lt;T&gt;</span> with the given tolerance, instead of the one derived from the number of decimals of the value.</p>
+
+
+<p>The floating-point literals (<span class="doxyComputerOutput">1.5_d</span>) and wrappers (<span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a>{ 1.5 }</span>) compare with a tolerance derived from the number of decimals written (0.1 for <span class="doxyComputerOutput">1.5</span>). <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gacae776e46a799b81af859ba9bb74e7d0">approx()</a></span> makes the tolerance explicit, independent of how the value is written. All six comparisons apply it: values whose difference is less than the tolerance are equal, and neither less nor greater. If both operands have a tolerance, the smaller one is used.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">t.expect (mt::eq (compute_float (), mt::approx (42.0f, 0.001f)));</span></span></div>
+
+</div>
+
+
+<p>For a single comparison, also of integers, the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gacae776e46a799b81af859ba9bb74e7d0">approx</a> (lhs, rhs, epsilon)</span> function comparator may be used instead.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">T</td>
+<td class="doxyParamItemDescription"><p>The floating-point type of the value.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
 
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Parameters</dt>
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">t</td>
-<td class="doxyParamItemDescription"><p>The value to be wrapped and explicitly converted.</p></td>
+<td class="doxyParamItemName">value</td>
+<td class="doxyParamItemDescription"><p>The expected value.</p></td>
 </tr>
-</table>
-</dd>
-</dl>
-
-<p>Constructs an <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/-t">_t</a></span> instance by forwarding the provided value to the base <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value</a>&lt;T&gt;</span> wrapper.</p>
-
-
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00730">730</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00600">600</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6195961d9ece2c2c91e8946d47d84a79">600</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#ga6195961d9ece2c2c91e8946d47d84a79">_t&lt;T&gt;::_t</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) : <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a>::<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a69374f408449c08c756896dd26d2d437">value</a>&lt;T&gt;{ t }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">601</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">602</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a69374f408449c08c756896dd26d2d437">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</a>.</p>
-
-</div>
-</div>
-
-### to\_t() {#gaad9720f2d1e443d77cdfd1eb1151e924}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::to_t&lt; T &gt;::to_t (const T &amp; t)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel explicit">explicit</span>
-<span class="doxyMemberLabel constexpr">constexpr</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Constructor for the strongly-typed wrapper.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">t</td>
-<td class="doxyParamItemDescription"><p>The value to be wrapped and explicitly converted.</p></td>
+<td class="doxyParamItemName">epsilon</td>
+<td class="doxyParamItemDescription"><p>The tolerance, converted to <span class="doxyComputerOutput">T</span>.</p></td>
 </tr>
 </table>
 </dd>
 </dl>
 
-<p>Constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span> instance by forwarding the provided value to the base <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value</a>&lt;T&gt;</span> wrapper.</p>
-
-
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01055">1055</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00610">610</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaad9720f2d1e443d77cdfd1eb1151e924">610</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#gaad9720f2d1e443d77cdfd1eb1151e924">to_t&lt;T&gt;::to_t</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) : <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a>::<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a69374f408449c08c756896dd26d2d437">value</a>&lt;T&gt;{ t }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">611</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">612</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a69374f408449c08c756896dd26d2d437">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</a>.</p>
-
-</div>
-</div>
-
-</div>
-
-<div class="doxySectionDef">
-
-## Deprecated Type Wrappers
-
-
-
-<p>Strongly-typed wrappers for explicit type conversion.</p>
-
-
-<p>These type aliases provide wrappers for converting values and expressions to specific types for use with µTest++ comparators and test expressions.</p>
-
-
-<p>The <span class="doxyComputerOutput"><a href="#ga1613ccf081248c601bed0f3022fba652">_i</a></span>, <span class="doxyComputerOutput"><a href="#ga2e2ad62d8c5d6e3abcfca9a897ae61de">_u8</a></span>, etc. forms are now deprecated as of version 3.2.0. Please use the preferred <span class="doxyComputerOutput">to_*</span> type wrappers for new code, as they offer improved clarity and consistency.</p>
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>&lt;T&gt;</span> wrapper, recognised by the comparators and the operators.</p></dd>
+</dl>
 
 
 <dl class="doxySectionUser">
-<dt>Deprecated</dt>
-<dd><p>Use the corresponding <span class="doxyComputerOutput">to_*</span> type wrappers instead (since 3.2.0).</p></dd>
+<dt>Since</dt>
+<dd><p>5.1.0</p></dd>
 </dl>
 
 
-### \_b {#ga74e6e2bffc2fc2dea47f979b5b55ea64}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_b = type_traits::value&lt;bool&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga6bdfe5c187140ee99d0bcabd5bb65156">to_b</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000001>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga6bdfe5c187140ee99d0bcabd5bb65156">to_b</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00484">484</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h/#l00449">449</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">literals-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga74e6e2bffc2fc2dea47f979b5b55ea64">484</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga74e6e2bffc2fc2dea47f979b5b55ea64">_b</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;bool&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gafe47800a219b00fcccf0a1dc596dbe20">449</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gacae776e46a799b81af859ba9bb74e7d0">approx</a> (T value, std::type_identity_t&lt;T&gt; epsilon) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">450</span><span class="doxyLineContent"><span class="doxyHighlight">      -&gt; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">451</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">452</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a>{ value, epsilon };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">453</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
-</div>
-</div>
-
-### \_c {#gabd2f8b7401162835cb4735e4a7532c36}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_c = type_traits::value&lt;char&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga5d14217f53925b323f4236298e3dcc90">to_c</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000002>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga5d14217f53925b323f4236298e3dcc90">to_c</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00494">494</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabd2f8b7401162835cb4735e4a7532c36">494</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gabd2f8b7401162835cb4735e4a7532c36">_c</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;char&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_d {#ga6ab8b464d71f15f55bd047dbfca50899}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_d = type_traits::value&lt;double&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to_d</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000022>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to_d</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00694">694</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6ab8b464d71f15f55bd047dbfca50899">694</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga6ab8b464d71f15f55bd047dbfca50899">_d</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;double&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_f {#gadcff4454bf86ea03c0c3d1be42b04e12}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_f = type_traits::value&lt;float&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga3c89dfb65d916dfc34dfdfcb10334b5c">to_f</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000021>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga3c89dfb65d916dfc34dfdfcb10334b5c">to_f</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00684">684</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gadcff4454bf86ea03c0c3d1be42b04e12">684</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gadcff4454bf86ea03c0c3d1be42b04e12">_f</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;float&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_i {#ga1613ccf081248c601bed0f3022fba652}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i = type_traits::value&lt;int&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#gab6ddb21470182cbdcf06436cde43718f">to_i</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000005>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gab6ddb21470182cbdcf06436cde43718f">to_i</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00524">524</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga1613ccf081248c601bed0f3022fba652">524</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga1613ccf081248c601bed0f3022fba652">_i</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;int&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_i16 {#gaec10ef24cb02dd0fb7f5e44227562d51}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i16 = type_traits::value&lt;std::int16_t&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#gaf22a7774a4b05de9779d9084ed41a02a">to_i16</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000014>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gaf22a7774a4b05de9779d9084ed41a02a">to_i16</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00614">614</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaec10ef24cb02dd0fb7f5e44227562d51">614</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaec10ef24cb02dd0fb7f5e44227562d51">_i16</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::int16_t&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_i32 {#ga5d6deb61637f1d7350a69f62d2971bc3}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i32 = type_traits::value&lt;std::int32_t&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga9ca96b6c6d79560f8186c6206ac4f613">to_i32</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000015>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga9ca96b6c6d79560f8186c6206ac4f613">to_i32</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00624">624</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga5d6deb61637f1d7350a69f62d2971bc3">624</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga5d6deb61637f1d7350a69f62d2971bc3">_i32</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::int32_t&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_i64 {#gae98aa89157544638f775d2a90a3ec774}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i64 = type_traits::value&lt;std::int64_t&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga240591501696d181e105529c1f52b56c">to_i64</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000016>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga240591501696d181e105529c1f52b56c">to_i64</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00634">634</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae98aa89157544638f775d2a90a3ec774">634</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gae98aa89157544638f775d2a90a3ec774">_i64</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::int64_t&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_i8 {#ga3cb44c2b09802fbee17f324cbdf3f31e}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i8 = type_traits::value&lt;std::int8_t&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#gaa61c255757e915cb05132602baea088b">to_i8</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000013>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gaa61c255757e915cb05132602baea088b">to_i8</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00604">604</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3cb44c2b09802fbee17f324cbdf3f31e">604</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga3cb44c2b09802fbee17f324cbdf3f31e">_i8</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::int8_t&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_l {#gaaebf2b13e1742a894179deedf8ad82cc}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_l = type_traits::value&lt;long&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#gaaf580ebebfba7cbe84a89db8574a6aa7">to_l</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000006>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gaaf580ebebfba7cbe84a89db8574a6aa7">to_l</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00534">534</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaaebf2b13e1742a894179deedf8ad82cc">534</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaaebf2b13e1742a894179deedf8ad82cc">_l</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;long&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_ld {#ga79572e6e73076a155927ff0c3888ce76}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ld = type_traits::value&lt;long double&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga33a096960b5dddee322e36c689ecbf47">to_ld</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000023>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga33a096960b5dddee322e36c689ecbf47">to_ld</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00704">704</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga79572e6e73076a155927ff0c3888ce76">704</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga79572e6e73076a155927ff0c3888ce76">_ld</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;long double&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_ll {#ga6b000cfa2a8a4c8b04cf6d6f142a76a6}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ll = type_traits::value&lt;long long&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#gab9d11644d3b22e2a9932e64853b5a59d">to_ll</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000007>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gab9d11644d3b22e2a9932e64853b5a59d">to_ll</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00544">544</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">544</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">_ll</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;long long&gt;</a>;</span></span></div>
-
-</div>
 
-</div>
-</div>
-
-### \_s {#ga102b1f7c41452481e6be2bd8da63e4a0}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_s = type_traits::value&lt;short&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga1b39571aeebcb8091bd410a9b247a571">to_s</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000004>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga1b39571aeebcb8091bd410a9b247a571">to_s</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00514">514</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga102b1f7c41452481e6be2bd8da63e4a0">514</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga102b1f7c41452481e6be2bd8da63e4a0">_s</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;short&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_sc {#gacf10cd5dca8066e1df77e668b68f3272}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_sc = type_traits::value&lt;signed char&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#gadb22be8fe019b5cd1ad56cfadea5f4ec">to_sc</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000003>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gadb22be8fe019b5cd1ad56cfadea5f4ec">to_sc</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00504">504</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gacf10cd5dca8066e1df77e668b68f3272">504</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gacf10cd5dca8066e1df77e668b68f3272">_sc</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;signed char&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_u {#ga74b4ecee40263c6b4ac8a60fc6480fac}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u = type_traits::value&lt;unsigned&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#gac8586b75498097cb06b404399c307960">to_u</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000008>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gac8586b75498097cb06b404399c307960">to_u</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00554">554</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga74b4ecee40263c6b4ac8a60fc6480fac">554</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga74b4ecee40263c6b4ac8a60fc6480fac">_u</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_u16 {#ga07f83438e4c0c85efdeacd78668f3543}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u16 = type_traits::value&lt;std::uint16_t&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#gaa60006a01aa94a5fd755aebddd8ceec3">to_u16</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000018>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gaa60006a01aa94a5fd755aebddd8ceec3">to_u16</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00654">654</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga07f83438e4c0c85efdeacd78668f3543">654</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga07f83438e4c0c85efdeacd78668f3543">_u16</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::uint16_t&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_u32 {#gaf66382b299dcf814298ae56b75b541d7}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u32 = type_traits::value&lt;std::uint32_t&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga3bf9f9c946f16b5e02f9f2c45739df42">to_u32</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000019>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga3bf9f9c946f16b5e02f9f2c45739df42">to_u32</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00664">664</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf66382b299dcf814298ae56b75b541d7">664</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaf66382b299dcf814298ae56b75b541d7">_u32</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::uint32_t&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_u64 {#gac654508c2894db262cbd0335f76b02bf}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u64 = type_traits::value&lt;std::uint64_t&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga5fba6fbb12941113aeff430609839ba4">to_u64</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000020>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga5fba6fbb12941113aeff430609839ba4">to_u64</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00674">674</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gac654508c2894db262cbd0335f76b02bf">674</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gac654508c2894db262cbd0335f76b02bf">_u64</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::uint64_t&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_u8 {#ga2e2ad62d8c5d6e3abcfca9a897ae61de}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u8 = type_traits::value&lt;std::uint8_t&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga8b683d809d600f5c5210bb16546a832e">to_u8</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000017>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga8b683d809d600f5c5210bb16546a832e">to_u8</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00644">644</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga2e2ad62d8c5d6e3abcfca9a897ae61de">644</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga2e2ad62d8c5d6e3abcfca9a897ae61de">_u8</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::uint8_t&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_uc {#ga1ef97880cc5f2e13eea8b4ebb888886a}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_uc = type_traits::value&lt;unsigned char&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga9b60956f6c874e5597cdea6c0323fff1">to_uc</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000009>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga9b60956f6c874e5597cdea6c0323fff1">to_uc</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00564">564</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga1ef97880cc5f2e13eea8b4ebb888886a">564</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga1ef97880cc5f2e13eea8b4ebb888886a">_uc</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned char&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_ul {#ga9cb69b5dc7c394a57e1b09c919b0f6ab}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ul = type_traits::value&lt;unsigned long&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga9f6f56950ba8bce6cc49037af83e443b">to_ul</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000011>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga9f6f56950ba8bce6cc49037af83e443b">to_ul</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00584">584</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9cb69b5dc7c394a57e1b09c919b0f6ab">584</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga9cb69b5dc7c394a57e1b09c919b0f6ab">_ul</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned long&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_ull {#ga0b9d74a6595fe7fdefca21255ab59dc8}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ull = type_traits::value&lt;unsigned long long&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#ga595258f3c1b293284f79a88b2872d43d">to_ull</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000012>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga595258f3c1b293284f79a88b2872d43d">to_ull</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00594">594</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga0b9d74a6595fe7fdefca21255ab59dc8">594</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga0b9d74a6595fe7fdefca21255ab59dc8">_ull</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned long long&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### \_us {#ga67992fcc21a60e3dd1fb4c9c5ebc814a}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_us = type_traits::value&lt;unsigned short&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values.</p>
-
-
-<p>Equivalent to <span class="doxyComputerOutput"><a href="#gac9a34848b05859a18794ece696e37f26">to_us</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000010>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gac9a34848b05859a18794ece696e37f26">to_us</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00574">574</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga67992fcc21a60e3dd1fb4c9c5ebc814a">574</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga67992fcc21a60e3dd1fb4c9c5ebc814a">_us</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned short&gt;</a>;</span></span></div>
-
-</div>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gacae776e46a799b81af859ba9bb74e7d0">micro_os_plus::micro_test_plus::approx</a>.</p>
 
 </div>
 </div>
@@ -4024,10 +2851,10 @@ keywords:
 <p>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</p>
 
 
-<p>These type aliases provide a modern, type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value</a>&lt;T&gt;</span>, ensuring that the value is treated as the specified type within the framework.</p>
+<p>These type aliases provide a type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>&lt;T&gt;</span>, ensuring that the value is treated as the specified type within the framework.</p>
 
 
-<p>The <span class="doxyComputerOutput">to_*</span> forms are the preferred approach since version 3.2.0, superseding the older <span class="doxyComputerOutput"><a href="#ga1613ccf081248c601bed0f3022fba652">_i</a></span>, <span class="doxyComputerOutput"><a href="#ga2e2ad62d8c5d6e3abcfca9a897ae61de">_u8</a></span>, etc. aliases, which are now deprecated.</p>
+<p>The <span class="doxyComputerOutput">to_*</span> forms replace the older <span class="doxyComputerOutput"><a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>, <span class="doxyComputerOutput"><a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a></span>, etc. aliases, which were deprecated in version 3.2.0, and are marked <span class="doxyComputerOutput">[[deprecated]]</span> since version 5.1.0.</p>
 
 
 <dl class="doxySectionUser">
@@ -4040,7 +2867,7 @@ keywords:
 
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> x = 42;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightComment">// Explicitly treat x as an int for test comparison.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> wrapped = <a href="#gab6ddb21470182cbdcf06436cde43718f">to_i</a>{x};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> wrapped = <a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a>{x};</span></span></div>
 
 </div>
 
@@ -4051,7 +2878,7 @@ keywords:
 </dl>
 
 
-### to\_b {#ga6bdfe5c187140ee99d0bcabd5bb65156}
+### to\_b {#ga5570e36fb3e73be3edf734ac80a23d93}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4060,7 +2887,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_b = type_traits::value&lt;bool&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_b = detail::value&lt;bool&gt;</td>
 </tr>
 </table>
 </td>
@@ -4081,19 +2908,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00772">772</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00488">488</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6bdfe5c187140ee99d0bcabd5bb65156">772</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga6bdfe5c187140ee99d0bcabd5bb65156">to_b</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;bool&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">488</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;bool&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_c {#ga5d14217f53925b323f4236298e3dcc90}
+### to\_c {#ga6ccf42d05ae14c445f602128f8ffd831}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4102,7 +2929,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_c = type_traits::value&lt;char&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_c = detail::value&lt;char&gt;</td>
 </tr>
 </table>
 </td>
@@ -4123,19 +2950,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00783">783</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00499">499</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga5d14217f53925b323f4236298e3dcc90">783</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga5d14217f53925b323f4236298e3dcc90">to_c</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;char&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">499</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;char&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_d {#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff}
+### to\_d {#ga9608f4a6f0a61bc159a66a46fb8cd630}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4144,7 +2971,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_d = type_traits::value&lt;double&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_d = detail::value&lt;double&gt;</td>
 </tr>
 </table>
 </td>
@@ -4165,19 +2992,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01003">1003</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00719">719</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">1003</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to_d</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;double&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">719</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;double&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_f {#ga3c89dfb65d916dfc34dfdfcb10334b5c}
+### to\_f {#ga5368740b47e92605914b6c38ea88aebf}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4186,7 +3013,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_f = type_traits::value&lt;float&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_f = detail::value&lt;float&gt;</td>
 </tr>
 </table>
 </td>
@@ -4207,19 +3034,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00992">992</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00708">708</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3c89dfb65d916dfc34dfdfcb10334b5c">992</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga3c89dfb65d916dfc34dfdfcb10334b5c">to_f</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;float&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga5368740b47e92605914b6c38ea88aebf">708</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;float&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_i {#gab6ddb21470182cbdcf06436cde43718f}
+### to\_i {#gaf3ee271cefcffa625e40d476305da62f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4228,7 +3055,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i = type_traits::value&lt;int&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i = detail::value&lt;int&gt;</td>
 </tr>
 </table>
 </td>
@@ -4249,19 +3076,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00816">816</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00532">532</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab6ddb21470182cbdcf06436cde43718f">816</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gab6ddb21470182cbdcf06436cde43718f">to_i</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;int&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf3ee271cefcffa625e40d476305da62f">532</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;int&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_i16 {#gaf22a7774a4b05de9779d9084ed41a02a}
+### to\_i16 {#ga5cc1961eb074bb0740d8a593c411e0f9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4270,7 +3097,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i16 = type_traits::value&lt;std::int16_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i16 = detail::value&lt;std::int16_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4291,19 +3118,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00915">915</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00631">631</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf22a7774a4b05de9779d9084ed41a02a">915</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaf22a7774a4b05de9779d9084ed41a02a">to_i16</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::int16_t&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">631</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;std::int16_t&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_i32 {#ga9ca96b6c6d79560f8186c6206ac4f613}
+### to\_i32 {#ga201eeff58867ba58d3312ae56113ef06}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4312,7 +3139,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i32 = type_traits::value&lt;std::int32_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i32 = detail::value&lt;std::int32_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4333,19 +3160,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00926">926</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00642">642</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9ca96b6c6d79560f8186c6206ac4f613">926</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga9ca96b6c6d79560f8186c6206ac4f613">to_i32</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::int32_t&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga201eeff58867ba58d3312ae56113ef06">642</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;std::int32_t&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_i64 {#ga240591501696d181e105529c1f52b56c}
+### to\_i64 {#gaead55f5e265634a742633261f9f2aa3f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4354,7 +3181,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i64 = type_traits::value&lt;std::int64_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i64 = detail::value&lt;std::int64_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4375,19 +3202,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00937">937</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00653">653</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga240591501696d181e105529c1f52b56c">937</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga240591501696d181e105529c1f52b56c">to_i64</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::int64_t&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaead55f5e265634a742633261f9f2aa3f">653</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;std::int64_t&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_i8 {#gaa61c255757e915cb05132602baea088b}
+### to\_i8 {#ga52ad3a0a454c230f9fcfb01e5d73e6db}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4396,7 +3223,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i8 = type_traits::value&lt;std::int8_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i8 = detail::value&lt;std::int8_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4417,19 +3244,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00904">904</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00620">620</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa61c255757e915cb05132602baea088b">904</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaa61c255757e915cb05132602baea088b">to_i8</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::int8_t&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">620</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;std::int8_t&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_l {#gaaf580ebebfba7cbe84a89db8574a6aa7}
+### to\_l {#ga09028a1e0e713723257afba48b9ee551}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4438,7 +3265,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_l = type_traits::value&lt;long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_l = detail::value&lt;long&gt;</td>
 </tr>
 </table>
 </td>
@@ -4459,19 +3286,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00827">827</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00543">543</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaaf580ebebfba7cbe84a89db8574a6aa7">827</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaaf580ebebfba7cbe84a89db8574a6aa7">to_l</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;long&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga09028a1e0e713723257afba48b9ee551">543</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;long&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_ld {#ga33a096960b5dddee322e36c689ecbf47}
+### to\_ld {#gaeba32254fdd8159523b525745b13bfa9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4480,7 +3307,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ld = type_traits::value&lt;long double&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ld = detail::value&lt;long double&gt;</td>
 </tr>
 </table>
 </td>
@@ -4501,19 +3328,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01014">1014</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00730">730</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga33a096960b5dddee322e36c689ecbf47">1014</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga33a096960b5dddee322e36c689ecbf47">to_ld</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;long double&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaeba32254fdd8159523b525745b13bfa9">730</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;long double&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_ll {#gab9d11644d3b22e2a9932e64853b5a59d}
+### to\_ll {#ga0d0ae1e784a8a4da6630ab06addcad34}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4522,7 +3349,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ll = type_traits::value&lt;long long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ll = detail::value&lt;long long&gt;</td>
 </tr>
 </table>
 </td>
@@ -4543,19 +3370,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00838">838</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00554">554</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab9d11644d3b22e2a9932e64853b5a59d">838</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gab9d11644d3b22e2a9932e64853b5a59d">to_ll</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;long long&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">554</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;long long&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_s {#ga1b39571aeebcb8091bd410a9b247a571}
+### to\_s {#gabc8f58b457f42435bcb51f53e6fe6b78}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4564,7 +3391,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_s = type_traits::value&lt;short&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_s = detail::value&lt;short&gt;</td>
 </tr>
 </table>
 </td>
@@ -4585,19 +3412,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00805">805</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00521">521</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga1b39571aeebcb8091bd410a9b247a571">805</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga1b39571aeebcb8091bd410a9b247a571">to_s</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;short&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">521</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;short&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_sc {#gadb22be8fe019b5cd1ad56cfadea5f4ec}
+### to\_sc {#gae3838e23c60edeadbafdd4a22d1b1516}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4606,7 +3433,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_sc = type_traits::value&lt;signed char&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_sc = detail::value&lt;signed char&gt;</td>
 </tr>
 </table>
 </td>
@@ -4627,19 +3454,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00794">794</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00510">510</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gadb22be8fe019b5cd1ad56cfadea5f4ec">794</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gadb22be8fe019b5cd1ad56cfadea5f4ec">to_sc</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;signed char&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">510</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;signed char&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_u {#gac8586b75498097cb06b404399c307960}
+### to\_u {#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4648,7 +3475,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u = type_traits::value&lt;unsigned&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u = detail::value&lt;unsigned&gt;</td>
 </tr>
 </table>
 </td>
@@ -4669,19 +3496,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00849">849</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00565">565</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gac8586b75498097cb06b404399c307960">849</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gac8586b75498097cb06b404399c307960">to_u</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">565</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;unsigned&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_u16 {#gaa60006a01aa94a5fd755aebddd8ceec3}
+### to\_u16 {#ga87bb08ab5e58f481ee911e872108f8e0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4690,7 +3517,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u16 = type_traits::value&lt;std::uint16_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u16 = detail::value&lt;std::uint16_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4711,19 +3538,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00959">959</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00675">675</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa60006a01aa94a5fd755aebddd8ceec3">959</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaa60006a01aa94a5fd755aebddd8ceec3">to_u16</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::uint16_t&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">675</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;std::uint16_t&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_u32 {#ga3bf9f9c946f16b5e02f9f2c45739df42}
+### to\_u32 {#gafe7f9ec77325e0ae6111967bf8c5f29a}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4732,7 +3559,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u32 = type_traits::value&lt;std::uint32_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u32 = detail::value&lt;std::uint32_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4753,19 +3580,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00970">970</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00686">686</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3bf9f9c946f16b5e02f9f2c45739df42">970</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga3bf9f9c946f16b5e02f9f2c45739df42">to_u32</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::uint32_t&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">686</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;std::uint32_t&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_u64 {#ga5fba6fbb12941113aeff430609839ba4}
+### to\_u64 {#gaf7cbf6fdcdeae86203faebdf9df7a201}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4774,7 +3601,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u64 = type_traits::value&lt;std::uint64_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u64 = detail::value&lt;std::uint64_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4795,19 +3622,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00981">981</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00697">697</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga5fba6fbb12941113aeff430609839ba4">981</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga5fba6fbb12941113aeff430609839ba4">to_u64</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::uint64_t&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">697</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;std::uint64_t&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_u8 {#ga8b683d809d600f5c5210bb16546a832e}
+### to\_u8 {#gaceb70f41ddfa8f5805dbe9be2adf2289}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4816,7 +3643,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u8 = type_traits::value&lt;std::uint8_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u8 = detail::value&lt;std::uint8_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4837,19 +3664,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00948">948</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00664">664</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga8b683d809d600f5c5210bb16546a832e">948</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga8b683d809d600f5c5210bb16546a832e">to_u8</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;std::uint8_t&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">664</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;std::uint8_t&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_uc {#ga9b60956f6c874e5597cdea6c0323fff1}
+### to\_uc {#gae0c0ed1401416ce6ee417ec86d8d2a89}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4858,7 +3685,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_uc = type_traits::value&lt;unsigned char&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_uc = detail::value&lt;unsigned char&gt;</td>
 </tr>
 </table>
 </td>
@@ -4879,19 +3706,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00860">860</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00576">576</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9b60956f6c874e5597cdea6c0323fff1">860</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga9b60956f6c874e5597cdea6c0323fff1">to_uc</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned char&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">576</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;unsigned char&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_ul {#ga9f6f56950ba8bce6cc49037af83e443b}
+### to\_ul {#ga5d2d6a69c090569866a779672772b48f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4900,7 +3727,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ul = type_traits::value&lt;unsigned long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ul = detail::value&lt;unsigned long&gt;</td>
 </tr>
 </table>
 </td>
@@ -4921,19 +3748,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00882">882</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00598">598</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9f6f56950ba8bce6cc49037af83e443b">882</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga9f6f56950ba8bce6cc49037af83e443b">to_ul</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned long&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga5d2d6a69c090569866a779672772b48f">598</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;unsigned long&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_ull {#ga595258f3c1b293284f79a88b2872d43d}
+### to\_ull {#gae1438b74ec39a793d5ad516a7c2c7788}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4942,7 +3769,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ull = type_traits::value&lt;unsigned long long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ull = detail::value&lt;unsigned long long&gt;</td>
 </tr>
 </table>
 </td>
@@ -4963,19 +3790,19 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00893">893</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00609">609</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga595258f3c1b293284f79a88b2872d43d">893</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga595258f3c1b293284f79a88b2872d43d">to_ull</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned long long&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">609</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;unsigned long long&gt;</a>;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### to\_us {#gac9a34848b05859a18794ece696e37f26}
+### to\_us {#ga8c22086f0e7e89d753cf7846ef7229d4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4984,7 +3811,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_us = type_traits::value&lt;unsigned short&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_us = detail::value&lt;unsigned short&gt;</td>
 </tr>
 </table>
 </td>
@@ -5005,14 +3832,1178 @@ keywords:
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00871">871</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00587">587</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gac9a34848b05859a18794ece696e37f26">871</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gac9a34848b05859a18794ece696e37f26">to_us</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type_traits::value&lt;unsigned short&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">587</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;unsigned short&gt;</a>;</span></span></div>
 
 </div>
+
+</div>
+</div>
+
+</div>
+
+<div class="doxySectionDef">
+
+## Deprecated Type Wrappers
+
+
+
+<p>The v5.0.1 names of the <span class="doxyComputerOutput">to_*</span> type wrappers.</p>
+
+
+<p>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <span class="doxyComputerOutput">to_*</span> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<span class="doxyComputerOutput">42<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>), which are in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> namespace.</p>
+
+
+<p>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <span class="doxyComputerOutput"><a href="#ga8468610e763177a8f569f7d618851288">_i</a> (expr)</span>; Clang reports it in both cases.</p>
+
+
+<dl class="doxySectionUser">
+<dt>Deprecated</dt>
+<dd><p>Use the corresponding <span class="doxyComputerOutput">to_*</span> type wrappers instead (since 3.2.0).</p></dd>
+</dl>
+
+
+### \_b {#gad4203783cfbe141f41ee8515f7b2ea94}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_b = to_b</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000032>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000033>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00852">852</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_c {#gafdd897d040f92df9cd42e551ebc88cd8}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_c = to_c</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000034>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000035>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00863">863</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_d {#ga7c6c0169d894a7dd589d96df49e8df26}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_d = to_d</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000074>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000075>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01083">1083</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_f {#ga231cd51e76a2f426703275739d605ad4}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_f = to_f</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000072>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000073>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01072">1072</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_i {#ga8468610e763177a8f569f7d618851288}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i = to_i</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000040>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000041>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00896">896</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_i16 {#gad2d95793c99112ad2889c6663789d1e3}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i16 = to_i16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000058>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000059>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00995">995</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_i32 {#ga917a1759e37cd0d3fe3786da11729a4b}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i32 = to_i32</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000060>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000061>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01006">1006</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_i64 {#ga290a150eae030e183ca2e14e9095c93b}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i64 = to_i64</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000062>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000063>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01017">1017</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_i8 {#ga265f8609ef3d6ead78c7a66825553e24}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i8 = to_i8</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000056>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000057>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00984">984</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_l {#ga429a848542fc4ffafd3dd22bc1832654}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_l = to_l</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000042>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000043>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00907">907</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_ld {#gacfe28c6fb7bfb47ca8891cb61e7f58d9}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ld = to_ld</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000076>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000077>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01094">1094</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_ll {#ga9c597ca04848620b8570c29a4741e77d}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ll = to_ll</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000044>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000045>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00918">918</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_s {#ga461a956b7e308ed6e8c64afa3cf160f2}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_s = to_s</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000038>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000039>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00885">885</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_sc {#ga0cc4baab5f421ac7adee10218d8ee8a2}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_sc = to_sc</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000036>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000037>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00874">874</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_t {#ga15147e343475e219c2e46dce07b4127c}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_t = to_t&lt;T&gt;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Generic strongly-typed wrapper, the v5.0.1 name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a>&lt;T&gt;</span>, so it takes the same argument and is reported in the same way; kept for backwards compatibility. In v5.0.1 it was a separate class, also derived from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>&lt;T&gt;</span>.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000078>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">T</td>
+<td class="doxyParamItemDescription"><p>The type of the wrapped value.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000079>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01110">1110</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_u {#gaaa486af2418a24076237fbe26940f5ae}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u = to_u</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000046>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000047>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00929">929</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_u16 {#ga97f7bc9a25eb4b7c663bd2388ade01ae}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u16 = to_u16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000066>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000067>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01039">1039</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_u32 {#ga4afa32150456241245bfc641a6f17bbc}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u32 = to_u32</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000068>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000069>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01050">1050</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_u64 {#ga1241e84fc4457af1b4df5f053eec6aa5}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u64 = to_u64</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000070>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000071>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01061">1061</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_u8 {#gaf27e37e2e29af1a3ffd5c4fb07e77ff9}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u8 = to_u8</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000064>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000065>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01028">1028</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_uc {#gaa8bb559065ea34a9645fdfd6339b9b7a}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_uc = to_uc</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000048>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000049>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00940">940</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_ul {#ga32c7eef01fcaef2f1a9478427d951f62}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ul = to_ul</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000052>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000053>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00962">962</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_ull {#gada8a165060d3d3b3ab51272b9da58761}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ull = to_ull</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000054>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000055>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00973">973</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
+
+</div>
+</div>
+
+### \_us {#ga65aea7fc6324806cc029041a1c785611}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_us = to_us</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000050>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span> (since 3.2.0).</p>
+</dd>
+</dl>
+</div>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000051>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00951">951</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
 
 </div>
 </div>
@@ -5021,6 +5012,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

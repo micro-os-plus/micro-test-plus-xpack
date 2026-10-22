@@ -17,20 +17,20 @@
  *
  * @details
  * This header provides the declarations for the test reporting facilities used
- * within the µTest++ framework. It defines the `verbosity` levels, the
- * `endl` and `indent()` stream manipulators, and the abstract `reporter`
- * base class, which accumulates output in a buffer, writes it to the
- * console and to an optional output file, and dispatches the pass/fail
+ * within the µTest++ framework. It defines the `endl` and `indent()`
+ * stream manipulators, and the abstract `reporter` base class, which
+ * accumulates output in a buffer, writes it to the console and to an
+ * optional output file, and dispatches the pass/fail
  * results and the session, suite, and test case events to the concrete
  * reporters (`reporter_human` and `reporter_tap`).
  *
  * The formatting of the values and the comparison expressions is delegated
  * to `detail::expression_formatter`.
  *
- * The `verbosity` enumeration is defined in the
- * `micro_os_plus::micro_test_plus` namespace; the manipulators and the
- * reporter are defined in the `micro_os_plus::micro_test_plus::detail`
- * namespace, since the reporters are internal to the framework.
+ * The `verbosity` levels, and the other session options, are defined in
+ * `runner-options.h`. The manipulators and the reporter are defined in the
+ * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
+ * are internal to the framework.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -163,33 +163,54 @@ namespace micro_os_plus::micro_test_plus
      * output operators for strings, characters, booleans, numbers, and
      * pointers, and writes it to the console and to an optional output file.
      *
-     * For failed checks, the reporter prints the actual values of the operands,
-     * pre-formatted by its `expression_formatter` (with type suffixes
-     * for numbers), supporting precise diagnostics and efficient debugging.
-     * The class supports multiple verbosity levels and colour-coded output to
-     * distinguish between successful and failed checks.
+     * For failed checks, the reporter prints the actual values of the
+     * operands, pre-formatted by its `expression_formatter` (with type
+     * suffixes for numbers). The class supports multiple verbosity levels
+     * and colour-coded output to distinguish between passed and failed
+     * checks.
      *
      * The pure virtual member functions report the beginning and end of the
      * session, the suites, and the test cases, and format the pass and fail
      * results; they are implemented by `reporter_human` and `reporter_tap`.
      * The concrete reporter is created by the runner, as selected by the
-     * `--reporter` command-line option.
+     * `--reporter` command-line option, or by
+     * `runner_options::selected_reporter`.
      *
      * The reporters are internal to the framework: their public members are
      * the protocol between the runner, the test nodes, the checks, and the
      * reporter, and custom reporters are not supported. The applications
-     * select a reporter with the `--reporter` command-line option, and read
-     * the verbosity with `runner::verbosity_level()`.
+     * select a reporter with the `--reporter` command-line option, or with
+     * the `runner_options`, and read the verbosity with
+     * `runner::verbosity_level()`.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
     class reporter
     {
-      // Pass the expression formatter to the checks, and format their
-      // expressions.
+      /**
+       * @brief The test case, which creates the checks.
+       *
+       * @details
+       * It passes the expression formatter to the check results created
+       * by `expect()` and `require()`.
+       */
       friend class micro_test_plus::test_case;
+
+      /**
+       * @brief The check result, which formats the expressions.
+       *
+       * @details
+       * It formats its expression into the expression formatter, and
+       * retrieves the text when it reports the check.
+       */
       friend class check_result;
-      // Write the list of the test cases, with `write_line()`.
+
+      /**
+       * @brief The runner, which lists the test cases.
+       *
+       * @details
+       * It writes the list of the test cases with `write_line()`.
+       */
       friend class micro_test_plus::runner;
 
     public:
@@ -329,7 +350,7 @@ namespace micro_os_plus::micro_test_plus
       end_line (void);
 
       /**
-       * @brief Output the current buffered content to the console.
+       * @brief Writes the current buffered content to the console.
        *
        * @details
        * The console is the standard output stream; the buffer is written
@@ -395,7 +416,7 @@ namespace micro_os_plus::micro_test_plus
       // ----------------------------------------------------------------------
 
       /**
-       * @brief Report a passed condition.
+       * @brief Reports a passed condition.
        *
        * @param message The message to display.
        * @param expression The string representation of the expression.
@@ -408,11 +429,11 @@ namespace micro_os_plus::micro_test_plus
             const test_case& test_case);
 
       /**
-       * @brief Report a failed condition.
+       * @brief Reports a failed condition.
        *
        * @param failure The failure details: the kind of the check, the
-       * message to display, whether the expression is a compound op to
-       * display, and the source location of the failure.
+       * message to display, whether the expression text is displayed,
+       * and the source location of the failure.
        * @param expression The string representation of the expression.
        * @param test_case The test case that owns this check.
        * @par Returns
@@ -425,7 +446,7 @@ namespace micro_os_plus::micro_test_plus
       // ----------------------------------------------------------------------
 
       /**
-       * @brief Mark the beginning of a test session.
+       * @brief Marks the beginning of a test session.
        *
        * @details
        * Called by `runner::initialise()`, after the reporter is created;
@@ -440,7 +461,7 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Mark the end of a test session.
+       * @brief Marks the end of a test session.
        *
        * @details
        * Called by `runner::run()`, after all suites have run;
@@ -455,7 +476,7 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Mark the beginning of a test suite.
+       * @brief Marks the beginning of a test suite.
        *
        * @details
        * Called by `suite::run()` before the suite body, for the suites
@@ -471,7 +492,7 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Mark the end of a test suite.
+       * @brief Marks the end of a test suite.
        *
        * @details
        * Called by `suite::run()` after the suite body, also when an
@@ -489,7 +510,7 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Report a test suite skipped by the filter.
+       * @brief Reports a test suite skipped by the filter.
        *
        * @details
        * Called by `runner::run_suites()`, instead of running the suite,
@@ -508,7 +529,7 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Report a failure of a test suite outside its test cases.
+       * @brief Reports a failure of a test suite outside its test cases.
        *
        * @details
        * Called by `suite::run()` when an exception escapes the suite body,
@@ -529,11 +550,13 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Mark the beginning of a test case.
+       * @brief Marks the beginning of a test case.
        *
        * @details
-       * Called by `test_case::run()` before the test case body; the output
-       * buffer is expected to be empty at this point.
+       * Called by `test_case::run()` before the test case body; the results
+       * buffered for an outer test case, if any, are written first (see
+       * `commit_outer_results()`), so that the buffer is empty when the
+       * body starts.
        *
        * @param test_case Reference to the test case.
        * @par Returns
@@ -544,7 +567,7 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Mark the end of a test case.
+       * @brief Marks the end of a test case.
        *
        * @details
        * Called by `test_case::run()` after the test case body; implementations
@@ -559,7 +582,7 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Report a test case skipped by the filter.
+       * @brief Reports a test case skipped by the filter.
        *
        * @details
        * Called instead of `begin_test_case()` and `end_test_case()`, when the
@@ -579,7 +602,7 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
-       * @brief Report the abort of the test execution.
+       * @brief Reports the abort of the test execution.
        *
        * @details
        * Called by `runner::abort()` between `begin_session()` and
@@ -652,7 +675,7 @@ namespace micro_os_plus::micro_test_plus
 
     protected:
       /**
-       * @brief Output the current buffered content to the output file.
+       * @brief Writes the current buffered content to the output file.
        *
        * @details
        * The buffer is written without appending a line ending, and is not
@@ -669,7 +692,7 @@ namespace micro_os_plus::micro_test_plus
       write_buffer_to_file (void);
 
       /**
-       * @brief Write formatted text to the console.
+       * @brief Writes formatted text to the console.
        *
        * @details
        * All reporter console output is routed through this function, so
@@ -691,7 +714,7 @@ namespace micro_os_plus::micro_test_plus
           ;
 
       /**
-       * @brief Write formatted text to the output file.
+       * @brief Writes formatted text to the output file.
        *
        * @details
        * If no output file is open, the call has no effect, so callers do
@@ -710,7 +733,7 @@ namespace micro_os_plus::micro_test_plus
           ;
 
       /**
-       * @brief Write formatted lines to the output file and, when
+       * @brief Writes formatted lines to the output file and, when
        * requested, to the console.
        *
        * @details
@@ -1051,12 +1074,13 @@ namespace micro_os_plus::micro_test_plus
       expression_formatter expression_{ colours_ };
 
       /**
-       * @brief Controls whether to add an empty line between successful test
-       * cases.
+       * @brief Whether to write an empty line before the next console
+       * output.
        *
        * @details
-       * Used by the concrete reporters to insert blank lines between groups
-       * of output lines.
+       * Set and cleared by the concrete reporters, to separate the groups
+       * of console lines, such as the suites and the failed test cases;
+       * the output file is not affected.
        */
       bool add_empty_line_{ true };
 
@@ -1076,9 +1100,11 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * When non-null, the report is written to this file in addition to
-       * the console, without colour sequences and regardless of the
-       * verbosity. The file is opened by the constructor and closed by the
-       * destructor.
+       * the console, without colour sequences. With the TAP reporter, the
+       * file receives the full report, regardless of the verbosity; with
+       * the human reporter, most of it only with the normal and verbose
+       * levels (see `verbosity`). The file is opened by the constructor
+       * and closed by the destructor.
        */
       FILE* output_file_{ nullptr };
 

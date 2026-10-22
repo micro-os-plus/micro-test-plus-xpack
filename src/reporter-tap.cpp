@@ -66,6 +66,20 @@ namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @brief Local helpers of the TAP reporter.
+   *
+   * @details
+   * The unnamed namespace gives the helpers internal linkage, so that they
+   * are visible only in this translation unit, and cannot conflict with
+   * the names of the application or of the other source files of the
+   * framework. They are not declared in any header.
+   *
+   * It contains the functions that make the texts safe to write in the
+   * TAP output: `tap_text()`, for the test point descriptions, the
+   * reasons, and the comments, and `yaml_double_quoted()`, for the
+   * values of the YAML diagnostic blocks.
+   */
   namespace
   {
     /**
@@ -715,8 +729,9 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * This member function outputs the prefix for a passing check result, as a
-   * TAP `"ok <n> - "` line, where `<n>` is the index of the check within the
-   * test case, indented one level deeper than the test case, followed by the
+   * TAP `"ok <n> - "` line, where `<n>` is the test point number of the
+   * check, which counts the checks and the nested test cases of the test
+   * case, indented one level deeper than the test case, followed by the
    * message, if provided. No colours are used.
    *
    * The position where the description begins is kept in

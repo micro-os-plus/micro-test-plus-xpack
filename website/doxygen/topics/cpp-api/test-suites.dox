@@ -3,42 +3,49 @@
 
 @details
 By default, all test cases defined in `main()` are included in the
-top-level test suite, which is created by `runner::initialise()` and
-executed immediately. For more complex projects, additional test suites can
-be defined, typically in separate source files.
+top-level test suite, which is owned by the runner and returned by
+`runner::initialise()`; its test cases run immediately. For more complex
+projects, additional test suites can be defined, typically in separate
+source files.
 
-Stand-alone test suites are implemented as `mt::static_suite` objects,
-constructed with a name, a reference to the runner, and a callable (usually
-a lambda that chains execution of test cases), along with any optional
-arguments. This design enables self-registration of test suites, ensuring
-they are automatically included in the test run.
+The additional test suites are either added in `main()` with
+`runner::add_suite()`, or defined as `mt::static_suite` objects, at
+namespace scope, constructed with a name, a reference to the runner, and a
+callable (usually a function or a lambda with a `mt::suite&` first
+parameter, which creates the test cases), along with any optional
+arguments. The static suites register themselves in their constructors,
+so they are included in the test run without other calls.
 
 @important
-It is strongly recommended to instantiate additional test suites as static
-objects so that their constructors are invoked before `main()` begins.
+The runner referred to by the static suites in other source files must
+have external linkage (not `static`), and be declared `extern` in a
+header shared by these files.
 
-Self-registration is performed within the constructor, ensuring that each
-test suite is automatically included in the test run. When test suites are
-defined in separate compilation units, they can be executed in any order,
-as the sequence in which static constructors are invoked is not specified.
-Consequently, test suites should be designed to be independent and must not
-rely on the execution order of other suites.
-
-All registered test suites are executed when `runner::run()` is
-called, guaranteeing comprehensive test coverage across the project.
+The static suites may be constructed before or after the runner, in any
+order. All suites, added or static, are run by `runner::run()`, after the
+test cases of the top suite, in a single order, sorted by name (byte by
+byte, as by `std::strcmp()`); suites with the same name run in the order
+in which they were created, so the static ones first. Zero-padded
+numeric prefixes (`"01 - Init"`) give an explicit order. Test suites
+should nevertheless be designed to be independent of each other.
 
 @par Examples
 
 @code{.cpp}
+// In a header shared by the source files.
+extern micro_os_plus::micro_test_plus::runner tr;
+@endcode
+
+@code{.cpp}
 namespace mt = micro_os_plus::micro_test_plus;
 
-// In main.cpp: create the runner (the static_runner variant also works).
-static mt::static_runner tr{ "Sample" };
+// In main.cpp: the runner, with external linkage.
+mt::runner tr;
 
 int
 main (int argc, char* argv[])
 {
-  auto& ts = tr.initialise (argc, argv);
+  auto& ts = tr.initialise (argc, argv, "Sample");
 
   ts.test ("Check one", [] (auto& t) {
     t.expect (true) << "Passed";
@@ -46,19 +53,23 @@ main (int argc, char* argv[])
 
   return tr.run ();
 }
+@endcode
+
+@code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
 
 // In a separate source file: a self-registering suite.
 static mt::static_suite ts_extra
-    = { "Extra suite", tr, [] (auto& t) {
-  t.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });
+    = { "Extra suite", tr, [] (mt::suite& ts) {
+  ts.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });
 } };
 
 // Parametrised test suite accepting additional arguments.
 static void
-test_suite_with_args (mt::static_suite& t, int ic, int iv,
+test_suite_with_args (mt::suite& ts, int ic, int iv,
                       int& ir, int* ip1, int* ip2)
 {
-  t.test ("args", [&] (auto& t) {
+  ts.test ("args", [&] (auto& t) {
     t.expect (mt::eq (ic, 42)) << "ic is 42";
     t.expect (mt::eq (iv, 43)) << "iv is 43";
     t.expect (mt::eq (ir, 44)) << "ir is 44";

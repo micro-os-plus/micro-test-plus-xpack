@@ -1,9 +1,14 @@
 var test_8h =
 [
-    [ "micro_os_plus::micro_test_plus::detail::runnable&lt; Self_T &gt;", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable" ],
+    [ "micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable" ],
+    [ "micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref" ],
     [ "micro_os_plus::micro_test_plus::detail::runnable_base", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base" ],
-    [ "micro_os_plus::micro_test_plus::detail::test_node", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node" ],
+    [ "micro_os_plus::micro_test_plus::test_case_name", "classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__case__name" ],
     [ "micro_os_plus::micro_test_plus::top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite" ],
-    [ "micro_os_plus::micro_test_plus::detail::register_static_suite", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ace6dc3e539bce5fdcce2741856b16b16", null ],
-    [ "micro_os_plus::micro_test_plus::detail::to_runner", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a9179be566c21dc8241d8e9f99f69e2bc", null ]
+    [ "micro_os_plus::micro_test_plus::detail::static_suite_body", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body.html", null ],
+    [ "micro_os_plus::micro_test_plus::detail::test_values_range", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html", null ],
+    [ "micro_os_plus::micro_test_plus::detail::test_values_tuple", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__tuple.html", null ],
+    [ "micro_os_plus::micro_test_plus::subtest", "group__micro-os-plus-micro-test-plus-test-case.html#ga1424c18b26d5fdaed11439c77e6bf561", null ],
+    [ "micro_os_plus::micro_test_plus::detail::bind_callable", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a6abb44ef8226b1f80aad8010b5ef1a5c", null ],
+    [ "micro_os_plus::micro_test_plus::detail::test_each_value", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8", null ]
 ];

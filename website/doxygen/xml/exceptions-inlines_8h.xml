@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="exceptions-inlines_8h" kind="file" language="C++">
     <compoundname>exceptions-inlines.h</compoundname>
     <includedby refid="exceptions_8h" local="yes">exceptions.h</includedby>
@@ -32,7 +32,7 @@
 <para>C++ header file with inline implementations for the µTest++ exceptions comparators. </para>
     </briefdescription>
     <detaileddescription>
-<para>This header provides the inline implementations for the exception-checking function templates used within the µTest++ framework (<computeroutput>throws()</computeroutput> and <computeroutput>nothrow()</computeroutput>), which create the <computeroutput>detail::throws_</computeroutput> and <computeroutput>detail::nothrow_</computeroutput> comparator objects.</para>
+<para>This header provides the inline implementations for the exception-checking function templates used within the µTest++ framework (<computeroutput>throws()</computeroutput> and <computeroutput>nothrow()</computeroutput>), which create the <computeroutput>detail::throws_op</computeroutput> and <computeroutput>detail::nothrow_op</computeroutput> comparator objects.</para>
 <para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</para>
 <para>The header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase.</para>
 <para>This file is intended solely for internal use within the framework and should not be included directly by user code. </para>
@@ -88,21 +88,21 @@
 <codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="82" refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func)</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__" kindref="compound">detail::throws_&lt;Callable_T, Exception_T&gt;</ref>{<sp/>func<sp/>};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op" kindref="compound">detail::throws_op&lt;Exception_T&gt;</ref>{<sp/>func<sp/>};</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="100" refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func)</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__" kindref="compound">detail::throws_&lt;Callable_T&gt;</ref>{<sp/>func<sp/>};</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op" kindref="compound">detail::throws_op&lt;&gt;</ref>{<sp/>func<sp/>};</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="118" refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func)</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__" kindref="compound">detail::nothrow_&lt;Callable_T&gt;</ref>{<sp/>func<sp/>};</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op" kindref="compound">detail::nothrow_op</ref>{<sp/>func<sp/>};</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"></highlight></codeline>
 <codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cpp_exceptions)</highlight><highlight class="normal"></highlight></codeline>

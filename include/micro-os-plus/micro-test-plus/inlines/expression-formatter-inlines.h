@@ -22,11 +22,11 @@
  *
  * @details
  * This header provides the inline and template member function
- * implementations for `expression_formatter`. The buffer accessors (`str()`,
- * `c_str()`, `clear()`, `empty()`, `append()`, `reserve()`) are defined as
- * inline functions for zero-overhead access. The template operators —
- * `operator<<(T*)`, `operator<<(is_op<T>)`, and `operator<<(container)` — are
- * instantiated per concrete type at each call site.
+ * implementations for `expression_formatter`: the constructors, the
+ * `str()` accessor, and the template operators (for the pointers, the
+ * value wrappers, the ranges, the scoped enumerations, the pairs, the
+ * tuples, the optionals, and the expressions), which are instantiated
+ * for each concrete type. It also defines `plain_text::append()`.
  *
  * The compound expression operators format comparator expressions and wrap
  * them in the pass/fail colour codes of the owning reporter.
@@ -35,8 +35,8 @@
  * and `detail::append_pointer()` helpers, defined in `detail-inlines.h`
  * and shared with the reporter.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail` namespace.
  *
  * This file is intended solely for internal use within the framework and
  * should not be included directly by user code.
@@ -258,15 +258,11 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This operator overload enables the `reporter` to output relational
-   * comparison expressions in a clear and expressive format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the operator symbol of the tag (`==`, `!=`, `>`, `>=`, `<`, or `<=`),
-   * with appropriate colour highlighting applied for improved readability in
-   * test reports and diagnostics. This structured output assists in quickly
-   * identifying the values involved in the assertions and facilitates
-   * efficient debugging of test failures.
+   * The left-hand side and right-hand side values are formatted and
+   * separated by the operator symbol of the tag (`==`, `!=`, `>`, `>=`,
+   * `<`, or `<=` for the built-in tags, or the symbol of an application
+   * tag), in the colour of the result (green for passed, red for failed,
+   * when colours are enabled).
    */
   template <class Lhs_T, class Rhs_T, class Compare_T>
   expression_formatter&
@@ -294,15 +290,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This operator overload enables the `reporter` to output logical
-   * conjunction (AND) expressions in a clear and structured format.
-   *
-   * The left-hand side and right-hand side expressions are enclosed in
-   * parentheses and separated by the word "and", with appropriate colour
-   * highlighting applied for improved readability in test reports and
-   * diagnostics. This presentation assists in quickly identifying the
-   * components of logical assertions and facilitates efficient debugging of
-   * test failures involving compound conditions.
+   * The left-hand side and right-hand side expressions are formatted as
+   * they are, enclosed in parentheses, and separated by the word `and`,
+   * written in the colour of the result of the conjunction.
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
@@ -314,15 +304,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This operator overload enables the `reporter` to output logical
-   * disjunction (OR) expressions in a clear and structured format.
-   *
-   * The left-hand side and right-hand side expressions are enclosed in
-   * parentheses and separated by the word "or", with appropriate colour
-   * highlighting applied for improved readability in test reports and
-   * diagnostics. This presentation assists in quickly identifying the
-   * components of logical assertions and facilitates efficient debugging of
-   * test failures involving compound conditions.
+   * The left-hand side and right-hand side expressions are formatted as
+   * they are, enclosed in parentheses, and separated by the word `or`,
+   * written in the colour of the result of the disjunction.
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
@@ -334,11 +318,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This operator overload enhances readability and clarity by formatting the
-   * output when handling negated expressions. It applies colour styling for
-   * improved distinction and appends the negated value accordingly, ensuring
-   * that logical negations are clearly represented in test reports and
-   * diagnostics.
+   * Writes the word `not`, followed by the operand, in the colour of the
+   * result of the negation.
    */
   template <class T>
   expression_formatter&
@@ -365,15 +346,9 @@ namespace micro_os_plus::micro_test_plus::detail
 #if defined(__cpp_exceptions)
   /**
    * @details
-   * This operator overload provides structured output for expressions that may
-   * throw exceptions. It applies colour styling for clarity and, when a
-   * specific exception is expected, includes its type name for precise
-   * identification.
-   *
-   * When invoked, the output highlights the `throws` qualifier, along with
-   * the expected exception type, if any, making it immediately apparent
-   * which exception is expected, and assists in the precise identification
-   * and debugging of exception-related test cases.
+   * Writes `throws`, followed, when a specific exception type is
+   * expected, by its name between angle brackets, as returned by
+   * `reflection::type_name()`, in the colour of the result.
    */
   template <class Exception_T>
   expression_formatter&
@@ -393,11 +368,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This operator overload formats output for expressions that are expected
-   * not to throw exceptions. It applies colour styling for clarity.
-   *
-   * The output highlights the `nothrow` qualifier, making it immediately
-   * apparent when an expression is expected not to throw.
+   * Writes `nothrow`, in the colour of the result.
    *
    * It is defined inline, not in the library sources, so that it is
    * available to the applications built with exceptions even when the

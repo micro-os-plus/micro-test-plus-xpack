@@ -19,7 +19,8 @@
  * @details
  * This header provides the declaration for `reporter_human`, a concrete
  * implementation of the `reporter` abstract interface, selected with the
- * `--reporter=human` command-line option (the default is TAP). It
+ * `--reporter=human` command-line option, or with
+ * `runner_options::selected_reporter` (the default is TAP). It
  * formats and presents test results in a human-readable form on the
  * standard output, accumulating output in an internal string buffer and
  * supporting colour-coded diagnostics and multiple verbosity levels.
@@ -91,7 +92,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * whose output file is always complete, is the one to use.
    *
    * The reporter is created by the runner, as selected by the
-   * `--reporter` command-line option. A different output format requires
+   * `--reporter` command-line option, or by
+   * `runner_options::selected_reporter`. A different output format requires
    * a new class derived from `reporter`, and an extension of the runner
    * to create it.
    *
@@ -163,7 +165,7 @@ namespace micro_os_plus::micro_test_plus::detail
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Mark the beginning of a test session.
+     * @brief Marks the beginning of a test session.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -173,7 +175,7 @@ namespace micro_os_plus::micro_test_plus::detail
     begin_session (const runner& runner) override;
 
     /**
-     * @brief Mark the end of a test session.
+     * @brief Marks the end of a test session.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -183,7 +185,7 @@ namespace micro_os_plus::micro_test_plus::detail
     end_session (const runner& runner) override;
 
     /**
-     * @brief Mark the beginning of a suite.
+     * @brief Marks the beginning of a test suite.
      *
      * @param suite Reference to the suite.
      * @par Returns
@@ -193,7 +195,7 @@ namespace micro_os_plus::micro_test_plus::detail
     begin_suite (const suite& suite) override;
 
     /**
-     * @brief Mark the end of a test suite.
+     * @brief Marks the end of a test suite.
      *
      * @param suite Reference to the test suite.
      * @par Returns
@@ -203,7 +205,7 @@ namespace micro_os_plus::micro_test_plus::detail
     end_suite (const suite& suite) override;
 
     /**
-     * @brief Report a test suite skipped by the filter.
+     * @brief Reports a test suite skipped by the filter.
      *
      * @details
      * Displays a `"• <name> - skipped (filtered)"` line, instead of the
@@ -217,7 +219,7 @@ namespace micro_os_plus::micro_test_plus::detail
     skip_suite (const suite& suite) override;
 
     /**
-     * @brief Report a failure of a test suite outside its test cases.
+     * @brief Reports a failure of a test suite outside its test cases.
      *
      * @details
      * Adds a `"✗ <message> FAILED"` line, at the indentation of the
@@ -232,7 +234,7 @@ namespace micro_os_plus::micro_test_plus::detail
     fail_suite (const std::string& message, const suite& suite) override;
 
     /**
-     * @brief Mark the beginning of a test case.
+     * @brief Marks the beginning of a test case.
      *
      * @param test_case Reference to the test case.
      * @par Returns
@@ -242,7 +244,7 @@ namespace micro_os_plus::micro_test_plus::detail
     begin_test_case (const test_case& test_case) override;
 
     /**
-     * @brief Mark the end of a test case.
+     * @brief Marks the end of a test case.
      *
      * @param test_case Reference to the test case.
      * @par Returns
@@ -252,7 +254,7 @@ namespace micro_os_plus::micro_test_plus::detail
     end_test_case (const test_case& test_case) override;
 
     /**
-     * @brief Report a test case skipped by the filter.
+     * @brief Reports a test case skipped by the filter.
      *
      * @details
      * Displays a `"• <name> - skipped (filtered)"` line,
@@ -266,7 +268,7 @@ namespace micro_os_plus::micro_test_plus::detail
     skip_test_case (const test_case& test_case) override;
 
     /**
-     * @brief Report the abort of the test execution.
+     * @brief Reports the abort of the test execution.
      *
      * @details
      * Displays the names of the open test cases not yet displayed,

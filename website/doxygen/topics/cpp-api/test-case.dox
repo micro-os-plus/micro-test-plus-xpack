@@ -4,7 +4,10 @@
 @details
 Each test case is defined by calling `suite::test()` with a descriptive
 name and a callable object (typically a lambda accepting a `test_case&`
-reference), along with any optional arguments required for the test.
+reference), along with any optional arguments required for the test. The
+test case runs immediately, within the call. Nested test cases are
+defined with `test_case::test()`, and a test case for each value of a
+range or a tuple with `test_each()`.
 
 Test cases allow related checks to be organised together within the same
 environment, improving clarity and maintainability. Any number of test cases

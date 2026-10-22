@@ -23,8 +23,9 @@
  * `stopwatch.h` to enforce the project convention that declarations
  * reside in headers and implementations reside in inline files.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail` namespace, ensuring clear
+ * separation from user code and minimising
  * the risk of naming conflicts.
  */
 

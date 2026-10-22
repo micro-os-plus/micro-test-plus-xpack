@@ -170,8 +170,11 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Keeps a copy of the verbosity, creates the reporter selected by the
-   * options, keeps a copy of the filter patterns, starts session timing, and emits the initial
-   * reporter notifications for the session and top suite.
+   * options, keeps a copy of the filter patterns, starts the session
+   * timing, and emits the initial reporter notifications for the session
+   * and the top suite. While the test cases are listed, only the header
+   * of the list is written; the session and the top suite are not
+   * reported.
    *
    * If the top suite name is not provided, here or by the deprecated
    * constructor, it is derived from the file name of
@@ -589,7 +592,8 @@ namespace micro_os_plus::micro_test_plus
    * executed via `suite::run()`, and its totals are accumulated into the
    * runner totals; otherwise, it is reported as skipped and counted in
    * `skipped_suites_count_`, keeping its index, so that the TAP plan
-   * remains complete. The executed test cases counter is not incremented;
+   * remains complete; while the test cases are listed, the skipped suites
+   * are not reported. The executed test cases counter is not incremented;
    * suites are not counted as test cases.
    *
    * The next suite is read after the current one has run, since the
@@ -644,6 +648,11 @@ namespace micro_os_plus::micro_test_plus
    *
    * While the suites run, the session is in the `running` state, so that
    * the suites added by them are rejected.
+   *
+   * While the test cases are listed, the top suite is not reported, the
+   * suites run only to create their test cases, the numbers of listed
+   * test cases and suites end the list, and the exit code is `0`, or
+   * `2` after an option error.
    *
    * The result is stored, and the later calls return it without running
    * anything again. If the runner was not initialised, if it is

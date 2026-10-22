@@ -27,11 +27,8 @@
  * selection, exponentiation, and compile-time parsing of numeric values from
  * character sequences.
  *
- * These utilities are designed to be lightweight and suitable for embedded
- * environments, supporting both integral and floating-point types, and
- * enabling expressive, type-safe, and efficient compile-time computations.
- * Special attention is given to constexpr compatibility and minimal reliance
- * on the standard library, ensuring portability and performance.
+ * These utilities are lightweight, `constexpr` or `consteval`, and
+ * support both integral and floating-point types.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail::math` namespace, since they are
@@ -89,10 +86,6 @@ namespace micro_os_plus::micro_test_plus
      * is less than the default-constructed value of its type (typically zero),
      * the negated value is returned; otherwise, the original value is
      * returned.
-     *
-     * This utility is designed to be lightweight and suitable for embedded
-     * environments, where standard library alternatives may be unavailable,
-     * less efficient, or not constexpr.
      */
     template <class T>
     constexpr auto
@@ -110,10 +103,6 @@ namespace micro_os_plus::micro_test_plus
      * The function returns a reference to the lesser of the two input values,
      * as determined by the `<` operator. If the second argument is less than
      * the first, it is returned; otherwise, the first argument is returned.
-     *
-     * This utility is designed to be lightweight and suitable for embedded
-     * environments, where standard library alternatives may be unavailable,
-     * less efficient, or not constexpr.
      */
     template <class T>
     constexpr auto
@@ -131,10 +120,6 @@ namespace micro_os_plus::micro_test_plus
      * The function starts from one and multiplies the result by the base
      * `exp` times. If the exponent is zero (or negative), the function
      * returns one (the multiplicative identity for the type).
-     *
-     * This utility is designed to be lightweight and suitable for embedded
-     * environments, where standard library alternatives may be unavailable,
-     * less efficient, or not constexpr.
      */
     template <class T, class Exp_T>
     constexpr auto
@@ -184,10 +169,6 @@ namespace micro_os_plus::micro_test_plus
      * integral part has more digits than `T` can always hold. Parsing stops
      * at the first dot, allowing the function to extract only the integral
      * part of the number.
-     *
-     * This utility is particularly useful for user-defined literals and other
-     * compile-time constant expressions, enabling efficient and type-safe
-     * conversion from character sequences to integral values.
      */
     template <class T, char... Cs>
     consteval auto
@@ -231,11 +212,6 @@ namespace micro_os_plus::micro_test_plus
      * (e.g. `1.25` yields 25), so that `den() / 10^den_size()` gives the
      * fraction. If the result could exceed `T`, the compilation fails with
      * an explicit message.
-     *
-     * This utility is particularly useful for user-defined literals and other
-     * compile-time constant expressions, enabling efficient and type-safe
-     * conversion from character sequences to the decimal part of numeric
-     * values.
      */
     template <class T, char... Cs>
     consteval auto
@@ -279,10 +255,6 @@ namespace micro_os_plus::micro_test_plus
      * apostrophe (`'`). It returns the number of digits that follow the
      * first dot (the digit separators are not counted; e.g. 2 for `1.25`),
      * which is the scale of the value returned by `den()`.
-     *
-     * This utility is particularly useful for user-defined literals and other
-     * compile-time constant expressions, enabling efficient and type-safe
-     * determination of decimal precision from character sequences.
      */
     template <class T, char... Cs>
     consteval auto
@@ -321,10 +293,6 @@ namespace micro_os_plus::micro_test_plus
      * steps for large values, infinities, and NaNs, for which the result
      * is one; for small values, the number of steps is bounded by the
      * decimal exponent of the smallest value of the type.
-     *
-     * This utility is particularly useful for user-defined literals and
-     * compile-time constant expressions, enabling efficient and type-safe
-     * determination of decimal precision from floating-point values.
      */
     template <class T, class Value_T>
     constexpr auto

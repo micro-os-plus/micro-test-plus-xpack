@@ -117,8 +117,9 @@ namespace micro_os_plus::micro_test_plus
      * worst-case complexity is `O(n * m)`, for an input of length `n` and
      * a pattern of length `m`.
      *
-     * The function is also used by the runner to select the suites
-     * matching the `--filter` patterns.
+     * The function is also used by the runner to select the suites and
+     * the test cases matching the `--filter` patterns, for each of the
+     * alternatives separated by `|`.
      *
      * @par Examples
      *

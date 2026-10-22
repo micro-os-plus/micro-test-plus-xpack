@@ -18,11 +18,12 @@
  * @details
  * This source file contains the implementation of the `stopwatch` class
  * of the µTest++ framework. It provides the member functions that read
- * the monotonic clock at the start and at the end of the measured
- * interval, and that compute the elapsed time between the two readings.
+ * the system clock (monotonic on POSIX) at the start and at the end of
+ * the measured interval, and that compute the elapsed time between the
+ * two readings.
  *
  * All definitions reside within the
- * `micro_os_plus::micro_test_plus` namespace.
+ * `micro_os_plus::micro_test_plus::detail` namespace.
  *
  * This file must be included when building the µTest++ library.
  */
@@ -52,6 +53,18 @@ namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @brief Local helpers of the stopwatch.
+   *
+   * @details
+   * The unnamed namespace gives the helpers internal linkage, so that they
+   * are visible only in this translation unit, and cannot conflict with
+   * the names of the application or of the other source files of the
+   * framework. They are not declared in any header.
+   *
+   * It contains `read_clock()`, which isolates the platform-specific
+   * access to the system clock.
+   */
   namespace
   {
     /**

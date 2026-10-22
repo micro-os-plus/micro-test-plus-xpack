@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1runner__options" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::runner_options</compoundname>
+    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a7c2cca740efdbdc4927cac43aa456611" prot="public" static="no" mutable="no">
+        <type>std::span&lt; char *const  &gt;</type>
+        <definition>std::span&lt;char* const&gt; micro_os_plus::micro_test_plus::runner_options::arguments</definition>
+        <argsstring></argsstring>
+        <name>arguments</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_options::arguments</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>The complete command line, including <computeroutput>argv[0]</computeroutput>, if any. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A view of the <computeroutput>argv[]</computeroutput> array of <computeroutput>main()</computeroutput>, set when the options are parsed from the command line. When not empty, the reporters list it at the beginning of the report, and <computeroutput>initialise()</computeroutput> derives the default name of the top suite from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a7c2cca740efdbdc4927cac43aa456611" kindref="member">arguments</ref>[0]</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="255" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="255" bodyend="255"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" compoundref="runner_8cpp" startline="192" endline="296">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2319eb34fc8b601ca5e6a8ec538ba138" compoundref="runner_8cpp" startline="331" endline="472">micro_os_plus::micro_test_plus::runner::parse_options</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905b" kindref="member">colour_mode</ref></type>
+        <definition>colour_mode micro_os_plus::micro_test_plus::runner_options::colour</definition>
+        <argsstring></argsstring>
+        <name>colour</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_options::colour</qualifiedname>
+        <initializer>{ <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8" kindref="member">colour_mode::automatic</ref> }</initializer>
+        <briefdescription>
+<para>Whether the console output uses colours. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by <computeroutput>--color[=&lt;when&gt;]</computeroutput>, as in the GNU tools, where <computeroutput>&lt;when&gt;</computeroutput> is <computeroutput>always</computeroutput>, <computeroutput>never</computeroutput>, or <computeroutput>auto</computeroutput>, or one of their GNU synonyms (<computeroutput>yes</computeroutput> and <computeroutput>force</computeroutput>, <computeroutput>no</computeroutput> and <computeroutput>none</computeroutput>, <computeroutput>tty</computeroutput> and <computeroutput>if-tty</computeroutput>), and <computeroutput>--color</computeroutput> alone means <computeroutput>always</computeroutput>; the value is accepted only after <computeroutput>=</computeroutput>. The alternative <computeroutput>--use-colour=&lt;mode&gt;</computeroutput> or <computeroutput>--use-colour &lt;mode&gt;</computeroutput>, as in Catch2 and Boost UT, takes <computeroutput>yes</computeroutput>, <computeroutput>no</computeroutput>, or <computeroutput>auto</computeroutput>, and also accepts the other values of <computeroutput>--color</computeroutput>. Used only by the human reporter.</para>
+<para><simplesect kind="since"><para>5.1.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="244" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="244" bodyend="244"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a82221fa355584dbaa75c7e66fbefa6b8" compoundref="reporter-human_8cpp" startline="80" endline="100">micro_os_plus::micro_test_plus::detail::reporter_human::reporter_human</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2319eb34fc8b601ca5e6a8ec538ba138" compoundref="runner_8cpp" startline="331" endline="472">micro_os_plus::micro_test_plus::runner::parse_options</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a8dc9c5a5b6c89c12acd27d67d57618dd" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string_view &gt;</type>
+        <definition>std::vector&lt;std::string_view&gt; micro_os_plus::micro_test_plus::runner_options::filter_patterns</definition>
+        <argsstring></argsstring>
+        <name>filter_patterns</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_options::filter_patterns</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>The patterns that select the suites and the test cases to run, one per nesting level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each <computeroutput>--filter=&lt;pattern&gt;</computeroutput> or <computeroutput>--filter &lt;pattern&gt;</computeroutput> option adds one pattern; unlike the other options, <computeroutput>--filter</computeroutput> may be repeated. As with <computeroutput>--grep</computeroutput> in node-tap, the first pattern applies to the suite names, the second to the names of the test cases, and each further pattern to the names of the test cases nested one level deeper; the levels without a pattern are not filtered.</para>
+<para>Within a pattern, <computeroutput>|</computeroutput> separates alternatives; a name matches when it matches any of them, as defined by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kindref="member">utility::is_match()</ref></computeroutput>: <computeroutput>*</computeroutput> matches any sequence of characters, <computeroutput>?</computeroutput> matches any single character, the match is case-sensitive, and the alternative must cover the whole name.</para>
+<para>The suites and the test cases that do not match are reported as skipped, and their bodies are not called. The top suite is never skipped as a whole, since its body is <computeroutput>main()</computeroutput>, but when its name does not match the first pattern, all its test cases are skipped.</para>
+<para>When the list is empty (the default), everything runs.</para>
+<para><simplesect kind="since"><para>5.1.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="284" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="284" bodyend="284"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" compoundref="runner_8cpp" startline="192" endline="296">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2319eb34fc8b601ca5e6a8ec538ba138" compoundref="runner_8cpp" startline="331" endline="472">micro_os_plus::micro_test_plus::runner::parse_options</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ac4f95336439b329d0f3731a5dcafb6f9" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::runner_options::list_tests</definition>
+        <argsstring></argsstring>
+        <name>list_tests</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_options::list_tests</qualifiedname>
+        <initializer>{ false }</initializer>
+        <briefdescription>
+<para>Whether the test cases are listed instead of run. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by the <computeroutput>--list-tests</computeroutput> option, or by its short form <computeroutput>--list</computeroutput>. When set, the suite bodies run, as usual, to create their test cases, but the bodies of the test cases do not, so no check is evaluated. The selected test cases (see <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a8dc9c5a5b6c89c12acd27d67d57618dd" kindref="member">filter_patterns</ref></computeroutput>) are listed under the names of their suites, as Catch2 lists them:</para>
+<para><programlisting filename=".txt"><codeline><highlight class="normal">All<sp/>available<sp/>test<sp/>cases:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Sample</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Check<sp/>various<sp/>conditions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Check<sp/>strings</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Explicit<sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">suite</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Check<sp/>one</highlight></codeline>
+<codeline><highlight class="normal">3<sp/>test<sp/>cases<sp/>in<sp/>2<sp/>test<sp/>suites</highlight></codeline>
+</programlisting></para>
+<para>The header is <computeroutput>Matching test cases:</computeroutput> when there are filter patterns, and the suites without selected test cases are not listed. The nested test cases are not listed, since they are created by the bodies of their parents, which do not run. The list is written to the console, unless the verbosity is <computeroutput>silent</computeroutput>, and to the output file, if any; no report is written, and <computeroutput>run()</computeroutput> returns 0, or 2 after an option error.</para>
+<para><simplesect kind="since"><para>5.1.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="316" column="10" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="316" bodyend="316"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" compoundref="runner_8cpp" startline="192" endline="296">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2319eb34fc8b601ca5e6a8ec538ba138" compoundref="runner_8cpp" startline="331" endline="472">micro_os_plus::micro_test_plus::runner::parse_options</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aacf79acd1554b6e8899524bc02ee6257" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::runner_options::output_file_path</definition>
+        <argsstring></argsstring>
+        <name>output_file_path</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_options::output_file_path</qualifiedname>
+        <initializer>{ nullptr }</initializer>
+        <briefdescription>
+<para>Path of the optional output file, or <computeroutput>nullptr</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by <computeroutput>--output-file=&lt;path&gt;</computeroutput> or <computeroutput>--output-file &lt;path&gt;</computeroutput>. When it is <computeroutput>nullptr</computeroutput> or empty, no file is written. The reporter opens the file, and keeps a copy of the path, when it is created by <computeroutput>initialise()</computeroutput>; if the file cannot be opened, the error is reported on <computeroutput>stderr</computeroutput>, the report is written only to the console, and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a97f725cb167a2b464fac0eb88a0c8a46" kindref="member">runner::run()</ref></computeroutput> returns 2. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="228" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="228" bodyend="228"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a7e04bcbd0745543c604fdd975829175a" compoundref="reporter_8cpp" startline="160" endline="184">micro_os_plus::micro_test_plus::detail::reporter::reporter</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2319eb34fc8b601ca5e6a8ec538ba138" compoundref="runner_8cpp" startline="331" endline="472">micro_os_plus::micro_test_plus::runner::parse_options</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2" kindref="member">reporter_kind</ref></type>
+        <definition>reporter_kind micro_os_plus::micro_test_plus::runner_options::selected_reporter</definition>
+        <argsstring></argsstring>
+        <name>selected_reporter</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_options::selected_reporter</qualifiedname>
+        <initializer>{ <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b" kindref="member">reporter_kind::tap</ref> }</initializer>
+        <briefdescription>
+<para>The reporter that displays the results. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by <computeroutput>--reporter=&lt;name&gt;</computeroutput> or <computeroutput>--reporter &lt;name&gt;</computeroutput>, where the name is <computeroutput>tap</computeroutput> or <computeroutput>human</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="204" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="204" bodyend="204"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" compoundref="runner_8cpp" startline="192" endline="296">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2319eb34fc8b601ca5e6a8ec538ba138" compoundref="runner_8cpp" startline="331" endline="472">micro_os_plus::micro_test_plus::runner::parse_options</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></type>
+        <definition>micro_test_plus::verbosity micro_os_plus::micro_test_plus::runner_options::verbosity_level</definition>
+        <argsstring></argsstring>
+        <name>verbosity_level</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_options::verbosity_level</qualifiedname>
+        <initializer>{
+      <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">micro_test_plus::verbosity::normal</ref>
+    }</initializer>
+        <briefdescription>
+<para>The level of detail of the console output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by <computeroutput>--silent</computeroutput>, <computeroutput>--quiet</computeroutput>, or <computeroutput>--verbose</computeroutput>; when several are given, the last one takes effect. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="213" column="32" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="213" bodyend="215"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" compoundref="runner_8cpp" startline="192" endline="296">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2319eb34fc8b601ca5e6a8ec538ba138" compoundref="runner_8cpp" startline="331" endline="472">micro_os_plus::micro_test_plus::runner::parse_options</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The configuration of a test session. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acfabd0e10d233ad305b6f4fc125a97f2" kindref="member">runner::initialise</ref> (argc, argv)</computeroutput> parses the command-line options into this structure and passes it to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acfabd0e10d233ad305b6f4fc125a97f2" kindref="member">runner::initialise</ref> (options)</computeroutput>, which creates the selected reporter and starts the session.</para>
+<para>The applications that do not have a command line, such as the embedded ones without semihosting arguments, can define the options directly, starting from the defaults, and call the second overload:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">mt::runner_options<sp/>options{};</highlight></codeline>
+<codeline><highlight class="normal">options.selected_reporter<sp/>=<sp/>mt::reporter_kind::human;</highlight></codeline>
+<codeline><highlight class="normal">options.verbosity_level<sp/>=<sp/>mt::verbosity::verbose;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ts<sp/>=<sp/>tr.initialise<sp/>(options,<sp/></highlight><highlight class="stringliteral">&quot;Main&quot;</highlight><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para>The structure only refers to the strings it uses; they must remain valid until <computeroutput>initialise()</computeroutput> returns, which copies what it keeps.</para>
+<para><simplesect kind="since"><para>5.1.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="195" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="196" bodyend="317"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a7c2cca740efdbdc4927cac43aa456611" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_options</scope><name>arguments</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_options</scope><name>colour</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a8dc9c5a5b6c89c12acd27d67d57618dd" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_options</scope><name>filter_patterns</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ac4f95336439b329d0f3731a5dcafb6f9" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_options</scope><name>list_tests</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aacf79acd1554b6e8899524bc02ee6257" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_options</scope><name>output_file_path</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_options</scope><name>selected_reporter</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_options</scope><name>verbosity_level</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::failure_info</compoundname>
+    <includes refid="check-result_8h" local="no">check-result.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info_1a6d4c667be4b4a4709ea29505c9d23f12" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::failure_info::has_expression</definition>
+        <argsstring></argsstring>
+        <name>has_expression</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::failure_info::has_expression</qualifiedname>
+        <briefdescription>
+<para>Indicates whether the check has an associated expression. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set when the checked expression is a framework comparator, whose formatted text is displayed on failure. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" line="172" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" bodystart="172" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a406cf77b7adcd5fe9417ce7bce4f3afb" compoundref="reporter_8cpp" startline="621" endline="635">micro_os_plus::micro_test_plus::detail::reporter::fail</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info_1af7c2c1b52b97d5d2af89155e16bf8c41" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70c" kindref="member">check_kind</ref></type>
+        <definition>check_kind micro_os_plus::micro_test_plus::detail::failure_info::kind</definition>
+        <argsstring></argsstring>
+        <name>kind</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::failure_info::kind</qualifiedname>
+        <briefdescription>
+<para>The kind of the check. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines whether the failure stops the test case, and whether the reporter displays the abort notice. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" line="155" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" bodystart="155" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a406cf77b7adcd5fe9417ce7bce4f3afb" compoundref="reporter_8cpp" startline="621" endline="635">micro_os_plus::micro_test_plus::detail::reporter::fail</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info_1a8c259595885388a6a550576d1d3fab35" prot="public" static="no" mutable="no">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref></type>
+        <definition>reflection::source_location micro_os_plus::micro_test_plus::detail::failure_info::location</definition>
+        <argsstring></argsstring>
+        <name>location</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::failure_info::location</qualifiedname>
+        <briefdescription>
+<para>The source location of the check. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Displayed with failures, and used when aborting. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" line="180" column="35" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" bodystart="180" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a406cf77b7adcd5fe9417ce7bce4f3afb" compoundref="reporter_8cpp" startline="621" endline="635">micro_os_plus::micro_test_plus::detail::reporter::fail</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info_1ad7484cdab2c4142c2df255dc9aadfea6" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string micro_os_plus::micro_test_plus::detail::failure_info::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::failure_info::message</qualifiedname>
+        <briefdescription>
+<para>The message passed via <computeroutput>operator&lt;&lt;()</computeroutput>, if any. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Displayed before the expression and the source location. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" line="163" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" bodystart="163" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a406cf77b7adcd5fe9417ce7bce4f3afb" compoundref="reporter_8cpp" startline="621" endline="635">micro_os_plus::micro_test_plus::detail::reporter::fail</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a1980019eed5ac5b1eef65302eb9cc9cd" compoundref="test_8cpp" startline="315" endline="336">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The details of a check, displayed when it fails. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Grouped in one object, passed to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a406cf77b7adcd5fe9417ce7bce4f3afb" kindref="member">reporter::fail()</ref></computeroutput>, so that the call sites do not pass unlabelled Boolean arguments. Held by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result" kindref="compound">check_result</ref></computeroutput>, and built by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput> when reporting an unexpected exception.</para>
+<para>The message is also displayed when the check passes. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::failure_info</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>location</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::reflection::source_location</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" line="146" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" bodystart="147" bodyend="181"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info_1a6d4c667be4b4a4709ea29505c9d23f12" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::failure_info</scope><name>has_expression</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info_1af7c2c1b52b97d5d2af89155e16bf8c41" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::failure_info</scope><name>kind</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info_1a8c259595885388a6a550576d1d3fab35" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::failure_info</scope><name>location</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info_1ad7484cdab2c4142c2df255dc9aadfea6" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::failure_info</scope><name>message</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

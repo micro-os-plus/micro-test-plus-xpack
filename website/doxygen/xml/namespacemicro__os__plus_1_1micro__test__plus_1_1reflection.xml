@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kind="namespace" language="C++">
     <compoundname>micro_os_plus::micro_test_plus::reflection</compoundname>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" prot="public">micro_os_plus::micro_test_plus::reflection::source_location</innerclass>
     <sectiondef kind="func">
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>const char *</type>
         <definition>const char * micro_os_plus::micro_test_plus::reflection::short_name</definition>
         <argsstring>(const char *name) noexcept</argsstring>
@@ -15,9 +15,10 @@
           <declname>name</declname>
         </param>
         <briefdescription>
-<para>Extract the file name from a path. </para>
+<para>Extracts the file name from a path. </para>
         </briefdescription>
         <detaileddescription>
+<para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput>, which the framework uses internally; it is kept only for compatibility with the existing applications.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>name</parametername>
@@ -27,16 +28,21 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A pointer to the file name within the input string.</para>
+<simplesect kind="return"><para>A pointer to the file name within the input string, after the last <computeroutput>/</computeroutput> or <computeroutput>\\endiskip</computeroutput> separator, or the string itself if there is no separator.</para>
 </simplesect>
-This function extracts the short name from a given file path by locating the final folder separator (&apos;/&apos;). If a separator is found, it returns a pointer to the character immediately following it, effectively providing the file or folder name. If no separator is present, the original input string is returned. This utility is useful for reporting concise file or folder names in test output. </para>
+<xrefsect id="deprecated_1_deprecated000080"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000081"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Delegates to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput>, the single implementation used by the framework, so both the <computeroutput>/</computeroutput> and the <computeroutput>\\endiskip</computeroutput> separators are recognised. If no separator is present, the original input string is returned.</para>
+<para><xrefsect id="deprecated_1_deprecated000131"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" line="75" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" bodystart="75" bodyend="94" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="212" declcolumn="5"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7bc806540e65c21095ef1ea1ef970db2" compoundref="runner_8cpp" startline="398" endline="408">micro_os_plus::micro_test_plus::runner::abort</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a20077cabbb38559ff5b0f75140fc7eae" compoundref="reporter-human_8cpp" startline="621" endline="652">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="640" endline="663">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" line="73" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" bodystart="73" bodyend="76" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="225" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="88" endline="97">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" compoundref="reflection_8cpp" startline="73" endline="76">short_name</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" compoundref="reflection_8cpp" startline="73" endline="76">short_name</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -53,18 +59,19 @@ This function extracts the short name from a given file path by locating the fin
           <type>void</type>
         </param>
         <briefdescription>
-<para>Extract the type name from the <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro. </para>
+<para>Extracts the type name from the <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro. </para>
         </briefdescription>
         <detaileddescription>
 <para>This function template parses the compiler-specific <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro to extract a concise type name for the template parameter <computeroutput>T</computeroutput>.</para>
-<para>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for well-known marker characters in the function signature string:</para>
+<para>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for the marker that introduces the template argument in the function signature string:</para>
 <para><itemizedlist>
-<listitem><para>Clang formats the signature as <computeroutput>"... [T = &lt;typename&gt;]"</computeroutput>, so the type name lies between the last <computeroutput>&apos;[&apos;</computeroutput> (skipping <computeroutput>"[T = "</computeroutput>) and the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
-</listitem><listitem><para>GCC formats the signature as <computeroutput>"... [with T = &lt;typename&gt;]"</computeroutput> or, on some versions, <computeroutput>"... [with T = &lt;typename&gt;; ...]"</computeroutput>, so the type name starts after the first <computeroutput>"T = "</computeroutput> and ends at the following <computeroutput>&apos;;&apos;</computeroutput> or, if there is none, at the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
+<listitem><para>Clang formats the signature as <computeroutput>"... [T = &lt;typename&gt;]"</computeroutput>, so the type name lies between the first <computeroutput>"[T = "</computeroutput> and the last <computeroutput>&apos;]&apos;</computeroutput>. The marker is searched for as a whole, since the type name may itself contain brackets (e.g. <computeroutput>int[3]</computeroutput>).</para>
+</listitem><listitem><para>GCC formats the signature as <computeroutput>"... [with T = &lt;typename&gt;]"</computeroutput> or, on some versions, <computeroutput>"... [with T = &lt;typename&gt;; ...]"</computeroutput>, so the type name starts after the first <computeroutput>"[with T = "</computeroutput> and ends at the following <computeroutput>&apos;;&apos;</computeroutput> or, if there is none, at the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
 </listitem></itemizedlist>
 </para>
-<para>Other compilers (e.g. MSVC) are not supported and trigger a compile-time error.</para>
-<para>This approach is resilient to namespace renaming, namespace nesting changes, and compiler format updates.</para>
+<para>If the marker is not found, or the compiler is not supported (e.g. MSVC, which uses <computeroutput>__FUNCSIG__</computeroutput> instead of <computeroutput>__PRETTY_FUNCTION__</computeroutput>), the function returns <computeroutput>"unknown"</computeroutput> rather than failing to compile, since the name is used only to improve the test output.</para>
+<para>The expected layouts are verified at compile time by the <computeroutput>static_assert</computeroutput> checks that follow the definition.</para>
+<para>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref>&lt;E&gt;</computeroutput> failure messages. Only clang and GCC are supported; with other compilers the function returns <computeroutput>"unknown"</computeroutput>.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
@@ -76,14 +83,16 @@ This function extracts the short name from a given file path by locating the fin
 </parameterlist>
 <simplesect kind="par"><title>Parameters</title><para>None. </para>
 </simplesect>
-<simplesect kind="return"><para>A <computeroutput>std::string_view</computeroutput> containing the extracted type name. </para>
+<simplesect kind="return"><para>A <computeroutput>std::string_view</computeroutput> containing the extracted type name, or <computeroutput>"unknown"</computeroutput> if it cannot be determined. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="150" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="150" bodyend="173" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="225" declcolumn="5"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a3d84f0a15194ead914bbf07a6e657e67" compoundref="expression-formatter-inlines_8h" startline="448" endline="454">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="154" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="154" bodyend="185" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="245" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="154" endline="185">type_name</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="355" endline="367">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="154" endline="185">type_name</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

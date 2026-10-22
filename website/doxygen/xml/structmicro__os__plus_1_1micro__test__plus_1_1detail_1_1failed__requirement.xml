@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failed__requirement" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::failed_requirement</compoundname>
+    <includes refid="check-result_8h" local="no">check-result.h</includes>
+    <briefdescription>
+<para>The exception thrown to stop a test case after a failed <computeroutput>require()</computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Thrown by the destructor of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result" kindref="compound">check_result</ref></computeroutput>, after the failure was reported and counted, when exceptions are enabled, and caught by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1adb4333ecb107fee477156b661f0b1512" kindref="member">test_case::run()</ref></computeroutput>, which ends the test case normally; the run continues with the next test case.</para>
+<para>It is deliberately not derived from <computeroutput>std::exception</computeroutput>, so that a <computeroutput>catch (const std::exception&amp;)</computeroutput> in the test case body does not stop it; a <computeroutput>catch (...)</computeroutput> does, and should rethrow it. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" line="99" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" bodystart="100" bodyend="101"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

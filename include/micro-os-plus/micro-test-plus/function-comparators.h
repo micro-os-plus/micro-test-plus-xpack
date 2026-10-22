@@ -25,9 +25,10 @@
  * and logical operators used within the µTest++ framework. It defines the
  * interfaces for the generic comparison functions, including
  * equality, non-equality, greater than, less than, greater than or equal,
- * and less than or equal. Additionally, it declares logical combinators such
+ * and less than or equal, and the approximate comparison with an explicit
+ * tolerance (`approx`). Additionally, it declares logical combinators such
  * as conjunction (`both`), disjunction (`either`), and negation
- * (`negate`).
+ * (`negate`), and their deprecated v5.0.1 names.
  *
  * These comparators and logical operators enable expressive and type-safe test
  * expectations and assertions. The C strings (`char` arrays, including the

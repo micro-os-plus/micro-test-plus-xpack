@@ -93,13 +93,12 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @namespace micro_os_plus::micro_test_plus::literals
-   * @brief User-defined literals and type wrappers for the µTest++ testing
-   * framework.
+   * @brief User-defined literals for the µTest++ testing framework.
    *
    * @details
    * The `literals` namespace provides an extensive collection of user-defined
-   * literal operators and type wrappers, enabling explicit specification
-   * of operand types for use with the µTest++ comparators and operators.
+   * literal operators, enabling explicit specification of operand types for
+   * use with the µTest++ comparators and operators.
    *
    * These operators allow constants to be suffixed (for example, `1_i`,
    * `2_u16`) to produce strongly-typed values, thereby enhancing type safety
@@ -473,6 +472,8 @@ namespace micro_os_plus::micro_test_plus
    * @endcode
    *
    * @since 3.2.0
+   *
+   * @{
    */
 
   /**
@@ -733,6 +734,10 @@ namespace micro_os_plus::micro_test_plus
    */
 
   /**
+   * @}
+   */
+
+  /**
    * @ingroup micro-os-plus-micro-test-plus-literals
    * @brief Generic strongly-typed wrapper for explicit type conversion.
    *
@@ -744,10 +749,10 @@ namespace micro_os_plus::micro_test_plus
    * type recognised by the µTest++ comparators and reporting mechanisms.
    *
    * This wrapper inherits from `detail::value<T>`, ensuring that the
-   * encapsulated value is treated as the specified type within the framework.
-   * It is particularly useful for enhancing type safety and clarity in test
-   * expressions, especially when working with user-defined or less common
-   * types.
+   * encapsulated value is treated as the specified type within the framework,
+   * for the types without a `to_*` alias, including the application types;
+   * with the operators of the `operators` namespace, the comparisons are
+   * then reported with their operands.
    *
    * **Example**
    *
@@ -831,6 +836,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @par Deprecated
    * Use the corresponding `to_*` type wrappers instead (since 3.2.0).
+   *
+   * @{
    */
 
   /**
@@ -922,8 +929,8 @@ namespace micro_os_plus::micro_test_plus
   using _u [[deprecated ("use to_u")]] = to_u;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned char` values, the v5.0.1 name of
-   * `to_uc`.
+   * @brief Strongly-typed wrapper for `unsigned char` values, the v5.0.1
+   * name of `to_uc`.
    *
    * @details
    * The same type as `to_uc`; kept for backwards compatibility.
@@ -933,8 +940,8 @@ namespace micro_os_plus::micro_test_plus
   using _uc [[deprecated ("use to_uc")]] = to_uc;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned short` values, the v5.0.1 name of
-   * `to_us`.
+   * @brief Strongly-typed wrapper for `unsigned short` values, the v5.0.1
+   * name of `to_us`.
    *
    * @details
    * The same type as `to_us`; kept for backwards compatibility.
@@ -944,8 +951,8 @@ namespace micro_os_plus::micro_test_plus
   using _us [[deprecated ("use to_us")]] = to_us;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned long` values, the v5.0.1 name of
-   * `to_ul`.
+   * @brief Strongly-typed wrapper for `unsigned long` values, the v5.0.1
+   * name of `to_ul`.
    *
    * @details
    * The same type as `to_ul`; kept for backwards compatibility.
@@ -955,8 +962,8 @@ namespace micro_os_plus::micro_test_plus
   using _ul [[deprecated ("use to_ul")]] = to_ul;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned long long` values, the v5.0.1 name of
-   * `to_ull`.
+   * @brief Strongly-typed wrapper for `unsigned long long` values, the v5.0.1
+   * name of `to_ull`.
    *
    * @details
    * The same type as `to_ull`; kept for backwards compatibility.
@@ -977,8 +984,8 @@ namespace micro_os_plus::micro_test_plus
   using _i8 [[deprecated ("use to_i8")]] = to_i8;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int16_t` values, the v5.0.1 name of
-   * `to_i16`.
+   * @brief Strongly-typed wrapper for `std::int16_t` values, the v5.0.1
+   * name of `to_i16`.
    *
    * @details
    * The same type as `to_i16`; kept for backwards compatibility.
@@ -988,8 +995,8 @@ namespace micro_os_plus::micro_test_plus
   using _i16 [[deprecated ("use to_i16")]] = to_i16;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int32_t` values, the v5.0.1 name of
-   * `to_i32`.
+   * @brief Strongly-typed wrapper for `std::int32_t` values, the v5.0.1
+   * name of `to_i32`.
    *
    * @details
    * The same type as `to_i32`; kept for backwards compatibility.
@@ -999,8 +1006,8 @@ namespace micro_os_plus::micro_test_plus
   using _i32 [[deprecated ("use to_i32")]] = to_i32;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int64_t` values, the v5.0.1 name of
-   * `to_i64`.
+   * @brief Strongly-typed wrapper for `std::int64_t` values, the v5.0.1
+   * name of `to_i64`.
    *
    * @details
    * The same type as `to_i64`; kept for backwards compatibility.
@@ -1010,8 +1017,8 @@ namespace micro_os_plus::micro_test_plus
   using _i64 [[deprecated ("use to_i64")]] = to_i64;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint8_t` values, the v5.0.1 name of
-   * `to_u8`.
+   * @brief Strongly-typed wrapper for `std::uint8_t` values, the v5.0.1
+   * name of `to_u8`.
    *
    * @details
    * The same type as `to_u8`; kept for backwards compatibility.
@@ -1021,8 +1028,8 @@ namespace micro_os_plus::micro_test_plus
   using _u8 [[deprecated ("use to_u8")]] = to_u8;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint16_t` values, the v5.0.1 name of
-   * `to_u16`.
+   * @brief Strongly-typed wrapper for `std::uint16_t` values, the v5.0.1
+   * name of `to_u16`.
    *
    * @details
    * The same type as `to_u16`; kept for backwards compatibility.
@@ -1032,8 +1039,8 @@ namespace micro_os_plus::micro_test_plus
   using _u16 [[deprecated ("use to_u16")]] = to_u16;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint32_t` values, the v5.0.1 name of
-   * `to_u32`.
+   * @brief Strongly-typed wrapper for `std::uint32_t` values, the v5.0.1
+   * name of `to_u32`.
    *
    * @details
    * The same type as `to_u32`; kept for backwards compatibility.
@@ -1043,8 +1050,8 @@ namespace micro_os_plus::micro_test_plus
   using _u32 [[deprecated ("use to_u32")]] = to_u32;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint64_t` values, the v5.0.1 name of
-   * `to_u64`.
+   * @brief Strongly-typed wrapper for `std::uint64_t` values, the v5.0.1
+   * name of `to_u64`.
    *
    * @details
    * The same type as `to_u64`; kept for backwards compatibility.
@@ -1101,6 +1108,10 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class T>
   using _t [[deprecated ("use to_t")]] = to_t<T>;
+
+  /**
+   * @}
+   */
 
   /**
    * @}

@@ -269,7 +269,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
             if (verbosity_ == verbosity::verbose)
               {
-                // With verbosity, show full TAP output accumulated in the
+                // With verbosity, show the full output accumulated in the
                 // buffer.
                 write_buffer_to_console ();
               }
@@ -284,8 +284,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
             write_buffer_to_file ();
 
-            // Show full TAP output accumulated in the buffer for failed suite
-            // cases, as it may contain useful information about the failure.
+            // Show the full output accumulated in the buffer for a failed
+            // suite, as it may contain useful information about the failure.
             write_buffer_to_console ();
 
             write_line (true, "%s✗%s %s - %sFAILED%s (%s)%s\n", colours_.fail,
@@ -451,7 +451,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
             if (verbosity_ == verbosity::verbose)
               {
-                // With verbosity, show full TAP output accumulated in the
+                // With verbosity, show the full output accumulated in the
                 // buffer.
                 write_buffer_to_console ();
               }

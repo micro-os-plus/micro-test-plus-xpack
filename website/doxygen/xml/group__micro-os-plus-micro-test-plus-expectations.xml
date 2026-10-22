@@ -1,20 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-expectations" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-expectations</compoundname>
     <title>Expectations</title>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-expectations_1gaad2aa05f39d1877f2173f6d0f6718bd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-expectations_1gaf4f5f9632b5a290c1894984661a41a86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Expr_T</type>
           </param>
         </templateparamlist>
         <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::subtest::expect</definition>
+        <definition>auto micro_os_plus::micro_test_plus::test_case::expect</definition>
         <argsstring>(const Expr_T &amp;expr, const reflection::source_location &amp;sl=reflection::source_location::current())</argsstring>
         <name>expect</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::subtest::expect</qualifiedname>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_case::expect</qualifiedname>
         <param>
           <type>const Expr_T &amp;</type>
           <declname>expr</declname>
@@ -24,9 +24,9 @@
           <declname>sl</declname>
           <defval>reflection::source_location::current()</defval>
         </param>
-    <requiresclause>type_traits::checkable&lt;Expr_T&gt;    </requiresclause>
+    <requiresclause>extension::checkable&lt;Expr_T&gt;    </requiresclause>
         <briefdescription>
-<para>Evaluate a generic condition and report the results. </para>
+<para>Evaluates a condition and reports the result. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -38,7 +38,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="par"><title>Constraints</title><para>Enabled only if <computeroutput>Expr_T</computeroutput> is derived from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">type_traits::op</ref></computeroutput> or is convertible to <computeroutput>bool</computeroutput> (enforced via a C++20 <computeroutput>requires</computeroutput> clause).</para>
+<simplesect kind="par"><title>Constraints</title><para>Enabled only if <computeroutput>Expr_T</computeroutput> is a framework expression type or is contextually convertible to <computeroutput>bool</computeroutput>, including by an <computeroutput>explicit operator bool</computeroutput> (enforced via a C++20 <computeroutput>requires</computeroutput> clause, with <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable" kindref="compound">extension::checkable</ref></computeroutput>).</para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -57,23 +57,25 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>An output stream to write optional messages.</para>
+<simplesect kind="return"><para>The check result, to which optional messages can be appended with <computeroutput>operator&lt;&lt;</computeroutput>; the check is reported when it is destroyed, at the end of the statement.</para>
 </simplesect>
-Constructs and returns a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter" kindref="compound">detail::deferred_reporter</ref></computeroutput> with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad8302d2dc629b643d34b3cfeafe44b3b" kindref="member">abort</ref> = false</computeroutput>. The reporter evaluates the condition when constructed, and records a pass or fail when it is destroyed, at the end of the expression statement. </para>
+Constructs and returns a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result" kindref="compound">detail::check_result</ref></computeroutput> of the kind <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70cae15c5d274bf9fa6571890c731d88bc37" kindref="member">detail::check_kind::expectation</ref></computeroutput>. The check result evaluates the condition when constructed, and records a pass or fail when it is destroyed, at the end of the expression statement. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="738" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="321" bodyend="325"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad2169093aee09bc28ae7f70467569a23" compoundref="reporter-inlines_8h" startline="104" endline="107">micro_os_plus::micro_test_plus::reporter::expression</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" compoundref="test_8cpp" startline="139" endline="142">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1ad3eb4bb11f1c6fc4631bae8a7215a95e">micro_os_plus::micro_test_plus::subtest::operator=</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1207" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="427" bodyend="435"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70cae15c5d274bf9fa6571890c731d88bc37" compoundref="check-result_8h" startline="121">micro_os_plus::micro_test_plus::detail::expectation</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac928cbe8852ca0c0273482b905c6301b" compoundref="reporter_8h" startline="1074" endline="1074">micro_os_plus::micro_test_plus::detail::reporter::expression_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" compoundref="test_8cpp" startline="115" endline="118">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2c1e2c756b442d4832c161c8127faacf">micro_os_plus::micro_test_plus::detail::reporter::writes_passed_checks</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ac2e310ec902a0c3e786d4c415269c23e">micro_os_plus::micro_test_plus::test_case::operator=</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Expectations are checks whose outcomes are counted and reported. </para>
     </briefdescription>
     <detaileddescription>
-<para>During test execution, each condition outcome, whether passing or failing, is explicitly reported in test results. Unlike assumptions, a failed expectation does not terminate the test; execution continues, allowing multiple conditions to be checked within a single test case.</para>
+<para>During test execution, each condition outcome, whether passing or failing, is explicitly reported in test results. Unlike requirements, a failed expectation does not stop the test; execution continues, allowing multiple conditions to be checked within a single test case.</para>
 <para>This approach enables comprehensive validation of code behaviour, because all relevant expectations can be evaluated and reported in one run. Using expectations provides detailed insight into which aspects of the code meet requirements and which do not, supporting thorough and efficient testing.  </para>
     </detaileddescription>
   </compounddef>

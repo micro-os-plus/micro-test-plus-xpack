@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-operators" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-operators</compoundname>
     <title>Operators</title>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gaa188c33047f559e28dc95dbb465e19a8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gad47ea22957940a08ff56104d3c0c16f7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -15,23 +15,23 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator and</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>operator and</name>
         <qualifiedname>micro_os_plus::micro_test_plus::operators::operator and</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
+    <requiresclause>extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvref_t&lt;Rhs_T&gt;&gt;    </requiresclause>
         <briefdescription>
-<para>Logical <computeroutput>&amp;&amp;</computeroutput> (and) operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+<para>Logical <computeroutput>&amp;&amp;</computeroutput> (and) operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs an <computeroutput>and_</computeroutput> logical conjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if both operands are true. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
+<para>Constructs an <computeroutput>and_op</computeroutput> logical conjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if both operands are true. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -72,9 +72,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="225" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="225" bodyend="228" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="307" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="188" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="188" bodyend="192" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="261" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga00db5f149865ed9fd8d73f2db44542b0" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga1d79c807e0d12684f1a850d7269c077b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -82,25 +82,25 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator not</definition>
-        <argsstring>(const T &amp;t)</argsstring>
+        <argsstring>(T &amp;&amp;t)</argsstring>
         <name>operator not</name>
         <qualifiedname>micro_os_plus::micro_test_plus::operators::operator not</qualifiedname>
         <param>
-          <type>const T &amp;</type>
+          <type>T &amp;&amp;</type>
           <declname>t</declname>
         </param>
-    <requiresclause>type_traits::is_op&lt;T&gt;    </requiresclause>
+    <requiresclause>extension::is_op&lt;std::remove_cvref_t&lt;T&gt;&gt;    </requiresclause>
         <briefdescription>
-<para>Logical <computeroutput>!</computeroutput> (not) operator. Matches only if the operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+<para>Logical <computeroutput>!</computeroutput> (not) operator. Matches only if the operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a <computeroutput>not_</computeroutput> logical negator object from the operand and returns it. The object evaluates to <computeroutput>true</computeroutput> if the operand is false. The operand must derive from the local <computeroutput>op</computeroutput> base.</para>
+<para>Constructs a <computeroutput>not_op</computeroutput> logical negator object from the operand and returns it. The object evaluates to <computeroutput>true</computeroutput> if the operand is false. The operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Type of the operand, constrained to types derived from the local <computeroutput>op</computeroutput> base.</para>
+<para>Type of the operand, constrained to the framework types.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -119,9 +119,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="253" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="253" bodyend="256" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="342" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="220" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="220" bodyend="226" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="296" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga0fe9ef52ecfb0de402da9e7454d7c20b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gac008174d3b00512dc53b3e9e26ed45ec" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -132,23 +132,23 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator or</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>operator or</name>
         <qualifiedname>micro_os_plus::micro_test_plus::operators::operator or</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
+    <requiresclause>extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvref_t&lt;Rhs_T&gt;&gt;    </requiresclause>
         <briefdescription>
-<para>Logical <computeroutput>||</computeroutput> (or) operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+<para>Logical <computeroutput>||</computeroutput> (or) operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs an <computeroutput>or_</computeroutput> logical disjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if at least one operand is true. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
+<para>Constructs an <computeroutput>or_op</computeroutput> logical disjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if at least one operand is true. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -189,9 +189,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="239" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="239" bodyend="242" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="325" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="205" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="205" bodyend="209" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="280" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga445025eccd3ef529af191aab5aad91a9" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga0cc55025bbf6cac2f1b64242784559cb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -202,23 +202,23 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator!=</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>operator!=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::operators::operator!=</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
+    <requiresclause>extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvref_t&lt;Rhs_T&gt;&gt;    </requiresclause>
         <briefdescription>
-<para>Non-equality operator for custom types. Matches only if at least one operand is of local type. </para>
+<para>Non-equality operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs an <computeroutput>ne_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are not equal. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
+<para>Constructs a comparator object, with the <computeroutput>not_equal_to</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are not equal. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -259,9 +259,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="153" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="153" bodyend="156" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="217" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="99" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="99" bodyend="104" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="166" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga675d31a23d8f0dfed775466ef1463a80" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga1d1c66d2cce699e0e64d8307e3951090" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -272,23 +272,23 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator&lt;</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>operator&lt;</name>
         <qualifiedname>micro_os_plus::micro_test_plus::operators::operator&lt;</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
+    <requiresclause>extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvref_t&lt;Rhs_T&gt;&gt;    </requiresclause>
         <briefdescription>
-<para>Less than operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+<para>Less than operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs an <computeroutput>lt_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than <computeroutput>rhs</computeroutput>. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
+<para>Constructs a comparator object, with the <computeroutput>less</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -329,9 +329,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="195" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="196" bodyend="199" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="270" declcolumn="16"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="152" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="153" bodyend="157" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="222" declcolumn="16"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga15235adceff30c6e3aa382696aea23cb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -342,23 +342,23 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator&lt;=</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>operator&lt;=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::operators::operator&lt;=</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
+    <requiresclause>extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvref_t&lt;Rhs_T&gt;&gt;    </requiresclause>
         <briefdescription>
-<para>Less than or equal operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+<para>Less than or equal operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs an <computeroutput>le_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than or equal to <computeroutput>rhs</computeroutput>. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
+<para>Constructs a comparator object, with the <computeroutput>less_equal</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than or equal to <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -399,9 +399,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="210" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="211" bodyend="214" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="288" declcolumn="16"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="169" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="170" bodyend="175" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="241" declcolumn="16"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gaae177a6c59286d4d7e4f85ffa6579e56" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -412,23 +412,23 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator==</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>operator==</name>
         <qualifiedname>micro_os_plus::micro_test_plus::operators::operator==</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
+    <requiresclause>extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvref_t&lt;Rhs_T&gt;&gt;    </requiresclause>
         <briefdescription>
-<para>Equality operator for custom types. Matches only if at least one operand is of local type. </para>
+<para>Equality operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs an <computeroutput>eq_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are equal. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
+<para>Constructs a comparator object, with the <computeroutput>equal_to</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are equal. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -469,9 +469,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="139" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="139" bodyend="142" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="199" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="81" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="81" bodyend="86" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="147" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gac0afc8d658f73e3b5f136a5c60d1fbd1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gaa7e34201bb41a287742c3c08a88924d3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -482,23 +482,23 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator&gt;</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>operator&gt;</name>
         <qualifiedname>micro_os_plus::micro_test_plus::operators::operator&gt;</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
+    <requiresclause>extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvref_t&lt;Rhs_T&gt;&gt;    </requiresclause>
         <briefdescription>
-<para>Greater than operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+<para>Greater than operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a <computeroutput>gt_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than <computeroutput>rhs</computeroutput>. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
+<para>Constructs a comparator object, with the <computeroutput>greater</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -539,9 +539,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="167" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="167" bodyend="170" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="235" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="117" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="117" bodyend="122" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="185" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gabfc165fd00e9f53bbf7b63f71b9d5020" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -552,23 +552,23 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::operators::operator&gt;=</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>operator&gt;=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::operators::operator&gt;=</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
+    <requiresclause>extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvref_t&lt;Rhs_T&gt;&gt;    </requiresclause>
         <briefdescription>
-<para>Greater than or equal operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+<para>Greater than or equal operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a <computeroutput>ge_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than or equal to <computeroutput>rhs</computeroutput>. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
+<para>Constructs a comparator object, with the <computeroutput>greater_equal</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than or equal to <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -609,7 +609,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="182" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="182" bodyend="185" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="253" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="135" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="135" bodyend="140" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="204" declcolumn="5"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -618,13 +618,16 @@
     <detaileddescription>
 <para>These overloads enable expressive, type-safe test assertions. Operators such as <computeroutput>==</computeroutput>, <computeroutput>!=</computeroutput>, <computeroutput>&lt;</computeroutput>, <computeroutput>&gt;</computeroutput>, <computeroutput>&lt;=</computeroutput>, and <computeroutput>&gt;=</computeroutput> are defined in the dedicated <computeroutput>micro_test_plus::operators</computeroutput> namespace to avoid conflicts with application-defined operators.</para>
 <para>For standard values, the default operators are used, ensuring correct comparisons. However, when specialised µTest++ operators are used with typed operands, failed checks display both actual and expected values, greatly improving report clarity.</para>
-<para>These operators are restricted to operands derived from the local <computeroutput>detail::op</computeroutput> type. For constant values, this is achieved with provided literals (for example, <computeroutput>1_i</computeroutput>), whilst dynamic values can be wrapped with converters such as <computeroutput>mt::to_i{expression}</computeroutput>.</para>
+<para>These operators are restricted to the framework types (see <computeroutput>extension::is_op</computeroutput>). For constant values, this is achieved with provided literals (for example, <computeroutput>1_i</computeroutput>), whilst dynamic values can be wrapped with converters such as <computeroutput>mt::to_i{expression}</computeroutput>. When neither operand is of such a type, the standard operators are selected; they return a plain <computeroutput>bool</computeroutput>, so a failed check cannot show the operands.</para>
+<para>There are no operators for strings and containers: the standard operators would be selected for <computeroutput>std::string</computeroutput> objects and for containers of the same type, and operators for <computeroutput>std::string_view</computeroutput> objects would also replace the standard ones in the application code that follows the <computeroutput>using namespace</computeroutput> directive. Use <computeroutput>mt::eq()</computeroutput> and <computeroutput>mt::ne()</computeroutput> to compare strings and containers.</para>
 <para>Logical operators (<computeroutput>&amp;&amp;</computeroutput>, <computeroutput>||</computeroutput>, <computeroutput>!</computeroutput>) are also supported and provide enhanced functionality when used with typed operands, allowing complex test conditions to be composed naturally and readably.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
-<programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">micro_test_plus::operators;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">micro_test_plus::literals;</highlight></codeline>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::operators;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::literals;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>==<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42<sp/>(with<sp/>literal)&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::to_i<sp/>{compute_answer<sp/>()}<sp/>==<sp/>42)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42<sp/>(with<sp/>cast)&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -640,9 +643,11 @@
 Logical operators provide enhanced reporting when used with typed operands, allowing complex test conditions to be composed naturally and readably.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
-<programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Logical<sp/>operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">micro_test_plus::operators;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">micro_test_plus::literals;</highlight></codeline>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Logical<sp/>operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::operators;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::literals;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>==<sp/>42_i<sp/>&amp;&amp;<sp/>compute_float<sp/>()<sp/>==<sp/>42.0_f);</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>

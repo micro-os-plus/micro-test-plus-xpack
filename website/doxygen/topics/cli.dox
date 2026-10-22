@@ -1,12 +1,14 @@
 @defgroup micro-os-plus-micro-test-plus-cli Command Line Options
-@brief Options for controlling test output verbosity at run-time.
+@brief Options for controlling the test output at run time.
 
 @details
 The µTest++ framework offers flexible control over test-output verbosity,
 allowing users to tailor the level of detail to their specific
 requirements and workflow.
 
-By default, the reporter presents detailed results only for failed test cases, while successful test cases are summarised in a single line, indicating the total number of passed and failed checks.
+By default, the reporter presents detailed results only for failed test
+cases, while successful test cases are summarised in a single line,
+indicating the total number of passed and failed checks.
 
 @par Example
 
@@ -29,17 +31,19 @@ ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
 
 @section cli-reporter Reporter
 
-By default, the µTest++ output follows the [TAP](https://en.wikipedia.org/wiki/Test_Anything_Protocol) rules.
+By default, the µTest++ output follows the
+[TAP](https://en.wikipedia.org/wiki/Test_Anything_Protocol) rules.
 
-For compatibility reasons, the proprietary format implemented by the initial
-releases will also be retained, but it is not recommended for new projects.
+The human-readable format of the initial releases is also available. It is
+intended for the people who read the console output, while the TAP format is
+intended for the integration with other tools.
 
 If needed, more reporting formats (like JUnit, JSON, etc.) can be added.
 
 To explicitly ask for a specific format:
 
-- `--reporter=tap` - the default TAP reporter
-- `--reporter=human` - the human-readable reporter
+- `--reporter=tap` – the default TAP reporter
+- `--reporter=human` – the human-readable reporter
 
 @section cli-colours Colours
 
@@ -68,21 +72,21 @@ On platforms without a command line, the mode can be set in
 
 @section cli-verbosity Verbosity
 
-By default, µTest++ displays a summary line for each passing test case and full expectation details for each failing one.
+By default, µTest++ displays a summary line for each passing test case and
+full expectation details for each failing one.
 
 To adjust the verbosity, the following command-line options are available:
 
 - `--verbose` – display all expectations, regardless of outcome
 - `--quiet` – display only the session totals and, with the TAP reporter,
   one result line per test suite; the failed checks are not displayed
-- `--silent` – suppress all output and return only the exit code
+- `--silent` – suppress all console output and return only the exit code
 
-These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.
+On platforms without a command line, the level can be set in
+`runner_options::verbosity_level`.
 
-The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.
-
-The source code for this example is in
-`tests/sources/minimal-test/src/main.cpp`.
+The source code for these examples is in
+`tests/sources/minimal/src/main.cpp`.
 
 @subsection cli-verbosity-verbose Verbose mode
 
@@ -150,8 +154,22 @@ mode as well, since the totals are never reached.
 
 @subsection cli-verbosity-silent Silent mode
 
-In silent mode, the µTest++ reporter suppresses all output, and the
-framework returns only the exit code.
+In silent mode, the µTest++ reporter suppresses all console output, and
+the framework returns only the exit code; the output file, if any, is
+still written.
+
+@section cli-output-file Output File
+
+- `--output-file=<path>` or `--output-file <path>` – write a copy of the
+  report to a file
+
+The file never receives colours. With the TAP reporter, it always receives
+the complete report, whatever the verbosity, so it can be passed to other
+tools; with the human reporter, it is complete only in the default and
+verbose modes. If the file cannot be opened, the error is reported on
+`stderr`, the report is written only to the console, and the exit code
+is 2. On platforms without a command line, the path can be set in
+`runner_options::output_file_path`.
 
 @section cli-filter Filter
 
@@ -229,3 +247,29 @@ ok 3 - Explicit namespace suite # { passed, 1 check in 1 test case, 1 skipped, t
 
 The test cases of the top suite `Sample` are skipped too, since its name
 does not match the first pattern.
+
+@section cli-list-tests Listing the Test Cases
+
+- `--list-tests`, or `--list` – list the test cases instead of running
+  them, as in Catch2 and Boost UT
+
+The suite bodies run, to create their test cases, but the test case
+bodies do not, so no check is evaluated. The selected test cases (see the
+filter above) are listed under the names of their suites; the nested test
+cases are not listed, since they are created by the bodies of their
+parents. The list is written to the console, unless the verbosity is
+`silent`, and to the output file, if any, and the exit code is 0 (or 2
+after an option error).
+
+@code{.console}
+$ sample-test --list-tests
+All available test cases:
+  Sample
+    Check various conditions
+    ...
+...
+@endcode
+
+The header is `Matching test cases:` when there are filter patterns. On
+platforms without a command line, the listing can be requested with
+`runner_options::list_tests`, and checked with `runner::is_listing()`.

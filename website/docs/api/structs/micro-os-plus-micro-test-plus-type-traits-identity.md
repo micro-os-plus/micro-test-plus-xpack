@@ -17,7 +17,7 @@ keywords:
 
 # `identity` Struct Template
 
-<p>Struct template for compile-time type identity. <a href="#details">More...</a></p>
+<p>Deprecated identity type. <a href="#details">More...</a></p>
 
 ## Declaration
 
@@ -28,7 +28,7 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>"
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>&gt;
 </div>
 
 ## Public Member Typedefs Index
@@ -45,7 +45,7 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Alias for the preserved type. <a href="#a6399364a09c1004ebbaab36b2d5dc0c8">More...</a></p>
+<p>The type <span class="doxyComputerOutput">T</span>. <a href="#a6399364a09c1004ebbaab36b2d5dc0c8">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -56,7 +56,7 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 
 ## Description {#details}
 
-<p>Struct template for compile-time type identity.</p>
+<p>Deprecated identity type.</p>
 
 
 <dl class="doxyParamsList">
@@ -65,23 +65,29 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The type to be preserved.</p></td>
+<td class="doxyParamItemDescription"><p>The type to be exposed.</p></td>
 </tr>
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">Extra</td>
-<td class="doxyParamItemDescription"><p>Additional template parameters, ignored. The variadic <span class="doxyComputerOutput">Extra</span> parameter pack absorbs additional type arguments that may arise during template argument deduction in some metaprogramming contexts, preventing substitution failures.</p></td>
+<td class="doxyParamItemDescription"><p>Additional types, ignored.</p></td>
 </tr>
 </table>
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">identity</a></span> struct template provides a mechanism for preserving a type <span class="doxyComputerOutput">T</span> during template metaprogramming. It is commonly used to delay type evaluation or to forward types in complex template constructs within the µTest++ framework.</p>
+<p>Exposes <span class="doxyComputerOutput">T</span> as the member type <span class="doxyComputerOutput"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">type</a></span>, like <span class="doxyComputerOutput">std::type_identity</span>, which replaces it.</p>
 
 
-<p>This utility is particularly useful in scenarios where type deduction or concept constraints are required, as it allows the type to be carried through template specialisations without modification.</p>
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000018>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Use <span class="doxyComputerOutput">std::type_identity</span> (since 5.1.0).</p>
+</dd>
+</dl>
+</div>
 
-
-<p>Definition at line 158 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 578 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -107,18 +113,18 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 </div>
 <div class="doxyMemberDoc">
 
-<p>Alias for the preserved type.</p>
+<p>The type <span class="doxyComputerOutput">T</span>.</p>
 
 
-<p>Always <span class="doxyComputerOutput">T</span>; the <span class="doxyComputerOutput">Extra</span> parameters do not affect it.</p>
+<p>The additional template arguments do not affect it.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00166">166</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00586">586</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">166</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">type</a> = T;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">586</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">type</a> = T;</span></span></div>
 
 </div>
 
@@ -132,11 +138,11 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a></li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

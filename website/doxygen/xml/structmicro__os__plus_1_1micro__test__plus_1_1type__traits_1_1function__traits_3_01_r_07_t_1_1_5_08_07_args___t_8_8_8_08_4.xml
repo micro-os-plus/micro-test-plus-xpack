@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;</compoundname>
-    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <includes refid="extension_8h" local="no">extension.h</includes>
     <templateparamlist>
       <param>
         <type>class R</type>
@@ -24,14 +24,14 @@
         <name>args</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;::args</qualifiedname>
         <briefdescription>
-<para>Type list of all argument types. </para>
+<para>The parameter types, as a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kindref="compound">list</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>Deduced from the function signature, in declaration order. </para>
+<para>The types <computeroutput>Args_T</computeroutput> of the specialisation, without the object parameter of the member functions. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="317" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="317" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="709" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="709" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4_1a1f21557f758a46166726e0c6e01ee8bc" prot="public" static="no">
         <type>R</type>
@@ -40,18 +40,18 @@
         <name>result_type</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;::result_type</qualifiedname>
         <briefdescription>
-<para>The return type of the member function. </para>
+<para>The return type. </para>
         </briefdescription>
         <detaileddescription>
-<para>Deduced from the function signature. </para>
+<para>The type <computeroutput>R</computeroutput> of the specialisation. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="309" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="309" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="700" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="700" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Struct template specialisation for extracting function traits from non-const member function types. </para>
+<para>Deprecated traits of the pointers to member functions. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -59,7 +59,7 @@
 <parametername>R</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The return type of the member function. </para>
+<para>The return type. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -67,7 +67,7 @@
 <parametername>T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The class type to which the member function belongs. </para>
+<para>The class type. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -75,14 +75,15 @@
 <parametername>Args_T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The argument types of the member function.</para>
+<para>The parameter types.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-This specialisation of the <computeroutput>function_traits</computeroutput> struct template provides compile-time introspection for non-const member function types. It exposes the return type and argument types of a member function, enabling advanced template metaprogramming and type deduction within the µTest++ framework.</para>
-<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4_1a1f21557f758a46166726e0c6e01ee8bc" kindref="member">result_type</ref></computeroutput> member defines the return type of the member function, while the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4_1abe3052f92aa798f6a80a6e9250fc76b4" kindref="member">args</ref></computeroutput> member is a type list containing all argument types. </para>
+Exposes the return type and the parameter types of a pointer to a non-<computeroutput>const</computeroutput> member function.</para>
+<para><xrefsect id="deprecated_1_deprecated000022"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="301" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="302" bodyend="318"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="692" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="693" bodyend="710"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4_1abe3052f92aa798f6a80a6e9250fc76b4" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;</scope><name>args</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4_1a1f21557f758a46166726e0c6e01ee8bc" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;</scope><name>result_type</name></member>

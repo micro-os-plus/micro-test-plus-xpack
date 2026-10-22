@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-utility-functions" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-utility-functions</compoundname>
     <title>Utility Functions</title>
@@ -41,7 +41,16 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-fun
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="88" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="88" bodyend="97" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="94" declcolumn="5"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acfabd0e10d233ad305b6f4fc125a97f2" compoundref="runner_8cpp" startline="169" endline="279">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="88" endline="97">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af0682165f5d07b13fd21e3f6f8da546c" compoundref="runner_8cpp" startline="796" endline="832">micro_os_plus::micro_test_plus::runner::abort</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a66f620b093f92e0def6bf5297fb6d6ee" compoundref="reporter-human_8cpp" startline="720" endline="771">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aa8802baefcb360f48451418c783ac413" compoundref="reporter-tap_8cpp" startline="946" endline="983">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="88" endline="97">micro_os_plus::micro_test_plus::utility::extract_file_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" compoundref="runner_8cpp" startline="192" endline="296">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a032be7e38aad40c8bc44b2376ad90e29" compoundref="reporter-human_8cpp" startline="584" endline="615">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aaea110287f115fbaf80b0248f724c5b6" compoundref="reporter-tap_8cpp" startline="853" endline="878">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" compoundref="reflection_8cpp" startline="73" endline="76">micro_os_plus::micro_test_plus::reflection::short_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aeafdc8e05a6d80d9445f17ff354ee215" compoundref="reporter_8cpp" startline="390" endline="463">micro_os_plus::micro_test_plus::detail::reporter::write_info</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -58,7 +67,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-fun
           <declname>pattern</declname>
         </param>
         <briefdescription>
-<para>Check if a string matches a pattern with <computeroutput>*</computeroutput> and <computeroutput>?</computeroutput> wildcards. </para>
+<para>Checks whether a string matches a pattern with <computeroutput>*</computeroutput> and <computeroutput>?</computeroutput> wildcards. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -81,9 +90,9 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-fun
 <simplesect kind="return"><para><computeroutput>true</computeroutput> if the input string matches the pattern; otherwise, <computeroutput>false</computeroutput>.</para>
 </simplesect>
 This function enables pattern-based string comparison for tests, supporting both exact matches and wildcard patterns. The pattern may include <computeroutput>*</computeroutput> to match any sequence of characters (including an empty one) and <computeroutput>?</computeroutput> to match any single character. This allows for flexible validation of string content in test assertions, accommodating variable or partially known values.</para>
-<para><simplesect kind="warning"><para>The <computeroutput>*</computeroutput> wildcard is handled via recursion with a linear loop, giving a worst-case complexity of <computeroutput>O(n^k)</computeroutput>, for an input of length <computeroutput>n</computeroutput> and a pattern with <computeroutput>k</computeroutput> wildcards (e.g. a pattern such as <computeroutput>"a*a*a*b"</computeroutput> against a long string of <computeroutput>&apos;a&apos;</computeroutput> characters). For the typical short patterns used in a test framework this is not a concern, but callers should avoid patterns with many wildcards against long input strings.</para>
-</simplesect>
-<simplesect kind="par"><title>Examples</title><para></para>
+<para>The match is iterative, with no recursion, so the stack usage is constant, which matters on embedded targets. When a mismatch occurs after a <computeroutput>*</computeroutput>, only the most recent <computeroutput>*</computeroutput> is retried, one character further in the input; the earlier ones never need to be, since any match they could produce is also found by the most recent one. The worst-case complexity is <computeroutput>O(n * m)</computeroutput>, for an input of length <computeroutput>n</computeroutput> and a pattern of length <computeroutput>m</computeroutput>.</para>
+<para>The function is also used by the runner to select the suites and the test cases matching the <computeroutput>--filter</computeroutput> patterns, for each of the alternatives separated by <computeroutput>|</computeroutput>.</para>
+<para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -93,57 +102,10 @@ This function enables pattern-based string comparison for tests, supporting both
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="130" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="130" bodyend="162" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="107" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="130" endline="162">micro_os_plus::micro_test_plus::utility::is_match</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="130" endline="162">micro_os_plus::micro_test_plus::utility::is_match</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-utility-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class T</type>
-          </param>
-        </templateparamlist>
-        <type>T &amp;</type>
-        <definition>T &amp; micro_os_plus::micro_test_plus::mut</definition>
-        <argsstring>(const T &amp;t) noexcept</argsstring>
-        <name>mut</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::mut</qualifiedname>
-        <param>
-          <type>const T &amp;</type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-<para>Generic mutator to remove const qualification from a reference. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The type of the input object.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>t</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The object from which to remove const qualification; it must not be an object originally declared as <computeroutput>const</computeroutput>, if it is to be modified. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A non-const reference to the input object.</para>
-</simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kindref="member">mut</ref></computeroutput> function template provides a generic mechanism to remove the <computeroutput>const</computeroutput> qualifier from a reference, via <computeroutput>const_cast</computeroutput>. It returns a non-const reference to the input object, enabling modification of non-const objects accessed through a <computeroutput>const</computeroutput> reference. This utility is particularly useful in testing scenarios where controlled mutation of test data is required.</para>
-<para><simplesect kind="warning"><para>Modifying an object that was originally declared as <computeroutput>const</computeroutput> through the returned reference is undefined behaviour. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="330" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="330" bodyend="333" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="332" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="134" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="134" bodyend="179" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="107" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="134" endline="179">micro_os_plus::micro_test_plus::utility::is_match</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="134" endline="179">micro_os_plus::micro_test_plus::utility::is_match</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2b0adeef059676a455d9506ba8a06d26" compoundref="runner_8cpp" startline="485" endline="506">micro_os_plus::micro_test_plus::runner::is_selected</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -169,7 +131,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-fun
           <declname>delim</declname>
         </param>
         <briefdescription>
-<para>Split a string into a vector of sub-strings. </para>
+<para>Splits a string into a vector of sub-strings. </para>
         </briefdescription>
         <detaileddescription>
 <para>This function template facilitates string handling in tests by splitting a string into a vector of substrings, using the specified delimiter.</para>
@@ -222,6 +184,8 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-fun
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="91" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" bodystart="91" bodyend="109" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="123" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" compoundref="utility-inlines_8h" startline="91" endline="109">micro_os_plus::micro_test_plus::utility::split</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" compoundref="utility-inlines_8h" startline="91" endline="109">micro_os_plus::micro_test_plus::utility::split</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

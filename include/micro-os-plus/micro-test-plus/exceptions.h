@@ -77,7 +77,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-exceptions
-   * @brief Check if a callable throws a specific exception.
+   * @brief Checks whether a callable throws a specific exception, for
+   * `expect()` or `require()`.
    *
    * @tparam Exception_T The type of the exception expected to be thrown.
    * @tparam Callable_T The type of the callable object to be invoked.
@@ -92,7 +93,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-exceptions
-   * @brief Check if a callable throws an exception (any exception).
+   * @brief Checks whether a callable throws any exception, for `expect()`
+   * or `require()`.
    *
    * @tparam Callable_T The type of the callable object to be invoked.
    * @param func The callable object to check for exception throwing
@@ -106,7 +108,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-exceptions
-   * @brief Check if a callable does not throw an exception.
+   * @brief Checks whether a callable does not throw any exception, for
+   * `expect()` or `require()`.
    *
    * @tparam Callable_T The type of the callable object to be invoked.
    * @param func The callable object to check.

@@ -1,38 +1,98 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kind="namespace" language="C++">
     <compoundname>micro_os_plus::micro_test_plus::type_traits</compoundname>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" prot="public">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;</innerclass>
-    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value" prot="public">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" prot="public">micro_os_plus::micro_test_plus::type_traits::identity</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" prot="public">micro_os_plus::micro_test_plus::type_traits::integral_constant</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" prot="public">micro_os_plus::micro_test_plus::type_traits::list</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" prot="public">micro_os_plus::micro_test_plus::type_traits::op</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" prot="public">micro_os_plus::micro_test_plus::type_traits::value</innerclass>
-    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" prot="public">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</innerclass>
-    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" prot="public">micro_os_plus::micro_test_plus::type_traits::value_base_</innerclass>
-    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1any__op">micro_os_plus::micro_test_plus::type_traits::any_op</innerconcept>
-    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1checkable">micro_os_plus::micro_test_plus::type_traits::checkable</innerconcept>
-    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1container__like">micro_os_plus::micro_test_plus::type_traits::container_like</innerconcept>
-    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__epsilon">micro_os_plus::micro_test_plus::type_traits::has_epsilon</innerconcept>
-    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos">micro_os_plus::micro_test_plus::type_traits::has_npos</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value">micro_os_plus::micro_test_plus::type_traits::has_value</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point">micro_os_plus::micro_test_plus::type_traits::is_floating_point</innerconcept>
-    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op">micro_os_plus::micro_test_plus::type_traits::is_op</innerconcept>
-    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1printable">micro_os_plus::micro_test_plus::type_traits::printable</innerconcept>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a67890916b8d3d8cbaab893cc6b599745" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt; T &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::genuine_integral_value = detail::value&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>genuine_integral_value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</qualifiedname>
+        <briefdescription>
+<para>Deprecated integral value wrapper. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type of the stored value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+In v5.0.1, a separate wrapper with the same members as <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, never created by the framework; now <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, so the values are compared and reported in the same way.</para>
+<para><xrefsect id="deprecated_1_deprecated000025"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="784" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="784" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a65ad920b21a6c0df6848aa939659b92e" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">detail::value_base</ref>&lt; T &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::value_base_ = detail::value_base&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>value_base_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value_base_</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">detail::value_base</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the stored value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The v5.0.1 name, with a trailing underscore. The stored value is now private, and <computeroutput>get()</computeroutput> returns a reference; the value is read with <computeroutput>get()</computeroutput> or with the explicit conversion, not through the v5.0.1 public member <computeroutput>value_</computeroutput>.</para>
+<para><xrefsect id="deprecated_1_deprecated000024"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="769" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="769" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
-<para>Type trait utilities and metaprogramming support for the µTest++ testing framework. </para>
+<para>Deprecated v5.0.1 namespace of the concepts and of the value wrapper templates. </para>
     </briefdescription>
     <detaileddescription>
-<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">type_traits</ref></computeroutput> namespace offers a comprehensive suite of type trait templates and metaprogramming utilities employed throughout the µTest++ framework.</para>
-<para>This includes templates for function traits, type lists, identity, value wrappers, and compile-time checks for container types, floating point types, and type convertibility. It also provides generic integral and floating point constant wrappers, as well as C++20 concepts and requirements checking.</para>
-<para>These utilities facilitate advanced template programming, type deduction, and compile-time introspection, supporting the flexible and type-safe design of the framework.</para>
-<para>All definitions within this namespace are implemented in the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
+<para>In v5.0.1, the concepts, the base of the expressions, and the value wrapper templates were outside <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></computeroutput>, in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">type_traits</ref></computeroutput> namespace. The namespace is kept for compatibility with the existing applications: the names that still exist refer to their current definitions, in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kindref="compound">extension</ref></computeroutput> and <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></computeroutput> namespaces, and the removed helpers are restored here.</para>
+<para>The concepts refer to the current ones, so their semantics are the current ones: <computeroutput>is_op</computeroutput> detects the <computeroutput>op_type</computeroutput> member, not the inheritance from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">op</ref></computeroutput>; <computeroutput>has_epsilon</computeroutput> also requires <computeroutput>is_op</computeroutput>; <computeroutput>checkable</computeroutput> also accepts the types with an <computeroutput>explicit operator bool</computeroutput>; <computeroutput>printable</computeroutput> accepts everything the formatter can print. The exception is <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kindref="compound">has_value</ref></computeroutput>, which is not used by the framework any more, and is restored with its v5.0.1 definition.</para>
+<para>The concepts cannot be deprecated individually, so the attribute is on the namespace. Clang reports the deprecation at every qualified use. GCC reports it only for the names declared in the namespace itself (the restored helpers and the alias templates), and, for the alias templates, only when they name the type of a declaration; it does not report the concepts, nor the names introduced by the using-declarations.</para>
+<para><xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use the concepts in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kindref="compound">extension</ref></computeroutput> namespace, and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op" kindref="compound">extension::compare_op</ref></computeroutput> or <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op" kindref="compound">extension::predicate_op</ref></computeroutput> for the application expressions; the value wrapper templates are internal (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
+<para><xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use the extension namespace</para>
+</xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/type-traits-inlines.h" line="67" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="453" column="1"/>
   </compounddef>
 </doxygen>

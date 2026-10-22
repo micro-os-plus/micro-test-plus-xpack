@@ -21,62 +21,390 @@ keywords:
 
 
 <dl class="doxyVariableList">
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga74e6e2bffc2fc2dea47f979b5b55ea64">micro_os_plus::micro_test_plus::_b</a></dt>
-<dd><p><a id="_deprecated000001"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6bdfe5c187140ee99d0bcabd5bb65156">to_b</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gabd2f8b7401162835cb4735e4a7532c36">micro_os_plus::micro_test_plus::_c</a></dt>
-<dd><p><a id="_deprecated000002"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5d14217f53925b323f4236298e3dcc90">to_c</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6ab8b464d71f15f55bd047dbfca50899">micro_os_plus::micro_test_plus::_d</a></dt>
-<dd><p><a id="_deprecated000022"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to_d</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gadcff4454bf86ea03c0c3d1be42b04e12">micro_os_plus::micro_test_plus::_f</a></dt>
-<dd><p><a id="_deprecated000021"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga3c89dfb65d916dfc34dfdfcb10334b5c">to_f</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga1613ccf081248c601bed0f3022fba652">micro_os_plus::micro_test_plus::_i</a></dt>
-<dd><p><a id="_deprecated000005"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gab6ddb21470182cbdcf06436cde43718f">to_i</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaec10ef24cb02dd0fb7f5e44227562d51">micro_os_plus::micro_test_plus::_i16</a></dt>
-<dd><p><a id="_deprecated000014"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf22a7774a4b05de9779d9084ed41a02a">to_i16</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5d6deb61637f1d7350a69f62d2971bc3">micro_os_plus::micro_test_plus::_i32</a></dt>
-<dd><p><a id="_deprecated000015"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9ca96b6c6d79560f8186c6206ac4f613">to_i32</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae98aa89157544638f775d2a90a3ec774">micro_os_plus::micro_test_plus::_i64</a></dt>
-<dd><p><a id="_deprecated000016"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga240591501696d181e105529c1f52b56c">to_i64</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga3cb44c2b09802fbee17f324cbdf3f31e">micro_os_plus::micro_test_plus::_i8</a></dt>
-<dd><p><a id="_deprecated000013"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaa61c255757e915cb05132602baea088b">to_i8</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaaebf2b13e1742a894179deedf8ad82cc">micro_os_plus::micro_test_plus::_l</a></dt>
-<dd><p><a id="_deprecated000006"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaaf580ebebfba7cbe84a89db8574a6aa7">to_l</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga79572e6e73076a155927ff0c3888ce76">micro_os_plus::micro_test_plus::_ld</a></dt>
-<dd><p><a id="_deprecated000023"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga33a096960b5dddee322e36c689ecbf47">to_ld</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">micro_os_plus::micro_test_plus::_ll</a></dt>
-<dd><p><a id="_deprecated000007"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gab9d11644d3b22e2a9932e64853b5a59d">to_ll</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga102b1f7c41452481e6be2bd8da63e4a0">micro_os_plus::micro_test_plus::_s</a></dt>
-<dd><p><a id="_deprecated000004"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga1b39571aeebcb8091bd410a9b247a571">to_s</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gacf10cd5dca8066e1df77e668b68f3272">micro_os_plus::micro_test_plus::_sc</a></dt>
-<dd><p><a id="_deprecated000003"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gadb22be8fe019b5cd1ad56cfadea5f4ec">to_sc</a></span> (since 3.2.0).</p></dd>
-<dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/-t">micro_os_plus::micro_test_plus::_t&lt; T &gt;</a></dt>
-<dd><p><a id="_deprecated000024"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga74b4ecee40263c6b4ac8a60fc6480fac">micro_os_plus::micro_test_plus::_u</a></dt>
-<dd><p><a id="_deprecated000008"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gac8586b75498097cb06b404399c307960">to_u</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga07f83438e4c0c85efdeacd78668f3543">micro_os_plus::micro_test_plus::_u16</a></dt>
-<dd><p><a id="_deprecated000018"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaa60006a01aa94a5fd755aebddd8ceec3">to_u16</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf66382b299dcf814298ae56b75b541d7">micro_os_plus::micro_test_plus::_u32</a></dt>
-<dd><p><a id="_deprecated000019"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga3bf9f9c946f16b5e02f9f2c45739df42">to_u32</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gac654508c2894db262cbd0335f76b02bf">micro_os_plus::micro_test_plus::_u64</a></dt>
-<dd><p><a id="_deprecated000020"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5fba6fbb12941113aeff430609839ba4">to_u64</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga2e2ad62d8c5d6e3abcfca9a897ae61de">micro_os_plus::micro_test_plus::_u8</a></dt>
-<dd><p><a id="_deprecated000017"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga8b683d809d600f5c5210bb16546a832e">to_u8</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga1ef97880cc5f2e13eea8b4ebb888886a">micro_os_plus::micro_test_plus::_uc</a></dt>
-<dd><p><a id="_deprecated000009"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9b60956f6c874e5597cdea6c0323fff1">to_uc</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9cb69b5dc7c394a57e1b09c919b0f6ab">micro_os_plus::micro_test_plus::_ul</a></dt>
-<dd><p><a id="_deprecated000011"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9f6f56950ba8bce6cc49037af83e443b">to_ul</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga0b9d74a6595fe7fdefca21255ab59dc8">micro_os_plus::micro_test_plus::_ull</a></dt>
-<dd><p><a id="_deprecated000012"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga595258f3c1b293284f79a88b2872d43d">to_ull</a></span> (since 3.2.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga67992fcc21a60e3dd1fb4c9c5ebc814a">micro_os_plus::micro_test_plus::_us</a></dt>
-<dd><p><a id="_deprecated000010"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gac9a34848b05859a18794ece696e37f26">to_us</a></span> (since 3.2.0).</p></dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga9998cd63972fac8b24a2f0138322e7c1">micro_os_plus::micro_test_plus::_and</a>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</dt>
+<dd>
+<p><a id="_deprecated000028"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga8c9c770da2ef632dec29c502651cb160">both()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000029"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga8c9c770da2ef632dec29c502651cb160">both()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gad4203783cfbe141f41ee8515f7b2ea94">micro_os_plus::micro_test_plus::_b</a></dt>
+<dd>
+<p><a id="_deprecated000032"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000033"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafdd897d040f92df9cd42e551ebc88cd8">micro_os_plus::micro_test_plus::_c</a></dt>
+<dd>
+<p><a id="_deprecated000034"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000035"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga7c6c0169d894a7dd589d96df49e8df26">micro_os_plus::micro_test_plus::_d</a></dt>
+<dd>
+<p><a id="_deprecated000074"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000075"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga231cd51e76a2f426703275739d605ad4">micro_os_plus::micro_test_plus::_f</a></dt>
+<dd>
+<p><a id="_deprecated000072"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000073"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5368740b47e92605914b6c38ea88aebf">to_f</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga8468610e763177a8f569f7d618851288">micro_os_plus::micro_test_plus::_i</a></dt>
+<dd>
+<p><a id="_deprecated000040"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000041"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf3ee271cefcffa625e40d476305da62f">to_i</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gad2d95793c99112ad2889c6663789d1e3">micro_os_plus::micro_test_plus::_i16</a></dt>
+<dd>
+<p><a id="_deprecated000058"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000059"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga917a1759e37cd0d3fe3786da11729a4b">micro_os_plus::micro_test_plus::_i32</a></dt>
+<dd>
+<p><a id="_deprecated000060"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000061"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga290a150eae030e183ca2e14e9095c93b">micro_os_plus::micro_test_plus::_i64</a></dt>
+<dd>
+<p><a id="_deprecated000062"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000063"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga265f8609ef3d6ead78c7a66825553e24">micro_os_plus::micro_test_plus::_i8</a></dt>
+<dd>
+<p><a id="_deprecated000056"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000057"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga429a848542fc4ffafd3dd22bc1832654">micro_os_plus::micro_test_plus::_l</a></dt>
+<dd>
+<p><a id="_deprecated000042"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga09028a1e0e713723257afba48b9ee551">to_l</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000043"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga09028a1e0e713723257afba48b9ee551">to_l</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gacfe28c6fb7bfb47ca8891cb61e7f58d9">micro_os_plus::micro_test_plus::_ld</a></dt>
+<dd>
+<p><a id="_deprecated000076"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000077"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9c597ca04848620b8570c29a4741e77d">micro_os_plus::micro_test_plus::_ll</a></dt>
+<dd>
+<p><a id="_deprecated000044"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000045"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gaa465723bc4fe309f15d30a4e7207d40f">micro_os_plus::micro_test_plus::_not</a>  (Expr_T &amp;&amp;expr)</dt>
+<dd>
+<p><a id="_deprecated000026"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000027"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">micro_os_plus::micro_test_plus::_or</a>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</dt>
+<dd>
+<p><a id="_deprecated000030"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gab9fbb94dec947fa60052531743114fa9">either()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000031"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gab9fbb94dec947fa60052531743114fa9">either()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga461a956b7e308ed6e8c64afa3cf160f2">micro_os_plus::micro_test_plus::_s</a></dt>
+<dd>
+<p><a id="_deprecated000038"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000039"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga0cc4baab5f421ac7adee10218d8ee8a2">micro_os_plus::micro_test_plus::_sc</a></dt>
+<dd>
+<p><a id="_deprecated000036"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000037"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga15147e343475e219c2e46dce07b4127c">micro_os_plus::micro_test_plus::_t</a></dt>
+<dd>
+<p><a id="_deprecated000078"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000079"></a>use <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaaa486af2418a24076237fbe26940f5ae">micro_os_plus::micro_test_plus::_u</a></dt>
+<dd>
+<p><a id="_deprecated000046"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000047"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga97f7bc9a25eb4b7c663bd2388ade01ae">micro_os_plus::micro_test_plus::_u16</a></dt>
+<dd>
+<p><a id="_deprecated000066"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000067"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga4afa32150456241245bfc641a6f17bbc">micro_os_plus::micro_test_plus::_u32</a></dt>
+<dd>
+<p><a id="_deprecated000068"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000069"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga1241e84fc4457af1b4df5f053eec6aa5">micro_os_plus::micro_test_plus::_u64</a></dt>
+<dd>
+<p><a id="_deprecated000070"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000071"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">micro_os_plus::micro_test_plus::_u8</a></dt>
+<dd>
+<p><a id="_deprecated000064"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000065"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaa8bb559065ea34a9645fdfd6339b9b7a">micro_os_plus::micro_test_plus::_uc</a></dt>
+<dd>
+<p><a id="_deprecated000048"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000049"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga32c7eef01fcaef2f1a9478427d951f62">micro_os_plus::micro_test_plus::_ul</a></dt>
+<dd>
+<p><a id="_deprecated000052"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000053"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5d2d6a69c090569866a779672772b48f">to_ul</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gada8a165060d3d3b3ab51272b9da58761">micro_os_plus::micro_test_plus::_ull</a></dt>
+<dd>
+<p><a id="_deprecated000054"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000055"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga65aea7fc6324806cc029041a1c785611">micro_os_plus::micro_test_plus::_us</a></dt>
+<dd>
+<p><a id="_deprecated000050"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span> (since 3.2.0).</p>
+
+<p><a id="_deprecated000051"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a3cd85c566bdf2b3b92e27db4c29c7bc5">micro_os_plus::micro_test_plus::counters::executed_subtests</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000007"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000008"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a082c78df2d5f6b10b6ac8c246caae6c5">micro_os_plus::micro_test_plus::counters::increment_executed_subtests</a>  (size_t count=1) noexcept</dt>
+<dd>
+<p><a id="_deprecated000003"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000004"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a4d3d1d6dfcc6a3a8c61c8c0326799533">micro_os_plus::micro_test_plus::counters::increment_successful_checks</a>  (size_t count=1) noexcept</dt>
+<dd>
+<p><a id="_deprecated000001"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000002"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a2e1ed349fc1d936b5de5929fa1a62650">micro_os_plus::micro_test_plus::counters::successful_checks</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000005"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000006"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#ae27ffc4d38a71b5c7d54f4a3b56c2203">micro_os_plus::micro_test_plus::counters::was_successful</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000009"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000010"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a467d1332df523b9acaa3ff82b0ebb714">micro_os_plus::micro_test_plus::detail::reporter::verbosity</a>  (void) const noexcept -&gt; <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></dt>
+<dd>
+<p><a id="_deprecated000082"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">runner::verbosity_level()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000083"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">runner::verbosity_level()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#af123417aafc76c826760101bcc517dfa">micro_os_plus::micro_test_plus::detail::runner_totals</a></dt>
+<dd>
+<p><a id="_deprecated000011"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters">counters</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000012"></a>use counters</p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#afd1213b3e3ffa9997ab0eba78b944ecf">micro_os_plus::micro_test_plus::detail::stopwatch::compute_elapsed_time</a>  (uint32_t &amp;milliseconds, uint32_t &amp;microseconds) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000112"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3719382123c6741054a89e4f76b55d90">elapsed()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000113"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3719382123c6741054a89e4f76b55d90">elapsed()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a306d33023758a96948a6b24ea7a5dc06">micro_os_plus::micro_test_plus::detail::stopwatch::has_begin</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000106"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000107"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#adbabde73dd4f7588ae46f8d051d120e1">micro_os_plus::micro_test_plus::detail::stopwatch::has_end</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000108"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000109"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac698189ef451dfe398d779eb7cccda7f">micro_os_plus::micro_test_plus::detail::stopwatch::has_timestamps</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000110"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000111"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a621a32c96a4950306c0a1aef8c577740">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</a>  (void) noexcept</dt>
+<dd>
+<p><a id="_deprecated000114"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#af5ebb1e454867633db12fef45db9788d">start()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000115"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#af5ebb1e454867633db12fef45db9788d">start()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#adcdd0817f5db5db49eac3562c52e5470">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</a>  (const timespec &amp;ts) noexcept</dt>
+<dd>
+<p><a id="_deprecated000116"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#af5ebb1e454867633db12fef45db9788d">start()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000117"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#af5ebb1e454867633db12fef45db9788d">start()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a4c1a4d8b22d04205be49f8289ed7abd6">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</a>  (void) noexcept</dt>
+<dd>
+<p><a id="_deprecated000118"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000119"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#aaa80547cfa783c321b0ce88ecaa39648">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</a>  (const timespec &amp;ts) noexcept</dt>
+<dd>
+<p><a id="_deprecated000120"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000121"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></p>
+</dd>
+<dt>Class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">micro_os_plus::micro_test_plus::detail::timestamp</a></dt>
+<dd>
+<p><a id="_deprecated000104"></a>The timings are internal; use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000105"></a>the timings are internal</p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">micro_os_plus::micro_test_plus::detail::timestamps</a></dt>
+<dd>
+<p><a id="_deprecated000102"></a>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0).</p>
+
+<p><a id="_deprecated000103"></a>the timings are internal</p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#afc93799846770e521c4721d0de0a81cc">micro_os_plus::micro_test_plus::reflection::short_name</a>  (const char *name) noexcept</dt>
+<dd>
+<p><a id="_deprecated000080"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000081"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name()</a></p>
+
+<p><a id="_deprecated000131"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name()</a></span> (since 5.1.0).</p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7f8403f1ccc6a0e8171ef077bcd9cbd4">micro_os_plus::micro_test_plus::runner::exit_code</a>  (void)</dt>
+<dd>
+<p><a id="_deprecated000088"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">run()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000089"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">run()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a65250ff363fbb3b5869bbe4de9578e86">micro_os_plus::micro_test_plus::runner::reporter</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000100"></a>The reporter is internal; use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">verbosity_level()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000101"></a>the reporter is internal; use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">verbosity_level()</a></p>
+</dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a10788baa079e19676a8cdbaa253285dc">micro_os_plus::micro_test_plus::runner::runner</a>  (const char *top_suite_name)</dt>
-<dd><p><a id="_deprecated000025"></a>Use the anonymous constructor.</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner/#a1e3c2cbe731c469a93fcad9e574e717a">micro_os_plus::micro_test_plus::static_runner::static_runner</a>  (const char *top_suite_name)</dt>
-<dd><p><a id="_deprecated000026"></a>Use the anonymous constructor.</p></dd>
+<dd>
+<p><a id="_deprecated000086"></a>Use the anonymous constructor, and pass the name to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#acfabd0e10d233ad305b6f4fc125a97f2">initialise()</a></span> (since 4.1.0).</p>
+
+<p><a id="_deprecated000087"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a5e2001730fd3659e9045fcc5cc668f07">runner()</a> and pass the name to <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#acfabd0e10d233ad305b6f4fc125a97f2">initialise()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a2636252ac7f80b7425cf2e5eced77834">micro_os_plus::micro_test_plus::runner::suite</a>  (std::string_view name, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</dt>
+<dd>
+<p><a id="_deprecated000090"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a4069fe957bbc7a9217ca2dd4d2034a97">add_suite()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000091"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a4069fe957bbc7a9217ca2dd4d2034a97">add_suite()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a6ed3a02ced62ed475c75678cd9e91be1">micro_os_plus::micro_test_plus::runner::suites_count</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000094"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a9484b22aa909151712144cd39130187a">added_suites_count()</a></span>, plus one for the top suite, or <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ac29e4b993bb3fe795eb8900231cbf5c4">total_suites_count()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000095"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a9484b22aa909151712144cd39130187a">added_suites_count()</a> or <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ac29e4b993bb3fe795eb8900231cbf5c4">total_suites_count()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#af314280f14d61d37da276567685ec2a8">micro_os_plus::micro_test_plus::runner::timings</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000096"></a>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0).</p>
+
+<p><a id="_deprecated000097"></a>the timings are internal</p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7d3ccfaf760cb2f4ace586c222b22244">micro_os_plus::micro_test_plus::runner::timings</a>  (void) noexcept</dt>
+<dd>
+<p><a id="_deprecated000098"></a>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0).</p>
+
+<p><a id="_deprecated000099"></a>the timings are internal</p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a94a9df0418776ebce476cd9a2e4f591f">micro_os_plus::micro_test_plus::runner::verbosity</a>  (void) const noexcept -&gt; <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></dt>
+<dd>
+<p><a id="_deprecated000092"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">verbosity_level()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000093"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">verbosity_level()</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-runners/#ga47d2c99f85fc5597b82da402d4687e75">micro_os_plus::micro_test_plus::static_runner</a></dt>
+<dd>
+<p><a id="_deprecated000084"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000085"></a>use runner</p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite/#a7890c9db0d4a64f53164857a4d034435">micro_os_plus::micro_test_plus::static_suite::static_suite</a>  (const char *name, runner &amp;test_runner, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</dt>
+<dd><p><a id="_deprecated000130"></a></p></dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-test-case/#ga1424c18b26d5fdaed11439c77e6bf561">micro_os_plus::micro_test_plus::subtest</a></dt>
+<dd>
+<p><a id="_deprecated000122"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000123"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a></p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a06c121fc0e8e87451a718846a11fc853">micro_os_plus::micro_test_plus::suite::timings</a>  (void) const noexcept</dt>
+<dd>
+<p><a id="_deprecated000126"></a>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0).</p>
+
+<p><a id="_deprecated000127"></a>the timings are internal</p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a431faae19127cec8fbc9ebce59709f31">micro_os_plus::micro_test_plus::suite::timings</a>  (void) noexcept</dt>
+<dd>
+<p><a id="_deprecated000128"></a>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0).</p>
+
+<p><a id="_deprecated000129"></a>the timings are internal</p>
+</dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-requirements/#gad25dc8d5d657ace9d47d3a95b3341802">micro_os_plus::micro_test_plus::test_case::assume</a>  (const Expr_T &amp;expr, const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> &amp;sl=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current()</a>)</dt>
+<dd>
+<p><a id="_deprecated000124"></a>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-requirements/#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a></span> (since 5.1.0).</p>
+
+<p><a id="_deprecated000125"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-requirements/#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a></p>
+</dd>
+<dt>Namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></dt>
+<dd>
+<p><a id="_deprecated000013"></a>Use the concepts in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">extension</a></span> namespace, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/compare-op">extension::compare_op</a></span> or <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/predicate-op">extension::predicate_op</a></span> for the application expressions; the value wrapper templates are internal (since 5.1.0).</p>
+
+<p><a id="_deprecated000014"></a>use the extension namespace</p>
+</dd>
+<dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</a></dt>
+<dd><p><a id="_deprecated000020"></a>Not replaced (since 5.1.0).</p></dd>
+<dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;</a></dt>
+<dd><p><a id="_deprecated000021"></a>Not replaced (since 5.1.0).</p></dd>
+<dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;</a></dt>
+<dd><p><a id="_deprecated000023"></a>Not replaced (since 5.1.0).</p></dd>
+<dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;</a></dt>
+<dd><p><a id="_deprecated000022"></a>Not replaced (since 5.1.0).</p></dd>
+<dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; T &gt;</a></dt>
+<dd><p><a id="_deprecated000019"></a>Not replaced (since 5.1.0).</p></dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a67890916b8d3d8cbaab893cc6b599745">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</a></dt>
+<dd><p><a id="_deprecated000025"></a>The value wrappers are internal (since 5.1.0).</p></dd>
+<dt>Concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">micro_os_plus::micro_test_plus::type_traits::has_value</a></dt>
+<dd><p><a id="_deprecated000015"></a>There is no replacement; the concept used by the framework is internal (since 5.1.0).</p></dd>
+<dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">micro_os_plus::micro_test_plus::type_traits::identity&lt; T, Extra &gt;</a></dt>
+<dd><p><a id="_deprecated000018"></a>Use <span class="doxyComputerOutput">std::type_identity</span> (since 5.1.0).</p></dd>
+<dt>Concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">micro_os_plus::micro_test_plus::type_traits::is_floating_point</a></dt>
+<dd><p><a id="_deprecated000016"></a>Use <span class="doxyComputerOutput">std::floating_point</span> (since 5.1.0).</p></dd>
+<dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">micro_os_plus::micro_test_plus::type_traits::list&lt; Types &gt;</a></dt>
+<dd><p><a id="_deprecated000017"></a>Not replaced (since 5.1.0).</p></dd>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a65ad920b21a6c0df6848aa939659b92e">micro_os_plus::micro_test_plus::type_traits::value_base_</a></dt>
+<dd><p><a id="_deprecated000024"></a>The value wrappers are internal (since 5.1.0).</p></dd>
 </dl>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

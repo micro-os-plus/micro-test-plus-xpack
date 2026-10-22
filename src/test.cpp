@@ -108,8 +108,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Delegates immediately to `runner_.reporter()`, returning the
-     * reporter associated with the owning runner instance.
+     * Returns the reporter owned by the runner, through its `reporter_`
+     * pointer, which is valid after `runner::initialise()`.
      */
     [[nodiscard]] reporter&
     runnable_base::test_reporter (void) const noexcept
@@ -152,9 +152,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Delegates immediately to `runner_.abort()`, passing the supplied
-     * source location, so that the report identifies the failed
-     * requirement, before the process is terminated via `::abort()`.
+     * Delegates to the private `runner::abort()`, as caused by a failed
+     * requirement, passing the supplied source location, so that the
+     * report identifies it. The runner then calls the abort handler, if
+     * any, and terminates the process via `::abort()`.
      */
     [[noreturn]] void
     runnable_base::abort (const reflection::source_location& sl) const
@@ -187,6 +188,10 @@ namespace micro_os_plus::micro_test_plus
      * reports only its own counters.
      * The child's totals are, however, accumulated into @p suite so that
      * the suite summary reflects all checks performed by its test cases.
+     *
+     * While the test cases are listed (see `runner_options::list_tests`),
+     * the selected test case is listed by the runner, and neither run nor
+     * counted, except in `child_test_cases_count_`.
      *
      * After the test execution was aborted (possible only when the abort
      * handler threw an exception, which the application caught), the
@@ -294,8 +299,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__cpp_exceptions)
   /**
    * @details
-   * The failure is reported as a check: the check index is incremented
-   * first, as `check_result` does, so that the TAP output
+   * The failure is reported as a check: the test point number is
+   * incremented first, as `check_result` does, so that the TAP output
    * numbers it after the checks already reported, and the failed checks
    * counter is incremented, so that the test case, and through it its
    * parents, fail.
@@ -532,8 +537,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Initialises the base `suite` with @p name, the given @p test_runner, and
-   * a no-op callable. Sets `own_index` to 1, reserving index 0 for the
-   * runner itself. If tracing is enabled, the name is output for
+   * a no-op callable. Sets `own_index_` to 1, since the top suite is
+   * always the first suite of the session; the runner numbers the other
+   * suites from 2. If tracing is enabled, the name is output for
    * diagnostic purposes.
    */
   top_suite::top_suite (const char* name, runner& test_runner)

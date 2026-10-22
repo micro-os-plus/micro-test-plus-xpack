@@ -1,10 +1,15 @@
 var math_8h =
 [
-    [ "micro_os_plus::micro_test_plus::math::abs", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#aef66ac12d33fb18753ae7440445e8d85", null ],
-    [ "micro_os_plus::micro_test_plus::math::den", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a8a29540b951c5cf6b40485287842b782", null ],
-    [ "micro_os_plus::micro_test_plus::math::den_size", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a3e243d7f77b8435e1433ccad9c603f98", null ],
-    [ "micro_os_plus::micro_test_plus::math::den_size", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#af5a33355bb68f644b9949ef1faa0d079", null ],
-    [ "micro_os_plus::micro_test_plus::math::min_value", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a2d07ed276b3f0d461e5b856ec24afcb4", null ],
-    [ "micro_os_plus::micro_test_plus::math::num", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#afeb53c0d3b6ce6d482cef71f147a2290", null ],
-    [ "micro_os_plus::micro_test_plus::math::pow", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a81a10f59f83a29f4ade9c710e833eced", null ]
+    [ "micro_os_plus::micro_test_plus::detail::math::integer_literal", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal" ],
+    [ "micro_os_plus::micro_test_plus::detail::math::abs", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::count_decimals", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#accba38bf51d261f330b594ca121e6f75", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::count_literal_digits", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#af295fc92026927f8a453248655e7862e", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::decimal_epsilon", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#ae474285acf7f49d66bb721b8ab5f8fa8", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::den", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::den_size", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::integer_magnitude", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a4f5af9be6a23a49f942e72de92adc91e", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::min_value", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a67e71e2dce0120ad4839635830e80de8", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::num", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::parse_integer_literal", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a9292deab69ef8584bc2604e76316ecfd", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::pow", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a121fbc662b8263c3b9ce605456fbc7d5", null ]
 ];

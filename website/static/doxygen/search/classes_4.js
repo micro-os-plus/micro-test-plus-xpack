@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['deferred_5freporter_0',['deferred_reporter',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html',1,'micro_os_plus::micro_test_plus::detail']]],
-  ['deferred_5freporter_5fbase_1',['deferred_reporter_base',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base.html',1,'micro_os_plus::micro_test_plus::detail']]]
+  ['failed_5frequirement_0',['failed_requirement',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failed__requirement.html',1,'micro_os_plus::micro_test_plus::detail']]],
+  ['failure_5finfo_1',['failure_info',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info.html',1,'micro_os_plus::micro_test_plus::detail']]],
+  ['floating_5fpoint_5fconstant_2',['floating_point_constant',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html',1,'micro_os_plus::micro_test_plus::detail::floating_point_constant&lt; T, N, D, Size, P &gt;'],['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html',1,'micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;']]],
+  ['function_5ftraits_3',['function_traits',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
+  ['function_5ftraits_3c_20r_28_2a_29_28args_5ft_2e_2e_2e_29_3e_4',['function_traits&lt; R(*)(Args_T...)&gt;',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
+  ['function_5ftraits_3c_20r_28args_5ft_2e_2e_2e_29_3e_5',['function_traits&lt; R(Args_T...)&gt;',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
+  ['function_5ftraits_3c_20r_28t_3a_3a_2a_29_28args_5ft_2e_2e_2e_29_20const_20_3e_6',['function_traits&lt; R(T::*)(Args_T...) const &gt;',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
+  ['function_5ftraits_3c_20r_28t_3a_3a_2a_29_28args_5ft_2e_2e_2e_29_3e_7',['function_traits&lt; R(T::*)(Args_T...)&gt;',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4.html',1,'micro_os_plus::micro_test_plus::type_traits']]]
 ];

@@ -23,12 +23,15 @@
  * @details
  * This source file contains the non-template `operator<<` overloads of
  * `expression_formatter` for all standard arithmetic, character, string,
- * boolean, and null-pointer types. Each overload appends the formatted
- * value — together with an appropriate type suffix where applicable — to
- * the internal string buffer.
+ * boolean, and null-pointer types, `std::nullopt`, and the `c_string` and
+ * `named_bool` operands. Each overload appends the formatted value —
+ * together with an appropriate type suffix where applicable — to the
+ * internal string buffer. It also contains the private helpers that
+ * write the decimal point, the suffixes, and the characters, and the
+ * functions that assign the buffer to the checks.
  *
  * All definitions reside within the
- * `micro_os_plus::micro_test_plus` namespace.
+ * `micro_os_plus::micro_test_plus::detail` namespace.
  *
  * This file must be included when building the µTest++ library.
  */
@@ -57,6 +60,18 @@ namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @brief Local helpers of the expression formatter.
+   *
+   * @details
+   * The unnamed namespace gives the helpers internal linkage, so that they
+   * are visible only in this translation unit, and cannot conflict with
+   * the names of the application or of the other source files of the
+   * framework. They are not declared in any header.
+   *
+   * It contains `append_hex()`, which writes the hexadecimal escapes of
+   * the characters that cannot be printed as they are.
+   */
   namespace
   {
     /**

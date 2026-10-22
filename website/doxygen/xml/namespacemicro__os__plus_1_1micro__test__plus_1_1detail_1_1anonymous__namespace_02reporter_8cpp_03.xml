@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a1ffff9ae8f2024f3bff18ec45b2baaf9" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::fragment_size</definition>
+        <argsstring></argsstring>
+        <name>fragment_size</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::fragment_size</qualifiedname>
+        <initializer>= 21 + (std::numeric_limits&lt;size_t&gt;::digits10 + 1)</initializer>
+        <briefdescription>
+<para>Size of the array that receives a fragment of the totals. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Large enough for <computeroutput>", N test cases failed"</computeroutput>, the longest fragment (20 characters and the count), and the terminator, with the count of the largest <computeroutput>size_t</computeroutput> value (10 digits on 32-bit targets, 20 on 64-bit ones, as in <computeroutput>", 18446744073709551615 test cases failed"</computeroutput>). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" line="687" column="22" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="688" bodyend="-1"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a0d696f5039163e76ec2e4005980ca285" compoundref="reporter_8cpp" startline="721" endline="733">format_skipped</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a0d696f5039163e76ec2e4005980ca285" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::format_skipped</definition>
+        <argsstring>(size_t count, char(&amp;message)[fragment_size])</argsstring>
+        <name>format_skipped</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::format_skipped</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>char(&amp;)</type>
+          <declname>message</declname>
+          <array>[fragment_size]</array>
+        </param>
+        <briefdescription>
+<para>Formats the number of items skipped by the filter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The text is <computeroutput>", &lt;count&gt; skipped"</computeroutput>, appended to the count of the items, or empty when no item was skipped, so that the totals lines of the runs without a filter are not longer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of skipped items. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character array that receives the null-terminated text. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" line="721" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="721" bodyend="733"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a0d696f5039163e76ec2e4005980ca285" compoundref="reporter_8cpp" startline="721" endline="733">format_skipped</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a1ffff9ae8f2024f3bff18ec45b2baaf9" compoundref="reporter_8cpp" startline="688">fragment_size</references>
+        <references refid="detail_8h_1aaec16ed032c8fc52ba753a273b788381" compoundref="detail_8h" startline="95">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a0d696f5039163e76ec2e4005980ca285" compoundref="reporter_8cpp" startline="721" endline="733">format_skipped</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a25afc917399bf6d116b401e47ca8a4d5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::plural</definition>
+        <argsstring>(size_t count) noexcept</argsstring>
+        <name>plural</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::plural</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Returns the plural suffix for a count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The totals lines are in English, where only the count 1 takes the singular form.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The count that precedes the noun. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>""</computeroutput> for 1, and <computeroutput>"s"</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" line="701" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="701" bodyend="704"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a25afc917399bf6d116b401e47ca8a4d5" compoundref="reporter_8cpp" startline="701" endline="704">plural</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a25afc917399bf6d116b401e47ca8a4d5" compoundref="reporter_8cpp" startline="701" endline="704">plural</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a78d7c9fe8e59d559bf67bc55e7c52040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::write_without_colours</definition>
+        <argsstring>(FILE *file, std::string_view text)</argsstring>
+        <name>write_without_colours</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::write_without_colours</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Writes a text to a file, without the ANSI colour sequences. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The text may contain ANSI colour sequences, added when the console is a terminal, which must not reach the file. They are removed while writing: each <computeroutput>ESC [</computeroutput>, followed by any digits and semicolons, and terminated by <computeroutput>m</computeroutput>, is skipped, and the text between the sequences is written unchanged. Any other use of <computeroutput>ESC</computeroutput> is written as is. No line ending is appended.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file to write to; must not be null. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to write. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" line="113" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="113" bodyend="145"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a78d7c9fe8e59d559bf67bc55e7c52040" compoundref="reporter_8cpp" startline="113" endline="145">write_without_colours</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a78d7c9fe8e59d559bf67bc55e7c52040" compoundref="reporter_8cpp" startline="113" endline="145">write_without_colours</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Local helpers of the reporter base class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The unnamed namespace gives the helpers internal linkage, so that they are visible only in this translation unit, and cannot conflict with the names of the application or of the other source files of the framework. They are not declared in any header.</para>
+<para>The namespace is opened twice in this file, each time before the code that uses its helpers; Doxygen merges the two parts. The first part contains <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a78d7c9fe8e59d559bf67bc55e7c52040" kindref="member">write_without_colours()</ref></computeroutput>, which copies the console output to the output file. The second part contains the helpers of the totals lines: <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a1ffff9ae8f2024f3bff18ec45b2baaf9" kindref="member">fragment_size</ref></computeroutput>, <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a25afc917399bf6d116b401e47ca8a4d5" kindref="member">plural()</ref></computeroutput>, and <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a0d696f5039163e76ec2e4005980ca285" kindref="member">format_skipped()</ref></computeroutput>. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" line="94" column="3"/>
+  </compounddef>
+</doxygen>

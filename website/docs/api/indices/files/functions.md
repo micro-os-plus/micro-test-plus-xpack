@@ -20,103 +20,119 @@ keywords:
 ## - _ -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga8b43b7658b43fb76daf5efbb2e03d236"><b>_and()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gad9ad936174faf965cffe4493e2b64cf0"><b>_not()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gad32b40e4b0022b276fa3b357b98a33c5"><b>_or()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga9998cd63972fac8b24a2f0138322e7c1"><b>_and()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gaa465723bc4fe309f15d30a4e7207d40f"><b>_not()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga1c7ddbf53764ab67240f1cf0e0fb4b8d"><b>_or()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 </ul>
 <p>3 entries</p>
 
 ## - A -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85"><b>abs()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a9c99a7907fdca67f8fc1f7b18b516ff1"><b>and_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#aa3885b7b361bc6af9e7a52fa6dcc78a1"><b>append_number_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a515f68bbb31d64d07810f45f3b1118f6"><b>abs()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#abaf649db5561610c2f8bea816f2683d3"><b>and_op()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-/#a2736611c9676822f8e948dc473f748f1"><b>append_hex()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">src/expression-formatter.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3abe0c9c597c7fe04a5f101022ecea5d"><b>append_number()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a622a2bb23e2c98ecfa3a2ccb53e19910"><b>append_pointer()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a933e64cbdd20aa8b1f0968965cf260a4"><b>approx_op()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gacae776e46a799b81af859ba9bb74e7d0"><b>approx()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe47800a219b00fcccf0a1dc596dbe20"><b>approx()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b"><b>as_operand()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+</ul>
+<p>9 entries</p>
+
+## - B -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a6abb44ef8226b1f80aad8010b5ef1a5c"><b>bind_callable()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga8c9c770da2ef632dec29c502651cb160"><b>both()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+</ul>
+<p>2 entries</p>
+
+## - C -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ab32427ede730747da86165a2965903a2"><b>compare_op()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#accba38bf51d261f330b594ca121e6f75"><b>count_decimals()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#af295fc92026927f8a453248655e7862e"><b>count_literal_digits()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
 </ul>
 <p>3 entries</p>
 
 ## - D -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98"><b>den_size()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079"><b>den_size()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782"><b>den()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#ae474285acf7f49d66bb721b8ab5f8fa8"><b>decimal_epsilon()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f"><b>den_size()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211"><b>den()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a7ce90ae12eac430cf58becac530b92b2"><b>differ_by_less_than()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
 </ul>
-<p>3 entries</p>
+<p>4 entries</p>
 
 ## - E -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#accd8ecc7473b09af578daa31bb8780eb"><b>endl()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3c134d5164d17cade8ff3f6de49c5e6b"><b>eq_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3"><b>eq()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gabdb021d3d6a5759cd2a5f502b2514dea"><b>eq()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gab9fbb94dec947fa60052531743114fa9"><b>either()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a18e81b3839468cd82ad9c394d88a0e02"><b>endl()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gaa7c7b6a7ad32856edc235a05e77d8c7f"><b>eq()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#ga791f22f0c85b6436c9016821907b0653"><b>extract_file_name()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/utility-h">include/micro-os-plus/micro-test-plus/utility.h</a></li>
 </ul>
-<p>5 entries</p>
+<p>4 entries</p>
+
+## - F -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-/#a0d696f5039163e76ec2e4005980ca285"><b>format_skipped()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
+</ul>
 
 ## - G -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#aded574b3efc7cfe142d34541e0ef71a5"><b>ge_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8"><b>ge()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#ga3957927d25a61348b639fe01aab11258"><b>ge()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343"><b>get()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a9b9cf4ed2f2e67ddd24b1f2771675f4f"><b>gt_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e"><b>gt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gae8a4dcd7ebf01cdfa7e46540cd6522fa"><b>gt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gab8da4228bc9a820546753b018a129a7e"><b>ge()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#ga9ae8e4747ff029faa7378110c8680278"><b>gt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 </ul>
-<p>7 entries</p>
+<p>2 entries</p>
 
 ## - I -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a7d5ad50c71915516060558e8f7f22bf9"><b>indent()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac6a624fe83a51361f31de016875fdb27"><b>indent()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a4f5af9be6a23a49f942e72de92adc91e"><b>integer_magnitude()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40"><b>integral_literal()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/values-h">include/micro-os-plus/micro-test-plus/values.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#gaa2f0f4cff320a783ad2347c9ff3fc731"><b>is_match()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/utility-h">include/micro-os-plus/micro-test-plus/utility.h</a></li>
 </ul>
-<p>2 entries</p>
+<p>4 entries</p>
 
 ## - L -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a1046941e8fddcb180ce30cc9efd2fb07"><b>le_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56"><b>le()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gaf8716c55446af28b090eb49acd8cf131"><b>le()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac93b3c5d42203345061f87bf2e794b07"><b>lt_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed"><b>lt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#ga047738c301c4c6b6c7fdb535aecfe097"><b>lt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gae695dd46840f76a156aee70ff4df33fa"><b>le()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#ga714ff07cd77e05898de4fd315770f901"><b>lt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 </ul>
-<p>6 entries</p>
+<p>2 entries</p>
 
 ## - M -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a2d07ed276b3f0d461e5b856ec24afcb4"><b>min_value()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#ga00ea8f3dfb7cb0ef39919065321cf62f"><b>mut()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a67e71e2dce0120ad4839635830e80de8"><b>min_value()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
 </ul>
-<p>2 entries</p>
 
 ## - N -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a887b0a1dcb769d9b07caeda9f00a2bd1"><b>ne_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f"><b>ne()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#ga172f305bbeaf8b965681f76c16a39516"><b>ne()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ae744b884d8e43bf196c35c31929a3efc"><b>not_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#ga5bf176ef730172592095657417e5f039"><b>ne()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga6a0bb2654eb89c1b0a35134e8738eeb1"><b>negate()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148"><b>nothrow()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/exceptions-h">include/micro-os-plus/micro-test-plus/exceptions.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290"><b>num()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402"><b>num()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
 </ul>
-<p>6 entries</p>
+<p>4 entries</p>
 
 ## - O -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaa188c33047f559e28dc95dbb465e19a8"><b>operator and()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga00db5f149865ed9fd8d73f2db44542b0"><b>operator not()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga0fe9ef52ecfb0de402da9e7454d7c20b"><b>operator or()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga445025eccd3ef529af191aab5aad91a9"><b>operator!=()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-container-operators/#gac2449b2b9f07c550b1218456ba1da2db"><b>operator!=()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-string-operators/#ga179e971d5e37795c036ad66aa35f1654"><b>operator!=()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gad47ea22957940a08ff56104d3c0c16f7"><b>operator and()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga1d79c807e0d12684f1a850d7269c077b"><b>operator not()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gac008174d3b00512dc53b3e9e26ed45ec"><b>operator or()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga0cc55025bbf6cac2f1b64242784559cb"><b>operator!=()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaa2bfc74376f8c110053bfa6e06e40772"><b>operator""_b()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae521cebfd48332f44d01e4f880b4aafa"><b>operator""_c()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da"><b>operator""_d()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h</a></li>
@@ -140,27 +156,34 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaef96b19b140b5007ec33a944c3b72cae"><b>operator""_ul()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga01adcd3866da43c393b7fba8a5e72bb2"><b>operator""_ull()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9017debdc1eafd64e3c53c80157ad6f5"><b>operator""_us()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga675d31a23d8f0dfed775466ef1463a80"><b>operator<()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga15235adceff30c6e3aa382696aea23cb"><b>operator<=()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaae177a6c59286d4d7e4f85ffa6579e56"><b>operator==()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-container-operators/#gab8c44f8115524296fbaf21688dd7f389"><b>operator==()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-string-operators/#gaabe34a842bf38ea2913a4164d2b0a9cb"><b>operator==()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gac0afc8d658f73e3b5f136a5c60d1fbd1"><b>operator>()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gabfc165fd00e9f53bbf7b63f71b9d5020"><b>operator>=()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2131bdcfa50aa796ae4a19a78558efa9"><b>or_()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga1d1c66d2cce699e0e64d8307e3951090"><b>operator<()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaa0bcc006277ab947cf9ff7f13ab9b8ed"><b>operator<=()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afa8a96f9fca4c7dceae1ee9e02a9861c"><b>operator<=>()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3a06e7992caa3dfc9355a34369486c86"><b>operator<=>()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3461b586a0b0e6146681ccda9dbb49b4"><b>operator==()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a81530e9e1a17d43a930a16a504af9912"><b>operator==()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a28646b3e1ddd2792546f303b6b65ad92"><b>operator==()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga6f2d36e79581db77f3aa9f8d7a958c78"><b>operator==()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaa7e34201bb41a287742c3c08a88924d3"><b>operator>()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga9d9f5f30c7d8973ef7ccd6f52f0cbd21"><b>operator>=()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a92a38209445666c9fdab2d9fb189cff0"><b>or_op()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 </ul>
-<p>37 entries</p>
+<p>38 entries</p>
 
 ## - P -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced"><b>pow()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a9292deab69ef8584bc2604e76316ecfd"><b>parse_integer_literal()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-/#a25afc917399bf6d116b401e47ca8a4d5"><b>plural()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a121fbc662b8263c3b9ce605456fbc7d5"><b>pow()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a5be372c9ff2b04cef7d12f215d0a194f"><b>predicate_op()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 </ul>
+<p>4 entries</p>
 
 ## - R -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ace6dc3e539bce5fdcce2741856b16b16"><b>register_static_suite()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-/#a34225dca0ef5b70eb98c8eeaa3a05b06"><b>read_clock()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">src/stopwatch.cpp</a></li>
 </ul>
 
 ## - S -
@@ -174,17 +197,40 @@ keywords:
 ## - T -
 
 <ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/#aec79a35b7936b91bee63d9baf4f8c861"><b>tap_text()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">src/reporter-tap.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#acb0858a0ba8b635ff89c4cb00c532ce8"><b>test_each_value()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#ga8bf54756e4122c6a0bd123b4621e60e2"><b>throws()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/exceptions-h">include/micro-os-plus/micro-test-plus/exceptions.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5"><b>throws()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/exceptions-h">include/micro-os-plus/micro-test-plus/exceptions.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a9179be566c21dc8241d8e9f99f69e2bc"><b>to_runner()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26"><b>type_name()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">include/micro-os-plus/micro-test-plus/reflection.h</a></li>
 </ul>
-<p>4 entries</p>
+<p>5 entries</p>
+
+## - U -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a59eb53c96f68d26635c13df53b358ac8"><b>unwrap()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a5ab08a688b0f89e017e0d90a6a18ff8d"><b>unwrap()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+</ul>
+<p>2 entries</p>
+
+## - W -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a6c5237ff6944278e8c5e3294cf99a3b9"><b>within_tolerance()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-/#a78d7c9fe8e59d559bf67bc55e7c52040"><b>write_without_colours()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
+</ul>
+<p>2 entries</p>
+
+## - Y -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/#ae344ed13847263c08e39a3e9266c0109"><b>yaml_double_quoted()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">src/reporter-tap.cpp</a></li>
+</ul>
 <br/>
-<p>Total: 82 entries.</p>
+<p>Total: 94 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -1,6 +1,7 @@
 var dir_b34942af1e28075bba4d79bf44077044 =
 [
-    [ "deferred-reporter-inlines.h", "deferred-reporter-inlines_8h.html", null ],
+    [ "check-result-inlines.h", "check-result-inlines_8h.html", null ],
+    [ "counters-inlines.h", "counters-inlines_8h.html", null ],
     [ "detail-inlines.h", "detail-inlines_8h.html", "detail-inlines_8h" ],
     [ "exceptions-inlines.h", "exceptions-inlines_8h.html", "exceptions-inlines_8h" ],
     [ "expression-formatter-inlines.h", "expression-formatter-inlines_8h.html", null ],
@@ -11,9 +12,8 @@ var dir_b34942af1e28075bba4d79bf44077044 =
     [ "reflection-inlines.h", "reflection-inlines_8h.html", "reflection-inlines_8h" ],
     [ "reporter-inlines.h", "reporter-inlines_8h.html", "reporter-inlines_8h" ],
     [ "runner-inlines.h", "runner-inlines_8h.html", null ],
-    [ "runner-totals-inlines.h", "runner-totals-inlines_8h.html", null ],
+    [ "stopwatch-inlines.h", "stopwatch-inlines_8h.html", null ],
     [ "test-inlines.h", "test-inlines_8h.html", "test-inlines_8h" ],
-    [ "timings-inlines.h", "timings-inlines_8h.html", null ],
-    [ "type-traits-inlines.h", "type-traits-inlines_8h.html", null ],
-    [ "utility-inlines.h", "utility-inlines_8h.html", "utility-inlines_8h" ]
+    [ "utility-inlines.h", "utility-inlines_8h.html", "utility-inlines_8h" ],
+    [ "values-inlines.h", "values-inlines_8h.html", "values-inlines_8h" ]
 ];

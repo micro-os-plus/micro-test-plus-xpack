@@ -8,13 +8,14 @@ more related components:
 
 - `check-result.cpp` — `check_result` construction and reporting
 - `counters.cpp` — `counters` accumulation and `operator+=`
-- `expression-formatter.cpp` - stream implementation for expressions
-- `reflection.cpp` — `reflection::short_name()` implementation
+- `expression-formatter.cpp` — non-template `operator<<` overloads of the
+  expression formatter, and the texts of the pending checks
+- `reflection.cpp` — deprecated `reflection::short_name()`
 - `reporter-human.cpp` — human-readable reporter implementation
 - `reporter-tap.cpp` — TAP-format reporter implementation
 - `reporter.cpp` — base `reporter` class and `operator<<` overloads
-- `runner.cpp` — `runner` and `static_runner` constructors, suite
-  registration, and `run()`
+- `runner.cpp` — `runner` constructors, option parsing, suite
+  registration, `run()`, and `abort()`
 - `stopwatch.cpp` — `stopwatch` clock readings and elapsed-time
   computation
 - `test.cpp` — `suite`, `top_suite`, `static_suite`, and `test_case`

@@ -25,12 +25,26 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/deferred-reporter-cpp">deferred-reporter.cpp</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">check-result.cpp</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ deferred reporter methods. <a href="/micro-test-plus-xpack/docs/api/files/src/deferred-reporter-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ check result member functions. <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/counters-cpp">counters.cpp</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>C++ source file with implementations for the µTest++ counters member functions. <a href="/micro-test-plus-xpack/docs/api/files/src/counters-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -72,7 +86,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ human test reporter methods. <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ human test reporter member functions. <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -86,7 +100,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ TAP test reporter methods. <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ TAP test reporter member functions. <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -100,21 +114,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ test reporter methods. <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/runner-totals-cpp">runner-totals.cpp</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ runner totals methods. <a href="/micro-test-plus-xpack/docs/api/files/src/runner-totals-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ test reporter member functions. <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -128,7 +128,21 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ test runner methods. <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ test runner member functions. <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">stopwatch.cpp</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>C++ source file with implementations for the µTest++ stopwatch. <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -142,21 +156,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ test hierarchy methods. <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ timings methods. <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ test hierarchy member functions. <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -188,21 +188,21 @@ keywords:
 
 
 <ul class="doxyList ">
-<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/deferred-reporter-cpp">deferred-reporter.cpp</a></span> — deferred check-result reporting helper</li>
-<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a></span> - stream implementation for expressions</li>
-<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp">reflection.cpp</a></span> — <span class="doxyComputerOutput">reflection::short_name()</span> implementation</li>
+<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">check-result.cpp</a></span> — <span class="doxyComputerOutput">check_result</span> construction and reporting</li>
+<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/counters-cpp">counters.cpp</a></span> — <span class="doxyComputerOutput">counters</span> accumulation and <span class="doxyComputerOutput">operator+=</span></li>
+<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a></span> — non-template <span class="doxyComputerOutput">operator&lt;&lt;</span> overloads of the expression formatter, and the texts of the pending checks</li>
+<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp">reflection.cpp</a></span> — deprecated <span class="doxyComputerOutput">reflection::short_name()</span></li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a></span> — human-readable reporter implementation</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">reporter-tap.cpp</a></span> — TAP-format reporter implementation</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a></span> — base <span class="doxyComputerOutput">reporter</span> class and <span class="doxyComputerOutput">operator&lt;&lt;</span> overloads</li>
-<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/runner-totals-cpp">runner-totals.cpp</a></span> — <span class="doxyComputerOutput">runner_totals</span> accumulation and <span class="doxyComputerOutput">operator+=</span></li>
-<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">runner.cpp</a></span> — <span class="doxyComputerOutput">runner</span> and <span class="doxyComputerOutput">static_runner</span> constructors, suite registration, and <span class="doxyComputerOutput">exit_code()</span></li>
-<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp">test.cpp</a></span> — <span class="doxyComputerOutput">suite</span>, <span class="doxyComputerOutput">top_suite</span>, <span class="doxyComputerOutput">static_suite</span>, and <span class="doxyComputerOutput">subtest</span> lifecycle methods</li>
-<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a></span> — <span class="doxyComputerOutput">timestamp</span> and elapsed-time computation</li>
+<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">runner.cpp</a></span> — <span class="doxyComputerOutput">runner</span> constructors, option parsing, suite registration, <span class="doxyComputerOutput">run()</span>, and <span class="doxyComputerOutput">abort()</span></li>
+<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">stopwatch.cpp</a></span> — <span class="doxyComputerOutput">stopwatch</span> clock readings and elapsed-time computation</li>
+<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp">test.cpp</a></span> — <span class="doxyComputerOutput">suite</span>, <span class="doxyComputerOutput">top_suite</span>, <span class="doxyComputerOutput">static_suite</span>, and <span class="doxyComputerOutput">test_case</span> lifecycle methods</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp">utility.cpp</a></span> — <span class="doxyComputerOutput">extract_file_name()</span> and <span class="doxyComputerOutput">is_match()</span> helpers</li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -12,8 +12,8 @@ comparisons. However, when specialised µTest++ operators are used with
 typed operands, failed checks display both actual and expected values,
 greatly improving report clarity.
 
-These operators are restricted to operands derived from the local
-`detail::op` type. For constant values, this is achieved with provided
+These operators are restricted to the framework types (see
+`extension::is_op`). For constant values, this is achieved with provided
 literals (for example, `1_i`), whilst dynamic values can be wrapped with
 converters such as `mt::to_i{expression}`. When neither operand is of
 such a type, the standard operators are selected; they return a plain
@@ -33,9 +33,11 @@ conditions to be composed naturally and readably.
 @par Examples
 
 @code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
 ts.test ("Operators", [] (auto& t) {
-  using namespace micro_test_plus::operators;
-  using namespace micro_test_plus::literals;
+  using namespace mt::operators;
+  using namespace mt::literals;
 
   t.expect (compute_answer () == 42_i) << "answer is 42 (with literal)";
   t.expect (mt::to_i {compute_answer ()} == 42) << "answer is 42 (with cast)";
@@ -55,9 +57,11 @@ allowing complex test conditions to be composed naturally and readably.
 @par Example
 
 @code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
 ts.test ("Logical operators", [] (auto& t) {
-  using namespace micro_test_plus::operators;
-  using namespace micro_test_plus::literals;
+  using namespace mt::operators;
+  using namespace mt::literals;
 
   t.expect (compute_answer () == 42_i && compute_float () == 42.0_f);
 });

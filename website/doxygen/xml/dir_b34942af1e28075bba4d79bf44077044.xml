@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="dir_b34942af1e28075bba4d79bf44077044" kind="dir">
     <compoundname>inlines</compoundname>
-    <innerfile refid="deferred-reporter-inlines_8h">deferred-reporter-inlines.h</innerfile>
+    <innerfile refid="check-result-inlines_8h">check-result-inlines.h</innerfile>
+    <innerfile refid="counters-inlines_8h">counters-inlines.h</innerfile>
     <innerfile refid="detail-inlines_8h">detail-inlines.h</innerfile>
     <innerfile refid="exceptions-inlines_8h">exceptions-inlines.h</innerfile>
     <innerfile refid="expression-formatter-inlines_8h">expression-formatter-inlines.h</innerfile>
@@ -13,16 +14,15 @@
     <innerfile refid="reflection-inlines_8h">reflection-inlines.h</innerfile>
     <innerfile refid="reporter-inlines_8h">reporter-inlines.h</innerfile>
     <innerfile refid="runner-inlines_8h">runner-inlines.h</innerfile>
-    <innerfile refid="runner-totals-inlines_8h">runner-totals-inlines.h</innerfile>
+    <innerfile refid="stopwatch-inlines_8h">stopwatch-inlines.h</innerfile>
     <innerfile refid="test-inlines_8h">test-inlines.h</innerfile>
-    <innerfile refid="timings-inlines_8h">timings-inlines.h</innerfile>
-    <innerfile refid="type-traits-inlines_8h">type-traits-inlines.h</innerfile>
     <innerfile refid="utility-inlines_8h">utility-inlines.h</innerfile>
+    <innerfile refid="values-inlines_8h">values-inlines.h</innerfile>
     <briefdescription>
 <para>Folder with C++ header files containing inline µTest++ implementations. </para>
     </briefdescription>
     <detaileddescription>
-<para>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core library components, including the deferred reporter, function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, test suites, and utility functions.</para>
+<para>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core library components, including the check results, function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, test suites, utility functions, and value wrappers.</para>
 <para>By separating inline implementations from their corresponding declarations, this structure promotes modularity, clarity, and maintainability within the codebase. All inline definitions are designed to be lightweight and efficient, supporting both embedded and general C++ development.</para>
 <para>The contents of this folder are intended solely for internal use within the library and should not be included directly by user code.  </para>
     </detaileddescription>

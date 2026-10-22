@@ -44,7 +44,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Enable trace in constructors and destructors in µTest++. <a href="#ga27bb1b9066b162d868e0b1c557b91e0d">More...</a></p>
+<p>Enables the trace messages of the µTest++ constructors and destructors. <a href="#ga27bb1b9066b162d868e0b1c557b91e0d">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -58,7 +58,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Enable trace in class methods in µTest++. <a href="#ga039219e6edfdcaa8a5e07badd7f4830d">More...</a></p>
+<p>Enables the trace messages of the µTest++ member functions. <a href="#ga039219e6edfdcaa8a5e07badd7f4830d">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -100,15 +100,15 @@ keywords:
 <p>Enables the µTest++ Testing Framework.</p>
 
 
-<p>...</p>
+<p>Must be defined by the application, in <span class="doxyComputerOutput">micro-os-plus/project-config.h</span>, in <span class="doxyComputerOutput">micro-os-plus/micro-test-plus-defines.h</span>, or on the compiler command line. Without it, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a></span> declares nothing and the library sources compile to nothing.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00080">80</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00076">76</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3dd1e70998580fe7d7f410e5cd83879b">80</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3dd1e70998580fe7d7f410e5cd83879b">76</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span></span></div>
 
 </div>
 
@@ -133,18 +133,18 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Enable trace in constructors and destructors in µTest++.</p>
+<p>Enables the trace messages of the µTest++ constructors and destructors.</p>
 
 
-<p>Display trace messages in constructors and destructors in the µTest++ Testing Framework when MICRO_OS_PLUS_DIAG_TRACE_ENABLED is present.</p>
+<p>Displays trace messages in the constructors and destructors of the µTest++ Testing Framework, through <span class="doxyComputerOutput">trace::printf()</span>, which writes them only when <span class="doxyComputerOutput">MICRO_OS_PLUS_DIAG_TRACE_ENABLED</span> is also defined.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00082">82</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00078">78</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga27bb1b9066b162d868e0b1c557b91e0d">82</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga27bb1b9066b162d868e0b1c557b91e0d">78</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></span></div>
 
 </div>
 
@@ -169,18 +169,18 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Enable trace in class methods in µTest++.</p>
+<p>Enables the trace messages of the µTest++ member functions.</p>
 
 
-<p>Display trace messages in the µTest++ Testing Framework when MICRO_OS_PLUS_DIAG_TRACE_ENABLED is present.</p>
+<p>Displays trace messages in the member functions of the µTest++ Testing Framework, through <span class="doxyComputerOutput">trace::printf()</span>, which writes them only when <span class="doxyComputerOutput">MICRO_OS_PLUS_DIAG_TRACE_ENABLED</span> is also defined.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00081">81</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00077">77</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga039219e6edfdcaa8a5e07badd7f4830d">81</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga039219e6edfdcaa8a5e07badd7f4830d">77</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</span></span></div>
 
 </div>
 
@@ -191,6 +191,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -34,12 +34,12 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaa188c33047f559e28dc95dbb465e19a8">operator and</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gad47ea22957940a08ff56104d3c0c16f7">operator and</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Logical <span class="doxyComputerOutput">&amp;&amp;</span> (and) operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaa188c33047f559e28dc95dbb465e19a8">More...</a></p>
+<p>Logical <span class="doxyComputerOutput">&amp;&amp;</span> (and) operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gad47ea22957940a08ff56104d3c0c16f7">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -51,12 +51,12 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga00db5f149865ed9fd8d73f2db44542b0">operator not</a> (const T &amp;t)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga1d79c807e0d12684f1a850d7269c077b">operator not</a> (T &amp;&amp;t)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Logical <span class="doxyComputerOutput">!</span> (not) operator. Matches only if the operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga00db5f149865ed9fd8d73f2db44542b0">More...</a></p>
+<p>Logical <span class="doxyComputerOutput">!</span> (not) operator. Matches only if the operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga1d79c807e0d12684f1a850d7269c077b">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -68,12 +68,12 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga0fe9ef52ecfb0de402da9e7454d7c20b">operator or</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gac008174d3b00512dc53b3e9e26ed45ec">operator or</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Logical <span class="doxyComputerOutput">||</span> (or) operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga0fe9ef52ecfb0de402da9e7454d7c20b">More...</a></p>
+<p>Logical <span class="doxyComputerOutput">||</span> (or) operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gac008174d3b00512dc53b3e9e26ed45ec">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -85,12 +85,12 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga445025eccd3ef529af191aab5aad91a9">operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga0cc55025bbf6cac2f1b64242784559cb">operator!=</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Non-equality operator for custom types. Matches only if at least one operand is of local type. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga445025eccd3ef529af191aab5aad91a9">More...</a></p>
+<p>Non-equality operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga0cc55025bbf6cac2f1b64242784559cb">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -102,26 +102,12 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-container-operators/#gac2449b2b9f07c550b1218456ba1da2db">operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga1d1c66d2cce699e0e64d8307e3951090">operator&lt;</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Non-equality operator for containers. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-container-operators/#gac2449b2b9f07c550b1218456ba1da2db">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-string-operators/#ga179e971d5e37795c036ad66aa35f1654">operator!=</a> (std::string_view lhs, std::string_view rhs)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Non-equality operator for <span class="doxyComputerOutput">string_view</span> objects. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-string-operators/#ga179e971d5e37795c036ad66aa35f1654">More...</a></p>
+<p>Less than operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga1d1c66d2cce699e0e64d8307e3951090">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -133,12 +119,12 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga675d31a23d8f0dfed775466ef1463a80">operator&lt;</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaa0bcc006277ab947cf9ff7f13ab9b8ed">operator&lt;=</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Less than operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga675d31a23d8f0dfed775466ef1463a80">More...</a></p>
+<p>Less than or equal operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaa0bcc006277ab947cf9ff7f13ab9b8ed">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -150,12 +136,12 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga15235adceff30c6e3aa382696aea23cb">operator&lt;=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga6f2d36e79581db77f3aa9f8d7a958c78">operator==</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Less than or equal operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga15235adceff30c6e3aa382696aea23cb">More...</a></p>
+<p>Equality operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga6f2d36e79581db77f3aa9f8d7a958c78">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -167,12 +153,12 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaae177a6c59286d4d7e4f85ffa6579e56">operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaa7e34201bb41a287742c3c08a88924d3">operator&gt;</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Equality operator for custom types. Matches only if at least one operand is of local type. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaae177a6c59286d4d7e4f85ffa6579e56">More...</a></p>
+<p>Greater than operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gaa7e34201bb41a287742c3c08a88924d3">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -184,60 +170,12 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-container-operators/#gab8c44f8115524296fbaf21688dd7f389">operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga9d9f5f30c7d8973ef7ccd6f52f0cbd21">operator&gt;=</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Equality operator for containers. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-container-operators/#gab8c44f8115524296fbaf21688dd7f389">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-string-operators/#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a> (std::string_view lhs, std::string_view rhs)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Equality operator for <span class="doxyComputerOutput">string_view</span> objects. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-string-operators/#gaabe34a842bf38ea2913a4164d2b0a9cb">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gac0afc8d658f73e3b5f136a5c60d1fbd1">operator&gt;</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Greater than operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gac0afc8d658f73e3b5f136a5c60d1fbd1">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gabfc165fd00e9f53bbf7b63f71b9d5020">operator&gt;=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Greater than or equal operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#gabfc165fd00e9f53bbf7b63f71b9d5020">More...</a></p>
+<p>Greater than or equal operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#ga9d9f5f30c7d8973ef7ccd6f52f0cbd21">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -254,7 +192,7 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">micro_os_plus::micro_test_plus::operators</a></span> namespace provides a comprehensive set of custom operator overloads designed to enable expressive, concise, and type-safe test assertions within the µTest++ framework.</p>
 
 
-<p>This namespace includes equality, inequality, relational, and logical operators tailored for use with the framework’s custom types, containers, and string views. These operators facilitate the creation of clear and readable test expressions, supporting both strongly-typed constants (via user-defined literals) and dynamic values (via wrappers).</p>
+<p>This namespace includes equality, inequality, relational, and logical operators tailored for use with the framework’s custom types. These operators facilitate the creation of clear and readable test expressions, supporting both strongly-typed constants (via user-defined literals) and dynamic values (via wrappers).</p>
 
 
 
@@ -263,7 +201,13 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 :::
 
 
-<p>To minimise conflicts with application-defined operators, these overloads are enabled only for specific types recognised by the framework, such as those derived from the local <span class="doxyComputerOutput">op</span> base type or identified as containers or string views. Constants typically require a literal suffix (e.g., <span class="doxyComputerOutput">1<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga1613ccf081248c601bed0f3022fba652">_i</a></span>), while dynamic values should be wrapped using the provided casting utilities (e.g., <span class="doxyComputerOutput">mt::to_i{...}</span>).</p>
+<p>To minimise conflicts with application-defined operators, these overloads are enabled only when an operand is a framework expression or value wrapper (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). Constants typically require a literal suffix (e.g., <span class="doxyComputerOutput">1<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga8468610e763177a8f569f7d618851288">_i</a></span>), while dynamic values should be wrapped using the provided casting utilities (e.g., <span class="doxyComputerOutput">mt::to_i{...}</span>). When neither operand is of such a type, the standard operators are selected; they return a plain <span class="doxyComputerOutput">bool</span>, so a failed check cannot show the operands.</p>
+
+
+<p>The operands are forwarded, as by the function comparators: the temporaries are moved into the returned expression, and the named operands of class type, including the nested expressions, are referred to, without copies.</p>
+
+
+<p>There are no operators for strings and containers: the standard operators would be selected for <span class="doxyComputerOutput">std::string</span> objects and for containers of the same type, and the framework operators for <span class="doxyComputerOutput">std::string_view</span> objects would also replace the standard ones in the application code that follows the using directive. Use <span class="doxyComputerOutput">mt::eq()</span> and <span class="doxyComputerOutput">mt::ne()</span> to compare strings and containers.</p>
 
 
 <p>All definitions within this namespace are implemented in the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder, ensuring a modular and maintainable codebase.</p>
@@ -271,6 +215,6 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

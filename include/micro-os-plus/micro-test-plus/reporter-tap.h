@@ -18,7 +18,7 @@
  * @details
  * This header provides the declaration for `reporter_tap`, a concrete
  * implementation of the `reporter` abstract interface that formats test
- * results according to the Test Anything Protocol (TAP).
+ * results according to the Test Anything Protocol (TAP), version 14.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
@@ -79,7 +79,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * string buffer and writes it to the standard output stream.
    *
    * The reporter is created by the runner, as selected by the
-   * `--reporter` command-line option. A different output format requires
+   * `--reporter` command-line option, or by
+   * `runner_options::selected_reporter`; it is the default. A different
+   * output format requires
    * a new class derived from `reporter`, and an extension of the runner
    * to create it.
    *
@@ -151,7 +153,7 @@ namespace micro_os_plus::micro_test_plus::detail
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Mark the beginning of a test session.
+     * @brief Marks the beginning of a test session.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -161,7 +163,7 @@ namespace micro_os_plus::micro_test_plus::detail
     begin_session (const runner& runner) override;
 
     /**
-     * @brief Mark the end of a test session.
+     * @brief Marks the end of a test session.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -171,7 +173,7 @@ namespace micro_os_plus::micro_test_plus::detail
     end_session (const runner& runner) override;
 
     /**
-     * @brief Mark the beginning of a test suite.
+     * @brief Marks the beginning of a test suite.
      *
      * @param suite Reference to the test suite.
      * @par Returns
@@ -181,7 +183,7 @@ namespace micro_os_plus::micro_test_plus::detail
     begin_suite (const suite& suite) override;
 
     /**
-     * @brief Mark the end of a test suite.
+     * @brief Marks the end of a test suite.
      *
      * @param suite Reference to the test suite.
      * @par Returns
@@ -191,7 +193,7 @@ namespace micro_os_plus::micro_test_plus::detail
     end_suite (const suite& suite) override;
 
     /**
-     * @brief Report a test suite skipped by the filter.
+     * @brief Reports a test suite skipped by the filter.
      *
      * @details
      * Displays an `ok <index> - <name> # SKIP filtered` line, instead of
@@ -205,7 +207,7 @@ namespace micro_os_plus::micro_test_plus::detail
     skip_suite (const suite& suite) override;
 
     /**
-     * @brief Report a failure of a test suite outside its test cases.
+     * @brief Reports a failure of a test suite outside its test cases.
      *
      * @details
      * Adds a `not ok <n> - <message>` test point, at the indentation of
@@ -220,7 +222,7 @@ namespace micro_os_plus::micro_test_plus::detail
     fail_suite (const std::string& message, const suite& suite) override;
 
     /**
-     * @brief Mark the beginning of a test case.
+     * @brief Marks the beginning of a test case.
      *
      * @param test_case Reference to the test case.
      * @par Returns
@@ -230,7 +232,7 @@ namespace micro_os_plus::micro_test_plus::detail
     begin_test_case (const test_case& test_case) override;
 
     /**
-     * @brief Mark the end of a test case.
+     * @brief Marks the end of a test case.
      *
      * @param test_case Reference to the test case.
      * @par Returns
@@ -240,7 +242,7 @@ namespace micro_os_plus::micro_test_plus::detail
     end_test_case (const test_case& test_case) override;
 
     /**
-     * @brief Report a test case skipped by the filter.
+     * @brief Reports a test case skipped by the filter.
      *
      * @details
      * Displays an `ok <index> - <name> # SKIP filtered` line,
@@ -254,7 +256,7 @@ namespace micro_os_plus::micro_test_plus::detail
     skip_test_case (const test_case& test_case) override;
 
     /**
-     * @brief Report the abort of the test execution.
+     * @brief Reports the abort of the test execution.
      *
      * @details
      * Displays the buffered check results, followed by a `Bail out!`

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::greater</compoundname>
+    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a95a4bc88029b08f41fc35e6341718356" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::detail::greater::symbol</definition>
+        <argsstring></argsstring>
+        <name>symbol</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::greater::symbol</qualifiedname>
+        <initializer>= &quot; &gt; &quot;</initializer>
+        <briefdescription>
+<para>The operator symbol, as displayed in the failure reports. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Includes the surrounding spaces, so that the formatter appends it with a single call; a C string, not a <computeroutput>std::string_view</computeroutput>, which would take two registers at each call site and enlarge the code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="529" column="35" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="529" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a3770982b9b7025e79d30c44f8b6de981" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::greater::within_tolerance_result</definition>
+        <argsstring></argsstring>
+        <name>within_tolerance_result</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::greater::within_tolerance_result</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>The result when the operands are within the tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Values within the tolerance are equal, not ordered. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="537" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="537" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a160a3a53085ef4de1cbe0d391df9c20a" prot="public" static="yes" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::greater::apply</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>apply</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::greater::apply</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Compares the operands with <computeroutput>&gt;</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always inlined, also at <computeroutput>-O0</computeroutput>, so that the debug builds do not get one more function for each combination of operand types.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the left-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the right-hand operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of <computeroutput>lhs &gt; rhs</computeroutput>, converted to <computeroutput>bool</computeroutput>.</para>
+</simplesect>
+The using-declaration makes the standard operators visible to unqualified lookup, in addition to those found by argument-dependent lookup, and hides any <computeroutput>operator&gt;</computeroutput> of the enclosing namespaces. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="555" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="297" bodyend="301"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Greater than tag for <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">compare_op</ref></computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Defines the operator applied by <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">compare_op</ref></computeroutput>, its symbol in the failure reports, and the result when the operands are within the tolerance of the floating-point wrappers. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="519" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="520" bodyend="556"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a160a3a53085ef4de1cbe0d391df9c20a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::greater</scope><name>apply</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a95a4bc88029b08f41fc35e6341718356" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::greater</scope><name>symbol</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a3770982b9b7025e79d30c44f8b6de981" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::greater</scope><name>within_tolerance_result</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::type_traits::function_traits</compoundname>
+    <includes refid="extension_8h" local="no">extension.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Deprecated traits of the callable objects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable object; its <computeroutput>operator()</computeroutput> is inspected.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The primary template applies to the lambdas and to the function objects, and forwards to the specialisation for the type of their <computeroutput>operator()</computeroutput>. The specialisations expose the return type as <computeroutput>result_type</computeroutput>, and the parameter types as <computeroutput>args</computeroutput>, a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kindref="compound">list</ref></computeroutput>.</para>
+<para><xrefsect id="deprecated_1_deprecated000019"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="604" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="610" bodyend="611"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

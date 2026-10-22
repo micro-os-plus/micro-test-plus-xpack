@@ -83,10 +83,10 @@ Expectations are checks whose outcomes are counted and reported
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-assumptions">Assumptions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-requirements">Requirements</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Assumptions are conditions that must be satisfied for a test to proceed
+Requirements are checks that stop the test case when they fail
 </td>
 </tr>
 
@@ -127,26 +127,6 @@ Functions for verifying exceptions in test cases
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Overloaded operators for expressive test comparisons
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-string-operators">String Operators</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Overloaded operators for string comparison
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-container-operators">Container Operators</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Overloaded operators for container comparison
 </td>
 </tr>
 
@@ -206,7 +186,7 @@ Configuration macros
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command Line Options</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Options for controlling test output verbosity at run-time
+Options for controlling the test output at run time
 </td>
 </tr>
 
@@ -237,6 +217,6 @@ For comparison, the original Doxygen html pages continue to be available via the
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -101,8 +101,9 @@ namespace micro_os_plus::micro_test_plus
    * test.
    *
    * To minimise conflicts with application-defined operators, these
-   * overloads are enabled only for operands of types derived from the local
-   * `op` base type. Constants typically require a literal suffix (e.g.,
+   * overloads are enabled only when an operand is a framework expression
+   * or value wrapper (see `extension::is_op`). Constants typically
+   * require a literal suffix (e.g.,
    * `1_i`), while dynamic values should be wrapped using the provided
    * casting utilities (e.g., `mt::to_i{...}`). When neither operand is of
    * such a type, the standard operators are selected; they return a plain
@@ -128,8 +129,8 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Equality operator for custom types. Matches only if at least one
-     * operand is of local type.
+     * @brief Equality operator. Matches only if at least one operand is a
+     * framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -147,8 +148,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Non-equality operator for custom types. Matches only if at least
-     * one operand is of local type.
+     * @brief Non-equality operator. Matches only if at least one operand
+     * is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -166,8 +167,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Greater than operator. Matches only if at least one operand is of
-     * local type (derived from local `op`).
+     * @brief Greater than operator. Matches only if at least one operand is
+     * a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -186,7 +187,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Greater than or equal operator. Matches only if at least one
-     * operand is of local type (derived from local `op`).
+     * operand is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -204,8 +205,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Less than operator. Matches only if at least one operand is of
-     * local type (derived from local `op`).
+     * @brief Less than operator. Matches only if at least one operand is
+     * a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -224,7 +225,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Less than or equal operator. Matches only if at least one operand
-     * is of local type (derived from local `op`).
+     * is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -243,7 +244,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Logical `&&` (and) operator. Matches only if at least one operand
-     * is of local type (derived from local `op`).
+     * is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -262,7 +263,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
      * @brief Logical `||` (or) operator. Matches only if at least one operand
-     * is of local type (derived from local `op`).
+     * is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -280,11 +281,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Logical `!` (not) operator. Matches only if the operand is of
-     * local type (derived from local `op`).
+     * @brief Logical `!` (not) operator. Matches only if the operand is a
+     * framework type (see `extension::is_op`).
      *
-     * @tparam T Type of the operand, constrained to types derived from the
-     * local `op` base.
+     * @tparam T Type of the operand, constrained to the framework types.
      *
      * @param t Operand to be logically negated.
      * @return A logical negator object that evaluates to true if the operand

@@ -12,7 +12,7 @@ or as a `.doxyfile`.
 
 It introduces and organises the main documentation groups for the
 library, covering the C++ API, command-line options, expectations,
-assumptions, comparators, operators, literals, utility functions, and test
+requirements, comparators, operators, literals, utility functions, and test
 suite management.
 
 The documentation is structured to provide a comprehensive overview of the

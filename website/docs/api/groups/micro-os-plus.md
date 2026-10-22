@@ -51,17 +51,14 @@ keywords:
 <p>The <a href="https://micro-os-plus.github.io">µOS++ Framework</a> is the principal project within the µOS++ (micro-os-plus) ecosystem, providing a comprehensive suite of modern C++ libraries for embedded systems development.</p>
 
 
-<p>µOS++ is organised as a <b>collection of modular source libraries</b>, each maintained in its own repository on GitHub and collectively managed under the <a href="https://github.com/micro-os-plus">micro-os-plus</a> GitHub organization. This modular structure enables developers to select and integrate only the components relevant to their projects, promoting flexibility and maintainability.</p>
+<p>µOS++ is organised as a <b>collection of modular source libraries</b>, each maintained in its own repository on GitHub and collectively managed under the <a href="https://github.com/micro-os-plus">micro-os-plus</a> GitHub organisation. This modular structure enables developers to select and integrate only the components relevant to their projects.</p>
 
 
-<p>The framework covers a wide range of topics, including <b>core operating system</b> functionality, <b>POSIX I/O</b>, <b>testing</b> frameworks, <b>utilities</b>, and supporting <b>tools</b>. Detailed documentation is provided for each library, ensuring that users have access to clear guidance, usage examples, and best practices for professional embedded software development.</p>
-
-
-<p>By adopting µOS++, developers benefit from a robust, scalable, and well-documented foundation for building high-quality embedded applications.</p>
+<p>The framework covers a wide range of topics, including <b>core operating system</b> functionality, <b>POSIX I/O</b>, <b>testing</b> frameworks, utilities**, and supporting <b>tools</b>. Each library has its own documentation.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::identity</compoundname>
-    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <includes refid="extension_8h" local="no">extension.h</includes>
     <templateparamlist>
       <param>
         <type>class T</type>
@@ -21,18 +21,18 @@
         <name>type</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::identity::type</qualifiedname>
         <briefdescription>
-<para>Alias for the preserved type. </para>
+<para>The type <computeroutput>T</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>Always <computeroutput>T</computeroutput>; the <computeroutput>Extra</computeroutput> parameters do not affect it. </para>
+<para>The additional template arguments do not affect it. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="166" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="166" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="586" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="586" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Struct template for compile-time type identity. </para>
+<para>Deprecated identity type. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -40,7 +40,7 @@
 <parametername>T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type to be preserved. </para>
+<para>The type to be exposed. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -48,14 +48,15 @@
 <parametername>Extra</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Additional template parameters, ignored. The variadic <computeroutput>Extra</computeroutput> parameter pack absorbs additional type arguments that may arise during template argument deduction in some metaprogramming contexts, preventing substitution failures.</para>
+<para>Additional types, ignored.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" kindref="compound">identity</ref></computeroutput> struct template provides a mechanism for preserving a type <computeroutput>T</computeroutput> during template metaprogramming. It is commonly used to delay type evaluation or to forward types in complex template constructs within the µTest++ framework.</para>
-<para>This utility is particularly useful in scenarios where type deduction or concept constraints are required, as it allows the type to be carried through template specialisations without modification. </para>
+Exposes <computeroutput>T</computeroutput> as the member type <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity_1a6399364a09c1004ebbaab36b2d5dc0c8" kindref="member">type</ref></computeroutput>, like <computeroutput>std::type_identity</computeroutput>, which replaces it.</para>
+<para><xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput>std::type_identity</computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="158" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="159" bodyend="167"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="578" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="579" bodyend="587"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity_1a6399364a09c1004ebbaab36b2d5dc0c8" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::identity</scope><name>type</name></member>
     </listofallmembers>

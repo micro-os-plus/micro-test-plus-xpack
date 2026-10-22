@@ -24,7 +24,7 @@
  * µTest++ framework, encapsulated within the
  * `micro_os_plus::micro_test_plus::detail` namespace. It defines the core
  * mechanisms, helper structures, and utility templates that underpin the
- * framework's value retrieval, comparator logic, deferred reporting, and
+ * framework's value retrieval, comparator logic, operand preparation, and
  * exception checking facilities.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
@@ -124,7 +124,7 @@ namespace micro_os_plus::micro_test_plus
    * Within this namespace, one will find the value wrappers (declared in
    * `values.h`), the value unwrapping helper, comparator structures for
    * logical and relational operations, mechanisms for exception checking,
-   * and base classes for deferred reporting of test results.
+   * the reporters, the check result, and the expression formatter.
    *
    * All definitions within `detail` are intended exclusively for internal use,
    * ensuring a clear distinction between user-facing and internal components.
@@ -159,8 +159,9 @@ namespace micro_os_plus::micro_test_plus
      * `t`.
      */
     template <class T>
-    [[nodiscard]] constexpr decltype (auto)
-    unwrap (const T& t);
+    // The specifier order works around a Doxygen (1.17, 1.18) mismatch
+    // with the definition, reported as "no matching file member found".
+    [[nodiscard]] decltype (auto) constexpr unwrap (const T& t);
 
     /**
      * @brief Checks whether two operands are equal within the tolerance of
@@ -790,6 +791,11 @@ namespace micro_os_plus::micro_test_plus
      * removed by `detail::unwrap()`.
      *
      * @tparam T The type of the operand, possibly a reference.
+     *
+     * @details
+     * Without references and qualifiers; for example `int` for a `to_i`
+     * wrapper and for a `42_i` literal, and the type itself for the other
+     * operands. Used by `approx_operand`.
      */
     template <class T>
     using unwrapped_t = std::remove_cvref_t<decltype (detail::unwrap (
@@ -907,6 +913,10 @@ namespace micro_os_plus::micro_test_plus
     private:
       /**
        * @brief The stored tolerance.
+       *
+       * @details
+       * Stored as the operands are (see `stored_operand_t`), only to be
+       * reported; the result was already computed by the constructor.
        */
       Epsilon_T epsilon_;
     };
@@ -1298,8 +1308,8 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief Appends the string representation of a numeric value to a
-     * buffer, using locale-independent formatting.
+     * @brief Appends the shortest decimal representation of a numeric
+     * value to a buffer.
      *
      * @tparam T The numeric type to format.
      * @param buffer The string to append to.

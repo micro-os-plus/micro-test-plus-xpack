@@ -19,21 +19,41 @@ keywords:
 
 <p>Functions for comparing actual and expected values in tests. <a href="#details">More...</a></p>
 
+## Typedefs Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gabecc05360d0941067222d827ff8e3f08">expression_formatter</a> = detail::expression_formatter</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Public name of the formatter used to report operand values. <a href="#gabecc05360d0941067222d827ff8e3f08">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
 ## Functions Index
 
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T, class Epsilon_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gae9dfca849300a917cb1c231d275baaa3">eq</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gacae776e46a799b81af859ba9bb74e7d0">approx</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs, Epsilon_T &amp;&amp;epsilon)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Generic equality comparator for non-pointer types. <a href="#gae9dfca849300a917cb1c231d275baaa3">More...</a></p>
+<p>Approximate equality comparator, with an explicit tolerance. <a href="#gacae776e46a799b81af859ba9bb74e7d0">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -45,12 +65,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gabdb021d3d6a5759cd2a5f502b2514dea">eq</a> (Lhs_T *lhs, Rhs_T *rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Pointer equality comparator for any pointer types. <a href="#gabdb021d3d6a5759cd2a5f502b2514dea">More...</a></p>
+<p>Generic equality comparator. <a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -62,12 +82,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga34e03399670ec0b365b94b7bea788dd8">ge</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gab8da4228bc9a820546753b018a129a7e">ge</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Generic greater than or equal comparator. <a href="#ga34e03399670ec0b365b94b7bea788dd8">More...</a></p>
+<p>Generic greater than or equal comparator. <a href="#gab8da4228bc9a820546753b018a129a7e">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -79,12 +99,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga3957927d25a61348b639fe01aab11258">ge</a> (Lhs_T *lhs, Rhs_T *rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga9ae8e4747ff029faa7378110c8680278">gt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Pointer greater than or equal comparator. <a href="#ga3957927d25a61348b639fe01aab11258">More...</a></p>
+<p>Generic greater than comparator. <a href="#ga9ae8e4747ff029faa7378110c8680278">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -96,12 +116,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gae2fb681444d8256f6bf827eea6b7c29e">gt</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gae695dd46840f76a156aee70ff4df33fa">le</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Generic greater than comparator. <a href="#gae2fb681444d8256f6bf827eea6b7c29e">More...</a></p>
+<p>Generic less than or equal comparator. <a href="#gae695dd46840f76a156aee70ff4df33fa">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -113,12 +133,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gae8a4dcd7ebf01cdfa7e46540cd6522fa">gt</a> (Lhs_T *lhs, Rhs_T *rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga714ff07cd77e05898de4fd315770f901">lt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Pointer greater than comparator. <a href="#gae8a4dcd7ebf01cdfa7e46540cd6522fa">More...</a></p>
+<p>Generic less than comparator. <a href="#ga714ff07cd77e05898de4fd315770f901">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -130,97 +150,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga2b5263a5b3965855aa04971bba735a56">le</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga5bf176ef730172592095657417e5f039">ne</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Generic less than or equal comparator. <a href="#ga2b5263a5b3965855aa04971bba735a56">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gaf8716c55446af28b090eb49acd8cf131">le</a> (Lhs_T *lhs, Rhs_T *rhs)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Pointer less than or equal comparator. <a href="#gaf8716c55446af28b090eb49acd8cf131">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gac162522dcad1a6ff7c869d52d376b3ed">lt</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Generic less than comparator. <a href="#gac162522dcad1a6ff7c869d52d376b3ed">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga047738c301c4c6b6c7fdb535aecfe097">lt</a> (Lhs_T *lhs, Rhs_T *rhs)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Pointer less than comparator. <a href="#ga047738c301c4c6b6c7fdb535aecfe097">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga59e4cf59954e81bc868e62b1c5c8db1f">ne</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Generic non-equality comparator. <a href="#ga59e4cf59954e81bc868e62b1c5c8db1f">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga172f305bbeaf8b965681f76c16a39516">ne</a> (Lhs_T *lhs, Rhs_T *rhs)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Pointer non-equality comparator. <a href="#ga172f305bbeaf8b965681f76c16a39516">More...</a></p>
+<p>Generic non-equality comparator. <a href="#ga5bf176ef730172592095657417e5f039">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -234,13 +169,13 @@ keywords:
 <p>Functions for comparing actual and expected values in tests.</p>
 
 
-<p>While any boolean expression can be used in expectations and assumptions, dedicated comparator functions such as <span class="doxyComputerOutput">eq</span>, <span class="doxyComputerOutput">ne</span>, <span class="doxyComputerOutput">lt</span>, <span class="doxyComputerOutput">le</span>, <span class="doxyComputerOutput">gt</span>, and <span class="doxyComputerOutput">ge</span> provide enhanced reporting by explicitly showing the compared values when a check fails.</p>
+<p>While any boolean expression can be used in expectations and requirements, dedicated comparator functions such as <span class="doxyComputerOutput">eq</span>, <span class="doxyComputerOutput">ne</span>, <span class="doxyComputerOutput">lt</span>, <span class="doxyComputerOutput">le</span>, <span class="doxyComputerOutput">gt</span>, and <span class="doxyComputerOutput">ge</span> provide enhanced reporting by explicitly showing the compared values when a check fails.</p>
 
 
 <p>Using these comparators ensures that failed checks report both actual and expected values, making issues easier to diagnose.</p>
 
 
-<p>Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.</p>
+<p>Comparators are available for both fundamental types and standard containers. When a container comparison fails, the elements of both containers are shown.</p>
 
 
 <dl class="doxySectionUser">
@@ -270,14 +205,16 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  Check failed comparisons</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ✗ FAILED (unit-test.cpp:307, 42 != 42)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ✗ 42 != 42_i FAILED (unit-test.cpp:310, 42 != 42)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">and 42 != 42.000000))</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">Check failed comparisons</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ✗ FAILED (unit-test.cpp:307, 42 != 42)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ✗ 42 != 42_i FAILED (unit-test.cpp:310, 42 != 42)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42 and 42 != 42.0))</span></span></div>
 
 </div>
+
+
+<p>The C strings (<span class="doxyComputerOutput">char</span> arrays, including the string literals, and <span class="doxyComputerOutput">char</span> pointers) are compared by content, also with <span class="doxyComputerOutput">std::string</span> and <span class="doxyComputerOutput">std::string_view</span>, so <span class="doxyComputerOutput">mt::eq (actual, "abc")</span> checks the characters, not the addresses; a null <span class="doxyComputerOutput">char</span> pointer is equal only to another null pointer (or <span class="doxyComputerOutput">nullptr</span>), not to an empty string. The other pointers and arrays (including <span class="doxyComputerOutput">uint8_t</span> buffers) are compared by address.</p>
 
 
 <dl class="doxySectionUser">
@@ -286,7 +223,7 @@ keywords:
 </dl>
 
 
-<p>Containers can be compared for equality or inequality using the same comparator functions. Comparison is performed by iterating through each element and evaluating it individually.</p>
+<p>Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed with the standard <span class="doxyComputerOutput">==</span> operator, so the containers must be of the same type. There are no <span class="doxyComputerOutput">==</span> and <span class="doxyComputerOutput">!=</span> operators for containers in the <span class="doxyComputerOutput">operators</span> namespace, since the standard ones would be selected, and these return a plain <span class="doxyComputerOutput">bool</span>.</p>
 
 
 <dl class="doxySectionUser">
@@ -297,6 +234,8 @@ keywords:
 
 <div class="doxyProgramListing">
 
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ts.test (</span><span class="doxyHighlightStringLiteral">"Check containers"</span><span class="doxyHighlight">, [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t) {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (mt::eq (std::vector&lt;int&gt;{ 1, 2 }, std::vector&lt;int&gt;{ 1, 2 }))</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      &lt;&lt; </span><span class="doxyHighlightStringLiteral">"vector{ 1, 2 } eq vector{ 1, 2 }"</span><span class="doxyHighlight">;</span></span></div>
@@ -311,19 +250,93 @@ keywords:
 
 <div class="doxySectionDef">
 
-## Functions
+## Typedefs
 
-### eq() {#gae9dfca849300a917cb1c231d275baaa3}
+### expression\_formatter {#gabecc05360d0941067222d827ff8e3f08}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::eq (const Lhs_T &amp; lhs, const Rhs_T &amp; rhs)</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::expression_formatter = detail::expression_formatter</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Public name of the formatter used to report operand values.</p>
+
+
+<p>The function comparators and the custom operators report the values of their operands when a check fails. Values of user-defined types can be reported only if the application provides an <span class="doxyComputerOutput">operator&lt;&lt;</span> that writes them to this formatter, declared in the namespace of the type, so that it is found by argument-dependent lookup:</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">app</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">point</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> x;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> y;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  operator== (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> point&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> point&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> lhs.x == rhs.x &amp;&amp; lhs.y == rhs.y;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> mt::expression_formatter&amp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  operator&lt;&lt; (mt::expression_formatter&amp; formatter, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> point&amp; p)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> formatter &lt;&lt; </span><span class="doxyHighlightStringLiteral">"{ "</span><span class="doxyHighlight"> &lt;&lt; p.x &lt;&lt; </span><span class="doxyHighlightStringLiteral">", "</span><span class="doxyHighlight"> &lt;&lt; p.y &lt;&lt; </span><span class="doxyHighlightStringLiteral">" }"</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">} </span><span class="doxyHighlightComment">// namespace app</span></span></div>
+
+</div>
+
+
+<p>Without such an operator, comparators such as <span class="doxyComputerOutput"><a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq()</a></span> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <span class="doxyComputerOutput">expect (a == b)</span>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<span class="doxyComputerOutput">expect (a == b) &lt;&lt; "a is " &lt;&lt; a</span>).</p>
+
+
+<p>Applications use the <span class="doxyComputerOutput">operator&lt;&lt;</span> overloads, and <span class="doxyComputerOutput">str()</span> to test their own operators; the functions that manage the buffer are private to the framework.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h/#l01134">1134</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabecc05360d0941067222d827ff8e3f08">1134</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gabecc05360d0941067222d827ff8e3f08">expression_formatter</a> = <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">detail::expression_formatter</a>;</span></span></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div class="doxySectionDef">
+
+## Functions
+
+### approx() {#gacae776e46a799b81af859ba9bb74e7d0}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T, class Epsilon_T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::approx (Lhs_T &amp;&amp; lhs, Rhs_T &amp;&amp; rhs, Epsilon_T &amp;&amp; epsilon)</td>
 </tr>
 </table>
 </td>
@@ -338,7 +351,136 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Generic equality comparator for non-pointer types.</p>
+<p>Approximate equality comparator, with an explicit tolerance.</p>
+
+
+<p>The comparison succeeds if the distance between <span class="doxyComputerOutput">lhs</span> and <span class="doxyComputerOutput">rhs</span> is less than <span class="doxyComputerOutput">epsilon</span>. The operands are numbers, integral or floating-point, possibly of different types, or the framework value wrappers and numeric literals, whose own tolerance is not used. For the integers, the distance is computed exactly, also for operands of different signedness, so <span class="doxyComputerOutput"><a href="#gacae776e46a799b81af859ba9bb74e7d0">approx</a> (0u, -1, 2)</span> succeeds; for the other types, in their common floating-point type. A failure is reported as <span class="doxyComputerOutput">lhs ~ (rhs +/- epsilon)</span>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">t.expect (mt::approx (read_adc (), 512, 3)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"ADC reading"</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">t.expect (mt::approx (compute_float (), 42.0f, 0.001f));</span></span></div>
+
+</div>
+
+
+<p>The <span class="doxyComputerOutput"><a href="#gacae776e46a799b81af859ba9bb74e7d0">approx</a> (value, epsilon)</span> form is a value wrapper instead, which applies its tolerance to the six comparisons and to the operators; it accepts only floating-point values.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Lhs_T</td>
+<td class="doxyParamItemDescription"><p>Type of the left hand side operand.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Rhs_T</td>
+<td class="doxyParamItemDescription"><p>Type of the right hand side operand.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Epsilon_T</td>
+<td class="doxyParamItemDescription"><p>Type of the tolerance.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">lhs</td>
+<td class="doxyParamItemDescription"><p>Left hand side operand.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">rhs</td>
+<td class="doxyParamItemDescription"><p>Right hand side operand.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">epsilon</td>
+<td class="doxyParamItemDescription"><p>The tolerance; a negative one fails all comparisons.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>A comparator object that evaluates to true if <span class="doxyComputerOutput">lhs</span> and <span class="doxyComputerOutput">rhs</span> differ by less than <span class="doxyComputerOutput">epsilon</span>.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Since</dt>
+<dd><p>5.1.0</p></dd>
+</dl>
+
+
+<p>The <span class="doxyComputerOutput"><a href="#gacae776e46a799b81af859ba9bb74e7d0">approx</a></span> function template constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/approx-op">detail::approx_op</a></span> from the forwarded operands and tolerance; the operands are numbers, so <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, which converts the C strings, is not needed.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00196">196</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gacae776e46a799b81af859ba9bb74e7d0">196</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gacae776e46a799b81af859ba9bb74e7d0">approx</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs, Epsilon_T&amp;&amp; epsilon)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">197</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">198</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/approx-op">detail::approx_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">199</span><span class="doxyLineContent"><span class="doxyHighlight">                              std::forward&lt;Rhs_T&gt; (rhs),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">200</span><span class="doxyLineContent"><span class="doxyHighlight">                              std::forward&lt;Epsilon_T&gt; (epsilon) };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">201</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#gacae776e46a799b81af859ba9bb74e7d0">micro_os_plus::micro_test_plus::approx</a>.</p>
+
+
+<p>Referenced by <a href="#gacae776e46a799b81af859ba9bb74e7d0">micro_os_plus::micro_test_plus::approx</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe47800a219b00fcccf0a1dc596dbe20">micro_os_plus::micro_test_plus::approx</a>.</p>
+
+</div>
+</div>
+
+### eq() {#gaa7c7b6a7ad32856edc235a05e77d8c7f}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::eq (Lhs_T &amp;&amp; lhs, Rhs_T &amp;&amp; rhs)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Generic equality comparator.</p>
+
+
+<p>The C strings (<span class="doxyComputerOutput">char</span> arrays, including the string literals, and <span class="doxyComputerOutput">char</span> pointers) are compared by content, also with <span class="doxyComputerOutput">std::string</span> and <span class="doxyComputerOutput">std::string_view</span>; a null <span class="doxyComputerOutput">char</span> pointer is equal only to another null pointer. The other pointers and arrays are compared by address.</p>
+
+
+<p>Both operands must satisfy <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/printable">extension::printable</a></span>, since they are reported on failure; an application type needs an <span class="doxyComputerOutput">operator&lt;&lt;</span> for <span class="doxyComputerOutput">mt::expression_formatter</span>, otherwise the call is rejected, with a diagnostic that names the operand type.</p>
+
+
+<p>The same rules apply to <span class="doxyComputerOutput"><a href="#ga5bf176ef730172592095657417e5f039">ne()</a></span>, <span class="doxyComputerOutput"><a href="#ga9ae8e4747ff029faa7378110c8680278">gt()</a></span>, <span class="doxyComputerOutput"><a href="#gab8da4228bc9a820546753b018a129a7e">ge()</a></span>, <span class="doxyComputerOutput"><a href="#ga714ff07cd77e05898de4fd315770f901">lt()</a></span>, and <span class="doxyComputerOutput"><a href="#gae695dd46840f76a156aee70ff4df33fa">le()</a></span>.</p>
 
 
 <dl class="doxyParamsList">
@@ -379,25 +521,36 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#gae9dfca849300a917cb1c231d275baaa3">eq</a></span> function template provides a generic equality comparator for any non-pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are equal. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq</a></span> function template provides a generic equality comparator for any types. The operands are first passed to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, which converts the C strings to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string">detail::c_string</a></span>, so that they are compared by content. It constructs a comparator object, with the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/equal-to">detail::equal_to</a></span> tag, which evaluates to <span class="doxyComputerOutput">true</span> if the two values are equal, and which is reported with both values if not.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00084">84</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>The operands are forwarded, so that the comparator moves the temporaries and refers to the named operands, without copying them.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00091">91</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae9dfca849300a917cb1c231d275baaa3">84</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gae9dfca849300a917cb1c231d275baaa3">eq</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">85</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">86</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">87</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">91</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">92</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">93</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">detail::compare_op</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">94</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">95</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/equal-to">detail::equal_to</a>{} };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">96</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
+
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a> and <a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">micro_os_plus::micro_test_plus::eq</a>.</p>
+
+
+<p>Referenced by <a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">micro_os_plus::micro_test_plus::eq</a>.</p>
+
 </div>
 </div>
 
-### eq() {#gabdb021d3d6a5759cd2a5f502b2514dea}
+### ge() {#gab8da4228bc9a820546753b018a129a7e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -407,91 +560,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::eq (Lhs_T * lhs, Rhs_T * rhs)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel nodiscard">nodiscard</span>
-<span class="doxyMemberLabel constexpr">constexpr</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Pointer equality comparator for any pointer types.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Lhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Rhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">lhs</td>
-<td class="doxyParamItemDescription"><p>Left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">rhs</td>
-<td class="doxyParamItemDescription"><p>Right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>A comparator object that evaluates to true if the pointers are equal.</p></dd>
-</dl>
-
-
-<p>The <span class="doxyComputerOutput"><a href="#gae9dfca849300a917cb1c231d275baaa3">eq</a></span> function template provides a pointer equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00099">99</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabdb021d3d6a5759cd2a5f502b2514dea">99</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gae9dfca849300a917cb1c231d275baaa3">eq</a> (Lhs_T* lhs, Rhs_T* rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">100</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">101</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_&lt;Lhs_T*, Rhs_T*&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">102</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### ge() {#ga34e03399670ec0b365b94b7bea788dd8}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::ge (const Lhs_T &amp; lhs, const Rhs_T &amp; rhs)</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::ge (Lhs_T &amp;&amp; lhs, Rhs_T &amp;&amp; rhs)</td>
 </tr>
 </table>
 </td>
@@ -547,25 +616,33 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#ga34e03399670ec0b365b94b7bea788dd8">ge</a></span> function template provides a generic greater than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The operands are passed to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, as for <span class="doxyComputerOutput"><a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq()</a></span>, so that the C strings are compared by content. It constructs a comparator object, with the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/greater-equal">detail::greater_equal</a></span> tag, which evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is greater than or equal to <span class="doxyComputerOutput">rhs</span>, and which is reported with both values if not.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00174">174</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00143">143</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga34e03399670ec0b365b94b7bea788dd8">174</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga34e03399670ec0b365b94b7bea788dd8">ge</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">175</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">176</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">detail::ge_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">177</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab8da4228bc9a820546753b018a129a7e">143</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gab8da4228bc9a820546753b018a129a7e">ge</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">145</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">detail::compare_op</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">146</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">147</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/greater-equal">detail::greater_equal</a>{} };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">148</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
+
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a> and <a href="#gab8da4228bc9a820546753b018a129a7e">micro_os_plus::micro_test_plus::ge</a>.</p>
+
+
+<p>Referenced by <a href="#gab8da4228bc9a820546753b018a129a7e">micro_os_plus::micro_test_plus::ge</a>.</p>
+
 </div>
 </div>
 
-### ge() {#ga3957927d25a61348b639fe01aab11258}
+### gt() {#ga9ae8e4747ff029faa7378110c8680278}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -575,91 +652,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::ge (Lhs_T * lhs, Rhs_T * rhs)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel nodiscard">nodiscard</span>
-<span class="doxyMemberLabel constexpr">constexpr</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Pointer greater than or equal comparator.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Lhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Rhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">lhs</td>
-<td class="doxyParamItemDescription"><p>Left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">rhs</td>
-<td class="doxyParamItemDescription"><p>Right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>A comparator object that evaluates to true if the left hand side pointer is greater than or equal to the right hand side pointer.</p></dd>
-</dl>
-
-
-<p>The <span class="doxyComputerOutput"><a href="#ga34e03399670ec0b365b94b7bea788dd8">ge</a></span> function template provides a pointer greater than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00190">190</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3957927d25a61348b639fe01aab11258">190</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga34e03399670ec0b365b94b7bea788dd8">ge</a> (Lhs_T* lhs, Rhs_T* rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">detail::ge_&lt;Lhs_T*, Rhs_T*&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">193</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### gt() {#gae2fb681444d8256f6bf827eea6b7c29e}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::gt (const Lhs_T &amp; lhs, const Rhs_T &amp; rhs)</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::gt (Lhs_T &amp;&amp; lhs, Rhs_T &amp;&amp; rhs)</td>
 </tr>
 </table>
 </td>
@@ -715,25 +708,33 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#gae2fb681444d8256f6bf827eea6b7c29e">gt</a></span> function template provides a generic greater than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The operands are passed to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, as for <span class="doxyComputerOutput"><a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq()</a></span>, so that the C strings are compared by content. It constructs a comparator object, with the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/greater">detail::greater</a></span> tag, which evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is greater than <span class="doxyComputerOutput">rhs</span>, and which is reported with both values if not.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00144">144</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00125">125</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae2fb681444d8256f6bf827eea6b7c29e">144</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gae2fb681444d8256f6bf827eea6b7c29e">gt</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">145</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">146</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">detail::gt_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">147</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9ae8e4747ff029faa7378110c8680278">125</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga9ae8e4747ff029faa7378110c8680278">gt</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">127</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">detail::compare_op</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/greater">detail::greater</a>{} };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
+
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a> and <a href="#ga9ae8e4747ff029faa7378110c8680278">micro_os_plus::micro_test_plus::gt</a>.</p>
+
+
+<p>Referenced by <a href="#ga9ae8e4747ff029faa7378110c8680278">micro_os_plus::micro_test_plus::gt</a>.</p>
+
 </div>
 </div>
 
-### gt() {#gae8a4dcd7ebf01cdfa7e46540cd6522fa}
+### le() {#gae695dd46840f76a156aee70ff4df33fa}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -743,91 +744,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::gt (Lhs_T * lhs, Rhs_T * rhs)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel nodiscard">nodiscard</span>
-<span class="doxyMemberLabel constexpr">constexpr</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Pointer greater than comparator.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Lhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Rhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">lhs</td>
-<td class="doxyParamItemDescription"><p>Left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">rhs</td>
-<td class="doxyParamItemDescription"><p>Right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>A comparator object that evaluates to true if the left hand side pointer is greater than the right hand side pointer.</p></dd>
-</dl>
-
-
-<p>The <span class="doxyComputerOutput"><a href="#gae2fb681444d8256f6bf827eea6b7c29e">gt</a></span> function template provides a pointer greater than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00159">159</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae8a4dcd7ebf01cdfa7e46540cd6522fa">159</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gae2fb681444d8256f6bf827eea6b7c29e">gt</a> (Lhs_T* lhs, Rhs_T* rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">160</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">161</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">detail::gt_&lt;Lhs_T*, Rhs_T*&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">162</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### le() {#ga2b5263a5b3965855aa04971bba735a56}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::le (const Lhs_T &amp; lhs, const Rhs_T &amp; rhs)</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::le (Lhs_T &amp;&amp; lhs, Rhs_T &amp;&amp; rhs)</td>
 </tr>
 </table>
 </td>
@@ -883,25 +800,33 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#ga2b5263a5b3965855aa04971bba735a56">le</a></span> function template provides a generic less than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The operands are passed to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, as for <span class="doxyComputerOutput"><a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq()</a></span>, so that the C strings are compared by content. It constructs a comparator object, with the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/less-equal">detail::less_equal</a></span> tag, which evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is less than or equal to <span class="doxyComputerOutput">rhs</span>, and which is reported with both values if not.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00235">235</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00178">178</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga2b5263a5b3965855aa04971bba735a56">235</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga2b5263a5b3965855aa04971bba735a56">le</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">236</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">237</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">detail::le_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">238</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae695dd46840f76a156aee70ff4df33fa">178</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gae695dd46840f76a156aee70ff4df33fa">le</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">179</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">180</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">detail::compare_op</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">182</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/less-equal">detail::less_equal</a>{} };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">183</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
+
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a> and <a href="#gae695dd46840f76a156aee70ff4df33fa">micro_os_plus::micro_test_plus::le</a>.</p>
+
+
+<p>Referenced by <a href="#gae695dd46840f76a156aee70ff4df33fa">micro_os_plus::micro_test_plus::le</a>.</p>
+
 </div>
 </div>
 
-### le() {#gaf8716c55446af28b090eb49acd8cf131}
+### lt() {#ga714ff07cd77e05898de4fd315770f901}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -911,91 +836,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::le (Lhs_T * lhs, Rhs_T * rhs)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel nodiscard">nodiscard</span>
-<span class="doxyMemberLabel constexpr">constexpr</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Pointer less than or equal comparator.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Lhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Rhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">lhs</td>
-<td class="doxyParamItemDescription"><p>Left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">rhs</td>
-<td class="doxyParamItemDescription"><p>Right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>A comparator object that evaluates to true if the left hand side pointer is less than or equal to the right hand side pointer.</p></dd>
-</dl>
-
-
-<p>The <span class="doxyComputerOutput"><a href="#ga2b5263a5b3965855aa04971bba735a56">le</a></span> function template provides a pointer less than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00251">251</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf8716c55446af28b090eb49acd8cf131">251</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga2b5263a5b3965855aa04971bba735a56">le</a> (Lhs_T* lhs, Rhs_T* rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">252</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">253</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">detail::le_&lt;Lhs_T*, Rhs_T*&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">254</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### lt() {#gac162522dcad1a6ff7c869d52d376b3ed}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::lt (const Lhs_T &amp; lhs, const Rhs_T &amp; rhs)</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::lt (Lhs_T &amp;&amp; lhs, Rhs_T &amp;&amp; rhs)</td>
 </tr>
 </table>
 </td>
@@ -1051,25 +892,33 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#gac162522dcad1a6ff7c869d52d376b3ed">lt</a></span> function template provides a generic less than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The operands are passed to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, as for <span class="doxyComputerOutput"><a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq()</a></span>, so that the C strings are compared by content. It constructs a comparator object, with the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/less">detail::less</a></span> tag, which evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is less than <span class="doxyComputerOutput">rhs</span>, and which is reported with both values if not.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00205">205</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00160">160</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gac162522dcad1a6ff7c869d52d376b3ed">205</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gac162522dcad1a6ff7c869d52d376b3ed">lt</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">206</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">207</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">detail::lt_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">208</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga714ff07cd77e05898de4fd315770f901">160</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga714ff07cd77e05898de4fd315770f901">lt</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">161</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">162</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">detail::compare_op</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">163</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/less">detail::less</a>{} };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">165</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
+
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a> and <a href="#ga714ff07cd77e05898de4fd315770f901">micro_os_plus::micro_test_plus::lt</a>.</p>
+
+
+<p>Referenced by <a href="#ga714ff07cd77e05898de4fd315770f901">micro_os_plus::micro_test_plus::lt</a>.</p>
+
 </div>
 </div>
 
-### lt() {#ga047738c301c4c6b6c7fdb535aecfe097}
+### ne() {#ga5bf176ef730172592095657417e5f039}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1079,91 +928,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::lt (Lhs_T * lhs, Rhs_T * rhs)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel nodiscard">nodiscard</span>
-<span class="doxyMemberLabel constexpr">constexpr</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Pointer less than comparator.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Lhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Rhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">lhs</td>
-<td class="doxyParamItemDescription"><p>Left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">rhs</td>
-<td class="doxyParamItemDescription"><p>Right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>A comparator object that evaluates to true if the left hand side pointer is less than the right hand side pointer.</p></dd>
-</dl>
-
-
-<p>The <span class="doxyComputerOutput"><a href="#gac162522dcad1a6ff7c869d52d376b3ed">lt</a></span> function template provides a pointer less than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00220">220</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga047738c301c4c6b6c7fdb535aecfe097">220</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gac162522dcad1a6ff7c869d52d376b3ed">lt</a> (Lhs_T* lhs, Rhs_T* rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">221</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">222</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">detail::lt_&lt;Lhs_T*, Rhs_T*&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">223</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### ne() {#ga59e4cf59954e81bc868e62b1c5c8db1f}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::ne (const Lhs_T &amp; lhs, const Rhs_T &amp; rhs)</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::ne (Lhs_T &amp;&amp; lhs, Rhs_T &amp;&amp; rhs)</td>
 </tr>
 </table>
 </td>
@@ -1219,104 +984,28 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#ga59e4cf59954e81bc868e62b1c5c8db1f">ne</a></span> function template provides a generic non-equality comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are not equal. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The operands are passed to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, as for <span class="doxyComputerOutput"><a href="#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq()</a></span>, so that the C strings are compared by content. It constructs a comparator object, with the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-equal-to">detail::not_equal_to</a></span> tag, which evaluates to <span class="doxyComputerOutput">true</span> if the two values are not equal, and which is reported with both values if not.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00114">114</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga59e4cf59954e81bc868e62b1c5c8db1f">114</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga59e4cf59954e81bc868e62b1c5c8db1f">ne</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">115</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">116</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">117</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### ne() {#ga172f305bbeaf8b965681f76c16a39516}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::ne (Lhs_T * lhs, Rhs_T * rhs)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel nodiscard">nodiscard</span>
-<span class="doxyMemberLabel constexpr">constexpr</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Pointer non-equality comparator.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Lhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Rhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">lhs</td>
-<td class="doxyParamItemDescription"><p>Left hand side pointer operand.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">rhs</td>
-<td class="doxyParamItemDescription"><p>Right hand side pointer operand.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>A comparator object that evaluates to true if the pointers are not equal.</p></dd>
-</dl>
-
-
-<p>The <span class="doxyComputerOutput"><a href="#ga59e4cf59954e81bc868e62b1c5c8db1f">ne</a></span> function template provides a pointer non-equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are not equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00129">129</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00108">108</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga172f305bbeaf8b965681f76c16a39516">129</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga59e4cf59954e81bc868e62b1c5c8db1f">ne</a> (Lhs_T* lhs, Rhs_T* rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">131</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_&lt;Lhs_T*, Rhs_T*&gt;</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">132</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga5bf176ef730172592095657417e5f039">108</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga5bf176ef730172592095657417e5f039">ne</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">110</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">detail::compare_op</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">111</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">112</span><span class="doxyLineContent"><span class="doxyHighlight">                               <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-equal-to">detail::not_equal_to</a>{} };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">113</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a> and <a href="#ga5bf176ef730172592095657417e5f039">micro_os_plus::micro_test_plus::ne</a>.</p>
+
+
+<p>Referenced by <a href="#ga5bf176ef730172592095657417e5f039">micro_os_plus::micro_test_plus::ne</a>.</p>
 
 </div>
 </div>
@@ -1325,6 +1014,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

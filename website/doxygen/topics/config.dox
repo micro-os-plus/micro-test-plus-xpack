@@ -2,5 +2,5 @@
 @brief Configuration macros.
 
 @details
-The µTest++ Testing Framework library uses several preprocessor macros 
+The µTest++ Testing Framework library uses several preprocessor macros
 to enable it and to configure various options.

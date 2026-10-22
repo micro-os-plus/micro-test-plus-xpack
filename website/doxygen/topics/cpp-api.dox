@@ -2,6 +2,12 @@
 @brief Topics related to the µTest++ C++ API.
 
 @details
-The µTest++ framework is built upon modern C++ standards, providing a robust and expressive API for defining and managing tests. Its design prioritises clarity and maintainability, offering a concise set of core primitives for verifying expectations and requirements within test cases.
+The µTest++ framework is built upon modern C++ standards, providing a robust
+and expressive API for defining and managing tests. Its design prioritises
+clarity and maintainability, offering a concise set of core primitives for
+verifying expectations and requirements within test cases.
 
-Unlike many traditional frameworks, µTest++ avoids the use of preprocessor macros; all testing primitives are implemented directly in C++. This approach ensures type safety, improved readability, and seamless integration with contemporary C++ development practices.
+Unlike many traditional frameworks, µTest++ avoids the use of preprocessor
+macros; all testing primitives are implemented directly in C++. This approach
+ensures type safety, improved readability, and seamless integration with
+contemporary C++ development practices.

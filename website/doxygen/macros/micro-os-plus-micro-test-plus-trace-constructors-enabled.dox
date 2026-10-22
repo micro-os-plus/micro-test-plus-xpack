@@ -1,6 +1,8 @@
 @def MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-@brief Enable trace in constructors and destructors in µTest++.
+@brief Enables the trace messages of the µTest++ constructors and
+destructors.
 
 @details
-Display trace messages in constructors and destructors in the µTest++ 
-Testing Framework when MICRO_OS_PLUS_DIAG_TRACE_ENABLED is present.
+Displays trace messages in the constructors and destructors of the µTest++
+Testing Framework, through `trace::printf()`, which writes them only when
+`MICRO_OS_PLUS_DIAG_TRACE_ENABLED` is also defined.

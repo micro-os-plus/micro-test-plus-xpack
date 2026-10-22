@@ -1,5 +1,6 @@
 var literals_inlines_8h =
 [
+    [ "micro_os_plus::micro_test_plus::approx", "group__micro-os-plus-micro-test-plus-literals.html#gafe47800a219b00fcccf0a1dc596dbe20", null ],
     [ "micro_os_plus::micro_test_plus::literals::operator\"\"_b", "group__micro-os-plus-micro-test-plus-literals.html#gaa2bfc74376f8c110053bfa6e06e40772", null ],
     [ "micro_os_plus::micro_test_plus::literals::operator\"\"_c", "group__micro-os-plus-micro-test-plus-literals.html#gae521cebfd48332f44d01e4f880b4aafa", null ],
     [ "micro_os_plus::micro_test_plus::literals::operator\"\"_d", "group__micro-os-plus-micro-test-plus-literals.html#ga9d9b0d77e96cc46e7c9fabbb6cf671da", null ],

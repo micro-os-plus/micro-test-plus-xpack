@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1indentation" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::indentation</compoundname>
+    <includes refid="reporter_8h" local="no">reporter.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1indentation_1a6b8b1c2610c1f1591bc87068deeefd5a" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::detail::indentation::level</definition>
+        <argsstring></argsstring>
+        <name>level</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::indentation::level</qualifiedname>
+        <briefdescription>
+<para>Number of four-space indentation levels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Converted into spaces by <computeroutput>reporter::operator&lt;&lt;</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="138" column="14" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="138" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aedfa17028026f6eaa871214da441e90c" compoundref="reporter_8cpp" startline="515" endline="519">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Parameterised stream manipulator for outputting indentation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Holds the indentation level; used with <computeroutput>reporter::operator&lt;&lt;</computeroutput> so that <computeroutput>*this &lt;&lt; indent(n) &lt;&lt; "text"</computeroutput> works naturally in chains. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="130" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="131" bodyend="139"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1indentation_1a6b8b1c2610c1f1591bc87068deeefd5a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::indentation</scope><name>level</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

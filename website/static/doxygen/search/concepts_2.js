@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['has_5fepsilon_0',['has_epsilon',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__epsilon.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
-  ['has_5fnpos_1',['has_npos',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
-  ['has_5fvalue_2',['has_value',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value.html',1,'micro_os_plus::micro_test_plus::type_traits']]]
+  ['formattable_5frange_0',['formattable_range',['../conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1formattable__range.html',1,'micro_os_plus::micro_test_plus::detail']]],
+  ['free_5frange_1',['free_range',['../conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range.html',1,'micro_os_plus::micro_test_plus::detail']]]
 ];

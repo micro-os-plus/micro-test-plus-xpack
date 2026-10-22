@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::free_range</compoundname>
+    <includes refid="extension_8h" local="no">extension.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range" kindref="compound">micro_os_plus::micro_test_plus::detail::free_range</ref> =  (not container_like&lt;T&gt;) and requires (const T&amp; t) {
+      begin (t);
+      end (t);
+    }</initializer>
+    <conceptparts>
+      <codepart line="306">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">free_range<sp/>=<sp/>(not<sp/>container_like&lt;T&gt;)<sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>begin<sp/>(t);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>(t);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>C++20 concept satisfied when <computeroutput>T</computeroutput> provides <computeroutput>begin()</computeroutput> and <computeroutput>end()</computeroutput> only as functions found by argument-dependent lookup. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to be checked.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput>free_range</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> has no <computeroutput>begin()</computeroutput> and <computeroutput>end()</computeroutput> members (see <computeroutput>container_like</computeroutput>), but calls of <computeroutput>begin()</computeroutput> and <computeroutput>end()</computeroutput> with a <computeroutput>const T&amp;</computeroutput> argument are valid, as in a range-based <computeroutput>for</computeroutput> statement, which then uses them. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="306" column="5"/>
+  </compounddef>
+</doxygen>

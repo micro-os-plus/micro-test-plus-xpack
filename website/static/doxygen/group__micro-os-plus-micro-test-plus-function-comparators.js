@@ -1,15 +1,11 @@
 var group__micro_os_plus_micro_test_plus_function_comparators =
 [
-    [ "micro_os_plus::micro_test_plus::eq", "group__micro-os-plus-micro-test-plus-function-comparators.html#gae9dfca849300a917cb1c231d275baaa3", null ],
-    [ "micro_os_plus::micro_test_plus::eq", "group__micro-os-plus-micro-test-plus-function-comparators.html#gabdb021d3d6a5759cd2a5f502b2514dea", null ],
-    [ "micro_os_plus::micro_test_plus::ge", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga34e03399670ec0b365b94b7bea788dd8", null ],
-    [ "micro_os_plus::micro_test_plus::ge", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga3957927d25a61348b639fe01aab11258", null ],
-    [ "micro_os_plus::micro_test_plus::gt", "group__micro-os-plus-micro-test-plus-function-comparators.html#gae2fb681444d8256f6bf827eea6b7c29e", null ],
-    [ "micro_os_plus::micro_test_plus::gt", "group__micro-os-plus-micro-test-plus-function-comparators.html#gae8a4dcd7ebf01cdfa7e46540cd6522fa", null ],
-    [ "micro_os_plus::micro_test_plus::le", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga2b5263a5b3965855aa04971bba735a56", null ],
-    [ "micro_os_plus::micro_test_plus::le", "group__micro-os-plus-micro-test-plus-function-comparators.html#gaf8716c55446af28b090eb49acd8cf131", null ],
-    [ "micro_os_plus::micro_test_plus::lt", "group__micro-os-plus-micro-test-plus-function-comparators.html#gac162522dcad1a6ff7c869d52d376b3ed", null ],
-    [ "micro_os_plus::micro_test_plus::lt", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga047738c301c4c6b6c7fdb535aecfe097", null ],
-    [ "micro_os_plus::micro_test_plus::ne", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga59e4cf59954e81bc868e62b1c5c8db1f", null ],
-    [ "micro_os_plus::micro_test_plus::ne", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga172f305bbeaf8b965681f76c16a39516", null ]
+    [ "micro_os_plus::micro_test_plus::expression_formatter", "group__micro-os-plus-micro-test-plus-function-comparators.html#gabecc05360d0941067222d827ff8e3f08", null ],
+    [ "micro_os_plus::micro_test_plus::approx", "group__micro-os-plus-micro-test-plus-function-comparators.html#gacae776e46a799b81af859ba9bb74e7d0", null ],
+    [ "micro_os_plus::micro_test_plus::eq", "group__micro-os-plus-micro-test-plus-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f", null ],
+    [ "micro_os_plus::micro_test_plus::ge", "group__micro-os-plus-micro-test-plus-function-comparators.html#gab8da4228bc9a820546753b018a129a7e", null ],
+    [ "micro_os_plus::micro_test_plus::gt", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278", null ],
+    [ "micro_os_plus::micro_test_plus::le", "group__micro-os-plus-micro-test-plus-function-comparators.html#gae695dd46840f76a156aee70ff4df33fa", null ],
+    [ "micro_os_plus::micro_test_plus::lt", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga714ff07cd77e05898de4fd315770f901", null ],
+    [ "micro_os_plus::micro_test_plus::ne", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga5bf176ef730172592095657417e5f039", null ]
 ];

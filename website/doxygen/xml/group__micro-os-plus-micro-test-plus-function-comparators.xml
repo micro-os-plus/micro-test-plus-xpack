@@ -1,10 +1,153 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-function-comparators" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-function-comparators</compoundname>
     <title>Function Comparators</title>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-function-comparators_1gabecc05360d0941067222d827ff8e3f08" prot="public" static="no">
+        <type>detail::expression_formatter</type>
+        <definition>using micro_os_plus::micro_test_plus::expression_formatter = detail::expression_formatter</definition>
+        <argsstring></argsstring>
+        <name>expression_formatter</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::expression_formatter</qualifiedname>
+        <briefdescription>
+<para>Public name of the formatter used to report operand values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The function comparators and the custom operators report the values of their operands when a check fails. Values of user-defined types can be reported only if the application provides an <computeroutput>operator&lt;&lt;</computeroutput> that writes them to this formatter, declared in the namespace of the type, so that it is found by argument-dependent lookup:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">app</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">point</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>operator==<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>rhs)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs.x<sp/>==<sp/>rhs.x<sp/>&amp;&amp;<sp/>lhs.y<sp/>==<sp/>rhs.y;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>mt::expression_formatter&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>operator&lt;&lt;<sp/>(mt::expression_formatter&amp;<sp/>formatter,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>p)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>formatter<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;{<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.x<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.y<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>app</highlight></codeline>
+</programlisting></para>
+<para>Without such an operator, comparators such as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <computeroutput>expect (a == b)</computeroutput>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<computeroutput>expect (a == b) &lt;&lt; "a is " &lt;&lt; a</computeroutput>).</para>
+<para>Applications use the <computeroutput>operator&lt;&lt;</computeroutput> overloads, and <computeroutput>str()</computeroutput> to test their own operators; the functions that manage the buffer are private to the framework. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1134" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1134" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+          <param>
+            <type>class Epsilon_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::approx</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs, Epsilon_T &amp;&amp;epsilon)</argsstring>
+        <name>approx</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::approx</qualifiedname>
+        <param>
+          <type>Lhs_T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>Epsilon_T &amp;&amp;</type>
+          <declname>epsilon</declname>
+        </param>
+    <requiresclause>(detail::approx_operand&lt;Lhs_T&gt; and detail::approx_operand&lt;Rhs_T&gt; and detail::approx_operand&lt;Epsilon_T&gt;)    </requiresclause>
+        <briefdescription>
+<para>Approximate equality comparator, with an explicit tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The comparison succeeds if the distance between <computeroutput>lhs</computeroutput> and <computeroutput>rhs</computeroutput> is less than <computeroutput>epsilon</computeroutput>. The operands are numbers, integral or floating-point, possibly of different types, or the framework value wrappers and numeric literals, whose own tolerance is not used. For the integers, the distance is computed exactly, also for operands of different signedness, so <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kindref="member">approx</ref> (0u, -1, 2)</computeroutput> succeeds; for the other types, in their common floating-point type. A failure is reported as <computeroutput>lhs ~ (rhs +/- epsilon)</computeroutput>.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">t.expect<sp/>(mt::approx<sp/>(read_adc<sp/>(),<sp/>512,<sp/>3))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ADC<sp/>reading&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">t.expect<sp/>(mt::approx<sp/>(compute_float<sp/>(),<sp/>42.0f,<sp/>0.001f));</highlight></codeline>
+</programlisting></para>
+<para>The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kindref="member">approx</ref> (value, epsilon)</computeroutput> form is a value wrapper instead, which applies its tolerance to the six comparisons and to the operators; it accepts only floating-point values.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Epsilon_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the tolerance.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>epsilon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tolerance; a negative one fails all comparisons. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> and <computeroutput>rhs</computeroutput> differ by less than <computeroutput>epsilon</computeroutput>.</para>
+</simplesect>
+<simplesect kind="since"><para>5.1.0</para>
+</simplesect>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kindref="member">approx</ref></computeroutput> function template constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op" kindref="compound">detail::approx_op</ref></computeroutput> from the forwarded operands and tolerance; the operands are numbers, so <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand()</ref></computeroutput>, which converts the C strings, is not needed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="196" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="196" bodyend="201" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="246" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" compoundref="function-comparators-inlines_8h" startline="196" endline="201">micro_os_plus::micro_test_plus::approx</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" compoundref="function-comparators-inlines_8h" startline="196" endline="201">micro_os_plus::micro_test_plus::approx</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="literals-inlines_8h" startline="449" endline="453">micro_os_plus::micro_test_plus::approx</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -15,21 +158,25 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::eq</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>eq</name>
         <qualifiedname>micro_os_plus::micro_test_plus::eq</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
+    <requiresclause>(extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt;)    </requiresclause>
         <briefdescription>
-<para>Generic equality comparator for non-pointer types. </para>
+<para>Generic equality comparator. </para>
         </briefdescription>
         <detaileddescription>
+<para>The C strings (<computeroutput>char</computeroutput> arrays, including the string literals, and <computeroutput>char</computeroutput> pointers) are compared by content, also with <computeroutput>std::string</computeroutput> and <computeroutput>std::string_view</computeroutput>; a null <computeroutput>char</computeroutput> pointer is equal only to another null pointer. The other pointers and arrays are compared by address.</para>
+<para>Both operands must satisfy <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable" kindref="compound">extension::printable</ref></computeroutput>, since they are reported on failure; an application type needs an <computeroutput>operator&lt;&lt;</computeroutput> for <computeroutput>mt::expression_formatter</computeroutput>, otherwise the call is rejected, with a diagnostic that names the operand type.</para>
+<para>The same rules apply to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref></computeroutput>.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -66,81 +213,17 @@
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the operands are equal.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kindref="member">eq</ref></computeroutput> function template provides a generic equality comparator for any non-pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are equal. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq</ref></computeroutput> function template provides a generic equality comparator for any types. The operands are first passed to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand()</ref></computeroutput>, which converts the C strings to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">detail::c_string</ref></computeroutput>, so that they are compared by content. It constructs a comparator object, with the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to" kindref="compound">detail::equal_to</ref></computeroutput> tag, which evaluates to <computeroutput>true</computeroutput> if the two values are equal, and which is reported with both values if not.</para>
+<para>The operands are forwarded, so that the comparator moves the temporaries and refers to the named operands, without copying them. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="84" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="84" bodyend="87" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="100" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="91" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="91" bodyend="96" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="122" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="985" endline="1017">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" compoundref="function-comparators-inlines_8h" startline="91" endline="96">micro_os_plus::micro_test_plus::eq</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" compoundref="function-comparators-inlines_8h" startline="91" endline="96">micro_os_plus::micro_test_plus::eq</referencedby>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gabdb021d3d6a5759cd2a5f502b2514dea" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class Lhs_T</type>
-          </param>
-          <param>
-            <type>class Rhs_T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::eq</definition>
-        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
-        <name>eq</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::eq</qualifiedname>
-        <param>
-          <type>Lhs_T *</type>
-          <declname>lhs</declname>
-        </param>
-        <param>
-          <type>Rhs_T *</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-<para>Pointer equality comparator for any pointer types. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Lhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>Rhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the right hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>lhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>rhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Right hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the pointers are equal.</para>
-</simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kindref="member">eq</ref></computeroutput> function template provides a pointer equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="99" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="99" bodyend="102" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="115" declcolumn="3"/>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -151,17 +234,18 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::ge</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>ge</name>
         <qualifiedname>micro_os_plus::micro_test_plus::ge</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
+    <requiresclause>(extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt;)    </requiresclause>
         <briefdescription>
 <para>Generic greater than or equal comparator. </para>
         </briefdescription>
@@ -202,81 +286,16 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is greater than or equal to <computeroutput>rhs</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" kindref="member">ge</ref></computeroutput> function template provides a generic greater than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand()</ref></computeroutput>, as for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, so that the C strings are compared by content. It constructs a comparator object, with the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal" kindref="compound">detail::greater_equal</ref></computeroutput> tag, which evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than or equal to <computeroutput>rhs</computeroutput>, and which is reported with both values if not. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="174" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="174" bodyend="177" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="192" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="143" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="143" bodyend="148" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="171" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="985" endline="1017">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" compoundref="function-comparators-inlines_8h" startline="143" endline="148">micro_os_plus::micro_test_plus::ge</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" compoundref="function-comparators-inlines_8h" startline="143" endline="148">micro_os_plus::micro_test_plus::ge</referencedby>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1ga3957927d25a61348b639fe01aab11258" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class Lhs_T</type>
-          </param>
-          <param>
-            <type>class Rhs_T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::ge</definition>
-        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
-        <name>ge</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::ge</qualifiedname>
-        <param>
-          <type>Lhs_T *</type>
-          <declname>lhs</declname>
-        </param>
-        <param>
-          <type>Rhs_T *</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-<para>Pointer greater than or equal comparator. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Lhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>Rhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the right hand side pointer operand.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>lhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>rhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Right hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is greater than or equal to the right hand side pointer.</para>
-</simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" kindref="member">ge</ref></computeroutput> function template provides a pointer greater than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="190" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="190" bodyend="193" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="208" declcolumn="3"/>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -287,17 +306,18 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::gt</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>gt</name>
         <qualifiedname>micro_os_plus::micro_test_plus::gt</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
+    <requiresclause>(extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt;)    </requiresclause>
         <briefdescription>
 <para>Generic greater than comparator. </para>
         </briefdescription>
@@ -338,81 +358,16 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is greater than <computeroutput>rhs</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" kindref="member">gt</ref></computeroutput> function template provides a generic greater than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand()</ref></computeroutput>, as for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, so that the C strings are compared by content. It constructs a comparator object, with the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater" kindref="compound">detail::greater</ref></computeroutput> tag, which evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than <computeroutput>rhs</computeroutput>, and which is reported with both values if not. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="144" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="144" bodyend="147" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="161" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="125" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="125" bodyend="130" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="154" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="985" endline="1017">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" compoundref="function-comparators-inlines_8h" startline="125" endline="130">micro_os_plus::micro_test_plus::gt</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" compoundref="function-comparators-inlines_8h" startline="125" endline="130">micro_os_plus::micro_test_plus::gt</referencedby>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gae8a4dcd7ebf01cdfa7e46540cd6522fa" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class Lhs_T</type>
-          </param>
-          <param>
-            <type>class Rhs_T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::gt</definition>
-        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
-        <name>gt</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::gt</qualifiedname>
-        <param>
-          <type>Lhs_T *</type>
-          <declname>lhs</declname>
-        </param>
-        <param>
-          <type>Rhs_T *</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-<para>Pointer greater than comparator. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Lhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>Rhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the right hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>lhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>rhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Right hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is greater than the right hand side pointer.</para>
-</simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" kindref="member">gt</ref></computeroutput> function template provides a pointer greater than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="159" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="159" bodyend="162" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="176" declcolumn="3"/>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -423,17 +378,18 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::le</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>le</name>
         <qualifiedname>micro_os_plus::micro_test_plus::le</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
+    <requiresclause>(extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt;)    </requiresclause>
         <briefdescription>
 <para>Generic less than or equal comparator. </para>
         </briefdescription>
@@ -474,81 +430,16 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is less than or equal to <computeroutput>rhs</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" kindref="member">le</ref></computeroutput> function template provides a generic less than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand()</ref></computeroutput>, as for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, so that the C strings are compared by content. It constructs a comparator object, with the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal" kindref="compound">detail::less_equal</ref></computeroutput> tag, which evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than or equal to <computeroutput>rhs</computeroutput>, and which is reported with both values if not. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="235" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="235" bodyend="238" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="256" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="178" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="178" bodyend="183" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="205" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="985" endline="1017">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" compoundref="function-comparators-inlines_8h" startline="178" endline="183">micro_os_plus::micro_test_plus::le</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" compoundref="function-comparators-inlines_8h" startline="178" endline="183">micro_os_plus::micro_test_plus::le</referencedby>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gaf8716c55446af28b090eb49acd8cf131" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class Lhs_T</type>
-          </param>
-          <param>
-            <type>class Rhs_T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::le</definition>
-        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
-        <name>le</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::le</qualifiedname>
-        <param>
-          <type>Lhs_T *</type>
-          <declname>lhs</declname>
-        </param>
-        <param>
-          <type>Rhs_T *</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-<para>Pointer less than or equal comparator. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Lhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>Rhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the right hand side pointer operand.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>lhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>rhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Right hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is less than or equal to the right hand side pointer.</para>
-</simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" kindref="member">le</ref></computeroutput> function template provides a pointer less than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="251" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="251" bodyend="254" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="272" declcolumn="3"/>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -559,17 +450,18 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::lt</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>lt</name>
         <qualifiedname>micro_os_plus::micro_test_plus::lt</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
+    <requiresclause>(extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt;)    </requiresclause>
         <briefdescription>
 <para>Generic less than comparator. </para>
         </briefdescription>
@@ -610,81 +502,16 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is less than <computeroutput>rhs</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" kindref="member">lt</ref></computeroutput> function template provides a generic less than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand()</ref></computeroutput>, as for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, so that the C strings are compared by content. It constructs a comparator object, with the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less" kindref="compound">detail::less</ref></computeroutput> tag, which evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than <computeroutput>rhs</computeroutput>, and which is reported with both values if not. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="205" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="205" bodyend="208" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="224" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="160" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="160" bodyend="165" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="188" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="985" endline="1017">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" compoundref="function-comparators-inlines_8h" startline="160" endline="165">micro_os_plus::micro_test_plus::lt</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" compoundref="function-comparators-inlines_8h" startline="160" endline="165">micro_os_plus::micro_test_plus::lt</referencedby>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1ga047738c301c4c6b6c7fdb535aecfe097" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class Lhs_T</type>
-          </param>
-          <param>
-            <type>class Rhs_T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::lt</definition>
-        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
-        <name>lt</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::lt</qualifiedname>
-        <param>
-          <type>Lhs_T *</type>
-          <declname>lhs</declname>
-        </param>
-        <param>
-          <type>Rhs_T *</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-<para>Pointer less than comparator. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Lhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>Rhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the right hand side pointer operand.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>lhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>rhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Right hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is less than the right hand side pointer.</para>
-</simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" kindref="member">lt</ref></computeroutput> function template provides a pointer less than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="220" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="220" bodyend="223" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="240" declcolumn="3"/>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -695,17 +522,18 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::ne</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>ne</name>
         <qualifiedname>micro_os_plus::micro_test_plus::ne</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
+    <requiresclause>(extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt;)    </requiresclause>
         <briefdescription>
 <para>Generic non-equality comparator. </para>
         </briefdescription>
@@ -746,88 +574,23 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the operands are not equal.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kindref="member">ne</ref></computeroutput> function template provides a generic non-equality comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are not equal. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand()</ref></computeroutput>, as for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, so that the C strings are compared by content. It constructs a comparator object, with the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to" kindref="compound">detail::not_equal_to</ref></computeroutput> tag, which evaluates to <computeroutput>true</computeroutput> if the two values are not equal, and which is reported with both values if not. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="114" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="114" bodyend="117" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="130" declcolumn="3"/>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-function-comparators_1ga172f305bbeaf8b965681f76c16a39516" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class Lhs_T</type>
-          </param>
-          <param>
-            <type>class Rhs_T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::ne</definition>
-        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
-        <name>ne</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::ne</qualifiedname>
-        <param>
-          <type>Lhs_T *</type>
-          <declname>lhs</declname>
-        </param>
-        <param>
-          <type>Rhs_T *</type>
-          <declname>rhs</declname>
-        </param>
-        <briefdescription>
-<para>Pointer non-equality comparator. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Lhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>Rhs_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the right hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>lhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Left hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>rhs</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Right hand side pointer operand. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the pointers are not equal.</para>
-</simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kindref="member">ne</ref></computeroutput> function template provides a pointer non-equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are not equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="129" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="129" bodyend="132" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="146" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="108" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="108" bodyend="113" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="138" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="985" endline="1017">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" compoundref="function-comparators-inlines_8h" startline="108" endline="113">micro_os_plus::micro_test_plus::ne</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" compoundref="function-comparators-inlines_8h" startline="108" endline="113">micro_os_plus::micro_test_plus::ne</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Functions for comparing actual and expected values in tests. </para>
     </briefdescription>
     <detaileddescription>
-<para>While any boolean expression can be used in expectations and assumptions, dedicated comparator functions such as <computeroutput>eq</computeroutput>, <computeroutput>ne</computeroutput>, <computeroutput>lt</computeroutput>, <computeroutput>le</computeroutput>, <computeroutput>gt</computeroutput>, and <computeroutput>ge</computeroutput> provide enhanced reporting by explicitly showing the compared values when a check fails.</para>
+<para>While any boolean expression can be used in expectations and requirements, dedicated comparator functions such as <computeroutput>eq</computeroutput>, <computeroutput>ne</computeroutput>, <computeroutput>lt</computeroutput>, <computeroutput>le</computeroutput>, <computeroutput>gt</computeroutput>, and <computeroutput>ge</computeroutput> provide enhanced reporting by explicitly showing the compared values when a check fails.</para>
 <para>Using these comparators ensures that failed checks report both actual and expected values, making issues easier to diagnose.</para>
-<para>Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.</para>
+<para>Comparators are available for both fundamental types and standard containers. When a container comparison fails, the elements of both containers are shown.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>various<sp/>conditions&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
@@ -842,19 +605,21 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-co
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
 <para>If a comparator check fails, the output clearly indicates the actual and expected values:</para>
-<para><programlisting filename=".console"><codeline><highlight class="normal"><sp/><sp/>Check<sp/>failed<sp/>comparisons</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>actual<sp/>!=<sp/>42<sp/>FAILED<sp/>(unit-test.cpp:286,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>FAILED<sp/>(unit-test.cpp:307,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>42<sp/>!=<sp/>42_i<sp/>FAILED<sp/>(unit-test.cpp:310,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>(actual<sp/>==<sp/>42)<sp/>and<sp/>(actual<sp/>!=<sp/>42.0)<sp/>FAILED<sp/>(unit-test.cpp:781,<sp/>(42<sp/>==<sp/>42</highlight></codeline>
-<codeline><highlight class="normal">and<sp/>42.000000<sp/>!=<sp/>42.000000))</highlight></codeline>
+<para><programlisting filename=".console"><codeline><highlight class="normal">Check<sp/>failed<sp/>comparisons</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>✗<sp/>actual<sp/>!=<sp/>42<sp/>FAILED<sp/>(unit-test.cpp:286,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>✗<sp/>FAILED<sp/>(unit-test.cpp:307,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>✗<sp/>42<sp/>!=<sp/>42_i<sp/>FAILED<sp/>(unit-test.cpp:310,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>✗<sp/>(actual<sp/>==<sp/>42)<sp/>and<sp/>(actual<sp/>!=<sp/>42.0)<sp/>FAILED<sp/>(unit-test.cpp:781,<sp/>(42<sp/>==<sp/>42<sp/>and<sp/>42.0<sp/>!=<sp/>42.0))</highlight></codeline>
 </programlisting></para>
+<para>The C strings (<computeroutput>char</computeroutput> arrays, including the string literals, and <computeroutput>char</computeroutput> pointers) are compared by content, also with <computeroutput>std::string</computeroutput> and <computeroutput>std::string_view</computeroutput>, so <computeroutput>mt::eq (actual, "abc")</computeroutput> checks the characters, not the addresses; a null <computeroutput>char</computeroutput> pointer is equal only to another null pointer (or <computeroutput>nullptr</computeroutput>), not to an empty string. The other pointers and arrays (including <computeroutput>uint8_t</computeroutput> buffers) are compared by address.</para>
 <para><simplesect kind="par"><title>Comparing Containers</title><para></para>
 </simplesect>
-Containers can be compared for equality or inequality using the same comparator functions. Comparison is performed by iterating through each element and evaluating it individually.</para>
+Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed with the standard <computeroutput>==</computeroutput> operator, so the containers must be of the same type. There are no <computeroutput>==</computeroutput> and <computeroutput>!=</computeroutput> operators for containers in the <computeroutput>operators</computeroutput> namespace, since the standard ones would be selected, and these return a plain <computeroutput>bool</computeroutput>.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
-<programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>containers&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>containers&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>},<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>}))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2<sp/>}<sp/>eq<sp/>vector{<sp/>1,<sp/>2<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>

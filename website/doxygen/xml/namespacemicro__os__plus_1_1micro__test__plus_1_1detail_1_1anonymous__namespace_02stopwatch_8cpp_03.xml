@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{stopwatch.cpp}</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03_1a34225dca0ef5b70eb98c8eeaa3a05b06" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::anonymous_namespace{stopwatch.cpp}::read_clock</definition>
+        <argsstring>(timespec &amp;ts) noexcept</argsstring>
+        <name>read_clock</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{stopwatch.cpp}::read_clock</qualifiedname>
+        <param>
+          <type>timespec &amp;</type>
+          <declname>ts</declname>
+        </param>
+        <briefdescription>
+<para>Reads the system clock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>On Windows, the current time is captured via <computeroutput>timespec_get()</computeroutput> with <computeroutput>TIME_UTC</computeroutput>. On POSIX platforms with <computeroutput>CLOCK_MONOTONIC</computeroutput> defined, <computeroutput>clock_gettime(CLOCK_MONOTONIC)</computeroutput> is used to obtain a monotonic reading. On platforms where neither macro is defined, <computeroutput>ts</computeroutput> is left unchanged.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <computeroutput>timespec</computeroutput> where the reading is stored. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" line="85" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="85" bodyend="94"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03_1a34225dca0ef5b70eb98c8eeaa3a05b06" compoundref="stopwatch_8cpp" startline="85" endline="94">read_clock</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03_1a34225dca0ef5b70eb98c8eeaa3a05b06" compoundref="stopwatch_8cpp" startline="85" endline="94">read_clock</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Local helpers of the stopwatch. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The unnamed namespace gives the helpers internal linkage, so that they are visible only in this translation unit, and cannot conflict with the names of the application or of the other source files of the framework. They are not declared in any header.</para>
+<para>It contains <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03_1a34225dca0ef5b70eb98c8eeaa3a05b06" kindref="member">read_clock()</ref></computeroutput>, which isolates the platform-specific access to the system clock. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" line="68" column="3"/>
+  </compounddef>
+</doxygen>

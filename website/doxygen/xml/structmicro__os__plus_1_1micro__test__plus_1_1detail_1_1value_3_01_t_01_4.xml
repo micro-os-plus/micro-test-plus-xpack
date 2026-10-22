@@ -1,0 +1,494 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</compoundname>
+    <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;</basecompoundref>
+    <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;</basecompoundref>
+    <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::to_t&lt; T &gt;</derivedcompoundref>
+    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1adbc4320a0bdfc8bcc0cdf255639af0f2" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::epsilon</definition>
+        <argsstring></argsstring>
+        <name>epsilon</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::epsilon</qualifiedname>
+        <initializer>= T{}</initializer>
+        <briefdescription>
+<para>The epsilon value used for floating-point comparisons. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This instance member defines the precision for comparisons. It is set via the constructor, either explicitly or computed as a default based on the number of decimal digits in the value. Each instance carries its own epsilon, so two <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput> objects with different precisions do not interfere with each other. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="473" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="473" bodyend="473"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a53d900a34b6e094537044952ccda7ca2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value</definition>
+        <argsstring>(const T &amp;_value) noexcept</argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>_value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a value object with the specified value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be stored.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Delegates to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">value_base</ref>&lt;T&gt;{ _value }</computeroutput> to initialise the base. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="437" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value</definition>
+        <argsstring>(const T &amp;_value, const T precision) noexcept</argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>_value</declname>
+        </param>
+        <param>
+          <type>const T</type>
+          <declname>precision</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a floating-point value with a specified precision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating-point value to be stored. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>precision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The epsilon value to be used for comparisons.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Delegates to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">value_base</ref>&lt;T&gt;{ _value }</computeroutput> and stores the supplied precision in <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1adbc4320a0bdfc8bcc0cdf255639af0f2" kindref="member">epsilon</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="494" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="494" bodyend="497"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" compoundref="values-inlines_8h" startline="78" endline="80">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_base</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t_1aad9720f2d1e443d77cdfd1eb1151e924" compoundref="literals-inlines_8h" startline="436" endline="438">micro_os_plus::micro_test_plus::to_t&lt; T &gt;::to_t</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a6c551645c456ea1319752d0055aceb5a" compoundref="values_8h" startline="511" endline="514">value</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a6c551645c456ea1319752d0055aceb5a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value</definition>
+        <argsstring>(const T &amp;val)</argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a floating point value with default precision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating point value to be stored.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The epsilon is computed by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" kindref="member">math::decimal_epsilon()</ref></computeroutput> as 1 divided by 10 raised to the number of decimal digits in the value, with the leading zeros of a value below one counted (1e-12 for <computeroutput>1e-12</computeroutput>); a zero value gets a zero epsilon, so that it is compared exactly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="511" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="511" bodyend="514"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" compoundref="values_8h" startline="494" endline="497">value</references>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T &amp; micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::get</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>get</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::get</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Getter for the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference, so that a wrapped object (for example a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref>&lt;std::string&gt;</computeroutput>) is not copied each time it is compared or formatted.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>A reference to the stored value.</para>
+</simplesect>
+Returns a <computeroutput>const</computeroutput> reference to the stored value, valid as long as the wrapper. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="200" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T &amp; micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::get</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>get</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::get</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Getter for the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference, so that a wrapped object (for example a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref>&lt;std::string&gt;</computeroutput>) is not copied each time it is compared or formatted.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>A reference to the stored value.</para>
+</simplesect>
+Returns a <computeroutput>const</computeroutput> reference to the stored value, valid as long as the wrapper. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="200" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T &amp; micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::get</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>get</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value_base::get</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Getter for the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference, so that a wrapped object (for example a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref>&lt;std::string&gt;</computeroutput>) is not copied each time it is compared or formatted.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>A reference to the stored value.</para>
+</simplesect>
+Returns a <computeroutput>const</computeroutput> reference to the stored value, valid as long as the wrapper. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="200" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="100" bodyend="103"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" compoundref="values_8h" startline="210" endline="210">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</references>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::operator T</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator T</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::operator T</qualifiedname>
+        <briefdescription>
+<para>Explicit conversion operator to the underlying value type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The stored value as type <computeroutput>T</computeroutput>.</para>
+</simplesect>
+Allows explicit conversion to the encapsulated value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="185" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::operator T</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator T</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::operator T</qualifiedname>
+        <briefdescription>
+<para>Explicit conversion operator to the underlying value type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The stored value as type <computeroutput>T</computeroutput>.</para>
+</simplesect>
+Allows explicit conversion to the encapsulated value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="185" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::operator T</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator T</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value_base::operator T</qualifiedname>
+        <briefdescription>
+<para>Explicit conversion operator to the underlying value type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The stored value as type <computeroutput>T</computeroutput>.</para>
+</simplesect>
+Allows explicit conversion to the encapsulated value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="185" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="88" bodyend="91"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" compoundref="values-inlines_8h" startline="78" endline="80">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_base</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" compoundref="values_8h" startline="210" endline="210">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" prot="public" static="no">
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></type>
+        <definition>using micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::op_type = </definition>
+        <argsstring></argsstring>
+        <name>op_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::op_type</qualifiedname>
+        <briefdescription>
+<para>Marker identifying the framework expression types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Declared directly rather than inherited from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></computeroutput>, to avoid the empty base; detected by the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput> concept. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="162" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" prot="public" static="no">
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></type>
+        <definition>using micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::op_type = </definition>
+        <argsstring></argsstring>
+        <name>op_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::op_type</qualifiedname>
+        <briefdescription>
+<para>Marker identifying the framework expression types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Declared directly rather than inherited from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></computeroutput>, to avoid the empty base; detected by the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput> concept. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="162" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" prot="public" static="no">
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></type>
+        <definition>using micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::op_type = op</definition>
+        <argsstring></argsstring>
+        <name>op_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value_base::op_type</qualifiedname>
+        <briefdescription>
+<para>Marker identifying the framework expression types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Declared directly rather than inherited from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></computeroutput>, to avoid the empty base; detected by the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput> concept. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="162" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1abb9873b49614cc55fae3f6dda7b08b48" prot="public" static="no">
+        <type>T</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_type = </definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value_type</qualifiedname>
+        <briefdescription>
+<para>The type of the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Exposed for use by generic code that inspects wrapper types. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="170" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1abb9873b49614cc55fae3f6dda7b08b48" prot="public" static="no">
+        <type>T</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_type = </definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value_type</qualifiedname>
+        <briefdescription>
+<para>The type of the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Exposed for use by generic code that inspects wrapper types. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="170" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1abb9873b49614cc55fae3f6dda7b08b48" prot="public" static="no">
+        <type>T</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_type = T</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value_base::value_type</qualifiedname>
+        <briefdescription>
+<para>The type of the stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Exposed for use by generic code that inspects wrapper types. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="170" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value_</qualifiedname>
+        <briefdescription>
+<para>The stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by the constructor. Derived wrappers and comparators access it via <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" kindref="member">get()</ref></computeroutput> or the explicit conversion operator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="210" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="210" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value_</qualifiedname>
+        <briefdescription>
+<para>The stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by the constructor. Derived wrappers and comparators access it via <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" kindref="member">get()</ref></computeroutput> or the explicit conversion operator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="210" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="210" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::value_base::value_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>The stored value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by the constructor. Derived wrappers and comparators access it via <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" kindref="member">get()</ref></computeroutput> or the explicit conversion operator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="210" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="210" bodyend="210"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" compoundref="values-inlines_8h" startline="78" endline="80">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_base</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" compoundref="values-inlines_8h" startline="100" endline="103">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::get</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" compoundref="values-inlines_8h" startline="88" endline="91">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::operator T</referencedby>
+      </memberdef>
+    </sectiondef>
+    <requiresclause>std::floating_point&lt;T&gt;    </requiresclause>
+    <briefdescription>
+<para>Struct template representing a floating point value with precision control. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating point type to be encapsulated.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">value</ref></computeroutput> struct template specialisation for floating point types encapsulates a value of type <computeroutput>T</computeroutput> and provides an associated <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1adbc4320a0bdfc8bcc0cdf255639af0f2" kindref="member">epsilon</ref></computeroutput> for precision control during comparisons. The stored value, explicit conversion operator, and getter are provided by the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">value_base</ref></computeroutput> base.</para>
+<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1adbc4320a0bdfc8bcc0cdf255639af0f2" kindref="member">epsilon</ref></computeroutput> member defines the precision used for floating point comparisons and can be set explicitly (by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kindref="member">approx()</ref></computeroutput>) or computed as a default based on the number of decimal digits in the value (by the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput> wrappers). </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base"/>
+      </node>
+      <node id="3">
+        <label>micro_os_plus::micro_test_plus::to_t&lt; T &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="461" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="462" bodyend="515"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1adbc4320a0bdfc8bcc0cdf255639af0f2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>epsilon</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>get</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>get</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>get</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>op_type</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>op_type</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>op_type</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>operator T</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>operator T</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>operator T</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a6c551645c456ea1319752d0055aceb5a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a53d900a34b6e094537044952ccda7ca2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value_base</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1abb9873b49614cc55fae3f6dda7b08b48" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value_type</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1abb9873b49614cc55fae3f6dda7b08b48" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value_type</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1abb9873b49614cc55fae3f6dda7b08b48" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</scope><name>value_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

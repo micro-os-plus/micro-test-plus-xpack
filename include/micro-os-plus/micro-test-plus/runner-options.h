@@ -18,7 +18,8 @@
  * @details
  * This header provides the `runner_options` structure, which holds the
  * configuration of a test session (the reporter, the verbosity, the
- * output file, the use of colours, and the suite filter), together with
+ * output file, the use of colours, the filter, and the listing of the
+ * test cases), together with
  * the `reporter_kind`, `verbosity`, and `colour_mode` enumerations used
  * by its members.
  *
@@ -220,8 +221,9 @@ namespace micro_os_plus::micro_test_plus
      * Set by `--output-file=<path>` or `--output-file <path>`. When it
      * is `nullptr` or empty, no file is written. The reporter opens the
      * file, and keeps a copy of the path, when it is created by
-     * `initialise()`; if the file cannot be opened, the program exits
-     * with an error message.
+     * `initialise()`; if the file cannot be opened, the error is reported
+     * on `stderr`, the report is written only to the console, and
+     * `runner::run()` returns 2.
      */
     const char* output_file_path{ nullptr };
 

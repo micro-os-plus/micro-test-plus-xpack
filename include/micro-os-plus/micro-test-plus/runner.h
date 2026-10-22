@@ -164,11 +164,31 @@ namespace micro_os_plus::micro_test_plus
    */
   class runner
   {
-    // Display the session duration.
+    /**
+     * @brief The human reporter, which displays the session.
+     *
+     * @details
+     * It reads the stopwatch, to display the duration of the session.
+     */
     friend class detail::reporter_human;
+
+    /**
+     * @brief The TAP reporter, which displays the session.
+     *
+     * @details
+     * It reads the stopwatch, to display the duration of the session.
+     */
     friend class detail::reporter_tap;
 
-    // Pass the reporter to the suites and the test cases.
+    /**
+     * @brief The base of the nodes, which shares the state of the
+     * session.
+     *
+     * @details
+     * It passes the reporter to the suites and the test cases, applies
+     * the filter, lists the test cases, keeps the running test case,
+     * and aborts for a failed requirement.
+     */
     friend class detail::runnable_base;
 
   public:
@@ -310,6 +330,11 @@ namespace micro_os_plus::micro_test_plus
      * suites whose names do not match the first pattern are reported as
      * skipped, without being run.
      *
+     * While the test cases are listed (see `is_listing()`), the suites
+     * run only to create their test cases, which are listed, and the
+     * number of listed test cases is written; the result of the checks
+     * does not affect the exit code, since no check is evaluated.
+     *
      * The session runs only once; later calls return the same exit code
      * without running anything again. A call made while the session runs,
      * for example from a suite body, or after the test execution was
@@ -318,10 +343,11 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *   None.
-     * @return 0 if all checks were successful, 1 otherwise, if a suite was
-     * rejected by `add_suite()`, if the runner was not initialised, or if the
-     * test execution was aborted, and 2 if `initialise()` reported an
-     * option error, regardless of the checks.
+     * @return 0 if all checks passed, or if the test cases were listed;
+     * 1 if a check failed, if a suite was rejected by `add_suite()`, if
+     * the runner was not initialised or is running, or if the test
+     * execution was aborted; 2 if `initialise()` reported an option
+     * error, regardless of the checks.
      *
      * @since 5.1.0
      */
@@ -720,7 +746,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Runs the suites registered with `add_suite()` and the static suites
      * that refer to this runner in a single order, sorted by name; for
-     * equal names, the registered suites run first. The suites not
+     * equal names, in the order of their insertion into the list, so the
+     * static suites constructed before `main()` run first. The suites not
      * selected by the first filter pattern are reported as skipped.
      *
      * @par Parameters
@@ -1023,11 +1050,19 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief The number of listed test cases.
+     *
+     * @details
+     * Incremented by `list_test_case()`; written by `run()` at the end
+     * of the list.
      */
     size_t listed_test_cases_count_ = 0;
 
     /**
      * @brief The number of suites with listed test cases.
+     *
+     * @details
+     * Incremented by `list_test_case()` when it writes the name of a
+     * suite; written by `run()` at the end of the list.
      */
     size_t listed_suites_count_ = 0;
   };

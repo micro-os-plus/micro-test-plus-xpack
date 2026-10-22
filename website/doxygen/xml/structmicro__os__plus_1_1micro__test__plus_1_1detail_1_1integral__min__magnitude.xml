@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::integral_min_magnitude</compoundname>
+    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude_1a30671e3b97a6c4c108d47358e9e40b35" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::detail::integral_min_magnitude&lt; T &gt;::operator-</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator-</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::integral_min_magnitude::operator-</qualifiedname>
+        <briefdescription>
+<para>Unary minus operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The only operation of the type, the one that makes the literal valid.</para>
+<para><simplesect kind="return"><para>An <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">integral_constant</ref></computeroutput> with the minimum value of <computeroutput>T</computeroutput>.</para>
+</simplesect>
+Returns the minimum of <computeroutput>T</computeroutput>, which is the negation of the absolute value represented by this type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="293" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="159" bodyend="162"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Struct template representing the absolute value of the minimum of a signed integral type, as written in a literal. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The signed integral type of the literal.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The absolute value of the minimum of a signed type (e.g. 128 for <computeroutput>int8_t</computeroutput>) does not fit in the type, but the literal must be accepted to write the minimum with the unary minus (e.g. <computeroutput>-128<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">_i8</ref></computeroutput>). The literal operators return this type for such a literal; its only operation is the unary minus, so any other use of the literal fails to compile. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="281" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="282" bodyend="294"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude_1a30671e3b97a6c4c108d47358e9e40b35" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::integral_min_magnitude</scope><name>operator-</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

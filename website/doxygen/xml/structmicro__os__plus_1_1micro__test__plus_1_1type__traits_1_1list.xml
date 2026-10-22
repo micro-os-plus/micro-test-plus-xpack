@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::list</compoundname>
-    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <includes refid="extension_8h" local="no">extension.h</includes>
     <templateparamlist>
       <param>
         <type>class...</type>
@@ -11,7 +11,7 @@
       </param>
     </templateparamlist>
     <briefdescription>
-<para>Struct template representing a compile-time type list. </para>
+<para>Deprecated empty type list. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -19,14 +19,15 @@
 <parametername>Types</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The types to be included in the list.</para>
+<para>The types in the list.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kindref="compound">list</ref></computeroutput> struct template provides a mechanism for grouping an arbitrary number of types into a single type list at compile time. This is a fundamental building block for template metaprogramming, enabling operations such as type iteration, transformation, and introspection within the µTest++ framework.</para>
-<para>The type list is commonly used in conjunction with function traits and other metaprogramming utilities to facilitate advanced type manipulations and compile-time computations. </para>
+Used only as the type of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits" kindref="compound">function_traits</ref>&lt;&gt;::args</computeroutput>; the framework no longer uses it.</para>
+<para><xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="132" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="133" bodyend="134"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="561" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="562" bodyend="563"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

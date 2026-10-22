@@ -27,12 +27,9 @@
  * selection, exponentiation, and compile-time parsing of numeric values from
  * character sequences.
  *
- * These utilities are designed to be lightweight and suitable for embedded
- * environments, supporting both integral and floating-point types, and
- * enabling expressive, type-safe, and efficient compile-time computations.
- * Special attention is given to constexpr compatibility and minimal reliance
- * on the standard library, ensuring portability and performance across a wide
- * range of platforms.
+ * These utilities are lightweight, `constexpr` or `consteval`, and
+ * support both integral and floating-point types; they depend only on
+ * `<array>` and `<limits>`.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail::math` namespace, since they are
@@ -179,8 +176,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Used by the floating-point literal operators; the integer literals
-     * use `integer()`, which also accepts the C++ prefixes and checks the
-     * range.
+     * use `integer_magnitude()`, which also accepts the C++ prefixes and
+     * checks the range.
      *
      * @tparam T The target integral type for the result.
      * @tparam Cs The character pack representing the numeric value.

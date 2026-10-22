@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-cli" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cli</compoundname>
     <title>Command Line Options</title>
     <briefdescription>
-<para>Options for controlling test output verbosity at run-time. </para>
+<para>Options for controlling the test output at run time. </para>
     </briefdescription>
     <detaileddescription>
 <para>The µTest++ framework offers flexible control over test-output verbosity, allowing users to tailor the level of detail to their specific requirements and workflow.</para>
@@ -28,27 +28,37 @@
 </programlisting></para>
 <sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-reporter">
 <title>Reporter</title><para>By default, the µTest++ output follows the <ulink url="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</ulink> rules.</para>
-<para>For compatibility reasons, the proprietary format implemented by the initial releases will also be retained, but it is not recommended for new projects.</para>
+<para>The human-readable format of the initial releases is also available. It is intended for the people who read the console output, while the TAP format is intended for the integration with other tools.</para>
 <para>If needed, more reporting formats (like JUnit, JSON, etc.) can be added.</para>
 <para>To explicitly ask for a specific format:</para>
 <para><itemizedlist>
-<listitem><para><computeroutput>--reporter=tap</computeroutput> - the default TAP reporter</para>
-</listitem><listitem><para><computeroutput>--reporter=human</computeroutput> - the human-readable reporter</para>
+<listitem><para><computeroutput>--reporter=tap</computeroutput> – the default TAP reporter</para>
+</listitem><listitem><para><computeroutput>--reporter=human</computeroutput> – the human-readable reporter</para>
 </listitem></itemizedlist>
 </para>
+</sect1>
+<sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-colours">
+<title>Colours</title><para>The human reporter highlights the results in colour. By default, the colours are used only when <computeroutput>stdout</computeroutput> is a terminal, which can be detected only on POSIX platforms. To select them explicitly, as in the GNU tools:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>--color=auto</computeroutput> – use colours only when the output is a terminal (the default)</para>
+</listitem><listitem><para><computeroutput>--color=always</computeroutput>, or <computeroutput>--color</computeroutput> alone – always use colours, for example in the CI systems that render the ANSI escape sequences but do not provide a terminal</para>
+</listitem><listitem><para><computeroutput>--color=never</computeroutput> – never use colours</para>
+</listitem></itemizedlist>
+</para>
+<para>As in the GNU tools, the value must be attached with <computeroutput>=</computeroutput>, and the synonyms <computeroutput>yes</computeroutput> and <computeroutput>force</computeroutput> (for <computeroutput>always</computeroutput>), <computeroutput>no</computeroutput> and <computeroutput>none</computeroutput> (for <computeroutput>never</computeroutput>), and <computeroutput>tty</computeroutput> and <computeroutput>if-tty</computeroutput> (for <computeroutput>auto</computeroutput>) are also accepted. For compatibility with Catch2 and Boost UT, <computeroutput>--use-colour=&lt;mode&gt;</computeroutput> or <computeroutput>--use-colour &lt;mode&gt;</computeroutput>, with <computeroutput>yes</computeroutput>, <computeroutput>no</computeroutput>, or <computeroutput>auto</computeroutput> (or any other value of <computeroutput>--color</computeroutput>), is also accepted. The TAP reporter never uses colours, and the output file never receives them.</para>
+<para>On platforms without a command line, the mode can be set in <computeroutput>runner_options::colour</computeroutput>.</para>
 </sect1>
 <sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-verbosity">
 <title>Verbosity</title><para>By default, µTest++ displays a summary line for each passing test case and full expectation details for each failing one.</para>
 <para>To adjust the verbosity, the following command-line options are available:</para>
 <para><itemizedlist>
 <listitem><para><computeroutput>--verbose</computeroutput> – display all expectations, regardless of outcome</para>
-</listitem><listitem><para><computeroutput>--quiet</computeroutput> – display only the test suite totals</para>
-</listitem><listitem><para><computeroutput>--silent</computeroutput> – suppress all output and return only the exit code</para>
+</listitem><listitem><para><computeroutput>--quiet</computeroutput> – display only the session totals and, with the TAP reporter, one result line per test suite; the failed checks are not displayed</para>
+</listitem><listitem><para><computeroutput>--silent</computeroutput> – suppress all console output and return only the exit code</para>
 </listitem></itemizedlist>
 </para>
-<para>These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.</para>
-<para>The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.</para>
-<para>The source code for this example is in <computeroutput>tests/sources/minimal-test/src/main.cpp</computeroutput>.</para>
+<para>On platforms without a command line, the level can be set in <computeroutput>runner_options::verbosity_level</computeroutput>.</para>
+<para>The source code for these examples is in <computeroutput>tests/sources/minimal/src/main.cpp</computeroutput>.</para>
 <sect2 id="group__micro-os-plus-micro-test-plus-cli_1cli-verbosity-verbose">
 <title>Verbose mode</title><para>In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
@@ -72,20 +82,98 @@
 </programlisting></para>
 </sect2>
 <sect2 id="group__micro-os-plus-micro-test-plus-cli_1cli-verbosity-quiet">
-<title>Quiet mode</title><para>In quiet mode, the µTest++ reporter displays only the overall session totals.</para>
+<title>Quiet mode</title><para>In quiet mode, the µTest++ reporter displays only the overall session totals. The TAP reporter also displays one <computeroutput>ok</computeroutput>/<computeroutput>not ok</computeroutput> line per test suite, with the plan counting them, so that the output remains a valid TAP document, which the TAP consumers read as failed when a suite failed.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting filename=".console"><codeline><highlight class="normal">$<sp/>minimal-test<sp/>one<sp/>two<sp/>--quiet<sp/>--reporter=tap</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">TAP<sp/>version<sp/>14</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">1..0</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>1<sp/>-<sp/>Minimal<sp/>#<sp/>{<sp/>passed,<sp/>2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">1..1</highlight></codeline>
 <codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
+<para>Quiet mode tells whether the run failed, not what failed: the failed checks, their locations, and their test cases are not displayed. This is by design, since displaying in full only the failed test cases is what the default mode does. To learn what failed, run without <computeroutput>--quiet</computeroutput>, or keep <computeroutput>--quiet</computeroutput> and add <computeroutput>--output-file</computeroutput> with the TAP reporter, whose file always receives the complete report, whatever the verbosity:</para>
+<para><programlisting filename=".console"><codeline><highlight class="normal">$<sp/>sample-test<sp/>--quiet<sp/>--output-file=sample-test.tap</highlight></codeline>
+</programlisting></para>
+<para>With the human reporter, the output file is complete only in the default and verbose modes, so in quiet mode neither the console nor the file shows the failures.</para>
+<para>When exceptions are not enabled and a failed requirement aborts the test execution, the results of the aborted test case are displayed in quiet mode as well, since the totals are never reached.</para>
 </sect2>
 <sect2 id="group__micro-os-plus-micro-test-plus-cli_1cli-verbosity-silent">
-<title>Silent mode</title><para>In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.   </para>
+<title>Silent mode</title><para>In silent mode, the µTest++ reporter suppresses all console output, and the framework returns only the exit code; the output file, if any, is still written.</para>
 </sect2>
+</sect1>
+<sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-output-file">
+<title>Output File</title><para><itemizedlist>
+<listitem><para><computeroutput>--output-file=&lt;path&gt;</computeroutput> or <computeroutput>--output-file &lt;path&gt;</computeroutput> – write a copy of the report to a file</para>
+</listitem></itemizedlist>
+</para>
+<para>The file never receives colours. With the TAP reporter, it always receives the complete report, whatever the verbosity, so it can be passed to other tools; with the human reporter, it is complete only in the default and verbose modes. If the file cannot be opened, the error is reported on <computeroutput>stderr</computeroutput>, the report is written only to the console, and the exit code is 2. On platforms without a command line, the path can be set in <computeroutput>runner_options::output_file_path</computeroutput>.</para>
+</sect1>
+<sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-filter">
+<title>Filter</title><para>By default, all test suites and test cases are run. To run only some of them, the <computeroutput>--filter</computeroutput> option selects them by name, as <computeroutput>--grep</computeroutput> does in node-tap:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>--filter=&lt;pattern&gt;</computeroutput> or <computeroutput>--filter &lt;pattern&gt;</computeroutput> – run only the suites and the test cases whose names match the patterns</para>
+</listitem></itemizedlist>
+</para>
+<para>The option may be repeated, one pattern per nesting level: the first pattern applies to the suite names, the second to the names of the test cases, and each further pattern to the names of the test cases nested one level deeper. The levels without a pattern are not filtered; to filter only the test cases, use <computeroutput>*</computeroutput> for the suites.</para>
+<para>In a pattern, <computeroutput>*</computeroutput> matches any sequence of characters, including an empty one, <computeroutput>?</computeroutput> matches any single character, and <computeroutput>|</computeroutput> separates alternatives. The match is case-sensitive, and the pattern must cover the whole name; for example, <computeroutput>Args</computeroutput> does not select a suite named <computeroutput>Args suite</computeroutput>, but <computeroutput>Args*</computeroutput> and <computeroutput>Args*|*namespace*</computeroutput> do. Since the patterns usually contain wildcards, they must be quoted, to prevent the shell from expanding them.</para>
+<para>The suites and the test cases that are not selected are reported as skipped, keep their numbers in the TAP plans, and their code is not run. The top suite is never skipped as a whole, since its body is <computeroutput>main()</computeroutput>, but its test cases are filtered like those of any other suite.</para>
+<para>On platforms without a command line, the patterns can be set in <computeroutput>runner_options::filter_patterns</computeroutput>.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".console"><codeline><highlight class="normal">$<sp/>sample-test<sp/>one<sp/>two<sp/>--filter=&apos;*namespace*&apos;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TAP<sp/>version<sp/>14</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Subtest:<sp/>Sample</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>1<sp/>-<sp/>Sample<sp/>#<sp/>{<sp/>passed,<sp/>31<sp/>checks<sp/>in<sp/>13<sp/>test<sp/>cases,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">ok<sp/>2<sp/>-<sp/>Args<sp/>suite<sp/>#<sp/>SKIP<sp/>filtered</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Subtest:<sp/>Explicit<sp/>namespace<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>3<sp/>-<sp/>Explicit<sp/>namespace<sp/>suite<sp/>#<sp/>{<sp/>passed,<sp/>2<sp/>checks<sp/>in<sp/>2<sp/>test<sp/>cases,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Subtest:<sp/>Implicit<sp/>namespace<sp/>suite</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>4<sp/>-<sp/>Implicit<sp/>namespace<sp/>suite<sp/>#<sp/>{<sp/>passed,<sp/>2<sp/>checks<sp/>in<sp/>2<sp/>test<sp/>cases,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1..4</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>35<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>17<sp/>test<sp/>cases,<sp/>4<sp/>test<sp/>suites,<sp/>1<sp/>skipped,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
+</programlisting></para>
+<para>To run only the test cases named <computeroutput>Check one</computeroutput> of the same suites:</para>
+<para><programlisting filename=".console"><codeline><highlight class="normal">$<sp/>sample-test<sp/>one<sp/>two<sp/>--filter=&apos;*namespace*&apos;<sp/>--filter=&apos;Check<sp/>one&apos;</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Subtest:<sp/>Explicit<sp/>namespace<sp/>suite</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>Subtest:<sp/>Check<sp/>one</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1..0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ok<sp/>1<sp/>-<sp/>Check<sp/>one<sp/>#<sp/>{<sp/>passed,<sp/>1<sp/>check<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ok<sp/>2<sp/>-<sp/>Check<sp/>two<sp/>#<sp/>SKIP<sp/>filtered</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>1..2</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>3<sp/>-<sp/>Explicit<sp/>namespace<sp/>suite<sp/>#<sp/>{<sp/>passed,<sp/>1<sp/>check<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>skipped,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">1..4</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>2<sp/>test<sp/>cases,<sp/>15<sp/>skipped,<sp/>4<sp/>test<sp/>suites,<sp/>1<sp/>skipped,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
+</programlisting></para>
+<para>The test cases of the top suite <computeroutput>Sample</computeroutput> are skipped too, since its name does not match the first pattern.</para>
+</sect1>
+<sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-list-tests">
+<title>Listing the Test Cases</title><para><itemizedlist>
+<listitem><para><computeroutput>--list-tests</computeroutput>, or <computeroutput>--list</computeroutput> – list the test cases instead of running them, as in Catch2 and Boost UT</para>
+</listitem></itemizedlist>
+</para>
+<para>The suite bodies run, to create their test cases, but the test case bodies do not, so no check is evaluated. The selected test cases (see the filter above) are listed under the names of their suites; the nested test cases are not listed, since they are created by the bodies of their parents. The list is written to the console, unless the verbosity is <computeroutput>silent</computeroutput>, and to the output file, if any, and the exit code is 0 (or 2 after an option error).</para>
+<para><programlisting filename=".console"><codeline><highlight class="normal">$<sp/>sample-test<sp/>--list-tests</highlight></codeline>
+<codeline><highlight class="normal">All<sp/>available<sp/>test<sp/>cases:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Sample</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Check<sp/>various<sp/>conditions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+</programlisting></para>
+<para>The header is <computeroutput>Matching test cases:</computeroutput> when there are filter patterns. On platforms without a command line, the listing can be requested with <computeroutput>runner_options::list_tests</computeroutput>, and checked with <computeroutput>runner::is_listing()</computeroutput>.   </para>
 </sect1>
     </detaileddescription>
   </compounddef>

@@ -150,7 +150,7 @@ namespace micro_os_plus::micro_test_plus
     {
     public:
       /**
-       * @brief Obtain the current source location.
+       * @brief Returns the current source location.
        *
        * @param file The file name (automatically provided by the compiler).
        * @param line The line number (automatically provided by the compiler).
@@ -167,7 +167,7 @@ namespace micro_os_plus::micro_test_plus
               ) noexcept;
 
       /**
-       * @brief Retrieve the file name associated with this source location.
+       * @brief Gets the file name associated with this source location.
        *
        * @par Parameters
        *   None.
@@ -177,7 +177,7 @@ namespace micro_os_plus::micro_test_plus
       file_name (void) const noexcept;
 
       /**
-       * @brief Retrieve the line number associated with this source location.
+       * @brief Gets the line number associated with this source location.
        *
        * @par Parameters
        *   None.
@@ -207,7 +207,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__cpp_lib_source_location)
 
     /**
-     * @brief Extract the file name from a path.
+     * @brief Extracts the file name from a path.
      *
      * @details
      * Forwards to `utility::extract_file_name()`, which the framework
@@ -225,7 +225,7 @@ namespace micro_os_plus::micro_test_plus
     short_name (const char* name) noexcept;
 
     /**
-     * @brief Extract the type name from the `__PRETTY_FUNCTION__` macro.
+     * @brief Extracts the type name from the `__PRETTY_FUNCTION__` macro.
      *
      * @details
      * The name is spelled as the compiler prints it, and is used to

@@ -1,0 +1,594 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="values_8h" kind="file" language="C++">
+    <compoundname>values.h</compoundname>
+    <includes refid="math_8h" local="yes">math.h</includes>
+    <includes local="no">concepts</includes>
+    <includes local="no">limits</includes>
+    <includes local="no">string_view</includes>
+    <includes local="no">type_traits</includes>
+    <includes refid="values-inlines_8h" local="yes">inlines/values-inlines.h</includes>
+    <includedby refid="extension_8h" local="yes">extension.h</includedby>
+    <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>inlines/math-inlines.h</label>
+        <link refid="math-inlines_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>inlines/values-inlines.h</label>
+        <link refid="values-inlines_8h"/>
+      </node>
+      <node id="2">
+        <label>math.h</label>
+        <link refid="math_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>values.h</label>
+        <link refid="values_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>array</label>
+      </node>
+      <node id="7">
+        <label>concepts</label>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>limits</label>
+      </node>
+      <node id="8">
+        <label>string_view</label>
+      </node>
+      <node id="9">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>micro-test-plus.h</label>
+        <link refid="micro-test-plus_8h"/>
+      </node>
+      <node id="3">
+        <label>check-result.h</label>
+        <link refid="check-result_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>detail.h</label>
+        <link refid="detail_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>exceptions.h</label>
+        <link refid="exceptions_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>expression-formatter.h</label>
+        <link refid="expression-formatter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>extension.h</label>
+        <link refid="extension_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>function-comparators.h</label>
+        <link refid="function-comparators_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>operators-inlines.h</label>
+        <link refid="operators-inlines_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>test-inlines.h</label>
+        <link refid="test-inlines_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>literals.h</label>
+        <link refid="literals_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>operators.h</label>
+        <link refid="operators_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>reporter-human.h</label>
+        <link refid="reporter-human_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>reporter-tap.h</label>
+        <link refid="reporter-tap_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>reporter.h</label>
+        <link refid="reporter_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>runner.h</label>
+        <link refid="runner_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>test.h</label>
+        <link refid="test_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>values.h</label>
+        <link refid="values_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>check-result.cpp</label>
+        <link refid="check-result_8cpp"/>
+      </node>
+      <node id="18">
+        <label>counters.cpp</label>
+        <link refid="counters_8cpp"/>
+      </node>
+      <node id="21">
+        <label>expression-formatter.cpp</label>
+        <link refid="expression-formatter_8cpp"/>
+      </node>
+      <node id="8">
+        <label>reporter-human.cpp</label>
+        <link refid="reporter-human_8cpp"/>
+      </node>
+      <node id="11">
+        <label>reporter-tap.cpp</label>
+        <link refid="reporter-tap_8cpp"/>
+      </node>
+      <node id="12">
+        <label>reporter.cpp</label>
+        <link refid="reporter_8cpp"/>
+      </node>
+      <node id="9">
+        <label>runner.cpp</label>
+        <link refid="runner_8cpp"/>
+      </node>
+      <node id="14">
+        <label>test.cpp</label>
+        <link refid="test_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant" prot="public">micro_os_plus::micro_test_plus::detail::floating_point_constant</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" prot="public">micro_os_plus::micro_test_plus::detail::integral_constant</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude" prot="public">micro_os_plus::micro_test_plus::detail::integral_min_magnitude</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" prot="public">micro_os_plus::micro_test_plus::detail::named_bool</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" prot="public">micro_os_plus::micro_test_plus::detail::op</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" prot="public">micro_os_plus::micro_test_plus::detail::value</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4" prot="public">micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" prot="public">micro_os_plus::micro_test_plus::detail::value_base</innerclass>
+    <innernamespace refid="namespacemicro__os__plus">micro_os_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail">micro_os_plus::micro_test_plus::detail</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::detail::integral_literal</definition>
+        <argsstring>(void)</argsstring>
+        <name>integral_literal</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::integral_literal</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Creates the compile-time constant of an integer literal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The value is checked by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kindref="member">math::integer_magnitude()</ref></computeroutput>, which accepts, for the signed types, the absolute value of the minimum; this value does not fit in <computeroutput>T</computeroutput>, so it is represented by <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude" kindref="compound">integral_min_magnitude</ref>&lt;T&gt;</computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type of the literal. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The characters of the literal, as received by a literal operator template.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Used by the integer literal operators (<computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>, etc.).</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>An <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">integral_constant</ref></computeroutput> with the value of the literal, or, when the value is the absolute value of the minimum of a signed <computeroutput>T</computeroutput>, an <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude" kindref="compound">integral_min_magnitude</ref>&lt;T&gt;</computeroutput>, valid only when negated. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" line="175" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="175" bodyend="189" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" declline="314" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" compoundref="literals-inlines_8h" startline="121" endline="124">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_c</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" compoundref="literals-inlines_8h" startline="93" endline="96">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" compoundref="literals-inlines_8h" startline="261" endline="264">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i16</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" compoundref="literals-inlines_8h" startline="275" endline="278">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i32</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" compoundref="literals-inlines_8h" startline="289" endline="292">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i64</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" compoundref="literals-inlines_8h" startline="247" endline="250">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i8</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" compoundref="literals-inlines_8h" startline="149" endline="152">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_l</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" compoundref="literals-inlines_8h" startline="163" endline="166">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ll</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" compoundref="literals-inlines_8h" startline="107" endline="110">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_s</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" compoundref="literals-inlines_8h" startline="135" endline="138">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_sc</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" compoundref="literals-inlines_8h" startline="177" endline="180">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" compoundref="literals-inlines_8h" startline="317" endline="320">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u16</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" compoundref="literals-inlines_8h" startline="331" endline="334">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u32</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" compoundref="literals-inlines_8h" startline="345" endline="348">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u64</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" compoundref="literals-inlines_8h" startline="303" endline="306">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u8</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" compoundref="literals-inlines_8h" startline="191" endline="194">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_uc</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" compoundref="literals-inlines_8h" startline="219" endline="222">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ul</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" compoundref="literals-inlines_8h" startline="233" endline="236">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ull</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" compoundref="literals-inlines_8h" startline="205" endline="208">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_us</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>C++ header file with declarations for the µTest++ value wrappers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This header provides the declarations for the value wrapper types used within the µTest++ framework: the <computeroutput>op</computeroutput> base struct, shared by all the framework expression types, the <computeroutput>value_base</computeroutput> common base, the compile-time <computeroutput>integral_constant</computeroutput> and <computeroutput>floating_point_constant</computeroutput> types, created by the literals, the run-time <computeroutput>value&lt;T&gt;</computeroutput> type, named by the <computeroutput>to_*</computeroutput> and <computeroutput>_*</computeroutput> aliases, and the <computeroutput>named_bool</computeroutput> type, created by the <computeroutput>_b</computeroutput> literal.</para>
+<para>The wrappers carry the operands of the comparisons, so that the comparators can apply the type-specific rules (for example the precision of the floating point values) and the reporters can print the actual values.</para>
+<para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">micro_os_plus::micro_test_plus::detail</ref></computeroutput> namespace, since users name these types only through the literals and the aliases, never directly.</para>
+<para>All header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase.</para>
+<para>This file is intended for internal use within the framework and should not be included directly by user code. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>µOS++<sp/>project<sp/>(https://micro-os-plus.github.io/).</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021-2026<sp/>Liviu<sp/>Ionescu.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software<sp/>for<sp/>any</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>purpose<sp/>is<sp/>hereby<sp/>granted,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>If<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>was<sp/>not<sp/>distributed<sp/>with<sp/>this<sp/>file,<sp/>it<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>obtained<sp/>from<sp/>https://opensource.org/licenses/mit.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Major<sp/>parts<sp/>of<sp/>the<sp/>code<sp/>are<sp/>inspired<sp/>from<sp/>v1.1.8<sp/>of<sp/>the<sp/>Boost<sp/>UT<sp/>project,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>released<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>Boost<sp/>Version<sp/>1.0<sp/>Software<sp/>License,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>which<sp/>can<sp/>be<sp/>obtained<sp/>from<sp/>https://www.boost.org/LICENSE_1_0.txt.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_VALUES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_VALUES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__has_include(&quot;micro-os-plus/project-config.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro-os-plus/project-config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__has_include(&quot;micro-os-plus/project-config.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__has_include(&quot;micro-os-plus/micro-test-plus-defines.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro-os-plus/micro-test-plus-defines.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__has_include(&quot;micro-os-plus/micro-test-plus-defines.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="math_8h" kindref="compound">math.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;concepts&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;type_traits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>push</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Waggregate-return&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat-pedantic&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="121" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kindref="member">op_type</ref><sp/>=<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="153" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" kindref="member">value_base</ref></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" kindref="member">op_type</ref><sp/>=<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1abb9873b49614cc55fae3f6dda7b08b48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1abb9873b49614cc55fae3f6dda7b08b48" kindref="member">value_type</ref><sp/>=<sp/>T;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" kindref="member">value_base</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>v)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>T<sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>constexpr<sp/>const<sp/>T&amp;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" kindref="member">get</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>private:</highlight></codeline>
+<codeline lineno="210" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" kindref="member">value_</ref>{};</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;auto<sp/>N&gt;</highlight></codeline>
+<codeline lineno="232" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_1a4f40fb20314c21d4c8320fe43a413103" kindref="member">integral_constant</ref><sp/>:<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" kindref="member">value_base</ref>&lt;decltype<sp/>(N)&gt;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="240" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_1abee5534864d29c269352cd6cf4c61059" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_1abee5534864d29c269352cd6cf4c61059" kindref="member">value</ref><sp/>=<sp/>N;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_1a4f40fb20314c21d4c8320fe43a413103" kindref="member">integral_constant</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_1ae73b9986fa10726b3ecb7a58ad0f08a5" kindref="member">operator- </ref>()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline lineno="281" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/>struct<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude" kindref="compound">integral_min_magnitude</ref></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_1ae73b9986fa10726b3ecb7a58ad0f08a5" kindref="member">operator- </ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">T,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">...<sp/>Cs&gt;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">integral_literal</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/>auto<sp/>N,<sp/>auto<sp/>D,<sp/>auto<sp/>Size,<sp/>auto<sp/>P<sp/>=<sp/>1&gt;</highlight></codeline>
+<codeline lineno="354" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant" kindref="compound">floating_point_constant</ref><sp/>:<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal"><sp/>(P<sp/>==<sp/>1<sp/>||<sp/>P<sp/>==<sp/>-1,</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;floating_point_constant:<sp/>P<sp/>must<sp/>be<sp/>+1<sp/>or<sp/>-1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1adcb16c95222c90598162fb5310bcd0f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1adcb16c95222c90598162fb5310bcd0f8" kindref="member">value_type</ref><sp/>=<sp/>T;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1acc11936d636a95777208dc8e50f2546f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1acc11936d636a95777208dc8e50f2546f" kindref="member">epsilon</ref><sp/>=<sp/>T<sp/>(1)<sp/>/<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" kindref="member">math::pow</ref><sp/>(T<sp/>(10),<sp/>Size);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1aab5138b851247527b8c8abdf28c5e5b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1aab5138b851247527b8c8abdf28c5e5b1" kindref="member">value</ref></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>T<sp/>(P)<sp/>*<sp/>(T<sp/>(N)<sp/>+<sp/>(T<sp/>(D)<sp/>/<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" kindref="member">math::pow</ref><sp/>(T<sp/>(10),<sp/>Size)));</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>T<sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>constexpr<sp/>T</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1a0169d044ee9d39e5d1b63c0a1fc4ce95" kindref="member">get</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>constexpr<sp/>auto</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>operator-<sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/>template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline lineno="427" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/>struct<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_1a53d900a34b6e094537044952ccda7ca2" kindref="member">value</ref><sp/>:<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" kindref="member">value_base</ref>&lt;T&gt;</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="437" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_1a53d900a34b6e094537044952ccda7ca2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_1a53d900a34b6e094537044952ccda7ca2" kindref="member">value</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>_value)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"></highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>std::floating_point&lt;T&gt;</highlight></codeline>
+<codeline lineno="461" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" kindref="member">value</ref>&lt;T&gt;<sp/>:<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" kindref="member">value_base</ref>&lt;T&gt;</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="473" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1adbc4320a0bdfc8bcc0cdf255639af0f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1adbc4320a0bdfc8bcc0cdf255639af0f2" kindref="member">epsilon</ref><sp/>=<sp/>T{};</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>These<sp/>constructor<sp/>bodies<sp/>are<sp/>defined<sp/>inline<sp/>rather<sp/>than</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>out-of-line<sp/>in<sp/>values-inlines.h.<sp/>Clang<sp/>16<sp/>has<sp/>a<sp/>deficiency<sp/>where</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>it<sp/>fails<sp/>to<sp/>match<sp/>out-of-line<sp/>constructor<sp/>definitions<sp/>to<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>`requires`-constrained<sp/>partial<sp/>specialisation:<sp/>it<sp/>either<sp/>rejects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>`requires`<sp/>clause<sp/>on<sp/>the<sp/>definition<sp/>as<sp/>differing<sp/>from<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>declaration,<sp/>or<sp/>—<sp/>when<sp/>the<sp/>clause<sp/>is<sp/>omitted<sp/>—<sp/>incorrectly<sp/>matches</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>definition<sp/>against<sp/>the<sp/>primary<sp/>template<sp/>instead<sp/>of<sp/>this</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>specialisation.<sp/>Keeping<sp/>the<sp/>bodies<sp/>here<sp/>avoids<sp/>both<sp/>failure<sp/>modes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" kindref="member">value</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>_value,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>precision)<sp/>noexcept</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" kindref="member">value_base&lt;T&gt;</ref>{<sp/>_value<sp/>},<sp/>epsilon{<sp/>precision<sp/>}</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight></codeline>
+<codeline lineno="511" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a6c551645c456ea1319752d0055aceb5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a6c551645c456ea1319752d0055aceb5a" kindref="member">value</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>val)</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" kindref="member">value</ref>{<sp/>val,<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math" kindref="compound">math</ref>::decimal_epsilon<sp/>(val)<sp/>}</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="518"><highlight class="normal"></highlight></codeline>
+<codeline lineno="542" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ada5dc84fd655a188ac350568572dddb8" kindref="member">named_bool</ref><sp/>:<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="550" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a43f20a87067408065e48d3bcd950db79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a43f20a87067408065e48d3bcd950db79" kindref="member">value_type</ref><sp/>=<sp/>bool;</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"></highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ada5dc84fd655a188ac350568572dddb8" kindref="member">named_bool</ref><sp/>(std::string_view<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" kindref="member">name</ref>)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"></highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a43f20a87067408065e48d3bcd950db79" kindref="member">value_type</ref><sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"></highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>constexpr<sp/>std::string_view</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" kindref="member">name</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/>private:</highlight></codeline>
+<codeline lineno="586" refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::string_view<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" kindref="member">name_</ref>;</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"></highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>detail</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="593"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight></codeline>
+<codeline lineno="595"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="596"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="597"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="598"><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="600"><highlight class="normal"></highlight></codeline>
+<codeline lineno="601"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="602"><highlight class="normal"></highlight></codeline>
+<codeline lineno="603"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Templates,<sp/>inlines<sp/>&amp;<sp/>constexpr<sp/>implementations.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="605"><highlight class="normal"></highlight></codeline>
+<codeline lineno="606"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="values-inlines_8h" kindref="compound">inlines/values-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="607"><highlight class="normal"></highlight></codeline>
+<codeline lineno="608"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="610"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_VALUES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="611"><highlight class="normal"></highlight></codeline>
+<codeline lineno="612"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h"/>
+  </compounddef>
+</doxygen>

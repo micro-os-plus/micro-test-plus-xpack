@@ -1,10 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-runners" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-runners</compoundname>
     <title>Test Runners</title>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" prot="public">micro_os_plus::micro_test_plus::runner</innerclass>
-    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" prot="public">micro_os_plus::micro_test_plus::static_runner</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-runners_1ga47d2c99f85fc5597b82da402d4687e75" prot="public" static="no">
+        <type>runner</type>
+        <definition>using micro_os_plus::micro_test_plus::static_runner = runner</definition>
+        <argsstring></argsstring>
+        <name>static_runner</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::static_runner</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> also runs the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects that refer to it, so a separate runner class is no longer needed.</para>
+<para><xrefsect id="deprecated_1_deprecated000084"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000085"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use runner</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner.h" line="1082" column="3"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
 <para>Classes for initialising the framework and returning an exit code. </para>
     </briefdescription>
@@ -25,7 +45,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>});</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr.exit_code<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr.run<sp/>();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>When this test is executed, the output is as follows:</para>

@@ -1,31 +1,29 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kind="namespace" language="C++">
     <compoundname>micro_os_plus::micro_test_plus::operators</compoundname>
     <sectiondef kind="func">
-      <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa188c33047f559e28dc95dbb465e19a8" kind="function"><name>operator and</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga00db5f149865ed9fd8d73f2db44542b0" kind="function"><name>operator not</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga0fe9ef52ecfb0de402da9e7454d7c20b" kind="function"><name>operator or</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga445025eccd3ef529af191aab5aad91a9" kind="function"><name>operator!=</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-container-operators_1gac2449b2b9f07c550b1218456ba1da2db" kind="function"><name>operator!=</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-string-operators_1ga179e971d5e37795c036ad66aa35f1654" kind="function"><name>operator!=</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga675d31a23d8f0dfed775466ef1463a80" kind="function"><name>operator&lt;</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga15235adceff30c6e3aa382696aea23cb" kind="function"><name>operator&lt;=</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-operators_1gaae177a6c59286d4d7e4f85ffa6579e56" kind="function"><name>operator==</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-container-operators_1gab8c44f8115524296fbaf21688dd7f389" kind="function"><name>operator==</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-string-operators_1gaabe34a842bf38ea2913a4164d2b0a9cb" kind="function"><name>operator==</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-operators_1gac0afc8d658f73e3b5f136a5c60d1fbd1" kind="function"><name>operator&gt;</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-operators_1gabfc165fd00e9f53bbf7b63f71b9d5020" kind="function"><name>operator&gt;=</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kind="function"><name>operator!=</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kind="function"><name>operator&lt;</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kind="function"><name>operator&lt;=</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
     </sectiondef>
     <briefdescription>
 <para>Custom operator overloads for expressive and type-safe test assertions. </para>
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">micro_os_plus::micro_test_plus::operators</ref></computeroutput> namespace provides a comprehensive set of custom operator overloads designed to enable expressive, concise, and type-safe test assertions within the µTest++ framework.</para>
-<para>This namespace includes equality, inequality, relational, and logical operators tailored for use with the framework’s custom types, containers, and string views. These operators facilitate the creation of clear and readable test expressions, supporting both strongly-typed constants (via user-defined literals) and dynamic values (via wrappers).</para>
+<para>This namespace includes equality, inequality, relational, and logical operators tailored for use with the framework’s custom types. These operators facilitate the creation of clear and readable test expressions, supporting both strongly-typed constants (via user-defined literals) and dynamic values (via wrappers).</para>
 <para><simplesect kind="warning"><para>Please be aware that these operators may conflict with other operators defined within the application under test.</para>
 </simplesect>
-To minimise conflicts with application-defined operators, these overloads are enabled only for specific types recognised by the framework, such as those derived from the local <computeroutput>op</computeroutput> base type or identified as containers or string views. Constants typically require a literal suffix (e.g., <computeroutput>1<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>), while dynamic values should be wrapped using the provided casting utilities (e.g., <computeroutput>mt::to_i{...}</computeroutput>).</para>
+To minimise conflicts with application-defined operators, these overloads are enabled only when an operand is a framework expression or value wrapper (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). Constants typically require a literal suffix (e.g., <computeroutput>1<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), while dynamic values should be wrapped using the provided casting utilities (e.g., <computeroutput>mt::to_i{...}</computeroutput>). When neither operand is of such a type, the standard operators are selected; they return a plain <computeroutput>bool</computeroutput>, so a failed check cannot show the operands.</para>
+<para>The operands are forwarded, as by the function comparators: the temporaries are moved into the returned expression, and the named operands of class type, including the nested expressions, are referred to, without copies.</para>
+<para>There are no operators for strings and containers: the standard operators would be selected for <computeroutput>std::string</computeroutput> objects and for containers of the same type, and the framework operators for <computeroutput>std::string_view</computeroutput> objects would also replace the standard ones in the application code that follows the using directive. Use <computeroutput>mt::eq()</computeroutput> and <computeroutput>mt::ne()</computeroutput> to compare strings and containers.</para>
 <para>All definitions within this namespace are implemented in the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder, ensuring a modular and maintainable codebase. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="66" column="3"/>

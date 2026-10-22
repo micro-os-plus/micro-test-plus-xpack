@@ -24,11 +24,44 @@ The classes, structs, union and interfaces used by this project are:
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion">assertion&lt;Expr_T&gt;</a>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/bound-callable">bound_callable&lt;...&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Assertion struct template for parameter passing to the evaluator
+Function object that holds a callable and the additional arguments it is invoked with
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string">c_string</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A C string operand of a comparator
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/callable-ref">callable_ref&lt;Self_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Non-owning reference to a callable invoked with a <span class="doxyComputerOutput">Self_T&amp;</span> argument
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">check_result</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The result of one check, reported when destroyed
 </td>
 </tr>
 
@@ -47,21 +80,21 @@ Colours used to highlight pass and fail results in test reports
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred_reporter_base</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters">counters</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Base class for a deferred reporter that collects messages into a string
+Aggregated check and test case counters for a node in the test tree
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">deferred_reporter</a>
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/equal-to">equal_to</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Deferred reporter class for a specific expression
+Equality tag for <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">compare_op</a></span>
 </td>
 </tr>
 
@@ -80,10 +113,43 @@ Formats values and expressions into an owned string buffer
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/failed-requirement">failed_requirement</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The exception thrown to stop a test case after a failed <span class="doxyComputerOutput">require()</span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/failure-info">failure_info</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The details of a check, displayed when it fails
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">function_traits&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Deprecated traits of the callable objects
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a">function_traits&lt;R(*)(Args_T...)&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template specialisation for extracting function traits from function pointer types
+Deprecated traits of the function pointers
 </td>
 </tr>
 
@@ -94,7 +160,7 @@ Struct template specialisation for extracting function traits from function poin
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55">function_traits&lt;R(Args_T...)&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template specialisation for extracting function traits from plain function types
+Deprecated traits of the function types
 </td>
 </tr>
 
@@ -105,7 +171,7 @@ Struct template specialisation for extracting function traits from plain functio
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">function_traits&lt;R(T::*)(Args_T...) const&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template specialisation for extracting function traits from const member function types
+Deprecated traits of the pointers to <span class="doxyComputerOutput">const</span> member functions
 </td>
 </tr>
 
@@ -116,7 +182,29 @@ Struct template specialisation for extracting function traits from const member 
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b">function_traits&lt;R(T::*)(Args_T...)&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template specialisation for extracting function traits from non-const member function types
+Deprecated traits of the pointers to member functions
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/greater">greater</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Greater than tag for <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">compare_op</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/greater-equal">greater_equal</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Greater than or equal tag for <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">compare_op</a></span>
 </td>
 </tr>
 
@@ -127,7 +215,7 @@ Struct template specialisation for extracting function traits from non-const mem
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">identity&lt;T, Extra&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template for compile-time type identity
+Deprecated identity type
 </td>
 </tr>
 
@@ -135,7 +223,7 @@ Struct template for compile-time type identity
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/indent-t">indent_t</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/indentation">indentation</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Parameterised stream manipulator for outputting indentation
@@ -146,10 +234,10 @@ Parameterised stream manipulator for outputting indentation
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list&lt;Types&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/math/integer-literal">integer_literal</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a compile-time type list
+The result of parsing the characters of an integer literal
 </td>
 </tr>
 
@@ -157,10 +245,65 @@ Struct template representing a compile-time type list
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-min-magnitude">integral_min_magnitude&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Empty base struct for all operator types
+Struct template representing the absolute value of the minimum of a signed integral type, as written in a literal
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/less">less</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Less than tag for <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">compare_op</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/less-equal">less_equal</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Less than or equal tag for <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">compare_op</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list&lt;Types&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Deprecated empty type list
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-equal-to">not_equal_to</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Non-equality tag for <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">compare_op</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/op">op</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Empty base struct for the framework expression types
 </td>
 </tr>
 
@@ -168,7 +311,7 @@ Empty base struct for all operator types
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-">binary_op_&lt;Lhs_T, Rhs_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op">binary_op&lt;Lhs_T, Rhs_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Common base struct template for binary comparators
@@ -179,7 +322,7 @@ Common base struct template for binary comparators
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">and_&lt;Lhs_T, Rhs_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-op">and_op&lt;Lhs_T, Rhs_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Logical AND comparator struct template
@@ -190,10 +333,10 @@ Logical AND comparator struct template
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">eq_&lt;Lhs_T, Rhs_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/approx-op">approx_op&lt;Lhs_T, Rhs_T, Epsilon_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Equality comparator struct template
+Approximate comparator struct template
 </td>
 </tr>
 
@@ -201,10 +344,10 @@ Equality comparator struct template
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">ge_&lt;Lhs_T, Rhs_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">compare_op&lt;Lhs_T, Rhs_T, Compare_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Greater than or equal comparator struct template
+Relational comparator struct template
 </td>
 </tr>
 
@@ -212,10 +355,10 @@ Greater than or equal comparator struct template
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">gt_&lt;Lhs_T, Rhs_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/compare-op">compare_op&lt;Lhs_T, Rhs_T, Compare_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Greater than comparator struct template
+Relational comparator struct template
 </td>
 </tr>
 
@@ -223,40 +366,7 @@ Greater than comparator struct template
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">le_&lt;Lhs_T, Rhs_T&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Less than or equal comparator struct template
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">lt_&lt;Lhs_T, Rhs_T&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Less than comparator struct template
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">ne_&lt;Lhs_T, Rhs_T&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Non-equality comparator struct template
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">or_&lt;Lhs_T, Rhs_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-op">or_op&lt;Lhs_T, Rhs_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Logical OR comparator struct template
@@ -267,7 +377,7 @@ Logical OR comparator struct template
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-">callable_op_</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op">callable_op</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Common base struct for callable-wrapping operators
@@ -278,10 +388,10 @@ Common base struct for callable-wrapping operators
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-">nothrow_&lt;Callable_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-op">nothrow_op</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Operator struct template to check if an expression does not throw any exception
+Operator struct to check if an expression does not throw any exception
 </td>
 </tr>
 
@@ -289,7 +399,7 @@ Operator struct template to check if an expression does not throw any exception
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws_&lt;Callable_T, Exception_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-op">throws_op&lt;Exception_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Operator struct template to check if an expression throws a specific exception
@@ -300,10 +410,21 @@ Operator struct template to check if an expression throws a specific exception
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be">throws_&lt;Callable_T, void&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-op-3f63415e4669117ff49f73960a4719d0">throws_op&lt;void&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Operator struct template to check if an expression throws any exception
+Operator struct to check if an expression throws any exception
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">floating_point_constant&lt;T, N, D, Size, P&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Struct template representing a generic floating point constant with custom size and precision
 </td>
 </tr>
 
@@ -322,7 +443,18 @@ Struct template representing a generic floating point constant with custom size 
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-">unary_op_&lt;T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">named_bool</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Struct representing a named boolean constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op">unary_op&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Common base struct template for unary comparators
@@ -333,7 +465,7 @@ Common base struct template for unary comparators
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">not_&lt;T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-op">not_op&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Logical NOT comparator struct template
@@ -342,12 +474,12 @@ Logical NOT comparator struct template
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-">value_base_&lt;T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/predicate-op">predicate_op&lt;T, Predicate_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Base struct template providing common storage and accessors for runtime value-wrapper types
+Unary predicate struct template
 </td>
 </tr>
 
@@ -355,65 +487,65 @@ Base struct template providing common storage and accessors for runtime value-wr
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine_integral_value&lt;T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/predicate-op">predicate_op&lt;T, Predicate_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a genuine integral value
+Unary predicate struct template
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral_constant&lt;N&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a generic integral constant
+Empty base struct for the framework expression types
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/reporter-human/open-test-case">open_test_case</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a generic value, accessible via a getter
+A test case that has begun and not yet ended
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432">value&lt;T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/plain-text">plain_text</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a floating point value with precision control
+Writes values as text, as the messages of the checks are written
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/-t">_t&lt;T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/range-element">range_element&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Deprecated generic strongly-typed wrapper for explicit type conversion
+The type of the elements of a range, as iterated by a range-based <span class="doxyComputerOutput">for</span> statement
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t&lt;T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/range-element-f7399366cd6336ecbea702c3289d9432">range_element&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Generic strongly-typed wrapper for explicit type conversion
+The type of the elements of a range with <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> members
 </td>
 </tr>
 
@@ -421,7 +553,7 @@ Generic strongly-typed wrapper for explicit type conversion
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">reporter</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Abstract base class for the reporters that display test results, including operand values for failures
@@ -432,10 +564,10 @@ Abstract base class for the reporters that display test results, including opera
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human">reporter_human</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human">reporter_human</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Human (standard output) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>
+Human (standard output) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">reporter</a></span>
 </td>
 </tr>
 
@@ -443,10 +575,10 @@ Human (standard output) implementation of <span class="doxyComputerOutput"><a hr
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">reporter_tap</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap">reporter_tap</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>
+TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">reporter</a></span>
 </td>
 </tr>
 
@@ -454,10 +586,76 @@ TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runner-totals">runner_totals</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base">runnable_base</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Aggregated pass/fail/subtest counters for a node in the test tree
+Non-template base for all runnable objects (suites and test cases)
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A named, runnable test suite registered with the test runner
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite">static_suite</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A test suite designed for static (namespace-scope) registration with a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite">top_suite</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The implicit top-level suite owned by every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> instance
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A named, runnable test case that lives inside a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The test runner for the µTest++ framework
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/runner-options">runner_options</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The configuration of a test session
 </td>
 </tr>
 
@@ -476,98 +674,21 @@ Local implementation of source location information for diagnostics
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/test-node">test_node</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Base class for runners and runnable tests
+Measures the elapsed time of an operation
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base">runnable_base</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name">test_case_name</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Non-template base for all runnable objects (suites and subtests)
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable">runnable&lt;Self_T&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-CRTP base class factoring out callable storage, rule-of-five, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable/#aa460dbde9c1f1fca6136acb080ad76b6">run()</a></span> logic shared by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a></span> and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span>
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A named, runnable test case that lives inside a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span>
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A named, runnable test suite registered with the test runner
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 60px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite">static_suite</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A test suite designed for static (namespace-scope) registration with a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner">static_runner</a></span>
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 60px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite">top_suite</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-The implicit top-level suite owned by every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> instance
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-The test runner for the µTest++ framework
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner">static_runner</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> variant that also manages statically-registered test suites
+The name of a test case, with the location of its definition
 </td>
 </tr>
 
@@ -578,18 +699,84 @@ A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/clas
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-A single point-in-time measurement, wrapping a <span class="doxyComputerOutput">timespec</span> value
+Deprecated clock reading
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps">timestamps</a>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">value_base&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-A begin/end timestamp pair used to measure elapsed time
+Base struct template providing common storage and accessors for runtime value-wrapper types
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">integral_constant&lt;N&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Struct template representing a generic integral constant
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral_constant&lt;N&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Struct template representing a generic integral constant
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Struct template representing a generic value, accessible via a getter
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Struct template representing a generic value, accessible via a getter
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-f7399366cd6336ecbea702c3289d9432">value&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Struct template representing a floating point value with precision control
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Generic strongly-typed wrapper for explicit type conversion
 </td>
 </tr>
 
@@ -597,6 +784,6 @@ A begin/end timestamp pair used to measure elapsed time
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

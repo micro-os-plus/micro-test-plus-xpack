@@ -27,10 +27,10 @@
  * arguments, the `test()` member functions that create and run test cases,
  * and the `expect()` and `require()` checks.
  *
- * When additional arguments are given, a lambda captures copies of them,
- * allowing versatile test initialisation with arbitrary callable types and
- * arguments. The suites store this lambda in a `std::function`, while
- * the test cases only refer to it, as a local object of the `test()`
+ * When additional arguments are given, a `detail::bound_callable` holds
+ * copies of the callable and of the arguments. The suites store this
+ * object in a `std::function`, while the test cases only refer to it,
+ * through a `detail::callable_ref`, as a local object of the `test()`
  * call that runs them. A `static_suite` additionally inserts itself into
  * the list of suites upon construction.
  *
@@ -459,8 +459,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Forwards to `require()`; the returned reporter is neither copied nor
-   * moved, since a prvalue is returned (guaranteed copy elision).
+   * Forwards to `require()`; the returned check result is neither copied
+   * nor moved, since a prvalue is returned (guaranteed copy elision).
    */
   template <class Expr_T>
     requires extension::checkable<Expr_T>
@@ -615,7 +615,7 @@ namespace micro_os_plus::micro_test_plus
    * as comparing a computed result to an expected value, with `expect()` or
    * `require()`. When exceptions are enabled, it is also possible to verify
    * whether evaluating an expression throws exceptions. Each check either
-   * succeeds or fails, and the suite totals count the successful and failed
+   * passes or fails, and the suite totals count the passed and failed
    * checks.
    *
    * It is typically invoked within the body of a suite. When invoked

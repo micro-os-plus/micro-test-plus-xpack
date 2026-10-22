@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1formattable__range" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::formattable_range</compoundname>
+    <includes refid="extension_8h" local="no">extension.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1formattable__range" kindref="compound">micro_os_plus::micro_test_plus::detail::formattable_range</ref> =  (container_like&lt;T&gt; or free_range&lt;T&gt;) and (not std::is_array_v&lt;T&gt;)
+          and (not has_npos&lt;T&gt;)
+          and (not std::is_same_v&lt;typename <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1range__element" kindref="compound">range_element</ref>&lt;T&gt;::type, T&gt;)
+          and extension::printable&lt;typename <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1range__element" kindref="compound">range_element</ref>&lt;T&gt;::type&gt;</initializer>
+    <conceptparts>
+      <codepart line="395">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">formattable_range<sp/>=<sp/>(container_like&lt;T&gt;<sp/>or<sp/>free_range&lt;T&gt;)<sp/>and<sp/>(not<sp/>std::is_array_v&lt;T&gt;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>has_npos&lt;T&gt;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>range_element&lt;T&gt;::type,<sp/>T&gt;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::printable&lt;typename<sp/>range_element&lt;T&gt;::type&gt;</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>C++20 concept satisfied when <computeroutput>T</computeroutput> is a range that the formatter writes element by element. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to be checked.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput>formattable_range</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> can be iterated by a range-based <computeroutput>for</computeroutput> statement, with <computeroutput>begin()</computeroutput> and <computeroutput>end()</computeroutput> members (<computeroutput>container_like</computeroutput>) or functions (<computeroutput>free_range</computeroutput>), and:<itemizedlist>
+<listitem><para>is not an array, since the arrays are compared by address, and are written as addresses, as the pointers they decay to;</para>
+</listitem><listitem><para>is not a string (see <computeroutput>has_npos</computeroutput>), which is written as text;</para>
+</listitem><listitem><para>does not have elements of its own type, like <computeroutput>std::filesystem::path</computeroutput>, whose elements are paths, so that formatting it would recurse without end;</para>
+</listitem><listitem><para>has elements that satisfy <computeroutput>extension::printable</computeroutput>, so that a range of elements that cannot be reported is rejected where it is compared, not where its elements are formatted.</para>
+</listitem></itemizedlist>
+</para>
+<para>The conditions are tested in this order, so the elements of a recursive range are not tested. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="394" column="5"/>
+  </compounddef>
+</doxygen>

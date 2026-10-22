@@ -266,8 +266,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `container_like` concept is satisfied when `T` exposes both a
      * `begin()` and an `end()` member function, as required by standard
-     * range-based iteration. It is used to detect container types for
-     * specialised comparison and reporting within the framework.
+     * range-based iteration. It is used to detect the ranges that the
+     * formatter writes element by element (see `formattable_range`), and
+     * the ranges of values of `test_each()`.
      */
     template <class T>
     concept container_like = requires (const T& t) {
@@ -283,8 +284,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `has_npos` concept is satisfied when `T` exposes a static `npos`
      * member, as provided by `std::string_view` and similar types. It is
-     * used to detect string-like types for specialised comparison and
-     * reporting within the framework.
+     * used to detect the string-like types, which the formatter writes as
+     * text, not element by element (see `formattable_range`).
      */
     template <class T>
     concept has_npos = requires { T::npos; };
@@ -313,6 +314,11 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The range type, satisfying `container_like` or
      * `free_range`.
+     *
+     * @details
+     * Only declared; the partial specialisations define the member
+     * `type`, for the two ways of iterating a range. Used by
+     * `formattable_range`.
      */
     template <class T>
     struct range_element;
@@ -329,6 +335,10 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The element type, without references and qualifiers.
+       *
+       * @details
+       * The type of the dereferenced `begin()` member, as iterated by a
+       * range-based `for` statement over a `const` range.
        */
       using type = std::remove_cvref_t<
           decltype (*std::declval<const T&> ().begin ())>;
@@ -346,6 +356,11 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The element type, without references and qualifiers.
+       *
+       * @details
+       * The type of the dereferenced `begin()` function, found by
+       * argument-dependent lookup, as in a range-based `for` statement
+       * over a `const` range.
        */
       using type
           = std::remove_cvref_t<decltype (*begin (std::declval<const T&> ()))>;
@@ -564,6 +579,9 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The type `T`.
+       *
+       * @details
+       * The additional template arguments do not affect it.
        */
       using type = T;
     };
@@ -583,7 +601,12 @@ namespace micro_os_plus::micro_test_plus
      * @deprecated Not replaced (since 5.1.0).
      */
     template <class T>
-    struct function_traits : function_traits<decltype (&T::operator())>
+    struct function_traits
+#if !defined(__DOXYGEN__)
+        // Hidden from Doxygen, which reports a recursive class relation.
+        // https://github.com/doxygen/doxygen/issues/9915
+        : function_traits<decltype (&T::operator())>
+#endif // !defined(__DOXYGEN__)
     {
     };
 
@@ -604,11 +627,18 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The return type.
+       *
+       * @details
+       * The type `R` of the specialisation.
        */
       using result_type = R;
 
       /**
        * @brief The parameter types, as a `list`.
+       *
+       * @details
+       * The types `Args_T` of the specialisation, without the object
+       * parameter of the member functions.
        */
       using args = list<Args_T...>;
     };
@@ -629,11 +659,18 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The return type.
+       *
+       * @details
+       * The type `R` of the specialisation.
        */
       using result_type = R;
 
       /**
        * @brief The parameter types, as a `list`.
+       *
+       * @details
+       * The types `Args_T` of the specialisation, without the object
+       * parameter of the member functions.
        */
       using args = list<Args_T...>;
     };
@@ -656,11 +693,18 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The return type.
+       *
+       * @details
+       * The type `R` of the specialisation.
        */
       using result_type = R;
 
       /**
        * @brief The parameter types, as a `list`.
+       *
+       * @details
+       * The types `Args_T` of the specialisation, without the object
+       * parameter of the member functions.
        */
       using args = list<Args_T...>;
     };
@@ -684,11 +728,18 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The return type.
+       *
+       * @details
+       * The type `R` of the specialisation.
        */
       using result_type = R;
 
       /**
        * @brief The parameter types, as a `list`.
+       *
+       * @details
+       * The types `Args_T` of the specialisation, without the object
+       * parameter of the member functions.
        */
       using args = list<Args_T...>;
     };

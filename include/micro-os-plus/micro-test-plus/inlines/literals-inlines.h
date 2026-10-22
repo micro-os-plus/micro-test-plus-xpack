@@ -30,10 +30,10 @@
  * The implemented literal operators support a wide range of C++ fundamental
  * types, allowing constants to be suffixed with type-specific identifiers
  * (such as `_i`, `_u16`, `_f`, `_d`, `_b`, etc.) to produce values that
- * integrate seamlessly with the µTest++ comparators and reporting mechanisms.
+ * the µTest++ comparators and operators report with their types.
  *
- * Specialised wrappers are provided for named boolean literals, supporting
- * enhanced expressiveness and type safety in test conditions.
+ * It also defines the constructor of `to_t`, and the `approx()` value
+ * wrapper with an explicit tolerance.
  *
  * The literal operators reside within the
  * `micro_os_plus::micro_test_plus::literals` namespace, and the constructor
@@ -83,14 +83,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `int` from character sequences
-     * at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_i` (for example, `42_i`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `int` constant, for example `42_i`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -101,14 +97,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `short` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_s` (for example, `123_s`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `short` constant, for example `123_s`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -119,14 +111,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `char` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_c` (for example, `65_c`) to
-     * produce a type-safe value that integrates seamlessly with the µTest++
-     * comparators and reporting mechanisms.
+     * Creates a compile-time `char` constant, for example `65_c`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -137,14 +125,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `signed char` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_sc` (for example, `65_sc`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `signed char` constant, for example `65_sc`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -155,14 +139,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `long` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_l` (for example, `123_l`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `long` constant, for example `123_l`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -173,14 +153,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `long long` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_ll` (for example, `123_ll`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `long long` constant, for example `123_ll`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -191,14 +167,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `unsigned` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_u` (for example, `123_u`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `unsigned` constant, for example `123_u`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -209,14 +181,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `unsigned char` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_uc` (for example, `65_uc`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `unsigned char` constant, for example `65_uc`,
+     * with `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -227,14 +195,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `unsigned short` from
-     * character sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_us` (for example, `123_us`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `unsigned short` constant, for example `123_us`,
+     * with `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -245,14 +209,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `unsigned long` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_ul` (for example, `123_ul`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `unsigned long` constant, for example `123_ul`,
+     * with `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -263,14 +223,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `unsigned long long` from
-     * character sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_ull` (for example, `123_ull`) to produce
-     * a type-safe value that integrates seamlessly with the µTest++
-     * comparators and reporting mechanisms.
+     * Creates a compile-time `unsigned long long` constant, for example
+     * `123_ull`, with `detail::integral_literal()`. The literal is parsed, and
+     * its value checked against the range of the type, at compile time; a
+     * negative constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -281,14 +237,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `int8_t` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_i8` (for example, `127_i8`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `int8_t` constant, for example `127_i8`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -299,14 +251,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `int16_t` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_i16` (for example, `32767_i16`) to
-     * produce a type-safe value that integrates seamlessly with the µTest++
-     * comparators and reporting mechanisms.
+     * Creates a compile-time `int16_t` constant, for example `32767_i16`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -317,14 +265,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `int32_t` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_i32` (for example, `2147483647_i32`) to
-     * produce a type-safe value that integrates seamlessly with the µTest++
-     * comparators and reporting mechanisms.
+     * Creates a compile-time `int32_t` constant, for example `2147483647_i32`,
+     * with `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -335,14 +279,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `int64_t` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_i64` (for example,
-     * `9223372036854775807_i64`) to produce a type-safe value that integrates
-     * seamlessly with the µTest++ comparators and reporting mechanisms.
+     * Creates a compile-time `int64_t` constant, for example
+     * `9223372036854775807_i64`, with `detail::integral_literal()`. The
+     * literal is parsed, and its value checked against the range of the type,
+     * at compile time; a negative constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -353,14 +293,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `uint8_t` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_u8` (for example, `255_u8`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `uint8_t` constant, for example `255_u8`, with
+     * `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -371,14 +307,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `uint16_t` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_u16` (for example, `65535_u16`) to
-     * produce a type-safe value that integrates seamlessly with the µTest++
-     * comparators and reporting mechanisms.
+     * Creates a compile-time `uint16_t` constant, for example `65535_u16`,
+     * with `detail::integral_literal()`. The literal is parsed, and its value
+     * checked against the range of the type, at compile time; a negative
+     * constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -389,14 +321,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `uint32_t` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_u32` (for example, `4294967295_u32`) to
-     * produce a type-safe value that integrates seamlessly with the µTest++
-     * comparators and reporting mechanisms.
+     * Creates a compile-time `uint32_t` constant, for example
+     * `4294967295_u32`, with `detail::integral_literal()`. The literal is
+     * parsed, and its value checked against the range of the type, at compile
+     * time; a negative constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -407,14 +335,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed integral constants of type `uint64_t` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_u64` (for example,
-     * `18446744073709551615_u64`) to produce a type-safe value that integrates
-     * seamlessly with the µTest++ comparators and reporting mechanisms.
+     * Creates a compile-time `uint64_t` constant, for example
+     * `18446744073709551615_u64`, with `detail::integral_literal()`. The
+     * literal is parsed, and its value checked against the range of the type,
+     * at compile time; a negative constant is written with the unary minus.
      */
     template <char... Cs>
     constexpr auto
@@ -425,14 +349,11 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed floating-point constants of type `float` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_f` (for example, `3.14_f`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `float` constant, for example `3.14_f`, from the
+     * integral part, the decimals, and the number of decimals of the literal,
+     * parsed at compile time by `detail::math::num()`, `den()`, and
+     * `den_size()`; the comparison tolerance is one unit of the last decimal
+     * written.
      */
     template <char... Cs>
     constexpr auto
@@ -446,14 +367,11 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed floating-point constants of type `double` from character
-     * sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_d` (for example, `2.718_d`) to produce a
-     * type-safe value that integrates seamlessly with the µTest++ comparators
-     * and reporting mechanisms.
+     * Creates a compile-time `double` constant, for example `2.718_d`, from
+     * the integral part, the decimals, and the number of decimals of the
+     * literal, parsed at compile time by `detail::math::num()`, `den()`, and
+     * `den_size()`; the comparison tolerance is one unit of the last decimal
+     * written.
      */
     template <char... Cs>
     constexpr auto
@@ -467,14 +385,11 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * This user-defined literal operator enables the creation of
-     * strongly-typed floating-point constants of type `long double` from
-     * character sequences at compile time.
-     *
-     * The operator is particularly useful in test expressions, allowing
-     * constants to be suffixed with `_ld` (for example, `1.618_ld`) to produce
-     * a type-safe value that integrates seamlessly with the µTest++
-     * comparators and reporting mechanisms.
+     * Creates a compile-time `long double` constant, for example `1.618_ld`,
+     * from the integral part, the decimals, and the number of decimals of the
+     * literal, parsed at compile time by `detail::math::num()`, `den()`, and
+     * `den_size()`; the comparison tolerance is one unit of the last decimal
+     * written.
      */
     template <char... Cs>
     constexpr auto

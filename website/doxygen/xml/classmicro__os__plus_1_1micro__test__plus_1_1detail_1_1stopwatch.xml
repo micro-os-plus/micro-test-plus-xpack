@@ -1,0 +1,719 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::stopwatch</compoundname>
+    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" prot="protected" static="no" mutable="no">
+        <type>timespec</type>
+        <definition>timespec micro_os_plus::micro_test_plus::detail::stopwatch::start_time_</definition>
+        <argsstring></argsstring>
+        <name>start_time_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::start_time_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>The clock reading at the start of the measured interval. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Zero until <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> is called; set again by each <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="410" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" bodystart="410" bodyend="410"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="136" endline="148">elapsed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" compoundref="stopwatch-inlines_8h" startline="87" endline="90">has_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="63" endline="66">has_elapsed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" compoundref="stopwatch_8cpp" startline="107" endline="112">start</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" compoundref="stopwatch-inlines_8h" startline="133" endline="139">timestamp_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" compoundref="stopwatch_8cpp" startline="157" endline="163">timestamp_begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" prot="protected" static="no" mutable="no">
+        <type>timespec</type>
+        <definition>timespec micro_os_plus::micro_test_plus::detail::stopwatch::stop_time_</definition>
+        <argsstring></argsstring>
+        <name>stop_time_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::stop_time_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>The clock reading at the end of the measured interval. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Zero until <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput> is called; set again by each <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput>, and cleared by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="419" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" bodystart="419" bodyend="419"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="136" endline="148">elapsed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="63" endline="66">has_elapsed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" compoundref="stopwatch-inlines_8h" startline="98" endline="101">has_end</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" compoundref="stopwatch_8cpp" startline="107" endline="112">start</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" compoundref="stopwatch_8cpp" startline="121" endline="125">stop</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" compoundref="stopwatch-inlines_8h" startline="146" endline="152">timestamp_end</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" compoundref="stopwatch_8cpp" startline="172" endline="178">timestamp_end</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a47996e55c1fdb1f6aadde6e53449fe8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::stopwatch::stopwatch</definition>
+        <argsstring>(const stopwatch &amp;)=delete</argsstring>
+        <name>stopwatch</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::stopwatch</qualifiedname>
+        <param>
+          <type>const stopwatch &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy constructor to prevent copying. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The timing state belongs to a single suite or runner. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="139" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a2c1f757da785a73f8a5f6d2a4408dc1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::stopwatch::stopwatch</definition>
+        <argsstring>(stopwatch &amp;&amp;)=delete</argsstring>
+        <name>stopwatch</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::stopwatch</qualifiedname>
+        <param>
+          <type>stopwatch &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move constructor to prevent moving. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The instance is a member of an object that is itself non-movable. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="147" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::stopwatch::stopwatch</definition>
+        <argsstring>(void)=default</argsstring>
+        <name>stopwatch</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::stopwatch</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Both readings are initially zero; they are set by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="131" column="7"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a47996e55c1fdb1f6aadde6e53449fe8d">stopwatch</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a2c1f757da785a73f8a5f6d2a4408dc1d">stopwatch</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac97586198c6e6ef9c8ff0b8dd1fb8e34">operator=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac515fef56d4be91466b0c6c51898f685">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::stopwatch::~stopwatch</definition>
+        <argsstring>()=default</argsstring>
+        <name>~stopwatch</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::~stopwatch</qualifiedname>
+        <briefdescription>
+<para>Defaulted destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>No resources are owned, so there is nothing to release. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="175" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" compoundref="stopwatch-inlines_8h" startline="120" endline="126">compute_elapsed_time</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="136" endline="148">elapsed</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" compoundref="stopwatch-inlines_8h" startline="87" endline="90">has_begin</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="63" endline="66">has_elapsed</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" compoundref="stopwatch-inlines_8h" startline="98" endline="101">has_end</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" compoundref="stopwatch-inlines_8h" startline="108" endline="111">has_timestamps</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="74" endline="77">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" compoundref="stopwatch_8cpp" startline="107" endline="112">start</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" compoundref="stopwatch_8cpp" startline="121" endline="125">stop</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" compoundref="stopwatch_8cpp" startline="157" endline="163">timestamp_begin</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" compoundref="stopwatch_8cpp" startline="172" endline="178">timestamp_end</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::stopwatch::compute_elapsed_time</definition>
+        <argsstring>(uint32_t &amp;milliseconds, uint32_t &amp;microseconds) const noexcept</argsstring>
+        <name>compute_elapsed_time</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::compute_elapsed_time</qualifiedname>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>milliseconds</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>microseconds</declname>
+        </param>
+        <briefdescription>
+<para>Deprecated split of the elapsed time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Kept from the v5.0.1 <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput> class. Splits the value returned by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref></computeroutput> into whole milliseconds and the remaining microseconds. Without both readings, both are zero; in v5.0.1, the call was not allowed (it asserted).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">milliseconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The whole milliseconds of the elapsed time. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">microseconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remaining microseconds, from 0 to 999. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000112"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000113"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Divides the microseconds count returned by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref></computeroutput> by 1000; the conversions to <computeroutput>uint32_t</computeroutput> truncate the intervals longer than about 49 days, as in v5.0.1. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="310" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="120" bodyend="126"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="136" endline="148">elapsed</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>std::chrono::microseconds</type>
+        <definition>std::chrono::microseconds micro_os_plus::micro_test_plus::detail::stopwatch::elapsed</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>elapsed</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::elapsed</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the time elapsed between <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The interval is truncated to whole microseconds. Without both readings (see <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput>), the elapsed time is zero.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The elapsed time, in microseconds.</para>
+</simplesect>
+Converts the differences of the seconds and of the nanoseconds members to a single nanoseconds duration, so that a negative nanoseconds difference borrows from the seconds without explicit normalisation, and truncates the result to whole microseconds. If <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput> is <computeroutput>false</computeroutput>, the result is zero. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="236" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="136" bodyend="148"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="63" endline="66">has_elapsed</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="410" endline="410">start_time_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="419" endline="419">stop_time_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" compoundref="stopwatch-inlines_8h" startline="120" endline="126">compute_elapsed_time</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac6dca3d3fa34870f3960fe5e226e45d8" compoundref="reporter_8cpp" startline="657" endline="672">micro_os_plus::micro_test_plus::detail::reporter::format_elapsed_time</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::stopwatch::has_begin</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>has_begin</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::has_begin</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Deprecated check of the start reading. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Kept from the v5.0.1 <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput> class. The start reading is available after <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput>, on a platform with a clock; in v5.0.1, it was also reported without a clock.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start reading is available. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start reading is absent.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<xrefsect id="deprecated_1_deprecated000106"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000107"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Returns <computeroutput>true</computeroutput> if the start reading was recorded, as determined by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" kindref="member">is_recorded()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="254" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="87" bodyend="90"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="74" endline="77">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="410" endline="410">start_time_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::stopwatch::has_elapsed</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>has_elapsed</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::has_elapsed</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Checks whether the elapsed time is available. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The elapsed time is available after both <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput> were called, on a platform with a clock.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Both readings are available; <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref></computeroutput> returns the measured interval. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>At least one reading is absent; <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref></computeroutput> returns zero.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <computeroutput>true</computeroutput> only when both the start and the stop readings were recorded, as determined by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" kindref="member">is_recorded()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="222" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="63" bodyend="66"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="74" endline="77">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="410" endline="410">start_time_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="419" endline="419">stop_time_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="136" endline="148">elapsed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" compoundref="stopwatch-inlines_8h" startline="108" endline="111">has_timestamps</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::stopwatch::has_end</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>has_end</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::has_end</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Deprecated check of the stop reading. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Kept from the v5.0.1 <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput> class. The stop reading is available after <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput>, on a platform with a clock, until the next <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput>; in v5.0.1, it was also reported without a clock.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stop reading is available. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stop reading is absent.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<xrefsect id="deprecated_1_deprecated000108"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000109"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Returns <computeroutput>true</computeroutput> if the stop reading was recorded, as determined by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" kindref="member">is_recorded()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="273" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="98" bodyend="101"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="74" endline="77">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="419" endline="419">stop_time_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::stopwatch::has_timestamps</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>has_timestamps</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::has_timestamps</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Kept from the v5.0.1 <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput> class; calls <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput>.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The value returned by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput>.</para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000110"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000111"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Forwards to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="289" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="108" bodyend="111"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="63" endline="66">has_elapsed</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac97586198c6e6ef9c8ff0b8dd1fb8e34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185" kindref="member">stopwatch</ref> &amp;</type>
+        <definition>stopwatch &amp; micro_os_plus::micro_test_plus::detail::stopwatch::operator=</definition>
+        <argsstring>(const stopwatch &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185" kindref="member">stopwatch</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy assignment operator to prevent copying. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The timing state belongs to a single suite or runner. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="156" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac515fef56d4be91466b0c6c51898f685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185" kindref="member">stopwatch</ref> &amp;</type>
+        <definition>stopwatch &amp; micro_os_plus::micro_test_plus::detail::stopwatch::operator=</definition>
+        <argsstring>(stopwatch &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185" kindref="member">stopwatch</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move assignment operator to prevent moving. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The instance is a member of an object that is itself non-movable. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="166" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::stopwatch::start</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>start</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::start</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Records the start time, from the system clock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each call restarts the measurement: the stop reading is cleared, so <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput> is <computeroutput>false</computeroutput> until the next <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput>.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+Clears both readings, then reads the system clock into <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" kindref="member">start_time_</ref></computeroutput>. The readings are cleared first because <computeroutput>read_clock()</computeroutput> leaves its argument unchanged on the platforms without a clock, where a previous reading would otherwise survive. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="190" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="107" bodyend="112"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="410" endline="410">start_time_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="419" endline="419">stop_time_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" compoundref="runner_8cpp" startline="192" endline="296">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" compoundref="test_8cpp" startline="374" endline="446">micro_os_plus::micro_test_plus::suite::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::stopwatch::stop</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>stop</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::stop</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Records the stop time, from the system clock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each call replaces the previous stop reading, if any, so the elapsed time is measured from the start to the last <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput>.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+Clears the stop reading, then reads the system clock into <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" kindref="member">stop_time_</ref></computeroutput>, for the same reason as in <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput>. The start reading is not changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="205" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="121" bodyend="125"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="419" endline="419">stop_time_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a97f725cb167a2b464fac0eb88a0c8a46" compoundref="runner_8cpp" startline="664" endline="739">micro_os_plus::micro_test_plus::runner::run</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" compoundref="test_8cpp" startline="374" endline="446">micro_os_plus::micro_test_plus::suite::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</definition>
+        <argsstring>(const timespec &amp;ts) noexcept</argsstring>
+        <name>timestamp_begin</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</qualifiedname>
+        <param>
+          <type>const timespec &amp;</type>
+          <declname>ts</declname>
+        </param>
+        <briefdescription>
+<para>Deprecated recording of a given start time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Kept from the v5.0.1 <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput> class. Stores <computeroutput>ts</computeroutput> as the start reading, only if the start reading is absent; the stop reading is not changed. A zero <computeroutput>ts</computeroutput> leaves the reading absent; in v5.0.1, it was stored, and reported by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" kindref="member">has_begin()</ref></computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start time. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000116"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000117"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Stores <computeroutput>ts</computeroutput> only if <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" kindref="member">is_recorded()</ref></computeroutput> reports no start reading. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="350" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="133" bodyend="139"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="74" endline="77">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="410" endline="410">start_time_</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>timestamp_begin</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Deprecated recording of the start time, from the system clock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Kept from the v5.0.1 <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput> class. Unlike <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput>, it reads the clock only if the start reading is absent, and it does not clear the stop reading. In v5.0.1, a reading taken without a clock was also kept; here, the next call reads the clock again.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000114"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000115"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Reads the system clock into <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" kindref="member">start_time_</ref></computeroutput> only if <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" kindref="member">is_recorded()</ref></computeroutput> reports no start reading; since the reading is zero in that case, it need not be cleared first, as in <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="332" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="157" bodyend="163"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="74" endline="77">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="410" endline="410">start_time_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</definition>
+        <argsstring>(const timespec &amp;ts) noexcept</argsstring>
+        <name>timestamp_end</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</qualifiedname>
+        <param>
+          <type>const timespec &amp;</type>
+          <declname>ts</declname>
+        </param>
+        <briefdescription>
+<para>Deprecated recording of a given stop time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Kept from the v5.0.1 <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput> class. Stores <computeroutput>ts</computeroutput> as the stop reading, only if the stop reading is absent. A zero <computeroutput>ts</computeroutput> leaves the reading absent; in v5.0.1, it was stored, and reported by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" kindref="member">has_end()</ref></computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stop time. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000120"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000121"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Stores <computeroutput>ts</computeroutput> only if <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" kindref="member">is_recorded()</ref></computeroutput> reports no stop reading. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="387" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="146" bodyend="152"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="74" endline="77">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="419" endline="419">stop_time_</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>timestamp_end</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Deprecated recording of the stop time, from the system clock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Kept from the v5.0.1 <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput> class. Unlike <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput>, it reads the clock only if the stop reading is absent, so the elapsed time is measured to the first call, not to the last one.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000118"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput> (since 5.1.0). </para>
+</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000119"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Reads the system clock into <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" kindref="member">stop_time_</ref></computeroutput> only if <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" kindref="member">is_recorded()</ref></computeroutput> reports no stop reading, for the same reason as in <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" kindref="member">timestamp_begin()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="369" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="172" bodyend="178"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="74" endline="77">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="419" endline="419">stop_time_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" prot="protected" static="yes" nodiscard="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::stopwatch::is_recorded</definition>
+        <argsstring>(const timespec &amp;ts) noexcept</argsstring>
+        <name>is_recorded</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::stopwatch::is_recorded</qualifiedname>
+        <param>
+          <type>const timespec &amp;</type>
+          <declname>ts</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether a clock reading was recorded. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A zero <computeroutput>timespec</computeroutput> means that the clock was not read, or that the platform has no clock.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The clock reading to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>At least one of the members is not zero. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Both members are zero.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <computeroutput>true</computeroutput> if at least one of the <computeroutput>tv_sec</computeroutput> or <computeroutput>tv_nsec</computeroutput> members of <computeroutput>ts</computeroutput> is non-zero, indicating that a clock reading was captured. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="402" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="74" bodyend="77"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" compoundref="stopwatch-inlines_8h" startline="87" endline="90">has_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="63" endline="66">has_elapsed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" compoundref="stopwatch-inlines_8h" startline="98" endline="101">has_end</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" compoundref="stopwatch-inlines_8h" startline="133" endline="139">timestamp_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" compoundref="stopwatch_8cpp" startline="157" endline="163">timestamp_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" compoundref="stopwatch-inlines_8h" startline="146" endline="152">timestamp_end</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" compoundref="stopwatch_8cpp" startline="172" endline="178">timestamp_end</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Measures the elapsed time of an operation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> reads the system clock just before the measured operation and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput> just after it; when both readings are available, <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref></computeroutput> returns the interval between them.</para>
+<para>Each call reads the clock again: <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> restarts the measurement, discarding both previous readings, and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput> replaces the previous stop reading, if any. A zero reading means that the clock was not read, either because the stopwatch was not started (or stopped), or because the platform has no clock; in both cases <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput> returns <computeroutput>false</computeroutput>, so that the reporters can skip the timing output.</para>
+<para>Typical usage in the framework:<orderedlist>
+<listitem><para>Call <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> just before the test suite or session body executes.</para>
+</listitem><listitem><para>Call <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput> immediately after it completes.</para>
+</listitem><listitem><para>The reporters display <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref></computeroutput>, when <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput>.</para>
+</listitem></orderedlist>
+</para>
+<para>The class is non-copyable and non-movable to prevent accidental sharing of live timing state.</para>
+<para>The non-public members are <computeroutput>protected</computeroutput>, not <computeroutput>private</computeroutput>, only so that the unit tests can derive from the class and set known readings; the class is not meant to be extended otherwise.</para>
+<para>The public members of the v5.0.1 <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput> class (<computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" kindref="member">timestamp_begin()</ref></computeroutput>, <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" kindref="member">timestamp_end()</ref></computeroutput>, <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" kindref="member">has_begin()</ref></computeroutput>, <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" kindref="member">has_end()</ref></computeroutput>, <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" kindref="member">has_timestamps()</ref></computeroutput>, and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" kindref="member">compute_elapsed_time()</ref></computeroutput>) are kept, deprecated, for the applications that used the deprecated <computeroutput>timings()</computeroutput> of the runner and of the suites, which return a reference to this class. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="121" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" bodystart="122" bodyend="420"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>compute_elapsed_time</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>elapsed</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>has_begin</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>has_elapsed</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>has_end</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>has_timestamps</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>is_recorded</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac97586198c6e6ef9c8ff0b8dd1fb8e34" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac515fef56d4be91466b0c6c51898f685" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>start</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>start_time_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>stop</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>stop_time_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>stopwatch</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a47996e55c1fdb1f6aadde6e53449fe8d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>stopwatch</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a2c1f757da785a73f8a5f6d2a4408dc1d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>stopwatch</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>timestamp_begin</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>timestamp_begin</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>timestamp_end</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>timestamp_end</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::stopwatch</scope><name>~stopwatch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

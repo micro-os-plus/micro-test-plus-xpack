@@ -96,7 +96,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `op` struct is the common base of the comparators defined in
-     * `detail.h` and of `floating_point_constant`. It provides the
+     * `detail.h`, of `floating_point_constant`, and of `named_bool`. It
+     * provides the
      * `op_type` marker, which the `extension::is_op` and
      * `extension::any_op` concepts use to distinguish the framework
      * types from the user types, so that `expect()`, `require()`, and the
@@ -138,12 +139,13 @@ namespace micro_os_plus::micro_test_plus
      * the `extension::is_op` concept without each struct needing to
      * declare it.
      *
-     * It does not derive from the empty `op` struct: on AArch64, a type
-     * with an empty base and only floating point members, like
-     * `value<float>`, is a homogeneous floating point aggregate whose
-     * parameter passing changed in GCC 10.1, and GCC emits a `-Wpsabi`
-     * note for each function passing or returning it by value, like
-     * `approx()`.
+     * It does not derive from the empty `op` struct: a type with an
+     * empty base and only floating point members, like `value<float>`,
+     * is a homogeneous floating point aggregate whose parameter passing
+     * with C++17 and later changed in GCC 10.1, and GCC emits a
+     * `-Wpsabi` note for each function passing or returning it by value,
+     * like `approx()`, on AArch64 and on 32-bit Arm with the hard-float
+     * ABI.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -202,8 +204,8 @@ namespace micro_os_plus::micro_test_plus
        * @brief The stored value.
        *
        * @details
-       * Value-initialised by default. Derived wrappers and comparators
-       * access it via `get()` or the explicit conversion operator.
+       * Set by the constructor. Derived wrappers and comparators access
+       * it via `get()` or the explicit conversion operator.
        */
       T value_{};
     };
@@ -215,7 +217,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `integral_constant` struct template provides a compile-time constant
-     * value of an integral type, with additional utility features. It inherits
+     * value of an integral type, created by the integer literals. It inherits
      * from `value_base<decltype(N)>`, which supplies the `value_type` alias,
      * the runtime value storage, the explicit conversion operator, and the
      * `get()` accessor.
@@ -328,10 +330,17 @@ namespace micro_os_plus::micro_test_plus
      * The `floating_point_constant` struct template provides a compile-time
      * constant value of a floating point type, supporting custom size and
      * precision. It inherits from `op` directly rather than from
-     * `value_base<T>`, which avoids introducing a user-provided constructor
-     * into the type and keeps it trivially default-constructible. This
-     * prevents the GCC ARM PSABI note about parameter-passing ABI changes
-     * that is emitted for non-trivially-constructible types under C++17.
+     * `value_base<T>`, since its value is the compile-time `value`
+     * constant, and it needs no run-time storage; the struct is empty, and
+     * the literal operators create it with `{}`, without a constructor.
+     * Having no non-static floating point members, it is not a
+     * homogeneous floating point aggregate, so the `-Wpsabi` note
+     * described for `value_base` does not apply to it, despite its empty
+     * base. On 32-bit Arm, GCC emits another note, about a change in GCC
+     * 7.1, for each function passing a `double` or `long double` constant
+     * by value, since the earlier versions computed its alignment from its
+     * static `double` members; the framework does not pass the constants
+     * by value.
      *
      * The `value_type` alias, explicit conversion operator, and `get()`
      * accessor are provided directly by this struct. The compile-time
@@ -441,12 +450,9 @@ namespace micro_os_plus::micro_test_plus
      * conversion operator, and getter are provided by the `value_base` base.
      *
      * The `epsilon` member defines the precision used for floating point
-     * comparisons and can be set explicitly or computed as a default based
-     * on the number of decimal digits in the value.
-     *
-     * This specialisation is intended for use cases where floating point
-     * values require controlled precision, supporting advanced template
-     * metaprogramming and type-safe comparisons within the framework.
+     * comparisons and can be set explicitly (by `approx()`) or computed as
+     * a default based on the number of decimal digits in the value (by
+     * the `to_f`, `to_d`, and `to_ld` wrappers).
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */

@@ -1,19 +1,5 @@
 var searchData=
 [
-  ['reflection_2dinlines_2eh_0',['reflection-inlines.h',['../reflection-inlines_8h.html',1,'']]],
-  ['reflection_2ecpp_1',['reflection.cpp',['../reflection_8cpp.html',1,'']]],
-  ['reflection_2eh_2',['reflection.h',['../reflection_8h.html',1,'']]],
-  ['reporter_2dhuman_2ecpp_3',['reporter-human.cpp',['../reporter-human_8cpp.html',1,'']]],
-  ['reporter_2dhuman_2eh_4',['reporter-human.h',['../reporter-human_8h.html',1,'']]],
-  ['reporter_2dinlines_2eh_5',['reporter-inlines.h',['../reporter-inlines_8h.html',1,'']]],
-  ['reporter_2dtap_2ecpp_6',['reporter-tap.cpp',['../reporter-tap_8cpp.html',1,'']]],
-  ['reporter_2dtap_2eh_7',['reporter-tap.h',['../reporter-tap_8h.html',1,'']]],
-  ['reporter_2ecpp_8',['reporter.cpp',['../reporter_8cpp.html',1,'']]],
-  ['reporter_2eh_9',['reporter.h',['../reporter_8h.html',1,'']]],
-  ['runner_2dinlines_2eh_10',['runner-inlines.h',['../runner-inlines_8h.html',1,'']]],
-  ['runner_2dtotals_2dinlines_2eh_11',['runner-totals-inlines.h',['../runner-totals-inlines_8h.html',1,'']]],
-  ['runner_2dtotals_2ecpp_12',['runner-totals.cpp',['../runner-totals_8cpp.html',1,'']]],
-  ['runner_2dtotals_2eh_13',['runner-totals.h',['../runner-totals_8h.html',1,'']]],
-  ['runner_2ecpp_14',['runner.cpp',['../runner_8cpp.html',1,'']]],
-  ['runner_2eh_15',['runner.h',['../runner_8h.html',1,'']]]
+  ['operators_2dinlines_2eh_0',['operators-inlines.h',['../operators-inlines_8h.html',1,'']]],
+  ['operators_2eh_1',['operators.h',['../operators_8h.html',1,'']]]
 ];

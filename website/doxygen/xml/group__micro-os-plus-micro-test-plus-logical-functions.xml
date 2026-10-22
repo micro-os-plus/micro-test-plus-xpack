@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-logical-functions" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-logical-functions</compoundname>
     <title>Logical Functions</title>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1ga8b43b7658b43fb76daf5efbb2e03d236" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -15,15 +15,220 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::_and</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
         <name>_and</name>
         <qualifiedname>micro_os_plus::micro_test_plus::_and</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical <bold>and</bold> operation, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other public names.</para>
+<para><xrefsect id="deprecated_1_deprecated000028"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></computeroutput> (since 5.1.0).</para>
+</xrefdescription></xrefsect></para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if both operand expressions are true. </para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000029"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="282" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="282" bodyend="285" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="334" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="function-comparators-inlines_8h" startline="282" endline="285">micro_os_plus::micro_test_plus::_and</references>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" compoundref="function-comparators-inlines_8h" startline="238" endline="242">micro_os_plus::micro_test_plus::both</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="function-comparators-inlines_8h" startline="282" endline="285">micro_os_plus::micro_test_plus::_and</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Expr_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::_not</definition>
+        <argsstring>(Expr_T &amp;&amp;expr)</argsstring>
+        <name>_not</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_not</qualifiedname>
+        <param>
+          <type>Expr_T &amp;&amp;</type>
+          <declname>expr</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical <bold>not</bold> operation, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other public names.</para>
+<para><xrefsect id="deprecated_1_deprecated000026"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></computeroutput> (since 5.1.0).</para>
+</xrefdescription></xrefsect></para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Expr_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical expression to be negated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if the operand is false. </para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000027"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="270" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="270" bodyend="273" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="311" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="function-comparators-inlines_8h" startline="270" endline="273">micro_os_plus::micro_test_plus::_not</references>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" compoundref="function-comparators-inlines_8h" startline="219" endline="224">micro_os_plus::micro_test_plus::negate</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="function-comparators-inlines_8h" startline="270" endline="273">micro_os_plus::micro_test_plus::_not</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::_or</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
+        <name>_or</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_or</qualifiedname>
+        <param>
+          <type>Lhs_T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical (inclusive) <bold>or</bold> operation, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other public names.</para>
+<para><xrefsect id="deprecated_1_deprecated000030"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></computeroutput> (since 5.1.0).</para>
+</xrefdescription></xrefsect></para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if at least one of the operand expressions is true, including when both are. </para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000031"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="294" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="294" bodyend="297" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="357" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="function-comparators-inlines_8h" startline="294" endline="297">micro_os_plus::micro_test_plus::_or</references>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" compoundref="function-comparators-inlines_8h" startline="257" endline="261">micro_os_plus::micro_test_plus::either</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="function-comparators-inlines_8h" startline="294" endline="297">micro_os_plus::micro_test_plus::_or</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::both</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
+        <name>both</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::both</qualifiedname>
+        <param>
+          <type>Lhs_T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
@@ -66,60 +271,17 @@
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if both operand expressions are true.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8b43b7658b43fb76daf5efbb2e03d236" kindref="member">_and</ref></computeroutput> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</para>
-<para>The underscore in the function name is intentional to differentiate it from the standard logical and operator. </para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both</ref></computeroutput> function template provides a generic logical conjunction for any expression types. It constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op" kindref="compound">detail::and_op</ref></computeroutput> logical conjunction object, which evaluates to <computeroutput>true</computeroutput> if both operands are true.</para>
+<para>It is the function form of the <computeroutput>&amp;&amp;</computeroutput> operator from the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">micro_test_plus::operators</ref></computeroutput> namespace. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="290" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="290" bodyend="293" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="301" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="238" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="238" bodyend="242" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="275" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" compoundref="function-comparators-inlines_8h" startline="238" endline="242">micro_os_plus::micro_test_plus::both</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="function-comparators-inlines_8h" startline="282" endline="285">micro_os_plus::micro_test_plus::_and</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" compoundref="function-comparators-inlines_8h" startline="238" endline="242">micro_os_plus::micro_test_plus::both</referencedby>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1gad9ad936174faf965cffe4493e2b64cf0" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class Expr_T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::_not</definition>
-        <argsstring>(const Expr_T &amp;expr)</argsstring>
-        <name>_not</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_not</qualifiedname>
-        <param>
-          <type>const Expr_T &amp;</type>
-          <declname>expr</declname>
-        </param>
-        <briefdescription>
-<para>Generic logical <bold>not</bold> operation. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Expr_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the operand.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>expr</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Logical expression to be negated. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>An object that evaluates to true if the operand is false.</para>
-</simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gad9ad936174faf965cffe4493e2b64cf0" kindref="member">_not</ref></computeroutput> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.</para>
-<para>The underscore in the function name is intentional to differentiate it from the standard logical not operator. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="272" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="272" bodyend="275" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="285" declcolumn="3"/>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1gad32b40e4b0022b276fa3b357b98a33c5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -129,20 +291,20 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-fun
           </param>
         </templateparamlist>
         <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::_or</definition>
-        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
-        <name>_or</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_or</qualifiedname>
+        <definition>auto micro_os_plus::micro_test_plus::either</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
+        <name>either</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::either</qualifiedname>
         <param>
-          <type>const Lhs_T &amp;</type>
+          <type>Lhs_T &amp;&amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const Rhs_T &amp;</type>
+          <type>Rhs_T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
-<para>Generic logical <bold>or</bold> operation. </para>
+<para>Generic logical (inclusive) <bold>or</bold> operation. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -179,26 +341,78 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-fun
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>An object that evaluates to true if at least one of the operand expressions is true.</para>
+<simplesect kind="return"><para>An object that evaluates to true if at least one of the operand expressions is true, including when both are.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gad32b40e4b0022b276fa3b357b98a33c5" kindref="member">_or</ref></computeroutput> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</para>
-<para>The underscore in the function name is intentional to differentiate it from the standard logical or operator. </para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either</ref></computeroutput> function template provides a generic logical disjunction for any expression types. It constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op" kindref="compound">detail::or_op</ref></computeroutput> logical disjunction object, which evaluates to <computeroutput>true</computeroutput> if at least one of the operands is true.</para>
+<para>It is the function form of the <computeroutput>||</computeroutput> operator from the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">micro_test_plus::operators</ref></computeroutput> namespace; the disjunction is inclusive, so the result is also true when both conditions are true. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="308" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="308" bodyend="311" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="317" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="257" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="257" bodyend="261" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="291" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" compoundref="function-comparators-inlines_8h" startline="257" endline="261">micro_os_plus::micro_test_plus::either</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="function-comparators-inlines_8h" startline="294" endline="297">micro_os_plus::micro_test_plus::_or</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" compoundref="function-comparators-inlines_8h" startline="257" endline="261">micro_os_plus::micro_test_plus::either</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Expr_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::negate</definition>
+        <argsstring>(Expr_T &amp;&amp;expr)</argsstring>
+        <name>negate</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::negate</qualifiedname>
+        <param>
+          <type>Expr_T &amp;&amp;</type>
+          <declname>expr</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical <bold>not</bold> operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Expr_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical expression to be negated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if the operand is false.</para>
+</simplesect>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate</ref></computeroutput> function template provides a generic logical negation for any expression type. It constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op" kindref="compound">detail::not_op</ref></computeroutput> logical negator object, which evaluates to <computeroutput>true</computeroutput> if the operand is false; the template argument is named, since the class template argument deduction would copy an operand that is itself a <computeroutput>not_op</computeroutput>, instead of negating it.</para>
+<para>It is the function form of the <computeroutput>!</computeroutput> operator from the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">micro_test_plus::operators</ref></computeroutput> namespace. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="219" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="219" bodyend="224" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="259" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" compoundref="function-comparators-inlines_8h" startline="219" endline="224">micro_os_plus::micro_test_plus::negate</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="function-comparators-inlines_8h" startline="270" endline="273">micro_os_plus::micro_test_plus::_not</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" compoundref="function-comparators-inlines_8h" startline="219" endline="224">micro_os_plus::micro_test_plus::negate</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Functions used to compose logical expressions in tests. </para>
     </briefdescription>
     <detaileddescription>
-<para>The functions <computeroutput>mt::_and()</computeroutput>, <computeroutput>mt::_or()</computeroutput>, and <computeroutput>mt::_not()</computeroutput> combine multiple conditions, allowing expressive and concise test logic.</para>
-<para>These function names are prefixed with an underscore to avoid clashes with language alternative tokens or related macros named <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput>. Using these logical functions allows developers to express compound conditions clearly and improve readability.</para>
+<para>The functions <computeroutput>mt::both()</computeroutput>, <computeroutput>mt::either()</computeroutput>, and <computeroutput>mt::negate()</computeroutput> combine multiple conditions, allowing expressive and concise test logic. <computeroutput>mt::either()</computeroutput> is an inclusive or: it is true also when both conditions are true.</para>
+<para>The functions have descriptive names, since <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput> are alternative tokens and cannot be used as identifiers. Using these logical functions allows developers to express compound conditions clearly and improve readability.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>compound<sp/>conditions&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::_and<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::both<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42),</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mt::eq<sp/>(compute_float<sp/>(),<sp/>42.0)));</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>

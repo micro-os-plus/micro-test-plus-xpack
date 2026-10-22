@@ -19,7 +19,7 @@ type of the literal (e.g. `300_u8`) is a compilation error.
 
 The floating-point literals are written with decimal digits and a decimal
 point, optionally with digit separators (`1'000.000'5_d`), but without an
-exponent; they can have up to 19 digits before the decimal point and 18
+exponent; they can have up to 19 digits before the decimal point and 19
 after it, otherwise the compilation fails.
 
 The floating-point literals (`1.5_d`) and wrappers (`mt::to_d{ 1.5 }`)
@@ -37,9 +37,11 @@ maintainable test code.
 @par Examples
 
 @code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
 ts.test ("Check typed operands", [] (auto& t) {
-  using namespace micro_test_plus::operators;
-  using namespace micro_test_plus::literals;
+  using namespace mt::operators;
+  using namespace mt::literals;
 
   t.expect (mt::to_i {answer} == 42_i);
   t.expect (mt::to_f {expression} == 42_f);

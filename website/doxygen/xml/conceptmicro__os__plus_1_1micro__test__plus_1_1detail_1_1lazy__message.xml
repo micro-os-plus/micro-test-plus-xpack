@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lazy__message" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::lazy_message</compoundname>
+    <includes refid="extension_8h" local="no">extension.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lazy__message" kindref="compound">micro_os_plus::micro_test_plus::detail::lazy_message</ref> =  std::is_class_v&lt;T&gt; and std::invocable&lt;const T&amp;&gt;
+          and (not std::is_void_v&lt;std::invoke_result_t&lt;const T&amp;&gt;&gt;)
+          and extension::printable&lt;std::invoke_result_t&lt;const T&amp;&gt;&gt;</initializer>
+    <conceptparts>
+      <codepart line="423">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">lazy_message<sp/>=<sp/>std::is_class_v&lt;T&gt;<sp/>and<sp/>std::invocable&lt;const<sp/>T&amp;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_void_v&lt;std::invoke_result_t&lt;const<sp/>T&amp;&gt;&gt;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::printable&lt;std::invoke_result_t&lt;const<sp/>T&amp;&gt;&gt;</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>C++20 concept satisfied when <computeroutput>T</computeroutput> is a callable object that returns a printable message. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to be checked.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput>lazy_message</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> is a class type, such as a lambda or a <computeroutput>std::function</computeroutput>, callable without arguments as a <computeroutput>const</computeroutput> object, whose result is not <computeroutput>void</computeroutput> and satisfies <computeroutput>extension::printable</computeroutput>. The message operator of the checks calls such an object only when the check fails, and appends its result, so that a message that is valid only after a failure (the error of a <computeroutput>std::expected</computeroutput>, for example) is not evaluated after a success.</para>
+<para>The function pointers are excluded, since they are printable (as addresses), and calling them by mistake could have side effects; a lambda without captures, which converts to a function pointer and then to <computeroutput>bool</computeroutput>, is printable too, and is called, since it is a class type. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="422" column="5"/>
+  </compounddef>
+</doxygen>

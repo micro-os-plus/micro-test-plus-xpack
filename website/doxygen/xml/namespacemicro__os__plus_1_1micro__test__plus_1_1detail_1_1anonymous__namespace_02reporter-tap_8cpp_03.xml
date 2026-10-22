@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_text</definition>
+        <argsstring>(std::string_view text, bool escape)</argsstring>
+        <name>tap_text</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_text</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>escape</declname>
+        </param>
+        <briefdescription>
+<para>Prepares a text for a single TAP line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each line break (<computeroutput>\\n</computeroutput>, <computeroutput>\\r</computeroutput>, or the <computeroutput>\\r\\n</computeroutput> pair) is replaced by a space, so that the text does not end the line. When <computeroutput>escape</computeroutput> is true, each <computeroutput>\\</computeroutput> is written as <computeroutput>\\\\</computeroutput> and each <computeroutput>#</computeroutput> as <computeroutput>\\#</computeroutput>, as the TAP 14 specification recommends for the test point descriptions and the reasons, so that a <computeroutput>#</computeroutput> in the text does not start a directive (for example <computeroutput># TODO</computeroutput>, which would hide a failure). The <computeroutput># Subtest:</computeroutput> comments are not escaped, since the specification defines no escapes in comments, and the node-tap parser uses their text as it is.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to prepare. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>escape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to escape the <computeroutput>\\</computeroutput> and <computeroutput>#</computeroutput> characters. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The text, without line breaks, and escaped if requested. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="104" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="104" bodyend="133"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" compoundref="reporter-tap_8cpp" startline="104" endline="133">tap_text</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" compoundref="reporter-tap_8cpp" startline="104" endline="133">tap_text</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::yaml_double_quoted</definition>
+        <argsstring>(std::string_view text)</argsstring>
+        <name>yaml_double_quoted</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::yaml_double_quoted</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Formats a text as a YAML double-quoted scalar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The text is enclosed in <computeroutput>"</computeroutput>, with each <computeroutput>\\</computeroutput> written as <computeroutput>\\\\</computeroutput>, each <computeroutput>"</computeroutput> as <computeroutput>\\"</computeroutput>, and each control character (including the line breaks, the tab, and <computeroutput>DEL</computeroutput>) as a YAML escape sequence (<computeroutput>\\0</computeroutput>, <computeroutput>\\t</computeroutput>, <computeroutput>\\n</computeroutput>, <computeroutput>\\r</computeroutput>, <computeroutput>\\e</computeroutput>, and so on, or <computeroutput>\\xHH</computeroutput> for the others), so that the value is a single line, and is valid YAML whatever it contains. As plain scalars, the values starting with <computeroutput>{</computeroutput>, <computeroutput>[</computeroutput>, or <computeroutput>&apos;</computeroutput>, or containing <computeroutput>: </computeroutput> or <computeroutput> #</computeroutput>, would be rejected or truncated by the YAML parsers used by the TAP consumers. The bytes above <computeroutput>0x7F</computeroutput> are written as they are, since they are expected to be parts of UTF-8 sequences.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to format. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The double-quoted scalar. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="154" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="154" bodyend="218"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" compoundref="reporter-tap_8cpp" startline="154" endline="218">yaml_double_quoted</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" compoundref="reporter-tap_8cpp" startline="154" endline="218">yaml_double_quoted</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Local helpers of the TAP reporter. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The unnamed namespace gives the helpers internal linkage, so that they are visible only in this translation unit, and cannot conflict with the names of the application or of the other source files of the framework. They are not declared in any header.</para>
+<para>It contains the functions that make the texts safe to write in the TAP output: <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" kindref="member">tap_text()</ref></computeroutput>, for the test point descriptions, the reasons, and the comments, and <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" kindref="member">yaml_double_quoted()</ref></computeroutput>, for the values of the YAML diagnostic blocks. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="83" column="3"/>
+  </compounddef>
+</doxygen>

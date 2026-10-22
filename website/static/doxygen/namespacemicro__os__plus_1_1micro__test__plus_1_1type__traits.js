@@ -1,25 +1,18 @@
 var namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits =
 [
     [ "floating_point_constant", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" ],
+    [ "function_traits", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits.html", null ],
     [ "function_traits&lt; R(*)(Args_T...)&gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4" ],
     [ "function_traits&lt; R(Args_T...)&gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4" ],
     [ "function_traits&lt; R(T::*)(Args_T...) const &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e" ],
     [ "function_traits&lt; R(T::*)(Args_T...)&gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4" ],
-    [ "genuine_integral_value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value" ],
     [ "identity", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" ],
     [ "integral_constant", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" ],
     [ "list", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
-    [ "op", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html", null ],
+    [ "op", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" ],
     [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" ],
-    [ "value&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" ],
-    [ "value_base_", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" ],
-    [ "any_op", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1any__op.html", null ],
-    [ "checkable", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1checkable.html", null ],
-    [ "container_like", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1container__like.html", null ],
-    [ "has_epsilon", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__epsilon.html", null ],
-    [ "has_npos", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos.html", null ],
     [ "has_value", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value.html", null ],
     [ "is_floating_point", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point.html", null ],
-    [ "is_op", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op.html", null ],
-    [ "printable", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1printable.html", null ]
+    [ "genuine_integral_value", "namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a67890916b8d3d8cbaab893cc6b599745", null ],
+    [ "value_base_", "namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a65ad920b21a6c0df6848aa939659b92e", null ]
 ];

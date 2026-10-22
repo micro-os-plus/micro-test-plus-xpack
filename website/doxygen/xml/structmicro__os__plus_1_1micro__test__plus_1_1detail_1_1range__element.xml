@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1range__element" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::range_element</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>The type of the elements of a range, as iterated by a range-based <computeroutput>for</computeroutput> statement. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The range type, satisfying <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like" kindref="compound">container_like</ref></computeroutput> or <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range" kindref="compound">free_range</ref></computeroutput>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Only declared; the partial specialisations define the member <computeroutput>type</computeroutput>, for the two ways of iterating a range. Used by <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1formattable__range" kindref="compound">formattable_range</ref></computeroutput>. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="324" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="324" bodyend="-1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

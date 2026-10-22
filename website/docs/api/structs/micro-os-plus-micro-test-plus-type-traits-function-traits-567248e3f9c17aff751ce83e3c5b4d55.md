@@ -17,7 +17,7 @@ keywords:
 
 # `function_traits` Struct Template
 
-<p>Struct template specialisation for extracting function traits from plain function types. <a href="#details">More...</a></p>
+<p>Deprecated traits of the function types. <a href="#details">More...</a></p>
 
 ## Declaration
 
@@ -28,7 +28,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>"
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>&gt;
 </div>
 
 ## Public Member Typedefs Index
@@ -45,7 +45,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Type list of all argument types. <a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">More...</a></p>
+<p>The parameter types, as a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a></span>. <a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -62,7 +62,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The return type of the function. <a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">More...</a></p>
+<p>The return type. <a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -73,7 +73,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 
 ## Description {#details}
 
-<p>Struct template specialisation for extracting function traits from plain function types.</p>
+<p>Deprecated traits of the function types.</p>
 
 
 <dl class="doxyParamsList">
@@ -82,23 +82,29 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">R</td>
-<td class="doxyParamItemDescription"><p>The return type of the function.</p></td>
+<td class="doxyParamItemDescription"><p>The return type.</p></td>
 </tr>
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">Args_T</td>
-<td class="doxyParamItemDescription"><p>The argument types of the function.</p></td>
+<td class="doxyParamItemDescription"><p>The parameter types.</p></td>
 </tr>
 </table>
 </dd>
 </dl>
 
-<p>This specialisation of the <span class="doxyComputerOutput">function_traits</span> struct template provides compile-time introspection for plain function types (i.e., non-pointer, non-member functions). It exposes the return type and argument types of a function, enabling advanced template metaprogramming and type deduction within the µTest++ framework.</p>
+<p>Exposes the return type and the parameter types of a function type.</p>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">result_type</a></span> member defines the return type of the function, while the <span class="doxyComputerOutput"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">args</a></span> member is a type list containing all argument types.</p>
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000021>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Not replaced (since 5.1.0).</p>
+</dd>
+</dl>
+</div>
 
-
-<p>Definition at line 261 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 658 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -124,18 +130,18 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 </div>
 <div class="doxyMemberDoc">
 
-<p>Type list of all argument types.</p>
+<p>The parameter types, as a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a></span>.</p>
 
 
-<p>Deduced from the function signature, in declaration order.</p>
+<p>The types <span class="doxyComputerOutput">Args_T</span> of the specialisation, without the object parameter of the member functions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00277">277</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00675">675</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">277</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">675</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
 
 </div>
 
@@ -161,18 +167,18 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 </div>
 <div class="doxyMemberDoc">
 
-<p>The return type of the function.</p>
+<p>The return type.</p>
 
 
-<p>Deduced from the function signature.</p>
+<p>The type <span class="doxyComputerOutput">R</span> of the specialisation.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00269">269</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00666">666</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">269</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">result_type</a> = R;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">666</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">result_type</a> = R;</span></span></div>
 
 </div>
 
@@ -186,11 +192,11 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a></li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::named_bool</compoundname>
+    <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::op</basecompoundref>
+    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" prot="public" static="no">
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></type>
+        <definition>using micro_os_plus::micro_test_plus::detail::op::op_type = op</definition>
+        <argsstring></argsstring>
+        <name>op_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::op::op_type</qualifiedname>
+        <briefdescription>
+<para>Marker identifying the framework expression types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Detected by the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput> concept, and inherited by all types derived from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="121" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a43f20a87067408065e48d3bcd950db79" prot="public" static="no">
+        <type>bool</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::named_bool::value_type = bool</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::named_bool::value_type</qualifiedname>
+        <briefdescription>
+<para>The type of the value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The named literal behaves as a boolean value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="550" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="550" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" prot="private" static="no" mutable="no">
+        <type>std::string_view</type>
+        <definition>std::string_view micro_os_plus::micro_test_plus::detail::named_bool::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::named_bool::name_</qualifiedname>
+        <briefdescription>
+<para>The name of the constant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Not owned; refers to the characters of the string literal. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="586" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="586" bodyend="-1"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ada5dc84fd655a188ac350568572dddb8" compoundref="values-inlines_8h" startline="241" endline="244">named_bool</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" compoundref="values-inlines_8h" startline="261" endline="264">name</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ada5dc84fd655a188ac350568572dddb8" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::named_bool::named_bool</definition>
+        <argsstring>(std::string_view name) noexcept</argsstring>
+        <name>named_bool</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::named_bool::named_bool</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a named boolean constant with the given name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name, printed in place of the value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Stores the view of the name; the characters are not copied. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="557" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="241" bodyend="244"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" compoundref="values-inlines_8h" startline="261" endline="264">name</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" compoundref="values_8h" startline="586">name_</references>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view micro_os_plus::micro_test_plus::detail::named_bool::name</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::named_bool::name</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Returns the name of the constant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The name passed to the constructor.</para>
+</simplesect>
+Returns the stored view of the name. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="577" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="261" bodyend="264"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" compoundref="values_8h" startline="586">name_</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ada5dc84fd655a188ac350568572dddb8" compoundref="values-inlines_8h" startline="241" endline="244">named_bool</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a46392700e7eabfa2e18655ac6b04c670" compoundref="expression-formatter_8cpp" startline="248" endline="252">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ac69d71afd275e3374ef0516c8d9a82d6" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::named_bool::operator value_type</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator value_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::named_bool::operator value_type</qualifiedname>
+        <briefdescription>
+<para>Conversion operator to <computeroutput>bool</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para><computeroutput>true</computeroutput>.</para>
+</simplesect>
+Always returns <computeroutput>true</computeroutput>, the value of all named boolean constants. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="567" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="251" bodyend="254"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Struct representing a named boolean constant, created by the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref></computeroutput> literal. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" kindref="compound">named_bool</ref></computeroutput> struct holds the constant <computeroutput>true</computeroutput>, together with a name, which the expression formatter prints instead of the value, so that a failed comparison like <computeroutput>"flag"<ref refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref> == flag</computeroutput>, with the operators in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">operators</ref></computeroutput> namespace, is reported as <computeroutput>flag == false</computeroutput>.</para>
+<para>The value is available only via the implicit conversion to <computeroutput>bool</computeroutput>, and the struct has neither a <computeroutput>get()</computeroutput> accessor nor comparison operators. Thus <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" kindref="member">detail::unwrap()</ref></computeroutput> returns the object itself, so that the formatter receives the name, the comparators compare it as the <computeroutput>bool</computeroutput> value <computeroutput>true</computeroutput>, and the generic operators in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">operators</ref></computeroutput> namespace, not a better matching operator of this struct, are selected for it.</para>
+<para>The name is not owned; it refers to the string literal, which has static storage duration. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::named_bool</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::detail::op</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::named_bool</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::detail::op</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="542" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="543" bodyend="587"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::named_bool</scope><name>name</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::named_bool</scope><name>name_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ada5dc84fd655a188ac350568572dddb8" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::named_bool</scope><name>named_bool</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::named_bool</scope><name>op_type</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ac69d71afd275e3374ef0516c8d9a82d6" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::named_bool</scope><name>operator value_type</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a43f20a87067408065e48d3bcd950db79" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::named_bool</scope><name>value_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

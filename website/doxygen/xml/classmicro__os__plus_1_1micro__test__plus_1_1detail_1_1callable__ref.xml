@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::callable_ref</compoundname>
+    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Self_T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7a5a1b1e001f34f819ac65e63c2d9567" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_</definition>
+        <argsstring></argsstring>
+        <name>callable_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::callable_ref::callable_</qualifiedname>
+        <briefdescription>
+<para>The address of the referred callable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Its type is erased; only <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7ca4453fe089a72345a476490212ae59" kindref="member">invoke_</ref></computeroutput> converts it back. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="897" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="897" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a8422edf1279e27a15356e28978569053" compoundref="test-inlines_8h" startline="329" endline="333">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a10148eb90e3393d8166e8712468d32e2" compoundref="test-inlines_8h" startline="341" endline="344">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7ca4453fe089a72345a476490212ae59" prot="private" static="no" mutable="no">
+        <type>void(*)</type>
+        <definition>void(*) micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::invoke_(void *callable, Self_T &amp;self)</definition>
+        <argsstring>(void *callable, Self_T &amp;self)</argsstring>
+        <name>invoke_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::callable_ref::invoke_</qualifiedname>
+        <briefdescription>
+<para>The function that invokes the referred callable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1affde2e2f927df6b5ada7f5578f8d5c36" kindref="member">invoke_callable()</ref></computeroutput> instantiation for the type of the callable; it receives <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7a5a1b1e001f34f819ac65e63c2d9567" kindref="member">callable_</ref></computeroutput> and the <computeroutput>Self_T&amp;</computeroutput> argument. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="906" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="906" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a10148eb90e3393d8166e8712468d32e2" compoundref="test-inlines_8h" startline="341" endline="344">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::operator()</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a8422edf1279e27a15356e28978569053" prot="public" static="no" const="no" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Callable_T</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</definition>
+        <argsstring>(Callable_T &amp;callable) noexcept</argsstring>
+        <name>callable_ref</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::callable_ref::callable_ref</qualifiedname>
+        <param>
+          <type>Callable_T &amp;</type>
+          <declname>callable</declname>
+        </param>
+    <requiresclause>(!std::is_same_v&lt;std::remove_cv_t&lt;Callable_T&gt;, callable_ref&gt;)    </requiresclause>
+        <briefdescription>
+<para>Constructs a reference to a callable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The callable must be invocable with a <computeroutput>Self_T&amp;</computeroutput> argument, and must outlive the reference.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Callable_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable object.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Constraints</title><para><computeroutput>Callable_T</computeroutput> is not a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref" kindref="compound">callable_ref</ref></computeroutput>, so that the copy constructor is used for copies.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callable object; a non-<computeroutput>const</computeroutput> lvalue.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Stores the address of the callable, and the address of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1affde2e2f927df6b5ada7f5578f8d5c36" kindref="member">invoke_callable()</ref></computeroutput> instantiation for its type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="853" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="329" bodyend="333"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a8422edf1279e27a15356e28978569053" compoundref="test-inlines_8h" startline="329" endline="333">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7a5a1b1e001f34f819ac65e63c2d9567" compoundref="test_8h" startline="897">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a8422edf1279e27a15356e28978569053" compoundref="test-inlines_8h" startline="329" endline="333">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a10148eb90e3393d8166e8712468d32e2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::operator()</definition>
+        <argsstring>(Self_T &amp;self) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::callable_ref::operator()</qualifiedname>
+        <param>
+          <type>Self_T &amp;</type>
+          <declname>self</declname>
+        </param>
+        <briefdescription>
+<para>Invokes the referred callable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Not <computeroutput>noexcept</computeroutput>, since a failed <computeroutput>require()</computeroutput> stops the body of a test case by throwing an exception.</para>
+<para>Always inlined, so that, without optimisations, it adds no frame between <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1adb4333ecb107fee477156b661f0b1512" kindref="member">test_case::run()</ref></computeroutput> and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1affde2e2f927df6b5ada7f5578f8d5c36" kindref="member">invoke_callable()</ref></computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reference passed to the callable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+Passes the stored address and <computeroutput>self</computeroutput> to the stored function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="870" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="341" bodyend="344"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7a5a1b1e001f34f819ac65e63c2d9567" compoundref="test_8h" startline="897">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7ca4453fe089a72345a476490212ae59" compoundref="test_8h" startline="906">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::invoke_</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1affde2e2f927df6b5ada7f5578f8d5c36" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Callable_T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::invoke_callable</definition>
+        <argsstring>(void *callable, Self_T &amp;self)</argsstring>
+        <name>invoke_callable</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::callable_ref::invoke_callable</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>callable</declname>
+        </param>
+        <param>
+          <type>Self_T &amp;</type>
+          <declname>self</declname>
+        </param>
+        <briefdescription>
+<para>Invokes a callable of a given type, from its address. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Instantiated by the constructor for the type of the callable; its address is stored in <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7ca4453fe089a72345a476490212ae59" kindref="member">invoke_</ref></computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Callable_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable object.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The address of the callable, with its type erased. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reference passed to the callable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+Casts <computeroutput>callable</computeroutput> back to <computeroutput>Callable_T*</computeroutput>, the type it had when the reference was constructed, and invokes the callable through it, as an lvalue, with <computeroutput>self</computeroutput>.</para>
+<para>A function pointer or a function object is called directly, not through <computeroutput>std::invoke()</computeroutput>, which, without optimisations, adds three frames to the call chain; a pointer to a member, which only <computeroutput>std::invoke()</computeroutput> can call, is still passed to it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="889" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="360" bodyend="370"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Non-owning reference to a callable invoked with a <computeroutput>Self_T&amp;</computeroutput> argument. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Holds the address of the callable and a pointer to a function, instantiated for its type, which converts the address back and invokes the callable. Unlike a <computeroutput>std::function</computeroutput>, it neither copies the callable nor allocates memory, so the callable must outlive the reference.</para>
+<para>A test case refers to its body this way, since the body is a local object of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad4ac49522cfd6e1608d9ac64ab7a8b91" kindref="member">runnable_base::create_test_case()</ref></computeroutput>, which runs the test case and destroys it before returning.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Self_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type referred to by the argument of the callable (<computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput>). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="833" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="834" bodyend="907"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7a5a1b1e001f34f819ac65e63c2d9567" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::callable_ref</scope><name>callable_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a8422edf1279e27a15356e28978569053" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::callable_ref</scope><name>callable_ref</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a7ca4453fe089a72345a476490212ae59" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::callable_ref</scope><name>invoke_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1affde2e2f927df6b5ada7f5578f8d5c36" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::callable_ref</scope><name>invoke_callable</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a10148eb90e3393d8166e8712468d32e2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::callable_ref</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

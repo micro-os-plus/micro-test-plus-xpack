@@ -1,9 +1,10 @@
 var structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant =
 [
-    [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a3538821b6929e9b13f6a3ea763e1627e", null ],
-    [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a9e42c82de949aa6640b3964bd67c4732", null ],
-    [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a2be95ffe95532c5b3a0ab852aa2c680f", null ],
-    [ "operator-", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a53595778654687cfd7fe8dd385d26bcc", null ],
-    [ "epsilon", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a5cab8e85fbee4a9314fc8a3e09e59eef", null ],
-    [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#ab0e05de518c208a6a762c7377d2f2332", null ]
+    [ "op_type", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a384b1d115e493d6a554ebda4e3089b19", null ],
+    [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#adcb16c95222c90598162fb5310bcd0f8", null ],
+    [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a0169d044ee9d39e5d1b63c0a1fc4ce95", null ],
+    [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#ad193f5a4c7c468860316b4e7d7a5ac05", null ],
+    [ "operator-", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#ab729a3603714779b81c47b8b57b1cbd8", null ],
+    [ "epsilon", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#acc11936d636a95777208dc8e50f2546f", null ],
+    [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#aab5138b851247527b8c8abdf28c5e5b1", null ]
 ];

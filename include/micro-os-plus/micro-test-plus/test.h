@@ -23,8 +23,8 @@
  * This header provides the declarations for the test hierarchy used within
  * the µTest++ framework: the internal `detail::runnable_base` base class,
  * and the `test_case`, `suite`, `top_suite`, and `static_suite` classes. They
- * offer mechanisms for running test cases, managing counters for successful
- * and failed checks, and registering test suites with the runner.
+ * offer mechanisms for running test cases, managing the counters of the
+ * passed and failed checks, and registering test suites with the runner.
  *
  * The design ensures that test suites are non-copyable and non-movable,
  * maintaining unique ownership and consistent state. Flexible support for
@@ -213,6 +213,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief The location of the call to `test()`.
+     *
+     * @details
+     * Captured by the default argument of the constructor, at the place
+     * of the conversion to `test_case_name`.
      */
     reflection::source_location location_;
   };
@@ -236,13 +240,14 @@ namespace micro_os_plus::micro_test_plus
      * `runnable_base` is the single base of the nodes of the test tree,
      * and holds the state that is shared by every runnable object:
      * - the node name,
-     * - the counters of the successful and failed checks and of the
-     *   executed test cases,
+     * - the counters of the passed and failed checks, and of the test
+     *   cases,
      * - a reference to the owning `runner`,
-     * - the object's own index within its parent container,
+     * - the object's own index within its parent,
      * - the number of the most recent test point (check or nested test
      *   case), used in the TAP output, and
-     * - an owning vector of child `test_case` instances.
+     * - the number of the direct child test cases, used in the TAP plan;
+     *   the child test cases themselves are not kept.
      *
      * The concrete runnable classes (`suite`, `test_case`) derive from
      * `runnable_base`; each refers to its body, which receives a
@@ -265,16 +270,41 @@ namespace micro_os_plus::micro_test_plus
      */
     class runnable_base
     {
-      // Set the indices of the suites, before running them, and select
-      // the static suites by their runner.
+      /**
+       * @brief The runner, which numbers and runs the suites.
+       *
+       * @details
+       * It sets the indices of the suites before running them, and
+       * selects the suites that refer to it.
+       */
       friend class micro_test_plus::runner;
 
-      // Number and count the checks of the test cases, and report them.
+      /**
+       * @brief The check result, which numbers and counts the checks.
+       *
+       * @details
+       * It advances the test point number, updates the totals, and
+       * reports the check through the reporter of the node.
+       */
       friend class check_result;
 
-      // Display the indices and the test point numbers, and abort on
-      // an inconsistent report.
+      /**
+       * @brief The human reporter, which displays the nodes.
+       *
+       * @details
+       * It currently uses only the public members of the nodes; the
+       * declaration is kept for symmetry with the TAP reporter.
+       */
       friend class reporter_human;
+
+      /**
+       * @brief The TAP reporter, which displays the nodes.
+       *
+       * @details
+       * It reads the indices and the test point numbers, for the TAP
+       * lines and plans, and, when tracing, the numbers of the child test
+       * cases.
+       */
       friend class reporter_tap;
 
     public:
@@ -588,10 +618,12 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * For the suites, the totals include the checks of all their
        * test cases; for a test case, they include only its own checks,
-       * plus the number of nested test cases executed.
+       * plus the counts of its direct nested test cases.
        *
-       * Updated by the node itself, by its parent, and by the deferred
-       * reporter, which is a friend.
+       * The check counters are updated by the check result, which is a
+       * friend; the test case counters by `after_test_case_create()`,
+       * when a nested test case ends. For a suite, the totals of each of
+       * its test cases are also added, by the same function.
        */
       counters totals_;
 
@@ -599,7 +631,9 @@ namespace micro_os_plus::micro_test_plus
        * @brief Reference to the test runner that owns this object.
        *
        * @details
-       * Provides access to the reporter, and is used when aborting.
+       * Provides access to the reporter, to the filter, and to the state
+       * of the session (the running test case, and the abort and listing
+       * flags), and is used when aborting.
        */
       runner& runner_;
 
@@ -968,7 +1002,13 @@ namespace micro_os_plus::micro_test_plus
    */
   class test_case : public detail::runnable_base
   {
-    // Create the test cases, and run them after their creation.
+    /**
+     * @brief The base of the nodes, which creates the test cases.
+     *
+     * @details
+     * It constructs the test cases, whose constructor is private, and
+     * runs them after their creation.
+     */
     friend class detail::runnable_base;
 
   private:
@@ -1069,8 +1109,8 @@ namespace micro_os_plus::micro_test_plus
           Args_T&&... arguments);
 
     /**
-     * @brief Adds a nested test case for each value of a range or a tuple, and runs
-     * them.
+     * @brief Adds a nested test case for each value of a range or a
+     * tuple, and runs them.
      *
      * @details
      * For each value, in order, a test case is added and run, as by
@@ -1116,8 +1156,8 @@ namespace micro_os_plus::micro_test_plus
                Callable_T&& callable);
 
     /**
-     * @brief Adds a nested test case for each value of a braced list, and runs
-     * them.
+     * @brief Adds a nested test case for each value of a braced list,
+     * and runs them.
      *
      * @details
      * As the overload for the ranges, for a list written in place, like
@@ -1145,7 +1185,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-expectations
-     * @brief Evaluate a generic condition and report the results.
+     * @brief Evaluates a condition and reports the result.
      *
      * @tparam Expr_T The type of the custom expression.
      *
@@ -1157,7 +1197,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.
-     * @return An output stream to write optional messages.
+     * @return The check result, to which optional messages can be
+     * appended with `operator<<`; the check is reported when it is
+     * destroyed, at the end of the statement.
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
@@ -1167,7 +1209,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-requirements
-     * @brief Check a condition and, if false, stop the test case.
+     * @brief Checks a condition and, if false, stops the test case.
      *
      * @details
      * The failure is reported and counted as for `expect()`; then, when
@@ -1192,7 +1234,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.
-     * @return An output stream to write optional messages.
+     * @return The check result, to which optional messages can be
+     * appended with `operator<<`; the check is reported when it is
+     * destroyed, at the end of the statement.
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
@@ -1202,7 +1246,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-requirements
-     * @brief Check a condition and, if false, stop the test case.
+     * @brief Deprecated name of `require()`.
      *
      * @details
      * The same as `require()`. The name was misleading: in other
@@ -1215,7 +1259,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.
-     * @return An output stream to write optional messages.
+     * @return The check result, to which optional messages can be
+     * appended with `operator<<`; the check is reported when it is
+     * destroyed, at the end of the statement.
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
@@ -1369,11 +1415,29 @@ namespace micro_os_plus::micro_test_plus
    */
   class suite : public detail::runnable_base
   {
-    // Create and register the suites, and time the top suite.
+    /**
+     * @brief The runner, which creates and runs the suites.
+     *
+     * @details
+     * It constructs and links the suites added with
+     * `runner::add_suite()`, runs them, and times the top suite.
+     */
     friend class micro_test_plus::runner;
 
-    // Display the suite duration.
+    /**
+     * @brief The human reporter, which displays the suites.
+     *
+     * @details
+     * It reads the stopwatch, to display the duration of the suite.
+     */
     friend class detail::reporter_human;
+
+    /**
+     * @brief The TAP reporter, which displays the suites.
+     *
+     * @details
+     * It reads the stopwatch, to display the duration of the suite.
+     */
     friend class detail::reporter_tap;
 
   protected:
@@ -1444,8 +1508,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      *
      * @details
-     * Removes the suite from the list of suites, if it is there, and
-     * destroys the owned test cases.
+     * Removes the suite from the list of suites, if it is there; the
+     * test cases were already destroyed, when the `test()` calls that
+     * created them returned.
      */
     ~suite () override;
 
@@ -1474,8 +1539,8 @@ namespace micro_os_plus::micro_test_plus
           Args_T&&... arguments);
 
     /**
-     * @brief Adds a test case to the suite for each value of a range or a tuple, and runs
-     * them.
+     * @brief Adds a test case to the suite for each value of a range or
+     * a tuple, and runs them.
      *
      * @details
      * For each value, in order, a test case is added and run, as by
@@ -1521,8 +1586,8 @@ namespace micro_os_plus::micro_test_plus
                Callable_T&& callable);
 
     /**
-     * @brief Adds a test case to the suite for each value of a braced list, and runs
-     * them.
+     * @brief Adds a test case to the suite for each value of a braced
+     * list, and runs them.
      *
      * @details
      * As the overload for the ranges, for a list written in place, like
@@ -1735,7 +1800,13 @@ namespace micro_os_plus::micro_test_plus
    */
   class top_suite : public suite
   {
-    // Construct the top suite, a member of the runner.
+    /**
+     * @brief The runner, which owns the top suite.
+     *
+     * @details
+     * It constructs the top suite, whose constructor is private, as a
+     * member.
+     */
     friend class micro_test_plus::runner;
 
   private:
@@ -1794,7 +1865,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      *
      * @details
-     * Destroys the owned test cases.
+     * Called when the runner is destroyed; the top suite is not in the
+     * list of suites, so the `suite` destructor leaves the list
+     * unchanged.
      */
     ~top_suite () override;
   };
@@ -1976,8 +2049,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The suite is removed from the list of suites by the `suite`
-     * destructor, which also destroys the owned test cases and the
-     * stored callable.
+     * destructor; the stored callable is destroyed with the `suite`
+     * members.
      */
     ~static_suite () override;
   };

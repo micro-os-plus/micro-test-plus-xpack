@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::extension::has_epsilon</compoundname>
+    <includes refid="extension_8h" local="no">extension.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon" kindref="compound">micro_os_plus::micro_test_plus::extension::has_epsilon</ref> =  is_op&lt;T&gt; and requires (const T&amp; t) { t.epsilon; }</initializer>
+    <conceptparts>
+      <codepart line="175">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">has_epsilon<sp/>=<sp/>is_op&lt;T&gt;<sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>{<sp/>t.epsilon;<sp/>}</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>C++20 concept satisfied when <computeroutput>T</computeroutput> is a framework floating-point wrapper with a tolerance. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to be checked.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput>has_epsilon</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> is a framework expression type (see <computeroutput>is_op</computeroutput>) with an <computeroutput>epsilon</computeroutput> member, like <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> and the floating-point specialisation of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>. The comparators treat the operands within this tolerance as equal; a custom comparator uses it to do the same.</para>
+<para>The types of the application are excluded, even if they have a member named <computeroutput>epsilon</computeroutput>, so that they are compared with their own operators. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="175" column="5"/>
+  </compounddef>
+</doxygen>

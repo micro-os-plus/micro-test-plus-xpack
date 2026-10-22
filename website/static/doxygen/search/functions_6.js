@@ -1,7 +1,15 @@
 var searchData=
 [
-  ['fail_0',['fail',['../classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#a0107c95e02de7196e660969b0e684173',1,'micro_os_plus::micro_test_plus::reporter']]],
-  ['failed_5fchecks_1',['failed_checks',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html#ad1301b9a6a0e67131c9a98bb8f07e4e4',1,'micro_os_plus::micro_test_plus::detail::runner_totals']]],
-  ['file_5fname_2',['file_name',['../classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#a3df499675aacb7ab9192cfb9a5371874',1,'micro_os_plus::micro_test_plus::reflection::source_location']]],
-  ['flush_3',['flush',['../classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#ae7f404f29f265c5db6038f1e03f854b2',1,'micro_os_plus::micro_test_plus::reporter']]]
+  ['fail_0',['fail',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a406cf77b7adcd5fe9417ce7bce4f3afb',1,'micro_os_plus::micro_test_plus::detail::reporter']]],
+  ['fail_5fsuite_1',['fail_suite',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human.html#afd98d9a322823d67448d4ba301846392',1,'micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap.html#a314df80e98fe6fa5de008d6708a14925',1,'micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a1bf7be6972ddc4f81cecb1552452db10',1,'micro_os_plus::micro_test_plus::detail::reporter::fail_suite()']]],
+  ['fail_5funexpected_5fexception_2',['fail_unexpected_exception',['../classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#a1980019eed5ac5b1eef65302eb9cc9cd',1,'micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()'],['../classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a1d15dd97c94c3dabccb9e5a7444af0ec',1,'micro_os_plus::micro_test_plus::suite::fail_unexpected_exception()']]],
+  ['failed_5fchecks_3',['failed_checks',['../classmicro__os__plus_1_1micro__test__plus_1_1counters.html#ab1684c7c6101a4d534356d9d16807bee',1,'micro_os_plus::micro_test_plus::counters']]],
+  ['failed_5ftest_5fcases_4',['failed_test_cases',['../classmicro__os__plus_1_1micro__test__plus_1_1counters.html#a85981e2e55a820cb49ee04aa82bbde56',1,'micro_os_plus::micro_test_plus::counters']]],
+  ['file_5fname_5',['file_name',['../classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#a3df499675aacb7ab9192cfb9a5371874',1,'micro_os_plus::micro_test_plus::reflection::source_location']]],
+  ['flush_5fstreams_6',['flush_streams',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a804b593aefa158d92a72da43de57d242',1,'micro_os_plus::micro_test_plus::detail::reporter']]],
+  ['format_5felapsed_5ftime_7',['format_elapsed_time',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#ac6dca3d3fa34870f3960fe5e226e45d8',1,'micro_os_plus::micro_test_plus::detail::reporter']]],
+  ['format_5fsession_5ftotals_8',['format_session_totals',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a6bf3aac88a5e66e2f93eb32c54dbdd14',1,'micro_os_plus::micro_test_plus::detail::reporter']]],
+  ['format_5fskipped_9',['format_skipped',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03.html#a0d696f5039163e76ec2e4005980ca285',1,'micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}']]],
+  ['format_5fsuite_5ftotals_10',['format_suite_totals',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a570030599ccc9f4133ed6a9eda2c2a1c',1,'micro_os_plus::micro_test_plus::detail::reporter']]],
+  ['format_5ftest_5fcase_5ftotals_11',['format_test_case_totals',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a60b8564f54a6a1230e6d4ce110de93f5',1,'micro_os_plus::micro_test_plus::detail::reporter']]]
 ];

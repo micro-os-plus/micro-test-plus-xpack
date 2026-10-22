@@ -17,7 +17,7 @@ keywords:
 
 # `list` Struct Template
 
-<p>Struct template representing a compile-time type list. <a href="#details">More...</a></p>
+<p>Deprecated empty type list. <a href="#details">More...</a></p>
 
 ## Declaration
 
@@ -28,12 +28,12 @@ struct micro_os_plus::micro_test_plus::type_traits::list&lt;Types&gt; { ... }
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>"
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>&gt;
 </div>
 
 ## Description {#details}
 
-<p>Struct template representing a compile-time type list.</p>
+<p>Deprecated empty type list.</p>
 
 
 <dl class="doxyParamsList">
@@ -42,23 +42,29 @@ struct micro_os_plus::micro_test_plus::type_traits::list&lt;Types&gt; { ... }
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">Types</td>
-<td class="doxyParamItemDescription"><p>The types to be included in the list.</p></td>
+<td class="doxyParamItemDescription"><p>The types in the list.</p></td>
 </tr>
 </table>
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a></span> struct template provides a mechanism for grouping an arbitrary number of types into a single type list at compile time. This is a fundamental building block for template metaprogramming, enabling operations such as type iteration, transformation, and introspection within the µTest++ framework.</p>
+<p>Used only as the type of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">function_traits</a>&lt;&gt;::args</span>; the framework no longer uses it.</p>
 
 
-<p>The type list is commonly used in conjunction with function traits and other metaprogramming utilities to facilitate advanced type manipulations and compile-time computations.</p>
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000017>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>Not replaced (since 5.1.0).</p>
+</dd>
+</dl>
+</div>
 
-
-<p>Definition at line 132 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 561 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

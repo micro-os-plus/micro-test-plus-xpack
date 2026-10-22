@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::not_equal_to</compoundname>
+    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1ababd5d29f7521518a978c737f2d481ec" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::detail::not_equal_to::symbol</definition>
+        <argsstring></argsstring>
+        <name>symbol</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::not_equal_to::symbol</qualifiedname>
+        <initializer>= &quot; != &quot;</initializer>
+        <briefdescription>
+<para>The operator symbol, as displayed in the failure reports. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Includes the surrounding spaces, so that the formatter appends it with a single call; a C string, not a <computeroutput>std::string_view</computeroutput>, which would take two registers at each call site and enlarge the code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="480" column="35" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="480" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a8decf36d3e0e7cc8242c6a2170743422" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</definition>
+        <argsstring></argsstring>
+        <name>within_tolerance_result</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>The result when the operands are within the tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Values within the tolerance are equal. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="488" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="488" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a6911d4baf097b704280eebbead545ba1" prot="public" static="yes" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::not_equal_to::apply</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>apply</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::not_equal_to::apply</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Compares the operands with <computeroutput>!=</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always inlined, also at <computeroutput>-O0</computeroutput>, so that the debug builds do not get one more function for each combination of operand types.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the left-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the right-hand operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of <computeroutput>lhs != rhs</computeroutput>, converted to <computeroutput>bool</computeroutput>.</para>
+</simplesect>
+The using-declarations make the standard operators visible to unqualified lookup, in addition to those found by argument-dependent lookup; <computeroutput>operator==</computeroutput> is also needed for the C++20 rewritten candidates of <computeroutput>!=</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="506" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="282" bodyend="287"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Non-equality tag for <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">compare_op</ref></computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Defines the operator applied by <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">compare_op</ref></computeroutput>, its symbol in the failure reports, and the result when the operands are within the tolerance of the floating-point wrappers. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="470" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="471" bodyend="507"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a6911d4baf097b704280eebbead545ba1" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::not_equal_to</scope><name>apply</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1ababd5d29f7521518a978c737f2d481ec" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::not_equal_to</scope><name>symbol</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a8decf36d3e0e7cc8242c6a2170743422" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::not_equal_to</scope><name>within_tolerance_result</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

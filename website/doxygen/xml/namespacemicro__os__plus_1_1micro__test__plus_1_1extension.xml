@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::extension</compoundname>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op" prot="public">micro_os_plus::micro_test_plus::extension::compare_op</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op" prot="public">micro_os_plus::micro_test_plus::extension::predicate_op</innerclass>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op">micro_os_plus::micro_test_plus::extension::any_op</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable">micro_os_plus::micro_test_plus::extension::checkable</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon">micro_os_plus::micro_test_plus::extension::has_epsilon</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op">micro_os_plus::micro_test_plus::extension::is_op</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable">micro_os_plus::micro_test_plus::extension::printable</innerconcept>
+    <briefdescription>
+<para>The concepts for extending the µTest++ testing framework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kindref="compound">extension</ref></computeroutput> namespace holds what the applications use to write their own comparators, predicates, operators, and helpers, reported as the built-in ones are:<itemizedlist>
+<listitem><para><computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op" kindref="compound">compare_op</ref></computeroutput> and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op" kindref="compound">predicate_op</ref></computeroutput> (declared in <computeroutput><ref refid="detail_8h" kindref="compound">detail.h</ref></computeroutput>), the expressions of the binary comparisons and of the unary predicates, parametrised by a tag that defines the operation and its symbol in the failure reports;</para>
+</listitem><listitem><para>the C++20 concepts with the same constraints as the framework itself: whether a type is a framework expression or value wrapper (<computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">is_op</ref></computeroutput>, <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op" kindref="compound">any_op</ref></computeroutput>), whether it carries a floating-point tolerance (<computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon" kindref="compound">has_epsilon</ref></computeroutput>), and whether it is accepted by <computeroutput>expect()</computeroutput> and <computeroutput>require()</computeroutput> (<computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable" kindref="compound">checkable</ref></computeroutput>) or by the message operator (<computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable" kindref="compound">printable</ref></computeroutput>).</para>
+</listitem></itemizedlist>
+</para>
+<para>The namespace is separate from the top namespace, so that <computeroutput>using namespace <ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> does not bring these generic names into the application code; refer to them qualified, as <computeroutput>mt::extension::is_op&lt;T&gt;</computeroutput>. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1512" column="3"/>
+  </compounddef>
+</doxygen>

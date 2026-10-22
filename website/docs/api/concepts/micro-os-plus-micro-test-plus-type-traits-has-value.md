@@ -17,7 +17,7 @@ keywords:
 
 # `has_value` Concept
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides a <span class="doxyComputerOutput">value</span> member. <a href="#details">More...</a></p>
+<p>Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> has a member named <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a></span>. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -28,7 +28,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides a <span class="doxyComputerOutput">value</span> member.</p>
+<p>Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> has a member named <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a></span>.</p>
 
 
 <dl class="doxyParamsList">
@@ -43,10 +43,19 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput">has_value</span> concept is satisfied when an instance of <span class="doxyComputerOutput">T</span> exposes a <span class="doxyComputerOutput">value</span> member. It is used to detect framework value-wrapper types such as <span class="doxyComputerOutput">integral_constant</span>, <span class="doxyComputerOutput">floating_point_constant</span>, and <span class="doxyComputerOutput">value&lt;T&gt;</span>, enabling specialised comparison and reporting.</p>
+<p>Restored with its v5.0.1 definition, satisfied by any type with a member named <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a></span>, static or not, including the application types, so that the v5.0.1 code that uses it keeps its result. It is not the concept used by the framework, <span class="doxyComputerOutput">detail::has_value</span>, which is satisfied only by the framework types, so that the application types with a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a></span> member are compared as values.</p>
 
 
-<p>Definition at line 430 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000015>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>There is no replacement; the concept used by the framework is internal (since 5.1.0).</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line 529 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -59,6 +68,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

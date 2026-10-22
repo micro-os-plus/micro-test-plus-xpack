@@ -2,13 +2,14 @@
 @brief Folder with C++ header files for the µTest++ Testing Framework.
 
 @details
-This folder provides the primary public header that defines the core
-functionality of the µTest++ Testing Framework.
+This folder provides the headers included by the primary public header,
+`micro-os-plus/micro-test-plus.h`, which defines the core functionality of
+the µTest++ Testing Framework.
 
 It includes declarations for essential library components, including
 test suite and test case management, test runner and reporter classes,
 function comparators, overloaded operators, user-defined literals,
-mathematical utilities, type traits, value wrappers, reflection
+mathematical utilities, extension concepts, value wrappers, reflection
 utilities, and supporting internal mechanisms.
 
 By consolidating public API definitions in this folder, the project
@@ -16,5 +17,5 @@ maintains a clear separation from implementation details (located in the
 `src` folder), thereby promoting modularity, maintainability, and
 straightforward integration.
 
-To access the full capabilities of the µTest++ Testing Framework, include 
+To access the full capabilities of the µTest++ Testing Framework, include
 only the top `micro-os-plus/micro-test-plus.h` in user projects.

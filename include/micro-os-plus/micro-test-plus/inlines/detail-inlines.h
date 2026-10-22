@@ -23,10 +23,13 @@
  * @details
  * This header provides the out-of-line template and inline implementations
  * for all types declared in `detail.h`. It defines the bodies of the
- * `unwrap()` helper, the unary and binary operator base class templates, all
- * relational and logical comparator constructors, the callable operator
- * types (`throws_op`, `nothrow_op`), and the `append_number()` formatting
- * helper.
+ * `unwrap()` helper, the unary and binary operator base class templates,
+ * the comparison tags, all relational, approximate, and logical comparator
+ * constructors, the predicate constructor, the tolerance helpers
+ * (`within_tolerance()`, `differ_by_less_than()`), the callable operator
+ * types (`throws_op`, `nothrow_op`), the `append_number()` and
+ * `append_pointer()` formatting helpers, the `c_string` operand and its
+ * operators, and `as_operand()`.
  *
  * Separating the implementations from the declarations keeps `detail.h`
  * concise and focused on the interface, whilst grouping the complex
@@ -715,7 +718,9 @@ namespace micro_os_plus::micro_test_plus
      *   `std::to_chars`, as above.
      *
      * For all other numeric types, `std::to_chars` is called directly,
-     * providing locale-independent formatting.
+     * providing locale-independent formatting. The `snprintf()` path
+     * uses the decimal point of the C locale, which is `.` unless the
+     * application changes it with `setlocale()`.
      */
     template <class T>
       requires std::is_arithmetic_v<T>

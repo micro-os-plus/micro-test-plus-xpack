@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="runner-options_8h" kind="file" language="C++">
+    <compoundname>runner-options.h</compoundname>
+    <includes local="no">span</includes>
+    <includes local="no">string_view</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
+    <includedby refid="reporter_8h" local="yes">reporter.h</includedby>
+    <includedby refid="runner_8h" local="yes">runner.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>runner-options.h</label>
+        <link refid="runner-options_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>span</label>
+      </node>
+      <node id="3">
+        <label>string_view</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>micro-test-plus.h</label>
+        <link refid="micro-test-plus_8h"/>
+      </node>
+      <node id="12">
+        <label>test-inlines.h</label>
+        <link refid="test-inlines_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>reporter-human.h</label>
+        <link refid="reporter-human_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>reporter-tap.h</label>
+        <link refid="reporter-tap_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>reporter.h</label>
+        <link refid="reporter_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>runner-options.h</label>
+        <link refid="runner-options_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>runner.h</label>
+        <link refid="runner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>test.h</label>
+        <link refid="test_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>check-result.cpp</label>
+        <link refid="check-result_8cpp"/>
+      </node>
+      <node id="5">
+        <label>reporter-human.cpp</label>
+        <link refid="reporter-human_8cpp"/>
+      </node>
+      <node id="8">
+        <label>reporter-tap.cpp</label>
+        <link refid="reporter-tap_8cpp"/>
+      </node>
+      <node id="9">
+        <label>reporter.cpp</label>
+        <link refid="reporter_8cpp"/>
+      </node>
+      <node id="6">
+        <label>runner.cpp</label>
+        <link refid="runner_8cpp"/>
+      </node>
+      <node id="11">
+        <label>test.cpp</label>
+        <link refid="test_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options" prot="public">micro_os_plus::micro_test_plus::runner_options</innerclass>
+    <innernamespace refid="namespacemicro__os__plus">micro_os_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>colour_mode</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::colour_mode</qualifiedname>
+        <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8" prot="public">
+          <name>automatic</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Colours are used when <computeroutput>stdout</computeroutput> is a terminal; on the platforms without <computeroutput>isatty()</computeroutput>, such as the embedded ones, they are not used. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb" prot="public">
+          <name>always</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Colours are always used, for example in the CI systems that render the ANSI escape sequences but do not provide a terminal, or on embedded targets whose output is displayed by a terminal. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4" prot="public">
+          <name>never</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Colours are never used. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The use of colours in the console output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected with the <computeroutput>--color</computeroutput> command-line option (or its alternative, <computeroutput>--use-colour</computeroutput>), or with <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kindref="member">runner_options::colour</ref></computeroutput>; the default is <computeroutput>automatic</computeroutput>. The names follow the values of <computeroutput>--color</computeroutput> in the GNU tools.</para>
+<para>Only the human reporter uses colours; the TAP reporter never does, since the ANSI escape sequences are not part of the TAP syntax. The output file never receives colours, whatever the mode.</para>
+<para><simplesect kind="since"><para>5.1.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="154" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="155" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>reporter_kind</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reporter_kind</qualifiedname>
+        <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b" prot="public">
+          <name>tap</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The TAP reporter, compliant with TAP version 14. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70" prot="public">
+          <name>human</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The human-readable reporter, with optional colours. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The built-in reporters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected with the <computeroutput>--reporter</computeroutput> command-line option, or with <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" kindref="member">runner_options::selected_reporter</ref></computeroutput>; the default is <computeroutput>tap</computeroutput>.</para>
+<para><simplesect kind="since"><para>5.1.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="131" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>verbosity</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::verbosity</qualifiedname>
+        <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" prot="public">
+          <name>silent</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No console output; only the exit code is returned. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" prot="public">
+          <name>quiet</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Displays only the overall session summary; the TAP reporter also displays one result line per test suite, counted by the plan. The failed checks are not displayed. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" prot="public">
+          <name>normal</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Displays test suite and test case results; the individual checks are shown only for failures. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" prot="public">
+          <name>verbose</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Displays all results, including passed checks, for maximum detail. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The verbosity levels for test reporting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity</ref></computeroutput> enumeration defines the available levels of detail for test output produced by the reporting system. These levels control the amount and type of information displayed during test execution, allowing users to tailor the output to their specific requirements.</para>
+<para>The level is selected with the <computeroutput>--silent</computeroutput>, <computeroutput>--quiet</computeroutput>, and <computeroutput>--verbose</computeroutput> command-line options, or with <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" kindref="member">runner_options::verbosity_level</ref></computeroutput>; the default is <computeroutput>normal</computeroutput>. The console output is intended for the people who watch the tests run, while the optional output file is intended for the integration with other tools. With the TAP reporter, the level affects only the console output, and the output file always receives the full report. The human reporter is intended for the console; its output file receives the full report only with the <computeroutput>normal</computeroutput> and <computeroutput>verbose</computeroutput> levels, and is incomplete otherwise.</para>
+<para>The <computeroutput>quiet</computeroutput> level tells whether the run failed, but not what failed: the failed checks, their locations, and their test cases are not displayed (except for a test case that aborts the test execution, when exceptions are not enabled, since the summary is never reached). To learn what failed, use the <computeroutput>normal</computeroutput> level, which displays in full only the failed test cases, or keep <computeroutput>quiet</computeroutput> and use the TAP reporter with an output file, which receives them. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="107" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="108" bodyend="118"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>C++ header file with declarations for the µTest++ runner options. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This header provides the <computeroutput>runner_options</computeroutput> structure, which holds the configuration of a test session (the reporter, the verbosity, the output file, the use of colours, the filter, and the listing of the test cases), together with the <computeroutput>reporter_kind</computeroutput>, <computeroutput>verbosity</computeroutput>, and <computeroutput>colour_mode</computeroutput> enumerations used by its members.</para>
+<para>The options are usually parsed from the command line by <computeroutput>runner::initialise (argc, argv)</computeroutput>; the applications without a command line, such as the embedded ones without semihosting arguments, can set them directly and pass them to <computeroutput>runner::initialise (options)</computeroutput>.</para>
+<para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</para>
+<para>The header is included through <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-test-plus.h</ref></computeroutput> and should not be included directly by user code. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>µOS++<sp/>project<sp/>(https://micro-os-plus.github.io/).</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021-2026<sp/>Liviu<sp/>Ionescu.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software<sp/>for<sp/>any</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>purpose<sp/>is<sp/>hereby<sp/>granted,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>If<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>was<sp/>not<sp/>distributed<sp/>with<sp/>this<sp/>file,<sp/>it<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>obtained<sp/>from<sp/>https://opensource.org/licenses/mit.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_RUNNER_OPTIONS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_RUNNER_OPTIONS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__has_include(&quot;micro-os-plus/project-config.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro-os-plus/project-config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__has_include(&quot;micro-os-plus/project-config.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__has_include(&quot;micro-os-plus/micro-test-plus-defines.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro-os-plus/micro-test-plus-defines.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__has_include(&quot;micro-os-plus/micro-test-plus-defines.h&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;span&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>push</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wpadded&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity</ref></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kindref="member">silent</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="110" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" kindref="member">quiet</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="114" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">normal</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="116" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbose</ref><sp/>=<sp/>3<sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2" kindref="member">reporter_kind</ref></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="133" refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b" kindref="member">tap</ref>,<sp/></highlight></codeline>
+<codeline lineno="134" refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70" kindref="member">human</ref><sp/></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905b" kindref="member">colour_mode</ref></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156" refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8" kindref="member">automatic</ref>,<sp/></highlight></codeline>
+<codeline lineno="159" refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb" kindref="member">always</ref>,<sp/></highlight></codeline>
+<codeline lineno="163" refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4" kindref="member">never</ref><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options" kindref="compound">runner_options</ref></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="204" refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2" kindref="member">reporter_kind</ref><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" kindref="member">selected_reporter</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b" kindref="member">reporter_kind::tap</ref><sp/>};</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" kindref="member">verbosity_level</ref>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">micro_test_plus::verbosity::normal</ref></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aacf79acd1554b6e8899524bc02ee6257" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aacf79acd1554b6e8899524bc02ee6257" kindref="member">output_file_path</ref>{<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905b" kindref="member">colour_mode</ref><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kindref="member">colour</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8" kindref="member">colour_mode::automatic</ref><sp/>};</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255" refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a7c2cca740efdbdc4927cac43aa456611" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::span&lt;char*<sp/>const&gt;<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a7c2cca740efdbdc4927cac43aa456611" kindref="member">arguments</ref>{};</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284" refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a8dc9c5a5b6c89c12acd27d67d57618dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string_view&gt;<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a8dc9c5a5b6c89c12acd27d67d57618dd" kindref="member">filter_patterns</ref>{};</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316" refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ac4f95336439b329d0f3731a5dcafb6f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ac4f95336439b329d0f3731a5dcafb6f9" kindref="member">list_tests</ref>{<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_RUNNER_OPTIONS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h"/>
+  </compounddef>
+</doxygen>

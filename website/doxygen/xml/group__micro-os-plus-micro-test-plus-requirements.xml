@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-micro-test-plus-requirements" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-requirements</compoundname>
+    <title>Requirements</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-requirements_1gad25dc8d5d657ace9d47d3a95b3341802" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Expr_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::test_case::assume</definition>
+        <argsstring>(const Expr_T &amp;expr, const reflection::source_location &amp;sl=reflection::source_location::current())</argsstring>
+        <name>assume</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_case::assume</qualifiedname>
+        <param>
+          <type>const Expr_T &amp;</type>
+          <declname>expr</declname>
+        </param>
+        <param>
+          <type>const reflection::source_location &amp;</type>
+          <declname>sl</declname>
+          <defval>reflection::source_location::current()</defval>
+        </param>
+    <requiresclause>extension::checkable&lt;Expr_T&gt;    </requiresclause>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></computeroutput>. The name was misleading: in other frameworks (JUnit, Hypothesis), an unmet assumption skips the test, while here it fails it.</para>
+<para><xrefsect id="deprecated_1_deprecated000124"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></computeroutput> (since 5.1.0).</para>
+</xrefdescription></xrefsect></para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Expr_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the custom expression.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical expression to evaluate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional source location, defaulting to the current line. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The check result, to which optional messages can be appended with <computeroutput>operator&lt;&lt;</computeroutput>; the check is reported when it is destroyed, at the end of the statement. </para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000125"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></para>
+</xrefdescription></xrefsect></para>
+<para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></computeroutput>; the returned check result is neither copied nor moved, since a prvalue is returned (guaranteed copy elision). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1269" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="468" bodyend="471"/>
+        <references refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" compoundref="test-inlines_8h" startline="449" endline="458">micro_os_plus::micro_test_plus::test_case::require</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ac2e310ec902a0c3e786d4c415269c23e">micro_os_plus::micro_test_plus::test_case::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Expr_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::test_case::require</definition>
+        <argsstring>(const Expr_T &amp;expr, const reflection::source_location &amp;sl=reflection::source_location::current())</argsstring>
+        <name>require</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_case::require</qualifiedname>
+        <param>
+          <type>const Expr_T &amp;</type>
+          <declname>expr</declname>
+        </param>
+        <param>
+          <type>const reflection::source_location &amp;</type>
+          <declname>sl</declname>
+          <defval>reflection::source_location::current()</defval>
+        </param>
+    <requiresclause>extension::checkable&lt;Expr_T&gt;    </requiresclause>
+        <briefdescription>
+<para>Checks a condition and, if false, stops the test case. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The failure is reported and counted as for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-expectations_1gaf4f5f9632b5a290c1894984661a41a86" kindref="member">expect()</ref></computeroutput>; then, when exceptions are enabled, the rest of the test case body is skipped, and the run continues with the next test case, as <computeroutput>ASSERT_*</computeroutput> in GoogleTest, <computeroutput>REQUIRE()</computeroutput> in Catch2 and doctest, and <computeroutput>BOOST_REQUIRE()</computeroutput> in Boost.Test do. Without exceptions, the test execution is aborted with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7bc806540e65c21095ef1ea1ef970db2" kindref="member">runner::abort()</ref></computeroutput>.</para>
+<para>The test case is stopped by throwing a private exception, at the end of the statement, after the optional message was appended. It is not derived from <computeroutput>std::exception</computeroutput>; a <computeroutput>catch (...)</computeroutput> in the test case body must rethrow it, and the body must not be <computeroutput>noexcept</computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Expr_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the custom expression.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Constraints</title><para>Enabled only if <computeroutput>Expr_T</computeroutput> is a framework expression type or is contextually convertible to <computeroutput>bool</computeroutput>, including by an <computeroutput>explicit operator bool</computeroutput> (enforced via a C++20 <computeroutput>requires</computeroutput> clause, with <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable" kindref="compound">extension::checkable</ref></computeroutput>).</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical expression to evaluate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional source location, defaulting to the current line. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The check result, to which optional messages can be appended with <computeroutput>operator&lt;&lt;</computeroutput>; the check is reported when it is destroyed, at the end of the statement.</para>
+</simplesect>
+Constructs and returns a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result" kindref="compound">detail::check_result</ref></computeroutput> of the kind <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e" kindref="member">detail::check_kind::requirement</ref></computeroutput>. The check result evaluates the condition when constructed, records a pass or fail when it is destroyed, and, if the condition is false, stops the test case by throwing <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failed__requirement" kindref="compound">detail::failed_requirement</ref></computeroutput> (caught by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1adb4333ecb107fee477156b661f0b1512" kindref="member">test_case::run()</ref></computeroutput>), or, without exceptions, aborts the test execution. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1244" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="449" bodyend="458"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac928cbe8852ca0c0273482b905c6301b" compoundref="reporter_8h" startline="1074" endline="1074">micro_os_plus::micro_test_plus::detail::reporter::expression_</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e" compoundref="check-result_8h" startline="130">micro_os_plus::micro_test_plus::detail::requirement</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" compoundref="test_8cpp" startline="115" endline="118">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2c1e2c756b442d4832c161c8127faacf">micro_os_plus::micro_test_plus::detail::reporter::writes_passed_checks</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-requirements_1gad25dc8d5d657ace9d47d3a95b3341802" compoundref="test-inlines_8h" startline="468" endline="471">micro_os_plus::micro_test_plus::test_case::assume</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ac2e310ec902a0c3e786d4c415269c23e">micro_os_plus::micro_test_plus::test_case::operator=</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Requirements are checks that stop the test case when they fail. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>When a precondition of the following checks does not hold, the test case cannot continue meaningfully. A failed requirement is reported and counted like a failed expectation, and then the rest of the test case body is skipped; the run continues with the next test case.</para>
+<para>This is the behaviour of the fatal assertions of most C++ test frameworks (<computeroutput>ASSERT_*</computeroutput> in GoogleTest, <computeroutput>REQUIRE()</computeroutput> in Catch2 and doctest, <computeroutput>BOOST_REQUIRE()</computeroutput> in Boost.Test). The test case is stopped with an exception; without exceptions, it cannot be stopped alone, so the results of the test case are reported, ending with the failed requirement (followed, with the TAP reporter, by a <computeroutput>Bail out!</computeroutput> line), and the whole test execution is aborted with <computeroutput>runner::abort()</computeroutput>, as Catch2 does; the remaining test cases do not run, and no totals are written.</para>
+<para><computeroutput>assume()</computeroutput> is a deprecated alias of <computeroutput>require()</computeroutput>; in JUnit or Hypothesis, an unmet assumption skips the test instead of failing it.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

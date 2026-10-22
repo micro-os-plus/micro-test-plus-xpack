@@ -17,10 +17,26 @@ keywords:
 
 <p>The namespaces defined in the project are:</p>
 
+## - A -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-"><b>anonymous{expression-formatter.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">src/expression-formatter.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-"><b>anonymous{reporter-tap.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">src/reporter-tap.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-"><b>anonymous{reporter.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-"><b>anonymous{stopwatch.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">src/stopwatch.cpp</a></li>
+</ul>
+<p>4 entries</p>
+
 ## - D -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail"><b>detail</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">src/timings.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail"><b>detail</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp">src/test.cpp</a></li>
+</ul>
+
+## - E -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension"><b>extension</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
 </ul>
 
 ## - L -
@@ -32,7 +48,7 @@ keywords:
 ## - M -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math"><b>math</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math"><b>math</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus"><b>micro_os_plus</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/top-common-h">top-common.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus"><b>micro_test_plus</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp">src/utility.cpp</a></li>
 </ul>
@@ -53,7 +69,7 @@ keywords:
 ## - T -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits"><b>type_traits</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits"><b>type_traits</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
 </ul>
 
 ## - U -
@@ -62,10 +78,10 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility"><b>utility</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp">src/utility.cpp</a></li>
 </ul>
 <br/>
-<p>Total: 9 entries.</p>
+<p>Total: 14 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

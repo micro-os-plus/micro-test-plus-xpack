@@ -19,10 +19,11 @@
  * @details
  * This source file contains the core implementations for the test reporting
  * facilities of the µTest++ framework. It provides lifecycle and utility
- * behaviour for reporters, including command-line option parsing,
- * output-file handling, informational banner emission, buffering helpers,
- * stream operators, and pass/fail dispatch to reporter-specific prefix/
- * suffix hooks.
+ * behaviour for reporters, including output-file handling, informational
+ * banner emission, buffering helpers, stream operators, the formatting of
+ * the totals and of the elapsed times, and pass/fail dispatch to
+ * reporter-specific prefix/suffix hooks. The command-line options are
+ * parsed by the runner.
  *
  * Concrete formatting behaviour is implemented by derived reporters
  * (`reporter_human` and `reporter_tap`).
@@ -74,6 +75,22 @@ namespace micro_os_plus::micro_test_plus::detail
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @brief Local helpers of the reporter base class.
+   *
+   * @details
+   * The unnamed namespace gives the helpers internal linkage, so that they
+   * are visible only in this translation unit, and cannot conflict with
+   * the names of the application or of the other source files of the
+   * framework. They are not declared in any header.
+   *
+   * The namespace is opened twice in this file, each time before the
+   * code that uses its helpers; Doxygen merges the two parts. The first
+   * part contains `write_without_colours()`, which copies the console
+   * output to the output file. The second part contains the helpers of
+   * the totals lines: `fragment_size`, `plural()`, and
+   * `format_skipped()`.
+   */
   namespace
   {
     /**
