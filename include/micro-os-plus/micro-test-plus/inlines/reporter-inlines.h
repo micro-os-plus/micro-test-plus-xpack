@@ -108,6 +108,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Returns the level stored in `verbosity_`, set by the constructor.
    */
+  // Deprecated since 5.1.0; use runner::verbosity_level().
   inline auto
   reporter::verbosity (void) const noexcept -> micro_test_plus::verbosity
   {

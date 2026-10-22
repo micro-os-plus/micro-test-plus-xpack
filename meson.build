@@ -26,7 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
-# A source code library with µTest++, a lightweight testing framework for embedded platforms.
+# A source code library with µTest++, a lightweight, macro-free C++ testing framework for embedded projects, with TAP output.
 message('Processing xpm package @micro-os-plus/micro-test-plus...')
 
 # -----------------------------------------------------------------------------
@@ -60,7 +60,7 @@ _local_sources += [
   'src/reporter-tap.cpp',
   'src/test.cpp',
   'src/stopwatch.cpp',
-  'src/reflection.cpp',
+  'src/deprecated.cpp',
   'src/utility.cpp',
 ]
 

@@ -144,6 +144,10 @@
 // runner-options.h.
 #include "micro-test-plus/runner.h"
 
+// Requires counters.h, extension.h, function-comparators.h, literals.h,
+// reflection.h, runner.h, stopwatch.h, test.h.
+#include "micro-test-plus/deprecated.h"
+
 // Defined in detail.h for the library formats only; the templates above
 // have already been parsed, so keep it out of the application code.
 #undef MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE

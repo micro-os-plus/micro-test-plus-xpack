@@ -452,25 +452,6 @@ namespace micro_os_plus::micro_test_plus
   };
 
   // --------------------------------------------------------------------------
-
-  namespace detail
-  {
-    // ========================================================================
-
-    /**
-     * @brief Deprecated name of `counters`.
-     *
-     * @details
-     * The v5.0.1 name of the class returned by `totals()`, renamed since
-     * the suites and the test cases own one too, not only the runner.
-     */
-    using runner_totals [[deprecated ("use counters (since 5.1.0)")]]
-    = counters;
-
-    // ========================================================================
-  } // namespace detail
-
-  // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)

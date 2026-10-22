@@ -94,6 +94,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Forwards to `verbosity_level()`.
    */
+  // Deprecated since 5.1.0; use verbosity_level().
   inline auto
   runner::verbosity (void) const noexcept -> micro_test_plus::verbosity
   {
@@ -114,6 +115,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a const reference to the `stopwatch` member.
    */
+  // Deprecated since 5.1.0; the timings are internal.
   inline const detail::stopwatch&
   runner::timings (void) const noexcept
   {
@@ -124,6 +126,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a reference to the `stopwatch` member.
    */
+  // Deprecated since 5.1.0; the timings are internal.
   inline detail::stopwatch&
   runner::timings (void) noexcept
   {
@@ -135,6 +138,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns a reference to the reporter owned by the `reporter_` unique
    * pointer, which is empty before `initialise()`.
    */
+  // Deprecated since 5.1.0; use verbosity_level().
   inline detail::reporter&
   runner::reporter (void) const noexcept
   {
@@ -174,6 +178,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Forwards the name, the callable, and the arguments to `add_suite()`.
    */
+  // Deprecated since 5.1.0; use add_suite().
   template <typename Callable_T, typename... Args_T>
   void
   runner::suite (std::string_view name, Callable_T&& callable,

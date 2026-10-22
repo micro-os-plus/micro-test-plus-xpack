@@ -1362,20 +1362,6 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-test-case
-   * @brief Deprecated name of `test_case`.
-   *
-   * @details
-   * The v5.0.1 name of the class passed to the test case bodies, kept
-   * for the functions and the lambdas that name it as the type of their
-   * first parameter (`void f (mt::subtest& t)`); the lambdas with an
-   * `auto&` parameter are not affected.
-   */
-  using subtest [[deprecated ("use test_case (since 5.1.0)")]] = test_case;
-
-  // ==========================================================================
-
-  /**
    * @ingroup micro-os-plus-micro-test-plus-test-suites
    * @brief A named, runnable test suite registered with the test runner.
    *

@@ -21,7 +21,7 @@
         "src/reporter-tap.cpp",
         "src/test.cpp",
         "src/stopwatch.cpp",
-        "src/reflection.cpp",
+        "src/deprecated.cpp",
         "src/utility.cpp"
       ],
       "dependencies": [

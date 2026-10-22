@@ -19,8 +19,8 @@
  * This header provides the declarations for the test runner facilities used
  * within the µTest++ framework. It defines the `runner` class, which manages
  * the registration and execution of test suites, including the static
- * suites declared at namespace scope, and the deprecated `static_runner`
- * alias.
+ * suites declared at namespace scope. The deprecated `static_runner`
+ * alias is declared in `deprecated.h`.
  *
  * The test runner is responsible for initialising the test environment,
  * creating the reporter, registering test suites, processing command-line
@@ -1050,18 +1050,6 @@ namespace micro_os_plus::micro_test_plus
      */
     size_t listed_suites_count_ = 0;
   };
-
-  // ==========================================================================
-
-  /**
-   * @ingroup micro-os-plus-micro-test-plus-runners
-   * @brief Deprecated name of `runner`.
-   *
-   * @details
-   * The `runner` also runs the `static_suite` objects that refer to it,
-   * so a separate runner class is no longer needed.
-   */
-  using static_runner [[deprecated ("use runner (since 5.1.0)")]] = runner;
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

@@ -101,7 +101,9 @@ inwards:
 6. `expression-formatter.h`, `reflection.h` (the failure messages);
 7. `reporter.h`, `reporter-human.h`, `reporter-tap.h`, and their
    `src/` files (the output protocol);
-8. `counters.h`, `stopwatch.h`, `utility.h` (the support classes).
+8. `counters.h`, `stopwatch.h`, `utility.h` (the support classes);
+9. `deprecated.h` (the deprecated definitions that are not class
+   members, kept for compatibility).
 
 While reading, note for each class and function: who calls it (the
 user, the framework, or only the tests), what it costs (allocations,

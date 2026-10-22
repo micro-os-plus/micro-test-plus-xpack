@@ -17,23 +17,27 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ reflection
- * utilities.
+ * @brief C++ source file with implementations for the deprecated µTest++
+ * definitions.
  *
  * @details
- * This source file contains the implementation of the deprecated
- * `reflection::short_name()`, which extracts the base file name from a
- * fully qualified path, by delegating to `utility::extract_file_name()`.
+ * This source file contains the non-inline definitions of the deprecated
+ * definitions declared in `deprecated.h`:
+ * - `reflection::short_name()`, which extracts the base file name from a
+ *   fully qualified path, by delegating to `utility::extract_file_name()`;
+ * - the constructor of `detail::timestamp` that reads the system clock,
+ *   with `detail::read_clock()`, the same clock as `detail::stopwatch`.
  *
- * All definitions reside within the
- * `micro_os_plus::micro_test_plus::reflection` namespace.
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace.
  *
  * This file must be included when building the µTest++ library.
  */
 
 // ----------------------------------------------------------------------------
 
-#include "micro-os-plus/micro-test-plus/reflection.h"
+#include "micro-os-plus/micro-test-plus/deprecated.h"
+#include "micro-os-plus/micro-test-plus/stopwatch.h"
 #include "micro-os-plus/micro-test-plus/utility.h"
 
 // ----------------------------------------------------------------------------
@@ -53,12 +57,10 @@
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
-  // Public API.
 
-  // --------------------------------------------------------------------------
-  // Too small to deserve a separate source file.
   namespace reflection
   {
+    // ------------------------------------------------------------------------
 
     /**
      * @details
@@ -67,13 +69,37 @@ namespace micro_os_plus::micro_test_plus
      * separators are recognised. If no separator is present, the original
      * input string is returned.
      */
+    // Deprecated since 5.1.0; use utility::extract_file_name().
     const char*
     short_name (const char* name) noexcept
     {
       return utility::extract_file_name (name);
     }
 
+    // ------------------------------------------------------------------------
   } // namespace reflection
+
+  // --------------------------------------------------------------------------
+
+  namespace detail
+  {
+    // ========================================================================
+
+    /**
+     * @details
+     * Reads the system clock into the stored value, with
+     * `read_clock()`, the same clock as `stopwatch`; without a clock,
+     * the value remains zero.
+     */
+    // Deprecated since 5.1.0, as the whole `timestamp` class; the timings are
+    // internal.
+    timestamp::timestamp (void) noexcept
+    {
+      read_clock (value_);
+    }
+
+    // ------------------------------------------------------------------------
+  } // namespace detail
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

@@ -20,7 +20,8 @@
  * of the µTest++ framework. It provides the member functions that read
  * the system clock (monotonic on POSIX) at the start and at the end of
  * the measured interval, and that compute the elapsed time between the
- * two readings.
+ * two readings, and `read_clock()`, which isolates the platform-specific
+ * access to the system clock.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail` namespace.
@@ -54,45 +55,24 @@ namespace micro_os_plus::micro_test_plus::detail
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Local helpers of the stopwatch.
-   *
    * @details
-   * The unnamed namespace gives the helpers internal linkage, so that they
-   * are visible only in this translation unit, and cannot conflict with
-   * the names of the application or of the other source files of the
-   * framework. They are not declared in any header.
-   *
-   * It contains `read_clock()`, which isolates the platform-specific
-   * access to the system clock.
+   * On Windows, the current time is captured via `timespec_get()` with
+   * `TIME_UTC`. On POSIX platforms with `CLOCK_MONOTONIC` defined,
+   * `clock_gettime(CLOCK_MONOTONIC)` is used to obtain a monotonic
+   * reading. On platforms where neither macro is defined, @p ts is
+   * left unchanged.
    */
-  namespace
+  void
+  read_clock (timespec& ts) noexcept
   {
-    /**
-     * @brief Reads the system clock.
-     *
-     * @details
-     * On Windows, the current time is captured via `timespec_get()` with
-     * `TIME_UTC`. On POSIX platforms with `CLOCK_MONOTONIC` defined,
-     * `clock_gettime(CLOCK_MONOTONIC)` is used to obtain a monotonic
-     * reading. On platforms where neither macro is defined, @p ts is
-     * left unchanged.
-     *
-     * @param[out] ts The `timespec` where the reading is stored.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    read_clock (timespec& ts) noexcept
-    {
 #if defined(_WIN32)
-      timespec_get (&ts, TIME_UTC);
+    timespec_get (&ts, TIME_UTC);
 #elif defined(CLOCK_MONOTONIC)
-      clock_gettime (CLOCK_MONOTONIC, &ts);
+    clock_gettime (CLOCK_MONOTONIC, &ts);
 #else
-      (void)ts;
+    (void)ts;
 #endif // defined(_WIN32) || defined(CLOCK_MONOTONIC)
-    }
-  } // namespace
+  }
 
   // --------------------------------------------------------------------------
 
@@ -153,6 +133,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * reports no start reading; since the reading is zero in that case,
    * it need not be cleared first, as in `start()`.
    */
+  // Deprecated since 5.1.0; use start().
   void
   stopwatch::timestamp_begin (void) noexcept
   {
@@ -168,6 +149,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * reports no stop reading, for the same reason as in
    * `timestamp_begin()`.
    */
+  // Deprecated since 5.1.0; use stop().
   void
   stopwatch::timestamp_end (void) noexcept
   {
@@ -175,18 +157,6 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         read_clock (stop_time_);
       }
-  }
-
-  // ==========================================================================
-
-  /**
-   * @details
-   * Reads the system clock into the stored value, with the same clock as
-   * `stopwatch`; without a clock, the value remains zero.
-   */
-  timestamp::timestamp (void) noexcept
-  {
-    read_clock (value_);
   }
 
   // --------------------------------------------------------------------------

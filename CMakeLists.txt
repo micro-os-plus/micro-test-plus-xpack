@@ -31,7 +31,7 @@ cmake_minimum_required (VERSION 3.20)
 project (
   micro-os-plus-micro-test-plus
   DESCRIPTION
-    "A source code library with µTest++, a lightweight testing framework for embedded platforms"
+    "A source code library with µTest++, a lightweight, macro-free C++ testing framework for embedded projects, with TAP output"
   LANGUAGES C CXX ASM
 )
 
@@ -84,7 +84,7 @@ target_sources (
             "src/reporter-tap.cpp"
             "src/test.cpp"
             "src/stopwatch.cpp"
-            "src/reflection.cpp"
+            "src/deprecated.cpp"
             "src/utility.cpp"
 )
 
@@ -152,7 +152,7 @@ target_sources (
           "src/reporter-tap.cpp"
           "src/test.cpp"
           "src/stopwatch.cpp"
-          "src/reflection.cpp"
+          "src/deprecated.cpp"
           "src/utility.cpp"
 )
 
@@ -240,7 +240,7 @@ target_sources (
           "src/reporter-tap.cpp"
           "src/test.cpp"
           "src/stopwatch.cpp"
-          "src/reflection.cpp"
+          "src/deprecated.cpp"
           "src/utility.cpp"
 )
 

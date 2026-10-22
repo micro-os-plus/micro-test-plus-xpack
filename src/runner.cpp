@@ -89,6 +89,7 @@ namespace micro_os_plus::micro_test_plus
    * its top suite (`top_suite_`). If tracing is enabled, it outputs the
    * function signature for diagnostic purposes.
    */
+  // Deprecated since 4.1.0; use runner() and initialise().
   runner::runner (const char* top_suite_name)
       : top_suite_{ top_suite_name, *this }
   {
@@ -743,6 +744,7 @@ namespace micro_os_plus::micro_test_plus
    * Kept for compatibility; it calls `run()`, so the first call runs the
    * session and the later ones return the stored exit code.
    */
+  // Deprecated since 5.1.0; use run().
   int
   runner::exit_code (void)
   {
@@ -847,6 +849,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns `added_suites_count()` plus one, for the top suite, as
    * before the rename.
    */
+  // Deprecated since 5.1.0; use added_suites_count() or total_suites_count().
   size_t
   runner::suites_count (void) const noexcept
   {

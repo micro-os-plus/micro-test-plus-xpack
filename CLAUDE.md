@@ -27,7 +27,9 @@ programs against it on many toolchains and platforms.
   `reporter-tap.h`, `check-result.h`, `operators.h`,
   `function-comparators.h`, `expression-formatter.h`, `reflection.h`,
   `extension.h`, `stopwatch.h`, `counters.h`, `literals.h`,
-  `math.h`, `utility.h`, `exceptions.h`, `detail.h`).
+  `math.h`, `utility.h`, `exceptions.h`, `detail.h`, and
+  `deprecated.h`, which groups the deprecated definitions that are not
+  class members).
 - `include/micro-os-plus/micro-test-plus/inlines/*.h` — inline/template
   definitions for the above headers (kept separate from the declarations).
 - `src/*.cpp` — non-inline definitions, one file per header of the same
@@ -115,7 +117,7 @@ wrapper templates, and the concepts `has_value`, `container_like`, and
   the outcome when it is destroyed, at the end of the expression
   statement.
 - `expression-formatter.h`/`src/expression-formatter.cpp` and
-  `reflection.h`/`src/reflection.cpp` provide the machinery behind the
+  `reflection.h` provide the machinery behind the
   reports of the `expect()`/`require()` expressions, so failed checks
   print the actual operands and operator, not just "assertion failed".
 - `operators.h` and `function-comparators.h` supply the comparison
