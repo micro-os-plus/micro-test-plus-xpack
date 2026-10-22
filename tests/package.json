@@ -184,7 +184,6 @@
       ],
       "$native-clang-url": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
       "native-clang-releases": {
-        "16": "16.0.6-1.1",
         "17": "17.0.6-3.1",
         "18": "18.1.8-2.1",
         "19": "19.1.7-1.1",
