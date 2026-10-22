@@ -218,10 +218,9 @@ namespace micro_os_plus::micro_test_plus
      * @return A pointer to the file name within the input string, after
      * the last `/` or `\` separator, or the string itself if there is
      * no separator.
-     *
-     * @deprecated Use `utility::extract_file_name()` (since 5.1.0).
      */
-    [[deprecated ("use utility::extract_file_name()"), nodiscard]] const char*
+    [[deprecated ("use utility::extract_file_name() (since 5.1.0)"),
+      nodiscard]] const char*
     short_name (const char* name) noexcept;
 
     /**

@@ -207,14 +207,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deprecated constructor for the runner class.
      *
      * @details
-     * The name can still be overridden by `initialise()`.
+     * Use the anonymous constructor, and pass the name to `initialise()`,
+     * which can also override the name given here.
      *
      * @param top_suite_name The name given to the implicit top suite.
-     *
-     * @deprecated Use the anonymous constructor, and pass the name to
-     * `initialise()` (since 4.1.0).
      */
-    [[deprecated ("use runner() and pass the name to initialise()")]]
+    [[deprecated ("use runner() and initialise() (since 4.1.0)")]]
     runner (const char* top_suite_name);
 
     /**
@@ -364,10 +362,8 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return The value returned by `run()`.
-     *
-     * @deprecated Use `run()` (since 5.1.0).
      */
-    [[deprecated ("use run()")]] int
+    [[deprecated ("use run() (since 5.1.0)")]] int
     exit_code (void);
 
     /**
@@ -426,11 +422,9 @@ namespace micro_os_plus::micro_test_plus
      * the callable.
      * @par Returns
      *   Nothing.
-     *
-     * @deprecated Use `add_suite()` (since 5.1.0).
      */
     template <typename Callable_T, typename... Args_T>
-    [[deprecated ("use add_suite()")]] void
+    [[deprecated ("use add_suite() (since 5.1.0)")]] void
     suite (std::string_view name, Callable_T&& callable,
            Args_T&&... arguments);
 
@@ -577,10 +571,8 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return The value returned by `verbosity_level()`.
-     *
-     * @deprecated Use `verbosity_level()` (since 5.1.0).
      */
-    [[deprecated ("use verbosity_level()"), nodiscard]] auto
+    [[deprecated ("use verbosity_level() (since 5.1.0)"), nodiscard]] auto
     verbosity (void) const noexcept -> micro_test_plus::verbosity;
 
     /**
@@ -610,17 +602,16 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Returns `added_suites_count()` plus one, for the top suite. The
      * name suggested that all the suites are counted, while the static
-     * suites are not.
+     * suites are not. Use `added_suites_count()`, plus one for the top
+     * suite, or `total_suites_count()`.
      *
      * @par Parameters
      *   None.
      * @return The number of test suites added with `add_suite()`, plus
      * one.
-     *
-     * @deprecated Use `added_suites_count()`, plus one for the top suite,
-     * or `total_suites_count()` (since 5.1.0).
      */
-    [[deprecated ("use added_suites_count() or total_suites_count()"),
+    [[deprecated (
+          "use added_suites_count() or total_suites_count() (since 5.1.0)"),
       nodiscard]] size_t
     suites_count (void) const noexcept;
 
@@ -684,16 +675,14 @@ namespace micro_os_plus::micro_test_plus
      * `initialise()` and stopped at the end of `run()`; the elapsed time
      * is complete only after `run()` has returned. In v5.0.1, the
      * returned class was `detail::timestamps`, now a deprecated alias;
-     * only its read-only members are kept.
+     * only its read-only members are kept. The timings are internal; the
+     * elapsed times are shown by the reporters.
      *
      * @par Parameters
      *   None.
      * @return A const reference to the stopwatch of the session.
-     *
-     * @deprecated The timings are internal; the elapsed times are shown
-     * by the reporters (since 5.1.0).
      */
-    [[deprecated ("the timings are internal"),
+    [[deprecated ("the timings are internal (since 5.1.0)"),
       nodiscard]] const detail::stopwatch&
     timings (void) const noexcept;
 
@@ -710,11 +699,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return A reference to the stopwatch of the session.
-     *
-     * @deprecated The timings are internal; the elapsed times are shown
-     * by the reporters (since 5.1.0).
      */
-    [[deprecated ("the timings are internal"), nodiscard]] detail::stopwatch&
+    [[deprecated ("the timings are internal (since 5.1.0)"),
+      nodiscard]] detail::stopwatch&
     timings (void) noexcept;
 
     /**
@@ -731,11 +718,8 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return A reference to the reporter of the session.
-     *
-     * @deprecated The reporter is internal; use `verbosity_level()`
-     * (since 5.1.0).
      */
-    [[deprecated ("the reporter is internal; use verbosity_level()"),
+    [[deprecated ("use verbosity_level() (since 5.1.0)"),
       nodiscard]] detail::reporter&
     reporter (void) const noexcept;
 
@@ -1076,10 +1060,8 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * The `runner` also runs the `static_suite` objects that refer to it,
    * so a separate runner class is no longer needed.
-   *
-   * @deprecated Use `runner` (since 5.1.0).
    */
-  using static_runner [[deprecated ("use runner")]] = runner;
+  using static_runner [[deprecated ("use runner (since 5.1.0)")]] = runner;
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

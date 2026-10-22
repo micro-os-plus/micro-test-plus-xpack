@@ -299,3 +299,27 @@ projects, so the text must stay generic.
   generated files (for example `website/docusaurus.config.ts`) are
   read-only; if this is not intended, check that regenerating the file
   makes it read-only again.
+
+## Deprecation sections
+
+- #76 Fixed: the generated pages showed two Deprecated sections for
+  each entity with both a `@deprecated` comment and a
+  `[[deprecated (...)]]` attribute, which Doxygen also turns into a
+  Deprecated section. The `@deprecated` comments were removed from the
+  59 such declarations, and from the `type_traits` namespace. The version
+  was added to the attribute messages (`use test_case (since 5.1.0)`),
+  which the compilers also print. Where the comment said more than the
+  attribute, the text moved to the `@details`. The duplicate on the
+  definition of `reflection::short_name()` was also removed. The
+  11 entities in the `type_traits` namespace have no attribute, since
+  the attribute is on the namespace, and keep their `@deprecated`
+  comment.
+  Doxygen 1.18 silently drops a deprecation message made of adjacent
+  string literals, which `clang-format` creates when a message does not
+  fit on a line. This had hidden the deprecation of the `static_suite`
+  constructor for a `static_suite&` body; its message is now a single
+  literal (`use a suite& first parameter (since 5.1.0)`). All 60
+  attribute messages are single literals after `clang-format`, and the
+  Doxygen XML has exactly one Deprecated section, with the version, for
+  each of the 71 deprecated entities. Keep the attribute messages short
+  enough to stay single literals.

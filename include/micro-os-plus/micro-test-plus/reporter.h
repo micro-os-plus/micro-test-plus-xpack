@@ -407,10 +407,9 @@ namespace micro_os_plus::micro_test_plus
        * @par Parameters
        *   None.
        * @return The verbosity level of the session.
-       *
-       * @deprecated Use `runner::verbosity_level()` (since 5.1.0).
        */
-      [[deprecated ("use runner::verbosity_level()"), nodiscard]] auto
+      [[deprecated ("use runner::verbosity_level() (since 5.1.0)"),
+        nodiscard]] auto
       verbosity (void) const noexcept -> micro_test_plus::verbosity;
 
       // ----------------------------------------------------------------------

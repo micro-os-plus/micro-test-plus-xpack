@@ -478,10 +478,9 @@ namespace micro_os_plus::micro_test_plus
    * does not report the concepts, nor the names introduced by the
    * using-declarations.
    *
-   * @deprecated Use the concepts in the `extension` namespace, and
+   * Use the concepts in the `extension` namespace, and
    * `extension::compare_op` or `extension::predicate_op` for the
-   * application expressions; the value wrapper templates are internal
-   * (since 5.1.0).
+   * application expressions; the value wrapper templates are internal.
    */
 
   // --------------------------------------------------------------------------
@@ -494,7 +493,8 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-  namespace [[deprecated ("use the extension namespace")]] type_traits
+  namespace
+      [[deprecated ("use the extension namespace (since 5.1.0)")]] type_traits
   {
     // ------------------------------------------------------------------------
     // Concepts, now in the `extension` and `detail` namespaces.

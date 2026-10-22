@@ -299,15 +299,13 @@ namespace micro_os_plus::micro_test_plus
    * The same as `negate()`. The name was changed since a leading
    * underscore is not used by the other public names.
    *
-   * @deprecated Use `negate()` (since 5.1.0).
-   *
    * @tparam Expr_T Type of the operand.
    *
    * @param expr Logical expression to be negated.
    * @return An object that evaluates to true if the operand is false.
    */
   template <class Expr_T>
-  [[deprecated ("use negate()"), nodiscard]] constexpr auto
+  [[deprecated ("use negate() (since 5.1.0)"), nodiscard]] constexpr auto
   _not (Expr_T&& expr);
 
   /**
@@ -319,8 +317,6 @@ namespace micro_os_plus::micro_test_plus
    * The same as `both()`. The name was changed since a leading
    * underscore is not used by the other public names.
    *
-   * @deprecated Use `both()` (since 5.1.0).
-   *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
@@ -330,7 +326,7 @@ namespace micro_os_plus::micro_test_plus
    * true.
    */
   template <class Lhs_T, class Rhs_T>
-  [[deprecated ("use both()"), nodiscard]] constexpr auto
+  [[deprecated ("use both() (since 5.1.0)"), nodiscard]] constexpr auto
   _and (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
@@ -342,8 +338,6 @@ namespace micro_os_plus::micro_test_plus
    * The same as `either()`. The name was changed since a leading
    * underscore is not used by the other public names.
    *
-   * @deprecated Use `either()` (since 5.1.0).
-   *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
@@ -353,7 +347,7 @@ namespace micro_os_plus::micro_test_plus
    * expressions is true, including when both are.
    */
   template <class Lhs_T, class Rhs_T>
-  [[deprecated ("use either()"), nodiscard]] constexpr auto
+  [[deprecated ("use either() (since 5.1.0)"), nodiscard]] constexpr auto
   _or (Lhs_T&& lhs, Rhs_T&& rhs);
 
   // --------------------------------------------------------------------------

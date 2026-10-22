@@ -1253,8 +1253,6 @@ namespace micro_os_plus::micro_test_plus
      * frameworks (JUnit, Hypothesis), an unmet assumption skips the test,
      * while here it fails it.
      *
-     * @deprecated Use `require()` (since 5.1.0).
-     *
      * @tparam Expr_T The type of the custom expression.
      *
      * @param expr Logical expression to evaluate.
@@ -1265,7 +1263,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
-    [[deprecated ("use require()")]] auto
+    [[deprecated ("use require() (since 5.1.0)")]] auto
     assume (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ());
 
@@ -1372,10 +1370,8 @@ namespace micro_os_plus::micro_test_plus
    * for the functions and the lambdas that name it as the type of their
    * first parameter (`void f (mt::subtest& t)`); the lambdas with an
    * `auto&` parameter are not affected.
-   *
-   * @deprecated Use `test_case` (since 5.1.0).
    */
-  using subtest [[deprecated ("use test_case")]] = test_case;
+  using subtest [[deprecated ("use test_case (since 5.1.0)")]] = test_case;
 
   // ==========================================================================
 
@@ -1619,16 +1615,14 @@ namespace micro_os_plus::micro_test_plus
      * body runs and stopped after it; for the top suite, it is started by
      * `runner::initialise()` and stopped by `runner::run()`. In v5.0.1,
      * the returned class was `detail::timestamps`, now a deprecated
-     * alias; only its read-only members are kept.
+     * alias; only its read-only members are kept. The timings are
+     * internal; the elapsed times are shown by the reporters.
      *
      * @par Parameters
      *   None.
      * @return A const reference to the stopwatch of the suite.
-     *
-     * @deprecated The timings are internal; the elapsed times are shown
-     * by the reporters (since 5.1.0).
      */
-    [[deprecated ("the timings are internal"),
+    [[deprecated ("the timings are internal (since 5.1.0)"),
       nodiscard]] const detail::stopwatch&
     timings (void) const noexcept;
 
@@ -1645,11 +1639,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return A reference to the stopwatch of the suite.
-     *
-     * @deprecated The timings are internal; the elapsed times are shown
-     * by the reporters (since 5.1.0).
      */
-    [[deprecated ("the timings are internal"), nodiscard]] detail::stopwatch&
+    [[deprecated ("the timings are internal (since 5.1.0)"),
+      nodiscard]] detail::stopwatch&
     timings (void) noexcept;
 
   private:
@@ -2001,8 +1993,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
       requires (detail::static_suite_body<Callable_T, Args_T...>)
-    [[deprecated ("declare the suite function with a suite& first "
-                  "parameter")]]
+    [[deprecated ("use a suite& first parameter (since 5.1.0)")]]
     static_suite (const char* name, runner& test_runner, Callable_T&& callable,
                   Args_T&&... arguments);
 

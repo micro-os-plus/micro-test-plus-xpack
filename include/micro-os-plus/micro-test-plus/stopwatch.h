@@ -247,10 +247,8 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @retval true  The start reading is available.
        * @retval false The start reading is absent.
-       *
-       * @deprecated Use `has_elapsed()` (since 5.1.0).
        */
-      [[deprecated ("use has_elapsed()"), nodiscard]] bool
+      [[deprecated ("use has_elapsed() (since 5.1.0)"), nodiscard]] bool
       has_begin (void) const noexcept;
 
       /**
@@ -266,10 +264,8 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @retval true  The stop reading is available.
        * @retval false The stop reading is absent.
-       *
-       * @deprecated Use `has_elapsed()` (since 5.1.0).
        */
-      [[deprecated ("use has_elapsed()"), nodiscard]] bool
+      [[deprecated ("use has_elapsed() (since 5.1.0)"), nodiscard]] bool
       has_end (void) const noexcept;
 
       /**
@@ -282,10 +278,8 @@ namespace micro_os_plus::micro_test_plus
        * @par Parameters
        *   None.
        * @return The value returned by `has_elapsed()`.
-       *
-       * @deprecated Use `has_elapsed()` (since 5.1.0).
        */
-      [[deprecated ("use has_elapsed()"), nodiscard]] bool
+      [[deprecated ("use has_elapsed() (since 5.1.0)"), nodiscard]] bool
       has_timestamps (void) const noexcept;
 
       /**
@@ -303,10 +297,8 @@ namespace micro_os_plus::micro_test_plus
        * 999.
        * @par Returns
        *   Nothing.
-       *
-       * @deprecated Use `elapsed()` (since 5.1.0).
        */
-      [[deprecated ("use elapsed()")]] void
+      [[deprecated ("use elapsed() (since 5.1.0)")]] void
       compute_elapsed_time (uint32_t& milliseconds,
                             uint32_t& microseconds) const noexcept;
 
@@ -325,10 +317,8 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @par Returns
        *   Nothing.
-       *
-       * @deprecated Use `start()` (since 5.1.0).
        */
-      [[deprecated ("use start()")]] void
+      [[deprecated ("use start() (since 5.1.0)")]] void
       timestamp_begin (void) noexcept;
 
       /**
@@ -343,10 +333,8 @@ namespace micro_os_plus::micro_test_plus
        * @param ts The start time.
        * @par Returns
        *   Nothing.
-       *
-       * @deprecated Use `start()` (since 5.1.0).
        */
-      [[deprecated ("use start()")]] void
+      [[deprecated ("use start() (since 5.1.0)")]] void
       timestamp_begin (const timespec& ts) noexcept;
 
       /**
@@ -362,10 +350,8 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @par Returns
        *   Nothing.
-       *
-       * @deprecated Use `stop()` (since 5.1.0).
        */
-      [[deprecated ("use stop()")]] void
+      [[deprecated ("use stop() (since 5.1.0)")]] void
       timestamp_end (void) noexcept;
 
       /**
@@ -380,10 +366,8 @@ namespace micro_os_plus::micro_test_plus
        * @param ts The stop time.
        * @par Returns
        *   Nothing.
-       *
-       * @deprecated Use `stop()` (since 5.1.0).
        */
-      [[deprecated ("use stop()")]] void
+      [[deprecated ("use stop() (since 5.1.0)")]] void
       timestamp_end (const timespec& ts) noexcept;
 
     protected:
@@ -429,12 +413,11 @@ namespace micro_os_plus::micro_test_plus
      * of the runner and of the suites, which kept the two timestamps of
      * the measured interval. Its public members are kept, on `stopwatch`;
      * its protected members, the two optional `timestamp` objects, are
-     * not.
-     *
-     * @deprecated The timings are internal; the elapsed times are shown
-     * by the reporters (since 5.1.0).
+     * not. The timings are internal; the elapsed times are shown by the
+     * reporters.
      */
-    using timestamps [[deprecated ("the timings are internal")]] = stopwatch;
+    using timestamps [[deprecated ("the timings are internal (since 5.1.0)")]]
+    = stopwatch;
 
     // ========================================================================
 
@@ -445,7 +428,8 @@ namespace micro_os_plus::micro_test_plus
      * The v5.0.1 class of the two readings kept by `detail::timestamps`,
      * restored for the applications that used it directly; the framework
      * no longer uses it, since `stopwatch` keeps the readings as
-     * `timespec` members.
+     * `timespec` members. The timings are internal; use `stopwatch`
+     * instead.
      *
      * A zero `timespec` means that the clock was not read, or that the
      * platform has no clock.
@@ -454,11 +438,8 @@ namespace micro_os_plus::micro_test_plus
      * derived classes can still access it.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
-     *
-     * @deprecated The timings are internal; use `stopwatch` (since
-     * 5.1.0).
      */
-    class [[deprecated ("the timings are internal")]] timestamp
+    class [[deprecated ("the timings are internal (since 5.1.0)")]] timestamp
     {
     public:
       /**

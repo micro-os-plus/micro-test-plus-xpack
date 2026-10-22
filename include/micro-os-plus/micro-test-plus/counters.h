@@ -216,10 +216,8 @@ namespace micro_os_plus::micro_test_plus
      * @param count The number of passed checks to add (default 1).
      * @par Returns
      *   Nothing.
-     *
-     * @deprecated Use `increment_passed_checks()` (since 5.1.0).
      */
-    [[deprecated ("use increment_passed_checks()")]] void
+    [[deprecated ("use increment_passed_checks() (since 5.1.0)")]] void
     increment_successful_checks (size_t count = 1) noexcept;
 
     /**
@@ -252,10 +250,8 @@ namespace micro_os_plus::micro_test_plus
      * @param count The number of test cases to add (default 1).
      * @par Returns
      *   Nothing.
-     *
-     * @deprecated Use `increment_executed_test_cases()` (since 5.1.0).
      */
-    [[deprecated ("use increment_executed_test_cases()")]] void
+    [[deprecated ("use increment_executed_test_cases() (since 5.1.0)")]] void
     increment_executed_subtests (size_t count = 1) noexcept;
 
     /**
@@ -306,10 +302,8 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return The value returned by `passed_checks()`.
-     *
-     * @deprecated Use `passed_checks()` (since 5.1.0).
      */
-    [[deprecated ("use passed_checks()"), nodiscard]] size_t
+    [[deprecated ("use passed_checks() (since 5.1.0)"), nodiscard]] size_t
     successful_checks (void) const noexcept;
 
     /**
@@ -352,10 +346,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return The value returned by `executed_test_cases()`.
-     *
-     * @deprecated Use `executed_test_cases()` (since 5.1.0).
      */
-    [[deprecated ("use executed_test_cases()"), nodiscard]] size_t
+    [[deprecated ("use executed_test_cases() (since 5.1.0)"),
+      nodiscard]] size_t
     executed_subtests (void) const noexcept;
 
     /**
@@ -405,10 +398,8 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return The value returned by `passed()`.
-     *
-     * @deprecated Use `passed()` (since 5.1.0).
      */
-    [[deprecated ("use passed()"), nodiscard]] bool
+    [[deprecated ("use passed() (since 5.1.0)"), nodiscard]] bool
     was_successful (void) const noexcept;
 
   private:
@@ -472,10 +463,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The v5.0.1 name of the class returned by `totals()`, renamed since
      * the suites and the test cases own one too, not only the runner.
-     *
-     * @deprecated Use `counters` (since 5.1.0).
      */
-    using runner_totals [[deprecated ("use counters")]] = counters;
+    using runner_totals [[deprecated ("use counters (since 5.1.0)")]]
+    = counters;
 
     // ========================================================================
   } // namespace detail
