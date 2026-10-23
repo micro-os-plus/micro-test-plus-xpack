@@ -117,6 +117,21 @@ endif
 
 # -----------------------------------------------------------------------------
 
+if xpack_enable_unit_combinations_test
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'unit-combinations-test',
+    unit_combinations_test,
+    args: [ 'one', 'two' ],
+    env: xpack_environment
+  )
+  message('T> unit-combinations-test')
+
+endif
+
+# -----------------------------------------------------------------------------
+
 if xpack_enable_unit_exceptions_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
@@ -127,6 +142,21 @@ if xpack_enable_unit_exceptions_test
     env: xpack_environment
   )
   message('T> unit-exceptions-test')
+
+endif
+
+# -----------------------------------------------------------------------------
+
+if xpack_enable_unit_miscellaneous_test
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'unit-miscellaneous-test',
+    unit_miscellaneous_test,
+    args: [ 'one', 'two' ],
+    env: xpack_environment
+  )
+  message('T> unit-miscellaneous-test')
 
 endif
 

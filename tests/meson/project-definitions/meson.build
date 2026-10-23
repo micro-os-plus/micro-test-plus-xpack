@@ -22,7 +22,9 @@ xpack_enable_suite_test = true
 xpack_enable_sample_test = true
 xpack_enable_unit_static_asserts_test = true
 xpack_enable_unit_checks_test = true
+xpack_enable_unit_combinations_test = true
 xpack_enable_unit_exceptions_test = true
+xpack_enable_unit_miscellaneous_test = true
 xpack_enable_unit_deprecated_test = true
 
 xpack_dependencies_tests_folders = []
@@ -52,8 +54,16 @@ if xpack_enable_unit_checks_test
   xpack_dependencies_tests_folders += [ 'sources/unit-checks' ]
 endif
 
+if xpack_enable_unit_combinations_test
+  xpack_dependencies_tests_folders += [ 'sources/unit-combinations' ]
+endif
+
 if xpack_enable_unit_exceptions_test
   xpack_dependencies_tests_folders += [ 'sources/unit-exceptions' ]
+endif
+
+if xpack_enable_unit_miscellaneous_test
+  xpack_dependencies_tests_folders += [ 'sources/unit-miscellaneous' ]
 endif
 
 if xpack_enable_unit_deprecated_test

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlComponents": [
+    {
+      "id": "tests.unit-miscellaneous",
+      "display": "Miscellaneous Unit Test",
+      "description": "The source code for a unit test to exercise the miscellaneous features of the test framework",
+      "publicIncludeFolders": [
+        "include"
+      ],
+      "sourceFiles": [
+        "src/main.cpp",
+        "src/miscellaneous.cpp",
+        "src/stopwatch.cpp",
+        "src/support.cpp",
+        "src/utility.cpp"
+      ],
+      "dependencies": [
+        "micro-os-plus.micro-test-plus.static-library"
+      ]
+    }
+  ]
+}

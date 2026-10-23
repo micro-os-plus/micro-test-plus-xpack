@@ -1,0 +1,460 @@
+# Running: unit-miscellaneous-test one two --output-file unit-miscellaneous-test.tap
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+TAP version 14
+# Subtest: Top suite
+    1..0
+ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.024 ms }
+# Subtest: Miscellaneous suite
+    # Subtest: Reporter stream operators
+        ok 1 - const char*
+        ok 2 - std::string_view
+        ok 3 - char
+        ok 4 - bool
+        ok 5 - nullptr
+        ok 6 - integers
+        ok 7 - double
+        ok 8 - null pointer
+        ok 9 - endl
+        ok 10 - char array
+        ok 11 - char*
+        ok 12 - null char pointers
+        ok 13 - pointer to const
+        1..13
+    ok 1 - Reporter stream operators # { passed, 13 checks }
+    # Subtest: Formatter character pointers
+        ok 1 - char array
+        ok 2 - char*
+        ok 3 - const char*
+        ok 4 - null char pointers
+        ok 5 - unsigned char array
+        1..5
+    ok 2 - Formatter character pointers # { passed, 5 checks }
+    # Subtest: Formatter number suffixes
+        ok 1 - signed char
+        ok 2 - unsigned char
+        ok 3 - int
+        ok 4 - long
+        ok 5 - integral float
+        ok 6 - integral double
+        ok 7 - integral long double
+        ok 8 - float
+        ok 9 - double
+        ok 10 - long double
+        ok 11 - long double with seven digits
+        ok 12 - long double with 15 digits
+        ok 13 - negative integral double
+        ok 14 - double with exponent
+        ok 15 - infinite double
+        1..15
+    ok 3 - Formatter number suffixes # { passed, 15 checks }
+    # Subtest: Formatter characters
+        ok 1 - letter
+        ok 2 - space
+        ok 3 - double quote
+        ok 4 - zero
+        ok 5 - control escapes
+        ok 6 - quote and backslash
+        ok 7 - other control characters
+        ok 8 - non-ASCII byte
+        1..8
+    ok 4 - Formatter characters # { passed, 8 checks }
+    # Subtest: Formatter wide characters
+        ok 1 - char8_t ASCII
+        ok 2 - char8_t code unit
+        ok 3 - char16_t ASCII
+        ok 4 - char16_t non-ASCII
+        ok 5 - char16_t surrogate
+        ok 6 - char32_t ASCII
+        ok 7 - char32_t non-ASCII
+        ok 8 - char32_t not characters
+        ok 9 - wchar_t
+        ok 10 - wchar_t negative
+        1..10
+    ok 5 - Formatter wide characters # { passed, 10 checks }
+    # Subtest: Formatter standard types
+        ok 1 - scoped enumeration
+        ok 2 - scoped enumeration with underlying type
+        ok 3 - scoped enumeration with formatter
+        ok 4 - std::byte
+        ok 5 - pair
+        ok 6 - tuple
+        ok 7 - empty tuple
+        ok 8 - container of pairs
+        ok 9 - container of containers
+        ok 10 - range with begin() and end() functions
+        ok 11 - optional with value
+        ok 12 - optional without value
+        ok 13 - nullopt
+        1..13
+    ok 6 - Formatter standard types # { passed, 13 checks }
+    # Subtest: Message types
+        ok 1 - numbers 1 2 3 1.5 2 true
+        ok 2 - pointer 0x10d147cc0
+        ok 3 - container {1, 2}
+        ok 4 - standard types (1, a) nullopt 1
+        ok 5 - custom type { 1, 2 } on
+        ok 6 - wrappers 42 1.5
+        ok 7 - wide characters u'x' U'x' L'x'
+        not ok 8 - failed {3}
+          ---
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 746
+          ...
+        1..8
+    not ok 7 - Message types # { FAILED, 7 checks passed, 1 failed }
+    # Subtest: Lazy messages
+        ok 1 - passed
+        ok 2 - true
+        ok 3 - not called after a success
+        not ok 4 - failed and appended
+          ---
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 774
+          ...
+        ok 5 - called after a failure
+        not ok 6 - 42
+          ---
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 785
+          ...
+        not ok 7 - from a function
+          ---
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 790
+          ...
+        1..7
+    not ok 8 - Lazy messages # { FAILED, 4 checks passed, 3 failed }
+    # Subtest: TAP escapes # TODO in names \ messages
+        ok 1 - message with \# hash and \\ backslash
+        ok 2 - a \# b == a \# b
+        ok 3 - first line second line
+        not ok 4 - failed \# TODO not a directive next line
+          ---
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 812
+          ...
+        1..4
+    not ok 9 - TAP escapes \# TODO in names \\ messages # { FAILED, 3 checks passed, 1 failed }
+    # Subtest: TAP condition values are quoted
+        not ok 1
+          ---
+          condition: "key: \"value\" # not a comment == a\\b"
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 823
+          ...
+        not ok 2
+          ---
+          condition: "line\nbreak\ttab == x"
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 827
+          ...
+        1..2
+    not ok 10 - TAP condition values are quoted # { FAILED, 0 checks passed, 2 failed }
+    # Subtest: Runner options
+        ok 1 - default verbosity before initialise()
+        ok 2 - given name
+        ok 3 - given verbosity
+        ok 4 - local session passed
+        ok 5 - added suite ran
+        ok 6 - total_suites_count() counts the top suite
+        ok 7 - default name without arguments
+        1..7
+    ok 11 - Runner options # { passed, 7 checks }
+    # Subtest: Runner option errors
+        ok 1 - valid options still applied
+        ok 2 - unknown reporter
+        ok 3 - missing argument
+        ok 4 - valid colour modes
+        ok 5 - --color alone keeps the next argument
+        ok 6 - unknown colour mode
+        ok 7 - output file not opened
+        1..7
+    ok 12 - Runner option errors # { passed, 7 checks }
+    # Subtest: Runner filter
+        ok 1 - suite filter passed
+        ok 2 - matching suites run
+        ok 3 - all their test cases run
+        ok 4 - one suite skipped
+        ok 5 - level filters passed
+        ok 6 - suites matching an alternative run
+        ok 7 - test cases matching the second pattern run
+        ok 8 - nested test cases matching the third pattern run
+        ok 9 - skipped suites and test cases counted
+        ok 10 - top suite filtered
+        ok 11 - top suite test case matching the second pattern runs
+        ok 12 - partial name does not match
+        ok 13 - patterns copied by initialise()
+        ok 14 - nothing skipped without patterns
+        ok 15 - missing pattern
+        1..15
+    ok 13 - Runner filter # { passed, 15 checks }
+    # Subtest: List test cases
+        ok 1 - listed, exit code 0
+        ok 2 - no test case body run
+        ok 3 - suite body run
+        ok 4 - all test cases listed
+        ok 5 - filtered, exit code 0
+        ok 6 - matching test cases listed
+        ok 7 - still no test case body run
+        1..7
+    ok 14 - List test cases # { passed, 7 checks }
+    # Subtest: Late suites
+        ok 1 - suite added during run() rejected
+        ok 2 - rejected suite neither run nor counted
+        ok 3 - nested run() rejected
+        ok 4 - session passed
+        ok 5 - suite added after run() rejected
+        1..5
+    ok 15 - Late suites # { passed, 5 checks }
+    # Subtest: Test case started on the suite
+        ok 1 - check before the test case
+        # Subtest: test case started on the suite
+            ok 1 - check in the test case
+            1..1
+        ok 2 - test case started on the suite # { passed, 1 check }
+        ok 3 - run nested
+        1..3
+    ok 16 - Test case started on the suite # { passed, 2 checks }
+    # Subtest: Each vector value (1)
+        ok 1 - value 1 > 0
+        1..1
+    ok 17 - Each vector value (1) # { passed, 1 check }
+    # Subtest: Each vector value (2)
+        ok 1 - value 2 > 0
+        1..1
+    ok 18 - Each vector value (2) # { passed, 1 check }
+    # Subtest: Each vector value (3)
+        ok 1 - value 3 > 0
+        1..1
+    ok 19 - Each vector value (3) # { passed, 1 check }
+    # Subtest: Each list value (alpha)
+        ok 1 - string not null
+        1..1
+    ok 20 - Each list value (alpha) # { passed, 1 check }
+    # Subtest: Each list value (beta)
+        ok 1 - string not null
+        1..1
+    ok 21 - Each list value (beta) # { passed, 1 check }
+    # Subtest: Each array value (2)
+        ok 1 - prime > 1
+        1..1
+    ok 22 - Each array value (2) # { passed, 1 check }
+    # Subtest: Each array value (3)
+        ok 1 - prime > 1
+        1..1
+    ok 23 - Each array value (3) # { passed, 1 check }
+    # Subtest: Each tuple value (42)
+        ok 1 - equal to itself
+        1..1
+    ok 24 - Each tuple value (42) # { passed, 1 check }
+    # Subtest: Each tuple value (1.5)
+        ok 1 - equal to itself
+        1..1
+    ok 25 - Each tuple value (1.5) # { passed, 1 check }
+    # Subtest: Each tuple value (true)
+        ok 1 - equal to itself
+        1..1
+    ok 26 - Each tuple value (true) # { passed, 1 check }
+    # Subtest: Each tuple value (x)
+        ok 1 - equal to itself
+        1..1
+    ok 27 - Each tuple value (x) # { passed, 1 check }
+    # Subtest: Each unnamed value (#1)
+        ok 1 - named by position
+        1..1
+    ok 28 - Each unnamed value (\#1) # { passed, 1 check }
+    # Subtest: Each unnamed value (#2)
+        ok 1 - named by position
+        1..1
+    ok 29 - Each unnamed value (\#2) # { passed, 1 check }
+    # Subtest: Nested test_each
+        # Subtest: Each nested value (10)
+            ok 1 - multiple of 10
+            1..1
+        ok 1 - Each nested value (10) # { passed, 1 check }
+        # Subtest: Each nested value (20)
+            ok 1 - multiple of 10
+            1..1
+        ok 2 - Each nested value (20) # { passed, 1 check }
+        1..2
+    ok 30 - Nested test_each # { passed, 0 checks }
+    # Subtest: Failed each value (1)
+        ok 1 - value 1 == 1
+        1..1
+    ok 31 - Failed each value (1) # { passed, 1 check }
+    # Subtest: Failed each value (2)
+        not ok 1 - value 2 == 1
+          ---
+          condition: "2 == 1"
+          at:
+            fileName: miscellaneous.cpp
+            lineNumber: 1463
+          ...
+        1..1
+    not ok 32 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
+    # Subtest: Callable arguments
+        ok 1 - reference parameter refers to a copy
+        ok 2 - std::ref() refers to the object
+        ok 3 - pointer refers to the object
+        ok 4 - local session passed
+        ok 5 - deferred suite received the copy
+        1..5
+    ok 33 - Callable arguments # { passed, 5 checks }
+    # Subtest: Test case lifetime
+        ok 1 - test cases destroyed
+        ok 2 - test cases counted
+        ok 3 - local session passed
+        1..3
+    ok 34 - Test case lifetime # { passed, 3 checks }
+    # Subtest: Test case bodies
+        ok 1 - large body invoked
+        ok 2 - large body not allocated
+        ok 3 - local session passed
+        1..3
+    ok 35 - Test case bodies # { passed, 3 checks }
+    # Subtest: Formatting of passed checks
+        ok 1 - passed check not formatted (human)
+        ok 2 - failed check formatted (human)
+        ok 3 - both checks counted (human)
+        ok 4 - passed check not formatted (tap)
+        ok 5 - failed check formatted (tap)
+        ok 6 - both checks counted (tap)
+        1..6
+    ok 36 - Formatting of passed checks # { passed, 6 checks }
+    # Subtest: Abort handler
+        ok 1 - no initial handler
+        ok 2 - handler called
+        ok 3 - previous handler returned
+        1..3
+    ok 37 - Abort handler # { passed, 3 checks }
+    # Subtest: Abort during the session
+        ok 1 - human handler exception passed on
+        ok 2 - human no test case after the abort
+        ok 3 - human run() refused after the abort
+        ok 4 - tap handler exception passed on
+        ok 5 - tap no test case after the abort
+        ok 6 - tap run() refused after the abort
+        1..6
+    ok 38 - Abort during the session # { passed, 6 checks }
+    # Subtest: Test case and suite names
+        ok 1 - temporary string name
+        ok 2 - string name
+        ok 3 - helper test cases run
+        ok 4 - location of the caller
+        ok 5 - local session passed
+        ok 6 - string suite name copied
+        ok 7 - string view suite name copied
+        1..7
+    ok 39 - Test case and suite names # { passed, 7 checks }
+    1..39
+not ok 2 - Miscellaneous suite # { FAILED, 171 checks passed, 8 failed, in 42 test cases, time: 5.372 ms }
+# Subtest: Stopwatch suite
+    # Subtest: stopwatch::start() and stop()
+        ok 1 - fresh: has_elapsed false
+        ok 2 - fresh: elapsed 0 µs
+        ok 3 - started only: has_elapsed false
+        ok 4 - started and stopped: has_elapsed if clock
+        ok 5 - started and stopped: elapsed >= 0 µs
+        1..5
+    ok 1 - stopwatch::start() and stop() # { passed, 5 checks }
+    # Subtest: stopwatch::has_elapsed() state
+        ok 1 - both readings: has_elapsed true
+        ok 2 - zero start: has_elapsed false
+        ok 3 - zero stop: has_elapsed false
+        ok 4 - tv_sec==0, tv_nsec!=0: has_elapsed true
+        1..4
+    ok 2 - stopwatch::has_elapsed() state # { passed, 4 checks }
+    # Subtest: stopwatch::start() restart
+        ok 1 - restarted: has_elapsed false
+        ok 2 - restarted: elapsed 0 µs
+        1..2
+    ok 3 - stopwatch::start() restart # { passed, 2 checks }
+    # Subtest: stopwatch::stop() replacement
+        ok 1 - second stop: reading replaced
+        ok 2 - second stop: has_elapsed if clock
+        1..2
+    ok 4 - stopwatch::stop() replacement # { passed, 2 checks }
+    # Subtest: stopwatch::elapsed()
+        ok 1 - 1 s -> 1000000 µs
+        ok 2 - 500 ms -> 500000 µs
+        ok 3 - 2.5 ms -> 2500 µs
+        ok 4 - ns borrow -> 600000 µs
+        ok 5 - 1999 ns -> 1 µs
+        ok 6 - zero elapsed -> 0 µs
+        ok 7 - no stop -> 0 µs
+        1..7
+    ok 5 - stopwatch::elapsed() # { passed, 7 checks }
+    1..5
+ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.327 ms }
+# Subtest: Utility suite
+    # Subtest: utility::extract_file_name()
+        ok 1 - Unix path returns filename
+        ok 2 - Windows path returns filename
+        ok 3 - No separator returns original
+        ok 4 - Empty string returns empty
+        ok 5 - Mixed separators, last wins
+        1..5
+    ok 1 - utility::extract_file_name() # { passed, 5 checks }
+    # Subtest: utility::is_match() — passing
+        ok 1 - "" matches ""
+        ok 2 - "" matches "*"
+        ok 3 - abc matches abc
+        ok 4 - abc matches a?c
+        ok 5 - abc matches ???
+        ok 6 - abc matches a*
+        ok 7 - abc matches a*c
+        ok 8 - abc matches *
+        ok 9 - abc matches *bc
+        ok 10 - abc matches *b*
+        ok 11 - abc matches **
+        ok 12 - aXbYbZc matches a*b*c
+        ok 13 - ab matches *?
+        ok 14 - suite name matches *namespace*
+        ok 15 - long input does not match a*a*a*a*a*a*a*a*b
+        ok 16 - Alpha one does not match Alpha
+        1..16
+    ok 2 - utility::is_match() — passing # { passed, 16 checks }
+    # Subtest: utility::is_match() — failing
+        not ok 1 - "" matches abc
+          ---
+          at:
+            fileName: utility.cpp
+            lineNumber: 179
+          ...
+        not ok 2 - abc matches b??
+          ---
+          at:
+            fileName: utility.cpp
+            lineNumber: 183
+          ...
+        not ok 3 - abc matches a*d
+          ---
+          at:
+            fileName: utility.cpp
+            lineNumber: 187
+          ...
+        not ok 4 - abc matches *C
+          ---
+          at:
+            fileName: utility.cpp
+            lineNumber: 191
+          ...
+        not ok 5 - ab matches ???
+          ---
+          at:
+            fileName: utility.cpp
+            lineNumber: 195
+          ...
+        1..5
+    not ok 3 - utility::is_match() — failing # { FAILED, 0 checks passed, 5 failed }
+    1..3
+not ok 4 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.232 ms }
+1..4
+# { total: 212 checks passed, 13 failed, in 50 test cases, 4 test suites, time: 6.179 ms }

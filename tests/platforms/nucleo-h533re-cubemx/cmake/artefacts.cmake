@@ -296,6 +296,39 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
+if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
+  add_cross_test_executable (unit-combinations-test)
+  target_link_cross_test_libraries (
+    unit-combinations-test tests::unit-combinations
+  )
+
+  xpack_display_target_lists (unit-combinations-test)
+  message (VERBOSE "A> unit-combinations-test")
+
+  add_openocd_test (
+    NAME
+    "unit-combinations-test-reporter-human"
+    COMMAND
+    unit-combinations-test
+    one
+    two
+    --reporter
+    human
+    --output-file
+    unit-combinations-test.txt
+  )
+  add_compare_files_test (
+    NAME "unit-combinations-test-reporter-human-compare"
+    DEPENDS "unit-combinations-test-reporter-human"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-combinations-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-combinations-test.txt"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
 if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
   add_cross_test_executable (unit-exceptions-test)
   target_link_cross_test_libraries (unit-exceptions-test tests::unit-exceptions)
@@ -320,6 +353,39 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
     DEPENDS "unit-exceptions-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test.txt"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-exceptions-test.txt"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
+  add_cross_test_executable (unit-miscellaneous-test)
+  target_link_cross_test_libraries (
+    unit-miscellaneous-test tests::unit-miscellaneous
+  )
+
+  xpack_display_target_lists (unit-miscellaneous-test)
+  message (VERBOSE "A> unit-miscellaneous-test")
+
+  add_openocd_test (
+    NAME
+    "unit-miscellaneous-test-reporter-human"
+    COMMAND
+    unit-miscellaneous-test
+    one
+    two
+    --reporter
+    human
+    --output-file
+    unit-miscellaneous-test.txt
+  )
+  add_compare_files_test (
+    NAME "unit-miscellaneous-test-reporter-human-compare"
+    DEPENDS "unit-miscellaneous-test-reporter-human"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-miscellaneous-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-miscellaneous-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability

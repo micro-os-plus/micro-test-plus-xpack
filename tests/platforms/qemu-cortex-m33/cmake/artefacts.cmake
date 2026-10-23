@@ -173,6 +173,32 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
+if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
+  add_cross_test_executable (unit-combinations-test)
+  target_link_cross_test_libraries (
+    unit-combinations-test tests::unit-combinations
+  )
+
+  xpack_display_target_lists (unit-combinations-test)
+  message (VERBOSE "A> unit-combinations-test")
+
+  add_qemu_test (
+    NAME "unit-combinations-test"
+    COMMAND unit-combinations-test one two --output-file
+            unit-combinations-test.tap
+  )
+  add_compare_files_test (
+    NAME "unit-combinations-test-compare"
+    DEPENDS "unit-combinations-test"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-combinations-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-combinations-test.tap"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
 if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
   add_cross_test_executable (unit-exceptions-test)
   target_link_cross_test_libraries (unit-exceptions-test tests::unit-exceptions)
@@ -189,6 +215,32 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
     DEPENDS "unit-exceptions-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-exceptions-test.tap"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
+  add_cross_test_executable (unit-miscellaneous-test)
+  target_link_cross_test_libraries (
+    unit-miscellaneous-test tests::unit-miscellaneous
+  )
+
+  xpack_display_target_lists (unit-miscellaneous-test)
+  message (VERBOSE "A> unit-miscellaneous-test")
+
+  add_qemu_test (
+    NAME "unit-miscellaneous-test"
+    COMMAND unit-miscellaneous-test one two --output-file
+            unit-miscellaneous-test.tap
+  )
+  add_compare_files_test (
+    NAME "unit-miscellaneous-test-compare"
+    DEPENDS "unit-miscellaneous-test"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-miscellaneous-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-miscellaneous-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability

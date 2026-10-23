@@ -37,17 +37,8 @@ target_include_directories (tests-unit-checks-interface INTERFACE "include")
 
 target_sources (
   tests-unit-checks-interface
-  INTERFACE "src/main.cpp"
-            "src/comparisons.cpp"
-            "src/float-failed-combinations.cpp"
-            "src/float-passed-combinations.cpp"
-            "src/integral-failed-combinations.cpp"
-            "src/integral-passed-combinations.cpp"
-            "src/miscellaneous.cpp"
-            "src/operators.cpp"
-            "src/stopwatch.cpp"
-            "src/support.cpp"
-            "src/utility.cpp"
+  INTERFACE "src/main.cpp" "src/comparisons.cpp" "src/operands.cpp"
+            "src/operators.cpp" "src/support.cpp"
 )
 
 target_link_libraries (

@@ -1,0 +1,502 @@
+Running: unit-combinations-test one two --reporter human --output-file unit-combinations-test.txt
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+• Top suite
+✓ Top suite - passed (0 checks in 0 test cases), time: 0.023 ms
+• Combinatorial floats suite
+    • Combinatorial floats
+        ✓ 42.0 == 42 signed long long
+        ✓ 42.0 == 42 unsigned long long
+        ✓ 42.0 == 42 signed long
+        ✓ 42.0 == 42 unsigned long
+        ✓ 42.0 == 42 signed int
+        ✓ 42.0 == 42 unsigned int
+        ✓ 42.0 == 42 signed short
+        ✓ 42.0 == 42 unsigned short
+        ✓ 42.0 == 42 signed char
+        ✓ 42.0 == 42 unsigned char
+        ✓ 42.0 <= 42 signed int
+        ✓ 42.0 >= 42 signed int
+        ✓ 43.0 != 42 signed int
+        ✓ 41.0 < 42 signed int
+        ✓ 43.0 > 42 signed int
+        ✓ 42.0 <= 42 unsigned int
+        ✓ 42.0 >= 42 unsigned int
+        ✓ 43.0 != 42 unsigned int
+        ✓ 41.0 < 42 unsigned int
+        ✓ 43.0 > 42 unsigned int
+        ✓ 42 == 42.0
+    ✓ Combinatorial floats - passed (21 checks)
+    • Combinatorial doubles
+        ✓ 42.0 == 42 signed long long
+        ✓ 42.0 == 42 unsigned long long
+        ✓ 42.0 == 42 signed long
+        ✓ 42.0 == 42 unsigned long
+        ✓ 42.0 == 42 signed int
+        ✓ 42.0 == 42 unsigned int
+        ✓ 42.0 == 42 signed short
+        ✓ 42.0 == 42 unsigned short
+        ✓ 42.0 == 42 signed char
+        ✓ 42.0 == 42 unsigned char
+        ✓ 42.0 <= 42 signed int
+        ✓ 42.0 >= 42 signed int
+        ✓ 43.0 != 42 signed int
+        ✓ 41.0 < 42 signed int
+        ✓ 43.0 > 42 signed int
+        ✓ 42.0 <= 42 unsigned int
+        ✓ 42.0 >= 42 unsigned int
+        ✓ 43.0 != 42 unsigned int
+        ✓ 41.0 < 42 unsigned int
+        ✓ 43.0 > 42 unsigned int
+        ✓ 42 == 42.0
+    ✓ Combinatorial doubles - passed (21 checks)
+✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.541 ms
+• Combinatorial integrals suite
+    • Combinatorial integrals with signed long long
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with signed long long - passed (20 checks)
+    • Combinatorial integrals unsigned long long
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals unsigned long long - passed (20 checks)
+    • Combinatorial integrals with signed int
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with signed int - passed (20 checks)
+    • Combinatorial integrals with unsigned int
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with unsigned int - passed (20 checks)
+    • Combinatorial integrals with signed short
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with signed short - passed (20 checks)
+    • Combinatorial integrals with unsigned short
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with unsigned short - passed (20 checks)
+    • Combinatorial integrals with signed char
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with signed char - passed (20 checks)
+    • Combinatorial integrals with unsigned char
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with unsigned char - passed (20 checks)
+✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.648 ms
+• Failed combinatorial floats suite
+    • Combinatorial floats
+        ✗ 42.0 == 42 signed long long FAILED (float-failed-combinations.cpp:35, 42.0f != 42ll)
+        ✗ 42.0 == 42 unsigned long long FAILED (float-failed-combinations.cpp:40, 42.0f != 42ull)
+        ✗ 42.0 == 42 signed long FAILED (float-failed-combinations.cpp:45, 42.0f != 42l)
+        ✗ 42.0 == 42 unsigned long FAILED (float-failed-combinations.cpp:49, 42.0f != 42ul)
+        ✗ 42.0 == 42 signed int FAILED (float-failed-combinations.cpp:53, 42.0f != 42)
+        ✗ 42.0 == 42 unsigned int FAILED (float-failed-combinations.cpp:57, 42.0f != 42u)
+        ✗ 42.0 == 42 signed short FAILED (float-failed-combinations.cpp:61, 42.0f != 42s)
+        ✗ 42.0 == 42 unsigned short FAILED (float-failed-combinations.cpp:65, 42.0f != 42us)
+        ✗ 42.0 == 42 signed char FAILED (float-failed-combinations.cpp:70, 42.0f != 42sc)
+        ✗ 42.0 == 42 unsigned char FAILED (float-failed-combinations.cpp:74, 42.0f != 42uc)
+        ✗ 42.0 <= 42 signed int FAILED (float-failed-combinations.cpp:80, 42.0f > 42)
+        ✗ 42.0 >= 42 signed int FAILED (float-failed-combinations.cpp:84, 42.0f < 42)
+        ✗ 43.0 != 42 signed int FAILED (float-failed-combinations.cpp:88, 43.0f == 42)
+        ✗ 41.0 < 42 signed int FAILED (float-failed-combinations.cpp:93, 41.0f >= 42)
+        ✗ 43.0 > 42 signed int FAILED (float-failed-combinations.cpp:98, 43.0f <= 42)
+        ✗ 42.0 <= 42 unsigned int FAILED (float-failed-combinations.cpp:105, 42.0f > 42u)
+        ✗ 42.0 >= 42 unsigned int FAILED (float-failed-combinations.cpp:109, 42.0f < 42u)
+        ✗ 43.0 != 42 unsigned int FAILED (float-failed-combinations.cpp:113, 43.0f == 42u)
+        ✗ 41.0 < 42 unsigned int FAILED (float-failed-combinations.cpp:118, 41.0f >= 42u)
+        ✗ 43.0 > 42 unsigned int FAILED (float-failed-combinations.cpp:123, 43.0f <= 42u)
+        ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:130, 42 != 42.0f)
+    ✗ Combinatorial floats - FAILED (0 checks passed, 21 failed)
+    • Combinatorial doubles
+        ✗ 42.0 == 42 signed long long FAILED (float-failed-combinations.cpp:35, 42.0 != 42ll)
+        ✗ 42.0 == 42 unsigned long long FAILED (float-failed-combinations.cpp:40, 42.0 != 42ull)
+        ✗ 42.0 == 42 signed long FAILED (float-failed-combinations.cpp:45, 42.0 != 42l)
+        ✗ 42.0 == 42 unsigned long FAILED (float-failed-combinations.cpp:49, 42.0 != 42ul)
+        ✗ 42.0 == 42 signed int FAILED (float-failed-combinations.cpp:53, 42.0 != 42)
+        ✗ 42.0 == 42 unsigned int FAILED (float-failed-combinations.cpp:57, 42.0 != 42u)
+        ✗ 42.0 == 42 signed short FAILED (float-failed-combinations.cpp:61, 42.0 != 42s)
+        ✗ 42.0 == 42 unsigned short FAILED (float-failed-combinations.cpp:65, 42.0 != 42us)
+        ✗ 42.0 == 42 signed char FAILED (float-failed-combinations.cpp:70, 42.0 != 42sc)
+        ✗ 42.0 == 42 unsigned char FAILED (float-failed-combinations.cpp:74, 42.0 != 42uc)
+        ✗ 42.0 <= 42 signed int FAILED (float-failed-combinations.cpp:80, 42.0 > 42)
+        ✗ 42.0 >= 42 signed int FAILED (float-failed-combinations.cpp:84, 42.0 < 42)
+        ✗ 43.0 != 42 signed int FAILED (float-failed-combinations.cpp:88, 43.0 == 42)
+        ✗ 41.0 < 42 signed int FAILED (float-failed-combinations.cpp:93, 41.0 >= 42)
+        ✗ 43.0 > 42 signed int FAILED (float-failed-combinations.cpp:98, 43.0 <= 42)
+        ✗ 42.0 <= 42 unsigned int FAILED (float-failed-combinations.cpp:105, 42.0 > 42u)
+        ✗ 42.0 >= 42 unsigned int FAILED (float-failed-combinations.cpp:109, 42.0 < 42u)
+        ✗ 43.0 != 42 unsigned int FAILED (float-failed-combinations.cpp:113, 43.0 == 42u)
+        ✗ 41.0 < 42 unsigned int FAILED (float-failed-combinations.cpp:118, 41.0 >= 42u)
+        ✗ 43.0 > 42 unsigned int FAILED (float-failed-combinations.cpp:123, 43.0 <= 42u)
+        ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:130, 42 != 42.0)
+    ✗ Combinatorial doubles - FAILED (0 checks passed, 21 failed)
+✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.487 ms
+• Failed combinatorial integrals suite
+    • Combinatorial integrals with signed long long
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42ll != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42ll != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42ll != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42ll != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42ll != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42ll != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42ll != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42ll != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42ll != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42ll != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42ll > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42ll < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43ll == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41ll >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43ll <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42ll > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42ll < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43ll == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41ll >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43ll <= 42u)
+    ✗ Combinatorial integrals with signed long long - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals unsigned long long
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42ull != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42ull != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42ull != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42ull != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42ull != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42ull != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42ull != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42ull != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42ull != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42ull != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42ull > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42ull < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43ull == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41ull >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43ull <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42ull > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42ull < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43ull == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41ull >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43ull <= 42u)
+    ✗ Combinatorial integrals unsigned long long - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with signed int
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42 != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42 != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42 != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42 != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42 != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42 != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42 != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42 != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42 != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42 != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42 > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42 < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43 == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41 >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43 <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42 > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42 < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43 == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41 >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43 <= 42u)
+    ✗ Combinatorial integrals with signed int - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with unsigned int
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42u != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42u != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42u != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42u != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42u != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42u != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42u != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42u != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42u != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42u != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42u > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42u < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43u == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41u >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43u <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42u > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42u < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43u == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41u >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43u <= 42u)
+    ✗ Combinatorial integrals with unsigned int - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with signed short
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42 != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42 != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42 != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42 != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42 != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42 != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42 != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42 != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42 != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42 != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42 > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42 < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43 == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41 >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43 <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42 > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42 < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43 == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41 >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43 <= 42u)
+    ✗ Combinatorial integrals with signed short - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with unsigned short
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42u != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42u != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42u != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42u != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42u != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42u != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42u != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42u != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42u != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42u != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42u > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42u < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43u == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41u >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43u <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42u > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42u < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43u == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41u >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43u <= 42u)
+    ✗ Combinatorial integrals with unsigned short - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with signed short
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42s != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42s != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42s != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42s != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42s != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42s != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42s != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42s != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42s != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42s != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42s > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42s < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43s == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41s >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43s <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42s > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42s < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43s == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41s >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43s <= 42u)
+    ✗ Combinatorial integrals with signed short - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with unsigned short
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42us != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42us != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42us != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42us != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42us != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42us != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42us != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42us != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42us != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42us != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42us > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42us < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43us == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41us >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43us <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42us > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42us < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43us == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41us >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43us <= 42u)
+    ✗ Combinatorial integrals with unsigned short - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with signed char
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42sc != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42sc != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42sc != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42sc != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42sc != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42sc != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42sc != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42sc != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42sc != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42sc != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42sc > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42sc < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43sc == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41sc >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43sc <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42sc > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42sc < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43sc == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41sc >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43sc <= 42u)
+    ✗ Combinatorial integrals with signed char - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with unsigned char
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42uc != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:40, 42uc != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:45, 42uc != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:50, 42uc != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:55, 42uc != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:59, 42uc != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:64, 42uc != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:69, 42uc != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:74, 42uc != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:79, 42uc != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:86, 42uc > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:90, 42uc < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:94, 43uc == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:99, 41uc >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:104, 43uc <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:109, 42uc > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:114, 42uc < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:119, 43uc == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:124, 41uc >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:129, 43uc <= 42u)
+    ✗ Combinatorial integrals with unsigned char - FAILED (0 checks passed, 20 failed)
+✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 1.961 ms
+✗ Total: 202 checks passed, 242 failed, in 22 test cases, 5 test suites, time: 4.909 ms

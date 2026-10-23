@@ -6,7 +6,7 @@
   "cdlComponents": [
     {
       "id": "tests.unit-deprecated",
-      "display": "Unit Deprecated Test",
+      "display": "Deprecated Unit Test",
       "description": "The source code for a unit test to exercise the deprecated features of the test framework",
       "publicIncludeFolders": [
         "include"

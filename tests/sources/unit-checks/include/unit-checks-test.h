@@ -119,10 +119,6 @@ local_test_assert (const char* failedexpr, const char* file, int line);
 
 extern micro_os_plus::micro_test_plus::runner tr;
 
-// The number of calls to the global allocation function, replaced in
-// `support.cpp`, to check that the test cases do not allocate their bodies.
-extern std::size_t allocations_count;
-
 // ----------------------------------------------------------------------------
 
 // Each test case exercises a member function or a family of member

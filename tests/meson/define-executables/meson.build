@@ -78,12 +78,30 @@ if xpack_enable_unit_checks_test
   }
 endif
 
+if xpack_enable_unit_combinations_test
+  tests += {
+    'name': 'unit-combinations-test',
+    'dependency': tests_unit_combinations_dependency,
+    'compile_c_args': tests_unit_combinations_dependency_compile_c_args,
+    'compile_cpp_args': tests_unit_combinations_dependency_compile_cpp_args,
+  }
+endif
+
 if xpack_enable_unit_exceptions_test
   tests += {
     'name': 'unit-exceptions-test',
     'dependency': tests_unit_exceptions_dependency,
     'compile_c_args': tests_unit_exceptions_dependency_compile_c_args,
     'compile_cpp_args': tests_unit_exceptions_dependency_compile_cpp_args,
+  }
+endif
+
+if xpack_enable_unit_miscellaneous_test
+  tests += {
+    'name': 'unit-miscellaneous-test',
+    'dependency': tests_unit_miscellaneous_dependency,
+    'compile_c_args': tests_unit_miscellaneous_dependency_compile_c_args,
+    'compile_cpp_args': tests_unit_miscellaneous_dependency_compile_cpp_args,
   }
 endif
 

@@ -11,7 +11,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "unit-checks-test.h"
+#include "unit-combinations-test.h"
 
 using namespace micro_os_plus::micro_test_plus;
 

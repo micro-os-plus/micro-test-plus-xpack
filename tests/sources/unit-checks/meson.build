@@ -53,15 +53,9 @@ _local_include_directories += [
 _local_sources += [
   'src/main.cpp',
   'src/comparisons.cpp',
-  'src/float-failed-combinations.cpp',
-  'src/float-passed-combinations.cpp',
-  'src/integral-failed-combinations.cpp',
-  'src/integral-passed-combinations.cpp',
-  'src/miscellaneous.cpp',
+  'src/operands.cpp',
   'src/operators.cpp',
-  'src/stopwatch.cpp',
   'src/support.cpp',
-  'src/utility.cpp',
 ]
 
 # The dependencies are single objects; enclose them in brackets,

@@ -33,7 +33,9 @@
     "sample",
     "unit-static-asserts",
     "unit-checks",
-    "unit-exceptions",
+    "unit-combinations",
+    "unit-exceptions",    
+    "unit-miscellaneous",    
     "unit-deprecated"
   ],
   "useStaticLibrary": true

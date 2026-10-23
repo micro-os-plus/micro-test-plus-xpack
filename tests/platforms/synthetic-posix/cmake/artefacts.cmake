@@ -93,9 +93,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
   )
   add_validate_tap_test (
-    NAME "empty-test-verbose-validate"
-    DEPENDS "empty-test-verbose"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/empty-test-verbose.tap"
+    NAME "empty-test-verbose-validate" DEPENDS "empty-test-verbose" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/empty-test-verbose.tap"
   )
 
   # default
@@ -110,9 +109,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
   )
   add_validate_tap_test (
-    NAME "empty-test-validate"
-    DEPENDS "empty-test"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/empty-test.tap"
+    NAME "empty-test-validate" DEPENDS "empty-test" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/empty-test.tap"
   )
 
   # --quiet
@@ -127,9 +125,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
   )
   add_validate_tap_test (
-    NAME "empty-test-quiet-validate"
-    DEPENDS "empty-test-quiet"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/empty-test-quiet.tap"
+    NAME "empty-test-quiet-validate" DEPENDS "empty-test-quiet" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/empty-test-quiet.tap"
   )
 
   # --silent
@@ -144,9 +141,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
   )
   add_validate_tap_test (
-    NAME "empty-test-silent-validate"
-    DEPENDS "empty-test-silent"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/empty-test-silent.tap"
+    NAME "empty-test-silent-validate" DEPENDS "empty-test-silent" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/empty-test-silent.tap"
   )
 
   # ---------------------------------------------------------------------------
@@ -241,9 +237,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
   )
   add_validate_tap_test (
-    NAME "minimal-test-verbose-validate"
-    DEPENDS "minimal-test-verbose"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-verbose.tap"
+    NAME "minimal-test-verbose-validate" DEPENDS "minimal-test-verbose" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-verbose.tap"
   )
 
   # default
@@ -258,9 +253,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
   )
   add_validate_tap_test (
-    NAME "minimal-test-validate"
-    DEPENDS "minimal-test"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.tap"
+    NAME "minimal-test-validate" DEPENDS "minimal-test" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.tap"
   )
 
   # --quiet
@@ -276,9 +270,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
   )
   add_validate_tap_test (
-    NAME "minimal-test-quiet-validate"
-    DEPENDS "minimal-test-quiet"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-quiet.tap"
+    NAME "minimal-test-quiet-validate" DEPENDS "minimal-test-quiet" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-quiet.tap"
   )
 
   # --silent
@@ -294,9 +287,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
   )
   add_validate_tap_test (
-    NAME "minimal-test-silent-validate"
-    DEPENDS "minimal-test-silent"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-silent.tap"
+    NAME "minimal-test-silent-validate" DEPENDS "minimal-test-silent" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-silent.tap"
   )
 
   # ---------------------------------------------------------------------------
@@ -382,9 +374,8 @@ if (XPACK_ENABLE_SUITE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
   )
   add_validate_tap_test (
-    NAME "suite-test-verbose-validate"
-    DEPENDS "suite-test-verbose"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/suite-test-verbose.tap"
+    NAME "suite-test-verbose-validate" DEPENDS "suite-test-verbose" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/suite-test-verbose.tap"
   )
 
   # default
@@ -399,9 +390,8 @@ if (XPACK_ENABLE_SUITE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
   )
   add_validate_tap_test (
-    NAME "suite-test-validate"
-    DEPENDS "suite-test"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/suite-test.tap"
+    NAME "suite-test-validate" DEPENDS "suite-test" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/suite-test.tap"
   )
 
   # --quiet
@@ -416,9 +406,8 @@ if (XPACK_ENABLE_SUITE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
   )
   add_validate_tap_test (
-    NAME "suite-test-quiet-validate"
-    DEPENDS "suite-test-quiet"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/suite-test-quiet.tap"
+    NAME "suite-test-quiet-validate" DEPENDS "suite-test-quiet" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/suite-test-quiet.tap"
   )
 
   # --silent
@@ -433,9 +422,8 @@ if (XPACK_ENABLE_SUITE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
   )
   add_validate_tap_test (
-    NAME "suite-test-silent-validate"
-    DEPENDS "suite-test-silent"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/suite-test-silent.tap"
+    NAME "suite-test-silent-validate" DEPENDS "suite-test-silent" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/suite-test-silent.tap"
   )
 
   # ---------------------------------------------------------------------------
@@ -522,9 +510,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
   )
   add_validate_tap_test (
-    NAME "sample-test-verbose-validate"
-    DEPENDS "sample-test-verbose"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/sample-test-verbose.tap"
+    NAME "sample-test-verbose-validate" DEPENDS "sample-test-verbose" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/sample-test-verbose.tap"
   )
 
   # default
@@ -539,9 +526,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
   )
   add_validate_tap_test (
-    NAME "sample-test-validate"
-    DEPENDS "sample-test"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/sample-test.tap"
+    NAME "sample-test-validate" DEPENDS "sample-test" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/sample-test.tap"
   )
 
   # --quiet
@@ -563,9 +549,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
   )
   add_validate_tap_test (
-    NAME "sample-test-quiet-validate"
-    DEPENDS "sample-test-quiet"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/sample-test-quiet.tap"
+    NAME "sample-test-quiet-validate" DEPENDS "sample-test-quiet" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/sample-test-quiet.tap"
   )
 
   # --silent
@@ -580,9 +565,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
   )
   add_validate_tap_test (
-    NAME "sample-test-silent-validate"
-    DEPENDS "sample-test-silent"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/sample-test-silent.tap"
+    NAME "sample-test-silent-validate" DEPENDS "sample-test-silent" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/sample-test-silent.tap"
   )
 
   # ---------------------------------------------------------------------------
@@ -710,8 +694,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
   )
   add_validate_tap_test (
-    NAME "unit-checks-test-verbose-validate"
-    DEPENDS "unit-checks-test-verbose"
+    NAME "unit-checks-test-verbose-validate" DEPENDS "unit-checks-test-verbose"
     FILE "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-verbose.tap"
   )
 
@@ -727,9 +710,8 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
   )
   add_validate_tap_test (
-    NAME "unit-checks-test-validate"
-    DEPENDS "unit-checks-test"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test.tap"
+    NAME "unit-checks-test-validate" DEPENDS "unit-checks-test" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test.tap"
   )
 
   # --quiet
@@ -745,8 +727,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
   )
   add_validate_tap_test (
-    NAME "unit-checks-test-quiet-validate"
-    DEPENDS "unit-checks-test-quiet"
+    NAME "unit-checks-test-quiet-validate" DEPENDS "unit-checks-test-quiet"
     FILE "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-quiet.tap"
   )
 
@@ -763,8 +744,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
   )
   add_validate_tap_test (
-    NAME "unit-checks-test-silent-validate"
-    DEPENDS "unit-checks-test-silent"
+    NAME "unit-checks-test-silent-validate" DEPENDS "unit-checks-test-silent"
     FILE "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-silent.tap"
   )
 
@@ -846,6 +826,32 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
+if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
+  add_native_test_executable (unit-combinations-test)
+  target_link_native_test_libraries (
+    unit-combinations-test tests::unit-combinations
+  )
+
+  xpack_display_target_lists (unit-combinations-test)
+  message (VERBOSE "A> unit-combinations-test")
+
+  add_test (NAME "unit-combinations-test"
+            COMMAND unit-combinations-test one two --output-file
+                    unit-combinations-test.tap
+  )
+  message (VERBOSE "T> unit-combinations-test")
+  add_compare_files_test (
+    NAME "unit-combinations-test-compare"
+    DEPENDS "unit-combinations-test"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-combinations-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-combinations-test.tap"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
 if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
   add_native_test_executable (unit-exceptions-test)
   target_link_native_test_libraries (
@@ -865,6 +871,32 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
     DEPENDS "unit-exceptions-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-exceptions-test.tap"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
+  add_native_test_executable (unit-miscellaneous-test)
+  target_link_native_test_libraries (
+    unit-miscellaneous-test tests::unit-miscellaneous
+  )
+
+  xpack_display_target_lists (unit-miscellaneous-test)
+  message (VERBOSE "A> unit-miscellaneous-test")
+
+  add_test (NAME "unit-miscellaneous-test"
+            COMMAND unit-miscellaneous-test one two --output-file
+                    unit-miscellaneous-test.tap
+  )
+  message (VERBOSE "T> unit-miscellaneous-test")
+  add_compare_files_test (
+    NAME "unit-miscellaneous-test-compare"
+    DEPENDS "unit-miscellaneous-test"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-miscellaneous-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-miscellaneous-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability
