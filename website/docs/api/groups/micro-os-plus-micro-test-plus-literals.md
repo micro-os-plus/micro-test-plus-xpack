@@ -456,334 +456,6 @@ keywords:
 
 </table>
 
-## Type Wrappers Index
-
-<table class="doxyMembersIndex">
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a> = detail::value&lt; bool &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values. <a href="#ga5570e36fb3e73be3edf734ac80a23d93">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a> = detail::value&lt; char &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values. <a href="#ga6ccf42d05ae14c445f602128f8ffd831">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a> = detail::value&lt; signed char &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values. <a href="#gae3838e23c60edeadbafdd4a22d1b1516">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a> = detail::value&lt; short &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values. <a href="#gabc8f58b457f42435bcb51f53e6fe6b78">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a> = detail::value&lt; int &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values. <a href="#gaf3ee271cefcffa625e40d476305da62f">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a> = detail::value&lt; long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values. <a href="#ga09028a1e0e713723257afba48b9ee551">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a> = detail::value&lt; long long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values. <a href="#ga0d0ae1e784a8a4da6630ab06addcad34">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a> = detail::value&lt; unsigned &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values. <a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a> = detail::value&lt; unsigned char &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values. <a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a> = detail::value&lt; unsigned short &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values. <a href="#ga8c22086f0e7e89d753cf7846ef7229d4">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a> = detail::value&lt; unsigned long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values. <a href="#ga5d2d6a69c090569866a779672772b48f">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a> = detail::value&lt; unsigned long long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values. <a href="#gae1438b74ec39a793d5ad516a7c2c7788">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a> = detail::value&lt; std::int8_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values. <a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a> = detail::value&lt; std::int16_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values. <a href="#ga5cc1961eb074bb0740d8a593c411e0f9">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a> = detail::value&lt; std::int32_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values. <a href="#ga201eeff58867ba58d3312ae56113ef06">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a> = detail::value&lt; std::int64_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values. <a href="#gaead55f5e265634a742633261f9f2aa3f">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a> = detail::value&lt; std::uint8_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values. <a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a> = detail::value&lt; std::uint16_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values. <a href="#ga87bb08ab5e58f481ee911e872108f8e0">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a> = detail::value&lt; std::uint32_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values. <a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a> = detail::value&lt; std::uint64_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values. <a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a> = detail::value&lt; float &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values. <a href="#ga5368740b47e92605914b6c38ea88aebf">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a> = detail::value&lt; double &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values. <a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a> = detail::value&lt; long double &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values. <a href="#gaeba32254fdd8159523b525745b13bfa9">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-</table>
-
 ## Deprecated Type Wrappers Index
 
 <table class="doxyMembersIndex">
@@ -1121,6 +793,334 @@ keywords:
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>Generic strongly-typed wrapper, the v5.0.1 name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span>. <a href="#ga15147e343475e219c2e46dce07b4127c">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Type Wrappers Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a> = detail::value&lt; bool &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values. <a href="#ga5570e36fb3e73be3edf734ac80a23d93">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a> = detail::value&lt; char &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values. <a href="#ga6ccf42d05ae14c445f602128f8ffd831">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a> = detail::value&lt; signed char &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values. <a href="#gae3838e23c60edeadbafdd4a22d1b1516">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a> = detail::value&lt; short &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values. <a href="#gabc8f58b457f42435bcb51f53e6fe6b78">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a> = detail::value&lt; int &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values. <a href="#gaf3ee271cefcffa625e40d476305da62f">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a> = detail::value&lt; long &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values. <a href="#ga09028a1e0e713723257afba48b9ee551">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a> = detail::value&lt; long long &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values. <a href="#ga0d0ae1e784a8a4da6630ab06addcad34">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a> = detail::value&lt; unsigned &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values. <a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a> = detail::value&lt; unsigned char &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values. <a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a> = detail::value&lt; unsigned short &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values. <a href="#ga8c22086f0e7e89d753cf7846ef7229d4">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a> = detail::value&lt; unsigned long &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values. <a href="#ga5d2d6a69c090569866a779672772b48f">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a> = detail::value&lt; unsigned long long &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values. <a href="#gae1438b74ec39a793d5ad516a7c2c7788">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a> = detail::value&lt; std::int8_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values. <a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a> = detail::value&lt; std::int16_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values. <a href="#ga5cc1961eb074bb0740d8a593c411e0f9">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a> = detail::value&lt; std::int32_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values. <a href="#ga201eeff58867ba58d3312ae56113ef06">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a> = detail::value&lt; std::int64_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values. <a href="#gaead55f5e265634a742633261f9f2aa3f">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a> = detail::value&lt; std::uint8_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values. <a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a> = detail::value&lt; std::uint16_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values. <a href="#ga87bb08ab5e58f481ee911e872108f8e0">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a> = detail::value&lt; std::uint32_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values. <a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a> = detail::value&lt; std::uint64_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values. <a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a> = detail::value&lt; float &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values. <a href="#ga5368740b47e92605914b6c38ea88aebf">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a> = detail::value&lt; double &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values. <a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a> = detail::value&lt; long double &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values. <a href="#gaeba32254fdd8159523b525745b13bfa9">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -2844,6 +2844,954 @@ keywords:
 
 <div class="doxySectionDef">
 
+## Deprecated Type Wrappers
+
+
+
+<p>The v5.0.1 names of the <span class="doxyComputerOutput">to_*</span> type wrappers.</p>
+
+
+<p>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <span class="doxyComputerOutput">to_*</span> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<span class="doxyComputerOutput">42<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>), which are in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> namespace.</p>
+
+
+<p>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <span class="doxyComputerOutput"><a href="#ga8468610e763177a8f569f7d618851288">_i</a> (expr)</span>; Clang reports it in both cases.</p>
+
+
+<dl class="doxySectionUser">
+<dt>Deprecated</dt>
+<dd><p>Use the corresponding <span class="doxyComputerOutput">to_*</span> type wrappers instead (since 3.2.0).</p></dd>
+</dl>
+
+
+### \_b {#gad4203783cfbe141f41ee8515f7b2ea94}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_b = to_b</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000009>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00202">202</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_c {#gafdd897d040f92df9cd42e551ebc88cd8}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_c = to_c</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000010>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00211">211</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_d {#ga7c6c0169d894a7dd589d96df49e8df26}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_d = to_d</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000030>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00391">391</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_f {#ga231cd51e76a2f426703275739d605ad4}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_f = to_f</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000029>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00382">382</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_i {#ga8468610e763177a8f569f7d618851288}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i = to_i</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000013>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00238">238</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_i16 {#gad2d95793c99112ad2889c6663789d1e3}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i16 = to_i16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000022>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00319">319</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_i32 {#ga917a1759e37cd0d3fe3786da11729a4b}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i32 = to_i32</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000023>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00328">328</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_i64 {#ga290a150eae030e183ca2e14e9095c93b}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i64 = to_i64</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000024>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00337">337</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_i8 {#ga265f8609ef3d6ead78c7a66825553e24}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i8 = to_i8</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000021>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00310">310</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_l {#ga429a848542fc4ffafd3dd22bc1832654}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_l = to_l</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000014>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00247">247</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_ld {#gacfe28c6fb7bfb47ca8891cb61e7f58d9}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ld = to_ld</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000031>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00400">400</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_ll {#ga9c597ca04848620b8570c29a4741e77d}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ll = to_ll</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000015>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00256">256</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_s {#ga461a956b7e308ed6e8c64afa3cf160f2}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_s = to_s</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000012>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00229">229</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_sc {#ga0cc4baab5f421ac7adee10218d8ee8a2}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_sc = to_sc</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000011>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00220">220</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_t {#ga15147e343475e219c2e46dce07b4127c}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_t = to_t&lt;T&gt;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Generic strongly-typed wrapper, the v5.0.1 name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a>&lt;T&gt;</span>, so it takes the same argument and is reported in the same way; kept for backwards compatibility. In v5.0.1 it was a separate class, also derived from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>&lt;T&gt;</span>.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">T</td>
+<td class="doxyParamItemDescription"><p>The type of the wrapped value.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000032>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00414">414</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_u {#gaaa486af2418a24076237fbe26940f5ae}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u = to_u</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000016>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00265">265</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_u16 {#ga97f7bc9a25eb4b7c663bd2388ade01ae}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u16 = to_u16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000026>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00355">355</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_u32 {#ga4afa32150456241245bfc641a6f17bbc}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u32 = to_u32</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000027>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00364">364</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_u64 {#ga1241e84fc4457af1b4df5f053eec6aa5}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u64 = to_u64</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000028>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00373">373</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_u8 {#gaf27e37e2e29af1a3ffd5c4fb07e77ff9}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u8 = to_u8</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000025>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00346">346</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_uc {#gaa8bb559065ea34a9645fdfd6339b9b7a}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_uc = to_uc</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000017>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00274">274</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_ul {#ga32c7eef01fcaef2f1a9478427d951f62}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ul = to_ul</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000019>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00292">292</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_ull {#gada8a165060d3d3b3ab51272b9da58761}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ull = to_ull</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000020>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00301">301</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+### \_us {#ga65aea7fc6324806cc029041a1c785611}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_us = to_us</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span>.</p>
+
+
+<p>The same type as <span class="doxyComputerOutput"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span>; kept for backwards compatibility.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000018>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a> (since 3.2.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00283">283</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+
+</div>
+</div>
+
+</div>
+
+<div class="doxySectionDef">
+
 ## Type Wrappers
 
 
@@ -3846,1172 +4794,8 @@ keywords:
 
 </div>
 
-<div class="doxySectionDef">
-
-## Deprecated Type Wrappers
-
-
-
-<p>The v5.0.1 names of the <span class="doxyComputerOutput">to_*</span> type wrappers.</p>
-
-
-<p>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <span class="doxyComputerOutput">to_*</span> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<span class="doxyComputerOutput">42<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>), which are in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> namespace.</p>
-
-
-<p>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <span class="doxyComputerOutput"><a href="#ga8468610e763177a8f569f7d618851288">_i</a> (expr)</span>; Clang reports it in both cases.</p>
-
-
-<dl class="doxySectionUser">
-<dt>Deprecated</dt>
-<dd><p>Use the corresponding <span class="doxyComputerOutput">to_*</span> type wrappers instead (since 3.2.0).</p></dd>
-</dl>
-
-
-### \_b {#gad4203783cfbe141f41ee8515f7b2ea94}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_b = to_b</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000032>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000033>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00852">852</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_c {#gafdd897d040f92df9cd42e551ebc88cd8}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_c = to_c</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000034>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000035>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00863">863</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_d {#ga7c6c0169d894a7dd589d96df49e8df26}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_d = to_d</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000074>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000075>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01083">1083</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_f {#ga231cd51e76a2f426703275739d605ad4}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_f = to_f</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000072>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000073>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01072">1072</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_i {#ga8468610e763177a8f569f7d618851288}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i = to_i</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000040>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000041>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00896">896</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_i16 {#gad2d95793c99112ad2889c6663789d1e3}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i16 = to_i16</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000058>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000059>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00995">995</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_i32 {#ga917a1759e37cd0d3fe3786da11729a4b}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i32 = to_i32</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000060>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000061>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01006">1006</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_i64 {#ga290a150eae030e183ca2e14e9095c93b}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i64 = to_i64</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000062>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000063>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01017">1017</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_i8 {#ga265f8609ef3d6ead78c7a66825553e24}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i8 = to_i8</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000056>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000057>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00984">984</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_l {#ga429a848542fc4ffafd3dd22bc1832654}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_l = to_l</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000042>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000043>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00907">907</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_ld {#gacfe28c6fb7bfb47ca8891cb61e7f58d9}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ld = to_ld</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000076>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000077>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01094">1094</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_ll {#ga9c597ca04848620b8570c29a4741e77d}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ll = to_ll</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000044>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000045>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00918">918</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_s {#ga461a956b7e308ed6e8c64afa3cf160f2}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_s = to_s</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000038>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000039>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00885">885</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_sc {#ga0cc4baab5f421ac7adee10218d8ee8a2}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_sc = to_sc</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000036>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000037>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00874">874</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_t {#ga15147e343475e219c2e46dce07b4127c}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_t = to_t&lt;T&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Generic strongly-typed wrapper, the v5.0.1 name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a>&lt;T&gt;</span>, so it takes the same argument and is reported in the same way; kept for backwards compatibility. In v5.0.1 it was a separate class, also derived from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>&lt;T&gt;</span>.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000078>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The type of the wrapped value.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000079>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01110">1110</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_u {#gaaa486af2418a24076237fbe26940f5ae}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u = to_u</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000046>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000047>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00929">929</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_u16 {#ga97f7bc9a25eb4b7c663bd2388ade01ae}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u16 = to_u16</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000066>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000067>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01039">1039</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_u32 {#ga4afa32150456241245bfc641a6f17bbc}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u32 = to_u32</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000068>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000069>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01050">1050</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_u64 {#ga1241e84fc4457af1b4df5f053eec6aa5}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u64 = to_u64</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000070>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000071>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01061">1061</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_u8 {#gaf27e37e2e29af1a3ffd5c4fb07e77ff9}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u8 = to_u8</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000064>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000065>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l01028">1028</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_uc {#gaa8bb559065ea34a9645fdfd6339b9b7a}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_uc = to_uc</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000048>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000049>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00940">940</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_ul {#ga32c7eef01fcaef2f1a9478427d951f62}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ul = to_ul</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000052>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000053>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00962">962</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_ull {#gada8a165060d3d3b3ab51272b9da58761}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ull = to_ull</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000054>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000055>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00973">973</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-### \_us {#ga65aea7fc6324806cc029041a1c785611}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_us = to_us</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span>.</p>
-
-
-<p>The same type as <span class="doxyComputerOutput"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span>; kept for backwards compatibility.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000050>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></span> (since 3.2.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000051>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00951">951</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.</p>
-
-</div>
-</div>
-
-</div>
-
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

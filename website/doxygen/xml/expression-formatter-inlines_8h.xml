@@ -51,7 +51,15 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>deprecated.h</label>
+        <link refid="deprecated_8h"/>
         <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -59,7 +67,7 @@
         <link refid="expression-formatter_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
@@ -72,10 +80,10 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="17">
         <label>test-inlines.h</label>
         <link refid="test-inlines_8h"/>
-        <childnode refid="16" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -111,12 +119,14 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="13">
         <label>runner.h</label>
         <link refid="runner_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
@@ -127,13 +137,15 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="18">
         <label>test.h</label>
         <link refid="test_8h"/>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
@@ -145,14 +157,18 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>check-result.cpp</label>
         <link refid="check-result_8cpp"/>
       </node>
-      <node id="17">
+      <node id="15">
+        <label>deprecated.cpp</label>
+        <link refid="deprecated_8cpp"/>
+      </node>
+      <node id="19">
         <label>expression-formatter.cpp</label>
         <link refid="expression-formatter_8cpp"/>
       </node>
@@ -172,7 +188,7 @@
         <label>runner.cpp</label>
         <link refid="runner_8cpp"/>
       </node>
-      <node id="14">
+      <node id="16">
         <label>test.cpp</label>
         <link refid="test_8cpp"/>
       </node>

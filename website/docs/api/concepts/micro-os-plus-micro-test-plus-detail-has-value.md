@@ -43,10 +43,10 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput">has_value</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is a framework expression type (see <span class="doxyComputerOutput">extension::is_op</span>) with a static <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a></span> member, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral_constant</a></span> and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating_point_constant</a></span>, the types of the numeric literals. The comparators compare such operands by their <span class="doxyComputerOutput">T::value</span> constants.</p>
+<p>The <span class="doxyComputerOutput">has_value</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is a framework expression type (see <span class="doxyComputerOutput">extension::is_op</span>) with a static <span class="doxyComputerOutput">value</span> member, like <span class="doxyComputerOutput">integral_constant</span> and <span class="doxyComputerOutput">floating_point_constant</span>, the types of the numeric literals. The comparators compare such operands by their <span class="doxyComputerOutput">T::value</span> constants.</p>
 
 
-<p>The types of the application are excluded, even if they have a member named <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a></span>, so that they are compared with their own operators.</p>
+<p>The types of the application are excluded, even if they have a member named <span class="doxyComputerOutput">value</span>, so that they are compared with their own operators.</p>
 
 
 <p>Definition at line 445 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
@@ -62,6 +62,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

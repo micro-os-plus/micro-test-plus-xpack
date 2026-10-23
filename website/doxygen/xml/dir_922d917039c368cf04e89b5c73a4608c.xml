@@ -5,6 +5,7 @@
     <innerdir refid="dir_b34942af1e28075bba4d79bf44077044">inlines</innerdir>
     <innerfile refid="check-result_8h">check-result.h</innerfile>
     <innerfile refid="counters_8h">counters.h</innerfile>
+    <innerfile refid="deprecated_8h">deprecated.h</innerfile>
     <innerfile refid="detail_8h">detail.h</innerfile>
     <innerfile refid="exceptions_8h">exceptions.h</innerfile>
     <innerfile refid="expression-formatter_8h">expression-formatter.h</innerfile>

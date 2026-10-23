@@ -73,20 +73,6 @@ namespace micro_os_plus::micro_test_plus::detail { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-">anonymous{stopwatch.cpp}</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Local helpers of the stopwatch. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math">math</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1247,6 +1233,20 @@ namespace micro_os_plus::micro_test_plus::detail { ... }
 <td class="doxyMemberIndexSeparator" colspan="2"></td>
 </tr>
 
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (timespec &amp;ts) noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Reads the system clock. <a href="#a60dcef812e43e13d1e30f602a572e27a">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
 <tr class="doxyMemberIndexTemplate">
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Self_T, class Values_T, class Callable_T&gt;</div></td>
 </tr>
@@ -1398,23 +1398,14 @@ namespace micro_os_plus::micro_test_plus::detail { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000011>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000037>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters">counters</a></span> (since 5.1.0).</p>
+<p>use counters (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
 
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000012>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use counters</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00478">478</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00493">493</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -1498,28 +1489,19 @@ namespace micro_os_plus::micro_test_plus::detail { ... }
 <p>Deprecated name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span>.</p>
 
 
-<p>The v5.0.1 name of the class returned by the <span class="doxyComputerOutput">timings()</span> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span>; its protected members, the two optional <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> objects, are not.</p>
+<p>The v5.0.1 name of the class returned by the <span class="doxyComputerOutput">timings()</span> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span>; its protected members, the two optional <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> objects, are not. The timings are internal; the elapsed times are shown by the reporters.</p>
 
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000102>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000038>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0).</p>
+<p>the timings are internal (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
 
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000103>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>the timings are internal</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00437">437</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>.</p>
+<p>Definition at line 509 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -3079,6 +3061,83 @@ namespace micro_os_plus::micro_test_plus::detail { ... }
 </div>
 </div>
 
+### read\_clock() {#a60dcef812e43e13d1e30f602a572e27a}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void micro_os_plus::micro_test_plus::detail::read_clock (timespec &amp; ts)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Reads the system clock.</p>
+
+
+<p>Isolates the platform-specific access to the system clock, used by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span> and by the deprecated <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> class. The clock is monotonic on POSIX; without a clock, <span class="doxyComputerOutput">ts</span> is left unchanged, so the callers clear it first when a zero value must mean that the clock was not read.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">[out] ts</td>
+<td class="doxyParamItemDescription"><p>The <span class="doxyComputerOutput">timespec</span> where the reading is stored.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>Nothing.</p></dd>
+</dl>
+
+
+<p>On Windows, the current time is captured via <span class="doxyComputerOutput">timespec_get()</span> with <span class="doxyComputerOutput">TIME_UTC</span>. On POSIX platforms with <span class="doxyComputerOutput">CLOCK_MONOTONIC</span> defined, <span class="doxyComputerOutput">clock_gettime(CLOCK_MONOTONIC)</span> is used to obtain a monotonic reading. On platforms where neither macro is defined, <span class="doxyComputerOutput">ts</span> is left unchanged.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp/#l00066">66</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">stopwatch.cpp</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a60dcef812e43e13d1e30f602a572e27a">66</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">67</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">68</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(_WIN32)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">69</span><span class="doxyLineContent"><span class="doxyHighlight">    timespec_get (&amp;ts, TIME_UTC);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">70</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#elif defined(CLOCK_MONOTONIC)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">71</span><span class="doxyLineContent"><span class="doxyHighlight">    clock_gettime (CLOCK_MONOTONIC, &amp;ts);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">72</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">73</span><span class="doxyLineContent"><span class="doxyHighlight">    (void)ts;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">74</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(_WIN32) || defined(CLOCK_MONOTONIC)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">75</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#a60dcef812e43e13d1e30f602a572e27a">read_clock</a>.</p>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">micro_os_plus::micro_test_plus::detail::timestamp::timestamp</a>, <a href="#a60dcef812e43e13d1e30f602a572e27a">read_clock</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#af5ebb1e454867633db12fef45db9788d">micro_os_plus::micro_test_plus::detail::stopwatch::start</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a83ab4e25e25a4a81ed1d3277ac09390d">micro_os_plus::micro_test_plus::detail::stopwatch::stop</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a621a32c96a4950306c0a1aef8c577740">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a4c1a4d8b22d04205be49f8289ed7abd6">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</a>.</p>
+
+</div>
+</div>
+
 ### test\_each\_value() {#acb0858a0ba8b635ff89c4cb00c532ce8}
 
 <div class="doxyMemberItem">
@@ -3157,52 +3216,52 @@ namespace micro_os_plus::micro_test_plus::detail { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00676">676</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00677">677</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acb0858a0ba8b635ff89c4cb00c532ce8">676</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#acb0858a0ba8b635ff89c4cb00c532ce8">test_each_value</a> (Self_T&amp; self, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name">test_case_name</a>&amp; name,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">677</span><span class="doxyLineContent"><span class="doxyHighlight">                     Values_T&amp;&amp; values, Callable_T&amp; callable)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">678</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">679</span><span class="doxyLineContent"><span class="doxyHighlight">      std::size_t position = 0;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">680</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">681</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> run_one</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">682</span><span class="doxyLineContent"><span class="doxyHighlight">          = [&amp;self, &amp;name, &amp;callable, &amp;position] (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">683</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">684</span><span class="doxyLineContent"><span class="doxyHighlight">          ++position;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">685</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">686</span><span class="doxyLineContent"><span class="doxyHighlight">          std::string text{ name.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name/#a624bdd72fd18db434a64993818bb5466">name</a> () };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">687</span><span class="doxyLineContent"><span class="doxyHighlight">          text += </span><span class="doxyHighlightStringLiteral">" ("</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">688</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/printable">extension::printable</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">689</span><span class="doxyLineContent"><span class="doxyHighlight">                            std::remove_cvref_t&lt;</span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>)&gt;&gt;)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">690</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">691</span><span class="doxyLineContent"><span class="doxyHighlight">              <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/plain-text/#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">692</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">693</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">694</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">695</span><span class="doxyLineContent"><span class="doxyHighlight">              text += </span><span class="doxyHighlightCharLiteral">'#'</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">696</span><span class="doxyLineContent"><span class="doxyHighlight">              <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/plain-text/#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, position);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">697</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">698</span><span class="doxyLineContent"><span class="doxyHighlight">          text += </span><span class="doxyHighlightCharLiteral">')'</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">699</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">700</span><span class="doxyLineContent"><span class="doxyHighlight">          self.test (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name">test_case_name</a>{ text, name.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name/#abfb91a55df657bbfbfb5fe774f46329b">location</a> () }, callable,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">701</span><span class="doxyLineContent"><span class="doxyHighlight">                     <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">702</span><span class="doxyLineContent"><span class="doxyHighlight">        };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">703</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">704</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/test-values-range">test_values_range&lt;Values_T&gt;</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">705</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">706</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a> : values)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">707</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">708</span><span class="doxyLineContent"><span class="doxyHighlight">              run_one (<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">709</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">710</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">711</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">712</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">713</span><span class="doxyLineContent"><span class="doxyHighlight">          std::apply ([&amp;run_one] (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp;... elements)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">714</span><span class="doxyLineContent"><span class="doxyHighlight">            { (run_one (elements), ...); }, values);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">715</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">716</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acb0858a0ba8b635ff89c4cb00c532ce8">677</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#acb0858a0ba8b635ff89c4cb00c532ce8">test_each_value</a> (Self_T&amp; self, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name">test_case_name</a>&amp; name,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">678</span><span class="doxyLineContent"><span class="doxyHighlight">                     Values_T&amp;&amp; values, Callable_T&amp; callable)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">679</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">680</span><span class="doxyLineContent"><span class="doxyHighlight">      std::size_t position = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">681</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">682</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> run_one</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">683</span><span class="doxyLineContent"><span class="doxyHighlight">          = [&amp;self, &amp;name, &amp;callable, &amp;position] (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">684</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">685</span><span class="doxyLineContent"><span class="doxyHighlight">          ++position;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">686</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">687</span><span class="doxyLineContent"><span class="doxyHighlight">          std::string text{ name.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name/#a624bdd72fd18db434a64993818bb5466">name</a> () };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">688</span><span class="doxyLineContent"><span class="doxyHighlight">          text += </span><span class="doxyHighlightStringLiteral">" ("</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">689</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/printable">extension::printable</a>&lt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">690</span><span class="doxyLineContent"><span class="doxyHighlight">                            std::remove_cvref_t&lt;</span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>)&gt;&gt;)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">691</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">692</span><span class="doxyLineContent"><span class="doxyHighlight">              <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/plain-text/#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">693</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">694</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">695</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">696</span><span class="doxyLineContent"><span class="doxyHighlight">              text += </span><span class="doxyHighlightCharLiteral">'#'</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">697</span><span class="doxyLineContent"><span class="doxyHighlight">              <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/plain-text/#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, position);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">698</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">699</span><span class="doxyLineContent"><span class="doxyHighlight">          text += </span><span class="doxyHighlightCharLiteral">')'</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">700</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">701</span><span class="doxyLineContent"><span class="doxyHighlight">          self.test (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name">test_case_name</a>{ text, name.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name/#abfb91a55df657bbfbfb5fe774f46329b">location</a> () }, callable,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">702</span><span class="doxyLineContent"><span class="doxyHighlight">                     <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">703</span><span class="doxyLineContent"><span class="doxyHighlight">        };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">704</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">705</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/test-values-range">test_values_range&lt;Values_T&gt;</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">706</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">707</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a> : values)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">708</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">709</span><span class="doxyLineContent"><span class="doxyHighlight">              run_one (<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">710</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">711</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">712</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">713</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">714</span><span class="doxyLineContent"><span class="doxyHighlight">          std::apply ([&amp;run_one] (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp;... elements)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">715</span><span class="doxyLineContent"><span class="doxyHighlight">            { (run_one (elements), ...); }, values);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">716</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">717</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -3647,19 +3706,19 @@ The documentation for this namespace was generated from the following files:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h">reporter-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/values-inlines-h">values-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">stopwatch.cpp</a></li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

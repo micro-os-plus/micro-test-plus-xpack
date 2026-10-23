@@ -113,7 +113,7 @@ keywords:
 ## - R -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-/#a34225dca0ef5b70eb98c8eeaa3a05b06"><b>read_clock()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-">micro_os_plus::micro_test_plus::detail::anonymous{stopwatch.cpp}</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a"><b>read_clock()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 </ul>
 
 ## - S -
@@ -157,6 +157,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -126,8 +126,6 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local helpers of the TAP reporter. <br /></td></tr>
 <tr class="memitem:anonymous_5Fnamespace_7Breporter_2Ecpp_7D" id="r_anonymous_5Fnamespace_7Breporter_2Ecpp_7D"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03.html">anonymous_namespace{reporter.cpp}</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local helpers of the reporter base class. <br /></td></tr>
-<tr class="memitem:anonymous_5Fnamespace_7Bstopwatch_2Ecpp_7D" id="r_anonymous_5Fnamespace_7Bstopwatch_2Ecpp_7D"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03.html">anonymous_namespace{stopwatch.cpp}</a></td></tr>
-<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local helpers of the stopwatch. <br /></td></tr>
 <tr class="memitem:math" id="r_math"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html">math</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal mathematical utilities for the µTest++ testing framework. <br /></td></tr>
 </table><table class="memberdecls">
@@ -318,6 +316,8 @@ requires std::is_arithmetic_v&lt;T&gt;</td></tr>
 <tr class="memitem:a5be372c9ff2b04cef7d12f215d0a194f" id="r_a5be372c9ff2b04cef7d12f215d0a194f"><td class="memTemplParams" colspan="2">template&lt;class T, class Predicate_T&gt; </td></tr>
 <tr class="memitem:a5be372c9ff2b04cef7d12f215d0a194f template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5be372c9ff2b04cef7d12f215d0a194f">predicate_op</a> (T &amp;&amp;, Predicate_T) -&gt; predicate_op&lt; <a class="el" href="#a85cd019d0861a4b6d62c3424f4a8931d">stored_operand_t</a>&lt; T &gt;, Predicate_T &gt;</td></tr>
 <tr class="memdesc:a5be372c9ff2b04cef7d12f215d0a194f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduction guide for the unary predicate.  <br /></td></tr>
+<tr class="memitem:a60dcef812e43e13d1e30f602a572e27a" id="r_a60dcef812e43e13d1e30f602a572e27a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (timespec &amp;ts) noexcept</td></tr>
+<tr class="memdesc:a60dcef812e43e13d1e30f602a572e27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the system clock.  <br /></td></tr>
 <tr class="memitem:acb0858a0ba8b635ff89c4cb00c532ce8" id="r_acb0858a0ba8b635ff89c4cb00c532ce8"><td class="memTemplParams" colspan="2">template&lt;class Self_T, class Values_T, class Callable_T&gt; </td></tr>
 <tr class="memitem:acb0858a0ba8b635ff89c4cb00c532ce8 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acb0858a0ba8b635ff89c4cb00c532ce8">test_each_value</a> (Self_T &amp;self, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html">test_case_name</a> &amp;name, Values_T &amp;&amp;values, Callable_T &amp;callable)</td></tr>
 <tr class="memdesc:acb0858a0ba8b635ff89c4cb00c532ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds and runs a test case for each value.  <br /></td></tr>
@@ -356,9 +356,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The v5.0.1 name of the class returned by <span class="tt">totals()</span>, renamed since the suites and the test cases own one too, not only the runner.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html" title="Aggregated check and test case counters for a node in the test tree.">counters</a></span> (since 5.1.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated</a></b></dt><dd>use counters</dd></dl>
+<p>The v5.0.1 name of the class returned by <span class="tt">totals()</span>, renamed since the suites and the test cases own one too, not only the runner. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000037">Deprecated</a></b></dt><dd>use counters (since 5.1.0)</dd></dl>
 
 </div>
 </div>
@@ -404,9 +402,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The v5.0.1 name of the class returned by the <span class="tt">timings()</span> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span>; its protected members, the two optional <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="Deprecated clock reading.">timestamp</a></span> objects, are not.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000102">Deprecated</a></b></dt><dd>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000103">Deprecated</a></b></dt><dd>the timings are internal</dd></dl>
+<p>The v5.0.1 name of the class returned by the <span class="tt">timings()</span> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span>; its protected members, the two optional <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="Deprecated clock reading.">timestamp</a></span> objects, are not. The timings are internal; the elapsed times are shown by the reporters. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000038">Deprecated</a></b></dt><dd>the timings are internal (since 5.1.0)</dd></dl>
 
 </div>
 </div>
@@ -621,7 +617,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00728">append_number()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00728">append_number()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00443">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00427">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00459">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00297">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00349">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00400">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00374">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00323">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00310">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00361">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00413">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00387">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00336">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00101">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00728">append_number()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00444">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00428">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00460">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00298">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00350">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00401">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00375">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00324">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00311">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00362">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00414">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00388">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00337">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00101">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -1465,6 +1461,55 @@ template&lt;class T, class Predicate_T&gt; </div>
 
 </div>
 </div>
+<a id="a60dcef812e43e13d1e30f602a572e27a" name="a60dcef812e43e13d1e30f602a572e27a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60dcef812e43e13d1e30f602a572e27a">&#9670;&#160;</a></span>read_clock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void micro_os_plus::micro_test_plus::detail::read_clock </td>
+          <td>(</td>
+          <td class="paramtype">timespec &amp;</td>          <td class="paramname"><span class="paramname"><em>ts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Isolates the platform-specific access to the system clock, used by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span> and by the deprecated <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="Deprecated clock reading.">timestamp</a></span> class. The clock is monotonic on POSIX; without a clock, <code class="param">ts</code> is left unchanged, so the callers clear it first when a zero value must mean that the clock was not read.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">ts</td><td>The <span class="tt">timespec</span> where the reading is stored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
+<p>On Windows, the current time is captured via <span class="tt">timespec_get()</span> with <span class="tt">TIME_UTC</span>. On POSIX platforms with <span class="tt">CLOCK_MONOTONIC</span> defined, <span class="tt">clock_gettime(CLOCK_MONOTONIC)</span> is used to obtain a monotonic reading. On platforms where neither macro is defined, <code class="param">ts</code> is left unchanged. </p>
+
+<p class="definition">Definition at line <a class="el" href="stopwatch_8cpp_source.html#l00066">66</a> of file <a class="el" href="stopwatch_8cpp_source.html">stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>  {</div>
+<div class="line"><span class="lineno">   68</span><span class="preprocessor">#if defined(_WIN32)</span></div>
+<div class="line"><span class="lineno">   69</span>    timespec_get (&amp;ts, TIME_UTC);</div>
+<div class="line"><span class="lineno">   70</span><span class="preprocessor">#elif defined(CLOCK_MONOTONIC)</span></div>
+<div class="line"><span class="lineno">   71</span>    clock_gettime (CLOCK_MONOTONIC, &amp;ts);</div>
+<div class="line"><span class="lineno">   72</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   73</span>    (void)ts;</div>
+<div class="line"><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">// defined(_WIN32) || defined(CLOCK_MONOTONIC)</span></div>
+<div class="line"><span class="lineno">   75</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00066">read_clock()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="deprecated_8cpp_source.html#l00096">micro_os_plus::micro_test_plus::detail::timestamp::timestamp()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00066">read_clock()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00087">micro_os_plus::micro_test_plus::detail::stopwatch::start()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00101">micro_os_plus::micro_test_plus::detail::stopwatch::stop()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00138">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin()</a>, and <a class="el" href="stopwatch_8cpp_source.html#l00154">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end()</a>.</p>
+
+</div>
+</div>
 <a id="acb0858a0ba8b635ff89c4cb00c532ce8" name="acb0858a0ba8b635ff89c4cb00c532ce8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb0858a0ba8b635ff89c4cb00c532ce8">&#9670;&#160;</a></span>test_each_value()</h2>
 
@@ -1516,54 +1561,54 @@ template&lt;class Self_T, class Values_T, class Callable_T&gt; </div>
 </dl>
 <dl class="section user"><dt>Returns</dt><dd>Nothing. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00676">676</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  678</span>    {</div>
-<div class="line"><span class="lineno">  679</span>      std::size_t position = 0;</div>
-<div class="line"><span class="lineno">  680</span> </div>
-<div class="line"><span class="lineno">  681</span>      <span class="keyword">const</span> <span class="keyword">auto</span> run_one</div>
-<div class="line"><span class="lineno">  682</span>          = [&amp;self, &amp;name, &amp;callable, &amp;position] (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>)</div>
-<div class="line"><span class="lineno">  683</span>        {</div>
-<div class="line"><span class="lineno">  684</span>          ++position;</div>
-<div class="line"><span class="lineno">  685</span> </div>
-<div class="line"><span class="lineno">  686</span>          std::string text{ name.name () };</div>
-<div class="line"><span class="lineno">  687</span>          text += <span class="stringliteral">&quot; (&quot;</span>;</div>
-<div class="line"><span class="lineno">  688</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">extension::printable</a>&lt;</div>
-<div class="line"><span class="lineno">  689</span>                            std::remove_cvref_t&lt;<span class="keyword">decltype</span> (value)&gt;&gt;)</div>
-<div class="line"><span class="lineno">  690</span>            {</div>
-<div class="line"><span class="lineno">  691</span>              <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, value);</div>
-<div class="line"><span class="lineno">  692</span>            }</div>
-<div class="line"><span class="lineno">  693</span>          <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  694</span>            {</div>
-<div class="line"><span class="lineno">  695</span>              text += <span class="charliteral">&#39;#&#39;</span>;</div>
-<div class="line"><span class="lineno">  696</span>              <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, position);</div>
-<div class="line"><span class="lineno">  697</span>            }</div>
-<div class="line"><span class="lineno">  698</span>          text += <span class="charliteral">&#39;)&#39;</span>;</div>
-<div class="line"><span class="lineno">  699</span> </div>
-<div class="line"><span class="lineno">  700</span>          self.test (test_case_name{ text, name.location () }, callable,</div>
-<div class="line"><span class="lineno">  701</span>                     <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
-<div class="line"><span class="lineno">  702</span>        };</div>
-<div class="line"><span class="lineno">  703</span> </div>
-<div class="line"><span class="lineno">  704</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">test_values_range&lt;Values_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  705</span>        {</div>
-<div class="line"><span class="lineno">  706</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a> : values)</div>
-<div class="line"><span class="lineno">  707</span>            {</div>
-<div class="line"><span class="lineno">  708</span>              run_one (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
-<div class="line"><span class="lineno">  709</span>            }</div>
-<div class="line"><span class="lineno">  710</span>        }</div>
-<div class="line"><span class="lineno">  711</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  712</span>        {</div>
-<div class="line"><span class="lineno">  713</span>          std::apply ([&amp;run_one] (<span class="keyword">const</span> <span class="keyword">auto</span>&amp;... elements)</div>
-<div class="line"><span class="lineno">  714</span>            { (run_one (elements), ...); }, values);</div>
-<div class="line"><span class="lineno">  715</span>        }</div>
-<div class="line"><span class="lineno">  716</span>    }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">micro_os_plus::micro_test_plus::detail::test_values_range</a></div><div class="ttdoc">C++20 concept satisfied when T is a range of values for test_each().</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00924">test.h:924</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00677">677</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  679</span>    {</div>
+<div class="line"><span class="lineno">  680</span>      std::size_t position = 0;</div>
+<div class="line"><span class="lineno">  681</span> </div>
+<div class="line"><span class="lineno">  682</span>      <span class="keyword">const</span> <span class="keyword">auto</span> run_one</div>
+<div class="line"><span class="lineno">  683</span>          = [&amp;self, &amp;name, &amp;callable, &amp;position] (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>)</div>
+<div class="line"><span class="lineno">  684</span>        {</div>
+<div class="line"><span class="lineno">  685</span>          ++position;</div>
+<div class="line"><span class="lineno">  686</span> </div>
+<div class="line"><span class="lineno">  687</span>          std::string text{ name.name () };</div>
+<div class="line"><span class="lineno">  688</span>          text += <span class="stringliteral">&quot; (&quot;</span>;</div>
+<div class="line"><span class="lineno">  689</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">extension::printable</a>&lt;</div>
+<div class="line"><span class="lineno">  690</span>                            std::remove_cvref_t&lt;<span class="keyword">decltype</span> (value)&gt;&gt;)</div>
+<div class="line"><span class="lineno">  691</span>            {</div>
+<div class="line"><span class="lineno">  692</span>              <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, value);</div>
+<div class="line"><span class="lineno">  693</span>            }</div>
+<div class="line"><span class="lineno">  694</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  695</span>            {</div>
+<div class="line"><span class="lineno">  696</span>              text += <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><span class="lineno">  697</span>              <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, position);</div>
+<div class="line"><span class="lineno">  698</span>            }</div>
+<div class="line"><span class="lineno">  699</span>          text += <span class="charliteral">&#39;)&#39;</span>;</div>
+<div class="line"><span class="lineno">  700</span> </div>
+<div class="line"><span class="lineno">  701</span>          self.test (test_case_name{ text, name.location () }, callable,</div>
+<div class="line"><span class="lineno">  702</span>                     <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
+<div class="line"><span class="lineno">  703</span>        };</div>
+<div class="line"><span class="lineno">  704</span> </div>
+<div class="line"><span class="lineno">  705</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">test_values_range&lt;Values_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  706</span>        {</div>
+<div class="line"><span class="lineno">  707</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a> : values)</div>
+<div class="line"><span class="lineno">  708</span>            {</div>
+<div class="line"><span class="lineno">  709</span>              run_one (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
+<div class="line"><span class="lineno">  710</span>            }</div>
+<div class="line"><span class="lineno">  711</span>        }</div>
+<div class="line"><span class="lineno">  712</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  713</span>        {</div>
+<div class="line"><span class="lineno">  714</span>          std::apply ([&amp;run_one] (<span class="keyword">const</span> <span class="keyword">auto</span>&amp;... elements)</div>
+<div class="line"><span class="lineno">  715</span>            { (run_one (elements), ...); }, values);</div>
+<div class="line"><span class="lineno">  716</span>        }</div>
+<div class="line"><span class="lineno">  717</span>    }</div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">micro_os_plus::micro_test_plus::detail::test_values_range</a></div><div class="ttdoc">C++20 concept satisfied when T is a range of values for test_each().</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00928">test.h:928</a></div></div>
 <div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">micro_os_plus::micro_test_plus::extension::printable</a></div><div class="ttdoc">C++20 concept satisfied when a type can be appended to the message of a check result via operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00247">extension.h:247</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_html_a63b3cc3a8e725c2921787180f1244824"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">micro_os_plus::micro_test_plus::detail::plain_text::append</a></div><div class="ttdeci">static void append(std::string &amp;text, const T &amp;value)</div><div class="ttdoc">Appends a value to a text, in the plain mode of the formatter.</div><div class="ttdef"><b>Definition</b> <a href="expression-formatter-inlines_8h_source.html#l00395">expression-formatter-inlines.h:395</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">micro_os_plus::micro_test_plus::detail::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="values_8h_source.html#l00427">values.h:428</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="expression-formatter-inlines_8h_source.html#l00395">micro_os_plus::micro_test_plus::detail::plain_text::append()</a>, <a class="el" href="test-inlines_8h_source.html#l00135">micro_os_plus::micro_test_plus::test_case_name::location()</a>, <a class="el" href="test-inlines_8h_source.html#l00125">micro_os_plus::micro_test_plus::test_case_name::name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00676">test_each_value()</a>.</p>
+<p class="reference">References <a class="el" href="expression-formatter-inlines_8h_source.html#l00395">micro_os_plus::micro_test_plus::detail::plain_text::append()</a>, <a class="el" href="test-inlines_8h_source.html#l00135">micro_os_plus::micro_test_plus::test_case_name::location()</a>, <a class="el" href="test-inlines_8h_source.html#l00125">micro_os_plus::micro_test_plus::test_case_name::name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00677">test_each_value()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00769">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00756">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00741">micro_os_plus::micro_test_plus::test_case::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00728">micro_os_plus::micro_test_plus::test_case::test_each()</a>, and <a class="el" href="test-inlines_8h_source.html#l00676">test_each_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00770">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00757">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00742">micro_os_plus::micro_test_plus::test_case::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00729">micro_os_plus::micro_test_plus::test_case::test_each()</a>, and <a class="el" href="test-inlines_8h_source.html#l00677">test_each_value()</a>.</p>
 
 </div>
 </div>

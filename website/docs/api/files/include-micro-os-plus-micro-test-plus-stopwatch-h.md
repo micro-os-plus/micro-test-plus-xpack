@@ -93,34 +93,20 @@ keywords:
 <td class="doxyMemberIndexSeparator" colspan="2"></td>
 </tr>
 
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated clock reading. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
 </table>
 
-## Typedefs Index
+## Functions Index
 
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">timestamps</a> = stopwatch</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (timespec &amp;ts) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span>. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">More...</a></p>
+<p>Reads the system clock. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -148,9 +134,9 @@ keywords:
 
 <div class="doxySectionDef">
 
-## Typedefs
+## Functions
 
-### timestamps {#a53a6bc7f86b15378c8296b3647e7013f}
+### read\_clock() {#a60dcef812e43e13d1e30f602a572e27a}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -159,40 +145,70 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::detail::timestamps = stopwatch</td>
+<td class="doxyMemberName">void micro_os_plus::micro_test_plus::detail::read_clock (timespec &amp; ts)</td>
 </tr>
 </table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
 </td>
 </tr>
 </table>
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span>.</p>
+<p>Reads the system clock.</p>
 
 
-<p>The v5.0.1 name of the class returned by the <span class="doxyComputerOutput">timings()</span> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span>; its protected members, the two optional <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> objects, are not.</p>
+<p>Isolates the platform-specific access to the system clock, used by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span> and by the deprecated <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a></span> class. The clock is monotonic on POSIX; without a clock, <span class="doxyComputerOutput">ts</span> is left unchanged, so the callers clear it first when a zero value must mean that the clock was not read.</p>
 
 
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000102>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0).</p>
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">[out] ts</td>
+<td class="doxyParamItemDescription"><p>The <span class="doxyComputerOutput">timespec</span> where the reading is stored.</p></td>
+</tr>
+</table>
 </dd>
 </dl>
-</div>
 
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000103>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>the timings are internal</p>
-</dd>
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>Nothing.</p></dd>
 </dl>
+
+
+<p>On Windows, the current time is captured via <span class="doxyComputerOutput">timespec_get()</span> with <span class="doxyComputerOutput">TIME_UTC</span>. On POSIX platforms with <span class="doxyComputerOutput">CLOCK_MONOTONIC</span> defined, <span class="doxyComputerOutput">clock_gettime(CLOCK_MONOTONIC)</span> is used to obtain a monotonic reading. On platforms where neither macro is defined, <span class="doxyComputerOutput">ts</span> is left unchanged.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp/#l00066">66</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">stopwatch.cpp</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">66</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">67</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">68</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(_WIN32)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">69</span><span class="doxyLineContent"><span class="doxyHighlight">    timespec_get (&amp;ts, TIME_UTC);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">70</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#elif defined(CLOCK_MONOTONIC)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">71</span><span class="doxyLineContent"><span class="doxyHighlight">    clock_gettime (CLOCK_MONOTONIC, &amp;ts);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">72</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">73</span><span class="doxyLineContent"><span class="doxyHighlight">    (void)ts;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">74</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(_WIN32) || defined(CLOCK_MONOTONIC)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">75</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
 </div>
 
-<p>Definition at line <a href="#l00437">437</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>.</p>
+
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">micro_os_plus::micro_test_plus::detail::read_clock</a>.</p>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">micro_os_plus::micro_test_plus::detail::timestamp::timestamp</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">micro_os_plus::micro_test_plus::detail::read_clock</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#af5ebb1e454867633db12fef45db9788d">micro_os_plus::micro_test_plus::detail::stopwatch::start</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a83ab4e25e25a4a81ed1d3277ac09390d">micro_os_plus::micro_test_plus::detail::stopwatch::stop</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a621a32c96a4950306c0a1aef8c577740">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a4c1a4d8b22d04205be49f8289ed7abd6">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</a>.</p>
 
 </div>
 </div>
@@ -262,140 +278,105 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00080"></a>80</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00081"></a>81</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ========================================================================</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00082"></a>82</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00121"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">121</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00122"></a>122</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00123"></a>123</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00131"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">131</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00132"></a>132</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00139"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a47996e55c1fdb1f6aadde6e53449fe8d">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a47996e55c1fdb1f6aadde6e53449fe8d">stopwatch</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00140"></a>140</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00147"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a2c1f757da785a73f8a5f6d2a4408dc1d">147</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a2c1f757da785a73f8a5f6d2a4408dc1d">stopwatch</a> (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;&amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00148"></a>148</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00155"></a>155</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00156"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac97586198c6e6ef9c8ff0b8dd1fb8e34">156</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac97586198c6e6ef9c8ff0b8dd1fb8e34">operator=</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00157"></a>157</span><span class="doxyLineContent"><span class="doxyHighlight">          = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00158"></a>158</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00165"></a>165</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00166"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac515fef56d4be91466b0c6c51898f685">166</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac97586198c6e6ef9c8ff0b8dd1fb8e34">operator=</a>(<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;&amp;)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00167"></a>167</span><span class="doxyLineContent"><span class="doxyHighlight">          = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00168"></a>168</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00175"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#addee5d2a57a6465734840797ff23cdc2">175</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#addee5d2a57a6465734840797ff23cdc2">~stopwatch</a> () = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00176"></a>176</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00189"></a>189</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00190"></a>190</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#af5ebb1e454867633db12fef45db9788d">start</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00191"></a>191</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00204"></a>204</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00205"></a>205</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a83ab4e25e25a4a81ed1d3277ac09390d">stop</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00206"></a>206</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00221"></a>221</span><span class="doxyLineContent"><span class="doxyHighlight">      [[nodiscard]] </span><span class="doxyHighlightKeywordType">bool</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00222"></a>222</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00223"></a>223</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00235"></a>235</span><span class="doxyLineContent"><span class="doxyHighlight">      [[nodiscard]] std::chrono::microseconds</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00236"></a>236</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3719382123c6741054a89e4f76b55d90">elapsed</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00237"></a>237</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00253"></a>253</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use has_elapsed()"</span><span class="doxyHighlight">), nodiscard]] </span><span class="doxyHighlightKeywordType">bool</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00254"></a>254</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a306d33023758a96948a6b24ea7a5dc06">has_begin</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00255"></a>255</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00272"></a>272</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use has_elapsed()"</span><span class="doxyHighlight">), nodiscard]] </span><span class="doxyHighlightKeywordType">bool</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00273"></a>273</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#adbabde73dd4f7588ae46f8d051d120e1">has_end</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00274"></a>274</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00288"></a>288</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use has_elapsed()"</span><span class="doxyHighlight">), nodiscard]] </span><span class="doxyHighlightKeywordType">bool</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00289"></a>289</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac698189ef451dfe398d779eb7cccda7f">has_timestamps</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00290"></a>290</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00309"></a>309</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use elapsed()"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00310"></a>310</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#afd1213b3e3ffa9997ab0eba78b944ecf">compute_elapsed_time</a> (uint32_t&amp; milliseconds,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00311"></a>311</span><span class="doxyLineContent"><span class="doxyHighlight">                            uint32_t&amp; microseconds) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00312"></a>312</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00331"></a>331</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use start()"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00332"></a>332</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a621a32c96a4950306c0a1aef8c577740">timestamp_begin</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00333"></a>333</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00349"></a>349</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use start()"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00350"></a>350</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a621a32c96a4950306c0a1aef8c577740">timestamp_begin</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00351"></a>351</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00368"></a>368</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use stop()"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00369"></a>369</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a4c1a4d8b22d04205be49f8289ed7abd6">timestamp_end</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00370"></a>370</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00386"></a>386</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use stop()"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00387"></a>387</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a4c1a4d8b22d04205be49f8289ed7abd6">timestamp_end</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00388"></a>388</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00389"></a>389</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">protected</span><span class="doxyHighlight">:</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00401"></a>401</span><span class="doxyLineContent"><span class="doxyHighlight">      [[nodiscard]] </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00402"></a>402</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00403"></a>403</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00410"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5f1f1e5b3faeb79b81bb7eb3602aefd1">410</a></span><span class="doxyLineContent"><span class="doxyHighlight">      timespec <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00411"></a>411</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00419"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#afa5a38b18b6f14b904fafac9f0bd74fa">419</a></span><span class="doxyLineContent"><span class="doxyHighlight">      timespec <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00420"></a>420</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00421"></a>421</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00422"></a>422</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ========================================================================</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00423"></a>423</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00437"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">437</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">timestamps</a> [[deprecated (</span><span class="doxyHighlightStringLiteral">"the timings are internal"</span><span class="doxyHighlight">)]] = <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00438"></a>438</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00439"></a>439</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ========================================================================</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00097"></a>97</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">void</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00098"></a>98</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00099"></a>99</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00100"></a>100</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ========================================================================</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00101"></a>101</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00140"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">140</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00141"></a>141</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00142"></a>142</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00150"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">150</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00151"></a>151</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00158"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a47996e55c1fdb1f6aadde6e53449fe8d">158</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a47996e55c1fdb1f6aadde6e53449fe8d">stopwatch</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00159"></a>159</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00166"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a2c1f757da785a73f8a5f6d2a4408dc1d">166</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a2c1f757da785a73f8a5f6d2a4408dc1d">stopwatch</a> (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;&amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00167"></a>167</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00174"></a>174</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00175"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac97586198c6e6ef9c8ff0b8dd1fb8e34">175</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac97586198c6e6ef9c8ff0b8dd1fb8e34">operator=</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00176"></a>176</span><span class="doxyLineContent"><span class="doxyHighlight">          = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00177"></a>177</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00184"></a>184</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00185"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac515fef56d4be91466b0c6c51898f685">185</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac97586198c6e6ef9c8ff0b8dd1fb8e34">operator=</a>(<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5564c4e3d0806e45b40ee16e7ae1b185">stopwatch</a>&amp;&amp;)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00186"></a>186</span><span class="doxyLineContent"><span class="doxyHighlight">          = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00187"></a>187</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00194"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#addee5d2a57a6465734840797ff23cdc2">194</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#addee5d2a57a6465734840797ff23cdc2">~stopwatch</a> () = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00195"></a>195</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00208"></a>208</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00209"></a>209</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#af5ebb1e454867633db12fef45db9788d">start</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00210"></a>210</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00223"></a>223</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00224"></a>224</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a83ab4e25e25a4a81ed1d3277ac09390d">stop</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00225"></a>225</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00240"></a>240</span><span class="doxyLineContent"><span class="doxyHighlight">      [[nodiscard]] </span><span class="doxyHighlightKeywordType">bool</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00241"></a>241</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00242"></a>242</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00254"></a>254</span><span class="doxyLineContent"><span class="doxyHighlight">      [[nodiscard]] std::chrono::microseconds</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00255"></a>255</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a3719382123c6741054a89e4f76b55d90">elapsed</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00256"></a>256</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00270"></a>270</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use has_elapsed() (since 5.1.0)"</span><span class="doxyHighlight">), nodiscard]] </span><span class="doxyHighlightKeywordType">bool</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00271"></a>271</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a306d33023758a96948a6b24ea7a5dc06">has_begin</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00272"></a>272</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00287"></a>287</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use has_elapsed() (since 5.1.0)"</span><span class="doxyHighlight">), nodiscard]] </span><span class="doxyHighlightKeywordType">bool</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00288"></a>288</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#adbabde73dd4f7588ae46f8d051d120e1">has_end</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00289"></a>289</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00301"></a>301</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use has_elapsed() (since 5.1.0)"</span><span class="doxyHighlight">), nodiscard]] </span><span class="doxyHighlightKeywordType">bool</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00302"></a>302</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#ac698189ef451dfe398d779eb7cccda7f">has_timestamps</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00303"></a>303</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00320"></a>320</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use elapsed() (since 5.1.0)"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00321"></a>321</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#afd1213b3e3ffa9997ab0eba78b944ecf">compute_elapsed_time</a> (uint32_t&amp; milliseconds,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00322"></a>322</span><span class="doxyLineContent"><span class="doxyHighlight">                            uint32_t&amp; microseconds) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00323"></a>323</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00340"></a>340</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use start() (since 5.1.0)"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00341"></a>341</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a621a32c96a4950306c0a1aef8c577740">timestamp_begin</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00342"></a>342</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00356"></a>356</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use start() (since 5.1.0)"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00357"></a>357</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a621a32c96a4950306c0a1aef8c577740">timestamp_begin</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00358"></a>358</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00373"></a>373</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use stop() (since 5.1.0)"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00374"></a>374</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a4c1a4d8b22d04205be49f8289ed7abd6">timestamp_end</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00375"></a>375</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00389"></a>389</span><span class="doxyLineContent"><span class="doxyHighlight">      [[deprecated (</span><span class="doxyHighlightStringLiteral">"use stop() (since 5.1.0)"</span><span class="doxyHighlight">)]] </span><span class="doxyHighlightKeywordType">void</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00390"></a>390</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a4c1a4d8b22d04205be49f8289ed7abd6">timestamp_end</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00391"></a>391</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00392"></a>392</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">protected</span><span class="doxyHighlight">:</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00404"></a>404</span><span class="doxyLineContent"><span class="doxyHighlight">      [[nodiscard]] </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00405"></a>405</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00406"></a>406</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00413"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5f1f1e5b3faeb79b81bb7eb3602aefd1">413</a></span><span class="doxyLineContent"><span class="doxyHighlight">      timespec <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00414"></a>414</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00422"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#afa5a38b18b6f14b904fafac9f0bd74fa">422</a></span><span class="doxyLineContent"><span class="doxyHighlight">      timespec <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch/#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00423"></a>423</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00424"></a>424</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00425"></a>425</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00426"></a>426</span><span class="doxyLineContent"><span class="doxyHighlight">  } </span><span class="doxyHighlightComment">// namespace detail</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00427"></a>427</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// ==========================================================================</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00428"></a>428</span><span class="doxyLineContent"><span class="doxyHighlight">} </span><span class="doxyHighlightComment">// namespace micro_os_plus::micro_test_plus</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00429"></a>429</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00430"></a>430</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(__GNUC__)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00431"></a>431</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma GCC diagnostic pop</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00432"></a>432</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__GNUC__)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00433"></a>433</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00434"></a>434</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00435"></a>435</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00436"></a>436</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__cplusplus)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00437"></a>437</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00438"></a>438</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ============================================================================</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00439"></a>439</span><span class="doxyLineContent"><span class="doxyHighlightComment">// Templates, inlines &amp; constexpr implementations.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00440"></a>440</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00461"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">461</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">[[deprecated (</span><span class="doxyHighlightStringLiteral">"the timings are internal"</span><span class="doxyHighlight">)]] <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00462"></a>462</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00463"></a>463</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00471"></a>471</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00472"></a>472</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00482"></a>482</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00483"></a>483</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00490"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a25cc87189f5ec1dbdef3302de6408d62">490</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a25cc87189f5ec1dbdef3302de6408d62">timestamp</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>&amp;) = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00491"></a>491</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00498"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a78ec32dd29a858de635f6be2a4fd3f8f">498</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a78ec32dd29a858de635f6be2a4fd3f8f">timestamp</a> (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>&amp;&amp;) = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00499"></a>499</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00508"></a>508</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00509"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a91c4b65a10407ab3c2a65343b924902b">509</a></span><span class="doxyLineContent"><span class="doxyHighlight">      operator= (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>&amp;)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00510"></a>510</span><span class="doxyLineContent"><span class="doxyHighlight">          = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00511"></a>511</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00521"></a>521</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00522"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a790a0f4322a690f7ab6591ada80222a0">522</a></span><span class="doxyLineContent"><span class="doxyHighlight">      operator= (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>&amp;&amp;)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00523"></a>523</span><span class="doxyLineContent"><span class="doxyHighlight">          = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00524"></a>524</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00531"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a1edc35b9931f3fdb714daf9cae3da73e">531</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a1edc35b9931f3fdb714daf9cae3da73e">~timestamp</a> () = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00532"></a>532</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00544"></a>544</span><span class="doxyLineContent"><span class="doxyHighlight">      [[nodiscard]] </span><span class="doxyHighlightKeywordType">bool</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00545"></a>545</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#ae5494fb57bcc3b577c914a0cc95ff667">has_clock</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00546"></a>546</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00554"></a>554</span><span class="doxyLineContent"><span class="doxyHighlight">      [[nodiscard]] timespec&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00555"></a>555</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a1538d7ab5b57c425c61510adfca32012">value</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00556"></a>556</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00564"></a>564</span><span class="doxyLineContent"><span class="doxyHighlight">      [[nodiscard]] </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00565"></a>565</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a1538d7ab5b57c425c61510adfca32012">value</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00566"></a>566</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00567"></a>567</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">protected</span><span class="doxyHighlight">:</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00574"></a><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a62c9539975cee7a03be62eb0a903bbf3">574</a></span><span class="doxyLineContent"><span class="doxyHighlight">      timespec <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp/#a62c9539975cee7a03be62eb0a903bbf3">value_</a>{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00575"></a>575</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00576"></a>576</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00577"></a>577</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00578"></a>578</span><span class="doxyLineContent"><span class="doxyHighlight">  } </span><span class="doxyHighlightComment">// namespace detail</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00579"></a>579</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// ==========================================================================</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00580"></a>580</span><span class="doxyLineContent"><span class="doxyHighlight">} </span><span class="doxyHighlightComment">// namespace micro_os_plus::micro_test_plus</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00581"></a>581</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00582"></a>582</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(__GNUC__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00583"></a>583</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma GCC diagnostic pop</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00584"></a>584</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__GNUC__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00585"></a>585</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00586"></a>586</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00587"></a>587</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00588"></a>588</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__cplusplus)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00589"></a>589</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00590"></a>590</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ============================================================================</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00591"></a>591</span><span class="doxyLineContent"><span class="doxyHighlightComment">// Templates, inlines &amp; constexpr implementations.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00592"></a>592</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00593"></a>593</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">inlines/stopwatch-inlines.h</a>"</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00594"></a>594</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00595"></a>595</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00596"></a>596</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00597"></a>597</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_STOPWATCH_H_</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00598"></a>598</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00599"></a>599</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00441"></a>441</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">inlines/stopwatch-inlines.h</a>"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00442"></a>442</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00443"></a>443</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00444"></a>444</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00445"></a>445</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_STOPWATCH_H_</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00446"></a>446</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00447"></a>447</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
 
 </div>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

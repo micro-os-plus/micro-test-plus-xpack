@@ -19,6 +19,40 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits">micro_os_plus::micro_test_plus::type_traits</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility">micro_os_plus::micro_test_plus::utility</innernamespace>
     <sectiondef kind="user-defined">
+      <header>Deprecated Type Wrappers</header>
+      <description><para>The v5.0.1 names of the <computeroutput>to_*</computeroutput> type wrappers.</para>
+<para>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <computeroutput>to_*</computeroutput> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), which are in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace.</para>
+<para>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref> (expr)</computeroutput>; Clang reports it in both cases.</para>
+<para><simplesect kind="par"><title>Deprecated</title><para>Use the corresponding <computeroutput>to_*</computeroutput> type wrappers instead (since 3.2.0). </para>
+</simplesect>
+</para>
+</description>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Type Wrappers</header>
       <description><para>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</para>
 <para>These type aliases provide a type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput>, ensuring that the value is treated as the specified type within the framework.</para>
@@ -56,40 +90,6 @@
       <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kind="typedef"><name>to_f</name></member>
       <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kind="typedef"><name>to_d</name></member>
       <member refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kind="typedef"><name>to_ld</name></member>
-    </sectiondef>
-    <sectiondef kind="user-defined">
-      <header>Deprecated Type Wrappers</header>
-      <description><para>The v5.0.1 names of the <computeroutput>to_*</computeroutput> type wrappers.</para>
-<para>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <computeroutput>to_*</computeroutput> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), which are in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace.</para>
-<para>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref> (expr)</computeroutput>; Clang reports it in both cases.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>Use the corresponding <computeroutput>to_*</computeroutput> type wrappers instead (since 3.2.0). </para>
-</simplesect>
-</para>
-</description>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
     </sectiondef>
     <sectiondef kind="enum">
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905b" prot="public" static="no" strong="yes">

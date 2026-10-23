@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -156,7 +156,6 @@ requires extension::checkable&lt;Expr_T&gt;</div>
       </table>
 </div><div class="memdoc">
 <p>The same as <span class="tt"><a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">require()</a></span>. The name was misleading: in other frameworks (JUnit, Hypothesis), an unmet assumption skips the test, while here it fails it.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000124">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">require()</a></span> (since 5.1.0).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Expr_T</td><td>The type of the custom expression.</td></tr>
@@ -171,13 +170,13 @@ requires extension::checkable&lt;Expr_T&gt;</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The check result, to which optional messages can be appended with <span class="tt">operator&lt;&lt;</span>; the check is reported when it is destroyed, at the end of the statement. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000125">Deprecated</a></b></dt><dd>use <a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">require()</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000068">Deprecated</a></b></dt><dd>use <a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">require()</a> (since 5.1.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">require()</a></span>; the returned check result is neither copied nor moved, since a prvalue is returned (guaranteed copy elision). </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00468">468</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  469</span>  {</div>
-<div class="line"><span class="lineno">  470</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#gace68a1bd4dd258082f4b1fc01fcd008a">require</a> (expr, sl);</div>
-<div class="line"><span class="lineno">  471</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00469">469</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  470</span>  {</div>
+<div class="line"><span class="lineno">  471</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#gace68a1bd4dd258082f4b1fc01fcd008a">require</a> (expr, sl);</div>
+<div class="line"><span class="lineno">  472</span>  }</div>
 <div class="ttc" id="agroup__micro-os-plus-micro-test-plus-requirements_html_gace68a1bd4dd258082f4b1fc01fcd008a"><div class="ttname"><a href="#gace68a1bd4dd258082f4b1fc01fcd008a">micro_os_plus::micro_test_plus::test_case::require</a></div><div class="ttdeci">auto require(const Expr_T &amp;expr, const reflection::source_location &amp;sl=reflection::source_location::current())</div><div class="ttdoc">Checks a condition and, if false, stops the test case.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00449">test-inlines.h:449</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00449">require()</a>.</p>
@@ -236,13 +235,13 @@ requires extension::checkable&lt;Expr_T&gt;</div>
 <div class="line"><span class="lineno">  457</span>                                 <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a7e4a578732a0464480e211f6591fa69f">test_reporter</a> ().<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a2c1e2c756b442d4832c161c8127faacf">writes_passed_checks</a> () };</div>
 <div class="line"><span class="lineno">  458</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a2c1e2c756b442d4832c161c8127faacf"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a2c1e2c756b442d4832c161c8127faacf">micro_os_plus::micro_test_plus::detail::reporter::writes_passed_checks</a></div><div class="ttdeci">virtual bool writes_passed_checks(void) const noexcept=0</div><div class="ttdoc">Returns whether the passed checks are written anywhere.</div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_ac928cbe8852ca0c0273482b905c6301b"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#ac928cbe8852ca0c0273482b905c6301b">micro_os_plus::micro_test_plus::detail::reporter::expression_</a></div><div class="ttdeci">expression_formatter expression_</div><div class="ttdoc">Expression formatter for pass and fail reporting.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01074">reporter.h:1074</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_ac928cbe8852ca0c0273482b905c6301b"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#ac928cbe8852ca0c0273482b905c6301b">micro_os_plus::micro_test_plus::detail::reporter::expression_</a></div><div class="ttdeci">expression_formatter expression_</div><div class="ttdoc">Expression formatter for pass and fail reporting.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01073">reporter.h:1073</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a7e4a578732a0464480e211f6591fa69f"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a7e4a578732a0464480e211f6591fa69f">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter</a></div><div class="ttdeci">class reporter &amp; test_reporter(void) const noexcept</div><div class="ttdoc">Gets the test reporter associated with this test runnable.</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00115">test.cpp:115</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e">micro_os_plus::micro_test_plus::detail::check_kind::requirement</a></div><div class="ttdeci">@ requirement</div><div class="ttdoc">A check created by require().</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00130">check-result.h:130</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01074">micro_os_plus::micro_test_plus::detail::reporter::expression_</a>, <a class="el" href="check-result_8h_source.html#l00130">micro_os_plus::micro_test_plus::detail::requirement</a>, <a class="el" href="test_8cpp_source.html#l00115">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a2c1e2c756b442d4832c161c8127faacf">micro_os_plus::micro_test_plus::detail::reporter::writes_passed_checks()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01073">micro_os_plus::micro_test_plus::detail::reporter::expression_</a>, <a class="el" href="check-result_8h_source.html#l00130">micro_os_plus::micro_test_plus::detail::requirement</a>, <a class="el" href="test_8cpp_source.html#l00115">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a2c1e2c756b442d4832c161c8127faacf">micro_os_plus::micro_test_plus::detail::reporter::writes_passed_checks()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00468">assume()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00469">assume()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>.</p>
 
 </div>
 </div>

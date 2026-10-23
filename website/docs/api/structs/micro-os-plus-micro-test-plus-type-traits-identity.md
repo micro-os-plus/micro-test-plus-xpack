@@ -28,7 +28,7 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>&gt;
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>&gt;
 </div>
 
 ## Public Member Typedefs Index
@@ -80,14 +80,14 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000018>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000043>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>Use <span class="doxyComputerOutput">std::type_identity</span> (since 5.1.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 578 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 782 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -119,12 +119,12 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 <p>The additional template arguments do not affect it.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00586">586</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00790">790</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">586</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">type</a> = T;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">790</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">type</a> = T;</span></span></div>
 
 </div>
 
@@ -138,11 +138,11 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a></li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

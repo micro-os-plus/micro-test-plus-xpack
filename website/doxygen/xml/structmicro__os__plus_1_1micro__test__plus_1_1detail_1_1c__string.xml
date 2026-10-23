@@ -154,7 +154,7 @@ Returns whether the stored pointer is null. </para>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1404" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="908" bodyend="911"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1413">str_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="229" endline="240">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="230" endline="241">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ae80c2a30d372f12aac55094520d6f68b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>std::string_view</type>
@@ -180,7 +180,7 @@ Returns an empty view for a null pointer. </para>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1393" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="897" bodyend="901"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ac98a2bf493b2ffe5ded3075dce583702" compoundref="detail_8h" startline="1421">size_</references>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1413">str_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="229" endline="240">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="230" endline="241">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

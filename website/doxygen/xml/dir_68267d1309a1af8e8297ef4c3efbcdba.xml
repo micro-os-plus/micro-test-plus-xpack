@@ -4,8 +4,8 @@
     <compoundname>src</compoundname>
     <innerfile refid="check-result_8cpp">check-result.cpp</innerfile>
     <innerfile refid="counters_8cpp">counters.cpp</innerfile>
+    <innerfile refid="deprecated_8cpp">deprecated.cpp</innerfile>
     <innerfile refid="expression-formatter_8cpp">expression-formatter.cpp</innerfile>
-    <innerfile refid="reflection_8cpp">reflection.cpp</innerfile>
     <innerfile refid="reporter-human_8cpp">reporter-human.cpp</innerfile>
     <innerfile refid="reporter-tap_8cpp">reporter-tap.cpp</innerfile>
     <innerfile refid="reporter_8cpp">reporter.cpp</innerfile>
@@ -22,7 +22,7 @@
 <listitem><para><computeroutput><ref refid="check-result_8cpp" kindref="compound">check-result.cpp</ref></computeroutput> — <computeroutput>check_result</computeroutput> construction and reporting</para>
 </listitem><listitem><para><computeroutput><ref refid="counters_8cpp" kindref="compound">counters.cpp</ref></computeroutput> — <computeroutput>counters</computeroutput> accumulation and <computeroutput>operator+=</computeroutput></para>
 </listitem><listitem><para><computeroutput><ref refid="expression-formatter_8cpp" kindref="compound">expression-formatter.cpp</ref></computeroutput> — non-template <computeroutput>operator&lt;&lt;</computeroutput> overloads of the expression formatter, and the texts of the pending checks</para>
-</listitem><listitem><para><computeroutput><ref refid="reflection_8cpp" kindref="compound">reflection.cpp</ref></computeroutput> — deprecated <computeroutput>reflection::short_name()</computeroutput></para>
+</listitem><listitem><para><computeroutput>reflection.cpp</computeroutput> — deprecated <computeroutput>reflection::short_name()</computeroutput></para>
 </listitem><listitem><para><computeroutput><ref refid="reporter-human_8cpp" kindref="compound">reporter-human.cpp</ref></computeroutput> — human-readable reporter implementation</para>
 </listitem><listitem><para><computeroutput><ref refid="reporter-tap_8cpp" kindref="compound">reporter-tap.cpp</ref></computeroutput> — TAP-format reporter implementation</para>
 </listitem><listitem><para><computeroutput><ref refid="reporter_8cpp" kindref="compound">reporter.cpp</ref></computeroutput> — base <computeroutput>reporter</computeroutput> class and <computeroutput>operator&lt;&lt;</computeroutput> overloads</para>

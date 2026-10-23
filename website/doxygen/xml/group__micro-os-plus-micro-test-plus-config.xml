@@ -10,7 +10,8 @@
 <para>Enables the µTest++ Testing Framework. </para>
         </briefdescription>
         <detaileddescription>
-<para>Must be defined by the application, in <computeroutput>micro-os-plus/project-config.h</computeroutput>, in <computeroutput>micro-os-plus/micro-test-plus-defines.h</computeroutput>, or on the compiler command line. Without it, <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput> declares nothing and the library sources compile to nothing.  </para>
+<para>This is the main configuration option of this library; it has no value, only its definition matters.</para>
+<para>Without it, <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput> declares nothing and the library sources compile to nothing. If it is defined on the compiler command line for the application, but not for the library sources, the link fails with undefined references.  </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -45,7 +46,14 @@
 <para>Configuration macros. </para>
     </briefdescription>
     <detaileddescription>
-<para>The µTest++ Testing Framework library uses several preprocessor macros to enable it and to configure various options.  </para>
+<para>The µTest++ Testing Framework library uses several preprocessor macros to enable it and to configure various options.</para>
+<para>These macros must be defined by the application; neither the library nor its CMake, meson, and xPack build files define them (the <computeroutput>defaultDefine</computeroutput> entries in <computeroutput>xcdl-package.jsonc</computeroutput> are informative only).</para>
+<para>The preferred place is <computeroutput>micro-os-plus/micro-test-plus-defines.h</computeroutput>, or <computeroutput>micro-os-plus/project-config.h</computeroutput>, which each µTest++ header includes, if present, before its own definitions, so that the application and the library sources are compiled with the same configuration. The macros have no value, only their definition matters; guard them, so that they can also be defined on the compiler command line:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#if<sp/>!defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</highlight></codeline>
+</programlisting></para>
+<para>A macro defined only on the compiler command line (for example <computeroutput>‑DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</computeroutput>) must be defined for the entire build (both the application and the library sources).  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

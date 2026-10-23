@@ -31,8 +31,6 @@
         </briefdescription>
         <detaileddescription>
 <para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other public names.</para>
-<para><xrefsect id="deprecated_1_deprecated000028"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></computeroutput> (since 5.1.0).</para>
-</xrefdescription></xrefsect></para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -69,16 +67,16 @@
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if both operand expressions are true. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000029"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></para>
+<xrefsect id="deprecated_1_deprecated000007"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref> (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="282" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="282" bodyend="285" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="334" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="function-comparators-inlines_8h" startline="282" endline="285">micro_os_plus::micro_test_plus::_and</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="93" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="93" bodyend="96" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="142" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="93" endline="96">micro_os_plus::micro_test_plus::_and</references>
         <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" compoundref="function-comparators-inlines_8h" startline="238" endline="242">micro_os_plus::micro_test_plus::both</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="function-comparators-inlines_8h" startline="282" endline="285">micro_os_plus::micro_test_plus::_and</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="93" endline="96">micro_os_plus::micro_test_plus::_and</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -100,8 +98,6 @@
         </briefdescription>
         <detaileddescription>
 <para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other public names.</para>
-<para><xrefsect id="deprecated_1_deprecated000026"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></computeroutput> (since 5.1.0).</para>
-</xrefdescription></xrefsect></para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Expr_T</parametername>
@@ -122,16 +118,16 @@
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if the operand is false. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000027"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></para>
+<xrefsect id="deprecated_1_deprecated000006"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="270" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="270" bodyend="273" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="311" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="function-comparators-inlines_8h" startline="270" endline="273">micro_os_plus::micro_test_plus::_not</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="80" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="80" bodyend="83" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="121" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="80" endline="83">micro_os_plus::micro_test_plus::_not</references>
         <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" compoundref="function-comparators-inlines_8h" startline="219" endline="224">micro_os_plus::micro_test_plus::negate</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="function-comparators-inlines_8h" startline="270" endline="273">micro_os_plus::micro_test_plus::_not</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="80" endline="83">micro_os_plus::micro_test_plus::_not</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -160,8 +156,6 @@
         </briefdescription>
         <detaileddescription>
 <para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other public names.</para>
-<para><xrefsect id="deprecated_1_deprecated000030"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></computeroutput> (since 5.1.0).</para>
-</xrefdescription></xrefsect></para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -198,16 +192,16 @@
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if at least one of the operand expressions is true, including when both are. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000031"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></para>
+<xrefsect id="deprecated_1_deprecated000008"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref> (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="294" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="294" bodyend="297" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="357" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="function-comparators-inlines_8h" startline="294" endline="297">micro_os_plus::micro_test_plus::_or</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="106" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="106" bodyend="109" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="163" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="106" endline="109">micro_os_plus::micro_test_plus::_or</references>
         <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" compoundref="function-comparators-inlines_8h" startline="257" endline="261">micro_os_plus::micro_test_plus::either</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="function-comparators-inlines_8h" startline="294" endline="297">micro_os_plus::micro_test_plus::_or</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="106" endline="109">micro_os_plus::micro_test_plus::_or</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -276,9 +270,9 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-fun
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="238" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="238" bodyend="242" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="275" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="238" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="238" bodyend="242" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="276" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" compoundref="function-comparators-inlines_8h" startline="238" endline="242">micro_os_plus::micro_test_plus::both</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="function-comparators-inlines_8h" startline="282" endline="285">micro_os_plus::micro_test_plus::_and</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="93" endline="96">micro_os_plus::micro_test_plus::_and</referencedby>
         <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" compoundref="function-comparators-inlines_8h" startline="238" endline="242">micro_os_plus::micro_test_plus::both</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -348,9 +342,9 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-fun
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="257" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="257" bodyend="261" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="291" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="257" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="257" bodyend="261" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="292" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" compoundref="function-comparators-inlines_8h" startline="257" endline="261">micro_os_plus::micro_test_plus::either</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="function-comparators-inlines_8h" startline="294" endline="297">micro_os_plus::micro_test_plus::_or</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="106" endline="109">micro_os_plus::micro_test_plus::_or</referencedby>
         <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" compoundref="function-comparators-inlines_8h" startline="257" endline="261">micro_os_plus::micro_test_plus::either</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -397,9 +391,9 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-fun
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="219" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="219" bodyend="224" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="259" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="219" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="219" bodyend="224" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="260" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" compoundref="function-comparators-inlines_8h" startline="219" endline="224">micro_os_plus::micro_test_plus::negate</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="function-comparators-inlines_8h" startline="270" endline="273">micro_os_plus::micro_test_plus::_not</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="80" endline="83">micro_os_plus::micro_test_plus::_not</referencedby>
         <referencedby refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" compoundref="function-comparators-inlines_8h" startline="219" endline="224">micro_os_plus::micro_test_plus::negate</referencedby>
       </memberdef>
     </sectiondef>

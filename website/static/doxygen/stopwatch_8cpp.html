@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -129,16 +129,14 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the µTest++ testing framework. <br /></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html">micro_os_plus::micro_test_plus::detail</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
-<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aanonymous_5Fnamespace_7Bstopwatch_2Ecpp_7D" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aanonymous_5Fnamespace_7Bstopwatch_2Ecpp_7D"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03.html">micro_os_plus::micro_test_plus::detail::anonymous_namespace{stopwatch.cpp}</a></td></tr>
-<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local helpers of the stopwatch. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a34225dca0ef5b70eb98c8eeaa3a05b06" id="r_a34225dca0ef5b70eb98c8eeaa3a05b06"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03.html#a34225dca0ef5b70eb98c8eeaa3a05b06">micro_os_plus::micro_test_plus::detail::anonymous_namespace{stopwatch.cpp}::read_clock</a> (timespec &amp;ts) noexcept</td></tr>
-<tr class="memdesc:a34225dca0ef5b70eb98c8eeaa3a05b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the system clock.  <br /></td></tr>
+<tr class="memitem:a60dcef812e43e13d1e30f602a572e27a" id="r_a60dcef812e43e13d1e30f602a572e27a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a60dcef812e43e13d1e30f602a572e27a">micro_os_plus::micro_test_plus::detail::read_clock</a> (timespec &amp;ts) noexcept</td></tr>
+<tr class="memdesc:a60dcef812e43e13d1e30f602a572e27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the system clock.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This source file contains the implementation of the <span class="tt">stopwatch</span> class of the µTest++ framework. It provides the member functions that read the system clock (monotonic on POSIX) at the start and at the end of the measured interval, and that compute the elapsed time between the two readings.</p>
+<div class="textblock"><p>This source file contains the implementation of the <span class="tt">stopwatch</span> class of the µTest++ framework. It provides the member functions that read the system clock (monotonic on POSIX) at the start and at the end of the measured interval, and that compute the elapsed time between the two readings, and <span class="tt">read_clock()</span>, which isolates the platform-specific access to the system clock.</p>
 <p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html" title="Internal implementation details for the µTest++ framework.">micro_os_plus::micro_test_plus::detail</a></span> namespace.</p>
 <p>This file must be included when building the µTest++ library. </p>
 

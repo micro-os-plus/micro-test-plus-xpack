@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -128,7 +128,13 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga039219e6edfdcaa8a5e07badd7f4830d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the trace messages of the µTest++ member functions.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The µTest++ Testing Framework library uses several preprocessor macros to enable it and to configure various options.  </p>
+<div class="textblock"><p>The µTest++ Testing Framework library uses several preprocessor macros to enable it and to configure various options.</p>
+<p>These macros must be defined by the application; neither the library nor its CMake, meson, and xPack build files define them (the <span class="tt">defaultDefine</span> entries in <span class="tt">xcdl-package.jsonc</span> are informative only).</p>
+<p>The preferred place is <span class="tt">micro-os-plus/micro-test-plus-defines.h</span>, or <span class="tt">micro-os-plus/project-config.h</span>, which each µTest++ header includes, if present, before its own definitions, so that the application and the library sources are compiled with the same configuration. The macros have no value, only their definition matters; guard them, so that they can also be defined on the compiler command line:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</span></div>
+<div class="line"><span class="preprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span></div>
+<div class="line"><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</span></div>
+</div><!-- fragment --><p>A macro defined only on the compiler command line (for example <span class="tt">‑DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span>) must be defined for the entire build (both the application and the library sources).  </p>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="ga3dd1e70998580fe7d7f410e5cd83879b" name="ga3dd1e70998580fe7d7f410e5cd83879b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3dd1e70998580fe7d7f410e5cd83879b">&#9670;&#160;</a></span>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</h2>
@@ -141,7 +147,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Must be defined by the application, in <span class="tt">micro-os-plus/project-config.h</span>, in <span class="tt">micro-os-plus/micro-test-plus-defines.h</span>, or on the compiler command line. Without it, <span class="tt"><a class="el" href="micro-test-plus_8h.html" title="Main C++ header with the declarations for the µTest++ Testing Framework.">micro-os-plus/micro-test-plus.h</a></span> declares nothing and the library sources compile to nothing.  </p>
+<p>This is the main configuration option of this library; it has no value, only its definition matters.</p>
+<p>Without it, <span class="tt"><a class="el" href="micro-test-plus_8h.html" title="Main C++ header with the declarations for the µTest++ Testing Framework.">micro-os-plus/micro-test-plus.h</a></span> declares nothing and the library sources compile to nothing. If it is defined on the compiler command line for the application, but not for the library sources, the link fails with undefined references.  </p>
 
 <p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00076">76</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
 

@@ -594,6 +594,53 @@ lambda without captures was previously accepted, converted to `bool`,
 and written as `true`; it is now called. The function pointers are
 still written as addresses, not called.
 
+### v5.0 (2026-08-06)
+
+The C++ API is unchanged; the changes affect only the configuration and
+the build integration, in preparation for the xCDL configuration.
+
+The library must now be explicitly enabled, by defining
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED`, usually in
+`micro-os-plus/micro-test-plus-defines.h`; without it, the headers and
+the sources compile to nothing, and the test programs fail to compile.
+
+The configuration headers are now included automatically, if present:
+`micro-os-plus/project-config.h`, followed by
+`micro-os-plus/micro-test-plus-defines.h`. The previous mechanism, which
+included `<micro-os-plus/config.h>` only when
+`MICRO_OS_PLUS_INCLUDE_CONFIG_H` was defined, was removed; rename the
+configuration file, and the macro is no longer needed.
+
+The configuration macros were renamed, with the `_ENABLED` suffix:
+`MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS` is now
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED`,
+`MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS` is now
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED`,
+`MICRO_OS_PLUS_TRACE` is now `MICRO_OS_PLUS_DIAG_TRACE_ENABLED`,
+`MICRO_OS_PLUS_DEBUG` is now `MICRO_OS_PLUS_DEBUG_ENABLED`, and
+`MICRO_OS_PLUS_INCLUDE_STARTUP` is now `MICRO_OS_PLUS_STARTUP_ENABLED`.
+The old names are not recognised, so an unchanged configuration silently
+disables the corresponding features. The new names also appear in the
+`Built with ...` line at the beginning of the reports, so tools that
+compare the output with reference files must update them.
+
+The include guards of the headers were renamed from
+`MICRO_TEST_PLUS_*_H_` to `MICRO_OS_PLUS_MICRO_TEST_PLUS_*_H_`, and a
+compilation with a standard older than C++20 is now reported with an
+explicit error.
+
+In CMake, the OBJECT library was renamed from
+`micro-os-plus::micro-test-plus-objects` to
+`micro-os-plus::micro-test-plus-objects-library`, and a new STATIC
+library, `micro-os-plus::micro-test-plus-static-library`, was added;
+`micro-os-plus::micro-test-plus` is unchanged. The CMake and meson files
+are now generated from `xcdl-package.jsonc`, and the meson dependency
+now also includes `micro_os_plus_diag_trace_dependency`.
+
+Since v5.0.1, `micro-os-plus/diag/trace.h` is included only if it is
+available, so the sources compile without the `diag-trace` headers;
+the CMake targets still link `micro-os-plus::diag-trace`.
+
 ### v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in

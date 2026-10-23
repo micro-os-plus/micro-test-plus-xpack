@@ -5,6 +5,439 @@
     <title>Literals and Wrappers</title>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" prot="public">micro_os_plus::micro_test_plus::to_t</innerclass>
     <sectiondef kind="user-defined">
+      <header>Deprecated Type Wrappers</header>
+      <description><para>The v5.0.1 names of the <computeroutput>to_*</computeroutput> type wrappers.</para>
+<para>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <computeroutput>to_*</computeroutput> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), which are in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace.</para>
+<para>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref> (expr)</computeroutput>; Clang reports it in both cases.</para>
+<para><simplesect kind="par"><title>Deprecated</title><para>Use the corresponding <computeroutput>to_*</computeroutput> type wrappers instead (since 3.2.0). </para>
+</simplesect>
+</para>
+</description>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" prot="public" static="no">
+        <type>to_b</type>
+        <definition>using micro_os_plus::micro_test_plus::_b = to_b</definition>
+        <argsstring></argsstring>
+        <name>_b</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_b</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>bool</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000009"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="202" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gafdd897d040f92df9cd42e551ebc88cd8" prot="public" static="no">
+        <type>to_c</type>
+        <definition>using micro_os_plus::micro_test_plus::_c = to_c</definition>
+        <argsstring></argsstring>
+        <name>_c</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_c</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000010"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="211" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" prot="public" static="no">
+        <type>to_sc</type>
+        <definition>using micro_os_plus::micro_test_plus::_sc = to_sc</definition>
+        <argsstring></argsstring>
+        <name>_sc</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_sc</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>signed char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000011"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="220" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" prot="public" static="no">
+        <type>to_s</type>
+        <definition>using micro_os_plus::micro_test_plus::_s = to_s</definition>
+        <argsstring></argsstring>
+        <name>_s</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_s</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>short</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000012"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="229" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" prot="public" static="no">
+        <type>to_i</type>
+        <definition>using micro_os_plus::micro_test_plus::_i = to_i</definition>
+        <argsstring></argsstring>
+        <name>_i</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_i</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>int</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="238" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga429a848542fc4ffafd3dd22bc1832654" prot="public" static="no">
+        <type>to_l</type>
+        <definition>using micro_os_plus::micro_test_plus::_l = to_l</definition>
+        <argsstring></argsstring>
+        <name>_l</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_l</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="247" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga9c597ca04848620b8570c29a4741e77d" prot="public" static="no">
+        <type>to_ll</type>
+        <definition>using micro_os_plus::micro_test_plus::_ll = to_ll</definition>
+        <argsstring></argsstring>
+        <name>_ll</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_ll</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>long long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="256" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaaa486af2418a24076237fbe26940f5ae" prot="public" static="no">
+        <type>to_u</type>
+        <definition>using micro_os_plus::micro_test_plus::_u = to_u</definition>
+        <argsstring></argsstring>
+        <name>_u</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_u</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>unsigned</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000016"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="265" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" prot="public" static="no">
+        <type>to_uc</type>
+        <definition>using micro_os_plus::micro_test_plus::_uc = to_uc</definition>
+        <argsstring></argsstring>
+        <name>_uc</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_uc</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>unsigned char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="274" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga65aea7fc6324806cc029041a1c785611" prot="public" static="no">
+        <type>to_us</type>
+        <definition>using micro_os_plus::micro_test_plus::_us = to_us</definition>
+        <argsstring></argsstring>
+        <name>_us</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_us</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>unsigned short</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="283" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga32c7eef01fcaef2f1a9478427d951f62" prot="public" static="no">
+        <type>to_ul</type>
+        <definition>using micro_os_plus::micro_test_plus::_ul = to_ul</definition>
+        <argsstring></argsstring>
+        <name>_ul</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_ul</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>unsigned long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000019"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="292" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gada8a165060d3d3b3ab51272b9da58761" prot="public" static="no">
+        <type>to_ull</type>
+        <definition>using micro_os_plus::micro_test_plus::_ull = to_ull</definition>
+        <argsstring></argsstring>
+        <name>_ull</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_ull</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>unsigned long long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="301" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" prot="public" static="no">
+        <type>to_i8</type>
+        <definition>using micro_os_plus::micro_test_plus::_i8 = to_i8</definition>
+        <argsstring></argsstring>
+        <name>_i8</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_i8</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>std::int8_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000021"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="310" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gad2d95793c99112ad2889c6663789d1e3" prot="public" static="no">
+        <type>to_i16</type>
+        <definition>using micro_os_plus::micro_test_plus::_i16 = to_i16</definition>
+        <argsstring></argsstring>
+        <name>_i16</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_i16</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>std::int16_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000022"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="319" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga917a1759e37cd0d3fe3786da11729a4b" prot="public" static="no">
+        <type>to_i32</type>
+        <definition>using micro_os_plus::micro_test_plus::_i32 = to_i32</definition>
+        <argsstring></argsstring>
+        <name>_i32</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_i32</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>std::int32_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000023"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="328" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga290a150eae030e183ca2e14e9095c93b" prot="public" static="no">
+        <type>to_i64</type>
+        <definition>using micro_os_plus::micro_test_plus::_i64 = to_i64</definition>
+        <argsstring></argsstring>
+        <name>_i64</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_i64</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>std::int64_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000024"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="337" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" prot="public" static="no">
+        <type>to_u8</type>
+        <definition>using micro_os_plus::micro_test_plus::_u8 = to_u8</definition>
+        <argsstring></argsstring>
+        <name>_u8</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_u8</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>std::uint8_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000025"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="346" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" prot="public" static="no">
+        <type>to_u16</type>
+        <definition>using micro_os_plus::micro_test_plus::_u16 = to_u16</definition>
+        <argsstring></argsstring>
+        <name>_u16</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_u16</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>std::uint16_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000026"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="355" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga4afa32150456241245bfc641a6f17bbc" prot="public" static="no">
+        <type>to_u32</type>
+        <definition>using micro_os_plus::micro_test_plus::_u32 = to_u32</definition>
+        <argsstring></argsstring>
+        <name>_u32</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_u32</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>std::uint32_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000027"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="364" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" prot="public" static="no">
+        <type>to_u64</type>
+        <definition>using micro_os_plus::micro_test_plus::_u64 = to_u64</definition>
+        <argsstring></argsstring>
+        <name>_u64</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_u64</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>std::uint64_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000028"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="373" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga231cd51e76a2f426703275739d605ad4" prot="public" static="no">
+        <type>to_f</type>
+        <definition>using micro_os_plus::micro_test_plus::_f = to_f</definition>
+        <argsstring></argsstring>
+        <name>_f</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_f</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>float</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000029"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="382" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga7c6c0169d894a7dd589d96df49e8df26" prot="public" static="no">
+        <type>to_d</type>
+        <definition>using micro_os_plus::micro_test_plus::_d = to_d</definition>
+        <argsstring></argsstring>
+        <name>_d</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_d</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>double</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000030"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="391" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" prot="public" static="no">
+        <type>to_ld</type>
+        <definition>using micro_os_plus::micro_test_plus::_ld = to_ld</definition>
+        <argsstring></argsstring>
+        <name>_ld</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_ld</qualifiedname>
+        <briefdescription>
+<para>Strongly-typed wrapper for <computeroutput>long double</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000031"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="400" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga15147e343475e219c2e46dce07b4127c" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>to_t&lt; T &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::_t = to_t&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>_t</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_t</qualifiedname>
+        <briefdescription>
+<para>Generic strongly-typed wrapper, the v5.0.1 name of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same type as <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref>&lt;T&gt;</computeroutput>, so it takes the same argument and is reported in the same way; kept for backwards compatibility. In v5.0.1 it was a separate class, also derived from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the wrapped value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<xrefsect id="deprecated_1_deprecated000032"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref> (since 3.2.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="414" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Type Wrappers</header>
       <description><para>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</para>
 <para>These type aliases provide a type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput>, ensuring that the value is treated as the specified type within the framework.</para>
@@ -455,487 +888,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="730" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="730" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="user-defined">
-      <header>Deprecated Type Wrappers</header>
-      <description><para>The v5.0.1 names of the <computeroutput>to_*</computeroutput> type wrappers.</para>
-<para>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <computeroutput>to_*</computeroutput> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), which are in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace.</para>
-<para>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref> (expr)</computeroutput>; Clang reports it in both cases.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>Use the corresponding <computeroutput>to_*</computeroutput> type wrappers instead (since 3.2.0). </para>
-</simplesect>
-</para>
-</description>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" prot="public" static="no">
-        <type>to_b</type>
-        <definition>using micro_os_plus::micro_test_plus::_b = to_b</definition>
-        <argsstring></argsstring>
-        <name>_b</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_b</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>bool</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000032"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000033"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="852" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gafdd897d040f92df9cd42e551ebc88cd8" prot="public" static="no">
-        <type>to_c</type>
-        <definition>using micro_os_plus::micro_test_plus::_c = to_c</definition>
-        <argsstring></argsstring>
-        <name>_c</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_c</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000034"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000035"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="863" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" prot="public" static="no">
-        <type>to_sc</type>
-        <definition>using micro_os_plus::micro_test_plus::_sc = to_sc</definition>
-        <argsstring></argsstring>
-        <name>_sc</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_sc</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>signed char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000036"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000037"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="874" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" prot="public" static="no">
-        <type>to_s</type>
-        <definition>using micro_os_plus::micro_test_plus::_s = to_s</definition>
-        <argsstring></argsstring>
-        <name>_s</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_s</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>short</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000038"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000039"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="885" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" prot="public" static="no">
-        <type>to_i</type>
-        <definition>using micro_os_plus::micro_test_plus::_i = to_i</definition>
-        <argsstring></argsstring>
-        <name>_i</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_i</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>int</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000040"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000041"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="896" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga429a848542fc4ffafd3dd22bc1832654" prot="public" static="no">
-        <type>to_l</type>
-        <definition>using micro_os_plus::micro_test_plus::_l = to_l</definition>
-        <argsstring></argsstring>
-        <name>_l</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_l</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000042"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000043"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="907" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga9c597ca04848620b8570c29a4741e77d" prot="public" static="no">
-        <type>to_ll</type>
-        <definition>using micro_os_plus::micro_test_plus::_ll = to_ll</definition>
-        <argsstring></argsstring>
-        <name>_ll</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_ll</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>long long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000044"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000045"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="918" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaaa486af2418a24076237fbe26940f5ae" prot="public" static="no">
-        <type>to_u</type>
-        <definition>using micro_os_plus::micro_test_plus::_u = to_u</definition>
-        <argsstring></argsstring>
-        <name>_u</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_u</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>unsigned</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000046"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000047"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="929" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" prot="public" static="no">
-        <type>to_uc</type>
-        <definition>using micro_os_plus::micro_test_plus::_uc = to_uc</definition>
-        <argsstring></argsstring>
-        <name>_uc</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_uc</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>unsigned char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000048"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000049"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="940" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga65aea7fc6324806cc029041a1c785611" prot="public" static="no">
-        <type>to_us</type>
-        <definition>using micro_os_plus::micro_test_plus::_us = to_us</definition>
-        <argsstring></argsstring>
-        <name>_us</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_us</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>unsigned short</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000050"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000051"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="951" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga32c7eef01fcaef2f1a9478427d951f62" prot="public" static="no">
-        <type>to_ul</type>
-        <definition>using micro_os_plus::micro_test_plus::_ul = to_ul</definition>
-        <argsstring></argsstring>
-        <name>_ul</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_ul</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>unsigned long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000052"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000053"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="962" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gada8a165060d3d3b3ab51272b9da58761" prot="public" static="no">
-        <type>to_ull</type>
-        <definition>using micro_os_plus::micro_test_plus::_ull = to_ull</definition>
-        <argsstring></argsstring>
-        <name>_ull</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_ull</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>unsigned long long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000054"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000055"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="973" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" prot="public" static="no">
-        <type>to_i8</type>
-        <definition>using micro_os_plus::micro_test_plus::_i8 = to_i8</definition>
-        <argsstring></argsstring>
-        <name>_i8</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_i8</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>std::int8_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000056"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000057"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="984" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gad2d95793c99112ad2889c6663789d1e3" prot="public" static="no">
-        <type>to_i16</type>
-        <definition>using micro_os_plus::micro_test_plus::_i16 = to_i16</definition>
-        <argsstring></argsstring>
-        <name>_i16</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_i16</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>std::int16_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000058"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000059"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="995" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga917a1759e37cd0d3fe3786da11729a4b" prot="public" static="no">
-        <type>to_i32</type>
-        <definition>using micro_os_plus::micro_test_plus::_i32 = to_i32</definition>
-        <argsstring></argsstring>
-        <name>_i32</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_i32</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>std::int32_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000060"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000061"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1006" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga290a150eae030e183ca2e14e9095c93b" prot="public" static="no">
-        <type>to_i64</type>
-        <definition>using micro_os_plus::micro_test_plus::_i64 = to_i64</definition>
-        <argsstring></argsstring>
-        <name>_i64</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_i64</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>std::int64_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000062"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000063"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1017" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" prot="public" static="no">
-        <type>to_u8</type>
-        <definition>using micro_os_plus::micro_test_plus::_u8 = to_u8</definition>
-        <argsstring></argsstring>
-        <name>_u8</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_u8</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>std::uint8_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000064"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000065"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1028" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" prot="public" static="no">
-        <type>to_u16</type>
-        <definition>using micro_os_plus::micro_test_plus::_u16 = to_u16</definition>
-        <argsstring></argsstring>
-        <name>_u16</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_u16</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>std::uint16_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000066"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000067"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1039" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga4afa32150456241245bfc641a6f17bbc" prot="public" static="no">
-        <type>to_u32</type>
-        <definition>using micro_os_plus::micro_test_plus::_u32 = to_u32</definition>
-        <argsstring></argsstring>
-        <name>_u32</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_u32</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>std::uint32_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000068"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000069"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1050" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" prot="public" static="no">
-        <type>to_u64</type>
-        <definition>using micro_os_plus::micro_test_plus::_u64 = to_u64</definition>
-        <argsstring></argsstring>
-        <name>_u64</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_u64</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>std::uint64_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000070"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000071"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1061" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga231cd51e76a2f426703275739d605ad4" prot="public" static="no">
-        <type>to_f</type>
-        <definition>using micro_os_plus::micro_test_plus::_f = to_f</definition>
-        <argsstring></argsstring>
-        <name>_f</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_f</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>float</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000072"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000073"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1072" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga7c6c0169d894a7dd589d96df49e8df26" prot="public" static="no">
-        <type>to_d</type>
-        <definition>using micro_os_plus::micro_test_plus::_d = to_d</definition>
-        <argsstring></argsstring>
-        <name>_d</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_d</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>double</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000074"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000075"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1083" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" prot="public" static="no">
-        <type>to_ld</type>
-        <definition>using micro_os_plus::micro_test_plus::_ld = to_ld</definition>
-        <argsstring></argsstring>
-        <name>_ld</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_ld</qualifiedname>
-        <briefdescription>
-<para>Strongly-typed wrapper for <computeroutput>long double</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput>; kept for backwards compatibility.</para>
-<para><xrefsect id="deprecated_1_deprecated000076"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput> (since 3.2.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000077"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1094" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-literals_1ga15147e343475e219c2e46dce07b4127c" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>class T</type>
-          </param>
-        </templateparamlist>
-        <type>to_t&lt; T &gt;</type>
-        <definition>using micro_os_plus::micro_test_plus::_t = to_t&lt;T&gt;</definition>
-        <argsstring></argsstring>
-        <name>_t</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_t</qualifiedname>
-        <briefdescription>
-<para>Generic strongly-typed wrapper, the v5.0.1 name of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same type as <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref>&lt;T&gt;</computeroutput>, so it takes the same argument and is reported in the same way; kept for backwards compatibility. In v5.0.1 it was a separate class, also derived from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput>.</para>
-<para><xrefsect id="deprecated_1_deprecated000078"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref></computeroutput> (since 3.2.0).</para>
-</xrefdescription></xrefsect></para>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The type of the wrapped value. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<xrefsect id="deprecated_1_deprecated000079"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref></para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="1110" column="3"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">

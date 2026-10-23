@@ -5,8 +5,8 @@
     <includes local="no">string_view</includes>
     <includes local="no">vector</includes>
     <includes refid="utility-inlines_8h" local="yes">inlines/utility-inlines.h</includes>
+    <includedby refid="deprecated_8cpp" local="yes">deprecated.cpp</includedby>
     <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
-    <includedby refid="reflection_8cpp" local="yes">reflection.cpp</includedby>
     <includedby refid="reporter-human_8cpp" local="yes">reporter-human.cpp</includedby>
     <includedby refid="reporter-tap_8cpp" local="yes">reporter-tap.cpp</includedby>
     <includedby refid="reporter_8cpp" local="yes">reporter.cpp</includedby>
@@ -35,7 +35,7 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
+      <node id="3">
         <label>micro-test-plus.h</label>
         <link refid="micro-test-plus_8h"/>
       </node>
@@ -57,9 +57,9 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>reflection.cpp</label>
-        <link refid="reflection_8cpp"/>
+      <node id="2">
+        <label>deprecated.cpp</label>
+        <link refid="deprecated_8cpp"/>
       </node>
       <node id="4">
         <label>reporter-human.cpp</label>

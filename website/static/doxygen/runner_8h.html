@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -143,14 +143,9 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace for the µOS++ framework. <br /></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the µTest++ testing framework. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga47d2c99f85fc5597b82da402d4687e75" id="r_ga47d2c99f85fc5597b82da402d4687e75"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-runners.html#ga47d2c99f85fc5597b82da402d4687e75">micro_os_plus::micro_test_plus::static_runner</a> = <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html">runner</a></td></tr>
-<tr class="memdesc:ga47d2c99f85fc5597b82da402d4687e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated name of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This header provides the declarations for the test runner facilities used within the µTest++ framework. It defines the <span class="tt">runner</span> class, which manages the registration and execution of test suites, including the static suites declared at namespace scope, and the deprecated <span class="tt">static_runner</span> alias.</p>
+<div class="textblock"><p>This header provides the declarations for the test runner facilities used within the µTest++ framework. It defines the <span class="tt">runner</span> class, which manages the registration and execution of test suites, including the static suites declared at namespace scope. The deprecated <span class="tt">static_runner</span> alias is declared in <span class="tt"><a class="el" href="deprecated_8h.html" title="C++ header file with the declarations of the deprecated µTest++ definitions.">deprecated.h</a></span>.</p>
 <p>The test runner is responsible for initialising the test environment, creating the reporter, registering test suites, processing command-line arguments, and determining the overall test result via an exit code. It also provides a mechanism for aborting test execution.</p>
 <p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 <p>The header files are organised within the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>

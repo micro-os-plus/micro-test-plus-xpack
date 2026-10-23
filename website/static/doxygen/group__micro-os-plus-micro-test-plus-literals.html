@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -199,6 +199,63 @@ requires std::is_floating_point_v&lt;T&gt;</td></tr>
 <tr class="memdesc:ga9017debdc1eafd64e3c53c80157ad6f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined literal operator to convert to <span class="tt">unsigned short</span>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Deprecated Type Wrappers</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>The v5.0.1 names of the <span class="tt">to_*</span> type wrappers.</p>
+<p>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <span class="tt">to_*</span> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<span class="tt">42<a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>), which are in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="User-defined literals for the µTest++ testing framework.">literals</a></span> namespace.</p>
+<p>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <span class="tt"><a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a> (expr)</span>; Clang reports it in both cases.</p>
+<dl class="section user"><dt>Deprecated</dt><dd>Use the corresponding <span class="tt">to_*</span> type wrappers instead (since 3.2.0). </dd></dl>
+</td></tr>
+<tr class="memitem:gad4203783cfbe141f41ee8515f7b2ea94" id="r_gad4203783cfbe141f41ee8515f7b2ea94"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gad4203783cfbe141f41ee8515f7b2ea94">micro_os_plus::micro_test_plus::_b</a> = <a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></td></tr>
+<tr class="memdesc:gad4203783cfbe141f41ee8515f7b2ea94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">bool</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Strongly-typed wrapper for bool values.">to_b</a></span>.  <br /></td></tr>
+<tr class="memitem:gafdd897d040f92df9cd42e551ebc88cd8" id="r_gafdd897d040f92df9cd42e551ebc88cd8"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gafdd897d040f92df9cd42e551ebc88cd8">micro_os_plus::micro_test_plus::_c</a> = <a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></td></tr>
+<tr class="memdesc:gafdd897d040f92df9cd42e551ebc88cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">char</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831" title="Strongly-typed wrapper for char values.">to_c</a></span>.  <br /></td></tr>
+<tr class="memitem:ga0cc4baab5f421ac7adee10218d8ee8a2" id="r_ga0cc4baab5f421ac7adee10218d8ee8a2"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga0cc4baab5f421ac7adee10218d8ee8a2">micro_os_plus::micro_test_plus::_sc</a> = <a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></td></tr>
+<tr class="memdesc:ga0cc4baab5f421ac7adee10218d8ee8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">signed char</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516" title="Strongly-typed wrapper for signed char values.">to_sc</a></span>.  <br /></td></tr>
+<tr class="memitem:ga461a956b7e308ed6e8c64afa3cf160f2" id="r_ga461a956b7e308ed6e8c64afa3cf160f2"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga461a956b7e308ed6e8c64afa3cf160f2">micro_os_plus::micro_test_plus::_s</a> = <a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></td></tr>
+<tr class="memdesc:ga461a956b7e308ed6e8c64afa3cf160f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">short</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78" title="Strongly-typed wrapper for short values.">to_s</a></span>.  <br /></td></tr>
+<tr class="memitem:ga8468610e763177a8f569f7d618851288" id="r_ga8468610e763177a8f569f7d618851288"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga8468610e763177a8f569f7d618851288">micro_os_plus::micro_test_plus::_i</a> = <a class="el" href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></td></tr>
+<tr class="memdesc:ga8468610e763177a8f569f7d618851288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">int</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaf3ee271cefcffa625e40d476305da62f" title="Strongly-typed wrapper for int values.">to_i</a></span>.  <br /></td></tr>
+<tr class="memitem:ga429a848542fc4ffafd3dd22bc1832654" id="r_ga429a848542fc4ffafd3dd22bc1832654"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga429a848542fc4ffafd3dd22bc1832654">micro_os_plus::micro_test_plus::_l</a> = <a class="el" href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></td></tr>
+<tr class="memdesc:ga429a848542fc4ffafd3dd22bc1832654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">long</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga09028a1e0e713723257afba48b9ee551" title="Strongly-typed wrapper for long values.">to_l</a></span>.  <br /></td></tr>
+<tr class="memitem:ga9c597ca04848620b8570c29a4741e77d" id="r_ga9c597ca04848620b8570c29a4741e77d"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga9c597ca04848620b8570c29a4741e77d">micro_os_plus::micro_test_plus::_ll</a> = <a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></td></tr>
+<tr class="memdesc:ga9c597ca04848620b8570c29a4741e77d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">long long</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34" title="Strongly-typed wrapper for long long values.">to_ll</a></span>.  <br /></td></tr>
+<tr class="memitem:gaaa486af2418a24076237fbe26940f5ae" id="r_gaaa486af2418a24076237fbe26940f5ae"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gaaa486af2418a24076237fbe26940f5ae">micro_os_plus::micro_test_plus::_u</a> = <a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></td></tr>
+<tr class="memdesc:gaaa486af2418a24076237fbe26940f5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" title="Strongly-typed wrapper for unsigned values.">to_u</a></span>.  <br /></td></tr>
+<tr class="memitem:gaa8bb559065ea34a9645fdfd6339b9b7a" id="r_gaa8bb559065ea34a9645fdfd6339b9b7a"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gaa8bb559065ea34a9645fdfd6339b9b7a">micro_os_plus::micro_test_plus::_uc</a> = <a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></td></tr>
+<tr class="memdesc:gaa8bb559065ea34a9645fdfd6339b9b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned char</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89" title="Strongly-typed wrapper for unsigned char values.">to_uc</a></span>.  <br /></td></tr>
+<tr class="memitem:ga65aea7fc6324806cc029041a1c785611" id="r_ga65aea7fc6324806cc029041a1c785611"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga65aea7fc6324806cc029041a1c785611">micro_os_plus::micro_test_plus::_us</a> = <a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></td></tr>
+<tr class="memdesc:ga65aea7fc6324806cc029041a1c785611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned short</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4" title="Strongly-typed wrapper for unsigned short values.">to_us</a></span>.  <br /></td></tr>
+<tr class="memitem:ga32c7eef01fcaef2f1a9478427d951f62" id="r_ga32c7eef01fcaef2f1a9478427d951f62"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga32c7eef01fcaef2f1a9478427d951f62">micro_os_plus::micro_test_plus::_ul</a> = <a class="el" href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></td></tr>
+<tr class="memdesc:ga32c7eef01fcaef2f1a9478427d951f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned long</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga5d2d6a69c090569866a779672772b48f" title="Strongly-typed wrapper for unsigned long values.">to_ul</a></span>.  <br /></td></tr>
+<tr class="memitem:gada8a165060d3d3b3ab51272b9da58761" id="r_gada8a165060d3d3b3ab51272b9da58761"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gada8a165060d3d3b3ab51272b9da58761">micro_os_plus::micro_test_plus::_ull</a> = <a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></td></tr>
+<tr class="memdesc:gada8a165060d3d3b3ab51272b9da58761"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned long long</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788" title="Strongly-typed wrapper for unsigned long long values.">to_ull</a></span>.  <br /></td></tr>
+<tr class="memitem:ga265f8609ef3d6ead78c7a66825553e24" id="r_ga265f8609ef3d6ead78c7a66825553e24"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga265f8609ef3d6ead78c7a66825553e24">micro_os_plus::micro_test_plus::_i8</a> = <a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></td></tr>
+<tr class="memdesc:ga265f8609ef3d6ead78c7a66825553e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::int8_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db" title="Strongly-typed wrapper for std::int8_t values.">to_i8</a></span>.  <br /></td></tr>
+<tr class="memitem:gad2d95793c99112ad2889c6663789d1e3" id="r_gad2d95793c99112ad2889c6663789d1e3"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gad2d95793c99112ad2889c6663789d1e3">micro_os_plus::micro_test_plus::_i16</a> = <a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></td></tr>
+<tr class="memdesc:gad2d95793c99112ad2889c6663789d1e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::int16_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9" title="Strongly-typed wrapper for std::int16_t values.">to_i16</a></span>.  <br /></td></tr>
+<tr class="memitem:ga917a1759e37cd0d3fe3786da11729a4b" id="r_ga917a1759e37cd0d3fe3786da11729a4b"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga917a1759e37cd0d3fe3786da11729a4b">micro_os_plus::micro_test_plus::_i32</a> = <a class="el" href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></td></tr>
+<tr class="memdesc:ga917a1759e37cd0d3fe3786da11729a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::int32_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga201eeff58867ba58d3312ae56113ef06" title="Strongly-typed wrapper for std::int32_t values.">to_i32</a></span>.  <br /></td></tr>
+<tr class="memitem:ga290a150eae030e183ca2e14e9095c93b" id="r_ga290a150eae030e183ca2e14e9095c93b"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga290a150eae030e183ca2e14e9095c93b">micro_os_plus::micro_test_plus::_i64</a> = <a class="el" href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></td></tr>
+<tr class="memdesc:ga290a150eae030e183ca2e14e9095c93b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::int64_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaead55f5e265634a742633261f9f2aa3f" title="Strongly-typed wrapper for std::int64_t values.">to_i64</a></span>.  <br /></td></tr>
+<tr class="memitem:gaf27e37e2e29af1a3ffd5c4fb07e77ff9" id="r_gaf27e37e2e29af1a3ffd5c4fb07e77ff9"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">micro_os_plus::micro_test_plus::_u8</a> = <a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></td></tr>
+<tr class="memdesc:gaf27e37e2e29af1a3ffd5c4fb07e77ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::uint8_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289" title="Strongly-typed wrapper for std::uint8_t values.">to_u8</a></span>.  <br /></td></tr>
+<tr class="memitem:ga97f7bc9a25eb4b7c663bd2388ade01ae" id="r_ga97f7bc9a25eb4b7c663bd2388ade01ae"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga97f7bc9a25eb4b7c663bd2388ade01ae">micro_os_plus::micro_test_plus::_u16</a> = <a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></td></tr>
+<tr class="memdesc:ga97f7bc9a25eb4b7c663bd2388ade01ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::uint16_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0" title="Strongly-typed wrapper for std::uint16_t values.">to_u16</a></span>.  <br /></td></tr>
+<tr class="memitem:ga4afa32150456241245bfc641a6f17bbc" id="r_ga4afa32150456241245bfc641a6f17bbc"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga4afa32150456241245bfc641a6f17bbc">micro_os_plus::micro_test_plus::_u32</a> = <a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></td></tr>
+<tr class="memdesc:ga4afa32150456241245bfc641a6f17bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::uint32_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a" title="Strongly-typed wrapper for std::uint32_t values.">to_u32</a></span>.  <br /></td></tr>
+<tr class="memitem:ga1241e84fc4457af1b4df5f053eec6aa5" id="r_ga1241e84fc4457af1b4df5f053eec6aa5"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga1241e84fc4457af1b4df5f053eec6aa5">micro_os_plus::micro_test_plus::_u64</a> = <a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></td></tr>
+<tr class="memdesc:ga1241e84fc4457af1b4df5f053eec6aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::uint64_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201" title="Strongly-typed wrapper for std::uint64_t values.">to_u64</a></span>.  <br /></td></tr>
+<tr class="memitem:ga231cd51e76a2f426703275739d605ad4" id="r_ga231cd51e76a2f426703275739d605ad4"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga231cd51e76a2f426703275739d605ad4">micro_os_plus::micro_test_plus::_f</a> = <a class="el" href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></td></tr>
+<tr class="memdesc:ga231cd51e76a2f426703275739d605ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">float</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga5368740b47e92605914b6c38ea88aebf" title="Strongly-typed wrapper for float values.">to_f</a></span>.  <br /></td></tr>
+<tr class="memitem:ga7c6c0169d894a7dd589d96df49e8df26" id="r_ga7c6c0169d894a7dd589d96df49e8df26"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga7c6c0169d894a7dd589d96df49e8df26">micro_os_plus::micro_test_plus::_d</a> = <a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></td></tr>
+<tr class="memdesc:ga7c6c0169d894a7dd589d96df49e8df26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">double</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Strongly-typed wrapper for double values.">to_d</a></span>.  <br /></td></tr>
+<tr class="memitem:gacfe28c6fb7bfb47ca8891cb61e7f58d9" id="r_gacfe28c6fb7bfb47ca8891cb61e7f58d9"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gacfe28c6fb7bfb47ca8891cb61e7f58d9">micro_os_plus::micro_test_plus::_ld</a> = <a class="el" href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></td></tr>
+<tr class="memdesc:gacfe28c6fb7bfb47ca8891cb61e7f58d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">long double</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaeba32254fdd8159523b525745b13bfa9" title="Strongly-typed wrapper for long double values.">to_ld</a></span>.  <br /></td></tr>
+<tr class="memitem:ga15147e343475e219c2e46dce07b4127c" id="r_ga15147e343475e219c2e46dce07b4127c"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:ga15147e343475e219c2e46dce07b4127c template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga15147e343475e219c2e46dce07b4127c">micro_os_plus::micro_test_plus::_t</a> = <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html">to_t</a>&lt;T&gt;</td></tr>
+<tr class="memdesc:ga15147e343475e219c2e46dce07b4127c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic strongly-typed wrapper, the v5.0.1 name of <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html" title="Generic strongly-typed wrapper for explicit type conversion.">to_t</a></span>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Type Wrappers</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</p>
 <p>These type aliases provide a type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">detail::value</a>&lt;T&gt;</span>, ensuring that the value is treated as the specified type within the framework.</p>
@@ -256,63 +313,6 @@ Type Wrappers</h2></td></tr>
 <tr class="memdesc:ga9608f4a6f0a61bc159a66a46fb8cd630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">double</span> values.  <br /></td></tr>
 <tr class="memitem:gaeba32254fdd8159523b525745b13bfa9" id="r_gaeba32254fdd8159523b525745b13bfa9"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gaeba32254fdd8159523b525745b13bfa9">micro_os_plus::micro_test_plus::to_ld</a> = <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">detail::value</a>&lt;long double&gt;</td></tr>
 <tr class="memdesc:gaeba32254fdd8159523b525745b13bfa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">long double</span> values.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Deprecated Type Wrappers</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p>The v5.0.1 names of the <span class="tt">to_*</span> type wrappers.</p>
-<p>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <span class="tt">to_*</span> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<span class="tt">42<a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>), which are in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="User-defined literals for the µTest++ testing framework.">literals</a></span> namespace.</p>
-<p>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <span class="tt"><a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a> (expr)</span>; Clang reports it in both cases.</p>
-<dl class="section user"><dt>Deprecated</dt><dd>Use the corresponding <span class="tt">to_*</span> type wrappers instead (since 3.2.0). </dd></dl>
-</td></tr>
-<tr class="memitem:gad4203783cfbe141f41ee8515f7b2ea94" id="r_gad4203783cfbe141f41ee8515f7b2ea94"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gad4203783cfbe141f41ee8515f7b2ea94">micro_os_plus::micro_test_plus::_b</a> = <a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></td></tr>
-<tr class="memdesc:gad4203783cfbe141f41ee8515f7b2ea94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">bool</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Strongly-typed wrapper for bool values.">to_b</a></span>.  <br /></td></tr>
-<tr class="memitem:gafdd897d040f92df9cd42e551ebc88cd8" id="r_gafdd897d040f92df9cd42e551ebc88cd8"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gafdd897d040f92df9cd42e551ebc88cd8">micro_os_plus::micro_test_plus::_c</a> = <a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a></td></tr>
-<tr class="memdesc:gafdd897d040f92df9cd42e551ebc88cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">char</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831" title="Strongly-typed wrapper for char values.">to_c</a></span>.  <br /></td></tr>
-<tr class="memitem:ga0cc4baab5f421ac7adee10218d8ee8a2" id="r_ga0cc4baab5f421ac7adee10218d8ee8a2"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga0cc4baab5f421ac7adee10218d8ee8a2">micro_os_plus::micro_test_plus::_sc</a> = <a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a></td></tr>
-<tr class="memdesc:ga0cc4baab5f421ac7adee10218d8ee8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">signed char</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516" title="Strongly-typed wrapper for signed char values.">to_sc</a></span>.  <br /></td></tr>
-<tr class="memitem:ga461a956b7e308ed6e8c64afa3cf160f2" id="r_ga461a956b7e308ed6e8c64afa3cf160f2"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga461a956b7e308ed6e8c64afa3cf160f2">micro_os_plus::micro_test_plus::_s</a> = <a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a></td></tr>
-<tr class="memdesc:ga461a956b7e308ed6e8c64afa3cf160f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">short</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78" title="Strongly-typed wrapper for short values.">to_s</a></span>.  <br /></td></tr>
-<tr class="memitem:ga8468610e763177a8f569f7d618851288" id="r_ga8468610e763177a8f569f7d618851288"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga8468610e763177a8f569f7d618851288">micro_os_plus::micro_test_plus::_i</a> = <a class="el" href="#gaf3ee271cefcffa625e40d476305da62f">to_i</a></td></tr>
-<tr class="memdesc:ga8468610e763177a8f569f7d618851288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">int</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaf3ee271cefcffa625e40d476305da62f" title="Strongly-typed wrapper for int values.">to_i</a></span>.  <br /></td></tr>
-<tr class="memitem:ga429a848542fc4ffafd3dd22bc1832654" id="r_ga429a848542fc4ffafd3dd22bc1832654"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga429a848542fc4ffafd3dd22bc1832654">micro_os_plus::micro_test_plus::_l</a> = <a class="el" href="#ga09028a1e0e713723257afba48b9ee551">to_l</a></td></tr>
-<tr class="memdesc:ga429a848542fc4ffafd3dd22bc1832654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">long</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga09028a1e0e713723257afba48b9ee551" title="Strongly-typed wrapper for long values.">to_l</a></span>.  <br /></td></tr>
-<tr class="memitem:ga9c597ca04848620b8570c29a4741e77d" id="r_ga9c597ca04848620b8570c29a4741e77d"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga9c597ca04848620b8570c29a4741e77d">micro_os_plus::micro_test_plus::_ll</a> = <a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a></td></tr>
-<tr class="memdesc:ga9c597ca04848620b8570c29a4741e77d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">long long</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34" title="Strongly-typed wrapper for long long values.">to_ll</a></span>.  <br /></td></tr>
-<tr class="memitem:gaaa486af2418a24076237fbe26940f5ae" id="r_gaaa486af2418a24076237fbe26940f5ae"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gaaa486af2418a24076237fbe26940f5ae">micro_os_plus::micro_test_plus::_u</a> = <a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a></td></tr>
-<tr class="memdesc:gaaa486af2418a24076237fbe26940f5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" title="Strongly-typed wrapper for unsigned values.">to_u</a></span>.  <br /></td></tr>
-<tr class="memitem:gaa8bb559065ea34a9645fdfd6339b9b7a" id="r_gaa8bb559065ea34a9645fdfd6339b9b7a"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gaa8bb559065ea34a9645fdfd6339b9b7a">micro_os_plus::micro_test_plus::_uc</a> = <a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a></td></tr>
-<tr class="memdesc:gaa8bb559065ea34a9645fdfd6339b9b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned char</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89" title="Strongly-typed wrapper for unsigned char values.">to_uc</a></span>.  <br /></td></tr>
-<tr class="memitem:ga65aea7fc6324806cc029041a1c785611" id="r_ga65aea7fc6324806cc029041a1c785611"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga65aea7fc6324806cc029041a1c785611">micro_os_plus::micro_test_plus::_us</a> = <a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a></td></tr>
-<tr class="memdesc:ga65aea7fc6324806cc029041a1c785611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned short</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4" title="Strongly-typed wrapper for unsigned short values.">to_us</a></span>.  <br /></td></tr>
-<tr class="memitem:ga32c7eef01fcaef2f1a9478427d951f62" id="r_ga32c7eef01fcaef2f1a9478427d951f62"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga32c7eef01fcaef2f1a9478427d951f62">micro_os_plus::micro_test_plus::_ul</a> = <a class="el" href="#ga5d2d6a69c090569866a779672772b48f">to_ul</a></td></tr>
-<tr class="memdesc:ga32c7eef01fcaef2f1a9478427d951f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned long</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga5d2d6a69c090569866a779672772b48f" title="Strongly-typed wrapper for unsigned long values.">to_ul</a></span>.  <br /></td></tr>
-<tr class="memitem:gada8a165060d3d3b3ab51272b9da58761" id="r_gada8a165060d3d3b3ab51272b9da58761"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gada8a165060d3d3b3ab51272b9da58761">micro_os_plus::micro_test_plus::_ull</a> = <a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a></td></tr>
-<tr class="memdesc:gada8a165060d3d3b3ab51272b9da58761"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">unsigned long long</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788" title="Strongly-typed wrapper for unsigned long long values.">to_ull</a></span>.  <br /></td></tr>
-<tr class="memitem:ga265f8609ef3d6ead78c7a66825553e24" id="r_ga265f8609ef3d6ead78c7a66825553e24"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga265f8609ef3d6ead78c7a66825553e24">micro_os_plus::micro_test_plus::_i8</a> = <a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a></td></tr>
-<tr class="memdesc:ga265f8609ef3d6ead78c7a66825553e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::int8_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db" title="Strongly-typed wrapper for std::int8_t values.">to_i8</a></span>.  <br /></td></tr>
-<tr class="memitem:gad2d95793c99112ad2889c6663789d1e3" id="r_gad2d95793c99112ad2889c6663789d1e3"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gad2d95793c99112ad2889c6663789d1e3">micro_os_plus::micro_test_plus::_i16</a> = <a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a></td></tr>
-<tr class="memdesc:gad2d95793c99112ad2889c6663789d1e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::int16_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9" title="Strongly-typed wrapper for std::int16_t values.">to_i16</a></span>.  <br /></td></tr>
-<tr class="memitem:ga917a1759e37cd0d3fe3786da11729a4b" id="r_ga917a1759e37cd0d3fe3786da11729a4b"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga917a1759e37cd0d3fe3786da11729a4b">micro_os_plus::micro_test_plus::_i32</a> = <a class="el" href="#ga201eeff58867ba58d3312ae56113ef06">to_i32</a></td></tr>
-<tr class="memdesc:ga917a1759e37cd0d3fe3786da11729a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::int32_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga201eeff58867ba58d3312ae56113ef06" title="Strongly-typed wrapper for std::int32_t values.">to_i32</a></span>.  <br /></td></tr>
-<tr class="memitem:ga290a150eae030e183ca2e14e9095c93b" id="r_ga290a150eae030e183ca2e14e9095c93b"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga290a150eae030e183ca2e14e9095c93b">micro_os_plus::micro_test_plus::_i64</a> = <a class="el" href="#gaead55f5e265634a742633261f9f2aa3f">to_i64</a></td></tr>
-<tr class="memdesc:ga290a150eae030e183ca2e14e9095c93b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::int64_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaead55f5e265634a742633261f9f2aa3f" title="Strongly-typed wrapper for std::int64_t values.">to_i64</a></span>.  <br /></td></tr>
-<tr class="memitem:gaf27e37e2e29af1a3ffd5c4fb07e77ff9" id="r_gaf27e37e2e29af1a3ffd5c4fb07e77ff9"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">micro_os_plus::micro_test_plus::_u8</a> = <a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a></td></tr>
-<tr class="memdesc:gaf27e37e2e29af1a3ffd5c4fb07e77ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::uint8_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289" title="Strongly-typed wrapper for std::uint8_t values.">to_u8</a></span>.  <br /></td></tr>
-<tr class="memitem:ga97f7bc9a25eb4b7c663bd2388ade01ae" id="r_ga97f7bc9a25eb4b7c663bd2388ade01ae"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga97f7bc9a25eb4b7c663bd2388ade01ae">micro_os_plus::micro_test_plus::_u16</a> = <a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a></td></tr>
-<tr class="memdesc:ga97f7bc9a25eb4b7c663bd2388ade01ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::uint16_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0" title="Strongly-typed wrapper for std::uint16_t values.">to_u16</a></span>.  <br /></td></tr>
-<tr class="memitem:ga4afa32150456241245bfc641a6f17bbc" id="r_ga4afa32150456241245bfc641a6f17bbc"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga4afa32150456241245bfc641a6f17bbc">micro_os_plus::micro_test_plus::_u32</a> = <a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a></td></tr>
-<tr class="memdesc:ga4afa32150456241245bfc641a6f17bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::uint32_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a" title="Strongly-typed wrapper for std::uint32_t values.">to_u32</a></span>.  <br /></td></tr>
-<tr class="memitem:ga1241e84fc4457af1b4df5f053eec6aa5" id="r_ga1241e84fc4457af1b4df5f053eec6aa5"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga1241e84fc4457af1b4df5f053eec6aa5">micro_os_plus::micro_test_plus::_u64</a> = <a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a></td></tr>
-<tr class="memdesc:ga1241e84fc4457af1b4df5f053eec6aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">std::uint64_t</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201" title="Strongly-typed wrapper for std::uint64_t values.">to_u64</a></span>.  <br /></td></tr>
-<tr class="memitem:ga231cd51e76a2f426703275739d605ad4" id="r_ga231cd51e76a2f426703275739d605ad4"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga231cd51e76a2f426703275739d605ad4">micro_os_plus::micro_test_plus::_f</a> = <a class="el" href="#ga5368740b47e92605914b6c38ea88aebf">to_f</a></td></tr>
-<tr class="memdesc:ga231cd51e76a2f426703275739d605ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">float</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga5368740b47e92605914b6c38ea88aebf" title="Strongly-typed wrapper for float values.">to_f</a></span>.  <br /></td></tr>
-<tr class="memitem:ga7c6c0169d894a7dd589d96df49e8df26" id="r_ga7c6c0169d894a7dd589d96df49e8df26"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga7c6c0169d894a7dd589d96df49e8df26">micro_os_plus::micro_test_plus::_d</a> = <a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a></td></tr>
-<tr class="memdesc:ga7c6c0169d894a7dd589d96df49e8df26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">double</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Strongly-typed wrapper for double values.">to_d</a></span>.  <br /></td></tr>
-<tr class="memitem:gacfe28c6fb7bfb47ca8891cb61e7f58d9" id="r_gacfe28c6fb7bfb47ca8891cb61e7f58d9"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gacfe28c6fb7bfb47ca8891cb61e7f58d9">micro_os_plus::micro_test_plus::_ld</a> = <a class="el" href="#gaeba32254fdd8159523b525745b13bfa9">to_ld</a></td></tr>
-<tr class="memdesc:gacfe28c6fb7bfb47ca8891cb61e7f58d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strongly-typed wrapper for <span class="tt">long double</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#gaeba32254fdd8159523b525745b13bfa9" title="Strongly-typed wrapper for long double values.">to_ld</a></span>.  <br /></td></tr>
-<tr class="memitem:ga15147e343475e219c2e46dce07b4127c" id="r_ga15147e343475e219c2e46dce07b4127c"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:ga15147e343475e219c2e46dce07b4127c template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga15147e343475e219c2e46dce07b4127c">micro_os_plus::micro_test_plus::_t</a> = <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html">to_t</a>&lt;T&gt;</td></tr>
-<tr class="memdesc:ga15147e343475e219c2e46dce07b4127c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic strongly-typed wrapper, the v5.0.1 name of <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html" title="Generic strongly-typed wrapper for explicit type conversion.">to_t</a></span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Within test expressions, literals such as <span class="tt">1<a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span> and <span class="tt">42<a class="el" href="#ga231cd51e76a2f426703275739d605ad4" title="Strongly-typed wrapper for float values, the v5.0.1 name of to_f.">_f</a></span> create strongly typed operands, whilst wrappers like <span class="tt">mt::to_i{expression}</span> convert dynamic values. These mechanisms enable clear, type-safe comparisons, improving readability and correctness in test cases.</p>
@@ -346,9 +346,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Strongly-typed wrapper for bool values.">to_b</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Strongly-typed wrapper for bool values.">to_b</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated</a></b></dt><dd>use <a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Strongly-typed wrapper for bool values.">to_b</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Strongly-typed wrapper for bool values.">to_b</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated</a></b></dt><dd>use <a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Strongly-typed wrapper for bool values.">to_b</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -363,9 +361,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831" title="Strongly-typed wrapper for char values.">to_c</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000034">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831" title="Strongly-typed wrapper for char values.">to_c</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000035">Deprecated</a></b></dt><dd>use <a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831" title="Strongly-typed wrapper for char values.">to_c</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831" title="Strongly-typed wrapper for char values.">to_c</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated</a></b></dt><dd>use <a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831" title="Strongly-typed wrapper for char values.">to_c</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -380,9 +376,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Strongly-typed wrapper for double values.">to_d</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000074">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Strongly-typed wrapper for double values.">to_d</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000075">Deprecated</a></b></dt><dd>use <a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Strongly-typed wrapper for double values.">to_d</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Strongly-typed wrapper for double values.">to_d</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000030">Deprecated</a></b></dt><dd>use <a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Strongly-typed wrapper for double values.">to_d</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -397,9 +391,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga5368740b47e92605914b6c38ea88aebf" title="Strongly-typed wrapper for float values.">to_f</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000072">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga5368740b47e92605914b6c38ea88aebf" title="Strongly-typed wrapper for float values.">to_f</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000073">Deprecated</a></b></dt><dd>use <a class="el" href="#ga5368740b47e92605914b6c38ea88aebf" title="Strongly-typed wrapper for float values.">to_f</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga5368740b47e92605914b6c38ea88aebf" title="Strongly-typed wrapper for float values.">to_f</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000029">Deprecated</a></b></dt><dd>use <a class="el" href="#ga5368740b47e92605914b6c38ea88aebf" title="Strongly-typed wrapper for float values.">to_f</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -414,9 +406,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaf3ee271cefcffa625e40d476305da62f" title="Strongly-typed wrapper for int values.">to_i</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000040">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gaf3ee271cefcffa625e40d476305da62f" title="Strongly-typed wrapper for int values.">to_i</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000041">Deprecated</a></b></dt><dd>use <a class="el" href="#gaf3ee271cefcffa625e40d476305da62f" title="Strongly-typed wrapper for int values.">to_i</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaf3ee271cefcffa625e40d476305da62f" title="Strongly-typed wrapper for int values.">to_i</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated</a></b></dt><dd>use <a class="el" href="#gaf3ee271cefcffa625e40d476305da62f" title="Strongly-typed wrapper for int values.">to_i</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -431,9 +421,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9" title="Strongly-typed wrapper for std::int16_t values.">to_i16</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000058">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9" title="Strongly-typed wrapper for std::int16_t values.">to_i16</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000059">Deprecated</a></b></dt><dd>use <a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9" title="Strongly-typed wrapper for std::int16_t values.">to_i16</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9" title="Strongly-typed wrapper for std::int16_t values.">to_i16</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated</a></b></dt><dd>use <a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9" title="Strongly-typed wrapper for std::int16_t values.">to_i16</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -448,9 +436,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga201eeff58867ba58d3312ae56113ef06" title="Strongly-typed wrapper for std::int32_t values.">to_i32</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000060">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga201eeff58867ba58d3312ae56113ef06" title="Strongly-typed wrapper for std::int32_t values.">to_i32</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000061">Deprecated</a></b></dt><dd>use <a class="el" href="#ga201eeff58867ba58d3312ae56113ef06" title="Strongly-typed wrapper for std::int32_t values.">to_i32</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga201eeff58867ba58d3312ae56113ef06" title="Strongly-typed wrapper for std::int32_t values.">to_i32</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000023">Deprecated</a></b></dt><dd>use <a class="el" href="#ga201eeff58867ba58d3312ae56113ef06" title="Strongly-typed wrapper for std::int32_t values.">to_i32</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -465,9 +451,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaead55f5e265634a742633261f9f2aa3f" title="Strongly-typed wrapper for std::int64_t values.">to_i64</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000062">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gaead55f5e265634a742633261f9f2aa3f" title="Strongly-typed wrapper for std::int64_t values.">to_i64</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000063">Deprecated</a></b></dt><dd>use <a class="el" href="#gaead55f5e265634a742633261f9f2aa3f" title="Strongly-typed wrapper for std::int64_t values.">to_i64</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaead55f5e265634a742633261f9f2aa3f" title="Strongly-typed wrapper for std::int64_t values.">to_i64</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated</a></b></dt><dd>use <a class="el" href="#gaead55f5e265634a742633261f9f2aa3f" title="Strongly-typed wrapper for std::int64_t values.">to_i64</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -482,9 +466,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db" title="Strongly-typed wrapper for std::int8_t values.">to_i8</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000056">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db" title="Strongly-typed wrapper for std::int8_t values.">to_i8</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000057">Deprecated</a></b></dt><dd>use <a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db" title="Strongly-typed wrapper for std::int8_t values.">to_i8</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db" title="Strongly-typed wrapper for std::int8_t values.">to_i8</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd>use <a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db" title="Strongly-typed wrapper for std::int8_t values.">to_i8</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -499,9 +481,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga09028a1e0e713723257afba48b9ee551" title="Strongly-typed wrapper for long values.">to_l</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000042">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga09028a1e0e713723257afba48b9ee551" title="Strongly-typed wrapper for long values.">to_l</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000043">Deprecated</a></b></dt><dd>use <a class="el" href="#ga09028a1e0e713723257afba48b9ee551" title="Strongly-typed wrapper for long values.">to_l</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga09028a1e0e713723257afba48b9ee551" title="Strongly-typed wrapper for long values.">to_l</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated</a></b></dt><dd>use <a class="el" href="#ga09028a1e0e713723257afba48b9ee551" title="Strongly-typed wrapper for long values.">to_l</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -516,9 +496,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaeba32254fdd8159523b525745b13bfa9" title="Strongly-typed wrapper for long double values.">to_ld</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000076">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gaeba32254fdd8159523b525745b13bfa9" title="Strongly-typed wrapper for long double values.">to_ld</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000077">Deprecated</a></b></dt><dd>use <a class="el" href="#gaeba32254fdd8159523b525745b13bfa9" title="Strongly-typed wrapper for long double values.">to_ld</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaeba32254fdd8159523b525745b13bfa9" title="Strongly-typed wrapper for long double values.">to_ld</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000031">Deprecated</a></b></dt><dd>use <a class="el" href="#gaeba32254fdd8159523b525745b13bfa9" title="Strongly-typed wrapper for long double values.">to_ld</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -533,9 +511,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34" title="Strongly-typed wrapper for long long values.">to_ll</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000044">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34" title="Strongly-typed wrapper for long long values.">to_ll</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000045">Deprecated</a></b></dt><dd>use <a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34" title="Strongly-typed wrapper for long long values.">to_ll</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34" title="Strongly-typed wrapper for long long values.">to_ll</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated</a></b></dt><dd>use <a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34" title="Strongly-typed wrapper for long long values.">to_ll</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -550,9 +526,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78" title="Strongly-typed wrapper for short values.">to_s</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000038">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78" title="Strongly-typed wrapper for short values.">to_s</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000039">Deprecated</a></b></dt><dd>use <a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78" title="Strongly-typed wrapper for short values.">to_s</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78" title="Strongly-typed wrapper for short values.">to_s</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated</a></b></dt><dd>use <a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78" title="Strongly-typed wrapper for short values.">to_s</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -567,9 +541,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516" title="Strongly-typed wrapper for signed char values.">to_sc</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000036">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516" title="Strongly-typed wrapper for signed char values.">to_sc</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000037">Deprecated</a></b></dt><dd>use <a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516" title="Strongly-typed wrapper for signed char values.">to_sc</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516" title="Strongly-typed wrapper for signed char values.">to_sc</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated</a></b></dt><dd>use <a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516" title="Strongly-typed wrapper for signed char values.">to_sc</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -587,14 +559,13 @@ template&lt;class T&gt; </div>
       </table>
 </div><div class="memdoc">
 <p>The same type as <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html" title="Generic strongly-typed wrapper for explicit type conversion.">to_t</a>&lt;T&gt;</span>, so it takes the same argument and is reported in the same way; kept for backwards compatibility. In v5.0.1 it was a separate class, also derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">detail::value</a>&lt;T&gt;</span>.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000078">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html" title="Generic strongly-typed wrapper for explicit type conversion.">to_t</a></span> (since 3.2.0).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The type of the wrapped value. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000079">Deprecated</a></b></dt><dd>use <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html" title="Generic strongly-typed wrapper for explicit type conversion.">to_t</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated</a></b></dt><dd>use <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html" title="Generic strongly-typed wrapper for explicit type conversion.">to_t</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -609,9 +580,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" title="Strongly-typed wrapper for unsigned values.">to_u</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000046">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" title="Strongly-typed wrapper for unsigned values.">to_u</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000047">Deprecated</a></b></dt><dd>use <a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" title="Strongly-typed wrapper for unsigned values.">to_u</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" title="Strongly-typed wrapper for unsigned values.">to_u</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000016">Deprecated</a></b></dt><dd>use <a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" title="Strongly-typed wrapper for unsigned values.">to_u</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -626,9 +595,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0" title="Strongly-typed wrapper for std::uint16_t values.">to_u16</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000066">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0" title="Strongly-typed wrapper for std::uint16_t values.">to_u16</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000067">Deprecated</a></b></dt><dd>use <a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0" title="Strongly-typed wrapper for std::uint16_t values.">to_u16</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0" title="Strongly-typed wrapper for std::uint16_t values.">to_u16</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated</a></b></dt><dd>use <a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0" title="Strongly-typed wrapper for std::uint16_t values.">to_u16</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -643,9 +610,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a" title="Strongly-typed wrapper for std::uint32_t values.">to_u32</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000068">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a" title="Strongly-typed wrapper for std::uint32_t values.">to_u32</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000069">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a" title="Strongly-typed wrapper for std::uint32_t values.">to_u32</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a" title="Strongly-typed wrapper for std::uint32_t values.">to_u32</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a" title="Strongly-typed wrapper for std::uint32_t values.">to_u32</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -660,9 +625,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201" title="Strongly-typed wrapper for std::uint64_t values.">to_u64</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000070">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201" title="Strongly-typed wrapper for std::uint64_t values.">to_u64</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000071">Deprecated</a></b></dt><dd>use <a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201" title="Strongly-typed wrapper for std::uint64_t values.">to_u64</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201" title="Strongly-typed wrapper for std::uint64_t values.">to_u64</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000028">Deprecated</a></b></dt><dd>use <a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201" title="Strongly-typed wrapper for std::uint64_t values.">to_u64</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -677,9 +640,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289" title="Strongly-typed wrapper for std::uint8_t values.">to_u8</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000064">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289" title="Strongly-typed wrapper for std::uint8_t values.">to_u8</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000065">Deprecated</a></b></dt><dd>use <a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289" title="Strongly-typed wrapper for std::uint8_t values.">to_u8</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289" title="Strongly-typed wrapper for std::uint8_t values.">to_u8</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated</a></b></dt><dd>use <a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289" title="Strongly-typed wrapper for std::uint8_t values.">to_u8</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -694,9 +655,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89" title="Strongly-typed wrapper for unsigned char values.">to_uc</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000048">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89" title="Strongly-typed wrapper for unsigned char values.">to_uc</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000049">Deprecated</a></b></dt><dd>use <a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89" title="Strongly-typed wrapper for unsigned char values.">to_uc</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89" title="Strongly-typed wrapper for unsigned char values.">to_uc</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated</a></b></dt><dd>use <a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89" title="Strongly-typed wrapper for unsigned char values.">to_uc</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -711,9 +670,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga5d2d6a69c090569866a779672772b48f" title="Strongly-typed wrapper for unsigned long values.">to_ul</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000052">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga5d2d6a69c090569866a779672772b48f" title="Strongly-typed wrapper for unsigned long values.">to_ul</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000053">Deprecated</a></b></dt><dd>use <a class="el" href="#ga5d2d6a69c090569866a779672772b48f" title="Strongly-typed wrapper for unsigned long values.">to_ul</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga5d2d6a69c090569866a779672772b48f" title="Strongly-typed wrapper for unsigned long values.">to_ul</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated</a></b></dt><dd>use <a class="el" href="#ga5d2d6a69c090569866a779672772b48f" title="Strongly-typed wrapper for unsigned long values.">to_ul</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -728,9 +685,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788" title="Strongly-typed wrapper for unsigned long long values.">to_ull</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000054">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788" title="Strongly-typed wrapper for unsigned long long values.">to_ull</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000055">Deprecated</a></b></dt><dd>use <a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788" title="Strongly-typed wrapper for unsigned long long values.">to_ull</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788" title="Strongly-typed wrapper for unsigned long long values.">to_ull</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated</a></b></dt><dd>use <a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788" title="Strongly-typed wrapper for unsigned long long values.">to_ull</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>
@@ -745,9 +700,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4" title="Strongly-typed wrapper for unsigned short values.">to_us</a></span>; kept for backwards compatibility.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000050">Deprecated</a></b></dt><dd>Use <span class="tt"><a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4" title="Strongly-typed wrapper for unsigned short values.">to_us</a></span> (since 3.2.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000051">Deprecated</a></b></dt><dd>use <a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4" title="Strongly-typed wrapper for unsigned short values.">to_us</a></dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4" title="Strongly-typed wrapper for unsigned short values.">to_us</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000018">Deprecated</a></b></dt><dd>use <a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4" title="Strongly-typed wrapper for unsigned short values.">to_us</a> (since 3.2.0)</dd></dl>
 
 </div>
 </div>

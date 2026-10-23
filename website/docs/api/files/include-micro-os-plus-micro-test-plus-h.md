@@ -40,6 +40,7 @@ keywords:
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/utility-h">micro-test-plus/utility.h</a>"
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">micro-test-plus/test.h</a>"
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h">micro-test-plus/runner.h</a>"
+#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">micro-test-plus/deprecated.h</a>"
 </div>
 
 ## Macro Definitions Index
@@ -234,29 +235,33 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00144"></a>144</span><span class="doxyLineContent"><span class="doxyHighlightComment">// runner-options.h.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00145"></a>145</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h">micro-test-plus/runner.h</a>"</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00146"></a>146</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00147"></a>147</span><span class="doxyLineContent"><span class="doxyHighlightComment">// Defined in detail.h for the library formats only; the templates above</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00148"></a>148</span><span class="doxyLineContent"><span class="doxyHighlightComment">// have already been parsed, so keep it out of the application code.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00149"></a>149</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#undef MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00147"></a>147</span><span class="doxyLineContent"><span class="doxyHighlightComment">// Requires counters.h, extension.h, function-comparators.h, literals.h,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00148"></a>148</span><span class="doxyLineContent"><span class="doxyHighlightComment">// reflection.h, runner.h, stopwatch.h, test.h.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00149"></a>149</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">micro-test-plus/deprecated.h</a>"</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00150"></a>150</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00151"></a>151</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00152"></a>152</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00153"></a>153</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00151"></a>151</span><span class="doxyLineContent"><span class="doxyHighlightComment">// Defined in detail.h for the library formats only; the templates above</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00152"></a>152</span><span class="doxyLineContent"><span class="doxyHighlightComment">// have already been parsed, so keep it out of the application code.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00153"></a>153</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#undef MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00154"></a>154</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00155"></a>155</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00156"></a>156</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00157"></a>157</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__cplusplus)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00157"></a>157</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00158"></a>158</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00159"></a>159</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00160"></a>160</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00161"></a>161</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_H_</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00161"></a>161</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__cplusplus)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00162"></a>162</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00163"></a>163</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00164"></a>164</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00165"></a>165</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_H_</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00166"></a>166</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00167"></a>167</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
 
 </div>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -69,9 +69,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="94" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="94" bodyend="106"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" compoundref="expression-formatter_8cpp" startline="94" endline="106">append_hex</references>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" compoundref="expression-formatter_8cpp" startline="94" endline="106">append_hex</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="95" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="95" bodyend="107"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" compoundref="expression-formatter_8cpp" startline="95" endline="107">append_hex</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" compoundref="expression-formatter_8cpp" startline="95" endline="107">append_hex</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -81,6 +81,6 @@
 <para>The unnamed namespace gives the helpers internal linkage, so that they are visible only in this translation unit, and cannot conflict with the names of the application or of the other source files of the framework. They are not declared in any header.</para>
 <para>It contains <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" kindref="member">append_hex()</ref></computeroutput>, which writes the hexadecimal escapes of the characters that cannot be printed as they are. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="75" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="76" column="3"/>
   </compounddef>
 </doxygen>

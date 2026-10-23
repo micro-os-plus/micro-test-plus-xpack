@@ -13,9 +13,6 @@ var namespacemicro__os__plus_1_1micro__test__plus_1_1detail =
       [ "write_without_colours", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03.html#a78d7c9fe8e59d559bf67bc55e7c52040", null ],
       [ "fragment_size", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03.html#a1ffff9ae8f2024f3bff18ec45b2baaf9", null ]
     ] ],
-    [ "anonymous_namespace{stopwatch.cpp}", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03.html", [
-      [ "read_clock", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03.html#a34225dca0ef5b70eb98c8eeaa3a05b06", null ]
-    ] ],
     [ "math", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math" ],
     [ "and_op", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op" ],
     [ "approx_op", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op" ],
@@ -97,6 +94,7 @@ var namespacemicro__os__plus_1_1micro__test__plus_1_1detail =
     [ "operator==", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a28646b3e1ddd2792546f303b6b65ad92", null ],
     [ "or_op", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a92a38209445666c9fdab2d9fb189cff0", null ],
     [ "predicate_op", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a5be372c9ff2b04cef7d12f215d0a194f", null ],
+    [ "read_clock", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a60dcef812e43e13d1e30f602a572e27a", null ],
     [ "test_each_value", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8", null ],
     [ "unwrap", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8", null ],
     [ "unwrap", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a5ab08a688b0f89e017e0d90a6a18ff8d", null ],

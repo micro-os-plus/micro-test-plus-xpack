@@ -102,15 +102,6 @@ keywords:
 <p>The same as <span class="doxyComputerOutput"><a href="#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a></span>. The name was misleading: in other frameworks (JUnit, Hypothesis), an unmet assumption skips the test, while here it fails it.</p>
 
 
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000124>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a></span> (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Template Parameters</dt>
 <dd>
@@ -147,9 +138,9 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000125>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000068>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a></p>
+<p>use <a href="#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -157,15 +148,15 @@ keywords:
 <p>Forwards to <span class="doxyComputerOutput"><a href="#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a></span>; the returned check result is neither copied nor moved, since a prvalue is returned (guaranteed copy elision).</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01269">1269</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00468">468</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01271">1271</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00469">469</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gad25dc8d5d657ace9d47d3a95b3341802">468</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gad25dc8d5d657ace9d47d3a95b3341802">test_case::assume</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Expr_T&amp; expr, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; sl)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">469</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">470</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#gace68a1bd4dd258082f4b1fc01fcd008a">require</a> (expr, sl);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">471</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gad25dc8d5d657ace9d47d3a95b3341802">469</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gad25dc8d5d657ace9d47d3a95b3341802">test_case::assume</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Expr_T&amp; expr, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; sl)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">470</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">471</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#gace68a1bd4dd258082f4b1fc01fcd008a">require</a> (expr, sl);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">472</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -249,7 +240,7 @@ keywords:
 <p>Constructs and returns a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">detail::check_result</a></span> of the kind <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e">detail::check_kind::requirement</a></span>. The check result evaluates the condition when constructed, records a pass or fail when it is destroyed, and, if the condition is false, stops the test case by throwing <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/failed-requirement">detail::failed_requirement</a></span> (caught by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#adb4333ecb107fee477156b661f0b1512">test_case::run()</a></span>), or, without exceptions, aborts the test execution.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01244">1244</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00449">449</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01248">1248</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00449">449</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -280,6 +271,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

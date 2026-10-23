@@ -66,34 +66,34 @@
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1009" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1009" bodyend="1009"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5c2acf2640374b8d971193eae264c26c" compoundref="expression-formatter-inlines_8h" startline="91" endline="95">expression_formatter</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_1a63b3cc3a8e725c2921787180f1244824" compoundref="expression-formatter-inlines_8h" startline="395" endline="400">micro_os_plus::micro_test_plus::detail::plain_text::append</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="530" endline="592">append_character</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="479" endline="502">append_decimal_point</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" compoundref="expression-formatter_8cpp" startline="604" endline="613">begin_check</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae0068f2e9d46a29c71fcc812f505fbce" compoundref="expression-formatter_8cpp" startline="622" endline="639">check_text</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="531" endline="593">append_character</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="480" endline="503">append_decimal_point</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" compoundref="expression-formatter_8cpp" startline="605" endline="614">begin_check</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae0068f2e9d46a29c71fcc812f505fbce" compoundref="expression-formatter_8cpp" startline="623" endline="640">check_text</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a44b0e35cd70af1cd0bfe333ffd6629e9" compoundref="check-result-inlines_8h" startline="184" endline="212">micro_os_plus::micro_test_plus::detail::check_result::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4b24176d3597d73506e5bf0b71bdab2a" compoundref="expression-formatter_8cpp" startline="260" endline="264">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="136" endline="146">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="229" endline="240">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afd1a0e24d72c0525f04e102fc2e6fb78" compoundref="expression-formatter_8cpp" startline="210" endline="221">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a46392700e7eabfa2e18655ac6b04c670" compoundref="expression-formatter_8cpp" startline="248" endline="252">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="443" endline="449">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="427" endline="434">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="459" endline="466">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="297" endline="302">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="349" endline="353">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="400" endline="405">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="374" endline="379">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="323" endline="328">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afedb833a4ea9bd720a9c9f471ea8ab34" compoundref="expression-formatter_8cpp" startline="283" endline="287">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9f9170708f0763a39314e19902843b4b" compoundref="expression-formatter_8cpp" startline="271" endline="275">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a937600e01855336e5ef437104e7ee688" compoundref="expression-formatter_8cpp" startline="117" endline="121">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4b24176d3597d73506e5bf0b71bdab2a" compoundref="expression-formatter_8cpp" startline="261" endline="265">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="137" endline="147">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="230" endline="241">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afd1a0e24d72c0525f04e102fc2e6fb78" compoundref="expression-formatter_8cpp" startline="211" endline="222">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a46392700e7eabfa2e18655ac6b04c670" compoundref="expression-formatter_8cpp" startline="249" endline="253">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="444" endline="450">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="428" endline="435">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="460" endline="467">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="298" endline="303">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="350" endline="354">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="401" endline="406">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="375" endline="380">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="324" endline="329">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afedb833a4ea9bd720a9c9f471ea8ab34" compoundref="expression-formatter_8cpp" startline="284" endline="288">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9f9170708f0763a39314e19902843b4b" compoundref="expression-formatter_8cpp" startline="272" endline="276">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a937600e01855336e5ef437104e7ee688" compoundref="expression-formatter_8cpp" startline="118" endline="122">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a965d6164f8c6d50cfb29545e794e9615" compoundref="expression-formatter-inlines_8h" startline="132" endline="136">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="310" endline="315">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="361" endline="366">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="413" endline="418">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="387" endline="392">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="336" endline="341">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="311" endline="316">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="362" endline="367">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="414" endline="419">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="388" endline="393">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="337" endline="342">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a57a2737ff5f067461e4f220acd9fcd4b" compoundref="expression-formatter-inlines_8h" startline="117" endline="120">str</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a566350d8ec85e4c0b5d8a27ef61f819f" prot="private" static="no" mutable="no">
@@ -139,9 +139,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1018" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1018" bodyend="1018"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" compoundref="expression-formatter_8cpp" startline="604" endline="613">begin_check</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae0068f2e9d46a29c71fcc812f505fbce" compoundref="expression-formatter_8cpp" startline="622" endline="639">check_text</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa568154ec1095196010a66fec43a393f" compoundref="expression-formatter_8cpp" startline="648" endline="671">end_check</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" compoundref="expression-formatter_8cpp" startline="605" endline="614">begin_check</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae0068f2e9d46a29c71fcc812f505fbce" compoundref="expression-formatter_8cpp" startline="623" endline="640">check_text</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa568154ec1095196010a66fec43a393f" compoundref="expression-formatter_8cpp" startline="649" endline="672">end_check</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5efacef89d1d5150982bbce240ac625e" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::pair&lt; const void *, std::string &gt; &gt;</type>
@@ -159,9 +159,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1031" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1031" bodyend="1031"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" compoundref="expression-formatter_8cpp" startline="604" endline="613">begin_check</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae0068f2e9d46a29c71fcc812f505fbce" compoundref="expression-formatter_8cpp" startline="622" endline="639">check_text</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa568154ec1095196010a66fec43a393f" compoundref="expression-formatter_8cpp" startline="648" endline="671">end_check</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" compoundref="expression-formatter_8cpp" startline="605" endline="614">begin_check</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae0068f2e9d46a29c71fcc812f505fbce" compoundref="expression-formatter_8cpp" startline="623" endline="640">check_text</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa568154ec1095196010a66fec43a393f" compoundref="expression-formatter_8cpp" startline="649" endline="672">end_check</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4a956e5994817535692a7684eb26e149" prot="private" static="no" mutable="no">
         <type>const bool</type>
@@ -180,9 +180,9 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1041" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1041" bodyend="1041"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5c2acf2640374b8d971193eae264c26c" compoundref="expression-formatter-inlines_8h" startline="91" endline="95">expression_formatter</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="479" endline="502">append_decimal_point</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="136" endline="146">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="480" endline="503">append_decimal_point</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="137" endline="147">operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -218,12 +218,12 @@ Initialises the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test_
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aed6149e163549956985e23a3ee9e6282">expression_formatter</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7de3044d562926e79a6039bed6230794">expression_formatter</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a421fc77a0d2c9939ca7d2fdc1ba13358">~expression_formatter</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4b24176d3597d73506e5bf0b71bdab2a" compoundref="expression-formatter_8cpp" startline="260" endline="264">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="136" endline="146">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a66178d7bc2ba82aa370731f91381e2e2" compoundref="expression-formatter_8cpp" startline="168" endline="172">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa273723118d3fc995eb3e2929d78f280" compoundref="expression-formatter_8cpp" startline="180" endline="184">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="229" endline="240">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afd1a0e24d72c0525f04e102fc2e6fb78" compoundref="expression-formatter_8cpp" startline="210" endline="221">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4b24176d3597d73506e5bf0b71bdab2a" compoundref="expression-formatter_8cpp" startline="261" endline="265">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="137" endline="147">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a66178d7bc2ba82aa370731f91381e2e2" compoundref="expression-formatter_8cpp" startline="169" endline="173">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa273723118d3fc995eb3e2929d78f280" compoundref="expression-formatter_8cpp" startline="181" endline="185">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="230" endline="241">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afd1a0e24d72c0525f04e102fc2e6fb78" compoundref="expression-formatter_8cpp" startline="211" endline="222">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac7bb8541495fe98975132f546f5529bc" compoundref="expression-formatter-inlines_8h" startline="299" endline="303">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7dbef1dcdbb8e4187ec4f28b41ed32fc" compoundref="expression-formatter-inlines_8h" startline="284" endline="289">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a91cd5a527853b70e7523e3180cb883f0" compoundref="expression-formatter-inlines_8h" startline="269" endline="274">operator&lt;&lt;</referencedby>
@@ -232,30 +232,30 @@ Initialises the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test_
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5a5535dbaa45481b3b6f74186d43152e" compoundref="expression-formatter-inlines_8h" startline="313" endline="317">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1af68e85825621bce88f656ced9be5396e" compoundref="expression-formatter-inlines_8h" startline="339" endline="344">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="355" endline="367">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a46392700e7eabfa2e18655ac6b04c670" compoundref="expression-formatter_8cpp" startline="248" endline="252">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a46392700e7eabfa2e18655ac6b04c670" compoundref="expression-formatter_8cpp" startline="249" endline="253">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a0f70445853f493e198a1fcf11177823d" compoundref="expression-formatter-inlines_8h" startline="233" endline="240">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2ca994c99c86ce1d5fdef788f9ece933" compoundref="expression-formatter-inlines_8h" startline="203" endline="209">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a277c1153e2afdb1a09df62f9858e4976" compoundref="expression-formatter-inlines_8h" startline="218" endline="224">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a0f53d49c9cf2bcbf4b5b35f136f769ce">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="443" endline="449">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="427" endline="434">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="459" endline="466">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="297" endline="302">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="349" endline="353">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="400" endline="405">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="374" endline="379">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="323" endline="328">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afedb833a4ea9bd720a9c9f471ea8ab34" compoundref="expression-formatter_8cpp" startline="283" endline="287">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9f9170708f0763a39314e19902843b4b" compoundref="expression-formatter_8cpp" startline="271" endline="275">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a937600e01855336e5ef437104e7ee688" compoundref="expression-formatter_8cpp" startline="117" endline="121">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="444" endline="450">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="428" endline="435">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="460" endline="467">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="298" endline="303">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="350" endline="354">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="401" endline="406">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="375" endline="380">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="324" endline="329">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afedb833a4ea9bd720a9c9f471ea8ab34" compoundref="expression-formatter_8cpp" startline="284" endline="288">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9f9170708f0763a39314e19902843b4b" compoundref="expression-formatter_8cpp" startline="272" endline="276">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a937600e01855336e5ef437104e7ee688" compoundref="expression-formatter_8cpp" startline="118" endline="122">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a965d6164f8c6d50cfb29545e794e9615" compoundref="expression-formatter-inlines_8h" startline="132" endline="136">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a8499cebf8c9b3815b189c0e6e8ca2920" compoundref="expression-formatter-inlines_8h" startline="191" endline="194">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="310" endline="315">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="361" endline="366">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="413" endline="418">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="387" endline="392">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="336" endline="341">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ad90b0391a9b4fb44cc89208745bdfe70" compoundref="expression-formatter_8cpp" startline="194" endline="199">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="311" endline="316">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="362" endline="367">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="414" endline="419">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="388" endline="393">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="337" endline="342">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ad90b0391a9b4fb44cc89208745bdfe70" compoundref="expression-formatter_8cpp" startline="195" endline="200">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1a4f5fbbf1f7194b61b6d1cedf2b8a62">operator=</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1acf0a0ce3f89ee68096e5b104dfbd8481">operator=</referencedby>
       </memberdef>
@@ -345,7 +345,7 @@ Appends the string <computeroutput>"true"</computeroutput> or <computeroutput>"f
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="430" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="260" bodyend="264"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="430" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="261" bodyend="265"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
@@ -380,9 +380,9 @@ The character is written as a C++ character literal, between single quotes, by <
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="304" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="136" bodyend="146"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="304" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="137" bodyend="147"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="530" endline="592">append_character</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="531" endline="593">append_character</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4a956e5994817535692a7684eb26e149" compoundref="expression-formatter_8h" startline="1041" endline="1041">plain_</references>
       </memberdef>
@@ -416,9 +416,9 @@ Written by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="345" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="168" bodyend="172"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="345" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="169" bodyend="173"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="530" endline="592">append_character</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="531" endline="593">append_character</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa273723118d3fc995eb3e2929d78f280" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" kindref="member">expression_formatter</ref> &amp;</type>
@@ -450,9 +450,9 @@ Written by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="366" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="180" bodyend="184"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="366" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="181" bodyend="185"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="530" endline="592">append_character</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="531" endline="593">append_character</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" kindref="member">expression_formatter</ref> &amp;</type>
@@ -483,7 +483,7 @@ Appends the characters of the string, or <computeroutput>"nullptr"</computeroutp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="408" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="229" bodyend="240"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="408" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="230" bodyend="241"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ab3ab63f34f2310d31484a226c92e32aa" compoundref="detail-inlines_8h" startline="908" endline="911">micro_os_plus::micro_test_plus::detail::c_string::is_null</references>
@@ -519,7 +519,7 @@ Appends the null-terminated C string <computeroutput>s</computeroutput> to the i
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="399" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="210" bodyend="221"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="399" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="211" bodyend="222"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
@@ -1013,7 +1013,7 @@ Appends the name, as the <computeroutput>std::string_view</computeroutput> overl
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="421" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="248" bodyend="252"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="421" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="249" bodyend="253"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" compoundref="values-inlines_8h" startline="261" endline="264">micro_os_plus::micro_test_plus::detail::named_bool::name</references>
@@ -1221,14 +1221,14 @@ Writes the opening parenthesis, the elements through <computeroutput><ref refid=
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="641" column="7"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="530" endline="592">append_character</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="479" endline="502">append_decimal_point</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="531" endline="593">append_character</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="480" endline="503">append_decimal_point</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2966189c9d09d874a21e069c10a23b44" compoundref="expression-formatter-inlines_8h" startline="250" endline="254">append_elements</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" compoundref="expression-formatter_8cpp" startline="604" endline="613">begin_check</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae0068f2e9d46a29c71fcc812f505fbce" compoundref="expression-formatter_8cpp" startline="622" endline="639">check_text</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" compoundref="expression-formatter_8cpp" startline="605" endline="614">begin_check</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae0068f2e9d46a29c71fcc812f505fbce" compoundref="expression-formatter_8cpp" startline="623" endline="640">check_text</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2440544fb5674da8853708f9af9ccc14" compoundref="expression-formatter-inlines_8h" startline="105" endline="108">colour</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa568154ec1095196010a66fec43a393f" compoundref="expression-formatter_8cpp" startline="648" endline="671">end_check</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa568154ec1095196010a66fec43a393f" compoundref="expression-formatter_8cpp" startline="649" endline="672">end_check</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a57a2737ff5f067461e4f220acd9fcd4b" compoundref="expression-formatter-inlines_8h" startline="117" endline="120">str</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a667715506ffe8f42c3243b7e290a9768" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1312,9 +1312,9 @@ Converts <computeroutput>v</computeroutput> to its string representation via <co
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="563" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="443" bodyend="449"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="563" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="444" bodyend="450"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="479" endline="502">append_decimal_point</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="480" endline="503">append_decimal_point</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
@@ -1348,11 +1348,11 @@ Converts <computeroutput>v</computeroutput> to its string representation via <co
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="550" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="427" bodyend="434"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="550" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="428" bodyend="435"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="479" endline="502">append_decimal_point</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="480" endline="503">append_decimal_point</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1385,11 +1385,11 @@ Converts <computeroutput>v</computeroutput> to its string representation via <co
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="575" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="459" bodyend="466"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="575" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="460" bodyend="467"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="479" endline="502">append_decimal_point</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" compoundref="expression-formatter_8cpp" startline="480" endline="503">append_decimal_point</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1421,10 +1421,10 @@ Converts <computeroutput>c</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="457" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="297" bodyend="302"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="457" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="298" bodyend="303"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1456,7 +1456,7 @@ Converts <computeroutput>v</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="493" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="349" bodyend="353"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="493" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="350" bodyend="354"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
@@ -1490,10 +1490,10 @@ Converts <computeroutput>v</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="529" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="400" bodyend="405"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="529" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="401" bodyend="406"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1525,10 +1525,10 @@ Converts <computeroutput>v</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="511" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="374" bodyend="379"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="511" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="375" bodyend="380"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1560,10 +1560,10 @@ Converts <computeroutput>v</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="475" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="323" bodyend="328"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="475" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="324" bodyend="329"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afedb833a4ea9bd720a9c9f471ea8ab34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1586,7 +1586,7 @@ Appends the string <computeroutput>"nullopt"</computeroutput> to the internal bu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="449" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="283" bodyend="287"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="449" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="284" bodyend="288"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
@@ -1609,7 +1609,7 @@ Appends the string <computeroutput>"nullptr"</computeroutput> to the internal bu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="438" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="271" bodyend="275"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="438" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="272" bodyend="276"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
@@ -1642,7 +1642,7 @@ Appends the contents of the <computeroutput>std::string_view</computeroutput> di
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="287" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="117" bodyend="121"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="287" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="118" bodyend="122"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
@@ -1776,10 +1776,10 @@ Converts <computeroutput>c</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="466" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="310" bodyend="315"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="466" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="311" bodyend="316"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1811,10 +1811,10 @@ Converts <computeroutput>v</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="502" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="361" bodyend="366"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="502" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="362" bodyend="367"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1846,10 +1846,10 @@ Converts <computeroutput>v</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="538" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="413" bodyend="418"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="538" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="414" bodyend="419"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1881,10 +1881,10 @@ Converts <computeroutput>v</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="520" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="387" bodyend="392"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="520" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="388" bodyend="393"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1916,10 +1916,10 @@ Converts <computeroutput>v</computeroutput> to its decimal string representation
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="484" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="336" bodyend="341"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="484" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="337" bodyend="342"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="510" endline="516">append_suffix</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" compoundref="expression-formatter_8cpp" startline="511" endline="517">append_suffix</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ad90b0391a9b4fb44cc89208745bdfe70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1952,9 +1952,9 @@ Written by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="385" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="194" bodyend="199"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="385" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="195" bodyend="200"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" compoundref="expression-formatter-inlines_8h" startline="80" endline="84">expression_formatter</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="530" endline="592">append_character</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" compoundref="expression-formatter_8cpp" startline="531" endline="593">append_character</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1a4f5fbbf1f7194b61b6d1cedf2b8a62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" kindref="member">expression_formatter</ref> &amp;</type>
@@ -2112,13 +2112,13 @@ A value of an 8-bit type above <computeroutput>0x7F</computeroutput> is a part o
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="972" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="530" bodyend="592"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="972" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="531" bodyend="593"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="136" endline="146">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a66178d7bc2ba82aa370731f91381e2e2" compoundref="expression-formatter_8cpp" startline="168" endline="172">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa273723118d3fc995eb3e2929d78f280" compoundref="expression-formatter_8cpp" startline="180" endline="184">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="137" endline="147">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a66178d7bc2ba82aa370731f91381e2e2" compoundref="expression-formatter_8cpp" startline="169" endline="173">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa273723118d3fc995eb3e2929d78f280" compoundref="expression-formatter_8cpp" startline="181" endline="185">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a0f53d49c9cf2bcbf4b5b35f136f769ce">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ad90b0391a9b4fb44cc89208745bdfe70" compoundref="expression-formatter_8cpp" startline="194" endline="199">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ad90b0391a9b4fb44cc89208745bdfe70" compoundref="expression-formatter_8cpp" startline="195" endline="200">operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2150,13 +2150,13 @@ The shortest representation of a floating-point value with an integral value has
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="930" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="479" bodyend="502"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="930" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="480" bodyend="503"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4a956e5994817535692a7684eb26e149" compoundref="expression-formatter_8h" startline="1041" endline="1041">plain_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a0f53d49c9cf2bcbf4b5b35f136f769ce">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="443" endline="449">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="427" endline="434">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="459" endline="466">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="444" endline="450">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="428" endline="435">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="460" endline="467">operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2966189c9d09d874a21e069c10a23b44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2253,21 +2253,21 @@ Appends <computeroutput>suffix</computeroutput>, unless the formatter is in the 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="945" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="510" bodyend="516"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="945" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="511" bodyend="517"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4a956e5994817535692a7684eb26e149" compoundref="expression-formatter_8h" startline="1041" endline="1041">plain_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a0f53d49c9cf2bcbf4b5b35f136f769ce">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="427" endline="434">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="459" endline="466">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="297" endline="302">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="400" endline="405">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="374" endline="379">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="323" endline="328">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="310" endline="315">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="361" endline="366">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="413" endline="418">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="387" endline="392">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="336" endline="341">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="428" endline="435">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="460" endline="467">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="298" endline="303">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="401" endline="406">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="375" endline="380">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="324" endline="329">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="311" endline="316">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="362" endline="367">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="414" endline="419">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="388" endline="393">operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="337" endline="342">operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2299,7 +2299,7 @@ In the usual case, the previous check was already reported (its <computeroutput>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="881" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="604" bodyend="613"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="881" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="605" bodyend="614"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aaa185fbbc82e45621ca924efea6c8a3c" compoundref="expression-formatter_8h" startline="1018" endline="1018">owner_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5efacef89d1d5150982bbce240ac625e" compoundref="expression-formatter_8h" startline="1031" endline="1031">pending_</references>
@@ -2335,7 +2335,7 @@ Searches <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="892" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="622" bodyend="639"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="892" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="623" bodyend="640"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1009" endline="1009">buffer_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aaa185fbbc82e45621ca924efea6c8a3c" compoundref="expression-formatter_8h" startline="1018" endline="1018">owner_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5efacef89d1d5150982bbce240ac625e" compoundref="expression-formatter_8h" startline="1031" endline="1031">pending_</references>
@@ -2413,7 +2413,7 @@ If the buffer belongs to <computeroutput>owner</computeroutput>, it is released 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="903" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="648" bodyend="671"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="903" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="649" bodyend="672"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aaa185fbbc82e45621ca924efea6c8a3c" compoundref="expression-formatter_8h" startline="1018" endline="1018">owner_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5efacef89d1d5150982bbce240ac625e" compoundref="expression-formatter_8h" startline="1031" endline="1031">pending_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a0f53d49c9cf2bcbf4b5b35f136f769ce">operator&lt;&lt;</referencedby>

@@ -53,12 +53,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">deprecated.cpp</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with non-template implementations for the µTest++ expression formatter. <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp/#details">More...</a></p>
+<p>C++ source file with implementations for the deprecated µTest++ definitions. <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -67,12 +67,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp">reflection.cpp</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>C++ source file with implementations for the µTest++ reflection utilities. <a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp/#details">More...</a></p>
+<p>C++ source file with non-template implementations for the µTest++ expression formatter. <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -191,7 +191,7 @@ keywords:
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">check-result.cpp</a></span> — <span class="doxyComputerOutput">check_result</span> construction and reporting</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/counters-cpp">counters.cpp</a></span> — <span class="doxyComputerOutput">counters</span> accumulation and <span class="doxyComputerOutput">operator+=</span></li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a></span> — non-template <span class="doxyComputerOutput">operator&lt;&lt;</span> overloads of the expression formatter, and the texts of the pending checks</li>
-<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp">reflection.cpp</a></span> — deprecated <span class="doxyComputerOutput">reflection::short_name()</span></li>
+<li><span class="doxyComputerOutput">reflection.cpp</span> — deprecated <span class="doxyComputerOutput">reflection::short_name()</span></li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a></span> — human-readable reporter implementation</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">reporter-tap.cpp</a></span> — TAP-format reporter implementation</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a></span> — base <span class="doxyComputerOutput">reporter</span> class and <span class="doxyComputerOutput">operator&lt;&lt;</span> overloads</li>
@@ -203,6 +203,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

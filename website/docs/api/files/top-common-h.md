@@ -47,13 +47,13 @@ keywords:
 <p>This file provides the principal Doxygen group and namespace documentation for the µOS++ project, serving as a central reference for the project's structure and organisation.</p>
 
 
-<p>Although named as a header, this file is not included in the build process; it is intended solely as a documentation resource for Doxygen. Due to Doxygen processing requirements, it cannot be supplied as a Markdown file or a <span class="doxyComputerOutput">.doxyfile</span>.</p>
+<p>Although named as a header, this file is not included in the build process; it is intended solely as a documentation resource for Doxygen. Due to Doxygen processing requirements, it cannot be supplied as a Markdown file or a .doxyfile.</p>
 
 
-<p>The file introduces the main documentation group for the µOS++ framework, outlining the overall project structure, which consists of multiple modular source libraries maintained as separate repositories within the <a href="https://github.com/micro-os-plus">micro-os-plus</a> organisation on GitHub.</p>
+<p>The file introduces the main documentation group for the µOS++ framework, outlining the overall project structure, which consists of multiple modular source libraries maintained as separate repositories within the <a href="https://github.com/micro-os-plus">micro-os-plus</a> group on GitHub.</p>
 
 
-<p>Additionally, it documents the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></span> namespace, which acts as the primary scope for all classes, functions, variables, enumerations, type definitions, and related entities within the framework. The namespace is further organised into nested namespaces.</p>
+<p>Additionally, it documents the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></span> namespace, which acts as the primary scope for all classes, functions, variables, enumerations, type definitions, and related entities within the framework. The namespace is further organised into nested namespaces to promote modularity, reduce redundancy, and enhance maintainability.</p>
 
 
 <p>All definitions and documentation topics in this file are maintained in the <span class="doxyComputerOutput">website/doxygen</span> folder to ensure a consistent and modular structure throughout the project's documentation.</p>
@@ -85,6 +85,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

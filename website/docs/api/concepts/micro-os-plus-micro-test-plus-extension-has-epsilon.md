@@ -43,7 +43,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput">has_epsilon</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is a framework expression type (see <span class="doxyComputerOutput">is_op</span>) with an <span class="doxyComputerOutput">epsilon</span> member, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating_point_constant</a></span> and the floating-point specialisation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a>&lt;T&gt;</span>. The comparators treat the operands within this tolerance as equal; a custom comparator uses it to do the same.</p>
+<p>The <span class="doxyComputerOutput">has_epsilon</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is a framework expression type (see <span class="doxyComputerOutput">is_op</span>) with an <span class="doxyComputerOutput">epsilon</span> member, like <span class="doxyComputerOutput">floating_point_constant</span> and the floating-point specialisation of <span class="doxyComputerOutput">value&lt;T&gt;</span>. The comparators treat the operands within this tolerance as equal; a custom comparator uses it to do the same.</p>
 
 
 <p>The types of the application are excluded, even if they have a member named <span class="doxyComputerOutput">epsilon</span>, so that they are compared with their own operators.</p>
@@ -62,6 +62,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -28,7 +28,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>&gt;
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>&gt;
 </div>
 
 ## Public Member Typedefs Index
@@ -97,14 +97,14 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000021>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000046>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>Not replaced (since 5.1.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 658 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 862 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -136,12 +136,12 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 <p>The types <span class="doxyComputerOutput">Args_T</span> of the specialisation, without the object parameter of the member functions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00675">675</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00879">879</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">675</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">879</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
 
 </div>
 
@@ -173,12 +173,12 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 <p>The type <span class="doxyComputerOutput">R</span> of the specialisation.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00666">666</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00870">870</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">666</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">result_type</a> = R;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">870</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">result_type</a> = R;</span></span></div>
 
 </div>
 
@@ -192,11 +192,11 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a></li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

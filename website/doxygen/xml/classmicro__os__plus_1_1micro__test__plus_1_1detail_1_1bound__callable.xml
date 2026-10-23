@@ -31,8 +31,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="807" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="807" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa9be536ae51bc405cb4fb0d8f015ebfc" compoundref="test-inlines_8h" startline="276" endline="281">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::bound_callable</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="810" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="810" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a15afa0762b074f3ef56335580bf7119d" compoundref="test-inlines_8h" startline="276" endline="281">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::bound_callable</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa0583b5d4d54c56f1460c18e88e43aa2" compoundref="test-inlines_8h" startline="305" endline="316">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::invoke</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1ae9058f5a50afba3eafc6b86d68957fdb" prot="private" static="no" mutable="no">
@@ -49,13 +49,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="798" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="798" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa9be536ae51bc405cb4fb0d8f015ebfc" compoundref="test-inlines_8h" startline="276" endline="281">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::bound_callable</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="801" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="801" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a15afa0762b074f3ef56335580bf7119d" compoundref="test-inlines_8h" startline="276" endline="281">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::bound_callable</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa0583b5d4d54c56f1460c18e88e43aa2" compoundref="test-inlines_8h" startline="305" endline="316">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::invoke</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa9be536ae51bc405cb4fb0d8f015ebfc" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a15afa0762b074f3ef56335580bf7119d" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename C</type>
@@ -79,7 +79,7 @@
           <type>A &amp;&amp;...</type>
           <declname>arguments</declname>
         </param>
-    <requiresclause>(sizeof...(A) == sizeof...(Args_T))    </requiresclause>
+    <requiresclause>(sizeof...(A) &gt; 0)    </requiresclause>
         <briefdescription>
 <para>Constructs the function object from a callable and the arguments. </para>
         </briefdescription>
@@ -102,7 +102,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="par"><title>Constraints</title><para>One argument for each stored argument, so that the copy and move constructors are used for copies (there is always at least one stored argument).</para>
+<simplesect kind="par"><title>Constraints</title><para>At least one argument, so that the copy and move constructors are used for copies (there is always at least one stored argument, and the member initialisation requires one argument for each of them). The constraint does not refer to <computeroutput>Args_T</computeroutput>, since clang 17 and 18 crash on the out-of-line definition of a constraint that refers to the pack of the enclosing class.</para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -125,11 +125,11 @@ The callable and the arguments are forwarded to the constructors of the members,
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="757" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="276" bodyend="281"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa9be536ae51bc405cb4fb0d8f015ebfc" compoundref="test-inlines_8h" startline="276" endline="281">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::bound_callable</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a674485f271757aa111f6cbf39bfa12f8" compoundref="test_8h" startline="807">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::arguments_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1ae9058f5a50afba3eafc6b86d68957fdb" compoundref="test_8h" startline="798">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::callable_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa9be536ae51bc405cb4fb0d8f015ebfc" compoundref="test-inlines_8h" startline="276" endline="281">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::bound_callable</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="760" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="276" bodyend="281"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a15afa0762b074f3ef56335580bf7119d" compoundref="test-inlines_8h" startline="276" endline="281">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::bound_callable</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a674485f271757aa111f6cbf39bfa12f8" compoundref="test_8h" startline="810">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::arguments_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1ae9058f5a50afba3eafc6b86d68957fdb" compoundref="test_8h" startline="801">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::callable_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a15afa0762b074f3ef56335580bf7119d" compoundref="test-inlines_8h" startline="276" endline="281">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::bound_callable</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a65c86f89bf9e216b5e2e3dae5f599a49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -161,7 +161,7 @@ Unpacks the stored arguments by their indices. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="771" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="289" bodyend="292"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="774" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="289" bodyend="292"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa0583b5d4d54c56f1460c18e88e43aa2" compoundref="test-inlines_8h" startline="305" endline="316">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::invoke</references>
       </memberdef>
     </sectiondef>
@@ -215,9 +215,9 @@ A function, a function pointer, or a function object is called directly, not thr
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="789" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="305" bodyend="316"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a674485f271757aa111f6cbf39bfa12f8" compoundref="test_8h" startline="807">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::arguments_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1ae9058f5a50afba3eafc6b86d68957fdb" compoundref="test_8h" startline="798">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::callable_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="792" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="305" bodyend="316"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a674485f271757aa111f6cbf39bfa12f8" compoundref="test_8h" startline="810">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::arguments_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1ae9058f5a50afba3eafc6b86d68957fdb" compoundref="test_8h" startline="801">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::callable_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a65c86f89bf9e216b5e2e3dae5f599a49" compoundref="test-inlines_8h" startline="289" endline="292">micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;::operator()</referencedby>
       </memberdef>
     </sectiondef>
@@ -254,10 +254,10 @@ A function, a function pointer, or a function object is called directly, not thr
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="733" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="734" bodyend="808"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="733" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="734" bodyend="811"/>
     <listofallmembers>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a674485f271757aa111f6cbf39bfa12f8" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::bound_callable</scope><name>arguments_</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa9be536ae51bc405cb4fb0d8f015ebfc" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::bound_callable</scope><name>bound_callable</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a15afa0762b074f3ef56335580bf7119d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::bound_callable</scope><name>bound_callable</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1ae9058f5a50afba3eafc6b86d68957fdb" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::bound_callable</scope><name>callable_</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1aa0583b5d4d54c56f1460c18e88e43aa2" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::bound_callable</scope><name>invoke</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_1a65c86f89bf9e216b5e2e3dae5f599a49" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::bound_callable</scope><name>operator()</name></member>

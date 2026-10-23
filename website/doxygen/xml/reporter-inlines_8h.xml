@@ -8,16 +8,24 @@
         <label>micro-test-plus.h</label>
         <link refid="micro-test-plus_8h"/>
       </node>
+      <node id="11">
+        <label>deprecated.h</label>
+        <link refid="deprecated_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>reporter-inlines.h</label>
         <link refid="reporter-inlines_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="12">
+      <node id="14">
         <label>test-inlines.h</label>
         <link refid="test-inlines_8h"/>
-        <childnode refid="13" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -53,12 +61,14 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
       <node id="10">
         <label>runner.h</label>
         <link refid="runner_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -69,13 +79,15 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="13">
+      <node id="15">
         <label>test.h</label>
         <link refid="test_8h"/>
-        <childnode refid="14" relation="include">
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
@@ -87,12 +99,16 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="16">
         <label>check-result.cpp</label>
         <link refid="check-result_8cpp"/>
+      </node>
+      <node id="12">
+        <label>deprecated.cpp</label>
+        <link refid="deprecated_8cpp"/>
       </node>
       <node id="5">
         <label>reporter-human.cpp</label>
@@ -110,7 +126,7 @@
         <label>runner.cpp</label>
         <link refid="runner_8cpp"/>
       </node>
-      <node id="11">
+      <node id="13">
         <label>test.cpp</label>
         <link refid="test_8cpp"/>
       </node>
@@ -246,28 +262,29 @@
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="112" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a467d1332df523b9acaa3ff82b0ebb714" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a467d1332df523b9acaa3ff82b0ebb714" kindref="member">reporter::verbosity</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2560a0f1cf935e420a2e584ccddf1a1e" kindref="member">verbosity_</ref>;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus::detail</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_REPORTER_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Deprecated<sp/>since<sp/>5.1.0;<sp/>use<sp/>runner::verbosity_level().</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a467d1332df523b9acaa3ff82b0ebb714" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a467d1332df523b9acaa3ff82b0ebb714" kindref="member">reporter::verbosity</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2560a0f1cf935e420a2e584ccddf1a1e" kindref="member">verbosity_</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus::detail</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_REPORTER_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines.h"/>
   </compounddef>

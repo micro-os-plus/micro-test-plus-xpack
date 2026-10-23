@@ -15,14 +15,12 @@
 <para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> also runs the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects that refer to it, so a separate runner class is no longer needed.</para>
-<para><xrefsect id="deprecated_1_deprecated000084"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> (since 5.1.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000085"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use runner</para>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> also runs the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects that refer to it, so a separate runner class is no longer needed. <xrefsect id="deprecated_1_deprecated000034"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use runner (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner.h" line="1082" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="450" column="3"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

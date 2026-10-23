@@ -2,7 +2,10 @@
 @brief Enables the µTest++ Testing Framework.
 
 @details
-Must be defined by the application, in `micro-os-plus/project-config.h`,
-in `micro-os-plus/micro-test-plus-defines.h`, or on the compiler command
-line. Without it, `micro-os-plus/micro-test-plus.h` declares nothing and
-the library sources compile to nothing.
+This is the main configuration option of this library; it has no value,
+only its definition matters.
+
+Without it, `micro-os-plus/micro-test-plus.h` declares nothing and the
+library sources compile to nothing. If it is defined on the compiler
+command line for the application, but not for the library sources, the
+link fails with undefined references.

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::identity</compoundname>
-    <includes refid="extension_8h" local="no">extension.h</includes>
+    <includes refid="deprecated_8h" local="no">deprecated.h</includes>
     <templateparamlist>
       <param>
         <type>class T</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="586" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="586" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="790" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="790" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -53,10 +53,10 @@
 </parameteritem>
 </parameterlist>
 Exposes <computeroutput>T</computeroutput> as the member type <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity_1a6399364a09c1004ebbaab36b2d5dc0c8" kindref="member">type</ref></computeroutput>, like <computeroutput>std::type_identity</computeroutput>, which replaces it.</para>
-<para><xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput>std::type_identity</computeroutput> (since 5.1.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000043"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput>std::type_identity</computeroutput> (since 5.1.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="578" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="579" bodyend="587"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="782" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="783" bodyend="791"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity_1a6399364a09c1004ebbaab36b2d5dc0c8" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::identity</scope><name>type</name></member>
     </listofallmembers>

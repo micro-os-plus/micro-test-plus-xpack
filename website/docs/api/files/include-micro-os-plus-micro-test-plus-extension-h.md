@@ -88,165 +88,11 @@ keywords:
 <td class="doxyMemberIndexSeparator" colspan="2"></td>
 </tr>
 
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated v5.0.1 namespace of the concepts and of the value wrapper templates. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
 </table>
 
 ## Classes Index
 
 <table class="doxyMembersIndex">
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating_point_constant&lt;T, N, D, Size, P&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Struct template representing a generic floating point constant with custom size and precision. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">function_traits&lt;T&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated traits of the callable objects. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a">function_traits&lt;R(*)(Args_T...)&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated traits of the function pointers. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55">function_traits&lt;R(Args_T...)&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated traits of the function types. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">function_traits&lt;R(T::*)(Args_T...) const&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated traits of the pointers to <span class="doxyComputerOutput">const</span> member functions. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b">function_traits&lt;R(T::*)(Args_T...)&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated traits of the pointers to member functions. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">identity&lt;T, Extra&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated identity type. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral_constant&lt;N&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Struct template representing a generic integral constant. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list&lt;Types&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated empty type list. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Empty base struct for the framework expression types. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
@@ -256,20 +102,6 @@ keywords:
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>The type of the elements of a range with <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> members. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/range-element-f7399366cd6336ecbea702c3289d9432/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T&gt;</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Struct template representing a generic value, accessible via a getter. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -436,74 +268,6 @@ keywords:
 <td class="doxyMemberIndexSeparator" colspan="2"></td>
 </tr>
 
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">concept</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">has_value</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> has a member named <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a></span>. <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">concept</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">is_floating_point</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a floating-point type. <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point/#details">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-</table>
-
-## Typedefs Index
-
-<table class="doxyMembersIndex">
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a67890916b8d3d8cbaab893cc6b599745">genuine_integral_value</a> = detail::value&lt; T &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated integral value wrapper. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a67890916b8d3d8cbaab893cc6b599745">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a65ad920b21a6c0df6848aa939659b92e">value_base_</a> = detail::value_base&lt; T &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base</a></span>. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a65ad920b21a6c0df6848aa939659b92e">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
 </table>
 
 ## Description {#details}
@@ -523,7 +287,7 @@ keywords:
 <p>The value wrappers themselves are declared in <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/values-h">values.h</a></span>, in the <span class="doxyComputerOutput">detail</span> namespace.</p>
 
 
-<p>The deprecated v5.0.1 <span class="doxyComputerOutput">type_traits</span> namespace, which refers to these concepts and to the value wrappers, is also declared here.</p>
+<p>The deprecated v5.0.1 <span class="doxyComputerOutput">type_traits</span> namespace, which refers to these concepts and to the value wrappers, is declared in <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a></span>.</p>
 
 
 <p>All header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
@@ -531,128 +295,6 @@ keywords:
 
 <p>This file is intended for internal use within the framework and should not be included directly by user code.</p>
 
-
-<div class="doxySectionDef">
-
-## Typedefs
-
-### genuine\_integral\_value {#a67890916b8d3d8cbaab893cc6b599745}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::genuine_integral_value = detail::value&lt;T&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Deprecated integral value wrapper.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The integral type of the stored value.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<p>In v5.0.1, a separate wrapper with the same members as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a>&lt;T&gt;</span>, never created by the framework; now <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a>&lt;T&gt;</span>, so the values are compared and reported in the same way.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000025>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>The value wrappers are internal (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="#l00784">784</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a67890916b8d3d8cbaab893cc6b599745">784</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a67890916b8d3d8cbaab893cc6b599745">genuine_integral_value</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-### value\_base\_ {#a65ad920b21a6c0df6848aa939659b92e}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::value_base_ = detail::value_base&lt;T&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base</a></span>.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The type of the stored value.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<p>The v5.0.1 name, with a trailing underscore. The stored value is now private, and <span class="doxyComputerOutput">get()</span> returns a reference; the value is read with <span class="doxyComputerOutput">get()</span> or with the explicit conversion, not through the v5.0.1 public member <span class="doxyComputerOutput">value_</span>.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000024>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>The value wrappers are internal (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line <a href="#l00769">769</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a65ad920b21a6c0df6848aa939659b92e">769</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a65ad920b21a6c0df6848aa939659b92e">value_base_</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base&lt;T&gt;</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 
 ## File Listing
 
@@ -748,7 +390,7 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00222"></a>222</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00246"></a>246</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00247"></a><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/printable">247</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">concept </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/printable">printable</a> = </span><span class="doxyHighlightKeyword">requires</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">detail::expression_formatter</a>&amp; formatter,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00248"></a>248</span><span class="doxyLineContent"><span class="doxyHighlight">                                  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a>) { formatter &lt;&lt; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a>; };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00248"></a>248</span><span class="doxyLineContent"><span class="doxyHighlight">                                  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; value) { formatter &lt;&lt; value; };</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00249"></a>249</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00250"></a>250</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ------------------------------------------------------------------------</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00251"></a>251</span><span class="doxyLineContent"><span class="doxyHighlight">  } </span><span class="doxyHighlightComment">// namespace extension</span></span></div>
@@ -814,133 +456,27 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00448"></a>448</span><span class="doxyLineContent"><span class="doxyHighlight">  } </span><span class="doxyHighlightComment">// namespace detail</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00449"></a>449</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00450"></a>450</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// --------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00451"></a>451</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00486"></a>486</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00487"></a>487</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// --------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00488"></a>488</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00489"></a>489</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(__GNUC__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00490"></a>490</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// GCC reports the partial specialisations of `function_traits` below,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00491"></a>491</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// since they name the deprecated namespace.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00492"></a>492</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma GCC diagnostic ignored "-Wdeprecated-declarations"</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00493"></a>493</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__GNUC__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00494"></a>494</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00495"></a>495</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// --------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00496"></a>496</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00497"></a>497</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">[[deprecated (</span><span class="doxyHighlightStringLiteral">"use the extension namespace"</span><span class="doxyHighlight">)]] <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00498"></a>498</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00499"></a>499</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00500"></a>500</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Concepts, now in the `extension` and `detail` namespaces.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00501"></a>501</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00502"></a>502</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/any-op">extension::any_op</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00503"></a>503</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/checkable">extension::checkable</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00504"></a>504</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/has-epsilon">extension::has_epsilon</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00505"></a>505</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00506"></a>506</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/printable">extension::printable</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00507"></a>507</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00508"></a>508</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/container-like">detail::container_like</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00509"></a>509</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/has-npos">detail::has_npos</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00510"></a>510</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00528"></a>528</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00529"></a><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">529</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">concept </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">has_value</a> = </span><span class="doxyHighlightKeyword">requires</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) { t.value; };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00530"></a>530</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00543"></a>543</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00544"></a><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">544</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">concept </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">is_floating_point</a> = std::floating_point&lt;T&gt;;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00545"></a>545</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00546"></a>546</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00547"></a>547</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Helpers removed from the framework, restored as in v5.0.1.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00548"></a>548</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00560"></a>560</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight">... Types&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00561"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">561</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00562"></a>562</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00563"></a>563</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00564"></a>564</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00577"></a>577</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">T, </span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight">... Extra&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00578"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">578</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">identity</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00579"></a>579</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00586"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity/#a6399364a09c1004ebbaab36b2d5dc0c8">586</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity/#a6399364a09c1004ebbaab36b2d5dc0c8">type</a> = T;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00587"></a>587</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00588"></a>588</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00603"></a>603</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00604"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">604</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">function_traits</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00605"></a>605</span><span class="doxyLineContent"><span class="doxyHighlight">#if !defined(__DOXYGEN__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00606"></a>606</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// Hidden from Doxygen, which reports a recursive class relation.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00607"></a>607</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// https://github.com/doxygen/doxygen/issues/9915</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00608"></a>608</span><span class="doxyLineContent"><span class="doxyHighlight">        : <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">function_traits</a>&lt;decltype (&amp;T::operator())&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00609"></a>609</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// !defined(__DOXYGEN__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00610"></a>610</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00611"></a>611</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00612"></a>612</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00625"></a>625</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">R, </span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight">... Args_T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00626"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a">626</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">function_traits</a>&lt;R (*) (Args_T...)&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00627"></a>627</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00634"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a/#a6e68b0f12d97490c730b3ee455887a75">634</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a/#a6e68b0f12d97490c730b3ee455887a75">result_type</a> = R;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00635"></a>635</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00643"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a/#a291ffb121545e9b52c3d1542f1612074">643</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a/#a291ffb121545e9b52c3d1542f1612074">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00644"></a>644</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00645"></a>645</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00657"></a>657</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">R, </span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight">... Args_T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00658"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55">658</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">function_traits</a>&lt;R (Args_T...)&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00659"></a>659</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00666"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55/#ae2c0f559e149f7cb6d9cfa59e4d02913">666</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55/#ae2c0f559e149f7cb6d9cfa59e4d02913">result_type</a> = R;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00667"></a>667</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00675"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55/#ae9cdecaa62003a4c7c1b7ca36da1361a">675</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55/#ae9cdecaa62003a4c7c1b7ca36da1361a">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00676"></a>676</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00677"></a>677</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00691"></a>691</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">R, </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">T, </span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight">... Args_T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00692"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b">692</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">function_traits</a>&lt;R (T::*) (Args_T...)&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00693"></a>693</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00700"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b/#a1f21557f758a46166726e0c6e01ee8bc">700</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b/#a1f21557f758a46166726e0c6e01ee8bc">result_type</a> = R;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00701"></a>701</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00709"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b/#abe3052f92aa798f6a80a6e9250fc76b4">709</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b/#abe3052f92aa798f6a80a6e9250fc76b4">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00710"></a>710</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00711"></a>711</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00726"></a>726</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">R, </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">T, </span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight">... Args_T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00727"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">727</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">function_traits</a>&lt;R (T::*) (Args_T...) const&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00728"></a>728</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00735"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8/#a19bf7a6150e7a0a8615fd74fda001d97">735</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8/#a19bf7a6150e7a0a8615fd74fda001d97">result_type</a> = R;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00736"></a>736</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00744"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8/#a6a6bb2b3c72d75ae76a082278c7086da">744</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8/#a6a6bb2b3c72d75ae76a082278c7086da">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00745"></a>745</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00746"></a>746</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00747"></a>747</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00748"></a>748</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// The base of the expressions and the value wrappers, now in `detail`.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00749"></a>749</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00750"></a>750</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00751"></a>751</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">detail::integral_constant</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00752"></a>752</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/op">detail::op</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00753"></a>753</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00754"></a>754</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00768"></a>768</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00769"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a65ad920b21a6c0df6848aa939659b92e">769</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a65ad920b21a6c0df6848aa939659b92e">value_base_</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base&lt;T&gt;</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00770"></a>770</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00783"></a>783</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00784"></a><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a67890916b8d3d8cbaab893cc6b599745">784</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a67890916b8d3d8cbaab893cc6b599745">genuine_integral_value</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00785"></a>785</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00786"></a>786</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00787"></a>787</span><span class="doxyLineContent"><span class="doxyHighlight">  } </span><span class="doxyHighlightComment">// namespace type_traits</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00788"></a>788</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00789"></a>789</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// --------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00790"></a>790</span><span class="doxyLineContent"><span class="doxyHighlight">} </span><span class="doxyHighlightComment">// namespace micro_os_plus::micro_test_plus</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00791"></a>791</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00792"></a>792</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(__GNUC__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00793"></a>793</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma GCC diagnostic pop</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00794"></a>794</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__GNUC__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00795"></a>795</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00796"></a>796</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00797"></a>797</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00798"></a>798</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__cplusplus)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00799"></a>799</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00800"></a>800</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00801"></a>801</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00802"></a>802</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_EXTENSION_H_</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00803"></a>803</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00804"></a>804</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00451"></a>451</span><span class="doxyLineContent"><span class="doxyHighlight">} </span><span class="doxyHighlightComment">// namespace micro_os_plus::micro_test_plus</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00452"></a>452</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00453"></a>453</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(__GNUC__)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00454"></a>454</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma GCC diagnostic pop</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00455"></a>455</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__GNUC__)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00456"></a>456</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00457"></a>457</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00458"></a>458</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00459"></a>459</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__cplusplus)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00460"></a>460</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00461"></a>461</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00462"></a>462</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00463"></a>463</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_EXTENSION_H_</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00464"></a>464</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00465"></a>465</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
 
 </div>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

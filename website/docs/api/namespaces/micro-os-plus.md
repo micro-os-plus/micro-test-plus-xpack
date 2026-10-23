@@ -56,8 +56,11 @@ namespace micro_os_plus { ... }
 <p>This namespace is further structured into nested namespaces, each dedicated to specific modules or subsystems. By encapsulating all definitions within well-defined namespaces, the framework achieves clear code organisation, minimises naming conflicts, and enhances overall maintainability.</p>
 
 
+<p>This approach promotes modular development, facilitates code reuse, and ensures seamless integration of components within the µOS++ ecosystem, supporting the creation of efficient, robust, and scalable embedded systems.</p>
+
+
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

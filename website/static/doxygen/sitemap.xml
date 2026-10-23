@@ -14,6 +14,9 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/counters_8h_source.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/deprecated_8h_source.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/detail_8h_source.html</loc>
   </url>
   <url>
@@ -33,6 +36,9 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/counters-inlines_8h_source.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/deprecated-inlines_8h_source.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/detail-inlines_8h_source.html</loc>
@@ -122,10 +128,10 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/counters_8cpp_source.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/expression-formatter_8cpp_source.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/deprecated_8cpp_source.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/reflection_8cpp_source.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/expression-formatter_8cpp_source.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/reporter-human_8cpp_source.html</loc>
@@ -164,6 +170,9 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/counters_8h.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/deprecated_8h.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/detail_8h.html</loc>
   </url>
   <url>
@@ -183,6 +192,9 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/counters-inlines_8h.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/deprecated-inlines_8h.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/detail-inlines_8h.html</loc>
@@ -272,10 +284,10 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/counters_8cpp.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/expression-formatter_8cpp.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/deprecated_8cpp.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/reflection_8cpp.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/expression-formatter_8cpp.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/reporter-human_8cpp.html</loc>
@@ -723,9 +735,6 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03.html</loc>
-  </url>
-  <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html</loc>

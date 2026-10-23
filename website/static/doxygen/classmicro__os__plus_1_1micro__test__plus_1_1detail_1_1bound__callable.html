@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -122,10 +122,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmicro__os
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa9be536ae51bc405cb4fb0d8f015ebfc" id="r_aa9be536ae51bc405cb4fb0d8f015ebfc"><td class="memTemplParams" colspan="2">template&lt;typename C, typename... A&gt; <br />
-requires (sizeof...(A) == sizeof...(Args_T))</td></tr>
-<tr class="memitem:aa9be536ae51bc405cb4fb0d8f015ebfc template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#aa9be536ae51bc405cb4fb0d8f015ebfc">bound_callable</a> (C &amp;&amp;callable, A &amp;&amp;... arguments)</td></tr>
-<tr class="memdesc:aa9be536ae51bc405cb4fb0d8f015ebfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the function object from a callable and the arguments.  <br /></td></tr>
+<tr class="memitem:a15afa0762b074f3ef56335580bf7119d" id="r_a15afa0762b074f3ef56335580bf7119d"><td class="memTemplParams" colspan="2">template&lt;typename C, typename... A&gt; <br />
+requires (sizeof...(A) &gt; 0)</td></tr>
+<tr class="memitem:a15afa0762b074f3ef56335580bf7119d template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a15afa0762b074f3ef56335580bf7119d">bound_callable</a> (C &amp;&amp;callable, A &amp;&amp;... arguments)</td></tr>
+<tr class="memdesc:a15afa0762b074f3ef56335580bf7119d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the function object from a callable and the arguments.  <br /></td></tr>
 <tr class="memitem:a65c86f89bf9e216b5e2e3dae5f599a49" id="r_a65c86f89bf9e216b5e2e3dae5f599a49"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a65c86f89bf9e216b5e2e3dae5f599a49">operator()</a> (Self_T &amp;self)</td></tr>
 <tr class="memdesc:a65c86f89bf9e216b5e2e3dae5f599a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes the stored callable.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -157,17 +157,17 @@ class micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callabl
 
 <p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00733">733</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa9be536ae51bc405cb4fb0d8f015ebfc" name="aa9be536ae51bc405cb4fb0d8f015ebfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9be536ae51bc405cb4fb0d8f015ebfc">&#9670;&#160;</a></span>bound_callable()</h2>
+<a id="a15afa0762b074f3ef56335580bf7119d" name="a15afa0762b074f3ef56335580bf7119d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15afa0762b074f3ef56335580bf7119d">&#9670;&#160;</a></span>bound_callable()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Self_T, typename Callable_T, typename... Args_T&gt; <br />
-requires (sizeof...(A) == sizeof...(Args_T))</div>
+requires (sizeof...(A) &gt; 0)</div>
 <div class="memtemplate">
 template&lt;typename C, typename... A&gt; <br />
-requires (sizeof...(A) == sizeof...(Args_T))</div>
+requires (sizeof...(A) &gt; 0)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -197,7 +197,7 @@ requires (sizeof...(A) == sizeof...(Args_T))</div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Constraints</dt><dd>One argument for each stored argument, so that the copy and move constructors are used for copies (there is always at least one stored argument).</dd></dl>
+<dl class="section user"><dt>Constraints</dt><dd>At least one argument, so that the copy and move constructors are used for copies (there is always at least one stored argument, and the member initialisation requires one argument for each of them). The constraint does not refer to <span class="tt">Args_T</span>, since clang 17 and 18 crash on the out-of-line definition of a constraint that refers to the pack of the enclosing class.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">callable</td><td>The callable object. </td></tr>
@@ -213,10 +213,10 @@ requires (sizeof...(A) == sizeof...(Args_T))</div>
 <div class="line"><span class="lineno">  280</span>    {</div>
 <div class="line"><span class="lineno">  281</span>    }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable.html">micro_os_plus::micro_test_plus::detail::bound_callable</a></div><div class="ttdoc">Function object that holds a callable and the additional arguments it is invoked with.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00733">test.h:734</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_html_a674485f271757aa111f6cbf39bfa12f8"><div class="ttname"><a href="#a674485f271757aa111f6cbf39bfa12f8">micro_os_plus::micro_test_plus::detail::bound_callable::arguments_</a></div><div class="ttdeci">std::tuple&lt; Args_T... &gt; arguments_</div><div class="ttdoc">The stored arguments.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00807">test.h:807</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_html_ae9058f5a50afba3eafc6b86d68957fdb"><div class="ttname"><a href="#ae9058f5a50afba3eafc6b86d68957fdb">micro_os_plus::micro_test_plus::detail::bound_callable::callable_</a></div><div class="ttdeci">Callable_T callable_</div><div class="ttdoc">The stored callable.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00798">test.h:798</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_html_a674485f271757aa111f6cbf39bfa12f8"><div class="ttname"><a href="#a674485f271757aa111f6cbf39bfa12f8">micro_os_plus::micro_test_plus::detail::bound_callable::arguments_</a></div><div class="ttdeci">std::tuple&lt; Args_T... &gt; arguments_</div><div class="ttdoc">The stored arguments.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00810">test.h:810</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable_html_ae9058f5a50afba3eafc6b86d68957fdb"><div class="ttname"><a href="#ae9058f5a50afba3eafc6b86d68957fdb">micro_os_plus::micro_test_plus::detail::bound_callable::callable_</a></div><div class="ttdeci">Callable_T callable_</div><div class="ttdoc">The stored callable.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00801">test.h:801</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00276">bound_callable()</a>, <a class="el" href="test_8h_source.html#l00807">arguments_</a>, and <a class="el" href="test_8h_source.html#l00798">callable_</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00276">bound_callable()</a>, <a class="el" href="test_8h_source.html#l00810">arguments_</a>, and <a class="el" href="test_8h_source.html#l00801">callable_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00276">bound_callable()</a>.</p>
 
@@ -281,7 +281,7 @@ template&lt;std::size_t... Is&gt; </div>
 <div class="line"><span class="lineno">  315</span>        }</div>
 <div class="line"><span class="lineno">  316</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00807">arguments_</a>, and <a class="el" href="test_8h_source.html#l00798">callable_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00810">arguments_</a>, and <a class="el" href="test_8h_source.html#l00801">callable_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00289">operator()()</a>.</p>
 
@@ -355,7 +355,7 @@ template&lt;typename Self_T, typename Callable_T, typename... Args_T&gt; </div>
 </div><div class="memdoc">
 <p>Copies of the arguments passed to <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a6abb44ef8226b1f80aad8010b5ef1a5c" title="Creates the function object that holds the body of a test case or suite.">bind_callable()</a></span>, decayed; a reference parameter of the callable refers to the copy. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00807">807</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00810">810</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00276">bound_callable()</a>, and <a class="el" href="test-inlines_8h_source.html#l00305">invoke()</a>.</p>
 
@@ -384,7 +384,7 @@ template&lt;typename Self_T, typename Callable_T, typename... Args_T&gt; </div>
 </div><div class="memdoc">
 <p>A copy of the callable passed to <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a6abb44ef8226b1f80aad8010b5ef1a5c" title="Creates the function object that holds the body of a test case or suite.">bind_callable()</a></span>, decayed, so a function is stored as a pointer. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00798">798</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00801">801</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00276">bound_callable()</a>, and <a class="el" href="test-inlines_8h_source.html#l00305">invoke()</a>.</p>
 

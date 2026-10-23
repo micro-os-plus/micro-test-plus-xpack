@@ -652,334 +652,6 @@ namespace micro_os_plus::micro_test_plus { ... }
 
 </table>
 
-## Type Wrappers Index
-
-<table class="doxyMembersIndex">
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a> = detail::value&lt; bool &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5570e36fb3e73be3edf734ac80a23d93">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a> = detail::value&lt; char &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6ccf42d05ae14c445f602128f8ffd831">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a> = detail::value&lt; signed char &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae3838e23c60edeadbafdd4a22d1b1516">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a> = detail::value&lt; short &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gabc8f58b457f42435bcb51f53e6fe6b78">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf3ee271cefcffa625e40d476305da62f">to_i</a> = detail::value&lt; int &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf3ee271cefcffa625e40d476305da62f">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga09028a1e0e713723257afba48b9ee551">to_l</a> = detail::value&lt; long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga09028a1e0e713723257afba48b9ee551">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a> = detail::value&lt; long long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga0d0ae1e784a8a4da6630ab06addcad34">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a> = detail::value&lt; unsigned &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a> = detail::value&lt; unsigned char &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae0c0ed1401416ce6ee417ec86d8d2a89">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a> = detail::value&lt; unsigned short &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga8c22086f0e7e89d753cf7846ef7229d4">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5d2d6a69c090569866a779672772b48f">to_ul</a> = detail::value&lt; unsigned long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5d2d6a69c090569866a779672772b48f">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a> = detail::value&lt; unsigned long long &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae1438b74ec39a793d5ad516a7c2c7788">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a> = detail::value&lt; std::int8_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga52ad3a0a454c230f9fcfb01e5d73e6db">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a> = detail::value&lt; std::int16_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5cc1961eb074bb0740d8a593c411e0f9">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga201eeff58867ba58d3312ae56113ef06">to_i32</a> = detail::value&lt; std::int32_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga201eeff58867ba58d3312ae56113ef06">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaead55f5e265634a742633261f9f2aa3f">to_i64</a> = detail::value&lt; std::int64_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaead55f5e265634a742633261f9f2aa3f">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a> = detail::value&lt; std::uint8_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaceb70f41ddfa8f5805dbe9be2adf2289">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a> = detail::value&lt; std::uint16_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga87bb08ab5e58f481ee911e872108f8e0">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a> = detail::value&lt; std::uint32_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe7f9ec77325e0ae6111967bf8c5f29a">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a> = detail::value&lt; std::uint64_t &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf7cbf6fdcdeae86203faebdf9df7a201">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5368740b47e92605914b6c38ea88aebf">to_f</a> = detail::value&lt; float &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5368740b47e92605914b6c38ea88aebf">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a> = detail::value&lt; double &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9608f4a6f0a61bc159a66a46fb8cd630">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaeba32254fdd8159523b525745b13bfa9">to_ld</a> = detail::value&lt; long double &gt;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaeba32254fdd8159523b525745b13bfa9">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-</table>
-
 ## Deprecated Type Wrappers Index
 
 <table class="doxyMembersIndex">
@@ -1325,6 +997,334 @@ namespace micro_os_plus::micro_test_plus { ... }
 
 </table>
 
+## Type Wrappers Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a> = detail::value&lt; bool &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">bool</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5570e36fb3e73be3edf734ac80a23d93">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6ccf42d05ae14c445f602128f8ffd831">to_c</a> = detail::value&lt; char &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">char</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga6ccf42d05ae14c445f602128f8ffd831">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae3838e23c60edeadbafdd4a22d1b1516">to_sc</a> = detail::value&lt; signed char &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">signed char</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae3838e23c60edeadbafdd4a22d1b1516">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gabc8f58b457f42435bcb51f53e6fe6b78">to_s</a> = detail::value&lt; short &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">short</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gabc8f58b457f42435bcb51f53e6fe6b78">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf3ee271cefcffa625e40d476305da62f">to_i</a> = detail::value&lt; int &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">int</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf3ee271cefcffa625e40d476305da62f">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga09028a1e0e713723257afba48b9ee551">to_l</a> = detail::value&lt; long &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga09028a1e0e713723257afba48b9ee551">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga0d0ae1e784a8a4da6630ab06addcad34">to_ll</a> = detail::value&lt; long long &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long long</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga0d0ae1e784a8a4da6630ab06addcad34">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">to_u</a> = detail::value&lt; unsigned &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae0c0ed1401416ce6ee417ec86d8d2a89">to_uc</a> = detail::value&lt; unsigned char &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned char</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae0c0ed1401416ce6ee417ec86d8d2a89">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga8c22086f0e7e89d753cf7846ef7229d4">to_us</a> = detail::value&lt; unsigned short &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned short</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga8c22086f0e7e89d753cf7846ef7229d4">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5d2d6a69c090569866a779672772b48f">to_ul</a> = detail::value&lt; unsigned long &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5d2d6a69c090569866a779672772b48f">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae1438b74ec39a793d5ad516a7c2c7788">to_ull</a> = detail::value&lt; unsigned long long &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">unsigned long long</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gae1438b74ec39a793d5ad516a7c2c7788">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga52ad3a0a454c230f9fcfb01e5d73e6db">to_i8</a> = detail::value&lt; std::int8_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int8_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga52ad3a0a454c230f9fcfb01e5d73e6db">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5cc1961eb074bb0740d8a593c411e0f9">to_i16</a> = detail::value&lt; std::int16_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int16_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5cc1961eb074bb0740d8a593c411e0f9">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga201eeff58867ba58d3312ae56113ef06">to_i32</a> = detail::value&lt; std::int32_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int32_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga201eeff58867ba58d3312ae56113ef06">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaead55f5e265634a742633261f9f2aa3f">to_i64</a> = detail::value&lt; std::int64_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::int64_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaead55f5e265634a742633261f9f2aa3f">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaceb70f41ddfa8f5805dbe9be2adf2289">to_u8</a> = detail::value&lt; std::uint8_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint8_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaceb70f41ddfa8f5805dbe9be2adf2289">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga87bb08ab5e58f481ee911e872108f8e0">to_u16</a> = detail::value&lt; std::uint16_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint16_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga87bb08ab5e58f481ee911e872108f8e0">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe7f9ec77325e0ae6111967bf8c5f29a">to_u32</a> = detail::value&lt; std::uint32_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint32_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe7f9ec77325e0ae6111967bf8c5f29a">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf7cbf6fdcdeae86203faebdf9df7a201">to_u64</a> = detail::value&lt; std::uint64_t &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">std::uint64_t</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf7cbf6fdcdeae86203faebdf9df7a201">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5368740b47e92605914b6c38ea88aebf">to_f</a> = detail::value&lt; float &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">float</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga5368740b47e92605914b6c38ea88aebf">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9608f4a6f0a61bc159a66a46fb8cd630">to_d</a> = detail::value&lt; double &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">double</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga9608f4a6f0a61bc159a66a46fb8cd630">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaeba32254fdd8159523b525745b13bfa9">to_ld</a> = detail::value&lt; long double &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Strongly-typed wrapper for <span class="doxyComputerOutput">long double</span> values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaeba32254fdd8159523b525745b13bfa9">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
 ## Description {#details}
 
 <p>Primary namespace for the µTest++ testing framework.</p>
@@ -1586,6 +1586,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

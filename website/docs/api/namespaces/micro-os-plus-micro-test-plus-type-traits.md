@@ -273,20 +273,14 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 <p>The concepts cannot be deprecated individually, so the attribute is on the namespace. Clang reports the deprecation at every qualified use. GCC reports it only for the names declared in the namespace itself (the restored helpers and the alias templates), and, for the alias templates, only when they name the type of a declaration; it does not report the concepts, nor the names introduced by the using-declarations.</p>
 
 
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000013>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use the concepts in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">extension</a></span> namespace, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/compare-op">extension::compare_op</a></span> or <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/predicate-op">extension::predicate_op</a></span> for the application expressions; the value wrapper templates are internal (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
+<p>Use the concepts in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">extension</a></span> namespace, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/compare-op">extension::compare_op</a></span> or <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/predicate-op">extension::predicate_op</a></span> for the application expressions; the value wrapper templates are internal.</p>
+
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000014>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000035>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use the extension namespace</p>
+<p>use the extension namespace (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -334,19 +328,19 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000025>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000050>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>The value wrappers are internal (since 5.1.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00784">784</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00988">988</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a67890916b8d3d8cbaab893cc6b599745">784</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a67890916b8d3d8cbaab893cc6b599745">genuine_integral_value</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a67890916b8d3d8cbaab893cc6b599745">988</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a67890916b8d3d8cbaab893cc6b599745">genuine_integral_value</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a>;</span></span></div>
 
 </div>
 
@@ -392,19 +386,19 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000024>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000049>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>The value wrappers are internal (since 5.1.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00769">769</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00973">973</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a65ad920b21a6c0df6848aa939659b92e">769</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a65ad920b21a6c0df6848aa939659b92e">value_base_</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base&lt;T&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a65ad920b21a6c0df6848aa939659b92e">973</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a65ad920b21a6c0df6848aa939659b92e">value_base_</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base&lt;T&gt;</a>;</span></span></div>
 
 </div>
 
@@ -418,11 +412,11 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 The documentation for this namespace was generated from the following file:
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a></li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

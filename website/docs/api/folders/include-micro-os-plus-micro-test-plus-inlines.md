@@ -53,6 +53,20 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>C++ header file with inline implementations for the deprecated µTest++ definitions. <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -265,6 +279,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

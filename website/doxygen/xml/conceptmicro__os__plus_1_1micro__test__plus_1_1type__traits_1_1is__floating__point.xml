@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point" kind="concept">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::is_floating_point</compoundname>
-    <includes refid="extension_8h" local="no">extension.h</includes>
+    <includes refid="deprecated_8h" local="no">deprecated.h</includes>
     <templateparamlist>
       <param>
         <type>class T</type>
@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point" kindref="compound">micro_os_plus::micro_test_plus::type_traits::is_floating_point</ref> =  std::floating_point&lt;T&gt;</initializer>
     <conceptparts>
-      <codepart line="544">    <programlisting>
+      <codepart line="748">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">is_floating_point<sp/>=<sp/>std::floating_point&lt;T&gt;</highlight></codeline>
     </programlisting>
@@ -31,9 +31,9 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameteritem>
 </parameterlist>
 The v5.0.1 name of <computeroutput>std::floating_point</computeroutput>, which the framework now uses directly.</para>
-<para><xrefsect id="deprecated_1_deprecated000016"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput>std::floating_point</computeroutput> (since 5.1.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000041"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput>std::floating_point</computeroutput> (since 5.1.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="544" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="748" column="5"/>
   </compounddef>
 </doxygen>

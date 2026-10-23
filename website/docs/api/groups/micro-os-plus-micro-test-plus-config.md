@@ -75,6 +75,24 @@ keywords:
 <p>The µTest++ Testing Framework library uses several preprocessor macros to enable it and to configure various options.</p>
 
 
+<p>These macros must be defined by the application; neither the library nor its CMake, meson, and xPack build files define them (the <span class="doxyComputerOutput">defaultDefine</span> entries in <span class="doxyComputerOutput">xcdl-package.jsonc</span> are informative only).</p>
+
+
+<p>The preferred place is <span class="doxyComputerOutput">micro-os-plus/micro-test-plus-defines.h</span>, or <span class="doxyComputerOutput">micro-os-plus/project-config.h</span>, which each µTest++ header includes, if present, before its own definitions, so that the application and the library sources are compiled with the same configuration. The macros have no value, only their definition matters; guard them, so that they can also be defined on the compiler command line:</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</span></span></div>
+
+</div>
+
+
+<p>A macro defined only on the compiler command line (for example <span class="doxyComputerOutput">‑DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span>) must be defined for the entire build (both the application and the library sources).</p>
+
+
 <div class="doxySectionDef">
 
 ## Macro Definitions
@@ -100,7 +118,10 @@ keywords:
 <p>Enables the µTest++ Testing Framework.</p>
 
 
-<p>Must be defined by the application, in <span class="doxyComputerOutput">micro-os-plus/project-config.h</span>, in <span class="doxyComputerOutput">micro-os-plus/micro-test-plus-defines.h</span>, or on the compiler command line. Without it, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a></span> declares nothing and the library sources compile to nothing.</p>
+<p>This is the main configuration option of this library; it has no value, only its definition matters.</p>
+
+
+<p>Without it, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a></span> declares nothing and the library sources compile to nothing. If it is defined on the compiler command line for the application, but not for the library sources, the link fails with undefined references.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00076">76</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
@@ -191,6 +212,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

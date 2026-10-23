@@ -948,15 +948,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the sum of <span class="doxyComputerOutput"><a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a></span> and <span class="doxyComputerOutput"><a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00333">333</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00158">158</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00327">327</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00161">161</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5909350d1852fa54f2cf4c260d99b820">158</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a5909350d1852fa54f2cf4c260d99b820">counters::executed_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">159</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">160</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> + <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">161</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5909350d1852fa54f2cf4c260d99b820">161</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a5909350d1852fa54f2cf4c260d99b820">counters::executed_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">162</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">163</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> + <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1014,18 +1014,9 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000007>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000004>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span> (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000008>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></p>
+<p>use <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -1033,15 +1024,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Forwards to <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00359">359</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00178">178</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00352">352</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00182">182</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">178</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">counters::executed_subtests</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">179</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">180</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a> ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">182</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">counters::executed_subtests</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">183</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">184</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">185</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1097,15 +1088,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00343">343</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00168">168</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00337">337</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00171">171</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3d33b96c8d1a299929ead1f830e91853">168</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a3d33b96c8d1a299929ead1f830e91853">counters::executed_test_cases</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">169</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">170</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">171</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3d33b96c8d1a299929ead1f830e91853">171</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a3d33b96c8d1a299929ead1f830e91853">counters::executed_test_cases</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">172</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">173</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">174</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1161,15 +1152,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00323">323</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00148">148</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00317">317</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00151">151</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab1684c7c6101a4d534356d9d16807bee">148</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ab1684c7c6101a4d534356d9d16807bee">counters::failed_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">149</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">150</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">151</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab1684c7c6101a4d534356d9d16807bee">151</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ab1684c7c6101a4d534356d9d16807bee">counters::failed_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">152</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">153</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">154</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1225,15 +1216,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00369">369</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00188">188</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00362">362</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00192">192</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a85981e2e55a820cb49ee04aa82bbde56">188</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a85981e2e55a820cb49ee04aa82bbde56">counters::failed_test_cases</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">189</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">190</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a85981e2e55a820cb49ee04aa82bbde56">192</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a85981e2e55a820cb49ee04aa82bbde56">counters::failed_test_cases</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">193</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">194</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">195</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1296,18 +1287,9 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000003>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000002>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span> (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000004>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></p>
+<p>use <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -1315,15 +1297,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Forwards to <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00259">259</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00098">98</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00255">255</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00100">100</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a082c78df2d5f6b10b6ac8c246caae6c5">98</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a082c78df2d5f6b10b6ac8c246caae6c5">counters::increment_executed_subtests</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">99</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">100</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases</a> (count);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">101</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a082c78df2d5f6b10b6ac8c246caae6c5">100</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a082c78df2d5f6b10b6ac8c246caae6c5">counters::increment_executed_subtests</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">101</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">102</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases</a> (count);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">103</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1384,15 +1366,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00243">243</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00088">88</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00241">241</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00089">89</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">88</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a21c6250b78a96ae1448a7fa93608d2d3">counters::increment_executed_test_cases</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">89</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">90</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a> += count;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">91</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">89</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a21c6250b78a96ae1448a7fa93608d2d3">counters::increment_executed_test_cases</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">90</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">91</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a> += count;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">92</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1453,15 +1435,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00233">233</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00078">78</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00231">231</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00079">79</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aceea5d97d4ae5cd25f077d0349465062">78</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#aceea5d97d4ae5cd25f077d0349465062">counters::increment_failed_checks</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">79</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">80</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> += count;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">81</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aceea5d97d4ae5cd25f077d0349465062">79</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#aceea5d97d4ae5cd25f077d0349465062">counters::increment_failed_checks</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">80</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">81</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> += count;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">82</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1522,15 +1504,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00269">269</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00108">108</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00265">265</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00110">110</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a80c4365daa5804dc8ea52c7a5531e4cd">108</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a80c4365daa5804dc8ea52c7a5531e4cd">counters::increment_failed_test_cases</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">110</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> += count;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">111</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a80c4365daa5804dc8ea52c7a5531e4cd">110</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a80c4365daa5804dc8ea52c7a5531e4cd">counters::increment_failed_test_cases</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">111</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">112</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> += count;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">113</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1675,15 +1657,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00281">281</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00118">118</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00277">277</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00120">120</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a0fdafd0ee8aa838ecc833365d2b0eebb">118</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a0fdafd0ee8aa838ecc833365d2b0eebb">counters::increment_skipped_test_cases</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">119</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">120</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a> += count;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">121</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a0fdafd0ee8aa838ecc833365d2b0eebb">120</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a0fdafd0ee8aa838ecc833365d2b0eebb">counters::increment_skipped_test_cases</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">121</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">122</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a> += count;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">123</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1748,16 +1730,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000001>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span> (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000002>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></p>
+<p>use <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -1765,15 +1738,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Forwards to <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00223">223</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00068">68</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00221">221</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00069">69</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">68</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">counters::increment_successful_checks</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">69</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">70</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks</a> (count);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">71</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">69</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">counters::increment_successful_checks</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">70</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">71</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks</a> (count);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">72</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1839,15 +1812,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>A node with no checks at all is considered successful, as it did not fail any check. A test case whose own checks all passed is still unsuccessful if one of its nested test cases failed, so that a failure is reported at every level above it, as in node-tap.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00396">396</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00211">211</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00389">389</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00215">215</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">211</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a14690f9880df505f9dd90a9f2c3dfc96">counters::passed</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">212</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">213</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> == 0 &amp;&amp; <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> == 0;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">214</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">215</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a14690f9880df505f9dd90a9f2c3dfc96">counters::passed</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">216</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">217</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> == 0 &amp;&amp; <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> == 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">218</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1912,15 +1885,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00297">297</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00128">128</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00293">293</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00130">130</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6d478407d2416d3d19a4041fa1c12c9b">128</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a6d478407d2416d3d19a4041fa1c12c9b">counters::passed_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">131</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6d478407d2416d3d19a4041fa1c12c9b">130</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a6d478407d2416d3d19a4041fa1c12c9b">counters::passed_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">131</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">132</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">133</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1985,15 +1958,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00384">384</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00198">198</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00377">377</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00202">202</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2e5ea7bbb9bd5a05213dee741f08599d">198</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a2e5ea7bbb9bd5a05213dee741f08599d">counters::skipped_test_cases</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">199</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">200</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">201</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2e5ea7bbb9bd5a05213dee741f08599d">202</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a2e5ea7bbb9bd5a05213dee741f08599d">counters::skipped_test_cases</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">203</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">204</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">205</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -2051,18 +2024,9 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000005>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000003>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a></span> (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000006>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a></p>
+<p>use <a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -2070,15 +2034,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Forwards to <span class="doxyComputerOutput"><a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00313">313</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00138">138</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00307">307</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00141">141</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2e1ed349fc1d936b5de5929fa1a62650">138</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a2e1ed349fc1d936b5de5929fa1a62650">counters::successful_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">139</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks</a> ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2e1ed349fc1d936b5de5929fa1a62650">141</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a2e1ed349fc1d936b5de5929fa1a62650">counters::successful_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">142</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -2136,18 +2100,9 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000009>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000005>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a></span> (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000010>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a></p>
+<p>use <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -2155,15 +2110,15 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Forwards to <span class="doxyComputerOutput"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00412">412</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00221">221</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00403">403</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00226">226</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">221</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">counters::was_successful</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">222</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">223</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed</a> ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">224</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">226</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">counters::was_successful</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">227</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">228</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">229</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -2206,12 +2161,12 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Incremented by <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span> and by <span class="doxyComputerOutput">operator+=</span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00438">438</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00429">429</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">438</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">429</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a> = 0;</span></span></div>
 
 </div>
 
@@ -2245,12 +2200,12 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Incremented by <span class="doxyComputerOutput"><a href="#aceea5d97d4ae5cd25f077d0349465062">increment_failed_checks()</a></span> and by <span class="doxyComputerOutput">operator+=</span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00429">429</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00420">420</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a903b0e792447e149a032a7e46570bfc1">429</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a903b0e792447e149a032a7e46570bfc1">420</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> = 0;</span></span></div>
 
 </div>
 
@@ -2284,12 +2239,12 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Incremented by <span class="doxyComputerOutput"><a href="#a80c4365daa5804dc8ea52c7a5531e4cd">increment_failed_test_cases()</a></span>, when a test case ends with a failed check or a failed nested test case, and by <span class="doxyComputerOutput">operator+=</span>. A test case fails when any of its nested test cases fails, as in node-tap, although the checks of the nested test cases are not counted in its check counters.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00450">450</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00441">441</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a09550bb4fd851f9b704904311bba27b6">450</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a09550bb4fd851f9b704904311bba27b6">441</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> = 0;</span></span></div>
 
 </div>
 
@@ -2323,12 +2278,12 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Incremented by <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span> and by <span class="doxyComputerOutput">operator+=</span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00421">421</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00412">412</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a454de640619adaeeb5cbc2ada7144946">421</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a454de640619adaeeb5cbc2ada7144946">412</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> = 0;</span></span></div>
 
 </div>
 
@@ -2362,12 +2317,12 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Incremented by <span class="doxyComputerOutput"><a href="#a0fdafd0ee8aa838ecc833365d2b0eebb">increment_skipped_test_cases()</a></span>, when the name of a test case, or of its suite, does not match the filter pattern of its level, and by <span class="doxyComputerOutput">operator+=</span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00460">460</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00451">451</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">460</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">451</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a> = 0;</span></span></div>
 
 </div>
 
@@ -2391,6 +2346,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

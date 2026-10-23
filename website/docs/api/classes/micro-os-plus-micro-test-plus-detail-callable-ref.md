@@ -39,12 +39,12 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename Callable_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemNoTypeNameTemplate" colspan="2" align="left" valign="top"><a href="#a8422edf1279e27a15356e28978569053">callable_ref</a> (Callable_T &amp;callable) noexcept</td>
+<td class="doxyMemberIndexItemNoTypeNameTemplate" colspan="2" align="left" valign="top"><a href="#a3e789d4fded524d5d5d088618d615026">callable_ref</a> (Callable_T &amp;callable) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Constructs a reference to a callable. <a href="#a8422edf1279e27a15356e28978569053">More...</a></p>
+<p>Constructs a reference to a callable. <a href="#a3e789d4fded524d5d5d088618d615026">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -162,14 +162,14 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 </dd>
 </dl>
 
-<p>Definition at line 833 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line 836 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxySectionDef">
 
 ## Public Constructors
 
-### callable\_ref() {#a8422edf1279e27a15356e28978569053}
+### callable\_ref() {#a3e789d4fded524d5d5d088618d615026}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -233,12 +233,12 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>Stores the address of the callable, and the address of the <span class="doxyComputerOutput"><a href="#affde2e2f927df6b5ada7f5578f8d5c36">invoke_callable()</a></span> instantiation for its type.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00853">853</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00329">329</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00857">857</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00329">329</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a8422edf1279e27a15356e28978569053">329</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a8422edf1279e27a15356e28978569053">callable_ref&lt;Self_T&gt;::callable_ref</a> (Callable_T&amp; callable) noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3e789d4fded524d5d5d088618d615026">329</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a3e789d4fded524d5d5d088618d615026">callable_ref&lt;Self_T&gt;::callable_ref</a> (Callable_T&amp; callable) noexcept</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">330</span><span class="doxyLineContent"><span class="doxyHighlight">        : <a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>{ std::addressof (callable) },</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">331</span><span class="doxyLineContent"><span class="doxyHighlight">          invoke_{ &amp;invoke_callable&lt;Callable_T&gt; }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">332</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
@@ -247,10 +247,10 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 </div>
 
 
-<p>References <a href="#a8422edf1279e27a15356e28978569053">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</a> and <a href="#a7a5a1b1e001f34f819ac65e63c2d9567">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_</a>.</p>
+<p>References <a href="#a3e789d4fded524d5d5d088618d615026">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</a> and <a href="#a7a5a1b1e001f34f819ac65e63c2d9567">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_</a>.</p>
 
 
-<p>Referenced by <a href="#a8422edf1279e27a15356e28978569053">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</a>.</p>
+<p>Referenced by <a href="#a3e789d4fded524d5d5d088618d615026">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</a>.</p>
 
 </div>
 </div>
@@ -315,7 +315,7 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>Passes the stored address and <span class="doxyComputerOutput">self</span> to the stored function.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00870">870</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00341">341</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00874">874</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00341">341</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -364,17 +364,17 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>Its type is erased; only <span class="doxyComputerOutput"><a href="#a7ca4453fe089a72345a476490212ae59">invoke_</a></span> converts it back.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00897">897</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00901">901</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7a5a1b1e001f34f819ac65e63c2d9567">897</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* <a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7a5a1b1e001f34f819ac65e63c2d9567">901</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* <a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#a8422edf1279e27a15356e28978569053">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</a> and <a href="#a10148eb90e3393d8166e8712468d32e2">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::operator()</a>.</p>
+<p>Referenced by <a href="#a3e789d4fded524d5d5d088618d615026">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::callable_ref</a> and <a href="#a10148eb90e3393d8166e8712468d32e2">micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;::operator()</a>.</p>
 
 </div>
 </div>
@@ -404,12 +404,12 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>The <span class="doxyComputerOutput"><a href="#affde2e2f927df6b5ada7f5578f8d5c36">invoke_callable()</a></span> instantiation for the type of the callable; it receives <span class="doxyComputerOutput"><a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a></span> and the <span class="doxyComputerOutput">Self_T&amp;</span> argument.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00906">906</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00910">910</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7ca4453fe089a72345a476490212ae59">906</a></span><span class="doxyLineContent"><span class="doxyHighlight">      void (*<a href="#a7ca4453fe089a72345a476490212ae59">invoke_</a>) (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* callable, Self_T&amp; self);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7ca4453fe089a72345a476490212ae59">910</a></span><span class="doxyLineContent"><span class="doxyHighlight">      void (*<a href="#a7ca4453fe089a72345a476490212ae59">invoke_</a>) (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* callable, Self_T&amp; self);</span></span></div>
 
 </div>
 
@@ -495,7 +495,7 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>A function pointer or a function object is called directly, not through <span class="doxyComputerOutput">std::invoke()</span>, which, without optimisations, adds three frames to the call chain; a pointer to a member, which only <span class="doxyComputerOutput">std::invoke()</span> can call, is still passed to it.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00889">889</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00360">360</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00893">893</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00360">360</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -530,6 +530,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

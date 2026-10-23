@@ -4,7 +4,7 @@
     <compoundname>utility-inlines.h</compoundname>
     <includedby refid="utility_8h" local="yes">utility.h</includedby>
     <invincdepgraph>
-      <node id="3">
+      <node id="4">
         <label>micro-test-plus.h</label>
         <link refid="micro-test-plus_8h"/>
       </node>
@@ -32,9 +32,9 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>reflection.cpp</label>
-        <link refid="reflection_8cpp"/>
+      <node id="3">
+        <label>deprecated.cpp</label>
+        <link refid="deprecated_8cpp"/>
       </node>
       <node id="5">
         <label>reporter-human.cpp</label>

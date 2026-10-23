@@ -29,25 +29,33 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="14">
+        <label>deprecated.h</label>
+        <link refid="deprecated_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
         <label>expression-formatter.h</label>
         <link refid="expression-formatter_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="19">
         <label>expression-formatter-inlines.h</label>
         <link refid="expression-formatter-inlines_8h"/>
-        <childnode refid="18" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -56,10 +64,10 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="17">
         <label>test-inlines.h</label>
         <link refid="test-inlines_8h"/>
-        <childnode refid="16" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -67,11 +75,11 @@
         <link refid="reflection_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
@@ -81,7 +89,7 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -117,12 +125,14 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="13">
         <label>runner.h</label>
         <link refid="runner_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
@@ -133,13 +143,15 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="18">
         <label>test.h</label>
         <link refid="test_8h"/>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
@@ -151,20 +163,20 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>check-result.cpp</label>
         <link refid="check-result_8cpp"/>
       </node>
-      <node id="19">
+      <node id="15">
+        <label>deprecated.cpp</label>
+        <link refid="deprecated_8cpp"/>
+      </node>
+      <node id="21">
         <label>expression-formatter.cpp</label>
         <link refid="expression-formatter_8cpp"/>
-      </node>
-      <node id="20">
-        <label>reflection.cpp</label>
-        <link refid="reflection_8cpp"/>
       </node>
       <node id="8">
         <label>reporter-human.cpp</label>
@@ -182,7 +194,7 @@
         <label>runner.cpp</label>
         <link refid="runner_8cpp"/>
       </node>
-      <node id="14">
+      <node id="16">
         <label>test.cpp</label>
         <link refid="test_8cpp"/>
       </node>
@@ -236,7 +248,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="154" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="154" bodyend="185" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="245" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="154" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="154" bodyend="185" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="227" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="154" endline="185">micro_os_plus::micro_test_plus::reflection::type_name</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="355" endline="367">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="154" endline="185">micro_os_plus::micro_test_plus::reflection::type_name</referencedby>
@@ -300,7 +312,7 @@
 <codeline lineno="74"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77" refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kindref="compound">reflection</ref></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kindref="compound">reflection</ref></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>

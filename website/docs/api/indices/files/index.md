@@ -85,6 +85,16 @@ C++ header file with inline implementations for the µTest++ counters
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h"><span class="doxyIconFile">deprecated-inlines.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with inline implementations for the deprecated µTest++ definitions
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h"><span class="doxyIconFile">detail-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -239,6 +249,16 @@ C++ header file with declarations for the µTest++ check result
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with declarations for the µTest++ counters
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h"><span class="doxyIconFile">deprecated.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with the declarations of the deprecated µTest++ definitions
 </td>
 </tr>
 
@@ -465,20 +485,20 @@ C++ source file with implementations for the µTest++ counters member functions
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp"><span class="doxyIconFile">expression-formatter.cpp</span></a>
+<a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp"><span class="doxyIconFile">deprecated.cpp</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ source file with non-template implementations for the µTest++ expression formatter
+C++ source file with implementations for the deprecated µTest++ definitions
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp"><span class="doxyIconFile">reflection.cpp</span></a>
+<a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp"><span class="doxyIconFile">expression-formatter.cpp</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ source file with implementations for the µTest++ reflection utilities
+C++ source file with non-template implementations for the µTest++ expression formatter
 </td>
 </tr>
 
@@ -576,6 +596,6 @@ Project specific Doxygen topics definitions
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

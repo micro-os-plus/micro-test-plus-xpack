@@ -17,41 +17,49 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="18">
-        <label>detail.h</label>
-        <link refid="detail_8h"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
+      <node id="15">
+        <label>deprecated.h</label>
+        <link refid="deprecated_8h"/>
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+      </node>
+      <node id="20">
+        <label>detail.h</label>
+        <link refid="detail_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="20">
+      <node id="22">
         <label>exceptions.h</label>
         <link refid="exceptions_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="23">
         <label>expression-formatter.h</label>
         <link refid="expression-formatter_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -63,37 +71,41 @@
         <link refid="extension_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="25">
         <label>function-comparators.h</label>
         <link refid="function-comparators_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="24">
+      <node id="26">
         <label>operators-inlines.h</label>
         <link refid="operators-inlines_8h"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="18">
         <label>test-inlines.h</label>
         <link refid="test-inlines_8h"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -102,13 +114,15 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="28">
         <label>literals.h</label>
         <link refid="literals_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="25">
+      <node id="27">
         <label>operators.h</label>
         <link refid="operators_8h"/>
         <childnode refid="6" relation="include">
@@ -147,12 +161,14 @@
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="14">
         <label>runner.h</label>
         <link refid="runner_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
@@ -163,13 +179,15 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="19">
         <label>test.h</label>
         <link refid="test_8h"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -181,7 +199,7 @@
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -196,11 +214,15 @@
         <label>check-result.cpp</label>
         <link refid="check-result_8cpp"/>
       </node>
-      <node id="19">
+      <node id="21">
         <label>counters.cpp</label>
         <link refid="counters_8cpp"/>
       </node>
-      <node id="22">
+      <node id="16">
+        <label>deprecated.cpp</label>
+        <link refid="deprecated_8cpp"/>
+      </node>
+      <node id="24">
         <label>expression-formatter.cpp</label>
         <link refid="expression-formatter_8cpp"/>
       </node>
@@ -220,7 +242,7 @@
         <label>runner.cpp</label>
         <link refid="runner_8cpp"/>
       </node>
-      <node id="15">
+      <node id="17">
         <label>test.cpp</label>
         <link refid="test_8cpp"/>
       </node>

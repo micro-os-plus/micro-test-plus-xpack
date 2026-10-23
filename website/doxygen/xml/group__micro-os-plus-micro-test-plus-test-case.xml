@@ -15,14 +15,12 @@
 <para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The v5.0.1 name of the class passed to the test case bodies, kept for the functions and the lambdas that name it as the type of their first parameter (<computeroutput>void f (mt::subtest&amp; t)</computeroutput>); the lambdas with an <computeroutput>auto&amp;</computeroutput> parameter are not affected.</para>
-<para><xrefsect id="deprecated_1_deprecated000122"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput> (since 5.1.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000123"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></para>
+<para>The v5.0.1 name of the class passed to the test case bodies, kept for the functions and the lambdas that name it as the type of their first parameter (<computeroutput>void f (mt::subtest&amp; t)</computeroutput>); the lambdas with an <computeroutput>auto&amp;</computeroutput> parameter are not affected. <xrefsect id="deprecated_1_deprecated000033"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref> (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1378" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="437" column="3"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

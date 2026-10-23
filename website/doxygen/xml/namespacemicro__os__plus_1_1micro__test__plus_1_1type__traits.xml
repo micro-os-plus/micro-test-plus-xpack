@@ -41,12 +41,12 @@
 </parameteritem>
 </parameterlist>
 In v5.0.1, a separate wrapper with the same members as <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, never created by the framework; now <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, so the values are compared and reported in the same way.</para>
-<para><xrefsect id="deprecated_1_deprecated000025"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000050"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="784" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="784" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="988" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="988" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a65ad920b21a6c0df6848aa939659b92e" prot="public" static="no">
         <templateparamlist>
@@ -73,12 +73,12 @@ In v5.0.1, a separate wrapper with the same members as <computeroutput><ref refi
 </parameteritem>
 </parameterlist>
 The v5.0.1 name, with a trailing underscore. The stored value is now private, and <computeroutput>get()</computeroutput> returns a reference; the value is read with <computeroutput>get()</computeroutput> or with the explicit conversion, not through the v5.0.1 public member <computeroutput>value_</computeroutput>.</para>
-<para><xrefsect id="deprecated_1_deprecated000024"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000049"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="769" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="769" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="973" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="973" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -88,11 +88,10 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
 <para>In v5.0.1, the concepts, the base of the expressions, and the value wrapper templates were outside <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></computeroutput>, in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">type_traits</ref></computeroutput> namespace. The namespace is kept for compatibility with the existing applications: the names that still exist refer to their current definitions, in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kindref="compound">extension</ref></computeroutput> and <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></computeroutput> namespaces, and the removed helpers are restored here.</para>
 <para>The concepts refer to the current ones, so their semantics are the current ones: <computeroutput>is_op</computeroutput> detects the <computeroutput>op_type</computeroutput> member, not the inheritance from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">op</ref></computeroutput>; <computeroutput>has_epsilon</computeroutput> also requires <computeroutput>is_op</computeroutput>; <computeroutput>checkable</computeroutput> also accepts the types with an <computeroutput>explicit operator bool</computeroutput>; <computeroutput>printable</computeroutput> accepts everything the formatter can print. The exception is <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kindref="compound">has_value</ref></computeroutput>, which is not used by the framework any more, and is restored with its v5.0.1 definition.</para>
 <para>The concepts cannot be deprecated individually, so the attribute is on the namespace. Clang reports the deprecation at every qualified use. GCC reports it only for the names declared in the namespace itself (the restored helpers and the alias templates), and, for the alias templates, only when they name the type of a declaration; it does not report the concepts, nor the names introduced by the using-declarations.</para>
-<para><xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use the concepts in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kindref="compound">extension</ref></computeroutput> namespace, and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op" kindref="compound">extension::compare_op</ref></computeroutput> or <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op" kindref="compound">extension::predicate_op</ref></computeroutput> for the application expressions; the value wrapper templates are internal (since 5.1.0). </para>
-</xrefdescription></xrefsect></para>
-<para><xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use the extension namespace</para>
+<para>Use the concepts in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kindref="compound">extension</ref></computeroutput> namespace, and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op" kindref="compound">extension::compare_op</ref></computeroutput> or <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op" kindref="compound">extension::predicate_op</ref></computeroutput> for the application expressions; the value wrapper templates are internal.</para>
+<para><xrefsect id="deprecated_1_deprecated000035"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use the extension namespace (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="453" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="657" column="1"/>
   </compounddef>
 </doxygen>

@@ -27,7 +27,6 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-"><b>anonymous{expression-formatter.cpp}</b></a>: as namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-">micro_os_plus::micro_test_plus::detail::anonymous{expression-formatter.cpp}</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-"><b>anonymous{reporter-tap.cpp}</b></a>: as namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-">micro_os_plus::micro_test_plus::detail::anonymous{reporter-tap.cpp}</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-"><b>anonymous{reporter.cpp}</b></a>: as namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-">micro_os_plus::micro_test_plus::detail::anonymous{reporter.cpp}</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-"><b>anonymous{stopwatch.cpp}</b></a>: as namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-">micro_os_plus::micro_test_plus::detail::anonymous{stopwatch.cpp}</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/any-op"><b>any_op</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">micro_os_plus::micro_test_plus::extension</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-/#a2736611c9676822f8e948dc473f748f1"><b>append_hex()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-">micro_os_plus::micro_test_plus::detail::anonymous{expression-formatter.cpp}</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3abe0c9c597c7fe04a5f101022ecea5d"><b>append_number()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
@@ -38,7 +37,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b"><b>as_operand()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8"><b>automatic</b></a>: as enum value in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
 </ul>
-<p>17 entries</p>
+<p>16 entries</p>
 
 ## - B -
 
@@ -225,7 +224,7 @@ keywords:
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/range-element"><b>range_element&lt;T&gt;</b></a>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/range-element-f7399366cd6336ecbea702c3289d9432"><b>range_element&lt;T&gt;</b></a>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-/#a34225dca0ef5b70eb98c8eeaa3a05b06"><b>read_clock()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-">micro_os_plus::micro_test_plus::detail::anonymous{stopwatch.cpp}</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a"><b>read_clock()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection"><b>reflection</b></a>: as namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">micro_os_plus::micro_test_plus::reflection</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter"><b>reporter</b></a>: as class in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human"><b>reporter_human</b></a>: as class in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
@@ -312,10 +311,10 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/#ae344ed13847263c08e39a3e9266c0109"><b>yaml_double_quoted()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-">micro_os_plus::micro_test_plus::detail::anonymous{reporter-tap.cpp}</a></li>
 </ul>
 <br/>
-<p>Total: 165 entries.</p>
+<p>Total: 164 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

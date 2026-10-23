@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</compoundname>
-    <includes refid="extension_8h" local="no">extension.h</includes>
+    <includes refid="deprecated_8h" local="no">deprecated.h</includes>
     <templateparamlist>
       <param>
         <type>class R</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="643" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="643" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="847" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="847" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4_1a6e68b0f12d97490c730b3ee455887a75" prot="public" static="no">
         <type>R</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="634" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="634" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="838" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="838" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -69,10 +69,10 @@
 </parameteritem>
 </parameterlist>
 Exposes the return type and the parameter types of a pointer to a free function.</para>
-<para><xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 5.1.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000045"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 5.1.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="626" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="627" bodyend="644"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="830" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="831" bodyend="848"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4_1a291ffb121545e9b52c3d1542f1612074" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</scope><name>args</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4_1a6e68b0f12d97490c730b3ee455887a75" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</scope><name>result_type</name></member>

@@ -59,7 +59,6 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03">micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}</innernamespace>
-    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02stopwatch_8cpp_03">micro_os_plus::micro_test_plus::detail::anonymous_namespace{stopwatch.cpp}</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math">micro_os_plus::micro_test_plus::detail::math</innernamespace>
     <sectiondef kind="enum">
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70c" prot="public" static="no" strong="yes">
@@ -106,14 +105,12 @@
 <para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kindref="compound">counters</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The v5.0.1 name of the class returned by <computeroutput>totals()</computeroutput>, renamed since the suites and the test cases own one too, not only the runner.</para>
-<para><xrefsect id="deprecated_1_deprecated000011"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kindref="compound">counters</ref></computeroutput> (since 5.1.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000012"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use counters</para>
+<para>The v5.0.1 name of the class returned by <computeroutput>totals()</computeroutput>, renamed since the suites and the test cases own one too, not only the runner. <xrefsect id="deprecated_1_deprecated000037"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use counters (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="478" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="493" column="5"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a85cd019d0861a4b6d62c3424f4a8931d" prot="public" static="no">
         <templateparamlist>
@@ -161,14 +158,12 @@
 <para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The v5.0.1 name of the class returned by the <computeroutput>timings()</computeroutput> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput>; its protected members, the two optional <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" kindref="compound">timestamp</ref></computeroutput> objects, are not.</para>
-<para><xrefsect id="deprecated_1_deprecated000102"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000103"><xreftitle>Deprecated</xreftitle><xrefdescription><para>the timings are internal</para>
+<para>The v5.0.1 name of the class returned by the <computeroutput>timings()</computeroutput> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput>; its protected members, the two optional <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" kindref="compound">timestamp</ref></computeroutput> objects, are not. The timings are internal; the elapsed times are shown by the reporters. <xrefsect id="deprecated_1_deprecated000038"><xreftitle>Deprecated</xreftitle><xrefdescription><para>the timings are internal (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="437" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="509" column="5"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" prot="public" static="no">
         <templateparamlist>
@@ -340,19 +335,19 @@ The value is formatted into a local buffer, which is then appended to <computero
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="728" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="728" bodyend="799" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1323" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">append_number</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">append_number</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="443" endline="449">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="427" endline="434">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="459" endline="466">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="297" endline="302">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="349" endline="353">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="400" endline="405">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="374" endline="379">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="323" endline="328">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="310" endline="315">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="361" endline="366">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="413" endline="418">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="387" endline="392">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="336" endline="341">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="444" endline="450">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="428" endline="435">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="460" endline="467">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="298" endline="303">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="350" endline="354">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="401" endline="406">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="375" endline="380">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="324" endline="329">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="311" endline="316">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="362" endline="367">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="414" endline="419">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="388" endline="393">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="337" endline="342">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0cdaf2313f78a256b80f7bb7b279e2e6" compoundref="reporter-inlines_8h" startline="101" endline="105">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1222,6 +1217,45 @@ A null pointer is not equal to any string. </para>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1160" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1160" declcolumn="5"/>
       </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a60dcef812e43e13d1e30f602a572e27a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::read_clock</definition>
+        <argsstring>(timespec &amp;ts) noexcept</argsstring>
+        <name>read_clock</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::read_clock</qualifiedname>
+        <param>
+          <type>timespec &amp;</type>
+          <declname>ts</declname>
+        </param>
+        <briefdescription>
+<para>Reads the system clock. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Isolates the platform-specific access to the system clock, used by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput> and by the deprecated <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" kindref="compound">timestamp</ref></computeroutput> class. The clock is monotonic on POSIX; without a clock, <computeroutput>ts</computeroutput> is left unchanged, so the callers clear it first when a zero value must mean that the clock was not read.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <computeroutput>timespec</computeroutput> where the reading is stored. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+On Windows, the current time is captured via <computeroutput>timespec_get()</computeroutput> with <computeroutput>TIME_UTC</computeroutput>. On POSIX platforms with <computeroutput>CLOCK_MONOTONIC</computeroutput> defined, <computeroutput>clock_gettime(CLOCK_MONOTONIC)</computeroutput> is used to obtain a monotonic reading. On platforms where neither macro is defined, <computeroutput>ts</computeroutput> is left unchanged. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" line="66" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="66" bodyend="75" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" declline="98" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a60dcef812e43e13d1e30f602a572e27a" compoundref="stopwatch_8cpp" startline="66" endline="75">read_clock</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="96" endline="99">micro_os_plus::micro_test_plus::detail::timestamp::timestamp</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a60dcef812e43e13d1e30f602a572e27a" compoundref="stopwatch_8cpp" startline="66" endline="75">read_clock</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" compoundref="stopwatch_8cpp" startline="87" endline="92">micro_os_plus::micro_test_plus::detail::stopwatch::start</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" compoundref="stopwatch_8cpp" startline="101" endline="105">micro_os_plus::micro_test_plus::detail::stopwatch::stop</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" compoundref="stopwatch_8cpp" startline="138" endline="144">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" compoundref="stopwatch_8cpp" startline="154" endline="160">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</referencedby>
+      </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -1325,16 +1359,16 @@ A null pointer is not equal to any string. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" line="676" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="676" bodyend="716" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="966" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" line="677" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="677" bodyend="717" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="970" declcolumn="5"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_1a63b3cc3a8e725c2921787180f1244824" compoundref="expression-formatter-inlines_8h" startline="395" endline="400">micro_os_plus::micro_test_plus::detail::plain_text::append</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1abfb91a55df657bbfbfb5fe774f46329b" compoundref="test-inlines_8h" startline="135" endline="138">micro_os_plus::micro_test_plus::test_case_name::location</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1a624bdd72fd18db434a64993818bb5466" compoundref="test-inlines_8h" startline="125" endline="128">micro_os_plus::micro_test_plus::test_case_name::name</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="676" endline="716">test_each_value</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a86d654e9059b1acecbf49f2725419320" compoundref="test-inlines_8h" startline="769" endline="773">micro_os_plus::micro_test_plus::suite::test_each</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a08e3a26d6e032a580f095f8dcf8b2b41" compoundref="test-inlines_8h" startline="756" endline="761">micro_os_plus::micro_test_plus::suite::test_each</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a018224e675db634b3b9898c72d1c8655" compoundref="test-inlines_8h" startline="741" endline="745">micro_os_plus::micro_test_plus::test_case::test_each</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1afe716dc1b9245d7761b1fd6e6e854c5c" compoundref="test-inlines_8h" startline="728" endline="733">micro_os_plus::micro_test_plus::test_case::test_each</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="676" endline="716">test_each_value</referencedby>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="677" endline="717">test_each_value</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a86d654e9059b1acecbf49f2725419320" compoundref="test-inlines_8h" startline="770" endline="774">micro_os_plus::micro_test_plus::suite::test_each</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a08e3a26d6e032a580f095f8dcf8b2b41" compoundref="test-inlines_8h" startline="757" endline="762">micro_os_plus::micro_test_plus::suite::test_each</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a018224e675db634b3b9898c72d1c8655" compoundref="test-inlines_8h" startline="742" endline="746">micro_os_plus::micro_test_plus::test_case::test_each</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1afe716dc1b9245d7761b1fd6e6e854c5c" compoundref="test-inlines_8h" startline="729" endline="734">micro_os_plus::micro_test_plus::test_case::test_each</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="677" endline="717">test_each_value</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

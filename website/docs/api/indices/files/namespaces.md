@@ -23,9 +23,8 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-"><b>anonymous{expression-formatter.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">src/expression-formatter.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-"><b>anonymous{reporter-tap.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">src/reporter-tap.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-"><b>anonymous{reporter.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-"><b>anonymous{stopwatch.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">src/stopwatch.cpp</a></li>
 </ul>
-<p>4 entries</p>
+<p>3 entries</p>
 
 ## - D -
 
@@ -63,13 +62,13 @@ keywords:
 ## - R -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection"><b>reflection</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp">src/reflection.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection"><b>reflection</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">src/deprecated.cpp</a></li>
 </ul>
 
 ## - T -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits"><b>type_traits</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits"><b>type_traits</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 </ul>
 
 ## - U -
@@ -78,10 +77,10 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility"><b>utility</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp">src/utility.cpp</a></li>
 </ul>
 <br/>
-<p>Total: 14 entries.</p>
+<p>Total: 13 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

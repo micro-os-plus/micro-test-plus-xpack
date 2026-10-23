@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -163,8 +163,8 @@ Typedefs</h2></td></tr>
 <div class="textblock"><p>In v5.0.1, the concepts, the base of the expressions, and the value wrapper templates were outside <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html" title="Internal implementation details for the µTest++ framework.">detail</a></span>, in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html" title="Deprecated v5.0.1 namespace of the concepts and of the value wrapper templates.">type_traits</a></span> namespace. The namespace is kept for compatibility with the existing applications: the names that still exist refer to their current definitions, in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1extension.html" title="The concepts for extending the µTest++ testing framework.">extension</a></span> and <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html" title="Internal implementation details for the µTest++ framework.">detail</a></span> namespaces, and the removed helpers are restored here.</p>
 <p>The concepts refer to the current ones, so their semantics are the current ones: <span class="tt">is_op</span> detects the <span class="tt">op_type</span> member, not the inheritance from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>; <span class="tt">has_epsilon</span> also requires <span class="tt">is_op</span>; <span class="tt">checkable</span> also accepts the types with an <span class="tt">explicit operator bool</span>; <span class="tt">printable</span> accepts everything the formatter can print. The exception is <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value.html" title="Deprecated C++20 concept satisfied when T has a member named value.">has_value</a></span>, which is not used by the framework any more, and is restored with its v5.0.1 definition.</p>
 <p>The concepts cannot be deprecated individually, so the attribute is on the namespace. Clang reports the deprecation at every qualified use. GCC reports it only for the names declared in the namespace itself (the restored helpers and the alias templates), and, for the alias templates, only when they name the type of a declaration; it does not report the concepts, nor the names introduced by the using-declarations.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated</a></b></dt><dd>Use the concepts in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1extension.html" title="The concepts for extending the µTest++ testing framework.">extension</a></span> namespace, and <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op.html" title="Relational comparator struct template.">extension::compare_op</a></span> or <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op.html" title="Unary predicate struct template.">extension::predicate_op</a></span> for the application expressions; the value wrapper templates are internal (since 5.1.0). </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated</a></b></dt><dd>use the extension namespace</dd></dl>
+<p>Use the concepts in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1extension.html" title="The concepts for extending the µTest++ testing framework.">extension</a></span> namespace, and <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op.html" title="Relational comparator struct template.">extension::compare_op</a></span> or <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op.html" title="Unary predicate struct template.">extension::predicate_op</a></span> for the application expressions; the value wrapper templates are internal.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000035">Deprecated</a></b></dt><dd>use the extension namespace (since 5.1.0)</dd></dl>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="a67890916b8d3d8cbaab893cc6b599745" name="a67890916b8d3d8cbaab893cc6b599745"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67890916b8d3d8cbaab893cc6b599745">&#9670;&#160;</a></span>genuine_integral_value</h2>
@@ -186,9 +186,9 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <p>In v5.0.1, a separate wrapper with the same members as <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;T&gt;</span>, never created by the framework; now <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;T&gt;</span>, so the values are compared and reported in the same way.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated</a></b></dt><dd>The value wrappers are internal (since 5.1.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000050">Deprecated</a></b></dt><dd>The value wrappers are internal (since 5.1.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00784">784</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00988">988</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -212,9 +212,9 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <p>The v5.0.1 name, with a trailing underscore. The stored value is now private, and <span class="tt">get()</span> returns a reference; the value is read with <span class="tt">get()</span> or with the explicit conversion, not through the v5.0.1 public member <span class="tt">value_</span>.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated</a></b></dt><dd>The value wrappers are internal (since 5.1.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000049">Deprecated</a></b></dt><dd>The value wrappers are internal (since 5.1.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00769">769</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00973">973</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>

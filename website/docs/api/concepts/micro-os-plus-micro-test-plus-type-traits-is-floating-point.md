@@ -48,14 +48,14 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000016>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000041>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>Use <span class="doxyComputerOutput">std::floating_point</span> (since 5.1.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 544 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 748 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -68,6 +68,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -4,6 +4,7 @@
     <compoundname>inlines</compoundname>
     <innerfile refid="check-result-inlines_8h">check-result-inlines.h</innerfile>
     <innerfile refid="counters-inlines_8h">counters-inlines.h</innerfile>
+    <innerfile refid="deprecated-inlines_8h">deprecated-inlines.h</innerfile>
     <innerfile refid="detail-inlines_8h">detail-inlines.h</innerfile>
     <innerfile refid="exceptions-inlines_8h">exceptions-inlines.h</innerfile>
     <innerfile refid="expression-formatter-inlines_8h">expression-formatter-inlines.h</innerfile>

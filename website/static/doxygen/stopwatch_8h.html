@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -128,8 +128,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('stopwatch_8h.h
 Classes</h2></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Astopwatch" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Astopwatch"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html">micro_os_plus::micro_test_plus::detail::stopwatch</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measures the elapsed time of an operation.  <a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#details">More...</a><br /></td></tr>
-<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Atimestamp" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Atimestamp"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html">micro_os_plus::micro_test_plus::detail::timestamp</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated clock reading.  <a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -140,10 +138,10 @@ Namespaces</h2></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html">micro_os_plus::micro_test_plus::detail</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a53a6bc7f86b15378c8296b3647e7013f" id="r_a53a6bc7f86b15378c8296b3647e7013f"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a53a6bc7f86b15378c8296b3647e7013f">micro_os_plus::micro_test_plus::detail::timestamps</a> = <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html">stopwatch</a></td></tr>
-<tr class="memdesc:a53a6bc7f86b15378c8296b3647e7013f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated name of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span>.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a60dcef812e43e13d1e30f602a572e27a" id="r_a60dcef812e43e13d1e30f602a572e27a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a60dcef812e43e13d1e30f602a572e27a">micro_os_plus::micro_test_plus::detail::read_clock</a> (timespec &amp;ts) noexcept</td></tr>
+<tr class="memdesc:a60dcef812e43e13d1e30f602a572e27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the system clock.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header provides the <span class="tt">stopwatch</span> class, used to measure the elapsed time of the test suites and of the test session within the µTest++ framework. The stopwatch is started before the measured operation, stopped after it, and then reports the elapsed time as a <span class="tt">std::chrono::microseconds</span> duration.</p>

@@ -8,7 +8,6 @@ var test_8h =
     [ "micro_os_plus::micro_test_plus::detail::static_suite_body", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::test_values_range", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::test_values_tuple", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__tuple.html", null ],
-    [ "micro_os_plus::micro_test_plus::subtest", "group__micro-os-plus-micro-test-plus-test-case.html#ga1424c18b26d5fdaed11439c77e6bf561", null ],
     [ "micro_os_plus::micro_test_plus::detail::bind_callable", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a6abb44ef8226b1f80aad8010b5ef1a5c", null ],
     [ "micro_os_plus::micro_test_plus::detail::test_each_value", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8", null ]
 ];

@@ -192,15 +192,6 @@ keywords:
 <p>The same as <span class="doxyComputerOutput"><a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a></span>. The name was changed since a leading underscore is not used by the other public names.</p>
 
 
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000028>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a></span> (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Template Parameters</dt>
 <dd>
@@ -241,9 +232,9 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000029>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000007>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a></p>
+<p>use <a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -251,15 +242,15 @@ keywords:
 <p>Forwards to <span class="doxyComputerOutput"><a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00282">282</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00093">93</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9998cd63972fac8b24a2f0138322e7c1">282</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga9998cd63972fac8b24a2f0138322e7c1">_and</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">283</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">284</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ga8c9c770da2ef632dec29c502651cb160">both</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">285</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9998cd63972fac8b24a2f0138322e7c1">93</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga9998cd63972fac8b24a2f0138322e7c1">_and</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">94</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">95</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ga8c9c770da2ef632dec29c502651cb160">both</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">96</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -303,15 +294,6 @@ keywords:
 <p>The same as <span class="doxyComputerOutput"><a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a></span>. The name was changed since a leading underscore is not used by the other public names.</p>
 
 
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000026>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a></span> (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Template Parameters</dt>
 <dd>
@@ -344,9 +326,9 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000027>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000006>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a></p>
+<p>use <a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -354,15 +336,15 @@ keywords:
 <p>Forwards to <span class="doxyComputerOutput"><a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00270">270</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00080">80</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa465723bc4fe309f15d30a4e7207d40f">270</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gaa465723bc4fe309f15d30a4e7207d40f">_not</a> (Expr_T&amp;&amp; expr)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">271</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">272</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate</a> (std::forward&lt;Expr_T&gt; (expr));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">273</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa465723bc4fe309f15d30a4e7207d40f">80</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gaa465723bc4fe309f15d30a4e7207d40f">_not</a> (Expr_T&amp;&amp; expr)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">81</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">82</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate</a> (std::forward&lt;Expr_T&gt; (expr));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">83</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -406,15 +388,6 @@ keywords:
 <p>The same as <span class="doxyComputerOutput"><a href="#gab9fbb94dec947fa60052531743114fa9">either()</a></span>. The name was changed since a leading underscore is not used by the other public names.</p>
 
 
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000030>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>Use <span class="doxyComputerOutput"><a href="#gab9fbb94dec947fa60052531743114fa9">either()</a></span> (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Template Parameters</dt>
 <dd>
@@ -455,9 +428,9 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000031>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000008>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="#gab9fbb94dec947fa60052531743114fa9">either()</a></p>
+<p>use <a href="#gab9fbb94dec947fa60052531743114fa9">either()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
@@ -465,15 +438,15 @@ keywords:
 <p>Forwards to <span class="doxyComputerOutput"><a href="#gab9fbb94dec947fa60052531743114fa9">either()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00294">294</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00106">106</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">294</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">_or</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">295</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">296</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#gab9fbb94dec947fa60052531743114fa9">either</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">297</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">106</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">_or</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">107</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">108</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#gab9fbb94dec947fa60052531743114fa9">either</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -765,6 +738,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

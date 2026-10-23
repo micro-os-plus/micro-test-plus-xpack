@@ -30,8 +30,6 @@
         </briefdescription>
         <detaileddescription>
 <para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></computeroutput>. The name was misleading: in other frameworks (JUnit, Hypothesis), an unmet assumption skips the test, while here it fails it.</para>
-<para><xrefsect id="deprecated_1_deprecated000124"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></computeroutput> (since 5.1.0).</para>
-</xrefdescription></xrefsect></para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Expr_T</parametername>
@@ -60,13 +58,13 @@
 </parameterlist>
 <simplesect kind="return"><para>The check result, to which optional messages can be appended with <computeroutput>operator&lt;&lt;</computeroutput>; the check is reported when it is destroyed, at the end of the statement. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000125"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></para>
+<xrefsect id="deprecated_1_deprecated000068"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref> (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></computeroutput>; the returned check result is neither copied nor moved, since a prvalue is returned (guaranteed copy elision). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1269" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="468" bodyend="471"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1271" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="469" bodyend="472"/>
         <references refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" compoundref="test-inlines_8h" startline="449" endline="458">micro_os_plus::micro_test_plus::test_case::require</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ac2e310ec902a0c3e786d4c415269c23e">micro_os_plus::micro_test_plus::test_case::operator=</referencedby>
       </memberdef>
@@ -131,12 +129,12 @@ Constructs and returns a <computeroutput><ref refid="classmicro__os__plus_1_1mic
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1244" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="449" bodyend="458"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac928cbe8852ca0c0273482b905c6301b" compoundref="reporter_8h" startline="1074" endline="1074">micro_os_plus::micro_test_plus::detail::reporter::expression_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1248" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="449" bodyend="458"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac928cbe8852ca0c0273482b905c6301b" compoundref="reporter_8h" startline="1073" endline="1073">micro_os_plus::micro_test_plus::detail::reporter::expression_</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e" compoundref="check-result_8h" startline="130">micro_os_plus::micro_test_plus::detail::requirement</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" compoundref="test_8cpp" startline="115" endline="118">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2c1e2c756b442d4832c161c8127faacf">micro_os_plus::micro_test_plus::detail::reporter::writes_passed_checks</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-requirements_1gad25dc8d5d657ace9d47d3a95b3341802" compoundref="test-inlines_8h" startline="468" endline="471">micro_os_plus::micro_test_plus::test_case::assume</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-requirements_1gad25dc8d5d657ace9d47d3a95b3341802" compoundref="test-inlines_8h" startline="469" endline="472">micro_os_plus::micro_test_plus::test_case::assume</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ac2e310ec902a0c3e786d4c415269c23e">micro_os_plus::micro_test_plus::test_case::operator=</referencedby>
       </memberdef>
     </sectiondef>

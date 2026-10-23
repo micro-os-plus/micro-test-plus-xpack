@@ -59,7 +59,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#a0302f9f5b977b05139d73df3bbc18d69"><b>begin_test_case()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap">micro_os_plus::micro_test_plus::detail::reporter_tap</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#aa5f6b45879c1e0986ce4ebf9f374a182"><b>begin_test_case()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">micro_os_plus::micro_test_plus::detail::reporter</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op/#a33a6b26e134e3403ea52fcaf9ce92691"><b>binary_op()</b></a>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op">micro_os_plus::micro_test_plus::detail::binary_op&lt;Lhs_T, Rhs_T&gt;</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/bound-callable/#aa9be536ae51bc405cb4fb0d8f015ebfc"><b>bound_callable()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/bound-callable">micro_os_plus::micro_test_plus::detail::bound_callable&lt;Self_T, Callable_T, Args_T&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/bound-callable/#a15afa0762b074f3ef56335580bf7119d"><b>bound_callable()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/bound-callable">micro_os_plus::micro_test_plus::detail::bound_callable&lt;Self_T, Callable_T, Args_T&gt;</a></li>
 </ul>
 <p>12 entries</p>
 
@@ -69,7 +69,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string/#a8981cf74f42a9cdbeed10da6b37a8009"><b>c_string()</b></a>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string">micro_os_plus::micro_test_plus::detail::c_string</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string/#ab62fc84779f70b69cf6d61ee4fee5de7"><b>c_string()</b></a>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string">micro_os_plus::micro_test_plus::detail::c_string</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op/#a094d51da3318c5f2bfa36121aac44829"><b>callable_op()</b></a>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op">micro_os_plus::micro_test_plus::detail::callable_op</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/callable-ref/#a8422edf1279e27a15356e28978569053"><b>callable_ref()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/callable-ref">micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/callable-ref/#a3e789d4fded524d5d5d088618d615026"><b>callable_ref()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/callable-ref">micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result/#ae3b88e57597f9fcd04536b894bebef5e"><b>~check_result()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">micro_os_plus::micro_test_plus::detail::check_result</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result/#ac5423d6f891819a4bf2f0bb0d4df8996"><b>check_result()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">micro_os_plus::micro_test_plus::detail::check_result</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result/#adc3eb4dbb45d2dfa7b88aac996247f10"><b>check_result()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">micro_os_plus::micro_test_plus::detail::check_result</a></li>
@@ -503,6 +503,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

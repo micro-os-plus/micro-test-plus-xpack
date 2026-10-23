@@ -10,7 +10,7 @@
     </templateparamlist>
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable" kindref="compound">micro_os_plus::micro_test_plus::extension::printable</ref> =  requires (<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter" kindref="compound">detail::expression_formatter</ref>&amp; formatter,
-                                  const T&amp; <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>) { formatter &lt;&lt; <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>; }</initializer>
+                                  const T&amp; value) { formatter &lt;&lt; value; }</initializer>
     <conceptparts>
       <codepart line="247">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>

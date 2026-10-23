@@ -4,3 +4,24 @@
 @details
 The µTest++ Testing Framework library uses several preprocessor macros
 to enable it and to configure various options.
+
+These macros must be defined by the application; neither the library nor
+its CMake, meson, and xPack build files define them (the `defaultDefine`
+entries in `xcdl-package.jsonc` are informative only).
+
+The preferred place is `micro-os-plus/micro-test-plus-defines.h`, or
+`micro-os-plus/project-config.h`, which each µTest++ header includes, if
+present, before its own definitions, so that the application and the
+library sources are compiled with the same configuration. The macros
+have no value, only their definition matters; guard them, so that they
+can also be defined on the compiler command line:
+
+@code{.cpp}
+#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED
+#endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
+@endcode
+
+A macro defined only on the compiler command line (for example
+`‑DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED`) must be defined for the 
+entire build (both the application and the library sources).

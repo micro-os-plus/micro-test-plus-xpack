@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.0.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -125,9 +125,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <div class="line">                                std::decay_t&lt;Args_T&gt;&amp;...&gt;)</div>
 <div class="line">          &amp;&amp; std::is_invocable_v&lt;std::decay_t&lt;Callable_T&gt;&amp;, <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html">static_suite</a>&amp;,</div>
 <div class="line">                                 std::decay_t&lt;Args_T&gt;&amp;...&gt;</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1static__suite_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html">micro_os_plus::micro_test_plus::static_suite</a></div><div class="ttdoc">A test suite designed for static (namespace-scope) registration with a runner.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01939">test.h:1940</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1suite_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">micro_os_plus::micro_test_plus::suite</a></div><div class="ttdoc">A named, runnable test suite registered with the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01416">test.h:1417</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body.html">micro_os_plus::micro_test_plus::detail::static_suite_body</a></div><div class="ttdoc">The body of a static suite written for v5.0.1, whose first parameter is a static_suite&amp; reference.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01897">test.h:1898</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1static__suite_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html">micro_os_plus::micro_test_plus::static_suite</a></div><div class="ttdoc">A test suite designed for static (namespace-scope) registration with a runner.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01921">test.h:1922</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1suite_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">micro_os_plus::micro_test_plus::suite</a></div><div class="ttdoc">A named, runnable test suite registered with the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01402">test.h:1403</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body.html">micro_os_plus::micro_test_plus::detail::static_suite_body</a></div><div class="ttdoc">The body of a static suite written for v5.0.1, whose first parameter is a static_suite&amp; reference.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01879">test.h:1880</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Satisfied by a callable that cannot be invoked with a <span class="tt">suite&amp;</span> reference, but can be invoked with a <span class="tt">static_suite&amp;</span> one, followed by the arguments as stored (decayed, non-<span class="tt">const</span> lvalues). It selects the deprecated constructor of <span class="tt">static_suite</span>; the callables that accept a <span class="tt">suite&amp;</span> reference, including the generic lambdas, do not satisfy it.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01897">1897</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01879">1879</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

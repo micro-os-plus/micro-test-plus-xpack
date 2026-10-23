@@ -28,21 +28,18 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A pointer to the file name within the input string, after the last <computeroutput>/</computeroutput> or <computeroutput>\\endiskip</computeroutput> separator, or the string itself if there is no separator.</para>
+<simplesect kind="return"><para>A pointer to the file name within the input string, after the last <computeroutput>/</computeroutput> or <computeroutput>\\endiskip</computeroutput> separator, or the string itself if there is no separator. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000080"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput> (since 5.1.0). </para>
-</xrefdescription></xrefsect><xrefsect id="deprecated_1_deprecated000081"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></para>
+<xrefsect id="deprecated_1_deprecated000036"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref> (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
-<para>Delegates to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput>, the single implementation used by the framework, so both the <computeroutput>/</computeroutput> and the <computeroutput>\\endiskip</computeroutput> separators are recognised. If no separator is present, the original input string is returned.</para>
-<para><xrefsect id="deprecated_1_deprecated000131"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput> (since 5.1.0). </para>
-</xrefdescription></xrefsect></para>
+<para>Delegates to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput>, the single implementation used by the framework, so both the <computeroutput>/</computeroutput> and the <computeroutput>\\endiskip</computeroutput> separators are recognised. If no separator is present, the original input string is returned. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" line="73" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" bodystart="73" bodyend="76" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="225" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" line="74" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" bodystart="74" bodyend="77" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="474" declcolumn="5"/>
         <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="88" endline="97">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" compoundref="reflection_8cpp" startline="73" endline="76">short_name</references>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" compoundref="reflection_8cpp" startline="73" endline="76">short_name</referencedby>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" compoundref="deprecated_8cpp" startline="74" endline="77">short_name</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" compoundref="deprecated_8cpp" startline="74" endline="77">short_name</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -89,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="154" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="154" bodyend="185" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="245" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="154" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="154" bodyend="185" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="227" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="154" endline="185">type_name</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="355" endline="367">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="154" endline="185">type_name</referencedby>
@@ -102,6 +99,6 @@
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kindref="compound">reflection</ref></computeroutput> namespace provides facilities for obtaining source location information and type names at compile time, thereby supporting advanced reporting and diagnostics within the µTest++ framework.</para>
 <para>It includes a local implementation of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> for standard libraries that do not yet provide <computeroutput>std::source_location</computeroutput>, as well as utilities for extracting file names from paths and concise type names from the compiler-specific <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="77" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="454" column="3"/>
   </compounddef>
 </doxygen>

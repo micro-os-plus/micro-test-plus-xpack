@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::list</compoundname>
-    <includes refid="extension_8h" local="no">extension.h</includes>
+    <includes refid="deprecated_8h" local="no">deprecated.h</includes>
     <templateparamlist>
       <param>
         <type>class...</type>
@@ -24,10 +24,10 @@
 </parameteritem>
 </parameterlist>
 Used only as the type of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits" kindref="compound">function_traits</ref>&lt;&gt;::args</computeroutput>; the framework no longer uses it.</para>
-<para><xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 5.1.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000042"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 5.1.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="561" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="562" bodyend="563"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="765" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="766" bodyend="767"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kind="concept">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::has_value</compoundname>
-    <includes refid="extension_8h" local="no">extension.h</includes>
+    <includes refid="deprecated_8h" local="no">deprecated.h</includes>
     <templateparamlist>
       <param>
         <type>class T</type>
@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kindref="compound">micro_os_plus::micro_test_plus::type_traits::has_value</ref> =  requires (const T&amp; t) { t.value; }</initializer>
     <conceptparts>
-      <codepart line="529">    <programlisting>
+      <codepart line="733">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">has_value<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>{<sp/>t.value;<sp/>}</highlight></codeline>
     </programlisting>
@@ -31,9 +31,9 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameteritem>
 </parameterlist>
 Restored with its v5.0.1 definition, satisfied by any type with a member named <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref></computeroutput>, static or not, including the application types, so that the v5.0.1 code that uses it keeps its result. It is not the concept used by the framework, <computeroutput>detail::has_value</computeroutput>, which is satisfied only by the framework types, so that the application types with a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref></computeroutput> member are compared as values.</para>
-<para><xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>There is no replacement; the concept used by the framework is internal (since 5.1.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000040"><xreftitle>Deprecated</xreftitle><xrefdescription><para>There is no replacement; the concept used by the framework is internal (since 5.1.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="529" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="733" column="5"/>
   </compounddef>
 </doxygen>

@@ -65,7 +65,15 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>deprecated.h</label>
+        <link refid="deprecated_8h"/>
         <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -77,15 +85,15 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -99,16 +107,18 @@
         <link refid="expression-formatter_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="23">
         <label>function-comparators.h</label>
         <link refid="function-comparators_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
@@ -118,19 +128,19 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="24">
         <label>operators-inlines.h</label>
         <link refid="operators-inlines_8h"/>
-        <childnode refid="23" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="20">
         <label>test-inlines.h</label>
         <link refid="test-inlines_8h"/>
-        <childnode refid="19" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="25">
         <label>operators.h</label>
         <link refid="operators_8h"/>
         <childnode refid="5" relation="include">
@@ -169,12 +179,14 @@
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="16">
         <label>runner.h</label>
         <link refid="runner_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
@@ -185,13 +197,15 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="21">
         <label>test.h</label>
         <link refid="test_8h"/>
         <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
@@ -203,7 +217,7 @@
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="8">
@@ -214,7 +228,11 @@
         <label>counters.cpp</label>
         <link refid="counters_8cpp"/>
       </node>
-      <node id="20">
+      <node id="18">
+        <label>deprecated.cpp</label>
+        <link refid="deprecated_8cpp"/>
+      </node>
+      <node id="22">
         <label>expression-formatter.cpp</label>
         <link refid="expression-formatter_8cpp"/>
       </node>
@@ -234,7 +252,7 @@
         <label>runner.cpp</label>
         <link refid="runner_8cpp"/>
       </node>
-      <node id="17">
+      <node id="19">
         <label>test.cpp</label>
         <link refid="test_8cpp"/>
       </node>
@@ -308,19 +326,19 @@ The value is formatted into a local buffer, which is then appended to <computero
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="728" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="728" bodyend="799" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1323" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="728" endline="799">micro_os_plus::micro_test_plus::detail::append_number</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="443" endline="449">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="427" endline="434">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="459" endline="466">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="297" endline="302">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="349" endline="353">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="400" endline="405">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="374" endline="379">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="323" endline="328">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="310" endline="315">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="361" endline="366">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="413" endline="418">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="387" endline="392">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="336" endline="341">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="444" endline="450">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="428" endline="435">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="460" endline="467">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="298" endline="303">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="350" endline="354">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="401" endline="406">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="375" endline="380">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="324" endline="329">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="311" endline="316">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="362" endline="367">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="414" endline="419">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="388" endline="393">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="337" endline="342">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0cdaf2313f78a256b80f7bb7b279e2e6" compoundref="reporter-inlines_8h" startline="101" endline="105">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">

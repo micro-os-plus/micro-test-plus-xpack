@@ -2,6 +2,7 @@ var dir_b34942af1e28075bba4d79bf44077044 =
 [
     [ "check-result-inlines.h", "check-result-inlines_8h.html", null ],
     [ "counters-inlines.h", "counters-inlines_8h.html", null ],
+    [ "deprecated-inlines.h", "deprecated-inlines_8h.html", "deprecated-inlines_8h" ],
     [ "detail-inlines.h", "detail-inlines_8h.html", "detail-inlines_8h" ],
     [ "exceptions-inlines.h", "exceptions-inlines_8h.html", "exceptions-inlines_8h" ],
     [ "expression-formatter-inlines.h", "expression-formatter-inlines_8h.html", null ],

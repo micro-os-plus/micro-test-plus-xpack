@@ -2,8 +2,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
     [ "check-result.cpp", "check-result_8cpp.html", null ],
     [ "counters.cpp", "counters_8cpp.html", null ],
+    [ "deprecated.cpp", "deprecated_8cpp.html", "deprecated_8cpp" ],
     [ "expression-formatter.cpp", "expression-formatter_8cpp.html", "expression-formatter_8cpp" ],
-    [ "reflection.cpp", "reflection_8cpp.html", "reflection_8cpp" ],
     [ "reporter-human.cpp", "reporter-human_8cpp.html", null ],
     [ "reporter-tap.cpp", "reporter-tap_8cpp.html", "reporter-tap_8cpp" ],
     [ "reporter.cpp", "reporter_8cpp.html", "reporter_8cpp" ],

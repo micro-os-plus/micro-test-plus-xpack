@@ -20,9 +20,9 @@ keywords:
 ## - _ -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga9998cd63972fac8b24a2f0138322e7c1"><b>_and()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gaa465723bc4fe309f15d30a4e7207d40f"><b>_not()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga1c7ddbf53764ab67240f1cf0e0fb4b8d"><b>_or()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga9998cd63972fac8b24a2f0138322e7c1"><b>_and()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gaa465723bc4fe309f15d30a4e7207d40f"><b>_not()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#ga1c7ddbf53764ab67240f1cf0e0fb4b8d"><b>_or()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 </ul>
 <p>3 entries</p>
 
@@ -183,13 +183,13 @@ keywords:
 ## - R -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-stopwatch-cpp-/#a34225dca0ef5b70eb98c8eeaa3a05b06"><b>read_clock()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">src/stopwatch.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a"><b>read_clock()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">src/stopwatch.cpp</a></li>
 </ul>
 
 ## - S -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#afc93799846770e521c4721d0de0a81cc"><b>short_name()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp">src/reflection.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#afc93799846770e521c4721d0de0a81cc"><b>short_name()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">src/deprecated.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions/#ga1b860aa64be17658d1664de447e6e125"><b>split()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/utility-inlines-h">include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h</a></li>
 </ul>
 <p>2 entries</p>
@@ -231,6 +231,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.4 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

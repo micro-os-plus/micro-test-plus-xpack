@@ -8,277 +8,217 @@
     <detaileddescription>
 <para><variablelist>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kindref="member">micro_os_plus::micro_test_plus::_and</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000028"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref></computeroutput> (since 5.1.0).</para>
-<para><anchor id="deprecated_1_deprecated000029"/>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000007"/>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga8c9c770da2ef632dec29c502651cb160" kindref="member">both()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">micro_os_plus::micro_test_plus::_b</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000032"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000033"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000009"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kindref="member">micro_os_plus::micro_test_plus::_c</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000034"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000035"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000010"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kindref="member">micro_os_plus::micro_test_plus::_d</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000074"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000075"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000030"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga231cd51e76a2f426703275739d605ad4" kindref="member">micro_os_plus::micro_test_plus::_f</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000072"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000073"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000029"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">micro_os_plus::micro_test_plus::_i</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000040"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000041"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000013"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gad2d95793c99112ad2889c6663789d1e3" kindref="member">micro_os_plus::micro_test_plus::_i16</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000058"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000059"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000022"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kindref="member">micro_os_plus::micro_test_plus::_i32</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000060"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000061"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000023"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga290a150eae030e183ca2e14e9095c93b" kindref="member">micro_os_plus::micro_test_plus::_i64</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000062"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000063"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000024"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">micro_os_plus::micro_test_plus::_i8</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000056"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000057"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000021"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga429a848542fc4ffafd3dd22bc1832654" kindref="member">micro_os_plus::micro_test_plus::_l</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000042"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000043"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000014"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kindref="member">micro_os_plus::micro_test_plus::_ld</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000076"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000077"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000031"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9c597ca04848620b8570c29a4741e77d" kindref="member">micro_os_plus::micro_test_plus::_ll</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000044"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000045"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000015"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kindref="member">micro_os_plus::micro_test_plus::_not</ref>  (Expr_T &amp;&amp;expr)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000026"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></computeroutput> (since 5.1.0).</para>
-<para><anchor id="deprecated_1_deprecated000027"/>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000006"/>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kindref="member">micro_os_plus::micro_test_plus::_or</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000030"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref></computeroutput> (since 5.1.0).</para>
-<para><anchor id="deprecated_1_deprecated000031"/>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000008"/>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9fbb94dec947fa60052531743114fa9" kindref="member">either()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kindref="member">micro_os_plus::micro_test_plus::_s</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000038"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000039"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000012"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kindref="member">micro_os_plus::micro_test_plus::_sc</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000036"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000037"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000011"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga15147e343475e219c2e46dce07b4127c" kindref="member">micro_os_plus::micro_test_plus::_t</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000078"/>Use <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref></computeroutput> (since 3.2.0).</para>
-<para><anchor id="deprecated_1_deprecated000079"/>use <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000032"/>use <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaaa486af2418a24076237fbe26940f5ae" kindref="member">micro_os_plus::micro_test_plus::_u</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000046"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000047"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000016"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kindref="member">micro_os_plus::micro_test_plus::_u16</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000066"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000067"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000026"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga4afa32150456241245bfc641a6f17bbc" kindref="member">micro_os_plus::micro_test_plus::_u32</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000068"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000069"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000027"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kindref="member">micro_os_plus::micro_test_plus::_u64</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000070"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000071"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000028"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">micro_os_plus::micro_test_plus::_u8</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000064"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000065"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000025"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kindref="member">micro_os_plus::micro_test_plus::_uc</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000048"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000049"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000017"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kindref="member">micro_os_plus::micro_test_plus::_ul</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000052"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000053"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000019"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1gada8a165060d3d3b3ab51272b9da58761" kindref="member">micro_os_plus::micro_test_plus::_ull</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000054"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000055"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000020"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga65aea7fc6324806cc029041a1c785611" kindref="member">micro_os_plus::micro_test_plus::_us</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000050"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput> (since 3.2.0). </para>
-<para><anchor id="deprecated_1_deprecated000051"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000018"/>use <ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref> (since 3.2.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" kindref="member">micro_os_plus::micro_test_plus::counters::executed_subtests</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000007"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kindref="member">executed_test_cases()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000008"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kindref="member">executed_test_cases()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000004"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kindref="member">executed_test_cases()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a082c78df2d5f6b10b6ac8c246caae6c5" kindref="member">micro_os_plus::micro_test_plus::counters::increment_executed_subtests</ref>  (size_t count=1) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000003"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kindref="member">increment_executed_test_cases()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000004"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kindref="member">increment_executed_test_cases()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000002"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kindref="member">increment_executed_test_cases()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4d3d1d6dfcc6a3a8c61c8c0326799533" kindref="member">micro_os_plus::micro_test_plus::counters::increment_successful_checks</ref>  (size_t count=1) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000001"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kindref="member">increment_passed_checks()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000002"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kindref="member">increment_passed_checks()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000001"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kindref="member">increment_passed_checks()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e1ed349fc1d936b5de5929fa1a62650" kindref="member">micro_os_plus::micro_test_plus::counters::successful_checks</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000005"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kindref="member">passed_checks()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000006"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kindref="member">passed_checks()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000003"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kindref="member">passed_checks()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" kindref="member">micro_os_plus::micro_test_plus::counters::was_successful</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000009"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kindref="member">passed()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000010"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kindref="member">passed()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000005"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kindref="member">passed()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a467d1332df523b9acaa3ff82b0ebb714" kindref="member">micro_os_plus::micro_test_plus::detail::reporter::verbosity</ref>  (void) const noexcept -&gt; <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000082"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">runner::verbosity_level()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000083"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">runner::verbosity_level()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000051"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">runner::verbosity_level()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af123417aafc76c826760101bcc517dfa" kindref="member">micro_os_plus::micro_test_plus::detail::runner_totals</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000011"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kindref="compound">counters</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000012"/>use counters </para>
+<listitem><para><anchor id="deprecated_1_deprecated000037"/>use counters (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::compute_elapsed_time</ref>  (uint32_t &amp;milliseconds, uint32_t &amp;microseconds) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000112"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000113"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000063"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::has_begin</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000106"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000107"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000060"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::has_end</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000108"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000109"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000061"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::has_timestamps</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000110"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000111"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000062"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</ref>  (void) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000114"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000115"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000064"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</ref>  (const timespec &amp;ts) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000116"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000117"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000065"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</ref>  (void) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000118"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000119"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000066"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</ref>  (const timespec &amp;ts) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000120"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000121"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000067"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" kindref="compound">micro_os_plus::micro_test_plus::detail::timestamp</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000104"/>The timings are internal; use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000105"/>the timings are internal </para>
+<listitem><para><anchor id="deprecated_1_deprecated000039"/>the timings are internal (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">micro_os_plus::micro_test_plus::detail::timestamps</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000102"/>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000103"/>the timings are internal </para>
+<listitem><para><anchor id="deprecated_1_deprecated000038"/>the timings are internal (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" kindref="member">micro_os_plus::micro_test_plus::reflection::short_name</ref>  (const char *name) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000080"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000081"/>use <ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></para>
-<para><anchor id="deprecated_1_deprecated000131"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput> (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000036"/>use <ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7f8403f1ccc6a0e8171ef077bcd9cbd4" kindref="member">micro_os_plus::micro_test_plus::runner::exit_code</ref>  (void)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000088"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a97f725cb167a2b464fac0eb88a0c8a46" kindref="member">run()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000089"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a97f725cb167a2b464fac0eb88a0c8a46" kindref="member">run()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000053"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a97f725cb167a2b464fac0eb88a0c8a46" kindref="member">run()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a65250ff363fbb3b5869bbe4de9578e86" kindref="member">micro_os_plus::micro_test_plus::runner::reporter</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000100"/>The reporter is internal; use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000101"/>the reporter is internal; use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000059"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a10788baa079e19676a8cdbaa253285dc" kindref="member">micro_os_plus::micro_test_plus::runner::runner</ref>  (const char *top_suite_name)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000086"/>Use the anonymous constructor, and pass the name to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acfabd0e10d233ad305b6f4fc125a97f2" kindref="member">initialise()</ref></computeroutput> (since 4.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000087"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a5e2001730fd3659e9045fcc5cc668f07" kindref="member">runner()</ref> and pass the name to <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acfabd0e10d233ad305b6f4fc125a97f2" kindref="member">initialise()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000052"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a5e2001730fd3659e9045fcc5cc668f07" kindref="member">runner()</ref> and <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acfabd0e10d233ad305b6f4fc125a97f2" kindref="member">initialise()</ref> (since 4.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2636252ac7f80b7425cf2e5eced77834" kindref="member">micro_os_plus::micro_test_plus::runner::suite</ref>  (std::string_view name, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000090"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a4069fe957bbc7a9217ca2dd4d2034a97" kindref="member">add_suite()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000091"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a4069fe957bbc7a9217ca2dd4d2034a97" kindref="member">add_suite()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000054"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a4069fe957bbc7a9217ca2dd4d2034a97" kindref="member">add_suite()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a6ed3a02ced62ed475c75678cd9e91be1" kindref="member">micro_os_plus::micro_test_plus::runner::suites_count</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000094"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a9484b22aa909151712144cd39130187a" kindref="member">added_suites_count()</ref></computeroutput>, plus one for the top suite, or <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac29e4b993bb3fe795eb8900231cbf5c4" kindref="member">total_suites_count()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000095"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a9484b22aa909151712144cd39130187a" kindref="member">added_suites_count()</ref> or <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac29e4b993bb3fe795eb8900231cbf5c4" kindref="member">total_suites_count()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000056"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a9484b22aa909151712144cd39130187a" kindref="member">added_suites_count()</ref> or <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac29e4b993bb3fe795eb8900231cbf5c4" kindref="member">total_suites_count()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af314280f14d61d37da276567685ec2a8" kindref="member">micro_os_plus::micro_test_plus::runner::timings</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000096"/>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000097"/>the timings are internal </para>
+<listitem><para><anchor id="deprecated_1_deprecated000057"/>the timings are internal (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7d3ccfaf760cb2f4ace586c222b22244" kindref="member">micro_os_plus::micro_test_plus::runner::timings</ref>  (void) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000098"/>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000099"/>the timings are internal </para>
+<listitem><para><anchor id="deprecated_1_deprecated000058"/>the timings are internal (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a94a9df0418776ebce476cd9a2e4f591f" kindref="member">micro_os_plus::micro_test_plus::runner::verbosity</ref>  (void) const noexcept -&gt; <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000092"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000093"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000055"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-runners_1ga47d2c99f85fc5597b82da402d4687e75" kindref="member">micro_os_plus::micro_test_plus::static_runner</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000084"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000085"/>use runner </para>
+<listitem><para><anchor id="deprecated_1_deprecated000034"/>use runner (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a7890c9db0d4a64f53164857a4d034435" kindref="member">micro_os_plus::micro_test_plus::static_suite::static_suite</ref>  (const char *name, runner &amp;test_runner, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000130"/> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000071"/>use a suite&amp; first parameter (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-test-case_1ga1424c18b26d5fdaed11439c77e6bf561" kindref="member">micro_os_plus::micro_test_plus::subtest</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000122"/>Use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput> (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000123"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000033"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a06c121fc0e8e87451a718846a11fc853" kindref="member">micro_os_plus::micro_test_plus::suite::timings</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000126"/>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000127"/>the timings are internal </para>
+<listitem><para><anchor id="deprecated_1_deprecated000069"/>the timings are internal (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a431faae19127cec8fbc9ebce59709f31" kindref="member">micro_os_plus::micro_test_plus::suite::timings</ref>  (void) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000128"/>The timings are internal; the elapsed times are shown by the reporters (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000129"/>the timings are internal </para>
+<listitem><para><anchor id="deprecated_1_deprecated000070"/>the timings are internal (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-requirements_1gad25dc8d5d657ace9d47d3a95b3341802" kindref="member">micro_os_plus::micro_test_plus::test_case::assume</ref>  (const Expr_T &amp;expr, const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref> &amp;sl=<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" kindref="member">reflection::source_location::current()</ref>)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000124"/>Use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref></computeroutput> (since 5.1.0).</para>
-<para><anchor id="deprecated_1_deprecated000125"/>use <ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000068"/>use <ref refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref> (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Namespace <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">micro_os_plus::micro_test_plus::type_traits</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000013"/>Use the concepts in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kindref="compound">extension</ref></computeroutput> namespace, and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op" kindref="compound">extension::compare_op</ref></computeroutput> or <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op" kindref="compound">extension::predicate_op</ref></computeroutput> for the application expressions; the value wrapper templates are internal (since 5.1.0). </para>
-<para><anchor id="deprecated_1_deprecated000014"/>use the extension namespace </para>
+<listitem><para><anchor id="deprecated_1_deprecated000035"/>use the extension namespace (since 5.1.0) </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000020"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000045"/>Not replaced (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000021"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000046"/>Not replaced (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000023"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000048"/>Not replaced (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000022"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000047"/>Not replaced (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; T &gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000019"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000044"/>Not replaced (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Member <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a67890916b8d3d8cbaab893cc6b599745" kindref="member">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000025"/>The value wrappers are internal (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000050"/>The value wrappers are internal (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kindref="compound">micro_os_plus::micro_test_plus::type_traits::has_value</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000015"/>There is no replacement; the concept used by the framework is internal (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000040"/>There is no replacement; the concept used by the framework is internal (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" kindref="compound">micro_os_plus::micro_test_plus::type_traits::identity&lt; T, Extra &gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000018"/>Use <computeroutput>std::type_identity</computeroutput> (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000043"/>Use <computeroutput>std::type_identity</computeroutput> (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point" kindref="compound">micro_os_plus::micro_test_plus::type_traits::is_floating_point</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000016"/>Use <computeroutput>std::floating_point</computeroutput> (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000041"/>Use <computeroutput>std::floating_point</computeroutput> (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kindref="compound">micro_os_plus::micro_test_plus::type_traits::list&lt; Types &gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000017"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000042"/>Not replaced (since 5.1.0).  </para>
 </listitem>
 <varlistentry><term>Member <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a65ad920b21a6c0df6848aa939659b92e" kindref="member">micro_os_plus::micro_test_plus::type_traits::value_base_</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000024"/>The value wrappers are internal (since 5.1.0). </para>
+<listitem><para><anchor id="deprecated_1_deprecated000049"/>The value wrappers are internal (since 5.1.0). </para>
 </listitem>
 </variablelist>
 </para>
