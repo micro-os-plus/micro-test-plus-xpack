@@ -20,11 +20,8 @@ separately.
 ## Scope
 
 If the user specifies a path, review only that path. Otherwise review
-`include/` (including `inlines/`), `src/` and `website/doxygen`. 
-
-Generated files (those
-with a `DO NOT EDIT` header) can be fixed in place and the templates
-will be updated later.
+`include/` (including `inlines/`) and `src/`. Generated files (those
+with a `DO NOT EDIT` header) are fixed in their templates, not in place.
 
 ## The Rules
 
@@ -192,12 +189,3 @@ Summarise for the user:
 - the code defects noticed but not fixed;
 - anything left unchanged, and why (e.g. generated documentation under
   `website/` that is updated only when the documentation is rebuilt).
-
-Write the report to a new file, `maintenance/docs/DOXYGEN-REVIEW.md`,
-
-Every actionable item in the report gets a permanent number, `#1`,
-`#2`, and so on, counting through the whole report (not restarting in
-each section), so that the user can refer to any of them (e.g. "fix
-#12", "apply #40 to #43").
-
-After fixing an item, mark it as fixed in the report.

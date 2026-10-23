@@ -140,20 +140,34 @@ powered up.
   `.github/skills/code-review/SKILL.md` for a thorough and uncompromising
   review of the codebase.
 
-## Commits
+## Commit Message Guidelines
 
-- When asked to commit, or to write a commit message, follow the
-  separate instructions in `.github/skills/github-commit/SKILL.md`,
-  which also cover the comment added to the fixed issue and the update
-  of the review documents.
+When making changes to the codebase, follow these guidelines for version control:
+
+- Use the imperative mood in the subject line (e.g., "Fix bug" instead of 
+  "Fixed bug" or "Fixes bug").
+- Limit the subject line to 50 characters.
+- Capitalise the subject line.
+- Do not end the subject line with a period.
+- Use the body to explain what and why vs. how.
+- Wrap the body at 72 characters.
+- Include references to relevant issues or pull requests if applicable.
+- Start the subject line with the GitHub issue number (as `#N:`) followed by 
+  a capital letter.
 - Do not commit without user review and approval.
 
-## Issues
+## Issue Updates
 
-- When asked to create a GitHub issue for a bug or an enhancement,
-  follow the separate instructions in
-  `.github/skills/create-github-issue/SKILL.md`.
-- Do not create an issue without user review and approval.
+After committing a fix for a GitHub issue (referenced in the commit
+message with `Fixes #N`), add a comment to that issue:
+
+- Briefly explain the changes made, and mention the commit hash;
+- End with a line `Fixed on YYYY-MM-DD.`, with the date of the commit;
+- Do not close the issue; it is closed when the commit reaches the
+  default branch.
+
+If the fix has no corresponding issue, ask for its number before
+committing.
 
 ## xcdl
 

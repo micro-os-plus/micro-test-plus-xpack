@@ -13,13 +13,6 @@ argument-hint: 'Optional: path or folder to review; defaults to the whole reposi
 - The user asks to check adherence to the project's coding standards before
   a commit or release.
 
-Related skills, with different scopes:
-
-- `api-review`: the design and the implementation of the whole C++
-  API, judged from the code alone (with probe programs), with a
-  new numbered report in `maintenance/docs/API-REVIEW-<n>.md`;
-- `doxygen-review`: verifies and fixes the Doxygen comments.
-
 ## Review Scope
 
 If the user specifies a path, review only that path. Otherwise review
@@ -34,15 +27,9 @@ specifically, with file and line references.
 
 - C/C++ identifiers use `snake_case` (types, functions, variables, members).
 - File names are lower-case words separated by dashes (e.g.
-  `runner-inlines.h`).
-- Formatting matches `maintenance/config/.clang-format`; check it
-  without modifying the files:
-
-  ```sh
-  xpacks/.bin/clang-format --dry-run --Werror \
-    --style=file:maintenance/config/.clang-format <files>
-  ```
-
+  `instructions-inlines.h`).
+- Formatting matches `.clang-format` (run `xpm run clang-format` mentally;
+  flag anything that looks inconsistent with it).
 - No lines exceed 80 characters, including comments, except possibly the
   file path in a `DO NOT EDIT` generated-file comment, link URLs.
 
@@ -50,11 +37,10 @@ specifically, with file and line references.
 
 - Declarations live in `include/`, out-of-line definitions in `src/`,
   inline (header-only) definitions in `inlines/`.
-- There is only one public header,
-  `include/micro-os-plus/micro-test-plus.h`; the other headers are
-  located in the subfolder named after it,
-  `include/micro-os-plus/micro-test-plus/`, and the inline bodies of
-  `<name>.h` are in `inlines/<name>-inlines.h`.
+- Usually there is only one public header (like
+  `include/micro-os-plus/architecture.h`);
+  internal headers are located in a subfolder named after the public header
+  (e.g. `include/micro-os-plus/architecture-cortexm/`).
 - New source files are registered in `xcdl-package.jsonc`, and the
   top-level `CMakeLists.txt` and `meson.build` are regenerated from it
   with `xpm run xcdl-export`; the generated files are not edited by hand.
@@ -92,7 +78,7 @@ specifically, with file and line references.
 - Every `#endif` is followed by a C++ comment (`// ...`) repeating the
   exact expression from its paired `#if`/`#if defined`/`#if !defined`,
   so nested and distant guards remain traceable.
-- The above applies to pragmas where `#if defined(__GNUC__)`,
+- The above applies to pragmas where `#if defined(__GNUC__)`, 
   `#if defined(__clang__)` or similar are used.
 
 ### Modern C++
@@ -110,39 +96,43 @@ specifically, with file and line references.
   attributes over compiler-specific equivalents.
 - Flag unnecessary use of raw pointers, casts, or macros where a
   standard C++20 facility would be clearer and safer, while respecting
-  the embedded constraints of the project: the library may use the
-  heap and the standard containers, but program size matters more than
-  speed, and the library must build without exceptions and without
-  RTTI (code that needs them is guarded by `__cpp_exceptions` or
-  `__cpp_rtti`, not by compiler-specific macros).
+  the embedded/bare-metal constraints of the project (no exceptions,
+  no heap allocation, no RTTI, unless already used elsewhere).
 - `noexcept` is specified explicitly wherever it is warranted (e.g.
   move constructors/assignment, destructors, and functions that
   provably cannot throw); flag missing or incorrect `noexcept`.
 
 ### Correctness and maintainability
 
-- Look for undefined behaviour, dangling pointers and references
-  (names kept as `const char*` or `std::string_view`), and missing
-  `const`-correctness.
+- Look for undefined behaviour, missing `const`-correctness, and
+  incorrect inline assembly (wrong mnemonics or operand direction,
+  missing clobbers or `memory` barriers, 32-bit operands used for
+  64-bit registers, and Cortex-M or AArch32 leftovers that are not
+  valid AArch64).
+- Check for potential ABI implications of changes to the public types
+  and to the semihosting call interface.
 - Flag weak assumptions, missing edge-case handling, and any deviation
   from existing patterns in the codebase without justification.
-- Check that a changed public entity keeps the symmetry between the
-  parallel forms of the API (`suite` and `static_suite`, `expect()`
-  and `require()`, the function comparators and the operators, the
-  `to_i` wrappers and the `_i` literals); a feature added to one form
-  should be added to the others, unless the omission is deliberate
-  and justified.
-- Check that the changed code works with both reporters (human and
-  TAP) and at every verbosity level.
+- Check that thread-safety/reentrancy expectations are documented where
+  relevant (any function that could be called from an exception handler
+  or from multiple cores should say so explicitly).
+- Check API symmetry between the parallel forms of each API (the
+  `aarch64_architecture_*` and `micro_os_plus_architecture_*` C
+  functions, and the `aarch64::architecture` and
+  `micro_os_plus::architecture` C++ namespaces); every function should
+  exist in all forms, with consistent names, unless the omission is
+  deliberate and justified.
+- Check API symmetry between related class templates (e.g. `doubly_list`
+  versus `intrusive_list`); if one offers a convenience method the other
+  lacks (such as `unlink_head`/`unlink_tail`), confirm this is a deliberate
+  design decision rather than an oversight, and note the justification.
 
 ### Toolchain verification
 
 - Where feasible, prefer verifying claims by actually building rather than
-  reading only: build with `-Wall -Wextra -Wpedantic` (or run the
+  reading only: run the project with `-Wall -Wextra -Wpedantic` (or the
   `xpm run test*` variants) and report any warnings, rather than only
-  flagging style issues that look suspicious. The probe build
-  described in the `api-review` skill ("Confirming Findings with
-  Probes") needs no other dependency.
+  flagging style issues that look suspicious.
 - For pointer-arithmetic or type-punning idioms (e.g. `reinterpret_cast`
   member-offset tricks, null-pointer-based `offsetof` substitutes), check
   whether a sanitizer build (`-fsanitize=undefined`/`-fsanitize=address`)
@@ -151,9 +141,8 @@ specifically, with file and line references.
 ### Tests
 
 - Changes to behaviour are covered by tests in `tests/`.
-- Note which tests should be re-run, as required by the Testing
-  section of `.github/copilot-instructions.md` (`test-selected` after
-  major changes, `test` after minor ones).
+- Note if `xpm run test -C tests` (and the clang/qemu variants mentioned
+  in the top-level instructions) should be re-run.
 
 ## Procedure
 
@@ -167,8 +156,6 @@ specifically, with file and line references.
    with:
    - a summary of findings, and
    - specific, actionable recommendations, grouped by checklist section.
-6. Number the findings (`#1`, `#2`, and so on, through the whole
-   report), so that the user can refer to them when asking to fix
-   them.
+6. Index open issues numerically, to be refered when asking to close them.
 7. Do not fix the issues automatically unless the user asks for that
    separately.
