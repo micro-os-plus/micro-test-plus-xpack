@@ -645,6 +645,19 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
+if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
+  add_native_test_executable (static-asserts-test)
+  target_link_native_test_libraries (static-asserts-test tests::static-asserts)
+
+  xpack_display_target_lists (static-asserts-test)
+  message (VERBOSE "A> static-asserts-test")
+
+  add_test (NAME "static-asserts-test" COMMAND static-asserts-test one two )
+  message (VERBOSE "T> static-asserts-test")
+endif ()
+
+# -----------------------------------------------------------------------------
+
 if (XPACK_ENABLE_UNIT_TEST)
   add_native_test_executable (unit-test)
   target_link_native_test_libraries (unit-test tests::unit)
@@ -762,9 +775,8 @@ if (XPACK_ENABLE_UNIT_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
   )
 
-  # --verbose --color
-  # The output file never receives colours, so the console output is
-  # captured instead.
+  # --verbose --color The output file never receives colours, so the console
+  # output is captured instead.
   add_test (
     NAME "unit-test-reporter-human-colour"
     COMMAND

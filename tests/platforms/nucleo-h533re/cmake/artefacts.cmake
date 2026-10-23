@@ -32,7 +32,7 @@ prepend_compile_common_private_options (
 set (XPACK_OPENOCD_INTERFACE "stlink.cfg")
 set (XPACK_OPENOCD_TARGET "stm32h5x.cfg")
 
-set(USE_STM_OPENOCD true)
+set (USE_STM_OPENOCD true)
 
 # Running successive OpenOCD/CMSIS-DAP sessions back-to-back has been observed
 # to intermittently fail the "verify" step of the next session with USB
@@ -91,7 +91,7 @@ function (add_openocd_test)
         "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset halt" -c
         "resume"
     )
-  else()
+  else ()
     add_test (
       NAME "${arg_NAME}"
       COMMAND
@@ -102,9 +102,8 @@ function (add_openocd_test)
         #
         -c "gdb_port disabled" -c "tcl_port disabled" -c "telnet_port disabled"
         -f "interface/stlink-dap.cfg" -f "target/stm32h5x.cfg" -c
-        "program ${name}.elf verify" -c
-        "arm semihosting enable" -c "${semihosting_cmdline}" -c "reset halt" -c
-        "resume"
+        "program ${name}.elf verify" -c "arm semihosting enable" -c
+        "${semihosting_cmdline}" -c "reset halt" -c "resume"
     )
   endif ()
 
@@ -244,7 +243,19 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-# if (XPACK_ENABLE_UNIT_TEST AND NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
+if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
+  add_cross_test_executable (static-asserts-test)
+  target_link_native_test_libraries (static-asserts-test tests::static-asserts)
+
+  xpack_display_target_lists (static-asserts-test)
+  message (VERBOSE "A> static-asserts-test")
+
+  # There is nothing to test at runtime for static asserts, as they are checked
+  # at compile time.
+endif ()
+
+# -----------------------------------------------------------------------------
+
 if (XPACK_ENABLE_UNIT_TEST)
   add_cross_test_executable (unit-test)
   target_link_cross_test_libraries (unit-test tests::unit)

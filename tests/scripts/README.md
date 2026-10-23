@@ -13,8 +13,8 @@ All scripts are generated from the templates in the
 changes will be overwritten at the next regeneration.
 
 The `.mjs` scripts require Node.js and the npm dependencies of the
-`tests` project (`json5`, `liquidjs`, `glob`, `tap-parser`, and the
-helper packages), installed with `npm install` in the `tests` folder.
+`tests` project (`json5`, `liquidjs`, `glob`, and the helper packages),
+installed with `npm install` in the `tests` folder.
 The `.sh` scripts require `bash`.
 
 | Script | Used by | Purpose |
@@ -24,7 +24,6 @@ The `.sh` scripts require `bash`.
 | `convert-startup-to-vectors.mjs` | `xpm run convert-vectors` | Generate `vectors-*.c` from a CMSIS startup file |
 | `get-libraries-paths.mjs` | native CMake/meson builds | Get the compiler run-time libraries paths |
 | `show-coverage.sh` | native CMake build, with coverage | Show the `llvm-cov` coverage report |
-| `validate-tap.mjs` | manually | Check that TAP files are well-formed TAP 14 |
 | `xcdl-export.mjs` | `xpm run xcdl-export` | Generate `CMakeLists.txt` and `meson.build` from xCDL |
 
 ## `clear-build-folder.mjs`
@@ -221,42 +220,6 @@ third argument limits the report to a single source file, for example
 In CMake builds, when `XPACK_ENABLE_COVERAGE` is enabled, it is
 registered as a test that depends on the test program run, for
 example in `platforms/synthetic-posix/cmake/artefacts.cmake`.
-
-## `validate-tap.mjs`
-
-Checks that one or more TAP files are well-formed TAP 14, for example
-the reference outputs, or the files written by the test programs with
-`--output-file`.
-
-Usage:
-
-```sh
-node scripts/validate-tap.mjs <file.tap> [<file.tap>...]
-```
-
-The files are parsed with the node-tap parser (`tap-parser`) in strict
-mode, and each subtest is checked recursively. A file is rejected for:
-
-- a parser error, such as a plan that does not match the number of
-  test points, or a duplicate test point number;
-- a line that is not TAP, including a misplaced test point and a YAML
-  diagnostics block that is invalid or not closed;
-- a missing plan;
-- a version other than `TAP version 14`.
-
-The `not ok` test points are not errors, so files with intentional
-failures are accepted. The names of the YAML diagnostics fields are not
-checked, since TAP 14 does not standardise them.
-
-The errors are written to `stderr`; for each valid file, the script
-prints `<file>: valid TAP`. The script exits with an error if any file
-is not valid, or if no file is given.
-
-For example, to check all the reference outputs:
-
-```sh
-node scripts/validate-tap.mjs assets/tap/*.tap
-```
 
 ## `xcdl-export.mjs`
 

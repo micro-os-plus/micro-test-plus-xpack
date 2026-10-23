@@ -2321,12 +2321,6 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     // a test case name with the location of its caller.
     ts.test ("Test case and suite names", [] (auto& t)
       {
-        static_assert (std::is_convertible_v<const char*, test_case_name>);
-        static_assert (std::is_convertible_v<std::string, test_case_name>);
-        // Not null-terminated, so not accepted.
-        static_assert (
-            !std::is_convertible_v<std::string_view, test_case_name>);
-
         runner_options options{};
         options.selected_reporter = reporter_kind::human;
         options.verbosity_level = verbosity::silent;

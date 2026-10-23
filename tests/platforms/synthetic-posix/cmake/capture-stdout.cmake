@@ -1,4 +1,6 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from template file:
+# build-helper/templates/common/_micro-os-plus/tests/platforms/synthetic-posix/cmake/capture-stdout-liquid.cmake
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2026 Liviu Ionescu. All rights reserved.
@@ -11,15 +13,14 @@
 #
 # -----------------------------------------------------------------------------
 
-# Usage:
-#   cmake -D EXECUTABLE=<path> -D OUTPUT=<file> -P capture-stdout.cmake
-#         -- [<arg>...]
+# Usage: cmake -D EXECUTABLE=<path> -D OUTPUT=<file> -P capture-stdout.cmake --
+# [<arg>...]
 #
-# Runs the executable with the arguments given after `--`, writes its
-# standard output to the file, and also shows it on the standard output;
-# the standard error is not captured. The trace lines of the debug builds
-# are removed, and the line endings are normalised to LF. Fails if the
-# executable returns non-zero.
+# Runs the executable with the arguments given after `--`, writes its standard
+# output to the file, and also shows it on the standard output; the standard
+# error is not captured. The trace lines of the debug builds are removed, and
+# the line endings are normalised to LF. Fails if the executable returns
+# non-zero.
 
 cmake_minimum_required (VERSION 3.20)
 
@@ -47,8 +48,8 @@ string (REGEX REPLACE "(^|\n)micro_os_plus::trace::[^\n]*\n" "\\1" output
 
 file (WRITE "${OUTPUT}" "${output}")
 
-# Also show the output, as it was written to the file, on the standard
-# output; message() would write it to the standard error, with a prefix.
+# Also show the output, as it was written to the file, on the standard output;
+# message() would write it to the standard error, with a prefix.
 execute_process (COMMAND "${CMAKE_COMMAND}" -E cat "${OUTPUT}")
 
 if (NOT result EQUAL 0)

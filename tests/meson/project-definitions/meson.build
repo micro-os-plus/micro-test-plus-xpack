@@ -20,6 +20,7 @@ xpack_enable_empty_test = true
 xpack_enable_minimal_test = true
 xpack_enable_suite_test = true
 xpack_enable_sample_test = true
+xpack_enable_static_asserts_test = true
 xpack_enable_unit_test = true
 
 xpack_dependencies_tests_folders = []
@@ -39,6 +40,10 @@ endif
 
 if xpack_enable_sample_test
   xpack_dependencies_tests_folders += [ 'sources/sample' ]
+endif
+
+if xpack_enable_static_asserts_test
+  xpack_dependencies_tests_folders += [ 'sources/static-asserts' ]
 endif
 
 if xpack_enable_unit_test

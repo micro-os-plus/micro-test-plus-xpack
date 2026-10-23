@@ -61,7 +61,6 @@ _local_sources += [
   'src/integral-passed-combinations.cpp',
   'src/miscellaneous.cpp',
   'src/operators.cpp',
-  'src/static-asserts.cpp',
   'src/stopwatch.cpp',
   'src/support.cpp',
   'src/utility.cpp',

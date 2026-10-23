@@ -109,6 +109,25 @@ endif
 
 # -----------------------------------------------------------------------------
 
+if (xpack_enable_static_asserts_test)
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'static-asserts-test',
+    qemu,
+    args: qemu_machine_args +
+      [ '--kernel', static_asserts_test ] +
+      qemu_extra_args +
+      [ '--semihosting-config',
+      'enable=on,target=native,arg=static-asserts-test,arg=one,arg=two' ],
+    env: xpack_environment
+  )
+  message('T> static-asserts-test')
+
+endif
+
+# -----------------------------------------------------------------------------
+
 if (xpack_enable_unit_test)
 
   # https://mesonbuild.com/Reference-manual_functions.html#test

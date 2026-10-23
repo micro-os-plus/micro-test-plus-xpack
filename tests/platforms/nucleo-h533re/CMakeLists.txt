@@ -52,7 +52,6 @@ target_compile_definitions (
 
 set (
   xpack_platform_common_args
-
   -mcpu=cortex-m33
   -mthumb
   -mfpu=fpv4-sp-d16

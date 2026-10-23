@@ -20,6 +20,7 @@ set (XPACK_ENABLE_EMPTY_TEST true)
 set (XPACK_ENABLE_MINIMAL_TEST true)
 set (XPACK_ENABLE_SUITE_TEST true)
 set (XPACK_ENABLE_SAMPLE_TEST true)
+set (XPACK_ENABLE_STATIC_ASSERTS_TEST true)
 set (XPACK_ENABLE_UNIT_TEST true)
 
 set (xpack_dependencies_tests_folders)
@@ -46,6 +47,12 @@ endif ()
 if (XPACK_ENABLE_SAMPLE_TEST)
   list (APPEND xpack_dependencies_tests_folders
         "${CMAKE_SOURCE_DIR}/sources/sample"
+  )
+endif ()
+
+if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
+  list (APPEND xpack_dependencies_tests_folders
+        "${CMAKE_SOURCE_DIR}/sources/static-asserts"
   )
 endif ()
 
