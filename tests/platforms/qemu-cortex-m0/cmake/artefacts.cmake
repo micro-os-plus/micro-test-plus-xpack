@@ -127,11 +127,13 @@ endif ()
 # -----------------------------------------------------------------------------
 
 if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
-  add_cross_test_executable (static-asserts-test)
-  target_link_native_test_libraries (static-asserts-test tests::static-asserts)
+  add_cross_test_executable (unit-static-asserts-test)
+  target_link_native_test_libraries (
+    unit-static-asserts-test tests::unit-static-asserts
+  )
 
-  xpack_display_target_lists (static-asserts-test)
-  message (VERBOSE "A> static-asserts-test")
+  xpack_display_target_lists (unit-static-asserts-test)
+  message (VERBOSE "A> unit-static-asserts-test")
 
   # There is nothing to test at runtime for static asserts, as they are checked
   # at compile time.

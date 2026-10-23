@@ -31,8 +31,8 @@
     "minimal",
     "suite",
     "sample",
-    "static-asserts",
-    "unit"
+    "unit",
+    "unit-static-asserts"
   ],
   "useStaticLibrary": true
 }

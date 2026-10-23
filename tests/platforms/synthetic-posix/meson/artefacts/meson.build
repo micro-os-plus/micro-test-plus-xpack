@@ -87,16 +87,16 @@ endif
 
 # -----------------------------------------------------------------------------
 
-if xpack_enable_static_asserts_test
+if xpack_enable_unit_static_asserts_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
-    'static-asserts-test',
-    static_asserts_test,
+    'unit-static-asserts-test',
+    unit_static_asserts_test,
     args: [ 'one', 'two' ],
     env: xpack_environment
   )
-  message('T> static-asserts-test')
+  message('T> unit-static-asserts-test')
 
 endif
 

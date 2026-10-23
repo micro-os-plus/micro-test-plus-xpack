@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT! Automatically generated from template file:
-# sources/static-asserts/xcdl-test.jsonc
+# sources/unit-static-asserts/xcdl-test.jsonc
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -15,11 +15,11 @@
 
 # This file is intended to be used by applications via:
 #
-# `subdir('sources/static-asserts')`
+# `subdir('sources/unit-static-asserts')`
 #
 # This creates a dependency that can be linked to a target with:
 #
-# `dependencies: [tests_static_asserts_dependency],`
+# `dependencies: [tests_unit_static_asserts_dependency],`
 
 # Note: the Meson configuration is provided only as a proof of concept;
 # for production it might need some refinements.
@@ -27,7 +27,7 @@
 # -----------------------------------------------------------------------------
 
 # The source code for a static asserts test of the whole test framework.
-message('Processing \'tests/sources/static-asserts/\'...')
+message('Processing \'tests/sources/unit-static-asserts/\'...')
 
 # -----------------------------------------------------------------------------
 
@@ -61,7 +61,7 @@ _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
 _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-tests_static_asserts_dependency = declare_dependency(
+tests_unit_static_asserts_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),
   compile_args: _local_compile_args,
   sources: files(_local_sources),
@@ -72,8 +72,8 @@ tests_static_asserts_dependency = declare_dependency(
 
 # Meson dependencies cannot differentiate between C and C++ compile args;
 # they are therefore exposed as separate variables alongside the dependency.
-tests_static_asserts_dependency_compile_c_args = _local_compile_c_args
-tests_static_asserts_dependency_compile_cpp_args = _local_compile_cpp_args
+tests_unit_static_asserts_dependency_compile_c_args = _local_compile_c_args
+tests_unit_static_asserts_dependency_compile_cpp_args = _local_compile_cpp_args
 
 foreach name : _local_include_directories
   message('+ -I ' + name)
@@ -81,6 +81,6 @@ endforeach
 foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
   message('+ ' + name)
 endforeach
-message('> tests_static_asserts_dependency')
+message('> tests_unit_static_asserts_dependency')
 
 # -----------------------------------------------------------------------------

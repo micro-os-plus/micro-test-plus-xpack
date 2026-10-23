@@ -60,21 +60,21 @@ if xpack_enable_sample_test
   }
 endif
 
-if xpack_enable_static_asserts_test
-  tests += {
-    'name': 'static-asserts-test',
-    'dependency': tests_static_asserts_dependency,
-    'compile_c_args': tests_static_asserts_dependency_compile_c_args,
-    'compile_cpp_args': tests_static_asserts_dependency_compile_cpp_args,
-  }
-endif
-
 if xpack_enable_unit_test
   tests += {
     'name': 'unit-test',
     'dependency': tests_unit_dependency,
     'compile_c_args': tests_unit_dependency_compile_c_args,
     'compile_cpp_args': tests_unit_dependency_compile_cpp_args,
+  }
+endif
+
+if xpack_enable_unit_static_asserts_test
+  tests += {
+    'name': 'unit-static-asserts-test',
+    'dependency': tests_unit_static_asserts_dependency,
+    'compile_c_args': tests_unit_static_asserts_dependency_compile_c_args,
+    'compile_cpp_args': tests_unit_static_asserts_dependency_compile_cpp_args,
   }
 endif
 

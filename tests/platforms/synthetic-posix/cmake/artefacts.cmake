@@ -646,14 +646,18 @@ endif ()
 # -----------------------------------------------------------------------------
 
 if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
-  add_native_test_executable (static-asserts-test)
-  target_link_native_test_libraries (static-asserts-test tests::static-asserts)
+  add_native_test_executable (unit-static-asserts-test)
+  target_link_native_test_libraries (
+    unit-static-asserts-test tests::unit-static-asserts
+  )
 
-  xpack_display_target_lists (static-asserts-test)
-  message (VERBOSE "A> static-asserts-test")
+  xpack_display_target_lists (unit-static-asserts-test)
+  message (VERBOSE "A> unit-static-asserts-test")
 
-  add_test (NAME "static-asserts-test" COMMAND static-asserts-test one two )
-  message (VERBOSE "T> static-asserts-test")
+  add_test (NAME "unit-static-asserts-test" COMMAND unit-static-asserts-test
+                                                    one two
+  )
+  message (VERBOSE "T> unit-static-asserts-test")
 endif ()
 
 # -----------------------------------------------------------------------------
