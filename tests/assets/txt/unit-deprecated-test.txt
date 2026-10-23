@@ -1,0 +1,108 @@
+Running: unit-deprecated-test one two --reporter human --output-file unit-deprecated-test.txt
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+• Top suite
+✓ Top suite - passed (0 checks in 0 test cases), time: 0.028 ms
+• Deprecated suite
+    • runner (const char*)
+        ✓ name given to the constructor
+        ✓ name given to initialise() replaces it
+    ✓ runner (const char*) - passed (2 checks)
+    • static_runner
+        ✓ static_runner session
+    ✓ static_runner - passed (1 check)
+    • runner::exit_code()
+        ✓ passed session
+        ✓ later calls do not run the suites again
+        ✓ failed session
+    ✓ runner::exit_code() - passed (3 checks)
+    • runner::suite()
+        ✓ verbosity()
+        ✓ suites_count() counts the top suite
+        ✓ local session passed
+        ✓ suite() added the suite
+    ✓ runner::suite() - passed (4 checks)
+    • static_suite& suite functions
+        ✓ local session passed
+        ✓ function without arguments
+        ✓ function with arguments, which are copies
+        ✓ the test cases of both suites ran
+    ✓ static_suite& suite functions - passed (4 checks)
+    • subtest
+        ✓ local session passed
+        ✓ the function ran in the suite and in the lambda
+    ✓ subtest - passed (2 checks)
+    • counters
+        ✓ successful_checks()
+        ✓ increment_successful_checks()
+        ✓ executed_subtests()
+        ✓ increment_executed_subtests()
+        ✓ was_successful() without failures
+        ✓ was_successful() with a failed check
+    ✓ counters - passed (6 checks)
+    • non-const totals(), detail::runner_totals
+        ✓ runner_totals& refers to the live totals
+        ✓ runner_totals& modifies the live totals
+        ✓ a failed check added to the totals fails the session
+    ✓ non-const totals(), detail::runner_totals - passed (3 checks)
+    • timings(), detail::timestamps
+        ✓ both overloads refer to the same timings
+        ✓ the timings are started by initialise()
+        ✓ local session passed
+        ✓ the suite timings are started
+        ✓ the timings are stopped by run()
+    ✓ timings(), detail::timestamps - passed (5 checks)
+    • timestamps::compute_elapsed_time()
+        ✓ no readings, zero elapsed time
+        ✓ start reading only
+        ✓ both readings, elapsed time split
+    ✓ timestamps::compute_elapsed_time() - passed (3 checks)
+    • timestamps::timestamp_begin(), timestamp_end()
+        ✓ the first start time is kept
+        ✓ the first stop time is kept
+        ✓ the clock does not replace the readings
+        ✓ the stop reading is kept
+        ✓ zero times are not readings
+        ✓ the readings of the clock
+    ✓ timestamps::timestamp_begin(), timestamp_end() - passed (6 checks)
+    • detail::timestamp
+        ✓ the default constructor reads the clock
+        ✓ the time given to the constructor
+        ✓ copied and assigned
+        ✓ modified through value()
+        ✓ zero value, no clock
+        ✓ non-zero nanoseconds, a clock
+    ✓ detail::timestamp - passed (6 checks)
+    • runner::reporter()
+        ✓ the verbosity of the session options
+        ✓ the verbosity of the command line
+    ✓ runner::reporter() - passed (2 checks)
+    • assume()
+        ✓ passed assumption
+    ✓ assume() - passed (1 check)
+    • Failed assume()
+        ✗ failed assumption FAILED (deprecated.cpp:703) - test case stopped
+    ✗ Failed assume() - FAILED (0 checks passed, 1 failed)
+    • reflection::short_name()
+        ✓ file.cpp == file.cpp
+        ✓ file.cpp == file.cpp
+        ✓ file.cpp == file.cpp
+    ✓ reflection::short_name() - passed (3 checks)
+    • _and(), _or(), _not()
+        ✓ (1 == 1 and 1 != 2)
+        ✓ (1 == 2 or 1 == 1)
+        ✓ not 1 == 2
+        ✓ false results
+    ✓ _and(), _or(), _not() - passed (4 checks)
+    • _i, _f, ..., _t<T>
+        ✓ 1 == 1
+        ✓ 0.5 == 0.5
+        ✓ 1 == 1
+        ✓ false results
+    ✓ _i, _f, ..., _t<T> - passed (4 checks)
+    • type_traits
+        ✓ the wrapped values are compared
+        ✓ false results
+    ✓ type_traits - passed (2 checks)
+✗ Deprecated suite - FAILED (61 checks passed, 1 failed, in 19 test cases), time: 2.340 ms
+✗ Total: 61 checks passed, 1 failed, in 19 test cases, 2 test suites, time: 2.980 ms

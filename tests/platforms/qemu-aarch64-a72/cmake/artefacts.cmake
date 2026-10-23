@@ -144,34 +144,84 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-if (XPACK_ENABLE_UNIT_TEST)
-  add_cross_test_executable (unit-test)
-  target_link_cross_test_libraries (unit-test tests::unit)
+if (XPACK_ENABLE_UNIT_CHECKS_TEST)
+  add_cross_test_executable (unit-checks-test)
+  target_link_cross_test_libraries (unit-checks-test tests::unit-checks)
 
-  xpack_display_target_lists (unit-test)
-  message (VERBOSE "A> unit-test")
-
-  add_qemu_test (
-    NAME "unit-test" COMMAND unit-test one two --output-file
-                             unit-test-noexcept.tap
-  )
-  add_compare_files_test (
-    NAME "unit-test-compare"
-    DEPENDS "unit-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test-noexcept.tap"
-  )
+  xpack_display_target_lists (unit-checks-test)
+  message (VERBOSE "A> unit-checks-test")
 
   add_qemu_test (
-    NAME "unit-test-reporter-human"
-    COMMAND unit-test one two --reporter human --output-file
-            unit-test-noexcept.txt
+    NAME "unit-checks-test" COMMAND unit-checks-test one two --output-file
+                                    unit-checks-test-noexcept.tap
   )
   add_compare_files_test (
-    NAME "unit-test-reporter-human-compare"
-    DEPENDS "unit-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-noexcept.txt"
+    NAME "unit-checks-test-compare"
+    DEPENDS "unit-checks-test"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test-noexcept.tap"
+  )
+
+  add_qemu_test (
+    NAME "unit-checks-test-reporter-human"
+    COMMAND unit-checks-test one two --reporter human --output-file
+            unit-checks-test-noexcept.txt
+  )
+  add_compare_files_test (
+    NAME "unit-checks-test-reporter-human-compare"
+    DEPENDS "unit-checks-test-reporter-human"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-noexcept.txt"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
+  add_cross_test_executable (unit-exceptions-test)
+  target_link_cross_test_libraries (unit-exceptions-test tests::unit-exceptions)
+
+  xpack_display_target_lists (unit-exceptions-test)
+  message (VERBOSE "A> unit-exceptions-test")
+
+  add_qemu_test (
+    NAME "unit-exceptions-test"
+    COMMAND unit-exceptions-test one two --output-file
+            unit-exceptions-test-noexcept.tap
+  )
+  add_compare_files_test (
+    NAME "unit-exceptions-test-compare"
+    DEPENDS "unit-exceptions-test"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-exceptions-test-noexcept.tap"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
+  add_cross_test_executable (unit-deprecated-test)
+  target_link_cross_test_libraries (unit-deprecated-test tests::unit-deprecated)
+
+  xpack_display_target_lists (unit-deprecated-test)
+  message (VERBOSE "A> unit-deprecated-test")
+
+  add_qemu_test (
+    NAME "unit-deprecated-test"
+    COMMAND unit-deprecated-test one two --output-file
+            unit-deprecated-test-noexcept.tap
+  )
+  add_compare_files_test (
+    NAME "unit-deprecated-test-compare"
+    DEPENDS "unit-deprecated-test"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-deprecated-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability

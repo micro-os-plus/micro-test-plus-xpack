@@ -31,8 +31,10 @@
     "minimal",
     "suite",
     "sample",
-    "unit",
-    "unit-static-asserts"
+    "unit-static-asserts",
+    "unit-checks",
+    "unit-exceptions",
+    "unit-deprecated"
   ],
   "useStaticLibrary": true
 }

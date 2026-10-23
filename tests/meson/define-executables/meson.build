@@ -60,21 +60,39 @@ if xpack_enable_sample_test
   }
 endif
 
-if xpack_enable_unit_test
-  tests += {
-    'name': 'unit-test',
-    'dependency': tests_unit_dependency,
-    'compile_c_args': tests_unit_dependency_compile_c_args,
-    'compile_cpp_args': tests_unit_dependency_compile_cpp_args,
-  }
-endif
-
 if xpack_enable_unit_static_asserts_test
   tests += {
     'name': 'unit-static-asserts-test',
     'dependency': tests_unit_static_asserts_dependency,
     'compile_c_args': tests_unit_static_asserts_dependency_compile_c_args,
     'compile_cpp_args': tests_unit_static_asserts_dependency_compile_cpp_args,
+  }
+endif
+
+if xpack_enable_unit_checks_test
+  tests += {
+    'name': 'unit-checks-test',
+    'dependency': tests_unit_checks_dependency,
+    'compile_c_args': tests_unit_checks_dependency_compile_c_args,
+    'compile_cpp_args': tests_unit_checks_dependency_compile_cpp_args,
+  }
+endif
+
+if xpack_enable_unit_exceptions_test
+  tests += {
+    'name': 'unit-exceptions-test',
+    'dependency': tests_unit_exceptions_dependency,
+    'compile_c_args': tests_unit_exceptions_dependency_compile_c_args,
+    'compile_cpp_args': tests_unit_exceptions_dependency_compile_cpp_args,
+  }
+endif
+
+if xpack_enable_unit_deprecated_test
+  tests += {
+    'name': 'unit-deprecated-test',
+    'dependency': tests_unit_deprecated_dependency,
+    'compile_c_args': tests_unit_deprecated_dependency_compile_c_args,
+    'compile_cpp_args': tests_unit_deprecated_dependency_compile_cpp_args,
   }
 endif
 

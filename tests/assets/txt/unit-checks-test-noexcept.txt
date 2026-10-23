@@ -1,0 +1,1270 @@
+Running: unit-checks-test one two --reporter human --output-file unit-checks-test-noexcept.txt
+Built with GCC 15.2.0, no FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+• Top suite
+    • require
+        ✓ Requirement 1
+    ✓ require - passed (1 check)
+    • Initial counters
+    ✓ Initial counters - passed (0 checks)
+    • expect(true)
+        ✓ true
+        ✓ Requirement 2
+        ✓ TRUE
+        ✓ P
+        ✓ 42
+    ✓ expect(true) - passed (5 checks)
+    • expect(false)
+        ✗ FAILED (main.cpp:217)
+        ✗ false FAILED (main.cpp:220)
+    ✗ expect(false) - FAILED (0 checks passed, 2 failed)
+    • reflection::type_name()
+        ✓ void == void
+        ✓ int == int
+        ✓ unsigned int == unsigned int
+        ✓ float == float
+    ✓ reflection::type_name() - passed (4 checks)
+    • Splits
+        ✓ empty splits into []
+        ✓ a. splits into [a]
+        ✓ a.b splits into [a,b]
+        ✓ a.b.cde splits into [a, b, cde]
+        ✓ abc (no delimiter) splits into [abc]
+        ✓ . (only delimiter) splits into []
+        ✓ .a (leading delimiter) splits into [a]
+        ✓ a..b (consecutive delimiters) splits into [a, b]
+    ✓ Splits - passed (8 checks)
+    • to_* modern wrappers
+        ✓ to_f wraps float for eq
+        ✓ to_d wraps double for eq
+        ✓ to_t<int> generic wrapper
+    ✓ to_* modern wrappers - passed (3 checks)
+    • Nested subtests
+        • inner subtest
+            ✓ 1 == 1
+        ✓ inner subtest - passed (1 check)
+    ✓ Nested subtests - passed (0 checks)
+    • Nested subtest after a check
+        ✓ outer check before the nested subtest
+        • inner subtest after a check
+            ✓ inner check
+        ✓ inner subtest after a check - passed (1 check)
+    ✓ Nested subtest after a check - passed (1 check)
+    • Failed nested subtest
+        ✓ outer check passes
+        • middle subtest
+            • inner subtest
+                ✗ inner check fails FAILED (main.cpp:410, 1 == 2)
+            ✗ inner subtest - FAILED (0 checks passed, 1 failed)
+        ✗ middle subtest - FAILED (0 checks passed, 0 failed, 1 test case failed)
+    ✗ Failed nested subtest - FAILED (1 check passed, 0 failed, 1 test case failed)
+    • Stored check result
+        ✓ later check passes
+        ✗ stored check fails FAILED (main.cpp:438, 1 == 2)
+    ✗ Stored check result - FAILED (1 check passed, 1 failed)
+    • Application types with get()
+        ✓ wrapped values differ
+        ✓ wrapped values are equal
+        ✓ handles differ
+        ✓ to_i{ 42 } == 42
+    ✓ Application types with get() - passed (4 checks)
+    • Application types with value and epsilon
+        ✓ readings differ
+        ✓ readings are equal
+        ✓ gauges differ
+        ✓ gauges are equal
+        ✓ 42_i == 42_i
+        ✓ to_d{ 1.5 } == 1.54
+    ✓ Application types with value and epsilon - passed (6 checks)
+    • Message values
+        ✓ flag is true, not false
+        ✓ int 42, char x, double 1.25
+        ✓ null strings nullptr, nullptr, nullptr
+    ✓ Message values - passed (3 checks)
+    • Character operands
+        ✗ FAILED (main.cpp:569, '\0' == 'a')
+        ✗ space is tab FAILED (main.cpp:572, ' ' == '\t')
+        ✓ 'x' == 'x'
+    ✗ Character operands - FAILED (1 check passed, 2 failed)
+    • Floating-point tolerance
+        ✓ 1.45 == 1.5_d
+        ✓ not 1.45 < 1.5_d
+        ✓ 1.45 <= 1.5_d
+        ✓ not 1.45 > 1.5_d
+        ✓ 1.45 >= 1.5_d
+        ✓ 1.3 < 1.5_d (outside the tolerance)
+        ✓ -1.45 == to_d{ -1.5 }
+        ✓ 0.0111 == to_d{ 0.011 }
+        ✓ 0.009 < to_d{ 0.011 }
+        ✓ to_d{ 1e-12 } != 0.05
+        ✓ to_d{ 1e-12 } < 2.5e-12
+        ✓ to_d{ 1e-12 } == 1.5e-12
+        ✓ to_d{ 1e-9 } != 0.05
+        ✓ to_d{ 0.0 } != 0.09
+        ✓ to_d{ 0.0 } < 0.09
+        ✓ to_d{ 0.0 } < 1e-300
+        ✓ to_d{ 0.0 } == 0.0
+        ✓ to_d{ 0.0 } == -0.0
+        ✓ to_d{ 42.0 } == 42.09
+        ✓ 1.45 != approx (1.5, 0.01)
+        ✓ 1.45 < approx (1.5, 0.01)
+        ✓ 1.495 == approx (1.5, 0.01)
+        ✓ not 1.495 < approx (1.5, 0.01)
+        ✓ 0.1f + 0.2f == approx (0.3f, 1e-6f)
+        ✓ 1.5 == approx (1.5, 0.0)
+        ✓ not 1.5 != approx (1.5, 0.0)
+        ✓ 1.5 <= approx (1.5, 0.0)
+        ✓ 1.5 >= approx (1.5, 0.0)
+    ✓ Floating-point tolerance - passed (28 checks)
+✗ Top suite - FAILED (68 checks passed, 6 failed, in 20 test cases)
+• Combinatorial floats suite
+    • Combinatorial floats
+        ✓ 42.0 == 42 signed long long
+        ✓ 42.0 == 42 unsigned long long
+        ✓ 42.0 == 42 signed long
+        ✓ 42.0 == 42 unsigned long
+        ✓ 42.0 == 42 signed int
+        ✓ 42.0 == 42 unsigned int
+        ✓ 42.0 == 42 signed short
+        ✓ 42.0 == 42 unsigned short
+        ✓ 42.0 == 42 signed char
+        ✓ 42.0 == 42 unsigned char
+        ✓ 42.0 <= 42 signed int
+        ✓ 42.0 >= 42 signed int
+        ✓ 43.0 != 42 signed int
+        ✓ 41.0 < 42 signed int
+        ✓ 43.0 > 42 signed int
+        ✓ 42.0 <= 42 unsigned int
+        ✓ 42.0 >= 42 unsigned int
+        ✓ 43.0 != 42 unsigned int
+        ✓ 41.0 < 42 unsigned int
+        ✓ 43.0 > 42 unsigned int
+        ✓ 42 == 42.0
+    ✓ Combinatorial floats - passed (21 checks)
+    • Combinatorial doubles
+        ✓ 42.0 == 42 signed long long
+        ✓ 42.0 == 42 unsigned long long
+        ✓ 42.0 == 42 signed long
+        ✓ 42.0 == 42 unsigned long
+        ✓ 42.0 == 42 signed int
+        ✓ 42.0 == 42 unsigned int
+        ✓ 42.0 == 42 signed short
+        ✓ 42.0 == 42 unsigned short
+        ✓ 42.0 == 42 signed char
+        ✓ 42.0 == 42 unsigned char
+        ✓ 42.0 <= 42 signed int
+        ✓ 42.0 >= 42 signed int
+        ✓ 43.0 != 42 signed int
+        ✓ 41.0 < 42 signed int
+        ✓ 43.0 > 42 signed int
+        ✓ 42.0 <= 42 unsigned int
+        ✓ 42.0 >= 42 unsigned int
+        ✓ 43.0 != 42 unsigned int
+        ✓ 41.0 < 42 unsigned int
+        ✓ 43.0 > 42 unsigned int
+        ✓ 42 == 42.0
+    ✓ Combinatorial doubles - passed (21 checks)
+✓ Combinatorial floats suite - passed (42 checks in 2 test cases)
+• Combinatorial integrals suite
+    • Combinatorial integrals with signed long long
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with signed long long - passed (20 checks)
+    • Combinatorial integrals unsigned long long
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals unsigned long long - passed (20 checks)
+    • Combinatorial integrals with signed int
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with signed int - passed (20 checks)
+    • Combinatorial integrals with unsigned int
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with unsigned int - passed (20 checks)
+    • Combinatorial integrals with signed short
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with signed short - passed (20 checks)
+    • Combinatorial integrals with unsigned short
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with unsigned short - passed (20 checks)
+    • Combinatorial integrals with signed char
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with signed char - passed (20 checks)
+    • Combinatorial integrals with unsigned char
+        ✓ eq matches signed long long
+        ✓ eq matches unsigned long long
+        ✓ eq matches signed long
+        ✓ eq matches unsigned long
+        ✓ eq matches signed int
+        ✓ eq matches unsigned int
+        ✓ eq matches signed short
+        ✓ eq matches unsigned short
+        ✓ eq matches signed char
+        ✓ eq matches unsigned char
+        ✓ le matches signed int
+        ✓ ge matches signed int
+        ✓ ne matches signed int
+        ✓ lt matches signed int
+        ✓ gt matches signed int
+        ✓ le matches unsigned int
+        ✓ ge matches unsigned int
+        ✓ ne matches unsigned int
+        ✓ lt matches unsigned int
+        ✓ gt matches unsigned int
+    ✓ Combinatorial integrals with unsigned char - passed (20 checks)
+✓ Combinatorial integrals suite - passed (160 checks in 8 test cases)
+• Comparisons suite
+    • Integer comparisons
+        ✓ actual == 42
+        ✓ actual+1 != 42
+        ✓ actual-1 < 42
+        ✓ actual <= 42
+        ✓ actual+1 > 42
+        ✓ actual >= 42
+        ✓ 42 == 42
+        ✓ 42 == 42_i
+    ✓ Integer comparisons - passed (8 checks)
+    • Failed integer comparisons
+        ✗ actual != 42 FAILED (comparisons.cpp:119, 42 != 42)
+        ✗ actual+1 == 42 FAILED (comparisons.cpp:122, 43 == 42)
+        ✗ actual-1 >= 42 FAILED (comparisons.cpp:126, 41 >= 42)
+        ✗ actual > 42 FAILED (comparisons.cpp:130, 42 > 42)
+        ✗ actual+1 <= 42 FAILED (comparisons.cpp:133, 43 <= 42)
+        ✗ actual < 42 FAILED (comparisons.cpp:137, 42 < 42)
+        ✗ 42_i != 42_i FAILED (comparisons.cpp:143, 42 != 42)
+        ✗ 42 != 42_i FAILED (comparisons.cpp:146, 42 != 42)
+    ✗ Failed integer comparisons - FAILED (0 checks passed, 8 failed)
+    • Float comparisons
+        ✓ actual == 42.0f
+        ✓ actual != 43.0f
+        ✓ actual == 42.0
+        ✓ actual != 43.0
+        ✓ actual == 42.0
+        ✓ actual != 43.0
+        ✓ actual == 42.0f
+        ✓ actual != 43.0f
+        ✓ actual == 42
+        ✓ actual != 43
+        ✓ 42.101f == 42.101_f
+        ✓ 42.101f epsilon 0.01f == 42.10_f
+        ✓ 42.101f epsilon 0.1f != 42.10_f
+        ✓ 42.1010001f epsilon 0.1f == 42.1_f
+        ✓ 42.101f != 42.10_f
+        ✓ 42.101f != 42.100_f
+        ✓ 42.10f == 42.1_f
+        ✓ 42.42f == 42.42_f
+        ✓ 42.42 == 42.420_d
+        ✓ 42.0 == 42.0_d
+        ✓ 42. == 42._d
+        ✓ 42.42 == 42.42_ld
+        ✓ 1234._f == 1234.f
+        ✓ 1234.56_f == 1234.56f
+        ✓ 12345678.9f == 12345678.9_f
+        ✓ 111111.42f == 111111.42_f
+        ✓ 1111111111.42 == 1111111111.42_d
+    ✓ Float comparisons - passed (27 checks)
+    • Failed float comparisons
+        ✗ actual != 42.0 FAILED (comparisons.cpp:267, 42.0f != 42.0f)
+        ✗ actual == 43.0 FAILED (comparisons.cpp:270, 42.0f == 43.0f)
+        ✗ actual != 42 FAILED (comparisons.cpp:273, 42.0f != 42)
+        ✗ actual == 43 FAILED (comparisons.cpp:276, 42.0f == 43)
+        ✗ 42.101f != 42.101_f FAILED (comparisons.cpp:282, 42.101f != 42.101f)
+        ✗ 42.101f epsilon 0.01f != 42.10_f FAILED (comparisons.cpp:285, 42.101f != 42.1f)
+        ✗ 42.101f epsilon 0.1f == 42.10_f FAILED (comparisons.cpp:289, 42.101f == 42.1f)
+        ✗ 42.1010001f epsilon 0.1f != 42.1_f FAILED (comparisons.cpp:293, 42.101f != 42.1f)
+        ✗ 42.101f == 42.10_f FAILED (comparisons.cpp:297, 42.101f == 42.1f)
+        ✗ 42.101f == 42.100_f FAILED (comparisons.cpp:300, 42.101f == 42.1f)
+        ✗ 42.10f == 42.1_f FAILED (comparisons.cpp:303, 42.1f != 42.1f)
+        ✗ 42.42f == 42.42_f FAILED (comparisons.cpp:306, 42.42f != 42.42f)
+        ✗ 42.42 == 42.420_d FAILED (comparisons.cpp:309, 42.42 != 42.42)
+        ✗ 42.0 == 42.0_d FAILED (comparisons.cpp:312, 42.0 != 42.0)
+        ✗ 42. == 42._d FAILED (comparisons.cpp:315, 42.0 != 42.0)
+        ✗ 42.42 == 42.42_ld FAILED (comparisons.cpp:318, 42.42ld != 42.42ld)
+        ✗ 1234._f == 1234.f FAILED (comparisons.cpp:321, 1234.0f != 1234.0f)
+        ✗ 1234.56_f == 1234.56f FAILED (comparisons.cpp:324, 1234.56f != 1234.56f)
+        ✗ 12345678.9f == 12345678.9_f FAILED (comparisons.cpp:327, 12345679.0f != 12345679.0f)
+        ✗ 111111.42f == 111111.42_f FAILED (comparisons.cpp:331, 111111.42f != 111111.42f)
+        ✗ 1111111111.42 == 1111111111.42_d FAILED (comparisons.cpp:335, 1111111111.42 != 1111111111.42)
+    ✗ Failed float comparisons - FAILED (0 checks passed, 21 failed)
+    • Approximate comparisons
+        ✓ actual ~ 43 +/- 2
+        ✓ 510u ~ 512u +/- 3u
+        ✓ 0u ~ -1 +/- 2
+        ✓ max ~ max - 1 +/- 2
+        ✓ actual ~ 42.001f +/- 0.01f
+        ✓ 1.5 ~ 1.25f +/- 0.5
+        ✓ 10 ~ 10.4 +/- 0.5
+        ✓ 42_i ~ 43 +/- 2
+        ✓ 500 ~ 512 +/- 13
+        ✓ not 10 ~ 20 +/- 5
+    ✓ Approximate comparisons - passed (10 checks)
+    • Failed approximate comparisons
+        ✗ actual ~ 44 +/- 2 FAILED (comparisons.cpp:411, 42 ~ (44 +/- 2))
+        ✗ 10 ~ 12 +/- 2 FAILED (comparisons.cpp:416, 10 ~ (12 +/- 2))
+        ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:420, 3u ~ (5u +/- 1u))
+        ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:424, 1 ~ (1 +/- -1))
+        ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:427, 42.0f ~ (42.1f +/- 0.01f))
+        ✗ FAILED (comparisons.cpp:431, 1.0 ~ (1.2 +/- 0.1))
+    ✗ Failed approximate comparisons - FAILED (0 checks passed, 6 failed)
+    • String comparisons
+        ✓ actual_sv == abc_sv
+        ✓ actual_sv != abx_sv
+        ✓ actual_sv < abd_sv
+        ✓ actual_sv <= abc_sv
+        ✓ actual_sv > abb_sv
+        ✓ actual_sv >= abc_sv
+    ✓ String comparisons - passed (6 checks)
+    • Failed string comparisons
+        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:394, abc != abc)
+        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:398, abc == abx)
+        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:402, abc >= abd)
+        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:406, abc > abc)
+        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:410, abc <= abb)
+        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:414, abc < abc)
+    ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
+    • C string comparisons
+        ✓ actual == "abc"
+        ✓ array == actual
+        ✓ "abc" == string
+        ✓ string == actual
+        ✓ string_view == actual
+        ✓ actual != "abx"
+        ✓ actual < "abd"
+        ✓ actual <= "abc"
+        ✓ actual > "abb"
+        ✓ actual >= "abc"
+        ✓ null_string == nullptr
+        ✓ null_string != ""
+        ✓ null_string < ""
+        ✓ unterminated == "abc"
+    ✓ C string comparisons - passed (14 checks)
+    • Failed C string comparisons
+        ✗ actual == "abx" FAILED (comparisons.cpp:479, abc == abx)
+        ✗ null_string == "abc" FAILED (comparisons.cpp:482, nullptr == abc)
+    ✗ Failed C string comparisons - FAILED (0 checks passed, 2 failed)
+    • Pointer comparisons
+        ✓ ptr1 == &one
+        ✓ ptr1 == ptr2
+        ✓ ptr1 <= ptr2
+        ✓ ptr1 >= ptr2
+        ✓ ptr1 != a_non_nullptr
+        ✓ pfunc == afunc
+        ✓ pfunc != a_non_nullptr
+        ✓ pone < ptwo
+        ✓ ptwo > pone
+    ✓ Pointer comparisons - passed (9 checks)
+    • Failed pointer comparisons
+        ✗ ptr1 != &one FAILED (comparisons.cpp:563, 0x87fff7e8 != 0x87fff7e8)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:566, 0x87fff7e8 != 0x87fff7e8)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:569, 0x87fff7e8 > 0x87fff7e8)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:572, 0x87fff7e8 < 0x87fff7e8)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:575, 0x87fff7e8 == 0x87fff7dc)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:578, 0x8001562c != 0x8001562c)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:581, 0x8001562c == 0x87fff7dc)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:593, 0x87fff7cc >= 0x87fff7d0)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:596, 0x87fff7d0 <= 0x87fff7cc)
+    ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
+    • Null pointer comparisons
+        ✓ a_nullptr == nullptr
+        ✓ a_non_nullptr != nullptr
+        ✓ pfunc == nullptr
+    ✓ Null pointer comparisons - passed (3 checks)
+    • Failed null pointer comparisons
+        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:644, 0x0 != nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:647, 0x87fff960 == nullptr)
+        ✗ pfunc != nullptr FAILED (comparisons.cpp:650, 0x0 != nullptr)
+    ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
+    • Logical operations
+        ✓ not (actual != 42)
+        ✗ not (actual == 42) FAILED (comparisons.cpp:671, not 42 == 42)
+        ✓ (actual == 42) and (actual == 42.0)
+        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:680, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:685, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:690, (42 != 42 and 42.0f != 42.0))
+        ✓ (42 == 42 and 42.0f == 42.0)
+        ✗ FAILED (comparisons.cpp:699, (42 == 42 and 42.0f != 42.0))
+        ✓ (actual == 42) or (actual == 42.0)
+        ✓ (actual == 42) or (actual != 42.0)
+        ✓ (actual != 42) or (actual == 42.0)
+        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:718, (42 != 42 or 42.0f != 42.0))
+    ✗ Logical operations - FAILED (6 checks passed, 6 failed)
+✗ Comparisons suite - FAILED (83 checks passed, 61 failed, in 15 test cases)
+• Dynamic suite
+    • check in dynamic suite
+        ✓ 1 == 1 in dynamic suite
+    ✓ check in dynamic suite - passed (1 check)
+✓ Dynamic suite - passed (1 check in 1 test case)
+• Dynamic suite with a temporary name
+    • check in dynamic suite with a temporary name
+        ✓ 2 == 2 in the suite with a temporary name
+    ✓ check in dynamic suite with a temporary name - passed (1 check)
+✓ Dynamic suite with a temporary name - passed (1 check in 1 test case)
+• Failed combinatorial floats suite
+    • Combinatorial floats
+        ✗ 42.0 == 42 signed long long FAILED (float-failed-combinations.cpp:36, 42.0f != 42ll)
+        ✗ 42.0 == 42 unsigned long long FAILED (float-failed-combinations.cpp:41, 42.0f != 42ull)
+        ✗ 42.0 == 42 signed long FAILED (float-failed-combinations.cpp:46, 42.0f != 42l)
+        ✗ 42.0 == 42 unsigned long FAILED (float-failed-combinations.cpp:50, 42.0f != 42ul)
+        ✗ 42.0 == 42 signed int FAILED (float-failed-combinations.cpp:54, 42.0f != 42)
+        ✗ 42.0 == 42 unsigned int FAILED (float-failed-combinations.cpp:58, 42.0f != 42u)
+        ✗ 42.0 == 42 signed short FAILED (float-failed-combinations.cpp:62, 42.0f != 42s)
+        ✗ 42.0 == 42 unsigned short FAILED (float-failed-combinations.cpp:66, 42.0f != 42us)
+        ✗ 42.0 == 42 signed char FAILED (float-failed-combinations.cpp:71, 42.0f != 42sc)
+        ✗ 42.0 == 42 unsigned char FAILED (float-failed-combinations.cpp:75, 42.0f != 42uc)
+        ✗ 42.0 <= 42 signed int FAILED (float-failed-combinations.cpp:81, 42.0f > 42)
+        ✗ 42.0 >= 42 signed int FAILED (float-failed-combinations.cpp:85, 42.0f < 42)
+        ✗ 43.0 != 42 signed int FAILED (float-failed-combinations.cpp:89, 43.0f == 42)
+        ✗ 41.0 < 42 signed int FAILED (float-failed-combinations.cpp:94, 41.0f >= 42)
+        ✗ 43.0 > 42 signed int FAILED (float-failed-combinations.cpp:99, 43.0f <= 42)
+        ✗ 42.0 <= 42 unsigned int FAILED (float-failed-combinations.cpp:106, 42.0f > 42u)
+        ✗ 42.0 >= 42 unsigned int FAILED (float-failed-combinations.cpp:110, 42.0f < 42u)
+        ✗ 43.0 != 42 unsigned int FAILED (float-failed-combinations.cpp:114, 43.0f == 42u)
+        ✗ 41.0 < 42 unsigned int FAILED (float-failed-combinations.cpp:119, 41.0f >= 42u)
+        ✗ 43.0 > 42 unsigned int FAILED (float-failed-combinations.cpp:124, 43.0f <= 42u)
+        ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:131, 42 != 42.0f)
+    ✗ Combinatorial floats - FAILED (0 checks passed, 21 failed)
+    • Combinatorial doubles
+        ✗ 42.0 == 42 signed long long FAILED (float-failed-combinations.cpp:36, 42.0 != 42ll)
+        ✗ 42.0 == 42 unsigned long long FAILED (float-failed-combinations.cpp:41, 42.0 != 42ull)
+        ✗ 42.0 == 42 signed long FAILED (float-failed-combinations.cpp:46, 42.0 != 42l)
+        ✗ 42.0 == 42 unsigned long FAILED (float-failed-combinations.cpp:50, 42.0 != 42ul)
+        ✗ 42.0 == 42 signed int FAILED (float-failed-combinations.cpp:54, 42.0 != 42)
+        ✗ 42.0 == 42 unsigned int FAILED (float-failed-combinations.cpp:58, 42.0 != 42u)
+        ✗ 42.0 == 42 signed short FAILED (float-failed-combinations.cpp:62, 42.0 != 42s)
+        ✗ 42.0 == 42 unsigned short FAILED (float-failed-combinations.cpp:66, 42.0 != 42us)
+        ✗ 42.0 == 42 signed char FAILED (float-failed-combinations.cpp:71, 42.0 != 42sc)
+        ✗ 42.0 == 42 unsigned char FAILED (float-failed-combinations.cpp:75, 42.0 != 42uc)
+        ✗ 42.0 <= 42 signed int FAILED (float-failed-combinations.cpp:81, 42.0 > 42)
+        ✗ 42.0 >= 42 signed int FAILED (float-failed-combinations.cpp:85, 42.0 < 42)
+        ✗ 43.0 != 42 signed int FAILED (float-failed-combinations.cpp:89, 43.0 == 42)
+        ✗ 41.0 < 42 signed int FAILED (float-failed-combinations.cpp:94, 41.0 >= 42)
+        ✗ 43.0 > 42 signed int FAILED (float-failed-combinations.cpp:99, 43.0 <= 42)
+        ✗ 42.0 <= 42 unsigned int FAILED (float-failed-combinations.cpp:106, 42.0 > 42u)
+        ✗ 42.0 >= 42 unsigned int FAILED (float-failed-combinations.cpp:110, 42.0 < 42u)
+        ✗ 43.0 != 42 unsigned int FAILED (float-failed-combinations.cpp:114, 43.0 == 42u)
+        ✗ 41.0 < 42 unsigned int FAILED (float-failed-combinations.cpp:119, 41.0 >= 42u)
+        ✗ 43.0 > 42 unsigned int FAILED (float-failed-combinations.cpp:124, 43.0 <= 42u)
+        ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:131, 42 != 42.0)
+    ✗ Combinatorial doubles - FAILED (0 checks passed, 21 failed)
+✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases)
+• Failed combinatorial integrals suite
+    • Combinatorial integrals with signed long long
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42ll != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42ll != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42ll != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42ll != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42ll != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42ll != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42ll != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42ll != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42ll != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42ll != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42ll > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42ll < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43ll == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41ll >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43ll <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42ll > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42ll < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43ll == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41ll >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43ll <= 42u)
+    ✗ Combinatorial integrals with signed long long - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals unsigned long long
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42ull != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42ull != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42ull != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42ull != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42ull != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42ull != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42ull != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42ull != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42ull != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42ull != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42ull > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42ull < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43ull == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41ull >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43ull <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42ull > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42ull < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43ull == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41ull >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43ull <= 42u)
+    ✗ Combinatorial integrals unsigned long long - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with signed int
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42 != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42 != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42 != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42 != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42 != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42 != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42 != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42 != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42 != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42 != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42 > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42 < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43 == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41 >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43 <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42 > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42 < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43 == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41 >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43 <= 42u)
+    ✗ Combinatorial integrals with signed int - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with unsigned int
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42u != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42u != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42u != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42u != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42u != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42u != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42u != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42u != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42u != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42u != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42u > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42u < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43u == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41u >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43u <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42u > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42u < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43u == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41u >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43u <= 42u)
+    ✗ Combinatorial integrals with unsigned int - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with signed short
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42 != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42 != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42 != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42 != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42 != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42 != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42 != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42 != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42 != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42 != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42 > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42 < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43 == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41 >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43 <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42 > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42 < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43 == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41 >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43 <= 42u)
+    ✗ Combinatorial integrals with signed short - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with unsigned short
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42u != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42u != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42u != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42u != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42u != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42u != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42u != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42u != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42u != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42u != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42u > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42u < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43u == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41u >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43u <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42u > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42u < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43u == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41u >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43u <= 42u)
+    ✗ Combinatorial integrals with unsigned short - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with signed short
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42s != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42s != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42s != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42s != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42s != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42s != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42s != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42s != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42s != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42s != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42s > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42s < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43s == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41s >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43s <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42s > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42s < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43s == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41s >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43s <= 42u)
+    ✗ Combinatorial integrals with signed short - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with unsigned short
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42us != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42us != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42us != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42us != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42us != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42us != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42us != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42us != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42us != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42us != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42us > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42us < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43us == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41us >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43us <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42us > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42us < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43us == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41us >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43us <= 42u)
+    ✗ Combinatorial integrals with unsigned short - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with signed char
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42sc != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42sc != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42sc != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42sc != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42sc != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42sc != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42sc != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42sc != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42sc != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42sc != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42sc > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42sc < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43sc == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41sc >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43sc <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42sc > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42sc < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43sc == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41sc >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43sc <= 42u)
+    ✗ Combinatorial integrals with signed char - FAILED (0 checks passed, 20 failed)
+    • Combinatorial integrals with unsigned char
+        ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42uc != 42ll)
+        ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42uc != 42ull)
+        ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42uc != 42l)
+        ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42uc != 42ul)
+        ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42uc != 42)
+        ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42uc != 42u)
+        ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42uc != 42s)
+        ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42uc != 42us)
+        ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42uc != 42sc)
+        ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42uc != 42uc)
+        ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42uc > 42)
+        ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42uc < 42)
+        ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43uc == 42)
+        ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41uc >= 42)
+        ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43uc <= 42)
+        ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42uc > 42u)
+        ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42uc < 42u)
+        ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43uc == 42u)
+        ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41uc >= 42u)
+        ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43uc <= 42u)
+    ✗ Combinatorial integrals with unsigned char - FAILED (0 checks passed, 20 failed)
+✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases)
+• Miscellaneous suite
+    • Arrays
+        ✓ array{ 42 } == array{ 42 }
+        ✓ array{ 42 } != array{ 43 }
+        ✓ array{ 1, 2 } == array{ 1, 2 }
+        ✓ array{ 1, 2, 3 } != array{ 1, 2, 4 }
+    ✓ Arrays - passed (4 checks)
+    • Arrays bad
+        ✗ array{ 42 } ne array{ 42 } FAILED (miscellaneous.cpp:439, {42} != {42})
+        ✗ array{ 42 } eq array{ 43 } FAILED (miscellaneous.cpp:443, {42} == {43})
+        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (miscellaneous.cpp:447, {1, 2} != {1, 2})
+        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (miscellaneous.cpp:451, {1, 2, 3} == {1, 2, 4})
+    ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
+    • Vectors
+        ✓ vector{ } == vector{ }
+        ✓ {} == {}
+        ✓ vector{ 42 } == vector{ 42 }
+        ✓ vector{ 42 } != vector{ 43 }
+        ✓ vector{ 1, 2 } == vector{ 1, 2 }
+        ✓ vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
+    ✓ Vectors - passed (6 checks)
+    • Vectors bad
+        ✗ vector{ } != vector{ } FAILED (miscellaneous.cpp:503, {} != {})
+        ✗ FAILED (miscellaneous.cpp:507, {} != {})
+        ✗ vector{ 42 } != vector{ 42 } FAILED (miscellaneous.cpp:510, {42} != {42})
+        ✗ vector{ 42 } == vector{ 43 } FAILED (miscellaneous.cpp:514, {42} == {43})
+        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (miscellaneous.cpp:518, {1, 2} != {1, 2})
+        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (miscellaneous.cpp:522, {1, 2, 3} == {1, 2, 4})
+    ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
+    • Custom types
+        ✓ point{ 1, 2 } == point{ 1, 2 }
+        ✓ point{ 1, 2 } != point{ 1, 3 }
+    ✓ Custom types - passed (2 checks)
+    • Custom types bad
+        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (miscellaneous.cpp:559, { 1, 2 } == { 1, 3 })
+        ✗ FAILED (miscellaneous.cpp:564, { 1, 2 } == { 1, 3 })
+        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (miscellaneous.cpp:567, { 1, 2 } != { 1, 2 })
+    ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
+    • Custom comparators
+        ✓ 3 divides 12
+        ✓ 3_i divides to_i{ 12 }
+        ✓ even to_i{ 4 }
+        ✓ 3_i | 12
+        ✓ combined
+    ✓ Custom comparators - passed (5 checks)
+    • Custom comparators bad
+        ✗ 5 divides 12 FAILED (miscellaneous.cpp:617, 5 divides 12)
+        ✗ FAILED (miscellaneous.cpp:620, 5 divides 12)
+        ✗ FAILED (miscellaneous.cpp:623, even 7)
+        ✗ FAILED (miscellaneous.cpp:626, 5 divides 12)
+        ✗ FAILED (miscellaneous.cpp:629, (3 divides 12 and even 7))
+    ✗ Custom comparators bad - FAILED (0 checks passed, 5 failed)
+    • Reporter stream operators
+        ✓ const char*
+        ✓ std::string_view
+        ✓ char
+        ✓ bool
+        ✓ nullptr
+        ✓ integers
+        ✓ double
+        ✓ null pointer
+        ✓ endl
+        ✓ char array
+        ✓ char*
+        ✓ null char pointers
+        ✓ pointer to const
+    ✓ Reporter stream operators - passed (13 checks)
+    • Formatter character pointers
+        ✓ char array
+        ✓ char*
+        ✓ const char*
+        ✓ null char pointers
+        ✓ unsigned char array
+    ✓ Formatter character pointers - passed (5 checks)
+    • Formatter number suffixes
+        ✓ signed char
+        ✓ unsigned char
+        ✓ int
+        ✓ long
+        ✓ integral float
+        ✓ integral double
+        ✓ integral long double
+        ✓ float
+        ✓ double
+        ✓ long double
+        ✓ long double with seven digits
+        ✓ long double with 15 digits
+        ✓ negative integral double
+        ✓ double with exponent
+        ✓ infinite double
+    ✓ Formatter number suffixes - passed (15 checks)
+    • Formatter characters
+        ✓ letter
+        ✓ space
+        ✓ double quote
+        ✓ zero
+        ✓ control escapes
+        ✓ quote and backslash
+        ✓ other control characters
+        ✓ non-ASCII byte
+    ✓ Formatter characters - passed (8 checks)
+    • Formatter wide characters
+        ✓ char8_t ASCII
+        ✓ char8_t code unit
+        ✓ char16_t ASCII
+        ✓ char16_t non-ASCII
+        ✓ char16_t surrogate
+        ✓ char32_t ASCII
+        ✓ char32_t non-ASCII
+        ✓ char32_t not characters
+        ✓ wchar_t
+        ✓ wchar_t negative
+    ✓ Formatter wide characters - passed (10 checks)
+    • Formatter standard types
+        ✓ scoped enumeration
+        ✓ scoped enumeration with underlying type
+        ✓ scoped enumeration with formatter
+        ✓ std::byte
+        ✓ pair
+        ✓ tuple
+        ✓ empty tuple
+        ✓ container of pairs
+        ✓ container of containers
+        ✓ range with begin() and end() functions
+        ✓ optional with value
+        ✓ optional without value
+        ✓ nullopt
+    ✓ Formatter standard types - passed (13 checks)
+    • Standard types
+        ✓ colour::red == colour::red
+        ✓ colour::red != colour::green
+        ✓ level::low < level::high
+        ✓ state::off != state::on
+        ✓ std::byte{ 1 } != std::byte{ 2 }
+        ✓ pair{ 1, 2 } == pair{ 1, 2 }
+        ✓ tuple{ 1, 'a' } != tuple{ 1, 'b' }
+        ✓ pairs1 != pairs2
+        ✓ optional == 42
+        ✓ optional != nullopt
+    ✓ Standard types - passed (10 checks)
+    • Standard types bad
+        ✗ colour::red == colour::green FAILED (miscellaneous.cpp:1087, 0 == 1)
+        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (miscellaneous.cpp:1091, 1uc == 2uc)
+        ✗ pairs1 == pairs2 FAILED (miscellaneous.cpp:1097, {(1, 2)} == {(1, 3)})
+        ✗ optional == nullopt FAILED (miscellaneous.cpp:1100, 42 == nullopt)
+    ✗ Standard types bad - FAILED (0 checks passed, 4 failed)
+    • Explicit conversions to bool
+        ✓ optional with a value
+        ✓ true
+        ✓ unique_ptr not null
+        ✓ function not empty
+        ✓ required unique_ptr
+    ✓ Explicit conversions to bool - passed (5 checks)
+    • Explicit conversions to bool bad
+        ✗ empty optional FAILED (miscellaneous.cpp:1152)
+        ✗ null unique_ptr FAILED (miscellaneous.cpp:1155)
+        ✗ empty function FAILED (miscellaneous.cpp:1158)
+        ✗ FAILED (miscellaneous.cpp:1161)
+    ✗ Explicit conversions to bool bad - FAILED (0 checks passed, 4 failed)
+    • Pointers to const
+        ✓ different const objects
+        ✓ same const object
+    ✓ Pointers to const - passed (2 checks)
+    • Message types
+        ✓ numbers 1 2 3 1.5 2 true
+        ✓ pointer 0x840048f4
+        ✓ container {1, 2}
+        ✓ standard types (1, a) nullopt 1
+        ✓ custom type { 1, 2 } on
+        ✓ wrappers 42 1.5
+        ✓ wide characters u'x' U'x' L'x'
+        ✗ failed {3} FAILED (miscellaneous.cpp:1162)
+    ✗ Message types - FAILED (7 checks passed, 1 failed)
+    • Lazy messages
+        ✓ passed
+        ✓ true
+        ✓ not called after a success
+        ✗ failed and appended FAILED (miscellaneous.cpp:1250)
+        ✓ called after a failure
+        ✗ 42 FAILED (miscellaneous.cpp:1261)
+        ✗ from a function FAILED (miscellaneous.cpp:1266)
+    ✗ Lazy messages - FAILED (4 checks passed, 3 failed)
+    • TAP escapes # TODO in names \ messages
+        ✓ message with # hash and \ backslash
+        ✓ a # b == a # b
+        ✓ first line
+second line
+        ✗ failed # TODO not a directive
+next line FAILED (miscellaneous.cpp:1184)
+    ✗ TAP escapes # TODO in names \ messages - FAILED (3 checks passed, 1 failed)
+    • TAP condition values are quoted
+        ✗ FAILED (miscellaneous.cpp:1195, key: "value" # not a comment == a\b)
+        ✗ FAILED (miscellaneous.cpp:1199, line
+break	tab == x)
+    ✗ TAP condition values are quoted - FAILED (0 checks passed, 2 failed)
+    • Runner options
+        ✓ default verbosity before initialise()
+        ✓ given name
+        ✓ given verbosity
+        ✓ local session passed
+        ✓ added suite ran
+        ✓ total_suites_count() counts the top suite
+        ✓ default name without arguments
+    ✓ Runner options - passed (7 checks)
+    • Runner option errors
+        ✓ valid options still applied
+        ✓ unknown reporter
+        ✓ missing argument
+        ✓ valid colour modes
+        ✓ --color alone keeps the next argument
+        ✓ unknown colour mode
+        ✓ output file not opened
+    ✓ Runner option errors - passed (7 checks)
+    • Runner filter
+        ✓ suite filter passed
+        ✓ matching suites run
+        ✓ all their test cases run
+        ✓ one suite skipped
+        ✓ level filters passed
+        ✓ suites matching an alternative run
+        ✓ test cases matching the second pattern run
+        ✓ nested test cases matching the third pattern run
+        ✓ skipped suites and test cases counted
+        ✓ top suite filtered
+        ✓ top suite test case matching the second pattern runs
+        ✓ partial name does not match
+        ✓ patterns copied by initialise()
+        ✓ nothing skipped without patterns
+        ✓ missing pattern
+    ✓ Runner filter - passed (15 checks)
+    • List test cases
+        ✓ listed, exit code 0
+        ✓ no test case body run
+        ✓ suite body run
+        ✓ all test cases listed
+        ✓ filtered, exit code 0
+        ✓ matching test cases listed
+        ✓ still no test case body run
+    ✓ List test cases - passed (7 checks)
+    • Late suites
+        ✓ suite added during run() rejected
+        ✓ rejected suite neither run nor counted
+        ✓ nested run() rejected
+        ✓ session passed
+        ✓ suite added after run() rejected
+    ✓ Late suites - passed (5 checks)
+    • Test case started on the suite
+        ✓ check before the test case
+        • test case started on the suite
+            ✓ check in the test case
+        ✓ test case started on the suite - passed (1 check)
+        ✓ run nested
+    ✓ Test case started on the suite - passed (2 checks)
+    • Each vector value (1)
+        ✓ value 1 > 0
+    ✓ Each vector value (1) - passed (1 check)
+    • Each vector value (2)
+        ✓ value 2 > 0
+    ✓ Each vector value (2) - passed (1 check)
+    • Each vector value (3)
+        ✓ value 3 > 0
+    ✓ Each vector value (3) - passed (1 check)
+    • Each list value (alpha)
+        ✓ string not null
+    ✓ Each list value (alpha) - passed (1 check)
+    • Each list value (beta)
+        ✓ string not null
+    ✓ Each list value (beta) - passed (1 check)
+    • Each array value (2)
+        ✓ prime > 1
+    ✓ Each array value (2) - passed (1 check)
+    • Each array value (3)
+        ✓ prime > 1
+    ✓ Each array value (3) - passed (1 check)
+    • Each tuple value (42)
+        ✓ equal to itself
+    ✓ Each tuple value (42) - passed (1 check)
+    • Each tuple value (1.5)
+        ✓ equal to itself
+    ✓ Each tuple value (1.5) - passed (1 check)
+    • Each tuple value (true)
+        ✓ equal to itself
+    ✓ Each tuple value (true) - passed (1 check)
+    • Each tuple value (x)
+        ✓ equal to itself
+    ✓ Each tuple value (x) - passed (1 check)
+    • Each unnamed value (#1)
+        ✓ named by position
+    ✓ Each unnamed value (#1) - passed (1 check)
+    • Each unnamed value (#2)
+        ✓ named by position
+    ✓ Each unnamed value (#2) - passed (1 check)
+    • Nested test_each
+        • Each nested value (10)
+            ✓ multiple of 10
+        ✓ Each nested value (10) - passed (1 check)
+        • Each nested value (20)
+            ✓ multiple of 10
+        ✓ Each nested value (20) - passed (1 check)
+    ✓ Nested test_each - passed (0 checks)
+    • Failed each value (1)
+        ✓ value 1 == 1
+    ✓ Failed each value (1) - passed (1 check)
+    • Failed each value (2)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1786, 2 == 1)
+    ✗ Failed each value (2) - FAILED (0 checks passed, 1 failed)
+    • Callable arguments
+        ✓ reference parameter refers to a copy
+        ✓ std::ref() refers to the object
+        ✓ pointer refers to the object
+        ✓ local session passed
+        ✓ deferred suite received the copy
+    ✓ Callable arguments - passed (5 checks)
+    • Operand copies
+        ✓ plain operands
+        ✓ plain operands not copied
+        ✓ wrapped operand
+        ✓ wrapped operand not copied
+        ✓ nested comparators
+        ✓ nested comparators not copied
+        ✓ stored comparator
+        ✓ temporary operand stored once
+    ✓ Operand copies - passed (8 checks)
+    • Test case lifetime
+        ✓ test cases destroyed
+        ✓ test cases counted
+        ✓ local session passed
+    ✓ Test case lifetime - passed (3 checks)
+    • Test case bodies
+        ✓ large body invoked
+        ✓ large body not allocated
+        ✓ local session passed
+    ✓ Test case bodies - passed (3 checks)
+    • Formatting of passed checks
+        ✓ passed check not formatted (human)
+        ✓ failed check formatted (human)
+        ✓ both checks counted (human)
+        ✓ passed check not formatted (tap)
+        ✓ failed check formatted (tap)
+        ✓ both checks counted (tap)
+    ✓ Formatting of passed checks - passed (6 checks)
+    • Abort handler
+        ✓ no initial handler
+        ✓ previous handler returned
+    ✓ Abort handler - passed (2 checks)
+    • Abort during the session
+        ✓ skipped without exceptions
+    ✓ Abort during the session - passed (1 check)
+    • Test case and suite names
+        ✓ temporary string name
+        ✓ string name
+        ✓ helper test cases run
+        ✓ location of the caller
+        ✓ local session passed
+        ✓ string suite name copied
+        ✓ string view suite name copied
+    ✓ Test case and suite names - passed (7 checks)
+✗ Miscellaneous suite - FAILED (207 checks passed, 34 failed, in 56 test cases)
+• Operators suite
+    • Operators
+        ✓ actual == 42
+        ✗ actual+1 == 42 with scalar FAILED (operators.cpp:48)
+        ✗ actual+1 == 42 with _i literal FAILED (operators.cpp:52, 43 == 42)
+        ✗ actual+1 == 42 with to_i() FAILED (operators.cpp:56, 43 == 42)
+        ✓ actual+1 != 42
+        ✓ actual-1 < 42
+        ✓ actual <= 42
+        ✓ actual+1 > 42
+        ✓ actual >= 42
+        ✓ not (actual != 42)
+        ✗ not (actual == 42) FAILED (operators.cpp:78, not 42 == 42)
+        ✓ not not (actual == 42)
+        ✓ (actual == 42) and (actual == 42.0)
+        ✗ (actual == 42) and (actual != 42.0) FAILED (operators.cpp:92, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (operators.cpp:97, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (operators.cpp:102, (42 != 42 and 42.0f != 42.0))
+        ✓ (42 == 42 and 42.0f == 42.0)
+        ✗ FAILED (operators.cpp:111, (42 == 42 and 42.0f != 42.0))
+        ✓ (actual == 42) or (actual == 42.0)
+        ✓ (actual == 42) or (actual != 42.0)
+        ✓ (actual != 42) or (actual == 42.0)
+        ✗ (actual != 42) or (actual != 42.0) FAILED (operators.cpp:130, (42 != 42 or 42.0f != 42.0f))
+    ✗ Operators - FAILED (13 checks passed, 9 failed)
+    • String view operators
+        ✓ equal string views with ==
+        ✗ unequal string views with == FAILED (operators.cpp:155)
+        ✓ unequal string views with !=
+        ✗ equal string views with != FAILED (operators.cpp:163)
+    ✗ String view operators - FAILED (2 checks passed, 2 failed)
+    • Named boolean literals
+        ✓ named alone
+        ✓ eq with true
+        ✗ eq with false FAILED (operators.cpp:193, disabled == false)
+        ✓ ne with false
+        ✓ == with true
+        ✗ == with false FAILED (operators.cpp:205, disabled == false)
+        ✗ reversed == with false FAILED (operators.cpp:208, false == disabled)
+        ✗ != with true FAILED (operators.cpp:211, enabled != true)
+        ✗ not FAILED (operators.cpp:214, not named)
+        ✓ two named literals
+    ✗ Named boolean literals - FAILED (5 checks passed, 5 failed)
+✗ Operators suite - FAILED (20 checks passed, 16 failed, in 3 test cases)
+• Stopwatch suite
+    • stopwatch::start() and stop()
+        ✓ fresh: has_elapsed false
+        ✓ fresh: elapsed 0 µs
+        ✓ started only: has_elapsed false
+        ✓ started and stopped: has_elapsed if clock
+        ✓ started and stopped: elapsed >= 0 µs
+    ✓ stopwatch::start() and stop() - passed (5 checks)
+    • stopwatch::has_elapsed() state
+        ✓ both readings: has_elapsed true
+        ✓ zero start: has_elapsed false
+        ✓ zero stop: has_elapsed false
+        ✓ tv_sec==0, tv_nsec!=0: has_elapsed true
+    ✓ stopwatch::has_elapsed() state - passed (4 checks)
+    • stopwatch::start() restart
+        ✓ restarted: has_elapsed false
+        ✓ restarted: elapsed 0 µs
+    ✓ stopwatch::start() restart - passed (2 checks)
+    • stopwatch::stop() replacement
+        ✓ second stop: reading replaced
+        ✓ second stop: has_elapsed if clock
+    ✓ stopwatch::stop() replacement - passed (2 checks)
+    • stopwatch::elapsed()
+        ✓ 1 s -> 1000000 µs
+        ✓ 500 ms -> 500000 µs
+        ✓ 2.5 ms -> 2500 µs
+        ✓ ns borrow -> 600000 µs
+        ✓ 1999 ns -> 1 µs
+        ✓ zero elapsed -> 0 µs
+        ✓ no stop -> 0 µs
+    ✓ stopwatch::elapsed() - passed (7 checks)
+✓ Stopwatch suite - passed (20 checks in 5 test cases)
+• Utility suite
+    • utility::extract_file_name()
+        ✓ Unix path returns filename
+        ✓ Windows path returns filename
+        ✓ No separator returns original
+        ✓ Empty string returns empty
+        ✓ Mixed separators, last wins
+    ✓ utility::extract_file_name() - passed (5 checks)
+    • utility::is_match() — passing
+        ✓ "" matches ""
+        ✓ "" matches "*"
+        ✓ abc matches abc
+        ✓ abc matches a?c
+        ✓ abc matches ???
+        ✓ abc matches a*
+        ✓ abc matches a*c
+        ✓ abc matches *
+        ✓ abc matches *bc
+        ✓ abc matches *b*
+        ✓ abc matches **
+        ✓ aXbYbZc matches a*b*c
+        ✓ ab matches *?
+        ✓ suite name matches *namespace*
+        ✓ long input does not match a*a*a*a*a*a*a*a*b
+        ✓ Alpha one does not match Alpha
+    ✓ utility::is_match() — passing - passed (16 checks)
+    • utility::is_match() — failing
+        ✗ "" matches abc FAILED (utility.cpp:180)
+        ✗ abc matches b?? FAILED (utility.cpp:184)
+        ✗ abc matches a*d FAILED (utility.cpp:188)
+        ✗ abc matches *C FAILED (utility.cpp:192)
+        ✗ ab matches ??? FAILED (utility.cpp:196)
+    ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
+✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
+✗ Total: 623 checks passed, 364 failed, in 126 test cases, 12 test suites

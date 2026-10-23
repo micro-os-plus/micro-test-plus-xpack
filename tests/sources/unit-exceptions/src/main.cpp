@@ -1,0 +1,80 @@
+/*
+ * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
+ * Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can be
+ * obtained from https://opensource.org/licenses/mit.
+ */
+
+// ----------------------------------------------------------------------------
+
+// The unit tests of the exceptions support: the `throws()` and `nothrow()`
+// comparators, the unexpected exceptions, and the failed `require()`.
+// The suites are in `exceptions.cpp`; without exceptions, there are none.
+
+#include "unit-exceptions-test.h"
+
+#include <stdio.h>
+
+// For this test only, make the namespaces globally visible.
+using namespace micro_os_plus::micro_test_plus;
+
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic ignored "-Waggregate-return"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
+#pragma clang diagnostic ignored "-Wglobal-constructors"
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
+
+// ----------------------------------------------------------------------------
+
+runner tr;
+
+local_counts_t local_counts;
+
+int
+main (int argc, char* argv[])
+{
+  tr.initialise (argc, argv, "Top suite");
+
+  if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())
+    {
+#if defined(__cpp_exceptions)
+      printf ("\nµTest++ exceptions unit tests; some checks are expected to "
+              "fail.\n");
+#else
+      printf ("\nµTest++ exceptions unit tests; without exceptions, there is "
+              "nothing to test.\n");
+#endif // defined(__cpp_exceptions)
+    }
+
+  // --------------------------------------------------------------------------
+
+  // run() must be always called, otherwise the test suites
+  // are not executed.
+  int code = tr.run ();
+#if defined(__cpp_exceptions)
+  // The inner test should return failure.
+  test_assert (code != 0);
+#else
+  test_assert (code == 0);
+#endif // defined(__cpp_exceptions)
+
+  if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())
+    {
+      // On failure it aborts before reaching this point.
+      printf ("Overall, the µTest++ exceptions unit tests were "
+              "successful!\n\n");
+    }
+
+  return 0;
+}
+
+// ----------------------------------------------------------------------------

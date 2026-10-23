@@ -1,0 +1,8 @@
+# Running: unit-exceptions-test one two --output-file unit-exceptions-test-noexcept.tap
+# Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+TAP version 14
+# Subtest: Top suite
+    1..0
+ok 1 - Top suite # { passed, 0 checks in 0 test cases }
+1..1
+# { total: 0 checks passed, 0 failed, in 0 test cases, 1 test suite }

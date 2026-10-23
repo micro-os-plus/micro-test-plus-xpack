@@ -20,8 +20,10 @@ set (XPACK_ENABLE_EMPTY_TEST true)
 set (XPACK_ENABLE_MINIMAL_TEST true)
 set (XPACK_ENABLE_SUITE_TEST true)
 set (XPACK_ENABLE_SAMPLE_TEST true)
-set (XPACK_ENABLE_UNIT_TEST true)
 set (XPACK_ENABLE_UNIT_STATIC_ASSERTS_TEST true)
+set (XPACK_ENABLE_UNIT_CHECKS_TEST true)
+set (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST true)
+set (XPACK_ENABLE_UNIT_DEPRECATED_TEST true)
 
 set (xpack_dependencies_tests_folders)
 
@@ -50,15 +52,27 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 endif ()
 
-if (XPACK_ENABLE_UNIT_TEST)
-  list (APPEND xpack_dependencies_tests_folders
-        "${CMAKE_SOURCE_DIR}/sources/unit"
-  )
-endif ()
-
 if (XPACK_ENABLE_UNIT_STATIC_ASSERTS_TEST)
   list (APPEND xpack_dependencies_tests_folders
         "${CMAKE_SOURCE_DIR}/sources/unit-static-asserts"
+  )
+endif ()
+
+if (XPACK_ENABLE_UNIT_CHECKS_TEST)
+  list (APPEND xpack_dependencies_tests_folders
+        "${CMAKE_SOURCE_DIR}/sources/unit-checks"
+  )
+endif ()
+
+if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
+  list (APPEND xpack_dependencies_tests_folders
+        "${CMAKE_SOURCE_DIR}/sources/unit-exceptions"
+  )
+endif ()
+
+if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
+  list (APPEND xpack_dependencies_tests_folders
+        "${CMAKE_SOURCE_DIR}/sources/unit-deprecated"
   )
 endif ()
 

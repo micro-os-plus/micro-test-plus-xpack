@@ -1,0 +1,60 @@
+Running: unit-exceptions-test one two --reporter human --output-file unit-exceptions-test.txt
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+• Top suite
+✓ Top suite - passed (0 checks in 0 test cases), time: 0.022 ms
+• Exceptions suite
+    • thrown exceptions
+        ✓ exception thrown
+        ✓ std::runtime_error thrown
+    ✓ thrown exceptions - passed (2 checks)
+    • Failed thrown exceptions
+        ✗ exception thrown FAILED (exceptions.cpp:103, throws)
+        ✗ std::runtime_error thrown FAILED (exceptions.cpp:115, throws<std::runtime_error>)
+    ✗ Failed thrown exceptions - FAILED (0 checks passed, 2 failed)
+    • Not thrown exceptions
+        ✓ exception not thrown
+    ✓ Not thrown exceptions - passed (1 check)
+    • Failed not thrown exceptions
+        ✗ exception not thrown FAILED (exceptions.cpp:157, nothrow)
+    ✗ Failed not thrown exceptions - FAILED (0 checks passed, 1 failed)
+    • Unexpected std::exception
+        ✓ check before the exception
+        ✗ unexpected exception: boom FAILED (exceptions.cpp:180)
+    ✗ Unexpected std::exception - FAILED (1 check passed, 1 failed)
+    • Unexpected exception of unknown type
+        ✗ unexpected exception of unknown type FAILED (exceptions.cpp:194)
+    ✗ Unexpected exception of unknown type - FAILED (0 checks passed, 1 failed)
+    • Unexpected exception in nested test case
+        • nested test case
+            ✗ unexpected exception: boom FAILED (exceptions.cpp:208)
+        ✗ nested test case - FAILED (0 checks passed, 1 failed)
+        ✓ check after the nested test case
+    ✗ Unexpected exception in nested test case - FAILED (1 check passed, 0 failed, 1 test case failed)
+    • Failed require
+        ✓ check before the requirement
+        ✗ failed requirement FAILED (exceptions.cpp:247) - test case stopped
+    ✗ Failed require - FAILED (1 check passed, 1 failed)
+    • Failed require in nested test case
+        • nested test case
+            ✗ failed nested requirement FAILED (exceptions.cpp:266) - test case stopped
+        ✗ nested test case - FAILED (0 checks passed, 1 failed)
+        ✓ check after the nested test case
+    ✗ Failed require in nested test case - FAILED (1 check passed, 0 failed, 1 test case failed)
+    • Failed require during unwinding
+        ✗ failed kept requirement FAILED (exceptions.cpp:283) - test case stopped
+        ✗ unexpected exception: boom FAILED (exceptions.cpp:279)
+    ✗ Failed require during unwinding - FAILED (0 checks passed, 2 failed)
+    • Exception in a suite body
+        ✓ session failed
+        ✓ later suite run
+        ✓ exception counted as a failed check
+    ✓ Exception in a suite body - passed (3 checks)
+✗ Exceptions suite - FAILED (10 checks passed, 10 failed, in 13 test cases), time: 2.358 ms
+• Exceptions suite body
+    • Test case before the exception
+        ✓ check before the exception
+    ✓ Test case before the exception - passed (1 check)
+    ✗ unexpected exception in the suite body: boom FAILED
+✗ Exceptions suite body - FAILED (1 check passed, 1 failed, in 1 test case), time: 0.098 ms
+✗ Total: 11 checks passed, 11 failed, in 14 test cases, 3 test suites, time: 2.755 ms

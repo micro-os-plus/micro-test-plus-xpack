@@ -102,16 +102,46 @@ endif
 
 # -----------------------------------------------------------------------------
 
-if xpack_enable_unit_test
+if xpack_enable_unit_checks_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
-    'unit-test',
-    unit_test,
+    'unit-checks-test',
+    unit_checks_test,
     args: [ 'one', 'two' ],
     env: xpack_environment
   )
-  message('T> unit-test')
+  message('T> unit-checks-test')
+
+endif
+
+# -----------------------------------------------------------------------------
+
+if xpack_enable_unit_exceptions_test
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'unit-exceptions-test',
+    unit_exceptions_test,
+    args: [ 'one', 'two' ],
+    env: xpack_environment
+  )
+  message('T> unit-exceptions-test')
+
+endif
+
+# -----------------------------------------------------------------------------
+
+if xpack_enable_unit_deprecated_test
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'unit-deprecated-test',
+    unit_deprecated_test,
+    args: [ 'one', 'two' ],
+    env: xpack_environment
+  )
+  message('T> unit-deprecated-test')
 
 endif
 

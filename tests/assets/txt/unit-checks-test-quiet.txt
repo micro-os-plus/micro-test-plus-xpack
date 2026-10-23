@@ -1,0 +1,130 @@
+Running: unit-checks-test one two --reporter human --output-file unit-checks-test-quiet.txt --quiet
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+    • require
+    • Initial counters
+    • expect(true)
+    • expect(false)
+    • reflection::type_name()
+    • Splits
+    • to_* modern wrappers
+    • Nested subtests
+        • inner subtest
+    • Nested subtest after a check
+        • inner subtest after a check
+    • Failed nested subtest
+        • middle subtest
+            • inner subtest
+    • Stored check result
+    • Application types with get()
+    • Application types with value and epsilon
+    • Message values
+    • Character operands
+    • Floating-point tolerance
+    • Combinatorial floats
+    • Combinatorial doubles
+    • Combinatorial integrals with signed long long
+    • Combinatorial integrals unsigned long long
+    • Combinatorial integrals with signed int
+    • Combinatorial integrals with unsigned int
+    • Combinatorial integrals with signed short
+    • Combinatorial integrals with unsigned short
+    • Combinatorial integrals with signed char
+    • Combinatorial integrals with unsigned char
+    • Integer comparisons
+    • Failed integer comparisons
+    • Float comparisons
+    • Failed float comparisons
+    • Approximate comparisons
+    • Failed approximate comparisons
+    • String comparisons
+    • Failed string comparisons
+    • C string comparisons
+    • Failed C string comparisons
+    • Pointer comparisons
+    • Failed pointer comparisons
+    • Null pointer comparisons
+    • Failed null pointer comparisons
+    • Logical operations
+    • check in dynamic suite
+    • check in dynamic suite with a temporary name
+    • Combinatorial floats
+    • Combinatorial doubles
+    • Combinatorial integrals with signed long long
+    • Combinatorial integrals unsigned long long
+    • Combinatorial integrals with signed int
+    • Combinatorial integrals with unsigned int
+    • Combinatorial integrals with signed short
+    • Combinatorial integrals with unsigned short
+    • Combinatorial integrals with signed short
+    • Combinatorial integrals with unsigned short
+    • Combinatorial integrals with signed char
+    • Combinatorial integrals with unsigned char
+    • Arrays
+    • Arrays bad
+    • Vectors
+    • Vectors bad
+    • Custom types
+    • Custom types bad
+    • Custom comparators
+    • Custom comparators bad
+    • Reporter stream operators
+    • Formatter character pointers
+    • Formatter number suffixes
+    • Formatter characters
+    • Formatter wide characters
+    • Formatter standard types
+    • Standard types
+    • Standard types bad
+    • Explicit conversions to bool
+    • Explicit conversions to bool bad
+    • Pointers to const
+    • Message types
+    • Lazy messages
+    • TAP escapes # TODO in names \ messages
+    • TAP condition values are quoted
+    • Runner options
+    • Runner option errors
+    • Runner filter
+    • List test cases
+    • Late suites
+    • Test case started on the suite
+        • test case started on the suite
+    • Each vector value (1)
+    • Each vector value (2)
+    • Each vector value (3)
+    • Each list value (alpha)
+    • Each list value (beta)
+    • Each array value (2)
+    • Each array value (3)
+    • Each tuple value (42)
+    • Each tuple value (1.5)
+    • Each tuple value (true)
+    • Each tuple value (x)
+    • Each unnamed value (#1)
+    • Each unnamed value (#2)
+    • Nested test_each
+        • Each nested value (10)
+        • Each nested value (20)
+    • Failed each value (1)
+    • Failed each value (2)
+    • Callable arguments
+    • Operand copies
+    • Test case lifetime
+    • Test case bodies
+    • Formatting of passed checks
+    • Abort handler
+    • Abort during the session
+    • Test case and suite names
+    • Operators
+    • String view operators
+    • Named boolean literals
+    • stopwatch::start() and stop()
+    • stopwatch::has_elapsed() state
+    • stopwatch::start() restart
+    • stopwatch::stop() replacement
+    • stopwatch::elapsed()
+    • utility::extract_file_name()
+    • utility::is_match() — passing
+    • utility::is_match() — failing
+✗ Total: 629 checks passed, 364 failed, in 126 test cases, 12 test suites, time: 11.615 ms

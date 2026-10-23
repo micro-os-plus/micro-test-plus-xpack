@@ -20,8 +20,10 @@ xpack_enable_empty_test = true
 xpack_enable_minimal_test = true
 xpack_enable_suite_test = true
 xpack_enable_sample_test = true
-xpack_enable_unit_test = true
 xpack_enable_unit_static_asserts_test = true
+xpack_enable_unit_checks_test = true
+xpack_enable_unit_exceptions_test = true
+xpack_enable_unit_deprecated_test = true
 
 xpack_dependencies_tests_folders = []
  
@@ -42,12 +44,20 @@ if xpack_enable_sample_test
   xpack_dependencies_tests_folders += [ 'sources/sample' ]
 endif
 
-if xpack_enable_unit_test
-  xpack_dependencies_tests_folders += [ 'sources/unit' ]
-endif
-
 if xpack_enable_unit_static_asserts_test
   xpack_dependencies_tests_folders += [ 'sources/unit-static-asserts' ]
+endif
+
+if xpack_enable_unit_checks_test
+  xpack_dependencies_tests_folders += [ 'sources/unit-checks' ]
+endif
+
+if xpack_enable_unit_exceptions_test
+  xpack_dependencies_tests_folders += [ 'sources/unit-exceptions' ]
+endif
+
+if xpack_enable_unit_deprecated_test
+  xpack_dependencies_tests_folders += [ 'sources/unit-deprecated' ]
 endif
 
 # -----------------------------------------------------------------------------

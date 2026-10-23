@@ -244,51 +244,113 @@ if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
 endif ()
 
 # -----------------------------------------------------------------------------
-if (XPACK_ENABLE_UNIT_TEST)
-  add_cross_test_executable (unit-test)
-  target_link_cross_test_libraries (unit-test tests::unit)
+if (XPACK_ENABLE_UNIT_CHECKS_TEST)
+  add_cross_test_executable (unit-checks-test)
+  target_link_cross_test_libraries (unit-checks-test tests::unit-checks)
 
-  xpack_display_target_lists (unit-test)
-  message (VERBOSE "A> unit-test")
+  xpack_display_target_lists (unit-checks-test)
+  message (VERBOSE "A> unit-checks-test")
 
   # The TAP output is too verbose and takes to long to be displayed by the
   # OpenOCD semihosting.
   if (false)
     add_openocd_test (
       NAME
-      "unit-test"
+      "unit-checks-test"
       COMMAND
-      unit-test
+      unit-checks-test
       one
       two
       --output-file
-      unit-test.tap
+      unit-checks-test.tap
     )
     add_compare_files_test (
-      NAME "unit-test-compare"
-      DEPENDS "unit-test"
-      FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.tap"
-            "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+      NAME "unit-checks-test-compare"
+      DEPENDS "unit-checks-test"
+      FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test.tap"
+            "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
     )
   endif ()
 
   add_openocd_test (
     NAME
-    "unit-test-reporter-human"
+    "unit-checks-test-reporter-human"
     COMMAND
-    unit-test
+    unit-checks-test
     one
     two
     --reporter
     human
     --output-file
-    unit-test.txt
+    unit-checks-test.txt
   )
   add_compare_files_test (
-    NAME "unit-test-reporter-human-compare"
-    DEPENDS "unit-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
+    NAME "unit-checks-test-reporter-human-compare"
+    DEPENDS "unit-checks-test-reporter-human"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test.txt"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
+  add_cross_test_executable (unit-exceptions-test)
+  target_link_cross_test_libraries (unit-exceptions-test tests::unit-exceptions)
+
+  xpack_display_target_lists (unit-exceptions-test)
+  message (VERBOSE "A> unit-exceptions-test")
+
+  add_openocd_test (
+    NAME
+    "unit-exceptions-test-reporter-human"
+    COMMAND
+    unit-exceptions-test
+    one
+    two
+    --reporter
+    human
+    --output-file
+    unit-exceptions-test.txt
+  )
+  add_compare_files_test (
+    NAME "unit-exceptions-test-reporter-human-compare"
+    DEPENDS "unit-exceptions-test-reporter-human"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-exceptions-test.txt"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
+  add_cross_test_executable (unit-deprecated-test)
+  target_link_cross_test_libraries (unit-deprecated-test tests::unit-deprecated)
+
+  xpack_display_target_lists (unit-deprecated-test)
+  message (VERBOSE "A> unit-deprecated-test")
+
+  add_openocd_test (
+    NAME
+    "unit-deprecated-test-reporter-human"
+    COMMAND
+    unit-deprecated-test
+    one
+    two
+    --reporter
+    human
+    --output-file
+    unit-deprecated-test.txt
+  )
+  add_compare_files_test (
+    NAME "unit-deprecated-test-reporter-human-compare"
+    DEPENDS "unit-deprecated-test-reporter-human"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-deprecated-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability

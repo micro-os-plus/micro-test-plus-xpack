@@ -128,20 +128,58 @@ endif
 
 # -----------------------------------------------------------------------------
 
-if (xpack_enable_unit_test)
+if (xpack_enable_unit_checks_test)
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
-    'unit-test',
+    'unit-checks-test',
     qemu,
     args: qemu_machine_args +
-      [ '--kernel', unit_test ] +
+      [ '--kernel', unit_checks_test ] +
       qemu_extra_args +
       [ '--semihosting-config',
-      'enable=on,target=native,arg=unit-test,arg=one,arg=two' ],
+      'enable=on,target=native,arg=unit-checks-test,arg=one,arg=two' ],
     env: xpack_environment
   )
-  message('T> unit-test')
+  message('T> unit-checks-test')
+
+endif
+
+# -----------------------------------------------------------------------------
+
+if (xpack_enable_unit_exceptions_test)
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'unit-exceptions-test',
+    qemu,
+    args: qemu_machine_args +
+      [ '--kernel', unit_exceptions_test ] +
+      qemu_extra_args +
+      [ '--semihosting-config',
+      'enable=on,target=native,arg=unit-exceptions-test,arg=one,arg=two' ],
+    env: xpack_environment
+  )
+  message('T> unit-exceptions-test')
+
+endif
+
+# -----------------------------------------------------------------------------
+
+if (xpack_enable_unit_deprecated_test)
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'unit-deprecated-test',
+    qemu,
+    args: qemu_machine_args +
+      [ '--kernel', unit_deprecated_test ] +
+      qemu_extra_args +
+      [ '--semihosting-config',
+      'enable=on,target=native,arg=unit-deprecated-test,arg=one,arg=two' ],
+    env: xpack_environment
+  )
+  message('T> unit-deprecated-test')
 
 endif
 
