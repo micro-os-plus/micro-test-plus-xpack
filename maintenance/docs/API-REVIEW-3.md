@@ -473,6 +473,10 @@ Tags:
   objects only; or keep the current policy and make it visible in the
   user manual. Migration: the release notes should say that the
   suites added with `add_suite()` now run in the order of the calls.
+  **Decision:** the current policy is kept (sorted by name, for all
+  suites); it is documented in the `runner` and `add_suite()` API
+  comments and shown as a warning in the user manual ("Non-static test
+  suites").
 
 - **#18 — The comparators and the operators constrain their operands
   differently.** [internal] **[confirmed]**

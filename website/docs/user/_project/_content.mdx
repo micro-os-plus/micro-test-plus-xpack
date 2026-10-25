@@ -1225,11 +1225,20 @@ main(int argc, char* argv[])
 }
 ```
 
-The added suites do not run in the order of the calls to `add_suite()`;
-they run when `run()` is called, together with the static suites, in
-the same order, by name (see above); for equal names, they run after
-the static suites constructed before `main()`, in the order of the
+:::warning Suites run by name, not in the order of the calls
+
+The order of the calls to `add_suite()` is **ignored**. The added suites
+run when `run()` is called, together with the static suites, sorted
+**alphabetically by name** (see above). Only for equal names, they run
+after the static suites constructed before `main()`, in the order of the
 calls.
+
+For example, if `"Zeta"` is added first and `"Alpha"` second, `"Alpha"`
+runs first. To control the order, choose the suite names accordingly,
+for example with a numeric prefix, such as `"01 Setup"` and
+`"02 Processing"`.
+
+:::
 
 The suites must be added before `run()` is called. A suite added while
 `run()` runs, for example from the body of another suite, or after it
