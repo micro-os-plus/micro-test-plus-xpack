@@ -242,18 +242,118 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * This member function writes the contents of the internal output buffer to
-   * the console without appending a newline character. The buffer is not
-   * cleared; the caller is responsible for clearing it when appropriate.
-   *
-   * The buffer is written with its size, not as a C string, so that a
-   * zero character in a message does not end the output.
+   * The file receives all the records, when it is open, so that its
+   * content does not depend on the verbosity (a file of a `silent` run is
+   * as complete as that of a `verbose` one). The console follows the
+   * verbosity levels, as documented in the declaration.
+   */
+  output_route
+  reporter::route (record_kind kind) const noexcept
+  {
+    bool console;
+    if (kind == record_kind::failed_check || kind == record_kind::total
+        || kind == record_kind::abort)
+      {
+        console = (verbosity_ != verbosity::silent);
+      }
+    else if (kind == record_kind::test_case_heading
+             || kind == record_kind::passed_check)
+      {
+        console = (verbosity_ == verbosity::verbose);
+      }
+#if defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
+    && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
+    else if (kind == record_kind::info)
+      {
+        // The startup code already displays this information.
+        console = false;
+      }
+#endif // defined(MICRO_OS_PLUS_STARTUP_ENABLED) && ...
+    else
+      {
+        console = (verbosity_ == verbosity::normal
+                   || verbosity_ == verbosity::verbose);
+      }
+
+    return { console, output_file_ != nullptr };
+  }
+
+  /**
+   * @details
+   * The passed checks are written to the output file, when it is open,
+   * whatever the verbosity; to the console only with the normal and
+   * verbose verbosity levels.
+   */
+  bool
+  reporter::writes_passed_checks (void) const noexcept
+  {
+    // With the normal verbosity, the passed checks of a failed test case
+    // are displayed.
+    return output_file_ != nullptr || verbosity_ == verbosity::normal
+           || verbosity_ == verbosity::verbose;
+  }
+
+  /**
+   * @details
+   * The quiet verbosity displays the failed checks, and the buffer may
+   * also contain the passed checks, for the output file; the lines of the
+   * failed checks are therefore kept separately, in `failures_`.
+   */
+  std::string_view
+  reporter::console_lines (bool failed) const noexcept
+  {
+    if (verbosity_ == verbosity::verbose)
+      {
+        return buffer_;
+      }
+    if (verbosity_ == verbosity::normal)
+      {
+        return failed ? std::string_view{ buffer_ } : std::string_view{};
+      }
+    if (verbosity_ == verbosity::quiet)
+      {
+        return failures_;
+      }
+    return {};
+  }
+
+  /**
+   * @details
+   * The text is written with its size, not as a C string, so that a zero
+   * character in a message does not end the output.
    */
   void
-  reporter::write_buffer_to_console (void)
+  reporter::write_console_text (std::string_view text)
   {
-    // Pass only the string, do not add an `\n` here.
-    fwrite (buffer_.data (), 1, buffer_.size (), stdout);
+    // Pass only the text, do not add an `\n` here.
+    fwrite (text.data (), 1, text.size (), stdout);
+  }
+
+  /**
+   * @details
+   * Only the quiet verbosity needs the copy, since the other levels
+   * display the buffer as a whole, or nothing.
+   */
+  void
+  reporter::mark_failure (size_t begin)
+  {
+    if (verbosity_ == verbosity::quiet)
+      {
+        failures_.append (buffer_, begin, std::string::npos);
+      }
+    buffer_has_failures_ = true;
+  }
+
+  /**
+   * @details
+   * Records the suite and whether its heading was displayed; the
+   * quiet verbosity displays it later, if the suite has a failure.
+   */
+  void
+  reporter::enter_suite (const suite& suite, bool displayed)
+  {
+    current_suite_ = &suite;
+    suite_displayed_ = displayed;
   }
 
   /**
@@ -382,21 +482,15 @@ namespace micro_os_plus::micro_test_plus::detail
    * floating-point availability on bare-metal targets, exception support,
    * and any active debug or trace macros. Both lines are written to the
    * output file when one is open, and to `stdout` when the verbosity is
-   * `normal` or `verbose`, except when both `MICRO_OS_PLUS_STARTUP_ENABLED`
-   * and `MICRO_OS_PLUS_DIAG_TRACE_ENABLED` are defined, since the startup
-   * code already displays this information.
+   * `normal` or `verbose` (see `route()`), except when both
+   * `MICRO_OS_PLUS_STARTUP_ENABLED` and `MICRO_OS_PLUS_DIAG_TRACE_ENABLED`
+   * are defined, since the startup code already displays this
+   * information.
    */
   void
   reporter::write_info (void)
   {
-#if defined(MICRO_OS_PLUS_STARTUP_ENABLED) \
-    && defined(MICRO_OS_PLUS_DIAG_TRACE_ENABLED)
-    // The startup code already displays this information.
-    const bool to_console = false;
-#else
-    const bool to_console = (verbosity_ == verbosity::normal
-                             || verbosity_ == verbosity::verbose);
-#endif // defined(MICRO_OS_PLUS_STARTUP_ENABLED) && ...
+    const bool to_console = route (record_kind::info).console;
 
     if (!arguments_.empty ())
       {
@@ -621,6 +715,8 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter::fail (const failure_info& failure, const std::string& expression,
                   const test_case& test_case)
   {
+    const size_t begin = buffer_.size ();
+
     output_fail_prefix (failure.message, failure.has_expression,
                         failure.location, test_case);
 
@@ -631,18 +727,19 @@ namespace micro_os_plus::micro_test_plus::detail
 
     output_fail_suffix (failure.location, failure.kind, test_case);
 
-    buffer_has_failures_ = true;
+    mark_failure (begin);
   }
 
   /**
    * @details
-   * Empties `buffer_`, keeping its capacity, and resets
+   * Empties `buffer_` and `failures_`, keeping their capacity, and resets
    * `buffer_has_failures_`.
    */
   void
   reporter::clear_buffer (void)
   {
     buffer_.clear ();
+    failures_.clear ();
     buffer_has_failures_ = false;
   }
 

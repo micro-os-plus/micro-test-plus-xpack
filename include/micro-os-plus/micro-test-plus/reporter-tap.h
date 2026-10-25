@@ -285,19 +285,6 @@ namespace micro_os_plus::micro_test_plus::detail
     const char*
     comment_prefix (void) const noexcept override;
 
-    /**
-     * @brief Returns whether the passed checks are written anywhere.
-     *
-     * @par Parameters
-     *   None.
-     * @retval true An output file is open, or the verbosity is normal or
-     * verbose.
-     * @retval false There is no output file, and the verbosity is quiet
-     * or silent.
-     */
-    [[nodiscard]] bool
-    writes_passed_checks (void) const noexcept override;
-
   private:
     /**
      * @brief Outputs the prefix for a passing condition.
@@ -366,6 +353,47 @@ namespace micro_os_plus::micro_test_plus::detail
      */
     void
     commit_buffer (void) override;
+
+    /**
+     * @brief Displays the `# Subtest:` headings not yet displayed, of the
+     * open test cases.
+     *
+     * @details
+     * With normal verbosity, a test case is displayed as a single test
+     * point, unless it contains a nested test case or a failure; its
+     * heading is therefore displayed only when something is displayed
+     * under it, outermost first, so that the displayed test points
+     * remain the complete content of the block.
+     *
+     * @param include_last Whether to display the heading of the
+     * innermost open test case too; false for the single test point of a
+     * passed test case, which has no block.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    display_open_headers (bool include_last);
+
+    /**
+     * @brief Writes the failed checks of the quiet verbosity, as
+     * comments.
+     *
+     * @details
+     * The quiet verbosity displays the suites as single test points, so
+     * the failed checks cannot be displayed as test points of their own,
+     * without altering the plan. They are written as TAP comments,
+     * preceded by a comment that names the suite and the open test cases,
+     * which keeps the console output a valid TAP document. The failed
+     * checks are removed from the buffer by `clear_buffer()`, not by this
+     * function. Nothing is written if there is no failed check.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    write_quiet_failures (void);
 
     /**
      * @brief The position in the buffer where the description of a

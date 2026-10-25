@@ -1,0 +1,237 @@
+
+Running: unit-checks-test one two --reporter human
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human report
+
+• Top suite
+
+µTest++ unit tests; some checks are expected to fail.
+
+    ✓ require - passed (1 check)
+    ✓ Initial counters - passed (0 checks)
+    ✓ expect(true) - passed (5 checks)
+
+    • expect(false)
+        ✗ FAILED (main.cpp:216)
+        ✗ false FAILED (main.cpp:219)
+    ✗ expect(false) - FAILED (0 checks passed, 2 failed)
+
+    ✓ reflection::type_name() - passed (4 checks)
+    ✓ Splits - passed (8 checks)
+
+    • Nested subtests
+        ✓ inner subtest - passed (1 check)
+    ✓ Nested subtests - passed (0 checks)
+
+    • Nested subtest after a check
+        ✓ inner subtest after a check - passed (1 check)
+    ✓ Nested subtest after a check - passed (1 check)
+
+    • Failed nested subtest
+        • middle subtest
+            • inner subtest
+                ✗ inner check fails FAILED (main.cpp:381, 1 == 2)
+            ✗ inner subtest - FAILED (0 checks passed, 1 failed)
+
+        ✗ middle subtest - FAILED (0 checks passed, 0 failed, 1 test case failed)
+
+    ✗ Failed nested subtest - FAILED (1 check passed, 0 failed, 1 test case failed)
+
+    • Stored check result
+        ✓ later check passes
+        ✗ stored check fails FAILED (main.cpp:409, 1 == 2)
+    ✗ Stored check result - FAILED (1 check passed, 1 failed)
+
+    ✓ Application types with get() - passed (3 checks)
+    ✓ Application types with value and epsilon - passed (4 checks)
+    ✓ Message values - passed (3 checks)
+
+    • Character operands
+        ✗ FAILED (main.cpp:527, '\0' == 'a')
+        ✗ space is tab FAILED (main.cpp:530, ' ' == '\t')
+        ✓ 'x' == 'x'
+    ✗ Character operands - FAILED (1 check passed, 2 failed)
+
+✗ Top suite - FAILED (34 checks passed, 6 failed, in 18 test cases), time: 0.672 ms
+
+• Comparisons suite
+
+    ✓ Integer comparisons - passed (6 checks)
+
+    • Failed integer comparisons
+        ✗ actual != 42 FAILED (comparisons.cpp:111, 42 != 42)
+        ✗ actual+1 == 42 FAILED (comparisons.cpp:114, 43 == 42)
+        ✗ actual-1 >= 42 FAILED (comparisons.cpp:118, 41 >= 42)
+        ✗ actual > 42 FAILED (comparisons.cpp:122, 42 > 42)
+        ✗ actual+1 <= 42 FAILED (comparisons.cpp:125, 43 <= 42)
+        ✗ actual < 42 FAILED (comparisons.cpp:129, 42 < 42)
+    ✗ Failed integer comparisons - FAILED (0 checks passed, 6 failed)
+
+    ✓ Float comparisons - passed (10 checks)
+
+    • Failed float comparisons
+        ✗ actual != 42.0 FAILED (comparisons.cpp:188, 42.0f != 42.0f)
+        ✗ actual == 43.0 FAILED (comparisons.cpp:191, 42.0f == 43.0f)
+        ✗ actual != 42 FAILED (comparisons.cpp:194, 42.0f != 42)
+        ✗ actual == 43 FAILED (comparisons.cpp:197, 42.0f == 43)
+    ✗ Failed float comparisons - FAILED (0 checks passed, 4 failed)
+
+    ✓ Approximate comparisons - passed (8 checks)
+
+    • Failed approximate comparisons
+        ✗ actual ~ 44 +/- 2 FAILED (comparisons.cpp:258, 42 ~ (44 +/- 2))
+        ✗ 10 ~ 12 +/- 2 FAILED (comparisons.cpp:263, 10 ~ (12 +/- 2))
+        ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:267, 3u ~ (5u +/- 1u))
+        ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:271, 1 ~ (1 +/- -1))
+        ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:274, 42.0f ~ (42.1f +/- 0.01f))
+        ✗ FAILED (comparisons.cpp:278, 1.0 ~ (1.2 +/- 0.1))
+    ✗ Failed approximate comparisons - FAILED (0 checks passed, 6 failed)
+
+    ✓ String comparisons - passed (6 checks)
+
+    • Failed string comparisons
+        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:335, "abc" != "abc")
+        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:339, "abc" == "abx")
+        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:343, "abc" >= "abd")
+        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:347, "abc" > "abc")
+        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:351, "abc" <= "abb")
+        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:355, "abc" < "abc")
+    ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
+
+    ✓ C string comparisons - passed (14 checks)
+
+    • Failed C string comparisons
+        ✗ actual == "abx" FAILED (comparisons.cpp:420, "abc" == "abx")
+        ✗ null_string == "abc" FAILED (comparisons.cpp:423, nullptr == "abc")
+    ✗ Failed C string comparisons - FAILED (0 checks passed, 2 failed)
+
+    ✓ Pointer comparisons - passed (9 checks)
+
+    • Failed pointer comparisons
+        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7b9874340 != 0x7ff7b9874340)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7b9874340 != 0x7ff7b9874340)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7b9874340 > 0x7ff7b9874340)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7b9874340 < 0x7ff7b9874340)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7b9874340 == 0x7ff7b9874390)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x10673f808 != 0x10673f808)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x10673f808 == 0x7ff7b9874390)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7b98749c0 >= 0x7ff7b98749c4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7b98749c4 <= 0x7ff7b98749c0)
+    ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
+
+    ✓ Null pointer comparisons - passed (3 checks)
+
+    • Failed null pointer comparisons
+        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7b9874980 == nullptr)
+        ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
+    ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
+
+    • Logical operations
+        ✓ not (actual != 42)
+        ✗ not (actual == 42) FAILED (comparisons.cpp:612, not 42 == 42)
+        ✓ (actual == 42) and (actual == 42.0)
+        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:621, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:626, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:631, (42 != 42 and 42.0f != 42.0))
+        ✓ (42 == 42 and 42.0f == 42.0)
+        ✗ FAILED (comparisons.cpp:640, (42 == 42 and 42.0f != 42.0))
+        ✓ (actual == 42) or (actual == 42.0)
+        ✓ (actual == 42) or (actual != 42.0)
+        ✓ (actual != 42) or (actual == 42.0)
+        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:659, (42 != 42 or 42.0f != 42.0))
+    ✗ Logical operations - FAILED (6 checks passed, 6 failed)
+
+    • Logical operations with more operands
+        ✓ all_of three true
+        ✓ all_of five true
+        ✓ any_of three, the last true
+        ✓ any_of three, the first true
+        ✓ all_of with a nested all_of
+        ✓ not all_of
+        ✗ all_of three, the second false FAILED (comparisons.cpp:709, (42 == 42 and 42 < 41 and 42 > 41))
+        ✗ all_of four, the last false FAILED (comparisons.cpp:713, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
+        ✗ any_of three false FAILED (comparisons.cpp:718, (42 == 0 or 42 == 1 or 42 == 2))
+        ✗ any_of of two all_of FAILED (comparisons.cpp:722, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
+        ✗ all_of with a nested any_of FAILED (comparisons.cpp:728, (42 == 42 and (42 == 0 or 42 == 1)))
+    ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
+
+✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 1.040 ms
+
+• Dynamic suite
+
+    ✓ check in dynamic suite - passed (1 check)
+
+✓ Dynamic suite - passed (1 check in 1 test case), time: 0.049 ms
+
+• Dynamic suite with a temporary name
+
+    ✓ check in dynamic suite with a temporary name - passed (1 check)
+
+✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.035 ms
+
+• Operands suite
+
+    ✓ Arrays - passed (4 checks)
+
+    • Arrays bad
+        ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:223, {42} != {42})
+        ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:227, {42} == {43})
+        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:231, {1, 2} != {1, 2})
+        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:235, {1, 2, 3} == {1, 2, 4})
+    ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
+
+    ✓ Vectors - passed (6 checks)
+
+    • Vectors bad
+        ✗ vector{ } != vector{ } FAILED (operands.cpp:287, {} != {})
+        ✗ FAILED (operands.cpp:291, {} != {})
+        ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:294, {42} != {42})
+        ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:298, {42} == {43})
+        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:302, {1, 2} != {1, 2})
+        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:306, {1, 2, 3} == {1, 2, 4})
+    ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
+
+    ✓ Custom types - passed (2 checks)
+
+    • Custom types bad
+        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:343, { 1, 2 } == { 1, 3 })
+        ✗ FAILED (operands.cpp:348, { 1, 2 } == { 1, 3 })
+        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:351, { 1, 2 } != { 1, 2 })
+    ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
+
+    ✓ Custom comparators - passed (3 checks)
+
+    • Custom comparators bad
+        ✗ 5 divides 12 FAILED (operands.cpp:389, 5 divides 12)
+        ✗ FAILED (operands.cpp:392, 5 divides 12)
+        ✗ FAILED (operands.cpp:395, even 7)
+        ✗ FAILED (operands.cpp:398, (3 divides 12 and even 7))
+    ✗ Custom comparators bad - FAILED (0 checks passed, 4 failed)
+
+    ✓ Standard types - passed (10 checks)
+
+    • Standard types bad
+        ✗ colour::red == colour::green FAILED (operands.cpp:464, 0 == 1)
+        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:468, 1uc == 2uc)
+        ✗ pairs1 == pairs2 FAILED (operands.cpp:474, {(1, 2)} == {(1, 3)})
+        ✗ optional == nullopt FAILED (operands.cpp:477, 42 == nullopt)
+    ✗ Standard types bad - FAILED (0 checks passed, 4 failed)
+
+    ✓ Explicit conversions to bool - passed (5 checks)
+
+    • Explicit conversions to bool bad
+        ✗ empty optional FAILED (operands.cpp:527)
+        ✗ null unique_ptr FAILED (operands.cpp:530)
+        ✗ empty function FAILED (operands.cpp:533)
+        ✗ FAILED (operands.cpp:536)
+    ✗ Explicit conversions to bool bad - FAILED (0 checks passed, 4 failed)
+
+    ✓ Pointers to const - passed (2 checks)
+    ✓ Operand copies - passed (6 checks)
+
+✗ Operands suite - FAILED (38 checks passed, 25 failed, in 14 test cases), time: 0.769 ms
+
+✗ Total: 142 checks passed, 78 failed, in 50 test cases, 5 test suites, time: 2.700 ms
+Overall, the µTest++ unit tests were successful!
+

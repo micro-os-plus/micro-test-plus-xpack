@@ -130,14 +130,16 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (verbosity_ != verbosity::silent)
+    const bool to_console = route (record_kind::total).console;
+
+    if (to_console)
       {
         write_console ("\n");
       }
 
     write_info ();
 
-    write_line (verbosity_ != verbosity::silent, "µTest++ human report\n");
+    write_line (to_console, "µTest++ human report\n");
 
     flush_streams ();
 
@@ -146,14 +148,14 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Unless verbosity is silent, prints a summary line to `stdout` (and to
-   * the output file if open) showing the total number of successful
-   * checks, failed checks, executed test cases, and test suites, each
-   * count followed by the number skipped by the filter (only when not
-   * zero), together with the elapsed time when timing data is
-   * available. The line is
-   * prefixed with a green `✓` tick on success or a red `✗` cross on
-   * failure, using ANSI colour codes when colour output is enabled.
+   * Prints a summary line to the output file (if open) and, unless
+   * verbosity is silent, to `stdout`, showing the total number of
+   * successful checks, failed checks, executed test cases, and test
+   * suites, each count followed by the number skipped by the filter (only
+   * when not zero), together with the elapsed time when timing data is
+   * available. The line is prefixed with a green `✓` tick on success or a
+   * red `✗` cross on failure, using ANSI colour codes when colour output
+   * is enabled.
    */
   void
   reporter_human::end_session (const runner& runner)
@@ -162,43 +164,44 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (verbosity_ != verbosity::silent)
+    const bool to_console = route (record_kind::total).console;
+
+    if (to_console && add_empty_line_)
       {
-        if (add_empty_line_)
-          {
-            write_console ("\n");
-          }
-
-        char message_totals[totals_size_];
-        format_session_totals (runner, message_totals);
-
-        char message_time[elapsed_time_size_];
-        format_elapsed_time (runner.stopwatch_, message_time);
-
-        if (runner.totals ().passed ()) [[likely]]
-          {
-            write_line (true, "%s✓%s Total: %s%s\n", colours_.pass,
-                        colours_.none, message_totals, message_time);
-          }
-        else
-          {
-            write_line (true, "%s✗%s Total: %s%s\n", colours_.fail,
-                        colours_.none, message_totals, message_time);
-          }
-
-        flush_streams ();
+        write_console ("\n");
       }
+
+    char message_totals[totals_size_];
+    format_session_totals (runner, message_totals);
+
+    char message_time[elapsed_time_size_];
+    format_elapsed_time (runner.stopwatch_, message_time);
+
+    if (runner.totals ().passed ()) [[likely]]
+      {
+        write_line (to_console, "%s✓%s Total: %s%s\n", colours_.pass,
+                    colours_.none, message_totals, message_time);
+      }
+    else
+      {
+        write_line (to_console, "%s✗%s Total: %s%s\n", colours_.fail,
+                    colours_.none, message_totals, message_time);
+      }
+
+    flush_streams ();
   }
 
   // --------------------------------------------------------------------------
 
   /**
    * @details
-   * With normal or verbose verbosity, this member function writes a
-   * `"• <name>"` line, marking the beginning of the test suite, to the
-   * output file (if open) and to `stdout`, preceded on `stdout` by an empty
-   * line when `add_empty_line_` is set. For silent or quiet verbosity
-   * levels, no output is produced.
+   * This member function writes a `"• <name>"` line, marking the
+   * beginning of the test suite, to the output file (if open) and, with
+   * normal or verbose verbosity, to `stdout`, preceded on `stdout` by an
+   * empty line when `add_empty_line_` is set. For silent or quiet
+   * verbosity levels, nothing is written to `stdout`; with quiet
+   * verbosity, the heading is displayed later, if the suite has a failure
+   * (see `display_open_names()`).
    */
   void
   reporter_human::begin_suite (const suite& suite)
@@ -207,35 +210,43 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+    const bool to_console = route (record_kind::suite_heading).console;
+
+    if (to_console && add_empty_line_)
       {
-        if (add_empty_line_)
-          {
-            write_console ("\n");
-          }
+        write_console ("\n");
+      }
 
-        write_line (true, "• %s\n", suite.name ());
+    write_line (to_console, "• %s\n", suite.name ());
 
-        flush_streams ();
+    flush_streams ();
 
+    if (to_console)
+      {
         add_empty_line_ = true;
       }
+
+    enter_suite (suite, to_console);
   }
 
   /**
    * @details
-   * With normal or verbose verbosity, this member function summarises the
-   * results of the test suite, with appropriate formatting and colour coding;
-   * for silent or quiet verbosity levels, no output is produced. An empty
-   * line is first added if the suite executed any test cases.
+   * This member function summarises the results of the test suite, with
+   * appropriate formatting and colour coding. An empty line is first
+   * added on `stdout` if the suite executed any test cases.
    *
    * For suites without failed checks, a `"✓ <name> - passed"` line is
-   * displayed, including the number of checks and test cases; the buffered
+   * written, including the number of checks and test cases; the buffered
    * check results are written to `stdout` only with verbose verbosity.
    * Otherwise, a `"✗ <name> - FAILED"` line is shown, detailing the number
    * of successful and failed checks and the number of test cases, preceded
-   * by the buffered check results. The buffered results are always written
-   * to the output file. The elapsed time is appended when available.
+   * by the buffered check results. The elapsed time is appended when
+   * available.
+   *
+   * The buffered check results and the result line are always written to
+   * the output file. For silent or quiet verbosity levels, the result
+   * line is not written to `stdout`; with quiet verbosity, only the
+   * failure of the suite body, if any, is.
    *
    * Finally, the streams are flushed and the buffer is cleared.
    */
@@ -246,52 +257,58 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
+    const bool to_console = route (record_kind::suite_result).console;
+    const bool passed = suite.totals ().passed ();
+
     char message_time[elapsed_time_size_];
     format_elapsed_time (suite.stopwatch_, message_time);
 
+    char message_totals[totals_size_];
+    format_suite_totals (suite, message_totals);
+
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
-      {
-        char message_totals[totals_size_];
-        format_suite_totals (suite, message_totals);
+    const std::string_view lines = console_lines (!passed);
 
+    write_buffer_to_file ();
+
+    if (to_console)
+      {
         if (suite.totals ().executed_test_cases () > 0)
           {
             write_console ("\n");
           }
 
-        if (suite.totals ().passed ()) [[likely]]
+        write_console_text (lines);
+      }
+    else if (!lines.empty ())
+      {
+        // The failure of the suite body, with quiet verbosity.
+        if (add_empty_line_)
           {
-            // Successful test suite.
-
-            write_buffer_to_file ();
-
-            if (verbosity_ == verbosity::verbose)
-              {
-                // With verbosity, show the full output accumulated in the
-                // buffer.
-                write_buffer_to_console ();
-              }
-
-            write_line (true, "%s✓%s %s - passed (%s)%s\n", colours_.pass,
-                        colours_.none, suite.name (), message_totals,
-                        message_time);
+            write_console ("\n");
           }
-        else
-          {
-            // Failed test suite.
 
-            write_buffer_to_file ();
+        display_open_names (true);
 
-            // Show the full output accumulated in the buffer for a failed
-            // suite, as it may contain useful information about the failure.
-            write_buffer_to_console ();
+        write_console_text (lines);
+      }
 
-            write_line (true, "%s✗%s %s - %sFAILED%s (%s)%s\n", colours_.fail,
-                        colours_.none, suite.name (), colours_.fail,
-                        colours_.none, message_totals, message_time);
-          }
+    if (passed) [[likely]]
+      {
+        // Successful test suite.
+
+        write_line (to_console, "%s✓%s %s - passed (%s)%s\n", colours_.pass,
+                    colours_.none, suite.name (), message_totals,
+                    message_time);
+      }
+    else
+      {
+        // Failed test suite.
+
+        write_line (to_console, "%s✗%s %s - %sFAILED%s (%s)%s\n",
+                    colours_.fail, colours_.none, suite.name (), colours_.fail,
+                    colours_.none, message_totals, message_time);
       }
 
     flush_streams ();
@@ -300,15 +317,17 @@ namespace micro_os_plus::micro_test_plus::detail
     clear_buffer ();
 
     add_empty_line_ = true;
+
+    current_suite_ = nullptr;
   }
 
   /**
    * @details
-   * With normal or verbose verbosity, this member function writes a
-   * `"• <name> - skipped (filtered)"` line, instead of the suite body and
-   * results, to the output file (if open) and to `stdout`, preceded on
+   * This member function writes a `"• <name> - skipped (filtered)"` line,
+   * instead of the suite body and results, to the output file (if open)
+   * and, with normal or verbose verbosity, to `stdout`, preceded on
    * `stdout` by an empty line when `add_empty_line_` is set. For silent
-   * or quiet verbosity levels, no output is produced.
+   * or quiet verbosity levels, nothing is written to `stdout`.
    */
   void
   reporter_human::skip_suite (const suite& suite)
@@ -317,17 +336,19 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+    const bool to_console = route (record_kind::skipped).console;
+
+    if (to_console && add_empty_line_)
       {
-        if (add_empty_line_)
-          {
-            write_console ("\n");
-          }
+        write_console ("\n");
+      }
 
-        write_line (true, "• %s - skipped (filtered)\n", suite.name ());
+    write_line (to_console, "• %s - skipped (filtered)\n", suite.name ());
 
-        flush_streams ();
+    flush_streams ();
 
+    if (to_console)
+      {
         add_empty_line_ = true;
       }
   }
@@ -348,11 +369,13 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
+    const size_t begin = buffer_.size ();
+
     *this << indent (1) << colours_.fail << "✗" << colours_.none << " "
           << message << " " << colours_.fail << "FAILED" << colours_.none
           << endl;
 
-    buffer_has_failures_ = true;
+    mark_failure (begin);
   }
 
   // --------------------------------------------------------------------------
@@ -367,6 +390,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * A `"• <name>"` line, indented according to the nesting depth, is
    * written to the output file (if open) and, with verbose verbosity, to
    * `stdout`, preceded by an empty line when `add_empty_line_` is set.
+   * With the other verbosity levels, the heading is displayed later, only
+   * if something is displayed under it (see `display_open_names()`).
    */
   void
   reporter_human::begin_test_case (const test_case& test_case)
@@ -377,12 +402,11 @@ namespace micro_os_plus::micro_test_plus::detail
 
     commit_outer_results ();
 
-    open_test_cases_.push_back (
-        { &test_case, verbosity_ == verbosity::verbose });
+    const bool to_console = route (record_kind::test_case_heading).console;
+
+    open_test_cases_.push_back ({ &test_case, to_console });
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
-
-    const bool to_console = (verbosity_ == verbosity::verbose);
 
     if (to_console && add_empty_line_)
       {
@@ -401,20 +425,25 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * With normal or verbose verbosity, this member function summarises the
-   * outcome of the test case, with appropriate formatting and colour coding;
-   * for silent or quiet verbosity levels, no output is produced.
+   * This member function summarises the outcome of the test case, with
+   * appropriate formatting and colour coding.
    *
-   * For passing test cases, a `"✓ <name> - passed"` line is shown with the
-   * number of checks; the buffered check results are written to `stdout`
-   * only with verbose verbosity. A test case fails when one of its checks
-   * or one of its nested test cases failed. For failing test cases, the
-   * buffered check results are always shown (preceded, with normal
-   * verbosity, by the names of the test case and of the outer test cases,
-   * if not already displayed), followed by a `"✗ <name> - FAILED"` line
-   * with the number of successful and failed checks, and of the failed
-   * nested test cases, when not zero. The buffered results are always
-   * written to the output file.
+   * For passing test cases, a `"✓ <name> - passed"` line is written with
+   * the number of checks; the buffered check results are written to
+   * `stdout` only with verbose verbosity. With normal verbosity, the
+   * names of the outer test cases are displayed first, if not displayed
+   * yet, so that the line of a nested test case is not left without its
+   * parent. A test case fails when one of its checks or one of its nested
+   * test cases failed. For failing test cases, the buffered check results
+   * are shown (preceded, with normal or quiet verbosity, by the names of
+   * the test case and of the outer test cases, if not already displayed),
+   * followed, with normal or verbose verbosity, by a `"✗ <name> - FAILED"`
+   * line with the number of successful and failed checks, and of the
+   * failed nested test cases, when not zero. With quiet verbosity, only
+   * the lines of the failed checks are shown.
+   *
+   * The buffered check results and the result line are always written to
+   * the output file.
    *
    * Finally, the streams are flushed and the buffer is cleared.
    */
@@ -427,67 +456,63 @@ namespace micro_os_plus::micro_test_plus::detail
                    test_case.nesting_depth ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
+    const bool to_console = route (record_kind::test_case_result).console;
+    const bool passed = test_case.totals ().passed ();
+
+    std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
+
+    // The name is not included, since its length is not bounded;
+    // it is passed to each write.
+    char message_totals[totals_size_];
+    format_test_case_totals (test_case, message_totals);
+
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
+    const std::string_view lines = console_lines (!passed);
+
+    write_buffer_to_file ();
+
+    const bool shows = to_console || !lines.empty ();
+    if (shows)
       {
-        std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
-
-        // The name is not included, since its length is not bounded;
-        // it is passed to each write.
-        char message_totals[totals_size_];
-        format_test_case_totals (test_case, message_totals);
-
         if (add_empty_line_)
           {
             write_console ("\n");
           }
 
-        if (test_case.totals ().passed ()) [[likely]]
-          {
-            // Successful test case.
+        // The names of this test case and of the outer ones, whose names
+        // may have been displayed already, by `commit_buffer()` or by a
+        // failed sibling; for a passed test case, only the outer ones.
+        display_open_names (!passed);
 
-            write_buffer_to_file ();
+        // With verbosity, the full output accumulated in the buffer;
+        // for a failed test case, as it may contain useful information
+        // about the failure.
+        write_console_text (lines);
+      }
 
-            if (verbosity_ == verbosity::verbose)
-              {
-                // With verbosity, show the full output accumulated in the
-                // buffer.
-                write_buffer_to_console ();
-              }
+    if (passed) [[likely]]
+      {
+        // Successful test case.
 
-            write_line (true, "%s%s✓%s %s - passed (%s)\n", indent.c_str (),
-                        colours_.pass, colours_.none, test_case.name (),
-                        message_totals);
+        write_line (to_console, "%s%s✓%s %s - passed (%s)\n", indent.c_str (),
+                    colours_.pass, colours_.none, test_case.name (),
+                    message_totals);
+      }
+    else
+      {
+        // Failed test case.
 
-            add_empty_line_ = (verbosity_ == verbosity::verbose);
-          }
-        else
-          {
-            // Failed test case.
+        write_line (to_console, "%s%s✗%s %s - %sFAILED%s (%s)\n",
+                    indent.c_str (), colours_.fail, colours_.none,
+                    test_case.name (), colours_.fail, colours_.none,
+                    message_totals);
+      }
 
-            write_buffer_to_file ();
-
-            if (verbosity_ == verbosity::normal)
-              {
-                // This test case and the outer ones, whose names may have
-                // been displayed already, by `commit_buffer()` or by a
-                // failed sibling.
-                display_open_names ();
-              }
-
-            // Show full output accumulated in the buffer for failed
-            // test cases, as it may contain useful information about the
-            // failure.
-            write_buffer_to_console ();
-
-            write_line (true, "%s%s✗%s %s - %sFAILED%s (%s)\n",
-                        indent.c_str (), colours_.fail, colours_.none,
-                        test_case.name (), colours_.fail, colours_.none,
-                        message_totals);
-
-            add_empty_line_ = true;
-          }
+    if (shows)
+      {
+        add_empty_line_
+            = !passed || route (record_kind::test_case_heading).console;
       }
 
     flush_streams ();
@@ -512,21 +537,6 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter_human::comment_prefix (void) const noexcept
   {
     return "";
-  }
-
-  /**
-   * @details
-   * The buffered check results are written, to the output file and to
-   * `stdout`, only with normal or verbose verbosity; with normal
-   * verbosity, the passed checks are displayed when the test case fails.
-   * With quiet verbosity, only the buffer of an aborted test execution
-   * is displayed (see `abort_session()`), which then includes only the
-   * failed checks.
-   */
-  bool
-  reporter_human::writes_passed_checks (void) const noexcept
-  {
-    return verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose;
   }
 
   /**
@@ -655,11 +665,12 @@ namespace micro_os_plus::micro_test_plus::detail
    * first (see `commit_outer_results()`), so that the output follows the
    * execution order.
    *
-   * With normal or verbose verbosity, a `"• <name> - skipped (filtered)"`
-   * line, indented according to the nesting depth, is then written to the
-   * output file (if open) and to `stdout`, preceded on `stdout` by an
+   * A `"• <name> - skipped (filtered)"` line, indented according to the
+   * nesting depth, is then written to the output file (if open) and, with
+   * normal or verbose verbosity, to `stdout`, preceded by the names of
+   * the outer test cases, if not displayed yet, and on `stdout` by an
    * empty line when `add_empty_line_` is set. For silent or quiet
-   * verbosity levels, no output is produced.
+   * verbosity levels, nothing is written to `stdout`.
    */
   void
   reporter_human::skip_test_case (const test_case& test_case)
@@ -670,20 +681,27 @@ namespace micro_os_plus::micro_test_plus::detail
 
     commit_outer_results ();
 
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
-      {
-        std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
+    const bool to_console = route (record_kind::skipped).console;
 
+    std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
+
+    if (to_console)
+      {
         if (add_empty_line_)
           {
             write_console ("\n");
           }
 
-        write_line (true, "%s• %s - skipped (filtered)\n", indent.c_str (),
-                    test_case.name ());
+        display_open_names (true);
+      }
 
+    write_line (to_console, "%s• %s - skipped (filtered)\n", indent.c_str (),
+                test_case.name ());
+
+    if (to_console)
+      {
         // As for a passed test case.
-        add_empty_line_ = (verbosity_ == verbosity::verbose);
+        add_empty_line_ = route (record_kind::test_case_heading).console;
       }
 
     flush_streams ();
@@ -693,20 +711,20 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Since `end_test_case()` is not called for the running test cases, this
    * member function writes the buffered results in its place; after a failed
-   * requirement, they end with it. As in `end_test_case()`, they are written
-   * to the output file only with normal or verbose verbosity.
+   * requirement, they end with it. As in `end_test_case()`, they are always
+   * written to the output file.
    *
-   * Unless the verbosity is silent, the names of the open test cases that
-   * were not displayed yet (all of them, with normal or quiet verbosity)
-   * are written to `stdout`, followed by the buffered results, so that a
-   * failure is not attributed to the previous test case. With quiet
-   * verbosity, which otherwise displays only the summary, the results are
-   * displayed as well, since the summary is never reached; this includes
-   * the passed checks, which give the context of the failure.
+   * Unless the verbosity is silent, the headings of the suite and of the
+   * open test cases that were not displayed yet (all of them, with normal
+   * or quiet verbosity) are written to `stdout`, followed by the buffered
+   * results, so that a failure is not attributed to the previous test case.
+   * With quiet verbosity, which otherwise displays only the failures and
+   * the summary, the lines of the failed checks are displayed, since the
+   * summary is never reached.
    *
    * In place of the summary, a `✗ Test execution aborted at
-   * <file>:<line>` line is then written, as the summary is, unless the
-   * verbosity is silent, to the output file and to `stdout`. After a
+   * <file>:<line>` line is then written, as the summary is, to the output
+   * file and, unless the verbosity is silent, to `stdout`. After a
    * failed requirement, the location is the same as in the failure
    * line, which is already marked `- test execution aborted`; for an
    * explicit call of `runner::abort()`, it is the only report of the
@@ -724,15 +742,23 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
-      {
-        write_buffer_to_file ();
-      }
+    const bool to_console = route (record_kind::abort).console;
 
-    if (verbosity_ != verbosity::silent)
+    // The type of `line()` depends on the toolchain (`uint_least32_t`
+    // for `std::source_location`); widen it implicitly, without a cast
+    // that would be useless on some platforms.
+    const unsigned long line = location.line ();
+    const char* file_name = utility::extract_file_name (location.file_name ());
+
+    const std::string_view lines = console_lines (true);
+
+    write_buffer_to_file ();
+
+    if (to_console)
       {
-        // Whether names or results are displayed before the final line.
-        bool has_results = !buffer_.empty ();
+        // Whether headings or results are displayed before the final line.
+        bool has_results = !lines.empty ()
+                           || (current_suite_ != nullptr && !suite_displayed_);
         for (const open_test_case& open : open_test_cases_)
           {
             has_results = has_results || !open.name_displayed;
@@ -743,9 +769,9 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console ("\n");
           }
 
-        display_open_names ();
+        display_open_names (true);
 
-        write_buffer_to_console ();
+        write_console_text (lines);
 
         // Separate the final line by an empty line, as the summary, unless
         // it was already written above.
@@ -753,34 +779,32 @@ namespace micro_os_plus::micro_test_plus::detail
           {
             write_console ("\n");
           }
-
-        // The type of `line()` depends on the toolchain (`uint_least32_t`
-        // for `std::source_location`); widen it implicitly, without a cast
-        // that would be useless on some platforms.
-        const unsigned long line = location.line ();
-        const char* file_name
-            = utility::extract_file_name (location.file_name ());
-
-        write_line (true, "%s✗%s Test execution aborted at %s:%lu\n",
-                    colours_.fail, colours_.none, file_name, line);
       }
+
+    write_line (to_console, "%s✗%s Test execution aborted at %s:%lu\n",
+                colours_.fail, colours_.none, file_name, line);
 
     flush_streams ();
 
     clear_buffer ();
+
+    // Should the abort handler throw, nothing may refer to the objects
+    // that are unwound.
+    open_test_cases_.clear ();
+    current_suite_ = nullptr;
   }
 
   /**
    * @details
-   * The buffered results of the outer test case are written to the output
-   * file, with normal or verbose verbosity (as `end_test_case()` does), and,
-   * with verbose verbosity, to `stdout`. With normal verbosity,
-   * they are written to `stdout` only when they include a failure,
-   * preceded by the name of the outer test case, which this verbosity
-   * otherwise displays only when the test case ends. The buffer is then
-   * cleared, so that the nested test case starts with an empty buffer,
-   * and the remaining results of the outer test case are written by its
-   * `end_test_case()`.
+   * The buffered results of the outer test case are always written to the
+   * output file (as `end_test_case()` does) and, with verbose verbosity,
+   * to `stdout`. With normal or quiet verbosity, they are written to
+   * `stdout` only when they include a failure (with quiet verbosity,
+   * only the failed checks), preceded by the headings of the suite and of
+   * the outer test case, which these verbosity levels otherwise display
+   * only when the test case ends. The buffer is then cleared, so that
+   * the nested test case starts with an empty buffer, and the remaining
+   * results of the outer test case are written by its `end_test_case()`.
    *
    * With normal verbosity, the passed checks committed here are not
    * displayed, even if the outer test case fails later; the output file
@@ -789,35 +813,35 @@ namespace micro_os_plus::micro_test_plus::detail
   void
   reporter_human::commit_buffer (void)
   {
-    // As in `end_test_case()`, the results reach the output file only with
-    // normal or verbose verbosity.
-    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
-      {
-        write_buffer_to_file ();
-      }
+    write_buffer_to_file ();
 
-    if (verbosity_ == verbosity::verbose)
+    const std::string_view lines = console_lines (buffer_has_failures_);
+    if (!lines.empty ())
       {
-        if (add_empty_line_)
+        if (route (record_kind::test_case_heading).console)
           {
-            write_console ("\n");
-            add_empty_line_ = false;
-          }
+            // Verbose, the headings were displayed.
+            if (add_empty_line_)
+              {
+                write_console ("\n");
+                add_empty_line_ = false;
+              }
 
-        write_buffer_to_console ();
-      }
-    else if (verbosity_ == verbosity::normal && buffer_has_failures_)
-      {
-        if (add_empty_line_)
+            write_console_text (lines);
+          }
+        else
           {
-            write_console ("\n");
+            if (add_empty_line_)
+              {
+                write_console ("\n");
+              }
+
+            display_open_names (true);
+
+            write_console_text (lines);
+
+            add_empty_line_ = true;
           }
-
-        display_open_names ();
-
-        write_buffer_to_console ();
-
-        add_empty_line_ = true;
       }
 
     flush_streams ();
@@ -827,18 +851,38 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Walks `open_test_cases_` from the outermost test case and displays, on
+   * If the heading of the suite was not displayed (with quiet verbosity),
+   * it is displayed first, followed by an empty line. Then walks
+   * `open_test_cases_` from the outermost test case and displays, on
    * `stdout`, the indented `"• <name>"` line of each one whose name was
-   * not displayed yet, marking it as displayed. An empty line is written
+   * not displayed yet, marking it as displayed. The innermost one is
+   * skipped unless @p include_last is true. An empty line is written
    * before the first name, unless `add_empty_line_` is set, in which case
    * the caller has already written it.
    */
   void
-  reporter_human::display_open_names (void)
+  reporter_human::display_open_names (bool include_last)
   {
-    bool is_first = true;
-    for (open_test_case& open : open_test_cases_)
+    if (!suite_displayed_ && current_suite_ != nullptr)
       {
+        if (!add_empty_line_)
+          {
+            write_console ("\n");
+          }
+
+        write_console ("• %s\n\n", current_suite_->name ());
+
+        suite_displayed_ = true;
+        add_empty_line_ = true;
+      }
+
+    bool is_first = true;
+    const size_t count = include_last || open_test_cases_.empty ()
+                             ? open_test_cases_.size ()
+                             : open_test_cases_.size () - 1;
+    for (size_t i = 0; i < count; ++i)
+      {
+        open_test_case& open = open_test_cases_[i];
         if (open.name_displayed)
           {
             continue;

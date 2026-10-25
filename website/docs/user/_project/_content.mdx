@@ -320,7 +320,7 @@ When exceptions are not enabled, a failed requirement cannot stop only its test 
 
 Then `runner::abort()` flushes the standard streams, calls the abort handler, if one was set (see below), and then `::abort()`. An abort before `initialise()`, or after `run()`, when there is no report to complete, is reported on `stderr`, as `error: test execution aborted at <file>:<line>`.
 
-With `--quiet`, which otherwise displays only the totals, the results of the aborted test case are displayed as well, since the totals are never reached; only the failed checks are included, since the passed ones are not formatted at this verbosity (except with the TAP reporter and an output file, which receives every check). With `--silent`, nothing is displayed. If an output file is used, the results and the final line are written to it too (with the human reporter, as for the other test cases and for the totals, the results only with normal or verbose verbosity, and the final line unless the verbosity is silent).
+With `--quiet`, which otherwise displays only the failed checks and the totals, the failed checks of the aborted test case are displayed as well, since the totals are never reached. With `--silent`, nothing is displayed. If an output file is used, the results and the final line are written to it too, whatever the verbosity.
 
 For example, with the human reporter, the end of the output is:
 
@@ -1493,30 +1493,27 @@ By default, µTest++ displays only **test case summaries for passing tests** (fo
 To adjust the verbosity, one of the following command-line options may be specified:
 
 - `--verbose` – display **all expectations**, irrespective of their outcome
-- `--quiet` – display only the **runner totals**; the TAP reporter also displays one `ok`/`not ok` line per test suite, with the plan counting them, so that the output remains a valid TAP document, which node-tap and the other TAP consumers read as failed when a suite failed
+- `--quiet` – display only the **failed checks**, with the names of the suite and of the test cases that contain them, and the **runner totals**; the TAP reporter also displays one `ok`/`not ok` line per test suite, with the plan counting them, so that the output remains a valid TAP document, which node-tap and the other TAP consumers read as failed when a suite failed
 - `--silent` – suppress all output and return **solely the exit code**
 
-The verbosity selects only the console output. The table summarises what each level displays, and what the output file receives (see [Output file](#output-file)):
+The verbosity selects only the console output; the output file always receives the complete report (see [Output file](#output-file)). The table summarises what each level displays on the console:
 
-| Level | Option | Console | TAP output file | Human output file |
-| --- | --- | --- | --- | --- |
-| verbose | `--verbose` | all the checks, passed and failed | complete | complete |
-| normal | (none) | a summary of each passed test case; all the checks of the failed test cases | complete | complete |
-| quiet | `--quiet` | the totals; with TAP, also one `ok`/`not ok` line per test suite | complete | incomplete |
-| silent | `--silent` | nothing; only the exit code | complete | incomplete |
+| Level | Option | Console |
+| --- | --- | --- |
+| verbose | `--verbose` | all the checks, passed and failed |
+| normal | (none) | a summary of each passed test case; all the checks of the failed test cases |
+| quiet | `--quiet` | the failed checks, with the names of the suite and of the test cases that contain them, and the totals; with TAP, also one `ok`/`not ok` line per test suite, and the failed checks as comments |
+| silent | `--silent` | nothing; only the exit code |
+
+With the TAP reporter and the normal verbosity, the passed test cases are displayed as single `ok` lines, and the failed ones as complete `# Subtest:` blocks; the nested passed test cases appear inside the block of their outer test case. With the human reporter, the line of a passed nested test case is preceded by the name of its outer test case.
 
 When the test execution is aborted, the totals are replaced by a line with the location of the abort, also with `--quiet`, and there is no exit code, since `run()` does not return; see [Aborting the test execution](#aborting-the-test-execution).
 
-**`--quiet` does not show which checks failed.** It shows whether the run failed, and, with the TAP reporter, which test suites failed, but not the failed checks, their locations, or their test cases. This is by design: showing the details of the failures, and only them, is what the normal verbosity does, so a quiet level that showed them would hardly differ from it. To learn what failed:
-
-- run without a verbosity option; the passed test cases are only summarised, and the failed ones are displayed in full;
-- or keep `--quiet` on the console, and add `--output-file` with the TAP reporter (the default); the file receives every check, with the location of each failure, whatever the verbosity:
+With `--quiet`, the failed checks are the only details displayed, so it is the level to use for a long run, in which only the failures matter. To also keep the details of the passed checks, add an output file, which receives every check, whatever the verbosity:
 
 ```sh
 sample-test --quiet --output-file=sample-test.tap
 ```
-
-With the human reporter, `--quiet` displays only the totals, and its output file is incomplete, so neither of them shows the failures; use the normal verbosity, or the TAP reporter.
 
 When exceptions are not enabled and a failed requirement aborts the test
 execution, the results of the aborted test case are displayed also with
@@ -1573,8 +1570,7 @@ To also write the report to a file, use the `--output-file` option, either as `-
 
 The two outputs have different purposes: the console is intended for the people who watch the tests run, and its content is selected with the verbosity options, while the output file is intended for the integration with other tools (for example a CI pipeline, or a TAP consumer such as node-tap).
 
-- With the **TAP** reporter (the default), the output file always receives the **complete report**, whatever the console verbosity; this is the reporter to use for integration. It is also the way to keep the console short with `--quiet`, which does not show which checks failed, while keeping the details of the failures in the file (see [Verbosity](#verbosity)).
-- The **human** reporter is intended for the console. Its output file receives the complete report only with the normal or verbose verbosity; with `--quiet` or `--silent`, the file is incomplete (it contains the test case names, and, with `--quiet`, the totals), and should not be relied upon.
+The output file always receives the **complete report**, whatever the console verbosity, with both reporters; the verbosity selects only what is displayed on the console. The TAP reporter is the one to use for integration, since its file is a valid TAP document, which the TAP consumers read. The file of the human reporter is intended for people, to keep the details of a run whose console output is short (see [Verbosity](#verbosity)).
 
 ### The _human_ reporter
 

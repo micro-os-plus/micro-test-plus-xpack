@@ -184,7 +184,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-reporter-human-quiet-compare"
     DEPENDS "empty-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/empty-test-quiet.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/empty-test.txt"
   )
 
   # --silent
@@ -197,7 +197,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-reporter-human-silent-compare"
     DEPENDS "empty-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/empty-test-silent.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/empty-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -330,7 +330,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-reporter-human-quiet-compare"
     DEPENDS "minimal-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/minimal-test-quiet.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/minimal-test.txt"
   )
 
   # --silent
@@ -343,7 +343,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-reporter-human-silent-compare"
     DEPENDS "minimal-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/minimal-test-silent.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/minimal-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -465,7 +465,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-reporter-human-quiet-compare"
     DEPENDS "suite-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/suite-test-quiet.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/suite-test.txt"
   )
 
   # --silent
@@ -478,7 +478,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-reporter-human-silent-compare"
     DEPENDS "suite-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/suite-test-silent.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/suite-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -608,7 +608,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-reporter-human-quiet-compare"
     DEPENDS "sample-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/sample-test-quiet.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/sample-test.txt"
   )
 
   # --silent
@@ -621,7 +621,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-reporter-human-silent-compare"
     DEPENDS "sample-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/sample-test-silent.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/sample-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -782,6 +782,80 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-colour.txt"
   )
 
+  # The console output with the normal verbosity differs from the output file:
+  # the passed test cases are single lines, and the names of the outer test
+  # cases precede the nested ones.
+  add_test (
+    NAME "unit-checks-test-reporter-human-console"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-checks-test>" -D
+      "OUTPUT=unit-checks-test-console.txt" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- one two --reporter
+      human
+  )
+  message (VERBOSE "T> unit-checks-test-reporter-human-console")
+  add_compare_files_test (
+    NAME "unit-checks-test-reporter-human-console-compare"
+    DEPENDS "unit-checks-test-reporter-human-console"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-console.txt"
+  )
+
+  # --quiet The console output shows only the failed checks, with the names of
+  # the enclosing suite and test cases, and the totals.
+  add_test (
+    NAME "unit-checks-test-reporter-human-console-quiet"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-checks-test>" -D
+      "OUTPUT=unit-checks-test-console-quiet.txt" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- one two --reporter
+      human --quiet
+  )
+  message (VERBOSE "T> unit-checks-test-reporter-human-console-quiet")
+  add_compare_files_test (
+    NAME "unit-checks-test-reporter-human-console-quiet-compare"
+    DEPENDS "unit-checks-test-reporter-human-console-quiet"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console-quiet.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-console-quiet.txt"
+  )
+
+  # The TAP console output with the normal verbosity; unlike the output file,
+  # the passed test cases are single test points, and the failed ones are
+  # complete blocks.
+  add_test (
+    NAME "unit-checks-test-console"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-checks-test>" -D
+      "OUTPUT=unit-checks-test-console.tap" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- one two
+  )
+  message (VERBOSE "T> unit-checks-test-console")
+  add_compare_files_test (
+    NAME "unit-checks-test-console-compare"
+    DEPENDS "unit-checks-test-console"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test-console.tap"
+  )
+
+  # --quiet The TAP console output has the suites as single test points, and the
+  # failed checks as comments.
+  add_test (
+    NAME "unit-checks-test-console-quiet"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-checks-test>" -D
+      "OUTPUT=unit-checks-test-console-quiet.tap" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- one two --quiet
+  )
+  message (VERBOSE "T> unit-checks-test-console-quiet")
+  add_compare_files_test (
+    NAME "unit-checks-test-console-quiet-compare"
+    DEPENDS "unit-checks-test-console-quiet"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console-quiet.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test-console-quiet.tap"
+  )
+
   # default
   add_test (NAME "unit-checks-test-reporter-human"
             COMMAND unit-checks-test one two --reporter human --output-file
@@ -805,7 +879,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-quiet-compare"
     DEPENDS "unit-checks-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-quiet.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test.txt"
   )
 
   # --silent
@@ -818,7 +892,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-silent-compare"
     DEPENDS "unit-checks-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-silent.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability

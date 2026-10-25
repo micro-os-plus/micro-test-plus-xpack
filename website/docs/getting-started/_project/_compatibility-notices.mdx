@@ -624,6 +624,29 @@ lambda without captures was previously accepted, converted to `bool`,
 and written as `true`; it is now called. The function pointers are
 still written as addresses, not called.
 
+The output file of the human reporter now receives the complete report
+whatever the console verbosity, as the output file of the TAP reporter
+always did; with `--quiet` and `--silent`, it was previously
+incomplete. The programs that compared the file of a quiet run with the
+names of the test cases and the totals must now expect the complete
+report.
+
+With `--quiet`, both reporters now display the failed checks, with the
+names of the suite and of the test cases that contain them (the TAP
+reporter as comments, after a comment line with the names), before the
+totals; previously only the totals, and, with TAP, the test points of
+the suites, were displayed.
+
+With the normal verbosity, the TAP reporter now displays a passed test
+case as a single `ok` line, without its `# Subtest:` block, and a failed
+or outer test case as a complete block, whose plan counts all the
+displayed test points, with their original numbers. Previously, the plan
+of a passed test case counted only its nested test cases, so the console
+output was rejected by the strict TAP parsers when a test case had both
+checks and nested test cases. The output file is unchanged. The human
+reporter now displays the name of the outer test case before the line of
+a passed nested test case.
+
 ### v5.0 (2026-08-06)
 
 The C++ API is unchanged; the changes affect only the configuration and

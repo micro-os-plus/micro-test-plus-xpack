@@ -265,14 +265,16 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (verbosity_ != verbosity::silent)
+    const bool to_console = route (record_kind::total).console;
+
+    if (to_console)
       {
         write_console ("\n");
       }
 
     write_info ();
 
-    write_line (verbosity_ != verbosity::silent, "TAP version 14\n");
+    write_line (to_console, "TAP version 14\n");
 
     flush_streams ();
 
@@ -311,9 +313,9 @@ namespace micro_os_plus::micro_test_plus::detail
     char message_time[elapsed_time_size_];
     format_elapsed_time (runner.stopwatch_, message_time);
 
-    const bool to_console = (verbosity_ != verbosity::silent);
+    const bool to_console = route (record_kind::total).console;
 
-    if (to_console && add_empty_line_ && verbosity_ != verbosity::quiet)
+    if (add_empty_line_ && route (record_kind::suite_result).console)
       {
         write_console ("\n");
       }
@@ -344,8 +346,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (suite.name (), false);
 
-    const bool to_console = (verbosity_ == verbosity::normal
-                             || verbosity_ == verbosity::verbose);
+    const bool to_console = route (record_kind::suite_heading).console;
 
     if (to_console && add_empty_line_)
       {
@@ -360,6 +361,8 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         add_empty_line_ = true;
       }
+
+    enter_suite (suite, to_console);
   }
 
   /**
@@ -375,7 +378,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * normal or verbose verbosity. With quiet verbosity, only the result
    * line is written to `stdout`, without the plan and without an empty
    * line, so that the session plan written by `end_session()` counts the
-   * displayed lines. The buffer is cleared on exit.
+   * displayed lines; the failure of the suite body, if any, precedes it,
+   * as comments (see `write_quiet_failures()`). The buffer is cleared on
+   * exit.
    */
   void
   reporter_tap::end_suite (const suite& suite)
@@ -410,8 +415,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_buffer_to_file ();
 
-    const bool to_console = (verbosity_ == verbosity::normal
-                             || verbosity_ == verbosity::verbose);
+    const bool to_console = route (record_kind::suite_result).console;
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
@@ -422,25 +426,14 @@ namespace micro_os_plus::micro_test_plus::detail
             write_console ("\n");
           }
 
-        if (passed) [[likely]]
-          {
-            // Successful test suite.
-
-            if (verbosity_ == verbosity::verbose)
-              {
-                // With verbosity, show full TAP output accumulated in the
-                // buffer.
-                write_buffer_to_console ();
-              }
-          }
-        else
-          {
-            // Failed test suite.
-
-            // Show full TAP output accumulated in the buffer for failed suite
-            // cases, as it may contain useful information about the failure.
-            write_buffer_to_console ();
-          }
+        // With verbosity, the full TAP output accumulated in the buffer;
+        // for a failed suite, as it may contain useful information about
+        // the failure.
+        write_console_text (console_lines (!passed));
+      }
+    else
+      {
+        write_quiet_failures ();
       }
 
     // The plan counts the test cases and the failure of the suite body,
@@ -453,9 +446,10 @@ namespace micro_os_plus::micro_test_plus::detail
                 suite.own_index_, name.c_str (), status, message_totals,
                 message_time);
 
-    if (verbosity_ == verbosity::quiet)
+    if (!to_console && route (record_kind::total).console)
       {
-        // Only the test point of the suite, counted by the session plan.
+        // Quiet: only the test point of the suite, counted by the session
+        // plan.
         write_console ("%s %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
                        " - %s # { %s, %s%s }\n",
                        result, suite.own_index_, name.c_str (), status,
@@ -467,6 +461,8 @@ namespace micro_os_plus::micro_test_plus::detail
     clear_buffer ();
 
     add_empty_line_ = true;
+
+    current_suite_ = nullptr;
   }
 
   /**
@@ -489,9 +485,11 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (suite.name (), true);
 
-    const bool to_console = (verbosity_ != verbosity::silent);
+    // The skipped suites are counted by the session plan, so they are
+    // displayed with quiet verbosity too.
+    const bool to_console = route (record_kind::total).console;
 
-    if (to_console && add_empty_line_ && verbosity_ != verbosity::quiet)
+    if (add_empty_line_ && route (record_kind::skipped).console)
       {
         write_console ("\n");
       }
@@ -523,10 +521,12 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
+    const size_t begin = buffer_.size ();
+
     *this << indent (1) << "not ok " << suite.test_point_number_ << " - "
           << tap_text (message, true) << endl;
 
-    buffer_has_failures_ = true;
+    mark_failure (begin);
   }
 
   // --------------------------------------------------------------------------
@@ -540,8 +540,10 @@ namespace micro_os_plus::micro_test_plus::detail
    *
    * A `"# Subtest: <name>"` comment line (indented according to nesting
    * depth), with the line breaks in the name replaced by spaces, is then
-   * written to the output file and, under normal or verbose verbosity, to
-   * `stdout` as well.
+   * written to the output file and, under verbose verbosity, to `stdout`
+   * as well. With the other verbosity levels, the heading is displayed
+   * later, only if something is displayed under it (see
+   * `display_open_headers()`).
    */
   void
   reporter_tap::begin_test_case (const test_case& test_case)
@@ -552,12 +554,13 @@ namespace micro_os_plus::micro_test_plus::detail
 
     commit_outer_results ();
 
+    const bool to_console = route (record_kind::test_case_heading).console;
+
+    open_test_cases_.push_back ({ &test_case, to_console });
+
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
     const std::string name = tap_text (test_case.name (), false);
-
-    const bool to_console = (verbosity_ == verbosity::normal
-                             || verbosity_ == verbosity::verbose);
 
     if (to_console && add_empty_line_)
       {
@@ -582,12 +585,22 @@ namespace micro_os_plus::micro_test_plus::detail
    * index, escaped name, pass/fail status, and check counts. As in
    * node-tap, the result is `not ok` when a check or a nested test case
    * failed; the number of failed nested test cases is added when it is
-   * not zero. Any output accumulated in `buffer_` is written to the
-   * output file and, with normal or verbose verbosity, when verbosity is
-   * verbose or the test case failed, to `stdout` as well. With normal
-   * verbosity, for a passing test case, the plan written to `stdout`
-   * counts only the nested test cases, since the individual check lines
-   * are not displayed. The buffer is cleared on exit.
+   * not zero. Any output accumulated in `buffer_` and the two lines are
+   * always written to the output file.
+   *
+   * With normal verbosity, a passed test case that has nothing displayed
+   * under it (no nested test case, and no committed checks) is displayed
+   * as a single test point, the `ok` line, without the `# Subtest:`
+   * heading, the plan, and the checks; this is a valid test point, and it
+   * keeps the console output short. Otherwise, with normal or verbose
+   * verbosity, the test case is displayed as a complete block, with the
+   * headings of the outer test cases first, if not displayed yet, all the
+   * buffered checks, the plan, and the result line, so that the plan
+   * matches the displayed test points, with the test point numbers
+   * unchanged. With quiet verbosity, only the failed checks are displayed,
+   * as comments (see `write_quiet_failures()`).
+   *
+   * The buffer is cleared on exit.
    */
   void
   reporter_tap::end_test_case (const test_case& test_case)
@@ -630,58 +643,49 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_buffer_to_file ();
 
-    const bool to_console = (verbosity_ == verbosity::normal
-                             || verbosity_ == verbosity::verbose);
+    const bool to_console = route (record_kind::test_case_result).console;
 
-    // At this point, the buffer may contain output from the test case, which
-    // should be displayed.
+    // A passed test case without anything displayed under it is a single
+    // test point.
+    const bool is_single_point
+        = to_console && passed
+          && (open_test_cases_.empty ()
+              || !open_test_cases_.back ().name_displayed);
+
     if (to_console)
       {
-        if (add_empty_line_)
+        if (is_single_point)
           {
-            write_console ("\n");
-          }
-
-        if (passed) [[likely]]
-          {
-            // Successful test case.
-            if (verbosity_ == verbosity::verbose)
-              {
-                // With verbosity, show full TAP output accumulated in the
-                // buffer.
-                write_buffer_to_console ();
-              }
+            // The headings of the outer test cases, to keep the test point
+            // in their block.
+            display_open_headers (false);
           }
         else
           {
-            // Failed test case.
+            // The heading of this test case too, if not displayed yet.
+            display_open_headers (true);
 
-            // Show full TAP output accumulated in the buffer for failed
-            // test cases, as it may contain useful information about the
-            // failure.
-            write_buffer_to_console ();
+            if (add_empty_line_)
+              {
+                write_console ("\n");
+              }
+
+            // The full TAP output accumulated in the buffer, as the
+            // plan counts it.
+            write_console_text (console_lines (true));
+
+            write_console ("%s1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+                           "\n",
+                           indent2.c_str (), plan_count);
           }
-      }
-
-    if (passed && verbosity_ == verbosity::normal)
-      {
-        // Without verbosity, show only the summary line and count only
-        // test cases, not checks, as the TAP output is not shown; the
-        // output file has all the lines, so its plan counts the checks.
-        write_file ("%s1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
-                    indent2.c_str (), plan_count);
-
-        write_console ("%s1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
-                       indent2.c_str (),
-                       test_case.totals ().executed_test_cases ()
-                           + test_case.totals ().skipped_test_cases ());
       }
     else
       {
-        write_line (to_console,
-                    "%s1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
-                    indent2.c_str (), plan_count);
+        write_quiet_failures ();
       }
+
+    write_file ("%s1..%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
+                indent2.c_str (), plan_count);
 
     write_line (to_console,
                 "%s%s %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
@@ -694,6 +698,11 @@ namespace micro_os_plus::micro_test_plus::detail
     clear_buffer ();
 
     add_empty_line_ = true;
+
+    if (!open_test_cases_.empty ())
+      {
+        open_test_cases_.pop_back ();
+      }
   }
 
   // --------------------------------------------------------------------------
@@ -708,22 +717,6 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter_tap::comment_prefix (void) const noexcept
   {
     return "# ";
-  }
-
-  /**
-   * @details
-   * The buffered test points are always written to the output file, if
-   * open, since its plans count all the checks; without one, they are
-   * written to `stdout` only with normal or verbose verbosity. With
-   * quiet verbosity, only the buffer of an aborted test execution is
-   * displayed (see `abort_session()`), which then includes only the
-   * failed checks.
-   */
-  bool
-  reporter_tap::writes_passed_checks (void) const noexcept
-  {
-    return output_file_ != nullptr || verbosity_ == verbosity::normal
-           || verbosity_ == verbosity::verbose;
   }
 
   /**
@@ -887,8 +880,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * An `ok <index> - <name> # SKIP filtered` line, with the name escaped,
    * indented according to the nesting depth, without a test case block,
    * is then written to the output file and, under normal or verbose
-   * verbosity, to `stdout`, preceded by a blank line when
-   * `add_empty_line_` is set.
+   * verbosity, to `stdout`, after the headings of the outer test cases,
+   * if not displayed yet, and, under verbose verbosity, preceded by a
+   * blank line when `add_empty_line_` is set.
    */
   void
   reporter_tap::skip_test_case (const test_case& test_case)
@@ -903,12 +897,16 @@ namespace micro_os_plus::micro_test_plus::detail
 
     const std::string name = tap_text (test_case.name (), true);
 
-    const bool to_console = (verbosity_ == verbosity::normal
-                             || verbosity_ == verbosity::verbose);
+    const bool to_console = route (record_kind::skipped).console;
 
-    if (to_console && add_empty_line_)
+    if (to_console)
       {
-        write_console ("\n");
+        display_open_headers (true);
+
+        if (add_empty_line_ && route (record_kind::test_case_heading).console)
+          {
+            write_console ("\n");
+          }
       }
 
     write_line (to_console,
@@ -925,7 +923,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Since `end_test_case()` is not called for the running test cases, this
    * member function writes the buffered lines, if any, in its place (after a
-   * failed requirement, they end with it), followed by an unindented
+   * failed requirement, they end with it), preceded, with normal or verbose
+   * verbosity, by the headings of the open test cases, if not displayed yet,
+   * followed by an unindented
    * `Bail out! <reason> at <file>:<line>` line, with the file name escaped
    * as the reason, which tells the TAP consumers that the run stopped early
    * (see the TAP 14 specification), not that the output was truncated. The
@@ -935,8 +935,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * Both are always written to the output file, as in `end_test_case()`,
    * and, unless the verbosity is silent, to `stdout`, preceded by an empty
    * line when `add_empty_line_` is set. With quiet verbosity, which
-   * otherwise displays only the summary, they are displayed as well, since
-   * the summary is never reached.
+   * otherwise displays only the summary, the failed checks are displayed
+   * as comments, and the `Bail out!` line as well, since the summary is
+   * never reached.
    *
    * The buffer is then cleared, so that its lines are not written again,
    * should the abort handler throw an exception that the application
@@ -962,16 +963,25 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_buffer_to_file ();
 
-    const bool to_console = (verbosity_ != verbosity::silent);
+    const bool to_console = route (record_kind::abort).console;
 
     if (to_console)
       {
-        if (add_empty_line_)
+        if (route (record_kind::suite_result).console)
           {
-            write_console ("\n");
-          }
+            display_open_headers (true);
 
-        write_buffer_to_console ();
+            if (add_empty_line_)
+              {
+                write_console ("\n");
+              }
+
+            write_console_text (console_lines (true));
+          }
+        else
+          {
+            write_quiet_failures ();
+          }
       }
 
     write_line (to_console, "Bail out! %s at %s:%lu\n", reason,
@@ -980,41 +990,132 @@ namespace micro_os_plus::micro_test_plus::detail
     flush_streams ();
 
     clear_buffer ();
+
+    // Should the abort handler throw, nothing may refer to the objects
+    // that are unwound.
+    open_test_cases_.clear ();
+    current_suite_ = nullptr;
   }
 
   /**
    * @details
-   * The buffered `ok`/`not ok` lines of the outer test case are written to
-   * the output file and, with verbose verbosity, or with normal verbosity
-   * when they include a failure, to `stdout`, preceded by an empty line
-   * when `add_empty_line_` is set. The buffer is then cleared, so that
+   * The buffered `ok`/`not ok` lines of the outer test case are always
+   * written to the output file and, with normal or verbose verbosity, to
+   * `stdout`, after the headings of the outer test cases, if not
+   * displayed yet, and preceded by an empty line when `add_empty_line_`
+   * is set. They are displayed even if all the checks passed, since the
+   * outer test case, which contains a nested test case, is displayed as a
+   * block, whose plan counts them. With quiet verbosity, only the failed
+   * checks are displayed, as comments. The buffer is then cleared, so that
    * the nested test case starts with an empty buffer, and the remaining
    * lines of the outer test case are written by its `end_test_case()`.
-   *
-   * With normal verbosity, the passed checks committed here are not
-   * displayed, even if the outer test case fails later; the output file
-   * always contains them.
    */
   void
   reporter_tap::commit_buffer (void)
   {
     write_buffer_to_file ();
 
-    if (verbosity_ == verbosity::verbose
-        || (verbosity_ == verbosity::normal && buffer_has_failures_))
+    if (route (record_kind::test_case_result).console)
       {
+        display_open_headers (true);
+
         if (add_empty_line_)
           {
             write_console ("\n");
             add_empty_line_ = false;
           }
 
-        write_buffer_to_console ();
+        write_console_text (console_lines (true));
+      }
+    else
+      {
+        write_quiet_failures ();
       }
 
     flush_streams ();
 
     clear_buffer ();
+  }
+
+  /**
+   * @details
+   * Walks `open_test_cases_` from the outermost test case and writes, to
+   * `stdout`, the indented `"# Subtest: <name>"` line of each one whose
+   * heading was not displayed yet, with the line breaks in the name
+   * replaced by spaces, marking it as displayed. Each heading is preceded
+   * by a blank line when `add_empty_line_` is set; the flag is then
+   * cleared, so that the content of the block follows its heading.
+   */
+  void
+  reporter_tap::display_open_headers (bool include_last)
+  {
+    const size_t count = include_last || open_test_cases_.empty ()
+                             ? open_test_cases_.size ()
+                             : open_test_cases_.size () - 1;
+    for (size_t i = 0; i < count; ++i)
+      {
+        open_test_case& open = open_test_cases_[i];
+        if (open.name_displayed)
+          {
+            continue;
+          }
+
+        if (add_empty_line_)
+          {
+            write_console ("\n");
+          }
+
+        std::string indent (indent_size_ * open.test->nesting_depth (), ' ');
+        const std::string name = tap_text (open.test->name (), false);
+        write_console ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
+
+        open.name_displayed = true;
+        add_empty_line_ = false;
+      }
+  }
+
+  /**
+   * @details
+   * Writes a comment line with the names of the suite and of the open
+   * test cases, separated by `" > "`, with the line breaks replaced by
+   * spaces, then the lines of `failures_`, each prefixed by the comment
+   * prefix. The lines of the failed checks keep their indentation, after
+   * the prefix, so that the YAML diagnostics blocks remain readable. The
+   * output is not buffered; `failures_` is not cleared.
+   */
+  void
+  reporter_tap::write_quiet_failures (void)
+  {
+    if (failures_.empty ())
+      {
+        return;
+      }
+
+    std::string path;
+    if (current_suite_ != nullptr)
+      {
+        path = tap_text (current_suite_->name (), false);
+      }
+    for (const open_test_case& open : open_test_cases_)
+      {
+        if (!path.empty ())
+          {
+            path.append (" > ");
+          }
+        path.append (tap_text (open.test->name (), false));
+      }
+    write_console ("%s%s\n", comment_prefix (), path.c_str ());
+
+    std::string_view rest{ failures_ };
+    while (!rest.empty ())
+      {
+        const size_t end = rest.find ('\n');
+        const size_t length
+            = (end == std::string_view::npos) ? rest.size () : end + 1;
+        write_console ("%s", comment_prefix ());
+        write_console_text (rest.substr (0, length));
+        rest.remove_prefix (length);
+      }
   }
 
   // --------------------------------------------------------------------------

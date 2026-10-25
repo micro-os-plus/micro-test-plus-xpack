@@ -298,17 +298,6 @@ namespace micro_os_plus::micro_test_plus::detail
     const char*
     comment_prefix (void) const noexcept override;
 
-    /**
-     * @brief Returns whether the passed checks are written anywhere.
-     *
-     * @par Parameters
-     *   None.
-     * @retval true The verbosity is normal or verbose.
-     * @retval false The verbosity is quiet or silent.
-     */
-    [[nodiscard]] bool
-    writes_passed_checks (void) const noexcept override;
-
   private:
     /**
      * @brief Outputs the prefix for a passing condition.
@@ -380,57 +369,25 @@ namespace micro_os_plus::micro_test_plus::detail
     commit_buffer (void) override;
 
     /**
-     * @brief Displays the names of the open test cases not yet displayed.
+     * @brief Displays the headings not yet displayed, of the suite and of
+     * the open test cases.
      *
      * @details
-     * With normal verbosity, the test case names are displayed only for
-     * failures; a failure in a nested test case also fails the outer ones,
-     * so their names are displayed first, outermost first, to show where
-     * the failure is.
+     * With normal verbosity, the test case headings are displayed only
+     * when something is displayed under them: a failure, or the result of
+     * a nested test case; with quiet verbosity, the suite heading too. A
+     * failure in a nested test case also fails the outer ones, so their
+     * headings are displayed first, outermost first, to show where the
+     * result is.
      *
-     * @par Parameters
-     *   None.
+     * @param include_last Whether to display the heading of the
+     * innermost open test case too; false for the result of a passed test
+     * case, which is not preceded by its own heading.
      * @par Returns
      *   Nothing.
      */
     void
-    display_open_names (void);
-
-    /**
-     * @brief A test case that has begun and not yet ended.
-     *
-     * @details
-     * Recorded by `begin_test_case()` and removed by `end_test_case()`.
-     */
-    struct open_test_case
-    {
-      /**
-       * @brief The test case.
-       *
-       * @details
-       * Used to display its name when its results are committed.
-       */
-      const test_case* test;
-
-      /**
-       * @brief Whether the name of the test case was displayed.
-       *
-       * @details
-       * Always true with verbose verbosity; with normal verbosity, set
-       * when failed results are committed before a nested test case, so
-       * that `end_test_case()` does not display the name again.
-       */
-      bool name_displayed;
-    };
-
-    /**
-     * @brief The test cases that have begun and not yet ended, outermost
-     * first.
-     *
-     * @details
-     * The last element is the test case that owns the buffered results.
-     */
-    std::vector<open_test_case> open_test_cases_{};
+    display_open_names (bool include_last);
   };
 
   // --------------------------------------------------------------------------

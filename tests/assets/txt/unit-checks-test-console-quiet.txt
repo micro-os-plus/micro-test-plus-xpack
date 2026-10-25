@@ -1,0 +1,128 @@
+
+µTest++ human report
+
+• Top suite
+
+    • expect(false)
+        ✗ FAILED (main.cpp:216)
+        ✗ false FAILED (main.cpp:219)
+
+    • Failed nested subtest
+        • middle subtest
+            • inner subtest
+                ✗ inner check fails FAILED (main.cpp:381, 1 == 2)
+
+    • Stored check result
+        ✗ stored check fails FAILED (main.cpp:409, 1 == 2)
+
+    • Character operands
+        ✗ FAILED (main.cpp:527, '\0' == 'a')
+        ✗ space is tab FAILED (main.cpp:530, ' ' == '\t')
+
+• Comparisons suite
+
+    • Failed integer comparisons
+        ✗ actual != 42 FAILED (comparisons.cpp:111, 42 != 42)
+        ✗ actual+1 == 42 FAILED (comparisons.cpp:114, 43 == 42)
+        ✗ actual-1 >= 42 FAILED (comparisons.cpp:118, 41 >= 42)
+        ✗ actual > 42 FAILED (comparisons.cpp:122, 42 > 42)
+        ✗ actual+1 <= 42 FAILED (comparisons.cpp:125, 43 <= 42)
+        ✗ actual < 42 FAILED (comparisons.cpp:129, 42 < 42)
+
+    • Failed float comparisons
+        ✗ actual != 42.0 FAILED (comparisons.cpp:188, 42.0f != 42.0f)
+        ✗ actual == 43.0 FAILED (comparisons.cpp:191, 42.0f == 43.0f)
+        ✗ actual != 42 FAILED (comparisons.cpp:194, 42.0f != 42)
+        ✗ actual == 43 FAILED (comparisons.cpp:197, 42.0f == 43)
+
+    • Failed approximate comparisons
+        ✗ actual ~ 44 +/- 2 FAILED (comparisons.cpp:258, 42 ~ (44 +/- 2))
+        ✗ 10 ~ 12 +/- 2 FAILED (comparisons.cpp:263, 10 ~ (12 +/- 2))
+        ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:267, 3u ~ (5u +/- 1u))
+        ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:271, 1 ~ (1 +/- -1))
+        ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:274, 42.0f ~ (42.1f +/- 0.01f))
+        ✗ FAILED (comparisons.cpp:278, 1.0 ~ (1.2 +/- 0.1))
+
+    • Failed string comparisons
+        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:335, "abc" != "abc")
+        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:339, "abc" == "abx")
+        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:343, "abc" >= "abd")
+        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:347, "abc" > "abc")
+        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:351, "abc" <= "abb")
+        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:355, "abc" < "abc")
+
+    • Failed C string comparisons
+        ✗ actual == "abx" FAILED (comparisons.cpp:420, "abc" == "abx")
+        ✗ null_string == "abc" FAILED (comparisons.cpp:423, nullptr == "abc")
+
+    • Failed pointer comparisons
+        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7b1f06320 != 0x7ff7b1f06320)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7b1f06320 != 0x7ff7b1f06320)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7b1f06320 > 0x7ff7b1f06320)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7b1f06320 < 0x7ff7b1f06320)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7b1f06320 == 0x7ff7b1f06370)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x10e0ad808 != 0x10e0ad808)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x10e0ad808 == 0x7ff7b1f06370)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7b1f069a0 >= 0x7ff7b1f069a4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7b1f069a4 <= 0x7ff7b1f069a0)
+
+    • Failed null pointer comparisons
+        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7b1f06960 == nullptr)
+        ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
+
+    • Logical operations
+        ✗ not (actual == 42) FAILED (comparisons.cpp:612, not 42 == 42)
+        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:621, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:626, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:631, (42 != 42 and 42.0f != 42.0))
+        ✗ FAILED (comparisons.cpp:640, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:659, (42 != 42 or 42.0f != 42.0))
+
+    • Logical operations with more operands
+        ✗ all_of three, the second false FAILED (comparisons.cpp:709, (42 == 42 and 42 < 41 and 42 > 41))
+        ✗ all_of four, the last false FAILED (comparisons.cpp:713, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
+        ✗ any_of three false FAILED (comparisons.cpp:718, (42 == 0 or 42 == 1 or 42 == 2))
+        ✗ any_of of two all_of FAILED (comparisons.cpp:722, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
+        ✗ all_of with a nested any_of FAILED (comparisons.cpp:728, (42 == 42 and (42 == 0 or 42 == 1)))
+
+• Operands suite
+
+    • Arrays bad
+        ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:223, {42} != {42})
+        ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:227, {42} == {43})
+        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:231, {1, 2} != {1, 2})
+        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:235, {1, 2, 3} == {1, 2, 4})
+
+    • Vectors bad
+        ✗ vector{ } != vector{ } FAILED (operands.cpp:287, {} != {})
+        ✗ FAILED (operands.cpp:291, {} != {})
+        ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:294, {42} != {42})
+        ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:298, {42} == {43})
+        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:302, {1, 2} != {1, 2})
+        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:306, {1, 2, 3} == {1, 2, 4})
+
+    • Custom types bad
+        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:343, { 1, 2 } == { 1, 3 })
+        ✗ FAILED (operands.cpp:348, { 1, 2 } == { 1, 3 })
+        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:351, { 1, 2 } != { 1, 2 })
+
+    • Custom comparators bad
+        ✗ 5 divides 12 FAILED (operands.cpp:389, 5 divides 12)
+        ✗ FAILED (operands.cpp:392, 5 divides 12)
+        ✗ FAILED (operands.cpp:395, even 7)
+        ✗ FAILED (operands.cpp:398, (3 divides 12 and even 7))
+
+    • Standard types bad
+        ✗ colour::red == colour::green FAILED (operands.cpp:464, 0 == 1)
+        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:468, 1uc == 2uc)
+        ✗ pairs1 == pairs2 FAILED (operands.cpp:474, {(1, 2)} == {(1, 3)})
+        ✗ optional == nullopt FAILED (operands.cpp:477, 42 == nullopt)
+
+    • Explicit conversions to bool bad
+        ✗ empty optional FAILED (operands.cpp:527)
+        ✗ null unique_ptr FAILED (operands.cpp:530)
+        ✗ empty function FAILED (operands.cpp:533)
+        ✗ FAILED (operands.cpp:536)
+
+✗ Total: 142 checks passed, 78 failed, in 50 test cases, 5 test suites, time: 2.164 ms

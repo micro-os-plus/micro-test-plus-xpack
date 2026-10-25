@@ -87,30 +87,24 @@ namespace micro_os_plus::micro_test_plus
    * command-line options, or with `runner_options::verbosity_level`; the
    * default is `normal`. The console output is intended for the people
    * who watch the tests run, while the optional output file is intended
-   * for the integration with other tools. With the TAP reporter, the
-   * level affects only the console output, and the output file always
-   * receives the full report. The human reporter is intended for the
-   * console; its output file receives the full report only with the
-   * `normal` and `verbose` levels, and is incomplete otherwise.
+   * for the integration with other tools. The level affects only the
+   * console output; the output file always receives the full report.
    *
-   * The `quiet` level tells whether the run failed, but not what
-   * failed: the failed checks, their locations, and their test cases
-   * are not displayed (except for a test case that aborts the test
-   * execution, when exceptions are not enabled, since the summary is
-   * never reached). To learn what failed, use the `normal` level,
-   * which displays in full only the failed test cases, or keep
-   * `quiet` and use the TAP reporter with an output file, which
-   * receives them.
+   * The `quiet` level displays the failed checks, with the names of the
+   * suite and of the test cases that contain them, and the totals; the
+   * passed checks and the passed test cases are not displayed. To also
+   * see them, use the `normal` level, or keep `quiet` and use an output
+   * file, which receives them.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   enum class verbosity
   {
     silent = 0, /**< No console output; only the exit code is returned. */
-    quiet = 1, /**< Displays only the overall session summary; the TAP
-                  reporter also displays one result line per test suite,
-                  counted by the plan. The failed checks are not
-                  displayed. */
+    quiet = 1, /**< Displays only the failed checks and the overall session
+                  summary; the TAP reporter also displays one result line
+                  per test suite, counted by the plan, and the failed
+                  checks as comments. */
     normal = 2, /**< Displays test suite and test case results; the
                    individual checks are shown only for failures. */
     verbose = 3 /**< Displays all results, including passed checks, for maximum

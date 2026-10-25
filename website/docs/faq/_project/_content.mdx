@@ -37,7 +37,8 @@ Without exceptions, the test case cannot be stopped alone, so the
 **whole test execution is aborted**. The results of the test case,
 ending with the failed requirement, are first displayed after its name
 (also with `--quiet`, but then only the failed checks, and not with
-`--silent`) and written to the output file, followed, in place of the totals, by a line with the
+`--silent`) and written to the output file, followed, in place of the
+totals, by a line with the
 location of the failure (`✗ Test execution aborted at <file>:<line>`
 with the human reporter, `Bail out! Requirement failed at
 <file>:<line>` with the TAP reporter). Then `runner::abort()` calls the
@@ -59,11 +60,10 @@ fails the test case, it does not skip it.
 Use the `--output-file` option, either as `--output-file=<path>` or as
 `--output-file <path>`. The file is intended for the integration with
 other tools, while the console is intended for the people who watch the
-tests run. With the TAP reporter (the default), the file receives the
-complete results, whatever the console verbosity selected with
-`--verbose`, `--quiet`, or `--silent`. The human reporter is intended
-for the console; its file is complete only with the normal or verbose
-verbosity, so, for integration, use the TAP reporter. If the path is
+tests run. With both reporters, the file receives the complete
+results, whatever the console verbosity selected with `--verbose`,
+`--quiet`, or `--silent`. The TAP reporter (the default) writes a valid
+TAP document, so, for integration, use it. If the path is
 missing or the file cannot be opened, the error is reported on
 `stderr`, the tests are still run, but the program returns 2.
 
@@ -74,28 +74,21 @@ semihosting.
 </details>
 
 <details>
-<summary>Why does `--quiet` not show which checks failed?</summary>
+<summary>What does `--quiet` show?</summary>
 
-By design, `--quiet` tells whether the run failed, not what failed. It
-displays the totals, and, with the TAP reporter, one `ok`/`not ok` line
-per test suite, but not the failed checks, their locations, or their
-test cases. Showing the details of the failures, and only them, is what
-the default (normal) verbosity does: the passed test cases are only
-summarised, and the failed ones are displayed in full. A quiet level
-that did the same would hardly differ from it.
-
-To learn what failed, run the tests again without `--quiet`, or, to
-avoid running them twice, keep `--quiet` and add `--output-file` with
-the TAP reporter (the default), whose file always receives every check,
-with the location of each failure:
+The failed checks, with their locations and the names of the suite and
+of the test cases that contain them, and the totals. With the TAP
+reporter, it also displays one `ok`/`not ok` line per test suite, and
+writes the failed checks as comments, so that the console output remains
+a valid TAP document. The passed checks and the passed test cases are
+not displayed; they are available in the output file, which always
+receives every check, whatever the verbosity:
 
 ```sh
 sample-test --quiet --output-file=sample-test.tap
 ```
 
-The human reporter has no such file: with `--quiet`, it displays only
-the totals, and its output file is incomplete as well. See
-[Verbosity](/docs/user/#verbosity).
+See [Verbosity](/docs/user/#verbosity).
 
 </details>
 

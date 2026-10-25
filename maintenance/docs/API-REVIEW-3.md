@@ -245,6 +245,15 @@ Tags:
   without its `# Subtest` block, or print its block complete (as in
   the file); do not renumber.
 
+  Status: fixed (#174). At the normal verbosity, a passed test case with
+  nothing displayed under it is a single `ok` test point, and a failed
+  test case, or one with a nested test case, is a complete block: its
+  heading is displayed lazily, with those of its outer test cases, and
+  its buffered checks are displayed, so that the plan counts the
+  displayed test points, with their original numbers. The console
+  output of all the test programs, at the three verbosity levels, is
+  accepted by `validate-tap.mjs`. The output file is unchanged.
+
 - **#8 — Quiet mode does not show which checks failed.** [internal]
   **[confirmed]**
   `src/reporter-tap.cpp` lines 456 to 463 and 633 to 664,
@@ -257,6 +266,15 @@ Tags:
   passed test cases, but print the failed checks with the names of the
   enclosing test cases (the human reporter already has
   `display_open_names()` for this).
+
+  Status: fixed (#174). With `--quiet`, the console displays the failed checks
+  and the totals. The human reporter writes the headings of the suite
+  and of the enclosing test cases, then the failed checks. The TAP
+  reporter keeps the console a valid document, with the suites as single
+  test points, and writes the failed checks as comments, after a comment
+  line with the names of the suite and of the test cases. The lines of
+  the failed checks are kept apart from the buffer, which also holds the
+  passed checks for the output file.
 
 - **#9 — The human output file depends on the console verbosity.**
   [internal] **[confirmed]**
@@ -271,6 +289,12 @@ Tags:
   check. Suggested change: decide the content of the file
   independently of the console (all the results, as in normal or
   verbose mode), as the TAP reporter does.
+
+  Status: fixed (#174). The human reporter writes all the records to the file,
+  as the TAP reporter does, whatever the console verbosity; the file of
+  a quiet or silent run is the same as that of the default run, so the
+  tests compare them with the same reference file, and the references
+  of the quiet and silent runs were removed.
 
 - **#10 — Command-line errors do not reach the outputs.** [internal]
   **[confirmed]**
@@ -385,6 +409,10 @@ Tags:
   omit the passed nested test cases (they are already counted in the
   parent), or print the open parent names first, as
   `display_open_names()` does for failures.
+
+  Status: fixed (#174). At the normal verbosity, the names of the outer test
+  cases that were not displayed yet are written before the line of a
+  passed nested test case (and of a skipped one).
 
 ## 2. Structure and layering
 
@@ -537,6 +565,15 @@ Tags:
   to the console and to the file at each verbosity, and let the
   callbacks only format the records. Fix #7, #8, #9, and #16 on top of
   it.
+
+  Status: fixed (#174). The base class decides where each kind of record goes
+  (`reporter::route()` with `record_kind`, and `console_lines()` for the
+  buffered lines), and the callbacks of the two reporters only format
+  the records and ask. The defects #7, #8, #9, and #16 were fixed on top
+  of it. The open test cases are tracked by the base class, for both
+  reporters. The console output with the normal and quiet verbosity is
+  covered by four new tests of `unit-checks-test`, which compare the
+  captured console with reference files.
 
 - **#26 — `test_each()` copies each value and the callable.**
   [internal] **[confirmed]**

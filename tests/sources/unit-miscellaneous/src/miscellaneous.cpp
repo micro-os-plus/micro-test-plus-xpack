@@ -249,12 +249,6 @@ namespace
       return "";
     }
 
-    bool
-    writes_passed_checks (void) const noexcept override
-    {
-      return false;
-    }
-
   protected:
     void
     commit_buffer (void) override

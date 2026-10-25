@@ -64,6 +64,7 @@
 #include "reflection.h"
 #include "runner-options.h"
 
+#include <cstdint>
 #include <cstdio>
 #include <limits>
 #include <string_view>
@@ -150,6 +151,94 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] indentation
     indent (size_t level);
+
+    // ========================================================================
+
+    /**
+     * @brief The kinds of records written by the reporters.
+     *
+     * @details
+     * The output policy, which decides where each kind of record is
+     * written at each verbosity level, is in `reporter::route()`. The
+     * concrete reporters only format the records and ask where they go.
+     */
+    enum class record_kind : uint8_t
+    {
+      /**
+       * @brief The informational lines written at the beginning of the
+       * session.
+       */
+      info,
+
+      /**
+       * @brief The heading that marks the beginning of a suite.
+       */
+      suite_heading,
+
+      /**
+       * @brief The result line of a suite.
+       */
+      suite_result,
+
+      /**
+       * @brief The heading that marks the beginning of a test case.
+       */
+      test_case_heading,
+
+      /**
+       * @brief The result line of a test case.
+       */
+      test_case_result,
+
+      /**
+       * @brief The line of a suite or of a test case skipped by the
+       * filter.
+       */
+      skipped,
+
+      /**
+       * @brief The line of a passed check.
+       */
+      passed_check,
+
+      /**
+       * @brief The lines of a failed check, or the failure of a suite.
+       */
+      failed_check,
+
+      /**
+       * @brief The totals of the session.
+       */
+      total,
+
+      /**
+       * @brief The report of an aborted test execution.
+       */
+      abort
+    };
+
+    /**
+     * @brief The destinations of a record.
+     *
+     * @details
+     * Returned by `reporter::route()`.
+     */
+    struct output_route
+    {
+      /**
+       * @brief Whether the record is written to the console.
+       */
+      bool console;
+
+      /**
+       * @brief Whether the record is written to the output file.
+       *
+       * @details
+       * True for all the records, when the output file is open, since the
+       * content of the file does not depend on the verbosity.
+       */
+      bool file;
+    };
 
     // ========================================================================
 
@@ -348,21 +437,6 @@ namespace micro_os_plus::micro_test_plus
        */
       void
       end_line (void);
-
-      /**
-       * @brief Writes the current buffered content to the console.
-       *
-       * @details
-       * The console is the standard output stream; the buffer is written
-       * verbatim, without appending a line ending, and is not cleared.
-       *
-       * @par Parameters
-       *   None.
-       * @par Returns
-       *   Nothing.
-       */
-      void
-      write_buffer_to_console (void);
 
       /**
        * @brief Flushes the standard output stream and the output file.
@@ -666,9 +740,8 @@ namespace micro_os_plus::micro_test_plus
        * the output file, at least in some cases.
        * @retval false The lines of the passed checks are never written.
        */
-      [[nodiscard]] virtual bool
-      writes_passed_checks (void) const noexcept
-          = 0;
+      [[nodiscard]] bool
+      writes_passed_checks (void) const noexcept;
 
       // ----------------------------------------------------------------------
 
@@ -689,6 +762,100 @@ namespace micro_os_plus::micro_test_plus
        */
       void
       write_buffer_to_file (void);
+
+      /**
+       * @brief Tells where a kind of record is written.
+       *
+       * @details
+       * The single place of the output policy. The output file receives
+       * all the records, whatever the verbosity, so that its content does
+       * not depend on the console. The console receives, with each
+       * verbosity level:
+       * - `silent`: nothing;
+       * - `quiet`: the failed checks, the failures of the suites, the
+       *   totals, and the report of an aborted execution;
+       * - `normal`: in addition, the informational lines, the headings
+       *   and results of the suites, the results of the test cases, and
+       *   the skipped suites and test cases;
+       * - `verbose`: in addition, the headings of the test cases and the
+       *   lines of the passed checks.
+       *
+       * The passed checks of a failed test case, and the headings of the
+       * test cases that contain a failure, are also displayed with the
+       * normal verbosity (see `console_lines()`); the concrete reporters
+       * adapt the quiet and normal levels to their format.
+       *
+       * @param kind The kind of record.
+       * @return The destinations of the record.
+       */
+      [[nodiscard]] output_route
+      route (record_kind kind) const noexcept;
+
+      /**
+       * @brief Returns the buffered lines that the console displays when
+       * a test case or a suite ends, or when its results are committed.
+       *
+       * @details
+       * With the verbose verbosity, all the buffered lines; with the
+       * normal verbosity, all the buffered lines of a failed test case or
+       * suite, otherwise none; with the quiet verbosity, only the lines
+       * of the failed checks; with the silent verbosity, none.
+       *
+       * @param failed Whether the test case or the suite failed, or, when
+       * committing the results of an outer test case, whether the buffer
+       * contains a failed check.
+       * @return A view of `buffer_` or of `failures_`, valid until they
+       * are modified.
+       */
+      [[nodiscard]] std::string_view
+      console_lines (bool failed) const noexcept;
+
+      /**
+       * @brief Writes a text to the console, unchanged.
+       *
+       * @details
+       * The text is written with its size, not as a C string, so that a
+       * zero character in a message does not end the output. No line
+       * ending is appended.
+       *
+       * @param text The text to write.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      write_console_text (std::string_view text);
+
+      /**
+       * @brief Records that the lines appended to the buffer from a
+       * given position are a failure.
+       *
+       * @details
+       * Sets `buffer_has_failures_` and, with the quiet verbosity, which
+       * displays only the failures, copies the lines to `failures_`.
+       *
+       * @param begin The position in `buffer_` where the lines of the
+       * failure begin.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      mark_failure (size_t begin);
+
+      /**
+       * @brief Notes the suite that begins, for the headings displayed
+       * later.
+       *
+       * @details
+       * Called by `begin_suite()` of the concrete reporters, with the
+       * information whether the heading of the suite was displayed.
+       *
+       * @param suite The suite that begins.
+       * @param displayed Whether the heading was written to the console.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      enter_suite (const suite& suite, bool displayed);
 
       /**
        * @brief Writes formatted text to the console.
@@ -1043,7 +1210,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Accumulates all reporter output until it is written to the
-       * console or the output file via `write_buffer_to_console()` or
+       * console or the output file via `write_console_text()` or
        * `write_buffer_to_file()`.
        */
       std::string buffer_{};
@@ -1058,6 +1225,72 @@ namespace micro_os_plus::micro_test_plus
        * with normal verbosity.
        */
       bool buffer_has_failures_{ false };
+
+      /**
+       * @brief The lines of the failed checks, for the quiet verbosity.
+       *
+       * @details
+       * With the quiet verbosity, the console displays only the failed
+       * checks, while `buffer_` may also contain the passed checks, for
+       * the output file. Filled by `mark_failure()` and emptied by
+       * `clear_buffer()`; not used with the other verbosity levels.
+       */
+      std::string failures_{};
+
+      /**
+       * @brief A test case that has begun and not yet ended.
+       *
+       * @details
+       * Recorded by `begin_test_case()` and removed by `end_test_case()`.
+       */
+      struct open_test_case
+      {
+        /**
+         * @brief The test case.
+         *
+         * @details
+         * Used to display its heading when its results are committed.
+         */
+        const test_case* test;
+
+        /**
+         * @brief Whether the heading of the test case was displayed.
+         *
+         * @details
+         * Always true with verbose verbosity; otherwise set when the
+         * heading is displayed because the test case, or a nested one,
+         * has something to show, so that it is not displayed again.
+         */
+        bool name_displayed;
+      };
+
+      /**
+       * @brief The test cases that have begun and not yet ended,
+       * outermost first.
+       *
+       * @details
+       * The last element is the test case that owns the buffered results.
+       */
+      std::vector<open_test_case> open_test_cases_{};
+
+      /**
+       * @brief The suite that has begun and not yet ended.
+       *
+       * @details
+       * Set by `enter_suite()`; null outside the suites.
+       */
+      const suite* current_suite_{ nullptr };
+
+      /**
+       * @brief Whether the heading of the current suite was displayed on
+       * the console.
+       *
+       * @details
+       * Set by `enter_suite()`; with the quiet verbosity, which does not
+       * display the headings, the heading is displayed when the first
+       * failure of the suite is.
+       */
+      bool suite_displayed_{ false };
 
       /**
        * @brief Expression formatter for pass and fail reporting.
@@ -1099,11 +1332,9 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * When non-null, the report is written to this file in addition to
-       * the console, without colour sequences. With the TAP reporter, the
-       * file receives the full report, regardless of the verbosity; with
-       * the human reporter, most of it only with the normal and verbose
-       * levels (see `verbosity`). The file is opened by the constructor
-       * and closed by the destructor.
+       * the console, without colour sequences. The file receives the full
+       * report, regardless of the verbosity. The file is opened by the
+       * constructor and closed by the destructor.
        */
       FILE* output_file_{ nullptr };
 
