@@ -334,5 +334,17 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ stored comparator
         ✓ temporary operand stored once
     ✓ Operand copies - passed (6 checks)
-✗ Operands suite - FAILED (41 checks passed, 26 failed, in 14 test cases), time: 1.047 ms
-✗ Total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites, time: 3.849 ms
+    • Raw arrays
+        ✓ bytes equal
+        ✓ bytes not equal
+        ✓ different sizes
+        ✓ bytes less
+        ✓ prefix is less
+        ✓ array == vector
+        ✓ vector == array
+    ✓ Raw arrays - passed (7 checks)
+    • Raw arrays bad
+        ✗ bytes eq FAILED (operands.cpp:661, {1uc, 2uc, 3uc} == {1uc, 2uc, 4uc})
+    ✗ Raw arrays bad - FAILED (0 checks passed, 1 failed)
+✗ Operands suite - FAILED (48 checks passed, 27 failed, in 16 test cases), time: 1.105 ms
+✗ Total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 3.627 ms

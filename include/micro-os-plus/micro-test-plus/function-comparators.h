@@ -33,8 +33,9 @@
  *
  * These comparators and logical operators enable expressive and type-safe test
  * expectations and assertions. The C strings (`char` arrays, including the
- * string literals, and `char` pointers) are compared by content; the other
- * pointers and arrays are compared by address.
+ * string literals, and `char` pointers) are compared by content, and so are
+ * the other arrays (e.g. byte buffers), element by element; the other
+ * pointers are compared by address.
  * The operands are not copied: the temporaries are moved into the
  * returned expressions, and the named operands of class type are
  * referred to, so the expressions must be checked before the named
@@ -101,7 +102,12 @@ namespace micro_os_plus::micro_test_plus
    * The C strings (`char` arrays, including the string literals, and
    * `char` pointers) are compared by content, also with `std::string` and
    * `std::string_view`; a null `char` pointer is equal only to another
-   * null pointer. The other pointers and arrays are compared by address.
+   * null pointer. The other arrays (e.g. byte buffers) are compared
+   * element by element, also with a container, and written as ranges; the
+   * other pointers are compared by address. The pointers and arrays of
+   * `char8_t`, `char16_t`, `char32_t`, and `wchar_t` are not treated as
+   * strings: the arrays are compared element by element, including the
+   * terminating null character, and the pointers by address.
    *
    * Both operands must satisfy `extension::printable`, since they are
    * reported on failure; an application type needs an `operator<<` for

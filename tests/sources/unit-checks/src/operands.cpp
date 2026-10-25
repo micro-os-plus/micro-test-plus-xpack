@@ -617,6 +617,52 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
         local_counts.executed_test_cases++;
       });
+
+    // The arrays that are not `char` arrays are compared by content, not by
+    // address, and are displayed as ranges.
+    ts.test ("Raw arrays", [] (auto& t)
+      {
+        const std::uint8_t first[]{ 1, 2, 3 };
+        const std::uint8_t same[]{ 1, 2, 3 };
+        const std::uint8_t other[]{ 1, 2, 4 };
+        const std::uint8_t shorter[]{ 1, 2 };
+        const int numbers[]{ 1, 2 };
+        const std::vector<int> vector{ 1, 2 };
+
+        t.expect (eq (first, same)) << "bytes equal";
+        local_counts.passed_checks++;
+
+        t.expect (ne (first, other)) << "bytes not equal";
+        local_counts.passed_checks++;
+
+        t.expect (ne (first, shorter)) << "different sizes";
+        local_counts.passed_checks++;
+
+        t.expect (lt (first, other)) << "bytes less";
+        local_counts.passed_checks++;
+
+        t.expect (gt (first, shorter)) << "prefix is less";
+        local_counts.passed_checks++;
+
+        t.expect (eq (numbers, vector)) << "array == vector";
+        local_counts.passed_checks++;
+
+        t.expect (eq (vector, numbers)) << "vector == array";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    ts.test ("Raw arrays bad", [] (auto& t)
+      {
+        const std::uint8_t first[]{ 1, 2, 3 };
+        const std::uint8_t other[]{ 1, 2, 4 };
+
+        t.expect (eq (first, other)) << "bytes eq";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
   } };
 
 // ----------------------------------------------------------------------------

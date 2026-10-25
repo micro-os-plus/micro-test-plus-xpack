@@ -141,6 +141,15 @@ Tags:
   addresses is almost certainly wrong; the release notes should say
   that arrays are now compared by content.
 
+  Status: fixed (#183). `as_operand()` converts the arrays other than
+  `char` arrays to the new `detail::array_operand`, which is compared
+  element by element, also with a container, and written as a range.
+  Arrays of different sizes are never equal. Not done: the pointers and
+  arrays of `char8_t`, `char16_t`, `char32_t`, and `wchar_t` are not
+  treated as strings; the arrays are compared by content, including the
+  terminator, and the pointers are still compared by address. Checks
+  were added to `unit-checks`.
+
 - **#3 — `expect()` and `require()` accept a string literal or a
   function name, and pass.** [breaking] **[confirmed]**
   `extension.h` lines 219 to 221: `checkable` accepts any type usable

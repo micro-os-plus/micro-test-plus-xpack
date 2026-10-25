@@ -693,11 +693,23 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
     not ok 12 - Explicit conversions to bool bad # { FAILED, 0 checks passed, 4 failed }
     ok 13 - Pointers to const # { passed, 2 checks }
     ok 14 - Operand copies # { passed, 6 checks }
+    ok 15 - Raw arrays # { passed, 7 checks }
 
-    1..14
-not ok 5 - Operands suite # { FAILED, 41 checks passed, 26 failed, in 14 test cases, time: 0.729 ms }
+    # Subtest: Raw arrays bad
+        not ok 1 - bytes eq
+          ---
+          condition: "{1uc, 2uc, 3uc} == {1uc, 2uc, 4uc}"
+          at:
+            fileName: operands.cpp
+            lineNumber: 661
+          ...
+        1..1
+    not ok 16 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
+
+    1..16
+not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases, time: 0.822 ms }
 
 1..5
-# { total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites, time: 2.746 ms }
+# { total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 2.937 ms }
 Overall, the µTest++ unit tests were successful!
 

@@ -570,6 +570,14 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 #             fileName: operands.cpp
 #             lineNumber: 552
 #           ...
-not ok 5 - Operands suite # { FAILED, 41 checks passed, 26 failed, in 14 test cases, time: 0.793 ms }
+# Operands suite > Raw arrays bad
+#         not ok 1 - bytes eq
+#           ---
+#           condition: "{1uc, 2uc, 3uc} == {1uc, 2uc, 4uc}"
+#           at:
+#             fileName: operands.cpp
+#             lineNumber: 661
+#           ...
+not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases, time: 1.203 ms }
 1..5
-# { total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites, time: 3.118 ms }
+# { total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 3.465 ms }

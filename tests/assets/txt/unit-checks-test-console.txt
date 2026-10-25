@@ -216,9 +216,14 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     ✓ Pointers to const - passed (2 checks)
     ✓ Operand copies - passed (6 checks)
+    ✓ Raw arrays - passed (7 checks)
 
-✗ Operands suite - FAILED (41 checks passed, 26 failed, in 14 test cases), time: 0.632 ms
+    • Raw arrays bad
+        ✗ bytes eq FAILED (operands.cpp:661, {1uc, 2uc, 3uc} == {1uc, 2uc, 4uc})
+    ✗ Raw arrays bad - FAILED (0 checks passed, 1 failed)
 
-✗ Total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites, time: 2.129 ms
+✗ Operands suite - FAILED (48 checks passed, 27 failed, in 16 test cases), time: 0.720 ms
+
+✗ Total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 2.644 ms
 Overall, the µTest++ unit tests were successful!
 

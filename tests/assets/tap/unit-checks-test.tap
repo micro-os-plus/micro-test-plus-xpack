@@ -856,7 +856,27 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
         ok 6 - temporary operand stored once
         1..6
     ok 14 - Operand copies # { passed, 6 checks }
-    1..14
-not ok 5 - Operands suite # { FAILED, 41 checks passed, 26 failed, in 14 test cases, time: 1.199 ms }
+    # Subtest: Raw arrays
+        ok 1 - bytes equal
+        ok 2 - bytes not equal
+        ok 3 - different sizes
+        ok 4 - bytes less
+        ok 5 - prefix is less
+        ok 6 - array == vector
+        ok 7 - vector == array
+        1..7
+    ok 15 - Raw arrays # { passed, 7 checks }
+    # Subtest: Raw arrays bad
+        not ok 1 - bytes eq
+          ---
+          condition: "{1uc, 2uc, 3uc} == {1uc, 2uc, 4uc}"
+          at:
+            fileName: operands.cpp
+            lineNumber: 661
+          ...
+        1..1
+    not ok 16 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
+    1..16
+not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases, time: 1.345 ms }
 1..5
-# { total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites, time: 4.565 ms }
+# { total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 5.111 ms }

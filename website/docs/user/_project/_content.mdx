@@ -731,8 +731,18 @@ The C strings (`char` arrays, including the string literals, and `char`
 pointers) are compared by content, also with `std::string` and
 `std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
 not the addresses; a null `char` pointer is equal only to another null
-pointer (or `nullptr`), not to an empty string. The other pointers and
-arrays (including `uint8_t` buffers) are compared by address.
+pointer (or `nullptr`), not to an empty string. The other arrays
+(including `uint8_t` buffers) are compared element by element, also with
+a container such as a `std::vector`, and are written as ranges on
+failure; arrays of different sizes are never equal. The other pointers
+are compared by address.
+
+The pointers and arrays of `char8_t`, `char16_t`, `char32_t`, and
+`wchar_t` are not treated as strings: the arrays are compared element
+by element, including the terminating null character, and the pointers
+are compared by address. Convert them to `std::u8string_view`,
+`std::u16string_view`, `std::u32string_view`, or `std::wstring_view`
+to compare their content.
 
 The `approx()` comparator succeeds if its first two operands differ by
 less than the third one, the tolerance. The operands are numbers,
@@ -825,11 +835,11 @@ t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
 The elements are shown as `{1, 2}`, for any type that a range-based
 `for` statement can iterate, with `begin()` and `end()` members, like
 the standard containers, the spans, and the views, or functions, found
-by argument-dependent lookup. The exceptions are the arrays, which are
-compared and shown by address, as the pointers they decay to; the
-strings, which are shown as text; and the types whose elements are of
-their own type, like `std::filesystem::path`, which cannot be shown
-element by element, and are rejected by the comparators; compare
+by argument-dependent lookup. The arrays passed to the comparators are
+shown the same way. The exceptions are the strings, which are shown as
+text, and the types whose elements are of their own type, like
+`std::filesystem::path`, which cannot be shown element by element, and
+are rejected by the comparators; compare
 `p.string ()` instead, or, for an application type, define an
 `operator<<` for it, as for the [custom types](#custom-types). The
 elements must themselves be printable.

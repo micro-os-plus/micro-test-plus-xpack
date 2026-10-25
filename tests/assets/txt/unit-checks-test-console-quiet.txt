@@ -126,4 +126,7 @@
         ✗ empty function FAILED (operands.cpp:549)
         ✗ FAILED (operands.cpp:552)
 
-✗ Total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites, time: 2.580 ms
+    • Raw arrays bad
+        ✗ bytes eq FAILED (operands.cpp:661, {1uc, 2uc, 3uc} == {1uc, 2uc, 4uc})
+
+✗ Total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 2.163 ms

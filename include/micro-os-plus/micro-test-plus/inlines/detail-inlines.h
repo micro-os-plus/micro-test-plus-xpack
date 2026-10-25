@@ -52,6 +52,7 @@
 
 // ----------------------------------------------------------------------------
 
+#include <algorithm>
 #include <cerrno>
 #include <cfloat>
 #include <charconv>
@@ -975,10 +976,74 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Stores the pointer and the count; nothing is copied.
+     */
+    template <class T>
+    constexpr array_operand<T>::array_operand (const T* first,
+                                               std::size_t count) noexcept
+        : first_{ first }, count_{ count }
+    {
+    }
+
+    /**
+     * @details
+     * Returns the stored pointer.
+     */
+    template <class T>
+    constexpr const T*
+    array_operand<T>::begin (void) const noexcept
+    {
+      return first_;
+    }
+
+    /**
+     * @details
+     * Returns the pointer past the last element.
+     */
+    template <class T>
+    constexpr const T*
+    array_operand<T>::end (void) const noexcept
+    {
+      return first_ + count_;
+    }
+
+    /**
+     * @details
+     * Ranges of different sizes are not equal, without comparing any
+     * element.
+     */
+    template <class T, class R>
+      requires (container_like<R> and std::equality_comparable_with<
+                    T, typename range_element<R>::type>)
+    constexpr bool
+    operator== (const array_operand<T>& lhs, const R& rhs)
+    {
+      return std::equal (lhs.begin (), lhs.end (), rhs.begin (), rhs.end ());
+    }
+
+    /**
+     * @details
+     * A range that is a prefix of the other is the lesser one.
+     */
+    template <class T, class R>
+      requires (container_like<R> and std::three_way_comparable_with<
+                    T, typename range_element<R>::type>)
+    constexpr auto
+    operator<=> (const array_operand<T>& lhs, const R& rhs)
+    {
+      return std::lexicographical_compare_three_way (
+          lhs.begin (), lhs.end (), rhs.begin (), rhs.end ());
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
      * Arrays of `char` are converted using their size as a bound, pointers
      * to `char` using the null terminator; the cv-qualifiers of the
-     * characters are ignored. Every other operand is forwarded, unchanged,
-     * as an lvalue or an rvalue reference.
+     * characters are ignored. The other arrays are converted to
+     * `array_operand`. Every other operand is forwarded, unchanged, as an
+     * lvalue or an rvalue reference.
      */
     template <class T>
     constexpr auto
@@ -1001,9 +1066,11 @@ namespace micro_os_plus::micro_test_plus
         }
       else if constexpr (std::is_array_v<type>)
         {
-          // Other arrays (e.g. byte buffers) are compared by address, as
-          // pointers to their first element.
-          return static_cast<const std::remove_extent_t<type>*> (t);
+          // Other arrays (e.g. byte buffers) are compared by content.
+          return array_operand<std::remove_extent_t<type>>{
+            static_cast<const std::remove_extent_t<type>*> (t),
+            std::extent_v<type>
+          };
         }
       else if constexpr (std::is_function_v<type>)
         {

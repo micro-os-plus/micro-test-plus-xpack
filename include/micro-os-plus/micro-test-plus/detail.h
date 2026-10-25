@@ -58,6 +58,7 @@
 
 #include "extension.h"
 
+#include <algorithm>
 #include <compare>
 #include <cstddef>
 #include <cstdio>
@@ -1483,15 +1484,114 @@ namespace micro_os_plus::micro_test_plus
     operator<=> (const c_string& lhs, std::string_view rhs) noexcept;
 
     /**
+     * @brief An array operand of a comparator, other than a `char` array.
+     *
+     * @details
+     * The comparators convert the arrays of any element type except `char`
+     * (the byte buffers, the arrays of numbers, and the arrays of the
+     * wide character types) to this type (see `as_operand()`), so that
+     * they are compared element by element, and written as ranges,
+     * instead of being compared and written as the addresses they decay
+     * to. Two arrays of different sizes are never equal.
+     *
+     * The elements are not copied; the operand must outlive the
+     * comparison, which is always the case within a check.
+     *
+     * @tparam T The element type, possibly `const`.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <class T>
+    struct array_operand
+    {
+      /**
+       * @brief Constructs the operand from the first element and the
+       * size of an array.
+       *
+       * @param first The first element of the array.
+       * @param count The number of elements of the array.
+       */
+      constexpr array_operand (const T* first, std::size_t count) noexcept;
+
+      /**
+       * @brief Returns an iterator to the first element.
+       *
+       * @par Parameters
+       *   None.
+       * @return A pointer to the first element.
+       */
+      [[nodiscard]] constexpr const T*
+      begin (void) const noexcept;
+
+      /**
+       * @brief Returns an iterator past the last element.
+       *
+       * @par Parameters
+       *   None.
+       * @return A pointer past the last element.
+       */
+      [[nodiscard]] constexpr const T*
+      end (void) const noexcept;
+
+    private:
+      /**
+       * @brief The first element.
+       *
+       * @details
+       * Not owned; points into the array passed to the comparator.
+       */
+      const T* first_;
+
+      /**
+       * @brief The number of elements.
+       */
+      std::size_t count_;
+    };
+
+    /**
+     * @brief Compares an array operand with a range for equality.
+     *
+     * @tparam T The element type of the array operand.
+     * @tparam R The type of the range.
+     *
+     * @param lhs The array operand.
+     * @param rhs The range, which may be another array operand.
+     * @retval true The ranges have the same size and equal elements.
+     * @retval false Otherwise.
+     */
+    template <class T, class R>
+      requires (container_like<R> and std::equality_comparable_with<
+                    T, typename range_element<R>::type>)
+    [[nodiscard]] constexpr bool
+    operator== (const array_operand<T>& lhs, const R& rhs);
+
+    /**
+     * @brief Orders an array operand and a range lexicographically.
+     *
+     * @tparam T The element type of the array operand.
+     * @tparam R The type of the range.
+     *
+     * @param lhs The array operand.
+     * @param rhs The range, which may be another array operand.
+     * @return The lexicographic order of the elements.
+     */
+    template <class T, class R>
+      requires (container_like<R> and std::three_way_comparable_with<
+                    T, typename range_element<R>::type>)
+    [[nodiscard]] constexpr auto
+    operator<=> (const array_operand<T>& lhs, const R& rhs);
+
+    /**
      * @brief Prepares an operand of a comparator.
      *
      * @details
      * The `char` arrays and the `char` pointers (not those of `signed
      * char` or `unsigned char`, which are byte buffers) are converted to
      * `c_string`, so that they are compared by content; the other arrays
-     * are converted to pointers to their first element, the functions to
-     * function pointers, and all other operands are returned unchanged, so
-     * the other pointers, arrays, and functions are compared by address.
+     * are converted to `array_operand`, so that they are compared by
+     * content, the functions to function pointers, and all other operands
+     * are returned unchanged, so the other pointers and the functions are
+     * compared by address.
      *
      * The other operands are forwarded, so that the comparator moves a
      * temporary, and refers to a named operand.
@@ -1499,7 +1599,8 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type deduced for the forwarding reference.
      *
      * @param t The operand.
-     * @return A `c_string` for the C strings, otherwise `t`, forwarded.
+     * @return A `c_string` for the C strings, an `array_operand` for the
+     * other arrays, otherwise `t`, forwarded.
      */
     template <class T>
     [[nodiscard]] constexpr auto
