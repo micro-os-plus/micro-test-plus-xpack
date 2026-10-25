@@ -754,6 +754,10 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Formats a logical AND as `(lhs and rhs)`.
        *
+       * @details
+       * A chain of ANDs, as built by `all_of()` for more than two operands,
+       * is written as a single group, `(a and b and c)`.
+       *
        * @tparam Lhs_T Left-hand operand type.
        * @tparam Rhs_T Right-hand operand type.
        * @param op The logical AND expression.
@@ -765,6 +769,10 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Formats a logical OR as `(lhs or rhs)`.
+       *
+       * @details
+       * A chain of ORs, as built by `any_of()` for more than two operands,
+       * is written as a single group, `(a or b or c)`.
        *
        * @tparam Lhs_T Left-hand operand type.
        * @tparam Rhs_T Right-hand operand type.
@@ -990,6 +998,64 @@ namespace micro_os_plus::micro_test_plus
       template <class Tuple_T, std::size_t... Is>
       void
       append_elements (const Tuple_T& t, std::index_sequence<Is...>);
+
+      /**
+       * @brief Appends an operand of a chain of logical ANDs.
+       *
+       * @details
+       * An operand that is itself a logical AND is written as the
+       * operands of a chain, without its own parentheses; any other
+       * operand is written as usual.
+       *
+       * @tparam T The type of the operand.
+       * @param t The operand.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class T>
+      void
+      append_and_operand (const T& t);
+
+      /**
+       * @brief Appends the operands of a logical AND, separated by `and`.
+       *
+       * @tparam Lhs_T Left-hand operand type.
+       * @tparam Rhs_T Right-hand operand type.
+       * @param op The logical AND expression.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class Lhs_T, class Rhs_T>
+      void
+      append_and_operand (const detail::and_op<Lhs_T, Rhs_T>& op);
+
+      /**
+       * @brief Appends an operand of a chain of logical ORs.
+       *
+       * @details
+       * Like `append_and_operand()`, for the logical OR.
+       *
+       * @tparam T The type of the operand.
+       * @param t The operand.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class T>
+      void
+      append_or_operand (const T& t);
+
+      /**
+       * @brief Appends the operands of a logical OR, separated by `or`.
+       *
+       * @tparam Lhs_T Left-hand operand type.
+       * @tparam Rhs_T Right-hand operand type.
+       * @param op The logical OR expression.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class Lhs_T, class Rhs_T>
+      void
+      append_or_operand (const detail::or_op<Lhs_T, Rhs_T>& op);
 
       /**
        * @brief ANSI colour codes for output formatting.

@@ -613,52 +613,121 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
             << "not (actual == 42)";
         local_counts.failed_checks++;
 
-        t.expect (both (eq (my_actual_integral (), 42),
-                        eq (my_actual_float<float> (), 42.0)))
+        t.expect (all_of (eq (my_actual_integral (), 42),
+                          eq (my_actual_float<float> (), 42.0)))
             << "(actual == 42) and (actual == 42.0)";
         local_counts.passed_checks++;
 
-        t.expect (both (eq (my_actual_integral (), 42),
-                        ne (my_actual_float<float> (), 42.0)))
+        t.expect (all_of (eq (my_actual_integral (), 42),
+                          ne (my_actual_float<float> (), 42.0)))
             << "(actual == 42) and (actual != 42.0)";
         local_counts.failed_checks++;
 
-        t.expect (both (ne (my_actual_integral (), 42),
-                        eq (my_actual_float<float> (), 42.0)))
+        t.expect (all_of (ne (my_actual_integral (), 42),
+                          eq (my_actual_float<float> (), 42.0)))
             << "(actual != 42) and (actual == 42.0)";
         local_counts.failed_checks++;
 
-        t.expect (both (ne (my_actual_integral (), 42),
-                        ne (my_actual_float<float> (), 42.0)))
+        t.expect (all_of (ne (my_actual_integral (), 42),
+                          ne (my_actual_float<float> (), 42.0)))
             << "(actual != 42) and (actual != 42.0)";
         local_counts.failed_checks++;
 
-        t.expect (both (eq (my_actual_integral (), 42),
-                        eq (my_actual_float<float> (), 42.0)));
+        t.expect (all_of (eq (my_actual_integral (), 42),
+                          eq (my_actual_float<float> (), 42.0)));
         local_counts.passed_checks++;
 
-        t.expect (both (eq (my_actual_integral (), 42),
-                        ne (my_actual_float<float> (), 42.0)));
+        t.expect (all_of (eq (my_actual_integral (), 42),
+                          ne (my_actual_float<float> (), 42.0)));
         local_counts.failed_checks++;
 
-        t.expect (either (eq (my_actual_integral (), 42),
+        t.expect (any_of (eq (my_actual_integral (), 42),
                           eq (my_actual_float<float> (), 42.0)))
             << "(actual == 42) or (actual == 42.0)";
         local_counts.passed_checks++;
 
-        t.expect (either (eq (my_actual_integral (), 42),
+        t.expect (any_of (eq (my_actual_integral (), 42),
                           ne (my_actual_float<float> (), 42.0)))
             << "(actual == 42) or (actual != 42.0)";
         local_counts.passed_checks++;
 
-        t.expect (either (ne (my_actual_integral (), 42),
+        t.expect (any_of (ne (my_actual_integral (), 42),
                           eq (my_actual_float<float> (), 42.0)))
             << "(actual != 42) or (actual == 42.0)";
         local_counts.passed_checks++;
 
-        t.expect (either (ne (my_actual_integral (), 42),
+        t.expect (any_of (ne (my_actual_integral (), 42),
                           ne (my_actual_float<float> (), 42.0)))
             << "(actual != 42) or (actual != 42.0)";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // --------------------------------------------------------------------------
+
+    // The logical functions accept two or more operands; a chain of the
+    // same operation is reported as a single group.
+    ts.test ("Logical operations with more operands", [] (auto& t)
+      {
+        const int actual = my_actual_integral ();
+
+        t.expect (all_of (eq (actual, 42), lt (actual, 43), gt (actual, 41)))
+            << "all_of three true";
+        local_counts.passed_checks++;
+
+        t.expect (all_of (eq (actual, 42), ne (actual, 0), lt (actual, 43),
+                          le (actual, 42), ge (actual, 42)))
+            << "all_of five true";
+        local_counts.passed_checks++;
+
+        t.expect (any_of (eq (actual, 0), eq (actual, 1), eq (actual, 42)))
+            << "any_of three, the last true";
+        local_counts.passed_checks++;
+
+        t.expect (any_of (eq (actual, 42), eq (actual, 0), eq (actual, 1)))
+            << "any_of three, the first true";
+        local_counts.passed_checks++;
+
+        t.expect (
+            all_of (eq (actual, 42), all_of (lt (actual, 43), ne (actual, 0))))
+            << "all_of with a nested all_of";
+        local_counts.passed_checks++;
+
+        t.expect (
+            negate (all_of (eq (actual, 42), eq (actual, 0), eq (actual, 1))))
+            << "not all_of";
+        local_counts.passed_checks++;
+
+        t.expect (all_of (eq (actual, 42), lt (actual, 41), gt (actual, 41)))
+            << "all_of three, the second false";
+        local_counts.failed_checks++;
+
+        t.expect (all_of (eq (actual, 42), eq (actual, 42), eq (actual, 42),
+                          eq (actual, 0)))
+            << "all_of four, the last false";
+        local_counts.failed_checks++;
+
+        t.expect (any_of (eq (actual, 0), eq (actual, 1), eq (actual, 2)))
+            << "any_of three false";
+        local_counts.failed_checks++;
+
+        t.expect (
+            any_of (all_of (eq (actual, 0), eq (actual, 42)),
+                    all_of (eq (actual, 1), eq (actual, 42), eq (actual, 2))))
+            << "any_of of two all_of";
+        local_counts.failed_checks++;
+
+        t.expect (
+            all_of (eq (actual, 42), any_of (eq (actual, 0), eq (actual, 1))))
+            << "all_of with a nested any_of";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

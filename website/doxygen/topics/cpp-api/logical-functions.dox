@@ -2,10 +2,19 @@
 @brief Functions used to compose logical expressions in tests.
 
 @details
-The functions `mt::both()`, `mt::either()`, and `mt::negate()` combine
+The functions `mt::all_of()`, `mt::any_of()`, and `mt::negate()` combine
 multiple conditions, allowing expressive and concise test logic.
-`mt::either()` is an inclusive or: it is true also when both conditions
-are true.
+`mt::all_of()` and `mt::any_of()` take two or more operands, and
+`mt::any_of()` is an inclusive or: it is true also when all the conditions
+are true. A chain of the same operation is reported as a single group,
+for example `(a and b and c)`.
+
+All the operands are evaluated before the check, so the functions do not
+stop at the first operand that decides the result, like the standard
+algorithms of the same names. After a `using namespace std`, an
+unqualified call with three or more operands of the same type selects the
+standard algorithm; call the functions as `mt::all_of()` and
+`mt::any_of()`.
 
 The functions have descriptive names, since `and`, `or`, and `not` are
 alternative tokens and cannot be used as identifiers. Using these logical
@@ -16,8 +25,9 @@ improve readability.
 
 @code{.cpp}
 ts.test ("Check compound conditions", [] (auto& t) {
-  t.expect (mt::both (mt::eq (compute_answer (), 42),
-                      mt::eq (compute_float (), 42.0)));
+  t.expect (mt::all_of (mt::eq (compute_answer (), 42),
+                        mt::eq (compute_float (), 42.0),
+                        mt::lt (compute_answer (), 43)));
 });
 @endcode
 

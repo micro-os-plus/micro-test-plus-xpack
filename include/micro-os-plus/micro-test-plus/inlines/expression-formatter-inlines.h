@@ -298,8 +298,35 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::and_op<Lhs_T, Rhs_T>& op)
   {
-    return (*this << "(" << op.lhs () << colour (op) << " and "
-                  << colours_.none << op.rhs () << ")");
+    *this << "(";
+    append_and_operand (op);
+    return (*this << ")");
+  }
+
+  /**
+   * @details
+   * The generic operand is written through the usual overloads.
+   */
+  template <class T>
+  void
+  expression_formatter::append_and_operand (const T& t)
+  {
+    *this << t;
+  }
+
+  /**
+   * @details
+   * The left operand is written first, as the operands of a chain if it is
+   * a logical AND too, then the word `and`, coloured by the result of this
+   * operation, and the right operand.
+   */
+  template <class Lhs_T, class Rhs_T>
+  void
+  expression_formatter::append_and_operand (
+      const detail::and_op<Lhs_T, Rhs_T>& op)
+  {
+    append_and_operand (op.lhs ());
+    *this << colour (op) << " and " << colours_.none << op.rhs ();
   }
 
   /**
@@ -312,8 +339,35 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::or_op<Lhs_T, Rhs_T>& op)
   {
-    return (*this << "(" << op.lhs () << colour (op) << " or " << colours_.none
-                  << op.rhs () << ")");
+    *this << "(";
+    append_or_operand (op);
+    return (*this << ")");
+  }
+
+  /**
+   * @details
+   * The generic operand is written through the usual overloads.
+   */
+  template <class T>
+  void
+  expression_formatter::append_or_operand (const T& t)
+  {
+    *this << t;
+  }
+
+  /**
+   * @details
+   * The left operand is written first, as the operands of a chain if it is
+   * a logical OR too, then the word `or`, coloured by the result of this
+   * operation, and the right operand.
+   */
+  template <class Lhs_T, class Rhs_T>
+  void
+  expression_formatter::append_or_operand (
+      const detail::or_op<Lhs_T, Rhs_T>& op)
+  {
+    append_or_operand (op.lhs ());
+    *this << colour (op) << " or " << colours_.none << op.rhs ();
   }
 
   /**

@@ -15,8 +15,8 @@ the `literals` namespace (`42_i`, `1.5_d`, `"flag"_b`, and the others),
 the `to_*` type wrappers, `to_t<T>`, and the two-argument
 `mt::approx (value, epsilon)` are deprecated in favour of the function
 comparators, which check and report the plain values: `mt::eq (x, 42)`
-replaces `x == 42_i` and `mt::to_i{ x } == 42`, and `mt::both ()`,
-`mt::either ()`, and `mt::negate ()` replace `and`, `or`, and `not`.
+replaces `x == 42_i` and `mt::to_i{ x } == 42`, and `mt::all_of ()`,
+`mt::any_of ()`, and `mt::negate ()` replace `and`, `or`, and `not`.
 They are still available, but the compiler reports their use; the
 applications that build with `-Werror` fail until the checks are
 rewritten, or the warning is disabled with `-Wno-deprecated-declarations`
@@ -30,6 +30,14 @@ check, so they do not short-circuit like the built-in ones: after
 `using namespace mt::operators`, `p != nullptr and p->x == 1_i`
 dereferences a null pointer. This is one of the reasons for the
 deprecation.
+
+The logical functions `all_of()` and `any_of()`, which replace the
+`both()` and `either()` of the earlier development versions of 5.1, take
+two or more operands, and report a chain of the same operation as a
+single group, `(a and b and c)`. All the operands are evaluated before
+the check, and an unqualified call after a `using namespace std` selects
+`std::all_of()` or `std::any_of()` when there are three or more operands
+of the same type; call them as `mt::all_of()` and `mt::any_of()`.
 
 The integer literals now follow the C++ syntax: `0x`, `0b`, and
 leading-`0` (octal) prefixes are parsed, so `010_i` is 8 (it was 10),
@@ -488,11 +496,11 @@ The output of the reporters is unchanged; the TAP reporter still
 introduces each test case with a `# Subtest:` line.
 
 The logical functions `_and()`, `_or()`, and `_not()` are deprecated
-in favour of `both()`, `either()`, and `negate()`, since a leading
+in favour of `all_of()`, `any_of()`, and `negate()`, since a leading
 underscore is not used by the other public names, and `and`, `or`, and
 `not` are alternative tokens. The old names are still available, as
 aliases, but marked `[[deprecated]]`; replace `mt::_and (...)` with
-`mt::both (...)`. The overloaded `&&`, `||`, and `!` operators are
+`mt::all_of (...)`. The overloaded `&&`, `||`, and `!` operators are
 unchanged.
 
 The type wrappers deprecated in v3.2, the `_b`, `_c`, `_sc`, `_s`,
@@ -516,7 +524,7 @@ only as long as the wrapper: in
 destroyed temporary. Store the result by value (`auto s = ...`) instead.
 
 The comparators no longer copy their operands: `eq()`, `ne()`,
-`gt()`, `ge()`, `lt()`, `le()`, `both()`, `either()`, `negate()`, and
+`gt()`, `ge()`, `lt()`, `le()`, `all_of()`, `any_of()`, `negate()`, and
 the operators of the `operators` namespace move the temporaries into the
 returned expression, and refer to the named operands of class type,
 like the strings and the containers, and to the nested expressions;

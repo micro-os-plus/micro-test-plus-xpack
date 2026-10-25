@@ -127,7 +127,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @par Deprecated
    * Use the function comparators `eq()`, `ne()`, `gt()`, `ge()`, `lt()`,
-   * and `le()`, with the plain values, and `both()`, `either()`, and
+   * and `le()`, with the plain values, and `all_of()`, `any_of()`, and
    * `negate()` for the logical combinations (since 5.1.0). The function
    * comparators accept the same operands, compare them and report them in
    * the same way, and do not need the literal suffixes or the type
@@ -267,7 +267,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[deprecated ("use both() (since 5.1.0)"), nodiscard]] constexpr auto
+    [[deprecated ("use all_of() (since 5.1.0)"), nodiscard]] constexpr auto
     operator and (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
@@ -286,7 +286,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[deprecated ("use either() (since 5.1.0)"), nodiscard]] constexpr auto
+    [[deprecated ("use any_of() (since 5.1.0)"), nodiscard]] constexpr auto
     operator or (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**

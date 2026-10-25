@@ -27,7 +27,7 @@
  * than, less than, greater than or equal, less than or equal, and the
  * approximate comparison. Additionally, it implements logical combinators
  * such as
- * conjunction (`both`), disjunction (`either`), and negation
+ * conjunction (`all_of`), disjunction (`any_of`), and negation
  * (`negate`).
  *
  * These comparators and logical operators enable expressive and type-safe test
@@ -225,39 +225,70 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `both` function template provides a generic logical conjunction for
-   * any expression types. It constructs a `detail::and_op` logical
-   * conjunction object, which evaluates to `true` if both operands are
-   * true.
+   * The `all_of` function template provides a generic logical conjunction
+   * for any expression types. It constructs a `detail::and_op` logical
+   * conjunction object, which evaluates to `true` if all the operands are
+   * true. For more than two operands, the objects are nested from the
+   * left, `(a and b) and c`, and the expression formatter writes them as
+   * a single chain, `(a and b and c)`.
    *
-   * It is the function form of the `&&` operator from the
-   * `micro_test_plus::operators` namespace.
+   * All the operands are evaluated before the check, so, unlike the
+   * standard algorithm of the same name, the function does not stop at the
+   * first operand that is false.
+   *
+   * The name is the same as that of `std::all_of`: after a
+   * `using namespace std`, an unqualified call with three or more operands
+   * of the same type selects the standard algorithm, so the function must
+   * be called as `mt::all_of()`.
    */
-  template <class Lhs_T, class Rhs_T>
+  template <class First_T, class Second_T, class... Rest_T>
   constexpr auto
-  both (Lhs_T&& lhs, Rhs_T&& rhs)
+  all_of (First_T&& first, Second_T&& second, Rest_T&&... rest)
   {
-    return detail::and_op{ std::forward<Lhs_T> (lhs),
-                           std::forward<Rhs_T> (rhs) };
+    if constexpr (sizeof...(Rest_T) == 0)
+      {
+        return detail::and_op{ std::forward<First_T> (first),
+                               std::forward<Second_T> (second) };
+      }
+    else
+      {
+        return micro_test_plus::all_of (
+            detail::and_op{ std::forward<First_T> (first),
+                            std::forward<Second_T> (second) },
+            std::forward<Rest_T> (rest)...);
+      }
   }
 
   /**
    * @details
-   * The `either` function template provides a generic logical disjunction
+   * The `any_of` function template provides a generic logical disjunction
    * for any expression types. It constructs a `detail::or_op` logical
    * disjunction object, which evaluates to `true` if at least one of the
-   * operands is true.
+   * operands is true; the disjunction is inclusive, so the result is also
+   * true when all the conditions are true. For more than two operands, the
+   * objects are nested from the left, and the expression formatter writes
+   * them as a single chain, `(a or b or c)`.
    *
-   * It is the function form of the `||` operator from the
-   * `micro_test_plus::operators` namespace; the disjunction is inclusive, so
-   * the result is also true when both conditions are true.
+   * All the operands are evaluated before the check, so the function does
+   * not stop at the first operand that is true; and, as for `all_of()`, it
+   * must be called as `mt::any_of()` after a `using namespace std`.
    */
-  template <class Lhs_T, class Rhs_T>
+  template <class First_T, class Second_T, class... Rest_T>
   constexpr auto
-  either (Lhs_T&& lhs, Rhs_T&& rhs)
+  any_of (First_T&& first, Second_T&& second, Rest_T&&... rest)
   {
-    return detail::or_op{ std::forward<Lhs_T> (lhs),
-                          std::forward<Rhs_T> (rhs) };
+    if constexpr (sizeof...(Rest_T) == 0)
+      {
+        return detail::or_op{ std::forward<First_T> (first),
+                              std::forward<Second_T> (second) };
+      }
+    else
+      {
+        return micro_test_plus::any_of (
+            detail::or_op{ std::forward<First_T> (first),
+                           std::forward<Second_T> (second) },
+            std::forward<Rest_T> (rest)...);
+      }
   }
 
   // --------------------------------------------------------------------------

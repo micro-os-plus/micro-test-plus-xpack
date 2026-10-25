@@ -99,7 +99,7 @@
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
-  // The logical functions, now `negate()`, `both()`, and `either()`, in
+  // The logical functions, now `negate()`, `all_of()`, and `any_of()`, in
   // `function-comparators.h`.
 
   /**
@@ -123,10 +123,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
    * @brief Generic logical **and** operation, the v5.0.1 name of
-   * `both()`.
+   * `all_of()`.
    *
    * @details
-   * The same as `both()`. The name was changed since a leading
+   * The same as `all_of()`. The name was changed since a leading
    * underscore is not used by the other public names.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -138,16 +138,16 @@ namespace micro_os_plus::micro_test_plus
    * true.
    */
   template <class Lhs_T, class Rhs_T>
-  [[deprecated ("use both() (since 5.1.0)"), nodiscard]] constexpr auto
+  [[deprecated ("use all_of() (since 5.1.0)"), nodiscard]] constexpr auto
   _and (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
    * @brief Generic logical (inclusive) **or** operation, the v5.0.1 name
-   * of `either()`.
+   * of `any_of()`.
    *
    * @details
-   * The same as `either()`. The name was changed since a leading
+   * The same as `any_of()`. The name was changed since a leading
    * underscore is not used by the other public names.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -159,7 +159,7 @@ namespace micro_os_plus::micro_test_plus
    * expressions is true, including when both are.
    */
   template <class Lhs_T, class Rhs_T>
-  [[deprecated ("use either() (since 5.1.0)"), nodiscard]] constexpr auto
+  [[deprecated ("use any_of() (since 5.1.0)"), nodiscard]] constexpr auto
   _or (Lhs_T&& lhs, Rhs_T&& rhs);
 
   // --------------------------------------------------------------------------

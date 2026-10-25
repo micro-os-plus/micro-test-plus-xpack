@@ -9,7 +9,7 @@ to avoid conflicts with application-defined operators.
 @par Deprecated
 The operators are deprecated since 5.1.0, in favour of the function
 comparators `mt::eq()`, `mt::ne()`, `mt::lt()`, `mt::le()`, `mt::gt()`, and
-`mt::ge()`, and of the logical functions `mt::both()`, `mt::either()`, and
+`mt::ge()`, and of the logical functions `mt::all_of()`, `mt::any_of()`, and
 `mt::negate()`, which check and report the plain values, without literal
 suffixes or casts. The compiler reports the use of the operators.
 
@@ -36,7 +36,7 @@ ts.test ("Comparators", [] (auto& t) {
   t.expect (mt::le (compute_answer (), 43)) << "answer is <= 43";
   t.expect (mt::gt (compute_answer (), 41)) << "answer is > 41";
   t.expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
-  t.expect (mt::both (mt::eq (compute_answer (), 42),
-                      mt::eq (compute_float (), 42.0f)));
+  t.expect (mt::all_of (mt::eq (compute_answer (), 42),
+                        mt::eq (compute_float (), 42.0f)));
 });
 @endcode

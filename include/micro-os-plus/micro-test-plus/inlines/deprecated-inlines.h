@@ -24,7 +24,7 @@
  * This header provides the inline implementations for the deprecated
  * definitions declared in `deprecated.h`: the v5.0.1 names of the
  * logical functions (`_not`, `_and`, and `_or`), which forward to
- * `negate()`, `both()`, and `either()`, and the members of the
+ * `negate()`, `all_of()`, and `any_of()`, and the members of the
  * `detail::timestamp` class.
  *
  * The constructor of `detail::timestamp` that reads the system clock is
@@ -84,28 +84,28 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Forwards to `both()`, so the returned expression is the same, and
+   * Forwards to `all_of()`, so the returned expression is the same, and
    * is reported in the same way.
    */
-  // Deprecated since 5.1.0; use both().
+  // Deprecated since 5.1.0; use all_of().
   template <class Lhs_T, class Rhs_T>
   constexpr auto
   _and (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return both (std::forward<Lhs_T> (lhs), std::forward<Rhs_T> (rhs));
+    return all_of (std::forward<Lhs_T> (lhs), std::forward<Rhs_T> (rhs));
   }
 
   /**
    * @details
-   * Forwards to `either()`, so the returned expression is the same, and
+   * Forwards to `any_of()`, so the returned expression is the same, and
    * is reported in the same way.
    */
-  // Deprecated since 5.1.0; use either().
+  // Deprecated since 5.1.0; use any_of().
   template <class Lhs_T, class Rhs_T>
   constexpr auto
   _or (Lhs_T&& lhs, Rhs_T&& rhs)
   {
-    return either (std::forward<Lhs_T> (lhs), std::forward<Rhs_T> (rhs));
+    return any_of (std::forward<Lhs_T> (lhs), std::forward<Rhs_T> (rhs));
   }
 
   // --------------------------------------------------------------------------

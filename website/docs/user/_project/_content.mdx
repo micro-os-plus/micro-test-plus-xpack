@@ -752,20 +752,30 @@ Refer to the [Function Comparators](/docs/api/groups/micro-os-plus-micro-test-pl
 ### Logical functions
 
 Complex expressions may be evaluated in a single statement using the logical
-functions `both()`, `either()`, and `negate()`, the function forms of the
-`&&`, `||`, and `!` operators; `either()` is an inclusive or, true also
-when both operands are true.
+functions `all_of()`, `any_of()`, and `negate()`, the function forms of the
+`&&`, `||`, and `!` operators; `any_of()` is an inclusive or, true also
+when all the operands are true.
 
 ```cpp
-template <class Lhs_T, class Rhs_T>
-auto both (const Lhs_T& lhs, const Rhs_T& rhs);
+template <class First_T, class Second_T, class... Rest_T>
+auto all_of (const First_T& first, const Second_T& second, const Rest_T&... rest);
 
-template <class Lhs_T, class Rhs_T>
-auto either (const Lhs_T& lhs, const Rhs_T& rhs);
+template <class First_T, class Second_T, class... Rest_T>
+auto any_of (const First_T& first, const Second_T& second, const Rest_T&... rest);
 
 template <class Expr_T>
 auto negate (const Expr_T& expr);
 ```
+
+`all_of()` and `any_of()` take two or more operands. A chain of the same
+operation is reported as a single group, for example
+`(1 == 1 and abc == abd and 3 < 2)`.
+
+All the operands are evaluated before the check, so, unlike the standard
+algorithms of the same names, the functions do not stop at the first operand
+that decides the result. After a `using namespace std`, an unqualified call
+with three or more operands of the same type selects `std::all_of()` or
+`std::any_of()`; call them as `mt::all_of()` and `mt::any_of()`.
 
 Refer to the [Logical Functions](/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/) reference page.
 
@@ -866,7 +876,7 @@ expressions do not need to be cast:
 | `x > 42_i`, `x >= 42_i` | `mt::gt (x, 42)`, `mt::ge (x, 42)` |
 | `x == 1.5_d`, `mt::to_d{ 1.5 } == x` | `mt::approx (x, 1.5, 0.1)`, or `mt::eq (x, 1.5)` for an exact comparison |
 | `mt::eq (x, mt::approx (1.5, 0.01))` | `mt::approx (x, 1.5, 0.01)` |
-| `a and b`, `a or b`, `not a` | `mt::both (a, b)`, `mt::either (a, b)`, `mt::negate (a)` |
+| `a and b`, `a or b`, `not a` | `mt::all_of (a, b)`, `mt::any_of (a, b)`, `mt::negate (a)` |
 | `"flag"_b == flag` | `t.expect (flag) << "flag"` |
 | `mt::to_t<app_type>{ x } == y` | `mt::eq (x, y)`, with an `operator<<` for the type |
 
@@ -1061,7 +1071,7 @@ main (int argc, char* argv[])
   ts.test ("Custom", [] (auto& t) {
     t.expect (app::divides (5, 12));
     t.expect (app::even (7));
-    t.expect (mt::both (app::divides (3, 12), app::even (7)));
+    t.expect (mt::all_of (app::divides (3, 12), app::even (7)));
   });
 
   return tr.run ();

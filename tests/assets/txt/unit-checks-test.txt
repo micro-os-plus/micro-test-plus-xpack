@@ -78,7 +78,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ space is tab FAILED (main.cpp:530, ' ' == '\t')
         ✓ 'x' == 'x'
     ✗ Character operands - FAILED (1 check passed, 2 failed)
-✗ Top suite - FAILED (34 checks passed, 6 failed, in 18 test cases), time: 1.895 ms
+✗ Top suite - FAILED (34 checks passed, 6 failed, in 18 test cases), time: 0.899 ms
 • Comparisons suite
     • Integer comparisons
         ✓ actual == 42
@@ -109,10 +109,10 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ actual != 43
     ✓ Float comparisons - passed (10 checks)
     • Failed float comparisons
-        ✗ actual != 42.0 FAILED (comparisons.cpp:189, 42.0f != 42.0f)
-        ✗ actual == 43.0 FAILED (comparisons.cpp:192, 42.0f == 43.0f)
-        ✗ actual != 42 FAILED (comparisons.cpp:195, 42.0f != 42)
-        ✗ actual == 43 FAILED (comparisons.cpp:198, 42.0f == 43)
+        ✗ actual != 42.0 FAILED (comparisons.cpp:188, 42.0f != 42.0f)
+        ✗ actual == 43.0 FAILED (comparisons.cpp:191, 42.0f == 43.0f)
+        ✗ actual != 42 FAILED (comparisons.cpp:194, 42.0f != 42)
+        ✗ actual == 43 FAILED (comparisons.cpp:197, 42.0f == 43)
     ✗ Failed float comparisons - FAILED (0 checks passed, 4 failed)
     • Approximate comparisons
         ✓ actual ~ 43 +/- 2
@@ -125,12 +125,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ not 10 ~ 20 +/- 5
     ✓ Approximate comparisons - passed (8 checks)
     • Failed approximate comparisons
-        ✗ actual ~ 44 +/- 2 FAILED (comparisons.cpp:259, 42 ~ (44 +/- 2))
-        ✗ 10 ~ 12 +/- 2 FAILED (comparisons.cpp:264, 10 ~ (12 +/- 2))
-        ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:268, 3u ~ (5u +/- 1u))
-        ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:272, 1 ~ (1 +/- -1))
-        ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:275, 42.0f ~ (42.1f +/- 0.01f))
-        ✗ FAILED (comparisons.cpp:279, 1.0 ~ (1.2 +/- 0.1))
+        ✗ actual ~ 44 +/- 2 FAILED (comparisons.cpp:258, 42 ~ (44 +/- 2))
+        ✗ 10 ~ 12 +/- 2 FAILED (comparisons.cpp:263, 10 ~ (12 +/- 2))
+        ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:267, 3u ~ (5u +/- 1u))
+        ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:271, 1 ~ (1 +/- -1))
+        ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:274, 42.0f ~ (42.1f +/- 0.01f))
+        ✗ FAILED (comparisons.cpp:278, 1.0 ~ (1.2 +/- 0.1))
     ✗ Failed approximate comparisons - FAILED (0 checks passed, 6 failed)
     • String comparisons
         ✓ actual_sv == abc_sv
@@ -141,12 +141,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ actual_sv >= abc_sv
     ✓ String comparisons - passed (6 checks)
     • Failed string comparisons
-        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:336, abc != abc)
-        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:340, abc == abx)
-        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:344, abc >= abd)
-        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:348, abc > abc)
-        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:352, abc <= abb)
-        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:356, abc < abc)
+        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:335, abc != abc)
+        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:339, abc == abx)
+        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:343, abc >= abd)
+        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:347, abc > abc)
+        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:351, abc <= abb)
+        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:355, abc < abc)
     ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
     • C string comparisons
         ✓ actual == "abc"
@@ -165,8 +165,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ unterminated == "abc"
     ✓ C string comparisons - passed (14 checks)
     • Failed C string comparisons
-        ✗ actual == "abx" FAILED (comparisons.cpp:421, abc == abx)
-        ✗ null_string == "abc" FAILED (comparisons.cpp:424, nullptr == abc)
+        ✗ actual == "abx" FAILED (comparisons.cpp:420, abc == abx)
+        ✗ null_string == "abc" FAILED (comparisons.cpp:423, nullptr == abc)
     ✗ Failed C string comparisons - FAILED (0 checks passed, 2 failed)
     • Pointer comparisons
         ✓ ptr1 == &one
@@ -180,15 +180,15 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:505, 0x7ff7b11f8240 != 0x7ff7b11f8240)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:508, 0x7ff7b11f8240 != 0x7ff7b11f8240)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:511, 0x7ff7b11f8240 > 0x7ff7b11f8240)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:514, 0x7ff7b11f8240 < 0x7ff7b11f8240)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:517, 0x7ff7b11f8240 == 0x7ff7b11f8290)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:520, 0x10edba9d8 != 0x10edba9d8)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:523, 0x10edba9d8 == 0x7ff7b11f8290)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:535, 0x7ff7b11f88c0 >= 0x7ff7b11f88c4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:538, 0x7ff7b11f88c4 <= 0x7ff7b11f88c0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7bbf671c0 != 0x7ff7bbf671c0)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7bbf671c0 != 0x7ff7bbf671c0)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7bbf671c0 > 0x7ff7bbf671c0)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7bbf671c0 < 0x7ff7bbf671c0)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7bbf671c0 == 0x7ff7bbf67210)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x10404c7b8 != 0x10404c7b8)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x10404c7b8 == 0x7ff7bbf67210)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7bbf67840 >= 0x7ff7bbf67844)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7bbf67844 <= 0x7ff7bbf67840)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -196,35 +196,48 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ pfunc == nullptr
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
-        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:586, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:589, 0x7ff7b11f8880 == nullptr)
-        ✗ pfunc != nullptr FAILED (comparisons.cpp:592, 0x0 != nullptr)
+        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7bbf67800 == nullptr)
+        ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
         ✓ not (actual != 42)
-        ✗ not (actual == 42) FAILED (comparisons.cpp:613, not 42 == 42)
+        ✗ not (actual == 42) FAILED (comparisons.cpp:612, not 42 == 42)
         ✓ (actual == 42) and (actual == 42.0)
-        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:622, (42 == 42 and 42.0f != 42.0))
-        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:627, (42 != 42 and 42.0f == 42.0))
-        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:632, (42 != 42 and 42.0f != 42.0))
+        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:621, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:626, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:631, (42 != 42 and 42.0f != 42.0))
         ✓ (42 == 42 and 42.0f == 42.0)
-        ✗ FAILED (comparisons.cpp:641, (42 == 42 and 42.0f != 42.0))
+        ✗ FAILED (comparisons.cpp:640, (42 == 42 and 42.0f != 42.0))
         ✓ (actual == 42) or (actual == 42.0)
         ✓ (actual == 42) or (actual != 42.0)
         ✓ (actual != 42) or (actual == 42.0)
-        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:660, (42 != 42 or 42.0f != 42.0))
+        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:659, (42 != 42 or 42.0f != 42.0))
     ✗ Logical operations - FAILED (6 checks passed, 6 failed)
-✗ Comparisons suite - FAILED (62 checks passed, 42 failed, in 15 test cases), time: 2.495 ms
+    • Logical operations with more operands
+        ✓ all_of three true
+        ✓ all_of five true
+        ✓ any_of three, the last true
+        ✓ any_of three, the first true
+        ✓ all_of with a nested all_of
+        ✓ not all_of
+        ✗ all_of three, the second false FAILED (comparisons.cpp:709, (42 == 42 and 42 < 41 and 42 > 41))
+        ✗ all_of four, the last false FAILED (comparisons.cpp:713, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
+        ✗ any_of three false FAILED (comparisons.cpp:718, (42 == 0 or 42 == 1 or 42 == 2))
+        ✗ any_of of two all_of FAILED (comparisons.cpp:722, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
+        ✗ all_of with a nested any_of FAILED (comparisons.cpp:728, (42 == 42 and (42 == 0 or 42 == 1)))
+    ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
+✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 1.230 ms
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
     ✓ check in dynamic suite - passed (1 check)
-✓ Dynamic suite - passed (1 check in 1 test case), time: 0.102 ms
+✓ Dynamic suite - passed (1 check in 1 test case), time: 0.061 ms
 • Dynamic suite with a temporary name
     • check in dynamic suite with a temporary name
         ✓ 2 == 2 in the suite with a temporary name
     ✓ check in dynamic suite with a temporary name - passed (1 check)
-✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.082 ms
+✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.049 ms
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -317,5 +330,5 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ stored comparator
         ✓ temporary operand stored once
     ✓ Operand copies - passed (6 checks)
-✗ Operands suite - FAILED (38 checks passed, 25 failed, in 14 test cases), time: 1.523 ms
-✗ Total: 136 checks passed, 73 failed, in 49 test cases, 5 test suites, time: 6.543 ms
+✗ Operands suite - FAILED (38 checks passed, 25 failed, in 14 test cases), time: 0.975 ms
+✗ Total: 142 checks passed, 78 failed, in 50 test cases, 5 test suites, time: 3.469 ms

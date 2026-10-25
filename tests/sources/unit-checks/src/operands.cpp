@@ -370,7 +370,7 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         t.expect (even (4)) << "even 4";
         local_counts.passed_checks++;
 
-        t.expect (both (divides (3, 12), even (4))) << "combined";
+        t.expect (all_of (divides (3, 12), even (4))) << "combined";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -395,7 +395,7 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         t.expect (even (7));
         local_counts.failed_checks++;
 
-        t.expect (both (divides (3, 12), even (7)));
+        t.expect (all_of (divides (3, 12), even (7)));
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
@@ -578,7 +578,7 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         counted_copies = 0;
-        t.expect (both (eq (a, b), negate (ne (a, b))))
+        t.expect (all_of (eq (a, b), negate (ne (a, b))))
             << "nested comparators";
         local_counts.passed_checks++;
         copies = counted_copies;

@@ -34,6 +34,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Null pointer comparisons
     • Failed null pointer comparisons
     • Logical operations
+    • Logical operations with more operands
     • check in dynamic suite
     • check in dynamic suite with a temporary name
     • Arrays
@@ -50,4 +51,4 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Explicit conversions to bool bad
     • Pointers to const
     • Operand copies
-✗ Total: 136 checks passed, 73 failed, in 49 test cases, 5 test suites, time: 3.298 ms
+✗ Total: 142 checks passed, 78 failed, in 50 test cases, 5 test suites, time: 2.313 ms

@@ -812,9 +812,22 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     // The nested expressions are stored as the operands are.
     using inner_t = decltype (eq (number, 1));
     static_assert (
-        std::is_same_v<decltype (both (std::declval<const inner_t&> (),
-                                       eq (number, 2))),
+        std::is_same_v<decltype (all_of (std::declval<const inner_t&> (),
+                                         eq (number, 2))),
                        detail::and_op<const inner_t&, inner_t>>);
+
+    // More than two operands are folded from the left, and the results
+    // are known at compile time.
+    static_assert (
+        std::is_same_v<
+            decltype (all_of (eq (number, 1), eq (number, 2), eq (number, 3))),
+            detail::and_op<detail::and_op<decltype (eq (number, 1)),
+                                          decltype (eq (number, 2))>,
+                           decltype (eq (number, 3))>>);
+    static_assert (all_of (eq (1, 1), lt (1, 2), ne (3, 4)));
+    static_assert (not all_of (eq (1, 1), lt (2, 2), ne (3, 4)));
+    static_assert (any_of (eq (1, 2), eq (3, 4), eq (5, 5)));
+    static_assert (not any_of (eq (1, 2), eq (3, 4), eq (5, 6), eq (7, 8)));
 
     // A double negation negates the inner negation, instead of
     // copying it.

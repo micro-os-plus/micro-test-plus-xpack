@@ -27,7 +27,7 @@
  * equality, non-equality, greater than, less than, greater than or equal,
  * and less than or equal, and the approximate comparison with an explicit
  * tolerance (`approx`). Additionally, it declares logical combinators such
- * as conjunction (`both`), disjunction (`either`), and negation
+ * as conjunction (`all_of`), disjunction (`any_of`), and negation
  * (`negate`); their deprecated v5.0.1 names are declared in
  * `deprecated.h`.
  *
@@ -261,35 +261,40 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
-   * @brief Generic logical **and** operation.
+   * @brief Generic logical **and** operation, for two or more operands.
    *
-   * @tparam Lhs_T Type of the left hand side operand.
-   * @tparam Rhs_T Type of the right hand side operand.
+   * @tparam First_T Type of the first operand.
+   * @tparam Second_T Type of the second operand.
+   * @tparam Rest_T Types of the other operands, if any.
    *
-   * @param lhs Left hand side operand.
-   * @param rhs Right hand side operand.
-   * @return An object that evaluates to true if both operand expressions are
-   * true.
+   * @param first First operand.
+   * @param second Second operand.
+   * @param rest The other operands, if any.
+   * @return An object that evaluates to true if all the operand expressions
+   * are true.
    */
-  template <class Lhs_T, class Rhs_T>
+  template <class First_T, class Second_T, class... Rest_T>
   [[nodiscard]] constexpr auto
-  both (Lhs_T&& lhs, Rhs_T&& rhs);
+  all_of (First_T&& first, Second_T&& second, Rest_T&&... rest);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-logical-functions
-   * @brief Generic logical (inclusive) **or** operation.
+   * @brief Generic logical (inclusive) **or** operation, for two or more
+   * operands.
    *
-   * @tparam Lhs_T Type of the left hand side operand.
-   * @tparam Rhs_T Type of the right hand side operand.
+   * @tparam First_T Type of the first operand.
+   * @tparam Second_T Type of the second operand.
+   * @tparam Rest_T Types of the other operands, if any.
    *
-   * @param lhs Left hand side operand.
-   * @param rhs Right hand side operand.
+   * @param first First operand.
+   * @param second Second operand.
+   * @param rest The other operands, if any.
    * @return An object that evaluates to true if at least one of the operand
-   * expressions is true, including when both are.
+   * expressions is true, including when all are.
    */
-  template <class Lhs_T, class Rhs_T>
+  template <class First_T, class Second_T, class... Rest_T>
   [[nodiscard]] constexpr auto
-  either (Lhs_T&& lhs, Rhs_T&& rhs);
+  any_of (First_T&& first, Second_T&& second, Rest_T&&... rest);
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

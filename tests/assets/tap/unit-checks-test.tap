@@ -131,7 +131,7 @@ TAP version 14
         1..3
     not ok 14 - Character operands # { FAILED, 1 check passed, 2 failed }
     1..14
-not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, time: 2.066 ms }
+not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, time: 1.340 ms }
 # Subtest: Comparisons suite
     # Subtest: Integer comparisons
         ok 1 - actual == 42
@@ -206,28 +206,28 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           condition: "42.0f != 42.0f"
           at:
             fileName: comparisons.cpp
-            lineNumber: 189
+            lineNumber: 188
           ...
         not ok 2 - actual == 43.0
           ---
           condition: "42.0f == 43.0f"
           at:
             fileName: comparisons.cpp
-            lineNumber: 192
+            lineNumber: 191
           ...
         not ok 3 - actual != 42
           ---
           condition: "42.0f != 42"
           at:
             fileName: comparisons.cpp
-            lineNumber: 195
+            lineNumber: 194
           ...
         not ok 4 - actual == 43
           ---
           condition: "42.0f == 43"
           at:
             fileName: comparisons.cpp
-            lineNumber: 198
+            lineNumber: 197
           ...
         1..4
     not ok 4 - Failed float comparisons # { FAILED, 0 checks passed, 4 failed }
@@ -248,42 +248,42 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           condition: "42 ~ (44 +/- 2)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 259
+            lineNumber: 258
           ...
         not ok 2 - 10 ~ 12 +/- 2
           ---
           condition: "10 ~ (12 +/- 2)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 264
+            lineNumber: 263
           ...
         not ok 3 - 3u ~ 5u +/- 1u
           ---
           condition: "3u ~ (5u +/- 1u)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 268
+            lineNumber: 267
           ...
         not ok 4 - 1 ~ 1 +/- -1
           ---
           condition: "1 ~ (1 +/- -1)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 272
+            lineNumber: 271
           ...
         not ok 5 - actual ~ 42.1f +/- 0.01f
           ---
           condition: "42.0f ~ (42.1f +/- 0.01f)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 275
+            lineNumber: 274
           ...
         not ok 6
           ---
           condition: "1.0 ~ (1.2 +/- 0.1)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 279
+            lineNumber: 278
           ...
         1..6
     not ok 6 - Failed approximate comparisons # { FAILED, 0 checks passed, 6 failed }
@@ -302,42 +302,42 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           condition: "abc != abc"
           at:
             fileName: comparisons.cpp
-            lineNumber: 336
+            lineNumber: 335
           ...
         not ok 2 - actual_sv == abx_sv
           ---
           condition: "abc == abx"
           at:
             fileName: comparisons.cpp
-            lineNumber: 340
+            lineNumber: 339
           ...
         not ok 3 - actual_sv >= abd_sv
           ---
           condition: "abc >= abd"
           at:
             fileName: comparisons.cpp
-            lineNumber: 344
+            lineNumber: 343
           ...
         not ok 4 - actual_sv > abc_sv
           ---
           condition: "abc > abc"
           at:
             fileName: comparisons.cpp
-            lineNumber: 348
+            lineNumber: 347
           ...
         not ok 5 - actual_sv <= abb_sv
           ---
           condition: "abc <= abb"
           at:
             fileName: comparisons.cpp
-            lineNumber: 352
+            lineNumber: 351
           ...
         not ok 6 - actual_sv < abc_sv
           ---
           condition: "abc < abc"
           at:
             fileName: comparisons.cpp
-            lineNumber: 356
+            lineNumber: 355
           ...
         1..6
     not ok 8 - Failed string comparisons # { FAILED, 0 checks passed, 6 failed }
@@ -364,14 +364,14 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           condition: "abc == abx"
           at:
             fileName: comparisons.cpp
-            lineNumber: 421
+            lineNumber: 420
           ...
         not ok 2 - null_string == "abc"
           ---
           condition: "nullptr == abc"
           at:
             fileName: comparisons.cpp
-            lineNumber: 424
+            lineNumber: 423
           ...
         1..2
     not ok 10 - Failed C string comparisons # { FAILED, 0 checks passed, 2 failed }
@@ -390,66 +390,66 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: "0x7ff7b04a3260 != 0x7ff7b04a3260"
+          condition: "0x7ff7b83c01e0 != 0x7ff7b83c01e0"
           at:
             fileName: comparisons.cpp
-            lineNumber: 505
+            lineNumber: 504
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: "0x7ff7b04a3260 != 0x7ff7b04a3260"
+          condition: "0x7ff7b83c01e0 != 0x7ff7b83c01e0"
           at:
             fileName: comparisons.cpp
-            lineNumber: 508
+            lineNumber: 507
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: "0x7ff7b04a3260 > 0x7ff7b04a3260"
+          condition: "0x7ff7b83c01e0 > 0x7ff7b83c01e0"
           at:
             fileName: comparisons.cpp
-            lineNumber: 511
+            lineNumber: 510
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: "0x7ff7b04a3260 < 0x7ff7b04a3260"
+          condition: "0x7ff7b83c01e0 < 0x7ff7b83c01e0"
           at:
             fileName: comparisons.cpp
-            lineNumber: 514
+            lineNumber: 513
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: "0x7ff7b04a3260 == 0x7ff7b04a32b0"
+          condition: "0x7ff7b83c01e0 == 0x7ff7b83c0230"
           at:
             fileName: comparisons.cpp
-            lineNumber: 517
+            lineNumber: 516
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: "0x10fb0f9d8 != 0x10fb0f9d8"
+          condition: "0x107bf37b8 != 0x107bf37b8"
           at:
             fileName: comparisons.cpp
-            lineNumber: 520
+            lineNumber: 519
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: "0x10fb0f9d8 == 0x7ff7b04a32b0"
+          condition: "0x107bf37b8 == 0x7ff7b83c0230"
           at:
             fileName: comparisons.cpp
-            lineNumber: 523
+            lineNumber: 522
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: "0x7ff7b04a38e0 >= 0x7ff7b04a38e4"
+          condition: "0x7ff7b83c0860 >= 0x7ff7b83c0864"
           at:
             fileName: comparisons.cpp
-            lineNumber: 535
+            lineNumber: 534
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: "0x7ff7b04a38e4 <= 0x7ff7b04a38e0"
+          condition: "0x7ff7b83c0864 <= 0x7ff7b83c0860"
           at:
             fileName: comparisons.cpp
-            lineNumber: 538
+            lineNumber: 537
           ...
         1..9
     not ok 12 - Failed pointer comparisons # { FAILED, 0 checks passed, 9 failed }
@@ -465,21 +465,21 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           condition: "0x0 != nullptr"
           at:
             fileName: comparisons.cpp
-            lineNumber: 586
+            lineNumber: 585
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: "0x7ff7b04a38a0 == nullptr"
+          condition: "0x7ff7b83c0820 == nullptr"
           at:
             fileName: comparisons.cpp
-            lineNumber: 589
+            lineNumber: 588
           ...
         not ok 3 - pfunc != nullptr
           ---
           condition: "0x0 != nullptr"
           at:
             fileName: comparisons.cpp
-            lineNumber: 592
+            lineNumber: 591
           ...
         1..3
     not ok 14 - Failed null pointer comparisons # { FAILED, 0 checks passed, 3 failed }
@@ -490,7 +490,7 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           condition: "not 42 == 42"
           at:
             fileName: comparisons.cpp
-            lineNumber: 613
+            lineNumber: 612
           ...
         ok 3 - (actual == 42) and (actual == 42.0)
         not ok 4 - (actual == 42) and (actual != 42.0)
@@ -498,21 +498,21 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           condition: "(42 == 42 and 42.0f != 42.0)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 622
+            lineNumber: 621
           ...
         not ok 5 - (actual != 42) and (actual == 42.0)
           ---
           condition: "(42 != 42 and 42.0f == 42.0)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 627
+            lineNumber: 626
           ...
         not ok 6 - (actual != 42) and (actual != 42.0)
           ---
           condition: "(42 != 42 and 42.0f != 42.0)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 632
+            lineNumber: 631
           ...
         ok 7 - (42 == 42 and 42.0f == 42.0)
         not ok 8
@@ -520,7 +520,7 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           condition: "(42 == 42 and 42.0f != 42.0)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 641
+            lineNumber: 640
           ...
         ok 9 - (actual == 42) or (actual == 42.0)
         ok 10 - (actual == 42) or (actual != 42.0)
@@ -530,26 +530,70 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           condition: "(42 != 42 or 42.0f != 42.0)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 660
+            lineNumber: 659
           ...
         1..12
     not ok 15 - Logical operations # { FAILED, 6 checks passed, 6 failed }
-    1..15
-not ok 2 - Comparisons suite # { FAILED, 62 checks passed, 42 failed, in 15 test cases, time: 3.222 ms }
+    # Subtest: Logical operations with more operands
+        ok 1 - all_of three true
+        ok 2 - all_of five true
+        ok 3 - any_of three, the last true
+        ok 4 - any_of three, the first true
+        ok 5 - all_of with a nested all_of
+        ok 6 - not all_of
+        not ok 7 - all_of three, the second false
+          ---
+          condition: "(42 == 42 and 42 < 41 and 42 > 41)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 709
+          ...
+        not ok 8 - all_of four, the last false
+          ---
+          condition: "(42 == 42 and 42 == 42 and 42 == 42 and 42 == 0)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 713
+          ...
+        not ok 9 - any_of three false
+          ---
+          condition: "(42 == 0 or 42 == 1 or 42 == 2)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 718
+          ...
+        not ok 10 - any_of of two all_of
+          ---
+          condition: "((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2))"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 722
+          ...
+        not ok 11 - all_of with a nested any_of
+          ---
+          condition: "(42 == 42 and (42 == 0 or 42 == 1))"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 728
+          ...
+        1..11
+    not ok 16 - Logical operations with more operands # { FAILED, 6 checks passed, 5 failed }
+    1..16
+not ok 2 - Comparisons suite # { FAILED, 68 checks passed, 47 failed, in 16 test cases, time: 1.805 ms }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
         1..1
     ok 1 - check in dynamic suite # { passed, 1 check }
     1..1
-ok 3 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.119 ms }
+ok 3 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.065 ms }
 # Subtest: Dynamic suite with a temporary name
     # Subtest: check in dynamic suite with a temporary name
         ok 1 - 2 == 2 in the suite with a temporary name
         1..1
     ok 1 - check in dynamic suite with a temporary name # { passed, 1 check }
     1..1
-ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.140 ms }
+ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.075 ms }
 # Subtest: Operands suite
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
@@ -803,6 +847,6 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
         1..6
     ok 14 - Operand copies # { passed, 6 checks }
     1..14
-not ok 5 - Operands suite # { FAILED, 38 checks passed, 25 failed, in 14 test cases, time: 2.443 ms }
+not ok 5 - Operands suite # { FAILED, 38 checks passed, 25 failed, in 14 test cases, time: 1.265 ms }
 1..5
-# { total: 136 checks passed, 73 failed, in 49 test cases, 5 test suites, time: 8.472 ms }
+# { total: 142 checks passed, 78 failed, in 50 test cases, 5 test suites, time: 4.827 ms }

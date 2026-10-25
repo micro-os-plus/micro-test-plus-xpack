@@ -851,17 +851,18 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    // The deprecated names of `both()`, `either()`, and `negate()`; they
+    // The deprecated names of `all_of()`, `any_of()`, and `negate()`; they
     // return the same expressions, so they are reported in the same way.
     ts.test ("_and(), _or(), _not()", [] (auto& t)
       {
-        static_assert (std::is_same_v<decltype (_and (eq (1, 1), eq (2, 2))),
-                                      decltype (both (eq (1, 1), eq (2, 2)))>,
-                       "_and() returns the same expression as both()");
+        static_assert (
+            std::is_same_v<decltype (_and (eq (1, 1), eq (2, 2))),
+                           decltype (all_of (eq (1, 1), eq (2, 2)))>,
+            "_and() returns the same expression as all_of()");
         static_assert (
             std::is_same_v<decltype (_or (eq (1, 1), eq (2, 2))),
-                           decltype (either (eq (1, 1), eq (2, 2)))>,
-            "_or() returns the same expression as either()");
+                           decltype (any_of (eq (1, 1), eq (2, 2)))>,
+            "_or() returns the same expression as any_of()");
         static_assert (std::is_same_v<decltype (_not (eq (1, 1))),
                                       decltype (negate (eq (1, 1)))>,
                        "_not() returns the same expression as negate()");
