@@ -517,6 +517,21 @@ auto buffer = std::make_unique<std::byte[]> (size);
 t.require (buffer) << "buffer allocated";
 ```
 
+The arguments that are always true are rejected, since they make the
+check pass silently: the arrays, including the string literals, the
+functions, the pointers to functions and to members, and the pointers to
+the character types. They usually come from writing the description
+instead of the condition, or a function name without the call; write
+the condition, with `mt::ne (p, nullptr)` for a character pointer. The
+pointers to other objects are accepted, so `t.expect (ptr)` checks for
+non-null:
+
+```cpp
+t.expect ("answer () == 42");        // Rejected, was always true.
+t.expect (answer);                   // Rejected, a function name.
+t.expect (mt::eq (answer (), 42));   // Correct.
+```
+
 A failed **expectation** is reported and counted, and the test case
 continues, so that all its checks are evaluated and reported in one run.
 

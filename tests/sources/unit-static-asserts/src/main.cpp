@@ -698,6 +698,22 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (not extension::checkable<scoped>);
     static_assert (not extension::checkable<std::string>);
     static_assert (not extension::checkable<no_conversion>);
+    // The arguments that are always true are not accepted: a string
+    // literal, a function name, and the pointers to functions, to
+    // members, and to characters.
+    static_assert (not extension::checkable<char[4]>);
+    static_assert (not extension::checkable<int[3]>);
+    static_assert (not extension::checkable<void (void)>);
+    static_assert (not extension::checkable<void (*) (void)>);
+    static_assert (not extension::checkable<int no_conversion::*>);
+    static_assert (not extension::checkable<const char*>);
+    static_assert (not extension::checkable<wchar_t*>);
+    static_assert (not extension::checkable<const char8_t*>);
+    static_assert (extension::legacy_checkable<char[4]>);
+    static_assert (extension::legacy_checkable<void (void)>);
+    static_assert (extension::legacy_checkable<const char*>);
+    static_assert (not extension::legacy_checkable<bool>);
+    static_assert (not extension::legacy_checkable<no_conversion>);
   }
 
   {

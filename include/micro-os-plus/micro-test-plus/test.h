@@ -1250,6 +1250,51 @@ namespace micro_os_plus::micro_test_plus
                                  = reflection::source_location::current ());
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-expectations
+     * @brief Deprecated `expect()` of a suspicious condition.
+     *
+     * @details
+     * Accepts the arguments excluded from `extension::checkable`, such
+     * as a string literal or a function name, which are always true, so
+     * the check passes silently; usually the description was written
+     * instead of the condition, or the function was not called. Write
+     * the condition, or `ne (p, nullptr)` for a pointer.
+     *
+     * @tparam Expr_T The type of the argument.
+     *
+     * @param expr The argument.
+     * @param sl Optional source location, defaulting to the current line.
+     * @return The check result.
+     */
+    template <class Expr_T>
+      requires extension::legacy_checkable<Expr_T>
+    [[deprecated ("the argument is always true; write the condition "
+                  "(since 5.1.0)")]] auto
+    expect (const Expr_T& expr, const reflection::source_location& sl
+                                = reflection::source_location::current ());
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-requirements
+     * @brief Deprecated `require()` of a suspicious condition.
+     *
+     * @details
+     * Accepts the arguments excluded from `extension::checkable`, as the
+     * deprecated overload of `expect()` does.
+     *
+     * @tparam Expr_T The type of the argument.
+     *
+     * @param expr The argument.
+     * @param sl Optional source location, defaulting to the current line.
+     * @return The check result.
+     */
+    template <class Expr_T>
+      requires extension::legacy_checkable<Expr_T>
+    [[deprecated ("the argument is always true; write the condition "
+                  "(since 5.1.0)")]] auto
+    require (const Expr_T& expr, const reflection::source_location& sl
+                                 = reflection::source_location::current ());
+
+    /**
      * @ingroup micro-os-plus-micro-test-plus-requirements
      * @brief Deprecated name of `require()`.
      *

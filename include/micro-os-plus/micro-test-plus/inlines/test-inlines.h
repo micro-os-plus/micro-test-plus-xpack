@@ -460,6 +460,43 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Deprecated; the check is the same as that of `expect()`, for the
+   * arguments that are always true.
+   */
+  template <class Expr_T>
+    requires extension::legacy_checkable<Expr_T>
+  auto
+  test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
+  {
+    return detail::check_result{ expr,
+                                 detail::check_kind::expectation,
+                                 sl,
+                                 *this,
+                                 test_reporter ().expression_,
+                                 test_reporter ().writes_passed_checks () };
+  }
+
+  /**
+   * @details
+   * Deprecated; the check is the same as that of `require()`, for the
+   * arguments that are always true.
+   */
+  template <class Expr_T>
+    requires extension::legacy_checkable<Expr_T>
+  auto
+  test_case::require (const Expr_T& expr,
+                      const reflection::source_location& sl)
+  {
+    return detail::check_result{ expr,
+                                 detail::check_kind::requirement,
+                                 sl,
+                                 *this,
+                                 test_reporter ().expression_,
+                                 test_reporter ().writes_passed_checks () };
+  }
+
+  /**
+   * @details
    * Forwards to `require()`; the returned check result is neither copied
    * nor moved, since a prvalue is returned (guaranteed copy elision).
    */

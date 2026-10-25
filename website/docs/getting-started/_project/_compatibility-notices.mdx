@@ -647,6 +647,18 @@ checks and nested test cases. The output file is unchanged. The human
 reporter now displays the name of the outer test case before the line of
 a passed nested test case.
 
+The checks (`expect()` and `require()`) no longer accept the arguments
+that are always true and make the check pass silently, usually because
+the description was written instead of the condition: the arrays,
+including the string literals, the functions (a function name without
+the call), the pointers to functions and to members, and the pointers to
+the character types. The pointers to other objects are still accepted.
+For one release, such calls still compile, through overloads marked
+`[[deprecated]]`, which produce a warning; replace them with the
+condition, for example `mt::ne (p, nullptr)` for a character pointer.
+The `extension::checkable` concept no longer holds for these types, and
+the new `extension::suspicious_condition` concept tells which they are.
+
 ### v5.0 (2026-08-06)
 
 The C++ API is unchanged; the changes affect only the configuration and

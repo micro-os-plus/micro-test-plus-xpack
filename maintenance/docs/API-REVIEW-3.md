@@ -168,6 +168,16 @@ Tags:
   message that explains the mistake; the release notes should say that
   these arguments are no longer accepted.
 
+  Status: fixed (#184). `extension::checkable` excludes the types
+  satisfying the new `extension::suspicious_condition`: the arrays
+  (including the string literals), the functions, the pointers to
+  functions and to members, and the pointers to the character types.
+  The pointers to other objects are still accepted. The new concept
+  `extension::legacy_checkable` constrains `[[deprecated]]` overloads of
+  `test_case::expect()` and `require()`, which keep the old code
+  compiling, with a warning, for one release. Static asserts were added
+  to `unit-static-asserts`.
+
 - **#4 — The overloaded `and` and `or` evaluate both operands.**
   [breaking] **[confirmed]**
   `operators.h` lines 257 to 280, `inlines/detail-inlines.h` lines
