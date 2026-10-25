@@ -247,7 +247,8 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class Rep, class Period>
   expression_formatter&
-  expression_formatter::operator<< (const std::chrono::duration<Rep, Period>& d)
+  expression_formatter::operator<< (
+      const std::chrono::duration<Rep, Period>& d)
   {
     detail::append_number (buffer_, d.count ());
 

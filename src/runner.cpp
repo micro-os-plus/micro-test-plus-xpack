@@ -550,8 +550,7 @@ namespace micro_os_plus::micro_test_plus
             // until the program ends.
             opts.filter_patterns.push_back (value);
           }
-        else if (argument.starts_with ("--")
-                 && !is_known_option (argument))
+        else if (argument.starts_with ("--") && !is_known_option (argument))
           {
             // The other arguments are left to the application, but a
             // mistyped option must not silently disable the tests.

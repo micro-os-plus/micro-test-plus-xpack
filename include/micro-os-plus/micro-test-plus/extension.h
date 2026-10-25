@@ -228,8 +228,7 @@ namespace micro_os_plus::micro_test_plus
                    or std::is_same_v<
                        std::remove_cv_t<std::remove_pointer_t<T>>, char16_t>
                    or std::is_same_v<
-                       std::remove_cv_t<std::remove_pointer_t<T>>,
-                       char32_t>));
+                       std::remove_cv_t<std::remove_pointer_t<T>>, char32_t>));
 
     /**
      * @brief C++20 concept satisfied when a type can be used as a test
@@ -258,10 +257,9 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     concept checkable
-        = is_op<T>
-          or (not suspicious_condition<T> and requires (const T& t) {
-               t ? true : false;
-             });
+        = is_op<T> or (not suspicious_condition<T> and requires (const T& t) {
+            t ? true : false;
+          });
 
     /**
      * @brief C++20 concept satisfied when a type was accepted by
@@ -277,9 +275,8 @@ namespace micro_os_plus::micro_test_plus
      * which keep such code compiling for one release, with a warning.
      */
     template <class T>
-    concept legacy_checkable
-        = (not checkable<T>) and suspicious_condition<T>
-          and requires (const T& t) { t ? true : false; };
+    concept legacy_checkable = (not checkable<T>) and suspicious_condition<T>
+                               and requires (const T& t) { t ? true : false; };
 
     /**
      * @brief C++20 concept satisfied when a type can be appended to the

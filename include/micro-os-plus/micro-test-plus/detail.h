@@ -1560,7 +1560,8 @@ namespace micro_os_plus::micro_test_plus
      * @retval false Otherwise.
      */
     template <class T, class R>
-      requires (container_like<R> and std::equality_comparable_with<
+      requires (container_like<R>
+                and std::equality_comparable_with<
                     T, typename range_element<R>::type>)
     [[nodiscard]] constexpr bool
     operator== (const array_operand<T>& lhs, const R& rhs);
@@ -1576,7 +1577,8 @@ namespace micro_os_plus::micro_test_plus
      * @return The lexicographic order of the elements.
      */
     template <class T, class R>
-      requires (container_like<R> and std::three_way_comparable_with<
+      requires (container_like<R>
+                and std::three_way_comparable_with<
                     T, typename range_element<R>::type>)
     [[nodiscard]] constexpr auto
     operator<=> (const array_operand<T>& lhs, const R& rhs);

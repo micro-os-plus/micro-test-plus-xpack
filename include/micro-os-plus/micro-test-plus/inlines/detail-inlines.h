@@ -1026,7 +1026,8 @@ namespace micro_os_plus::micro_test_plus
      * element.
      */
     template <class T, class R>
-      requires (container_like<R> and std::equality_comparable_with<
+      requires (container_like<R>
+                and std::equality_comparable_with<
                     T, typename range_element<R>::type>)
     constexpr bool
     operator== (const array_operand<T>& lhs, const R& rhs)
@@ -1039,13 +1040,14 @@ namespace micro_os_plus::micro_test_plus
      * A range that is a prefix of the other is the lesser one.
      */
     template <class T, class R>
-      requires (container_like<R> and std::three_way_comparable_with<
+      requires (container_like<R>
+                and std::three_way_comparable_with<
                     T, typename range_element<R>::type>)
     constexpr auto
     operator<=> (const array_operand<T>& lhs, const R& rhs)
     {
-      return std::lexicographical_compare_three_way (
-          lhs.begin (), lhs.end (), rhs.begin (), rhs.end ());
+      return std::lexicographical_compare_three_way (lhs.begin (), lhs.end (),
+                                                     rhs.begin (), rhs.end ());
     }
 
     // ------------------------------------------------------------------------
