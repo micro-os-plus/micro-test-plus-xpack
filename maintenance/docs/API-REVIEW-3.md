@@ -685,6 +685,11 @@ Tags:
   library. Suggested change: refer to the `doxygen-review` skill, or
   wrap the concept declarations in a `-Wdocumentation` pragma.
 
+  Status: fixed (#181). `extension.h`, `test.h`, `detail.h`, and
+  `deprecated.h` ignore `-Wdocumentation` for Clang, in their existing
+  diagnostic pragma groups. `-Weverything` now reports nothing in the
+  library.
+
 - **#32 — Non-finite values get the type suffix.** [internal]
   **[confirmed]**
   `src/expression-formatter.cpp` lines 427 to 467: `INFINITY` and a
