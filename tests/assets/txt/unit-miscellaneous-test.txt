@@ -211,6 +211,21 @@ break	tab == x)
     • Each unnamed value (#2)
         ✓ named by position
     ✓ Each unnamed value (#2) - passed (1 check)
+    • Each move-only value (#1)
+        ✓ owned pointer
+    ✓ Each move-only value (#1) - passed (1 check)
+    • Each move-only value (#2)
+        ✓ owned pointer
+    ✓ Each move-only value (#2) - passed (1 check)
+    • Each uncopied callable (1)
+        ✓ callable not copied
+    ✓ Each uncopied callable (1) - passed (1 check)
+    • Each uncopied callable (2)
+        ✓ callable not copied
+    ✓ Each uncopied callable (2) - passed (1 check)
+    • Each uncopied callable (3)
+        ✓ callable not copied
+    ✓ Each uncopied callable (3) - passed (1 check)
     • Nested test_each
         • Each nested value (10)
             ✓ multiple of 10
@@ -272,7 +287,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (173 checks passed, 8 failed, in 42 test cases), time: 15.218 ms
+✗ Miscellaneous suite - FAILED (178 checks passed, 8 failed, in 47 test cases), time: 15.218 ms
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -339,4 +354,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.313 ms
-✗ Total: 213 checks passed, 13 failed, in 50 test cases, 4 test suites, time: 16.599 ms
+✗ Total: 218 checks passed, 13 failed, in 55 test cases, 4 test suites, time: 16.599 ms

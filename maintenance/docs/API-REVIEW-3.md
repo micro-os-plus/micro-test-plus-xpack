@@ -606,6 +606,11 @@ Tags:
   that stores a pointer), and the callable by reference, since both
   outlive the synchronous call.
 
+  Status: fixed (#177). `test_each_value()` passes a lambda that
+  captures the element and the callable by reference, so nothing is
+  copied and a range of move-only elements compiles. The callable now
+  receives the element as a `const` lvalue.
+
 ## 5. Modern C++
 
 - **#27 — A positive integer literal one past the maximum gives an

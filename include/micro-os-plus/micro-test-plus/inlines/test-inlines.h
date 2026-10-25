@@ -669,7 +669,9 @@ namespace micro_os_plus::micro_test_plus
      * For each value, the name is built in a local string, which lives
      * while the test case runs, since a test case runs within the call to
      * `test()`, and the test case is added with `test()`, with the
-     * location of the call to `test_each()`. The values of a range are
+     * location of the call to `test_each()`. The callable receives each
+     * value as a `const` lvalue, referring to the element itself; neither
+     * the values nor the callable are copied. The values of a range are
      * iterated by a range-based `for` statement, and those of a tuple are
      * expanded by `std::apply()`, in order.
      */
@@ -699,8 +701,21 @@ namespace micro_os_plus::micro_test_plus
             }
           text += ')';
 
-          self.test (test_case_name{ text, name.location () }, callable,
-                     value);
+          // The test case runs within this call, so the value and the
+          // callable are captured by reference, not copied.
+          self.test (test_case_name{ text, name.location () },
+                     [&callable, &value] (auto& test_self)
+            {
+              if constexpr (std::is_member_pointer_v<
+                                std::remove_cvref_t<Callable_T>>)
+                {
+                  std::invoke (callable, test_self, value);
+                }
+              else
+                {
+                  callable (test_self, value);
+                }
+            });
         };
 
       if constexpr (test_values_range<Values_T>)

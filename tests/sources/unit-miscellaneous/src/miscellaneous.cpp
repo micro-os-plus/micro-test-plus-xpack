@@ -19,6 +19,7 @@
 #include <functional>
 #include <iterator>
 #include <limits>
+#include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -56,6 +57,25 @@ namespace
   {
     return formatter << "{ " << p.x << ", " << p.y << " }";
   }
+
+  // A callable that counts its copies, to check that test_each() does not
+  // copy it.
+  struct copy_counter
+  {
+    copy_counter () = default;
+    copy_counter (const copy_counter&)
+    {
+      ++total_copies;
+    }
+
+    void
+    operator() (test_case& t, int) const
+    {
+      t.expect (eq (total_copies, 0)) << "callable not copied";
+    }
+
+    static inline int total_copies = 0;
+  };
 
   // A range with begin() and end() functions, not members, found by
   // argument-dependent lookup, as by a range-based for statement.
@@ -1480,6 +1500,25 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
         local_counts.executed_test_cases++;
       });
+
+    // The values and the callable are not copied, so move-only elements
+    // are accepted, and a callable that counts its copies sees none.
+    std::vector<std::unique_ptr<int>> owned;
+    owned.push_back (std::make_unique<int> (7));
+    owned.push_back (std::make_unique<int> (9));
+    ts.test_each ("Each move-only value", owned,
+                  [] (auto& t, const std::unique_ptr<int>& value)
+      {
+        t.expect (ne (value.get (), nullptr)) << "owned pointer";
+        local_counts.passed_checks++;
+        local_counts.executed_test_cases++;
+      });
+
+    copy_counter copy_counting_callable;
+    ts.test_each ("Each uncopied callable", { 1, 2, 3 },
+                  copy_counting_callable);
+    local_counts.passed_checks += 3;
+    local_counts.executed_test_cases += 3;
 
     ts.test ("Nested test_each", [] (auto& t)
       {
