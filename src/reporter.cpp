@@ -281,16 +281,15 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * The passed checks are written to the output file, when it is open,
-   * whatever the verbosity; to the console only with the normal and
-   * verbose verbosity levels.
+   * whatever the verbosity; to the console only with the verbose
+   * verbosity level. With the normal verbosity, only the failed checks
+   * (with the names of the open test cases) are displayed, so the passed
+   * checks are only counted, without formatting them.
    */
   bool
   reporter::writes_passed_checks (void) const noexcept
   {
-    // With the normal verbosity, the passed checks of a failed test case
-    // are displayed.
-    return output_file_ != nullptr || verbosity_ == verbosity::normal
-           || verbosity_ == verbosity::verbose;
+    return output_file_ != nullptr || verbosity_ == verbosity::verbose;
   }
 
   /**

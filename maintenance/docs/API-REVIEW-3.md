@@ -647,6 +647,11 @@ Tags:
   checks (with the names of the open test cases) at the normal
   verbosity; or keep the current behaviour and state the trade-off.
 
+  Status: fixed (#178). `reporter::writes_passed_checks()` is true only
+  with the verbose verbosity or an output file, so at the normal
+  verbosity the passed checks are only counted, and the failed test
+  cases show only their failed checks.
+
 ## 7. Incidental observations
 
 - **#29 — `uncaught_exceptions_` is unused without exceptions.**

@@ -34,14 +34,12 @@ TAP version 14
     ok 7 - Nested subtests # { passed, 0 checks }
 
     # Subtest: Nested subtest after a check
-        ok 1 - outer check before the nested subtest
         ok 2 - inner subtest after a check # { passed, 1 check }
 
         1..2
     ok 8 - Nested subtest after a check # { passed, 1 check }
 
     # Subtest: Failed nested subtest
-        ok 1 - outer check passes
         # Subtest: middle subtest
             # Subtest: inner subtest
                 not ok 1 - inner check fails
@@ -61,7 +59,6 @@ TAP version 14
     not ok 9 - Failed nested subtest # { FAILED, 1 check passed, 0 failed, 1 test case failed }
 
     # Subtest: Stored check result
-        ok 1 - later check passes
         not ok 2 - stored check fails
           ---
           condition: "1 == 2"
@@ -90,12 +87,11 @@ TAP version 14
             fileName: main.cpp
             lineNumber: 530
           ...
-        ok 3 - 'x' == 'x'
         1..3
     not ok 14 - Character operands # { FAILED, 1 check passed, 2 failed }
 
     1..14
-not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, time: 0.850 ms }
+not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, time: 0.656 ms }
 
 # Subtest: Comparisons suite
     ok 1 - Integer comparisons # { passed, 6 checks }
@@ -296,63 +292,63 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: "0x7ff7be7590a0 != 0x7ff7be7590a0"
+          condition: "0x7ff7bf5a80a0 != 0x7ff7bf5a80a0"
           at:
             fileName: comparisons.cpp
             lineNumber: 504
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: "0x7ff7be7590a0 != 0x7ff7be7590a0"
+          condition: "0x7ff7bf5a80a0 != 0x7ff7bf5a80a0"
           at:
             fileName: comparisons.cpp
             lineNumber: 507
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: "0x7ff7be7590a0 > 0x7ff7be7590a0"
+          condition: "0x7ff7bf5a80a0 > 0x7ff7bf5a80a0"
           at:
             fileName: comparisons.cpp
             lineNumber: 510
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: "0x7ff7be7590a0 < 0x7ff7be7590a0"
+          condition: "0x7ff7bf5a80a0 < 0x7ff7bf5a80a0"
           at:
             fileName: comparisons.cpp
             lineNumber: 513
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: "0x7ff7be7590a0 == 0x7ff7be7590f0"
+          condition: "0x7ff7bf5a80a0 == 0x7ff7bf5a80f0"
           at:
             fileName: comparisons.cpp
             lineNumber: 516
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: "0x101859298 != 0x101859298"
+          condition: "0x100a0a298 != 0x100a0a298"
           at:
             fileName: comparisons.cpp
             lineNumber: 519
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: "0x101859298 == 0x7ff7be7590f0"
+          condition: "0x100a0a298 == 0x7ff7bf5a80f0"
           at:
             fileName: comparisons.cpp
             lineNumber: 522
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: "0x7ff7be759720 >= 0x7ff7be759724"
+          condition: "0x7ff7bf5a8720 >= 0x7ff7bf5a8724"
           at:
             fileName: comparisons.cpp
             lineNumber: 534
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: "0x7ff7be759724 <= 0x7ff7be759720"
+          condition: "0x7ff7bf5a8724 <= 0x7ff7bf5a8720"
           at:
             fileName: comparisons.cpp
             lineNumber: 537
@@ -371,7 +367,7 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: "0x7ff7be7596e0 == nullptr"
+          condition: "0x7ff7bf5a86e0 == nullptr"
           at:
             fileName: comparisons.cpp
             lineNumber: 588
@@ -387,7 +383,6 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
     not ok 14 - Failed null pointer comparisons # { FAILED, 0 checks passed, 3 failed }
 
     # Subtest: Logical operations
-        ok 1 - not (actual != 42)
         not ok 2 - not (actual == 42)
           ---
           condition: "not 42 == 42"
@@ -395,7 +390,6 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
             fileName: comparisons.cpp
             lineNumber: 612
           ...
-        ok 3 - (actual == 42) and (actual == 42.0)
         not ok 4 - (actual == 42) and (actual != 42.0)
           ---
           condition: "(42 == 42 and 42.0f != 42.0)"
@@ -417,7 +411,6 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
             fileName: comparisons.cpp
             lineNumber: 631
           ...
-        ok 7 - (42 == 42 and 42.0f == 42.0)
         not ok 8
           ---
           condition: "(42 == 42 and 42.0f != 42.0)"
@@ -425,9 +418,6 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
             fileName: comparisons.cpp
             lineNumber: 640
           ...
-        ok 9 - (actual == 42) or (actual == 42.0)
-        ok 10 - (actual == 42) or (actual != 42.0)
-        ok 11 - (actual != 42) or (actual == 42.0)
         not ok 12 - (actual != 42) or (actual != 42.0)
           ---
           condition: "(42 != 42 or 42.0f != 42.0)"
@@ -439,12 +429,6 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
     not ok 15 - Logical operations # { FAILED, 6 checks passed, 6 failed }
 
     # Subtest: Logical operations with more operands
-        ok 1 - all_of three true
-        ok 2 - all_of five true
-        ok 3 - any_of three, the last true
-        ok 4 - any_of three, the first true
-        ok 5 - all_of with a nested all_of
-        ok 6 - not all_of
         not ok 7 - all_of three, the second false
           ---
           condition: "(42 == 42 and 42 < 41 and 42 > 41)"
@@ -484,19 +468,19 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
     not ok 16 - Logical operations with more operands # { FAILED, 6 checks passed, 5 failed }
 
     1..16
-not ok 2 - Comparisons suite # { FAILED, 68 checks passed, 47 failed, in 16 test cases, time: 1.572 ms }
+not ok 2 - Comparisons suite # { FAILED, 68 checks passed, 47 failed, in 16 test cases, time: 1.153 ms }
 
 # Subtest: Dynamic suite
     ok 1 - check in dynamic suite # { passed, 1 check }
 
     1..1
-ok 3 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.044 ms }
+ok 3 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.028 ms }
 
 # Subtest: Dynamic suite with a temporary name
     ok 1 - check in dynamic suite with a temporary name # { passed, 1 check }
 
     1..1
-ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.056 ms }
+ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.038 ms }
 
 # Subtest: Operands suite
     ok 1 - Arrays # { passed, 4 checks }
@@ -711,9 +695,9 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
     ok 14 - Operand copies # { passed, 6 checks }
 
     1..14
-not ok 5 - Operands suite # { FAILED, 41 checks passed, 26 failed, in 14 test cases, time: 0.973 ms }
+not ok 5 - Operands suite # { FAILED, 41 checks passed, 26 failed, in 14 test cases, time: 0.729 ms }
 
 1..5
-# { total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites, time: 3.653 ms }
+# { total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites, time: 2.746 ms }
 Overall, the µTest++ unit tests were successful!
 

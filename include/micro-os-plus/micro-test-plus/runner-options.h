@@ -93,7 +93,7 @@ namespace micro_os_plus::micro_test_plus
    * The `quiet` level displays the failed checks, with the names of the
    * suite and of the test cases that contain them, and the totals; the
    * passed checks and the passed test cases are not displayed. To also
-   * see them, use the `normal` level, or keep `quiet` and use an output
+   * see them, use the `verbose` level, or keep `quiet` and use an output
    * file, which receives them.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
@@ -106,7 +106,8 @@ namespace micro_os_plus::micro_test_plus
                   per test suite, counted by the plan, and the failed
                   checks as comments. */
     normal = 2, /**< Displays test suite and test case results; the
-                   individual checks are shown only for failures. */
+                   individual checks are shown only for failures, the
+                   passed checks being only counted. */
     verbose = 3 /**< Displays all results, including passed checks, for maximum
                    detail. */
   };

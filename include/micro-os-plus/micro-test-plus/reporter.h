@@ -780,9 +780,10 @@ namespace micro_os_plus::micro_test_plus
        * - `verbose`: in addition, the headings of the test cases and the
        *   lines of the passed checks.
        *
-       * The passed checks of a failed test case, and the headings of the
-       * test cases that contain a failure, are also displayed with the
-       * normal verbosity (see `console_lines()`); the concrete reporters
+       * The headings of the test cases that contain a failure are also
+       * displayed with the normal verbosity (see `console_lines()`), but
+       * the passed checks are not; they are only counted, without being
+       * formatted (see `writes_passed_checks()`). The concrete reporters
        * adapt the quiet and normal levels to their format.
        *
        * @param kind The kind of record.

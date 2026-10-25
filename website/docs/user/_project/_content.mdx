@@ -1492,11 +1492,11 @@ by µTest++.
 
 ### Verbosity
 
-By default, µTest++ displays only **test case summaries for passing tests** (for failed tests, all expectations are shown).
+By default, µTest++ displays a **summary line for each test case**, and, for the failed ones, the **failed checks**; the passed checks are only counted.
 
 To adjust the verbosity, one of the following command-line options may be specified:
 
-- `--verbose` – display **all expectations**, irrespective of their outcome
+- `--verbose` – display **all checks**, irrespective of their outcome, and the heading of every test case
 - `--quiet` – display only the **failed checks**, with the names of the suite and of the test cases that contain them, and the **runner totals**; the TAP reporter also displays one `ok`/`not ok` line per test suite, with the plan counting them, so that the output remains a valid TAP document, which node-tap and the other TAP consumers read as failed when a suite failed
 - `--silent` – suppress all output and return **solely the exit code**
 
@@ -1504,10 +1504,18 @@ The verbosity selects only the console output; the output file always receives t
 
 | Level | Option | Console |
 | --- | --- | --- |
-| verbose | `--verbose` | all the checks, passed and failed |
-| normal | (none) | a summary of each passed test case; all the checks of the failed test cases |
+| verbose | `--verbose` | everything displayed by the normal level, plus the heading of every test case and each passed check |
+| normal | (none) | the informational lines, the result of each suite and of each test case, passed or failed, with the counts of checks, and the failed checks, under the headings of the test cases that contain them; the passed checks are only counted |
 | quiet | `--quiet` | the failed checks, with the names of the suite and of the test cases that contain them, and the totals; with TAP, also one `ok`/`not ok` line per test suite, and the failed checks as comments |
 | silent | `--silent` | nothing; only the exit code |
+
+In short, the levels differ as follows:
+
+- **quiet** shows only what failed, without the results of the passed or failed test cases, and the totals;
+- **normal** adds the result line of every test case, so a passed test case is visible as such, and the header and informational lines;
+- **verbose** adds the headings of all the test cases and the line of each passed check, which is the only console level that shows them.
+
+The passed checks are not formatted at the quiet and normal levels, unless an output file is used, so they cost only a counter increment.
 
 With the TAP reporter and the normal verbosity, the passed test cases are displayed as single `ok` lines, and the failed ones as complete `# Subtest:` blocks; the nested passed test cases appear inside the block of their outer test case. With the human reporter, the line of a passed nested test case is preceded by the name of its outer test case.
 
