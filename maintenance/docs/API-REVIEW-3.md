@@ -346,6 +346,12 @@ Tags:
   Suggested change: store `""` (or a fixed placeholder) for a null
   name in `test_case_name`, `suite`, and `static_suite`.
 
+  Status: fixed. `test_case_name` and the two `static_suite`
+  constructors store or pass `""` for a null `const char*`. The
+  `suite` and `runner::add_suite()` parameters are `std::string_view`,
+  so a null `const char*` is converted at the call, before the library
+  is entered; it cannot be intercepted there.
+
 - **#15 — Strings in failure messages are not quoted, and NUL and
   newline characters reach the console raw.** [internal]
   **[confirmed]**

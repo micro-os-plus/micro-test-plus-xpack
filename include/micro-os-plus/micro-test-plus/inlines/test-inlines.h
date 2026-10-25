@@ -94,12 +94,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Stores the name pointer and the location; when called implicitly,
-   * the location is the place of the conversion, in the user code.
+   * Stores the name pointer, or an empty name if it is null, and the
+   * location; when called implicitly, the location is the place of the
+   * conversion, in the user code.
    */
   inline test_case_name::test_case_name (
       const char* name, const reflection::source_location& location) noexcept
-      : name_{ name }, location_{ location }
+      : name_{ name != nullptr ? name : "" }, location_{ location }
   {
   }
 
@@ -800,7 +801,8 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Delegates to `suite`, which stores the callable and binds its
-   * arguments, if any; the callable receives a `suite&` reference, as
+   * arguments, if any; a null name is replaced by an empty name; the
+   * callable receives a `suite&` reference, as
    * for the suites registered with `runner::add_suite()`. After
    * construction, the suite is inserted into the list of suites, to be
    * run by its runner, unless the runner has already started, when the
@@ -810,12 +812,13 @@ namespace micro_os_plus::micro_test_plus
     requires (!detail::static_suite_body<Callable_T, Args_T...>)
   static_suite::static_suite (const char* name, runner& test_runner,
                               Callable_T&& callable, Args_T&&... arguments)
-      : suite{ name, test_runner, std::forward<Callable_T> (callable),
+      : suite{ name != nullptr ? name : "", test_runner,
+               std::forward<Callable_T> (callable),
                std::forward<Args_T> (arguments)... }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
-                   __PRETTY_FUNCTION__, name, own_index_);
+                   __PRETTY_FUNCTION__, name_, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
     link_or_reject ();
@@ -836,7 +839,7 @@ namespace micro_os_plus::micro_test_plus
     requires (detail::static_suite_body<Callable_T, Args_T...>)
   static_suite::static_suite (const char* name, runner& test_runner,
                               Callable_T&& callable, Args_T&&... arguments)
-      : suite{ name, test_runner,
+      : suite{ name != nullptr ? name : "", test_runner,
                [stored_callable = std::forward<Callable_T> (callable)] (
                    suite& self, auto&... stored_arguments) mutable
     {
@@ -846,7 +849,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
-                   __PRETTY_FUNCTION__, name, own_index_);
+                   __PRETTY_FUNCTION__, name_, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
     link_or_reject ();
