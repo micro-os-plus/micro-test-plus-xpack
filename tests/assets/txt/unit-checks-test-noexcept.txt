@@ -180,15 +180,15 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x43fff284 != 0x43fff284)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x43fff284 != 0x43fff284)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x43fff284 > 0x43fff284)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x43fff284 < 0x43fff284)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x43fff284 == 0x43fff268)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x40011ad0 != 0x40011ad0)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x40011ad0 == 0x43fff268)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x43fff250 >= 0x43fff254)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x43fff254 <= 0x43fff250)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x43fff2cc != 0x43fff2cc)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x43fff2cc != 0x43fff2cc)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x43fff2cc > 0x43fff2cc)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x43fff2cc < 0x43fff2cc)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x43fff2cc == 0x43fff2b0)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x40011abc != 0x40011abc)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x40011abc == 0x43fff2b0)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x43fff298 >= 0x43fff29c)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x43fff29c <= 0x43fff298)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -197,7 +197,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x43fff510 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x43fff528 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
@@ -334,5 +334,17 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ stored comparator
         ✓ temporary operand stored once
     ✓ Operand copies - passed (6 checks)
-✗ Operands suite - FAILED (41 checks passed, 26 failed, in 14 test cases)
-✗ Total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites
+    • Raw arrays
+        ✓ bytes equal
+        ✓ bytes not equal
+        ✓ different sizes
+        ✓ bytes less
+        ✓ prefix is less
+        ✓ array == vector
+        ✓ vector == array
+    ✓ Raw arrays - passed (7 checks)
+    • Raw arrays bad
+        ✗ bytes eq FAILED (operands.cpp:661, {1uc, 2uc, 3uc} == {1uc, 2uc, 4uc})
+    ✗ Raw arrays bad - FAILED (0 checks passed, 1 failed)
+✗ Operands suite - FAILED (48 checks passed, 27 failed, in 16 test cases)
+✗ Total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites

@@ -390,63 +390,63 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases }
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: "0x43fff284 != 0x43fff284"
+          condition: "0x43fff2cc != 0x43fff2cc"
           at:
             fileName: comparisons.cpp
             lineNumber: 504
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: "0x43fff284 != 0x43fff284"
+          condition: "0x43fff2cc != 0x43fff2cc"
           at:
             fileName: comparisons.cpp
             lineNumber: 507
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: "0x43fff284 > 0x43fff284"
+          condition: "0x43fff2cc > 0x43fff2cc"
           at:
             fileName: comparisons.cpp
             lineNumber: 510
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: "0x43fff284 < 0x43fff284"
+          condition: "0x43fff2cc < 0x43fff2cc"
           at:
             fileName: comparisons.cpp
             lineNumber: 513
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: "0x43fff284 == 0x43fff268"
+          condition: "0x43fff2cc == 0x43fff2b0"
           at:
             fileName: comparisons.cpp
             lineNumber: 516
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: "0x40011ad0 != 0x40011ad0"
+          condition: "0x40011abc != 0x40011abc"
           at:
             fileName: comparisons.cpp
             lineNumber: 519
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: "0x40011ad0 == 0x43fff268"
+          condition: "0x40011abc == 0x43fff2b0"
           at:
             fileName: comparisons.cpp
             lineNumber: 522
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: "0x43fff250 >= 0x43fff254"
+          condition: "0x43fff298 >= 0x43fff29c"
           at:
             fileName: comparisons.cpp
             lineNumber: 534
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: "0x43fff254 <= 0x43fff250"
+          condition: "0x43fff29c <= 0x43fff298"
           at:
             fileName: comparisons.cpp
             lineNumber: 537
@@ -469,7 +469,7 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases }
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: "0x43fff510 == nullptr"
+          condition: "0x43fff528 == nullptr"
           at:
             fileName: comparisons.cpp
             lineNumber: 588
@@ -856,7 +856,27 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
         ok 6 - temporary operand stored once
         1..6
     ok 14 - Operand copies # { passed, 6 checks }
-    1..14
-not ok 5 - Operands suite # { FAILED, 41 checks passed, 26 failed, in 14 test cases }
+    # Subtest: Raw arrays
+        ok 1 - bytes equal
+        ok 2 - bytes not equal
+        ok 3 - different sizes
+        ok 4 - bytes less
+        ok 5 - prefix is less
+        ok 6 - array == vector
+        ok 7 - vector == array
+        1..7
+    ok 15 - Raw arrays # { passed, 7 checks }
+    # Subtest: Raw arrays bad
+        not ok 1 - bytes eq
+          ---
+          condition: "{1uc, 2uc, 3uc} == {1uc, 2uc, 4uc}"
+          at:
+            fileName: operands.cpp
+            lineNumber: 661
+          ...
+        1..1
+    not ok 16 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
+    1..16
+not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases }
 1..5
-# { total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites }
+# { total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites }

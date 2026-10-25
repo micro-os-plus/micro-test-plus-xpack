@@ -528,6 +528,14 @@ Tags:
   constructed by a derived class); for `static_suite`, the release
   notes should say that it is now `final`.
 
+  Status: fixed (#186). `test_case`, `top_suite`, `static_suite`, and
+  `detail::stopwatch` are `final`, and the protected members of
+  `test_case` and `stopwatch` are private. The unit tests that derived
+  from `stopwatch` to set known readings use the `stopwatch_test_access`
+  friend, defined by the tests. A class derived from `static_suite` or
+  `detail::stopwatch` no longer compiles, which the release notes and
+  the compatibility notices must say.
+
 - **#21 — `utility::split()` is not used by the library, and does not
   deduce its arguments.** [breaking] **[confirmed]**
   `utility.h` lines 121 to 123, `inlines/utility-inlines.h` lines 89

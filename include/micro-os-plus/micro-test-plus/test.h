@@ -988,7 +988,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
-  class test_case : public detail::runnable_base
+  class test_case final : public detail::runnable_base
   {
     /**
      * @brief The base of the nodes, which creates the test cases.
@@ -1334,7 +1334,7 @@ namespace micro_os_plus::micro_test_plus
     [[gnu::always_inline]] void
     run (void) override;
 
-  protected:
+  private:
 #if defined(__cpp_exceptions)
     /**
      * @brief Reports an exception that escaped the test case body as a
@@ -1354,7 +1354,7 @@ namespace micro_os_plus::micro_test_plus
     fail_unexpected_exception (const char* what);
 #endif // defined(__cpp_exceptions)
 
-  protected:
+  private:
     /**
      * @brief Reference to the test case body, with any bound arguments.
      *
@@ -1809,7 +1809,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
-  class top_suite : public suite
+  class top_suite final : public suite
   {
     /**
      * @brief The runner, which owns the top suite.
@@ -1947,7 +1947,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
-  class static_suite : public suite
+  class static_suite final : public suite
   {
   public:
     /**

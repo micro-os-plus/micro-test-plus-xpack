@@ -76,21 +76,24 @@ subtest_function (subtest& t)
 
 // ----------------------------------------------------------------------------
 
-namespace
+namespace micro_os_plus::micro_test_plus::detail
 {
-  // A stopwatch with known readings, for the deprecated members kept
-  // from the v5.0.1 `detail::timestamps`.
-  class known_stopwatch : public detail::stopwatch
+  // Sets known readings of a stopwatch, which the v5.0.1 tests did by
+  // deriving from the class.
+  struct stopwatch_test_access
   {
-  public:
-    void
-    set_times (const timespec& start, const timespec& stop) noexcept
+    static void
+    set_times (stopwatch& sw, const timespec& start,
+               const timespec& stop) noexcept
     {
-      start_time_ = start;
-      stop_time_ = stop;
+      sw.start_time_ = start;
+      sw.stop_time_ = stop;
     }
   };
+} // namespace micro_os_plus::micro_test_plus::detail
 
+namespace
+{
   // A timestamp with a known value, set through the protected member, as
   // the v5.0.1 unit tests did.
   class known_timestamp : public detail::timestamp
@@ -485,8 +488,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
     // bound a non-`const` reference no longer compiles.
     ts.test ("read-only totals()", [] (auto& t)
       {
-        static_assert (std::is_same_v<decltype (t.totals ()),
-                                      const counters&>,
+        static_assert (std::is_same_v<decltype (t.totals ()), const counters&>,
                        "the totals() of a non-const node is read-only");
         static_assert (std::is_same_v<decltype (std::as_const (t).totals ()),
                                       const counters&>,
@@ -584,7 +586,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
     // with known readings.
     ts.test ("timestamps::compute_elapsed_time()", [] (auto& t)
       {
-        known_stopwatch sw{};
+        detail::stopwatch sw{};
         uint32_t milliseconds = 1;
         uint32_t microseconds = 1;
 
@@ -595,14 +597,15 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
             << "no readings, zero elapsed time";
         local_counts.passed_checks++;
 
-        sw.set_times ({ 1, 0 }, { 0, 0 });
+        detail::stopwatch_test_access::set_times (sw, { 1, 0 }, { 0, 0 });
 
         t.expect (sw.has_begin () and !sw.has_end () and !sw.has_timestamps ())
             << "start reading only";
         local_counts.passed_checks++;
 
         // 1.001235 seconds, with a borrow from the seconds.
-        sw.set_times ({ 1, 999'999'000 }, { 3, 1'234'000 });
+        detail::stopwatch_test_access::set_times (sw, { 1, 999'999'000 },
+                                                  { 3, 1'234'000 });
         sw.compute_elapsed_time (milliseconds, microseconds);
 
         t.expect (sw.has_begin () and sw.has_end () and sw.has_timestamps ()
@@ -620,7 +623,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         uint32_t milliseconds = 0;
         uint32_t microseconds = 0;
 
-        known_stopwatch sw{};
+        detail::stopwatch sw{};
         sw.timestamp_begin ({ 1, 0 });
         sw.timestamp_begin ({ 5, 0 });
 
@@ -639,7 +642,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         // Present readings are not replaced by the clock.
-        sw.set_times ({ 1, 0 }, { 2, 0 });
+        detail::stopwatch_test_access::set_times (sw, { 1, 0 }, { 2, 0 });
         sw.timestamp_begin ();
         sw.timestamp_end ();
         sw.compute_elapsed_time (milliseconds, microseconds);
@@ -650,7 +653,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
 
         // The start reading does not clear the stop reading, as start()
         // does.
-        sw.set_times ({ 0, 0 }, { 2, 0 });
+        detail::stopwatch_test_access::set_times (sw, { 0, 0 }, { 2, 0 });
         sw.timestamp_begin ({ 1, 0 });
         sw.compute_elapsed_time (milliseconds, microseconds);
 
@@ -659,7 +662,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         // A zero time is not a reading.
-        known_stopwatch zero_sw{};
+        detail::stopwatch zero_sw{};
         zero_sw.timestamp_begin ({ 0, 0 });
         zero_sw.timestamp_end ({ 0, 0 });
 

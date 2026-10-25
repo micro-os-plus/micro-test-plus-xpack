@@ -124,9 +124,8 @@ namespace micro_os_plus::micro_test_plus
      * The class is non-copyable and non-movable to prevent accidental
      * sharing of live timing state.
      *
-     * The non-public members are `protected`, not `private`, only so that
-     * the unit tests can derive from the class and set known readings;
-     * the class is not meant to be extended otherwise.
+     * The class is `final`; the non-public members are `private`, and
+     * only the unit tests, through a friend, set known readings.
      *
      * The public members of the v5.0.1 `detail::timestamps` class
      * (`timestamp_begin()`, `timestamp_end()`, `has_begin()`, `has_end()`,
@@ -137,7 +136,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    class stopwatch
+    class stopwatch final
     {
     public:
       /**
@@ -389,7 +388,16 @@ namespace micro_os_plus::micro_test_plus
       [[deprecated ("use stop() (since 5.1.0)")]] void
       timestamp_end (const timespec& ts) noexcept;
 
-    protected:
+    private:
+      /**
+       * @brief The unit tests helper, which sets known readings.
+       *
+       * @details
+       * It is declared here, and defined by the unit tests only, so that
+       * the tests can inject readings without deriving from the class.
+       */
+      friend struct stopwatch_test_access;
+
       /**
        * @brief Checks whether a clock reading was recorded.
        *
