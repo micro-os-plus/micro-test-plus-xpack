@@ -42,6 +42,7 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
+#include <cstddef>
 #include <string_view>
 #include <vector>
 
@@ -110,6 +111,14 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-os-plus-micro-test-plus-utility-functions
      * @brief Splits a string into a vector of sub-strings.
      *
+     * @details
+     * This template preserves the type of the argument: for a
+     * `std::string_view` it returns views into the input, for a
+     * `std::string` it returns copies. It takes part in overload
+     * resolution only for the string-like types, i.e. those having
+     * `npos`, `find_first_of()`, and `substr()`; for string literals and
+     * `const char*` arguments the non-template overload is selected.
+     *
      * @tparam T Type of the input string.
      * @tparam Delim_T Type of the delimiter.
      *
@@ -119,8 +128,32 @@ namespace micro_os_plus::micro_test_plus
      * sub-strings (e.g. between consecutive delimiters) are omitted.
      */
     template <class T, class Delim_T>
+      requires requires (T s, Delim_T d) {
+        T::npos;
+        s.find_first_of (d, std::size_t{});
+        s.substr (std::size_t{}, std::size_t{});
+      }
     [[nodiscard]] auto
     split (T input, Delim_T delim) -> std::vector<T>;
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-utility-functions
+     * @brief Splits a string view into a vector of string views.
+     *
+     * @details
+     * This overload accepts string literals and `const char*` arguments,
+     * which the template cannot handle, and also any other type
+     * convertible to `std::string_view`. The returned views refer to the
+     * characters of the input, which must outlive them.
+     *
+     * @param input Input string to split.
+     * @param delimiters Delimiter characters; any of them separates
+     * sub-strings.
+     * @return A vector containing the resulting sub-strings; empty
+     * sub-strings (e.g. between consecutive delimiters) are omitted.
+     */
+    [[nodiscard]] std::vector<std::string_view>
+    split (std::string_view input, std::string_view delimiters);
 
     // ------------------------------------------------------------------------
   } // namespace utility

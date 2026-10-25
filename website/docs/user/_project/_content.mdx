@@ -935,8 +935,12 @@ namespace utility {
 }
 
 namespace utility {
-  template <class T, class Delim_T>
+  template <class T, class Delim_T> // string-like T only
   auto split (T input, Delim_T delim) -> std::vector<T>;
+
+  // Selected for string literals and `const char*`.
+  std::vector<std::string_view>
+  split (std::string_view input, std::string_view delimiters);
 }
 ```
 

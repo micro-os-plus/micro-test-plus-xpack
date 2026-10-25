@@ -25,7 +25,7 @@ TAP version 14
         1..2
     not ok 4 - expect(false) # { FAILED, 0 checks passed, 2 failed }
     ok 5 - reflection::type_name() # { passed, 4 checks }
-    ok 6 - Splits # { passed, 8 checks }
+    ok 6 - Splits # { passed, 13 checks }
 
     # Subtest: Nested subtests
         ok 1 - inner subtest # { passed, 1 check }
@@ -47,7 +47,7 @@ TAP version 14
                   condition: "1 == 2"
                   at:
                     fileName: main.cpp
-                    lineNumber: 381
+                    lineNumber: 408
                   ...
                 1..1
             not ok 1 - inner subtest # { FAILED, 0 checks passed, 1 failed }
@@ -64,7 +64,7 @@ TAP version 14
           condition: "1 == 2"
           at:
             fileName: main.cpp
-            lineNumber: 409
+            lineNumber: 436
           ...
         1..2
     not ok 10 - Stored check result # { FAILED, 1 check passed, 1 failed }
@@ -78,20 +78,20 @@ TAP version 14
           condition: "'\\0' == 'a'"
           at:
             fileName: main.cpp
-            lineNumber: 527
+            lineNumber: 554
           ...
         not ok 2 - space is tab
           ---
           condition: "' ' == '\\t'"
           at:
             fileName: main.cpp
-            lineNumber: 530
+            lineNumber: 557
           ...
         1..3
     not ok 14 - Character operands # { FAILED, 1 check passed, 2 failed }
 
     1..14
-not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, time: 0.656 ms }
+not ok 1 - Top suite # { FAILED, 39 checks passed, 6 failed, in 18 test cases, time: 0.768 ms }
 
 # Subtest: Comparisons suite
     ok 1 - Integer comparisons # { passed, 6 checks }
@@ -292,63 +292,63 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: "0x7ff7bf5a80a0 != 0x7ff7bf5a80a0"
+          condition: "0x7ff7b9d720a0 != 0x7ff7b9d720a0"
           at:
             fileName: comparisons.cpp
             lineNumber: 504
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: "0x7ff7bf5a80a0 != 0x7ff7bf5a80a0"
+          condition: "0x7ff7b9d720a0 != 0x7ff7b9d720a0"
           at:
             fileName: comparisons.cpp
             lineNumber: 507
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: "0x7ff7bf5a80a0 > 0x7ff7bf5a80a0"
+          condition: "0x7ff7b9d720a0 > 0x7ff7b9d720a0"
           at:
             fileName: comparisons.cpp
             lineNumber: 510
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: "0x7ff7bf5a80a0 < 0x7ff7bf5a80a0"
+          condition: "0x7ff7b9d720a0 < 0x7ff7b9d720a0"
           at:
             fileName: comparisons.cpp
             lineNumber: 513
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: "0x7ff7bf5a80a0 == 0x7ff7bf5a80f0"
+          condition: "0x7ff7b9d720a0 == 0x7ff7b9d720f0"
           at:
             fileName: comparisons.cpp
             lineNumber: 516
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: "0x100a0a298 != 0x100a0a298"
+          condition: "0x10624b858 != 0x10624b858"
           at:
             fileName: comparisons.cpp
             lineNumber: 519
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: "0x100a0a298 == 0x7ff7bf5a80f0"
+          condition: "0x10624b858 == 0x7ff7b9d720f0"
           at:
             fileName: comparisons.cpp
             lineNumber: 522
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: "0x7ff7bf5a8720 >= 0x7ff7bf5a8724"
+          condition: "0x7ff7b9d72720 >= 0x7ff7b9d72724"
           at:
             fileName: comparisons.cpp
             lineNumber: 534
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: "0x7ff7bf5a8724 <= 0x7ff7bf5a8720"
+          condition: "0x7ff7b9d72724 <= 0x7ff7b9d72720"
           at:
             fileName: comparisons.cpp
             lineNumber: 537
@@ -367,7 +367,7 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: "0x7ff7bf5a86e0 == nullptr"
+          condition: "0x7ff7b9d726e0 == nullptr"
           at:
             fileName: comparisons.cpp
             lineNumber: 588
@@ -468,19 +468,19 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
     not ok 16 - Logical operations with more operands # { FAILED, 6 checks passed, 5 failed }
 
     1..16
-not ok 2 - Comparisons suite # { FAILED, 68 checks passed, 47 failed, in 16 test cases, time: 1.153 ms }
+not ok 2 - Comparisons suite # { FAILED, 68 checks passed, 47 failed, in 16 test cases, time: 1.192 ms }
 
 # Subtest: Dynamic suite
     ok 1 - check in dynamic suite # { passed, 1 check }
 
     1..1
-ok 3 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.028 ms }
+ok 3 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.029 ms }
 
 # Subtest: Dynamic suite with a temporary name
     ok 1 - check in dynamic suite with a temporary name # { passed, 1 check }
 
     1..1
-ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.038 ms }
+ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.040 ms }
 
 # Subtest: Operands suite
     ok 1 - Arrays # { passed, 4 checks }
@@ -707,9 +707,9 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
     not ok 16 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
 
     1..16
-not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases, time: 0.822 ms }
+not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases, time: 0.811 ms }
 
 1..5
-# { total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 2.937 ms }
+# { total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 2.985 ms }
 Overall, the µTest++ unit tests were successful!
 

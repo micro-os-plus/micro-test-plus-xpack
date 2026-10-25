@@ -43,7 +43,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m . (only delimiter) splits into []
         [32m✓[0m .a (leading delimiter) splits into [a]
         [32m✓[0m a..b (consecutive delimiters) splits into [a, b]
-    [32m✓[0m Splits - passed (8 checks)
+        [32m✓[0m literal a.b splits into [a, b]
+        [32m✓[0m literal a.b,c splits on any delimiter
+        [32m✓[0m literal empty splits into []
+        [32m✓[0m string view a.b splits into [a, b]
+        [32m✓[0m string a.b splits into [a, b] strings
+    [32m✓[0m Splits - passed (13 checks)
 
     • Nested subtests
         • inner subtest
@@ -64,7 +69,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m outer check passes
         • middle subtest
             • inner subtest
-                [31m✗[0m inner check fails [31mFAILED[0m (main.cpp:381, [31m1 == 2[0m)
+                [31m✗[0m inner check fails [31mFAILED[0m (main.cpp:408, [31m1 == 2[0m)
             [31m✗[0m inner subtest - [31mFAILED[0m (0 checks passed, 1 failed)
 
         [31m✗[0m middle subtest - [31mFAILED[0m (0 checks passed, 0 failed, 1 test case failed)
@@ -73,7 +78,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     • Stored check result
         [32m✓[0m later check passes
-        [31m✗[0m stored check fails [31mFAILED[0m (main.cpp:409, [31m1 == 2[0m)
+        [31m✗[0m stored check fails [31mFAILED[0m (main.cpp:436, [31m1 == 2[0m)
     [31m✗[0m Stored check result - [31mFAILED[0m (1 check passed, 1 failed)
 
     • Application types with get()
@@ -96,12 +101,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Message values - passed (3 checks)
 
     • Character operands
-        [31m✗[0m [31mFAILED[0m (main.cpp:527, [31m'\0' == 'a'[0m)
-        [31m✗[0m space is tab [31mFAILED[0m (main.cpp:530, [31m' ' == '\t'[0m)
+        [31m✗[0m [31mFAILED[0m (main.cpp:554, [31m'\0' == 'a'[0m)
+        [31m✗[0m space is tab [31mFAILED[0m (main.cpp:557, [31m' ' == '\t'[0m)
         [32m✓[0m [32m'x' == 'x'[0m
     [31m✗[0m Character operands - [31mFAILED[0m (1 check passed, 2 failed)
 
-[31m✗[0m Top suite - [31mFAILED[0m (34 checks passed, 6 failed, in 18 test cases), time: 0.683 ms
+[31m✗[0m Top suite - [31mFAILED[0m (39 checks passed, 6 failed, in 18 test cases), time: 0.819 ms
 
 • Comparisons suite
 
@@ -216,15 +221,15 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:504, [31m0x7ff7bb2e1060 != 0x7ff7bb2e1060[0m)
-        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:507, [31m0x7ff7bb2e1060 != 0x7ff7bb2e1060[0m)
-        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:510, [31m0x7ff7bb2e1060 > 0x7ff7bb2e1060[0m)
-        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:513, [31m0x7ff7bb2e1060 < 0x7ff7bb2e1060[0m)
-        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:516, [31m0x7ff7bb2e1060 == 0x7ff7bb2e10b0[0m)
-        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:519, [31m0x104cd1298 != 0x104cd1298[0m)
-        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:522, [31m0x104cd1298 == 0x7ff7bb2e10b0[0m)
-        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:534, [31m0x7ff7bb2e16e0 >= 0x7ff7bb2e16e4[0m)
-        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:537, [31m0x7ff7bb2e16e4 <= 0x7ff7bb2e16e0[0m)
+        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:504, [31m0x7ff7b4912060 != 0x7ff7b4912060[0m)
+        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:507, [31m0x7ff7b4912060 != 0x7ff7b4912060[0m)
+        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:510, [31m0x7ff7b4912060 > 0x7ff7b4912060[0m)
+        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:513, [31m0x7ff7b4912060 < 0x7ff7b4912060[0m)
+        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:516, [31m0x7ff7b4912060 == 0x7ff7b49120b0[0m)
+        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:519, [31m0x10b6ab858 != 0x10b6ab858[0m)
+        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:522, [31m0x10b6ab858 == 0x7ff7b49120b0[0m)
+        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:534, [31m0x7ff7b49126e0 >= 0x7ff7b49126e4[0m)
+        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:537, [31m0x7ff7b49126e4 <= 0x7ff7b49126e0[0m)
     [31m✗[0m Failed pointer comparisons - [31mFAILED[0m (0 checks passed, 9 failed)
 
     • Null pointer comparisons
@@ -235,7 +240,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     • Failed null pointer comparisons
         [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:585, [31m0x0 != nullptr[0m)
-        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:588, [31m0x7ff7bb2e16a0 == nullptr[0m)
+        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:588, [31m0x7ff7b49126a0 == nullptr[0m)
         [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:591, [31m0x0 != nullptr[0m)
     [31m✗[0m Failed null pointer comparisons - [31mFAILED[0m (0 checks passed, 3 failed)
 
@@ -268,7 +273,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:728, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
     [31m✗[0m Logical operations with more operands - [31mFAILED[0m (6 checks passed, 5 failed)
 
-[31m✗[0m Comparisons suite - [31mFAILED[0m (68 checks passed, 47 failed, in 16 test cases), time: 1.061 ms
+[31m✗[0m Comparisons suite - [31mFAILED[0m (68 checks passed, 47 failed, in 16 test cases), time: 1.067 ms
 
 • Dynamic suite
 
@@ -276,7 +281,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 1 == 1 in dynamic suite
     [32m✓[0m check in dynamic suite - passed (1 check)
 
-[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.035 ms
+[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.037 ms
 
 • Dynamic suite with a temporary name
 
@@ -284,7 +289,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 2 == 2 in the suite with a temporary name
     [32m✓[0m check in dynamic suite with a temporary name - passed (1 check)
 
-[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.031 ms
+[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.033 ms
 
 • Operands suite
 
@@ -411,8 +416,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m bytes eq [31mFAILED[0m (operands.cpp:661, [31m{1uc, 2uc, 3uc} == {1uc, 2uc, 4uc}[0m)
     [31m✗[0m Raw arrays bad - [31mFAILED[0m (0 checks passed, 1 failed)
 
-[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 27 failed, in 16 test cases), time: 1.789 ms
+[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 27 failed, in 16 test cases), time: 0.910 ms
 
-[31m✗[0m Total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 4.518 ms
+[31m✗[0m Total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 3.010 ms
 Overall, the µTest++ unit tests were successful!
 

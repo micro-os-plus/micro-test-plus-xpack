@@ -306,6 +306,33 @@ main (int argc, char* argv[])
           << "a..b (consecutive delimiters) splits into [a, b]";
       local_counts.passed_checks++;
 
+      // The non-template overload, selected for literals.
+      t.expect (std::vector<std::string_view>{ "a", "b" }
+                == utility::split ("a.b", "."))
+          << "literal a.b splits into [a, b]";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{ "a", "b", "c" }
+                == utility::split ("a.b,c", ".,"))
+          << "literal a.b,c splits on any delimiter";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{}
+                == utility::split ("", "."))
+          << "literal empty splits into []";
+      local_counts.passed_checks++;
+
+      // The template, selected for string views and strings.
+      t.expect (std::vector<std::string_view>{ "a", "b" }
+                == utility::split (std::string_view{ "a.b" }, "."))
+          << "string view a.b splits into [a, b]";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string>{ "a", "b" }
+                == utility::split (std::string{ "a.b" }, "."))
+          << "string a.b splits into [a, b] strings";
+      local_counts.passed_checks++;
+
       local_counts.executed_test_cases++;
     });
 

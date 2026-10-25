@@ -25,7 +25,8 @@
  * for the µTest++ framework. It provides `extract_file_name()`, which
  * strips the folder path from a file path returning only the base name,
  * and `is_match()`, which performs wildcard pattern matching with `*`
- * (any sequence of characters) and `?` (any single character) support.
+ * (any sequence of characters) and `?` (any single character) support, and the `split()` overload
+ * for string views.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::utility` namespace.
@@ -176,6 +177,46 @@ namespace micro_os_plus::micro_test_plus
         }
 
       return p == pattern.size ();
+    }
+
+    /**
+     * @details
+     * The function iterates through the input, identifying the positions
+     * of any of the delimiter characters (via `find_first_of()`) and
+     * extracting the views between them. Empty views, such as those
+     * between consecutive delimiters, are omitted. It is the overload
+     * selected for string literals and `const char*` arguments, which the
+     * template cannot handle.
+     *
+     * @par Example
+     *
+     * @code{.cpp}
+     * namespace mt = micro_os_plus::micro_test_plus;
+     *
+     * t.expect (std::vector<std::string_view>{ "a", "b" }
+     *           == mt::utility::split ("a.b", "."))
+     *     << "a.b splits into [a,b]";
+     * @endcode
+     */
+    [[nodiscard]] std::vector<std::string_view>
+    split (std::string_view input, std::string_view delimiters)
+    {
+      std::vector<std::string_view> output{};
+      std::size_t first{};
+      while (first < input.size ())
+        {
+          const auto second = input.find_first_of (delimiters, first);
+          if (first != second)
+            {
+              output.emplace_back (input.substr (first, second - first));
+            }
+          if (second == std::string_view::npos)
+            {
+              break;
+            }
+          first = second + 1;
+        }
+      return output;
     }
 
   } // namespace utility

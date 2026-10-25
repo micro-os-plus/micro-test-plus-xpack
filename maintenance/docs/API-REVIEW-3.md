@@ -536,19 +536,23 @@ Tags:
   `detail::stopwatch` no longer compiles, which the release notes and
   the compatibility notices must say.
 
-- **#21 — `utility::split()` is not used by the library, and does not
-  deduce its arguments.** [breaking] **[confirmed]**
+- **#21 — `utility::split()` does not accept string literals.**
+  **[confirmed]**
   `utility.h` lines 121 to 123, `inlines/utility-inlines.h` lines 89
   to 109: the declaration has no default for `T`, the definition adds
   `T = std::string_view`, but `T` is always deduced from the first
   argument, so the default never applies; `split ("a.b", ".")` does
-  not compile (`std::size` and `find_first_of` on `const char*`). Only
-  the unit tests call it, with an explicit `<std::string_view>`, and
-  it returns a `std::vector` (heap). Suggested change: remove it from
-  the public `utility` namespace, or give it the signature
+  not compile (`std::size` and `find_first_of` on `const char*`). The
+  function is meant to be used by applications, so it stays public and
+  is not deprecated. Suggested change: constrain the template to
+  string-like types (those having `npos`, `find_first_of()`, and
+  `substr()`), drop the dead default, and add the non-template overload
   `split (std::string_view input, std::string_view delimiters)
-  -> std::vector<std::string_view>`. Migration: `[[deprecated]]` for
-  one release.
+  -> std::vector<std::string_view>`, so that literals and `const char*`
+  select it. The calls with an explicit `<std::string_view>` and those
+  with a `std::string` keep their meaning. Not breaking.
+
+  Status: fixed (#187). The result is still a heap-allocating `std::vector`.
 
 ## 3. Naming and consistency
 

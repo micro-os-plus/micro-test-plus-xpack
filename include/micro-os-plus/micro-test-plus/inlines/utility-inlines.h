@@ -86,7 +86,12 @@ namespace micro_os_plus::micro_test_plus
      *         << "a.b splits into [a,b]";
      * @endcode
      */
-    template <class T = std::string_view, class Delim_T>
+    template <class T, class Delim_T>
+      requires requires (T s, Delim_T d) {
+        T::npos;
+        s.find_first_of (d, std::size_t{});
+        s.substr (std::size_t{}, std::size_t{});
+      }
     [[nodiscard]] auto
     split (T input, Delim_T delim) -> std::vector<T>
     {

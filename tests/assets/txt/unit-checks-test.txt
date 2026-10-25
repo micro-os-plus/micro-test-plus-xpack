@@ -1,4 +1,4 @@
-Running: unit-checks-test one two --reporter human --output-file unit-checks-test-verbose.txt --verbose
+Running: unit-checks-test one two --reporter human --output-file unit-checks-test.txt
 Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Top suite
@@ -33,7 +33,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ . (only delimiter) splits into []
         ✓ .a (leading delimiter) splits into [a]
         ✓ a..b (consecutive delimiters) splits into [a, b]
-    ✓ Splits - passed (8 checks)
+        ✓ literal a.b splits into [a, b]
+        ✓ literal a.b,c splits on any delimiter
+        ✓ literal empty splits into []
+        ✓ string view a.b splits into [a, b]
+        ✓ string a.b splits into [a, b] strings
+    ✓ Splits - passed (13 checks)
     • Nested subtests
         • inner subtest
             ✓ 1 == 1
@@ -49,13 +54,13 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ outer check passes
         • middle subtest
             • inner subtest
-                ✗ inner check fails FAILED (main.cpp:381, 1 == 2)
+                ✗ inner check fails FAILED (main.cpp:408, 1 == 2)
             ✗ inner subtest - FAILED (0 checks passed, 1 failed)
         ✗ middle subtest - FAILED (0 checks passed, 0 failed, 1 test case failed)
     ✗ Failed nested subtest - FAILED (1 check passed, 0 failed, 1 test case failed)
     • Stored check result
         ✓ later check passes
-        ✗ stored check fails FAILED (main.cpp:409, 1 == 2)
+        ✗ stored check fails FAILED (main.cpp:436, 1 == 2)
     ✗ Stored check result - FAILED (1 check passed, 1 failed)
     • Application types with get()
         ✓ wrapped values differ
@@ -74,11 +79,11 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ null strings nullptr, nullptr, nullptr
     ✓ Message values - passed (3 checks)
     • Character operands
-        ✗ FAILED (main.cpp:527, '\0' == 'a')
-        ✗ space is tab FAILED (main.cpp:530, ' ' == '\t')
+        ✗ FAILED (main.cpp:554, '\0' == 'a')
+        ✗ space is tab FAILED (main.cpp:557, ' ' == '\t')
         ✓ 'x' == 'x'
     ✗ Character operands - FAILED (1 check passed, 2 failed)
-✗ Top suite - FAILED (34 checks passed, 6 failed, in 18 test cases), time: 0.984 ms
+✗ Top suite - FAILED (39 checks passed, 6 failed, in 18 test cases), time: 1.053 ms
 • Comparisons suite
     • Integer comparisons
         ✓ actual == 42
@@ -180,15 +185,15 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7bd383020 != 0x7ff7bd383020)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7bd383020 != 0x7ff7bd383020)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7bd383020 > 0x7ff7bd383020)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7bd383020 < 0x7ff7bd383020)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7bd383020 == 0x7ff7bd383070)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x102c2f298 != 0x102c2f298)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x102c2f298 == 0x7ff7bd383070)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7bd3836a0 >= 0x7ff7bd3836a4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7bd3836a4 <= 0x7ff7bd3836a0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7b7cde040 != 0x7ff7b7cde040)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7b7cde040 != 0x7ff7b7cde040)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7b7cde040 > 0x7ff7b7cde040)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7b7cde040 < 0x7ff7b7cde040)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7b7cde040 == 0x7ff7b7cde090)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x1082df858 != 0x1082df858)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x1082df858 == 0x7ff7b7cde090)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7b7cde6c0 >= 0x7ff7b7cde6c4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7b7cde6c4 <= 0x7ff7b7cde6c0)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -197,7 +202,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7bd383660 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7b7cde680 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
@@ -227,12 +232,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ any_of of two all_of FAILED (comparisons.cpp:722, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
         ✗ all_of with a nested any_of FAILED (comparisons.cpp:728, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
-✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 1.378 ms
+✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 1.211 ms
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
     ✓ check in dynamic suite - passed (1 check)
-✓ Dynamic suite - passed (1 check in 1 test case), time: 0.059 ms
+✓ Dynamic suite - passed (1 check in 1 test case), time: 0.071 ms
 • Dynamic suite with a temporary name
     • check in dynamic suite with a temporary name
         ✓ 2 == 2 in the suite with a temporary name
@@ -346,5 +351,5 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Raw arrays bad
         ✗ bytes eq FAILED (operands.cpp:661, {1uc, 2uc, 3uc} == {1uc, 2uc, 4uc})
     ✗ Raw arrays bad - FAILED (0 checks passed, 1 failed)
-✗ Operands suite - FAILED (48 checks passed, 27 failed, in 16 test cases), time: 1.105 ms
-✗ Total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 3.627 ms
+✗ Operands suite - FAILED (48 checks passed, 27 failed, in 16 test cases), time: 1.117 ms
+✗ Total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 3.769 ms

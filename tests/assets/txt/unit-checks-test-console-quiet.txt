@@ -10,14 +10,14 @@
     • Failed nested subtest
         • middle subtest
             • inner subtest
-                ✗ inner check fails FAILED (main.cpp:381, 1 == 2)
+                ✗ inner check fails FAILED (main.cpp:408, 1 == 2)
 
     • Stored check result
-        ✗ stored check fails FAILED (main.cpp:409, 1 == 2)
+        ✗ stored check fails FAILED (main.cpp:436, 1 == 2)
 
     • Character operands
-        ✗ FAILED (main.cpp:527, '\0' == 'a')
-        ✗ space is tab FAILED (main.cpp:530, ' ' == '\t')
+        ✗ FAILED (main.cpp:554, '\0' == 'a')
+        ✗ space is tab FAILED (main.cpp:557, ' ' == '\t')
 
 • Comparisons suite
 
@@ -56,19 +56,19 @@
         ✗ null_string == "abc" FAILED (comparisons.cpp:423, nullptr == "abc")
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7b0122060 != 0x7ff7b0122060)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7b0122060 != 0x7ff7b0122060)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7b0122060 > 0x7ff7b0122060)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7b0122060 < 0x7ff7b0122060)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7b0122060 == 0x7ff7b01220b0)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x10fe90298 != 0x10fe90298)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x10fe90298 == 0x7ff7b01220b0)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7b01226e0 >= 0x7ff7b01226e4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7b01226e4 <= 0x7ff7b01226e0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7b6bed060 != 0x7ff7b6bed060)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7b6bed060 != 0x7ff7b6bed060)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7b6bed060 > 0x7ff7b6bed060)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7b6bed060 < 0x7ff7b6bed060)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7b6bed060 == 0x7ff7b6bed0b0)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x1093d0858 != 0x1093d0858)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x1093d0858 == 0x7ff7b6bed0b0)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7b6bed6e0 >= 0x7ff7b6bed6e4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7b6bed6e4 <= 0x7ff7b6bed6e0)
 
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7b01226a0 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7b6bed6a0 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
 
     • Logical operations
@@ -129,4 +129,4 @@
     • Raw arrays bad
         ✗ bytes eq FAILED (operands.cpp:661, {1uc, 2uc, 3uc} == {1uc, 2uc, 4uc})
 
-✗ Total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 2.163 ms
+✗ Total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 2.222 ms

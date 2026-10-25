@@ -17,7 +17,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✗ expect(false) - FAILED (0 checks passed, 2 failed)
 
     ✓ reflection::type_name() - passed (4 checks)
-    ✓ Splits - passed (8 checks)
+    ✓ Splits - passed (13 checks)
 
     • Nested subtests
         ✓ inner subtest - passed (1 check)
@@ -30,7 +30,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Failed nested subtest
         • middle subtest
             • inner subtest
-                ✗ inner check fails FAILED (main.cpp:381, 1 == 2)
+                ✗ inner check fails FAILED (main.cpp:408, 1 == 2)
             ✗ inner subtest - FAILED (0 checks passed, 1 failed)
 
         ✗ middle subtest - FAILED (0 checks passed, 0 failed, 1 test case failed)
@@ -38,7 +38,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✗ Failed nested subtest - FAILED (1 check passed, 0 failed, 1 test case failed)
 
     • Stored check result
-        ✗ stored check fails FAILED (main.cpp:409, 1 == 2)
+        ✗ stored check fails FAILED (main.cpp:436, 1 == 2)
     ✗ Stored check result - FAILED (1 check passed, 1 failed)
 
     ✓ Application types with get() - passed (3 checks)
@@ -46,11 +46,11 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Message values - passed (3 checks)
 
     • Character operands
-        ✗ FAILED (main.cpp:527, '\0' == 'a')
-        ✗ space is tab FAILED (main.cpp:530, ' ' == '\t')
+        ✗ FAILED (main.cpp:554, '\0' == 'a')
+        ✗ space is tab FAILED (main.cpp:557, ' ' == '\t')
     ✗ Character operands - FAILED (1 check passed, 2 failed)
 
-✗ Top suite - FAILED (34 checks passed, 6 failed, in 18 test cases), time: 0.550 ms
+✗ Top suite - FAILED (39 checks passed, 6 failed, in 18 test cases), time: 0.715 ms
 
 • Comparisons suite
 
@@ -106,22 +106,22 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7b33b9080 != 0x7ff7b33b9080)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7b33b9080 != 0x7ff7b33b9080)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7b33b9080 > 0x7ff7b33b9080)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7b33b9080 < 0x7ff7b33b9080)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7b33b9080 == 0x7ff7b33b90d0)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x10cbf9298 != 0x10cbf9298)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x10cbf9298 == 0x7ff7b33b90d0)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7b33b9700 >= 0x7ff7b33b9704)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7b33b9704 <= 0x7ff7b33b9700)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7bfaec080 != 0x7ff7bfaec080)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7bfaec080 != 0x7ff7bfaec080)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7bfaec080 > 0x7ff7bfaec080)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7bfaec080 < 0x7ff7bfaec080)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7bfaec080 == 0x7ff7bfaec0d0)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x1004d1858 != 0x1004d1858)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x1004d1858 == 0x7ff7bfaec0d0)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7bfaec700 >= 0x7ff7bfaec704)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7bfaec704 <= 0x7ff7bfaec700)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
 
     ✓ Null pointer comparisons - passed (3 checks)
 
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7b33b96c0 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7bfaec6c0 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
 
@@ -142,19 +142,19 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ all_of with a nested any_of FAILED (comparisons.cpp:728, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
 
-✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 0.755 ms
+✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 0.768 ms
 
 • Dynamic suite
 
     ✓ check in dynamic suite - passed (1 check)
 
-✓ Dynamic suite - passed (1 check in 1 test case), time: 0.027 ms
+✓ Dynamic suite - passed (1 check in 1 test case), time: 0.028 ms
 
 • Dynamic suite with a temporary name
 
     ✓ check in dynamic suite with a temporary name - passed (1 check)
 
-✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.023 ms
+✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.025 ms
 
 • Operands suite
 
@@ -222,8 +222,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ bytes eq FAILED (operands.cpp:661, {1uc, 2uc, 3uc} == {1uc, 2uc, 4uc})
     ✗ Raw arrays bad - FAILED (0 checks passed, 1 failed)
 
-✗ Operands suite - FAILED (48 checks passed, 27 failed, in 16 test cases), time: 0.720 ms
+✗ Operands suite - FAILED (48 checks passed, 27 failed, in 16 test cases), time: 0.680 ms
 
-✗ Total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 2.644 ms
+✗ Total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 2.366 ms
 Overall, the µTest++ unit tests were successful!
 

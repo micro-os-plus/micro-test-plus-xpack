@@ -19,7 +19,7 @@ TAP version 14
 #                   condition: "1 == 2"
 #                   at:
 #                     fileName: main.cpp
-#                     lineNumber: 381
+#                     lineNumber: 408
 #                   ...
 # Top suite > Stored check result
 #         not ok 2 - stored check fails
@@ -27,7 +27,7 @@ TAP version 14
 #           condition: "1 == 2"
 #           at:
 #             fileName: main.cpp
-#             lineNumber: 409
+#             lineNumber: 436
 #           ...
 # Top suite > Character operands
 #         not ok 1
@@ -35,16 +35,16 @@ TAP version 14
 #           condition: "'\\0' == 'a'"
 #           at:
 #             fileName: main.cpp
-#             lineNumber: 527
+#             lineNumber: 554
 #           ...
 #         not ok 2 - space is tab
 #           ---
 #           condition: "' ' == '\\t'"
 #           at:
 #             fileName: main.cpp
-#             lineNumber: 530
+#             lineNumber: 557
 #           ...
-not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, time: 0.906 ms }
+not ok 1 - Top suite # { FAILED, 39 checks passed, 6 failed, in 18 test cases, time: 0.824 ms }
 # Comparisons suite > Failed integer comparisons
 #         not ok 1 - actual != 42
 #           ---
@@ -221,63 +221,63 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
 # Comparisons suite > Failed pointer comparisons
 #         not ok 1 - ptr1 != &one
 #           ---
-#           condition: "0x7ff7b3e8c080 != 0x7ff7b3e8c080"
+#           condition: "0x7ff7bbb2d080 != 0x7ff7bbb2d080"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 504
 #           ...
 #         not ok 2 - ptr1 != ptr2
 #           ---
-#           condition: "0x7ff7b3e8c080 != 0x7ff7b3e8c080"
+#           condition: "0x7ff7bbb2d080 != 0x7ff7bbb2d080"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 507
 #           ...
 #         not ok 3 - ptr1 > ptr2
 #           ---
-#           condition: "0x7ff7b3e8c080 > 0x7ff7b3e8c080"
+#           condition: "0x7ff7bbb2d080 > 0x7ff7bbb2d080"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 510
 #           ...
 #         not ok 4 - ptr1 < ptr2
 #           ---
-#           condition: "0x7ff7b3e8c080 < 0x7ff7b3e8c080"
+#           condition: "0x7ff7bbb2d080 < 0x7ff7bbb2d080"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 513
 #           ...
 #         not ok 5 - ptr1 == a_non_nullptr
 #           ---
-#           condition: "0x7ff7b3e8c080 == 0x7ff7b3e8c0d0"
+#           condition: "0x7ff7bbb2d080 == 0x7ff7bbb2d0d0"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 516
 #           ...
 #         not ok 6 - pfunc != afunc
 #           ---
-#           condition: "0x10c126298 != 0x10c126298"
+#           condition: "0x104490858 != 0x104490858"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 519
 #           ...
 #         not ok 7 - pfunc == a_non_nullptr
 #           ---
-#           condition: "0x10c126298 == 0x7ff7b3e8c0d0"
+#           condition: "0x104490858 == 0x7ff7bbb2d0d0"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 522
 #           ...
 #         not ok 8 - pone >= ptwo
 #           ---
-#           condition: "0x7ff7b3e8c700 >= 0x7ff7b3e8c704"
+#           condition: "0x7ff7bbb2d700 >= 0x7ff7bbb2d704"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 534
 #           ...
 #         not ok 9 - ptwo <= pone
 #           ---
-#           condition: "0x7ff7b3e8c704 <= 0x7ff7b3e8c700"
+#           condition: "0x7ff7bbb2d704 <= 0x7ff7bbb2d700"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 537
@@ -292,7 +292,7 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
 #           ...
 #         not ok 2 - a_non_nullptr == nullptr
 #           ---
-#           condition: "0x7ff7b3e8c6c0 == nullptr"
+#           condition: "0x7ff7bbb2d6c0 == nullptr"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 588
@@ -383,9 +383,9 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases, t
 #             fileName: comparisons.cpp
 #             lineNumber: 728
 #           ...
-not ok 2 - Comparisons suite # { FAILED, 68 checks passed, 47 failed, in 16 test cases, time: 1.276 ms }
-ok 3 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.023 ms }
-ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.029 ms }
+not ok 2 - Comparisons suite # { FAILED, 68 checks passed, 47 failed, in 16 test cases, time: 1.260 ms }
+ok 3 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.024 ms }
+ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.031 ms }
 # Operands suite > Arrays bad
 #         not ok 1 - array{ 42 } ne array{ 42 }
 #           ---
@@ -578,6 +578,6 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 #             fileName: operands.cpp
 #             lineNumber: 661
 #           ...
-not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases, time: 1.203 ms }
+not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases, time: 0.833 ms }
 1..5
-# { total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 3.465 ms }
+# { total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 3.058 ms }

@@ -48,8 +48,13 @@ TAP version 14
         ok 6 - . (only delimiter) splits into []
         ok 7 - .a (leading delimiter) splits into [a]
         ok 8 - a..b (consecutive delimiters) splits into [a, b]
-        1..8
-    ok 6 - Splits # { passed, 8 checks }
+        ok 9 - literal a.b splits into [a, b]
+        ok 10 - literal a.b,c splits on any delimiter
+        ok 11 - literal empty splits into []
+        ok 12 - string view a.b splits into [a, b]
+        ok 13 - string a.b splits into [a, b] strings
+        1..13
+    ok 6 - Splits # { passed, 13 checks }
     # Subtest: Nested subtests
         # Subtest: inner subtest
             ok 1 - 1 == 1
@@ -74,7 +79,7 @@ TAP version 14
                   condition: "1 == 2"
                   at:
                     fileName: main.cpp
-                    lineNumber: 381
+                    lineNumber: 408
                   ...
                 1..1
             not ok 1 - inner subtest # { FAILED, 0 checks passed, 1 failed }
@@ -89,7 +94,7 @@ TAP version 14
           condition: "1 == 2"
           at:
             fileName: main.cpp
-            lineNumber: 409
+            lineNumber: 436
           ...
         1..2
     not ok 10 - Stored check result # { FAILED, 1 check passed, 1 failed }
@@ -118,20 +123,20 @@ TAP version 14
           condition: "'\\0' == 'a'"
           at:
             fileName: main.cpp
-            lineNumber: 527
+            lineNumber: 554
           ...
         not ok 2 - space is tab
           ---
           condition: "' ' == '\\t'"
           at:
             fileName: main.cpp
-            lineNumber: 530
+            lineNumber: 557
           ...
         ok 3 - 'x' == 'x'
         1..3
     not ok 14 - Character operands # { FAILED, 1 check passed, 2 failed }
     1..14
-not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases }
+not ok 1 - Top suite # { FAILED, 39 checks passed, 6 failed, in 18 test cases }
 # Subtest: Comparisons suite
     # Subtest: Integer comparisons
         ok 1 - actual == 42
@@ -425,14 +430,14 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases }
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: "0x40011abc != 0x40011abc"
+          condition: "0x40013a8c != 0x40013a8c"
           at:
             fileName: comparisons.cpp
             lineNumber: 519
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: "0x40011abc == 0x43fff2b0"
+          condition: "0x40013a8c == 0x43fff2b0"
           at:
             fileName: comparisons.cpp
             lineNumber: 522
@@ -879,4 +884,4 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
     1..16
 not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases }
 1..5
-# { total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites }
+# { total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites }

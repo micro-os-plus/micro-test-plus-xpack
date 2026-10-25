@@ -33,7 +33,12 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ . (only delimiter) splits into []
         ✓ .a (leading delimiter) splits into [a]
         ✓ a..b (consecutive delimiters) splits into [a, b]
-    ✓ Splits - passed (8 checks)
+        ✓ literal a.b splits into [a, b]
+        ✓ literal a.b,c splits on any delimiter
+        ✓ literal empty splits into []
+        ✓ string view a.b splits into [a, b]
+        ✓ string a.b splits into [a, b] strings
+    ✓ Splits - passed (13 checks)
     • Nested subtests
         • inner subtest
             ✓ 1 == 1
@@ -49,13 +54,13 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ outer check passes
         • middle subtest
             • inner subtest
-                ✗ inner check fails FAILED (main.cpp:381, 1 == 2)
+                ✗ inner check fails FAILED (main.cpp:408, 1 == 2)
             ✗ inner subtest - FAILED (0 checks passed, 1 failed)
         ✗ middle subtest - FAILED (0 checks passed, 0 failed, 1 test case failed)
     ✗ Failed nested subtest - FAILED (1 check passed, 0 failed, 1 test case failed)
     • Stored check result
         ✓ later check passes
-        ✗ stored check fails FAILED (main.cpp:409, 1 == 2)
+        ✗ stored check fails FAILED (main.cpp:436, 1 == 2)
     ✗ Stored check result - FAILED (1 check passed, 1 failed)
     • Application types with get()
         ✓ wrapped values differ
@@ -74,11 +79,11 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ null strings nullptr, nullptr, nullptr
     ✓ Message values - passed (3 checks)
     • Character operands
-        ✗ FAILED (main.cpp:527, '\0' == 'a')
-        ✗ space is tab FAILED (main.cpp:530, ' ' == '\t')
+        ✗ FAILED (main.cpp:554, '\0' == 'a')
+        ✗ space is tab FAILED (main.cpp:557, ' ' == '\t')
         ✓ 'x' == 'x'
     ✗ Character operands - FAILED (1 check passed, 2 failed)
-✗ Top suite - FAILED (34 checks passed, 6 failed, in 18 test cases)
+✗ Top suite - FAILED (39 checks passed, 6 failed, in 18 test cases)
 • Comparisons suite
     • Integer comparisons
         ✓ actual == 42
@@ -185,8 +190,8 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x43fff2cc > 0x43fff2cc)
         ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x43fff2cc < 0x43fff2cc)
         ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x43fff2cc == 0x43fff2b0)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x40011abc != 0x40011abc)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x40011abc == 0x43fff2b0)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x40013a8c != 0x40013a8c)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x40013a8c == 0x43fff2b0)
         ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x43fff298 >= 0x43fff29c)
         ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x43fff29c <= 0x43fff298)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
@@ -347,4 +352,4 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✗ bytes eq FAILED (operands.cpp:661, {1uc, 2uc, 3uc} == {1uc, 2uc, 4uc})
     ✗ Raw arrays bad - FAILED (0 checks passed, 1 failed)
 ✗ Operands suite - FAILED (48 checks passed, 27 failed, in 16 test cases)
-✗ Total: 152 checks passed, 80 failed, in 52 test cases, 5 test suites
+✗ Total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites
