@@ -473,6 +473,13 @@ Tags:
   count followed by the unit (`5ms`, `250us`, `2s`, or the ratio for
   the other periods).
 
+  Status: fixed in #176, commit `a2b16cc5`, on 2026-10-25. A new
+  `expression_formatter::operator<<` overload
+  writes the count, without a type suffix, followed by `ns`, `us`,
+  `ms`, `s`, `min`, or `h`, or, for the other periods, `[N/D]s`. The
+  comparators and `expect()` accept durations; the checks added to
+  `unit-checks` and the reference outputs updated.
+
 - **#20 — Classes that are not designed for derivation are not
   `final`.** [breaking]
   `test.h` lines 1007 to 1364 (`test_case`, which has a private

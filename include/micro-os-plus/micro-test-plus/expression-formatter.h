@@ -67,6 +67,7 @@
 #include "extension.h"
 
 #include <charconv>
+#include <chrono>
 #include <cstdio>
 #include <optional>
 #include <string>
@@ -721,6 +722,23 @@ namespace micro_os_plus::micro_test_plus
       template <class T>
       expression_formatter&
       operator<< (const std::optional<T>& o);
+
+      /**
+       * @brief Appends a duration, as the count followed by the unit.
+       *
+       * @details
+       * The count is written without a type suffix, followed by the
+       * unit: `ns`, `us`, `ms`, `s`, `min`, or `h` for the standard
+       * periods, or the ratio, as `[N/D]s`, for the other ones.
+       *
+       * @tparam Rep The type of the count.
+       * @tparam Period The period of the duration.
+       * @param d The duration.
+       * @return Reference to this instance.
+       */
+      template <class Rep, class Period>
+      expression_formatter&
+      operator<< (const std::chrono::duration<Rep, Period>& d);
 
       // ----------------------------------------------------------------------
       // Compound expression operator<< overloads (with pass/fail colours).

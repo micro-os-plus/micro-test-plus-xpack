@@ -180,15 +180,15 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x43fff2c4 != 0x43fff2c4)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x43fff2c4 != 0x43fff2c4)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x43fff2c4 > 0x43fff2c4)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x43fff2c4 < 0x43fff2c4)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x43fff2c4 == 0x43fff2a8)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x43fff284 != 0x43fff284)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x43fff284 != 0x43fff284)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x43fff284 > 0x43fff284)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x43fff284 < 0x43fff284)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x43fff284 == 0x43fff268)
         ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x40011ad0 != 0x40011ad0)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x40011ad0 == 0x43fff2a8)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x43fff290 >= 0x43fff294)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x43fff294 <= 0x43fff290)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x40011ad0 == 0x43fff268)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x43fff250 >= 0x43fff254)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x43fff254 <= 0x43fff250)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -197,7 +197,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x43fff550 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x43fff510 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
@@ -246,10 +246,10 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ array{ 1, 2, 3 } != array{ 1, 2, 4 }
     ✓ Arrays - passed (4 checks)
     • Arrays bad
-        ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:223, {42} != {42})
-        ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:227, {42} == {43})
-        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:231, {1, 2} != {1, 2})
-        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:235, {1, 2, 3} == {1, 2, 4})
+        ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:224, {42} != {42})
+        ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:228, {42} == {43})
+        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:232, {1, 2} != {1, 2})
+        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:236, {1, 2, 3} == {1, 2, 4})
     ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
     • Vectors
         ✓ vector{ } == vector{ }
@@ -260,21 +260,21 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
     ✓ Vectors - passed (6 checks)
     • Vectors bad
-        ✗ vector{ } != vector{ } FAILED (operands.cpp:287, {} != {})
-        ✗ FAILED (operands.cpp:291, {} != {})
-        ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:294, {42} != {42})
-        ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:298, {42} == {43})
-        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:302, {1, 2} != {1, 2})
-        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:306, {1, 2, 3} == {1, 2, 4})
+        ✗ vector{ } != vector{ } FAILED (operands.cpp:288, {} != {})
+        ✗ FAILED (operands.cpp:292, {} != {})
+        ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:295, {42} != {42})
+        ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:299, {42} == {43})
+        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:303, {1, 2} != {1, 2})
+        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:307, {1, 2, 3} == {1, 2, 4})
     ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
     • Custom types
         ✓ point{ 1, 2 } == point{ 1, 2 }
         ✓ point{ 1, 2 } != point{ 1, 3 }
     ✓ Custom types - passed (2 checks)
     • Custom types bad
-        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:343, { 1, 2 } == { 1, 3 })
-        ✗ FAILED (operands.cpp:348, { 1, 2 } == { 1, 3 })
-        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:351, { 1, 2 } != { 1, 2 })
+        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:344, { 1, 2 } == { 1, 3 })
+        ✗ FAILED (operands.cpp:349, { 1, 2 } == { 1, 3 })
+        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:352, { 1, 2 } != { 1, 2 })
     ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
     • Custom comparators
         ✓ 3 divides 12
@@ -282,10 +282,10 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ combined
     ✓ Custom comparators - passed (3 checks)
     • Custom comparators bad
-        ✗ 5 divides 12 FAILED (operands.cpp:389, 5 divides 12)
-        ✗ FAILED (operands.cpp:392, 5 divides 12)
-        ✗ FAILED (operands.cpp:395, even 7)
-        ✗ FAILED (operands.cpp:398, (3 divides 12 and even 7))
+        ✗ 5 divides 12 FAILED (operands.cpp:390, 5 divides 12)
+        ✗ FAILED (operands.cpp:393, 5 divides 12)
+        ✗ FAILED (operands.cpp:396, even 7)
+        ✗ FAILED (operands.cpp:399, (3 divides 12 and even 7))
     ✗ Custom comparators bad - FAILED (0 checks passed, 4 failed)
     • Standard types
         ✓ colour::red == colour::red
@@ -298,13 +298,17 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ pairs1 != pairs2
         ✓ optional == 42
         ✓ optional != nullopt
-    ✓ Standard types - passed (10 checks)
+        ✓ 5ms == 5ms
+        ✓ 250us < 1ms
+        ✓ 1000ms == 1s
+    ✓ Standard types - passed (13 checks)
     • Standard types bad
-        ✗ colour::red == colour::green FAILED (operands.cpp:464, 0 == 1)
-        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:468, 1uc == 2uc)
-        ✗ pairs1 == pairs2 FAILED (operands.cpp:474, {(1, 2)} == {(1, 3)})
-        ✗ optional == nullopt FAILED (operands.cpp:477, 42 == nullopt)
-    ✗ Standard types bad - FAILED (0 checks passed, 4 failed)
+        ✗ colour::red == colour::green FAILED (operands.cpp:475, 0 == 1)
+        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:479, 1uc == 2uc)
+        ✗ pairs1 == pairs2 FAILED (operands.cpp:485, {(1, 2)} == {(1, 3)})
+        ✗ optional == nullopt FAILED (operands.cpp:488, 42 == nullopt)
+        ✗ 5ms == 6ms FAILED (operands.cpp:492, 5ms == 6ms)
+    ✗ Standard types bad - FAILED (0 checks passed, 5 failed)
     • Explicit conversions to bool
         ✓ optional with a value
         ✓ true
@@ -313,10 +317,10 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ required unique_ptr
     ✓ Explicit conversions to bool - passed (5 checks)
     • Explicit conversions to bool bad
-        ✗ empty optional FAILED (operands.cpp:527)
-        ✗ null unique_ptr FAILED (operands.cpp:530)
-        ✗ empty function FAILED (operands.cpp:533)
-        ✗ FAILED (operands.cpp:536)
+        ✗ empty optional FAILED (operands.cpp:543)
+        ✗ null unique_ptr FAILED (operands.cpp:546)
+        ✗ empty function FAILED (operands.cpp:549)
+        ✗ FAILED (operands.cpp:552)
     ✗ Explicit conversions to bool bad - FAILED (0 checks passed, 4 failed)
     • Pointers to const
         ✓ different const objects
@@ -330,5 +334,5 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ stored comparator
         ✓ temporary operand stored once
     ✓ Operand copies - passed (6 checks)
-✗ Operands suite - FAILED (38 checks passed, 25 failed, in 14 test cases)
-✗ Total: 142 checks passed, 78 failed, in 50 test cases, 5 test suites
+✗ Operands suite - FAILED (41 checks passed, 26 failed, in 14 test cases)
+✗ Total: 145 checks passed, 79 failed, in 50 test cases, 5 test suites

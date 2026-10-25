@@ -14,6 +14,7 @@
 #include "unit-checks-test.h"
 
 #include <array>
+#include <chrono>
 #include <cstddef>
 #include <cstdint>
 #include <functional>
@@ -449,6 +450,16 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         t.expect (ne (optional, std::nullopt)) << "optional != nullopt";
         local_counts.passed_checks++;
 
+        using namespace std::chrono_literals;
+        t.expect (eq (5ms, 5ms)) << "5ms == 5ms";
+        local_counts.passed_checks++;
+
+        t.expect (lt (250us, 1ms)) << "250us < 1ms";
+        local_counts.passed_checks++;
+
+        t.expect (eq (1000ms, 1s)) << "1000ms == 1s";
+        local_counts.passed_checks++;
+
         local_counts.executed_test_cases++;
       });
 
@@ -476,6 +487,11 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
         t.expect (eq (std::optional<int>{ 42 }, std::nullopt))
             << "optional == nullopt";
+        local_counts.failed_checks++;
+
+        t.expect (eq (std::chrono::milliseconds{ 5 },
+                      std::chrono::milliseconds{ 6 }))
+            << "5ms == 6ms";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

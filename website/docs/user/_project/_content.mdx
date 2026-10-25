@@ -847,13 +847,17 @@ When a check fails, they are shown as follows:
   enumerators instead, define an `operator<<` for the enumeration, as
   for the [custom types](#custom-types);
 - a pair or a tuple as `(a, b)`, and a map as `{(1, 2), (3, 4)}`;
-- an optional by its value, or as `nullopt` when it has no value.
+- an optional by its value, or as `nullopt` when it has no value;
+- a `std::chrono` duration as the count followed by the unit, for example
+  `5ms`, `250us`, `2s`, `3min`, or `1h`, and, for the other periods, by the
+  ratio, as `3[1/30]s`.
 
 ```cpp
 enum class colour { red, green };
 
 t.expect (mt::eq (paint (), colour::red)) << "colour is red";
 t.expect (mt::ne (find (42), std::nullopt)) << "42 is found";
+t.expect (mt::lt (elapsed (), 5ms)) << "completed within 5ms";
 ```
 
 ### Deprecated operators, literals, and wrappers

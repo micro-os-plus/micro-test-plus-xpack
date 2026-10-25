@@ -241,6 +241,49 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Writes the count with `append_number()`, without a type suffix, then the unit selected from
+   * the period; the periods without a standard unit are written as
+   * the ratio, `[N/D]s`.
+   */
+  template <class Rep, class Period>
+  expression_formatter&
+  expression_formatter::operator<< (const std::chrono::duration<Rep, Period>& d)
+  {
+    detail::append_number (buffer_, d.count ());
+
+    if constexpr (std::is_same_v<Period, std::nano>)
+      {
+        return *this << "ns";
+      }
+    else if constexpr (std::is_same_v<Period, std::micro>)
+      {
+        return *this << "us";
+      }
+    else if constexpr (std::is_same_v<Period, std::milli>)
+      {
+        return *this << "ms";
+      }
+    else if constexpr (std::is_same_v<Period, std::ratio<1>>)
+      {
+        return *this << "s";
+      }
+    else if constexpr (std::is_same_v<Period, std::ratio<60>>)
+      {
+        return *this << "min";
+      }
+    else if constexpr (std::is_same_v<Period, std::ratio<3600>>)
+      {
+        return *this << "h";
+      }
+    else
+      {
+        return *this << "[" << static_cast<long long> (Period::num) << "/"
+                     << static_cast<long long> (Period::den) << "]s";
+      }
+  }
+
+  /**
+   * @details
    * Expands the indices in a fold expression over the comma operator,
    * so the elements are written in order; the separator is omitted
    * before the first element. For an empty tuple, nothing is written.
