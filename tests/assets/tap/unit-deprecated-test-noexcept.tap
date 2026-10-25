@@ -96,9 +96,9 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         1..1
     ok 14 - assume() # { passed, 1 check }
     # Subtest: reflection::short_name()
-        ok 1 - file.cpp == file.cpp
-        ok 2 - file.cpp == file.cpp
-        ok 3 - file.cpp == file.cpp
+        ok 1 - "file.cpp" == "file.cpp"
+        ok 2 - "file.cpp" == "file.cpp"
+        ok 3 - "file.cpp" == "file.cpp"
         1..3
     ok 15 - reflection::short_name() # { passed, 3 checks }
     # Subtest: _and(), _or(), _not()
@@ -131,14 +131,14 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "42 != 42"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1060
+            lineNumber: 1061
           ...
         not ok 2 - 42 != 42_i
           ---
           condition: "42 != 42"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1063
+            lineNumber: 1064
           ...
         1..2
     not ok 20 - Failed integer comparisons with literals # { FAILED, 0 checks passed, 2 failed }
@@ -168,119 +168,119 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "42.101f != 42.101f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1151
+            lineNumber: 1152
           ...
         not ok 2 - 42.101f epsilon 0.01f != 42.10_f
           ---
           condition: "42.101f != 42.1f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1154
+            lineNumber: 1155
           ...
         not ok 3 - 42.101f epsilon 0.1f == 42.10_f
           ---
           condition: "42.101f == 42.1f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1158
+            lineNumber: 1159
           ...
         not ok 4 - 42.1010001f epsilon 0.1f != 42.1_f
           ---
           condition: "42.101f != 42.1f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1162
+            lineNumber: 1163
           ...
         not ok 5 - 42.101f == 42.10_f
           ---
           condition: "42.101f == 42.1f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1166
+            lineNumber: 1167
           ...
         not ok 6 - 42.101f == 42.100_f
           ---
           condition: "42.101f == 42.1f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1169
+            lineNumber: 1170
           ...
         not ok 7 - 42.10f == 42.1_f
           ---
           condition: "42.1f != 42.1f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1172
+            lineNumber: 1173
           ...
         not ok 8 - 42.42f == 42.42_f
           ---
           condition: "42.42f != 42.42f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1175
+            lineNumber: 1176
           ...
         not ok 9 - 42.42 == 42.420_d
           ---
           condition: "42.42 != 42.42"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1178
+            lineNumber: 1179
           ...
         not ok 10 - 42.0 == 42.0_d
           ---
           condition: "42.0 != 42.0"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1181
+            lineNumber: 1182
           ...
         not ok 11 - 42. == 42._d
           ---
           condition: "42.0 != 42.0"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1184
+            lineNumber: 1185
           ...
         not ok 12 - 42.42 == 42.42_ld
           ---
           condition: "42.42ld != 42.42ld"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1187
+            lineNumber: 1188
           ...
         not ok 13 - 1234._f == 1234.f
           ---
           condition: "1234.0f != 1234.0f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1190
+            lineNumber: 1191
           ...
         not ok 14 - 1234.56_f == 1234.56f
           ---
           condition: "1234.56f != 1234.56f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1193
+            lineNumber: 1194
           ...
         not ok 15 - 12345678.9f == 12345678.9_f
           ---
           condition: "12345679.0f != 12345679.0f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1196
+            lineNumber: 1197
           ...
         not ok 16 - 111111.42f == 111111.42_f
           ---
           condition: "111111.42f != 111111.42f"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1200
+            lineNumber: 1201
           ...
         not ok 17 - 1111111111.42 == 1111111111.42_d
           ---
           condition: "1111111111.42 != 1111111111.42"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1203
+            lineNumber: 1204
           ...
         1..17
     not ok 22 - Failed float comparisons with literals and wrappers # { FAILED, 0 checks passed, 17 failed }
@@ -332,21 +332,21 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           ---
           at:
             fileName: deprecated.cpp
-            lineNumber: 1341
+            lineNumber: 1342
           ...
         not ok 3 - actual+1 == 42 with _i literal
           ---
           condition: "43 == 42"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1345
+            lineNumber: 1346
           ...
         not ok 4 - actual+1 == 42 with to_i()
           ---
           condition: "43 == 42"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1349
+            lineNumber: 1350
           ...
         ok 5 - actual+1 != 42
         ok 6 - actual-1 < 42
@@ -359,7 +359,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "not 42 == 42"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1371
+            lineNumber: 1372
           ...
         ok 12 - not not (actual == 42)
         ok 13 - (actual == 42) and (actual == 42.0)
@@ -368,21 +368,21 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "(42 == 42 and 42.0f != 42.0)"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1385
+            lineNumber: 1386
           ...
         not ok 15 - (actual != 42) and (actual == 42.0)
           ---
           condition: "(42 != 42 and 42.0f == 42.0)"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1390
+            lineNumber: 1391
           ...
         not ok 16 - (actual != 42) and (actual != 42.0)
           ---
           condition: "(42 != 42 and 42.0f != 42.0)"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1395
+            lineNumber: 1396
           ...
         ok 17 - (42 == 42 and 42.0f == 42.0)
         not ok 18
@@ -390,7 +390,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "(42 == 42 and 42.0f != 42.0)"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1404
+            lineNumber: 1405
           ...
         ok 19 - (actual == 42) or (actual == 42.0)
         ok 20 - (actual == 42) or (actual != 42.0)
@@ -400,7 +400,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "(42 != 42 or 42.0f != 42.0f)"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1423
+            lineNumber: 1424
           ...
         1..22
     not ok 26 - Operators # { FAILED, 13 checks passed, 9 failed }
@@ -410,14 +410,14 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           ---
           at:
             fileName: deprecated.cpp
-            lineNumber: 1448
+            lineNumber: 1449
           ...
         ok 3 - unequal string views with !=
         not ok 4 - equal string views with !=
           ---
           at:
             fileName: deprecated.cpp
-            lineNumber: 1456
+            lineNumber: 1457
           ...
         1..4
     not ok 27 - String view operators # { FAILED, 2 checks passed, 2 failed }
@@ -429,7 +429,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "disabled == false"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1486
+            lineNumber: 1487
           ...
         ok 4 - ne with false
         ok 5 - == with true
@@ -438,28 +438,28 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "disabled == false"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1498
+            lineNumber: 1499
           ...
         not ok 7 - reversed == with false
           ---
           condition: "false == disabled"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1501
+            lineNumber: 1502
           ...
         not ok 8 - != with true
           ---
           condition: "enabled != true"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1504
+            lineNumber: 1505
           ...
         not ok 9 - not
           ---
           condition: "not named"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1507
+            lineNumber: 1508
           ...
         ok 10 - two named literals
         1..10
@@ -486,14 +486,14 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "even 7"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1598
+            lineNumber: 1599
           ...
         not ok 2
           ---
           condition: "5 divides 12"
           at:
             fileName: deprecated.cpp
-            lineNumber: 1601
+            lineNumber: 1602
           ...
         1..2
     not ok 32 - Failed custom comparators with wrappers # { FAILED, 0 checks passed, 2 failed }

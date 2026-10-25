@@ -71,7 +71,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * framework. They are not declared in any header.
    *
    * It contains `append_hex()`, which writes the hexadecimal escapes of
-   * the characters that cannot be printed as they are.
+   * the characters that cannot be printed as they are, and
+   * `append_quoted()`, which writes a string between double quotes.
    */
   namespace
   {
@@ -105,19 +106,99 @@ namespace micro_os_plus::micro_test_plus::detail
           buffer.push_back (digits[nibble]);
         }
     }
+
+    /**
+     * @brief Appends a string, as a quoted literal.
+     *
+     * @details
+     * Used by the string operands, so that the empty strings and the
+     * leading or trailing spaces are visible, and the control characters
+     * do not reach the console. The escapes are those of the character
+     * literals, with the double quote escaped instead of the single
+     * quote. The bytes above `0x7F` are written unchanged, so that the
+     * UTF-8 text remains readable.
+     *
+     * @param buffer The text to which the literal is appended.
+     * @param sv The string to write; it may contain `'\\0'`.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    append_quoted (std::string& buffer, std::string_view sv)
+    {
+      buffer.push_back ('"');
+      for (const char c : sv)
+        {
+          switch (c)
+            {
+            case '\0':
+              buffer.append ("\\0");
+              break;
+            case '\a':
+              buffer.append ("\\a");
+              break;
+            case '\b':
+              buffer.append ("\\b");
+              break;
+            case '\t':
+              buffer.append ("\\t");
+              break;
+            case '\n':
+              buffer.append ("\\n");
+              break;
+            case '\v':
+              buffer.append ("\\v");
+              break;
+            case '\f':
+              buffer.append ("\\f");
+              break;
+            case '\r':
+              buffer.append ("\\r");
+              break;
+            case '"':
+              buffer.append ("\\\"");
+              break;
+            case '\\':
+              buffer.append ("\\\\");
+              break;
+            default:
+              if (static_cast<unsigned char> (c) < 0x20 || c == 0x7F)
+                {
+                  append_hex (buffer, static_cast<unsigned char> (c), "\\x",
+                              2);
+                }
+              else
+                {
+                  buffer.push_back (c);
+                }
+              break;
+            }
+        }
+      buffer.push_back ('"');
+    }
   } // namespace
 
   // --------------------------------------------------------------------------
 
   /**
    * @details
-   * Appends the contents of the `std::string_view` directly to the
-   * internal buffer using `buffer_.append(sv)`.
+   * The string is written as a C++ string literal, between double
+   * quotes, by `append_quoted()`, so that the empty and blank strings
+   * are visible, and the control characters are escaped. In the plain
+   * mode, used for the messages, the contents are appended unchanged,
+   * using `buffer_.append(sv)`.
    */
   expression_formatter&
   expression_formatter::operator<< (std::string_view sv)
   {
-    buffer_.append (sv);
+    if (plain_)
+      {
+        buffer_.append (sv);
+      }
+    else
+      {
+        append_quoted (buffer_, sv);
+      }
     return *this;
   }
 
@@ -223,8 +304,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Appends the characters of the string, or `"nullptr"` for a null
-   * pointer, as the other operator overloads do for these values.
+   * Appends the characters of the string, quoted and escaped as the
+   * `std::string_view` overload does (unchanged in the plain mode), or
+   * `"nullptr"` for a null pointer, as the other operator overloads do
+   * for these values.
    */
   expression_formatter&
   expression_formatter::operator<< (const c_string& s)
@@ -235,7 +318,7 @@ namespace micro_os_plus::micro_test_plus::detail
       }
     else
       {
-        buffer_.append (s.view ());
+        *this << s.view ();
       }
     return *this;
   }

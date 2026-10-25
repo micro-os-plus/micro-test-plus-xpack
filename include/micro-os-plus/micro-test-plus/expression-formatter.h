@@ -281,6 +281,11 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Appends a string view to the buffer.
        *
+       * @details
+       * The string is written between double quotes, with the control
+       * characters, the double quote, and the backslash escaped. In the
+       * plain mode, used for the messages, it is appended unchanged.
+       *
        * @param sv The string view to append.
        * @return Reference to this instance.
        */
@@ -401,6 +406,10 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Appends a C string operand of a comparator.
+       *
+       * @details
+       * Quoted and escaped as a string view; a null pointer is written
+       * as `nullptr`.
        *
        * @param s The operand.
        * @return Reference to this instance.

@@ -33,10 +33,10 @@ TAP version 14
         1..2
     not ok 4 - expect(false) # { FAILED, 0 checks passed, 2 failed }
     # Subtest: reflection::type_name()
-        ok 1 - void == void
-        ok 2 - int == int
-        ok 3 - unsigned int == unsigned int
-        ok 4 - float == float
+        ok 1 - "void" == "void"
+        ok 2 - "int" == "int"
+        ok 3 - "unsigned int" == "unsigned int"
+        ok 4 - "float" == "float"
         1..4
     ok 5 - reflection::type_name() # { passed, 4 checks }
     # Subtest: Splits
@@ -299,42 +299,42 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases }
     # Subtest: Failed string comparisons
         not ok 1 - actual_sv != abc_sv
           ---
-          condition: "abc != abc"
+          condition: "\"abc\" != \"abc\""
           at:
             fileName: comparisons.cpp
             lineNumber: 335
           ...
         not ok 2 - actual_sv == abx_sv
           ---
-          condition: "abc == abx"
+          condition: "\"abc\" == \"abx\""
           at:
             fileName: comparisons.cpp
             lineNumber: 339
           ...
         not ok 3 - actual_sv >= abd_sv
           ---
-          condition: "abc >= abd"
+          condition: "\"abc\" >= \"abd\""
           at:
             fileName: comparisons.cpp
             lineNumber: 343
           ...
         not ok 4 - actual_sv > abc_sv
           ---
-          condition: "abc > abc"
+          condition: "\"abc\" > \"abc\""
           at:
             fileName: comparisons.cpp
             lineNumber: 347
           ...
         not ok 5 - actual_sv <= abb_sv
           ---
-          condition: "abc <= abb"
+          condition: "\"abc\" <= \"abb\""
           at:
             fileName: comparisons.cpp
             lineNumber: 351
           ...
         not ok 6 - actual_sv < abc_sv
           ---
-          condition: "abc < abc"
+          condition: "\"abc\" < \"abc\""
           at:
             fileName: comparisons.cpp
             lineNumber: 355
@@ -361,14 +361,14 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases }
     # Subtest: Failed C string comparisons
         not ok 1 - actual == "abx"
           ---
-          condition: "abc == abx"
+          condition: "\"abc\" == \"abx\""
           at:
             fileName: comparisons.cpp
             lineNumber: 420
           ...
         not ok 2 - null_string == "abc"
           ---
-          condition: "nullptr == abc"
+          condition: "nullptr == \"abc\""
           at:
             fileName: comparisons.cpp
             lineNumber: 423
@@ -425,14 +425,14 @@ not ok 1 - Top suite # { FAILED, 34 checks passed, 6 failed, in 18 test cases }
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: "0x40011b08 != 0x40011b08"
+          condition: "0x40011ad0 != 0x40011ad0"
           at:
             fileName: comparisons.cpp
             lineNumber: 519
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: "0x40011b08 == 0x43fff2a8"
+          condition: "0x40011ad0 == 0x43fff2a8"
           at:
             fileName: comparisons.cpp
             lineNumber: 522

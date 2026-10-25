@@ -366,6 +366,15 @@ Tags:
   quotes, with the same escapes as the characters, in the expression
   (not in the user messages, which stay plain).
 
+  Status: fixed. The `std::string_view` and `c_string` overloads of
+  `expression_formatter` write the string between double quotes, with
+  the escapes of the character literals (`\0`, `\n`, `\"`, `\\`, and
+  `\xNN` for the other control characters); the bytes above `0x7F` are
+  kept, so that UTF-8 text stays readable. The plain mode of the
+  messages and the null pointers (`nullptr`) are unchanged. The type
+  name in `throws<T>` is appended directly, so it is not quoted. The
+  reference files in `tests/assets` were updated.
+
 - **#16 — At the normal verbosity, a passed nested test case is
   printed without its parent.** [internal] **[confirmed]**
   `src/reporter-human.cpp` lines 446 to 463: the probe prints

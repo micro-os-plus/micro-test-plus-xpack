@@ -414,9 +414,10 @@ namespace micro_os_plus::micro_test_plus::detail
       }
     else
       {
-        return (*this << colour (op) << "throws<"
-                      << reflection::type_name<Exception_T> () << ">"
-                      << colours_.none);
+        // The type name is not a string operand, so it is not quoted.
+        *this << colour (op) << "throws<";
+        buffer_.append (reflection::type_name<Exception_T> ());
+        return (*this << ">" << colours_.none);
       }
   }
 
