@@ -24,12 +24,12 @@ programs against it on many toolchains and platforms.
   users include only this file.
 - `include/micro-os-plus/micro-test-plus/*.h` — public headers, one per
   concern (`runner.h`, `test.h`, `reporter.h`, `reporter-human.h`,
-  `reporter-tap.h`, `check-result.h`, `operators.h`,
-  `function-comparators.h`, `expression-formatter.h`, `reflection.h`,
-  `extension.h`, `stopwatch.h`, `counters.h`, `literals.h`,
-  `math.h`, `utility.h`, `exceptions.h`, `detail.h`, and
-  `deprecated.h`, which groups the deprecated definitions that are not
-  class members).
+  `reporter-tap.h`, `check-result.h`, `function-comparators.h`,
+  `expression-formatter.h`, `reflection.h`, `extension.h`,
+  `stopwatch.h`, `counters.h`, `math.h`, `utility.h`, `exceptions.h`,
+  `detail.h`, and `deprecated.h`, which groups the deprecated
+  definitions that are not class members, including the operators, the
+  literals, and the type wrappers).
 - `include/micro-os-plus/micro-test-plus/inlines/*.h` — inline/template
   definitions for the above headers (kept separate from the declarations).
 - `src/*.cpp` — non-inline definitions, one file per header of the same
@@ -58,14 +58,16 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace
   `verbosity`, and `reporter_kind`; `static_runner` is a deprecated
   alias), the test hierarchy (`test_case`, `suite`, `static_suite`,
   `top_suite`, `test_case_name`), `counters`, the function comparators
-  (`eq()`, `ne()`, `gt()`, `ge()`, `lt()`, `le()`, `negate()`,
-  `both()`, `either()`), `throws()` and `nothrow()` (with exceptions),
-  the value wrappers (`to_i`, `to_f`, ..., `to_t<T>`, `approx()`), and
-  `expression_formatter` (an alias of `detail::expression_formatter`,
-  for the `operator<<` of the application types);
-- `literals` — the user-defined literals (`42_i`, `1.5_d`, `"..."_b`);
-- `operators` — the comparison and logical operators, enabled with
-  `using namespace mt::operators`;
+  (`eq()`, `ne()`, `gt()`, `ge()`, `lt()`, `le()`, `approx()`,
+  `negate()`, `all_of()`, `any_of()`), `throws()` and `nothrow()` (with
+  exceptions), the deprecated value wrappers (`to_i`, `to_f`, ...,
+  `to_t<T>`, and `approx (value, epsilon)`), and `expression_formatter`
+  (an alias of `detail::expression_formatter`, for the `operator<<` of
+  the application types);
+- `literals` (deprecated) — the user-defined literals (`42_i`, `1.5_d`,
+  `"..."_b`);
+- `operators` (deprecated) — the comparison and logical operators,
+  enabled with `using namespace mt::operators`;
 - `utility` — `is_match()` and `split()`;
 - `extension` — what the applications use to write their own
   comparators, predicates, operators, and helpers that report their
@@ -120,16 +122,18 @@ wrapper templates, and the concepts `has_value`, `container_like`, and
   `reflection.h` provide the machinery behind the
   reports of the `expect()`/`require()` expressions, so failed checks
   print the actual operands and operator, not just "assertion failed".
-- `operators.h` and `function-comparators.h` supply the comparison
-  operators and function-based comparators used inside `expect (...)`
-  expressions; they return the expression templates of `detail.h`
+- `function-comparators.h` supplies the function-based comparators used
+  inside `expect (...)` expressions (the deprecated comparison operators
+  are in `deprecated.h`); they return the expression templates of
+  `detail.h`
   (`detail::compare_op` with the tags `equal_to`, `less`, ..., and the
   logical `and_op`, `or_op`, `not_op`), which the formatter reports.
   `extension.h` holds the concepts that constrain them, and `math.h`
   (`detail::math`) supports the floating-point comparisons. The
   application extensions reuse the same templates, through the
   `extension` namespace, so they need no formatter of their own.
-- `literals.h` defines user-defined literals (e.g. for naming tests).
+- `deprecated.h` also holds the deprecated user-defined literals, type
+  wrappers, and operators, each deprecated function individually.
 - Headers declare, `inlines/*.h` hold template/inline bodies, `src/*.cpp`
   hold non-template definitions — keep new code split the same way when
   extending a header (declaration in `include/.../<name>.h`, inline

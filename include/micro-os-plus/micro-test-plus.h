@@ -99,17 +99,11 @@
 // Requires extension.h, reflection.h.
 #include "micro-test-plus/detail.h"
 
-// Requires extension.h, math.h.
-#include "micro-test-plus/literals.h"
-
 // No deps.
 #include "micro-test-plus/function-comparators.h"
 
 // No deps.
 #include "micro-test-plus/exceptions.h"
-
-// Requires extension.h + detail.h,
-#include "micro-test-plus/operators.h"
 
 // Requires extension.h, detail.h + reflection.h.
 #include "micro-test-plus/expression-formatter.h"
@@ -144,7 +138,7 @@
 // runner-options.h.
 #include "micro-test-plus/runner.h"
 
-// Requires counters.h, extension.h, function-comparators.h, literals.h,
+// Requires counters.h, extension.h, function-comparators.h, math.h,
 // reflection.h, runner.h, stopwatch.h, test.h.
 #include "micro-test-plus/deprecated.h"
 

@@ -94,16 +94,17 @@ inwards:
    test cases);
 3. `check-result.h` and `src/check-result.cpp` (what `expect()` and
    `require()` return and do);
-4. `function-comparators.h`, `operators.h`, `exceptions.h`,
-   `detail.h` (the checks and the comparison structures);
-5. `values.h`, `literals.h`, `extension.h`, `math.h` (the wrappers,
-   the literals, and the extension interface);
+4. `function-comparators.h`, `exceptions.h`, `detail.h` (the checks and
+   the comparison structures);
+5. `values.h`, `extension.h`, `math.h` (the wrappers and the extension
+   interface);
 6. `expression-formatter.h`, `reflection.h` (the failure messages);
 7. `reporter.h`, `reporter-human.h`, `reporter-tap.h`, and their
    `src/` files (the output protocol);
 8. `counters.h`, `stopwatch.h`, `utility.h` (the support classes);
 9. `deprecated.h` (the deprecated definitions that are not class
-   members, kept for compatibility).
+   members, kept for compatibility, including the operators, the
+   literals, and the type wrappers).
 
 While reading, note for each class and function: who calls it (the
 user, the framework, or only the tests), what it costs (allocations,

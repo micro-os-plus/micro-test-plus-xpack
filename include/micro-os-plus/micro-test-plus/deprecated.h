@@ -26,6 +26,10 @@
  * written for the previous versions:
  * - the v5.0.1 names of the logical functions (`_not`, `_and`, and
  *   `_or`);
+ * - the overloaded operators of the `operators` namespace, the
+ *   user-defined literals of the `literals` namespace, the `to_*` type
+ *   wrappers, `to_t<T>`, and `approx (value, epsilon)`, deprecated since
+ *   5.1.0 in favour of the function comparators;
  * - the v5.0.1 names of the type wrappers (`_i`, `_u8`, etc.);
  * - the v5.0.1 names of the classes (`subtest`, `static_runner`,
  *   `detail::runner_totals`, and `detail::timestamps`);
@@ -72,14 +76,15 @@
 #include "counters.h"
 #include "extension.h"
 #include "function-comparators.h"
-#include "literals.h"
 #include "reflection.h"
 #include "runner.h"
 #include "stopwatch.h"
 #include "test.h"
 
 #include <concepts>
+#include <cstdint>
 #include <ctime>
+#include <type_traits>
 
 // ----------------------------------------------------------------------------
 
@@ -87,6 +92,7 @@
 #pragma GCC diagnostic push
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
+#pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
@@ -163,7 +169,1069 @@ namespace micro_os_plus::micro_test_plus
   _or (Lhs_T&& lhs, Rhs_T&& rhs);
 
   // --------------------------------------------------------------------------
-  // The type wrappers, now `to_*`, in `literals.h`.
+
+  /**
+   * @namespace micro_os_plus::micro_test_plus::operators
+   * @brief Custom operator overloads for expressive and type-safe test
+   * assertions.
+   *
+   * @details
+   * The `micro_os_plus::micro_test_plus::operators` namespace provides a
+   * comprehensive set of custom operator overloads designed to enable
+   * expressive, concise, and type-safe test assertions within the µTest++
+   * framework.
+   *
+   * This namespace includes equality, inequality, relational, and logical
+   * operators tailored for use with the framework’s custom types. These
+   * operators facilitate the creation of clear and readable test
+   * expressions, supporting both strongly-typed constants (via user-defined
+   * literals) and dynamic values (via wrappers).
+   *
+   * @warning Please be aware that these operators
+   * may conflict with other operators defined within the application under
+   * test.
+   *
+   * To minimise conflicts with application-defined operators, these
+   * overloads are enabled only when an operand is a framework expression
+   * or value wrapper (see `extension::is_op`). Constants typically
+   * require a literal suffix (e.g.,
+   * `1_i`), while dynamic values should be wrapped using the provided
+   * casting utilities (e.g., `mt::to_i{...}`). When neither operand is of
+   * such a type, the standard operators are selected; they return a plain
+   * `bool`, so a failed check cannot show the operands.
+   *
+   * The operands are forwarded, as by the function comparators: the
+   * temporaries are moved into the returned expression, and the named
+   * operands of class type, including the nested expressions, are
+   * referred to, without copies.
+   *
+   * There are no operators for strings and containers: the standard
+   * operators would be selected for `std::string` objects and for
+   * containers of the same type, and the framework operators for
+   * `std::string_view` objects would also replace the standard ones in the
+   * application code that follows the using directive. Use `mt::eq()` and
+   * `mt::ne()` to compare strings and containers.
+   *
+   * All definitions within this namespace are implemented in the
+   * `include/micro-os-plus/micro-test-plus` folder, ensuring a modular and
+   * maintainable codebase.
+   *
+   * @par Deprecated
+   * Use the function comparators `eq()`, `ne()`, `gt()`, `ge()`, `lt()`,
+   * and `le()`, with the plain values, and `all_of()`, `any_of()`, and
+   * `negate()` for the logical combinations (since 5.1.0). The function
+   * comparators accept the same operands, compare them and report them in
+   * the same way, and do not need the literal suffixes or the type
+   * wrappers.
+   *
+   * @since 3.2.0
+   */
+  namespace operators
+  {
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-operators
+     * @brief Equality operator. Matches only if at least one operand is a
+     * framework type (see `extension::is_op`).
+     *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param lhs Left hand side operand.
+     * @param rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the operands are
+     * equal.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
+    [[deprecated ("use eq() (since 5.1.0)"), nodiscard]] constexpr auto
+    operator== (Lhs_T&& lhs, Rhs_T&& rhs);
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-operators
+     * @brief Non-equality operator. Matches only if at least one operand
+     * is a framework type (see `extension::is_op`).
+     *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param lhs Left hand side operand.
+     * @param rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the operands are
+     * not equal.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
+    [[deprecated ("use ne() (since 5.1.0)"), nodiscard]] constexpr auto
+    operator!= (Lhs_T&& lhs, Rhs_T&& rhs);
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-operators
+     * @brief Greater than operator. Matches only if at least one operand is
+     * a framework type (see `extension::is_op`).
+     *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param lhs Left hand side operand.
+     * @param rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the left hand side
+     * operand is greater than the right hand side operand.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
+    [[deprecated ("use gt() (since 5.1.0)"), nodiscard]] constexpr auto
+    operator> (Lhs_T&& lhs, Rhs_T&& rhs);
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-operators
+     * @brief Greater than or equal operator. Matches only if at least one
+     * operand is a framework type (see `extension::is_op`).
+     *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param lhs Left hand side operand.
+     * @param rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the left hand side
+     * operand is greater than or equal to the right hand side operand.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
+    [[deprecated ("use ge() (since 5.1.0)"), nodiscard]] constexpr auto
+    operator>= (Lhs_T&& lhs, Rhs_T&& rhs);
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-operators
+     * @brief Less than operator. Matches only if at least one operand is
+     * a framework type (see `extension::is_op`).
+     *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param lhs Left hand side operand.
+     * @param rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the left hand side
+     * operand is less than the right hand side operand.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
+    [[deprecated ("use lt() (since 5.1.0)"), nodiscard]] constexpr auto
+    operator< (Lhs_T&& lhs, Rhs_T&& rhs);
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-operators
+     * @brief Less than or equal operator. Matches only if at least one operand
+     * is a framework type (see `extension::is_op`).
+     *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param lhs Left hand side operand.
+     * @param rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the left hand side
+     * operand is less than or equal to the right hand side operand.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
+    [[deprecated ("use le() (since 5.1.0)"), nodiscard]] constexpr auto
+    operator<= (Lhs_T&& lhs, Rhs_T&& rhs);
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-operators
+     * @brief Logical `&&` (and) operator. Matches only if at least one operand
+     * is a framework type (see `extension::is_op`).
+     *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param lhs Left hand side operand.
+     * @param rhs Right hand side operand.
+     * @return A logical conjunction object that evaluates to true if both
+     * operands are true.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
+    [[deprecated ("use all_of() (since 5.1.0)"), nodiscard]] constexpr auto
+    operator and (Lhs_T&& lhs, Rhs_T&& rhs);
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-operators
+     * @brief Logical `||` (or) operator. Matches only if at least one operand
+     * is a framework type (see `extension::is_op`).
+     *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param lhs Left hand side operand.
+     * @param rhs Right hand side operand.
+     * @return A logical disjunction object that evaluates to true if at least
+     * one operand is true.
+     */
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<std::remove_cvref_t<Lhs_T>,
+                                 std::remove_cvref_t<Rhs_T>>
+    [[deprecated ("use any_of() (since 5.1.0)"), nodiscard]] constexpr auto
+    operator or (Lhs_T&& lhs, Rhs_T&& rhs);
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-operators
+     * @brief Logical `!` (not) operator. Matches only if the operand is a
+     * framework type (see `extension::is_op`).
+     *
+     * @tparam T Type of the operand, constrained to the framework types.
+     *
+     * @param t Operand to be logically negated.
+     * @return A logical negator object that evaluates to true if the operand
+     * is false.
+     */
+    template <class T>
+      requires extension::is_op<std::remove_cvref_t<T>>
+    [[deprecated ("use negate() (since 5.1.0)"), nodiscard]] constexpr auto
+    operator not(T&& t);
+
+    // ------------------------------------------------------------------------
+  } // namespace operators
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @namespace micro_os_plus::micro_test_plus::literals
+   * @brief User-defined literals for the µTest++ testing framework.
+   *
+   * @details
+   * The `literals` namespace provides an extensive collection of user-defined
+   * literal operators, enabling explicit specification of operand types for
+   * use with the µTest++ comparators and operators.
+   *
+   * These operators allow constants to be suffixed (for example, `1_i`,
+   * `2_u16`) to produce strongly-typed values, thereby enhancing type safety
+   * and ensuring that comparator functions and operators can display actual
+   * values in test reports.
+   *
+   * The complementary wrappers for converting dynamic values and
+   * expressions to recognised types (such as `to_i`, `to_u8`) are defined
+   * in the parent `micro_os_plus::micro_test_plus` namespace.
+   *
+   * All definitions within this namespace are intended to facilitate clear and
+   * type-safe test expressions, and are implemented in the
+   * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
+   * and modular codebase.
+   *
+   * @par Deprecated
+   * Pass the plain values to the function comparators `eq()`, `ne()`,
+   * `gt()`, `ge()`, `lt()`, and `le()`, and use `approx()` for the
+   * floating-point values compared with a tolerance (since 5.1.0). The
+   * function comparators report the operands in the same way, and do not
+   * need the literal suffixes.
+   *
+   * @since 3.2.0
+   */
+  namespace literals
+  {
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `int`.
+     *
+     * @tparam Cs The character pack representing the digits of the integer
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `int` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_i ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `short`.
+     *
+     * @tparam Cs The character pack representing the digits of the integer
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `short` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_s ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `char`.
+     *
+     * @tparam Cs The character pack representing the digits of the character
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `char` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_c ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `signed char`.
+     *
+     * @tparam Cs The character pack representing the digits of the signed
+     * character constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `signed char` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_sc ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `long`.
+     *
+     * @tparam Cs The character pack representing the digits of the long
+     * integer constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `long` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_l ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `long long`.
+     *
+     * @tparam Cs The character pack representing the digits of the long long
+     * integer constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `long long` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_ll ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `unsigned`.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * integer constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `unsigned` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_u ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `unsigned char`.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * character constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `unsigned char` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_uc ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `unsigned short`.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * short constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `unsigned short` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_us ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `unsigned long`.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * long integer constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `unsigned long` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_ul ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `unsigned long long`.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * long long integer constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `unsigned long long` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_ull ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `int8_t`.
+     *
+     * @tparam Cs The character pack representing the digits of the `int8_t`
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `int8_t` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_i8 ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `int16_t`.
+     *
+     * @tparam Cs The character pack representing the digits of the `int16_t`
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `int16_t` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_i16 ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `int32_t`.
+     *
+     * @tparam Cs The character pack representing the digits of the `int32_t`
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `int32_t` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_i32 ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `int64_t`.
+     *
+     * @tparam Cs The character pack representing the digits of the `int64_t`
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `int64_t` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_i64 ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `uint8_t`.
+     *
+     * @tparam Cs The character pack representing the digits of the `uint8_t`
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `uint8_t` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_u8 ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `uint16_t`.
+     *
+     * @tparam Cs The character pack representing the digits of the `uint16_t`
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `uint16_t` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_u16 ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `uint32_t`.
+     *
+     * @tparam Cs The character pack representing the digits of the `uint32_t`
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `uint32_t` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_u32 ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `uint64_t`.
+     *
+     * @tparam Cs The character pack representing the digits of the `uint64_t`
+     * constant.
+     *
+     * @return A `detail::integral_constant` instance holding the parsed
+     * `uint64_t` value.
+     */
+    template <char... Cs>
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_u64 ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `float`.
+     *
+     * @tparam Cs The character pack representing the digits of the
+     * floating-point constant.
+     *
+     * @return A `detail::floating_point_constant` instance holding the
+     * parsed `float` value.
+     */
+    template <char... Cs>
+    [[deprecated ("use approx() for tolerances (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_f ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `double`.
+     *
+     * @tparam Cs The character pack representing the digits of the
+     * floating-point constant.
+     *
+     * @return A `detail::floating_point_constant` instance holding the
+     * parsed `double` value.
+     */
+    template <char... Cs>
+    [[deprecated ("use approx() for tolerances (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_d ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to convert to `long double`.
+     *
+     * @tparam Cs The character pack representing the digits of the
+     * floating-point constant.
+     *
+     * @return A `detail::floating_point_constant` instance holding the
+     * parsed `long double` value.
+     */
+    template <char... Cs>
+    [[deprecated ("use approx() for tolerances (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_ld ();
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-literals
+     * @brief User-defined literal operator to create a named boolean
+     * constant.
+     *
+     * @param name Pointer to the character sequence representing the literal.
+     * @param size The size of the character sequence.
+     * @return A `detail::named_bool` instance, with the value `true`,
+     * reported by its name.
+     */
+    [[deprecated ("use a plain bool and a check message (since 5.1.0)"),
+      nodiscard]] constexpr auto
+    operator""_b (const char* name, decltype (sizeof ("")) size);
+
+    // ------------------------------------------------------------------------
+  } // namespace literals
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @addtogroup micro-os-plus-micro-test-plus-literals
+   * @{
+   */
+
+  /**
+   * @name Type Wrappers
+   * @brief Strongly-typed wrappers for converting dynamic values and
+   * expressions to specific types recognised by µTest++ comparators.
+   *
+   * @details
+   * These type aliases provide a type-safe mechanism for explicitly
+   * converting values to the required types for µTest++ test expressions and
+   * comparators. Each alias is a wrapper around `detail::value<T>`,
+   * ensuring that the value is treated as the specified type within the
+   * framework.
+   *
+   * The `to_*` forms replaced the older `_i`, `_u8`, etc. aliases, which
+   * were deprecated in version 3.2.0.
+   *
+   * @par Deprecated
+   * Pass the plain values to the function comparators `eq()`, `ne()`,
+   * `gt()`, `ge()`, `lt()`, and `le()` instead; they report the operands
+   * in the same way. For the floating-point values compared with a
+   * tolerance, use `approx()` (since 5.1.0).
+   *
+   * @par Example
+   *
+   * @code
+   * int x = 42;
+   * // Explicitly treat x as an int for test comparison.
+   * auto wrapped = to_i{x};
+   * @endcode
+   *
+   * @since 3.2.0
+   *
+   * @{
+   */
+
+  /**
+   * @brief Strongly-typed wrapper for `bool` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `bool`.
+   *
+   * @since 3.2.0
+   */
+  using to_b [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<bool>;
+
+  /**
+   * @brief Strongly-typed wrapper for `char` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `char`.
+   *
+   * @since 3.2.0
+   */
+  using to_c [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<char>;
+
+  /**
+   * @brief Strongly-typed wrapper for `signed char` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `signed char`.
+   *
+   * @since 3.2.0
+   */
+  using to_sc [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<signed char>;
+
+  /**
+   * @brief Strongly-typed wrapper for `short` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `short`.
+   *
+   * @since 3.2.0
+   */
+  using to_s [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<short>;
+
+  /**
+   * @brief Strongly-typed wrapper for `int` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `int`.
+   *
+   * @since 3.2.0
+   */
+  using to_i [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<int>;
+
+  /**
+   * @brief Strongly-typed wrapper for `long` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `long`.
+   *
+   * @since 3.2.0
+   */
+  using to_l [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<long>;
+
+  /**
+   * @brief Strongly-typed wrapper for `long long` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `long long`.
+   *
+   * @since 3.2.0
+   */
+  using to_ll [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<long long>;
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned`.
+   *
+   * @since 3.2.0
+   */
+  using to_u [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned>;
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned char` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned char`.
+   *
+   * @since 3.2.0
+   */
+  using to_uc [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned char>;
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned short` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned short`.
+   *
+   * @since 3.2.0
+   */
+  using to_us [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned short>;
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned long` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned long`.
+   *
+   * @since 3.2.0
+   */
+  using to_ul [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned long>;
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned long long` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `unsigned long long`.
+   *
+   * @since 3.2.0
+   */
+  using to_ull [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned long long>;
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int8_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::int8_t`.
+   *
+   * @since 3.2.0
+   */
+  using to_i8 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::int8_t>;
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int16_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::int16_t`.
+   *
+   * @since 3.2.0
+   */
+  using to_i16 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::int16_t>;
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int32_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::int32_t`.
+   *
+   * @since 3.2.0
+   */
+  using to_i32 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::int32_t>;
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int64_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::int64_t`.
+   *
+   * @since 3.2.0
+   */
+  using to_i64 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::int64_t>;
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint8_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::uint8_t`.
+   *
+   * @since 3.2.0
+   */
+  using to_u8 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::uint8_t>;
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint16_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::uint16_t`.
+   *
+   * @since 3.2.0
+   */
+  using to_u16 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::uint16_t>;
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint32_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::uint32_t`.
+   *
+   * @since 3.2.0
+   */
+  using to_u32 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::uint32_t>;
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint64_t` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `std::uint64_t`.
+   *
+   * @since 3.2.0
+   */
+  using to_u64 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::uint64_t>;
+
+  /**
+   * @brief Strongly-typed wrapper for `float` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `float`.
+   *
+   * @since 3.2.0
+   */
+  using to_f [[deprecated ("use approx() for tolerances (since 5.1.0)")]]
+  = detail::value<float>;
+
+  /**
+   * @brief Strongly-typed wrapper for `double` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `double`.
+   *
+   * @since 3.2.0
+   */
+  using to_d [[deprecated ("use approx() for tolerances (since 5.1.0)")]]
+  = detail::value<double>;
+
+  /**
+   * @brief Strongly-typed wrapper for `long double` values.
+   *
+   * @details
+   * Wraps a run-time value, so that the comparators and the reporter
+   * treat it as `long double`.
+   *
+   * @since 3.2.0
+   */
+  using to_ld [[deprecated ("use approx() for tolerances (since 5.1.0)")]]
+  = detail::value<long double>;
+
+  /**
+   * @}
+   */
+
+  /**
+   * @}
+   */
+
+  /**
+   * @ingroup micro-os-plus-micro-test-plus-literals
+   * @brief Generic strongly-typed wrapper for explicit type conversion.
+   *
+   * @since 3.2.0
+   *
+   * @details
+   * The `to_t` template provides a public, strongly-typed wrapper for any type
+   * `T`, enabling explicit conversion of dynamic values and expressions to a
+   * type recognised by the µTest++ comparators and reporting mechanisms.
+   *
+   * This wrapper inherits from `detail::value<T>`, ensuring that the
+   * encapsulated value is treated as the specified type within the framework,
+   * for the types without a `to_*` alias, including the application types;
+   * with the operators of the `operators` namespace, the comparisons are
+   * then reported with their operands.
+   *
+   * **Example**
+   *
+   * @code
+   * MyType obj;
+   * // Explicitly treat obj as MyType for test comparison.
+   * auto wrapped = to_t<MyType>{obj};
+   * @endcode
+   *
+   * @par Deprecated
+   * Pass the plain value to the function comparators `eq()`, `ne()`,
+   * `gt()`, `ge()`, `lt()`, and `le()` instead; the application types
+   * are reported with the `operator<<` of `expression_formatter`
+   * (since 5.1.0).
+   *
+   * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+   */
+  template <class T>
+  struct [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  to_t : detail::value<T>
+  {
+    /**
+     * @brief Constructor for the strongly-typed wrapper.
+     *
+     * @param t The value to be wrapped and explicitly converted.
+     */
+    constexpr explicit to_t (const T& t);
+  };
+
+  /**
+   * @ingroup micro-os-plus-micro-test-plus-literals
+   * @brief Wraps a floating-point value with an explicit comparison
+   * tolerance.
+   *
+   * @details
+   * The floating-point literals (`1.5_d`) and wrappers (`to_d{ 1.5 }`)
+   * compare with a tolerance derived from the number of decimals written
+   * (0.1 for `1.5`). `approx()` makes the tolerance explicit, independent
+   * of how the value is written. All six comparisons apply it: values
+   * whose difference is less than the tolerance are equal, and neither
+   * less nor greater. If both operands have a tolerance, the smaller one
+   * is used.
+   *
+   * @code{.cpp}
+   * t.expect (mt::eq (compute_float (), mt::approx (42.0f, 0.001f)));
+   * @endcode
+   *
+   * For a single comparison, also of integers, the
+   * `approx (lhs, rhs, epsilon)` function comparator may be used instead.
+   *
+   * @tparam T The floating-point type of the value.
+   *
+   * @param value The expected value.
+   * @param epsilon The tolerance, converted to `T`.
+   * @return A `detail::value<T>` wrapper, recognised by the
+   * comparators and the operators.
+   *
+   * @par Deprecated
+   * Use the function comparator `approx (lhs, rhs, epsilon)` instead
+   * (since 5.1.0).
+   *
+   * @since 5.1.0
+   */
+  template <class T>
+    requires std::is_floating_point_v<T>
+  [[deprecated ("use approx (lhs, rhs, epsilon) (since 5.1.0)"),
+    nodiscard]] constexpr auto
+  approx (T value, std::type_identity_t<T> epsilon) noexcept
+      -> detail::value<T>;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
