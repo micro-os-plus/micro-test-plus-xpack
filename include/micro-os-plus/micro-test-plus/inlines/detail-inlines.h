@@ -787,7 +787,7 @@ namespace micro_os_plus::micro_test_plus
               if (ec == std::errc{})
                 buffer.append (buf, ptr);
             }
-#endif // defined(_WIN32) || (defined(__SIZEOF_LONG_DOUBLE__) && __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)
+#endif // long double formatting
         }
       else
         {

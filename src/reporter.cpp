@@ -538,7 +538,7 @@ namespace micro_os_plus::micro_test_plus::detail
 #else
       line.append (", no FP");
 #endif // defined(__ARM_PCS_VFP) || defined(__ARM_FP)
-#endif // !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) || defined(_WIN32))
+#endif // bare-metal only
 #if defined(__cpp_exceptions)
       line.append (", with exceptions");
 #else

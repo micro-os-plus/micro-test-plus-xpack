@@ -672,6 +672,8 @@ Tags:
   after `#endif` that repeat a long condition. Suggested change:
   shorten the comments (for example `// long double formatting`).
 
+  Status: fixed (#180). The three comments are shortened.
+
 - **#31 — Comments on concepts produce `-Wdocumentation` warnings in
   user code.** [internal] **[confirmed]**
   With `-Weverything`, a user translation unit that includes the
