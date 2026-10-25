@@ -56,6 +56,7 @@
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-c++11-c++14-compat"
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
+#pragma clang diagnostic ignored "-Wc++20-compat"
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
@@ -108,6 +109,16 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
+
+    for (runner** slot = &started_first_; *slot != nullptr;
+         slot = &(*slot)->started_next_)
+      {
+        if (*slot == this)
+          {
+            *slot = started_next_;
+            break;
+          }
+      }
 
     // reporter_ is a unique_ptr; destroyed automatically.
   }
@@ -561,20 +572,60 @@ namespace micro_os_plus::micro_test_plus
     if (session_state_ == session_state::running
         || session_state_ == session_state::finished)
       {
-        fprintf (stderr,
-                 "error: suite '%s' added after run() started, rejected\n",
-                 suite->name ());
-        has_rejected_suites_ = true;
-        if (session_state_ == session_state::finished && exit_code_ == 0)
-          {
-            exit_code_ = 1;
-          }
+        reject_suite (suite->name ());
         return;
       }
 
     children_suites_.push_back (std::move (suite));
     children_suites_.back ()->link ();
   }
+
+  /**
+   * @details
+   * The message is written on `stderr`, since the reporter may have
+   * ended. The suite itself is destroyed by the caller.
+   */
+  void
+  runner::reject_suite (const char* name)
+  {
+    fprintf (stderr, "error: suite '%s' added after run() started, rejected\n",
+             name);
+    has_rejected_suites_ = true;
+    if (session_state_ == session_state::finished && exit_code_ == 0)
+      {
+        exit_code_ = 1;
+      }
+  }
+
+  /**
+   * @details
+   * Searches the list of the started runners for @p test_runner, without
+   * accessing it, since it may not be constructed yet. If found, the
+   * runner reports the rejection; otherwise, the suite is linked. No
+   * memory is allocated.
+   */
+  void
+  runner::link_static_suite (runner& test_runner, class suite& suite) noexcept
+  {
+    for (const runner* started = started_first_; started != nullptr;
+         started = started->started_next_)
+      {
+        if (started == &test_runner)
+          {
+            test_runner.reject_suite (suite.name ());
+            return;
+          }
+      }
+
+    suite.link ();
+  }
+
+  /**
+   * @details
+   * Constant-initialised, so it is null before any static constructor
+   * runs.
+   */
+  constinit runner* runner::started_first_ = nullptr;
 
   /**
    * @details
@@ -693,6 +744,8 @@ namespace micro_os_plus::micro_test_plus
       }
 
     session_state_ = session_state::running;
+    started_next_ = started_first_;
+    started_first_ = this;
 
     // When listing, the suites run only to create their test cases, which
     // are listed, and the number of listed test cases ends the list.

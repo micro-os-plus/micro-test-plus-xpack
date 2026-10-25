@@ -204,6 +204,14 @@ Tags:
   exit code non-zero), and compute the plan from the suites actually
   reported.
 
+  Status: fixed. The `static_suite` constructors call
+  `runner::link_static_suite()`, which rejects the suite (as
+  `add_suite()` does, with `runner::reject_suite()`) if the runner has
+  started. A static suite may be constructed before its runner, so the
+  runner is not accessed; the started runners are kept in a
+  constant-initialised list, searched by address. The plan then follows
+  from the suites actually linked.
+
 - **#6 — A test case or a suite can overwrite its own counters.**
   [breaking] **[confirmed]**
   `test.h` lines 391 to 411, `inlines/test-inlines.h` lines 160 to

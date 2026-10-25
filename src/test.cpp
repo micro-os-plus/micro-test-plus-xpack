@@ -569,6 +569,17 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Delegates to the runner, which knows whether its session has
+   * started.
+   */
+  void
+  static_suite::link_or_reject (void) noexcept
+  {
+    runner::link_static_suite (test_runner (), *this);
+  }
+
+  /**
+   * @details
    * The suite is removed from the list of suites by the `suite`
    * destructor. If tracing is enabled, the suite name is output for
    * diagnostic purposes.

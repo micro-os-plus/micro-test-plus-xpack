@@ -803,7 +803,8 @@ namespace micro_os_plus::micro_test_plus
    * arguments, if any; the callable receives a `suite&` reference, as
    * for the suites registered with `runner::add_suite()`. After
    * construction, the suite is inserted into the list of suites, to be
-   * run by its runner; the runner itself is not accessed.
+   * run by its runner, unless the runner has already started, when the
+   * suite is rejected; a runner that has not started is not accessed.
    */
   template <typename Callable_T, typename... Args_T>
     requires (!detail::static_suite_body<Callable_T, Args_T...>)
@@ -817,7 +818,7 @@ namespace micro_os_plus::micro_test_plus
                    __PRETTY_FUNCTION__, name, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-    link ();
+    link_or_reject ();
   }
 
   /**
@@ -848,7 +849,7 @@ namespace micro_os_plus::micro_test_plus
                    __PRETTY_FUNCTION__, name, own_index_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-    link ();
+    link_or_reject ();
   }
 
   // --------------------------------------------------------------------------

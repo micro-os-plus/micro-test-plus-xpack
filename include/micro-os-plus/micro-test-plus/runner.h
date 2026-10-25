@@ -191,6 +191,15 @@ namespace micro_os_plus::micro_test_plus
      */
     friend class detail::runnable_base;
 
+    /**
+     * @brief The static suites link themselves through the runner.
+     *
+     * @details
+     * The `static_suite` constructors call `link_static_suite()`, which
+     * rejects the suites constructed after `run()` has started.
+     */
+    friend class static_suite;
+
   public:
     /**
      * @brief Constructor for the runner class.
@@ -756,6 +765,61 @@ namespace micro_os_plus::micro_test_plus
      */
     void
     register_suite (std::unique_ptr<class suite> suite);
+
+    /**
+     * @brief Reject a suite constructed after `run()` has started.
+     *
+     * @details
+     * Reports the error on `stderr`, sets `has_rejected_suites_`, and,
+     * if the session has already ended, updates the stored exit code,
+     * for the later calls of `run()`. Used by `register_suite()` and by
+     * `link_static_suite()`.
+     *
+     * @param [in] name The name of the rejected suite.
+     *
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    reject_suite (const char* name);
+
+    /**
+     * @brief Insert a static suite into the list of suites, or reject it.
+     *
+     * @details
+     * Called by the `static_suite` constructors. A static suite may be
+     * constructed before its runner, which must not be accessed then;
+     * therefore the runners that have started are kept in a
+     * constant-initialised list, which is searched by address. If the
+     * runner is in the list, `run()` has started and the suite would
+     * never run, so it is rejected, as by `add_suite()`; otherwise, it
+     * is linked.
+     *
+     * @param [in] test_runner The runner of the suite.
+     * @param [in] suite The suite being constructed.
+     *
+     * @par Returns
+     *   Nothing.
+     */
+    static void
+    link_static_suite (runner& test_runner, class suite& suite) noexcept;
+
+    /**
+     * @brief The head of the list of the runners that have started.
+     *
+     * @details
+     * Constant-initialised, so it is valid before any constructor runs.
+     * A runner is inserted by `run()` and removed by the destructor.
+     */
+    static runner* started_first_;
+
+    /**
+     * @brief The next runner in the list of the started runners.
+     *
+     * @details
+     * Null if this runner has not started, or is the last one.
+     */
+    runner* started_next_ = nullptr;
 
     /**
      * @brief Parses the command-line options of the test session.

@@ -2034,6 +2034,24 @@ namespace micro_os_plus::micro_test_plus
      * members.
      */
     ~static_suite () override;
+
+  private:
+    /**
+     * @brief Insert this suite into the list of suites, or reject it.
+     *
+     * @details
+     * Called by the constructors, after the base was constructed. The
+     * suite is rejected if its runner has already started, since it
+     * would never run; see `runner::link_static_suite()`. Defined in
+     * `src/test.cpp`, where the runner is a complete type.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    link_or_reject (void) noexcept;
   };
 
   // --------------------------------------------------------------------------

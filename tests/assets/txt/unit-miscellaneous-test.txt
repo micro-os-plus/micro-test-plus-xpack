@@ -161,7 +161,9 @@ break	tab == x)
         ✓ nested run() rejected
         ✓ session passed
         ✓ suite added after run() rejected
-    ✓ Late suites - passed (5 checks)
+        ✓ static suites constructed during run() rejected
+        ✓ static suite constructed after run() rejected
+    ✓ Late suites - passed (7 checks)
     • Test case started on the suite
         ✓ check before the test case
         • test case started on the suite
@@ -269,7 +271,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (170 checks passed, 8 failed, in 42 test cases), time: 15.218 ms
+✗ Miscellaneous suite - FAILED (172 checks passed, 8 failed, in 42 test cases), time: 15.218 ms
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -336,4 +338,4 @@ break	tab == x)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.313 ms
-✗ Total: 211 checks passed, 13 failed, in 50 test cases, 4 test suites, time: 16.599 ms
+✗ Total: 213 checks passed, 13 failed, in 50 test cases, 4 test suites, time: 16.599 ms

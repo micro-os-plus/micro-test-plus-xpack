@@ -1370,6 +1370,39 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
             << "suite added after run() rejected";
         local_counts.passed_checks++;
 
+        // The static suites are rejected the same way, whether they sort
+        // before or after the running suite, or are constructed after
+        // the session ended.
+        runner static_runner;
+        static_runner.initialise (options, "Local");
+        std::optional<static_suite> before_suite;
+        std::optional<static_suite> after_suite;
+        static_runner.add_suite ("Middle", [&] (suite& s)
+          {
+            before_suite.emplace ("Before", static_runner,
+                                  [&late_runs] (suite&) noexcept
+            { ++late_runs; });
+            after_suite.emplace ("Zafter", static_runner,
+                                 [&late_runs] (suite&) noexcept
+            { ++late_runs; });
+            s.test ("Local test", [] (auto& lt) { lt.expect (true); });
+          });
+
+        t.expect (eq (static_runner.run (), 1)
+                  and eq (late_runs, 0)
+                  and eq (static_runner.static_suites_count (), 0u))
+            << "static suites constructed during run() rejected";
+        local_counts.passed_checks++;
+
+        std::optional<static_suite> ended_suite;
+        ended_suite.emplace ("Ended", static_runner,
+                             [&late_runs] (suite&) noexcept { ++late_runs; });
+
+        t.expect (eq (static_runner.run (), 1) and eq (late_runs, 0)
+                  and eq (static_runner.static_suites_count (), 0u))
+            << "static suite constructed after run() rejected";
+        local_counts.passed_checks++;
+
         local_counts.executed_test_cases++;
       });
 
