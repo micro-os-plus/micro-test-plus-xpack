@@ -697,6 +697,11 @@ Tags:
   `infld` and `nanld`, which read as misspellings. Suggested change:
   append the suffix only when the text is a number.
 
+  Status: fixed (#182). The `float` and `long double` overloads of
+  `expression_formatter` append the suffix only if the value is finite,
+  so the infinities and NaNs print as `inf` and `nan`. Checks were added
+  to `unit-miscellaneous`.
+
 ## 8. Reviewed and found sound
 
 - All 21 public headers compile on their own; the formatting matches

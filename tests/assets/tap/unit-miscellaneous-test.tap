@@ -45,8 +45,14 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.021 ms }
         ok 13 - negative integral double
         ok 14 - double with exponent
         ok 15 - infinite double
-        1..15
-    ok 3 - Formatter number suffixes # { passed, 15 checks }
+        ok 16 - infinite float
+        ok 17 - negative infinite float
+        ok 18 - float NaN
+        ok 19 - double NaN
+        ok 20 - infinite long double
+        ok 21 - long double NaN
+        1..21
+    ok 3 - Formatter number suffixes # { passed, 21 checks }
     # Subtest: Formatter characters
         ok 1 - letter
         ok 2 - space
@@ -89,7 +95,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.021 ms }
     ok 6 - Formatter standard types # { passed, 13 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
-        ok 2 - pointer 0x105ed0780
+        ok 2 - pointer 0x10ebd8e00
         ok 3 - container {1, 2}
         ok 4 - standard types (1, a) nullopt 1
         ok 5 - custom type { 1, 2 } on
@@ -98,7 +104,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.021 ms }
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 757
+            lineNumber: 776
           ...
         1..7
     not ok 7 - Message types # { FAILED, 6 checks passed, 1 failed }
@@ -110,20 +116,20 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.021 ms }
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 785
+            lineNumber: 804
           ...
         ok 5 - called after a failure
         not ok 6 - 42
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 796
+            lineNumber: 815
           ...
         not ok 7 - from a function
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 801
+            lineNumber: 820
           ...
         1..7
     not ok 8 - Lazy messages # { FAILED, 4 checks passed, 3 failed }
@@ -135,7 +141,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.021 ms }
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 823
+            lineNumber: 842
           ...
         1..4
     not ok 9 - TAP escapes \# TODO in names \\ messages # { FAILED, 3 checks passed, 1 failed }
@@ -145,14 +151,14 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.021 ms }
           condition: "\"key: \\\"value\\\" # not a comment\" == \"a\\\\b\""
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 834
+            lineNumber: 853
           ...
         not ok 2
           ---
           condition: "\"line\\nbreak\\ttab\" == \"x\""
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 838
+            lineNumber: 857
           ...
         1..2
     not ok 10 - TAP condition values are quoted # { FAILED, 0 checks passed, 2 failed }
@@ -317,7 +323,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.021 ms }
           condition: "2 == 1"
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 1537
+            lineNumber: 1556
           ...
         1..1
     not ok 37 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
@@ -376,7 +382,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.021 ms }
         1..7
     ok 44 - Test case and suite names # { passed, 7 checks }
     1..44
-not ok 2 - Miscellaneous suite # { FAILED, 178 checks passed, 8 failed, in 47 test cases, time: 7.456 ms }
+not ok 2 - Miscellaneous suite # { FAILED, 184 checks passed, 8 failed, in 47 test cases, time: 6.250 ms }
 # Subtest: Stopwatch suite
     # Subtest: stopwatch::start() and stop()
         ok 1 - fresh: has_elapsed false
@@ -414,7 +420,7 @@ not ok 2 - Miscellaneous suite # { FAILED, 178 checks passed, 8 failed, in 47 te
         1..7
     ok 5 - stopwatch::elapsed() # { passed, 7 checks }
     1..5
-ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.396 ms }
+ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.308 ms }
 # Subtest: Utility suite
     # Subtest: utility::extract_file_name()
         ok 1 - Unix path returns filename
@@ -477,6 +483,6 @@ ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.396 ms }
         1..5
     not ok 3 - utility::is_match() — failing # { FAILED, 0 checks passed, 5 failed }
     1..3
-not ok 4 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.352 ms }
+not ok 4 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.275 ms }
 1..4
-# { total: 219 checks passed, 13 failed, in 55 test cases, 4 test suites, time: 8.562 ms }
+# { total: 225 checks passed, 13 failed, in 55 test cases, 4 test suites, time: 7.129 ms }

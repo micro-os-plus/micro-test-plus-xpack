@@ -40,6 +40,8 @@
 
 #include "micro-os-plus/micro-test-plus/expression-formatter.h"
 
+#include <cmath>
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -505,7 +507,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Converts @p v to its string representation via `append_number()`,
    * adds the decimal point if needed (via `append_decimal_point()`),
-   * and appends the type suffix `"f"`.
+   * and appends the type suffix `"f"`, unless the text is an infinity
+   * or a NaN, which would read as a misspelling (`inff`).
    */
   expression_formatter&
   expression_formatter::operator<< (float v)
@@ -513,7 +516,10 @@ namespace micro_os_plus::micro_test_plus::detail
     const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
     append_decimal_point (start);
-    append_suffix ("f");
+    if (std::isfinite (v))
+      {
+        append_suffix ("f");
+      }
     return *this;
   }
 
@@ -537,7 +543,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * Converts @p v to its string representation via `append_number()`,
    * adds the decimal point if needed (via `append_decimal_point()`),
    * and appends the type suffix `"ld"`, the name of the `_ld` literal;
-   * the C++ suffix `"l"` would suggest `long`.
+   * the C++ suffix `"l"` would suggest `long`. The suffix is not
+   * appended to an infinity or a NaN, which would read as a
+   * misspelling (`infld`).
    */
   expression_formatter&
   expression_formatter::operator<< (long double v)
@@ -545,7 +553,10 @@ namespace micro_os_plus::micro_test_plus::detail
     const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
     append_decimal_point (start);
-    append_suffix ("ld");
+    if (std::isfinite (v))
+      {
+        append_suffix ("ld");
+      }
     return *this;
   }
 

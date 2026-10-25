@@ -522,6 +522,25 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         f << std::numeric_limits<double>::infinity ();
         check ("inf", "infinite double");
 
+        // The type suffix is not appended to the infinities and NaNs.
+        f << std::numeric_limits<float>::infinity ();
+        check ("inf", "infinite float");
+
+        f << -std::numeric_limits<float>::infinity ();
+        check ("-inf", "negative infinite float");
+
+        f << std::numeric_limits<float>::quiet_NaN ();
+        check ("nan", "float NaN");
+
+        f << std::numeric_limits<double>::quiet_NaN ();
+        check ("nan", "double NaN");
+
+        f << std::numeric_limits<long double>::infinity ();
+        check ("inf", "infinite long double");
+
+        f << std::numeric_limits<long double>::quiet_NaN ();
+        check ("nan", "long double NaN");
+
         local_counts.executed_test_cases++;
       });
 
