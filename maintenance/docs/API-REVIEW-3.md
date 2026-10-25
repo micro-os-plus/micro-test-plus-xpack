@@ -309,6 +309,13 @@ Tags:
   `Bail out!` or a comment line, and a human error line), so that
   they reach the console and the file alike.
 
+  Status: fixed. An unknown reporter name stops the session in
+  `initialise()`: no output file is created, nothing is reported, no
+  test is run, and `run()` returns 2. The other command-line errors are
+  kept by the runner and written by `begin_session()` as comment lines
+  (`# error: ...` in TAP), to the console and to the output file, as
+  well as on `stderr`.
+
 - **#11 — Mistyped options, and filters that match nothing, end in
   success.** [internal] **[confirmed]**
   `src/runner.cpp` lines 404 to 470 and 725 to 732: the option loop
@@ -321,6 +328,11 @@ Tags:
   as errors (exit code 2, as for the other option errors), leaving
   the other arguments to the application; and report a run in which
   the filters selected no test case as an error.
+
+  Status: fixed. The unknown options that start with `--` are reported
+  as errors (exit code 2); the other arguments are left to the
+  application. A run with filters that executed no test case is
+  reported as an error, with exit code 2. The unit tests were updated.
 
 - **#12 — `range_element` fails hard on types with non-iterator
   `begin()` and `end()`.** [internal] **[confirmed]**

@@ -890,7 +890,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
     // An option error does not terminate the process; it is reported on
     // stderr (the messages are expected in the test output), the tests are
-    // still run, and `run()` returns 2.
+    // still run, and `run()` returns 2; an unknown reporter stops the
+    // session, without running any test.
     ts.test ("Runner option errors", [] (auto& t)
       {
         char arg_name[] = "local";
@@ -911,6 +912,15 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         t.expect (eq (bad_reporter_runner.run (), 2)) << "unknown reporter";
+        local_counts.passed_checks++;
+
+        char arg_unknown[] = "--verbos";
+        char* unknown_argv[] = { arg_name, arg_silent, arg_unknown, nullptr };
+        runner unknown_runner;
+        auto& unknown_ts = unknown_runner.initialise (3, unknown_argv);
+        unknown_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        t.expect (eq (unknown_runner.run (), 2)) << "unknown option";
         local_counts.passed_checks++;
 
         char* missing_argv[] = { arg_name, arg_silent, arg_reporter, nullptr };
@@ -1140,7 +1150,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         runner partial_runner;
         body (partial_runner.initialise (top_options, "Local"));
 
-        t.expect (eq (partial_runner.run (), 0)
+        // A filter that selects no test case is an error.
+        t.expect (eq (partial_runner.run (), 2)
                   and eq (partial_runner.totals ().skipped_test_cases (), 2u)
                   and eq (runs.first, 0) and eq (runs.second, 0))
             << "partial name does not match";

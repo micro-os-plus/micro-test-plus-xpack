@@ -169,13 +169,14 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
     # Subtest: Runner option errors
         ok 1 - valid options still applied
         ok 2 - unknown reporter
-        ok 3 - missing argument
-        ok 4 - valid colour modes
-        ok 5 - --color alone keeps the next argument
-        ok 6 - unknown colour mode
-        ok 7 - output file not opened
-        1..7
-    ok 12 - Runner option errors # { passed, 7 checks }
+        ok 3 - unknown option
+        ok 4 - missing argument
+        ok 5 - valid colour modes
+        ok 6 - --color alone keeps the next argument
+        ok 7 - unknown colour mode
+        ok 8 - output file not opened
+        1..8
+    ok 12 - Runner option errors # { passed, 8 checks }
     # Subtest: Runner filter
         ok 1 - suite filter passed
         ok 2 - matching suites run
@@ -349,7 +350,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         1..7
     ok 39 - Test case and suite names # { passed, 7 checks }
     1..39
-not ok 2 - Miscellaneous suite # { FAILED, 166 checks passed, 8 failed, in 42 test cases }
+not ok 2 - Miscellaneous suite # { FAILED, 167 checks passed, 8 failed, in 42 test cases }
 # Subtest: Stopwatch suite
     # Subtest: stopwatch::start() and stop()
         ok 1 - fresh: has_elapsed false
@@ -452,4 +453,4 @@ ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 4 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..4
-# { total: 207 checks passed, 13 failed, in 50 test cases, 4 test suites }
+# { total: 208 checks passed, 13 failed, in 50 test cases, 4 test suites }

@@ -827,8 +827,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * All the options are parsed here, once, and passed to the reporter;
      * the arguments not recognised as options are ignored, since the
-     * applications may define their own. A missing option argument, an
-     * unknown reporter name, or an unknown colour mode, is reported on
+     * applications may define their own, except for the options starting
+     * with `--`. A missing option argument, an unknown reporter name, an
+     * unknown colour mode, or an unknown `--` option, is reported on
      * `stderr`, the option is ignored, and `has_option_errors_` is set.
      *
      * @param argc The argument count from main().
@@ -837,6 +838,33 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] runner_options
     parse_options (int argc, char* argv[]);
+
+    /**
+     * @brief Records and reports a command-line error.
+     *
+     * @details
+     * Writes `error: <text>` on `stderr`, keeps the text, to be written
+     * by `report_option_errors()` through the reporter, and sets
+     * `has_option_errors_`.
+     *
+     * @param before The start of the message, without the `error:`
+     * prefix.
+     * @param value The variable part, usually an option or a value.
+     * @param after The end of the message, without the newline.
+     */
+    void
+    add_option_error (std::string_view before, std::string_view value = {},
+                      std::string_view after = {});
+
+    /**
+     * @brief Writes the recorded command-line errors through the reporter.
+     *
+     * @details
+     * The errors are written as comment lines, to the console and to the
+     * output file, so that they are not visible only on `stderr`.
+     */
+    void
+    report_option_errors (void);
 
     /**
      * @brief Checks whether a suite or a test case is selected by the
@@ -1034,6 +1062,21 @@ namespace micro_os_plus::micro_test_plus
      * `run()` then returns 2.
      */
     bool has_option_errors_ = false;
+
+    /**
+     * @brief Whether the reporter name was not recognised.
+     *
+     * @details
+     * Set by `parse_options()`; `initialise()` then does not proceed,
+     * creates no output file, and `run()` returns 2 without running any
+     * test.
+     */
+    bool has_invalid_reporter_ = false;
+
+    /**
+     * @brief The command-line errors not yet written by the reporter.
+     */
+    std::vector<std::string> option_errors_;
 
     /**
      * @brief Whether a suite was added after `run()` had started.

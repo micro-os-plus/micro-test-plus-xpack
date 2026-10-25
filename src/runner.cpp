@@ -44,6 +44,7 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
+#include <cstdio>
 #include <cstring>
 #include <string>
 
@@ -196,6 +197,10 @@ namespace micro_os_plus::micro_test_plus
    * If the output file cannot be opened, the reporter writes only to the
    * console, and `run()` will return 2.
    *
+   * If the reporter name is not recognised, nothing else is done: no
+   * output file is created, nothing is reported, the session is marked as
+   * finished, so that no test is run, and `run()` returns 2.
+   *
    * The runner is initialised only once; a later call, or a call after
    * the test execution was aborted, reports an error on `stderr` and
    * returns the top suite, without other effects.
@@ -254,6 +259,21 @@ namespace micro_os_plus::micro_test_plus
 
     verbosity_ = options.verbosity_level;
 
+    // With an unknown reporter, do not proceed: no output file is created,
+    // nothing is reported, no test is run, and `run()` returns 2. A silent
+    // reporter without output file is still created, since the suites and
+    // the test cases refer to it.
+    if (has_invalid_reporter_)
+      {
+        runner_options silent_options{};
+        silent_options.verbosity_level = verbosity::silent;
+        verbosity_ = verbosity::silent;
+        reporter_ = std::make_unique<detail::reporter_tap> (silent_options);
+        exit_code_ = 2;
+        session_state_ = session_state::finished;
+        return top_suite_;
+      }
+
     // Initialise and configure the reporter; it keeps its own copy of the
     // verbosity, taken from the same options.
     if (options.selected_reporter == reporter_kind::human)
@@ -292,12 +312,14 @@ namespace micro_os_plus::micro_test_plus
                                filter_patterns_.empty ()
                                    ? "All available test cases:"
                                    : "Matching test cases:");
+        report_option_errors ();
         session_state_ = session_state::initialised;
         return top_suite_;
       }
 
     stopwatch_.start ();
     reporter_->begin_session (*this);
+    report_option_errors ();
 
     top_suite_.stopwatch_.start ();
     reporter_->begin_suite (top_suite_);
@@ -336,8 +358,45 @@ namespace micro_os_plus::micro_test_plus
    *
    * A missing option argument, an unknown reporter name, or an unknown
    * colour mode, is reported on `stderr`, the option is ignored, and
-   * `has_option_errors_` is set, so that `run()` returns 2; the parsing
+   * `has_option_errors_` is set, so that `run()` returns 2 (for an unknown
+   * reporter, `has_invalid_reporter_` is also set, to stop the session in
+   * `initialise()`); the parsing
    * continues with the next argument.
+   */
+  void
+  runner::add_option_error (std::string_view before, std::string_view value,
+                            std::string_view after)
+  {
+    std::string text{ before };
+    text.append (value);
+    text.append (after);
+
+    fprintf (stderr, "error: %s\n", text.c_str ());
+    option_errors_.push_back (std::move (text));
+    has_option_errors_ = true;
+  }
+
+  /**
+   * @details
+   * Writes each error kept by `add_option_error()` as a comment line, to
+   * the console, unless silent, and to the output file, so that the
+   * consumers of the report see the errors too.
+   */
+  void
+  runner::report_option_errors (void)
+  {
+    for (const std::string& text : option_errors_)
+      {
+        reporter_->write_line (verbosity_ != verbosity::silent,
+                               "%serror: %s\n", reporter_->comment_prefix (),
+                               text.c_str ());
+      }
+    option_errors_.clear ();
+  }
+
+  /**
+   * @details
+   * Parses the options; see the description above.
    */
   runner_options
   runner::parse_options (int argc, char* argv[])
@@ -369,9 +428,7 @@ namespace micro_os_plus::micro_test_plus
           {
             if (i + 1 >= opts.arguments.size ())
               {
-                fprintf (stderr, "error: %.*s option requires an argument\n",
-                         static_cast<int> (option.size ()), option.data ());
-                has_option_errors_ = true;
+                add_option_error ("", option, " option requires an argument");
                 return false;
               }
             value = opts.arguments[++i];
@@ -382,6 +439,24 @@ namespace micro_os_plus::micro_test_plus
           {
             value = argument.substr (option.size () + 1);
             return true;
+          }
+        return false;
+      };
+
+    // Whether the argument is one of the options with a value, possibly
+    // with the value missing, which was already reported.
+    auto is_known_option = [&] (std::string_view argument) -> bool
+      {
+        for (const std::string_view option :
+             { reporter_option, output_file_option, use_colour_option,
+               filter_option })
+          {
+            if (argument == option
+                || (argument.starts_with (option)
+                    && argument.substr (option.size ()).starts_with ('=')))
+              {
+                return true;
+              }
           }
         return false;
       };
@@ -406,9 +481,7 @@ namespace micro_os_plus::micro_test_plus
           }
         else
           {
-            fprintf (stderr, "error: unknown colour mode '%.*s'\n",
-                     static_cast<int> (value.size ()), value.data ());
-            has_option_errors_ = true;
+            add_option_error ("unknown colour mode '", value, "'");
           }
       };
 
@@ -445,9 +518,8 @@ namespace micro_os_plus::micro_test_plus
               }
             else
               {
-                fprintf (stderr, "error: unknown reporter '%.*s'\n",
-                         static_cast<int> (value.size ()), value.data ());
-                has_option_errors_ = true;
+                add_option_error ("unknown reporter '", value, "'");
+                has_invalid_reporter_ = true;
               }
           }
         else if (get_value (output_file_option, i, value))
@@ -477,6 +549,13 @@ namespace micro_os_plus::micro_test_plus
             // The view refers to the argv[] string, which remains valid
             // until the program ends.
             opts.filter_patterns.push_back (value);
+          }
+        else if (argument.starts_with ("--")
+                 && !is_known_option (argument))
+          {
+            // The other arguments are left to the application, but a
+            // mistyped option must not silently disable the tests.
+            add_option_error ("unknown option '", argument, "'");
           }
       }
 
@@ -771,6 +850,15 @@ namespace micro_os_plus::micro_test_plus
     totals_ += top_suite_.totals ();
 
     run_suites ();
+
+    // A filter that selects no test case disables the tests; report it.
+    if (!filter_patterns_.empty () && totals_.executed_test_cases () == 0)
+      {
+        add_option_error ("the filters selected no test case");
+        reporter_->write_line (verbosity_ != verbosity::silent,
+                               "%serror: the filters selected no test case\n",
+                               reporter_->comment_prefix ());
+      }
 
     stopwatch_.stop ();
     reporter_->end_session (*this);

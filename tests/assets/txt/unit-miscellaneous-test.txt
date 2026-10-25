@@ -123,12 +123,13 @@ break	tab == x)
     • Runner option errors
         ✓ valid options still applied
         ✓ unknown reporter
+        ✓ unknown option
         ✓ missing argument
         ✓ valid colour modes
         ✓ --color alone keeps the next argument
         ✓ unknown colour mode
         ✓ output file not opened
-    ✓ Runner option errors - passed (7 checks)
+    ✓ Runner option errors - passed (8 checks)
     • Runner filter
         ✓ suite filter passed
         ✓ matching suites run
@@ -271,7 +272,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (172 checks passed, 8 failed, in 42 test cases), time: 15.218 ms
+✗ Miscellaneous suite - FAILED (173 checks passed, 8 failed, in 42 test cases), time: 15.218 ms
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
