@@ -553,6 +553,9 @@ Paths in the report are relative to the repository root, or to
 `runner.h`, `inlines/test-inlines.h`); `src/` paths are always written
 in full.
 
+Clearly mark the issues related to deprecated functionality with the
+tag `[deprecated]`, and group them at the end.
+
 ## Procedure
 
 1. Determine the scope, and the number of the new report (from the
@@ -594,3 +597,5 @@ the most recent report, unless the user names another one:
 7. Commit only when the user asks, following
    `.github/skills/github-commit/SKILL.md`, which also covers the
    reference to the GitHub issue and the update of the report.
+8. After committing, update the api review file to reflect the 
+   fixed or improved items.
