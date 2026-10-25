@@ -211,6 +211,17 @@ namespace with_ranges
     end (void) const;
   };
 
+  // A type with begin() and end() members that do not return iterators,
+  // like a transaction; only declared, as it is not iterated.
+  struct transaction
+  {
+    void
+    begin (void) const;
+
+    void
+    end (void) const;
+  };
+
   // A range with begin() and end() functions, found by argument-dependent
   // lookup; only declared, as it is not iterated.
   struct number_pair
@@ -288,6 +299,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     using with_comparators::unreported;
     using with_ranges::number_pair;
     using with_ranges::self_range;
+    using with_ranges::transaction;
 
     // The formatter writes element by element the ranges with members
     // or functions, except the arrays, the strings, the ranges of
@@ -305,6 +317,12 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (not detail::formattable_range<self_range>);
     static_assert (not detail::formattable_range<std::vector<unreported>>);
     static_assert (not detail::formattable_range<int>);
+
+    // The members must return iterators, otherwise the type is not a
+    // range, instead of a hard error when forming the element type.
+    static_assert (not detail::container_like<transaction>);
+    static_assert (not detail::free_range<transaction>);
+    static_assert (not detail::formattable_range<transaction>);
 
     // So the ranges that cannot be reported are rejected by the
     // comparators.

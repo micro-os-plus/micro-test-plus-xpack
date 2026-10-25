@@ -314,6 +314,13 @@ Tags:
   (`requires { typename range_element<T>::type; }` with a SFINAE-safe
   `range_element`).
 
+  Status: fixed. `container_like` and `free_range` require
+  `begin()` to return a `std::input_or_output_iterator` and `end()` a
+  `std::sentinel_for` it, so such a type is not a range and the
+  `range_element` specialisations are not selected. Static asserts for
+  a type with `void` `begin()` and `end()` were added to
+  `unit-static-asserts`.
+
 - **#13 — Mixing a `float` and a `double` tolerance does not
   compile.** [internal] **[confirmed]**
   `inlines/detail-inlines.h` lines 223 to 228, `math.h` lines 133 to

@@ -72,6 +72,7 @@
 #include "values.h"
 
 #include <concepts>
+#include <iterator>
 #include <string_view>
 #include <type_traits>
 #include <utility>
@@ -259,21 +260,26 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief C++20 concept satisfied when `T` provides both `begin()` and
-     * `end()` member functions.
+     * `end()` member functions returning an iterator and its sentinel.
      *
      * @tparam T The type to be checked.
      *
      * @details
      * The `container_like` concept is satisfied when `T` exposes both a
      * `begin()` and an `end()` member function, as required by standard
-     * range-based iteration. It is used to detect the ranges that the
+     * range-based iteration, and `begin()` returns a
+     * `std::input_or_output_iterator` for which `end()` returns a
+     * `std::sentinel_for`. The check is part of the concept, so a type
+     * whose `begin()` and `end()` return something else (`void`, for
+     * example) is not a container, instead of being a hard error where
+     * the element type is formed. It is used to detect the ranges that the
      * formatter writes element by element (see `formattable_range`), and
      * the ranges of values of `test_each()`.
      */
     template <class T>
     concept container_like = requires (const T& t) {
-      t.begin ();
-      t.end ();
+      requires std::input_or_output_iterator<decltype (t.begin ())>;
+      requires std::sentinel_for<decltype (t.end ()), decltype (t.begin ())>;
     };
 
     /**
@@ -299,13 +305,14 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `free_range` concept is satisfied when `T` has no `begin()`
      * and `end()` members (see `container_like`), but calls of `begin()`
-     * and `end()` with a `const T&` argument are valid, as in a
-     * range-based `for` statement, which then uses them.
+     * and `end()` with a `const T&` argument are valid and return an
+     * iterator and its sentinel, as in a range-based `for` statement,
+     * which then uses them.
      */
     template <class T>
     concept free_range = (not container_like<T>) and requires (const T& t) {
-      begin (t);
-      end (t);
+      requires std::input_or_output_iterator<decltype (begin (t))>;
+      requires std::sentinel_for<decltype (end (t)), decltype (begin (t))>;
     };
 
     /**
