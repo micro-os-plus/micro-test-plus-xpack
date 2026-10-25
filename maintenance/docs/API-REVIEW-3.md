@@ -662,6 +662,10 @@ Tags:
   `check_result` carries the unused member. Suggested change: declare
   it under `#if defined(__cpp_exceptions)`.
 
+  Status: fixed (#179). `check_result::uncaught_exceptions_` is
+  declared only when `__cpp_exceptions` is defined, like its uses in
+  `src/check-result.cpp`.
+
 - **#30 — Three lines exceed 80 characters.** [internal]
   `micro-test-plus.h` line 61 (85), `inlines/detail-inlines.h` line
   790 (109), and `src/reporter.cpp` line 448 (93): all are comments

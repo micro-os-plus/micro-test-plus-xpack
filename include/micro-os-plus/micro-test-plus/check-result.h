@@ -365,9 +365,12 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * If the destructor finds more, it runs during stack unwinding (for
-       * a result kept in a variable), and must not throw.
+       * a result kept in a variable), and must not throw. Present only
+       * when exceptions are enabled.
        */
+#if defined(__cpp_exceptions)
       int uncaught_exceptions_ = 0;
+#endif // defined(__cpp_exceptions)
 
       /**
        * @brief Reference to the test case invoking this check.
