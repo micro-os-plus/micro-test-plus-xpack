@@ -49,13 +49,19 @@ command-line errors do not reach the outputs (#10, #11).
 
 Suggested order of work:
 
-1. The non-breaking defects: #5, #12, #13, #14, and #15, which are
-   local fixes, then #7, #8, #9, #10, #11, and #16, best done together
-   with the refactoring of the output policy in #25.
-2. The non-breaking clean-ups: #18, #19, #26, #27, #28, #29, #30,
-   #31, and #32.
-3. The breaking changes, grouped for one major release: #1, #2, #3,
-   #4, #6, #17, #20, #21, #22, #23, and #24.
+1. The non-breaking defects: #5, #12, #14, and #15, which are local
+   fixes, then #7, #8, #9, #10, #11, and #16, best done together with
+   the refactoring of the output policy in #25.
+2. The non-breaking clean-ups: #19, #26, #28, #29, #30, #31, and #32.
+3. The breaking changes, grouped for one major release: #2, #3, #6,
+   #17, #20, and #21.
+4. The deprecated definitions, last, since they need no separate work:
+   #1, #4, #13, #18, #22, #23, #27, and #24. The first seven concern
+   the overloaded operators, the literals, and the type wrappers, which
+   are deprecated since 5.1.0 (#166); their defects disappear when
+   these are removed in a future major release, so none of them needs
+   a fix of its own. #24 is the removal of the members that were
+   deprecated earlier, in the same release.
 
 Tags:
 
@@ -171,7 +177,10 @@ Tags:
 
   Status: deprecated in `0b707ed6` (#166), not removed. The overloaded `and`,
   `or`, and `not` operators are deprecated since 5.1.0 (they are removed
-  together with the operators).
+  together with the operators). The definitions moved to `deprecated.h` in
+  `1b55e954` (#169). The functions `both()` and `either()`, recommended
+  above, were renamed `all_of()` and `any_of()`, and made variadic, in
+  `e7f7d5f7` (#168).
 
 - **#5 — A `static_suite` constructed during or after `run()` is
   silently skipped, and still counted.** [internal] **[confirmed]**
@@ -382,6 +391,7 @@ Tags:
 
   Status: deprecated in `0b707ed6` (#166), not removed. The operators are
   deprecated since 5.1.0; the difference disappears when they are removed.
+  The definitions moved to `deprecated.h` in `1b55e954` (#169).
 
 - **#19 — `std::chrono` durations can be neither printed nor
   compared.** [internal] **[confirmed]**
@@ -439,7 +449,8 @@ Tags:
 
   Status: deprecated in `0b707ed6` (#166), not removed. The two-argument
   `approx (value, epsilon)` is deprecated since 5.1.0, in favour of `approx
-  (lhs, rhs, epsilon)`.
+  (lhs, rhs, epsilon)`. The definitions moved to `deprecated.h` in `1b55e954`
+  (#169).
 
 - **#23 — The `_b` literal does not match `to_b`.** [breaking]
   `literals.h` lines 437 to 438 and 488: every other literal has a
@@ -469,7 +480,8 @@ Tags:
   `_s` suffix can stay, since it matches `to_s`.
 
   Status: deprecated in `0b707ed6` (#166), not removed. The `_b` literal and
-  `to_b` are deprecated since 5.1.0.
+  `to_b` are deprecated since 5.1.0. The definitions moved to `deprecated.h`
+  in `1b55e954` (#169).
 
 - **#24 — Deprecated members named after types force qualified names
   in the declarations.** [breaking]
