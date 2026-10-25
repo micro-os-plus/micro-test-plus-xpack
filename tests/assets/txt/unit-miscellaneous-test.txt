@@ -2,7 +2,7 @@ Running: unit-miscellaneous-test one two --reporter human --output-file unit-mis
 Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Top suite
-✓ Top suite - passed (0 checks in 0 test cases), time: 0.024 ms
+✓ Top suite - passed (0 checks in 0 test cases), time: 0.042 ms
 • Miscellaneous suite
     • Reporter stream operators
         ✓ const char*
@@ -82,22 +82,21 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Formatter standard types - passed (13 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x107bbfcc0
+        ✓ pointer 0x10e915c20
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
-        ✓ wrappers 42 1.5
         ✓ wide characters u'x' U'x' L'x'
-        ✗ failed {3} FAILED (miscellaneous.cpp:746)
-    ✗ Message types - FAILED (7 checks passed, 1 failed)
+        ✗ failed {3} FAILED (miscellaneous.cpp:743)
+    ✗ Message types - FAILED (6 checks passed, 1 failed)
     • Lazy messages
         ✓ passed
         ✓ true
         ✓ not called after a success
-        ✗ failed and appended FAILED (miscellaneous.cpp:774)
+        ✗ failed and appended FAILED (miscellaneous.cpp:771)
         ✓ called after a failure
-        ✗ 42 FAILED (miscellaneous.cpp:785)
-        ✗ from a function FAILED (miscellaneous.cpp:790)
+        ✗ 42 FAILED (miscellaneous.cpp:782)
+        ✗ from a function FAILED (miscellaneous.cpp:787)
     ✗ Lazy messages - FAILED (4 checks passed, 3 failed)
     • TAP escapes # TODO in names \ messages
         ✓ message with # hash and \ backslash
@@ -105,11 +104,11 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ first line
 second line
         ✗ failed # TODO not a directive
-next line FAILED (miscellaneous.cpp:812)
+next line FAILED (miscellaneous.cpp:809)
     ✗ TAP escapes # TODO in names \ messages - FAILED (3 checks passed, 1 failed)
     • TAP condition values are quoted
-        ✗ FAILED (miscellaneous.cpp:823, key: "value" # not a comment == a\b)
-        ✗ FAILED (miscellaneous.cpp:827, line
+        ✗ FAILED (miscellaneous.cpp:820, key: "value" # not a comment == a\b)
+        ✗ FAILED (miscellaneous.cpp:824, line
 break	tab == x)
     ✗ TAP condition values are quoted - FAILED (0 checks passed, 2 failed)
     • Runner options
@@ -221,7 +220,7 @@ break	tab == x)
         ✓ value 1 == 1
     ✓ Failed each value (1) - passed (1 check)
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1463, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1460, 2 == 1)
     ✗ Failed each value (2) - FAILED (0 checks passed, 1 failed)
     • Callable arguments
         ✓ reference parameter refers to a copy
@@ -270,7 +269,7 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (171 checks passed, 8 failed, in 42 test cases), time: 5.416 ms
+✗ Miscellaneous suite - FAILED (170 checks passed, 8 failed, in 42 test cases), time: 15.218 ms
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -302,7 +301,7 @@ break	tab == x)
         ✓ zero elapsed -> 0 µs
         ✓ no stop -> 0 µs
     ✓ stopwatch::elapsed() - passed (7 checks)
-✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.325 ms
+✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.511 ms
 • Utility suite
     • utility::extract_file_name()
         ✓ Unix path returns filename
@@ -336,5 +335,5 @@ break	tab == x)
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
-✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.201 ms
-✗ Total: 212 checks passed, 13 failed, in 50 test cases, 4 test suites, time: 6.193 ms
+✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.313 ms
+✗ Total: 211 checks passed, 13 failed, in 50 test cases, 4 test suites, time: 16.599 ms

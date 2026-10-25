@@ -92,16 +92,6 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (ge (my_actual_integral (), 42)) << "actual >= 42";
         local_counts.passed_checks++;
 
-        {
-          using namespace literals;
-
-          t.expect (eq (42_i, 42_i));
-          local_counts.passed_checks++;
-
-          t.expect (eq (42, 42_i)) << "42 == 42_i";
-          local_counts.passed_checks++;
-        }
-
         local_counts.executed_test_cases++;
       });
 
@@ -138,16 +128,6 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
         t.expect (lt (my_actual_integral (), 42)) << "actual < 42";
         local_counts.failed_checks++;
-
-        {
-          using namespace literals;
-
-          t.expect (ne (42_i, 42_i)) << "42_i != 42_i";
-          local_counts.failed_checks++;
-
-          t.expect (ne (42, 42_i)) << "42 != 42_i";
-          local_counts.failed_checks++;
-        }
       });
 
     test_assert (current_suite_totals.passed_checks ()
@@ -191,67 +171,6 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (ne (my_actual_float<float> (), 43)) << "actual != 43";
         local_counts.passed_checks++;
 
-        {
-          using namespace literals;
-
-          t.expect (eq (to_f (42.101f), 42.101_f)) << "42.101f == 42.101_f";
-          local_counts.passed_checks++;
-
-          t.expect (eq (to_f (42.101f, 0.01f), 42.10_f))
-              << "42.101f epsilon 0.01f == 42.10_f";
-          local_counts.passed_checks++;
-
-          t.expect (ne (to_f (42.101f, 0.1f), 42.1000_f))
-              << "42.101f epsilon 0.1f != 42.10_f";
-          local_counts.passed_checks++;
-
-          t.expect (eq (to_f (42.1010001f, 0.1f), 42.1_f))
-              << "42.1010001f epsilon 0.1f == 42.1_f";
-          local_counts.passed_checks++;
-
-          t.expect (ne (to_f (42.101f), 42.10_f)) << "42.101f != 42.10_f";
-          local_counts.passed_checks++;
-
-          t.expect (ne (to_f (42.101f), 42.100_f)) << "42.101f != 42.100_f";
-          local_counts.passed_checks++;
-
-          t.expect (eq (to_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
-          local_counts.passed_checks++;
-
-          t.expect (eq (to_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
-          local_counts.passed_checks++;
-
-          t.expect (eq (to_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
-          local_counts.passed_checks++;
-
-          t.expect (eq (to_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
-          local_counts.passed_checks++;
-
-          t.expect (eq (to_d (42.), 42._d)) << "42. == 42._d";
-          local_counts.passed_checks++;
-
-          t.expect (eq (to_ld (42.42L), 42.42_ld)) << "42.42 == 42.42_ld";
-          local_counts.passed_checks++;
-
-          t.expect (eq (1234._f, 1234.f)) << "1234._f == 1234.f";
-          local_counts.passed_checks++;
-
-          t.expect (eq (1234.56_f, 1234.56f)) << "1234.56_f == 1234.56f";
-          local_counts.passed_checks++;
-
-          t.expect (eq (12345678.9f, 12345678.9_f))
-              << "12345678.9f == 12345678.9_f";
-          local_counts.passed_checks++;
-
-          t.expect (eq (111111.42f, 111111.42_f))
-              << "111111.42f == 111111.42_f";
-          local_counts.passed_checks++;
-
-          t.expect (eq (1111111111.42, 1111111111.42_d))
-              << "1111111111.42 == 1111111111.42_d";
-          local_counts.passed_checks++;
-        }
-
         local_counts.executed_test_cases++;
       });
 
@@ -277,67 +196,6 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
         t.expect (eq (my_actual_float<float> (), 43)) << "actual == 43";
         local_counts.failed_checks++;
-
-        {
-          using namespace literals;
-
-          t.expect (ne (to_f (42.101f), 42.101_f)) << "42.101f != 42.101_f";
-          local_counts.failed_checks++;
-
-          t.expect (ne (to_f (42.101f, 0.01f), 42.10_f))
-              << "42.101f epsilon 0.01f != 42.10_f";
-          local_counts.failed_checks++;
-
-          t.expect (eq (to_f (42.101f, 0.1f), 42.1000_f))
-              << "42.101f epsilon 0.1f == 42.10_f";
-          local_counts.failed_checks++;
-
-          t.expect (ne (to_f (42.1010001f, 0.1f), 42.1_f))
-              << "42.1010001f epsilon 0.1f != 42.1_f";
-          local_counts.failed_checks++;
-
-          t.expect (eq (to_f (42.101f), 42.10_f)) << "42.101f == 42.10_f";
-          local_counts.failed_checks++;
-
-          t.expect (eq (to_f (42.101f), 42.100_f)) << "42.101f == 42.100_f";
-          local_counts.failed_checks++;
-
-          t.expect (ne (to_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
-          local_counts.failed_checks++;
-
-          t.expect (ne (to_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
-          local_counts.failed_checks++;
-
-          t.expect (ne (to_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
-          local_counts.failed_checks++;
-
-          t.expect (ne (to_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
-          local_counts.failed_checks++;
-
-          t.expect (ne (to_d (42.), 42._d)) << "42. == 42._d";
-          local_counts.failed_checks++;
-
-          t.expect (ne (to_ld (42.42L), 42.42_ld)) << "42.42 == 42.42_ld";
-          local_counts.failed_checks++;
-
-          t.expect (ne (1234._f, 1234.f)) << "1234._f == 1234.f";
-          local_counts.failed_checks++;
-
-          t.expect (ne (1234.56_f, 1234.56f)) << "1234.56_f == 1234.56f";
-          local_counts.failed_checks++;
-
-          t.expect (ne (12345678.9f, 12345678.9_f))
-              << "12345678.9f == 12345678.9_f";
-          local_counts.failed_checks++;
-
-          t.expect (ne (111111.42f, 111111.42_f))
-              << "111111.42f == 111111.42_f";
-          local_counts.failed_checks++;
-
-          t.expect (ne (1111111111.42, 1111111111.42_d))
-              << "1111111111.42 == 1111111111.42_d";
-          local_counts.failed_checks++;
-        }
 
         local_counts.executed_test_cases++;
       });
@@ -379,16 +237,6 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
         t.expect (approx (10, 10.4, 0.5)) << "10 ~ 10.4 +/- 0.5";
         local_counts.passed_checks++;
-
-        {
-          using namespace literals;
-
-          t.expect (approx (42_i, 43, 2)) << "42_i ~ 43 +/- 2";
-          local_counts.passed_checks++;
-
-          t.expect (approx (to_u16 (500), 512, 13)) << "500 ~ 512 +/- 13";
-          local_counts.passed_checks++;
-        }
 
         t.expect (negate (approx (10, 20, 5))) << "not 10 ~ 20 +/- 5";
         local_counts.passed_checks++;

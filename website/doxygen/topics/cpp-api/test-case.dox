@@ -27,12 +27,4 @@ ts.test ("Check various conditions", [] (auto& t) {
   t.expect (mt::eq (compute_answer (), 42)) << "answer eq 42";
   t.expect (mt::ne (compute_answer (), 43)) << "answer ne 43";
 });
-
-ts.test ("Check various conditions with operators", [] (auto& t) {
-  using namespace mt::operators;
-  using namespace mt::literals;
-
-  t.expect (compute_answer () == 42_i) << "answer == 42";
-  t.expect (compute_answer () != 43_i) << "answer != 43";
-});
 @endcode

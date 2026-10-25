@@ -36,9 +36,8 @@ add_library (tests-unit-checks-interface INTERFACE EXCLUDE_FROM_ALL)
 target_include_directories (tests-unit-checks-interface INTERFACE "include")
 
 target_sources (
-  tests-unit-checks-interface
-  INTERFACE "src/main.cpp" "src/comparisons.cpp" "src/operands.cpp"
-            "src/operators.cpp" "src/support.cpp"
+  tests-unit-checks-interface INTERFACE "src/main.cpp" "src/comparisons.cpp"
+                                        "src/operands.cpp" "src/support.cpp"
 )
 
 target_link_libraries (

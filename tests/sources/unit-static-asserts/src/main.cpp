@@ -31,6 +31,11 @@ using namespace micro_os_plus::micro_test_plus;
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
+// Most of the checks in this file verify, at compile time, the literals,
+// the type wrappers, and the operators, which are deprecated but still
+// available; they cost nothing at run time, so they are kept here until
+// the features are removed.
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif // defined(__clang__)

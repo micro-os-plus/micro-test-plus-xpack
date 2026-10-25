@@ -736,9 +736,6 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         t.expect (true) << "custom type " << point{ 1, 2 } << ' ' << state::on;
         local_counts.passed_checks++;
 
-        t.expect (true) << "wrappers " << 42_i << ' ' << 1.5_d;
-        local_counts.passed_checks++;
-
         t.expect (true) << "wide characters " << u'x' << ' ' << U'x' << ' '
                         << L'x';
         local_counts.passed_checks++;

@@ -36,7 +36,6 @@ expected values:
   Check failed comparisons
     ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)
     ✗ FAILED (unit-test.cpp:307, 42 != 42)
-    ✗ 42 != 42_i FAILED (unit-test.cpp:310, 42 != 42)
     ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42 and 42.0 != 42.0))
 @endcode
 
@@ -51,10 +50,9 @@ arrays (including `uint8_t` buffers) are compared by address.
 
 Containers can be compared for equality or inequality using the same
 comparator functions. The comparison is performed with the standard
-`==` operator, so the containers must be of the same type. There are no
-`==` and `!=` operators for containers in the `operators` namespace,
-since the standard ones would be selected, and these return a plain
-`bool`.
+`==` operator, so the containers must be of the same type. The standard
+`==` and `!=` operators return a plain `bool`, so a failed check could
+not show the elements.
 
 @par Examples
 

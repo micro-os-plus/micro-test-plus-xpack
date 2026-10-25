@@ -35,6 +35,7 @@ using namespace micro_os_plus::micro_test_plus;
 #if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#pragma GCC diagnostic ignored "-Wfloat-equal"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
@@ -108,6 +109,125 @@ namespace
   {
     int value;
   };
+
+  // Mock functions that simulate code computing integers and floats.
+  template <typename T = int>
+  T
+  my_actual_integral ()
+  {
+    return 42;
+  }
+
+  template <typename T = int>
+  T
+  my_actual_integral_less ()
+  {
+    return 41;
+  }
+
+  template <typename T = int>
+  T
+  my_actual_integral_more ()
+  {
+    return 43;
+  }
+
+  template <typename T>
+  T
+  my_actual_float ()
+  {
+    return 42.0;
+  }
+
+  // A comparator, a predicate, and an operator of the application, as the
+  // applications built them with the literals and the wrappers.
+  struct divides_tag
+  {
+    static constexpr const char* symbol = " divides ";
+
+    template <class Lhs_T, class Rhs_T>
+    static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return rhs % lhs == 0;
+    }
+  };
+
+  struct even_tag
+  {
+    static constexpr const char* symbol = "even ";
+
+    template <class T>
+    static constexpr bool
+    apply (const T& t)
+    {
+      return t % 2 == 0;
+    }
+  };
+
+  template <class Lhs_T, class Rhs_T>
+  constexpr auto
+  divides (const Lhs_T& lhs, const Rhs_T& rhs)
+  {
+    return extension::compare_op{ lhs, rhs, divides_tag{} };
+  }
+
+  template <class T>
+  constexpr auto
+  even (const T& t)
+  {
+    return extension::predicate_op{ t, even_tag{} };
+  }
+
+  namespace custom_operators
+  {
+    // `a | b` reads "a divides b"; enabled only when an operand is a
+    // framework type, as the operators of the framework are.
+    template <class Lhs_T, class Rhs_T>
+      requires extension::any_op<Lhs_T, Rhs_T>
+    constexpr auto
+    operator| (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return extension::compare_op{ lhs, rhs, divides_tag{} };
+    }
+  } // namespace custom_operators
+
+  // A user-defined type that counts its copies.
+  int counted_copies = 0;
+
+  struct counted
+  {
+    explicit counted (int v) : number{ v }
+    {
+    }
+
+    counted (const counted& other) : number{ other.number }
+    {
+      ++counted_copies;
+    }
+
+    counted&
+    operator= (const counted& other)
+    {
+      number = other.number;
+      ++counted_copies;
+      return *this;
+    }
+
+    int number;
+  };
+
+  constexpr bool
+  operator== (const counted& lhs, const counted& rhs)
+  {
+    return lhs.number == rhs.number;
+  }
+
+  expression_formatter&
+  operator<< (expression_formatter& formatter, const counted& c)
+  {
+    return formatter << c.number;
+  }
 } // namespace
 
 // Without a clock, the readings remain zero.
@@ -895,6 +1015,615 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         t.expect (!eq (type_traits::value<int>{ one }, 2)) << "false results";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // ------------------------------------------------------------------------
+    // The operators, the literals, and the type wrappers, deprecated in
+    // favour of the function comparators, `eq()`, `ne()`, ..., and
+    // `approx()`, which compare and report the plain values.
+    // ------------------------------------------------------------------------
+
+    ts.test ("Integer comparisons with literals", [] (auto& t)
+      {
+        using namespace literals;
+
+        t.expect (eq (42_i, 42_i));
+        local_counts.passed_checks++;
+
+        t.expect (eq (42, 42_i)) << "42 == 42_i";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Failed integer comparisons with literals", [] (auto& t)
+      {
+        using namespace literals;
+
+        t.expect (ne (42_i, 42_i)) << "42_i != 42_i";
+        local_counts.failed_checks++;
+
+        t.expect (ne (42, 42_i)) << "42 != 42_i";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Float comparisons with literals and wrappers", [] (auto& t)
+      {
+        using namespace literals;
+
+        t.expect (eq (to_f (42.101f), 42.101_f)) << "42.101f == 42.101_f";
+        local_counts.passed_checks++;
+
+        t.expect (eq (to_f (42.101f, 0.01f), 42.10_f))
+            << "42.101f epsilon 0.01f == 42.10_f";
+        local_counts.passed_checks++;
+
+        t.expect (ne (to_f (42.101f, 0.1f), 42.1000_f))
+            << "42.101f epsilon 0.1f != 42.10_f";
+        local_counts.passed_checks++;
+
+        t.expect (eq (to_f (42.1010001f, 0.1f), 42.1_f))
+            << "42.1010001f epsilon 0.1f == 42.1_f";
+        local_counts.passed_checks++;
+
+        t.expect (ne (to_f (42.101f), 42.10_f)) << "42.101f != 42.10_f";
+        local_counts.passed_checks++;
+
+        t.expect (ne (to_f (42.101f), 42.100_f)) << "42.101f != 42.100_f";
+        local_counts.passed_checks++;
+
+        t.expect (eq (to_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
+        local_counts.passed_checks++;
+
+        t.expect (eq (to_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
+        local_counts.passed_checks++;
+
+        t.expect (eq (to_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
+        local_counts.passed_checks++;
+
+        t.expect (eq (to_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
+        local_counts.passed_checks++;
+
+        t.expect (eq (to_d (42.), 42._d)) << "42. == 42._d";
+        local_counts.passed_checks++;
+
+        t.expect (eq (to_ld (42.42L), 42.42_ld)) << "42.42 == 42.42_ld";
+        local_counts.passed_checks++;
+
+        t.expect (eq (1234._f, 1234.f)) << "1234._f == 1234.f";
+        local_counts.passed_checks++;
+
+        t.expect (eq (1234.56_f, 1234.56f)) << "1234.56_f == 1234.56f";
+        local_counts.passed_checks++;
+
+        t.expect (eq (12345678.9f, 12345678.9_f))
+            << "12345678.9f == 12345678.9_f";
+        local_counts.passed_checks++;
+
+        t.expect (eq (111111.42f, 111111.42_f)) << "111111.42f == 111111.42_f";
+        local_counts.passed_checks++;
+
+        t.expect (eq (1111111111.42, 1111111111.42_d))
+            << "1111111111.42 == 1111111111.42_d";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Failed float comparisons with literals and wrappers",
+             [] (auto& t)
+      {
+        using namespace literals;
+
+        t.expect (ne (to_f (42.101f), 42.101_f)) << "42.101f != 42.101_f";
+        local_counts.failed_checks++;
+
+        t.expect (ne (to_f (42.101f, 0.01f), 42.10_f))
+            << "42.101f epsilon 0.01f != 42.10_f";
+        local_counts.failed_checks++;
+
+        t.expect (eq (to_f (42.101f, 0.1f), 42.1000_f))
+            << "42.101f epsilon 0.1f == 42.10_f";
+        local_counts.failed_checks++;
+
+        t.expect (ne (to_f (42.1010001f, 0.1f), 42.1_f))
+            << "42.1010001f epsilon 0.1f != 42.1_f";
+        local_counts.failed_checks++;
+
+        t.expect (eq (to_f (42.101f), 42.10_f)) << "42.101f == 42.10_f";
+        local_counts.failed_checks++;
+
+        t.expect (eq (to_f (42.101f), 42.100_f)) << "42.101f == 42.100_f";
+        local_counts.failed_checks++;
+
+        t.expect (ne (to_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
+        local_counts.failed_checks++;
+
+        t.expect (ne (to_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
+        local_counts.failed_checks++;
+
+        t.expect (ne (to_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
+        local_counts.failed_checks++;
+
+        t.expect (ne (to_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
+        local_counts.failed_checks++;
+
+        t.expect (ne (to_d (42.), 42._d)) << "42. == 42._d";
+        local_counts.failed_checks++;
+
+        t.expect (ne (to_ld (42.42L), 42.42_ld)) << "42.42 == 42.42_ld";
+        local_counts.failed_checks++;
+
+        t.expect (ne (1234._f, 1234.f)) << "1234._f == 1234.f";
+        local_counts.failed_checks++;
+
+        t.expect (ne (1234.56_f, 1234.56f)) << "1234.56_f == 1234.56f";
+        local_counts.failed_checks++;
+
+        t.expect (ne (12345678.9f, 12345678.9_f))
+            << "12345678.9f == 12345678.9_f";
+        local_counts.failed_checks++;
+
+        t.expect (ne (111111.42f, 111111.42_f)) << "111111.42f == 111111.42_f";
+        local_counts.failed_checks++;
+
+        t.expect (ne (1111111111.42, 1111111111.42_d))
+            << "1111111111.42 == 1111111111.42_d";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Approximate comparisons with literals and wrappers", [] (auto& t)
+      {
+        using namespace literals;
+
+        t.expect (approx (42_i, 43, 2)) << "42_i ~ 43 +/- 2";
+        local_counts.passed_checks++;
+
+        t.expect (approx (to_u16 (500), 512, 13)) << "500 ~ 512 +/- 13";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("to_* modern wrappers", [] (auto& t)
+      {
+        // Verify runtime wrapping of floating-point values.
+        float f = 42.0f;
+        t.expect (eq (to_f{ f }, 42.0f)) << "to_f wraps float for eq";
+        local_counts.passed_checks++;
+
+        double d = 42.0;
+        t.expect (eq (to_d{ d }, 42.0)) << "to_d wraps double for eq";
+        local_counts.passed_checks++;
+
+        // Generic to_t<T> wrapper in a runtime expectation.
+        int x = 42;
+        t.expect (eq (to_t<int>{ x }, 42)) << "to_t<int> generic wrapper";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // All six comparisons apply the tolerance of the floating-point literals
+    // and wrappers consistently: values within the tolerance are equal, and
+    // neither less nor greater; `approx()` makes the tolerance explicit.
+    ts.test ("Floating-point tolerance", [] (auto& t)
+      {
+        using namespace literals;
+
+        // `1.5_d` has a tolerance of 0.1, so 1.45 is equal to it.
+        t.expect (eq (1.45, 1.5_d)) << "1.45 == 1.5_d";
+        t.expect (negate (lt (1.45, 1.5_d))) << "not 1.45 < 1.5_d";
+        t.expect (le (1.45, 1.5_d)) << "1.45 <= 1.5_d";
+        t.expect (negate (gt (1.45, 1.5_d))) << "not 1.45 > 1.5_d";
+        t.expect (ge (1.45, 1.5_d)) << "1.45 >= 1.5_d";
+        t.expect (lt (1.3, 1.5_d)) << "1.3 < 1.5_d (outside the tolerance)";
+        local_counts.passed_checks += 6;
+
+        // The tolerance of a wrapper is also derived from the number of
+        // decimals, for negative values too, and the rounding noise of 0.011
+        // does not make it 1e-18.
+        t.expect (eq (-1.45, to_d{ -1.5 })) << "-1.45 == to_d{ -1.5 }";
+        t.expect (eq (0.0111, to_d{ 0.011 })) << "0.0111 == to_d{ 0.011 }";
+        t.expect (lt (0.009, to_d{ 0.011 })) << "0.009 < to_d{ 0.011 }";
+        local_counts.passed_checks += 3;
+
+        // The leading zeros of a small wrapper value are counted, so its
+        // tolerance is not 0.1, a zero wrapper compares exactly, and a
+        // whole value keeps one decimal, as `42.0_d`.
+        t.expect (ne (to_d{ 1e-12 }, 0.05)) << "to_d{ 1e-12 } != 0.05";
+        t.expect (lt (to_d{ 1e-12 }, 2.5e-12)) << "to_d{ 1e-12 } < 2.5e-12";
+        t.expect (eq (to_d{ 1e-12 }, 1.5e-12)) << "to_d{ 1e-12 } == 1.5e-12";
+        t.expect (ne (to_d{ 1e-9 }, 0.05)) << "to_d{ 1e-9 } != 0.05";
+        t.expect (ne (to_d{ 0.0 }, 0.09)) << "to_d{ 0.0 } != 0.09";
+        t.expect (lt (to_d{ 0.0 }, 0.09)) << "to_d{ 0.0 } < 0.09";
+        t.expect (lt (to_d{ 0.0 }, 1e-300)) << "to_d{ 0.0 } < 1e-300";
+        t.expect (eq (to_d{ 0.0 }, 0.0)) << "to_d{ 0.0 } == 0.0";
+        t.expect (eq (to_d{ 0.0 }, -0.0)) << "to_d{ 0.0 } == -0.0";
+        t.expect (eq (to_d{ 42.0 }, 42.09)) << "to_d{ 42.0 } == 42.09";
+        local_counts.passed_checks += 10;
+
+        // An explicit tolerance of 0.01.
+        t.expect (ne (1.45, approx (1.5, 0.01)))
+            << "1.45 != approx (1.5, 0.01)";
+        t.expect (lt (1.45, approx (1.5, 0.01)))
+            << "1.45 < approx (1.5, 0.01)";
+        t.expect (eq (1.495, approx (1.5, 0.01)))
+            << "1.495 == approx (1.5, 0.01)";
+        t.expect (negate (lt (1.495, approx (1.5, 0.01))))
+            << "not 1.495 < approx (1.5, 0.01)";
+        t.expect (eq (0.1f + 0.2f, approx (0.3f, 1e-6f)))
+            << "0.1f + 0.2f == approx (0.3f, 1e-6f)";
+        local_counts.passed_checks += 5;
+
+        // A zero tolerance compares the values exactly.
+        t.expect (eq (1.5, approx (1.5, 0.0))) << "1.5 == approx (1.5, 0.0)";
+        t.expect (negate (ne (1.5, approx (1.5, 0.0))))
+            << "not 1.5 != approx (1.5, 0.0)";
+        t.expect (le (1.5, approx (1.5, 0.0))) << "1.5 <= approx (1.5, 0.0)";
+        t.expect (ge (1.5, approx (1.5, 0.0))) << "1.5 >= approx (1.5, 0.0)";
+        local_counts.passed_checks += 4;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Operators", [] (auto& t)
+      {
+        using namespace operators;
+        using namespace literals;
+
+        t.expect (my_actual_integral () == 42_i) << "actual == 42";
+        local_counts.passed_checks++;
+
+        t.expect (my_actual_integral_more<int> () == 42)
+            << "actual+1 == 42 with scalar";
+        local_counts.failed_checks++;
+
+        t.expect (my_actual_integral_more<int> () == 42_i)
+            << "actual+1 == 42 with _i literal";
+        local_counts.failed_checks++;
+
+        t.expect (to_i (my_actual_integral_more<int> ()) == 42)
+            << "actual+1 == 42 with to_i()";
+        local_counts.failed_checks++;
+
+        t.expect (my_actual_integral_more<int> () != 42_i) << "actual+1 != 42";
+        local_counts.passed_checks++;
+
+        t.expect (my_actual_integral_less<int> () < 42_i) << "actual-1 < 42";
+        local_counts.passed_checks++;
+
+        t.expect (my_actual_integral () <= 42_i) << "actual <= 42";
+        local_counts.passed_checks++;
+
+        t.expect (my_actual_integral_more<int> () > 42_i) << "actual+1 > 42";
+        local_counts.passed_checks++;
+
+        t.expect (my_actual_integral () >= 42_i) << "actual >= 42";
+        local_counts.passed_checks++;
+
+        t.expect (!(my_actual_integral () != 42_i)) << "not (actual != 42)";
+        local_counts.passed_checks++;
+
+        t.expect (!(my_actual_integral () == 42_i)) << "not (actual == 42)";
+        local_counts.failed_checks++;
+
+        // A double negation is not reduced to a single one, by copying
+        // the inner negation.
+        t.expect (!!(my_actual_integral () == 42_i))
+            << "not not (actual == 42)";
+        local_counts.passed_checks++;
+
+        t.expect (((my_actual_integral () == 42_i)
+                   && (my_actual_float<float> () == 42.0_d)))
+            << "(actual == 42) and (actual == 42.0)";
+        local_counts.passed_checks++;
+
+        t.expect (((my_actual_integral () == 42_i)
+                   && (my_actual_float<float> () != 42.0_d)))
+            << "(actual == 42) and (actual != 42.0)";
+        local_counts.failed_checks++;
+
+        t.expect (((my_actual_integral () != 42_i)
+                   && (my_actual_float<float> () == 42.0_d)))
+            << "(actual != 42) and (actual == 42.0)";
+        local_counts.failed_checks++;
+
+        t.expect (((my_actual_integral () != 42_i)
+                   && (my_actual_float<float> () != 42.0_d)))
+            << "(actual != 42) and (actual != 42.0)";
+        local_counts.failed_checks++;
+
+        t.expect (((my_actual_integral () == 42_i)
+                   && (my_actual_float<float> () == 42.0_d)));
+        local_counts.passed_checks++;
+
+        t.expect (((my_actual_integral () == 42_i)
+                   && (my_actual_float<float> () != 42.0_d)));
+        local_counts.failed_checks++;
+
+        t.expect (((my_actual_integral () == 42)
+                   || (my_actual_float<float> () == 42.0f)))
+            << "(actual == 42) or (actual == 42.0)";
+        local_counts.passed_checks++;
+
+        t.expect (((my_actual_integral () == 42)
+                   || (my_actual_float<float> () != 42.0f)))
+            << "(actual == 42) or (actual != 42.0)";
+        local_counts.passed_checks++;
+
+        t.expect (((my_actual_integral () != 42)
+                   || (my_actual_float<float> () == 42.0f)))
+            << "(actual != 42) or (actual == 42.0)";
+        local_counts.passed_checks++;
+
+        t.expect ((my_actual_integral () != 42_i
+                   || my_actual_float<float> () != 42.0_f))
+            << "(actual != 42) or (actual != 42.0)";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // There are no string view operators; the standard ones are selected,
+    // so the failed checks show no operands.
+    ts.test ("String view operators", [] (auto& t)
+      {
+        using namespace operators;
+
+        t.expect (std::string_view{ "hello" } == std::string_view{ "hello" })
+            << "equal string views with ==";
+        local_counts.passed_checks++;
+
+        t.expect (std::string_view{ "hello" } == std::string_view{ "world" })
+            << "unequal string views with ==";
+        local_counts.failed_checks++;
+
+        t.expect (std::string_view{ "hello" } != std::string_view{ "world" })
+            << "unequal string views with !=";
+        local_counts.passed_checks++;
+
+        t.expect (std::string_view{ "hello" } != std::string_view{ "hello" })
+            << "equal string views with !=";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The named boolean constants are reported by their names; they
+    // previously recursed in the expression formatter, until the stack
+    // overflowed.
+    ts.test ("Named boolean literals", [] (auto& t)
+      {
+        using namespace literals;
+
+        bool enabled = true;
+        bool disabled = false;
+
+        t.expect ("named"_b) << "named alone";
+        local_counts.passed_checks++;
+
+        t.expect (eq ("enabled"_b, enabled)) << "eq with true";
+        local_counts.passed_checks++;
+
+        t.expect (eq ("disabled"_b, disabled)) << "eq with false";
+        local_counts.failed_checks++;
+
+        t.expect (ne ("disabled"_b, disabled)) << "ne with false";
+        local_counts.passed_checks++;
+
+        {
+          using namespace operators;
+
+          t.expect ("enabled"_b == enabled) << "== with true";
+          local_counts.passed_checks++;
+
+          t.expect ("disabled"_b == disabled) << "== with false";
+          local_counts.failed_checks++;
+
+          t.expect (disabled == "disabled"_b) << "reversed == with false";
+          local_counts.failed_checks++;
+
+          t.expect ("enabled"_b != enabled) << "!= with true";
+          local_counts.failed_checks++;
+
+          t.expect (not "named"_b) << "not";
+          local_counts.failed_checks++;
+
+          t.expect ("first"_b == "second"_b) << "two named literals";
+          local_counts.passed_checks++;
+        }
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The framework constants and wrappers compare as before next to the
+    // application types.
+    ts.test ("Constants and wrappers", [] (auto& t)
+      {
+        using namespace literals;
+
+        t.expect (eq (to_i{ 42 }, 42)) << "to_i{ 42 } == 42";
+        local_counts.passed_checks++;
+
+        t.expect (eq (42_i, 42_i)) << "42_i == 42_i";
+        local_counts.passed_checks++;
+
+        t.expect (eq (to_d{ 1.5 }, 1.54)) << "to_d{ 1.5 } == 1.54";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The literals and the wrappers can be streamed into the messages.
+    ts.test ("Wrappers in messages", [] (auto& t)
+      {
+        using namespace literals;
+
+        t.expect (true) << "wrappers " << 42_i << ' ' << 1.5_d;
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The operators of the application are enabled by the framework types
+    // of their operands, the literals and the wrappers.
+    ts.test ("Custom comparators with wrappers", [] (auto& t)
+      {
+        using namespace literals;
+        using namespace custom_operators;
+
+        t.expect (divides (3_i, to_i{ 12 })) << "3_i divides to_i{ 12 }";
+        local_counts.passed_checks++;
+
+        t.expect (even (to_i{ 4 })) << "even to_i{ 4 }";
+        local_counts.passed_checks++;
+
+        t.expect (3_i | 12) << "3_i | 12";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    ts.test ("Failed custom comparators with wrappers", [] (auto& t)
+      {
+        using namespace literals;
+        using namespace custom_operators;
+
+        t.expect (even (to_i{ 7 }));
+        local_counts.failed_checks++;
+
+        t.expect (5_i | 12);
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // A wrapped operand is referred to, not copied.
+    ts.test ("Operand copies of wrappers", [] (auto& t)
+      {
+        const counted a{ 1 };
+        const counted b{ 1 };
+        const to_t<counted> wrapped{ a };
+
+        counted_copies = 0;
+        t.expect (eq (wrapped, b)) << "wrapped operand";
+        local_counts.passed_checks++;
+        const int copies = counted_copies;
+
+        t.expect (eq (copies, 0)) << "wrapped operand not copied";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

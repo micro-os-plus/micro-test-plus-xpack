@@ -21,6 +21,5 @@ ts.test ("Check compound conditions", [] (auto& t) {
 });
 @endcode
 
-When operands are function comparators, use the overloaded logical
-operators `&&`, `||`, and `!` provided in the `micro_test_plus::operators`
-namespace for more natural logical expressions.
+The overloaded logical operators of the `micro_test_plus::operators`
+namespace are deprecated since 5.1.0, in favour of these functions.

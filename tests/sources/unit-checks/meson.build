@@ -54,7 +54,6 @@ _local_sources += [
   'src/main.cpp',
   'src/comparisons.cpp',
   'src/operands.cpp',
-  'src/operators.cpp',
   'src/support.cpp',
 ]
 

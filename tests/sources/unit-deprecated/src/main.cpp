@@ -55,13 +55,9 @@ main (int argc, char* argv[])
   // run() must be always called, otherwise the test suites
   // are not executed.
   int code = tr.run ();
-#if defined(__cpp_exceptions)
-  // The inner test should return failure.
+  // The deprecated tests include checks that fail on purpose, so the
+  // session should return failure.
   test_assert (code != 0);
-#else
-  // The only failing check, of `assume()`, needs exceptions.
-  test_assert (code == 0);
-#endif // defined(__cpp_exceptions)
 
   if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())
     {

@@ -318,34 +318,6 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  ts.test ("to_* modern wrappers", [] (auto& t)
-    {
-      // Verify runtime wrapping of floating-point values.
-      float f = 42.0f;
-      t.expect (eq (to_f{ f }, 42.0f)) << "to_f wraps float for eq";
-      local_counts.passed_checks++;
-
-      double d = 42.0;
-      t.expect (eq (to_d{ d }, 42.0)) << "to_d wraps double for eq";
-      local_counts.passed_checks++;
-
-      // Generic to_t<T> wrapper in a runtime expectation.
-      int x = 42;
-      t.expect (eq (to_t<int>{ x }, 42)) << "to_t<int> generic wrapper";
-      local_counts.passed_checks++;
-
-      local_counts.executed_test_cases++;
-    });
-
-  test_assert (current_suite_totals.passed_checks ()
-               == local_counts.passed_checks);
-  test_assert (current_suite_totals.failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_test_cases ()
-               == local_counts.executed_test_cases);
-
-  // --------------------------------------------------------------------------
-
   ts.test ("Nested subtests", [] (auto& t)
     {
       t.test ("inner subtest", [] (auto& t2)
@@ -471,10 +443,6 @@ main (int argc, char* argv[])
           << "handles differ";
       local_counts.passed_checks++;
 
-      // The framework wrappers are still unwrapped.
-      t.expect (eq (to_i{ 42 }, 42)) << "to_i{ 42 } == 42";
-      local_counts.passed_checks++;
-
       local_counts.executed_test_cases++;
     });
 
@@ -492,8 +460,6 @@ main (int argc, char* argv[])
   // only identify the framework constants and floating-point wrappers.
   ts.test ("Application types with value and epsilon", [] (auto& t)
     {
-      using namespace literals;
-
       t.expect (ne (user_types::reading{ 1 }, user_types::reading{ 2 }))
           << "readings differ";
       local_counts.passed_checks++;
@@ -508,13 +474,6 @@ main (int argc, char* argv[])
 
       t.expect (eq (user_types::gauge{ 3, 5 }, user_types::gauge{ 3, 5 }))
           << "gauges are equal";
-      local_counts.passed_checks++;
-
-      // The framework constants and wrappers keep their comparisons.
-      t.expect (eq (42_i, 42_i)) << "42_i == 42_i";
-      local_counts.passed_checks++;
-
-      t.expect (eq (to_d{ 1.5 }, 1.54)) << "to_d{ 1.5 } == 1.54";
       local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
@@ -573,76 +532,6 @@ main (int argc, char* argv[])
 
       t.expect (eq ('x', 'x'));
       local_counts.passed_checks++;
-
-      local_counts.executed_test_cases++;
-    });
-
-  test_assert (current_suite_totals.passed_checks ()
-               == local_counts.passed_checks);
-  test_assert (current_suite_totals.failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_test_cases ()
-               == local_counts.executed_test_cases);
-
-  // --------------------------------------------------------------------------
-
-  // All six comparisons apply the tolerance of the floating-point literals
-  // and wrappers consistently: values within the tolerance are equal, and
-  // neither less nor greater; `approx()` makes the tolerance explicit.
-  ts.test ("Floating-point tolerance", [] (auto& t)
-    {
-      using namespace literals;
-
-      // `1.5_d` has a tolerance of 0.1, so 1.45 is equal to it.
-      t.expect (eq (1.45, 1.5_d)) << "1.45 == 1.5_d";
-      t.expect (negate (lt (1.45, 1.5_d))) << "not 1.45 < 1.5_d";
-      t.expect (le (1.45, 1.5_d)) << "1.45 <= 1.5_d";
-      t.expect (negate (gt (1.45, 1.5_d))) << "not 1.45 > 1.5_d";
-      t.expect (ge (1.45, 1.5_d)) << "1.45 >= 1.5_d";
-      t.expect (lt (1.3, 1.5_d)) << "1.3 < 1.5_d (outside the tolerance)";
-      local_counts.passed_checks += 6;
-
-      // The tolerance of a wrapper is also derived from the number of
-      // decimals, for negative values too, and the rounding noise of 0.011
-      // does not make it 1e-18.
-      t.expect (eq (-1.45, to_d{ -1.5 })) << "-1.45 == to_d{ -1.5 }";
-      t.expect (eq (0.0111, to_d{ 0.011 })) << "0.0111 == to_d{ 0.011 }";
-      t.expect (lt (0.009, to_d{ 0.011 })) << "0.009 < to_d{ 0.011 }";
-      local_counts.passed_checks += 3;
-
-      // The leading zeros of a small wrapper value are counted, so its
-      // tolerance is not 0.1, a zero wrapper compares exactly, and a
-      // whole value keeps one decimal, as `42.0_d`.
-      t.expect (ne (to_d{ 1e-12 }, 0.05)) << "to_d{ 1e-12 } != 0.05";
-      t.expect (lt (to_d{ 1e-12 }, 2.5e-12)) << "to_d{ 1e-12 } < 2.5e-12";
-      t.expect (eq (to_d{ 1e-12 }, 1.5e-12)) << "to_d{ 1e-12 } == 1.5e-12";
-      t.expect (ne (to_d{ 1e-9 }, 0.05)) << "to_d{ 1e-9 } != 0.05";
-      t.expect (ne (to_d{ 0.0 }, 0.09)) << "to_d{ 0.0 } != 0.09";
-      t.expect (lt (to_d{ 0.0 }, 0.09)) << "to_d{ 0.0 } < 0.09";
-      t.expect (lt (to_d{ 0.0 }, 1e-300)) << "to_d{ 0.0 } < 1e-300";
-      t.expect (eq (to_d{ 0.0 }, 0.0)) << "to_d{ 0.0 } == 0.0";
-      t.expect (eq (to_d{ 0.0 }, -0.0)) << "to_d{ 0.0 } == -0.0";
-      t.expect (eq (to_d{ 42.0 }, 42.09)) << "to_d{ 42.0 } == 42.09";
-      local_counts.passed_checks += 10;
-
-      // An explicit tolerance of 0.01.
-      t.expect (ne (1.45, approx (1.5, 0.01))) << "1.45 != approx (1.5, 0.01)";
-      t.expect (lt (1.45, approx (1.5, 0.01))) << "1.45 < approx (1.5, 0.01)";
-      t.expect (eq (1.495, approx (1.5, 0.01)))
-          << "1.495 == approx (1.5, 0.01)";
-      t.expect (negate (lt (1.495, approx (1.5, 0.01))))
-          << "not 1.495 < approx (1.5, 0.01)";
-      t.expect (eq (0.1f + 0.2f, approx (0.3f, 1e-6f)))
-          << "0.1f + 0.2f == approx (0.3f, 1e-6f)";
-      local_counts.passed_checks += 5;
-
-      // A zero tolerance compares the values exactly.
-      t.expect (eq (1.5, approx (1.5, 0.0))) << "1.5 == approx (1.5, 0.0)";
-      t.expect (negate (ne (1.5, approx (1.5, 0.0))))
-          << "not 1.5 != approx (1.5, 0.0)";
-      t.expect (le (1.5, approx (1.5, 0.0))) << "1.5 <= approx (1.5, 0.0)";
-      t.expect (ge (1.5, approx (1.5, 0.0))) << "1.5 >= approx (1.5, 0.0)";
-      local_counts.passed_checks += 4;
 
       local_counts.executed_test_cases++;
     });

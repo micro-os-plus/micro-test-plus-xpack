@@ -119,37 +119,10 @@ main (int argc, char* argv[])
       t.expect (compute_condition ()) << "condition is true";
     });
 
-  ts.test ("Check various conditions with operators", [] (auto& t)
-    {
-      // There are custom operators for all comparisons, but
-      // since interferences with other operators are possible,
-      // they are located in a separate namespace. Even so, they
-      // require their operands to be typed, via literals (like
-      // `1_i`) or casts (like `mt::to_i(expr)`).
-
-      using namespace mt::operators;
-      using namespace mt::literals;
-
-      t.expect (compute_answer () == 42_i) << "answer == 42 (with literal)";
-      t.expect (mt::to_i (compute_answer ()) == 42)
-          << "answer == 42 (with cast)";
-      t.expect (compute_answer () != 43_i) << "answer != 43";
-      t.expect (compute_answer () < 43_i) << "answer < 43";
-      t.expect (compute_answer () <= 43_i) << "answer <= 42";
-      t.expect (compute_answer () > 41_i) << "answer > 43";
-      t.expect (compute_answer () >= 42_i) << "answer >= 42";
-
-      // Note: if the operands are not typed, the test is still
-      // performed correctly using the standard operators, as
-      // for any logical expression, but in case of failures the
-      // actual values cannot be shown.
-    });
-
   ts.test ("Check strings", [] (auto& t)
     {
-      // Strings are compared with `eq()` or `ne()`. There are no custom
-      // operators for strings, since the standard `==` and `!=` would be
-      // selected, and these cannot show the values in case of failures.
+      // Strings are compared with `eq()` or `ne()`, which show the values
+      // in case of failures.
 
       t.expect (mt::eq (std::string_view{ compute_ultimate_answer () },
                         "fortytwo"sv))
@@ -166,20 +139,6 @@ main (int argc, char* argv[])
                     mt::eq (std::string_view{ compute_ultimate_answer () },
                             "fortytwo"sv)))
           << "logical 'and' expression";
-    });
-
-  ts.test ("Check compound conditions with operators", [] (auto& t)
-    {
-      // There are also operators for logical expressions; their operands
-      // may also be function comparators.
-
-      using namespace mt::operators;
-      using namespace mt::literals;
-
-      t.expect ((compute_answer () == 42_i)
-                and mt::eq (std::string_view{ compute_ultimate_answer () },
-                            "fortytwo"sv))
-          << "logical 'and' expression with operators";
     });
 
   // --------------------------------------------------------------------------
@@ -289,9 +248,7 @@ main (int argc, char* argv[])
   ts.test ("Check containers", [] (auto& t)
     {
       // Containers are iterated and each value compared with
-      // `eq()` or `ne()`. There are no custom operators for containers,
-      // since the standard `==` and `!=` would be selected, and these
-      // cannot show the values in case of failures.
+      // `eq()` or `ne()`, which show the values in case of failures.
 
       t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
           << "vector{ 1, 2 } eq vector{ 1, 2 }";

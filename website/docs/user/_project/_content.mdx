@@ -187,7 +187,7 @@ The output identifies the failed test at line 17, but does not provide further d
 
 ### More advanced comparators
 
-To obtain a more informative report, such as the actual incorrect value, the test should be slightly more detailed and employ custom comparators or operators; for example:
+To obtain a more informative report, such as the actual incorrect value, the test should be slightly more detailed and employ a function comparator; for example:
 
 ```cpp showLineNumbers
 #include "micro-os-plus/micro-test-plus.h"
@@ -208,14 +208,6 @@ main(int argc, char* argv[])
 
   ts.test ("Check answer with comparator", [] (auto& t) {
     t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
-  });
-
-  ts.test ("Check answer with operator", [] (auto& t) {
-    using namespace mt::operators;
-    using namespace mt::literals;
-
-    t.expect (compute_answer () == 42_i) << "answer is 42";
-    t.expect (mt::to_i {compute_answer ()} == 42) << "answer is 42";
   });
 
   return tr.run ();
@@ -239,39 +231,15 @@ TAP version 14
             ...
         1..1
     not ok 1 - Check answer with comparator # { test case FAILED, 0 checks passed, 1 failed }
-
-    # Subtest: Check answer with operator
-        not ok 1 - answer is 42
-            ---
-            expect: 43 == 42
-            at:
-              fileName: main.cpp
-              lineNumber: 76
-            ...
-        not ok 2 - answer is 42
-            ---
-            expect: 43 == 42
-            at:
-              fileName: main.cpp
-              lineNumber: 77
-            ...
-        1..2
-    not ok 2 - Check answer with operator # { test case FAILED, 0 checks passed, 2 failed }
-    1..2
-not ok 1 - The Answer # { test suite FAILED, 0 checks passed, 3 failed, in 2 test cases, time: 0.036 ms }
+    1..1
+not ok 1 - The Answer # { test suite FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.036 ms }
 1..1
-# { total: 0 checks passed, 3 failed, in 2 test cases, 1 test suite, time: 0.067 ms }
+# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.067 ms }
 ```
 
-In the first case, `eq()` is a **function comparator**, a function not only capable of comparing almost any type but also of recording the values of its operands. Similar functions exist for all types of comparisons.
+Here, `eq()` is a **function comparator**, a function not only capable of comparing almost any type but also of recording the values of its operands. Similar functions exist for all types of comparisons (`ne()`, `lt()`, `le()`, `gt()`, `ge()`, and `approx()`).
 
-In the second case, a **custom operator** is used. To avoid conflicts with other operators, this custom operator is defined in a separate namespace (which must be explicitly referenced as shown) and matches only operands of specific types.
-
-To cast the integer constant `42` to such a specific type, a **custom literal** (`_i`) is available, also defined in the separate `micro_test_plus` namespace.
-
-In addition to literals for constants, there are also **definitions to cast expressions**.
-
-For the custom operators to match, at least one operand must be of the specific type, usually the constant via a literal. If both are expressions, at least one must be cast.
+The earlier releases also offered overloaded operators, literals (such as `42_i`), and type wrappers (such as `mt::to_i`); they are deprecated, in favour of the function comparators (see [Deprecated operators, literals, and wrappers](#deprecated-operators-literals-and-wrappers)).
 
 ### More complex tests
 
@@ -286,15 +254,16 @@ For more complex applications, test cases can be grouped into test suites and in
 The definitions are organised within several namespaces under `micro_os_plus`:
 
 - `micro_os_plus::micro_test_plus` (commonly aliased as `mt`)
-- `micro_os_plus::micro_test_plus::operators`
-- `micro_os_plus::micro_test_plus::literals`
+- `micro_os_plus::micro_test_plus::operators` (deprecated)
+- `micro_os_plus::micro_test_plus::literals` (deprecated)
 - `micro_os_plus::micro_test_plus::utility`
 
 `micro_os_plus` is the primary µOS++ namespace, and `micro_test_plus` is the
 namespace for µTest++.
 
 The `operators` namespace provides custom operators, while the `literals`
-namespace defines user-defined literals (such as `1_i`).
+namespace defines user-defined literals (such as `1_i`); both are deprecated
+since 5.1.0.
 
 ### Test runner
 
@@ -767,8 +736,7 @@ arrays (including `uint8_t` buffers) are compared by address.
 
 The `approx()` comparator succeeds if its first two operands differ by
 less than the third one, the tolerance. The operands are numbers,
-integral or floating-point, possibly of different types, or the value
-wrappers and the numeric literals, whose own tolerance is not used. For
+integral or floating-point, possibly of different types. For
 the integers, the distance is computed exactly, also for operands of
 different signedness, without wrap-around; for the other types, in
 their common floating-point type. A failure is reported as
@@ -821,62 +789,12 @@ auto nothrow (const Callable_T& expr);
 
 Refer to the [Checking Exceptions](/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/) reference page.
 
-### Operators
-
-For convenience, it is also possible to overload the
-`==`, `!=`, `<`, `>`, `<=`, and `>=` operators:
-
-```cpp
-namespace operators {
-  template <class Lhs_T, class Rhs_T>
-    requires extension::any_op<Lhs_T, Rhs_T>
-  auto operator== (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  template <class Lhs_T, class Rhs_T>
-    requires extension::any_op<Lhs_T, Rhs_T>
-  auto operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  template <class Lhs_T, class Rhs_T>
-    requires extension::any_op<Lhs_T, Rhs_T>
-  auto operator< (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  template <class Lhs_T, class Rhs_T>
-    requires extension::any_op<Lhs_T, Rhs_T>
-  auto operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  template <class Lhs_T, class Rhs_T>
-    requires extension::any_op<Lhs_T, Rhs_T>
-  auto operator> (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  template <class Lhs_T, class Rhs_T>
-    requires extension::any_op<Lhs_T, Rhs_T>
-  auto operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  template <class Lhs_T, class Rhs_T>
-    requires extension::any_op<Lhs_T, Rhs_T>
-  auto operator and (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  template <class Lhs_T, class Rhs_T>
-    requires extension::any_op<Lhs_T, Rhs_T>
-  auto operator or (const Lhs_T& lhs, const Rhs_T& rhs);
-
-  template <class T>
-    requires extension::is_op<T>
-  auto operator not (const T& t);
-}
-```
-
-Refer to the [Operators](/docs/api/groups/micro-os-plus-micro-test-plus-operators/) reference page.
-
 ### Strings
 
-There are no operators for strings: the standard `==` and `!=`
-operators would be selected for `std::string` objects, and they return
-a plain `bool`, so a failed check could not show the strings; operators
-for `std::string_view` objects would also replace the standard ones in
-the application code that follows the `using namespace` directive. Use
-`eq()` and `ne()`, which compare the strings by content, and show them
-when the check fails:
+Strings are compared with `eq()` and `ne()`, which compare them by
+content, and show them when the check fails (the standard `==` and `!=`
+operators return a plain `bool`, so a failed check could not show the
+strings):
 
 ```cpp
 t.expect (mt::eq (actual, "fortytwo"sv))
@@ -885,12 +803,9 @@ t.expect (mt::eq (actual, "fortytwo"sv))
 
 ### Containers
 
-There are no operators for containers: the standard `==` and `!=`
-operators would be selected, and they return a plain `bool`, so a
-failed check could not show the containers. Use `eq()` and `ne()`,
-which compare the containers with the standard operators, and show
-their elements when the check fails. The containers must be of the
-same type, as for the standard operators:
+Containers are compared with `eq()` and `ne()`, which use the standard
+operators, and show their elements when the check fails. The containers
+must be of the same type, as for the standard operators:
 
 ```cpp
 t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
@@ -931,144 +846,47 @@ t.expect (mt::eq (paint (), colour::red)) << "colour is red";
 t.expect (mt::ne (find (42), std::nullopt)) << "42 is found";
 ```
 
-### Literals and wrappers
+### Deprecated operators, literals, and wrappers
 
-To convert constants into recognised typed operands, the following
-literal operators are available in the separate `literals` namespace:
+The overloaded operators of the `operators` namespace, the literals of the
+`literals` namespace, the `to_*` type wrappers, `to_t<T>`, and the
+`approx (value, epsilon)` wrapper are deprecated since 5.1.0, and will be
+removed in a future release. They are still available, but the compiler
+reports their use.
 
-```cpp
-namespace literals {
-  auto operator""_i (); // int
-  auto operator""_s (); // short
-  auto operator""_c (); // char
-  auto operator""_sc (); // signed char
-  auto operator""_l (); // long
-  auto operator""_ll (); // long long
-  auto operator""_u (); // unsigned
-  auto operator""_uc (); // unsigned char
-  auto operator""_us (); // unsigned short
-  auto operator""_ul (); // unsigned long
-  auto operator""_ull (); // unsigned long long
-  auto operator""_i8 (); // int8_t
-  auto operator""_i16 (); // int16_t
-  auto operator""_i32 (); // int32_t
-  auto operator""_i64 (); // int64_t
-  auto operator""_u8 (); // uint8_t
-  auto operator""_u16 (); // uint16_t
-  auto operator""_u32 (); // uint32_t
-  auto operator""_u64 (); // uint64_t
-  auto operator""_f (); // float
-  auto operator""_d (); // double
-  auto operator""_ld (); // long double
-  auto operator""_b (const char* name, std::size_t size); // named bool, true
-}
-```
+The function comparators provide the same checks and the same reports, with
+plain values, so that the constants do not need a literal suffix and the
+expressions do not need to be cast:
 
-The integer literals follow the C++ syntax: decimal, hexadecimal (`0x10_i`),
-binary (`0b101_i`), and octal (`010_i`, which is 8), with digit separators
-(`1'000_i`). A decimal point, an exponent, or a value that does not fit in the
-type of the literal (e.g. `300_u8`) is a compilation error.
+| Deprecated | Use |
+| --- | --- |
+| `x == 42_i`, `mt::to_i{ x } == 42` | `mt::eq (x, 42)` |
+| `x != 42_i` | `mt::ne (x, 42)` |
+| `x < 42_i`, `x <= 42_i` | `mt::lt (x, 42)`, `mt::le (x, 42)` |
+| `x > 42_i`, `x >= 42_i` | `mt::gt (x, 42)`, `mt::ge (x, 42)` |
+| `x == 1.5_d`, `mt::to_d{ 1.5 } == x` | `mt::approx (x, 1.5, 0.1)`, or `mt::eq (x, 1.5)` for an exact comparison |
+| `mt::eq (x, mt::approx (1.5, 0.01))` | `mt::approx (x, 1.5, 0.01)` |
+| `a and b`, `a or b`, `not a` | `mt::both (a, b)`, `mt::either (a, b)`, `mt::negate (a)` |
+| `"flag"_b == flag` | `t.expect (flag) << "flag"` |
+| `mt::to_t<app_type>{ x } == y` | `mt::eq (x, y)`, with an `operator<<` for the type |
 
-Negative values are written with the unary minus (`-42_i`), which keeps the
-type of the literal (`-1_i8` is an `int8_t`); the minimum of a signed type can
-be written too (`-128_i8`). As in C++ for `unsigned int`, the negation of an
-unsigned literal wraps around (`-1_u8` is 255). The negation of the minimum of
-a signed type (`-(-128_i8)`) is a compilation error.
-
-The floating-point literals are written with decimal digits and a decimal
-point, optionally with digit separators (`1'000.000'5_d`), but without an
-exponent; they can have up to 19 digits before the decimal point and 18
-after it, otherwise the compilation fails.
-
-The floating-point literals (`1.5_d`) and wrappers (`mt::to_d{ 1.5 }`)
-compare with a tolerance of one unit of the last decimal written (0.1 for
-`1.5`), so that `1.45 == 1.5_d` is true. All six comparisons apply it
-consistently: values within the tolerance are equal, and neither less nor
-greater. For the wrappers, the decimals are counted from the run-time
-value, ignoring differences below 1e-7 caused by its binary
-representation, so `mt::to_d{ 0.011 }` has a tolerance of 0.001; the
-leading zeros of a small value are counted, so `mt::to_d{ 1e-12 }` has a
-tolerance of 1e-12, and a zero (`mt::to_d{ 0.0 }`) has no decimals, so
-it compares exactly. Whole values count as one decimal, as `42.0_d`, so
-`mt::to_d{ 42.0 }` has a tolerance of 0.1.
-Plain floating-point values compare exactly. To set the tolerance
-explicitly, independent of how the value is written, use `mt::approx()`:
-
-```cpp
-t.expect (mt::eq (compute_float (), mt::approx (42.0f, 0.001f)));
-```
-
-This form, with two arguments, wraps a floating-point value, and its
-tolerance applies to all six comparisons and to the operators; for a
-single comparison, also of integers, the
-[`approx()` comparator](#function-comparators), with three arguments,
-may be used instead.
-
-The `_b` literal creates a named boolean constant, with the value `true`,
-which is reported by its name instead of its value; it gives a name to a
-flag in the failure messages:
-
-```cpp
-t.expect (mt::eq ("feature_enabled"_b, is_feature_enabled ()));
-// When it fails: feature_enabled == false
-```
-
-With the operators in the `operators` namespace, `"feature_enabled"_b ==
-is_feature_enabled ()` is reported in the same way; without them, the
-comparison is a plain `bool` expression, and its operands are not
-reported.
-
-Similarly, for dynamic values, wrappers are provided to convert them into
-recognised types:
-
-```cpp
-  using to_b = detail::value<bool>;
-  using to_c = detail::value<char>;
-  using to_sc = detail::value<signed char>;
-  using to_s = detail::value<short>;
-  using to_i = detail::value<int>;
-  using to_l = detail::value<long>;
-  using to_ll = detail::value<long long>;
-  using to_u = detail::value<unsigned>;
-  using to_uc = detail::value<unsigned char>;
-  using to_us = detail::value<unsigned short>;
-  using to_ul = detail::value<unsigned long>;
-  using to_ull = detail::value<unsigned long long>;
-  using to_i8 = detail::value<std::int8_t>;
-  using to_i16 = detail::value<std::int16_t>;
-  using to_i32 = detail::value<std::int32_t>;
-  using to_i64 = detail::value<std::int64_t>;
-  using to_u8 = detail::value<std::uint8_t>;
-  using to_u16 = detail::value<std::uint16_t>;
-  using to_u32 = detail::value<std::uint32_t>;
-  using to_u64 = detail::value<std::uint64_t>;
-  using to_f = detail::value<float>;
-  using to_d = detail::value<double>;
-  using to_ld = detail::value<long double>;
-
-  // Template for wrapping any other type.
-  template <class T>
-  struct to_t : detail::value<T>
-  {
-    constexpr explicit to_t (const T& t) : detail::value<T>{ t }
-    {
-    }
-  };
-```
-
-Refer to the [Literals and Wrappers](/docs/api/groups/micro-os-plus-micro-test-plus-literals/) reference page.
-
-### Functions vs. Operators and Literals
-
-Both comparator functions (e.g. `eq()`) and overloaded operators (e.g. `==`) are fully supported; the choice is largely a matter of personal preference.
-
-**Comparator functions** guarantee that the actual values are always displayed when an expectation fails, and their syntax is explicit and unambiguous.
-
-**Overloaded operators** are more immediately familiar to most C++ developers, but require at least one operand to be of a specific typed wrapper or literal type (e.g. `42_i`); without this, the actual values will not be reported on failure.
-
-:::info
-The µOS++ projects favour the use of explicit comparator functions.
+:::warning
+The overloaded `and` and `or` operators evaluate both operands before the
+check, so they do not short-circuit like the built-in ones;
+`p != nullptr and p->x == 1_i` dereferences a null pointer.
 :::
+
+The floating-point literals and wrappers compare with a tolerance of one
+unit of the last decimal written (0.1 for `1.5_d`), derived from the digits
+of the value. This is not always what the digits suggest: the tolerance of a
+whole value is 0.1, and the comparison depends on which operand is wrapped.
+With `mt::approx (lhs, rhs, epsilon)` the tolerance is explicit, and the
+same for both operands.
+
+Refer to the
+[Operators](/docs/api/groups/micro-os-plus-micro-test-plus-operators/) and
+[Literals and Wrappers](/docs/api/groups/micro-os-plus-micro-test-plus-literals/)
+reference pages.
 
 ### Utility functions
 
@@ -1167,7 +985,7 @@ pointers, are written as addresses. A plain boolean check, such as
 the source location. The same `operator<<` also writes the values
 appended to the messages (`t.expect (p == q) << "p is " << p`).
 
-### Custom Comparators and Operators
+### Custom Comparators
 
 When the relation to check is not one of the built-in comparisons, a
 function that returns `bool` can be used, but on failure it reports only
@@ -1182,9 +1000,8 @@ public templates of the `mt::extension` namespace:
 
 The **tag** is an empty structure that defines the operation, with a
 static `apply()` member function template, which receives the operands
-already unwrapped (the values of the `to_*` wrappers and of the
-literals) and returns the result, and a static `symbol`, written in the
-failure reports between the two operands, or before the single one:
+and returns the result, and a static `symbol`, written in the failure
+reports between the two operands, or before the single one:
 
 ```cpp showLineNumbers
 #include "micro-os-plus/micro-test-plus.h"
@@ -1233,17 +1050,6 @@ namespace app
     return mt::extension::predicate_op{ t, even_tag{} };
   }
 
-  namespace operators
-  {
-    // A custom operator: `a | b` reads "a divides b".
-    template <class Lhs_T, class Rhs_T>
-      requires mt::extension::any_op<Lhs_T, Rhs_T>
-    constexpr auto
-    operator| (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return mt::extension::compare_op{ lhs, rhs, divides_tag{} };
-    }
-  } // namespace operators
 } // namespace app
 
 int
@@ -1253,12 +1059,8 @@ main (int argc, char* argv[])
   auto& ts = tr.initialise (argc, argv);
 
   ts.test ("Custom", [] (auto& t) {
-    using namespace mt::literals;
-    using namespace app::operators;
-
     t.expect (app::divides (5, 12));
-    t.expect (app::even (mt::to_i (7)));
-    t.expect (5_i | 12);
+    t.expect (app::even (7));
     t.expect (mt::both (app::divides (3, 12), app::even (7)));
   });
 
@@ -1269,30 +1071,16 @@ main (int argc, char* argv[])
 The failed checks report the operands, with the symbols of the tags:
 
 ```console
-        ✗ FAILED (main.cpp:70, 5 divides 12)
-        ✗ FAILED (main.cpp:71, even 7)
-        ✗ FAILED (main.cpp:72, 5 divides 12)
-        ✗ FAILED (main.cpp:73, (3 divides 12 and even 7))
+        ✗ FAILED (main.cpp:58, 5 divides 12)
+        ✗ FAILED (main.cpp:59, even 7)
+        ✗ FAILED (main.cpp:60, (3 divides 12 and even 7))
 ```
 
-The expressions can be combined with the logical comparators and
-operators, and, being `constexpr`, also checked at compile time
+The expressions can be combined with the logical comparators, and,
+being `constexpr`, also checked at compile time
 (`static_assert (app::divides (3, 12))`). The operands are written with
 the `operator<<` of the formatter, so the types of the application need
 one, as for the [custom types](#custom-types).
-
-A custom operator should be enabled only when at least one operand is a
-framework type, with the `extension::any_op` concept, as the operators
-of the `operators` namespace are, so that it does not compete with the
-operators of the application types; `extension::is_op` tells whether a
-single type is a framework type.
-
-If an operand may be a floating-point wrapper (`to_f`, `to_d`, or the
-`_f` and `_d` literals), the tag may also define
-`static constexpr bool within_tolerance_result`: when the operands are
-within the tolerance of the wrapper, the comparison gives this result,
-without calling `apply()`, as `eq()` does (`true`) and `ne()` does
-(`false`); without it, the tolerance is ignored.
 
 The expressions do not copy their operands: a temporary is moved into
 the expression, and a named operand of class type is referred to. The
@@ -1303,8 +1091,7 @@ in `t.expect (app::divides (5, x))`, but an expression kept in a
 variable, from a call with a temporary argument, would refer to a
 destroyed object. To also store such expressions, take the operands as
 forwarding references (`Lhs_T&& lhs`) and pass them on with
-`std::forward<Lhs_T> (lhs)`, as `eq()` does; the concepts of a custom
-operator then apply to `std::remove_cvref_t<Lhs_T>`.
+`std::forward<Lhs_T> (lhs)`, as `eq()` does.
 
 A helper that passes its argument on to `expect()` or `require()` can be
 constrained with `extension::checkable`, as these functions are, and one
@@ -1559,12 +1346,12 @@ main(int argc, char* argv[])
 
 </details>
 
-However, the use of templates for implementing comparators and operators
+However, the use of templates for implementing comparators
 should be used with care on platforms with severely limited memory
 resources, as each unique pair of operand types contributes to the overall
 programme size.
 
-If necessary, µTest++ can be used without custom comparators and operators,
+If necessary, µTest++ can be used without custom comparators,
 relying solely on standard boolean expressions, while still providing the
 essential functionality for testing conditions. In this configuration, the
 actual values compared are not displayed on failure.

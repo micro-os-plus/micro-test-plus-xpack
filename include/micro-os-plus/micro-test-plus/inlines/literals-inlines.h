@@ -427,6 +427,12 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+// The definition of the deprecated class.
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif // defined(__GNUC__)
+
   /**
    * @details
    * Constructs a `to_t` instance by forwarding the provided value to the
@@ -436,6 +442,10 @@ namespace micro_os_plus::micro_test_plus
   constexpr to_t<T>::to_t (const T& t) : detail::value<T>{ t }
   {
   }
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
   /**
    * @details

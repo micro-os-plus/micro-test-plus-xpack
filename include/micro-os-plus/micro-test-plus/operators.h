@@ -124,6 +124,16 @@ namespace micro_os_plus::micro_test_plus
    * All definitions within this namespace are implemented in the
    * `include/micro-os-plus/micro-test-plus` folder, ensuring a modular and
    * maintainable codebase.
+   *
+   * @par Deprecated
+   * Use the function comparators `eq()`, `ne()`, `gt()`, `ge()`, `lt()`,
+   * and `le()`, with the plain values, and `both()`, `either()`, and
+   * `negate()` for the logical combinations (since 5.1.0). The function
+   * comparators accept the same operands, compare them and report them in
+   * the same way, and do not need the literal suffixes or the type
+   * wrappers.
+   *
+   * @since 3.2.0
    */
   namespace operators
   {
@@ -143,7 +153,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use eq() (since 5.1.0)"), nodiscard]] constexpr auto
     operator== (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
@@ -162,7 +172,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use ne() (since 5.1.0)"), nodiscard]] constexpr auto
     operator!= (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
@@ -181,7 +191,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use gt() (since 5.1.0)"), nodiscard]] constexpr auto
     operator> (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
@@ -200,7 +210,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use ge() (since 5.1.0)"), nodiscard]] constexpr auto
     operator>= (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
@@ -219,7 +229,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use lt() (since 5.1.0)"), nodiscard]] constexpr auto
     operator< (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
@@ -238,7 +248,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use le() (since 5.1.0)"), nodiscard]] constexpr auto
     operator<= (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
@@ -257,7 +267,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use both() (since 5.1.0)"), nodiscard]] constexpr auto
     operator and (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
@@ -276,7 +286,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
                                  std::remove_cvref_t<Rhs_T>>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use either() (since 5.1.0)"), nodiscard]] constexpr auto
     operator or (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
@@ -292,7 +302,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
       requires extension::is_op<std::remove_cvref_t<T>>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use negate() (since 5.1.0)"), nodiscard]] constexpr auto
     operator not(T&& t);
 
     // ------------------------------------------------------------------------

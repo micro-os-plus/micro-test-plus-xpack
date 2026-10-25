@@ -7,7 +7,6 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • expect(false)
     • reflection::type_name()
     • Splits
-    • to_* modern wrappers
     • Nested subtests
         • inner subtest
     • Nested subtest after a check
@@ -20,7 +19,6 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Application types with value and epsilon
     • Message values
     • Character operands
-    • Floating-point tolerance
     • Integer comparisons
     • Failed integer comparisons
     • Float comparisons
@@ -52,6 +50,3 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Explicit conversions to bool bad
     • Pointers to const
     • Operand copies
-    • Operators
-    • String view operators
-    • Named boolean literals

@@ -113,6 +113,15 @@ namespace micro_os_plus::micro_test_plus
    * type-safe test expressions, and are implemented in the
    * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
    * and modular codebase.
+   *
+   * @par Deprecated
+   * Pass the plain values to the function comparators `eq()`, `ne()`,
+   * `gt()`, `ge()`, `lt()`, and `le()`, and use `approx()` for the
+   * floating-point values compared with a tolerance (since 5.1.0). The
+   * function comparators report the operands in the same way, and do not
+   * need the literal suffixes.
+   *
+   * @since 3.2.0
    */
   namespace literals
   {
@@ -127,7 +136,9 @@ namespace micro_os_plus::micro_test_plus
      * `int` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_i ();
 
     /**
@@ -141,7 +152,9 @@ namespace micro_os_plus::micro_test_plus
      * `short` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_s ();
 
     /**
@@ -155,7 +168,9 @@ namespace micro_os_plus::micro_test_plus
      * `char` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_c ();
 
     /**
@@ -169,7 +184,9 @@ namespace micro_os_plus::micro_test_plus
      * `signed char` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_sc ();
 
     /**
@@ -183,7 +200,9 @@ namespace micro_os_plus::micro_test_plus
      * `long` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_l ();
 
     /**
@@ -197,7 +216,9 @@ namespace micro_os_plus::micro_test_plus
      * `long long` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_ll ();
 
     /**
@@ -211,7 +232,9 @@ namespace micro_os_plus::micro_test_plus
      * `unsigned` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_u ();
 
     /**
@@ -225,7 +248,9 @@ namespace micro_os_plus::micro_test_plus
      * `unsigned char` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_uc ();
 
     /**
@@ -239,7 +264,9 @@ namespace micro_os_plus::micro_test_plus
      * `unsigned short` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_us ();
 
     /**
@@ -253,7 +280,9 @@ namespace micro_os_plus::micro_test_plus
      * `unsigned long` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_ul ();
 
     /**
@@ -267,7 +296,9 @@ namespace micro_os_plus::micro_test_plus
      * `unsigned long long` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_ull ();
 
     /**
@@ -281,7 +312,9 @@ namespace micro_os_plus::micro_test_plus
      * `int8_t` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_i8 ();
 
     /**
@@ -295,7 +328,9 @@ namespace micro_os_plus::micro_test_plus
      * `int16_t` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_i16 ();
 
     /**
@@ -309,7 +344,9 @@ namespace micro_os_plus::micro_test_plus
      * `int32_t` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_i32 ();
 
     /**
@@ -323,7 +360,9 @@ namespace micro_os_plus::micro_test_plus
      * `int64_t` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_i64 ();
 
     /**
@@ -337,7 +376,9 @@ namespace micro_os_plus::micro_test_plus
      * `uint8_t` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_u8 ();
 
     /**
@@ -351,7 +392,9 @@ namespace micro_os_plus::micro_test_plus
      * `uint16_t` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_u16 ();
 
     /**
@@ -365,7 +408,9 @@ namespace micro_os_plus::micro_test_plus
      * `uint32_t` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_u32 ();
 
     /**
@@ -379,7 +424,9 @@ namespace micro_os_plus::micro_test_plus
      * `uint64_t` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated (
+          "pass plain values to eq() and the other comparators (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_u64 ();
 
     /**
@@ -393,7 +440,8 @@ namespace micro_os_plus::micro_test_plus
      * parsed `float` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use approx() for tolerances (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_f ();
 
     /**
@@ -407,7 +455,8 @@ namespace micro_os_plus::micro_test_plus
      * parsed `double` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use approx() for tolerances (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_d ();
 
     /**
@@ -421,7 +470,8 @@ namespace micro_os_plus::micro_test_plus
      * parsed `long double` value.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use approx() for tolerances (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_ld ();
 
     /**
@@ -434,7 +484,8 @@ namespace micro_os_plus::micro_test_plus
      * @return A `detail::named_bool` instance, with the value `true`,
      * reported by its name.
      */
-    [[nodiscard]] constexpr auto
+    [[deprecated ("use a plain bool and a check message (since 5.1.0)"),
+      nodiscard]] constexpr auto
     operator""_b (const char* name, decltype (sizeof ("")) size);
 
     // ------------------------------------------------------------------------
@@ -459,9 +510,14 @@ namespace micro_os_plus::micro_test_plus
    * ensuring that the value is treated as the specified type within the
    * framework.
    *
-   * The `to_*` forms replace the older `_i`, `_u8`, etc. aliases, which
-   * were deprecated in version 3.2.0, and are marked `[[deprecated]]`
-   * since version 5.1.0.
+   * The `to_*` forms replaced the older `_i`, `_u8`, etc. aliases, which
+   * were deprecated in version 3.2.0.
+   *
+   * @par Deprecated
+   * Pass the plain values to the function comparators `eq()`, `ne()`,
+   * `gt()`, `ge()`, `lt()`, and `le()` instead; they report the operands
+   * in the same way. For the floating-point values compared with a
+   * tolerance, use `approx()` (since 5.1.0).
    *
    * @par Example
    *
@@ -485,7 +541,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_b = detail::value<bool>;
+  using to_b [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<bool>;
 
   /**
    * @brief Strongly-typed wrapper for `char` values.
@@ -496,7 +554,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_c = detail::value<char>;
+  using to_c [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<char>;
 
   /**
    * @brief Strongly-typed wrapper for `signed char` values.
@@ -507,7 +567,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_sc = detail::value<signed char>;
+  using to_sc [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<signed char>;
 
   /**
    * @brief Strongly-typed wrapper for `short` values.
@@ -518,7 +580,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_s = detail::value<short>;
+  using to_s [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<short>;
 
   /**
    * @brief Strongly-typed wrapper for `int` values.
@@ -529,7 +593,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i = detail::value<int>;
+  using to_i [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<int>;
 
   /**
    * @brief Strongly-typed wrapper for `long` values.
@@ -540,7 +606,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_l = detail::value<long>;
+  using to_l [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<long>;
 
   /**
    * @brief Strongly-typed wrapper for `long long` values.
@@ -551,7 +619,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_ll = detail::value<long long>;
+  using to_ll [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<long long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned` values.
@@ -562,7 +632,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u = detail::value<unsigned>;
+  using to_u [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned char` values.
@@ -573,7 +645,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_uc = detail::value<unsigned char>;
+  using to_uc [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned char>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned short` values.
@@ -584,7 +658,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_us = detail::value<unsigned short>;
+  using to_us [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned short>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned long` values.
@@ -595,7 +671,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_ul = detail::value<unsigned long>;
+  using to_ul [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned long>;
 
   /**
    * @brief Strongly-typed wrapper for `unsigned long long` values.
@@ -606,7 +684,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_ull = detail::value<unsigned long long>;
+  using to_ull [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<unsigned long long>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int8_t` values.
@@ -617,7 +697,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i8 = detail::value<std::int8_t>;
+  using to_i8 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::int8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int16_t` values.
@@ -628,7 +710,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i16 = detail::value<std::int16_t>;
+  using to_i16 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::int16_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int32_t` values.
@@ -639,7 +723,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i32 = detail::value<std::int32_t>;
+  using to_i32 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::int32_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::int64_t` values.
@@ -650,7 +736,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_i64 = detail::value<std::int64_t>;
+  using to_i64 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::int64_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint8_t` values.
@@ -661,7 +749,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u8 = detail::value<std::uint8_t>;
+  using to_u8 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::uint8_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint16_t` values.
@@ -672,7 +762,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u16 = detail::value<std::uint16_t>;
+  using to_u16 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::uint16_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint32_t` values.
@@ -683,7 +775,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u32 = detail::value<std::uint32_t>;
+  using to_u32 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::uint32_t>;
 
   /**
    * @brief Strongly-typed wrapper for `std::uint64_t` values.
@@ -694,7 +788,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_u64 = detail::value<std::uint64_t>;
+  using to_u64 [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  = detail::value<std::uint64_t>;
 
   /**
    * @brief Strongly-typed wrapper for `float` values.
@@ -705,7 +801,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_f = detail::value<float>;
+  using to_f [[deprecated ("use approx() for tolerances (since 5.1.0)")]]
+  = detail::value<float>;
 
   /**
    * @brief Strongly-typed wrapper for `double` values.
@@ -716,7 +813,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_d = detail::value<double>;
+  using to_d [[deprecated ("use approx() for tolerances (since 5.1.0)")]]
+  = detail::value<double>;
 
   /**
    * @brief Strongly-typed wrapper for `long double` values.
@@ -727,7 +825,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @since 3.2.0
    */
-  using to_ld = detail::value<long double>;
+  using to_ld [[deprecated ("use approx() for tolerances (since 5.1.0)")]]
+  = detail::value<long double>;
 
   /**
    * @}
@@ -762,10 +861,18 @@ namespace micro_os_plus::micro_test_plus
    * auto wrapped = to_t<MyType>{obj};
    * @endcode
    *
+   * @par Deprecated
+   * Pass the plain value to the function comparators `eq()`, `ne()`,
+   * `gt()`, `ge()`, `lt()`, and `le()` instead; the application types
+   * are reported with the `operator<<` of `expression_formatter`
+   * (since 5.1.0).
+   *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
   template <class T>
-  struct to_t : detail::value<T>
+  struct [[deprecated (
+      "pass plain values to eq() and the other comparators (since 5.1.0)")]]
+  to_t : detail::value<T>
   {
     /**
      * @brief Constructor for the strongly-typed wrapper.
@@ -803,11 +910,16 @@ namespace micro_os_plus::micro_test_plus
    * @return A `detail::value<T>` wrapper, recognised by the
    * comparators and the operators.
    *
+   * @par Deprecated
+   * Use the function comparator `approx (lhs, rhs, epsilon)` instead
+   * (since 5.1.0).
+   *
    * @since 5.1.0
    */
   template <class T>
     requires std::is_floating_point_v<T>
-  [[nodiscard]] constexpr auto
+  [[deprecated ("use approx (lhs, rhs, epsilon) (since 5.1.0)"),
+    nodiscard]] constexpr auto
   approx (T value, std::type_identity_t<T> epsilon) noexcept
       -> detail::value<T>;
 

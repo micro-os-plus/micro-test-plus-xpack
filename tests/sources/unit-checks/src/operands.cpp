@@ -100,19 +100,6 @@ namespace
     return extension::predicate_op{ t, even_tag{} };
   }
 
-  namespace custom_operators
-  {
-    // `a | b` reads "a divides b"; enabled only when an operand is a
-    // framework type, as the operators of the framework are.
-    template <class Lhs_T, class Rhs_T>
-      requires extension::any_op<Lhs_T, Rhs_T>
-    constexpr auto
-    operator| (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return extension::compare_op{ lhs, rhs, divides_tag{} };
-    }
-  } // namespace custom_operators
-
   // Scoped enumerations, formatted by their underlying value.
   enum class colour
   {
@@ -377,19 +364,10 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     ts.test ("Custom comparators", [] (auto& t)
       {
-        using namespace literals;
-        using namespace custom_operators;
-
         t.expect (divides (3, 12)) << "3 divides 12";
         local_counts.passed_checks++;
 
-        t.expect (divides (3_i, to_i{ 12 })) << "3_i divides to_i{ 12 }";
-        local_counts.passed_checks++;
-
-        t.expect (even (to_i{ 4 })) << "even to_i{ 4 }";
-        local_counts.passed_checks++;
-
-        t.expect (3_i | 12) << "3_i | 12";
+        t.expect (even (4)) << "even 4";
         local_counts.passed_checks++;
 
         t.expect (both (divides (3, 12), even (4))) << "combined";
@@ -407,9 +385,6 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     ts.test ("Custom comparators bad", [] (auto& t)
       {
-        using namespace literals;
-        using namespace custom_operators;
-
         // The operands are reported, with the symbols of the tags.
         t.expect (divides (5, 12)) << "5 divides 12";
         local_counts.failed_checks++;
@@ -417,10 +392,7 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         t.expect (divides (5, 12));
         local_counts.failed_checks++;
 
-        t.expect (even (to_i{ 7 }));
-        local_counts.failed_checks++;
-
-        t.expect (5_i | 12);
+        t.expect (even (7));
         local_counts.failed_checks++;
 
         t.expect (both (divides (3, 12), even (7)));
@@ -603,16 +575,6 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         int copies = counted_copies;
 
         t.expect (eq (copies, 0)) << "plain operands not copied";
-        local_counts.passed_checks++;
-
-        const to_t<counted> wrapped{ a };
-
-        counted_copies = 0;
-        t.expect (eq (wrapped, b)) << "wrapped operand";
-        local_counts.passed_checks++;
-        copies = counted_copies;
-
-        t.expect (eq (copies, 0)) << "wrapped operand not copied";
         local_counts.passed_checks++;
 
         counted_copies = 0;

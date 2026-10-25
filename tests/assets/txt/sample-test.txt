@@ -11,24 +11,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ answer ge 42
         ✓ condition is true
     ✓ Check various conditions - passed (7 checks)
-    • Check various conditions with operators
-        ✓ answer == 42 (with literal)
-        ✓ answer == 42 (with cast)
-        ✓ answer != 43
-        ✓ answer < 43
-        ✓ answer <= 42
-        ✓ answer > 43
-        ✓ answer >= 42
-    ✓ Check various conditions with operators - passed (7 checks)
     • Check strings
         ✓ ultimate answer is 'fortytwo'
     ✓ Check strings - passed (1 check)
     • Check compound conditions
         ✓ logical 'and' expression
     ✓ Check compound conditions - passed (1 check)
-    • Check compound conditions with operators
-        ✓ logical 'and' expression with operators
-    ✓ Check compound conditions with operators - passed (1 check)
     • Check multiple function invocations
         ✓ lambda returns 42
         ✓ lambda returns 43
@@ -52,7 +40,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ vector{ 1, 2 } eq vector{ 1, 2 }
         ✓ vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
     ✓ Check containers - passed (2 checks)
-✓ Sample - passed (28 checks in 11 test cases), time: 0.398 ms
+✓ Sample - passed (20 checks in 9 test cases), time: 1.242 ms
 • Args suite
     • args
         ✓ ic is 42
@@ -61,7 +49,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ *ip1 is 45
         ✓ *ip2 is 46
     ✓ args - passed (5 checks)
-✓ Args suite - passed (5 checks in 1 test case), time: 0.020 ms
+✓ Args suite - passed (5 checks in 1 test case), time: 0.120 ms
 • Explicit namespace suite
     • Check one
         ✓ Passed
@@ -69,7 +57,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Check two
         ✓ Passed
     ✓ Check two - passed (1 check)
-✓ Explicit namespace suite - passed (2 checks in 2 test cases), time: 0.034 ms
+✓ Explicit namespace suite - passed (2 checks in 2 test cases), time: 0.125 ms
 • Implicit namespace suite
     • Check one
         ✓ Passed
@@ -77,5 +65,5 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     • Check two
         ✓ Passed
     ✓ Check two - passed (1 check)
-✓ Implicit namespace suite - passed (2 checks in 2 test cases), time: 0.031 ms
-✓ Total: 37 checks passed, 0 failed, in 16 test cases, 4 test suites, time: 0.546 ms
+✓ Implicit namespace suite - passed (2 checks in 2 test cases), time: 0.123 ms
+✓ Total: 29 checks passed, 0 failed, in 14 test cases, 4 test suites, time: 2.162 ms

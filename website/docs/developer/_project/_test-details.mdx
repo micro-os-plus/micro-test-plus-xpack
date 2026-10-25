@@ -2,12 +2,16 @@
 
 ### Test Details
 
+The tests are built and run for each platform and toolchain; the excerpts
+below are from the native run, with the system compiler:
+
 ```console
-> xpm run test --config native-cmake-sys-release
-> cd build/native-cmake-sys-release && ctest -V
-UpdateCTestConfiguration  from :/home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/DartConfiguration.tcl
-UpdateCTestConfiguration  from :/home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/DartConfiguration.tcl
-Test project /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release
+> xpm run test --config synthetic-posix-cmake-sys-debug
+> ctest -V --test-dir build/synthetic-posix-cmake-sys-debug
+Internal ctest changing into directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+UpdateCTestConfiguration  from :/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/DartConfiguration.tcl
+Test project /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
 Constructing a list of tests
 Done constructing a list of tests
 Updating test list for fixtures
@@ -19,833 +23,568 @@ Checking test dependency graph end
 
 #### minimal-test
 
-The [minimal/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/minimal/src/main.cpp)
+The [minimal/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/sources/minimal/src/main.cpp)
 file is a concise application that illustrates
 how to construct the simplest possible test for verifying a condition.
 
 ```console
-test 13
-      Start 13: minimal-test-reporter-tap-verbose
+test 21
+        Start  21: minimal-test-verbose
 
-13: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--verbose" "--reporter" "tap" "--output-file" "minimal-test-verbose.tap"
-13: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-13: Test timeout computed to be: 10000000
-13:
-13: # Running: minimal-test one two --verbose --reporter tap --output-file minimal-test-verbose.tap
-13: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions
-13: TAP version 14
-13: # Subtest: Minimal
-13:
-13:     # Subtest: Check various conditions
-13:         ok 1 - answer is 42
-13:         ok 2 - condition is true
-13:         1..2
-13:     ok 1 - Check various conditions # { passed, 2 checks }
-13:
-13:     1..1
-13: ok 1 - Minimal # { passed, 2 checks in 1 test case, time: 0.025 ms }
-13:
-13: 1..1
-13: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.074 ms }
-13: Test output written to 'minimal-test-verbose.tap'.
-13/63 Test #13: minimal-test-reporter-tap-verbose ...........   Passed    0.00 sec
-test 14
-      Start 14: minimal-test-reporter-tap-verbose-compare
+21: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test "one" "two" "--output-file" "minimal-test-verbose.tap" "--verbose"
+21: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+21: Test timeout computed to be: 10000000
+21: micro_os_plus::trace::initialise()
+21: 
+21: # Running: minimal-test one two --output-file minimal-test-verbose.tap --verbose
+21: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+21: TAP version 14
+21: # Subtest: minimal-test
+21: void micro_os_plus::micro_test_plus::suite::test(const test_case_name &, Callable_T &&, Args_T &&...) [Callable_T = (lambda at /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/sources/minimal/src/main.cpp:64:40), Args_T = <>] 'Check various conditions'
+21: micro_os_plus::micro_test_plus::test_case::test_case(const test_case_name &, runner &, suite &, size_t, size_t, detail::callable_ref<test_case>) 'Check various conditions' 1 1
+21: 
+21:     # Subtest: Check various conditions
+21: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = micro_os_plus::micro_test_plus::detail::compare_op<int, int, micro_os_plus::micro_test_plus::detail::equal_to>]
+21: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = bool]
+21:         ok 1 - answer is 42
+21:         ok 2 - condition is true
+21:         1..2
+21:     ok 1 - Check various conditions # { passed, 2 checks }
+21: 
+21:     1..1
+21: ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.174 ms }
+21: 
+21: 1..1
+21: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.420 ms }
+21: Test output written to 'minimal-test-verbose.tap'.
+ 21/110 Test  #21: minimal-test-verbose ..............................   Passed    0.06 sec
+test 22
+        Start  22: minimal-test-verbose-compare
 
-14: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/native/../../scripts/compare-files.sh" "minimal-test-verbose.tap" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/native/../../assets/tap/minimal-test.tap"
-14: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-14: Test timeout computed to be: 10000000
-14: minimal-test-verbose.tap ok
-14/63 Test #14: minimal-test-reporter-tap-verbose-compare ...   Passed    0.02 sec
-test 15
-      Start 15: minimal-test-reporter-tap
+22: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-verbose.tap" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/assets/tap/minimal-test.tap"
+22: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+22: Test timeout computed to be: 10000000
+22: minimal-test-verbose.tap ok
+ 22/110 Test  #22: minimal-test-verbose-compare ......................   Passed    0.03 sec
+test 23
+        Start  23: minimal-test-verbose-validate
 
-15: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--reporter" "tap" "--output-file" "minimal-test.tap"
-15: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-15: Test timeout computed to be: 10000000
-15:
-15: # Running: minimal-test one two --reporter tap --output-file minimal-test.tap
-15: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions
-15: TAP version 14
-15: # Subtest: Minimal
-15:
-15:     # Subtest: Check various conditions
-15:         1..0
-15:     ok 1 - Check various conditions # { passed, 2 checks }
-15:
-15:     1..1
-15: ok 1 - Minimal # { passed, 2 checks in 1 test case, time: 0.077 ms }
-15:
-15: 1..1
-15: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.164 ms }
-15: Test output written to 'minimal-test.tap'.
-15/63 Test #15: minimal-test-reporter-tap ...................   Passed    0.00 sec
-test 16
-      Start 16: minimal-test-reporter-tap-compare
+23: Test command: /Users/ilg/.nvm/versions/node/v20.20.0/bin/node "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/validate-tap.mjs" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-verbose.tap"
+23: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+23: Test timeout computed to be: 10000000
+23: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-verbose.tap: valid TAP
+ 23/110 Test  #23: minimal-test-verbose-validate .....................   Passed    0.13 sec
+test 24
+        Start  24: minimal-test
 
-16: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/native/../../scripts/compare-files.sh" "minimal-test.tap" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/native/../../assets/tap/minimal-test.tap"
-16: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-16: Test timeout computed to be: 10000000
-16: minimal-test.tap ok
-16/63 Test #16: minimal-test-reporter-tap-compare ...........   Passed    0.02 sec
-test 17
-      Start 17: minimal-test-reporter-tap-quiet
+24: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test "one" "two" "--output-file" "minimal-test.tap"
+24: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+24: Test timeout computed to be: 10000000
+24: micro_os_plus::trace::initialise()
+24: 
+24: # Running: minimal-test one two --output-file minimal-test.tap
+24: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+24: TAP version 14
+24: # Subtest: minimal-test
+24: void micro_os_plus::micro_test_plus::suite::test(const test_case_name &, Callable_T &&, Args_T &&...) [Callable_T = (lambda at /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/sources/minimal/src/main.cpp:64:40), Args_T = <>] 'Check various conditions'
+24: micro_os_plus::micro_test_plus::test_case::test_case(const test_case_name &, runner &, suite &, size_t, size_t, detail::callable_ref<test_case>) 'Check various conditions' 1 1
+24: 
+24:     # Subtest: Check various conditions
+24: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = micro_os_plus::micro_test_plus::detail::compare_op<int, int, micro_os_plus::micro_test_plus::detail::equal_to>]
+24: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = bool]
+24:         1..0
+24:     ok 1 - Check various conditions # { passed, 2 checks }
+24: 
+24:     1..1
+24: ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.191 ms }
+24: 
+24: 1..1
+24: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.436 ms }
+24: Test output written to 'minimal-test.tap'.
+ 24/110 Test  #24: minimal-test ......................................   Passed    0.06 sec
+test 25
+        Start  25: minimal-test-compare
 
-17: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--quiet" "--reporter" "tap" "--output-file" "minimal-test-quiet.tap"
-17: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-17: Test timeout computed to be: 10000000
-17:
-17: TAP version 14
-17: ok 1 - Minimal # { passed, 2 checks in 1 test case, time: 0.046 ms }
-17: 1..1
-17: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.049 ms }
-17: Test output written to 'minimal-test-quiet.tap'.
-17/63 Test #17: minimal-test-reporter-tap-quiet .............   Passed    0.00 sec
-test 18
-      Start 18: minimal-test-reporter-tap-quiet-compare
+25: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test.tap" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/assets/tap/minimal-test.tap"
+25: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+25: Test timeout computed to be: 10000000
+25: minimal-test.tap ok
+ 25/110 Test  #25: minimal-test-compare ..............................   Passed    0.03 sec
+test 26
+        Start  26: minimal-test-validate
 
-18: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/native/../../scripts/compare-files.sh" "minimal-test-quiet.tap" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/native/../../assets/tap/minimal-test.tap"
-18: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-18: Test timeout computed to be: 10000000
-18: minimal-test-quiet.tap ok
-18/63 Test #18: minimal-test-reporter-tap-quiet-compare .....   Passed    0.02 sec
-test 19
-      Start 19: minimal-test-reporter-tap-silent
+26: Test command: /Users/ilg/.nvm/versions/node/v20.20.0/bin/node "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/validate-tap.mjs" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test.tap"
+26: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+26: Test timeout computed to be: 10000000
+26: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test.tap: valid TAP
+ 26/110 Test  #26: minimal-test-validate .............................   Passed    0.11 sec
+test 27
+        Start  27: minimal-test-quiet
 
-19: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--silent" "--reporter" "tap" "--output-file" "minimal-test-silent.tap"
-19: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-19: Test timeout computed to be: 10000000
-19/63 Test #19: minimal-test-reporter-tap-silent ............   Passed    0.00 sec
+27: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test "one" "two" "--output-file" "minimal-test-quiet.tap" "--quiet"
+27: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+27: Test timeout computed to be: 10000000
+27: micro_os_plus::trace::initialise()
+27: 
+27: TAP version 14
+27: void micro_os_plus::micro_test_plus::suite::test(const test_case_name &, Callable_T &&, Args_T &&...) [Callable_T = (lambda at /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/sources/minimal/src/main.cpp:64:40), Args_T = <>] 'Check various conditions'
+27: micro_os_plus::micro_test_plus::test_case::test_case(const test_case_name &, runner &, suite &, size_t, size_t, detail::callable_ref<test_case>) 'Check various conditions' 1 1
+27: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = micro_os_plus::micro_test_plus::detail::compare_op<int, int, micro_os_plus::micro_test_plus::detail::equal_to>]
+27: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = bool]
+27: ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.146 ms }
+27: 1..1
+27: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.336 ms }
+27: Test output written to 'minimal-test-quiet.tap'.
+ 27/110 Test  #27: minimal-test-quiet ................................   Passed    0.06 sec
+test 28
+        Start  28: minimal-test-quiet-compare
+
+28: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-quiet.tap" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/assets/tap/minimal-test.tap"
+28: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+28: Test timeout computed to be: 10000000
+28: minimal-test-quiet.tap ok
+ 28/110 Test  #28: minimal-test-quiet-compare ........................   Passed    0.03 sec
+test 29
+        Start  29: minimal-test-quiet-validate
+
+29: Test command: /Users/ilg/.nvm/versions/node/v20.20.0/bin/node "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/validate-tap.mjs" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-quiet.tap"
+29: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+29: Test timeout computed to be: 10000000
+29: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-quiet.tap: valid TAP
+ 29/110 Test  #29: minimal-test-quiet-validate .......................   Passed    0.12 sec
+test 30
+        Start  30: minimal-test-silent
+
+30: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test "one" "two" "--output-file" "minimal-test-silent.tap" "--silent"
+30: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+30: Test timeout computed to be: 10000000
+30: micro_os_plus::trace::initialise()
+30: void micro_os_plus::micro_test_plus::suite::test(const test_case_name &, Callable_T &&, Args_T &&...) [Callable_T = (lambda at /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/sources/minimal/src/main.cpp:64:40), Args_T = <>] 'Check various conditions'
+30: micro_os_plus::micro_test_plus::test_case::test_case(const test_case_name &, runner &, suite &, size_t, size_t, detail::callable_ref<test_case>) 'Check various conditions' 1 1
+30: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = micro_os_plus::micro_test_plus::detail::compare_op<int, int, micro_os_plus::micro_test_plus::detail::equal_to>]
+30: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = bool]
+ 30/110 Test  #30: minimal-test-silent ...............................   Passed    0.08 sec
 ```
 
 All verbosity modes are exercised: default, `--verbose`, `--quiet`, and `--silent`.
 
 #### sample-test
 
-The [sample/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/sample/src/main.cpp)
+The [sample/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/sources/sample/src/main.cpp)
 file is a representative application that demonstrates how to use the principal
 primitives provided by the library to construct a practical test.
 
 A typical execution produces the following output:
 
 ```console
-test 39
-      Start 39: sample-test-reporter-tap-verbose
+test 61
+        Start  61: sample-test-verbose
 
-39: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/sample-test "one" "two" "--verbose" "--reporter" "tap" "--output-file" "sample-test-verbose.tap"
-39: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-39: Test timeout computed to be: 10000000
-39:
-39: # Running: sample-test one two --verbose --reporter tap --output-file sample-test-verbose.tap
-39: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions
-39: TAP version 14
-39: # Subtest: Sample
-39:
-39:     # Subtest: Check various conditions
-39:         ok 1 - answer eq 42
-39:         ok 2 - answer ne 43
-39:         ok 3 - answer lt 43
-39:         ok 4 - answer le 42
-39:         ok 5 - answer gt 43
-39:         ok 6 - answer ge 42
-39:         ok 7 - condition is true
-39:         1..7
-39:     ok 1 - Check various conditions # { passed, 7 checks }
-39:
-39:     # Subtest: Check various conditions with operators
-39:         ok 1 - answer == 42 (with literal)
-39:         ok 2 - answer == 42 (with cast)
-39:         ok 3 - answer != 43
-39:         ok 4 - answer < 43
-39:         ok 5 - answer <= 42
-39:         ok 6 - answer > 43
-39:         ok 7 - answer >= 42
-39:         1..7
-39:     ok 2 - Check various conditions with operators # { passed, 7 checks }
-39:
-39:     # Subtest: Check strings
-39:         ok 1 - ultimate answer is 'fortytwo'
-39:         1..1
-39:     ok 3 - Check strings # { passed, 1 check }
-39:
-39:     # Subtest: Check compound conditions
-39:         ok 1 - logical 'and' expression
-39:         1..1
-39:     ok 4 - Check compound conditions # { passed, 1 check }
-39:
-39:     # Subtest: Check compound conditions with operators
-39:         ok 1 - logical 'and' expression with operators
-39:         1..1
-39:     ok 5 - Check compound conditions with operators # { passed, 1 check }
-39:
-39:     # Subtest: Check multiple function invocations
-39:         ok 1 - lambda returns 42
-39:         ok 2 - lambda returns 43
-39:         1..2
-39:     ok 6 - Check multiple function invocations # { passed, 2 checks }
-39:
-39:     # Subtest: Check args
-39:         ok 1 - argc >= 2
-39:         ok 2 - argv[1] is 'one'
-39:         ok 3 - argv[2] is 'two'
-39:         1..3
-39:     ok 7 - Check args # { passed, 3 checks }
-39:
-39:     # Subtest: Check complex logic
-39:         ok 1 - xyz passed
-39:         1..1
-39:     ok 8 - Check complex logic # { passed, 1 check }
-39:
-39:     # Subtest: Check if exceptions are thrown
-39:         ok 1 - exception thrown
-39:         ok 2 - std::runtime_error thrown
-39:         1..2
-39:     ok 9 - Check if exceptions are thrown # { passed, 2 checks }
-39:
-39:     # Subtest: Check if exceptions are not thrown
-39:         ok 1 - exception not thrown
-39:         1..1
-39:     ok 10 - Check if exceptions are not thrown # { passed, 1 check }
-39:
-39:     # Subtest: Check containers
-39:         ok 1 - vector{ 1, 2 } eq vector{ 1, 2 }
-39:         ok 2 - vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
-39:         1..2
-39:     ok 11 - Check containers # { passed, 2 checks }
-39:
-39:     1..11
-39: ok 1 - Sample # { passed, 28 checks in 11 test cases, time: 0.295 ms }
-39:
-39: # Subtest: Args suite
-39:
-39:     # Subtest: args
-39:         ok 1 - ic is 42
-39:         ok 2 - iv is 43
-39:         ok 3 - ir is 44
-39:         ok 4 - *ip1 is 45
-39:         ok 5 - *ip2 is 46
-39:         1..5
-39:     ok 1 - args # { passed, 5 checks }
-39:
-39:     1..1
-39: ok 2 - Args suite # { passed, 5 checks in 1 test case, time: 0.017 ms }
-39:
-39: # Subtest: Explicit namespace suite
-39:
-39:     # Subtest: Check one
-39:         ok 1 - Passed
-39:         1..1
-39:     ok 1 - Check one # { passed, 1 check }
-39:
-39:     # Subtest: Check two
-39:         ok 1 - Passed
-39:         1..1
-39:     ok 2 - Check two # { passed, 1 check }
-39:
-39:     1..2
-39: ok 3 - Explicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.026 ms }
-39:
-39: # Subtest: Implicit namespace suite
-39:
-39:     # Subtest: Check one
-39:         ok 1 - Passed
-39:         1..1
-39:     ok 1 - Check one # { passed, 1 check }
-39:
-39:     # Subtest: Check two
-39:         ok 1 - Passed
-39:         1..1
-39:     ok 2 - Check two # { passed, 1 check }
-39:
-39:     1..2
-39: ok 4 - Implicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.026 ms }
-39:
-39: 1..4
-39: # { total: 37 checks passed, 0 failed, in 16 test cases, 4 test suites, time: 0.438 ms }
-39: Test output written to 'sample-test-verbose.tap'.
-39/63 Test #39: sample-test-reporter-tap-verbose ............   Passed    0.00 sec
+61: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/sample-test "one" "two" "--output-file" "sample-test-verbose.tap" "--verbose"
+61: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+61: Test timeout computed to be: 10000000
+61: micro_os_plus::trace::initialise()
+61: 
+61: # Running: sample-test one two --output-file sample-test-verbose.tap --verbose
+61: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+61: TAP version 14
+61: # Subtest: Sample
+61: 
+61:     # Subtest: Check various conditions
+61:         ok 1 - answer eq 42
+61:         ok 2 - answer ne 43
+61:         ok 3 - answer lt 43
+61:         ok 4 - answer le 42
+61:         ok 5 - answer gt 43
+61:         ok 6 - answer ge 42
+61:         ok 7 - condition is true
+61:         1..7
+61:     ok 1 - Check various conditions # { passed, 7 checks }
+61: 
+61:     # Subtest: Check strings
+61:         ok 1 - ultimate answer is 'fortytwo'
+61:         1..1
+61:     ok 2 - Check strings # { passed, 1 check }
+61: 
+61:     # Subtest: Check compound conditions
+61:         ok 1 - logical 'and' expression
+61:         1..1
+61:     ok 3 - Check compound conditions # { passed, 1 check }
+61: 
+61:     # Subtest: Check multiple function invocations
+61:         ok 1 - lambda returns 42
+61:         ok 2 - lambda returns 43
+61:         1..2
+61:     ok 4 - Check multiple function invocations # { passed, 2 checks }
+61: 
+61:     # Subtest: Check args
+61:         ok 1 - argc >= 2
+61:         ok 2 - argv[1] is 'one'
+61:         ok 3 - argv[2] is 'two'
+61:         1..3
+61:     ok 5 - Check args # { passed, 3 checks }
+61: 
+61:     # Subtest: Check complex logic
+61:         ok 1 - xyz passed
+61:         1..1
+61:     ok 6 - Check complex logic # { passed, 1 check }
+61: 
+61:     # Subtest: Check if exceptions are thrown
+61:         ok 1 - exception thrown
+61:         ok 2 - std::runtime_error thrown
+61:         1..2
+61:     ok 7 - Check if exceptions are thrown # { passed, 2 checks }
+61: 
+61:     # Subtest: Check if exceptions are not thrown
+61:         ok 1 - exception not thrown
+61:         1..1
+61:     ok 8 - Check if exceptions are not thrown # { passed, 1 check }
+61: 
+61:     # Subtest: Check containers
+61:         ok 1 - vector{ 1, 2 } eq vector{ 1, 2 }
+61:         ok 2 - vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
+61:         1..2
+61:     ok 9 - Check containers # { passed, 2 checks }
+61: 
+61:     1..9
+61: ok 1 - Sample # { passed, 20 checks in 9 test cases, time: 0.705 ms }
+61: 
+61: # Subtest: Args suite
+61: 
+61:     # Subtest: args
+61:         ok 1 - ic is 42
+61:         ok 2 - iv is 43
+61:         ok 3 - ir is 44
+61:         ok 4 - *ip1 is 45
+61:         ok 5 - *ip2 is 46
+61:         1..5
+61:     ok 1 - args # { passed, 5 checks }
+61: 
+61:     1..1
+61: ok 2 - Args suite # { passed, 5 checks in 1 test case, time: 0.061 ms }
+61: 
+61: # Subtest: Explicit namespace suite
+61: 
+61:     # Subtest: Check one
+61:         ok 1 - Passed
+61:         1..1
+61:     ok 1 - Check one # { passed, 1 check }
+61: 
+61:     # Subtest: Check two
+61:         ok 1 - Passed
+61:         1..1
+61:     ok 2 - Check two # { passed, 1 check }
+61: 
+61:     1..2
+61: ok 3 - Explicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.091 ms }
+61: 
+61: # Subtest: Implicit namespace suite
+61: 
+61:     # Subtest: Check one
+61:         ok 1 - Passed
+61:         1..1
+61:     ok 1 - Check one # { passed, 1 check }
+61: 
+61:     # Subtest: Check two
+61:         ok 1 - Passed
+61:         1..1
+61:     ok 2 - Check two # { passed, 1 check }
+61: 
+61:     1..2
+61: ok 4 - Implicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.068 ms }
+61: 
+61: 1..4
+61: # { total: 29 checks passed, 0 failed, in 14 test cases, 4 test suites, time: 1.159 ms }
+61: Test output written to 'sample-test-verbose.tap'.
+ 61/110 Test  #61: sample-test-verbose ...............................   Passed    0.07 sec
 ```
 
 All possible verbosity modes are exercised: default, `--verbose`, `--quiet`, and `--silent`.
 
-#### unit-test
+#### unit-checks-test
 
-The [unit/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/unit/src/main.cpp)
-file constitutes the comprehensive test suite, designed to verify that all
-library functions behave as intended. Some checks are deliberately expected
+The [unit-checks/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/sources/unit-checks/src/main.cpp)
+file, with the other files of the same folder, constitutes the comprehensive
+test suite of the checks, designed to verify that the library functions
+behave as intended. Some checks are deliberately expected
 to fail, in order to validate the failure-reporting paths.
+
+The other unit tests exercise the exceptions (`unit-exceptions`), the
+combinations of operand types (`unit-combinations`), the test hierarchy,
+the formatters, and the reporters (`unit-miscellaneous`), and the
+deprecated features (`unit-deprecated`).
 
 A typical execution produces the following output:
 
 ```console
-test 60
-      Start 60: unit-test-reporter-human
+test 97
+        Start  97: unit-checks-test-reporter-human
 
-60: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/unit-test "--reporter" "human" "--output-file" "unit-test.txt"
-60: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-60: Test timeout computed to be: 10000000
-60:
-60: Running: unit-test --reporter human --output-file unit-test.txt
-60: Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions
-60: µTest++ human report
-60:
-60: • Static top suite
-60:
-60: µTest++ unit tests; some checks are expected to fail.
-60:
-60:     ✓ require - passed (2 checks)
-60:     ✓ Initial counters - passed (0 checks)
-60:     ✓ expect(true) - passed (5 checks)
-60:
-60:     • expect(false)
-60:         ✗ FAILED (main.cpp:127)
-60:         ✗ false FAILED (main.cpp:130)
-60:     ✗ expect(false) - FAILED (0 checks passed, 2 failed)
-60:
-60:     ✓ reflection::type_name() - passed (4 checks)
-60:     ✓ Splits - passed (8 checks)
-60:     ✓ to_* modern wrappers - passed (4 checks)
-60:     ✓ reflection::short_name() - passed (3 checks)
-60:         ✓ inner subtest - passed (1 check)
-60:     ✓ Nested subtests - passed (0 checks)
-60:
-60: ✗ Static top suite - FAILED (26 checks passed, 2 failed, in 10 test cases), time: 0.157 ms
-60:
-60: • Dynamic suite
-60:
-60:     ✓ check in dynamic suite - passed (1 check)
-60:
-60: ✓ Dynamic suite - passed (1 check in 1 test case), time: 0.018 ms
-60:
-60: • Combinatorial floats suite
-60:
-60:     ✓ Combinatorial floats - passed (21 checks)
-60:     ✓ Combinatorial doubles - passed (21 checks)
-60:
-60: ✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.063 ms
-60:
-60: • Combinatorial integrals suite
-60:
-60:     ✓ Combinatorial integrals with signed long long - passed (20 checks)
-60:     ✓ Combinatorial integrals unsigned long long - passed (20 checks)
-60:     ✓ Combinatorial integrals with signed int - passed (20 checks)
-60:     ✓ Combinatorial integrals with unsigned int - passed (20 checks)
-60:     ✓ Combinatorial integrals with signed short - passed (20 checks)
-60:     ✓ Combinatorial integrals with unsigned short - passed (20 checks)
-60:     ✓ Combinatorial integrals with signed char - passed (20 checks)
-60:     ✓ Combinatorial integrals with unsigned char - passed (20 checks)
-60:
-60: ✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 0.223 ms
-60:
-60: • Comparisons suite
-60:
-60:     ✓ Integer comparisons - passed (8 checks)
-60:
-60:     • Failed integer comparisons
-60:         ✗ actual != 42 FAILED (comparisons.cpp:115, 42 != 42)
-60:         ✗ actual+1 == 42 FAILED (comparisons.cpp:118, 43 == 42)
-60:         ✗ actual-1 >= 42 FAILED (comparisons.cpp:122, 41 >= 42)
-60:         ✗ actual > 42 FAILED (comparisons.cpp:126, 42 > 42)
-60:         ✗ actual+1 <= 42 FAILED (comparisons.cpp:129, 43 <= 42)
-60:         ✗ actual < 42 FAILED (comparisons.cpp:133, 42 < 42)
-60:         ✗ 42_i != 42_i FAILED (comparisons.cpp:139, 42 != 42)
-60:         ✗ 42 != 42_i FAILED (comparisons.cpp:142, 42 != 42)
-60:     ✗ Failed integer comparisons - FAILED (0 checks passed, 8 failed)
-60:
-60:     ✓ Float comparisons - passed (27 checks)
-60:
-60:     • Failed float comparisons
-60:         ✗ actual != 42.0 FAILED (comparisons.cpp:264, 42.0f != 42.0f)
-60:         ✗ actual == 43.0 FAILED (comparisons.cpp:267, 42.0f == 43.0f)
-60:         ✗ actual != 42 FAILED (comparisons.cpp:270, 42.0f != 42)
-60:         ✗ actual == 43 FAILED (comparisons.cpp:273, 42.0f == 43)
-60:         ✗ 42.101f != 42.101_f FAILED (comparisons.cpp:279, 42.101f != 42.101f)
-60:         ✗ 42.101f epsilon 0.01f != 42.10_f FAILED (comparisons.cpp:282, 42.101f != 42.1f)
-60:         ✗ 42.101f epsilon 0.1f == 42.10_f FAILED (comparisons.cpp:286, 42.101f == 42.1f)
-60:         ✗ 42.1010001f epsilon 0.1f != 42.1_f FAILED (comparisons.cpp:290, 42.101f != 42.1f)
-60:         ✗ 42.101f == 42.10_f FAILED (comparisons.cpp:294, 42.101f == 42.1f)
-60:         ✗ 42.101f == 42.100_f FAILED (comparisons.cpp:297, 42.101f == 42.1f)
-60:         ✗ 42.10f == 42.1_f FAILED (comparisons.cpp:300, 42.1f != 42.1f)
-60:         ✗ 42.42f == 42.42_f FAILED (comparisons.cpp:303, 42.42f != 42.42f)
-60:         ✗ 42.42 == 42.420_d FAILED (comparisons.cpp:306, 42.42 != 42.42)
-60:         ✗ 42.0 == 42.0_d FAILED (comparisons.cpp:309, 42.0 != 42.0)
-60:         ✗ 42. == 42._d FAILED (comparisons.cpp:312, 42.0 != 42.0)
-60:         ✗ 42.42 == 42.42_ld FAILED (comparisons.cpp:315, 42.42ld != 42.42ld)
-60:         ✗ 1234._f == 1234.f FAILED (comparisons.cpp:319, 1234.0f != 1234.0f)
-60:         ✗ 1234.56_f == 1234.56f FAILED (comparisons.cpp:322, 1234.56f != 1234.56f)
-60:         ✗ 12345678.9f == 12345678.9_f FAILED (comparisons.cpp:325, 12345679.0f != 12345679.0f)
-60:         ✗ 111111.42f == 111111.42_f FAILED (comparisons.cpp:329, 111111.42f != 111111.42f)
-60:         ✗ 1111111111.42 == 1111111111.42_d FAILED (comparisons.cpp:333, 1111111111.42 != 1111111111.42)
-60:     ✗ Failed float comparisons - FAILED (0 checks passed, 21 failed)
-60:
-60:     ✓ String comparisons - passed (6 checks)
-60:
-60:     • Failed string comparisons
-60:         ✗ actual_sv != abc_sv FAILED (comparisons.cpp:392, abc != abc)
-60:         ✗ actual_sv == abx_sv FAILED (comparisons.cpp:396, abc == abx)
-60:         ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:400, abc >= abd)
-60:         ✗ actual_sv > abc_sv FAILED (comparisons.cpp:404, abc > abc)
-60:         ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:408, abc <= abb)
-60:         ✗ actual_sv < abc_sv FAILED (comparisons.cpp:412, abc < abc)
-60:     ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
-60:
-60:     ✓ Pointer comparisons - passed (9 checks)
-60:
-60:     • Failed pointer comparisons
-60:         ✗ ptr1 != &one FAILED (comparisons.cpp:494, 0x7ff7b396c45c != 0x7ff7b396c45c)
-60:         ✗ ptr1 != ptr2 FAILED (comparisons.cpp:497, 0x7ff7b396c45c != 0x7ff7b396c45c)
-60:         ✗ ptr1 > ptr2 FAILED (comparisons.cpp:500, 0x7ff7b396c45c > 0x7ff7b396c45c)
-60:         ✗ ptr1 < ptr2 FAILED (comparisons.cpp:503, 0x7ff7b396c45c < 0x7ff7b396c45c)
-60:         ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:506, 0x7ff7b396c45c == 0x7ff7b396c450)
-60:         ✗ pfunc != afunc FAILED (comparisons.cpp:509, 0x10c5eb7c0 != 0x10c5eb7c0)
-60:         ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:512, 0x10c5eb7c0 == 0x7ff7b396c450)
-60:         ✗ pone >= ptwo FAILED (comparisons.cpp:524, 0x7ff7b396c448 >= 0x7ff7b396c44c)
-60:         ✗ ptwo <= pone FAILED (comparisons.cpp:527, 0x7ff7b396c44c <= 0x7ff7b396c448)
-60:     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
-60:
-60:     ✓ Null pointer comparisons - passed (3 checks)
-60:
-60:     • Failed null pointer comparisons
-60:         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:575, 0x0 != nullptr)
-60:         ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:578, 0x7ff7b396c468 == nullptr)
-60:         ✗ pfunc != nullptr FAILED (comparisons.cpp:581, 0x0 != nullptr)
-60:     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
-60:
-60:     • Logical operations
-60:         ✓ not (actual != 42)
-60:         ✗ not (actual == 42) FAILED (comparisons.cpp:602, not 42 == 42)
-60:         ✓ (actual == 42) and (actual == 42.0)
-60:         ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:611, (42 == 42 and 42.0f != 42.0))
-60:         ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:616, (42 != 42 and 42.0f == 42.0))
-60:         ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:621, (42 != 42 and 42.0f != 42.0))
-60:         ✓ (42 == 42 and 42.0f == 42.0)
-60:         ✗ FAILED (comparisons.cpp:630, (42 == 42 and 42.0f != 42.0))
-60:         ✓ (actual == 42) or (actual == 42.0)
-60:         ✓ (actual == 42) or (actual != 42.0)
-60:         ✓ (actual != 42) or (actual == 42.0)
-60:         ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:649, (42 != 42 or 42.0f != 42.0))
-60:     ✗ Logical operations - FAILED (6 checks passed, 6 failed)
-60:
-60: ✗ Comparisons suite - FAILED (59 checks passed, 53 failed, in 11 test cases), time: 0.309 ms
-60:
-60: • Exceptions suite
-60:
-60:     ✓ thrown exceptions - passed (2 checks)
-60:
-60:     • Failed thrown exceptions
-60:         ✗ exception thrown FAILED (exceptions.cpp:91, throws)
-60:         ✗ std::runtime_error thrown FAILED (exceptions.cpp:101, throws<std::runtime_error>)
-60:     ✗ Failed thrown exceptions - FAILED (0 checks passed, 2 failed)
-60:
-60:     ✓ Not thrown exceptions - passed (1 check)
-60:
-60:     • Failed not thrown exceptions
-60:         ✗ exception not thrown FAILED (exceptions.cpp:142, nothrow)
-60:     ✗ Failed not thrown exceptions - FAILED (0 checks passed, 1 failed)
-60:
-60: ✗ Exceptions suite - FAILED (3 checks passed, 3 failed, in 4 test cases), time: 0.159 ms
-60:
-60: • Failed combinatorial floats suite
-60:
-60:     • Combinatorial floats
-60:         ✗ 42.0 == 42 signed long long FAILED (float-failed-combinations.cpp:36, 42.0f != 42ll)
-60:         ✗ 42.0 == 42 unsigned long long FAILED (float-failed-combinations.cpp:41, 42.0f != 42ull)
-60:         ✗ 42.0 == 42 signed long FAILED (float-failed-combinations.cpp:46, 42.0f != 42l)
-60:         ✗ 42.0 == 42 unsigned long FAILED (float-failed-combinations.cpp:50, 42.0f != 42ul)
-60:         ✗ 42.0 == 42 signed int FAILED (float-failed-combinations.cpp:54, 42.0f != 42)
-60:         ✗ 42.0 == 42 unsigned int FAILED (float-failed-combinations.cpp:58, 42.0f != 42u)
-60:         ✗ 42.0 == 42 signed short FAILED (float-failed-combinations.cpp:62, 42.0f != 42s)
-60:         ✗ 42.0 == 42 unsigned short FAILED (float-failed-combinations.cpp:66, 42.0f != 42us)
-60:         ✗ 42.0 == 42 signed char FAILED (float-failed-combinations.cpp:71, 42.0f != 42sc)
-60:         ✗ 42.0 == 42 unsigned char FAILED (float-failed-combinations.cpp:75, 42.0f != 42uc)
-60:         ✗ 42.0 <= 42 signed int FAILED (float-failed-combinations.cpp:81, 42.0f > 42)
-60:         ✗ 42.0 >= 42 signed int FAILED (float-failed-combinations.cpp:85, 42.0f < 42)
-60:         ✗ 43.0 != 42 signed int FAILED (float-failed-combinations.cpp:89, 43.0f == 42)
-60:         ✗ 41.0 < 42 signed int FAILED (float-failed-combinations.cpp:94, 41.0f >= 42)
-60:         ✗ 43.0 > 42 signed int FAILED (float-failed-combinations.cpp:99, 43.0f <= 42)
-60:         ✗ 42.0 <= 42 unsigned int FAILED (float-failed-combinations.cpp:106, 42.0f > 42u)
-60:         ✗ 42.0 >= 42 unsigned int FAILED (float-failed-combinations.cpp:110, 42.0f < 42u)
-60:         ✗ 43.0 != 42 unsigned int FAILED (float-failed-combinations.cpp:114, 43.0f == 42u)
-60:         ✗ 41.0 < 42 unsigned int FAILED (float-failed-combinations.cpp:119, 41.0f >= 42u)
-60:         ✗ 43.0 > 42 unsigned int FAILED (float-failed-combinations.cpp:124, 43.0f <= 42u)
-60:         ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:131, 42 != 42.0f)
-60:     ✗ Combinatorial floats - FAILED (0 checks passed, 21 failed)
-60:
-60:     • Combinatorial doubles
-60:         ✗ 42.0 == 42 signed long long FAILED (float-failed-combinations.cpp:36, 42.0 != 42ll)
-60:         ✗ 42.0 == 42 unsigned long long FAILED (float-failed-combinations.cpp:41, 42.0 != 42ull)
-60:         ✗ 42.0 == 42 signed long FAILED (float-failed-combinations.cpp:46, 42.0 != 42l)
-60:         ✗ 42.0 == 42 unsigned long FAILED (float-failed-combinations.cpp:50, 42.0 != 42ul)
-60:         ✗ 42.0 == 42 signed int FAILED (float-failed-combinations.cpp:54, 42.0 != 42)
-60:         ✗ 42.0 == 42 unsigned int FAILED (float-failed-combinations.cpp:58, 42.0 != 42u)
-60:         ✗ 42.0 == 42 signed short FAILED (float-failed-combinations.cpp:62, 42.0 != 42s)
-60:         ✗ 42.0 == 42 unsigned short FAILED (float-failed-combinations.cpp:66, 42.0 != 42us)
-60:         ✗ 42.0 == 42 signed char FAILED (float-failed-combinations.cpp:71, 42.0 != 42sc)
-60:         ✗ 42.0 == 42 unsigned char FAILED (float-failed-combinations.cpp:75, 42.0 != 42uc)
-60:         ✗ 42.0 <= 42 signed int FAILED (float-failed-combinations.cpp:81, 42.0 > 42)
-60:         ✗ 42.0 >= 42 signed int FAILED (float-failed-combinations.cpp:85, 42.0 < 42)
-60:         ✗ 43.0 != 42 signed int FAILED (float-failed-combinations.cpp:89, 43.0 == 42)
-60:         ✗ 41.0 < 42 signed int FAILED (float-failed-combinations.cpp:94, 41.0 >= 42)
-60:         ✗ 43.0 > 42 signed int FAILED (float-failed-combinations.cpp:99, 43.0 <= 42)
-60:         ✗ 42.0 <= 42 unsigned int FAILED (float-failed-combinations.cpp:106, 42.0 > 42u)
-60:         ✗ 42.0 >= 42 unsigned int FAILED (float-failed-combinations.cpp:110, 42.0 < 42u)
-60:         ✗ 43.0 != 42 unsigned int FAILED (float-failed-combinations.cpp:114, 43.0 == 42u)
-60:         ✗ 41.0 < 42 unsigned int FAILED (float-failed-combinations.cpp:119, 41.0 >= 42u)
-60:         ✗ 43.0 > 42 unsigned int FAILED (float-failed-combinations.cpp:124, 43.0 <= 42u)
-60:         ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:131, 42 != 42.0)
-60:     ✗ Combinatorial doubles - FAILED (0 checks passed, 21 failed)
-60:
-60: ✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.079 ms
-60:
-60: • Failed combinatorial integrals suite
-60:
-60:     • Combinatorial integrals with signed long long
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42ll != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42ll != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42ll != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42ll != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42ll != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42ll != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42ll != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42ll != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42ll != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42ll != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42ll > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42ll < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43ll == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41ll >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43ll <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42ll > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42ll < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43ll == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41ll >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43ll <= 42u)
-60:     ✗ Combinatorial integrals with signed long long - FAILED (0 checks passed, 20 failed)
-60:
-60:     • Combinatorial integrals unsigned long long
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42ull != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42ull != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42ull != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42ull != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42ull != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42ull != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42ull != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42ull != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42ull != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42ull != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42ull > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42ull < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43ull == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41ull >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43ull <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42ull > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42ull < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43ull == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41ull >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43ull <= 42u)
-60:     ✗ Combinatorial integrals unsigned long long - FAILED (0 checks passed, 20 failed)
-60:
-60:     • Combinatorial integrals with signed int
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42 != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42 != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42 != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42 != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42 != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42 != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42 != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42 != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42 != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42 != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42 > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42 < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43 == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41 >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43 <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42 > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42 < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43 == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41 >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43 <= 42u)
-60:     ✗ Combinatorial integrals with signed int - FAILED (0 checks passed, 20 failed)
-60:
-60:     • Combinatorial integrals with unsigned int
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42u != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42u != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42u != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42u != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42u != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42u != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42u != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42u != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42u != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42u != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42u > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42u < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43u == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41u >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43u <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42u > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42u < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43u == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41u >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43u <= 42u)
-60:     ✗ Combinatorial integrals with unsigned int - FAILED (0 checks passed, 20 failed)
-60:
-60:     • Combinatorial integrals with signed short
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42 != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42 != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42 != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42 != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42 != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42 != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42 != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42 != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42 != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42 != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42 > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42 < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43 == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41 >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43 <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42 > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42 < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43 == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41 >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43 <= 42u)
-60:     ✗ Combinatorial integrals with signed short - FAILED (0 checks passed, 20 failed)
-60:
-60:     • Combinatorial integrals with unsigned short
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42u != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42u != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42u != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42u != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42u != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42u != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42u != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42u != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42u != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42u != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42u > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42u < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43u == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41u >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43u <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42u > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42u < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43u == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41u >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43u <= 42u)
-60:     ✗ Combinatorial integrals with unsigned short - FAILED (0 checks passed, 20 failed)
-60:
-60:     • Combinatorial integrals with signed short
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42s != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42s != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42s != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42s != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42s != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42s != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42s != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42s != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42s != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42s != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42s > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42s < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43s == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41s >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43s <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42s > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42s < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43s == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41s >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43s <= 42u)
-60:     ✗ Combinatorial integrals with signed short - FAILED (0 checks passed, 20 failed)
-60:
-60:     • Combinatorial integrals with unsigned short
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42us != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42us != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42us != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42us != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42us != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42us != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42us != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42us != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42us != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42us != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42us > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42us < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43us == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41us >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43us <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42us > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42us < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43us == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41us >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43us <= 42u)
-60:     ✗ Combinatorial integrals with unsigned short - FAILED (0 checks passed, 20 failed)
-60:
-60:     • Combinatorial integrals with signed char
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42sc != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42sc != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42sc != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42sc != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42sc != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42sc != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42sc != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42sc != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42sc != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42sc != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42sc > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42sc < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43sc == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41sc >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43sc <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42sc > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42sc < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43sc == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41sc >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43sc <= 42u)
-60:     ✗ Combinatorial integrals with signed char - FAILED (0 checks passed, 20 failed)
-60:
-60:     • Combinatorial integrals with unsigned char
-60:         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:36, 42uc != 42ll)
-60:         ✗ ne matches unsigned long long FAILED (integral-failed-combinations.cpp:41, 42uc != 42ull)
-60:         ✗ ne matches signed long FAILED (integral-failed-combinations.cpp:46, 42uc != 42l)
-60:         ✗ ne matches unsigned long FAILED (integral-failed-combinations.cpp:51, 42uc != 42ul)
-60:         ✗ ne matches signed int FAILED (integral-failed-combinations.cpp:56, 42uc != 42)
-60:         ✗ ne matches unsigned int FAILED (integral-failed-combinations.cpp:60, 42uc != 42u)
-60:         ✗ ne matches signed short FAILED (integral-failed-combinations.cpp:65, 42uc != 42s)
-60:         ✗ ne matches unsigned short FAILED (integral-failed-combinations.cpp:70, 42uc != 42us)
-60:         ✗ ne matches signed char FAILED (integral-failed-combinations.cpp:75, 42uc != 42sc)
-60:         ✗ ne matches unsigned char FAILED (integral-failed-combinations.cpp:80, 42uc != 42uc)
-60:         ✗ gt matches signed int FAILED (integral-failed-combinations.cpp:87, 42uc > 42)
-60:         ✗ lt matches signed int FAILED (integral-failed-combinations.cpp:91, 42uc < 42)
-60:         ✗ eq matches signed int FAILED (integral-failed-combinations.cpp:95, 43uc == 42)
-60:         ✗ ge matches signed int FAILED (integral-failed-combinations.cpp:100, 41uc >= 42)
-60:         ✗ le matches signed int FAILED (integral-failed-combinations.cpp:105, 43uc <= 42)
-60:         ✗ gt matches unsigned int FAILED (integral-failed-combinations.cpp:110, 42uc > 42u)
-60:         ✗ lt matches unsigned int FAILED (integral-failed-combinations.cpp:115, 42uc < 42u)
-60:         ✗ eq matches unsigned int FAILED (integral-failed-combinations.cpp:120, 43uc == 42u)
-60:         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:125, 41uc >= 42u)
-60:         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:130, 43uc <= 42u)
-60:     ✗ Combinatorial integrals with unsigned char - FAILED (0 checks passed, 20 failed)
-60:
-60: ✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 0.486 ms
-60:
-60: • Miscellaneous suite
-60:
-60:     ✓ Arrays - passed (4 checks)
-60:
-60:     • Arrays bad
-60:         ✗ array{ 42 } ne array{ 42 } FAILED (miscellaneous.cpp:68, {42} != {42})
-60:         ✗ array{ 42 } eq array{ 43 } FAILED (miscellaneous.cpp:72, {42} == {43})
-60:         ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (miscellaneous.cpp:76, {1, 2} != {1, 2})
-60:         ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (miscellaneous.cpp:80, {1, 2, 3} == {1, 2, 4})
-60:     ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
-60:
-60:     ✓ Vectors - passed (6 checks)
-60:
-60:     • Vectors bad
-60:         ✗ vector{ } != vector{ } FAILED (miscellaneous.cpp:132, {} != {})
-60:         ✗ FAILED (miscellaneous.cpp:136, {} != {})
-60:         ✗ vector{ 42 } != vector{ 42 } FAILED (miscellaneous.cpp:139, {42} != {42})
-60:         ✗ vector{ 42 } == vector{ 43 } FAILED (miscellaneous.cpp:143, {42} == {43})
-60:         ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (miscellaneous.cpp:147, {1, 2} != {1, 2})
-60:         ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (miscellaneous.cpp:151, {1, 2, 3} == {1, 2, 4})
-60:     ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
-60:
-60: ✗ Miscellaneous suite - FAILED (10 checks passed, 10 failed, in 4 test cases), time: 0.082 ms
-60:
-60: • Operators suite
-60:
-60:     • Operators
-60:         ✓ actual == 42
-60:         ✗ actual+1 == 42 with scalar FAILED (operators.cpp:48)
-60:         ✗ actual+1 == 42 with _i literal FAILED (operators.cpp:52, 43 == 42)
-60:         ✗ actual+1 == 42 with to_i() FAILED (operators.cpp:56, 43 == 42)
-60:         ✓ actual+1 != 42
-60:         ✓ actual-1 < 42
-60:         ✓ actual <= 42
-60:         ✓ actual+1 > 42
-60:         ✓ actual >= 42
-60:         ✓ not (actual != 42)
-60:         ✗ not (actual == 42) FAILED (operators.cpp:78, not 42 == 42)
-60:         ✓ (actual == 42) and (actual == 42.0)
-60:         ✗ (actual == 42) and (actual != 42.0) FAILED (operators.cpp:86, (42 == 42 and 42.0f != 42.0))
-60:         ✗ (actual != 42) and (actual == 42.0) FAILED (operators.cpp:91, (42 != 42 and 42.0f == 42.0))
-60:         ✗ (actual != 42) and (actual != 42.0) FAILED (operators.cpp:96, (42 != 42 and 42.0f != 42.0))
-60:         ✓ (42 == 42 and 42.0f == 42.0)
-60:         ✗ FAILED (operators.cpp:105, (42 == 42 and 42.0f != 42.0))
-60:         ✓ (actual == 42) or (actual == 42.0)
-60:         ✓ (actual == 42) or (actual != 42.0)
-60:         ✓ (actual != 42) or (actual == 42.0)
-60:         ✗ (actual != 42) or (actual != 42.0) FAILED (operators.cpp:124, (42 != 42 or 42.0f != 42.0f))
-60:     ✗ Operators - FAILED (12 checks passed, 9 failed)
-60:
-60:     • String view operators
-60:         ✓ equal string views with ==
-60:         ✗ unequal string views with == FAILED (operators.cpp:147, hello == world)
-60:         ✓ unequal string views with !=
-60:         ✗ equal string views with != FAILED (operators.cpp:155, hello != hello)
-60:     ✗ String view operators - FAILED (2 checks passed, 2 failed)
-60:
-60: ✗ Operators suite - FAILED (14 checks passed, 11 failed, in 2 test cases), time: 0.061 ms
-60:
-60: • Stopwatch suite
-60:
-60:     ✓ stopwatch::start() and stop() - passed (5 checks)
-60:     ✓ stopwatch::has_elapsed() state - passed (4 checks)
-60:     ✓ stopwatch::start() restart - passed (2 checks)
-60:     ✓ stopwatch::stop() replacement - passed (2 checks)
-60:     ✓ stopwatch::elapsed() - passed (7 checks)
-60:
-60: ✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.077 ms
-60:
-60: • Utility suite
-60:
-60:     ✓ utility::extract_file_name() - passed (5 checks)
-60:     ✓ utility::is_match() — passing - passed (11 checks)
-60:
-60:     • utility::is_match() — failing
-60:         ✗ "" matches abc FAILED (utility.cpp:152)
-60:         ✗ abc matches b?? FAILED (utility.cpp:156)
-60:         ✗ abc matches a*d FAILED (utility.cpp:160)
-60:         ✗ abc matches *C FAILED (utility.cpp:164)
-60:         ✗ ab matches ??? FAILED (utility.cpp:168)
-60:     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
-60:
-60: ✗ Utility suite - FAILED (16 checks passed, 5 failed, in 3 test cases), time: 0.055 ms
-60:
-60: ✗ Total: 351 checks passed, 326 failed, in 62 test cases, 12 test suites, time: 1.899 ms
-60: Overall, the µTest++ unit tests were successful!
-60:
-60: Test output written to 'unit-test.txt'.
-60/63 Test #60: unit-test-reporter-human ....................   Passed    0.01 sec
-test 61
-      Start 61: unit-test-reporter-human-compare
+97: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test "one" "two" "--reporter" "human" "--output-file" "unit-checks-test.txt"
+97: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+97: Test timeout computed to be: 10000000
+97: micro_os_plus::trace::initialise()
+97: 
+97: Running: unit-checks-test one two --reporter human --output-file unit-checks-test.txt
+97: Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+97: µTest++ human report
+97: 
+97: • Top suite
+97: 
+97: µTest++ unit tests; some checks are expected to fail.
+97: 
+97:     ✓ require - passed (1 check)
+97:     ✓ Initial counters - passed (0 checks)
+97:     ✓ expect(true) - passed (5 checks)
+97: 
+97:     • expect(false)
+97:         ✗ FAILED (main.cpp:216)
+97:         ✗ false FAILED (main.cpp:219)
+97:     ✗ expect(false) - FAILED (0 checks passed, 2 failed)
+97: 
+97:     ✓ reflection::type_name() - passed (4 checks)
+97:     ✓ Splits - passed (8 checks)
+97:         ✓ inner subtest - passed (1 check)
+97:     ✓ Nested subtests - passed (0 checks)
+97:         ✓ inner subtest after a check - passed (1 check)
+97:     ✓ Nested subtest after a check - passed (1 check)
+97: 
+97:     • Failed nested subtest
+97:         • middle subtest
+97:             • inner subtest
+97:                 ✗ inner check fails FAILED (main.cpp:381, 1 == 2)
+97:             ✗ inner subtest - FAILED (0 checks passed, 1 failed)
+97: 
+97:         ✗ middle subtest - FAILED (0 checks passed, 0 failed, 1 test case failed)
+97: 
+97:     ✗ Failed nested subtest - FAILED (1 check passed, 0 failed, 1 test case failed)
+97: 
+97:     • Stored check result
+97:         ✓ later check passes
+97:         ✗ stored check fails FAILED (main.cpp:409, 1 == 2)
+97:     ✗ Stored check result - FAILED (1 check passed, 1 failed)
+97: 
+97:     ✓ Application types with get() - passed (3 checks)
+97:     ✓ Application types with value and epsilon - passed (4 checks)
+97:     ✓ Message values - passed (3 checks)
+97: 
+97:     • Character operands
+97:         ✗ FAILED (main.cpp:527, '\0' == 'a')
+97:         ✗ space is tab FAILED (main.cpp:530, ' ' == '\t')
+97:         ✓ 'x' == 'x'
+97:     ✗ Character operands - FAILED (1 check passed, 2 failed)
+97: 
+97: ✗ Top suite - FAILED (34 checks passed, 6 failed, in 18 test cases), time: 0.898 ms
+97: 
+97: • Comparisons suite
+97: 
+97:     ✓ Integer comparisons - passed (6 checks)
+97: 
+97:     • Failed integer comparisons
+97:         ✗ actual != 42 FAILED (comparisons.cpp:111, 42 != 42)
+97:         ✗ actual+1 == 42 FAILED (comparisons.cpp:114, 43 == 42)
+97:         ✗ actual-1 >= 42 FAILED (comparisons.cpp:118, 41 >= 42)
+97:         ✗ actual > 42 FAILED (comparisons.cpp:122, 42 > 42)
+97:         ✗ actual+1 <= 42 FAILED (comparisons.cpp:125, 43 <= 42)
+97:         ✗ actual < 42 FAILED (comparisons.cpp:129, 42 < 42)
+97:     ✗ Failed integer comparisons - FAILED (0 checks passed, 6 failed)
+97: 
+97:     ✓ Float comparisons - passed (10 checks)
+97: 
+97:     • Failed float comparisons
+97:         ✗ actual != 42.0 FAILED (comparisons.cpp:188, 42.0f != 42.0f)
+97:         ✗ actual == 43.0 FAILED (comparisons.cpp:191, 42.0f == 43.0f)
+97:         ✗ actual != 42 FAILED (comparisons.cpp:194, 42.0f != 42)
+97:         ✗ actual == 43 FAILED (comparisons.cpp:197, 42.0f == 43)
+97:     ✗ Failed float comparisons - FAILED (0 checks passed, 4 failed)
+97: 
+97:     ✓ Approximate comparisons - passed (8 checks)
+97: 
+97:     • Failed approximate comparisons
+97:         ✗ actual ~ 44 +/- 2 FAILED (comparisons.cpp:258, 42 ~ (44 +/- 2))
+97:         ✗ 10 ~ 12 +/- 2 FAILED (comparisons.cpp:263, 10 ~ (12 +/- 2))
+97:         ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:267, 3u ~ (5u +/- 1u))
+97:         ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:271, 1 ~ (1 +/- -1))
+97:         ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:274, 42.0f ~ (42.1f +/- 0.01f))
+97:         ✗ FAILED (comparisons.cpp:278, 1.0 ~ (1.2 +/- 0.1))
+97:     ✗ Failed approximate comparisons - FAILED (0 checks passed, 6 failed)
+97: 
+97:     ✓ String comparisons - passed (6 checks)
+97: 
+97:     • Failed string comparisons
+97:         ✗ actual_sv != abc_sv FAILED (comparisons.cpp:335, abc != abc)
+97:         ✗ actual_sv == abx_sv FAILED (comparisons.cpp:339, abc == abx)
+97:         ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:343, abc >= abd)
+97:         ✗ actual_sv > abc_sv FAILED (comparisons.cpp:347, abc > abc)
+97:         ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:351, abc <= abb)
+97:         ✗ actual_sv < abc_sv FAILED (comparisons.cpp:355, abc < abc)
+97:     ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
+97: 
+97:     ✓ C string comparisons - passed (14 checks)
+97: 
+97:     • Failed C string comparisons
+97:         ✗ actual == "abx" FAILED (comparisons.cpp:420, abc == abx)
+97:         ✗ null_string == "abc" FAILED (comparisons.cpp:423, nullptr == abc)
+97:     ✗ Failed C string comparisons - FAILED (0 checks passed, 2 failed)
+97: 
+97:     ✓ Pointer comparisons - passed (9 checks)
+97: 
+97:     • Failed pointer comparisons
+97:         ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7b8f91240 != 0x7ff7b8f91240)
+97:         ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7b8f91240 != 0x7ff7b8f91240)
+97:         ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7b8f91240 > 0x7ff7b8f91240)
+97:         ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7b8f91240 < 0x7ff7b8f91240)
+97:         ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7b8f91240 == 0x7ff7b8f91290)
+97:         ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x1070219d8 != 0x1070219d8)
+97:         ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x1070219d8 == 0x7ff7b8f91290)
+97:         ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7b8f918c0 >= 0x7ff7b8f918c4)
+97:         ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7b8f918c4 <= 0x7ff7b8f918c0)
+97:     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
+97: 
+97:     ✓ Null pointer comparisons - passed (3 checks)
+97: 
+97:     • Failed null pointer comparisons
+97:         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
+97:         ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7b8f91880 == nullptr)
+97:         ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
+97:     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
+97: 
+97:     • Logical operations
+97:         ✓ not (actual != 42)
+97:         ✗ not (actual == 42) FAILED (comparisons.cpp:612, not 42 == 42)
+97:         ✓ (actual == 42) and (actual == 42.0)
+97:         ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:621, (42 == 42 and 42.0f != 42.0))
+97:         ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:626, (42 != 42 and 42.0f == 42.0))
+97:         ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:631, (42 != 42 and 42.0f != 42.0))
+97:         ✓ (42 == 42 and 42.0f == 42.0)
+97:         ✗ FAILED (comparisons.cpp:640, (42 == 42 and 42.0f != 42.0))
+97:         ✓ (actual == 42) or (actual == 42.0)
+97:         ✓ (actual == 42) or (actual != 42.0)
+97:         ✓ (actual != 42) or (actual == 42.0)
+97:         ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:659, (42 != 42 or 42.0f != 42.0))
+97:     ✗ Logical operations - FAILED (6 checks passed, 6 failed)
+97: 
+97: ✗ Comparisons suite - FAILED (62 checks passed, 42 failed, in 15 test cases), time: 1.170 ms
+97: 
+97: • Dynamic suite
+97: 
+97:     ✓ check in dynamic suite - passed (1 check)
+97: 
+97: ✓ Dynamic suite - passed (1 check in 1 test case), time: 0.126 ms
+97: 
+97: • Dynamic suite with a temporary name
+97: 
+97:     ✓ check in dynamic suite with a temporary name - passed (1 check)
+97: 
+97: ✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.070 ms
+97: 
+97: • Operands suite
+97: 
+97:     ✓ Arrays - passed (4 checks)
+97: 
+97:     • Arrays bad
+97:         ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:223, {42} != {42})
+97:         ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:227, {42} == {43})
+97:         ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:231, {1, 2} != {1, 2})
+97:         ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:235, {1, 2, 3} == {1, 2, 4})
+97:     ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
+97: 
+97:     ✓ Vectors - passed (6 checks)
+97: 
+97:     • Vectors bad
+97:         ✗ vector{ } != vector{ } FAILED (operands.cpp:287, {} != {})
+97:         ✗ FAILED (operands.cpp:291, {} != {})
+97:         ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:294, {42} != {42})
+97:         ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:298, {42} == {43})
+97:         ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:302, {1, 2} != {1, 2})
+97:         ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:306, {1, 2, 3} == {1, 2, 4})
+97:     ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
+97: 
+97:     ✓ Custom types - passed (2 checks)
+97: 
+97:     • Custom types bad
+97:         ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:343, { 1, 2 } == { 1, 3 })
+97:         ✗ FAILED (operands.cpp:348, { 1, 2 } == { 1, 3 })
+97:         ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:351, { 1, 2 } != { 1, 2 })
+97:     ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
+97: 
+97:     ✓ Custom comparators - passed (3 checks)
+97: 
+97:     • Custom comparators bad
+97:         ✗ 5 divides 12 FAILED (operands.cpp:389, 5 divides 12)
+97:         ✗ FAILED (operands.cpp:392, 5 divides 12)
+97:         ✗ FAILED (operands.cpp:395, even 7)
+97:         ✗ FAILED (operands.cpp:398, (3 divides 12 and even 7))
+97:     ✗ Custom comparators bad - FAILED (0 checks passed, 4 failed)
+97: 
+97:     ✓ Standard types - passed (10 checks)
+97: 
+97:     • Standard types bad
+97:         ✗ colour::red == colour::green FAILED (operands.cpp:464, 0 == 1)
+97:         ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:468, 1uc == 2uc)
+97:         ✗ pairs1 == pairs2 FAILED (operands.cpp:474, {(1, 2)} == {(1, 3)})
+97:         ✗ optional == nullopt FAILED (operands.cpp:477, 42 == nullopt)
+97:     ✗ Standard types bad - FAILED (0 checks passed, 4 failed)
+97: 
+97:     ✓ Explicit conversions to bool - passed (5 checks)
+97: 
+97:     • Explicit conversions to bool bad
+97:         ✗ empty optional FAILED (operands.cpp:527)
+97:         ✗ null unique_ptr FAILED (operands.cpp:530)
+97:         ✗ empty function FAILED (operands.cpp:533)
+97:         ✗ FAILED (operands.cpp:536)
+97:     ✗ Explicit conversions to bool bad - FAILED (0 checks passed, 4 failed)
+97: 
+97:     ✓ Pointers to const - passed (2 checks)
+97:     ✓ Operand copies - passed (6 checks)
+97: 
+97: ✗ Operands suite - FAILED (38 checks passed, 25 failed, in 14 test cases), time: 0.999 ms
+97: 
+97: ✗ Total: 136 checks passed, 73 failed, in 49 test cases, 5 test suites, time: 3.536 ms
+97: error: test runner already initialised
+97: Overall, the µTest++ unit tests were successful!
+97: 
+97: Test output written to 'unit-checks-test.txt'.
+ 97/110 Test  #97: unit-checks-test-reporter-human ...................   Passed    0.08 sec
+test 98
+        Start  98: unit-checks-test-reporter-human-compare
 
-61: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/native/../../scripts/compare-files.sh" "unit-test.txt" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/platforms/native/../../assets/txt/unit-test.txt"
-61: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-61: Test timeout computed to be: 10000000
-61: unit-test.txt ok
-61/63 Test #61: unit-test-reporter-human-compare ............   Passed    0.03 sec
-test 62
-      Start 62: unit-test-reporter-human-quiet
+98: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test.txt" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/assets/txt/unit-checks-test.txt"
+98: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+98: Test timeout computed to be: 10000000
+98: unit-checks-test.txt ok
+ 98/110 Test  #98: unit-checks-test-reporter-human-compare ...........   Passed    0.03 sec
+test 99
+        Start  99: unit-checks-test-reporter-human-quiet
 
-62: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/unit-test "--quiet" "--reporter" "human"
-62: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-62: Test timeout computed to be: 10000000
-62:
-62: µTest++ human report
-62:
-62: ✗ Total: 351 checks passed, 326 failed, in 62 test cases, 12 test suites, time: 0.758 ms
-62/63 Test #62: unit-test-reporter-human-quiet ..............   Passed    0.00 sec
-test 63
-      Start 63: unit-test-reporter-human-silent
+99: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test "one" "two" "--reporter" "human" "--output-file" "unit-checks-test-quiet.txt" "--quiet"
+99: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+99: Test timeout computed to be: 10000000
+99: micro_os_plus::trace::initialise()
+99: 
+99: µTest++ human report
+99: 
+99: ✗ Total: 136 checks passed, 73 failed, in 49 test cases, 5 test suites, time: 2.982 ms
+99: error: test runner already initialised
+99: Test output written to 'unit-checks-test-quiet.txt'.
+ 99/110 Test  #99: unit-checks-test-reporter-human-quiet .............   Passed    0.11 sec
+test 100
+        Start 100: unit-checks-test-reporter-human-quiet-compare
 
-63: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/unit-test "--silent" "--reporter" "human"
-63: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-63: Test timeout computed to be: 10000000
-63/63 Test #63: unit-test-reporter-human-silent .............   Passed    0.00 sec
+100: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test-quiet.txt" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/assets/txt/unit-checks-test-quiet.txt"
+100: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+100: Test timeout computed to be: 10000000
+100: unit-checks-test-quiet.txt ok
+100/110 Test #100: unit-checks-test-reporter-human-quiet-compare .....   Passed    0.03 sec
+test 101
+        Start 101: unit-checks-test-reporter-human-silent
+
+101: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test "one" "two" "--reporter" "human" "--output-file" "unit-checks-test-silent.txt" "--silent"
+101: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
+101: Test timeout computed to be: 10000000
+101: micro_os_plus::trace::initialise()
+101: error: test runner already initialised
+101/110 Test #101: unit-checks-test-reporter-human-silent ............   Passed    0.07 sec
 ```
 
 All verbosity modes are evaluated: default, verbose, quiet, and silent

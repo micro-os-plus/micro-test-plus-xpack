@@ -9,16 +9,11 @@ Because the check is a plain `bool` expression. In
 `expect()` is called, so µTest++ receives only `false`, and can report
 only the file and the line.
 
-To have the values reported, use a function comparator, or make one of
-the operands a µTest++ type, so that the comparison is performed by
-µTest++:
+To have the values reported, use a function comparator, so that the
+comparison is performed by µTest++:
 
 ```cpp
 t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
-
-using namespace mt::operators;
-using namespace mt::literals;
-t.expect (compute_answer () == 42_i) << "answer is 42";
 ```
 
 A failure then also reports the operands, for example

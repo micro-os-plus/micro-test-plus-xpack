@@ -1,9 +1,9 @@
 # Running: unit-miscellaneous-test one two --output-file unit-miscellaneous-test-noexcept.tap
-# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+# Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: Top suite
     1..0
-ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.026 ms }
+ok 1 - Top suite # { passed, 0 checks in 0 test cases }
 # Subtest: Miscellaneous suite
     # Subtest: Reporter stream operators
         ok 1 - const char*
@@ -89,20 +89,19 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.026 ms }
     ok 6 - Formatter standard types # { passed, 13 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
-        ok 2 - pointer 0x10d7dd340
+        ok 2 - pointer 0x4007b658
         ok 3 - container {1, 2}
         ok 4 - standard types (1, a) nullopt 1
         ok 5 - custom type { 1, 2 } on
-        ok 6 - wrappers 42 1.5
-        ok 7 - wide characters u'x' U'x' L'x'
-        not ok 8 - failed {3}
+        ok 6 - wide characters u'x' U'x' L'x'
+        not ok 7 - failed {3}
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 746
+            lineNumber: 743
           ...
-        1..8
-    not ok 7 - Message types # { FAILED, 7 checks passed, 1 failed }
+        1..7
+    not ok 7 - Message types # { FAILED, 6 checks passed, 1 failed }
     # Subtest: Lazy messages
         ok 1 - passed
         ok 2 - true
@@ -111,20 +110,20 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.026 ms }
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 774
+            lineNumber: 771
           ...
         ok 5 - called after a failure
         not ok 6 - 42
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 785
+            lineNumber: 782
           ...
         not ok 7 - from a function
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 790
+            lineNumber: 787
           ...
         1..7
     not ok 8 - Lazy messages # { FAILED, 4 checks passed, 3 failed }
@@ -136,7 +135,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.026 ms }
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 812
+            lineNumber: 809
           ...
         1..4
     not ok 9 - TAP escapes \# TODO in names \\ messages # { FAILED, 3 checks passed, 1 failed }
@@ -146,14 +145,14 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.026 ms }
           condition: "key: \"value\" # not a comment == a\\b"
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 823
+            lineNumber: 820
           ...
         not ok 2
           ---
           condition: "line\nbreak\ttab == x"
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 827
+            lineNumber: 824
           ...
         1..2
     not ok 10 - TAP condition values are quoted # { FAILED, 0 checks passed, 2 failed }
@@ -295,7 +294,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.026 ms }
           condition: "2 == 1"
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 1463
+            lineNumber: 1460
           ...
         1..1
     not ok 32 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
@@ -348,7 +347,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.026 ms }
         1..7
     ok 39 - Test case and suite names # { passed, 7 checks }
     1..39
-not ok 2 - Miscellaneous suite # { FAILED, 165 checks passed, 8 failed, in 42 test cases, time: 4.951 ms }
+not ok 2 - Miscellaneous suite # { FAILED, 164 checks passed, 8 failed, in 42 test cases }
 # Subtest: Stopwatch suite
     # Subtest: stopwatch::start() and stop()
         ok 1 - fresh: has_elapsed false
@@ -386,7 +385,7 @@ not ok 2 - Miscellaneous suite # { FAILED, 165 checks passed, 8 failed, in 42 te
         1..7
     ok 5 - stopwatch::elapsed() # { passed, 7 checks }
     1..5
-ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.332 ms }
+ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases }
 # Subtest: Utility suite
     # Subtest: utility::extract_file_name()
         ok 1 - Unix path returns filename
@@ -449,6 +448,6 @@ ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.332 ms }
         1..5
     not ok 3 - utility::is_match() — failing # { FAILED, 0 checks passed, 5 failed }
     1..3
-not ok 4 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.236 ms }
+not ok 4 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..4
-# { total: 206 checks passed, 13 failed, in 50 test cases, 4 test suites, time: 5.787 ms }
+# { total: 205 checks passed, 13 failed, in 50 test cases, 4 test suites }

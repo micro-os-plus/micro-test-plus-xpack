@@ -2,7 +2,7 @@ Running: unit-deprecated-test one two --reporter human --output-file unit-deprec
 Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Top suite
-✓ Top suite - passed (0 checks in 0 test cases), time: 0.028 ms
+✓ Top suite - passed (0 checks in 0 test cases), time: 0.026 ms
 • Deprecated suite
     • runner (const char*)
         ✓ name given to the constructor
@@ -81,7 +81,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ passed assumption
     ✓ assume() - passed (1 check)
     • Failed assume()
-        ✗ failed assumption FAILED (deprecated.cpp:703) - test case stopped
+        ✗ failed assumption FAILED (deprecated.cpp:822) - test case stopped
     ✗ Failed assume() - FAILED (0 checks passed, 1 failed)
     • reflection::short_name()
         ✓ file.cpp == file.cpp
@@ -104,5 +104,153 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ the wrapped values are compared
         ✓ false results
     ✓ type_traits - passed (2 checks)
-✗ Deprecated suite - FAILED (61 checks passed, 1 failed, in 19 test cases), time: 2.340 ms
-✗ Total: 61 checks passed, 1 failed, in 19 test cases, 2 test suites, time: 2.980 ms
+    • Integer comparisons with literals
+        ✓ 42 == 42
+        ✓ 42 == 42_i
+    ✓ Integer comparisons with literals - passed (2 checks)
+    • Failed integer comparisons with literals
+        ✗ 42_i != 42_i FAILED (deprecated.cpp:1059, 42 != 42)
+        ✗ 42 != 42_i FAILED (deprecated.cpp:1062, 42 != 42)
+    ✗ Failed integer comparisons with literals - FAILED (0 checks passed, 2 failed)
+    • Float comparisons with literals and wrappers
+        ✓ 42.101f == 42.101_f
+        ✓ 42.101f epsilon 0.01f == 42.10_f
+        ✓ 42.101f epsilon 0.1f != 42.10_f
+        ✓ 42.1010001f epsilon 0.1f == 42.1_f
+        ✓ 42.101f != 42.10_f
+        ✓ 42.101f != 42.100_f
+        ✓ 42.10f == 42.1_f
+        ✓ 42.42f == 42.42_f
+        ✓ 42.42 == 42.420_d
+        ✓ 42.0 == 42.0_d
+        ✓ 42. == 42._d
+        ✓ 42.42 == 42.42_ld
+        ✓ 1234._f == 1234.f
+        ✓ 1234.56_f == 1234.56f
+        ✓ 12345678.9f == 12345678.9_f
+        ✓ 111111.42f == 111111.42_f
+        ✓ 1111111111.42 == 1111111111.42_d
+    ✓ Float comparisons with literals and wrappers - passed (17 checks)
+    • Failed float comparisons with literals and wrappers
+        ✗ 42.101f != 42.101_f FAILED (deprecated.cpp:1150, 42.101f != 42.101f)
+        ✗ 42.101f epsilon 0.01f != 42.10_f FAILED (deprecated.cpp:1153, 42.101f != 42.1f)
+        ✗ 42.101f epsilon 0.1f == 42.10_f FAILED (deprecated.cpp:1157, 42.101f == 42.1f)
+        ✗ 42.1010001f epsilon 0.1f != 42.1_f FAILED (deprecated.cpp:1161, 42.101f != 42.1f)
+        ✗ 42.101f == 42.10_f FAILED (deprecated.cpp:1165, 42.101f == 42.1f)
+        ✗ 42.101f == 42.100_f FAILED (deprecated.cpp:1168, 42.101f == 42.1f)
+        ✗ 42.10f == 42.1_f FAILED (deprecated.cpp:1171, 42.1f != 42.1f)
+        ✗ 42.42f == 42.42_f FAILED (deprecated.cpp:1174, 42.42f != 42.42f)
+        ✗ 42.42 == 42.420_d FAILED (deprecated.cpp:1177, 42.42 != 42.42)
+        ✗ 42.0 == 42.0_d FAILED (deprecated.cpp:1180, 42.0 != 42.0)
+        ✗ 42. == 42._d FAILED (deprecated.cpp:1183, 42.0 != 42.0)
+        ✗ 42.42 == 42.42_ld FAILED (deprecated.cpp:1186, 42.42ld != 42.42ld)
+        ✗ 1234._f == 1234.f FAILED (deprecated.cpp:1189, 1234.0f != 1234.0f)
+        ✗ 1234.56_f == 1234.56f FAILED (deprecated.cpp:1192, 1234.56f != 1234.56f)
+        ✗ 12345678.9f == 12345678.9_f FAILED (deprecated.cpp:1195, 12345679.0f != 12345679.0f)
+        ✗ 111111.42f == 111111.42_f FAILED (deprecated.cpp:1199, 111111.42f != 111111.42f)
+        ✗ 1111111111.42 == 1111111111.42_d FAILED (deprecated.cpp:1202, 1111111111.42 != 1111111111.42)
+    ✗ Failed float comparisons with literals and wrappers - FAILED (0 checks passed, 17 failed)
+    • Approximate comparisons with literals and wrappers
+        ✓ 42_i ~ 43 +/- 2
+        ✓ 500 ~ 512 +/- 13
+    ✓ Approximate comparisons with literals and wrappers - passed (2 checks)
+    • to_* modern wrappers
+        ✓ to_f wraps float for eq
+        ✓ to_d wraps double for eq
+        ✓ to_t<int> generic wrapper
+    ✓ to_* modern wrappers - passed (3 checks)
+    • Floating-point tolerance
+        ✓ 1.45 == 1.5_d
+        ✓ not 1.45 < 1.5_d
+        ✓ 1.45 <= 1.5_d
+        ✓ not 1.45 > 1.5_d
+        ✓ 1.45 >= 1.5_d
+        ✓ 1.3 < 1.5_d (outside the tolerance)
+        ✓ -1.45 == to_d{ -1.5 }
+        ✓ 0.0111 == to_d{ 0.011 }
+        ✓ 0.009 < to_d{ 0.011 }
+        ✓ to_d{ 1e-12 } != 0.05
+        ✓ to_d{ 1e-12 } < 2.5e-12
+        ✓ to_d{ 1e-12 } == 1.5e-12
+        ✓ to_d{ 1e-9 } != 0.05
+        ✓ to_d{ 0.0 } != 0.09
+        ✓ to_d{ 0.0 } < 0.09
+        ✓ to_d{ 0.0 } < 1e-300
+        ✓ to_d{ 0.0 } == 0.0
+        ✓ to_d{ 0.0 } == -0.0
+        ✓ to_d{ 42.0 } == 42.09
+        ✓ 1.45 != approx (1.5, 0.01)
+        ✓ 1.45 < approx (1.5, 0.01)
+        ✓ 1.495 == approx (1.5, 0.01)
+        ✓ not 1.495 < approx (1.5, 0.01)
+        ✓ 0.1f + 0.2f == approx (0.3f, 1e-6f)
+        ✓ 1.5 == approx (1.5, 0.0)
+        ✓ not 1.5 != approx (1.5, 0.0)
+        ✓ 1.5 <= approx (1.5, 0.0)
+        ✓ 1.5 >= approx (1.5, 0.0)
+    ✓ Floating-point tolerance - passed (28 checks)
+    • Operators
+        ✓ actual == 42
+        ✗ actual+1 == 42 with scalar FAILED (deprecated.cpp:1340)
+        ✗ actual+1 == 42 with _i literal FAILED (deprecated.cpp:1344, 43 == 42)
+        ✗ actual+1 == 42 with to_i() FAILED (deprecated.cpp:1348, 43 == 42)
+        ✓ actual+1 != 42
+        ✓ actual-1 < 42
+        ✓ actual <= 42
+        ✓ actual+1 > 42
+        ✓ actual >= 42
+        ✓ not (actual != 42)
+        ✗ not (actual == 42) FAILED (deprecated.cpp:1370, not 42 == 42)
+        ✓ not not (actual == 42)
+        ✓ (actual == 42) and (actual == 42.0)
+        ✗ (actual == 42) and (actual != 42.0) FAILED (deprecated.cpp:1384, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (deprecated.cpp:1389, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (deprecated.cpp:1394, (42 != 42 and 42.0f != 42.0))
+        ✓ (42 == 42 and 42.0f == 42.0)
+        ✗ FAILED (deprecated.cpp:1403, (42 == 42 and 42.0f != 42.0))
+        ✓ (actual == 42) or (actual == 42.0)
+        ✓ (actual == 42) or (actual != 42.0)
+        ✓ (actual != 42) or (actual == 42.0)
+        ✗ (actual != 42) or (actual != 42.0) FAILED (deprecated.cpp:1422, (42 != 42 or 42.0f != 42.0f))
+    ✗ Operators - FAILED (13 checks passed, 9 failed)
+    • String view operators
+        ✓ equal string views with ==
+        ✗ unequal string views with == FAILED (deprecated.cpp:1447)
+        ✓ unequal string views with !=
+        ✗ equal string views with != FAILED (deprecated.cpp:1455)
+    ✗ String view operators - FAILED (2 checks passed, 2 failed)
+    • Named boolean literals
+        ✓ named alone
+        ✓ eq with true
+        ✗ eq with false FAILED (deprecated.cpp:1485, disabled == false)
+        ✓ ne with false
+        ✓ == with true
+        ✗ == with false FAILED (deprecated.cpp:1497, disabled == false)
+        ✗ reversed == with false FAILED (deprecated.cpp:1500, false == disabled)
+        ✗ != with true FAILED (deprecated.cpp:1503, enabled != true)
+        ✗ not FAILED (deprecated.cpp:1506, not named)
+        ✓ two named literals
+    ✗ Named boolean literals - FAILED (5 checks passed, 5 failed)
+    • Constants and wrappers
+        ✓ to_i{ 42 } == 42
+        ✓ 42_i == 42_i
+        ✓ to_d{ 1.5 } == 1.54
+    ✓ Constants and wrappers - passed (3 checks)
+    • Wrappers in messages
+        ✓ wrappers 42 1.5
+    ✓ Wrappers in messages - passed (1 check)
+    • Custom comparators with wrappers
+        ✓ 3_i divides to_i{ 12 }
+        ✓ even to_i{ 4 }
+        ✓ 3_i | 12
+    ✓ Custom comparators with wrappers - passed (3 checks)
+    • Failed custom comparators with wrappers
+        ✗ FAILED (deprecated.cpp:1597, even 7)
+        ✗ FAILED (deprecated.cpp:1600, 5 divides 12)
+    ✗ Failed custom comparators with wrappers - FAILED (0 checks passed, 2 failed)
+    • Operand copies of wrappers
+        ✓ wrapped operand
+        ✓ wrapped operand not copied
+    ✓ Operand copies of wrappers - passed (2 checks)
+✗ Deprecated suite - FAILED (142 checks passed, 38 failed, in 34 test cases), time: 3.772 ms
+✗ Total: 142 checks passed, 38 failed, in 34 test cases, 2 test suites, time: 4.163 ms
