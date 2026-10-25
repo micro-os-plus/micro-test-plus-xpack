@@ -247,6 +247,17 @@ Tags:
   overload `[[deprecated]]` for one release; reading code then selects
   the const overload and keeps compiling.
 
+  Status: fixed (#185). The non-const overload of `totals()` was
+  removed, rather than made private or deprecated as suggested, since
+  overload resolution selects it for every call on a non-const node,
+  reads included: a private overload would reject the reads, and a
+  deprecated one would warn on each of them. `totals()` now returns a
+  `const counters&` for all nodes, and the framework updates the
+  protected `totals_` member directly. The code binding a non-const
+  reference to the result no longer compiles; the compatibility
+  notices describe the replacement. The test of the old overload in
+  `unit-deprecated` was replaced by one of the read-only reference.
+
 - **#7 — The TAP output on the console is invalid at the normal
   verbosity.** [internal] **[confirmed]**
   `src/reporter-tap.cpp` lines 666 to 678 and 745 to 756,

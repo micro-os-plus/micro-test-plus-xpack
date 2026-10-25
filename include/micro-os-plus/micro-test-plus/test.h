@@ -381,9 +381,11 @@ namespace micro_os_plus::micro_test_plus
        * @brief Gets the totals of the node.
        *
        * @details
-       * The reference is read-only, so that the counters cannot be
-       * modified through it. Selected for the `const` nodes; for the
-       * others, the non-`const` overload, kept for v5.0.1, is selected.
+       * The reference is read-only, for the `const` and the non-`const`
+       * nodes alike, so that a test case or a suite cannot modify its
+       * own counters, which decide the exit code. The counters are
+       * updated only by the framework, which accesses the protected
+       * member directly.
        *
        * @par Parameters
        *   None.
@@ -391,25 +393,6 @@ namespace micro_os_plus::micro_test_plus
        */
       [[nodiscard]] const counters&
       totals (void) const noexcept;
-
-      /**
-       * @brief Gets the totals of the node, as a non-`const` reference.
-       *
-       * @details
-       * Kept for the v5.0.1 code that binds a non-`const` reference
-       * (`detail::runner_totals& t = ts.totals ();`). It is selected for
-       * all the calls on a non-`const` node, including the reads, so it
-       * cannot be marked `[[deprecated]]` without warning on every use;
-       * the v5.0.1 code is warned by the deprecated `detail::runner_totals`
-       * alias instead. The test code must not modify the counters through
-       * it, since they decide the exit code.
-       *
-       * @par Parameters
-       *   None.
-       * @return A reference to the `counters` instance.
-       */
-      [[nodiscard]] counters&
-      totals (void) noexcept;
 
     private:
       /**

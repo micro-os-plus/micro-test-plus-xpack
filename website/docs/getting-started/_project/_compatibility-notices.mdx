@@ -245,11 +245,12 @@ check, it previously aborted the program; before any check, the report
 was malformed.
 
 The counters of the suites and of the test cases are meant to be read
-only. A non-`const` reference to the result of `totals()`
-(`detail::runner_totals& t = ts.totals ();`) is still accepted, for
-compatibility, but store it in a `const counters&` reference, or copy
-it into a `counters` object to modify the copy, since the live
-counters decide the exit code. The `own_index (size_t)` setter and
+only. The `totals()` function returns a `const` reference, also for
+the non-`const` nodes, so the code that binds a non-`const` reference
+(`detail::runner_totals& t = ts.totals ();`) no longer compiles; store
+the result in a `const counters&` reference, or copy it into a
+`counters` object to modify the copy, since the live counters decide
+the exit code. The `own_index (size_t)` setter and
 `increment_subtest_index()` are no longer public.
 
 The functions of the suites and the test cases that serve only the
