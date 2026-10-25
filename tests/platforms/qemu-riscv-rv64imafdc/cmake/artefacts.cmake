@@ -200,13 +200,14 @@ if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
   add_qemu_test (
     NAME "unit-combinations-test"
     COMMAND unit-combinations-test one two --output-file
-            unit-combinations-test.tap
+            unit-combinations-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-combinations-test-compare"
     DEPENDS "unit-combinations-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-combinations-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-combinations-test.tap"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-combinations-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-combinations-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -222,14 +223,16 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
   message (VERBOSE "A> unit-exceptions-test")
 
   add_qemu_test (
-    NAME "unit-exceptions-test" COMMAND unit-exceptions-test one two
-                                        --output-file unit-exceptions-test.tap
+    NAME "unit-exceptions-test"
+    COMMAND unit-exceptions-test one two --output-file
+            unit-exceptions-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-exceptions-test-compare"
     DEPENDS "unit-exceptions-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-exceptions-test.tap"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-exceptions-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -249,13 +252,14 @@ if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
   add_qemu_test (
     NAME "unit-miscellaneous-test"
     COMMAND unit-miscellaneous-test one two --output-file
-            unit-miscellaneous-test.tap
+            unit-miscellaneous-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-miscellaneous-test-compare"
     DEPENDS "unit-miscellaneous-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-miscellaneous-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-miscellaneous-test.tap"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-miscellaneous-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-miscellaneous-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -271,14 +275,16 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
   message (VERBOSE "A> unit-deprecated-test")
 
   add_qemu_test (
-    NAME "unit-deprecated-test" COMMAND unit-deprecated-test one two
-                                        --output-file unit-deprecated-test.tap
+    NAME "unit-deprecated-test"
+    COMMAND unit-deprecated-test one two --output-file
+            unit-deprecated-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-deprecated-test-compare"
     DEPENDS "unit-deprecated-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-deprecated-test.tap"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-deprecated-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
