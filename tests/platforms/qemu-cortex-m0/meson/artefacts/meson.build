@@ -15,7 +15,7 @@
 
 # -----------------------------------------------------------------------------
 
-message('Processing tests/platforms/qemu-cortex-m0/meson/artefacts...')
+message('Processing tests/platforms/' + xpack_platform_name + '/meson/artefacts...')
 
 # -----------------------------------------------------------------------------
 

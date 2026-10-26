@@ -23,7 +23,8 @@
 
 # -----------------------------------------------------------------------------
 
-# The source code for a unit test to exercise the exceptions features of the test framework.
+# The source code for a unit test to exercise the exceptions features of the
+# test framework.
 message (VERBOSE "Processing 'tests/sources/unit-exceptions/'...")
 
 # -----------------------------------------------------------------------------
@@ -33,20 +34,15 @@ message (VERBOSE "Processing 'tests/sources/unit-exceptions/'...")
 # against it.
 add_library (tests-unit-exceptions-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (
-  tests-unit-exceptions-interface 
-  INTERFACE "include"
-)
+target_include_directories (tests-unit-exceptions-interface INTERFACE "include")
 
 target_sources (
-  tests-unit-exceptions-interface
-  INTERFACE "src/main.cpp"
-            "src/exceptions.cpp"
-            "src/support.cpp"
+  tests-unit-exceptions-interface INTERFACE "src/main.cpp" "src/exceptions.cpp"
+                                            "src/support.cpp"
 )
 
 target_link_libraries (
-  tests-unit-exceptions-interface 
+  tests-unit-exceptions-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 

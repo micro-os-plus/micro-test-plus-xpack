@@ -23,7 +23,8 @@
 
 # -----------------------------------------------------------------------------
 
-# The source code for a unit test to exercise the miscellaneous features of the test framework.
+# The source code for a unit test to exercise the miscellaneous features of the
+# test framework.
 message (VERBOSE "Processing 'tests/sources/unit-miscellaneous/'...")
 
 # -----------------------------------------------------------------------------
@@ -34,21 +35,17 @@ message (VERBOSE "Processing 'tests/sources/unit-miscellaneous/'...")
 add_library (tests-unit-miscellaneous-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
-  tests-unit-miscellaneous-interface 
-  INTERFACE "include"
+  tests-unit-miscellaneous-interface INTERFACE "include"
 )
 
 target_sources (
   tests-unit-miscellaneous-interface
-  INTERFACE "src/main.cpp"
-            "src/miscellaneous.cpp"
-            "src/stopwatch.cpp"
-            "src/support.cpp"
-            "src/utility.cpp"
+  INTERFACE "src/main.cpp" "src/miscellaneous.cpp" "src/stopwatch.cpp"
+            "src/support.cpp" "src/utility.cpp"
 )
 
 target_link_libraries (
-  tests-unit-miscellaneous-interface 
+  tests-unit-miscellaneous-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
@@ -67,6 +64,8 @@ xpack_display_target_lists (tests-unit-miscellaneous-interface)
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (tests::unit-miscellaneous ALIAS tests-unit-miscellaneous-interface)
-message (VERBOSE "> tests::unit-miscellaneous -> tests-unit-miscellaneous-interface")
+message (VERBOSE
+         "> tests::unit-miscellaneous -> tests-unit-miscellaneous-interface"
+)
 
 # -----------------------------------------------------------------------------

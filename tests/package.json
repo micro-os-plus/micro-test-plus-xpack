@@ -148,6 +148,12 @@
         "nucleo-f767zi-cubemx": "stm32f767xx",
         "nucleo-h533re-cubemx": "stm32h533xx"
       },
+      "$configs-platforms-device-folders": {
+        "Template": "define configs-platforms-device-folders for the vectors platforms whose device folder is not named 'device'",
+        "nucleo-f411re-cubemx": "device-stm32f411re",
+        "nucleo-f767zi-cubemx": "device-stm32f767zi",
+        "nucleo-h533re-cubemx": "device-stm32h533re"
+      },
       "configs-platforms-device-folders": {
         "nucleo-f411re-cubemx": "device-stm32f411re",
         "nucleo-f767zi-cubemx": "device-stm32f767zi",
@@ -339,13 +345,7 @@
       "action-build-for-config": "xpm run build-{{ config }}",
       "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}",
       "actions-clear-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clear --config {{ config }}-{{ build-type }} --ignore-errors{{ os.EOL }}{% endfor %}{% endfor %}",
-      "actions-convert-startup-to-vectors-for-platforms": "{% assign platform-names = properties.configs-platforms-vectors-names | split_lines %}{% for platform-name in platform-names %}{% assign vector-name = properties.configs-platforms-vectors[platform-name] %}{% assign device-folder = properties.configs-platforms-device-folders[platform-name] | default: 'device' %}node scripts/convert-startup-to-vectors.mjs platforms/{{ platform-name }}/{{ device-folder }}/stm32cubemx/startup_{{ vector-name }}.s platforms/{{ platform-name }}/{{ device-folder }}/src/vectors-{{ vector-name }}.c{{ os.EOL }}{% endfor %}",
-      "$configs-platforms-device-folders": {
-        "Template": "define configs-platforms-device-folders for the vectors platforms whose device folder is not named 'device'",
-        "nucleo-f411re-cubemx": "device-stm32f411re",
-        "nucleo-f767zi-cubemx": "device-stm32f767zi",
-        "nucleo-h533re-cubemx": "device-stm32h533re"
-      }
+      "actions-convert-startup-to-vectors-for-platforms": "{% assign platform-names = properties.configs-platforms-vectors-names | split_lines %}{% for platform-name in platform-names %}{% assign vector-name = properties.configs-platforms-vectors[platform-name] %}{% assign device-folder = properties.configs-platforms-device-folders[platform-name] | default: 'device' %}node scripts/convert-startup-to-vectors.mjs platforms/{{ platform-name }}/{{ device-folder }}/stm32cubemx/startup_{{ vector-name }}.s platforms/{{ platform-name }}/{{ device-folder }}/src/vectors-{{ vector-name }}.c{{ os.EOL }}{% endfor %}"
     },
     "actions": {
       "xcdl-export": [
@@ -1230,7 +1230,7 @@
           ],
           "clear": "{{ properties.commandClearBuildFolder }}",
           "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+            "xpm link @micro-os-plus/architecture-synthetic-posix --config {{ configuration.name }}"
           ]
         }
       },
@@ -1241,7 +1241,7 @@
             "xpm install --config {{ configuration.name }}"
           ],
           "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm @micro-os-plus/devices-qemu-cortexm @micro-os-plus/semihosting @micro-os-plus/startup @xpack-3rd-party/arm-cmsis-core"
+            "xpm link @micro-os-plus/architecture-cortexm @micro-os-plus/devices-qemu-cortexm @micro-os-plus/semihosting @micro-os-plus/startup @xpack-3rd-party/arm-cmsis-core --config {{ configuration.name }}"
           ]
         }
       },
@@ -1252,7 +1252,7 @@
             "xpm install --config {{ configuration.name }}"
           ],
           "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch32 @micro-os-plus/devices-qemu-aarch32 @micro-os-plus/semihosting @micro-os-plus/startup"
+            "xpm link @micro-os-plus/architecture-aarch32 @micro-os-plus/devices-qemu-aarch32 @micro-os-plus/semihosting @micro-os-plus/startup --config {{ configuration.name }}"
           ]
         }
       },
@@ -1263,7 +1263,7 @@
             "xpm install --config {{ configuration.name }}"
           ],
           "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch64 @micro-os-plus/devices-qemu-aarch64 @micro-os-plus/semihosting @micro-os-plus/startup"
+            "xpm link @micro-os-plus/architecture-aarch64 @micro-os-plus/devices-qemu-aarch64 @micro-os-plus/semihosting @micro-os-plus/startup --config {{ configuration.name }}"
           ]
         }
       },
@@ -1274,7 +1274,7 @@
             "xpm install --config {{ configuration.name }}"
           ],
           "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-riscv @micro-os-plus/devices-qemu-riscv @micro-os-plus/semihosting @micro-os-plus/startup"
+            "xpm link @micro-os-plus/architecture-riscv @micro-os-plus/devices-qemu-riscv @micro-os-plus/semihosting @micro-os-plus/startup --config {{ configuration.name }}"
           ]
         }
       },

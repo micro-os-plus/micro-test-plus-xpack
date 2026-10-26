@@ -15,13 +15,13 @@
 
 # -----------------------------------------------------------------------------
 
-message('Processing tests/platforms/qemu-aarch32-a15/meson/artefacts...')
+message('Processing tests/platforms/' + xpack_platform_name + '/meson/artefacts...')
 
 # -----------------------------------------------------------------------------
 
 qemu = find_program('qemu-system-arm')
 qemu_machine_args = [ '--machine', 'virt', '--cpu', 'cortex-a15' ]
-qemu_extra_args = [ '-smp', '1', '--nographic', '-d', 'unimp,guest_errors' ]
+qemu_extra_args = [ '-smp', '2', '--nographic', '-d', 'unimp,guest_errors' ]
 
 # -----------------------------------------------------------------------------
 

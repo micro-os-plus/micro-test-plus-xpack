@@ -33,13 +33,10 @@ message (VERBOSE "Processing 'tests/sources/unit-static-asserts/'...")
 # against it.
 add_library (tests-unit-static-asserts-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (
-  tests-unit-static-asserts-interface
-  INTERFACE "src/main.cpp"
-)
+target_sources (tests-unit-static-asserts-interface INTERFACE "src/main.cpp")
 
 target_link_libraries (
-  tests-unit-static-asserts-interface 
+  tests-unit-static-asserts-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
@@ -57,7 +54,11 @@ xpack_display_target_lists (tests-unit-static-asserts-interface)
 # read-only; properties must be set on the underlying target, not on the alias
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::unit-static-asserts ALIAS tests-unit-static-asserts-interface)
-message (VERBOSE "> tests::unit-static-asserts -> tests-unit-static-asserts-interface")
+add_library (
+  tests::unit-static-asserts ALIAS tests-unit-static-asserts-interface
+)
+message (VERBOSE
+         "> tests::unit-static-asserts -> tests-unit-static-asserts-interface"
+)
 
 # -----------------------------------------------------------------------------

@@ -15,7 +15,7 @@
 
 # -----------------------------------------------------------------------------
 
-message('Processing tests/platforms/qemu-riscv-rv64imafdc/meson/artefacts...')
+message('Processing tests/platforms/' + xpack_platform_name + '/meson/artefacts...')
 
 # -----------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ message('Processing tests/platforms/qemu-riscv-rv64imafdc/meson/artefacts...')
 
 qemu = find_program('qemu-system-riscv64')
 qemu_machine_args = [ '--machine', 'virt', '--cpu', 'rv64' ]
-qemu_extra_args = [ '-smp', '1', '-bios', 'none', '--nographic', '-d', 'unimp,guest_errors' ]
+qemu_extra_args = [ '-smp', '2', '-bios', 'none', '--nographic', '-d', 'unimp,guest_errors' ]
 
 # -----------------------------------------------------------------------------
 

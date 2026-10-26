@@ -23,7 +23,8 @@
 
 # -----------------------------------------------------------------------------
 
-# The source code for a unit test to exercise the deprecated features of the test framework.
+# The source code for a unit test to exercise the deprecated features of the
+# test framework.
 message (VERBOSE "Processing 'tests/sources/unit-deprecated/'...")
 
 # -----------------------------------------------------------------------------
@@ -33,20 +34,15 @@ message (VERBOSE "Processing 'tests/sources/unit-deprecated/'...")
 # against it.
 add_library (tests-unit-deprecated-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (
-  tests-unit-deprecated-interface 
-  INTERFACE "include"
-)
+target_include_directories (tests-unit-deprecated-interface INTERFACE "include")
 
 target_sources (
-  tests-unit-deprecated-interface
-  INTERFACE "src/main.cpp"
-            "src/deprecated.cpp"
-            "src/support.cpp"
+  tests-unit-deprecated-interface INTERFACE "src/main.cpp" "src/deprecated.cpp"
+                                            "src/support.cpp"
 )
 
 target_link_libraries (
-  tests-unit-deprecated-interface 
+  tests-unit-deprecated-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
