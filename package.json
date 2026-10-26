@@ -62,6 +62,7 @@
       "@xpack-dev-tools/clang": "21.1.8-1.1"
     },
     "actions": {
+      "xpm-link": "xpm link",
       "clang-format": "node maintenance/scripts/clang-format.mjs",
       "cmake-format": "node maintenance/scripts/cmake-format.mjs",
       "jsonc-format": "node maintenance/scripts/jsonc-format.mjs",
