@@ -82,17 +82,43 @@ _local_compile_args += [
 {%- endfor %}
 ]
 {%- endif %}
+{%- comment %}
+  The compiler options are maps of categories, each with an array of strings.
+  Flatten them in a fixed category order. The `remove` category is not
+  additive. The `linker` category is collected separately, since it goes to
+  the link args.
+{%- endcomment %}
+{%- assign optionCategories = "target,optimisations,warnings,debugging,miscellaneous" | split: "," %}
 {%- assign compilerOptions = "" | split: "" %}
-{%- if component.publicCompilerOptions and component.publicCompilerOptions.size > 0 %}
-  {%- assign compilerOptions = compilerOptions | concat: component.publicCompilerOptions %}
-{%- endif %}
-{%- if component.privateCompilerOptions and component.privateCompilerOptions.size > 0 %}
-  {%- assign compilerOptions = compilerOptions | concat: component.privateCompilerOptions %}
-{%- endif %}
+{%- for category in optionCategories %}
+  {%- assign categoryOptions = component.publicCompilerOptions[category] %}
+  {%- if categoryOptions and categoryOptions.size > 0 %}
+    {%- assign compilerOptions = compilerOptions | concat: categoryOptions %}
+  {%- endif %}
+  {%- assign categoryOptions = component.privateCompilerOptions[category] %}
+  {%- if categoryOptions and categoryOptions.size > 0 %}
+    {%- assign compilerOptions = compilerOptions | concat: categoryOptions %}
+  {%- endif %}
+{%- endfor %}
 {%- if compilerOptions.size > 0 %}
 
 _local_compile_args += [
 {%- for option in compilerOptions %}
+  '{{option}}',
+{%- endfor %}
+]
+{%- endif %}
+{%- assign linkerOptions = "" | split: "" %}
+{%- if component.publicCompilerOptions.linker and component.publicCompilerOptions.linker.size > 0 %}
+  {%- assign linkerOptions = linkerOptions | concat: component.publicCompilerOptions.linker %}
+{%- endif %}
+{%- if component.privateCompilerOptions.linker and component.privateCompilerOptions.linker.size > 0 %}
+  {%- assign linkerOptions = linkerOptions | concat: component.privateCompilerOptions.linker %}
+{%- endif %}
+{%- if linkerOptions.size > 0 %}
+
+_local_link_args += [
+{%- for option in linkerOptions %}
   '{{option}}',
 {%- endfor %}
 ]
@@ -135,7 +161,7 @@ _local_compile_cpp_args += {{dependencyUnderscore}}_dependency_compile_cpp_args
 foreach name : _local_include_directories
   message('+ -I ' + name)
 endforeach
-foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
+foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
   message('+ ' + name)
 endforeach
 message('> {{nameUnderscore}}_dependency')
@@ -162,7 +188,7 @@ message('> {{nameUnderscore}}_dependency')
 foreach name : _local_include_directories
   message('+ -I ' + name)
 endforeach
-foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
+foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
   message('+ ' + name)
 endforeach
 message('> {{aliasUnderscore}}_dependency')
