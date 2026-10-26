@@ -275,7 +275,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Returned by <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span>, it lives until the end of the expression statement. Its template constructor evaluates the expression and formats it, with the actual operand values, into the expression formatter of the reporter, which keeps the text for this check until it is reported, so that it can be displayed on failure. The messages passed via <span class="doxyComputerOutput">operator&lt;&lt;()</span> are collected into a string. The destructor reports the outcome, updates the counters of the test case, and, after a failed <span class="doxyComputerOutput">require()</span>, stops the test case.</p>
 
 
-<p>A passed check whose line the reporter never writes (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a2c1e2c756b442d4832c161c8127faacf">reporter::writes_passed_checks()</a></span>) formats neither its expression nor its messages, and is only counted.</p>
+<p>A passed check whose line the reporter never writes (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a0e6f0a129d495a7e9d57ef71412cd88f">reporter::writes_passed_checks()</a></span>) formats neither its expression nor its messages, and is only counted.</p>
 
 
 <p>Only the template constructor depends on the type of the expression; it delegates to a private non-template constructor, and the destructor, which does the reporting, is not a template either, so this code is compiled once, in <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">src/check-result.cpp</a></span>, not for each type of expression.</p>
@@ -1075,12 +1075,12 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Provides access to the reporter and to the totals to be updated.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00378">378</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00381">381</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acfffc3c834c3a59408fcfae3a20f2dc1">378</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>&amp; <a href="#acfffc3c834c3a59408fcfae3a20f2dc1">test_case_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acfffc3c834c3a59408fcfae3a20f2dc1">381</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>&amp; <a href="#acfffc3c834c3a59408fcfae3a20f2dc1">test_case_</a>;</span></span></div>
 
 </div>
 
@@ -1111,15 +1111,15 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The number of uncaught exceptions when the check was created.</p>
 
 
-<p>If the destructor finds more, it runs during stack unwinding (for a result kept in a variable), and must not throw.</p>
+<p>If the destructor finds more, it runs during stack unwinding (for a result kept in a variable), and must not throw. Present only when exceptions are enabled.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00370">370</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00372">372</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4a9f64710ef24d140b065ae5666badeb">370</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a4a9f64710ef24d140b065ae5666badeb">uncaught_exceptions_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4a9f64710ef24d140b065ae5666badeb">372</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a4a9f64710ef24d140b065ae5666badeb">uncaught_exceptions_</a> = 0;</span></span></div>
 
 </div>
 

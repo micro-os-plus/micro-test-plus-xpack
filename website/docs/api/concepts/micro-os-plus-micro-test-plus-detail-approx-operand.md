@@ -52,7 +52,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">approx_operand</span> concept is satisfied when <span class="doxyComputerOutput">T</span>, or the value it wraps (for the framework value wrappers and the numeric literals), is an arithmetic type other than <span class="doxyComputerOutput">bool</span> and the character types (<span class="doxyComputerOutput">char</span>, <span class="doxyComputerOutput">wchar_t</span>, <span class="doxyComputerOutput">char8_t</span>, <span class="doxyComputerOutput">char16_t</span>, and <span class="doxyComputerOutput">char32_t</span>), which are not numbers; <span class="doxyComputerOutput">signed char</span> and <span class="doxyComputerOutput">unsigned char</span> are accepted, as the integer types they are.</p>
 
 
-<p>Definition at line 819 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line 821 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">

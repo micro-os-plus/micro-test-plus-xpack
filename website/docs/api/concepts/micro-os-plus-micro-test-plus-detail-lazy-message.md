@@ -51,7 +51,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The function pointers are excluded, since they are printable (as addresses), and calling them by mistake could have side effects; a lambda without captures, which converts to a function pointer and then to <span class="doxyComputerOutput">bool</span>, is printable too, and is called, since it is a class type.</p>
 
 
-<p>Definition at line 422 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 486 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">

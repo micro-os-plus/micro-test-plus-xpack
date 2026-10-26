@@ -33,7 +33,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Generic logical <b>and</b> operation, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a></span>. <a href="#ga9998cd63972fac8b24a2f0138322e7c1">More...</a></p>
+<p>Generic logical <b>and</b> operation, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a></span>. <a href="#ga9998cd63972fac8b24a2f0138322e7c1">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -67,7 +67,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Generic logical (inclusive) <b>or</b> operation, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gab9fbb94dec947fa60052531743114fa9">either()</a></span>. <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">More...</a></p>
+<p>Generic logical (inclusive) <b>or</b> operation, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae6395736f05626ba6dcf79ecc523486c">any_of()</a></span>. <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -75,16 +75,16 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class First_T, class Second_T, class... Rest_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga8c9c770da2ef632dec29c502651cb160">both</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of</a> (First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Generic logical <b>and</b> operation. <a href="#ga8c9c770da2ef632dec29c502651cb160">More...</a></p>
+<p>Generic logical <b>and</b> operation, for two or more operands. <a href="#gab9b9c26860ceafc1288ecb415f52aaaf">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -92,16 +92,16 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class First_T, class Second_T, class... Rest_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gab9fbb94dec947fa60052531743114fa9">either</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gae6395736f05626ba6dcf79ecc523486c">any_of</a> (First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Generic logical (inclusive) <b>or</b> operation. <a href="#gab9fbb94dec947fa60052531743114fa9">More...</a></p>
+<p>Generic logical (inclusive) <b>or</b> operation, for two or more operands. <a href="#gae6395736f05626ba6dcf79ecc523486c">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -132,7 +132,10 @@ keywords:
 <p>Functions used to compose logical expressions in tests.</p>
 
 
-<p>The functions <span class="doxyComputerOutput">mt::both()</span>, <span class="doxyComputerOutput">mt::either()</span>, and <span class="doxyComputerOutput">mt::negate()</span> combine multiple conditions, allowing expressive and concise test logic. <span class="doxyComputerOutput">mt::either()</span> is an inclusive or: it is true also when both conditions are true.</p>
+<p>The functions <span class="doxyComputerOutput">mt::all_of()</span>, <span class="doxyComputerOutput">mt::any_of()</span>, and <span class="doxyComputerOutput">mt::negate()</span> combine multiple conditions, allowing expressive and concise test logic. <span class="doxyComputerOutput">mt::all_of()</span> and <span class="doxyComputerOutput">mt::any_of()</span> take two or more operands, and <span class="doxyComputerOutput">mt::any_of()</span> is an inclusive or: it is true also when all the conditions are true. A chain of the same operation is reported as a single group, for example <span class="doxyComputerOutput">(a and b and c)</span>.</p>
+
+
+<p>All the operands are evaluated before the check, so the functions do not stop at the first operand that decides the result, like the standard algorithms of the same names. After a <span class="doxyComputerOutput">using namespace std</span>, an unqualified call with three or more operands of the same type selects the standard algorithm; call the functions as <span class="doxyComputerOutput">mt::all_of()</span> and <span class="doxyComputerOutput">mt::any_of()</span>.</p>
 
 
 <p>The functions have descriptive names, since <span class="doxyComputerOutput">and</span>, <span class="doxyComputerOutput">or</span>, and <span class="doxyComputerOutput">not</span> are alternative tokens and cannot be used as identifiers. Using these logical functions allows developers to express compound conditions clearly and improve readability.</p>
@@ -147,14 +150,15 @@ keywords:
 <div class="doxyProgramListing">
 
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ts.test (</span><span class="doxyHighlightStringLiteral">"Check compound conditions"</span><span class="doxyHighlight">, [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t) {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (mt::both (mt::eq (compute_answer (), 42),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">                      mt::eq (compute_float (), 42.0)));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (mt::all_of (mt::eq (compute_answer (), 42),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">                        mt::eq (compute_float (), 42.0),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">                        mt::lt (compute_answer (), 43)));</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">});</span></span></div>
 
 </div>
 
 
-<p>When operands are function comparators, use the overloaded logical operators <span class="doxyComputerOutput">&amp;&amp;</span>, <span class="doxyComputerOutput">||</span>, and <span class="doxyComputerOutput">!</span> provided in the <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace for more natural logical expressions.</p>
+<p>The overloaded logical operators of the <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace are deprecated since 5.1.0, in favour of these functions.</p>
 
 
 <div class="doxySectionDef">
@@ -186,10 +190,10 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Generic logical <b>and</b> operation, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a></span>.</p>
+<p>Generic logical <b>and</b> operation, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a></span>.</p>
 
 
-<p>The same as <span class="doxyComputerOutput"><a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a></span>. The name was changed since a leading underscore is not used by the other public names.</p>
+<p>The same as <span class="doxyComputerOutput"><a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a></span>. The name was changed since a leading underscore is not used by the other public names.</p>
 
 
 <dl class="doxyParamsList">
@@ -234,28 +238,28 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000007>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a> (since 5.1.0)</p>
+<p>use <a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
 
-<p>Forwards to <span class="doxyComputerOutput"><a href="#ga8c9c770da2ef632dec29c502651cb160">both()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
+<p>Forwards to <span class="doxyComputerOutput"><a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00093">93</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00094">94</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9998cd63972fac8b24a2f0138322e7c1">93</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga9998cd63972fac8b24a2f0138322e7c1">_and</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">94</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">95</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ga8c9c770da2ef632dec29c502651cb160">both</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">96</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9998cd63972fac8b24a2f0138322e7c1">94</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga9998cd63972fac8b24a2f0138322e7c1">_and</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">95</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">96</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">97</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#ga9998cd63972fac8b24a2f0138322e7c1">micro_os_plus::micro_test_plus::_and</a> and <a href="#ga8c9c770da2ef632dec29c502651cb160">micro_os_plus::micro_test_plus::both</a>.</p>
+<p>References <a href="#ga9998cd63972fac8b24a2f0138322e7c1">micro_os_plus::micro_test_plus::_and</a> and <a href="#gab9b9c26860ceafc1288ecb415f52aaaf">micro_os_plus::micro_test_plus::all_of</a>.</p>
 
 
 <p>Referenced by <a href="#ga9998cd63972fac8b24a2f0138322e7c1">micro_os_plus::micro_test_plus::_and</a>.</p>
@@ -336,15 +340,15 @@ keywords:
 <p>Forwards to <span class="doxyComputerOutput"><a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00080">80</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00081">81</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa465723bc4fe309f15d30a4e7207d40f">80</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gaa465723bc4fe309f15d30a4e7207d40f">_not</a> (Expr_T&amp;&amp; expr)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">81</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">82</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate</a> (std::forward&lt;Expr_T&gt; (expr));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">83</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa465723bc4fe309f15d30a4e7207d40f">81</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gaa465723bc4fe309f15d30a4e7207d40f">_not</a> (Expr_T&amp;&amp; expr)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">82</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">83</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate</a> (std::forward&lt;Expr_T&gt; (expr));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">84</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -382,10 +386,10 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Generic logical (inclusive) <b>or</b> operation, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gab9fbb94dec947fa60052531743114fa9">either()</a></span>.</p>
+<p>Generic logical (inclusive) <b>or</b> operation, the v5.0.1 name of <span class="doxyComputerOutput"><a href="#gae6395736f05626ba6dcf79ecc523486c">any_of()</a></span>.</p>
 
 
-<p>The same as <span class="doxyComputerOutput"><a href="#gab9fbb94dec947fa60052531743114fa9">either()</a></span>. The name was changed since a leading underscore is not used by the other public names.</p>
+<p>The same as <span class="doxyComputerOutput"><a href="#gae6395736f05626ba6dcf79ecc523486c">any_of()</a></span>. The name was changed since a leading underscore is not used by the other public names.</p>
 
 
 <dl class="doxyParamsList">
@@ -430,28 +434,28 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000008>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="#gab9fbb94dec947fa60052531743114fa9">either()</a> (since 5.1.0)</p>
+<p>use <a href="#gae6395736f05626ba6dcf79ecc523486c">any_of()</a> (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
 
-<p>Forwards to <span class="doxyComputerOutput"><a href="#gab9fbb94dec947fa60052531743114fa9">either()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
+<p>Forwards to <span class="doxyComputerOutput"><a href="#gae6395736f05626ba6dcf79ecc523486c">any_of()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00106">106</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00107">107</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">106</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">_or</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">107</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">108</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#gab9fbb94dec947fa60052531743114fa9">either</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">107</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">_or</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">108</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#gae6395736f05626ba6dcf79ecc523486c">any_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">110</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">micro_os_plus::micro_test_plus::_or</a> and <a href="#gab9fbb94dec947fa60052531743114fa9">micro_os_plus::micro_test_plus::either</a>.</p>
+<p>References <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">micro_os_plus::micro_test_plus::_or</a> and <a href="#gae6395736f05626ba6dcf79ecc523486c">micro_os_plus::micro_test_plus::any_of</a>.</p>
 
 
 <p>Referenced by <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">micro_os_plus::micro_test_plus::_or</a>.</p>
@@ -459,17 +463,17 @@ keywords:
 </div>
 </div>
 
-### both() {#ga8c9c770da2ef632dec29c502651cb160}
+### all\_of() {#gab9b9c26860ceafc1288ecb415f52aaaf}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
+<div class="doxyMemberTemplate">template &lt;class First_T, class Second_T, class... Rest_T&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::both (Lhs_T &amp;&amp; lhs, Rhs_T &amp;&amp; rhs)</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::all_of (First_T &amp;&amp; first, Second_T &amp;&amp; second, Rest_T &amp;&amp;... rest)</td>
 </tr>
 </table>
 </td>
@@ -484,7 +488,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Generic logical <b>and</b> operation.</p>
+<p>Generic logical <b>and</b> operation, for two or more operands.</p>
 
 
 <dl class="doxyParamsList">
@@ -492,12 +496,16 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">Lhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the left hand side operand.</p></td>
+<td class="doxyParamItemName">First_T</td>
+<td class="doxyParamItemDescription"><p>Type of the first operand.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">Rhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the right hand side operand.</p></td>
+<td class="doxyParamItemName">Second_T</td>
+<td class="doxyParamItemDescription"><p>Type of the second operand.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Rest_T</td>
+<td class="doxyParamItemDescription"><p>Types of the other operands, if any.</p></td>
 </tr>
 </table>
 </dd>
@@ -508,12 +516,16 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">lhs</td>
-<td class="doxyParamItemDescription"><p>Left hand side operand.</p></td>
+<td class="doxyParamItemName">first</td>
+<td class="doxyParamItemDescription"><p>First operand.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">rhs</td>
-<td class="doxyParamItemDescription"><p>Right hand side operand.</p></td>
+<td class="doxyParamItemName">second</td>
+<td class="doxyParamItemDescription"><p>Second operand.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">rest</td>
+<td class="doxyParamItemDescription"><p>The other operands, if any.</p></td>
 </tr>
 </table>
 </dd>
@@ -521,49 +533,62 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>An object that evaluates to true if both operand expressions are true.</p></dd>
+<dd><p>An object that evaluates to true if all the operand expressions are true.</p></dd>
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#ga8c9c770da2ef632dec29c502651cb160">both</a></span> function template provides a generic logical conjunction for any expression types. It constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-op">detail::and_op</a></span> logical conjunction object, which evaluates to <span class="doxyComputerOutput">true</span> if both operands are true.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of</a></span> function template provides a generic logical conjunction for any expression types. It constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-op">detail::and_op</a></span> logical conjunction object, which evaluates to <span class="doxyComputerOutput">true</span> if all the operands are true. For more than two operands, the objects are nested from the left, <span class="doxyComputerOutput">(a and b) and c</span>, and the expression formatter writes them as a single chain, <span class="doxyComputerOutput">(a and b and c)</span>.</p>
 
 
-<p>It is the function form of the <span class="doxyComputerOutput">&amp;&amp;</span> operator from the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">micro_test_plus::operators</a></span> namespace.</p>
+<p>All the operands are evaluated before the check, so, unlike the standard algorithm of the same name, the function does not stop at the first operand that is false.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00238">238</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>The name is the same as that of <span class="doxyComputerOutput">std::all_of</span>: after a <span class="doxyComputerOutput">using namespace std</span>, an unqualified call with three or more operands of the same type selects the standard algorithm, so the function must be called as <span class="doxyComputerOutput">mt::all_of()</span>.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00246">246</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga8c9c770da2ef632dec29c502651cb160">238</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga8c9c770da2ef632dec29c502651cb160">both</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">239</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">240</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-op">detail::and_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">241</span><span class="doxyLineContent"><span class="doxyHighlight">                           std::forward&lt;Rhs_T&gt; (rhs) };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">242</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab9b9c26860ceafc1288ecb415f52aaaf">246</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of</a> (First_T&amp;&amp; first, Second_T&amp;&amp; second, Rest_T&amp;&amp;... rest)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">247</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">248</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">...(Rest_T) == 0)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">249</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">250</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-op">detail::and_op</a>{ std::forward&lt;First_T&gt; (first),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">251</span><span class="doxyLineContent"><span class="doxyHighlight">                               std::forward&lt;Second_T&gt; (second) };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">252</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">253</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">254</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">255</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#gab9b9c26860ceafc1288ecb415f52aaaf">micro_test_plus::all_of</a> (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">256</span><span class="doxyLineContent"><span class="doxyHighlight">            <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-op">detail::and_op</a>{ std::forward&lt;First_T&gt; (first),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">257</span><span class="doxyLineContent"><span class="doxyHighlight">                            std::forward&lt;Second_T&gt; (second) },</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">258</span><span class="doxyLineContent"><span class="doxyHighlight">            std::forward&lt;Rest_T&gt; (rest)...);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">259</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">260</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#ga8c9c770da2ef632dec29c502651cb160">micro_os_plus::micro_test_plus::both</a>.</p>
+<p>Reference <a href="#gab9b9c26860ceafc1288ecb415f52aaaf">micro_os_plus::micro_test_plus::all_of</a>.</p>
 
 
-<p>Referenced by <a href="#ga9998cd63972fac8b24a2f0138322e7c1">micro_os_plus::micro_test_plus::_and</a> and <a href="#ga8c9c770da2ef632dec29c502651cb160">micro_os_plus::micro_test_plus::both</a>.</p>
+<p>Referenced by <a href="#ga9998cd63972fac8b24a2f0138322e7c1">micro_os_plus::micro_test_plus::_and</a> and <a href="#gab9b9c26860ceafc1288ecb415f52aaaf">micro_os_plus::micro_test_plus::all_of</a>.</p>
 
 </div>
 </div>
 
-### either() {#gab9fbb94dec947fa60052531743114fa9}
+### any\_of() {#gae6395736f05626ba6dcf79ecc523486c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
+<div class="doxyMemberTemplate">template &lt;class First_T, class Second_T, class... Rest_T&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::either (Lhs_T &amp;&amp; lhs, Rhs_T &amp;&amp; rhs)</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::any_of (First_T &amp;&amp; first, Second_T &amp;&amp; second, Rest_T &amp;&amp;... rest)</td>
 </tr>
 </table>
 </td>
@@ -578,7 +603,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Generic logical (inclusive) <b>or</b> operation.</p>
+<p>Generic logical (inclusive) <b>or</b> operation, for two or more operands.</p>
 
 
 <dl class="doxyParamsList">
@@ -586,12 +611,16 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">Lhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the left hand side operand.</p></td>
+<td class="doxyParamItemName">First_T</td>
+<td class="doxyParamItemDescription"><p>Type of the first operand.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">Rhs_T</td>
-<td class="doxyParamItemDescription"><p>Type of the right hand side operand.</p></td>
+<td class="doxyParamItemName">Second_T</td>
+<td class="doxyParamItemDescription"><p>Type of the second operand.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Rest_T</td>
+<td class="doxyParamItemDescription"><p>Types of the other operands, if any.</p></td>
 </tr>
 </table>
 </dd>
@@ -602,12 +631,16 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">lhs</td>
-<td class="doxyParamItemDescription"><p>Left hand side operand.</p></td>
+<td class="doxyParamItemName">first</td>
+<td class="doxyParamItemDescription"><p>First operand.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">rhs</td>
-<td class="doxyParamItemDescription"><p>Right hand side operand.</p></td>
+<td class="doxyParamItemName">second</td>
+<td class="doxyParamItemDescription"><p>Second operand.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">rest</td>
+<td class="doxyParamItemDescription"><p>The other operands, if any.</p></td>
 </tr>
 </table>
 </dd>
@@ -615,34 +648,44 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>An object that evaluates to true if at least one of the operand expressions is true, including when both are.</p></dd>
+<dd><p>An object that evaluates to true if at least one of the operand expressions is true, including when all are.</p></dd>
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#gab9fbb94dec947fa60052531743114fa9">either</a></span> function template provides a generic logical disjunction for any expression types. It constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-op">detail::or_op</a></span> logical disjunction object, which evaluates to <span class="doxyComputerOutput">true</span> if at least one of the operands is true.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gae6395736f05626ba6dcf79ecc523486c">any_of</a></span> function template provides a generic logical disjunction for any expression types. It constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-op">detail::or_op</a></span> logical disjunction object, which evaluates to <span class="doxyComputerOutput">true</span> if at least one of the operands is true; the disjunction is inclusive, so the result is also true when all the conditions are true. For more than two operands, the objects are nested from the left, and the expression formatter writes them as a single chain, <span class="doxyComputerOutput">(a or b or c)</span>.</p>
 
 
-<p>It is the function form of the <span class="doxyComputerOutput">||</span> operator from the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">micro_test_plus::operators</a></span> namespace; the disjunction is inclusive, so the result is also true when both conditions are true.</p>
+<p>All the operands are evaluated before the check, so the function does not stop at the first operand that is true; and, as for <span class="doxyComputerOutput"><a href="#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a></span>, it must be called as <span class="doxyComputerOutput">mt::any_of()</span> after a <span class="doxyComputerOutput">using namespace std</span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00257">257</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00278">278</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab9fbb94dec947fa60052531743114fa9">257</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gab9fbb94dec947fa60052531743114fa9">either</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">258</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">259</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-op">detail::or_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">260</span><span class="doxyLineContent"><span class="doxyHighlight">                          std::forward&lt;Rhs_T&gt; (rhs) };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">261</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae6395736f05626ba6dcf79ecc523486c">278</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gae6395736f05626ba6dcf79ecc523486c">any_of</a> (First_T&amp;&amp; first, Second_T&amp;&amp; second, Rest_T&amp;&amp;... rest)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">279</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">280</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">...(Rest_T) == 0)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">281</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">282</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-op">detail::or_op</a>{ std::forward&lt;First_T&gt; (first),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">283</span><span class="doxyLineContent"><span class="doxyHighlight">                              std::forward&lt;Second_T&gt; (second) };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">284</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">285</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">286</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">287</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#gae6395736f05626ba6dcf79ecc523486c">micro_test_plus::any_of</a> (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">288</span><span class="doxyLineContent"><span class="doxyHighlight">            <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-op">detail::or_op</a>{ std::forward&lt;First_T&gt; (first),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">289</span><span class="doxyLineContent"><span class="doxyHighlight">                           std::forward&lt;Second_T&gt; (second) },</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">290</span><span class="doxyLineContent"><span class="doxyHighlight">            std::forward&lt;Rest_T&gt; (rest)...);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">291</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">292</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#gab9fbb94dec947fa60052531743114fa9">micro_os_plus::micro_test_plus::either</a>.</p>
+<p>Reference <a href="#gae6395736f05626ba6dcf79ecc523486c">micro_os_plus::micro_test_plus::any_of</a>.</p>
 
 
-<p>Referenced by <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">micro_os_plus::micro_test_plus::_or</a> and <a href="#gab9fbb94dec947fa60052531743114fa9">micro_os_plus::micro_test_plus::either</a>.</p>
+<p>Referenced by <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">micro_os_plus::micro_test_plus::_or</a> and <a href="#gae6395736f05626ba6dcf79ecc523486c">micro_os_plus::micro_test_plus::any_of</a>.</p>
 
 </div>
 </div>

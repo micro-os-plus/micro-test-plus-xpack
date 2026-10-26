@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['stopwatch_2dinlines_2eh_0',['stopwatch-inlines.h',['../stopwatch-inlines_8h.html',1,'']]],
-  ['stopwatch_2ecpp_1',['stopwatch.cpp',['../stopwatch_8cpp.html',1,'']]],
-  ['stopwatch_2eh_2',['stopwatch.h',['../stopwatch_8h.html',1,'']]]
+  ['utility_2dinlines_2eh_0',['utility-inlines.h',['../utility-inlines_8h.html',1,'']]],
+  ['utility_2ecpp_1',['utility.cpp',['../utility_8cpp.html',1,'']]],
+  ['utility_2eh_2',['utility.h',['../utility_8h.html',1,'']]]
 ];

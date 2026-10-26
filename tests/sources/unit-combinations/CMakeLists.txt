@@ -23,8 +23,7 @@
 
 # -----------------------------------------------------------------------------
 
-# The source code for a unit test to exercise the combinations of the numeric
-# types of the test framework.
+# The source code for a unit test to exercise the combinations of the numeric types of the test framework.
 message (VERBOSE "Processing 'tests/sources/unit-combinations/'...")
 
 # -----------------------------------------------------------------------------
@@ -35,7 +34,8 @@ message (VERBOSE "Processing 'tests/sources/unit-combinations/'...")
 add_library (tests-unit-combinations-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
-  tests-unit-combinations-interface INTERFACE "include"
+  tests-unit-combinations-interface 
+  INTERFACE "include"
 )
 
 target_sources (
@@ -49,7 +49,7 @@ target_sources (
 )
 
 target_link_libraries (
-  tests-unit-combinations-interface
+  tests-unit-combinations-interface 
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
@@ -68,8 +68,6 @@ xpack_display_target_lists (tests-unit-combinations-interface)
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (tests::unit-combinations ALIAS tests-unit-combinations-interface)
-message (VERBOSE
-         "> tests::unit-combinations -> tests-unit-combinations-interface"
-)
+message (VERBOSE "> tests::unit-combinations -> tests-unit-combinations-interface")
 
 # -----------------------------------------------------------------------------

@@ -41,7 +41,7 @@ keywords:
 ## - L -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals"><b>literals</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">include/micro-os-plus/micro-test-plus/literals.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals"><b>literals</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h</a></li>
 </ul>
 
 ## - M -
@@ -56,7 +56,7 @@ keywords:
 ## - O -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators"><b>operators</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">include/micro-os-plus/micro-test-plus/operators.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators"><b>operators</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h</a></li>
 </ul>
 
 ## - R -

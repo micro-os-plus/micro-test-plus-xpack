@@ -46,7 +46,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">has_npos</span> concept is satisfied when <span class="doxyComputerOutput">T</span> exposes a static <span class="doxyComputerOutput">npos</span> member, as provided by <span class="doxyComputerOutput">std::string_view</span> and similar types. It is used to detect the string-like types, which the formatter writes as text, not element by element (see <span class="doxyComputerOutput">formattable_range</span>).</p>
 
 
-<p>Definition at line 291 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 354 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">

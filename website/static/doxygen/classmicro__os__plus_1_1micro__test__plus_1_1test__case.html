@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmicro__os
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::test_case Class Reference<div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-test-case.html">Test Cases</a></div></div></div>
+  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::test_case Class Reference<span class="mlabels"><span class="mlabel final">final</span></span><div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-test-case.html">Test Cases</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -143,6 +143,10 @@ requires extension::checkable&lt;Expr_T&gt;</td></tr>
 <tr class="memitem:gad25dc8d5d657ace9d47d3a95b3341802 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-requirements.html#gad25dc8d5d657ace9d47d3a95b3341802">assume</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
 <tr class="memdesc:gad25dc8d5d657ace9d47d3a95b3341802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated name of <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-requirements.html#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">require()</a></span>.  <br /></td></tr>
 <tr class="memitem:gaf4f5f9632b5a290c1894984661a41a86" id="r_gaf4f5f9632b5a290c1894984661a41a86"><td class="memTemplParams" colspan="2">template&lt;class Expr_T&gt; <br />
+requires extension::legacy_checkable&lt;Expr_T&gt;</td></tr>
+<tr class="memitem:gaf4f5f9632b5a290c1894984661a41a86 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#gaf4f5f9632b5a290c1894984661a41a86">expect</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
+<tr class="memdesc:gaf4f5f9632b5a290c1894984661a41a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-expectations.html#gaf4f5f9632b5a290c1894984661a41a86" title="Evaluates a condition and reports the result.">expect()</a></span> of a suspicious condition.  <br /></td></tr>
+<tr class="memitem:gaf4f5f9632b5a290c1894984661a41a86" id="r_gaf4f5f9632b5a290c1894984661a41a86"><td class="memTemplParams" colspan="2">template&lt;class Expr_T&gt; <br />
 requires extension::checkable&lt;Expr_T&gt;</td></tr>
 <tr class="memitem:gaf4f5f9632b5a290c1894984661a41a86 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-expectations.html#gaf4f5f9632b5a290c1894984661a41a86">expect</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
 <tr class="memdesc:gaf4f5f9632b5a290c1894984661a41a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates a condition and reports the result.  <br /></td></tr>
@@ -154,6 +158,10 @@ requires extension::checkable&lt;Expr_T&gt;</td></tr>
 <tr class="memdesc:a556bbac39502797d52241f481e021847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy assignment operator to prevent copying.  <br /></td></tr>
 <tr class="memitem:ac2e310ec902a0c3e786d4c415269c23e" id="r_ac2e310ec902a0c3e786d4c415269c23e"><td class="memItemLeft"><a class="el" href="#a0ffeed47bd9ecd07bda3a2f33f062b71">test_case</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">operator=</a> (<a class="el" href="#a0ffeed47bd9ecd07bda3a2f33f062b71">test_case</a> &amp;&amp;)=delete</td></tr>
 <tr class="memdesc:ac2e310ec902a0c3e786d4c415269c23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move assignment operator to prevent moving.  <br /></td></tr>
+<tr class="memitem:gace68a1bd4dd258082f4b1fc01fcd008a" id="r_gace68a1bd4dd258082f4b1fc01fcd008a"><td class="memTemplParams" colspan="2">template&lt;class Expr_T&gt; <br />
+requires extension::legacy_checkable&lt;Expr_T&gt;</td></tr>
+<tr class="memitem:gace68a1bd4dd258082f4b1fc01fcd008a template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a">require</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
+<tr class="memdesc:gace68a1bd4dd258082f4b1fc01fcd008a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-requirements.html#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">require()</a></span> of a suspicious condition.  <br /></td></tr>
 <tr class="memitem:gace68a1bd4dd258082f4b1fc01fcd008a" id="r_gace68a1bd4dd258082f4b1fc01fcd008a"><td class="memTemplParams" colspan="2">template&lt;class Expr_T&gt; <br />
 requires extension::checkable&lt;Expr_T&gt;</td></tr>
 <tr class="memitem:gace68a1bd4dd258082f4b1fc01fcd008a template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-requirements.html#gace68a1bd4dd258082f4b1fc01fcd008a">require</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
@@ -170,8 +178,6 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 <tr class="memdesc:afe716dc1b9245d7761b1fd6e6e854c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a nested test case for each value of a range or a tuple, and runs them.  <br /></td></tr>
 <tr class="memitem:aa83553cf6bf351153328304ebc71e545" id="r_aa83553cf6bf351153328304ebc71e545"><td class="memItemLeft">const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html">counters</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aa83553cf6bf351153328304ebc71e545">totals</a> (void) const noexcept</td></tr>
 <tr class="memdesc:aa83553cf6bf351153328304ebc71e545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the totals of the node.  <br /></td></tr>
-<tr class="memitem:ae4b1b292777b0c1a7ee9edb02c4f2235" id="r_ae4b1b292777b0c1a7ee9edb02c4f2235"><td class="memItemLeft"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html">counters</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ae4b1b292777b0c1a7ee9edb02c4f2235">totals</a> (void) noexcept</td></tr>
-<tr class="memdesc:ae4b1b292777b0c1a7ee9edb02c4f2235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the totals of the node, as a non-<span class="tt">const</span> reference.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -180,8 +186,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad4ac49522cfd6e1608d9ac64ab7a8b91" id="r_ad4ac49522cfd6e1608d9ac64ab7a8b91"><td class="memTemplParams" colspan="2">template&lt;typename Callable_T, typename... Args_T&gt; </td></tr>
 <tr class="memitem:ad4ac49522cfd6e1608d9ac64ab7a8b91 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ad4ac49522cfd6e1608d9ac64ab7a8b91">create_test_case</a> (const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html">test_case_name</a> &amp;name, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">suite</a> &amp;parent_suite, size_t nesting_depth, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</td></tr>
 <tr class="memdesc:ad4ac49522cfd6e1608d9ac64ab7a8b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a child test case, and runs it.  <br /></td></tr>
-<tr class="memitem:a1980019eed5ac5b1eef65302eb9cc9cd" id="r_a1980019eed5ac5b1eef65302eb9cc9cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1980019eed5ac5b1eef65302eb9cc9cd">fail_unexpected_exception</a> (const char *what)</td></tr>
-<tr class="memdesc:a1980019eed5ac5b1eef65302eb9cc9cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports an exception that escaped the test case body as a failed check.  <br /></td></tr>
 <tr class="memitem:aaec8b378e1d1639a5fa0e6dec20d6a46" id="r_aaec8b378e1d1639a5fa0e6dec20d6a46"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aaec8b378e1d1639a5fa0e6dec20d6a46">is_aborted</a> (void) const noexcept</td></tr>
 <tr class="memdesc:aaec8b378e1d1639a5fa0e6dec20d6a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the test execution was aborted by the owning runner.  <br /></td></tr>
 <tr class="memitem:a58c3051635ce2389a8afc2222cd6b30d" id="r_a58c3051635ce2389a8afc2222cd6b30d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a58c3051635ce2389a8afc2222cd6b30d">is_listing</a> (void) const noexcept</td></tr>
@@ -197,20 +201,12 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:aad4b8f6b15291abb5dc6602784fa7bad" id="r_aad4b8f6b15291abb5dc6602784fa7bad"><td class="memItemLeft"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">detail::callable_ref</a>&lt; <a class="el" href="#a0ffeed47bd9ecd07bda3a2f33f062b71">test_case</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aad4b8f6b15291abb5dc6602784fa7bad">callable_</a></td></tr>
-<tr class="memdesc:aad4b8f6b15291abb5dc6602784fa7bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the test case body, with any bound arguments.  <br /></td></tr>
 <tr class="memitem:aff1a81aff41ab5dc80e2fac1c5a78a31" id="r_aff1a81aff41ab5dc80e2fac1c5a78a31"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aff1a81aff41ab5dc80e2fac1c5a78a31">child_test_cases_count_</a> = 0</td></tr>
 <tr class="memdesc:aff1a81aff41ab5dc80e2fac1c5a78a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of direct child test cases.  <br /></td></tr>
-<tr class="memitem:a1c0173e5186060d94f09db00552f44b4" id="r_a1c0173e5186060d94f09db00552f44b4"><td class="memItemLeft"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1c0173e5186060d94f09db00552f44b4">location_</a></td></tr>
-<tr class="memdesc:a1c0173e5186060d94f09db00552f44b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The location of the call to <span class="tt"><a class="el" href="#aac23ee148d8e5946cd87e0de036e9fb8" title="Adds a nested test case to this test case, and runs it.">test()</a></span> that created this test case.  <br /></td></tr>
 <tr class="memitem:aad830bd92e4f6e4239d2bb5b75d5bf50" id="r_aad830bd92e4f6e4239d2bb5b75d5bf50"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50">name_</a></td></tr>
 <tr class="memdesc:aad830bd92e4f6e4239d2bb5b75d5bf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">The node name.  <br /></td></tr>
-<tr class="memitem:a3da31fa70e1009cfde8a13a7ffaad036" id="r_a3da31fa70e1009cfde8a13a7ffaad036"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a></td></tr>
-<tr class="memdesc:a3da31fa70e1009cfde8a13a7ffaad036"><td class="mdescLeft">&#160;</td><td class="mdescRight">The nesting depth of this test case within the suite.  <br /></td></tr>
 <tr class="memitem:a69687627342981d42471b17f1d83311f" id="r_a69687627342981d42471b17f1d83311f"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a69687627342981d42471b17f1d83311f">own_index_</a></td></tr>
 <tr class="memdesc:a69687627342981d42471b17f1d83311f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The test index, counting from 1.  <br /></td></tr>
-<tr class="memitem:a3f1717ee8c04af1181f6dff2966b3d34" id="r_a3f1717ee8c04af1181f6dff2966b3d34"><td class="memItemLeft"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">suite</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3f1717ee8c04af1181f6dff2966b3d34">parent_suite_</a></td></tr>
-<tr class="memdesc:a3f1717ee8c04af1181f6dff2966b3d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the parent suite that owns this test case.  <br /></td></tr>
 <tr class="memitem:ab7513249cc0aac30e3edd7008d08d355" id="r_ab7513249cc0aac30e3edd7008d08d355"><td class="memItemLeft"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a68a030feff1f481126e9a6d170331420">runner</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">runner_</a></td></tr>
 <tr class="memdesc:ab7513249cc0aac30e3edd7008d08d355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the test runner that owns this object.  <br /></td></tr>
 <tr class="memitem:abc92cbb8ab8d04e7c75bf18aa7189d98" id="r_abc92cbb8ab8d04e7c75bf18aa7189d98"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#abc92cbb8ab8d04e7c75bf18aa7189d98">test_point_number_</a> = 0</td></tr>
@@ -224,8 +220,21 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a0ffeed47bd9ecd07bda3a2f33f062b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a test case with a name, runner, parent suite, index, nesting depth, and body.  <br /></td></tr>
 <tr class="memitem:a5fec64d9b300277d56e02193bb7d0a46" id="r_a5fec64d9b300277d56e02193bb7d0a46"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a5fec64d9b300277d56e02193bb7d0a46">abort</a> (const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>()) const</td></tr>
 <tr class="memdesc:a5fec64d9b300277d56e02193bb7d0a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aborts test execution via the owning runner, for a failed requirement.  <br /></td></tr>
+<tr class="memitem:a1980019eed5ac5b1eef65302eb9cc9cd" id="r_a1980019eed5ac5b1eef65302eb9cc9cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1980019eed5ac5b1eef65302eb9cc9cd">fail_unexpected_exception</a> (const char *what)</td></tr>
+<tr class="memdesc:a1980019eed5ac5b1eef65302eb9cc9cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports an exception that escaped the test case body as a failed check.  <br /></td></tr>
 <tr class="memitem:adb4333ecb107fee477156b661f0b1512" id="r_adb4333ecb107fee477156b661f0b1512"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adb4333ecb107fee477156b661f0b1512">run</a> (void) override</td></tr>
 <tr class="memdesc:adb4333ecb107fee477156b661f0b1512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the test case body by invoking the referred callable.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aad4b8f6b15291abb5dc6602784fa7bad" id="r_aad4b8f6b15291abb5dc6602784fa7bad"><td class="memItemLeft"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">detail::callable_ref</a>&lt; <a class="el" href="#a0ffeed47bd9ecd07bda3a2f33f062b71">test_case</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aad4b8f6b15291abb5dc6602784fa7bad">callable_</a></td></tr>
+<tr class="memdesc:aad4b8f6b15291abb5dc6602784fa7bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the test case body, with any bound arguments.  <br /></td></tr>
+<tr class="memitem:a1c0173e5186060d94f09db00552f44b4" id="r_a1c0173e5186060d94f09db00552f44b4"><td class="memItemLeft"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1c0173e5186060d94f09db00552f44b4">location_</a></td></tr>
+<tr class="memdesc:a1c0173e5186060d94f09db00552f44b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The location of the call to <span class="tt"><a class="el" href="#aac23ee148d8e5946cd87e0de036e9fb8" title="Adds a nested test case to this test case, and runs it.">test()</a></span> that created this test case.  <br /></td></tr>
+<tr class="memitem:a3da31fa70e1009cfde8a13a7ffaad036" id="r_a3da31fa70e1009cfde8a13a7ffaad036"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a></td></tr>
+<tr class="memdesc:a3da31fa70e1009cfde8a13a7ffaad036"><td class="mdescLeft">&#160;</td><td class="mdescRight">The nesting depth of this test case within the suite.  <br /></td></tr>
+<tr class="memitem:a3f1717ee8c04af1181f6dff2966b3d34" id="r_a3f1717ee8c04af1181f6dff2966b3d34"><td class="memItemLeft"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">suite</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3f1717ee8c04af1181f6dff2966b3d34">parent_suite_</a></td></tr>
+<tr class="memdesc:a3f1717ee8c04af1181f6dff2966b3d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the parent suite that owns this test case.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -238,7 +247,7 @@ Friends</h2></td></tr>
 <p>The constructor is private, since its parameters are set by the framework; the test cases are created only by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a402696dc4d4978ff3c050427890cfe01" title="Adds a test case to the suite, and runs it.">suite::test()</a></span> and <span class="tt"><a class="el" href="#aac23ee148d8e5946cd87e0de036e9fb8" title="Adds a nested test case to this test case, and runs it.">test_case::test()</a></span>.</p>
 <p>The class is non-copyable and non-movable to preserve unique ownership and consistent state throughout the test session. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01007">1007</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00991">991</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0ffeed47bd9ecd07bda3a2f33f062b71" name="a0ffeed47bd9ecd07bda3a2f33f062b71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ffeed47bd9ecd07bda3a2f33f062b71">&#9670;&#160;</a></span>test_case() <span class="overload">[1/3]</span></h2>
@@ -300,30 +309,30 @@ Friends</h2></td></tr>
 </dl>
 <p>Stores the reference to the body, the location of the call to <span class="tt"><a class="el" href="#aac23ee148d8e5946cd87e0de036e9fb8" title="Adds a nested test case to this test case, and runs it.">test()</a></span>, the parent suite, and the nesting depth. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00382">382</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  386</span>      : <a class="code hl_friend" href="#a484008ed66130a2bf334948841099943">runnable_base</a>{ <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>.name (), <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0224080b4433f538798354eca0f4c8c5">test_runner</a>, own_index },</div>
-<div class="line"><span class="lineno">  387</span>        <a class="code hl_variable" href="#aad4b8f6b15291abb5dc6602784fa7bad">callable_</a>{ body }, <a class="code hl_variable" href="#a1c0173e5186060d94f09db00552f44b4">location_</a>{ <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>.location () },</div>
-<div class="line"><span class="lineno">  388</span>        <a class="code hl_variable" href="#a3f1717ee8c04af1181f6dff2966b3d34">parent_suite_</a>{ parent_suite }, <a class="code hl_variable" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a>{ <a class="code hl_function" href="#af2b6792d06fa335f2b617e4d39bbba3c">nesting_depth</a> }</div>
-<div class="line"><span class="lineno">  389</span>  {</div>
-<div class="line"><span class="lineno">  390</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></div>
-<div class="line"><span class="lineno">  391</span>    trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39; %&quot;</span> <a class="code hl_define" href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a></div>
-<div class="line"><span class="lineno">  392</span>                   <span class="stringliteral">&quot; %&quot;</span> <a class="code hl_define" href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a> <span class="stringliteral">&quot;\n&quot;</span>,</div>
-<div class="line"><span class="lineno">  393</span>                   __PRETTY_FUNCTION__, <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50">name_</a>, <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a69687627342981d42471b17f1d83311f">own_index_</a>, <a class="code hl_variable" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a>);</div>
-<div class="line"><span class="lineno">  394</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
-<div class="line"><span class="lineno">  395</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a0224080b4433f538798354eca0f4c8c5"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0224080b4433f538798354eca0f4c8c5">micro_os_plus::micro_test_plus::detail::runnable_base::test_runner</a></div><div class="ttdeci">runner &amp; test_runner(void) const noexcept</div><div class="ttdoc">Gets the test runner that owns this test runnable.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00194">test-inlines.h:194</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a69687627342981d42471b17f1d83311f"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a69687627342981d42471b17f1d83311f">micro_os_plus::micro_test_plus::detail::runnable_base::own_index_</a></div><div class="ttdeci">size_t own_index_</div><div class="ttdoc">The test index, counting from 1.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00649">test.h:649</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a6c652cd5dc8194269c1cc5f0dc1945e0"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">micro_os_plus::micro_test_plus::detail::runnable_base::name</a></div><div class="ttdeci">const char * name(void) const noexcept</div><div class="ttdoc">Gets the node name.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00151">test-inlines.h:151</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_aad830bd92e4f6e4239d2bb5b75d5bf50"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50">micro_os_plus::micro_test_plus::detail::runnable_base::name_</a></div><div class="ttdeci">const char * name_</div><div class="ttdoc">The node name.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00613">test.h:613</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_a1c0173e5186060d94f09db00552f44b4"><div class="ttname"><a href="#a1c0173e5186060d94f09db00552f44b4">micro_os_plus::micro_test_plus::test_case::location_</a></div><div class="ttdeci">reflection::source_location location_</div><div class="ttdoc">The location of the call to test() that created this test case.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01346">test.h:1346</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_a3da31fa70e1009cfde8a13a7ffaad036"><div class="ttname"><a href="#a3da31fa70e1009cfde8a13a7ffaad036">micro_os_plus::micro_test_plus::test_case::nesting_depth_</a></div><div class="ttdeci">size_t nesting_depth_</div><div class="ttdoc">The nesting depth of this test case within the suite.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01363">test.h:1363</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_a3f1717ee8c04af1181f6dff2966b3d34"><div class="ttname"><a href="#a3f1717ee8c04af1181f6dff2966b3d34">micro_os_plus::micro_test_plus::test_case::parent_suite_</a></div><div class="ttdeci">suite &amp; parent_suite_</div><div class="ttdoc">Reference to the parent suite that owns this test case.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01355">test.h:1355</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_a484008ed66130a2bf334948841099943"><div class="ttname"><a href="#a484008ed66130a2bf334948841099943">micro_os_plus::micro_test_plus::test_case::runnable_base</a></div><div class="ttdeci">friend class detail::runnable_base</div><div class="ttdoc">The base of the nodes, which creates the test cases.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01016">test.h:1016</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_aad4b8f6b15291abb5dc6602784fa7bad"><div class="ttname"><a href="#aad4b8f6b15291abb5dc6602784fa7bad">micro_os_plus::micro_test_plus::test_case::callable_</a></div><div class="ttdeci">detail::callable_ref&lt; test_case &gt; callable_</div><div class="ttdoc">Reference to the test case body, with any bound arguments.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01337">test.h:1337</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_af2b6792d06fa335f2b617e4d39bbba3c"><div class="ttname"><a href="#af2b6792d06fa335f2b617e4d39bbba3c">micro_os_plus::micro_test_plus::test_case::nesting_depth</a></div><div class="ttdeci">size_t nesting_depth(void) const noexcept</div><div class="ttdoc">Returns the nesting depth of this test case.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00480">test-inlines.h:480</a></div></div>
-<div class="ttc" id="adetail_8h_html_aaec16ed032c8fc52ba753a273b788381"><div class="ttname"><a href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a></div><div class="ttdeci">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</div><div class="ttdoc">Portable printf() conversion for the size_t values.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00095">detail.h:95</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00373">373</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  377</span>      : <a class="code hl_friend" href="#a484008ed66130a2bf334948841099943">runnable_base</a>{ <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>.name (), <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0224080b4433f538798354eca0f4c8c5">test_runner</a>, own_index },</div>
+<div class="line"><span class="lineno">  378</span>        <a class="code hl_variable" href="#aad4b8f6b15291abb5dc6602784fa7bad">callable_</a>{ body }, <a class="code hl_variable" href="#a1c0173e5186060d94f09db00552f44b4">location_</a>{ <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>.location () },</div>
+<div class="line"><span class="lineno">  379</span>        <a class="code hl_variable" href="#a3f1717ee8c04af1181f6dff2966b3d34">parent_suite_</a>{ parent_suite }, <a class="code hl_variable" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a>{ <a class="code hl_function" href="#af2b6792d06fa335f2b617e4d39bbba3c">nesting_depth</a> }</div>
+<div class="line"><span class="lineno">  380</span>  {</div>
+<div class="line"><span class="lineno">  381</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></div>
+<div class="line"><span class="lineno">  382</span>    trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39; %&quot;</span> <a class="code hl_define" href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a></div>
+<div class="line"><span class="lineno">  383</span>                   <span class="stringliteral">&quot; %&quot;</span> <a class="code hl_define" href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a> <span class="stringliteral">&quot;\n&quot;</span>,</div>
+<div class="line"><span class="lineno">  384</span>                   __PRETTY_FUNCTION__, <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50">name_</a>, <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a69687627342981d42471b17f1d83311f">own_index_</a>, <a class="code hl_variable" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a>);</div>
+<div class="line"><span class="lineno">  385</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
+<div class="line"><span class="lineno">  386</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a0224080b4433f538798354eca0f4c8c5"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0224080b4433f538798354eca0f4c8c5">micro_os_plus::micro_test_plus::detail::runnable_base::test_runner</a></div><div class="ttdeci">runner &amp; test_runner(void) const noexcept</div><div class="ttdoc">Gets the test runner that owns this test runnable.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00185">test-inlines.h:185</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a69687627342981d42471b17f1d83311f"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a69687627342981d42471b17f1d83311f">micro_os_plus::micro_test_plus::detail::runnable_base::own_index_</a></div><div class="ttdeci">size_t own_index_</div><div class="ttdoc">The test index, counting from 1.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00633">test.h:633</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a6c652cd5dc8194269c1cc5f0dc1945e0"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">micro_os_plus::micro_test_plus::detail::runnable_base::name</a></div><div class="ttdeci">const char * name(void) const noexcept</div><div class="ttdoc">Gets the node name.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00152">test-inlines.h:152</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_aad830bd92e4f6e4239d2bb5b75d5bf50"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50">micro_os_plus::micro_test_plus::detail::runnable_base::name_</a></div><div class="ttdeci">const char * name_</div><div class="ttdoc">The node name.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00597">test.h:597</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_a1c0173e5186060d94f09db00552f44b4"><div class="ttname"><a href="#a1c0173e5186060d94f09db00552f44b4">micro_os_plus::micro_test_plus::test_case::location_</a></div><div class="ttdeci">reflection::source_location location_</div><div class="ttdoc">The location of the call to test() that created this test case.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01375">test.h:1375</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_a3da31fa70e1009cfde8a13a7ffaad036"><div class="ttname"><a href="#a3da31fa70e1009cfde8a13a7ffaad036">micro_os_plus::micro_test_plus::test_case::nesting_depth_</a></div><div class="ttdeci">size_t nesting_depth_</div><div class="ttdoc">The nesting depth of this test case within the suite.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01392">test.h:1392</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_a3f1717ee8c04af1181f6dff2966b3d34"><div class="ttname"><a href="#a3f1717ee8c04af1181f6dff2966b3d34">micro_os_plus::micro_test_plus::test_case::parent_suite_</a></div><div class="ttdeci">suite &amp; parent_suite_</div><div class="ttdoc">Reference to the parent suite that owns this test case.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01384">test.h:1384</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_a484008ed66130a2bf334948841099943"><div class="ttname"><a href="#a484008ed66130a2bf334948841099943">micro_os_plus::micro_test_plus::test_case::runnable_base</a></div><div class="ttdeci">friend class detail::runnable_base</div><div class="ttdoc">The base of the nodes, which creates the test cases.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01000">test.h:1000</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_aad4b8f6b15291abb5dc6602784fa7bad"><div class="ttname"><a href="#aad4b8f6b15291abb5dc6602784fa7bad">micro_os_plus::micro_test_plus::test_case::callable_</a></div><div class="ttdeci">detail::callable_ref&lt; test_case &gt; callable_</div><div class="ttdoc">Reference to the test case body, with any bound arguments.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01366">test.h:1366</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_af2b6792d06fa335f2b617e4d39bbba3c"><div class="ttname"><a href="#af2b6792d06fa335f2b617e4d39bbba3c">micro_os_plus::micro_test_plus::test_case::nesting_depth</a></div><div class="ttdeci">size_t nesting_depth(void) const noexcept</div><div class="ttdoc">Returns the nesting depth of this test case.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00508">test-inlines.h:508</a></div></div>
+<div class="ttc" id="adetail_8h_html_aaec16ed032c8fc52ba753a273b788381"><div class="ttname"><a href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a></div><div class="ttdeci">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</div><div class="ttdoc">Portable printf() conversion for the size_t values.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00096">detail.h:96</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l01337">callable_</a>, <a class="el" href="test_8h_source.html#l01016">detail::runnable_base</a>, <a class="el" href="test_8h_source.html#l01346">location_</a>, <a class="el" href="detail_8h_source.html#l00095">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="test_8h_source.html#l00280">micro_os_plus::micro_test_plus::detail::runnable_base::micro_test_plus::runner</a>, <a class="el" href="test-inlines_8h_source.html#l00151">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test_8h_source.html#l00613">micro_os_plus::micro_test_plus::detail::runnable_base::name_</a>, <a class="el" href="test-inlines_8h_source.html#l00480">nesting_depth()</a>, <a class="el" href="test_8h_source.html#l01363">nesting_depth_</a>, <a class="el" href="test_8h_source.html#l00649">micro_os_plus::micro_test_plus::detail::runnable_base::own_index_</a>, <a class="el" href="test_8h_source.html#l01355">parent_suite_</a>, and <a class="el" href="test-inlines_8h_source.html#l00194">micro_os_plus::micro_test_plus::detail::runnable_base::test_runner()</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l01366">callable_</a>, <a class="el" href="test_8h_source.html#l01000">detail::runnable_base</a>, <a class="el" href="test_8h_source.html#l01375">location_</a>, <a class="el" href="detail_8h_source.html#l00096">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="test_8h_source.html#l00281">micro_os_plus::micro_test_plus::detail::runnable_base::micro_test_plus::runner</a>, <a class="el" href="test-inlines_8h_source.html#l00152">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test_8h_source.html#l00597">micro_os_plus::micro_test_plus::detail::runnable_base::name_</a>, <a class="el" href="test-inlines_8h_source.html#l00508">nesting_depth()</a>, <a class="el" href="test_8h_source.html#l01392">nesting_depth_</a>, <a class="el" href="test_8h_source.html#l00633">micro_os_plus::micro_test_plus::detail::runnable_base::own_index_</a>, <a class="el" href="test_8h_source.html#l01384">parent_suite_</a>, and <a class="el" href="test-inlines_8h_source.html#l00185">micro_os_plus::micro_test_plus::detail::runnable_base::test_runner()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#ab7f67423b68a596e6a31ffc7ba261345">test_case()</a>, <a class="el" href="#a13ad0f433d3a8189cb806ddb38c2a56c">test_case()</a>, <a class="el" href="#a556bbac39502797d52241f481e021847">operator=()</a>, and <a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>.</p>
 
@@ -353,7 +362,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>A copy would duplicate the counters. </p>
 
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>.</p>
 
 </div>
 </div>
@@ -381,7 +390,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Nodes are referred to by address (e.g. by their children and by the runner), so they must not be relocated. </p>
 
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>.</p>
 
 </div>
 </div>
@@ -417,7 +426,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  296</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></div>
 <div class="line"><span class="lineno">  297</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00613">micro_os_plus::micro_test_plus::detail::runnable_base::name_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00597">micro_os_plus::micro_test_plus::detail::runnable_base::name_</a>.</p>
 
 </div>
 </div>
@@ -458,10 +467,10 @@ Friends</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  162</span>    {</div>
 <div class="line"><span class="lineno">  163</span>      <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">runner_</a>.<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7bc806540e65c21095ef1ea1ef970db2">abort</a> (sl, <span class="keyword">true</span>);</div>
 <div class="line"><span class="lineno">  164</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_ab7513249cc0aac30e3edd7008d08d355"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">micro_os_plus::micro_test_plus::detail::runnable_base::runner_</a></div><div class="ttdeci">runner &amp; runner_</div><div class="ttdoc">Reference to the test runner that owns this object.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00638">test.h:638</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a7bc806540e65c21095ef1ea1ef970db2"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7bc806540e65c21095ef1ea1ef970db2">micro_os_plus::micro_test_plus::runner::abort</a></div><div class="ttdeci">void abort(const reflection::source_location &amp;sl=reflection::source_location::current())</div><div class="ttdoc">Aborts test execution immediately.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00773">runner.cpp:773</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_ab7513249cc0aac30e3edd7008d08d355"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">micro_os_plus::micro_test_plus::detail::runnable_base::runner_</a></div><div class="ttdeci">runner &amp; runner_</div><div class="ttdoc">Reference to the test runner that owns this object.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00622">test.h:622</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a7bc806540e65c21095ef1ea1ef970db2"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7bc806540e65c21095ef1ea1ef970db2">micro_os_plus::micro_test_plus::runner::abort</a></div><div class="ttdeci">void abort(const reflection::source_location &amp;sl=reflection::source_location::current())</div><div class="ttdoc">Aborts test execution immediately.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00913">runner.cpp:913</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner_8cpp_source.html#l00773">micro_os_plus::micro_test_plus::runner::abort()</a>, and <a class="el" href="test_8h_source.html#l00638">runner_</a>.</p>
+<p class="reference">References <a class="el" href="runner_8cpp_source.html#l00913">micro_os_plus::micro_test_plus::runner::abort()</a>, and <a class="el" href="test_8h_source.html#l00622">runner_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>.</p>
 
@@ -592,17 +601,17 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a80c4365daa5804dc8ea52c7a5531e4cd"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html#a80c4365daa5804dc8ea52c7a5531e4cd">micro_os_plus::micro_test_plus::counters::increment_failed_test_cases</a></div><div class="ttdeci">void increment_failed_test_cases(size_t count=1) noexcept</div><div class="ttdoc">Increments the failed test cases counter.</div><div class="ttdef"><b>Definition</b> <a href="counters-inlines_8h_source.html#l00110">counters-inlines.h:110</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a1986653001ad23e18de13822bbcd022f"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a1986653001ad23e18de13822bbcd022f">micro_os_plus::micro_test_plus::detail::reporter::skip_test_case</a></div><div class="ttdeci">virtual void skip_test_case(const test_case &amp;test_case)=0</div><div class="ttdoc">Reports a test case skipped by the filter.</div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a7e4a578732a0464480e211f6591fa69f"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a7e4a578732a0464480e211f6591fa69f">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter</a></div><div class="ttdeci">class reporter &amp; test_reporter(void) const noexcept</div><div class="ttdoc">Gets the test reporter associated with this test runnable.</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00115">test.cpp:115</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a87091ad4653e9db854ba9d5a64b30738"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a87091ad4653e9db854ba9d5a64b30738">micro_os_plus::micro_test_plus::detail::runnable_base::totals_</a></div><div class="ttdeci">counters totals_</div><div class="ttdoc">Totals for the node.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00628">test.h:628</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_aff1a81aff41ab5dc80e2fac1c5a78a31"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aff1a81aff41ab5dc80e2fac1c5a78a31">micro_os_plus::micro_test_plus::detail::runnable_base::child_test_cases_count_</a></div><div class="ttdeci">size_t child_test_cases_count_</div><div class="ttdoc">The number of direct child test cases.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00673">test.h:673</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a0e478c394741ff78f65a7e2c0822ba50"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a0e478c394741ff78f65a7e2c0822ba50">micro_os_plus::micro_test_plus::runner::list_test_case</a></div><div class="ttdeci">void list_test_case(const class suite &amp;suite, const class test_case &amp;test_case)</div><div class="ttdoc">Lists a test case, instead of running it.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00519">runner.cpp:519</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a2b0adeef059676a455d9506ba8a06d26"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a2b0adeef059676a455d9506ba8a06d26">micro_os_plus::micro_test_plus::runner::is_selected</a></div><div class="ttdeci">bool is_selected(const char *name, size_t level) const</div><div class="ttdoc">Checks whether a suite or a test case is selected by the filter pattern of its nesting level.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00486">runner.cpp:486</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a2cbcc12d72c192f6053cd342af1b5a77"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a2cbcc12d72c192f6053cd342af1b5a77">micro_os_plus::micro_test_plus::runner::list_tests_</a></div><div class="ttdeci">bool list_tests_</div><div class="ttdoc">Whether the test cases are listed instead of run.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l01024">runner.h:1024</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_acf5727abb4e4b23e1a2d7d3320f5dec9"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acf5727abb4e4b23e1a2d7d3320f5dec9">micro_os_plus::micro_test_plus::runner::running_test_case_</a></div><div class="ttdeci">test_case * running_test_case_</div><div class="ttdoc">The innermost test case being run, if any.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l01013">runner.h:1013</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_ad107cec6e32daac2da4cd665c7444e51"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ad107cec6e32daac2da4cd665c7444e51">micro_os_plus::micro_test_plus::runner::aborted_</a></div><div class="ttdeci">bool aborted_</div><div class="ttdoc">Whether the test execution was aborted.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l01002">runner.h:1002</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a87091ad4653e9db854ba9d5a64b30738"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a87091ad4653e9db854ba9d5a64b30738">micro_os_plus::micro_test_plus::detail::runnable_base::totals_</a></div><div class="ttdeci">counters totals_</div><div class="ttdoc">Totals for the node.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00612">test.h:612</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_aff1a81aff41ab5dc80e2fac1c5a78a31"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aff1a81aff41ab5dc80e2fac1c5a78a31">micro_os_plus::micro_test_plus::detail::runnable_base::child_test_cases_count_</a></div><div class="ttdeci">size_t child_test_cases_count_</div><div class="ttdoc">The number of direct child test cases.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00657">test.h:657</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a0e478c394741ff78f65a7e2c0822ba50"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a0e478c394741ff78f65a7e2c0822ba50">micro_os_plus::micro_test_plus::runner::list_test_case</a></div><div class="ttdeci">void list_test_case(const class suite &amp;suite, const class test_case &amp;test_case)</div><div class="ttdoc">Lists a test case, instead of running it.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00608">runner.cpp:608</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a2b0adeef059676a455d9506ba8a06d26"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a2b0adeef059676a455d9506ba8a06d26">micro_os_plus::micro_test_plus::runner::is_selected</a></div><div class="ttdeci">bool is_selected(const char *name, size_t level) const</div><div class="ttdoc">Checks whether a suite or a test case is selected by the filter pattern of its nesting level.</div><div class="ttdef"><b>Definition</b> <a href="runner_8cpp_source.html#l00575">runner.cpp:575</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a2cbcc12d72c192f6053cd342af1b5a77"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a2cbcc12d72c192f6053cd342af1b5a77">micro_os_plus::micro_test_plus::runner::list_tests_</a></div><div class="ttdeci">bool list_tests_</div><div class="ttdoc">Whether the test cases are listed instead of run.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l01131">runner.h:1131</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_acf5727abb4e4b23e1a2d7d3320f5dec9"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acf5727abb4e4b23e1a2d7d3320f5dec9">micro_os_plus::micro_test_plus::runner::running_test_case_</a></div><div class="ttdeci">test_case * running_test_case_</div><div class="ttdoc">The innermost test case being run, if any.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l01120">runner.h:1120</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_ad107cec6e32daac2da4cd665c7444e51"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ad107cec6e32daac2da4cd665c7444e51">micro_os_plus::micro_test_plus::runner::aborted_</a></div><div class="ttdeci">bool aborted_</div><div class="ttdoc">Whether the test execution was aborted.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l01109">runner.h:1109</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="runner_8h_source.html#l01002">micro_os_plus::micro_test_plus::runner::aborted_</a>, <a class="el" href="test_8h_source.html#l00673">child_test_cases_count_</a>, <a class="el" href="counters-inlines_8h_source.html#l00089">micro_os_plus::micro_test_plus::counters::increment_executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00110">micro_os_plus::micro_test_plus::counters::increment_failed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00120">micro_os_plus::micro_test_plus::counters::increment_skipped_test_cases()</a>, <a class="el" href="runner_8cpp_source.html#l00486">micro_os_plus::micro_test_plus::runner::is_selected()</a>, <a class="el" href="runner_8cpp_source.html#l00519">micro_os_plus::micro_test_plus::runner::list_test_case()</a>, <a class="el" href="runner_8h_source.html#l01024">micro_os_plus::micro_test_plus::runner::list_tests_</a>, <a class="el" href="test-inlines_8h_source.html#l00151">name()</a>, <a class="el" href="test-inlines_8h_source.html#l00480">micro_os_plus::micro_test_plus::test_case::nesting_depth()</a>, <a class="el" href="counters-inlines_8h_source.html#l00215">micro_os_plus::micro_test_plus::counters::passed()</a>, <a class="el" href="test_8h_source.html#l00638">runner_</a>, <a class="el" href="runner_8h_source.html#l01013">micro_os_plus::micro_test_plus::runner::running_test_case_</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a1986653001ad23e18de13822bbcd022f">micro_os_plus::micro_test_plus::detail::reporter::skip_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00115">test_reporter()</a>, <a class="el" href="test-inlines_8h_source.html#l00161">totals()</a>, and <a class="el" href="test_8h_source.html#l00628">totals_</a>.</p>
+<p class="reference">References <a class="el" href="runner_8h_source.html#l01109">micro_os_plus::micro_test_plus::runner::aborted_</a>, <a class="el" href="test_8h_source.html#l00657">child_test_cases_count_</a>, <a class="el" href="counters-inlines_8h_source.html#l00089">micro_os_plus::micro_test_plus::counters::increment_executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00110">micro_os_plus::micro_test_plus::counters::increment_failed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00120">micro_os_plus::micro_test_plus::counters::increment_skipped_test_cases()</a>, <a class="el" href="runner_8cpp_source.html#l00575">micro_os_plus::micro_test_plus::runner::is_selected()</a>, <a class="el" href="runner_8cpp_source.html#l00608">micro_os_plus::micro_test_plus::runner::list_test_case()</a>, <a class="el" href="runner_8h_source.html#l01131">micro_os_plus::micro_test_plus::runner::list_tests_</a>, <a class="el" href="test-inlines_8h_source.html#l00152">name()</a>, <a class="el" href="test-inlines_8h_source.html#l00508">micro_os_plus::micro_test_plus::test_case::nesting_depth()</a>, <a class="el" href="counters-inlines_8h_source.html#l00215">micro_os_plus::micro_test_plus::counters::passed()</a>, <a class="el" href="test_8h_source.html#l00622">runner_</a>, <a class="el" href="runner_8h_source.html#l01120">micro_os_plus::micro_test_plus::runner::running_test_case_</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a1986653001ad23e18de13822bbcd022f">micro_os_plus::micro_test_plus::detail::reporter::skip_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00115">test_reporter()</a>, <a class="el" href="test-inlines_8h_source.html#l00162">totals()</a>, and <a class="el" href="test_8h_source.html#l00612">totals_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00216">create_test_case()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00207">create_test_case()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>.</p>
 
 </div>
 </div>
@@ -672,26 +681,68 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 <p>Binds the callable and its arguments into a local body, constructs the child <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html" title="A named, runnable test case that lives inside a suite.">test_case</a></span> as a local object that refers to the body, with the next test point number of this node as its index, then passes it to <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a38cf903fb0ba5b76b1eb2350b6385962" title="Counts a newly constructed child test case and executes it immediately.">after_test_case_create()</a></span>, which counts and runs it.</p>
 <p>The child test case and its body, with the copies of the arguments, are destroyed when this function returns, so the memory used by a test session does not grow with the number of test cases; the stack holds one test case and one body for each level of nesting being run. Since the body is not stored in a <span class="tt">std::function</span>, it is never allocated, whatever the size of the lambda captures and of the arguments. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00216">216</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  220</span>    {</div>
-<div class="line"><span class="lineno">  221</span>      <span class="keywordtype">size_t</span> own_index = <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0d131770fe8aed387ca6da982f1ff60e">next_test_point_number</a> ();</div>
-<div class="line"><span class="lineno">  222</span>      <span class="keyword">auto</span> body = <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a6abb44ef8226b1f80aad8010b5ef1a5c">bind_callable&lt;class test_case&gt;</a> (</div>
-<div class="line"><span class="lineno">  223</span>          std::forward&lt;Callable_T&gt; (callable),</div>
-<div class="line"><span class="lineno">  224</span>          std::forward&lt;Args_T&gt; (arguments)...);</div>
-<div class="line"><span class="lineno">  225</span>      <span class="keyword">class </span>test_case child_test_case{</div>
-<div class="line"><span class="lineno">  226</span>        name,      runner_,       parent_suite,</div>
-<div class="line"><span class="lineno">  227</span>        own_index, nesting_depth, callable_ref&lt;class test_case&gt;{ body }</div>
-<div class="line"><span class="lineno">  228</span>      };</div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>      <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a38cf903fb0ba5b76b1eb2350b6385962">after_test_case_create</a> (child_test_case, parent_suite);</div>
-<div class="line"><span class="lineno">  231</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a0d131770fe8aed387ca6da982f1ff60e"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0d131770fe8aed387ca6da982f1ff60e">micro_os_plus::micro_test_plus::detail::runnable_base::next_test_point_number</a></div><div class="ttdeci">size_t next_test_point_number(void) noexcept</div><div class="ttdoc">Advances to the next child test point, and returns its number.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00184">test-inlines.h:184</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00207">207</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>    {</div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordtype">size_t</span> own_index = <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0d131770fe8aed387ca6da982f1ff60e">next_test_point_number</a> ();</div>
+<div class="line"><span class="lineno">  213</span>      <span class="keyword">auto</span> body = <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a6abb44ef8226b1f80aad8010b5ef1a5c">bind_callable&lt;class test_case&gt;</a> (</div>
+<div class="line"><span class="lineno">  214</span>          std::forward&lt;Callable_T&gt; (callable),</div>
+<div class="line"><span class="lineno">  215</span>          std::forward&lt;Args_T&gt; (arguments)...);</div>
+<div class="line"><span class="lineno">  216</span>      <span class="keyword">class </span>test_case child_test_case{</div>
+<div class="line"><span class="lineno">  217</span>        name,      runner_,       parent_suite,</div>
+<div class="line"><span class="lineno">  218</span>        own_index, nesting_depth, callable_ref&lt;class test_case&gt;{ body }</div>
+<div class="line"><span class="lineno">  219</span>      };</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>      <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a38cf903fb0ba5b76b1eb2350b6385962">after_test_case_create</a> (child_test_case, parent_suite);</div>
+<div class="line"><span class="lineno">  222</span>    }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a0d131770fe8aed387ca6da982f1ff60e"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a0d131770fe8aed387ca6da982f1ff60e">micro_os_plus::micro_test_plus::detail::runnable_base::next_test_point_number</a></div><div class="ttdeci">size_t next_test_point_number(void) noexcept</div><div class="ttdoc">Advances to the next child test point, and returns its number.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00175">test-inlines.h:175</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a38cf903fb0ba5b76b1eb2350b6385962"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a38cf903fb0ba5b76b1eb2350b6385962">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</a></div><div class="ttdeci">void after_test_case_create(class test_case &amp;test_case, suite &amp;suite)</div><div class="ttdoc">Counts a newly constructed child test case and executes it immediately.</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00201">test.cpp:201</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a6abb44ef8226b1f80aad8010b5ef1a5c"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a6abb44ef8226b1f80aad8010b5ef1a5c">micro_os_plus::micro_test_plus::detail::bind_callable</a></div><div class="ttdeci">auto bind_callable(Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</div><div class="ttdoc">Creates the function object that holds the body of a test case or suite.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00250">test-inlines.h:250</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a6abb44ef8226b1f80aad8010b5ef1a5c"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a6abb44ef8226b1f80aad8010b5ef1a5c">micro_os_plus::micro_test_plus::detail::bind_callable</a></div><div class="ttdeci">auto bind_callable(Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</div><div class="ttdoc">Creates the function object that holds the body of a test case or suite.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00241">test-inlines.h:241</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="test-inlines_8h_source.html#l00250">micro_os_plus::micro_test_plus::detail::bind_callable()</a>, <a class="el" href="test-inlines_8h_source.html#l00151">name()</a>, <a class="el" href="test-inlines_8h_source.html#l00184">next_test_point_number()</a>, and <a class="el" href="test_8h_source.html#l00638">runner_</a>.</p>
+<p class="reference">References <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="test-inlines_8h_source.html#l00241">micro_os_plus::micro_test_plus::detail::bind_callable()</a>, <a class="el" href="test-inlines_8h_source.html#l00152">name()</a>, <a class="el" href="test-inlines_8h_source.html#l00175">next_test_point_number()</a>, and <a class="el" href="test_8h_source.html#l00622">runner_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, <a class="el" href="test-inlines_8h_source.html#l00643">micro_os_plus::micro_test_plus::suite::test()</a>, and <a class="el" href="test-inlines_8h_source.html#l00405">micro_os_plus::micro_test_plus::test_case::test()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, <a class="el" href="test-inlines_8h_source.html#l00671">micro_os_plus::micro_test_plus::suite::test()</a>, and <a class="el" href="test-inlines_8h_source.html#l00396">micro_os_plus::micro_test_plus::test_case::test()</a>.</p>
+
+</div>
+</div>
+<a id="gaf4f5f9632b5a290c1894984661a41a86" name="gaf4f5f9632b5a290c1894984661a41a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4f5f9632b5a290c1894984661a41a86">&#9670;&#160;</a></span>expect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Expr_T&gt; <br />
+requires extension::legacy_checkable&lt;Expr_T&gt;</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto micro_os_plus::micro_test_plus::test_case::expect </td>
+          <td>(</td>
+          <td class="paramtype">const Expr_T &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sl</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>()</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Accepts the arguments excluded from <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html" title="C++20 concept satisfied when a type can be used as a test expression in expect() or require().">extension::checkable</a></span>, such as a string literal or a function name, which are always true, so the check passes silently; usually the description was written instead of the condition, or the function was not called. Write the condition, or <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-function-comparators.html#ga5bf176ef730172592095657417e5f039" title="Generic non-equality comparator.">ne</a> (p, nullptr)</span> for a pointer.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Expr_T</td><td>The type of the argument.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>The argument. </td></tr>
+    <tr><td class="paramname">sl</td><td>Optional source location, defaulting to the current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The check result. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000125">Deprecated</a></b></dt><dd></dd></dl>
+
+<p class="reference">References <a class="el" href="reflection-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::reflection::source_location::current()</a>.</p>
 
 </div>
 </div>
@@ -713,7 +764,7 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -751,12 +802,12 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 <div class="line"><span class="lineno">  335</span>    <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a87091ad4653e9db854ba9d5a64b30738">totals_</a>.<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html#aceea5d97d4ae5cd25f077d0349465062">increment_failed_checks</a> ();</div>
 <div class="line"><span class="lineno">  336</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_aceea5d97d4ae5cd25f077d0349465062"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html#aceea5d97d4ae5cd25f077d0349465062">micro_os_plus::micro_test_plus::counters::increment_failed_checks</a></div><div class="ttdeci">void increment_failed_checks(size_t count=1) noexcept</div><div class="ttdoc">Increments the failed-checks counter.</div><div class="ttdef"><b>Definition</b> <a href="counters-inlines_8h_source.html#l00079">counters-inlines.h:79</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a406cf77b7adcd5fe9417ce7bce4f3afb"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a406cf77b7adcd5fe9417ce7bce4f3afb">micro_os_plus::micro_test_plus::detail::reporter::fail</a></div><div class="ttdeci">void fail(const failure_info &amp;failure, const std::string &amp;expression, const test_case &amp;test_case)</div><div class="ttdoc">Reports a failed condition.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00621">reporter.cpp:621</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a406cf77b7adcd5fe9417ce7bce4f3afb"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a406cf77b7adcd5fe9417ce7bce4f3afb">micro_os_plus::micro_test_plus::detail::reporter::fail</a></div><div class="ttdeci">void fail(const failure_info &amp;failure, const std::string &amp;expression, const test_case &amp;test_case)</div><div class="ttdoc">Reports a failed condition.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00714">reporter.cpp:714</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a0726a1bc3b6f16245cb8a4b42fe0e70cae15c5d274bf9fa6571890c731d88bc37"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a0726a1bc3b6f16245cb8a4b42fe0e70cae15c5d274bf9fa6571890c731d88bc37">micro_os_plus::micro_test_plus::detail::check_kind::expectation</a></div><div class="ttdeci">@ expectation</div><div class="ttdoc">A check created by expect().</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00121">check-result.h:121</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="check-result_8h_source.html#l00121">micro_os_plus::micro_test_plus::detail::expectation</a>, <a class="el" href="reporter_8cpp_source.html#l00621">micro_os_plus::micro_test_plus::detail::reporter::fail()</a>, <a class="el" href="counters-inlines_8h_source.html#l00079">micro_os_plus::micro_test_plus::counters::increment_failed_checks()</a>, <a class="el" href="test_8h_source.html#l01346">location_</a>, <a class="el" href="check-result_8h_source.html#l00163">micro_os_plus::micro_test_plus::detail::failure_info::message</a>, <a class="el" href="test-inlines_8h_source.html#l00184">micro_os_plus::micro_test_plus::detail::runnable_base::next_test_point_number()</a>, <a class="el" href="test_8cpp_source.html#l00115">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter()</a>, and <a class="el" href="test_8h_source.html#l00628">micro_os_plus::micro_test_plus::detail::runnable_base::totals_</a>.</p>
+<p class="reference">References <a class="el" href="check-result_8h_source.html#l00121">micro_os_plus::micro_test_plus::detail::expectation</a>, <a class="el" href="reporter_8cpp_source.html#l00714">micro_os_plus::micro_test_plus::detail::reporter::fail()</a>, <a class="el" href="counters-inlines_8h_source.html#l00079">micro_os_plus::micro_test_plus::counters::increment_failed_checks()</a>, <a class="el" href="test_8h_source.html#l01375">location_</a>, <a class="el" href="check-result_8h_source.html#l00163">micro_os_plus::micro_test_plus::detail::failure_info::message</a>, <a class="el" href="test-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::runnable_base::next_test_point_number()</a>, <a class="el" href="test_8cpp_source.html#l00115">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter()</a>, and <a class="el" href="test_8h_source.html#l00612">micro_os_plus::micro_test_plus::detail::runnable_base::totals_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>, and <a class="el" href="test-inlines_8h_source.html#l00511">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a>, and <a class="el" href="test-inlines_8h_source.html#l00539">run()</a>.</p>
 
 </div>
 </div>
@@ -792,9 +843,9 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 <div class="line"><span class="lineno">  139</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">runner_</a>.<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ad107cec6e32daac2da4cd665c7444e51">aborted_</a>;</div>
 <div class="line"><span class="lineno">  140</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00638">runner_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00622">runner_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, <a class="el" href="test_8cpp_source.html#l00374">micro_os_plus::micro_test_plus::suite::run()</a>, and <a class="el" href="test-inlines_8h_source.html#l00511">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, <a class="el" href="test_8cpp_source.html#l00374">micro_os_plus::micro_test_plus::suite::run()</a>, and <a class="el" href="test-inlines_8h_source.html#l00539">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
 
 </div>
 </div>
@@ -830,7 +881,7 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 <div class="line"><span class="lineno">  150</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">runner_</a>.<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a2cbcc12d72c192f6053cd342af1b5a77">list_tests_</a>;</div>
 <div class="line"><span class="lineno">  151</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00638">runner_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00622">runner_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, and <a class="el" href="test_8cpp_source.html#l00374">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
 
@@ -862,14 +913,14 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the null-terminated node name.</dd></dl>
 <p>Returns a pointer to the null-terminated name stored in <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50" title="The node name.">name_</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00151">151</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>    {</div>
-<div class="line"><span class="lineno">  153</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50">name_</a>;</div>
-<div class="line"><span class="lineno">  154</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00152">152</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>    {</div>
+<div class="line"><span class="lineno">  154</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50">name_</a>;</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00613">name_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00597">name_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="runner_8cpp_source.html#l00093">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="runner_8cpp_source.html#l00079">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="test-inlines_8h_source.html#l00810">micro_os_plus::micro_test_plus::static_suite::static_suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00577">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00382">micro_os_plus::micro_test_plus::test_case::test_case()</a>, <a class="el" href="test_8cpp_source.html#l00545">micro_os_plus::micro_test_plus::top_suite::top_suite()</a>, <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00204">micro_os_plus::micro_test_plus::detail::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00339">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00372">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00547">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="test-inlines_8h_source.html#l00216">create_test_case()</a>, <a class="el" href="test_8h_source.html#l01427">micro_os_plus::micro_test_plus::suite::detail::reporter_tap</a>, <a class="el" href="test_8h_source.html#l01016">micro_os_plus::micro_test_plus::test_case::detail::runnable_base</a>, <a class="el" href="reporter-human_8cpp_source.html#l00243">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00381">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00422">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00593">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00344">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00520">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>, <a class="el" href="runner_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="runner_8cpp_source.html#l00519">micro_os_plus::micro_test_plus::runner::list_test_case()</a>, <a class="el" href="test_8h_source.html#l01792">micro_os_plus::micro_test_plus::top_suite::micro_test_plus::runner</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a18b82d51daccd8a75f87e043d2660006">operator=()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html#aaaa545978a454f1ae63fc06ac5169efe">micro_os_plus::micro_test_plus::suite::operator=()</a>, <a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">micro_os_plus::micro_test_plus::test_case::operator=()</a>, <a class="el" href="test_8h_source.html#l00308">reporter_tap</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00314">micro_os_plus::micro_test_plus::detail::reporter_human::skip_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00484">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00665">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00894">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>, <a class="el" href="test-inlines_8h_source.html#l00643">micro_os_plus::micro_test_plus::suite::test()</a>, <a class="el" href="test-inlines_8h_source.html#l00405">micro_os_plus::micro_test_plus::test_case::test()</a>, <a class="el" href="test-inlines_8h_source.html#l00770">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00757">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00742">micro_os_plus::micro_test_plus::test_case::test_each()</a>, and <a class="el" href="test-inlines_8h_source.html#l00729">micro_os_plus::micro_test_plus::test_case::test_each()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="runner_8cpp_source.html#l00095">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="runner_8cpp_source.html#l00081">micro_os_plus::micro_test_plus::runner::runner()</a>, <a class="el" href="test-inlines_8h_source.html#l00855">micro_os_plus::micro_test_plus::static_suite::static_suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00605">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00373">micro_os_plus::micro_test_plus::test_case::test_case()</a>, <a class="el" href="test_8cpp_source.html#l00545">micro_os_plus::micro_test_plus::top_suite::top_suite()</a>, <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00207">micro_os_plus::micro_test_plus::detail::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="test-inlines_8h_source.html#l00207">create_test_case()</a>, <a class="el" href="test_8h_source.html#l01456">micro_os_plus::micro_test_plus::suite::detail::reporter_tap</a>, <a class="el" href="test_8h_source.html#l01000">micro_os_plus::micro_test_plus::test_case::detail::runnable_base</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01050">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00864">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00365">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>, <a class="el" href="runner_8cpp_source.html#l00209">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="runner_8cpp_source.html#l00608">micro_os_plus::micro_test_plus::runner::list_test_case()</a>, <a class="el" href="test_8h_source.html#l01821">micro_os_plus::micro_test_plus::top_suite::micro_test_plus::runner</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a18b82d51daccd8a75f87e043d2660006">operator=()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html#aaaa545978a454f1ae63fc06ac5169efe">micro_os_plus::micro_test_plus::suite::operator=()</a>, <a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">micro_os_plus::micro_test_plus::test_case::operator=()</a>, <a class="el" href="test_8h_source.html#l00309">reporter_tap</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00333">micro_os_plus::micro_test_plus::detail::reporter_human::skip_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00480">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00676">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>, <a class="el" href="test-inlines_8h_source.html#l00671">micro_os_plus::micro_test_plus::suite::test()</a>, <a class="el" href="test-inlines_8h_source.html#l00396">micro_os_plus::micro_test_plus::test_case::test()</a>, <a class="el" href="test-inlines_8h_source.html#l00813">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00800">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00785">micro_os_plus::micro_test_plus::test_case::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00772">micro_os_plus::micro_test_plus::test_case::test_each()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l01087">micro_os_plus::micro_test_plus::detail::reporter_tap::write_quiet_failures()</a>.</p>
 
 </div>
 </div>
@@ -899,14 +950,14 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The nesting depth (1 = top-level).</dd></dl>
 <p>Top-level test cases (direct children of a <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html" title="A named, runnable test suite registered with the test runner.">suite</a></span>) have depth 1. Each additional level of nesting increments the depth by 1. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00480">480</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  481</span>  {</div>
-<div class="line"><span class="lineno">  482</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a>;</div>
-<div class="line"><span class="lineno">  483</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00508">508</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  509</span>  {</div>
+<div class="line"><span class="lineno">  510</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a>;</div>
+<div class="line"><span class="lineno">  511</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l01363">nesting_depth_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l01392">nesting_depth_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>, <a class="el" href="test_8cpp_source.html#l00201">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00372">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00547">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="test_8h_source.html#l01016">detail::runnable_base</a>, <a class="el" href="reporter-human_8cpp_source.html#l00422">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00593">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00584">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00797">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00853">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00543">micro_os_plus::micro_test_plus::detail::reporter_human::output_pass_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00745">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00665">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00894">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>, <a class="el" href="test_8cpp_source.html#l00201">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="test_8h_source.html#l01000">detail::runnable_base</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01050">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00864">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00594">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00790">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00846">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00553">micro_os_plus::micro_test_plus::detail::reporter_human::output_pass_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_prefix()</a>, <a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00676">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
 
 </div>
 </div>
@@ -937,15 +988,15 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The one-based number of the new test point.</dd></dl>
 <p>Each call to <span class="tt"><a class="el" href="#aac23ee148d8e5946cd87e0de036e9fb8" title="Adds a nested test case to this test case, and runs it.">test()</a></span> invokes this member function before constructing the new <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html" title="A named, runnable test case that lives inside a suite.">test_case</a></span>, and each check invokes it from the check result destructor, when the check is reported, so the numbers form a strictly increasing, one-based sequence of TAP test points, in output order. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00184">184</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  185</span>    {</div>
-<div class="line"><span class="lineno">  186</span>      <span class="keywordflow">return</span> ++<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#abc92cbb8ab8d04e7c75bf18aa7189d98">test_point_number_</a>;</div>
-<div class="line"><span class="lineno">  187</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_abc92cbb8ab8d04e7c75bf18aa7189d98"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#abc92cbb8ab8d04e7c75bf18aa7189d98">micro_os_plus::micro_test_plus::detail::runnable_base::test_point_number_</a></div><div class="ttdeci">size_t test_point_number_</div><div class="ttdoc">The number of the most recent child test point.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00661">test.h:661</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00175">175</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>    {</div>
+<div class="line"><span class="lineno">  177</span>      <span class="keywordflow">return</span> ++<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#abc92cbb8ab8d04e7c75bf18aa7189d98">test_point_number_</a>;</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_abc92cbb8ab8d04e7c75bf18aa7189d98"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#abc92cbb8ab8d04e7c75bf18aa7189d98">micro_os_plus::micro_test_plus::detail::runnable_base::test_point_number_</a></div><div class="ttdeci">size_t test_point_number_</div><div class="ttdoc">The number of the most recent child test point.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00645">test.h:645</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00661">test_point_number_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00645">test_point_number_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00216">create_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00463">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception()</a>, <a class="el" href="test_8cpp_source.html#l00315">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00207">create_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00463">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception()</a>, <a class="el" href="test_8cpp_source.html#l00315">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>.</p>
 
 </div>
 </div>
@@ -973,7 +1024,7 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 </div><div class="memdoc">
 <p>A copy would duplicate the counters. </p>
 
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>.</p>
 
 </div>
 </div>
@@ -1001,7 +1052,49 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 </div><div class="memdoc">
 <p>Nodes are referred to by address (e.g. by their children and by the runner), so they must not be relocated. </p>
 
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>, <a class="el" href="test-inlines_8h_source.html#l00469">assume()</a>, <a class="el" href="reflection-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::reflection::source_location::current()</a>, <a class="el" href="test-inlines_8h_source.html#l00427">expect()</a>, <a class="el" href="test_8cpp_source.html#l00315">fail_unexpected_exception()</a>, <a class="el" href="test-inlines_8h_source.html#l00151">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test-inlines_8h_source.html#l00480">nesting_depth()</a>, <a class="el" href="test-inlines_8h_source.html#l00449">require()</a>, <a class="el" href="test-inlines_8h_source.html#l00511">run()</a>, <a class="el" href="test-inlines_8h_source.html#l00405">test()</a>, and <a class="el" href="test-inlines_8h_source.html#l00729">test_each()</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>, <a class="el" href="reflection-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::reflection::source_location::current()</a>, <a class="el" href="test-inlines_8h_source.html#l00418">expect()</a>, <a class="el" href="test-inlines_8h_source.html#l00152">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test-inlines_8h_source.html#l00440">require()</a>, <a class="el" href="test-inlines_8h_source.html#l00396">test()</a>, and <a class="el" href="test-inlines_8h_source.html#l00772">test_each()</a>.</p>
+
+</div>
+</div>
+<a id="gace68a1bd4dd258082f4b1fc01fcd008a" name="gace68a1bd4dd258082f4b1fc01fcd008a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace68a1bd4dd258082f4b1fc01fcd008a">&#9670;&#160;</a></span>require()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Expr_T&gt; <br />
+requires extension::legacy_checkable&lt;Expr_T&gt;</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto micro_os_plus::micro_test_plus::test_case::require </td>
+          <td>(</td>
+          <td class="paramtype">const Expr_T &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sl</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>()</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Accepts the arguments excluded from <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html" title="C++20 concept satisfied when a type can be used as a test expression in expect() or require().">extension::checkable</a></span>, as the deprecated overload of <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-expectations.html#gaf4f5f9632b5a290c1894984661a41a86" title="Evaluates a condition and reports the result.">expect()</a></span> does.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Expr_T</td><td>The type of the argument.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>The argument. </td></tr>
+    <tr><td class="paramname">sl</td><td>Optional source location, defaulting to the current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The check result. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000126">Deprecated</a></b></dt><dd></dd></dl>
+
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00497">assume()</a>, <a class="el" href="reflection-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::reflection::source_location::current()</a>, <a class="el" href="test_8cpp_source.html#l00315">fail_unexpected_exception()</a>, <a class="el" href="test-inlines_8h_source.html#l00508">nesting_depth()</a>, and <a class="el" href="test-inlines_8h_source.html#l00539">run()</a>.</p>
 
 </div>
 </div>
@@ -1039,62 +1132,62 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 
 <p>Implements <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">micro_os_plus::micro_test_plus::detail::runnable_base</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00511">511</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  512</span>  {</div>
-<div class="line"><span class="lineno">  513</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</span></div>
-<div class="line"><span class="lineno">  514</span>    trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39;\n&quot;</span>, __PRETTY_FUNCTION__, <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50">name_</a>);</div>
-<div class="line"><span class="lineno">  515</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</span></div>
-<div class="line"><span class="lineno">  516</span> </div>
-<div class="line"><span class="lineno">  517</span>    detail::reporter&amp; reporter = this-&gt;<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a7e4a578732a0464480e211f6591fa69f">test_reporter</a> ();</div>
-<div class="line"><span class="lineno">  518</span> </div>
-<div class="line"><span class="lineno">  519</span>    <span class="comment">// For now, test cases do not record the time.</span></div>
-<div class="line"><span class="lineno">  520</span>    <span class="comment">// this-&gt;stopwatch_.start ();</span></div>
-<div class="line"><span class="lineno">  521</span>    reporter.begin_test_case (*<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  522</span> </div>
-<div class="line"><span class="lineno">  523</span><span class="preprocessor">#if defined(__cpp_exceptions)</span></div>
-<div class="line"><span class="lineno">  524</span>    <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  525</span>      {</div>
-<div class="line"><span class="lineno">  526</span>        <span class="comment">// Invoke the callable, passing the self reference followed by the</span></div>
-<div class="line"><span class="lineno">  527</span>        <span class="comment">// variadic arguments.</span></div>
-<div class="line"><span class="lineno">  528</span>        <a class="code hl_variable" href="#aad4b8f6b15291abb5dc6602784fa7bad">callable_</a> (*<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  529</span>      }</div>
-<div class="line"><span class="lineno">  530</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> detail::failed_requirement&amp;)</div>
-<div class="line"><span class="lineno">  531</span>      {</div>
-<div class="line"><span class="lineno">  532</span>        <span class="comment">// A failed require() stopped the test case; already reported.</span></div>
-<div class="line"><span class="lineno">  533</span>      }</div>
-<div class="line"><span class="lineno">  534</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
-<div class="line"><span class="lineno">  535</span>      {</div>
-<div class="line"><span class="lineno">  536</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aaec8b378e1d1639a5fa0e6dec20d6a46">is_aborted</a> ())</div>
-<div class="line"><span class="lineno">  537</span>          {</div>
-<div class="line"><span class="lineno">  538</span>            <span class="comment">// Thrown by the abort handler; the report is complete.</span></div>
-<div class="line"><span class="lineno">  539</span>            <span class="keywordflow">throw</span>;</div>
-<div class="line"><span class="lineno">  540</span>          }</div>
-<div class="line"><span class="lineno">  541</span>        <a class="code hl_function" href="#a1980019eed5ac5b1eef65302eb9cc9cd">fail_unexpected_exception</a> (e.what ());</div>
-<div class="line"><span class="lineno">  542</span>      }</div>
-<div class="line"><span class="lineno">  543</span>    <span class="keywordflow">catch</span> (...)</div>
-<div class="line"><span class="lineno">  544</span>      {</div>
-<div class="line"><span class="lineno">  545</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aaec8b378e1d1639a5fa0e6dec20d6a46">is_aborted</a> ())</div>
-<div class="line"><span class="lineno">  546</span>          {</div>
-<div class="line"><span class="lineno">  547</span>            <span class="comment">// Thrown by the abort handler; the report is complete.</span></div>
-<div class="line"><span class="lineno">  548</span>            <span class="keywordflow">throw</span>;</div>
-<div class="line"><span class="lineno">  549</span>          }</div>
-<div class="line"><span class="lineno">  550</span>        <a class="code hl_function" href="#a1980019eed5ac5b1eef65302eb9cc9cd">fail_unexpected_exception</a> (<span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  551</span>      }</div>
-<div class="line"><span class="lineno">  552</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  553</span>    <span class="comment">// Invoke the callable, passing the self reference followed by the variadic</span></div>
-<div class="line"><span class="lineno">  554</span>    <span class="comment">// arguments.</span></div>
-<div class="line"><span class="lineno">  555</span>    <a class="code hl_variable" href="#aad4b8f6b15291abb5dc6602784fa7bad">callable_</a> (*<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  556</span><span class="preprocessor">#endif </span><span class="comment">// defined(__cpp_exceptions)</span></div>
-<div class="line"><span class="lineno">  557</span> </div>
-<div class="line"><span class="lineno">  558</span>    <span class="comment">// this-&gt;stopwatch_.stop ();</span></div>
-<div class="line"><span class="lineno">  559</span>    reporter.end_test_case (*<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  560</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00539">539</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  540</span>  {</div>
+<div class="line"><span class="lineno">  541</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</span></div>
+<div class="line"><span class="lineno">  542</span>    trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39;\n&quot;</span>, __PRETTY_FUNCTION__, <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad830bd92e4f6e4239d2bb5b75d5bf50">name_</a>);</div>
+<div class="line"><span class="lineno">  543</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</span></div>
+<div class="line"><span class="lineno">  544</span> </div>
+<div class="line"><span class="lineno">  545</span>    detail::reporter&amp; reporter = this-&gt;<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a7e4a578732a0464480e211f6591fa69f">test_reporter</a> ();</div>
+<div class="line"><span class="lineno">  546</span> </div>
+<div class="line"><span class="lineno">  547</span>    <span class="comment">// For now, test cases do not record the time.</span></div>
+<div class="line"><span class="lineno">  548</span>    <span class="comment">// this-&gt;stopwatch_.start ();</span></div>
+<div class="line"><span class="lineno">  549</span>    reporter.begin_test_case (*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  550</span> </div>
+<div class="line"><span class="lineno">  551</span><span class="preprocessor">#if defined(__cpp_exceptions)</span></div>
+<div class="line"><span class="lineno">  552</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  553</span>      {</div>
+<div class="line"><span class="lineno">  554</span>        <span class="comment">// Invoke the callable, passing the self reference followed by the</span></div>
+<div class="line"><span class="lineno">  555</span>        <span class="comment">// variadic arguments.</span></div>
+<div class="line"><span class="lineno">  556</span>        <a class="code hl_variable" href="#aad4b8f6b15291abb5dc6602784fa7bad">callable_</a> (*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  557</span>      }</div>
+<div class="line"><span class="lineno">  558</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> detail::failed_requirement&amp;)</div>
+<div class="line"><span class="lineno">  559</span>      {</div>
+<div class="line"><span class="lineno">  560</span>        <span class="comment">// A failed require() stopped the test case; already reported.</span></div>
+<div class="line"><span class="lineno">  561</span>      }</div>
+<div class="line"><span class="lineno">  562</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
+<div class="line"><span class="lineno">  563</span>      {</div>
+<div class="line"><span class="lineno">  564</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aaec8b378e1d1639a5fa0e6dec20d6a46">is_aborted</a> ())</div>
+<div class="line"><span class="lineno">  565</span>          {</div>
+<div class="line"><span class="lineno">  566</span>            <span class="comment">// Thrown by the abort handler; the report is complete.</span></div>
+<div class="line"><span class="lineno">  567</span>            <span class="keywordflow">throw</span>;</div>
+<div class="line"><span class="lineno">  568</span>          }</div>
+<div class="line"><span class="lineno">  569</span>        <a class="code hl_function" href="#a1980019eed5ac5b1eef65302eb9cc9cd">fail_unexpected_exception</a> (e.what ());</div>
+<div class="line"><span class="lineno">  570</span>      }</div>
+<div class="line"><span class="lineno">  571</span>    <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><span class="lineno">  572</span>      {</div>
+<div class="line"><span class="lineno">  573</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aaec8b378e1d1639a5fa0e6dec20d6a46">is_aborted</a> ())</div>
+<div class="line"><span class="lineno">  574</span>          {</div>
+<div class="line"><span class="lineno">  575</span>            <span class="comment">// Thrown by the abort handler; the report is complete.</span></div>
+<div class="line"><span class="lineno">  576</span>            <span class="keywordflow">throw</span>;</div>
+<div class="line"><span class="lineno">  577</span>          }</div>
+<div class="line"><span class="lineno">  578</span>        <a class="code hl_function" href="#a1980019eed5ac5b1eef65302eb9cc9cd">fail_unexpected_exception</a> (<span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  579</span>      }</div>
+<div class="line"><span class="lineno">  580</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  581</span>    <span class="comment">// Invoke the callable, passing the self reference followed by the variadic</span></div>
+<div class="line"><span class="lineno">  582</span>    <span class="comment">// arguments.</span></div>
+<div class="line"><span class="lineno">  583</span>    <a class="code hl_variable" href="#aad4b8f6b15291abb5dc6602784fa7bad">callable_</a> (*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  584</span><span class="preprocessor">#endif </span><span class="comment">// defined(__cpp_exceptions)</span></div>
+<div class="line"><span class="lineno">  585</span> </div>
+<div class="line"><span class="lineno">  586</span>    <span class="comment">// this-&gt;stopwatch_.stop ();</span></div>
+<div class="line"><span class="lineno">  587</span>    reporter.end_test_case (*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  588</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_aaec8b378e1d1639a5fa0e6dec20d6a46"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aaec8b378e1d1639a5fa0e6dec20d6a46">micro_os_plus::micro_test_plus::detail::runnable_base::is_aborted</a></div><div class="ttdeci">bool is_aborted(void) const noexcept</div><div class="ttdoc">Checks whether the test execution was aborted by the owning runner.</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00137">test.cpp:137</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case_html_a1980019eed5ac5b1eef65302eb9cc9cd"><div class="ttname"><a href="#a1980019eed5ac5b1eef65302eb9cc9cd">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception</a></div><div class="ttdeci">void fail_unexpected_exception(const char *what)</div><div class="ttdoc">Reports an exception that escaped the test case body as a failed check.</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00315">test.cpp:315</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#aa5f6b45879c1e0986ce4ebf9f374a182">micro_os_plus::micro_test_plus::detail::reporter::begin_test_case()</a>, <a class="el" href="test_8h_source.html#l01337">callable_</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a145971ca001d89162c435f87b4cfeece">micro_os_plus::micro_test_plus::detail::reporter::end_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00315">fail_unexpected_exception()</a>, <a class="el" href="test_8cpp_source.html#l00137">micro_os_plus::micro_test_plus::detail::runnable_base::is_aborted()</a>, <a class="el" href="test_8h_source.html#l00613">micro_os_plus::micro_test_plus::detail::runnable_base::name_</a>, and <a class="el" href="test_8cpp_source.html#l00115">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter()</a>.</p>
+<p class="reference">References <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#aa5f6b45879c1e0986ce4ebf9f374a182">micro_os_plus::micro_test_plus::detail::reporter::begin_test_case()</a>, <a class="el" href="test_8h_source.html#l01366">callable_</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a145971ca001d89162c435f87b4cfeece">micro_os_plus::micro_test_plus::detail::reporter::end_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00315">fail_unexpected_exception()</a>, <a class="el" href="test_8cpp_source.html#l00137">micro_os_plus::micro_test_plus::detail::runnable_base::is_aborted()</a>, <a class="el" href="test_8h_source.html#l00597">micro_os_plus::micro_test_plus::detail::runnable_base::name_</a>, and <a class="el" href="test_8cpp_source.html#l00115">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a">require()</a>.</p>
 
 </div>
 </div>
@@ -1130,9 +1223,9 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 <div class="line"><span class="lineno">  128</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">runner_</a>.<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acf5727abb4e4b23e1a2d7d3320f5dec9">running_test_case_</a>;</div>
 <div class="line"><span class="lineno">  129</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00638">runner_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00622">runner_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, and <a class="el" href="test-inlines_8h_source.html#l00643">micro_os_plus::micro_test_plus::suite::test()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, and <a class="el" href="test-inlines_8h_source.html#l00671">micro_os_plus::micro_test_plus::suite::test()</a>.</p>
 
 </div>
 </div>
@@ -1179,19 +1272,19 @@ template&lt;typename Callable_T, typename... Args_T&gt; </div>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Creates and runs the child test case with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ad4ac49522cfd6e1608d9ac64ab7a8b91" title="Creates a child test case, and runs it.">create_test_case()</a></span>, in the parent suite of this test case, one level of nesting deeper than this test case. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00405">405</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  407</span>  {</div>
-<div class="line"><span class="lineno">  408</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</span></div>
-<div class="line"><span class="lineno">  409</span>    trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39;\n&quot;</span>, __PRETTY_FUNCTION__, <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>.name ());</div>
-<div class="line"><span class="lineno">  410</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</span></div>
-<div class="line"><span class="lineno">  411</span> </div>
-<div class="line"><span class="lineno">  412</span>    <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ad4ac49522cfd6e1608d9ac64ab7a8b91">create_test_case</a> (<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>, <a class="code hl_variable" href="#a3f1717ee8c04af1181f6dff2966b3d34">parent_suite_</a>, <a class="code hl_variable" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a> + 1,</div>
-<div class="line"><span class="lineno">  413</span>                      std::forward&lt;Callable_T&gt; (callable),</div>
-<div class="line"><span class="lineno">  414</span>                      std::forward&lt;Args_T&gt; (arguments)...);</div>
-<div class="line"><span class="lineno">  415</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_ad4ac49522cfd6e1608d9ac64ab7a8b91"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ad4ac49522cfd6e1608d9ac64ab7a8b91">micro_os_plus::micro_test_plus::detail::runnable_base::create_test_case</a></div><div class="ttdeci">void create_test_case(const test_case_name &amp;name, suite &amp;parent_suite, size_t nesting_depth, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</div><div class="ttdoc">Creates a child test case, and runs it.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00216">test-inlines.h:216</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00396">396</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  398</span>  {</div>
+<div class="line"><span class="lineno">  399</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)</span></div>
+<div class="line"><span class="lineno">  400</span>    trace::printf (<span class="stringliteral">&quot;%s &#39;%s&#39;\n&quot;</span>, __PRETTY_FUNCTION__, <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>.name ());</div>
+<div class="line"><span class="lineno">  401</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</span></div>
+<div class="line"><span class="lineno">  402</span> </div>
+<div class="line"><span class="lineno">  403</span>    <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ad4ac49522cfd6e1608d9ac64ab7a8b91">create_test_case</a> (<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>, <a class="code hl_variable" href="#a3f1717ee8c04af1181f6dff2966b3d34">parent_suite_</a>, <a class="code hl_variable" href="#a3da31fa70e1009cfde8a13a7ffaad036">nesting_depth_</a> + 1,</div>
+<div class="line"><span class="lineno">  404</span>                      std::forward&lt;Callable_T&gt; (callable),</div>
+<div class="line"><span class="lineno">  405</span>                      std::forward&lt;Args_T&gt; (arguments)...);</div>
+<div class="line"><span class="lineno">  406</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_ad4ac49522cfd6e1608d9ac64ab7a8b91"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ad4ac49522cfd6e1608d9ac64ab7a8b91">micro_os_plus::micro_test_plus::detail::runnable_base::create_test_case</a></div><div class="ttdeci">void create_test_case(const test_case_name &amp;name, suite &amp;parent_suite, size_t nesting_depth, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</div><div class="ttdoc">Creates a child test case, and runs it.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00207">test-inlines.h:207</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00216">micro_os_plus::micro_test_plus::detail::runnable_base::create_test_case()</a>, <a class="el" href="test-inlines_8h_source.html#l00151">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test-inlines_8h_source.html#l00125">micro_os_plus::micro_test_plus::test_case_name::name()</a>, <a class="el" href="test_8h_source.html#l01363">nesting_depth_</a>, and <a class="el" href="test_8h_source.html#l01355">parent_suite_</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00207">micro_os_plus::micro_test_plus::detail::runnable_base::create_test_case()</a>, <a class="el" href="test-inlines_8h_source.html#l00152">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test-inlines_8h_source.html#l00126">micro_os_plus::micro_test_plus::test_case_name::name()</a>, <a class="el" href="test_8h_source.html#l01392">nesting_depth_</a>, and <a class="el" href="test_8h_source.html#l01384">parent_suite_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>.</p>
 
@@ -1242,13 +1335,13 @@ template&lt;typename T, typename Callable_T&gt; </div>
 <dl class="section since"><dt>Since</dt><dd>5.1.0</dd></dl>
 <p>The list is iterated as a range. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00742">742</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  744</span>  {</div>
-<div class="line"><span class="lineno">  745</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8">detail::test_each_value</a> (*<span class="keyword">this</span>, <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>, values, callable);</div>
-<div class="line"><span class="lineno">  746</span>  }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_acb0858a0ba8b635ff89c4cb00c532ce8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8">micro_os_plus::micro_test_plus::detail::test_each_value</a></div><div class="ttdeci">void test_each_value(Self_T &amp;self, const test_case_name &amp;name, Values_T &amp;&amp;values, Callable_T &amp;callable)</div><div class="ttdoc">Adds and runs a test case for each value.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00677">test-inlines.h:677</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00785">785</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  787</span>  {</div>
+<div class="line"><span class="lineno">  788</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8">detail::test_each_value</a> (*<span class="keyword">this</span>, <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>, values, callable);</div>
+<div class="line"><span class="lineno">  789</span>  }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_acb0858a0ba8b635ff89c4cb00c532ce8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8">micro_os_plus::micro_test_plus::detail::test_each_value</a></div><div class="ttdeci">void test_each_value(Self_T &amp;self, const test_case_name &amp;name, Values_T &amp;&amp;values, Callable_T &amp;callable)</div><div class="ttdoc">Adds and runs a test case for each value.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00707">test-inlines.h:707</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00151">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00677">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00152">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00707">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
 
 </div>
 </div>
@@ -1303,15 +1396,15 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 <dl class="section since"><dt>Since</dt><dd>5.1.0</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8" title="Adds and runs a test case for each value.">detail::test_each_value()</a></span>, which adds the test cases with <span class="tt"><a class="el" href="#aac23ee148d8e5946cd87e0de036e9fb8" title="Adds a nested test case to this test case, and runs it.">test()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00729">729</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  731</span>  {</div>
-<div class="line"><span class="lineno">  732</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8">detail::test_each_value</a> (*<span class="keyword">this</span>, <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>, std::forward&lt;Values_T&gt; (values),</div>
-<div class="line"><span class="lineno">  733</span>                             callable);</div>
-<div class="line"><span class="lineno">  734</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00772">772</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  774</span>  {</div>
+<div class="line"><span class="lineno">  775</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#acb0858a0ba8b635ff89c4cb00c532ce8">detail::test_each_value</a> (*<span class="keyword">this</span>, <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0">name</a>, std::forward&lt;Values_T&gt; (values),</div>
+<div class="line"><span class="lineno">  776</span>                             callable);</div>
+<div class="line"><span class="lineno">  777</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00151">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test-inlines_8h_source.html#l00729">test_each()</a>, and <a class="el" href="test-inlines_8h_source.html#l00677">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00152">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test-inlines_8h_source.html#l00772">test_each()</a>, and <a class="el" href="test-inlines_8h_source.html#l00707">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>, and <a class="el" href="test-inlines_8h_source.html#l00729">test_each()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>, and <a class="el" href="test-inlines_8h_source.html#l00772">test_each()</a>.</p>
 
 </div>
 </div>
@@ -1347,11 +1440,11 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 <div class="fragment"><div class="line"><span class="lineno">  116</span>    {</div>
 <div class="line"><span class="lineno">  117</span>      <span class="keywordflow">return</span> *<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">runner_</a>.<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a67205181c73d11d12964bb324f1dc902">reporter_</a>;</div>
 <div class="line"><span class="lineno">  118</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a67205181c73d11d12964bb324f1dc902"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a67205181c73d11d12964bb324f1dc902">micro_os_plus::micro_test_plus::runner::reporter_</a></div><div class="ttdeci">std::unique_ptr&lt; detail::reporter &gt; reporter_</div><div class="ttdoc">Owning pointer to the test reporter used for outputting test results.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l00869">runner.h:869</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1runner_html_a67205181c73d11d12964bb324f1dc902"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a67205181c73d11d12964bb324f1dc902">micro_os_plus::micro_test_plus::runner::reporter_</a></div><div class="ttdeci">std::unique_ptr&lt; detail::reporter &gt; reporter_</div><div class="ttdoc">Owning pointer to the test reporter used for outputting test results.</div><div class="ttdef"><b>Definition</b> <a href="runner_8h_source.html#l00961">runner.h:961</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00638">runner_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00622">runner_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="test-inlines_8h_source.html#l00427">micro_os_plus::micro_test_plus::test_case::expect()</a>, <a class="el" href="test_8cpp_source.html#l00463">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception()</a>, <a class="el" href="test_8cpp_source.html#l00315">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>, <a class="el" href="test-inlines_8h_source.html#l00449">micro_os_plus::micro_test_plus::test_case::require()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, <a class="el" href="test_8cpp_source.html#l00374">micro_os_plus::micro_test_plus::suite::run()</a>, and <a class="el" href="test-inlines_8h_source.html#l00511">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="test-inlines_8h_source.html#l00418">micro_os_plus::micro_test_plus::test_case::expect()</a>, <a class="el" href="test_8cpp_source.html#l00463">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception()</a>, <a class="el" href="test_8cpp_source.html#l00315">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>, <a class="el" href="test-inlines_8h_source.html#l00440">micro_os_plus::micro_test_plus::test_case::require()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>, <a class="el" href="test_8cpp_source.html#l00374">micro_os_plus::micro_test_plus::suite::run()</a>, and <a class="el" href="test-inlines_8h_source.html#l00539">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
 
 </div>
 </div>
@@ -1383,19 +1476,19 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 <dl class="section return"><dt>Returns</dt><dd>A reference to the test runner.</dd></dl>
 <p>Returns a reference to the owning test runner. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00194">194</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  195</span>    {</div>
-<div class="line"><span class="lineno">  196</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">runner_</a>;</div>
-<div class="line"><span class="lineno">  197</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00185">185</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  186</span>    {</div>
+<div class="line"><span class="lineno">  187</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ab7513249cc0aac30e3edd7008d08d355">runner_</a>;</div>
+<div class="line"><span class="lineno">  188</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00638">runner_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00622">runner_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="test-inlines_8h_source.html#l00810">micro_os_plus::micro_test_plus::static_suite::static_suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00577">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00382">micro_os_plus::micro_test_plus::test_case::test_case()</a>, <a class="el" href="test_8cpp_source.html#l00545">micro_os_plus::micro_test_plus::top_suite::top_suite()</a>, <a class="el" href="test_8h_source.html#l01427">micro_os_plus::micro_test_plus::suite::detail::reporter_tap</a>, <a class="el" href="test_8h_source.html#l01016">micro_os_plus::micro_test_plus::test_case::detail::runnable_base</a>, <a class="el" href="test_8h_source.html#l01792">micro_os_plus::micro_test_plus::top_suite::micro_test_plus::runner</a>, <a class="el" href="test_8h_source.html#l00308">reporter_tap</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="test-inlines_8h_source.html#l00855">micro_os_plus::micro_test_plus::static_suite::static_suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00605">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00373">micro_os_plus::micro_test_plus::test_case::test_case()</a>, <a class="el" href="test_8cpp_source.html#l00545">micro_os_plus::micro_test_plus::top_suite::top_suite()</a>, <a class="el" href="test_8h_source.html#l01456">micro_os_plus::micro_test_plus::suite::detail::reporter_tap</a>, <a class="el" href="test_8h_source.html#l01000">micro_os_plus::micro_test_plus::test_case::detail::runnable_base</a>, <a class="el" href="test_8cpp_source.html#l00576">micro_os_plus::micro_test_plus::static_suite::link_or_reject()</a>, <a class="el" href="test_8h_source.html#l01821">micro_os_plus::micro_test_plus::top_suite::micro_test_plus::runner</a>, <a class="el" href="test_8h_source.html#l00309">reporter_tap</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">run()</a>.</p>
 
 </div>
 </div>
 <a id="aa83553cf6bf351153328304ebc71e545" name="aa83553cf6bf351153328304ebc71e545"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa83553cf6bf351153328304ebc71e545">&#9670;&#160;</a></span>totals() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83553cf6bf351153328304ebc71e545">&#9670;&#160;</a></span>totals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1416,55 +1509,19 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The reference is read-only, so that the counters cannot be modified through it. Selected for the <span class="tt">const</span> nodes; for the others, the non-<span class="tt">const</span> overload, kept for v5.0.1, is selected.</p>
+<p>The reference is read-only, for the <span class="tt">const</span> and the non-<span class="tt">const</span> nodes alike, so that a test case or a suite cannot modify its own counters, which decide the exit code. The counters are updated only by the framework, which accesses the protected member directly.</p>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>A const reference to the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html" title="Aggregated check and test case counters for a node in the test tree.">counters</a></span> instance.</dd></dl>
 <p>Returns a const reference to the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html" title="Aggregated check and test case counters for a node in the test tree.">counters</a></span> member. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00161">161</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  162</span>    {</div>
-<div class="line"><span class="lineno">  163</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a87091ad4653e9db854ba9d5a64b30738">totals_</a>;</div>
-<div class="line"><span class="lineno">  164</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00162">162</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>    {</div>
+<div class="line"><span class="lineno">  164</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a87091ad4653e9db854ba9d5a64b30738">totals_</a>;</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00628">totals_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00612">totals_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00243">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00381">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00422">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00593">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00780">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00817">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a18b82d51daccd8a75f87e043d2660006">operator=()</a>, and <a class="el" href="runner_8cpp_source.html#l00665">micro_os_plus::micro_test_plus::runner::run()</a>.</p>
-
-</div>
-</div>
-<a id="ae4b1b292777b0c1a7ee9edb02c4f2235" name="ae4b1b292777b0c1a7ee9edb02c4f2235"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4b1b292777b0c1a7ee9edb02c4f2235">&#9670;&#160;</a></span>totals() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html">counters</a> &amp; micro_os_plus::micro_test_plus::detail::runnable_base::totals </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Kept for the v5.0.1 code that binds a non-<span class="tt">const</span> reference (<span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af123417aafc76c826760101bcc517dfa" title="Deprecated name of counters.">detail::runner_totals</a>&amp; t = ts.totals ();</span>). It is selected for all the calls on a non-<span class="tt">const</span> node, including the reads, so it cannot be marked <span class="tt">[[deprecated]]</span> without warning on every use; the v5.0.1 code is warned by the deprecated <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af123417aafc76c826760101bcc517dfa" title="Deprecated name of counters.">detail::runner_totals</a></span> alias instead. The test code must not modify the counters through it, since they decide the exit code.</p>
-<dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html" title="Aggregated check and test case counters for a node in the test tree.">counters</a></span> instance.</dd></dl>
-<p>Returns a reference to the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html" title="Aggregated check and test case counters for a node in the test tree.">counters</a></span> member. </p>
-
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00171">171</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  172</span>    {</div>
-<div class="line"><span class="lineno">  173</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a87091ad4653e9db854ba9d5a64b30738">totals_</a>;</div>
-<div class="line"><span class="lineno">  174</span>    }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00628">totals_</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00876">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00913">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a18b82d51daccd8a75f87e043d2660006">operator=()</a>, and <a class="el" href="runner_8cpp_source.html#l00794">micro_os_plus::micro_test_plus::runner::run()</a>.</p>
 
 </div>
 </div>
@@ -1490,11 +1547,11 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 </div><div class="memdoc">
 <p>It constructs the test cases, whose constructor is private, and runs them after their creation. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01016">1016</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01000">1000</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">References <a class="el" href="test_8h_source.html#l00280">micro_os_plus::micro_test_plus::detail::runnable_base::micro_test_plus::runner</a>, <a class="el" href="test-inlines_8h_source.html#l00151">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test-inlines_8h_source.html#l00480">nesting_depth()</a>, and <a class="el" href="test-inlines_8h_source.html#l00194">micro_os_plus::micro_test_plus::detail::runnable_base::test_runner()</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00281">micro_os_plus::micro_test_plus::detail::runnable_base::micro_test_plus::runner</a>, <a class="el" href="test-inlines_8h_source.html#l00152">micro_os_plus::micro_test_plus::detail::runnable_base::name()</a>, <a class="el" href="test-inlines_8h_source.html#l00508">nesting_depth()</a>, and <a class="el" href="test-inlines_8h_source.html#l00185">micro_os_plus::micro_test_plus::detail::runnable_base::test_runner()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>.</p>
 
 </div>
 </div>
@@ -1514,15 +1571,15 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Invoked by <span class="tt"><a class="el" href="#adb4333ecb107fee477156b661f0b1512" title="Executes the test case body by invoking the referred callable.">run()</a></span> with a reference to this test case. The body is a local object of <span class="tt">runnable_base::create_test_case()</span>, which outlives the test case. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01337">1337</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01366">1366</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>, and <a class="el" href="test-inlines_8h_source.html#l00511">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>, and <a class="el" href="test-inlines_8h_source.html#l00539">run()</a>.</p>
 
 </div>
 </div>
@@ -1547,9 +1604,9 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 </div><div class="memdoc">
 <p>Incremented for each call to <span class="tt"><a class="el" href="#aac23ee148d8e5946cd87e0de036e9fb8" title="Adds a nested test case to this test case, and runs it.">test()</a></span>, which creates a child <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html" title="A named, runnable test case that lives inside a suite.">test_case</a></span> and runs it immediately. The child test cases are not kept after they run, so that the memory does not grow with the number of test cases; only their number is needed later, for the TAP plan. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00673">673</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00657">657</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00381">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00593">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>.</p>
 
 </div>
 </div>
@@ -1568,15 +1625,15 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Used to report the failures that are not associated with a check. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01346">1346</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01375">1375</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>, and <a class="el" href="test_8cpp_source.html#l00315">fail_unexpected_exception()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>, and <a class="el" href="test_8cpp_source.html#l00315">fail_unexpected_exception()</a>.</p>
 
 </div>
 </div>
@@ -1601,9 +1658,9 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 </div><div class="memdoc">
 <p>Not owned; it points to a string whose lifetime exceeds that of the node. Derived classes may access this member directly, in addition to the public <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a6c652cd5dc8194269c1cc5f0dc1945e0" title="Gets the node name.">name()</a></span> getter. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00613">613</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00597">597</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="test-inlines_8h_source.html#l00577">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00382">micro_os_plus::micro_test_plus::test_case::test_case()</a>, <a class="el" href="test_8cpp_source.html#l00102">~runnable_base()</a>, <a class="el" href="test_8cpp_source.html#l00576">micro_os_plus::micro_test_plus::static_suite::~static_suite()</a>, <a class="el" href="test_8cpp_source.html#l00347">micro_os_plus::micro_test_plus::suite::~suite()</a>, <a class="el" href="test_8cpp_source.html#l00292">micro_os_plus::micro_test_plus::test_case::~test_case()</a>, <a class="el" href="test_8cpp_source.html#l00561">micro_os_plus::micro_test_plus::top_suite::~top_suite()</a>, <a class="el" href="runner_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="test_8cpp_source.html#l00500">micro_os_plus::micro_test_plus::suite::link()</a>, <a class="el" href="test-inlines_8h_source.html#l00151">name()</a>, <a class="el" href="test_8cpp_source.html#l00374">micro_os_plus::micro_test_plus::suite::run()</a>, and <a class="el" href="test-inlines_8h_source.html#l00511">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="test-inlines_8h_source.html#l00605">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00373">micro_os_plus::micro_test_plus::test_case::test_case()</a>, <a class="el" href="test_8cpp_source.html#l00102">~runnable_base()</a>, <a class="el" href="test_8cpp_source.html#l00587">micro_os_plus::micro_test_plus::static_suite::~static_suite()</a>, <a class="el" href="test_8cpp_source.html#l00347">micro_os_plus::micro_test_plus::suite::~suite()</a>, <a class="el" href="test_8cpp_source.html#l00292">micro_os_plus::micro_test_plus::test_case::~test_case()</a>, <a class="el" href="test_8cpp_source.html#l00561">micro_os_plus::micro_test_plus::top_suite::~top_suite()</a>, <a class="el" href="runner_8cpp_source.html#l00209">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="test_8cpp_source.html#l00500">micro_os_plus::micro_test_plus::suite::link()</a>, <a class="el" href="test-inlines_8h_source.html#l00152">name()</a>, <a class="el" href="test_8cpp_source.html#l00374">micro_os_plus::micro_test_plus::suite::run()</a>, and <a class="el" href="test-inlines_8h_source.html#l00539">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
 
 </div>
 </div>
@@ -1622,15 +1679,15 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>1 for the direct children of a suite; used for indentation. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01363">1363</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01392">1392</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>, <a class="el" href="test-inlines_8h_source.html#l00480">nesting_depth()</a>, and <a class="el" href="test-inlines_8h_source.html#l00405">test()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>, <a class="el" href="test-inlines_8h_source.html#l00508">nesting_depth()</a>, and <a class="el" href="test-inlines_8h_source.html#l00396">test()</a>.</p>
 
 </div>
 </div>
@@ -1655,9 +1712,9 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 </div><div class="memdoc">
 <p>The position of this object within its parent, displayed by the TAP reporter in the <span class="tt">ok</span>/<span class="tt">not ok</span> lines. Set directly by the runner, which numbers the suites when it runs them, and by the top suite, which is always the first one. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00649">649</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00633">633</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="test-inlines_8h_source.html#l00577">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00382">micro_os_plus::micro_test_plus::test_case::test_case()</a>, <a class="el" href="test_8cpp_source.html#l00545">micro_os_plus::micro_test_plus::top_suite::top_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00381">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00593">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00484">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00894">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="test-inlines_8h_source.html#l00605">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00373">micro_os_plus::micro_test_plus::test_case::test_case()</a>, <a class="el" href="test_8cpp_source.html#l00545">micro_os_plus::micro_test_plus::top_suite::top_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00480">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
 
 </div>
 </div>
@@ -1676,15 +1733,15 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>The suite into which the totals of the nested test cases are accumulated. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01355">1355</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01384">1384</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00382">test_case()</a>, and <a class="el" href="test-inlines_8h_source.html#l00405">test()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00373">test_case()</a>, and <a class="el" href="test-inlines_8h_source.html#l00396">test()</a>.</p>
 
 </div>
 </div>
@@ -1709,9 +1766,9 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 </div><div class="memdoc">
 <p>Provides access to the reporter, to the filter, and to the state of the session (the running test case, and the abort and listing flags), and is used when aborting. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00638">638</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00622">622</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="test_8cpp_source.html#l00161">abort()</a>, <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="test-inlines_8h_source.html#l00216">create_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00137">is_aborted()</a>, <a class="el" href="test_8cpp_source.html#l00148">is_listing()</a>, <a class="el" href="test_8cpp_source.html#l00126">running_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00115">test_reporter()</a>, and <a class="el" href="test-inlines_8h_source.html#l00194">test_runner()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00086">runnable_base()</a>, <a class="el" href="test_8cpp_source.html#l00161">abort()</a>, <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="test-inlines_8h_source.html#l00207">create_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00137">is_aborted()</a>, <a class="el" href="test_8cpp_source.html#l00148">is_listing()</a>, <a class="el" href="test_8cpp_source.html#l00126">running_test_case()</a>, <a class="el" href="test_8cpp_source.html#l00115">test_reporter()</a>, and <a class="el" href="test-inlines_8h_source.html#l00185">test_runner()</a>.</p>
 
 </div>
 </div>
@@ -1736,9 +1793,9 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 </div><div class="memdoc">
 <p>Test points are numbered from 1; the value is 0 before the first one. This number counts the checks and the nested test cases of this object, in execution order, as required by the TAP <span class="tt">ok</span>/<span class="tt">not ok</span> lines. It is incremented for each check (by the check result) and for each nested test case created. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00661">661</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00645">645</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-tap_8cpp_source.html#l00381">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00520">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00184">next_test_point_number()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00797">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00745">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_prefix()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>, <a class="el" href="test-inlines_8h_source.html#l00175">next_test_point_number()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00790">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_prefix()</a>.</p>
 
 </div>
 </div>
@@ -1764,9 +1821,9 @@ requires (detail::test_values_range&lt;Values_T&gt; or detail::test_values_tuple
 <p>For the suites, the totals include the checks of all their test cases; for a test case, they include only its own checks, plus the counts of its direct nested test cases.</p>
 <p>The check counters are updated by the check result, which is a friend; the test case counters by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a38cf903fb0ba5b76b1eb2350b6385962" title="Counts a newly constructed child test case and executes it immediately.">after_test_case_create()</a></span>, when a nested test case ends. For a suite, the totals of each of its test cases are also added, by the same function. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00628">628</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00612">612</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="test_8cpp_source.html#l00463">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception()</a>, <a class="el" href="test_8cpp_source.html#l00315">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>, <a class="el" href="test-inlines_8h_source.html#l00161">totals()</a>, and <a class="el" href="test-inlines_8h_source.html#l00171">totals()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00201">after_test_case_create()</a>, <a class="el" href="test_8cpp_source.html#l00463">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception()</a>, <a class="el" href="test_8cpp_source.html#l00315">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>, and <a class="el" href="test-inlines_8h_source.html#l00162">totals()</a>.</p>
 
 </div>
 </div>

@@ -171,7 +171,7 @@ struct micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;</
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00322">322</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00324">324</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a384b1d115e493d6a554ebda4e3089b19" name="a384b1d115e493d6a554ebda4e3089b19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a384b1d115e493d6a554ebda4e3089b19">&#9670;&#160;</a></span>op_type</h2>
@@ -252,21 +252,21 @@ template&lt;class L, class R&gt; </div>
 </dl>
 <p>Stores the two operands and the pre-computed boolean result of the comparison in the corresponding private members. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00152">152</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span>        : <a class="code hl_variable" href="#ac21255b7b6b6d4b9c71522cc997a5fc2">lhs_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html">std::forward&lt;L&gt;</a> (<a class="code hl_function" href="#a27b015b0e2b40e0f0bbb1b08588e1c20">lhs</a>) }, <a class="code hl_variable" href="#a3111bc24739599066db41c6a5023672b">rhs_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html">std::forward&lt;R&gt;</a> (<a class="code hl_function" href="#ae1436f1b38c1062f7c733d3e8cb39b87">rhs</a>) },</div>
-<div class="line"><span class="lineno">  154</span>          <a class="code hl_variable" href="#abbe4c20d03a94cac1a942d8e3af65aea">value_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html">value</a> }</div>
-<div class="line"><span class="lineno">  155</span>    {</div>
-<div class="line"><span class="lineno">  156</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html">micro_os_plus::micro_test_plus::detail::binary_op</a></div><div class="ttdoc">Common base struct template for binary comparators.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00322">detail.h:323</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_a27b015b0e2b40e0f0bbb1b08588e1c20"><div class="ttname"><a href="#a27b015b0e2b40e0f0bbb1b08588e1c20">micro_os_plus::micro_test_plus::detail::binary_op::lhs</a></div><div class="ttdeci">constexpr decltype(auto) lhs(void) const</div><div class="ttdoc">Retrieves the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00178">detail-inlines.h:178</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_a3111bc24739599066db41c6a5023672b"><div class="ttname"><a href="#a3111bc24739599066db41c6a5023672b">micro_os_plus::micro_test_plus::detail::binary_op::rhs_</a></div><div class="ttdeci">Rhs_T rhs_</div><div class="ttdoc">Stores the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00398">detail.h:398</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_abbe4c20d03a94cac1a942d8e3af65aea"><div class="ttname"><a href="#abbe4c20d03a94cac1a942d8e3af65aea">micro_os_plus::micro_test_plus::detail::binary_op::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the comparison.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00406">detail.h:406</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_ac21255b7b6b6d4b9c71522cc997a5fc2"><div class="ttname"><a href="#ac21255b7b6b6d4b9c71522cc997a5fc2">micro_os_plus::micro_test_plus::detail::binary_op::lhs_</a></div><div class="ttdeci">Lhs_T lhs_</div><div class="ttdoc">Stores the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00390">detail.h:390</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_ae1436f1b38c1062f7c733d3e8cb39b87"><div class="ttname"><a href="#ae1436f1b38c1062f7c733d3e8cb39b87">micro_os_plus::micro_test_plus::detail::binary_op::rhs</a></div><div class="ttdeci">constexpr decltype(auto) rhs(void) const</div><div class="ttdoc">Retrieves the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00191">detail-inlines.h:191</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00153">153</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>        : <a class="code hl_variable" href="#ac21255b7b6b6d4b9c71522cc997a5fc2">lhs_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html">std::forward&lt;L&gt;</a> (<a class="code hl_function" href="#a27b015b0e2b40e0f0bbb1b08588e1c20">lhs</a>) }, <a class="code hl_variable" href="#a3111bc24739599066db41c6a5023672b">rhs_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html">std::forward&lt;R&gt;</a> (<a class="code hl_function" href="#ae1436f1b38c1062f7c733d3e8cb39b87">rhs</a>) },</div>
+<div class="line"><span class="lineno">  155</span>          <a class="code hl_variable" href="#abbe4c20d03a94cac1a942d8e3af65aea">value_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html">value</a> }</div>
+<div class="line"><span class="lineno">  156</span>    {</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html">micro_os_plus::micro_test_plus::detail::binary_op</a></div><div class="ttdoc">Common base struct template for binary comparators.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00324">detail.h:325</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_a27b015b0e2b40e0f0bbb1b08588e1c20"><div class="ttname"><a href="#a27b015b0e2b40e0f0bbb1b08588e1c20">micro_os_plus::micro_test_plus::detail::binary_op::lhs</a></div><div class="ttdeci">constexpr decltype(auto) lhs(void) const</div><div class="ttdoc">Retrieves the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00179">detail-inlines.h:179</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_a3111bc24739599066db41c6a5023672b"><div class="ttname"><a href="#a3111bc24739599066db41c6a5023672b">micro_os_plus::micro_test_plus::detail::binary_op::rhs_</a></div><div class="ttdeci">Rhs_T rhs_</div><div class="ttdoc">Stores the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00400">detail.h:400</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_abbe4c20d03a94cac1a942d8e3af65aea"><div class="ttname"><a href="#abbe4c20d03a94cac1a942d8e3af65aea">micro_os_plus::micro_test_plus::detail::binary_op::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the comparison.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00408">detail.h:408</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_ac21255b7b6b6d4b9c71522cc997a5fc2"><div class="ttname"><a href="#ac21255b7b6b6d4b9c71522cc997a5fc2">micro_os_plus::micro_test_plus::detail::binary_op::lhs_</a></div><div class="ttdeci">Lhs_T lhs_</div><div class="ttdoc">Stores the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00392">detail.h:392</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_ae1436f1b38c1062f7c733d3e8cb39b87"><div class="ttname"><a href="#ae1436f1b38c1062f7c733d3e8cb39b87">micro_os_plus::micro_test_plus::detail::binary_op::rhs</a></div><div class="ttdeci">constexpr decltype(auto) rhs(void) const</div><div class="ttdoc">Retrieves the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00192">detail-inlines.h:192</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00178">lhs()</a>, <a class="el" href="detail_8h_source.html#l00390">lhs_</a>, <a class="el" href="detail-inlines_8h_source.html#l00191">rhs()</a>, <a class="el" href="detail_8h_source.html#l00398">rhs_</a>, and <a class="el" href="detail_8h_source.html#l00406">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00179">lhs()</a>, <a class="el" href="detail_8h_source.html#l00392">lhs_</a>, <a class="el" href="detail-inlines_8h_source.html#l00192">rhs()</a>, <a class="el" href="detail_8h_source.html#l00400">rhs_</a>, and <a class="el" href="detail_8h_source.html#l00408">value_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00513">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00480">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00370">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00531">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00165">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00514">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00481">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00371">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00532">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00166">operator bool()</a>.</p>
 
 </div>
 </div>
@@ -300,15 +300,15 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The extracted left-hand operand.</dd></dl>
 <p>Returns the value of the left-hand operand, unwrapped by <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8" title="Returns the value wrapped by a framework type, or the operand itself.">detail::unwrap()</a></span> if it is a framework wrapper type; the stored operand is not copied. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00178">178</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  179</span>    {</div>
-<div class="line"><span class="lineno">  180</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (<a class="code hl_variable" href="#ac21255b7b6b6d4b9c71522cc997a5fc2">lhs_</a>);</div>
-<div class="line"><span class="lineno">  181</span>    }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a59eb53c96f68d26635c13df53b358ac8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">micro_os_plus::micro_test_plus::detail::unwrap</a></div><div class="ttdeci">decltype(auto) constexpr unwrap(const T &amp;t)</div><div class="ttdoc">Returns the value wrapped by a framework type, or the operand itself.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00097">detail-inlines.h:97</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00179">179</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>    {</div>
+<div class="line"><span class="lineno">  181</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (<a class="code hl_variable" href="#ac21255b7b6b6d4b9c71522cc997a5fc2">lhs_</a>);</div>
+<div class="line"><span class="lineno">  182</span>    }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a59eb53c96f68d26635c13df53b358ac8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">micro_os_plus::micro_test_plus::detail::unwrap</a></div><div class="ttdeci">decltype(auto) constexpr unwrap(const T &amp;t)</div><div class="ttdoc">Returns the value wrapped by a framework type, or the operand itself.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00098">detail-inlines.h:98</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00178">lhs()</a>, <a class="el" href="detail_8h_source.html#l00390">lhs_</a>, and <a class="el" href="detail-inlines_8h_source.html#l00097">micro_os_plus::micro_test_plus::detail::unwrap()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00179">lhs()</a>, <a class="el" href="detail_8h_source.html#l00392">lhs_</a>, and <a class="el" href="detail-inlines_8h_source.html#l00098">micro_os_plus::micro_test_plus::detail::unwrap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00513">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00480">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00152">binary_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00370">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00531">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00178">lhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00514">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00481">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00153">binary_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00371">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00532">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00179">lhs()</a>.</p>
 
 </div>
 </div>
@@ -340,12 +340,12 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The result of the comparison.</dd></dl>
 <p>Returns the pre-computed boolean result stored by the derived comparator's constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00164">164</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
-<div class="line"><span class="lineno">  167</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbe4c20d03a94cac1a942d8e3af65aea">value_</a>;</div>
-<div class="line"><span class="lineno">  168</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00165">165</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>    {</div>
+<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbe4c20d03a94cac1a942d8e3af65aea">value_</a>;</div>
+<div class="line"><span class="lineno">  169</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00152">binary_op()</a>, and <a class="el" href="detail_8h_source.html#l00406">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00153">binary_op()</a>, and <a class="el" href="detail_8h_source.html#l00408">value_</a>.</p>
 
 </div>
 </div>
@@ -378,14 +378,14 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The extracted right-hand operand.</dd></dl>
 <p>Returns the value of the right-hand operand, unwrapped by <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8" title="Returns the value wrapped by a framework type, or the operand itself.">detail::unwrap()</a></span> if it is a framework wrapper type; the stored operand is not copied. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00191">191</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  192</span>    {</div>
-<div class="line"><span class="lineno">  193</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (<a class="code hl_variable" href="#a3111bc24739599066db41c6a5023672b">rhs_</a>);</div>
-<div class="line"><span class="lineno">  194</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00192">192</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>    {</div>
+<div class="line"><span class="lineno">  194</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (<a class="code hl_variable" href="#a3111bc24739599066db41c6a5023672b">rhs_</a>);</div>
+<div class="line"><span class="lineno">  195</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00191">rhs()</a>, <a class="el" href="detail_8h_source.html#l00398">rhs_</a>, and <a class="el" href="detail-inlines_8h_source.html#l00097">micro_os_plus::micro_test_plus::detail::unwrap()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00192">rhs()</a>, <a class="el" href="detail_8h_source.html#l00400">rhs_</a>, and <a class="el" href="detail-inlines_8h_source.html#l00098">micro_os_plus::micro_test_plus::detail::unwrap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00513">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00480">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00152">binary_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00370">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00531">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00191">rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00514">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00481">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00153">binary_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00371">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00532">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00192">rhs()</a>.</p>
 
 </div>
 </div>
@@ -413,9 +413,9 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </div><div class="memdoc">
 <p>Either a value, moved from a temporary, or a <span class="tt">const</span> reference to a named operand (see <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a85cd019d0861a4b6d62c3424f4a8931d" title="The type with which an expression stores an operand.">stored_operand_t</a></span>), so that a named container is not copied. It is not <span class="tt">const</span>, so that a temporary expression can be moved into an enclosing one. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00390">390</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00392">392</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00152">binary_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00178">lhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00153">binary_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00179">lhs()</a>.</p>
 
 </div>
 </div>
@@ -442,9 +442,9 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </div><div class="memdoc">
 <p>Stored as the left-hand operand is. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00398">398</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00400">400</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00152">binary_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00191">rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00153">binary_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00192">rhs()</a>.</p>
 
 </div>
 </div>
@@ -471,9 +471,9 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </div><div class="memdoc">
 <p>Computed once, by the derived comparator constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00406">406</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00408">408</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00152">binary_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00165">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00153">binary_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00166">operator bool()</a>.</p>
 
 </div>
 </div>

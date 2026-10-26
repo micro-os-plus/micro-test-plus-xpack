@@ -40,17 +40,17 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-utility-fun
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="88" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="88" bodyend="97" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="94" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="88" endline="97">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af0682165f5d07b13fd21e3f6f8da546c" compoundref="runner_8cpp" startline="798" endline="834">micro_os_plus::micro_test_plus::runner::abort</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a66f620b093f92e0def6bf5297fb6d6ee" compoundref="reporter-human_8cpp" startline="720" endline="771">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aa8802baefcb360f48451418c783ac413" compoundref="reporter-tap_8cpp" startline="946" endline="983">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="88" endline="97">micro_os_plus::micro_test_plus::utility::extract_file_name</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" compoundref="runner_8cpp" startline="193" endline="297">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a032be7e38aad40c8bc44b2376ad90e29" compoundref="reporter-human_8cpp" startline="584" endline="615">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aaea110287f115fbaf80b0248f724c5b6" compoundref="reporter-tap_8cpp" startline="853" endline="878">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="89" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="89" bodyend="98" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="95" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="89" endline="98">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af0682165f5d07b13fd21e3f6f8da546c" compoundref="runner_8cpp" startline="938" endline="974">micro_os_plus::micro_test_plus::runner::abort</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a66f620b093f92e0def6bf5297fb6d6ee" compoundref="reporter-human_8cpp" startline="738" endline="795">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aa8802baefcb360f48451418c783ac413" compoundref="reporter-tap_8cpp" startline="947" endline="998">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="89" endline="98">micro_os_plus::micro_test_plus::utility::extract_file_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" compoundref="runner_8cpp" startline="209" endline="330">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a032be7e38aad40c8bc44b2376ad90e29" compoundref="reporter-human_8cpp" startline="594" endline="625">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aaea110287f115fbaf80b0248f724c5b6" compoundref="reporter-tap_8cpp" startline="846" endline="871">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" compoundref="deprecated_8cpp" startline="74" endline="77">micro_os_plus::micro_test_plus::reflection::short_name</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aeafdc8e05a6d80d9445f17ff354ee215" compoundref="reporter_8cpp" startline="390" endline="463">micro_os_plus::micro_test_plus::detail::reporter::write_info</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aeafdc8e05a6d80d9445f17ff354ee215" compoundref="reporter_8cpp" startline="490" endline="556">micro_os_plus::micro_test_plus::detail::reporter::write_info</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -102,16 +102,68 @@ This function enables pattern-based string comparison for tests, supporting both
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="134" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="134" bodyend="179" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="107" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="134" endline="179">micro_os_plus::micro_test_plus::utility::is_match</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="134" endline="179">micro_os_plus::micro_test_plus::utility::is_match</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2b0adeef059676a455d9506ba8a06d26" compoundref="runner_8cpp" startline="486" endline="507">micro_os_plus::micro_test_plus::runner::is_selected</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="135" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="135" bodyend="180" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="108" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="135" endline="180">micro_os_plus::micro_test_plus::utility::is_match</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="135" endline="180">micro_os_plus::micro_test_plus::utility::is_match</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2b0adeef059676a455d9506ba8a06d26" compoundref="runner_8cpp" startline="575" endline="596">micro_os_plus::micro_test_plus::runner::is_selected</referencedby>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string_view &gt;</type>
+        <definition>std::vector&lt; std::string_view &gt; micro_os_plus::micro_test_plus::utility::split</definition>
+        <argsstring>(std::string_view input, std::string_view delimiters)</argsstring>
+        <name>split</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::utility::split</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delimiters</declname>
+        </param>
+        <briefdescription>
+<para>Splits a string view into a vector of string views. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This overload accepts string literals and <computeroutput>const char*</computeroutput> arguments, which the template cannot handle, and also any other type convertible to <computeroutput>std::string_view</computeroutput>. The returned views refer to the characters of the input, which must outlive them.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string to split. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delimiter characters; any of them separates sub-strings. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector containing the resulting sub-strings; empty sub-strings (e.g. between consecutive delimiters) are omitted.</para>
+</simplesect>
+The function iterates through the input, identifying the positions of any of the delimiter characters (via <computeroutput>find_first_of()</computeroutput>) and extracting the views between them. Empty views, such as those between consecutive delimiters, are omitted. It is the overload selected for string literals and <computeroutput>const char*</computeroutput> arguments, which the template cannot handle.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">t.expect<sp/>(std::vector&lt;std::string_view&gt;{<sp/></highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;b&quot;</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>mt::utility::split<sp/>(</highlight><highlight class="stringliteral">&quot;a.b&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;a.b<sp/>splits<sp/>into<sp/>[a,b]&quot;</highlight><highlight class="normal">;</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="202" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="202" bodyend="220" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="156" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="96" endline="114">micro_os_plus::micro_test_plus::utility::split</references>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
-            <defval>std::string_view</defval>
           </param>
           <param>
             <type>class Delim_T</type>
@@ -130,6 +182,7 @@ This function enables pattern-based string comparison for tests, supporting both
           <type>Delim_T</type>
           <declname>delim</declname>
         </param>
+    <requiresclause>requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{}); s.substr (std::size_t{}, std::size_t{}); }    </requiresclause>
         <briefdescription>
 <para>Splits a string into a vector of sub-strings. </para>
         </briefdescription>
@@ -143,6 +196,7 @@ This function enables pattern-based string comparison for tests, supporting both
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>mt::utility::split&lt;std::string_view&gt;<sp/>(</highlight><highlight class="stringliteral">&quot;a.b&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;a.b<sp/>splits<sp/>into<sp/>[a,b]&quot;</highlight><highlight class="normal">;</highlight></codeline>
 </programlisting></para>
+<para>This template preserves the type of the argument: for a <computeroutput>std::string_view</computeroutput> it returns views into the input, for a <computeroutput>std::string</computeroutput> it returns copies. It takes part in overload resolution only for the string-like types, i.e. those having <computeroutput>npos</computeroutput>, <computeroutput>find_first_of()</computeroutput>, and <computeroutput>substr()</computeroutput>; for string literals and <computeroutput>const char*</computeroutput> arguments the non-template overload is selected.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
@@ -183,9 +237,10 @@ This function enables pattern-based string comparison for tests, supporting both
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="91" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" bodystart="91" bodyend="109" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="123" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" compoundref="utility-inlines_8h" startline="91" endline="109">micro_os_plus::micro_test_plus::utility::split</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" compoundref="utility-inlines_8h" startline="91" endline="109">micro_os_plus::micro_test_plus::utility::split</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="96" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" bodystart="96" bodyend="114" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="137" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="96" endline="114">micro_os_plus::micro_test_plus::utility::split</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" compoundref="utility_8cpp" startline="202" endline="220">micro_os_plus::micro_test_plus::utility::split</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="96" endline="114">micro_os_plus::micro_test_plus::utility::split</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

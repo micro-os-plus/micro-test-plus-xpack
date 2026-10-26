@@ -53,14 +53,14 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;T&gt; { .
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000044>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000101>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>Not replaced (since 5.1.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 808 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 1888 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <hr/>

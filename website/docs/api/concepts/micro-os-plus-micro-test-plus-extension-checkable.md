@@ -23,7 +23,9 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/checkable">micro_os_plus::micro_test_plus::extension::checkable</a> =  is_op&lt;T&gt; or requires (const T&amp; t) { t ? true : false; }
+concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/checkable">micro_os_plus::micro_test_plus::extension::checkable</a> =  is_op&lt;T&gt; or (not suspicious_condition&lt;T&gt; and requires (const T&amp; t) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t ? true : false;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})
 </div>
 
 ## Description {#details}
@@ -43,19 +45,21 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput">checkable</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is either a framework expression type (see <span class="doxyComputerOutput">is_op</span>) or a type contextually convertible to <span class="doxyComputerOutput">bool</span>, as the condition of an <span class="doxyComputerOutput">if</span> statement is. This includes the types with an <span class="doxyComputerOutput">explicit operator bool</span>, such as <span class="doxyComputerOutput">std::optional</span>, <span class="doxyComputerOutput">std::unique_ptr</span>, <span class="doxyComputerOutput">std::shared_ptr</span>, and <span class="doxyComputerOutput">std::function</span>, but not the scoped enumerations, which only a cast converts. It is used to constrain the <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> function templates, ensuring that only sensible expression types are accepted; an application helper that forwards its argument to them uses it for the same constraint.</p>
+<p>The <span class="doxyComputerOutput">checkable</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is either a framework expression type (see <span class="doxyComputerOutput">is_op</span>) or a type contextually convertible to <span class="doxyComputerOutput">bool</span>, as the condition of an <span class="doxyComputerOutput">if</span> statement is. This includes the types with an <span class="doxyComputerOutput">explicit operator bool</span>, such as <span class="doxyComputerOutput">std::optional</span>, <span class="doxyComputerOutput">std::unique_ptr</span>, <span class="doxyComputerOutput">std::shared_ptr</span>, and <span class="doxyComputerOutput">std::function</span>, but not the scoped enumerations, which only a cast converts, nor the types satisfying <span class="doxyComputerOutput">suspicious_condition</span> (the arrays, the functions, the pointers to functions, to members, and to characters), which would make the check pass by mistake. It is used to constrain the <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> function templates, ensuring that only sensible expression types are accepted; an application helper that forwards its argument to them uses it for the same constraint.</p>
 
 
 <p>The condition of the conditional operator, which cannot be overloaded, is used to test the contextual conversion, applied to a <span class="doxyComputerOutput">const</span> value, as <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> receive it.</p>
 
 
-<p>Definition at line 220 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 259 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight">&lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">concept </span><span class="doxyHighlight">checkable = is_op&lt;T&gt; or </span><span class="doxyHighlightKeyword">requires</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) { t ? true : </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">; }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">concept </span><span class="doxyHighlight">checkable = is_op&lt;T&gt; or (not suspicious_condition&lt;T&gt; and </span><span class="doxyHighlightKeyword">requires</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">            t ? true : </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">          })</span></span></div>
 
 </div>
 

@@ -31,7 +31,6 @@
 <para>Logical <computeroutput>&amp;&amp;</computeroutput> (and) operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs an <computeroutput>and_op</computeroutput> logical conjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if both operands are true. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -68,11 +67,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A logical conjunction object that evaluates to true if both operands are true. </para>
 </simplesect>
-</para>
+<xrefsect id="deprecated_1_deprecated000067"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs an <computeroutput>and_op</computeroutput> logical conjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if both operands are true. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="188" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="188" bodyend="192" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="261" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="236" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="236" bodyend="240" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="363" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga1d79c807e0d12684f1a850d7269c077b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -94,7 +95,6 @@
 <para>Logical <computeroutput>!</computeroutput> (not) operator. Matches only if the operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a <computeroutput>not_op</computeroutput> logical negator object from the operand and returns it. The object evaluates to <computeroutput>true</computeroutput> if the operand is false. The operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
@@ -115,11 +115,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A logical negator object that evaluates to true if the operand is false. </para>
 </simplesect>
-</para>
+<xrefsect id="deprecated_1_deprecated000069"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs a <computeroutput>not_op</computeroutput> logical negator object from the operand and returns it. The object evaluates to <computeroutput>true</computeroutput> if the operand is false. The operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="220" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="220" bodyend="226" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="296" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="268" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="268" bodyend="274" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="398" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gac008174d3b00512dc53b3e9e26ed45ec" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -148,7 +150,6 @@
 <para>Logical <computeroutput>||</computeroutput> (or) operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs an <computeroutput>or_op</computeroutput> logical disjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if at least one operand is true. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -185,11 +186,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A logical disjunction object that evaluates to true if at least one operand is true. </para>
 </simplesect>
-</para>
+<xrefsect id="deprecated_1_deprecated000068"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs an <computeroutput>or_op</computeroutput> logical disjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if at least one operand is true. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="205" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="205" bodyend="209" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="280" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="253" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="253" bodyend="257" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="382" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga0cc55025bbf6cac2f1b64242784559cb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -218,7 +221,6 @@
 <para>Non-equality operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a comparator object, with the <computeroutput>not_equal_to</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are not equal. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -255,11 +257,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the operands are not equal. </para>
 </simplesect>
-</para>
+<xrefsect id="deprecated_1_deprecated000062"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs a comparator object, with the <computeroutput>not_equal_to</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are not equal. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="99" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="99" bodyend="104" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="166" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="147" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="147" bodyend="152" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="268" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga1d1c66d2cce699e0e64d8307e3951090" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -288,7 +292,6 @@
 <para>Less than operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a comparator object, with the <computeroutput>less</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -325,11 +328,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is less than the right hand side operand. </para>
 </simplesect>
-</para>
+<xrefsect id="deprecated_1_deprecated000065"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs a comparator object, with the <computeroutput>less</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="152" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="153" bodyend="157" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="222" declcolumn="16"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="200" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="201" bodyend="205" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="324" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -358,7 +363,6 @@
 <para>Less than or equal operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a comparator object, with the <computeroutput>less_equal</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than or equal to <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -395,11 +399,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is less than or equal to the right hand side operand. </para>
 </simplesect>
-</para>
+<xrefsect id="deprecated_1_deprecated000066"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs a comparator object, with the <computeroutput>less_equal</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than or equal to <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="169" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="170" bodyend="175" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="241" declcolumn="16"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="217" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="218" bodyend="223" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="343" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -428,7 +434,6 @@
 <para>Equality operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a comparator object, with the <computeroutput>equal_to</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are equal. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -465,11 +470,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the operands are equal. </para>
 </simplesect>
-</para>
+<xrefsect id="deprecated_1_deprecated000061"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs a comparator object, with the <computeroutput>equal_to</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are equal. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="81" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="81" bodyend="86" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="147" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="129" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="129" bodyend="134" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="249" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1gaa7e34201bb41a287742c3c08a88924d3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -498,7 +505,6 @@
 <para>Greater than operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a comparator object, with the <computeroutput>greater</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -535,11 +541,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is greater than the right hand side operand. </para>
 </simplesect>
-</para>
+<xrefsect id="deprecated_1_deprecated000063"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs a comparator object, with the <computeroutput>greater</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="117" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="117" bodyend="122" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="185" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="165" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="165" bodyend="170" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="287" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -568,7 +576,6 @@
 <para>Greater than or equal operator. Matches only if at least one operand is a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
-<para>Constructs a comparator object, with the <computeroutput>greater_equal</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than or equal to <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -605,51 +612,38 @@
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is greater than or equal to the right hand side operand. </para>
 </simplesect>
-</para>
+<xrefsect id="deprecated_1_deprecated000064"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs a comparator object, with the <computeroutput>greater_equal</computeroutput> tag, from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than or equal to <computeroutput>rhs</computeroutput>. At least one operand must be a framework type (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="135" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="135" bodyend="140" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="204" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="183" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="183" bodyend="188" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="306" declcolumn="5"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Overloaded operators for expressive test comparisons. </para>
+<para>Deprecated overloaded operators for test comparisons. </para>
     </briefdescription>
     <detaileddescription>
-<para>These overloads enable expressive, type-safe test assertions. Operators such as <computeroutput>==</computeroutput>, <computeroutput>!=</computeroutput>, <computeroutput>&lt;</computeroutput>, <computeroutput>&gt;</computeroutput>, <computeroutput>&lt;=</computeroutput>, and <computeroutput>&gt;=</computeroutput> are defined in the dedicated <computeroutput>micro_test_plus::operators</computeroutput> namespace to avoid conflicts with application-defined operators.</para>
-<para>For standard values, the default operators are used, ensuring correct comparisons. However, when specialised µTest++ operators are used with typed operands, failed checks display both actual and expected values, greatly improving report clarity.</para>
-<para>These operators are restricted to the framework types (see <computeroutput>extension::is_op</computeroutput>). For constant values, this is achieved with provided literals (for example, <computeroutput>1_i</computeroutput>), whilst dynamic values can be wrapped with converters such as <computeroutput>mt::to_i{expression}</computeroutput>. When neither operand is of such a type, the standard operators are selected; they return a plain <computeroutput>bool</computeroutput>, so a failed check cannot show the operands.</para>
-<para>There are no operators for strings and containers: the standard operators would be selected for <computeroutput>std::string</computeroutput> objects and for containers of the same type, and operators for <computeroutput>std::string_view</computeroutput> objects would also replace the standard ones in the application code that follows the <computeroutput>using namespace</computeroutput> directive. Use <computeroutput>mt::eq()</computeroutput> and <computeroutput>mt::ne()</computeroutput> to compare strings and containers.</para>
-<para>Logical operators (<computeroutput>&amp;&amp;</computeroutput>, <computeroutput>||</computeroutput>, <computeroutput>!</computeroutput>) are also supported and provide enhanced functionality when used with typed operands, allowing complex test conditions to be composed naturally and readably.</para>
-<para><simplesect kind="par"><title>Examples</title><para></para>
+<para>The overloaded operators <computeroutput>==</computeroutput>, <computeroutput>!=</computeroutput>, <computeroutput>&lt;</computeroutput>, <computeroutput>&gt;</computeroutput>, <computeroutput>&lt;=</computeroutput>, <computeroutput>&gt;=</computeroutput>, <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput> are defined in the dedicated <computeroutput>micro_test_plus::operators</computeroutput> namespace, to avoid conflicts with application-defined operators.</para>
+<para><simplesect kind="par"><title>Deprecated</title><para>The operators are deprecated since 5.1.0, in favour of the function comparators <computeroutput>mt::eq()</computeroutput>, <computeroutput>mt::ne()</computeroutput>, <computeroutput>mt::lt()</computeroutput>, <computeroutput>mt::le()</computeroutput>, <computeroutput>mt::gt()</computeroutput>, and <computeroutput>mt::ge()</computeroutput>, and of the logical functions <computeroutput>mt::all_of()</computeroutput>, <computeroutput>mt::any_of()</computeroutput>, and <computeroutput>mt::negate()</computeroutput>, which check and report the plain values, without literal suffixes or casts. The compiler reports the use of the operators.</para>
+</simplesect>
+The operators are restricted to the framework types (see <computeroutput>extension::is_op</computeroutput>). For constant values, this is achieved with the (deprecated) literals, for example <computeroutput>1_i</computeroutput>, whilst dynamic values can be wrapped with the (deprecated) converters such as <computeroutput>mt::to_i{expression}</computeroutput>. When neither operand is of such a type, the standard operators are selected; they return a plain <computeroutput>bool</computeroutput>, so a failed check cannot show the operands.</para>
+<para><simplesect kind="warning"><para>The overloaded <computeroutput>and</computeroutput> and <computeroutput>or</computeroutput> operators evaluate both operands before the check, so they do not short-circuit like the built-in ones.</para>
+</simplesect>
+<simplesect kind="par"><title>Replacement</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::operators;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::literals;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>==<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42<sp/>(with<sp/>literal)&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::to_i<sp/>{compute_answer<sp/>()}<sp/>==<sp/>42)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42<sp/>(with<sp/>cast)&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>!=<sp/>43_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>not<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>&lt;<sp/>43_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>&lt;=<sp/>43_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;=<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>&gt;<sp/>41_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;<sp/>41&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>&gt;=<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal">});</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="par"><title>Logical Operators</title><para></para>
-</simplesect>
-Logical operators provide enhanced reporting when used with typed operands, allowing complex test conditions to be composed naturally and readably.</para>
-<para><simplesect kind="par"><title>Example</title><para></para>
-</simplesect>
-<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Logical<sp/>operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::operators;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::literals;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>==<sp/>42_i<sp/>&amp;&amp;<sp/>compute_float<sp/>()<sp/>==<sp/>42.0_f);</highlight></codeline>
+<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Comparators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::ne<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>not<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::lt<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::le<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;=<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::gt<sp/>(compute_answer<sp/>(),<sp/>41))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;<sp/>41&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::ge<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::all_of<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mt::eq<sp/>(compute_float<sp/>(),<sp/>42.0f)));</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting>  </para>
     </detaileddescription>

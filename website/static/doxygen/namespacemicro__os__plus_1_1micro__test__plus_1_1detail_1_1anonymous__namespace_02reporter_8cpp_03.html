@@ -164,24 +164,24 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section user"><dt>Returns</dt><dd>Nothing. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00721">721</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  722</span>    {</div>
-<div class="line"><span class="lineno">  723</span>      <span class="keywordflow">if</span> (count &gt; 0)</div>
-<div class="line"><span class="lineno">  724</span>        {</div>
-<div class="line"><span class="lineno">  725</span>          snprintf (message, <span class="keyword">sizeof</span> (message),</div>
-<div class="line"><span class="lineno">  726</span>                    <span class="stringliteral">&quot;, %&quot;</span> <a class="code hl_define" href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a> <span class="stringliteral">&quot; skipped&quot;</span>,</div>
-<div class="line"><span class="lineno">  727</span>                    count);</div>
-<div class="line"><span class="lineno">  728</span>        }</div>
-<div class="line"><span class="lineno">  729</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  730</span>        {</div>
-<div class="line"><span class="lineno">  731</span>          message[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  732</span>        }</div>
-<div class="line"><span class="lineno">  733</span>    }</div>
-<div class="ttc" id="adetail_8h_html_aaec16ed032c8fc52ba753a273b788381"><div class="ttname"><a href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a></div><div class="ttdeci">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</div><div class="ttdoc">Portable printf() conversion for the size_t values.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00095">detail.h:95</a></div></div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00817">817</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  818</span>    {</div>
+<div class="line"><span class="lineno">  819</span>      <span class="keywordflow">if</span> (count &gt; 0)</div>
+<div class="line"><span class="lineno">  820</span>        {</div>
+<div class="line"><span class="lineno">  821</span>          snprintf (message, <span class="keyword">sizeof</span> (message),</div>
+<div class="line"><span class="lineno">  822</span>                    <span class="stringliteral">&quot;, %&quot;</span> <a class="code hl_define" href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a> <span class="stringliteral">&quot; skipped&quot;</span>,</div>
+<div class="line"><span class="lineno">  823</span>                    count);</div>
+<div class="line"><span class="lineno">  824</span>        }</div>
+<div class="line"><span class="lineno">  825</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  826</span>        {</div>
+<div class="line"><span class="lineno">  827</span>          message[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  828</span>        }</div>
+<div class="line"><span class="lineno">  829</span>    }</div>
+<div class="ttc" id="adetail_8h_html_aaec16ed032c8fc52ba753a273b788381"><div class="ttname"><a href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a></div><div class="ttdeci">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</div><div class="ttdoc">Portable printf() conversion for the size_t values.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00096">detail.h:96</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00721">format_skipped()</a>, <a class="el" href="reporter_8cpp_source.html#l00688">fragment_size</a>, and <a class="el" href="detail_8h_source.html#l00095">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00817">format_skipped()</a>, <a class="el" href="reporter_8cpp_source.html#l00784">fragment_size</a>, and <a class="el" href="detail_8h_source.html#l00096">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00721">format_skipped()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00817">format_skipped()</a>.</p>
 
 </div>
 </div>
@@ -216,14 +216,14 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">""</span> for 1, and <span class="tt">"s"</span> otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00701">701</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  702</span>    {</div>
-<div class="line"><span class="lineno">  703</span>      <span class="keywordflow">return</span> count == 1 ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot;s&quot;</span>;</div>
-<div class="line"><span class="lineno">  704</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00797">797</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  798</span>    {</div>
+<div class="line"><span class="lineno">  799</span>      <span class="keywordflow">return</span> count == 1 ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot;s&quot;</span>;</div>
+<div class="line"><span class="lineno">  800</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00701">plural()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00797">plural()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00701">plural()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00797">plural()</a>.</p>
 
 </div>
 </div>
@@ -317,9 +317,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Large enough for <span class="tt">", N test cases failed"</span>, the longest fragment (20 characters and the count), and the terminator, with the count of the largest <span class="tt">size_t</span> value (10 digits on 32-bit targets, 20 on 64-bit ones, as in <span class="tt">", 18446744073709551615 test cases failed"</span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00687">687</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8cpp_source.html#l00783">783</a> of file <a class="el" href="reporter_8cpp_source.html">reporter.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00721">format_skipped()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00817">format_skipped()</a>.</p>
 
 </div>
 </div>

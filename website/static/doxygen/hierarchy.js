@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::c_string", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html", null ],
@@ -52,7 +53,8 @@ var hierarchy =
       [ "micro_os_plus::micro_test_plus::detail::named_bool", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html", null ],
       [ "micro_os_plus::micro_test_plus::detail::unary_op< T >", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op.html", null ]
     ] ],
-    [ "micro_os_plus::micro_test_plus::detail::reporter_human::open_test_case", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1_1open__test__case.html", null ],
+    [ "micro_os_plus::micro_test_plus::detail::reporter::open_test_case", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case.html", null ],
+    [ "micro_os_plus::micro_test_plus::detail::output_route", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1output__route.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::plain_text", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::range_element&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1range__element.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::range_element&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1range__element_3_01_t_01_4.html", null ],

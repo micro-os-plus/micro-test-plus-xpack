@@ -91,7 +91,7 @@ struct micro_os_plus::micro_test_plus::detail::range_element&lt;T&gt; { ... }
 </dd>
 </dl>
 
-<p>Definition at line 334 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 398 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -123,12 +123,12 @@ struct micro_os_plus::micro_test_plus::detail::range_element&lt;T&gt; { ... }
 <p>The type of the dereferenced <span class="doxyComputerOutput">begin()</span> function, found by argument-dependent lookup, as in a range-based <span class="doxyComputerOutput">for</span> statement over a <span class="doxyComputerOutput">const</span> range.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00365">365</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00429">429</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa2f9968426ee992c2e99aedc6226c145">365</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">type</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa2f9968426ee992c2e99aedc6226c145">429</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">type</a></span></span></div>
 
 </div>
 
@@ -161,12 +161,12 @@ struct micro_os_plus::micro_test_plus::detail::range_element&lt;T&gt; { ... }
 <p>The type of the dereferenced <span class="doxyComputerOutput">begin()</span> member, as iterated by a range-based <span class="doxyComputerOutput">for</span> statement over a <span class="doxyComputerOutput">const</span> range.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00343">343</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00407">407</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">343</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">type</a> = std::remove_cvref_t&lt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">407</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">type</a> = std::remove_cvref_t&lt;</span></span></div>
 
 </div>
 

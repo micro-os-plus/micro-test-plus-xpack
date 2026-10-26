@@ -19,6 +19,7 @@ var classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch =
     [ "timestamp_begin", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#a621a32c96a4950306c0a1aef8c577740", null ],
     [ "timestamp_end", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#aaa80547cfa783c321b0ce88ecaa39648", null ],
     [ "timestamp_end", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#a4c1a4d8b22d04205be49f8289ed7abd6", null ],
+    [ "stopwatch_test_access", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#acdcaae1b9c3790cb15df661d99efcba4", null ],
     [ "start_time_", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#a5f1f1e5b3faeb79b81bb7eb3602aefd1", null ],
     [ "stop_time_", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#afa5a38b18b6f14b904fafac9f0bd74fa", null ]
 ];

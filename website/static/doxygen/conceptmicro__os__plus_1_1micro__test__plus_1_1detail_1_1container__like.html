@@ -115,17 +115,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </div><!--header-->
 <div class="contents">
 
-<p>C++20 concept satisfied when <span class="tt">T</span> provides both <span class="tt">begin()</span> and <span class="tt">end()</span> member functions.  
+<p>C++20 concept satisfied when <span class="tt">T</span> provides both <span class="tt">begin()</span> and <span class="tt">end()</span> member functions returning an iterator and its sentinel.  
 <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="extension_8h_source.html">extension.h</a>&gt;</code></p>
 <h2 id="header-conceptdef" class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like.html">container_like</a> = <span class="keyword">requires</span> (<span class="keyword">const</span> T&amp; t) {</div>
-<div class="line">      t.begin ();</div>
-<div class="line">      t.end ();</div>
+<div class="line">      <span class="keyword">requires</span> std::input_or_output_iterator&lt;<span class="keyword">decltype</span> (t.begin ())&gt;;</div>
+<div class="line">      <span class="keyword">requires</span> std::sentinel_for&lt;<span class="keyword">decltype</span> (t.end ()), <span class="keyword">decltype</span> (t.begin ())&gt;;</div>
 <div class="line">    }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like.html">micro_os_plus::micro_test_plus::detail::container_like</a></div><div class="ttdoc">C++20 concept satisfied when T provides both begin() and end() member functions.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00274">extension.h:274</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like.html">micro_os_plus::micro_test_plus::detail::container_like</a></div><div class="ttdoc">C++20 concept satisfied when T provides both begin() and end() member functions returning an iterator...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00337">extension.h:337</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -133,9 +133,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
   </table>
   </dd>
 </dl>
-<p>The <span class="tt">container_like</span> concept is satisfied when <span class="tt">T</span> exposes both a <span class="tt">begin()</span> and an <span class="tt">end()</span> member function, as required by standard range-based iteration. It is used to detect the ranges that the formatter writes element by element (see <span class="tt">formattable_range</span>), and the ranges of values of <span class="tt">test_each()</span>. </p>
+<p>The <span class="tt">container_like</span> concept is satisfied when <span class="tt">T</span> exposes both a <span class="tt">begin()</span> and an <span class="tt">end()</span> member function, as required by standard range-based iteration, and <span class="tt">begin()</span> returns a <span class="tt">std::input_or_output_iterator</span> for which <span class="tt">end()</span> returns a <span class="tt">std::sentinel_for</span>. The check is part of the concept, so a type whose <span class="tt">begin()</span> and <span class="tt">end()</span> return something else (<span class="tt">void</span>, for example) is not a container, instead of being a hard error where the element type is formed. It is used to detect the ranges that the formatter writes element by element (see <span class="tt">formattable_range</span>), and the ranges of values of <span class="tt">test_each()</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00274">274</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00337">337</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

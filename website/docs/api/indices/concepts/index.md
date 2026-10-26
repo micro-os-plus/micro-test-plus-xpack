@@ -73,7 +73,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a vali
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/container-like">container_like</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides both <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> member functions
+C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides both <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> member functions returning an iterator and its sentinel
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -212,10 +212,30 @@ C++20 concept satisfied when a type is a framework expression type
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/legacy-checkable">legacy_checkable</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++20 concept satisfied when a type was accepted by <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> before the exclusion of the suspicious conditions
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/printable">printable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when a type can be appended to the message of a check result via <span class="doxyComputerOutput">operator&lt;&lt;</span>
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/suspicious-condition">suspicious_condition</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++20 concept satisfied when a type is contextually convertible to <span class="doxyComputerOutput">bool</span>, but is most likely not a condition
 </td>
 </tr>
 

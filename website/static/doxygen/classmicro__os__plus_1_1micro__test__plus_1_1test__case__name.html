@@ -153,10 +153,10 @@ Private Attributes</h2></td></tr>
 <div class="line">{</div>
 <div class="line">  ts.test (<a class="code hl_function" href="#a624bdd72fd18db434a64993818bb5466">name</a>, [v] (<span class="keyword">auto</span>&amp; t) { t.expect (mt::eq (v, 42)); });</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case__name_html_a624bdd72fd18db434a64993818bb5466"><div class="ttname"><a href="#a624bdd72fd18db434a64993818bb5466">micro_os_plus::micro_test_plus::test_case_name::name</a></div><div class="ttdeci">const char * name(void) const noexcept</div><div class="ttdoc">Gets the test case name.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00125">test-inlines.h:125</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case__name_html_a624bdd72fd18db434a64993818bb5466"><div class="ttname"><a href="#a624bdd72fd18db434a64993818bb5466">micro_os_plus::micro_test_plus::test_case_name::name</a></div><div class="ttdeci">const char * name(void) const noexcept</div><div class="ttdoc">Gets the test case name.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00126">test-inlines.h:126</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00156">156</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00157">157</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a86534273fcfac3a3edd7fbae2f04e5ea" name="a86534273fcfac3a3edd7fbae2f04e5ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86534273fcfac3a3edd7fbae2f04e5ea">&#9670;&#160;</a></span>test_case_name() <span class="overload">[1/2]</span></h2>
@@ -191,17 +191,17 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Stores the name pointer and the location; when called implicitly, the location is the place of the conversion, in the user code. </p>
+<p>Stores the name pointer, or an empty name if it is null, and the location; when called implicitly, the location is the place of the conversion, in the user code. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00100">100</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>      : <a class="code hl_variable" href="#a2941ef285834b5d22e0300238473e648">name_</a>{ <a class="code hl_function" href="#a624bdd72fd18db434a64993818bb5466">name</a> }, <a class="code hl_variable" href="#ab9ecf89d495d71f224e182228eaec66e">location_</a>{ <a class="code hl_function" href="#abfb91a55df657bbfbfb5fe774f46329b">location</a> }</div>
-<div class="line"><span class="lineno">  103</span>  {</div>
-<div class="line"><span class="lineno">  104</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case__name_html_a2941ef285834b5d22e0300238473e648"><div class="ttname"><a href="#a2941ef285834b5d22e0300238473e648">micro_os_plus::micro_test_plus::test_case_name::name_</a></div><div class="ttdeci">const char * name_</div><div class="ttdoc">The test case name.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00212">test.h:212</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case__name_html_ab9ecf89d495d71f224e182228eaec66e"><div class="ttname"><a href="#ab9ecf89d495d71f224e182228eaec66e">micro_os_plus::micro_test_plus::test_case_name::location_</a></div><div class="ttdeci">reflection::source_location location_</div><div class="ttdoc">The location of the call to test().</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00221">test.h:221</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case__name_html_abfb91a55df657bbfbfb5fe774f46329b"><div class="ttname"><a href="#abfb91a55df657bbfbfb5fe774f46329b">micro_os_plus::micro_test_plus::test_case_name::location</a></div><div class="ttdeci">const reflection::source_location &amp; location(void) const noexcept</div><div class="ttdoc">Gets the location of the call to test().</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00135">test-inlines.h:135</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00101">101</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>      : <a class="code hl_variable" href="#a2941ef285834b5d22e0300238473e648">name_</a>{ <a class="code hl_function" href="#a624bdd72fd18db434a64993818bb5466">name</a> != <span class="keyword">nullptr</span> ? <a class="code hl_function" href="#a624bdd72fd18db434a64993818bb5466">name</a> : <span class="stringliteral">&quot;&quot;</span> }, <a class="code hl_variable" href="#ab9ecf89d495d71f224e182228eaec66e">location_</a>{ <a class="code hl_function" href="#abfb91a55df657bbfbfb5fe774f46329b">location</a> }</div>
+<div class="line"><span class="lineno">  104</span>  {</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case__name_html_a2941ef285834b5d22e0300238473e648"><div class="ttname"><a href="#a2941ef285834b5d22e0300238473e648">micro_os_plus::micro_test_plus::test_case_name::name_</a></div><div class="ttdeci">const char * name_</div><div class="ttdoc">The test case name.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00213">test.h:213</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case__name_html_ab9ecf89d495d71f224e182228eaec66e"><div class="ttname"><a href="#ab9ecf89d495d71f224e182228eaec66e">micro_os_plus::micro_test_plus::test_case_name::location_</a></div><div class="ttdeci">reflection::source_location location_</div><div class="ttdoc">The location of the call to test().</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00222">test.h:222</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__case__name_html_abfb91a55df657bbfbfb5fe774f46329b"><div class="ttname"><a href="#abfb91a55df657bbfbfb5fe774f46329b">micro_os_plus::micro_test_plus::test_case_name::location</a></div><div class="ttdeci">const reflection::source_location &amp; location(void) const noexcept</div><div class="ttdoc">Gets the location of the call to test().</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00136">test-inlines.h:136</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00135">location()</a>, <a class="el" href="test-inlines_8h_source.html#l00125">name()</a>, and <a class="el" href="test_8h_source.html#l00212">name_</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00136">location()</a>, <a class="el" href="test-inlines_8h_source.html#l00126">name()</a>, and <a class="el" href="test_8h_source.html#l00213">name_</a>.</p>
 
 </div>
 </div>
@@ -240,12 +240,12 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>Stores the pointer returned by <span class="tt">name.c_str()</span>, which remains valid while the string is neither destroyed nor modified, and the location; when called implicitly, the location is the place of the conversion, in the user code. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00113">113</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  116</span>      : <a class="code hl_variable" href="#a2941ef285834b5d22e0300238473e648">name_</a>{ <a class="code hl_function" href="#a624bdd72fd18db434a64993818bb5466">name</a>.c_str () }, <a class="code hl_variable" href="#ab9ecf89d495d71f224e182228eaec66e">location_</a>{ <a class="code hl_function" href="#abfb91a55df657bbfbfb5fe774f46329b">location</a> }</div>
-<div class="line"><span class="lineno">  117</span>  {</div>
-<div class="line"><span class="lineno">  118</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00114">114</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>      : <a class="code hl_variable" href="#a2941ef285834b5d22e0300238473e648">name_</a>{ <a class="code hl_function" href="#a624bdd72fd18db434a64993818bb5466">name</a>.c_str () }, <a class="code hl_variable" href="#ab9ecf89d495d71f224e182228eaec66e">location_</a>{ <a class="code hl_function" href="#abfb91a55df657bbfbfb5fe774f46329b">location</a> }</div>
+<div class="line"><span class="lineno">  118</span>  {</div>
+<div class="line"><span class="lineno">  119</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00135">location()</a>, <a class="el" href="test-inlines_8h_source.html#l00125">name()</a>, and <a class="el" href="test_8h_source.html#l00212">name_</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00136">location()</a>, <a class="el" href="test-inlines_8h_source.html#l00126">name()</a>, and <a class="el" href="test_8h_source.html#l00213">name_</a>.</p>
 
 </div>
 </div>
@@ -276,14 +276,14 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the stored source location.</dd></dl>
 <p>Returns a reference to the location stored in <span class="tt"><a class="el" href="#ab9ecf89d495d71f224e182228eaec66e" title="The location of the call to test().">location_</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00135">135</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  136</span>  {</div>
-<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab9ecf89d495d71f224e182228eaec66e">location_</a>;</div>
-<div class="line"><span class="lineno">  138</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00136">136</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>  {</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab9ecf89d495d71f224e182228eaec66e">location_</a>;</div>
+<div class="line"><span class="lineno">  139</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00221">location_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00222">location_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00100">test_case_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00113">test_case_name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00677">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00101">test_case_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00114">test_case_name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00707">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
 
 </div>
 </div>
@@ -313,14 +313,14 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the null-terminated test case name.</dd></dl>
 <p>Returns the pointer stored in <span class="tt"><a class="el" href="#a2941ef285834b5d22e0300238473e648" title="The test case name.">name_</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00125">125</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  126</span>  {</div>
-<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a2941ef285834b5d22e0300238473e648">name_</a>;</div>
-<div class="line"><span class="lineno">  128</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00126">126</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>  {</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a2941ef285834b5d22e0300238473e648">name_</a>;</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00212">name_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00213">name_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00100">test_case_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00113">test_case_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00643">micro_os_plus::micro_test_plus::suite::test()</a>, <a class="el" href="test-inlines_8h_source.html#l00405">micro_os_plus::micro_test_plus::test_case::test()</a>, and <a class="el" href="test-inlines_8h_source.html#l00677">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00101">test_case_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00114">test_case_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00671">micro_os_plus::micro_test_plus::suite::test()</a>, <a class="el" href="test-inlines_8h_source.html#l00396">micro_os_plus::micro_test_plus::test_case::test()</a>, and <a class="el" href="test-inlines_8h_source.html#l00707">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
 
 </div>
 </div>
@@ -346,9 +346,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Captured by the default argument of the constructor, at the place of the conversion to <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html" title="The name of a test case, with the location of its definition.">test_case_name</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00221">221</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00222">222</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00135">location()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00136">location()</a>.</p>
 
 </div>
 </div>
@@ -373,9 +373,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Not owned; test cases run immediately, while the name is valid. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00212">212</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00213">213</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00100">test_case_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00113">test_case_name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00125">name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00101">test_case_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00114">test_case_name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00126">name()</a>.</p>
 
 </div>
 </div>

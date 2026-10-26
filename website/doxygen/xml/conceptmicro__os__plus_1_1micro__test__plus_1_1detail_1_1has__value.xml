@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value" kindref="compound">micro_os_plus::micro_test_plus::detail::has_value</ref> =  extension::is_op&lt;T&gt; and requires { T::value; }</initializer>
     <conceptparts>
-      <codepart line="445">    <programlisting>
+      <codepart line="509">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">has_value<sp/>=<sp/>extension::is_op&lt;T&gt;<sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>{<sp/>T::value;<sp/>}</highlight></codeline>
     </programlisting>
@@ -33,6 +33,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has
 The <computeroutput>has_value</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> is a framework expression type (see <computeroutput>extension::is_op</computeroutput>) with a static <computeroutput>value</computeroutput> member, like <computeroutput>integral_constant</computeroutput> and <computeroutput>floating_point_constant</computeroutput>, the types of the numeric literals. The comparators compare such operands by their <computeroutput>T::value</computeroutput> constants.</para>
 <para>The types of the application are excluded, even if they have a member named <computeroutput>value</computeroutput>, so that they are compared with their own operators. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="445" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="509" column="5"/>
   </compounddef>
 </doxygen>

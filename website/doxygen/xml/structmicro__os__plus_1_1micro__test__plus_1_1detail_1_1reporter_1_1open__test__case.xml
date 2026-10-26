@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case" kind="struct" language="C++" prot="protected">
+    <compoundname>micro_os_plus::micro_test_plus::detail::reporter::open_test_case</compoundname>
+    <includes refid="reporter_8h" local="no">reporter.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case_1a545589f22f45b2450bf06447aaee7ee5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::reporter::open_test_case::name_displayed</definition>
+        <argsstring></argsstring>
+        <name>name_displayed</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::reporter::open_test_case::name_displayed</qualifiedname>
+        <briefdescription>
+<para>Whether the heading of the test case was displayed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always true with verbose verbosity; otherwise set when the heading is displayed because the test case, or a nested one, has something to show, so that it is not displayed again. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1265" column="14" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1265" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aec7a63f892ff631e659c28607bf31242" compoundref="reporter-tap_8cpp" startline="1050" endline="1075">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1abcfa63d8c5ca8acd458383102b7e99e9" compoundref="reporter-human_8cpp" startline="864" endline="902">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case_1abb9fb536c656c747e0e2f9062193f7e2" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a904f410e240644fa77d65e686e6fc3eb" kindref="member">test_case</ref> *</type>
+        <definition>const test_case* micro_os_plus::micro_test_plus::detail::reporter::open_test_case::test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::reporter::open_test_case::test</qualifiedname>
+        <briefdescription>
+<para>The test case. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to display its heading when its results are committed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1255" column="25" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1255" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aec7a63f892ff631e659c28607bf31242" compoundref="reporter-tap_8cpp" startline="1050" endline="1075">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1abcfa63d8c5ca8acd458383102b7e99e9" compoundref="reporter-human_8cpp" startline="864" endline="902">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A test case that has begun and not yet ended. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Recorded by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aa5f6b45879c1e0986ce4ebf9f374a182" kindref="member">begin_test_case()</ref></computeroutput> and removed by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a145971ca001d89162c435f87b4cfeece" kindref="member">end_test_case()</ref></computeroutput>. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>micro_os_plus::micro_test_plus::counters</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1counters"/>
+      </node>
+      <node id="10">
+        <label>micro_os_plus::micro_test_plus::detail::callable_ref&lt; micro_os_plus::micro_test_plus::test_case &gt;</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref"/>
+      </node>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::reporter::open_test_case</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>test</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>micro_os_plus::micro_test_plus::detail::runnable_base</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>totals_</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>runner_</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>micro_os_plus::micro_test_plus::detail::stopwatch</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch"/>
+      </node>
+      <node id="9">
+        <label>micro_os_plus::micro_test_plus::reflection::source_location</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location"/>
+      </node>
+      <node id="5">
+        <label>micro_os_plus::micro_test_plus::runner</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1runner"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>started_first_</edgelabel>
+          <edgelabel>started_next_</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>top_suite_</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>stopwatch_</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>totals_</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>abort_handler_</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>running_test_case_</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>listed_suite_</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>micro_os_plus::micro_test_plus::suite</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1suite"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>stopwatch_</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>first_</edgelabel>
+          <edgelabel>next_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::test_case</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>callable_</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>location_</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>parent_suite_</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>micro_os_plus::micro_test_plus::top_suite</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1247" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1248" bodyend="1266"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case_1a545589f22f45b2450bf06447aaee7ee5" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::reporter::open_test_case</scope><name>name_displayed</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case_1abb9fb536c656c747e0e2f9062193f7e2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::reporter::open_test_case</scope><name>test</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -25,7 +25,6 @@ var classmicro__os__plus_1_1micro__test__plus_1_1suite =
     [ "timings", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a06c121fc0e8e87451a718846a11fc853", null ],
     [ "timings", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a431faae19127cec8fbc9ebce59709f31", null ],
     [ "totals", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html#aa83553cf6bf351153328304ebc71e545", null ],
-    [ "totals", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html#ae4b1b292777b0c1a7ee9edb02c4f2235", null ],
     [ "unlink", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a20ca7721bdf59488ed0713378235cfd2", null ],
     [ "detail::reporter_human", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a099a369b6d1f67c296baf9d22be40ba2", null ],
     [ "detail::reporter_tap", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a6cd3b3f893312fe43fa2d7b5018646e9", null ],

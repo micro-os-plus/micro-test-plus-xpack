@@ -153,7 +153,7 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00836">836</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00820">820</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3e789d4fded524d5d5d088618d615026" name="a3e789d4fded524d5d5d088618d615026"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e789d4fded524d5d5d088618d615026">&#9670;&#160;</a></span>callable_ref()</h2>
@@ -199,19 +199,19 @@ requires (!std::is_same_v&lt;std::remove_cv_t&lt;Callable_T&gt;, callable_ref&lt
 </dl>
 <p>Stores the address of the callable, and the address of the <span class="tt"><a class="el" href="#affde2e2f927df6b5ada7f5578f8d5c36" title="Invokes a callable of a given type, from its address.">invoke_callable()</a></span> instantiation for its type. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00329">329</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  330</span>        : <a class="code hl_variable" href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>{ <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">std::addressof</a> (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">callable</a>) },</div>
-<div class="line"><span class="lineno">  331</span>          <a class="code hl_variable" href="#a7ca4453fe089a72345a476490212ae59">invoke_</a>{ &amp;<a class="code hl_function" href="#affde2e2f927df6b5ada7f5578f8d5c36">invoke_callable&lt;Callable_T&gt;</a> }</div>
-<div class="line"><span class="lineno">  332</span>    {</div>
-<div class="line"><span class="lineno">  333</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">micro_os_plus::micro_test_plus::detail::callable_ref</a></div><div class="ttdoc">Non-owning reference to a callable invoked with a Self_T&amp; argument.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00836">test.h:837</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_html_a7a5a1b1e001f34f819ac65e63c2d9567"><div class="ttname"><a href="#a7a5a1b1e001f34f819ac65e63c2d9567">micro_os_plus::micro_test_plus::detail::callable_ref::callable_</a></div><div class="ttdeci">void * callable_</div><div class="ttdoc">The address of the referred callable.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00901">test.h:901</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_html_a7ca4453fe089a72345a476490212ae59"><div class="ttname"><a href="#a7ca4453fe089a72345a476490212ae59">micro_os_plus::micro_test_plus::detail::callable_ref::invoke_</a></div><div class="ttdeci">void(*) invoke_(void *callable, Self_T &amp;self)</div><div class="ttdoc">The function that invokes the referred callable.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00910">test.h:910</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_html_affde2e2f927df6b5ada7f5578f8d5c36"><div class="ttname"><a href="#affde2e2f927df6b5ada7f5578f8d5c36">micro_os_plus::micro_test_plus::detail::callable_ref::invoke_callable</a></div><div class="ttdeci">static void invoke_callable(void *callable, Self_T &amp;self)</div><div class="ttdoc">Invokes a callable of a given type, from its address.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00360">test-inlines.h:360</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00320">320</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  321</span>        : <a class="code hl_variable" href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>{ <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">std::addressof</a> (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">callable</a>) },</div>
+<div class="line"><span class="lineno">  322</span>          <a class="code hl_variable" href="#a7ca4453fe089a72345a476490212ae59">invoke_</a>{ &amp;<a class="code hl_function" href="#affde2e2f927df6b5ada7f5578f8d5c36">invoke_callable&lt;Callable_T&gt;</a> }</div>
+<div class="line"><span class="lineno">  323</span>    {</div>
+<div class="line"><span class="lineno">  324</span>    }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">micro_os_plus::micro_test_plus::detail::callable_ref</a></div><div class="ttdoc">Non-owning reference to a callable invoked with a Self_T&amp; argument.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00820">test.h:821</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_html_a7a5a1b1e001f34f819ac65e63c2d9567"><div class="ttname"><a href="#a7a5a1b1e001f34f819ac65e63c2d9567">micro_os_plus::micro_test_plus::detail::callable_ref::callable_</a></div><div class="ttdeci">void * callable_</div><div class="ttdoc">The address of the referred callable.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00885">test.h:885</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_html_a7ca4453fe089a72345a476490212ae59"><div class="ttname"><a href="#a7ca4453fe089a72345a476490212ae59">micro_os_plus::micro_test_plus::detail::callable_ref::invoke_</a></div><div class="ttdeci">void(*) invoke_(void *callable, Self_T &amp;self)</div><div class="ttdoc">The function that invokes the referred callable.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00894">test.h:894</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_html_affde2e2f927df6b5ada7f5578f8d5c36"><div class="ttname"><a href="#affde2e2f927df6b5ada7f5578f8d5c36">micro_os_plus::micro_test_plus::detail::callable_ref::invoke_callable</a></div><div class="ttdeci">static void invoke_callable(void *callable, Self_T &amp;self)</div><div class="ttdoc">Invokes a callable of a given type, from its address.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00351">test-inlines.h:351</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00329">callable_ref()</a>, and <a class="el" href="test_8h_source.html#l00901">callable_</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00320">callable_ref()</a>, and <a class="el" href="test_8h_source.html#l00885">callable_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00329">callable_ref()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00320">callable_ref()</a>.</p>
 
 </div>
 </div>
@@ -264,17 +264,17 @@ template&lt;typename Callable_T&gt; </div>
 <p>Casts <code class="param">callable</code> back to <span class="tt">Callable_T*</span>, the type it had when the reference was constructed, and invokes the callable through it, as an lvalue, with <code class="param">self</code>.</p>
 <p>A function pointer or a function object is called directly, not through <span class="tt">std::invoke()</span>, which, without optimisations, adds three frames to the call chain; a pointer to a member, which only <span class="tt">std::invoke()</span> can call, is still passed to it. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00360">360</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  361</span>    {</div>
-<div class="line"><span class="lineno">  362</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">std::is_member_pointer_v&lt;Callable_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  363</span>        {</div>
-<div class="line"><span class="lineno">  364</span>          <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">std::invoke</a> (*<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">Callable_T</a>*<span class="keyword">&gt;</span> (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">callable</a>), <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">self</a>);</div>
-<div class="line"><span class="lineno">  365</span>        }</div>
-<div class="line"><span class="lineno">  366</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  367</span>        {</div>
-<div class="line"><span class="lineno">  368</span>          (*<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">Callable_T</a>*<span class="keyword">&gt;</span> (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">callable</a>)) (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">self</a>);</div>
-<div class="line"><span class="lineno">  369</span>        }</div>
-<div class="line"><span class="lineno">  370</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00351">351</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  352</span>    {</div>
+<div class="line"><span class="lineno">  353</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">std::is_member_pointer_v&lt;Callable_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  354</span>        {</div>
+<div class="line"><span class="lineno">  355</span>          <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">std::invoke</a> (*<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">Callable_T</a>*<span class="keyword">&gt;</span> (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">callable</a>), <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">self</a>);</div>
+<div class="line"><span class="lineno">  356</span>        }</div>
+<div class="line"><span class="lineno">  357</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  358</span>        {</div>
+<div class="line"><span class="lineno">  359</span>          (*<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">Callable_T</a>*<span class="keyword">&gt;</span> (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">callable</a>)) (<a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">self</a>);</div>
+<div class="line"><span class="lineno">  360</span>        }</div>
+<div class="line"><span class="lineno">  361</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -313,12 +313,12 @@ template&lt;typename Self_T&gt; </div>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Passes the stored address and <code class="param">self</code> to the stored function. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00341">341</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  342</span>    {</div>
-<div class="line"><span class="lineno">  343</span>      <a class="code hl_variable" href="#a7ca4453fe089a72345a476490212ae59">invoke_</a> (<a class="code hl_variable" href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>, <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">self</a>);</div>
-<div class="line"><span class="lineno">  344</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00332">332</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  333</span>    {</div>
+<div class="line"><span class="lineno">  334</span>      <a class="code hl_variable" href="#a7ca4453fe089a72345a476490212ae59">invoke_</a> (<a class="code hl_variable" href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>, <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html">self</a>);</div>
+<div class="line"><span class="lineno">  335</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00901">callable_</a>, and <a class="el" href="test_8h_source.html#l00910">invoke_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00885">callable_</a>, and <a class="el" href="test_8h_source.html#l00894">invoke_</a>.</p>
 
 </div>
 </div>
@@ -346,9 +346,9 @@ template&lt;typename Self_T&gt; </div>
 </div><div class="memdoc">
 <p>Its type is erased; only <span class="tt"><a class="el" href="#a7ca4453fe089a72345a476490212ae59" title="The function that invokes the referred callable.">invoke_</a></span> converts it back. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00901">901</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00885">885</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00329">callable_ref()</a>, and <a class="el" href="test-inlines_8h_source.html#l00341">operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00320">callable_ref()</a>, and <a class="el" href="test-inlines_8h_source.html#l00332">operator()()</a>.</p>
 
 </div>
 </div>
@@ -375,9 +375,9 @@ template&lt;typename Self_T&gt; </div>
 </div><div class="memdoc">
 <p>The <span class="tt"><a class="el" href="#affde2e2f927df6b5ada7f5578f8d5c36" title="Invokes a callable of a given type, from its address.">invoke_callable()</a></span> instantiation for the type of the callable; it receives <span class="tt"><a class="el" href="#a7a5a1b1e001f34f819ac65e63c2d9567" title="The address of the referred callable.">callable_</a></span> and the <span class="tt">Self_T&amp;</span> argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00910">910</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00894">894</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00341">operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00332">operator()()</a>.</p>
 
 </div>
 </div>

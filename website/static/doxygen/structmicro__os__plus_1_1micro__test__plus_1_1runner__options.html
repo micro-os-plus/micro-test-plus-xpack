@@ -148,7 +148,7 @@ Public Attributes</h2></td></tr>
 </div><!-- fragment --><p>The structure only refers to the strings it uses; they must remain valid until <span class="tt">initialise()</span> returns, which copies what it keeps.</p>
 <dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00195">195</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00190">190</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a7c2cca740efdbdc4927cac43aa456611" name="a7c2cca740efdbdc4927cac43aa456611"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c2cca740efdbdc4927cac43aa456611">&#9670;&#160;</a></span>arguments</h2>
@@ -163,9 +163,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>A view of the <span class="tt">argv[]</span> array of <span class="tt">main()</span>, set when the options are parsed from the command line. When not empty, the reporters list it at the beginning of the report, and <span class="tt">initialise()</span> derives the default name of the top suite from <span class="tt"><a class="el" href="#a7c2cca740efdbdc4927cac43aa456611" title="The complete command line, including argv[0], if any.">arguments</a>[0]</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00255">255</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00250">250</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00332">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00209">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
 
 </div>
 </div>
@@ -183,9 +183,9 @@ Public Attributes</h2></td></tr>
 <p>Set by <span class="tt">--color[=&lt;when&gt;]</span>, as in the GNU tools, where <span class="tt">&lt;when&gt;</span> is <span class="tt">always</span>, <span class="tt">never</span>, or <span class="tt">auto</span>, or one of their GNU synonyms (<span class="tt">yes</span> and <span class="tt">force</span>, <span class="tt">no</span> and <span class="tt">none</span>, <span class="tt">tty</span> and <span class="tt">if-tty</span>), and <span class="tt">--color</span> alone means <span class="tt">always</span>; the value is accepted only after <span class="tt">=</span>. The alternative <span class="tt">--use-colour=&lt;mode&gt;</span> or <span class="tt">--use-colour &lt;mode&gt;</span>, as in Catch2 and Boost UT, takes <span class="tt">yes</span>, <span class="tt">no</span>, or <span class="tt">auto</span>, and also accepts the other values of <span class="tt">--color</span>. Used only by the human reporter.</p>
 <dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00244">244</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00239">239</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::reporter_human::reporter_human()</a>, and <a class="el" href="runner_8cpp_source.html#l00332">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::reporter_human::reporter_human()</a>, and <a class="el" href="runner_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
 
 </div>
 </div>
@@ -206,9 +206,9 @@ Public Attributes</h2></td></tr>
 <p>When the list is empty (the default), everything runs.</p>
 <dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00284">284</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00279">279</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00332">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00209">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
 
 </div>
 </div>
@@ -231,13 +231,13 @@ Public Attributes</h2></td></tr>
 <div class="line">  Explicit <span class="keyword">namespace </span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">suite</a></div>
 <div class="line">    Check one</div>
 <div class="line">3 test cases in 2 test suites</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1suite_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">micro_os_plus::micro_test_plus::suite</a></div><div class="ttdoc">A named, runnable test suite registered with the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01402">test.h:1403</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1suite_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">micro_os_plus::micro_test_plus::suite</a></div><div class="ttdoc">A named, runnable test suite registered with the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01431">test.h:1432</a></div></div>
 </div><!-- fragment --><p>The header is <span class="tt">Matching test cases:</span> when there are filter patterns, and the suites without selected test cases are not listed. The nested test cases are not listed, since they are created by the bodies of their parents, which do not run. The list is written to the console, unless the verbosity is <span class="tt">silent</span>, and to the output file, if any; no report is written, and <span class="tt">run()</span> returns 0, or 2 after an option error.</p>
 <dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00316">316</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00311">311</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00332">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00209">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
 
 </div>
 </div>
@@ -254,9 +254,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Set by <span class="tt">--output-file=&lt;path&gt;</span> or <span class="tt">--output-file &lt;path&gt;</span>. When it is <span class="tt">nullptr</span> or empty, no file is written. The reporter opens the file, and keeps a copy of the path, when it is created by <span class="tt">initialise()</span>; if the file cannot be opened, the error is reported on <span class="tt">stderr</span>, the report is written only to the console, and <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a97f725cb167a2b464fac0eb88a0c8a46" title="Runs the registered suites, ends the session, and returns the exit code.">runner::run()</a></span> returns 2. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00228">228</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00223">223</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00160">micro_os_plus::micro_test_plus::detail::reporter::reporter()</a>, and <a class="el" href="runner_8cpp_source.html#l00332">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00160">micro_os_plus::micro_test_plus::detail::reporter::reporter()</a>, and <a class="el" href="runner_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
 
 </div>
 </div>
@@ -273,9 +273,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Set by <span class="tt">--reporter=&lt;name&gt;</span> or <span class="tt">--reporter &lt;name&gt;</span>, where the name is <span class="tt">tap</span> or <span class="tt">human</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00204">204</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00199">199</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00332">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00209">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
 
 </div>
 </div>
@@ -293,12 +293,12 @@ Public Attributes</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">      <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_test_plus::verbosity::normal</a></div>
 <div class="line">    }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_os_plus::micro_test_plus::verbosity::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00114">runner-options.h:114</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_os_plus::micro_test_plus::verbosity::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00108">runner-options.h:108</a></div></div>
 </div><!-- fragment --><p>Set by <span class="tt">--silent</span>, <span class="tt">--quiet</span>, or <span class="tt">--verbose</span>; when several are given, the last one takes effect. </p>
 
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00213">213</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00208">208</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00193">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00332">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00209">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="runner_8cpp_source.html#l00402">micro_os_plus::micro_test_plus::runner::parse_options()</a>.</p>
 
 </div>
 </div>

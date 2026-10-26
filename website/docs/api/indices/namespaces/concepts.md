@@ -63,7 +63,9 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message"><b>lazy_message</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/legacy-checkable"><b>legacy_checkable</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">micro_os_plus::micro_test_plus::extension</a></li>
 </ul>
+<p>2 entries</p>
 
 ## - P -
 
@@ -75,7 +77,9 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/static-suite-body"><b>static_suite_body</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/suspicious-condition"><b>suspicious_condition</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">micro_os_plus::micro_test_plus::extension</a></li>
 </ul>
+<p>2 entries</p>
 
 ## - T -
 
@@ -85,7 +89,7 @@ keywords:
 </ul>
 <p>2 entries</p>
 <br/>
-<p>Total: 17 entries.</p>
+<p>Total: 19 entries.</p>
 
 <hr/>
 

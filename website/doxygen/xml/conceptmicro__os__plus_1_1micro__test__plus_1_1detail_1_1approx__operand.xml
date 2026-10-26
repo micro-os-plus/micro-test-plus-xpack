@@ -17,7 +17,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1app
                              and not std::is_same_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kindref="member">unwrapped_t</ref>&lt;T&gt;, char16_t&gt;
                              and not std::is_same_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kindref="member">unwrapped_t</ref>&lt;T&gt;, char32_t&gt;</initializer>
     <conceptparts>
-      <codepart line="819">    <programlisting>
+      <codepart line="821">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">approx_operand<sp/>=<sp/>std::is_arithmetic_v&lt;unwrapped_t&lt;T&gt;&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>not<sp/>std::is_same_v&lt;unwrapped_t&lt;T&gt;,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&gt;</highlight></codeline>
@@ -44,6 +44,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1app
 </parameterlist>
 The <computeroutput>approx_operand</computeroutput> concept is satisfied when <computeroutput>T</computeroutput>, or the value it wraps (for the framework value wrappers and the numeric literals), is an arithmetic type other than <computeroutput>bool</computeroutput> and the character types (<computeroutput>char</computeroutput>, <computeroutput>wchar_t</computeroutput>, <computeroutput>char8_t</computeroutput>, <computeroutput>char16_t</computeroutput>, and <computeroutput>char32_t</computeroutput>), which are not numbers; <computeroutput>signed char</computeroutput> and <computeroutput>unsigned char</computeroutput> are accepted, as the integer types they are. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="819" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="821" column="5"/>
   </compounddef>
 </doxygen>

@@ -5,7 +5,6 @@
     <includes local="no">array</includes>
     <includes local="no">limits</includes>
     <includes refid="math-inlines_8h" local="yes">inlines/math-inlines.h</includes>
-    <includedby refid="literals_8h" local="yes">literals.h</includedby>
     <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
     <includedby refid="values_8h" local="yes">values.h</includedby>
     <incdepgraph>
@@ -36,116 +35,96 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="5">
+      <node id="2">
         <label>micro-test-plus.h</label>
         <link refid="micro-test-plus_8h"/>
       </node>
-      <node id="8">
+      <node id="5">
         <label>check-result.h</label>
         <link refid="check-result_8h"/>
-        <childnode refid="9" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="3">
+      <node id="15">
         <label>deprecated.h</label>
         <link refid="deprecated_8h"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="20">
         <label>detail.h</label>
         <link refid="detail_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
         <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
+      </node>
+      <node id="22">
+        <label>exceptions.h</label>
+        <link refid="exceptions_8h"/>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="23">
-        <label>exceptions.h</label>
-        <link refid="exceptions_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="24">
         <label>expression-formatter.h</label>
         <link refid="expression-formatter_8h"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
         <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>extension.h</label>
-        <link refid="extension_8h"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>extension.h</label>
+        <link refid="extension_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
       </node>
-      <node id="26">
+      <node id="25">
         <label>function-comparators.h</label>
         <link refid="function-comparators_8h"/>
-        <childnode refid="3" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>operators-inlines.h</label>
-        <link refid="operators-inlines_8h"/>
-        <childnode refid="28" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="18">
         <label>test-inlines.h</label>
         <link refid="test-inlines_8h"/>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>literals.h</label>
-        <link refid="literals_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -153,132 +132,124 @@
         <link refid="math_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="28">
-        <label>operators.h</label>
-        <link refid="operators_8h"/>
-        <childnode refid="5" relation="include">
+      <node id="8">
+        <label>reporter-human.h</label>
+        <link refid="reporter-human_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="11">
-        <label>reporter-human.h</label>
-        <link refid="reporter-human_8h"/>
-        <childnode refid="5" relation="include">
+        <label>reporter-tap.h</label>
+        <link refid="reporter-tap_8h"/>
+        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>reporter-tap.h</label>
-        <link refid="reporter-tap_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
+      <node id="7">
         <label>reporter.h</label>
         <link refid="reporter_8h"/>
-        <childnode refid="5" relation="include">
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="14">
         <label>runner.h</label>
         <link refid="runner_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>test.h</label>
-        <link refid="test_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+      </node>
+      <node id="19">
+        <label>test.h</label>
+        <link refid="test_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>values.h</label>
+        <link refid="values_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="6">
-        <label>values.h</label>
-        <link refid="values_8h"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
         <label>check-result.cpp</label>
         <link refid="check-result_8cpp"/>
       </node>
-      <node id="22">
+      <node id="21">
         <label>counters.cpp</label>
         <link refid="counters_8cpp"/>
       </node>
-      <node id="4">
+      <node id="16">
         <label>deprecated.cpp</label>
         <link refid="deprecated_8cpp"/>
       </node>
-      <node id="25">
+      <node id="24">
         <label>expression-formatter.cpp</label>
         <link refid="expression-formatter_8cpp"/>
       </node>
-      <node id="12">
+      <node id="9">
         <label>reporter-human.cpp</label>
         <link refid="reporter-human_8cpp"/>
       </node>
-      <node id="15">
+      <node id="12">
         <label>reporter-tap.cpp</label>
         <link refid="reporter-tap_8cpp"/>
       </node>
-      <node id="16">
+      <node id="13">
         <label>reporter.cpp</label>
         <link refid="reporter_8cpp"/>
       </node>
-      <node id="13">
+      <node id="10">
         <label>runner.cpp</label>
         <link refid="runner_8cpp"/>
       </node>
-      <node id="18">
+      <node id="17">
         <label>test.cpp</label>
         <link refid="test_8cpp"/>
       </node>
@@ -338,8 +309,8 @@
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" compoundref="math-inlines_8h" startline="92" endline="95">micro_os_plus::micro_test_plus::detail::math::abs</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" compoundref="math-inlines_8h" startline="92" endline="95">micro_os_plus::micro_test_plus::detail::math::abs</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" compoundref="math-inlines_8h" startline="299" endline="350">micro_os_plus::micro_test_plus::detail::math::count_decimals</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a7ce90ae12eac430cf58becac530b92b2" compoundref="detail-inlines_8h" startline="427" endline="468">micro_os_plus::micro_test_plus::detail::differ_by_less_than</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" compoundref="detail-inlines_8h" startline="208" endline="240">micro_os_plus::micro_test_plus::detail::within_tolerance</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a7ce90ae12eac430cf58becac530b92b2" compoundref="detail-inlines_8h" startline="428" endline="469">micro_os_plus::micro_test_plus::detail::differ_by_less_than</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" compoundref="detail-inlines_8h" startline="209" endline="241">micro_os_plus::micro_test_plus::detail::within_tolerance</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -570,9 +541,9 @@
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" compoundref="math-inlines_8h" startline="142" endline="158">micro_os_plus::micro_test_plus::detail::math::count_literal_digits</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="math-inlines_8h" startline="218" endline="245">micro_os_plus::micro_test_plus::detail::math::den</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="math-inlines_8h" startline="218" endline="245">micro_os_plus::micro_test_plus::detail::math::den</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="378" endline="384">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="360" endline="366">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="396" endline="402">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="deprecated-inlines_8h" startline="578" endline="584">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="deprecated-inlines_8h" startline="560" endline="566">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="deprecated-inlines_8h" startline="596" endline="602">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -628,9 +599,9 @@
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" compoundref="math-inlines_8h" startline="142" endline="158">micro_os_plus::micro_test_plus::detail::math::count_literal_digits</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="math-inlines_8h" startline="261" endline="266">micro_os_plus::micro_test_plus::detail::math::den_size</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="math-inlines_8h" startline="261" endline="266">micro_os_plus::micro_test_plus::detail::math::den_size</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="378" endline="384">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="360" endline="366">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="396" endline="402">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="deprecated-inlines_8h" startline="578" endline="584">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="deprecated-inlines_8h" startline="560" endline="566">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="deprecated-inlines_8h" startline="596" endline="602">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -753,7 +724,7 @@
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a67e71e2dce0120ad4839635830e80de8" compoundref="math-inlines_8h" startline="109" endline="112">micro_os_plus::micro_test_plus::detail::math::min_value</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" compoundref="math-inlines_8h" startline="299" endline="350">micro_os_plus::micro_test_plus::detail::math::count_decimals</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a67e71e2dce0120ad4839635830e80de8" compoundref="math-inlines_8h" startline="109" endline="112">micro_os_plus::micro_test_plus::detail::math::min_value</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" compoundref="detail-inlines_8h" startline="208" endline="240">micro_os_plus::micro_test_plus::detail::within_tolerance</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" compoundref="detail-inlines_8h" startline="209" endline="241">micro_os_plus::micro_test_plus::detail::within_tolerance</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -810,9 +781,9 @@
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" compoundref="math-inlines_8h" startline="142" endline="158">micro_os_plus::micro_test_plus::detail::math::count_literal_digits</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="math-inlines_8h" startline="175" endline="200">micro_os_plus::micro_test_plus::detail::math::num</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="math-inlines_8h" startline="175" endline="200">micro_os_plus::micro_test_plus::detail::math::num</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="378" endline="384">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="360" endline="366">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="396" endline="402">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="deprecated-inlines_8h" startline="578" endline="584">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="deprecated-inlines_8h" startline="560" endline="566">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="deprecated-inlines_8h" startline="596" endline="602">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

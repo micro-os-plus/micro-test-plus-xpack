@@ -46,10 +46,10 @@ Invokes <computeroutput>func</computeroutput> inside a try/catch block. If <comp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1303" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="662" bodyend="676"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a094d51da3318c5f2bfa36121aac44829" compoundref="detail-inlines_8h" startline="579" endline="581">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_1aadecd7994227046918629f744bde73e0" compoundref="detail-inlines_8h" startline="662" endline="676">nothrow_op</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_1aadecd7994227046918629f744bde73e0" compoundref="detail-inlines_8h" startline="662" endline="676">nothrow_op</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1305" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="663" bodyend="677"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a094d51da3318c5f2bfa36121aac44829" compoundref="detail-inlines_8h" startline="580" endline="582">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_1aadecd7994227046918629f744bde73e0" compoundref="detail-inlines_8h" startline="663" endline="677">nothrow_op</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_1aadecd7994227046918629f744bde73e0" compoundref="detail-inlines_8h" startline="663" endline="677">nothrow_op</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -69,8 +69,8 @@ Returns the pre-computed boolean result stored by the derived operator&apos;s co
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1198" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="589" bodyend="592"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1ad464d00d1f7b4add47e7e6258dd5164d" compoundref="detail_8h" startline="1208" endline="1208">micro_os_plus::micro_test_plus::detail::callable_op::value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1200" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="590" bodyend="593"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1ad464d00d1f7b4add47e7e6258dd5164d" compoundref="detail_8h" startline="1210" endline="1210">micro_os_plus::micro_test_plus::detail::callable_op::value_</references>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -89,9 +89,9 @@ Returns the pre-computed boolean result stored by the derived operator&apos;s co
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1208" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1208" bodyend="1208"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a094d51da3318c5f2bfa36121aac44829" compoundref="detail-inlines_8h" startline="579" endline="581">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" compoundref="detail-inlines_8h" startline="589" endline="592">micro_os_plus::micro_test_plus::detail::callable_op::operator bool</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1210" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1210" bodyend="1210"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a094d51da3318c5f2bfa36121aac44829" compoundref="detail-inlines_8h" startline="580" endline="582">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" compoundref="detail-inlines_8h" startline="590" endline="593">micro_os_plus::micro_test_plus::detail::callable_op::operator bool</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-type">
@@ -155,7 +155,7 @@ Returns the pre-computed boolean result stored by the derived operator&apos;s co
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op"/>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1293" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1294" bodyend="1304"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1295" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1296" bodyend="1306"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a094d51da3318c5f2bfa36121aac44829" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::nothrow_op</scope><name>callable_op</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_1aadecd7994227046918629f744bde73e0" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::nothrow_op</scope><name>nothrow_op</name></member>

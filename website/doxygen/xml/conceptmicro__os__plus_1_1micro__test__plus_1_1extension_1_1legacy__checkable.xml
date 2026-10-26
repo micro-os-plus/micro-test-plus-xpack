@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::extension::legacy_checkable</compoundname>
+    <includes refid="extension_8h" local="no">extension.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable" kindref="compound">micro_os_plus::micro_test_plus::extension::legacy_checkable</ref> =  (not checkable&lt;T&gt;) and suspicious_condition&lt;T&gt;
+                               and requires (const T&amp; t) { t ? true : false; }</initializer>
+    <conceptparts>
+      <codepart line="278">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">legacy_checkable<sp/>=<sp/>(not<sp/>checkable&lt;T&gt;)<sp/>and<sp/>suspicious_condition&lt;T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>{<sp/>t<sp/>?<sp/>true<sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>C++20 concept satisfied when a type was accepted by <computeroutput>expect()</computeroutput> and <computeroutput>require()</computeroutput> before the exclusion of the suspicious conditions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to be checked.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Satisfied by the types that are contextually convertible to <computeroutput>bool</computeroutput> but are not <computeroutput>checkable</computeroutput>, i.e. the <computeroutput>suspicious_condition</computeroutput> types. It constrains the deprecated overloads of <computeroutput>expect()</computeroutput> and <computeroutput>require()</computeroutput>, which keep such code compiling for one release, with a warning. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="278" column="5"/>
+  </compounddef>
+</doxygen>

@@ -58,7 +58,7 @@ struct micro_os_plus::micro_test_plus::detail::indentation { ... }
 <p>Holds the indentation level; used with <span class="doxyComputerOutput">reporter::operator&lt;&lt;</span> so that <span class="doxyComputerOutput">*this &lt;&lt; indent(n) &lt;&lt; "text"</span> works naturally in chains.</p>
 
 
-<p>Definition at line 130 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line 131 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -89,12 +89,12 @@ struct micro_os_plus::micro_test_plus::detail::indentation { ... }
 <p>Converted into spaces by <span class="doxyComputerOutput">reporter::operator&lt;&lt;</span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00138">138</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6b8b1c2610c1f1591bc87068deeefd5a">138</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a6b8b1c2610c1f1591bc87068deeefd5a">level</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6b8b1c2610c1f1591bc87068deeefd5a">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a6b8b1c2610c1f1591bc87068deeefd5a">level</a>;</span></span></div>
 
 </div>
 

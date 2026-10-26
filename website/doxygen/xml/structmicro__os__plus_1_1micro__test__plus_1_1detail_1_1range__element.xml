@@ -22,7 +22,7 @@
 </parameterlist>
 Only declared; the partial specialisations define the member <computeroutput>type</computeroutput>, for the two ways of iterating a range. Used by <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1formattable__range" kindref="compound">formattable_range</ref></computeroutput>. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="324" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="324" bodyend="-1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="388" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="388" bodyend="-1"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

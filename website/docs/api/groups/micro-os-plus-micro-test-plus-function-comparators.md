@@ -208,7 +208,6 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">Check failed comparisons</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ✗ FAILED (unit-test.cpp:307, 42 != 42)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ✗ 42 != 42_i FAILED (unit-test.cpp:310, 42 != 42)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42 and 42 != 42.0))</span></span></div>
 
 </div>
@@ -223,7 +222,7 @@ keywords:
 </dl>
 
 
-<p>Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed with the standard <span class="doxyComputerOutput">==</span> operator, so the containers must be of the same type. There are no <span class="doxyComputerOutput">==</span> and <span class="doxyComputerOutput">!=</span> operators for containers in the <span class="doxyComputerOutput">operators</span> namespace, since the standard ones would be selected, and these return a plain <span class="doxyComputerOutput">bool</span>.</p>
+<p>Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed with the standard <span class="doxyComputerOutput">==</span> operator, so the containers must be of the same type. The standard <span class="doxyComputerOutput">==</span> and <span class="doxyComputerOutput">!=</span> operators return a plain <span class="doxyComputerOutput">bool</span>, so a failed check could not show the elements.</p>
 
 
 <dl class="doxySectionUser">
@@ -308,12 +307,12 @@ keywords:
 <p>Applications use the <span class="doxyComputerOutput">operator&lt;&lt;</span> overloads, and <span class="doxyComputerOutput">str()</span> to test their own operators; the functions that manage the buffer are private to the framework.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h/#l01134">1134</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h/#l01227">1227</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabecc05360d0941067222d827ff8e3f08">1134</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gabecc05360d0941067222d827ff8e3f08">expression_formatter</a> = <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">detail::expression_formatter</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabecc05360d0941067222d827ff8e3f08">1227</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#gabecc05360d0941067222d827ff8e3f08">expression_formatter</a> = <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">detail::expression_formatter</a>;</span></span></div>
 
 </div>
 
@@ -354,7 +353,7 @@ keywords:
 <p>Approximate equality comparator, with an explicit tolerance.</p>
 
 
-<p>The comparison succeeds if the distance between <span class="doxyComputerOutput">lhs</span> and <span class="doxyComputerOutput">rhs</span> is less than <span class="doxyComputerOutput">epsilon</span>. The operands are numbers, integral or floating-point, possibly of different types, or the framework value wrappers and numeric literals, whose own tolerance is not used. For the integers, the distance is computed exactly, also for operands of different signedness, so <span class="doxyComputerOutput"><a href="#gacae776e46a799b81af859ba9bb74e7d0">approx</a> (0u, -1, 2)</span> succeeds; for the other types, in their common floating-point type. A failure is reported as <span class="doxyComputerOutput">lhs ~ (rhs +/- epsilon)</span>.</p>
+<p>The comparison succeeds if the distance between <span class="doxyComputerOutput">lhs</span> and <span class="doxyComputerOutput">rhs</span> is less than <span class="doxyComputerOutput">epsilon</span>. The operands are numbers, integral or floating-point, possibly of different types, or the framework value wrappers and numeric literals, whose own tolerance is not used. For the integers, the distance is computed exactly, also for operands of different signedness, so <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (0u, -1, 2)</span> succeeds; for the other types, in their common floating-point type. A failure is reported as <span class="doxyComputerOutput">lhs ~ (rhs +/- epsilon)</span>.</p>
 
 
 <div class="doxyProgramListing">
@@ -365,7 +364,7 @@ keywords:
 </div>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#gacae776e46a799b81af859ba9bb74e7d0">approx</a> (value, epsilon)</span> form is a value wrapper instead, which applies its tolerance to the six comparisons and to the operators; it accepts only floating-point values.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (value, epsilon)</span> form is a value wrapper instead, which applies its tolerance to the six comparisons and to the operators; it accepts only floating-point values.</p>
 
 
 <dl class="doxyParamsList">
@@ -420,7 +419,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#gacae776e46a799b81af859ba9bb74e7d0">approx</a></span> function template constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/approx-op">detail::approx_op</a></span> from the forwarded operands and tolerance; the operands are numbers, so <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, which converts the C strings, is not needed.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a></span> function template constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/approx-op">detail::approx_op</a></span> from the forwarded operands and tolerance; the operands are numbers, so <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, which converts the C strings, is not needed.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00196">196</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -428,7 +427,7 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gacae776e46a799b81af859ba9bb74e7d0">196</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gacae776e46a799b81af859ba9bb74e7d0">approx</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs, Epsilon_T&amp;&amp; epsilon)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gacae776e46a799b81af859ba9bb74e7d0">196</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs, Epsilon_T&amp;&amp; epsilon)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">197</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">198</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/approx-op">detail::approx_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">199</span><span class="doxyLineContent"><span class="doxyHighlight">                              std::forward&lt;Rhs_T&gt; (rhs),</span></span></div>
@@ -438,10 +437,7 @@ keywords:
 </div>
 
 
-<p>Reference <a href="#gacae776e46a799b81af859ba9bb74e7d0">micro_os_plus::micro_test_plus::approx</a>.</p>
-
-
-<p>Referenced by <a href="#gacae776e46a799b81af859ba9bb74e7d0">micro_os_plus::micro_test_plus::approx</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe47800a219b00fcccf0a1dc596dbe20">micro_os_plus::micro_test_plus::approx</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gafe47800a219b00fcccf0a1dc596dbe20">micro_os_plus::micro_test_plus::approx</a>.</p>
 
 </div>
 </div>
@@ -474,7 +470,7 @@ keywords:
 <p>Generic equality comparator.</p>
 
 
-<p>The C strings (<span class="doxyComputerOutput">char</span> arrays, including the string literals, and <span class="doxyComputerOutput">char</span> pointers) are compared by content, also with <span class="doxyComputerOutput">std::string</span> and <span class="doxyComputerOutput">std::string_view</span>; a null <span class="doxyComputerOutput">char</span> pointer is equal only to another null pointer. The other pointers and arrays are compared by address.</p>
+<p>The C strings (<span class="doxyComputerOutput">char</span> arrays, including the string literals, and <span class="doxyComputerOutput">char</span> pointers) are compared by content, also with <span class="doxyComputerOutput">std::string</span> and <span class="doxyComputerOutput">std::string_view</span>; a null <span class="doxyComputerOutput">char</span> pointer is equal only to another null pointer. The other arrays (e.g. byte buffers) are compared element by element, also with a container, and written as ranges; the other pointers are compared by address. The pointers and arrays of <span class="doxyComputerOutput">char8_t</span>, <span class="doxyComputerOutput">char16_t</span>, <span class="doxyComputerOutput">char32_t</span>, and <span class="doxyComputerOutput">wchar_t</span> are not treated as strings: the arrays are compared element by element, including the terminating null character, and the pointers by address.</p>
 
 
 <p>Both operands must satisfy <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/printable">extension::printable</a></span>, since they are reported on failure; an application type needs an <span class="doxyComputerOutput">operator&lt;&lt;</span> for <span class="doxyComputerOutput">mt::expression_formatter</span>, otherwise the call is rejected, with a diagnostic that names the operand type.</p>

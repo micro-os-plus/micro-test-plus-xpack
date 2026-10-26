@@ -69,9 +69,57 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="95" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="95" bodyend="107"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" compoundref="expression-formatter_8cpp" startline="95" endline="107">append_hex</references>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" compoundref="expression-formatter_8cpp" startline="95" endline="107">append_hex</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="98" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="98" bodyend="110"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" compoundref="expression-formatter_8cpp" startline="98" endline="110">append_hex</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" compoundref="expression-formatter_8cpp" startline="98" endline="110">append_hex</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a82575d5d4e13eb8c54fd209ab830cd7d" compoundref="expression-formatter_8cpp" startline="129" endline="180">append_quoted</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a82575d5d4e13eb8c54fd209ab830cd7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}::append_quoted</definition>
+        <argsstring>(std::string &amp;buffer, std::string_view sv)</argsstring>
+        <name>append_quoted</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}::append_quoted</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>sv</declname>
+        </param>
+        <briefdescription>
+<para>Appends a string, as a quoted literal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used by the string operands, so that the empty strings and the leading or trailing spaces are visible, and the control characters do not reach the console. The escapes are those of the character literals, with the double quote escaped instead of the single quote. The bytes above <computeroutput>0x7F</computeroutput> are written unchanged, so that the UTF-8 text remains readable.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to which the literal is appended. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to write; it may contain <computeroutput>&apos;\\0&apos;</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="129" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="129" bodyend="180"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" compoundref="expression-formatter_8cpp" startline="98" endline="110">append_hex</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a82575d5d4e13eb8c54fd209ab830cd7d" compoundref="expression-formatter_8cpp" startline="129" endline="180">append_quoted</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a82575d5d4e13eb8c54fd209ab830cd7d" compoundref="expression-formatter_8cpp" startline="129" endline="180">append_quoted</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -79,8 +127,8 @@
     </briefdescription>
     <detaileddescription>
 <para>The unnamed namespace gives the helpers internal linkage, so that they are visible only in this translation unit, and cannot conflict with the names of the application or of the other source files of the framework. They are not declared in any header.</para>
-<para>It contains <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" kindref="member">append_hex()</ref></computeroutput>, which writes the hexadecimal escapes of the characters that cannot be printed as they are. </para>
+<para>It contains <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" kindref="member">append_hex()</ref></computeroutput>, which writes the hexadecimal escapes of the characters that cannot be printed as they are, and <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a82575d5d4e13eb8c54fd209ab830cd7d" kindref="member">append_quoted()</ref></computeroutput>, which writes a string between double quotes. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="76" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="79" column="3"/>
   </compounddef>
 </doxygen>

@@ -230,14 +230,14 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000039>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000096>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>the timings are internal (since 5.1.0)</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 531 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 1611 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -289,19 +289,19 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Copies <span class="doxyComputerOutput">ts</span> into the stored value.</p>
 
 
-<p>Declaration at line 552 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00126">126</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line 1632 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00679">679</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5877a6dda459f5dc695f0e4569175a82">126</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp::timestamp</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) noexcept : <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>{ ts }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">127</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5877a6dda459f5dc695f0e4569175a82">679</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp::timestamp</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) noexcept : <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>{ ts }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">680</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">681</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.</p>
+<p>References <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a> and <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.</p>
 
 </div>
 </div>
@@ -335,10 +335,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>A timestamp is a plain value, so it may be copied.</p>
 
 
-<p>Definition at line 560 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
-
-
-<p>Reference <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>.</p>
+<p>Definition at line 1640 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -372,7 +369,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Equivalent to the copy, since the value is trivially copyable.</p>
 
 
-<p>Definition at line 568 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 1648 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <p>Reference <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>.</p>
@@ -412,7 +409,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Reads the system clock into the stored value, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">read_clock()</a></span>, the same clock as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span>; without a clock, the value remains zero.</p>
 
 
-<p>Declaration at line 541 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp/#l00096">96</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">deprecated.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l01621">1621</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp/#l00096">96</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">deprecated.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -428,7 +425,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">micro_os_plus::micro_test_plus::detail::read_clock</a> and <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.</p>
 
 
-<p>Referenced by <a href="#a25cc87189f5ec1dbdef3302de6408d62">timestamp</a>, <a href="#a78ec32dd29a858de635f6be2a4fd3f8f">timestamp</a>, <a href="#a1edc35b9931f3fdb714daf9cae3da73e">~timestamp</a>, <a href="#a91c4b65a10407ab3c2a65343b924902b">operator=</a> and <a href="#a790a0f4322a690f7ab6591ada80222a0">operator=</a>.</p>
+<p>Referenced by <a href="#a5877a6dda459f5dc695f0e4569175a82">timestamp</a>, <a href="#a78ec32dd29a858de635f6be2a4fd3f8f">timestamp</a>, <a href="#a1edc35b9931f3fdb714daf9cae3da73e">~timestamp</a>, <a href="#a91c4b65a10407ab3c2a65343b924902b">operator=</a> and <a href="#a790a0f4322a690f7ab6591ada80222a0">operator=</a>.</p>
 
 </div>
 </div>
@@ -468,10 +465,10 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>No resources are owned, so there is nothing to release.</p>
 
 
-<p>Definition at line 601 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 1681 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
-<p>References <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a> and <a href="#ae5494fb57bcc3b577c914a0cc95ff667">has_clock</a>.</p>
+<p>Reference <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>.</p>
 
 </div>
 </div>
@@ -517,7 +514,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 </dl>
 
 
-<p>Definition at line 579 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l01659">1659</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <p>Reference <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>.</p>
@@ -560,7 +557,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 </dl>
 
 
-<p>Definition at line 592 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 1672 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <p>Reference <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>.</p>
@@ -630,23 +627,23 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Returns <span class="doxyComputerOutput">true</span> if either the seconds or the nanoseconds member is not zero.</p>
 
 
-<p>Declaration at line 615 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00138">138</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l01695">1695</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00691">691</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae5494fb57bcc3b577c914a0cc95ff667">138</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ae5494fb57bcc3b577c914a0cc95ff667">timestamp::has_clock</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">139</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_sec != 0 || <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_nsec != 0;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae5494fb57bcc3b577c914a0cc95ff667">691</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ae5494fb57bcc3b577c914a0cc95ff667">timestamp::has_clock</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">692</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">693</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_sec != 0 || <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_nsec != 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">694</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.</p>
+<p>References <a href="#ae5494fb57bcc3b577c914a0cc95ff667">has_clock</a> and <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.</p>
 
 
-<p>Referenced by <a href="#a1edc35b9931f3fdb714daf9cae3da73e">~timestamp</a>.</p>
+<p>Referenced by <a href="#ae5494fb57bcc3b577c914a0cc95ff667">has_clock</a>.</p>
 
 </div>
 </div>
@@ -694,20 +691,20 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>The returned reference is valid as long as the object exists.</p>
 
 
-<p>Declaration at line 635 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00163">163</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line 1715 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00716">716</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab5cdd20fcc69d0a7539d0fa219206e68">163</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a1538d7ab5b57c425c61510adfca32012">timestamp::value</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">165</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">166</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab5cdd20fcc69d0a7539d0fa219206e68">716</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a1538d7ab5b57c425c61510adfca32012">timestamp::value</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">717</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">718</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">719</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.</p>
+<p>References <a href="#a1538d7ab5b57c425c61510adfca32012">value</a> and <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.</p>
 
 </div>
 </div>
@@ -755,20 +752,23 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>The caller may modify the stored time through the returned reference.</p>
 
 
-<p>Declaration at line 625 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00151">151</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l01705">1705</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00704">704</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1538d7ab5b57c425c61510adfca32012">151</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a1538d7ab5b57c425c61510adfca32012">timestamp::value</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">152</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">153</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">154</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1538d7ab5b57c425c61510adfca32012">704</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a1538d7ab5b57c425c61510adfca32012">timestamp::value</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">705</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">706</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">707</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.</p>
+<p>References <a href="#a1538d7ab5b57c425c61510adfca32012">value</a> and <a href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.</p>
+
+
+<p>Referenced by <a href="#ab5cdd20fcc69d0a7539d0fa219206e68">value</a> and <a href="#a1538d7ab5b57c425c61510adfca32012">value</a>.</p>
 
 </div>
 </div>
@@ -808,7 +808,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Set by the constructors; zero if the clock was not read.</p>
 
 
-<p>Definition at line 644 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 1724 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <p>Referenced by <a href="#a5877a6dda459f5dc695f0e4569175a82">timestamp</a>, <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>, <a href="#ae5494fb57bcc3b577c914a0cc95ff667">has_clock</a>, <a href="#ab5cdd20fcc69d0a7539d0fa219206e68">value</a> and <a href="#a1538d7ab5b57c425c61510adfca32012">value</a>.</p>

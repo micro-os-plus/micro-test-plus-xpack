@@ -135,30 +135,10 @@ C++ header file with inline implementations for the µTest++ function comparator
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h"><span class="doxyIconFile">literals-inlines.h</span></a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with inline implementations for the µTest++ literals and type wrappers
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h"><span class="doxyIconFile">math-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with inline implementations for the µTest++ mathematical utilities
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h"><span class="doxyIconFile">operators-inlines.h</span></a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with inline implementations for the µTest++ operator overloads
 </td>
 </tr>
 
@@ -315,30 +295,10 @@ C++ header file with declarations for the µTest++ function comparators
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h"><span class="doxyIconFile">literals.h</span></a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with declarations for the µTest++ user-defined literals and type wrappers
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h"><span class="doxyIconFile">math.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with declarations for the µTest++ mathematical utilities
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h"><span class="doxyIconFile">operators.h</span></a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with declarations for the µTest++ operators
 </td>
 </tr>
 

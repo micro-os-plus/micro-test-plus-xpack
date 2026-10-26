@@ -46,7 +46,7 @@ struct micro_os_plus::micro_test_plus::detail::range_element&lt;T&gt; { ... }
 <p>Only declared; the partial specialisations define the member <span class="doxyComputerOutput">type</span>, for the two ways of iterating a range. Used by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/formattable-range">formattable_range</a></span>.</p>
 
 
-<p>Definition at line 324 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 388 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <hr/>

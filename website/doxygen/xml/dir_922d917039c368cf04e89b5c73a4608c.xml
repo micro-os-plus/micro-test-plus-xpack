@@ -11,9 +11,7 @@
     <innerfile refid="expression-formatter_8h">expression-formatter.h</innerfile>
     <innerfile refid="extension_8h">extension.h</innerfile>
     <innerfile refid="function-comparators_8h">function-comparators.h</innerfile>
-    <innerfile refid="literals_8h">literals.h</innerfile>
     <innerfile refid="math_8h">math.h</innerfile>
-    <innerfile refid="operators_8h">operators.h</innerfile>
     <innerfile refid="reflection_8h">reflection.h</innerfile>
     <innerfile refid="reporter-human_8h">reporter-human.h</innerfile>
     <innerfile refid="reporter-tap_8h">reporter-tap.h</innerfile>

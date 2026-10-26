@@ -460,10 +460,30 @@
                         },
                         {
                           "type": "category",
+                          "label": "legacy_checkable",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-extension-legacy-checkable"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
                           "label": "printable",
                           "link": {
                             "type": "doc",
                             "id": "api/concepts/micro-os-plus-micro-test-plus-extension-printable"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "suspicious_condition",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-extension-suspicious-condition"
                           },
                           "collapsed": true,
                           "items": []
@@ -533,6 +553,12 @@
           },
           "collapsed": true,
           "items": [
+            {
+              "type": "doc",
+              "label": "array_operand<T>",
+              "className": "doxyEllipsis",
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-array-operand"
+            },
             {
               "type": "doc",
               "label": "bound_callable<Self_T, Callable_T, Args_T>",
@@ -825,7 +851,13 @@
               "type": "doc",
               "label": "open_test_case",
               "className": "doxyEllipsis",
-              "id": "api/structs/micro-os-plus-micro-test-plus-detail-reporter-human-open-test-case"
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-reporter-open-test-case"
+            },
+            {
+              "type": "doc",
+              "label": "output_route",
+              "className": "doxyEllipsis",
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-output-route"
             },
             {
               "type": "doc",
@@ -1142,21 +1174,9 @@
                             },
                             {
                               "type": "doc",
-                              "label": "literals-inlines.h",
-                              "className": "doxyEllipsis",
-                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-literals-inlines-h"
-                            },
-                            {
-                              "type": "doc",
                               "label": "math-inlines.h",
                               "className": "doxyEllipsis",
                               "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-math-inlines-h"
-                            },
-                            {
-                              "type": "doc",
-                              "label": "operators-inlines.h",
-                              "className": "doxyEllipsis",
-                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-operators-inlines-h"
                             },
                             {
                               "type": "doc",
@@ -1252,21 +1272,9 @@
                         },
                         {
                           "type": "doc",
-                          "label": "literals.h",
-                          "className": "doxyEllipsis",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-literals-h"
-                        },
-                        {
-                          "type": "doc",
                           "label": "math.h",
                           "className": "doxyEllipsis",
                           "id": "api/files/include-micro-os-plus-micro-test-plus-math-h"
-                        },
-                        {
-                          "type": "doc",
-                          "label": "operators.h",
-                          "className": "doxyEllipsis",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-operators-h"
                         },
                         {
                           "type": "doc",

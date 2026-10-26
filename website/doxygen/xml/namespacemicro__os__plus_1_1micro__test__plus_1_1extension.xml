@@ -8,7 +8,9 @@
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable">micro_os_plus::micro_test_plus::extension::checkable</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon">micro_os_plus::micro_test_plus::extension::has_epsilon</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op">micro_os_plus::micro_test_plus::extension::is_op</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable">micro_os_plus::micro_test_plus::extension::legacy_checkable</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable">micro_os_plus::micro_test_plus::extension::printable</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1suspicious__condition">micro_os_plus::micro_test_plus::extension::suspicious_condition</innerconcept>
     <briefdescription>
 <para>The concepts for extending the µTest++ testing framework. </para>
     </briefdescription>
@@ -20,6 +22,6 @@
 </para>
 <para>The namespace is separate from the top namespace, so that <computeroutput>using namespace <ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> does not bring these generic names into the application code; refer to them qualified, as <computeroutput>mt::extension::is_op&lt;T&gt;</computeroutput>. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1512" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1616" column="3"/>
   </compounddef>
 </doxygen>

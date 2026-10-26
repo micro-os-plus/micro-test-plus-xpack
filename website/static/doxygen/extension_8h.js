@@ -11,5 +11,7 @@ var extension_8h =
     [ "micro_os_plus::micro_test_plus::extension::checkable", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html", null ],
     [ "micro_os_plus::micro_test_plus::extension::has_epsilon", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html", null ],
     [ "micro_os_plus::micro_test_plus::extension::is_op", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html", null ],
-    [ "micro_os_plus::micro_test_plus::extension::printable", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html", null ]
+    [ "micro_os_plus::micro_test_plus::extension::legacy_checkable", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable.html", null ],
+    [ "micro_os_plus::micro_test_plus::extension::printable", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html", null ],
+    [ "micro_os_plus::micro_test_plus::extension::suspicious_condition", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1suspicious__condition.html", null ]
 ];

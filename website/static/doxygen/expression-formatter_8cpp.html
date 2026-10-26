@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('expression-for
 <p>C++ source file with non-template implementations for the µTest++ expression formatter.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="expression-formatter_8h_source.html">micro-os-plus/micro-test-plus/expression-formatter.h</a>&quot;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 </div>
 <p><a href="expression-formatter_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -136,6 +137,8 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a2736611c9676822f8e948dc473f748f1" id="r_a2736611c9676822f8e948dc473f748f1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03.html#a2736611c9676822f8e948dc473f748f1">micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}::append_hex</a> (std::string &amp;buffer, char32_t code, std::string_view escape, std::size_t count)</td></tr>
 <tr class="memdesc:a2736611c9676822f8e948dc473f748f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an escape and a fixed number of hexadecimal digits.  <br /></td></tr>
+<tr class="memitem:a82575d5d4e13eb8c54fd209ab830cd7d" id="r_a82575d5d4e13eb8c54fd209ab830cd7d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03.html#a82575d5d4e13eb8c54fd209ab830cd7d">micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}::append_quoted</a> (std::string &amp;buffer, std::string_view sv)</td></tr>
+<tr class="memdesc:a82575d5d4e13eb8c54fd209ab830cd7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a string, as a quoted literal.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This source file contains the non-template <span class="tt">operator&lt;&lt;</span> overloads of <span class="tt">expression_formatter</span> for all standard arithmetic, character, string, boolean, and null-pointer types, <span class="tt">std::nullopt</span>, and the <span class="tt">c_string</span> and <span class="tt">named_bool</span> operands. Each overload appends the formatted value — together with an appropriate type suffix where applicable — to the internal string buffer. It also contains the private helpers that write the decimal point, the suffixes, and the characters, and the functions that assign the buffer to the checks.</p>

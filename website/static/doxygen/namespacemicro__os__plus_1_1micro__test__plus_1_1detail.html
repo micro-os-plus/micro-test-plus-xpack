@@ -135,6 +135,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical AND comparator struct template.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#details">More...</a><br /></td></tr>
 <tr class="memitem:approx_5Fop" id="r_approx_5Fop"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html">approx_op</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approximate comparator struct template.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html#details">More...</a><br /></td></tr>
+<tr class="memitem:array_5Foperand" id="r_array_5Foperand"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html">array_operand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array operand of a comparator, other than a <span class="tt">char</span> array.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html#details">More...</a><br /></td></tr>
 <tr class="memitem:binary_5Fop" id="r_binary_5Fop"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html">binary_op</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common base struct template for binary comparators.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#details">More...</a><br /></td></tr>
 <tr class="memitem:bound_5Fcallable" id="r_bound_5Fcallable"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable.html">bound_callable</a></td></tr>
@@ -187,6 +189,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty base struct for the framework expression types.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html#details">More...</a><br /></td></tr>
 <tr class="memitem:or_5Fop" id="r_or_5Fop"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html">or_op</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical OR comparator struct template.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html#details">More...</a><br /></td></tr>
+<tr class="memitem:output_5Froute" id="r_output_5Froute"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1output__route.html">output_route</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destinations of a record.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1output__route.html#details">More...</a><br /></td></tr>
 <tr class="memitem:plain_5Ftext" id="r_plain_5Ftext"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html">plain_text</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes values as text, as the messages of the checks are written.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#details">More...</a><br /></td></tr>
 <tr class="memitem:predicate_5Fop" id="r_predicate_5Fop"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op.html">predicate_op</a></td></tr>
@@ -225,7 +229,7 @@ Concepts</h2></td></tr>
 <tr class="memitem:approx_5Foperand" id="r_approx_5Foperand"><td class="memItemLeft">concept &#160;</td><td class="memItemRight"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__operand.html">approx_operand</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++20 concept satisfied when <span class="tt">T</span> is a valid operand of the approximate comparator. <br /></td></tr>
 <tr class="memitem:container_5Flike" id="r_container_5Flike"><td class="memItemLeft">concept &#160;</td><td class="memItemRight"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like.html">container_like</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++20 concept satisfied when <span class="tt">T</span> provides both <span class="tt">begin()</span> and <span class="tt">end()</span> member functions. <br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++20 concept satisfied when <span class="tt">T</span> provides both <span class="tt">begin()</span> and <span class="tt">end()</span> member functions returning an iterator and its sentinel. <br /></td></tr>
 <tr class="memitem:formattable_5Frange" id="r_formattable_5Frange"><td class="memItemLeft">concept &#160;</td><td class="memItemRight"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1formattable__range.html">formattable_range</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++20 concept satisfied when <span class="tt">T</span> is a range that the formatter writes element by element. <br /></td></tr>
 <tr class="memitem:free_5Frange" id="r_free_5Frange"><td class="memItemLeft">concept &#160;</td><td class="memItemRight"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range.html">free_range</a></td></tr>
@@ -265,6 +269,29 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="memdesc:a0726a1bc3b6f16245cb8a4b42fe0e70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of a check, which determines what happens when it fails.  <a href="#a0726a1bc3b6f16245cb8a4b42fe0e70c">More...</a><br /></td></tr>
+<tr class="memitem:af25a23e4451135649a8207c3a0ea30b5" id="r_af25a23e4451135649a8207c3a0ea30b5"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#af25a23e4451135649a8207c3a0ea30b5">record_kind</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5acaf9b6b99962bf5c2264824231d7a40c">info</a>
+, <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5abd97c2ef5f66e470bc30d4fd1c3b1f08">suite_heading</a>
+, <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5a89dde41a0e1f6b1091218e741a26f257">suite_result</a>
+, <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5a50bcbe154487d5fbab186979293ec8f1">test_case_heading</a>
+, <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5a2e8ebf6e2498d36d386a89fe4f78c739">test_case_result</a>
+, <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5ae52e279299e912838f689d4380c81f4a">skipped</a>
+, <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5ad92bae248e3e6219914c8348b9b14a6e">passed_check</a>
+, <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640">failed_check</a>
+, <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e">total</a>
+, <br />
+&#160;&#160;<a class="el" href="#af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa">abort</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:af25a23e4451135649a8207c3a0ea30b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kinds of records written by the reporters.  <a href="#af25a23e4451135649a8207c3a0ea30b5">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -300,10 +327,18 @@ requires std::is_arithmetic_v&lt;T&gt;</td></tr>
 <tr class="memitem:a8e476a4d97076ce7f016a18821d66c40" id="r_a8e476a4d97076ce7f016a18821d66c40"><td class="memTemplParams" colspan="2">template&lt;class T, char... Cs&gt; </td></tr>
 <tr class="memitem:a8e476a4d97076ce7f016a18821d66c40 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a8e476a4d97076ce7f016a18821d66c40">integral_literal</a> (void)</td></tr>
 <tr class="memdesc:a8e476a4d97076ce7f016a18821d66c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the compile-time constant of an integer literal.  <br /></td></tr>
+<tr class="memitem:ade4fe4b187a8ded1bb42910536d86235" id="r_ade4fe4b187a8ded1bb42910536d86235"><td class="memTemplParams" colspan="2">template&lt;class T, class R&gt; <br />
+requires (container_like&lt;R&gt; and std::three_way_comparable_with&lt; T, typename <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1range__element.html">range_element</a>&lt;R&gt;::type&gt;)</td></tr>
+<tr class="memitem:ade4fe4b187a8ded1bb42910536d86235 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ade4fe4b187a8ded1bb42910536d86235">operator&lt;=&gt;</a> (const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html">array_operand</a>&lt; T &gt; &amp;lhs, const R &amp;rhs)</td></tr>
+<tr class="memdesc:ade4fe4b187a8ded1bb42910536d86235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orders an array operand and a range lexicographically.  <br /></td></tr>
 <tr class="memitem:afa8a96f9fca4c7dceae1ee9e02a9861c" id="r_afa8a96f9fca4c7dceae1ee9e02a9861c"><td class="memItemLeft">constexpr std::strong_ordering&#160;</td><td class="memItemRight"><a class="el" href="#afa8a96f9fca4c7dceae1ee9e02a9861c">operator&lt;=&gt;</a> (const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a> &amp;lhs, const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a> &amp;rhs) noexcept</td></tr>
 <tr class="memdesc:afa8a96f9fca4c7dceae1ee9e02a9861c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orders two C string operands.  <br /></td></tr>
 <tr class="memitem:a3a06e7992caa3dfc9355a34369486c86" id="r_a3a06e7992caa3dfc9355a34369486c86"><td class="memItemLeft">constexpr std::strong_ordering&#160;</td><td class="memItemRight"><a class="el" href="#a3a06e7992caa3dfc9355a34369486c86">operator&lt;=&gt;</a> (const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a> &amp;lhs, std::string_view rhs) noexcept</td></tr>
 <tr class="memdesc:a3a06e7992caa3dfc9355a34369486c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orders a C string operand and a string.  <br /></td></tr>
+<tr class="memitem:ad7b514fb92021548630dbeb2cd8189bc" id="r_ad7b514fb92021548630dbeb2cd8189bc"><td class="memTemplParams" colspan="2">template&lt;class T, class R&gt; <br />
+requires (container_like&lt;R&gt; and std::equality_comparable_with&lt; T, typename <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1range__element.html">range_element</a>&lt;R&gt;::type&gt;)</td></tr>
+<tr class="memitem:ad7b514fb92021548630dbeb2cd8189bc template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#ad7b514fb92021548630dbeb2cd8189bc">operator==</a> (const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html">array_operand</a>&lt; T &gt; &amp;lhs, const R &amp;rhs)</td></tr>
+<tr class="memdesc:ad7b514fb92021548630dbeb2cd8189bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares an array operand with a range for equality.  <br /></td></tr>
 <tr class="memitem:a3461b586a0b0e6146681ccda9dbb49b4" id="r_a3461b586a0b0e6146681ccda9dbb49b4"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a3461b586a0b0e6146681ccda9dbb49b4">operator==</a> (const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a> &amp;lhs, const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a> &amp;rhs) noexcept</td></tr>
 <tr class="memdesc:a3461b586a0b0e6146681ccda9dbb49b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two C string operands for equality.  <br /></td></tr>
 <tr class="memitem:a81530e9e1a17d43a930a16a504af9912" id="r_a81530e9e1a17d43a930a16a504af9912"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a81530e9e1a17d43a930a16a504af9912">operator==</a> (const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a> &amp;lhs, std::nullptr_t) noexcept</td></tr>
@@ -356,7 +391,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The v5.0.1 name of the class returned by <span class="tt">totals()</span>, renamed since the suites and the test cases own one too, not only the runner. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000037">Deprecated</a></b></dt><dd>use counters (since 5.1.0)</dd></dl>
+<p>The v5.0.1 name of the class returned by <span class="tt">totals()</span>, renamed since the suites and the test cases own one too, not only the runner. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000094">Deprecated</a></b></dt><dd>use counters (since 5.1.0)</dd></dl>
 
 </div>
 </div>
@@ -387,7 +422,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00215">215</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00217">217</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>
@@ -402,7 +437,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The v5.0.1 name of the class returned by the <span class="tt">timings()</span> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span>; its protected members, the two optional <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="Deprecated clock reading.">timestamp</a></span> objects, are not. The timings are internal; the elapsed times are shown by the reporters. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000038">Deprecated</a></b></dt><dd>the timings are internal (since 5.1.0)</dd></dl>
+<p>The v5.0.1 name of the class returned by the <span class="tt">timings()</span> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span>; its protected members, the two optional <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="Deprecated clock reading.">timestamp</a></span> objects, are not. The timings are internal; the elapsed times are shown by the reporters. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000095">Deprecated</a></b></dt><dd>the timings are internal (since 5.1.0)</dd></dl>
 
 </div>
 </div>
@@ -421,7 +456,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">std::remove_cvref_t&lt;<span class="keyword">decltype</span> (<a class="code hl_function" href="#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (</div>
 <div class="line">       std::declval&lt;<span class="keyword">const</span> std::remove_cvref_t&lt;T&gt;&amp;&gt; ()))&gt;</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a59eb53c96f68d26635c13df53b358ac8"><div class="ttname"><a href="#a59eb53c96f68d26635c13df53b358ac8">micro_os_plus::micro_test_plus::detail::unwrap</a></div><div class="ttdeci">decltype(auto) constexpr unwrap(const T &amp;t)</div><div class="ttdoc">Returns the value wrapped by a framework type, or the operand itself.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00097">detail-inlines.h:97</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a59eb53c96f68d26635c13df53b358ac8"><div class="ttname"><a href="#a59eb53c96f68d26635c13df53b358ac8">micro_os_plus::micro_test_plus::detail::unwrap</a></div><div class="ttdeci">decltype(auto) constexpr unwrap(const T &amp;t)</div><div class="ttdoc">Returns the value wrapped by a framework type, or the operand itself.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00098">detail-inlines.h:98</a></div></div>
 </div><!-- fragment --><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The type of the operand, possibly a reference.</td></tr>
@@ -430,7 +465,7 @@ template&lt;class T&gt; </div>
 </dl>
 <p>Without references and qualifiers; for example <span class="tt">int</span> for a <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-literals.html#gaf3ee271cefcffa625e40d476305da62f" title="Strongly-typed wrapper for int values.">to_i</a></span> wrapper and for a <span class="tt">42<a class="el" href="group__micro-os-plus-micro-test-plus-literals.html#ga8468610e763177a8f569f7d618851288" title="Strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span> literal, and the type itself for the other operands. Used by <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__operand.html" title="C++20 concept satisfied when T is a valid operand of the approximate comparator.">approx_operand</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00801">801</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00803">803</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>
@@ -472,6 +507,84 @@ template&lt;class T&gt; </div>
 <div class="line"><span class="lineno">  131</span>    };</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e"><div class="ttname"><a href="#a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e">micro_os_plus::micro_test_plus::detail::check_kind::requirement</a></div><div class="ttdeci">@ requirement</div><div class="ttdoc">A check created by require().</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00130">check-result.h:130</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a0726a1bc3b6f16245cb8a4b42fe0e70cae15c5d274bf9fa6571890c731d88bc37"><div class="ttname"><a href="#a0726a1bc3b6f16245cb8a4b42fe0e70cae15c5d274bf9fa6571890c731d88bc37">micro_os_plus::micro_test_plus::detail::check_kind::expectation</a></div><div class="ttdeci">@ expectation</div><div class="ttdoc">A check created by expect().</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00121">check-result.h:121</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af25a23e4451135649a8207c3a0ea30b5" name="af25a23e4451135649a8207c3a0ea30b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af25a23e4451135649a8207c3a0ea30b5">&#9670;&#160;</a></span>record_kind</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#af25a23e4451135649a8207c3a0ea30b5">micro_os_plus::micro_test_plus::detail::record_kind</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The output policy, which decides where each kind of record is written at each verbosity level, is in <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#af33f2f6498a97383cdb75020e32ccf23" title="Tells where a kind of record is written.">reporter::route()</a></span>. The concrete reporters only format the records and ask where they go. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5acaf9b6b99962bf5c2264824231d7a40c" name="af25a23e4451135649a8207c3a0ea30b5acaf9b6b99962bf5c2264824231d7a40c"></a>info&#160;</td><td class="fielddoc"><p>The informational lines written at the beginning of the session. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5abd97c2ef5f66e470bc30d4fd1c3b1f08" name="af25a23e4451135649a8207c3a0ea30b5abd97c2ef5f66e470bc30d4fd1c3b1f08"></a>suite_heading&#160;</td><td class="fielddoc"><p>The heading that marks the beginning of a suite. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5a89dde41a0e1f6b1091218e741a26f257" name="af25a23e4451135649a8207c3a0ea30b5a89dde41a0e1f6b1091218e741a26f257"></a>suite_result&#160;</td><td class="fielddoc"><p>The result line of a suite. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5a50bcbe154487d5fbab186979293ec8f1" name="af25a23e4451135649a8207c3a0ea30b5a50bcbe154487d5fbab186979293ec8f1"></a>test_case_heading&#160;</td><td class="fielddoc"><p>The heading that marks the beginning of a test case. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5a2e8ebf6e2498d36d386a89fe4f78c739" name="af25a23e4451135649a8207c3a0ea30b5a2e8ebf6e2498d36d386a89fe4f78c739"></a>test_case_result&#160;</td><td class="fielddoc"><p>The result line of a test case. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5ae52e279299e912838f689d4380c81f4a" name="af25a23e4451135649a8207c3a0ea30b5ae52e279299e912838f689d4380c81f4a"></a>skipped&#160;</td><td class="fielddoc"><p>The line of a suite or of a test case skipped by the filter. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5ad92bae248e3e6219914c8348b9b14a6e" name="af25a23e4451135649a8207c3a0ea30b5ad92bae248e3e6219914c8348b9b14a6e"></a>passed_check&#160;</td><td class="fielddoc"><p>The line of a passed check. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640" name="af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640"></a>failed_check&#160;</td><td class="fielddoc"><p>The lines of a failed check, or the failure of a suite. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e" name="af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e"></a>total&#160;</td><td class="fielddoc"><p>The totals of the session. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa" name="af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa"></a>abort&#160;</td><td class="fielddoc"><p>The report of an aborted test execution. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00165">165</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  171</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5acaf9b6b99962bf5c2264824231d7a40c">info</a>,</div>
+<div class="line"><span class="lineno">  172</span></div>
+<div class="line"><span class="lineno">  176</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5abd97c2ef5f66e470bc30d4fd1c3b1f08">suite_heading</a>,</div>
+<div class="line"><span class="lineno">  177</span></div>
+<div class="line"><span class="lineno">  181</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5a89dde41a0e1f6b1091218e741a26f257">suite_result</a>,</div>
+<div class="line"><span class="lineno">  182</span></div>
+<div class="line"><span class="lineno">  186</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5a50bcbe154487d5fbab186979293ec8f1">test_case_heading</a>,</div>
+<div class="line"><span class="lineno">  187</span></div>
+<div class="line"><span class="lineno">  191</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5a2e8ebf6e2498d36d386a89fe4f78c739">test_case_result</a>,</div>
+<div class="line"><span class="lineno">  192</span></div>
+<div class="line"><span class="lineno">  197</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5ae52e279299e912838f689d4380c81f4a">skipped</a>,</div>
+<div class="line"><span class="lineno">  198</span></div>
+<div class="line"><span class="lineno">  202</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5ad92bae248e3e6219914c8348b9b14a6e">passed_check</a>,</div>
+<div class="line"><span class="lineno">  203</span></div>
+<div class="line"><span class="lineno">  207</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640">failed_check</a>,</div>
+<div class="line"><span class="lineno">  208</span></div>
+<div class="line"><span class="lineno">  212</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e">total</a>,</div>
+<div class="line"><span class="lineno">  213</span></div>
+<div class="line"><span class="lineno">  217</span>      <a class="code hl_enumvalue" href="#af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa">abort</a></div>
+<div class="line"><span class="lineno">  218</span>    };</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5a2e8ebf6e2498d36d386a89fe4f78c739"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5a2e8ebf6e2498d36d386a89fe4f78c739">micro_os_plus::micro_test_plus::detail::record_kind::test_case_result</a></div><div class="ttdeci">@ test_case_result</div><div class="ttdoc">The result line of a test case.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00191">reporter.h:191</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5a50bcbe154487d5fbab186979293ec8f1"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5a50bcbe154487d5fbab186979293ec8f1">micro_os_plus::micro_test_plus::detail::record_kind::test_case_heading</a></div><div class="ttdeci">@ test_case_heading</div><div class="ttdoc">The heading that marks the beginning of a test case.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00186">reporter.h:186</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa">micro_os_plus::micro_test_plus::detail::record_kind::abort</a></div><div class="ttdeci">@ abort</div><div class="ttdoc">The report of an aborted test execution.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00217">reporter.h:217</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5a89dde41a0e1f6b1091218e741a26f257"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5a89dde41a0e1f6b1091218e741a26f257">micro_os_plus::micro_test_plus::detail::record_kind::suite_result</a></div><div class="ttdeci">@ suite_result</div><div class="ttdoc">The result line of a suite.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00181">reporter.h:181</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5abd97c2ef5f66e470bc30d4fd1c3b1f08"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5abd97c2ef5f66e470bc30d4fd1c3b1f08">micro_os_plus::micro_test_plus::detail::record_kind::suite_heading</a></div><div class="ttdeci">@ suite_heading</div><div class="ttdoc">The heading that marks the beginning of a suite.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00176">reporter.h:176</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5acaf9b6b99962bf5c2264824231d7a40c"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5acaf9b6b99962bf5c2264824231d7a40c">micro_os_plus::micro_test_plus::detail::record_kind::info</a></div><div class="ttdeci">@ info</div><div class="ttdoc">The informational lines written at the beginning of the session.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00171">reporter.h:171</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5ad92bae248e3e6219914c8348b9b14a6e"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5ad92bae248e3e6219914c8348b9b14a6e">micro_os_plus::micro_test_plus::detail::record_kind::passed_check</a></div><div class="ttdeci">@ passed_check</div><div class="ttdoc">The line of a passed check.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00202">reporter.h:202</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640">micro_os_plus::micro_test_plus::detail::record_kind::failed_check</a></div><div class="ttdeci">@ failed_check</div><div class="ttdoc">The lines of a failed check, or the failure of a suite.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00207">reporter.h:207</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5ae52e279299e912838f689d4380c81f4a"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5ae52e279299e912838f689d4380c81f4a">micro_os_plus::micro_test_plus::detail::record_kind::skipped</a></div><div class="ttdeci">@ skipped</div><div class="ttdoc">The line of a suite or of a test case skipped by the filter.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00197">reporter.h:197</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e"><div class="ttname"><a href="#af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e">micro_os_plus::micro_test_plus::detail::record_kind::total</a></div><div class="ttdeci">@ total</div><div class="ttdoc">The totals of the session.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00212">reporter.h:212</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -542,82 +655,82 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </ul>
 <p>For all other numeric types, <span class="tt">std::to_chars</span> is called directly, providing locale-independent formatting. The <span class="tt">snprintf()</span> path uses the decimal point of the C locale, which is <span class="tt">.</span> unless the application changes it with <span class="tt">setlocale()</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00728">728</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  729</span>    {</div>
-<div class="line"><span class="lineno">  730</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, long double&gt;)</div>
-<div class="line"><span class="lineno">  731</span>        {</div>
-<div class="line"><span class="lineno">  732</span><span class="preprocessor">#if defined(_WIN32) \</span></div>
-<div class="line"><span class="lineno">  733</span><span class="preprocessor">    || (defined(__SIZEOF_LONG_DOUBLE__) \</span></div>
-<div class="line"><span class="lineno">  734</span><span class="preprocessor">        &amp;&amp; __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)</span></div>
-<div class="line"><span class="lineno">  735</span>          <span class="comment">// On Windows (all toolchains: MinGW, Clang, MSVC), the C runtime</span></div>
-<div class="line"><span class="lineno">  736</span>          <span class="comment">// does not handle the %Lg printf specifier correctly for 80-bit</span></div>
-<div class="line"><span class="lineno">  737</span>          <span class="comment">// long double, producing garbage output. On platforms where long</span></div>
-<div class="line"><span class="lineno">  738</span>          <span class="comment">// double has the same width as double (e.g. 32-bit Arm), the cast</span></div>
-<div class="line"><span class="lineno">  739</span>          <span class="comment">// is lossless. In both cases, cast to double and use</span></div>
-<div class="line"><span class="lineno">  740</span>          <span class="comment">// std::to_chars.</span></div>
-<div class="line"><span class="lineno">  741</span>          <span class="keywordtype">char</span> buf[32];</div>
-<div class="line"><span class="lineno">  742</span>          <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf),</div>
-<div class="line"><span class="lineno">  743</span>                                                <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span> (v));</div>
-<div class="line"><span class="lineno">  744</span>          <span class="keywordflow">if</span> (ec == std::errc{})</div>
-<div class="line"><span class="lineno">  745</span>            buffer.append (buf, ptr);</div>
-<div class="line"><span class="lineno">  746</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  747</span>          <span class="comment">// On other platforms (80-bit extended precision on x86-64,</span></div>
-<div class="line"><span class="lineno">  748</span>          <span class="comment">// 128-bit quad precision on AArch64 and RISC-V), std::to_chars</span></div>
-<div class="line"><span class="lineno">  749</span>          <span class="comment">// for long double may be unavailable (e.g., with lld).</span></div>
-<div class="line"><span class="lineno">  750</span>          <span class="comment">// Use snprintf as a portable fallback; %Lg is supported by the C</span></div>
-<div class="line"><span class="lineno">  751</span>          <span class="comment">// libraries used on these platforms (e.g. glibc, the macOS libc,</span></div>
-<div class="line"><span class="lineno">  752</span>          <span class="comment">// and newlib, the latter with the precision of double on AArch64</span></div>
-<div class="line"><span class="lineno">  753</span>          <span class="comment">// and RISC-V). Use the smallest precision that reads back as the</span></div>
-<div class="line"><span class="lineno">  754</span>          <span class="comment">// same value; the buffer fits the 36 digits of the 128-bit</span></div>
-<div class="line"><span class="lineno">  755</span>          <span class="comment">// format, with the sign, the point, and the exponent.</span></div>
-<div class="line"><span class="lineno">  756</span>          <span class="keywordtype">char</span> buf[48];</div>
-<div class="line"><span class="lineno">  757</span>          <span class="keyword">const</span> <span class="keywordtype">int</span> saved_errno = errno;</div>
-<div class="line"><span class="lineno">  758</span>          <span class="comment">// The subnormal values have fewer significant digits.</span></div>
-<div class="line"><span class="lineno">  759</span>          <span class="keyword">const</span> <span class="keywordtype">int</span> min_precision</div>
-<div class="line"><span class="lineno">  760</span>              = (v &gt; -LDBL_MIN &amp;&amp; v &lt; LDBL_MIN) ? 1 : LDBL_DIG;</div>
-<div class="line"><span class="lineno">  761</span>          <span class="keywordtype">bool</span> is_exact = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  762</span>          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> precision = min_precision; precision &lt;= LDBL_DECIMAL_DIG;</div>
-<div class="line"><span class="lineno">  763</span>               ++precision)</div>
-<div class="line"><span class="lineno">  764</span>            {</div>
-<div class="line"><span class="lineno">  765</span>              snprintf (buf, <span class="keyword">sizeof</span> (buf), <span class="stringliteral">&quot;%.*Lg&quot;</span>, precision, v);</div>
-<div class="line"><span class="lineno">  766</span>              <span class="comment">// A NaN is never equal to itself, and has no digits.</span></div>
-<div class="line"><span class="lineno">  767</span>              <span class="keywordflow">if</span> (v != v || strtold (buf, <span class="keyword">nullptr</span>) == v)</div>
-<div class="line"><span class="lineno">  768</span>                {</div>
-<div class="line"><span class="lineno">  769</span>                  is_exact = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  770</span>                  <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  771</span>                }</div>
-<div class="line"><span class="lineno">  772</span>            }</div>
-<div class="line"><span class="lineno">  773</span>          errno = saved_errno;</div>
-<div class="line"><span class="lineno">  774</span>          <span class="keywordflow">if</span> (is_exact)</div>
-<div class="line"><span class="lineno">  775</span>            {</div>
-<div class="line"><span class="lineno">  776</span>              buffer.append (buf);</div>
-<div class="line"><span class="lineno">  777</span>            }</div>
-<div class="line"><span class="lineno">  778</span>          <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  779</span>            {</div>
-<div class="line"><span class="lineno">  780</span>              <span class="comment">// The C library formats or reads long double with the</span></div>
-<div class="line"><span class="lineno">  781</span>              <span class="comment">// precision of double (e.g. newlib on AArch64 and RISC-V),</span></div>
-<div class="line"><span class="lineno">  782</span>              <span class="comment">// and its long text would only show the error of the</span></div>
-<div class="line"><span class="lineno">  783</span>              <span class="comment">// conversion; use the shortest form of the double value,</span></div>
-<div class="line"><span class="lineno">  784</span>              <span class="comment">// as on the platforms above.</span></div>
-<div class="line"><span class="lineno">  785</span>              <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf),</div>
-<div class="line"><span class="lineno">  786</span>                                                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span> (v));</div>
-<div class="line"><span class="lineno">  787</span>              <span class="keywordflow">if</span> (ec == std::errc{})</div>
-<div class="line"><span class="lineno">  788</span>                buffer.append (buf, ptr);</div>
-<div class="line"><span class="lineno">  789</span>            }</div>
-<div class="line"><span class="lineno">  790</span><span class="preprocessor">#endif </span><span class="comment">// defined(_WIN32) || (defined(__SIZEOF_LONG_DOUBLE__) &amp;&amp; __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)</span></div>
-<div class="line"><span class="lineno">  791</span>        }</div>
-<div class="line"><span class="lineno">  792</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  793</span>        {</div>
-<div class="line"><span class="lineno">  794</span>          <span class="keywordtype">char</span> buf[32];</div>
-<div class="line"><span class="lineno">  795</span>          <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf), v);</div>
-<div class="line"><span class="lineno">  796</span>          <span class="keywordflow">if</span> (ec == std::errc{})</div>
-<div class="line"><span class="lineno">  797</span>            buffer.append (buf, ptr);</div>
-<div class="line"><span class="lineno">  798</span>        }</div>
-<div class="line"><span class="lineno">  799</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00729">729</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  730</span>    {</div>
+<div class="line"><span class="lineno">  731</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, long double&gt;)</div>
+<div class="line"><span class="lineno">  732</span>        {</div>
+<div class="line"><span class="lineno">  733</span><span class="preprocessor">#if defined(_WIN32) \</span></div>
+<div class="line"><span class="lineno">  734</span><span class="preprocessor">    || (defined(__SIZEOF_LONG_DOUBLE__) \</span></div>
+<div class="line"><span class="lineno">  735</span><span class="preprocessor">        &amp;&amp; __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)</span></div>
+<div class="line"><span class="lineno">  736</span>          <span class="comment">// On Windows (all toolchains: MinGW, Clang, MSVC), the C runtime</span></div>
+<div class="line"><span class="lineno">  737</span>          <span class="comment">// does not handle the %Lg printf specifier correctly for 80-bit</span></div>
+<div class="line"><span class="lineno">  738</span>          <span class="comment">// long double, producing garbage output. On platforms where long</span></div>
+<div class="line"><span class="lineno">  739</span>          <span class="comment">// double has the same width as double (e.g. 32-bit Arm), the cast</span></div>
+<div class="line"><span class="lineno">  740</span>          <span class="comment">// is lossless. In both cases, cast to double and use</span></div>
+<div class="line"><span class="lineno">  741</span>          <span class="comment">// std::to_chars.</span></div>
+<div class="line"><span class="lineno">  742</span>          <span class="keywordtype">char</span> buf[32];</div>
+<div class="line"><span class="lineno">  743</span>          <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf),</div>
+<div class="line"><span class="lineno">  744</span>                                                <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span> (v));</div>
+<div class="line"><span class="lineno">  745</span>          <span class="keywordflow">if</span> (ec == std::errc{})</div>
+<div class="line"><span class="lineno">  746</span>            buffer.append (buf, ptr);</div>
+<div class="line"><span class="lineno">  747</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  748</span>          <span class="comment">// On other platforms (80-bit extended precision on x86-64,</span></div>
+<div class="line"><span class="lineno">  749</span>          <span class="comment">// 128-bit quad precision on AArch64 and RISC-V), std::to_chars</span></div>
+<div class="line"><span class="lineno">  750</span>          <span class="comment">// for long double may be unavailable (e.g., with lld).</span></div>
+<div class="line"><span class="lineno">  751</span>          <span class="comment">// Use snprintf as a portable fallback; %Lg is supported by the C</span></div>
+<div class="line"><span class="lineno">  752</span>          <span class="comment">// libraries used on these platforms (e.g. glibc, the macOS libc,</span></div>
+<div class="line"><span class="lineno">  753</span>          <span class="comment">// and newlib, the latter with the precision of double on AArch64</span></div>
+<div class="line"><span class="lineno">  754</span>          <span class="comment">// and RISC-V). Use the smallest precision that reads back as the</span></div>
+<div class="line"><span class="lineno">  755</span>          <span class="comment">// same value; the buffer fits the 36 digits of the 128-bit</span></div>
+<div class="line"><span class="lineno">  756</span>          <span class="comment">// format, with the sign, the point, and the exponent.</span></div>
+<div class="line"><span class="lineno">  757</span>          <span class="keywordtype">char</span> buf[48];</div>
+<div class="line"><span class="lineno">  758</span>          <span class="keyword">const</span> <span class="keywordtype">int</span> saved_errno = errno;</div>
+<div class="line"><span class="lineno">  759</span>          <span class="comment">// The subnormal values have fewer significant digits.</span></div>
+<div class="line"><span class="lineno">  760</span>          <span class="keyword">const</span> <span class="keywordtype">int</span> min_precision</div>
+<div class="line"><span class="lineno">  761</span>              = (v &gt; -LDBL_MIN &amp;&amp; v &lt; LDBL_MIN) ? 1 : LDBL_DIG;</div>
+<div class="line"><span class="lineno">  762</span>          <span class="keywordtype">bool</span> is_exact = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  763</span>          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> precision = min_precision; precision &lt;= LDBL_DECIMAL_DIG;</div>
+<div class="line"><span class="lineno">  764</span>               ++precision)</div>
+<div class="line"><span class="lineno">  765</span>            {</div>
+<div class="line"><span class="lineno">  766</span>              snprintf (buf, <span class="keyword">sizeof</span> (buf), <span class="stringliteral">&quot;%.*Lg&quot;</span>, precision, v);</div>
+<div class="line"><span class="lineno">  767</span>              <span class="comment">// A NaN is never equal to itself, and has no digits.</span></div>
+<div class="line"><span class="lineno">  768</span>              <span class="keywordflow">if</span> (v != v || strtold (buf, <span class="keyword">nullptr</span>) == v)</div>
+<div class="line"><span class="lineno">  769</span>                {</div>
+<div class="line"><span class="lineno">  770</span>                  is_exact = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  771</span>                  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  772</span>                }</div>
+<div class="line"><span class="lineno">  773</span>            }</div>
+<div class="line"><span class="lineno">  774</span>          errno = saved_errno;</div>
+<div class="line"><span class="lineno">  775</span>          <span class="keywordflow">if</span> (is_exact)</div>
+<div class="line"><span class="lineno">  776</span>            {</div>
+<div class="line"><span class="lineno">  777</span>              buffer.append (buf);</div>
+<div class="line"><span class="lineno">  778</span>            }</div>
+<div class="line"><span class="lineno">  779</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  780</span>            {</div>
+<div class="line"><span class="lineno">  781</span>              <span class="comment">// The C library formats or reads long double with the</span></div>
+<div class="line"><span class="lineno">  782</span>              <span class="comment">// precision of double (e.g. newlib on AArch64 and RISC-V),</span></div>
+<div class="line"><span class="lineno">  783</span>              <span class="comment">// and its long text would only show the error of the</span></div>
+<div class="line"><span class="lineno">  784</span>              <span class="comment">// conversion; use the shortest form of the double value,</span></div>
+<div class="line"><span class="lineno">  785</span>              <span class="comment">// as on the platforms above.</span></div>
+<div class="line"><span class="lineno">  786</span>              <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf),</div>
+<div class="line"><span class="lineno">  787</span>                                                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span> (v));</div>
+<div class="line"><span class="lineno">  788</span>              <span class="keywordflow">if</span> (ec == std::errc{})</div>
+<div class="line"><span class="lineno">  789</span>                buffer.append (buf, ptr);</div>
+<div class="line"><span class="lineno">  790</span>            }</div>
+<div class="line"><span class="lineno">  791</span><span class="preprocessor">#endif </span><span class="comment">// long double formatting</span></div>
+<div class="line"><span class="lineno">  792</span>        }</div>
+<div class="line"><span class="lineno">  793</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  794</span>        {</div>
+<div class="line"><span class="lineno">  795</span>          <span class="keywordtype">char</span> buf[32];</div>
+<div class="line"><span class="lineno">  796</span>          <span class="keyword">const</span> <span class="keyword">auto</span> [ptr, ec] = std::to_chars (buf, buf + <span class="keyword">sizeof</span> (buf), v);</div>
+<div class="line"><span class="lineno">  797</span>          <span class="keywordflow">if</span> (ec == std::errc{})</div>
+<div class="line"><span class="lineno">  798</span>            buffer.append (buf, ptr);</div>
+<div class="line"><span class="lineno">  799</span>        }</div>
+<div class="line"><span class="lineno">  800</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00728">append_number()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00729">append_number()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00728">append_number()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00444">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00428">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00460">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00298">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00350">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00401">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00375">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00324">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00311">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00362">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00414">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00388">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00337">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00101">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00729">append_number()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00250">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00533">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00514">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00551">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00383">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00435">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00486">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00460">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00409">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00396">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00447">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00499">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00473">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="expression-formatter_8cpp_source.html#l00422">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00101">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -659,45 +772,45 @@ template&lt;class T&gt; </div>
 <p>Null pointers are rendered as <span class="tt">"0x0"</span>, regardless of the platform, avoiding platform-specific representations such as <span class="tt">"(nil)"</span> on Linux/glibc. Non-null pointers are formatted with <span class="tt">snprintf()</span>, using the <span class="tt">p</span> specifier.</p>
 <p>The <span class="tt">p</span> specifier expects a <span class="tt">void*</span>. Object pointers are converted implicitly to <span class="tt">const volatile void*</span>, which accepts any qualification, and the qualifiers are then removed with <span class="tt">const_cast</span>; a <span class="tt">reinterpret_cast</span> to <span class="tt">void*</span> would not compile for pointers to <span class="tt">const</span> objects. The object is not accessed. Function pointers, which do not convert to <span class="tt">void*</span> implicitly, use <span class="tt">reinterpret_cast</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00824">824</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  825</span>    {</div>
-<div class="line"><span class="lineno">  826</span>      <span class="keywordflow">if</span> (v == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  827</span>        {</div>
-<div class="line"><span class="lineno">  828</span>          buffer.append (<span class="stringliteral">&quot;0x0&quot;</span>);</div>
-<div class="line"><span class="lineno">  829</span>          <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  830</span>        }</div>
-<div class="line"><span class="lineno">  831</span> </div>
-<div class="line"><span class="lineno">  832</span>      <span class="keywordtype">void</span>* p;</div>
-<div class="line"><span class="lineno">  833</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_function_v&lt;T&gt;)</div>
-<div class="line"><span class="lineno">  834</span>        {</div>
-<div class="line"><span class="lineno">  835</span>          p = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span> (v);</div>
-<div class="line"><span class="lineno">  836</span>        }</div>
-<div class="line"><span class="lineno">  837</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  838</span>        {</div>
-<div class="line"><span class="lineno">  839</span>          <span class="keyword">const</span> <span class="keyword">volatile</span> <span class="keywordtype">void</span>* cvp = v;</div>
-<div class="line"><span class="lineno">  840</span>          p = <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span> (cvp);</div>
-<div class="line"><span class="lineno">  841</span>        }</div>
-<div class="line"><span class="lineno">  842</span> </div>
-<div class="line"><span class="lineno">  843</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  844</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  845</span> </div>
-<div class="line"><span class="lineno">  846</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  847</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
-<div class="line"><span class="lineno">  848</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  849</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  850</span> </div>
-<div class="line"><span class="lineno">  851</span>      <span class="keywordtype">char</span> buf[20];</div>
-<div class="line"><span class="lineno">  852</span>      snprintf (buf, <span class="keyword">sizeof</span> (buf), <span class="stringliteral">&quot;%p&quot;</span>, p);</div>
-<div class="line"><span class="lineno">  853</span>      buffer.append (buf);</div>
-<div class="line"><span class="lineno">  854</span> </div>
-<div class="line"><span class="lineno">  855</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  856</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  857</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  858</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00825">825</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  826</span>    {</div>
+<div class="line"><span class="lineno">  827</span>      <span class="keywordflow">if</span> (v == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  828</span>        {</div>
+<div class="line"><span class="lineno">  829</span>          buffer.append (<span class="stringliteral">&quot;0x0&quot;</span>);</div>
+<div class="line"><span class="lineno">  830</span>          <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  831</span>        }</div>
+<div class="line"><span class="lineno">  832</span> </div>
+<div class="line"><span class="lineno">  833</span>      <span class="keywordtype">void</span>* p;</div>
+<div class="line"><span class="lineno">  834</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_function_v&lt;T&gt;)</div>
+<div class="line"><span class="lineno">  835</span>        {</div>
+<div class="line"><span class="lineno">  836</span>          p = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span> (v);</div>
+<div class="line"><span class="lineno">  837</span>        }</div>
+<div class="line"><span class="lineno">  838</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  839</span>        {</div>
+<div class="line"><span class="lineno">  840</span>          <span class="keyword">const</span> <span class="keyword">volatile</span> <span class="keywordtype">void</span>* cvp = v;</div>
+<div class="line"><span class="lineno">  841</span>          p = <span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span> (cvp);</div>
+<div class="line"><span class="lineno">  842</span>        }</div>
+<div class="line"><span class="lineno">  843</span> </div>
+<div class="line"><span class="lineno">  844</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  845</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">  846</span> </div>
+<div class="line"><span class="lineno">  847</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  848</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage-in-libc-call&quot;</span></div>
+<div class="line"><span class="lineno">  849</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  850</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  851</span> </div>
+<div class="line"><span class="lineno">  852</span>      <span class="keywordtype">char</span> buf[20];</div>
+<div class="line"><span class="lineno">  853</span>      snprintf (buf, <span class="keyword">sizeof</span> (buf), <span class="stringliteral">&quot;%p&quot;</span>, p);</div>
+<div class="line"><span class="lineno">  854</span>      buffer.append (buf);</div>
+<div class="line"><span class="lineno">  855</span> </div>
+<div class="line"><span class="lineno">  856</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  857</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">  858</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  859</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00824">append_pointer()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00825">append_pointer()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00824">append_pointer()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00132">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00084">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00825">append_pointer()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00132">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00084">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -755,7 +868,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>The <span class="tt">char</span> arrays and the <span class="tt">char</span> pointers (not those of <span class="tt">signed
-char</span> or <span class="tt">unsigned char</span>, which are byte buffers) are converted to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html" title="A C string operand of a comparator.">c_string</a></span>, so that they are compared by content; the other arrays are converted to pointers to their first element, the functions to function pointers, and all other operands are returned unchanged, so the other pointers, arrays, and functions are compared by address.</p>
+char</span> or <span class="tt">unsigned char</span>, which are byte buffers) are converted to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html" title="A C string operand of a comparator.">c_string</a></span>, so that they are compared by content; the other arrays are converted to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html" title="An array operand of a comparator, other than a char array.">array_operand</a></span>, so that they are compared by content, the functions to function pointers, and all other operands are returned unchanged, so the other pointers and the functions are compared by address.</p>
 <p>The other operands are forwarded, so that the comparator moves a temporary, and refers to a named operand.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -769,47 +882,50 @@ char</span> or <span class="tt">unsigned char</span>, which are byte buffers) ar
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html" title="A C string operand of a comparator.">c_string</a></span> for the C strings, otherwise <span class="tt">t</span>, forwarded.</dd></dl>
-<p>Arrays of <span class="tt">char</span> are converted using their size as a bound, pointers to <span class="tt">char</span> using the null terminator; the cv-qualifiers of the characters are ignored. Every other operand is forwarded, unchanged, as an lvalue or an rvalue reference. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html" title="A C string operand of a comparator.">c_string</a></span> for the C strings, an <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html" title="An array operand of a comparator, other than a char array.">array_operand</a></span> for the other arrays, otherwise <span class="tt">t</span>, forwarded.</dd></dl>
+<p>Arrays of <span class="tt">char</span> are converted using their size as a bound, pointers to <span class="tt">char</span> using the null terminator; the cv-qualifiers of the characters are ignored. The other arrays are converted to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html" title="An array operand of a comparator, other than a char array.">array_operand</a></span>. Every other operand is forwarded, unchanged, as an lvalue or an rvalue reference. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00985">985</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  986</span>    {</div>
-<div class="line"><span class="lineno">  987</span>      <span class="keyword">using </span>type = std::remove_cvref_t&lt;T&gt;;</div>
-<div class="line"><span class="lineno">  988</span> </div>
-<div class="line"><span class="lineno">  989</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_array_v&lt;type&gt;</div>
-<div class="line"><span class="lineno">  990</span>                    &amp;&amp; std::is_same_v&lt;</div>
-<div class="line"><span class="lineno">  991</span>                        std::remove_cv_t&lt;std::remove_extent_t&lt;type&gt;&gt;, <span class="keywordtype">char</span>&gt;)</div>
-<div class="line"><span class="lineno">  992</span>        {</div>
-<div class="line"><span class="lineno">  993</span>          <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a>{ t, std::extent_v&lt;type&gt; };</div>
-<div class="line"><span class="lineno">  994</span>        }</div>
-<div class="line"><span class="lineno">  995</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_pointer_v&lt;type&gt;</div>
-<div class="line"><span class="lineno">  996</span>                         &amp;&amp; std::is_same_v&lt;</div>
-<div class="line"><span class="lineno">  997</span>                             std::remove_cv_t&lt;std::remove_pointer_t&lt;type&gt;&gt;,</div>
-<div class="line"><span class="lineno">  998</span>                             <span class="keywordtype">char</span>&gt;)</div>
-<div class="line"><span class="lineno">  999</span>        {</div>
-<div class="line"><span class="lineno"> 1000</span>          <span class="keywordflow">return</span> c_string{ t };</div>
-<div class="line"><span class="lineno"> 1001</span>        }</div>
-<div class="line"><span class="lineno"> 1002</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_array_v&lt;type&gt;)</div>
-<div class="line"><span class="lineno"> 1003</span>        {</div>
-<div class="line"><span class="lineno"> 1004</span>          <span class="comment">// Other arrays (e.g. byte buffers) are compared by address, as</span></div>
-<div class="line"><span class="lineno"> 1005</span>          <span class="comment">// pointers to their first element.</span></div>
-<div class="line"><span class="lineno"> 1006</span>          <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>std::remove_extent_t&lt;type&gt;*<span class="keyword">&gt;</span> (t);</div>
-<div class="line"><span class="lineno"> 1007</span>        }</div>
-<div class="line"><span class="lineno"> 1008</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_function_v&lt;type&gt;)</div>
-<div class="line"><span class="lineno"> 1009</span>        {</div>
-<div class="line"><span class="lineno"> 1010</span>          <span class="comment">// Functions are compared by address, as function pointers.</span></div>
-<div class="line"><span class="lineno"> 1011</span>          <span class="keywordflow">return</span> &amp;t;</div>
-<div class="line"><span class="lineno"> 1012</span>        }</div>
-<div class="line"><span class="lineno"> 1013</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno"> 1014</span>        {</div>
-<div class="line"><span class="lineno"> 1015</span>          <span class="keywordflow">return</span> std::forward&lt;T&gt; (t);</div>
-<div class="line"><span class="lineno"> 1016</span>        }</div>
-<div class="line"><span class="lineno"> 1017</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">micro_os_plus::micro_test_plus::detail::c_string</a></div><div class="ttdoc">A C string operand of a comparator.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01361">detail.h:1362</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01065">1065</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1066</span>    {</div>
+<div class="line"><span class="lineno"> 1067</span>      <span class="keyword">using </span>type = std::remove_cvref_t&lt;T&gt;;</div>
+<div class="line"><span class="lineno"> 1068</span> </div>
+<div class="line"><span class="lineno"> 1069</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_array_v&lt;type&gt;</div>
+<div class="line"><span class="lineno"> 1070</span>                    &amp;&amp; std::is_same_v&lt;</div>
+<div class="line"><span class="lineno"> 1071</span>                        std::remove_cv_t&lt;std::remove_extent_t&lt;type&gt;&gt;, <span class="keywordtype">char</span>&gt;)</div>
+<div class="line"><span class="lineno"> 1072</span>        {</div>
+<div class="line"><span class="lineno"> 1073</span>          <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a>{ t, std::extent_v&lt;type&gt; };</div>
+<div class="line"><span class="lineno"> 1074</span>        }</div>
+<div class="line"><span class="lineno"> 1075</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_pointer_v&lt;type&gt;</div>
+<div class="line"><span class="lineno"> 1076</span>                         &amp;&amp; std::is_same_v&lt;</div>
+<div class="line"><span class="lineno"> 1077</span>                             std::remove_cv_t&lt;std::remove_pointer_t&lt;type&gt;&gt;,</div>
+<div class="line"><span class="lineno"> 1078</span>                             <span class="keywordtype">char</span>&gt;)</div>
+<div class="line"><span class="lineno"> 1079</span>        {</div>
+<div class="line"><span class="lineno"> 1080</span>          <span class="keywordflow">return</span> c_string{ t };</div>
+<div class="line"><span class="lineno"> 1081</span>        }</div>
+<div class="line"><span class="lineno"> 1082</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_array_v&lt;type&gt;)</div>
+<div class="line"><span class="lineno"> 1083</span>        {</div>
+<div class="line"><span class="lineno"> 1084</span>          <span class="comment">// Other arrays (e.g. byte buffers) are compared by content.</span></div>
+<div class="line"><span class="lineno"> 1085</span>          <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html">array_operand&lt;std::remove_extent_t&lt;type&gt;</a>&gt;{</div>
+<div class="line"><span class="lineno"> 1086</span>            <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>std::remove_extent_t&lt;type&gt;*<span class="keyword">&gt;</span> (t),</div>
+<div class="line"><span class="lineno"> 1087</span>            std::extent_v&lt;type&gt;</div>
+<div class="line"><span class="lineno"> 1088</span>          };</div>
+<div class="line"><span class="lineno"> 1089</span>        }</div>
+<div class="line"><span class="lineno"> 1090</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_function_v&lt;type&gt;)</div>
+<div class="line"><span class="lineno"> 1091</span>        {</div>
+<div class="line"><span class="lineno"> 1092</span>          <span class="comment">// Functions are compared by address, as function pointers.</span></div>
+<div class="line"><span class="lineno"> 1093</span>          <span class="keywordflow">return</span> &amp;t;</div>
+<div class="line"><span class="lineno"> 1094</span>        }</div>
+<div class="line"><span class="lineno"> 1095</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1096</span>        {</div>
+<div class="line"><span class="lineno"> 1097</span>          <span class="keywordflow">return</span> std::forward&lt;T&gt; (t);</div>
+<div class="line"><span class="lineno"> 1098</span>        }</div>
+<div class="line"><span class="lineno"> 1099</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html">micro_os_plus::micro_test_plus::detail::array_operand</a></div><div class="ttdoc">An array operand of a comparator, other than a char array.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01505">detail.h:1506</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">micro_os_plus::micro_test_plus::detail::c_string</a></div><div class="ttdoc">A C string operand of a comparator.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01363">detail.h:1364</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00985">as_operand()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01065">as_operand()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00985">as_operand()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00091">micro_os_plus::micro_test_plus::eq()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00143">micro_os_plus::micro_test_plus::ge()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00125">micro_os_plus::micro_test_plus::gt()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00178">micro_os_plus::micro_test_plus::le()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00160">micro_os_plus::micro_test_plus::lt()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00108">micro_os_plus::micro_test_plus::ne()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01065">as_operand()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00091">micro_os_plus::micro_test_plus::eq()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00143">micro_os_plus::micro_test_plus::ge()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00125">micro_os_plus::micro_test_plus::gt()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00178">micro_os_plus::micro_test_plus::le()</a>, <a class="el" href="function-comparators-inlines_8h_source.html#l00160">micro_os_plus::micro_test_plus::lt()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00108">micro_os_plus::micro_test_plus::ne()</a>.</p>
 
 </div>
 </div>
@@ -862,25 +978,25 @@ template&lt;typename Self_T, typename Callable_T, typename... Args_T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The function object, invocable with a <span class="tt">Self_T&amp;</span> argument. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00250">250</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  251</span>    {</div>
-<div class="line"><span class="lineno">  252</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(arguments) == 0)</div>
-<div class="line"><span class="lineno">  253</span>        {</div>
-<div class="line"><span class="lineno">  254</span>          <span class="keywordflow">return</span> std::forward&lt;Callable_T&gt; (callable);</div>
-<div class="line"><span class="lineno">  255</span>        }</div>
-<div class="line"><span class="lineno">  256</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  257</span>        {</div>
-<div class="line"><span class="lineno">  258</span>          <span class="keywordflow">return</span> bound_callable&lt;Self_T, std::decay_t&lt;Callable_T&gt;,</div>
-<div class="line"><span class="lineno">  259</span>                                std::decay_t&lt;Args_T&gt;...&gt;{</div>
-<div class="line"><span class="lineno">  260</span>            std::forward&lt;Callable_T&gt; (callable),</div>
-<div class="line"><span class="lineno">  261</span>            std::forward&lt;Args_T&gt; (arguments)...</div>
-<div class="line"><span class="lineno">  262</span>          };</div>
-<div class="line"><span class="lineno">  263</span>        }</div>
-<div class="line"><span class="lineno">  264</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00241">241</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  242</span>    {</div>
+<div class="line"><span class="lineno">  243</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(arguments) == 0)</div>
+<div class="line"><span class="lineno">  244</span>        {</div>
+<div class="line"><span class="lineno">  245</span>          <span class="keywordflow">return</span> std::forward&lt;Callable_T&gt; (callable);</div>
+<div class="line"><span class="lineno">  246</span>        }</div>
+<div class="line"><span class="lineno">  247</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  248</span>        {</div>
+<div class="line"><span class="lineno">  249</span>          <span class="keywordflow">return</span> bound_callable&lt;Self_T, std::decay_t&lt;Callable_T&gt;,</div>
+<div class="line"><span class="lineno">  250</span>                                std::decay_t&lt;Args_T&gt;...&gt;{</div>
+<div class="line"><span class="lineno">  251</span>            std::forward&lt;Callable_T&gt; (callable),</div>
+<div class="line"><span class="lineno">  252</span>            std::forward&lt;Args_T&gt; (arguments)...</div>
+<div class="line"><span class="lineno">  253</span>          };</div>
+<div class="line"><span class="lineno">  254</span>        }</div>
+<div class="line"><span class="lineno">  255</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00250">bind_callable()</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00241">bind_callable()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00250">bind_callable()</a>, and <a class="el" href="test-inlines_8h_source.html#l00216">micro_os_plus::micro_test_plus::detail::runnable_base::create_test_case()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00241">bind_callable()</a>, and <a class="el" href="test-inlines_8h_source.html#l00207">micro_os_plus::micro_test_plus::detail::runnable_base::create_test_case()</a>.</p>
 
 </div>
 </div>
@@ -973,53 +1089,53 @@ template&lt;class Lhs_T, class Rhs_T, class Epsilon_T&gt; </div>
 <p>For the integers, the larger value is selected with <span class="tt">std::cmp_less()</span>, and the distance is computed in <span class="tt">std::uintmax_t</span>: when both values have the same sign, as the modular difference of their conversions, which is exact; otherwise, as the sum of the larger value and of the magnitude of the negative one, saturated at the maximum of the type, which is then larger than any tolerance, as the true distance is. The tolerance is compared with <span class="tt">std::cmp_less()</span>, so a negative one gives <span class="tt">false</span>.</p>
 <p>For the other types, the values are converted to their common type, which is a floating-point one, so <span class="tt">std::int64_t</span> values compared with a <span class="tt">float</span> tolerance lose precision; the comparison is strict, as in the tolerances of the floating-point wrappers. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00427">427</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  428</span>    {</div>
-<div class="line"><span class="lineno">  429</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_integral_v&lt;Lhs_T&gt; and std::is_integral_v&lt;Rhs_T&gt;</div>
-<div class="line"><span class="lineno">  430</span>                    and std::is_integral_v&lt;Epsilon_T&gt;)</div>
-<div class="line"><span class="lineno">  431</span>        {</div>
-<div class="line"><span class="lineno">  432</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distance</div>
-<div class="line"><span class="lineno">  433</span>              = [] (<span class="keyword">auto</span> larger, <span class="keyword">auto</span> smaller) <span class="keyword">constexpr</span> -&gt; std::uintmax_t</div>
-<div class="line"><span class="lineno">  434</span>            {</div>
-<div class="line"><span class="lineno">  435</span>              <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_signed_v&lt;<span class="keyword">decltype</span> (smaller)&gt;)</div>
-<div class="line"><span class="lineno">  436</span>                {</div>
-<div class="line"><span class="lineno">  437</span>                  <span class="keywordflow">if</span> (smaller &lt; 0 and std::cmp_greater_equal (larger, 0))</div>
-<div class="line"><span class="lineno">  438</span>                    {</div>
-<div class="line"><span class="lineno">  439</span>                      <span class="comment">// The magnitude of the negative value, without</span></div>
-<div class="line"><span class="lineno">  440</span>                      <span class="comment">// negating the minimum of its type.</span></div>
-<div class="line"><span class="lineno">  441</span>                      <span class="keyword">const</span> <span class="keyword">auto</span> magnitude</div>
-<div class="line"><span class="lineno">  442</span>                          = <span class="keyword">static_cast&lt;</span>std::uintmax_t<span class="keyword">&gt;</span> (-(smaller + 1)) + 1u;</div>
-<div class="line"><span class="lineno">  443</span>                      <span class="keyword">const</span> <span class="keyword">auto</span> upper = <span class="keyword">static_cast&lt;</span>std::uintmax_t<span class="keyword">&gt;</span> (larger);</div>
-<div class="line"><span class="lineno">  444</span>                      <span class="keywordflow">if</span> (upper &gt; std::numeric_limits&lt;std::uintmax_t&gt;::max ()</div>
-<div class="line"><span class="lineno">  445</span>                                      - magnitude)</div>
-<div class="line"><span class="lineno">  446</span>                        {</div>
-<div class="line"><span class="lineno">  447</span>                          <span class="keywordflow">return</span> std::numeric_limits&lt;std::uintmax_t&gt;::max ();</div>
-<div class="line"><span class="lineno">  448</span>                        }</div>
-<div class="line"><span class="lineno">  449</span>                      <span class="keywordflow">return</span> upper + magnitude;</div>
-<div class="line"><span class="lineno">  450</span>                    }</div>
-<div class="line"><span class="lineno">  451</span>                }</div>
-<div class="line"><span class="lineno">  452</span>              <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>std::uintmax_t<span class="keyword">&gt;</span> (larger)</div>
-<div class="line"><span class="lineno">  453</span>                     - <span class="keyword">static_cast&lt;</span>std::uintmax_t<span class="keyword">&gt;</span> (smaller);</div>
-<div class="line"><span class="lineno">  454</span>            };</div>
-<div class="line"><span class="lineno">  455</span> </div>
-<div class="line"><span class="lineno">  456</span>          <span class="keyword">const</span> std::uintmax_t difference = std::cmp_less (lhs, rhs)</div>
-<div class="line"><span class="lineno">  457</span>                                                ? distance (rhs, lhs)</div>
-<div class="line"><span class="lineno">  458</span>                                                : distance (lhs, rhs);</div>
-<div class="line"><span class="lineno">  459</span>          <span class="keywordflow">return</span> std::cmp_less (difference, epsilon);</div>
-<div class="line"><span class="lineno">  460</span>        }</div>
-<div class="line"><span class="lineno">  461</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  462</span>        {</div>
-<div class="line"><span class="lineno">  463</span>          <span class="keyword">using </span>float_type = std::common_type_t&lt;Lhs_T, Rhs_T, Epsilon_T&gt;;</div>
-<div class="line"><span class="lineno">  464</span>          <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6">math::abs</a> (<span class="keyword">static_cast&lt;</span>float_type<span class="keyword">&gt;</span> (lhs)</div>
-<div class="line"><span class="lineno">  465</span>                            - <span class="keyword">static_cast&lt;</span>float_type<span class="keyword">&gt;</span> (rhs))</div>
-<div class="line"><span class="lineno">  466</span>                 &lt; <span class="keyword">static_cast&lt;</span>float_type<span class="keyword">&gt;</span> (epsilon);</div>
-<div class="line"><span class="lineno">  467</span>        }</div>
-<div class="line"><span class="lineno">  468</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00428">428</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  429</span>    {</div>
+<div class="line"><span class="lineno">  430</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_integral_v&lt;Lhs_T&gt; and std::is_integral_v&lt;Rhs_T&gt;</div>
+<div class="line"><span class="lineno">  431</span>                    and std::is_integral_v&lt;Epsilon_T&gt;)</div>
+<div class="line"><span class="lineno">  432</span>        {</div>
+<div class="line"><span class="lineno">  433</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distance</div>
+<div class="line"><span class="lineno">  434</span>              = [] (<span class="keyword">auto</span> larger, <span class="keyword">auto</span> smaller) <span class="keyword">constexpr</span> -&gt; std::uintmax_t</div>
+<div class="line"><span class="lineno">  435</span>            {</div>
+<div class="line"><span class="lineno">  436</span>              <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_signed_v&lt;<span class="keyword">decltype</span> (smaller)&gt;)</div>
+<div class="line"><span class="lineno">  437</span>                {</div>
+<div class="line"><span class="lineno">  438</span>                  <span class="keywordflow">if</span> (smaller &lt; 0 and std::cmp_greater_equal (larger, 0))</div>
+<div class="line"><span class="lineno">  439</span>                    {</div>
+<div class="line"><span class="lineno">  440</span>                      <span class="comment">// The magnitude of the negative value, without</span></div>
+<div class="line"><span class="lineno">  441</span>                      <span class="comment">// negating the minimum of its type.</span></div>
+<div class="line"><span class="lineno">  442</span>                      <span class="keyword">const</span> <span class="keyword">auto</span> magnitude</div>
+<div class="line"><span class="lineno">  443</span>                          = <span class="keyword">static_cast&lt;</span>std::uintmax_t<span class="keyword">&gt;</span> (-(smaller + 1)) + 1u;</div>
+<div class="line"><span class="lineno">  444</span>                      <span class="keyword">const</span> <span class="keyword">auto</span> upper = <span class="keyword">static_cast&lt;</span>std::uintmax_t<span class="keyword">&gt;</span> (larger);</div>
+<div class="line"><span class="lineno">  445</span>                      <span class="keywordflow">if</span> (upper &gt; std::numeric_limits&lt;std::uintmax_t&gt;::max ()</div>
+<div class="line"><span class="lineno">  446</span>                                      - magnitude)</div>
+<div class="line"><span class="lineno">  447</span>                        {</div>
+<div class="line"><span class="lineno">  448</span>                          <span class="keywordflow">return</span> std::numeric_limits&lt;std::uintmax_t&gt;::max ();</div>
+<div class="line"><span class="lineno">  449</span>                        }</div>
+<div class="line"><span class="lineno">  450</span>                      <span class="keywordflow">return</span> upper + magnitude;</div>
+<div class="line"><span class="lineno">  451</span>                    }</div>
+<div class="line"><span class="lineno">  452</span>                }</div>
+<div class="line"><span class="lineno">  453</span>              <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>std::uintmax_t<span class="keyword">&gt;</span> (larger)</div>
+<div class="line"><span class="lineno">  454</span>                     - <span class="keyword">static_cast&lt;</span>std::uintmax_t<span class="keyword">&gt;</span> (smaller);</div>
+<div class="line"><span class="lineno">  455</span>            };</div>
+<div class="line"><span class="lineno">  456</span> </div>
+<div class="line"><span class="lineno">  457</span>          <span class="keyword">const</span> std::uintmax_t difference = std::cmp_less (lhs, rhs)</div>
+<div class="line"><span class="lineno">  458</span>                                                ? distance (rhs, lhs)</div>
+<div class="line"><span class="lineno">  459</span>                                                : distance (lhs, rhs);</div>
+<div class="line"><span class="lineno">  460</span>          <span class="keywordflow">return</span> std::cmp_less (difference, epsilon);</div>
+<div class="line"><span class="lineno">  461</span>        }</div>
+<div class="line"><span class="lineno">  462</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  463</span>        {</div>
+<div class="line"><span class="lineno">  464</span>          <span class="keyword">using </span>float_type = std::common_type_t&lt;Lhs_T, Rhs_T, Epsilon_T&gt;;</div>
+<div class="line"><span class="lineno">  465</span>          <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6">math::abs</a> (<span class="keyword">static_cast&lt;</span>float_type<span class="keyword">&gt;</span> (lhs)</div>
+<div class="line"><span class="lineno">  466</span>                            - <span class="keyword">static_cast&lt;</span>float_type<span class="keyword">&gt;</span> (rhs))</div>
+<div class="line"><span class="lineno">  467</span>                 &lt; <span class="keyword">static_cast&lt;</span>float_type<span class="keyword">&gt;</span> (epsilon);</div>
+<div class="line"><span class="lineno">  468</span>        }</div>
+<div class="line"><span class="lineno">  469</span>    }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a515f68bbb31d64d07810f45f3b1118f6"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6">micro_os_plus::micro_test_plus::detail::math::abs</a></div><div class="ttdeci">constexpr auto abs(const T t) noexcept -&gt; T</div><div class="ttdoc">Computes the absolute value of a given comparable value.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00092">math-inlines.h:92</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::detail::math::abs()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00427">differ_by_less_than()</a>.</p>
+<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::detail::math::abs()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00428">differ_by_less_than()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00480">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00427">differ_by_less_than()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00481">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00428">differ_by_less_than()</a>.</p>
 
 </div>
 </div>
@@ -1056,7 +1172,7 @@ template&lt;class Lhs_T, class Rhs_T, class Epsilon_T&gt; </div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00238">micro_os_plus::micro_test_plus::detail::reporter::end_line()</a>, and <a class="el" href="reporter_8cpp_source.html#l00224">endl()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00224">endl()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00344">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00520">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00797">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00635">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_suffix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00853">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00567">micro_os_plus::micro_test_plus::detail::reporter_human::output_pass_suffix()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00773">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_suffix()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00224">endl()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00365">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00790">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00645">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_suffix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00846">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00577">micro_os_plus::micro_test_plus::detail::reporter_human::output_pass_suffix()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00766">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_suffix()</a>.</p>
 
 </div>
 </div>
@@ -1099,7 +1215,7 @@ template&lt;class Lhs_T, class Rhs_T, class Epsilon_T&gt; </div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reporter-inlines_8h_source.html#l00068">indent()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00372">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00547">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00837">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00381">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00422">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00593">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00344">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00520">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00068">indent()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00584">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00797">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00853">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00543">micro_os_plus::micro_test_plus::detail::reporter_human::output_pass_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00745">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00665">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00894">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01050">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00864">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00365">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00068">indent()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00594">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00790">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00846">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00553">micro_os_plus::micro_test_plus::detail::reporter_human::output_pass_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00676">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
 
 </div>
 </div>
@@ -1160,12 +1276,71 @@ template&lt;class T, char... Cs&gt; </div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">integral_literal()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="values-inlines_8h_source.html#l00175">integral_literal()</a>, <a class="el" href="literals-inlines_8h_source.html#l00121">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_c()</a>, <a class="el" href="literals-inlines_8h_source.html#l00093">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i()</a>, <a class="el" href="literals-inlines_8h_source.html#l00261">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i16()</a>, <a class="el" href="literals-inlines_8h_source.html#l00275">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i32()</a>, <a class="el" href="literals-inlines_8h_source.html#l00289">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i64()</a>, <a class="el" href="literals-inlines_8h_source.html#l00247">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i8()</a>, <a class="el" href="literals-inlines_8h_source.html#l00149">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_l()</a>, <a class="el" href="literals-inlines_8h_source.html#l00163">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ll()</a>, <a class="el" href="literals-inlines_8h_source.html#l00107">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_s()</a>, <a class="el" href="literals-inlines_8h_source.html#l00135">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_sc()</a>, <a class="el" href="literals-inlines_8h_source.html#l00177">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u()</a>, <a class="el" href="literals-inlines_8h_source.html#l00317">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u16()</a>, <a class="el" href="literals-inlines_8h_source.html#l00331">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u32()</a>, <a class="el" href="literals-inlines_8h_source.html#l00345">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u64()</a>, <a class="el" href="literals-inlines_8h_source.html#l00303">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u8()</a>, <a class="el" href="literals-inlines_8h_source.html#l00191">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_uc()</a>, <a class="el" href="literals-inlines_8h_source.html#l00219">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ul()</a>, <a class="el" href="literals-inlines_8h_source.html#l00233">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ull()</a>, and <a class="el" href="literals-inlines_8h_source.html#l00205">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_us()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="values-inlines_8h_source.html#l00175">integral_literal()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00321">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_c()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00293">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00461">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i16()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00475">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i32()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00489">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i64()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00447">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i8()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00349">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_l()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00363">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ll()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00307">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_s()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00335">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_sc()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00377">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00517">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u16()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00531">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u32()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00545">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u64()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00503">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u8()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00391">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_uc()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00419">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ul()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00433">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ull()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00405">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_us()</a>.</p>
+
+</div>
+</div>
+<a id="ade4fe4b187a8ded1bb42910536d86235" name="ade4fe4b187a8ded1bb42910536d86235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4fe4b187a8ded1bb42910536d86235">&#9670;&#160;</a></span>operator&lt;=&gt;() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class R&gt; <br />
+requires (container_like&lt;R&gt; and std::three_way_comparable_with&lt; T, typename <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1range__element.html">range_element</a>&lt;R&gt;::type&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto micro_os_plus::micro_test_plus::detail::operator&lt;=&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html">array_operand</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const R &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The element type of the array operand. </td></tr>
+    <tr><td class="paramname">R</td><td>The type of the range.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The array operand. </td></tr>
+    <tr><td class="paramname">rhs</td><td>The range, which may be another array operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The lexicographic order of the elements.</dd></dl>
+<p>A range that is a prefix of the other is the lesser one. </p>
+
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01046">1046</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1047</span>             =&gt; (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html">array_operand&lt;T&gt;</a>&amp; lhs, <span class="keyword">const</span> R&amp; rhs)</div>
+<div class="line"><span class="lineno"> 1048</span>    {</div>
+<div class="line"><span class="lineno"> 1049</span>      <span class="keywordflow">return</span> std::lexicographical_compare_three_way (lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html#a8f44a4be9bb4c412b551818b378395c4">begin</a> (), lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html#afe9138ceb8877c6f13281c240008a762">end</a> (),</div>
+<div class="line"><span class="lineno"> 1050</span>                                                     rhs.begin (), rhs.end ());</div>
+<div class="line"><span class="lineno"> 1051</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_html_a8f44a4be9bb4c412b551818b378395c4"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html#a8f44a4be9bb4c412b551818b378395c4">micro_os_plus::micro_test_plus::detail::array_operand::begin</a></div><div class="ttdeci">constexpr const T * begin(void) const noexcept</div><div class="ttdoc">Returns an iterator to the first element.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00994">detail-inlines.h:994</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_html_afe9138ceb8877c6f13281c240008a762"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html#afe9138ceb8877c6f13281c240008a762">micro_os_plus::micro_test_plus::detail::array_operand::end</a></div><div class="ttdeci">constexpr const T * end(void) const noexcept</div><div class="ttdoc">Returns an iterator past the last element.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l01013">detail-inlines.h:1013</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00994">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::begin()</a>, <a class="el" href="detail-inlines_8h_source.html#l01013">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::end()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00954">operator&lt;=&gt;()</a>.</p>
 
 </div>
 </div>
 <a id="afa8a96f9fca4c7dceae1ee9e02a9861c" name="afa8a96f9fca4c7dceae1ee9e02a9861c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa8a96f9fca4c7dceae1ee9e02a9861c">&#9670;&#160;</a></span>operator&lt;=&gt;() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8a96f9fca4c7dceae1ee9e02a9861c">&#9670;&#160;</a></span>operator&lt;=&gt;() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1200,22 +1375,24 @@ template&lt;class T, char... Cs&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The lexicographic order of the characters; a null pointer is equal to another null pointer and less than any string.</dd></dl>
 <p>A null pointer orders before any string. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00952">952</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  953</span>             =&gt; (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a>&amp; lhs, <span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a>&amp; rhs) <span class="keyword">noexcept</span></div>
-<div class="line"><span class="lineno">  954</span>    {</div>
-<div class="line"><span class="lineno">  955</span>      <span class="keywordflow">if</span> (lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () || rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ())</div>
-<div class="line"><span class="lineno">  956</span>        {</div>
-<div class="line"><span class="lineno">  957</span>          <span class="keywordflow">return</span> !lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () &lt;=&gt; !rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ();</div>
-<div class="line"><span class="lineno">  958</span>        }</div>
-<div class="line"><span class="lineno">  959</span>      <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> () &lt;=&gt; rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> ();</div>
-<div class="line"><span class="lineno">  960</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html_ab3ab63f34f2310d31484a226c92e32aa"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">micro_os_plus::micro_test_plus::detail::c_string::is_null</a></div><div class="ttdeci">constexpr bool is_null(void) const noexcept</div><div class="ttdoc">Returns whether the operand is a null pointer.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00908">detail-inlines.h:908</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html_ae80c2a30d372f12aac55094520d6f68b"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">micro_os_plus::micro_test_plus::detail::c_string::view</a></div><div class="ttdeci">constexpr std::string_view view(void) const noexcept</div><div class="ttdoc">Returns the characters, as a string view.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00897">detail-inlines.h:897</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00953">953</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  954</span>             =&gt; (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a>&amp; lhs, <span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a>&amp; rhs) <span class="keyword">noexcept</span></div>
+<div class="line"><span class="lineno">  955</span>    {</div>
+<div class="line"><span class="lineno">  956</span>      <span class="keywordflow">if</span> (lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () || rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ())</div>
+<div class="line"><span class="lineno">  957</span>        {</div>
+<div class="line"><span class="lineno">  958</span>          <span class="keywordflow">return</span> !lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () &lt;=&gt; !rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ();</div>
+<div class="line"><span class="lineno">  959</span>        }</div>
+<div class="line"><span class="lineno">  960</span>      <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> () &lt;=&gt; rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> ();</div>
+<div class="line"><span class="lineno">  961</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html_ab3ab63f34f2310d31484a226c92e32aa"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">micro_os_plus::micro_test_plus::detail::c_string::is_null</a></div><div class="ttdeci">constexpr bool is_null(void) const noexcept</div><div class="ttdoc">Returns whether the operand is a null pointer.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00909">detail-inlines.h:909</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html_ae80c2a30d372f12aac55094520d6f68b"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">micro_os_plus::micro_test_plus::detail::c_string::view</a></div><div class="ttdeci">constexpr std::string_view view(void) const noexcept</div><div class="ttdoc">Returns the characters, as a string view.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00898">detail-inlines.h:898</a></div></div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01047">operator&lt;=&gt;()</a>.</p>
+
 </div>
 </div>
 <a id="a3a06e7992caa3dfc9355a34369486c86" name="a3a06e7992caa3dfc9355a34369486c86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a06e7992caa3dfc9355a34369486c86">&#9670;&#160;</a></span>operator&lt;=&gt;() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a06e7992caa3dfc9355a34369486c86">&#9670;&#160;</a></span>operator&lt;=&gt;() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1250,20 +1427,81 @@ template&lt;class T, char... Cs&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The lexicographic order of the characters; a null pointer is less than any string.</dd></dl>
 <p>A null pointer orders before any string. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00966">966</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  967</span>             =&gt; (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a>&amp; lhs, std::string_view rhs) <span class="keyword">noexcept</span></div>
-<div class="line"><span class="lineno">  968</span>    {</div>
-<div class="line"><span class="lineno">  969</span>      <span class="keywordflow">if</span> (lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ())</div>
-<div class="line"><span class="lineno">  970</span>        {</div>
-<div class="line"><span class="lineno">  971</span>          <span class="keywordflow">return</span> std::strong_ordering::less;</div>
-<div class="line"><span class="lineno">  972</span>        }</div>
-<div class="line"><span class="lineno">  973</span>      <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> () &lt;=&gt; rhs;</div>
-<div class="line"><span class="lineno">  974</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00967">967</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  968</span>             =&gt; (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html">c_string</a>&amp; lhs, std::string_view rhs) <span class="keyword">noexcept</span></div>
+<div class="line"><span class="lineno">  969</span>    {</div>
+<div class="line"><span class="lineno">  970</span>      <span class="keywordflow">if</span> (lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ())</div>
+<div class="line"><span class="lineno">  971</span>        {</div>
+<div class="line"><span class="lineno">  972</span>          <span class="keywordflow">return</span> std::strong_ordering::less;</div>
+<div class="line"><span class="lineno">  973</span>        }</div>
+<div class="line"><span class="lineno">  974</span>      <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> () &lt;=&gt; rhs;</div>
+<div class="line"><span class="lineno">  975</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ad7b514fb92021548630dbeb2cd8189bc" name="ad7b514fb92021548630dbeb2cd8189bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7b514fb92021548630dbeb2cd8189bc">&#9670;&#160;</a></span>operator==() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class R&gt; <br />
+requires (container_like&lt;R&gt; and std::equality_comparable_with&lt; T, typename <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1range__element.html">range_element</a>&lt;R&gt;::type&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool micro_os_plus::micro_test_plus::detail::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html">array_operand</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const R &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The element type of the array operand. </td></tr>
+    <tr><td class="paramname">R</td><td>The type of the range.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The array operand. </td></tr>
+    <tr><td class="paramname">rhs</td><td>The range, which may be another array operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>The ranges have the same size and equal elements. </td></tr>
+    <tr><td class="paramname">false</td><td>Otherwise.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Ranges of different sizes are not equal, without comparing any element. </p>
+
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01033">1033</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1034</span>    {</div>
+<div class="line"><span class="lineno"> 1035</span>      <span class="keywordflow">return</span> std::equal (lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html#a8f44a4be9bb4c412b551818b378395c4">begin</a> (), lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html#afe9138ceb8877c6f13281c240008a762">end</a> (), rhs.begin (), rhs.end ());</div>
+<div class="line"><span class="lineno"> 1036</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00994">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::begin()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01013">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::end()</a>.</p>
+
+</div>
+</div>
 <a id="a3461b586a0b0e6146681ccda9dbb49b4" name="a3461b586a0b0e6146681ccda9dbb49b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3461b586a0b0e6146681ccda9dbb49b4">&#9670;&#160;</a></span>operator==() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3461b586a0b0e6146681ccda9dbb49b4">&#9670;&#160;</a></span>operator==() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1304,19 +1542,19 @@ template&lt;class T, char... Cs&gt; </div>
 </dl>
 <p>Two null pointers are equal; a null pointer is not equal to any string, not even an empty one. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00919">919</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  920</span>    {</div>
-<div class="line"><span class="lineno">  921</span>      <span class="keywordflow">if</span> (lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () || rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ())</div>
-<div class="line"><span class="lineno">  922</span>        {</div>
-<div class="line"><span class="lineno">  923</span>          <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () &amp;&amp; rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ();</div>
-<div class="line"><span class="lineno">  924</span>        }</div>
-<div class="line"><span class="lineno">  925</span>      <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> () == rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> ();</div>
-<div class="line"><span class="lineno">  926</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00920">920</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  921</span>    {</div>
+<div class="line"><span class="lineno">  922</span>      <span class="keywordflow">if</span> (lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () || rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ())</div>
+<div class="line"><span class="lineno">  923</span>        {</div>
+<div class="line"><span class="lineno">  924</span>          <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () &amp;&amp; rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ();</div>
+<div class="line"><span class="lineno">  925</span>        }</div>
+<div class="line"><span class="lineno">  926</span>      <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> () == rhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> ();</div>
+<div class="line"><span class="lineno">  927</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a81530e9e1a17d43a930a16a504af9912" name="a81530e9e1a17d43a930a16a504af9912"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81530e9e1a17d43a930a16a504af9912">&#9670;&#160;</a></span>operator==() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a81530e9e1a17d43a930a16a504af9912">&#9670;&#160;</a></span>operator==() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1356,15 +1594,15 @@ template&lt;class T, char... Cs&gt; </div>
 </dl>
 <p>Returns whether the operand is a null pointer. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00943">943</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  944</span>    {</div>
-<div class="line"><span class="lineno">  945</span>      <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ();</div>
-<div class="line"><span class="lineno">  946</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00944">944</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  945</span>    {</div>
+<div class="line"><span class="lineno">  946</span>      <span class="keywordflow">return</span> lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> ();</div>
+<div class="line"><span class="lineno">  947</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a28646b3e1ddd2792546f303b6b65ad92" name="a28646b3e1ddd2792546f303b6b65ad92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28646b3e1ddd2792546f303b6b65ad92">&#9670;&#160;</a></span>operator==() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28646b3e1ddd2792546f303b6b65ad92">&#9670;&#160;</a></span>operator==() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1406,10 +1644,10 @@ template&lt;class T, char... Cs&gt; </div>
 </dl>
 <p>A null pointer is not equal to any string. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00933">933</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  934</span>    {</div>
-<div class="line"><span class="lineno">  935</span>      <span class="keywordflow">return</span> !lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () &amp;&amp; lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> () == rhs;</div>
-<div class="line"><span class="lineno">  936</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00934">934</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  935</span>    {</div>
+<div class="line"><span class="lineno">  936</span>      <span class="keywordflow">return</span> !lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa">is_null</a> () &amp;&amp; lhs.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b">view</a> () == rhs;</div>
+<div class="line"><span class="lineno">  937</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1540,7 +1778,7 @@ template&lt;class Self_T, class Values_T, class Callable_T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>For each value, the name is built in a local string, which lives while the test case runs, since a test case runs within the call to <span class="tt">test()</span>, and the test case is added with <span class="tt">test()</span>, with the location of the call to <span class="tt">test_each()</span>. The values of a range are iterated by a range-based <span class="tt">for</span> statement, and those of a tuple are expanded by <span class="tt">std::apply()</span>, in order.</p>
+<p>For each value, the name is built in a local string, which lives while the test case runs, since a test case runs within the call to <span class="tt">test()</span>, and the test case is added with <span class="tt">test()</span>, with the location of the call to <span class="tt">test_each()</span>. The callable receives each value as a <span class="tt">const</span> lvalue, referring to the element itself; neither the values nor the callable are copied. The values of a range are iterated by a range-based <span class="tt">for</span> statement, and those of a tuple are expanded by <span class="tt">std::apply()</span>, in order.</p>
 <p>The common implementation of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#afe716dc1b9245d7761b1fd6e6e854c5c" title="Adds a nested test case for each value of a range or a tuple, and runs them.">test_case::test_each()</a></span> and <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a08e3a26d6e032a580f095f8dcf8b2b41" title="Adds a test case to the suite for each value of a range or a tuple, and runs them.">suite::test_each()</a></span>.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -1561,54 +1799,67 @@ template&lt;class Self_T, class Values_T, class Callable_T&gt; </div>
 </dl>
 <dl class="section user"><dt>Returns</dt><dd>Nothing. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00677">677</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  679</span>    {</div>
-<div class="line"><span class="lineno">  680</span>      std::size_t position = 0;</div>
-<div class="line"><span class="lineno">  681</span> </div>
-<div class="line"><span class="lineno">  682</span>      <span class="keyword">const</span> <span class="keyword">auto</span> run_one</div>
-<div class="line"><span class="lineno">  683</span>          = [&amp;self, &amp;name, &amp;callable, &amp;position] (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>)</div>
-<div class="line"><span class="lineno">  684</span>        {</div>
-<div class="line"><span class="lineno">  685</span>          ++position;</div>
-<div class="line"><span class="lineno">  686</span> </div>
-<div class="line"><span class="lineno">  687</span>          std::string text{ name.name () };</div>
-<div class="line"><span class="lineno">  688</span>          text += <span class="stringliteral">&quot; (&quot;</span>;</div>
-<div class="line"><span class="lineno">  689</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">extension::printable</a>&lt;</div>
-<div class="line"><span class="lineno">  690</span>                            std::remove_cvref_t&lt;<span class="keyword">decltype</span> (value)&gt;&gt;)</div>
-<div class="line"><span class="lineno">  691</span>            {</div>
-<div class="line"><span class="lineno">  692</span>              <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, value);</div>
-<div class="line"><span class="lineno">  693</span>            }</div>
-<div class="line"><span class="lineno">  694</span>          <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  695</span>            {</div>
-<div class="line"><span class="lineno">  696</span>              text += <span class="charliteral">&#39;#&#39;</span>;</div>
-<div class="line"><span class="lineno">  697</span>              <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, position);</div>
-<div class="line"><span class="lineno">  698</span>            }</div>
-<div class="line"><span class="lineno">  699</span>          text += <span class="charliteral">&#39;)&#39;</span>;</div>
-<div class="line"><span class="lineno">  700</span> </div>
-<div class="line"><span class="lineno">  701</span>          self.test (test_case_name{ text, name.location () }, callable,</div>
-<div class="line"><span class="lineno">  702</span>                     <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
-<div class="line"><span class="lineno">  703</span>        };</div>
-<div class="line"><span class="lineno">  704</span> </div>
-<div class="line"><span class="lineno">  705</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">test_values_range&lt;Values_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  706</span>        {</div>
-<div class="line"><span class="lineno">  707</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a> : values)</div>
-<div class="line"><span class="lineno">  708</span>            {</div>
-<div class="line"><span class="lineno">  709</span>              run_one (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
-<div class="line"><span class="lineno">  710</span>            }</div>
-<div class="line"><span class="lineno">  711</span>        }</div>
-<div class="line"><span class="lineno">  712</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  713</span>        {</div>
-<div class="line"><span class="lineno">  714</span>          std::apply ([&amp;run_one] (<span class="keyword">const</span> <span class="keyword">auto</span>&amp;... elements)</div>
-<div class="line"><span class="lineno">  715</span>            { (run_one (elements), ...); }, values);</div>
-<div class="line"><span class="lineno">  716</span>        }</div>
-<div class="line"><span class="lineno">  717</span>    }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">micro_os_plus::micro_test_plus::detail::test_values_range</a></div><div class="ttdoc">C++20 concept satisfied when T is a range of values for test_each().</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00928">test.h:928</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">micro_os_plus::micro_test_plus::extension::printable</a></div><div class="ttdoc">C++20 concept satisfied when a type can be appended to the message of a check result via operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00247">extension.h:247</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_html_a63b3cc3a8e725c2921787180f1244824"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">micro_os_plus::micro_test_plus::detail::plain_text::append</a></div><div class="ttdeci">static void append(std::string &amp;text, const T &amp;value)</div><div class="ttdoc">Appends a value to a text, in the plain mode of the formatter.</div><div class="ttdef"><b>Definition</b> <a href="expression-formatter-inlines_8h_source.html#l00395">expression-formatter-inlines.h:395</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00707">707</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  709</span>    {</div>
+<div class="line"><span class="lineno">  710</span>      std::size_t position = 0;</div>
+<div class="line"><span class="lineno">  711</span> </div>
+<div class="line"><span class="lineno">  712</span>      <span class="keyword">const</span> <span class="keyword">auto</span> run_one</div>
+<div class="line"><span class="lineno">  713</span>          = [&amp;self, &amp;name, &amp;callable, &amp;position] (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>)</div>
+<div class="line"><span class="lineno">  714</span>        {</div>
+<div class="line"><span class="lineno">  715</span>          ++position;</div>
+<div class="line"><span class="lineno">  716</span> </div>
+<div class="line"><span class="lineno">  717</span>          std::string text{ name.name () };</div>
+<div class="line"><span class="lineno">  718</span>          text += <span class="stringliteral">&quot; (&quot;</span>;</div>
+<div class="line"><span class="lineno">  719</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">extension::printable</a>&lt;</div>
+<div class="line"><span class="lineno">  720</span>                            std::remove_cvref_t&lt;<span class="keyword">decltype</span> (value)&gt;&gt;)</div>
+<div class="line"><span class="lineno">  721</span>            {</div>
+<div class="line"><span class="lineno">  722</span>              <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, value);</div>
+<div class="line"><span class="lineno">  723</span>            }</div>
+<div class="line"><span class="lineno">  724</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  725</span>            {</div>
+<div class="line"><span class="lineno">  726</span>              text += <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><span class="lineno">  727</span>              <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, position);</div>
+<div class="line"><span class="lineno">  728</span>            }</div>
+<div class="line"><span class="lineno">  729</span>          text += <span class="charliteral">&#39;)&#39;</span>;</div>
+<div class="line"><span class="lineno">  730</span> </div>
+<div class="line"><span class="lineno">  731</span>          <span class="comment">// The test case runs within this call, so the value and the</span></div>
+<div class="line"><span class="lineno">  732</span>          <span class="comment">// callable are captured by reference, not copied.</span></div>
+<div class="line"><span class="lineno">  733</span>          self.test (test_case_name{ text, name.location () },</div>
+<div class="line"><span class="lineno">  734</span>                     [&amp;callable, &amp;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>] (<span class="keyword">auto</span>&amp; test_self)</div>
+<div class="line"><span class="lineno">  735</span>            {</div>
+<div class="line"><span class="lineno">  736</span>              <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_member_pointer_v&lt;</div>
+<div class="line"><span class="lineno">  737</span>                                std::remove_cvref_t&lt;Callable_T&gt;&gt;)</div>
+<div class="line"><span class="lineno">  738</span>                {</div>
+<div class="line"><span class="lineno">  739</span>                  std::invoke (callable, test_self, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
+<div class="line"><span class="lineno">  740</span>                }</div>
+<div class="line"><span class="lineno">  741</span>              <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  742</span>                {</div>
+<div class="line"><span class="lineno">  743</span>                  callable (test_self, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
+<div class="line"><span class="lineno">  744</span>                }</div>
+<div class="line"><span class="lineno">  745</span>            });</div>
+<div class="line"><span class="lineno">  746</span>        };</div>
+<div class="line"><span class="lineno">  747</span> </div>
+<div class="line"><span class="lineno">  748</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">test_values_range&lt;Values_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  749</span>        {</div>
+<div class="line"><span class="lineno">  750</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a> : values)</div>
+<div class="line"><span class="lineno">  751</span>            {</div>
+<div class="line"><span class="lineno">  752</span>              run_one (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
+<div class="line"><span class="lineno">  753</span>            }</div>
+<div class="line"><span class="lineno">  754</span>        }</div>
+<div class="line"><span class="lineno">  755</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  756</span>        {</div>
+<div class="line"><span class="lineno">  757</span>          std::apply ([&amp;run_one] (<span class="keyword">const</span> <span class="keyword">auto</span>&amp;... elements)</div>
+<div class="line"><span class="lineno">  758</span>            { (run_one (elements), ...); }, values);</div>
+<div class="line"><span class="lineno">  759</span>        }</div>
+<div class="line"><span class="lineno">  760</span>    }</div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">micro_os_plus::micro_test_plus::detail::test_values_range</a></div><div class="ttdoc">C++20 concept satisfied when T is a range of values for test_each().</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00912">test.h:912</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">micro_os_plus::micro_test_plus::extension::printable</a></div><div class="ttdoc">C++20 concept satisfied when a type can be appended to the message of a check result via operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00305">extension.h:305</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_html_a63b3cc3a8e725c2921787180f1244824"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text.html#a63b3cc3a8e725c2921787180f1244824">micro_os_plus::micro_test_plus::detail::plain_text::append</a></div><div class="ttdeci">static void append(std::string &amp;text, const T &amp;value)</div><div class="ttdoc">Appends a value to a text, in the plain mode of the formatter.</div><div class="ttdef"><b>Definition</b> <a href="expression-formatter-inlines_8h_source.html#l00494">expression-formatter-inlines.h:494</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">micro_os_plus::micro_test_plus::detail::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="values_8h_source.html#l00427">values.h:428</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="expression-formatter-inlines_8h_source.html#l00395">micro_os_plus::micro_test_plus::detail::plain_text::append()</a>, <a class="el" href="test-inlines_8h_source.html#l00135">micro_os_plus::micro_test_plus::test_case_name::location()</a>, <a class="el" href="test-inlines_8h_source.html#l00125">micro_os_plus::micro_test_plus::test_case_name::name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00677">test_each_value()</a>.</p>
+<p class="reference">References <a class="el" href="expression-formatter-inlines_8h_source.html#l00494">micro_os_plus::micro_test_plus::detail::plain_text::append()</a>, <a class="el" href="test-inlines_8h_source.html#l00136">micro_os_plus::micro_test_plus::test_case_name::location()</a>, <a class="el" href="test-inlines_8h_source.html#l00126">micro_os_plus::micro_test_plus::test_case_name::name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00707">test_each_value()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00770">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00757">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00742">micro_os_plus::micro_test_plus::test_case::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00729">micro_os_plus::micro_test_plus::test_case::test_each()</a>, and <a class="el" href="test-inlines_8h_source.html#l00677">test_each_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00813">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00800">micro_os_plus::micro_test_plus::suite::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00785">micro_os_plus::micro_test_plus::test_case::test_each()</a>, <a class="el" href="test-inlines_8h_source.html#l00772">micro_os_plus::micro_test_plus::test_case::test_each()</a>, and <a class="el" href="test-inlines_8h_source.html#l00707">test_each_value()</a>.</p>
 
 </div>
 </div>
@@ -1653,18 +1904,18 @@ template&lt;class T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The value returned by <span class="tt">t.get()</span> for the framework wrappers (the literals and the <span class="tt">to_*</span> wrappers), otherwise a reference to <span class="tt">t</span>.</dd></dl>
 <p>If the type <span class="tt">T</span> is a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>) that provides a <span class="tt">get()</span> member function, it is invoked and its result returned. Otherwise a reference to the argument itself is returned, so that the types of the application, even those with a <span class="tt">get()</span> member function, are compared with their own operators, without a copy. The selection is performed at compile time via <span class="tt">if constexpr</span> with an inline <span class="tt">requires</span> expression; the return type is deduced with <span class="tt">decltype (auto)</span> from the selected branch. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00097">97</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>    {</div>
-<div class="line"><span class="lineno">   99</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">extension::is_op&lt;T&gt;</a> &amp;&amp; <span class="keyword">requires</span> { t.get (); })</div>
-<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">return</span> t.get ();</div>
-<div class="line"><span class="lineno">  101</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> t;</div>
-<div class="line"><span class="lineno">  103</span>    }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">C++20 concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00154">extension.h:155</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00098">98</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">extension::is_op&lt;T&gt;</a> &amp;&amp; <span class="keyword">requires</span> { t.get (); })</div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">return</span> t.get ();</div>
+<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span> t;</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">C++20 concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00156">extension.h:157</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00097">unwrap()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00098">unwrap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00480">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00370">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00563">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00498">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::epsilon()</a>, <a class="el" href="detail-inlines_8h_source.html#l00178">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00138">micro_os_plus::micro_test_plus::detail::unary_op&lt; T &gt;::operand()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00149">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="detail-inlines_8h_source.html#l00191">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00097">unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00208">within_tolerance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00481">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00371">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00564">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00499">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::epsilon()</a>, <a class="el" href="detail-inlines_8h_source.html#l00179">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00139">micro_os_plus::micro_test_plus::detail::unary_op&lt; T &gt;::operand()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00149">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="detail-inlines_8h_source.html#l00192">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00098">unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00209">within_tolerance()</a>.</p>
 
 </div>
 </div>
@@ -1709,17 +1960,17 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value returned by <span class="tt">t.get()</span> for the framework wrappers (the literals and the <span class="tt">to_*</span> wrappers), otherwise a reference to <span class="tt">t</span>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00097">97</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>    {</div>
-<div class="line"><span class="lineno">   99</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">extension::is_op&lt;T&gt;</a> &amp;&amp; <span class="keyword">requires</span> { t.get (); })</div>
-<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">return</span> t.get ();</div>
-<div class="line"><span class="lineno">  101</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> t;</div>
-<div class="line"><span class="lineno">  103</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00098">98</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">extension::is_op&lt;T&gt;</a> &amp;&amp; <span class="keyword">requires</span> { t.get (); })</div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">return</span> t.get ();</div>
+<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span> t;</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00097">unwrap()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00098">unwrap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00480">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00370">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00563">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00498">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::epsilon()</a>, <a class="el" href="detail-inlines_8h_source.html#l00178">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00138">micro_os_plus::micro_test_plus::detail::unary_op&lt; T &gt;::operand()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00149">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="detail-inlines_8h_source.html#l00191">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00097">unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00208">within_tolerance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00481">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00371">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00564">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00499">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::epsilon()</a>, <a class="el" href="detail-inlines_8h_source.html#l00179">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00139">micro_os_plus::micro_test_plus::detail::unary_op&lt; T &gt;::operand()</a>, <a class="el" href="expression-formatter-inlines_8h_source.html#l00149">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, <a class="el" href="detail-inlines_8h_source.html#l00192">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00098">unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00209">within_tolerance()</a>.</p>
 
 </div>
 </div>
@@ -1752,7 +2003,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Used by <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html" title="Relational comparator struct template.">compare_op</a></span> for all six tags, so that a value within the tolerance is equal, and neither less nor greater; at least one operand must have an <span class="tt">epsilon</span> member (a floating-point literal, a <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-literals.html#ga5368740b47e92605914b6c38ea88aebf" title="Strongly-typed wrapper for float values.">to_f</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-literals.html#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Strongly-typed wrapper for double values.">to_d</a></span>, or <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-literals.html#gaeba32254fdd8159523b525745b13bfa9" title="Strongly-typed wrapper for long double values.">to_ld</a></span> wrapper, or <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-function-comparators.html#gacae776e46a799b81af859ba9bb74e7d0" title="Approximate equality comparator, with an explicit tolerance.">approx()</a></span>).</p>
+<p>Used by <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html" title="Relational comparator struct template.">compare_op</a></span> for all six tags, so that a value within the tolerance is equal, and neither less nor greater; at least one operand must have an <span class="tt">epsilon</span> member (a floating-point literal, a <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-literals.html#ga5368740b47e92605914b6c38ea88aebf" title="Strongly-typed wrapper for float values.">to_f</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-literals.html#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Strongly-typed wrapper for double values.">to_d</a></span>, or <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-literals.html#gaeba32254fdd8159523b525745b13bfa9" title="Strongly-typed wrapper for long double values.">to_ld</a></span> wrapper, or <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-literals.html#gafe47800a219b00fcccf0a1dc596dbe20" title="Wraps a floating-point value with an explicit comparison tolerance.">approx()</a></span>).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Lhs_T</td><td>The type of the left-hand operand. </td></tr>
@@ -1776,45 +2027,45 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 </dl>
 <p>The tolerance is the smaller <span class="tt">epsilon</span> of the two operands, if both have one, otherwise the <span class="tt">epsilon</span> of the operand that has one. The operands are equal when the absolute value of their difference is less than the tolerance. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00208">208</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  209</span>    {</div>
-<div class="line"><span class="lineno">  210</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  211</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  212</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wfloat-equal&quot;</span></div>
-<div class="line"><span class="lineno">  213</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wconversion&quot;</span></div>
-<div class="line"><span class="lineno">  214</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wdouble-promotion&quot;</span></div>
-<div class="line"><span class="lineno">  215</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wsign-compare&quot;</span></div>
-<div class="line"><span class="lineno">  216</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  217</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wimplicit-int-float-conversion&quot;</span></div>
-<div class="line"><span class="lineno">  218</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wpedantic&quot;</span></div>
-<div class="line"><span class="lineno">  219</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  220</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  221</span>      <span class="keyword">const</span> <span class="keyword">auto</span> difference</div>
-<div class="line"><span class="lineno">  222</span>          = <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6">math::abs</a> (<a class="code hl_function" href="#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (lhs) - <a class="code hl_function" href="#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (rhs));</div>
-<div class="line"><span class="lineno">  223</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Lhs_T&gt;</a></div>
-<div class="line"><span class="lineno">  224</span>                    and <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Rhs_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  225</span>        {</div>
-<div class="line"><span class="lineno">  226</span>          <span class="comment">// If both values have precision, use the smallest one.</span></div>
-<div class="line"><span class="lineno">  227</span>          <span class="keywordflow">return</span> difference &lt; <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a67e71e2dce0120ad4839635830e80de8">math::min_value</a> (lhs.epsilon, rhs.epsilon);</div>
-<div class="line"><span class="lineno">  228</span>        }</div>
-<div class="line"><span class="lineno">  229</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Lhs_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  230</span>        {</div>
-<div class="line"><span class="lineno">  231</span>          <span class="keywordflow">return</span> difference &lt; lhs.epsilon;</div>
-<div class="line"><span class="lineno">  232</span>        }</div>
-<div class="line"><span class="lineno">  233</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  234</span>        {</div>
-<div class="line"><span class="lineno">  235</span>          <span class="keywordflow">return</span> difference &lt; rhs.epsilon;</div>
-<div class="line"><span class="lineno">  236</span>        }</div>
-<div class="line"><span class="lineno">  237</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  238</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  239</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  240</span>    }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">micro_os_plus::micro_test_plus::extension::has_epsilon</a></div><div class="ttdoc">C++20 concept satisfied when T is a framework floating-point wrapper with a tolerance.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00175">extension.h:175</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00209">209</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  210</span>    {</div>
+<div class="line"><span class="lineno">  211</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  212</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">  213</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wfloat-equal&quot;</span></div>
+<div class="line"><span class="lineno">  214</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wconversion&quot;</span></div>
+<div class="line"><span class="lineno">  215</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wdouble-promotion&quot;</span></div>
+<div class="line"><span class="lineno">  216</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wsign-compare&quot;</span></div>
+<div class="line"><span class="lineno">  217</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  218</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wimplicit-int-float-conversion&quot;</span></div>
+<div class="line"><span class="lineno">  219</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wpedantic&quot;</span></div>
+<div class="line"><span class="lineno">  220</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  221</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  222</span>      <span class="keyword">const</span> <span class="keyword">auto</span> difference</div>
+<div class="line"><span class="lineno">  223</span>          = <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6">math::abs</a> (<a class="code hl_function" href="#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (lhs) - <a class="code hl_function" href="#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (rhs));</div>
+<div class="line"><span class="lineno">  224</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Lhs_T&gt;</a></div>
+<div class="line"><span class="lineno">  225</span>                    and <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Rhs_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  226</span>        {</div>
+<div class="line"><span class="lineno">  227</span>          <span class="comment">// If both values have precision, use the smallest one.</span></div>
+<div class="line"><span class="lineno">  228</span>          <span class="keywordflow">return</span> difference &lt; <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a67e71e2dce0120ad4839635830e80de8">math::min_value</a> (lhs.epsilon, rhs.epsilon);</div>
+<div class="line"><span class="lineno">  229</span>        }</div>
+<div class="line"><span class="lineno">  230</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Lhs_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  231</span>        {</div>
+<div class="line"><span class="lineno">  232</span>          <span class="keywordflow">return</span> difference &lt; lhs.epsilon;</div>
+<div class="line"><span class="lineno">  233</span>        }</div>
+<div class="line"><span class="lineno">  234</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  235</span>        {</div>
+<div class="line"><span class="lineno">  236</span>          <span class="keywordflow">return</span> difference &lt; rhs.epsilon;</div>
+<div class="line"><span class="lineno">  237</span>        }</div>
+<div class="line"><span class="lineno">  238</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  239</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">  240</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  241</span>    }</div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">micro_os_plus::micro_test_plus::extension::has_epsilon</a></div><div class="ttdoc">C++20 concept satisfied when T is a framework floating-point wrapper with a tolerance.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00177">extension.h:177</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a67e71e2dce0120ad4839635830e80de8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a67e71e2dce0120ad4839635830e80de8">micro_os_plus::micro_test_plus::detail::math::min_value</a></div><div class="ttdeci">constexpr auto min_value(const T &amp;lhs, const T &amp;rhs) noexcept -&gt; const T &amp;</div><div class="ttdoc">Computes the minimum of two comparable values.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00109">math-inlines.h:109</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::detail::math::abs()</a>, <a class="el" href="math-inlines_8h_source.html#l00109">micro_os_plus::micro_test_plus::detail::math::min_value()</a>, <a class="el" href="detail-inlines_8h_source.html#l00097">unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00208">within_tolerance()</a>.</p>
+<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::detail::math::abs()</a>, <a class="el" href="math-inlines_8h_source.html#l00109">micro_os_plus::micro_test_plus::detail::math::min_value()</a>, <a class="el" href="detail-inlines_8h_source.html#l00098">unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00209">within_tolerance()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00370">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00208">within_tolerance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00371">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00209">within_tolerance()</a>.</p>
 
 </div>
 </div>
@@ -1840,7 +2091,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 </div><div class="memdoc">
 <p>Used by the formatters that write the messages of the checks, which are never coloured; all members are empty strings. </p>
 
-<p class="definition">Definition at line <a class="el" href="expression-formatter_8h_source.html#l00162">162</a> of file <a class="el" href="expression-formatter_8h_source.html">expression-formatter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression-formatter_8h_source.html#l00163">163</a> of file <a class="el" href="expression-formatter_8h_source.html">expression-formatter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00091">micro_os_plus::micro_test_plus::detail::expression_formatter::expression_formatter()</a>.</p>
 
@@ -1872,7 +2123,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 <div class="line">}</div>
 </div><!-- fragment --><p>Assigned by reporters that output to a colour-capable terminal; the members are, in order, the reset, pass, and fail ANSI escape sequences. </p>
 
-<p class="definition">Definition at line <a class="el" href="expression-formatter_8h_source.html#l00149">149</a> of file <a class="el" href="expression-formatter_8h_source.html">expression-formatter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression-formatter_8h_source.html#l00150">150</a> of file <a class="el" href="expression-formatter_8h_source.html">expression-formatter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::reporter_human::reporter_human()</a>.</p>
 

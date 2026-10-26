@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <h2 id="header-conceptdef" class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value.html">has_value</a> = <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">extension::is_op&lt;T&gt;</a> and <span class="keyword">requires</span> { T::value; }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value.html">micro_os_plus::micro_test_plus::detail::has_value</a></div><div class="ttdoc">C++20 concept satisfied when T is a framework compile-time constant.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00445">extension.h:445</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">C++20 concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00154">extension.h:155</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value.html">micro_os_plus::micro_test_plus::detail::has_value</a></div><div class="ttdoc">C++20 concept satisfied when T is a framework compile-time constant.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00509">extension.h:509</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">C++20 concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00156">extension.h:157</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <p>The <span class="tt">has_value</span> concept is satisfied when <span class="tt">T</span> is a framework expression type (see <span class="tt">extension::is_op</span>) with a static <span class="tt">value</span> member, like <span class="tt">integral_constant</span> and <span class="tt">floating_point_constant</span>, the types of the numeric literals. The comparators compare such operands by their <span class="tt">T::value</span> constants.</p>
 <p>The types of the application are excluded, even if they have a member named <span class="tt">value</span>, so that they are compared with their own operators. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00445">445</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00509">509</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

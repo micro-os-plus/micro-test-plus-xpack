@@ -104,8 +104,6 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
@@ -140,11 +138,7 @@
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
         <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -159,30 +153,10 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="25">
-        <label>operators-inlines.h</label>
-        <link refid="operators-inlines_8h"/>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
       <node id="17">
         <label>test-inlines.h</label>
         <link refid="test-inlines_8h"/>
         <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>literals.h</label>
-        <link refid="literals_8h"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>operators.h</label>
-        <link refid="operators_8h"/>
-        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -369,25 +343,25 @@ Used by the integer literal operators (<computeroutput><ref refid="group__micro-
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" line="175" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="175" bodyend="189" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" declline="314" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" compoundref="literals-inlines_8h" startline="121" endline="124">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_c</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" compoundref="literals-inlines_8h" startline="93" endline="96">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" compoundref="literals-inlines_8h" startline="261" endline="264">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i16</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" compoundref="literals-inlines_8h" startline="275" endline="278">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i32</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" compoundref="literals-inlines_8h" startline="289" endline="292">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i64</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" compoundref="literals-inlines_8h" startline="247" endline="250">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i8</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" compoundref="literals-inlines_8h" startline="149" endline="152">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_l</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" compoundref="literals-inlines_8h" startline="163" endline="166">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ll</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" compoundref="literals-inlines_8h" startline="107" endline="110">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_s</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" compoundref="literals-inlines_8h" startline="135" endline="138">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_sc</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" compoundref="literals-inlines_8h" startline="177" endline="180">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" compoundref="literals-inlines_8h" startline="317" endline="320">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u16</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" compoundref="literals-inlines_8h" startline="331" endline="334">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u32</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" compoundref="literals-inlines_8h" startline="345" endline="348">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u64</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" compoundref="literals-inlines_8h" startline="303" endline="306">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u8</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" compoundref="literals-inlines_8h" startline="191" endline="194">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_uc</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" compoundref="literals-inlines_8h" startline="219" endline="222">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ul</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" compoundref="literals-inlines_8h" startline="233" endline="236">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ull</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" compoundref="literals-inlines_8h" startline="205" endline="208">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_us</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" compoundref="deprecated-inlines_8h" startline="321" endline="324">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_c</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" compoundref="deprecated-inlines_8h" startline="293" endline="296">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" compoundref="deprecated-inlines_8h" startline="461" endline="464">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i16</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" compoundref="deprecated-inlines_8h" startline="475" endline="478">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i32</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" compoundref="deprecated-inlines_8h" startline="489" endline="492">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i64</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" compoundref="deprecated-inlines_8h" startline="447" endline="450">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i8</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" compoundref="deprecated-inlines_8h" startline="349" endline="352">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_l</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" compoundref="deprecated-inlines_8h" startline="363" endline="366">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ll</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" compoundref="deprecated-inlines_8h" startline="307" endline="310">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_s</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" compoundref="deprecated-inlines_8h" startline="335" endline="338">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_sc</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" compoundref="deprecated-inlines_8h" startline="377" endline="380">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" compoundref="deprecated-inlines_8h" startline="517" endline="520">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u16</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" compoundref="deprecated-inlines_8h" startline="531" endline="534">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u32</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" compoundref="deprecated-inlines_8h" startline="545" endline="548">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u64</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" compoundref="deprecated-inlines_8h" startline="503" endline="506">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u8</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" compoundref="deprecated-inlines_8h" startline="391" endline="394">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_uc</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" compoundref="deprecated-inlines_8h" startline="419" endline="422">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ul</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" compoundref="deprecated-inlines_8h" startline="433" endline="436">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ull</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" compoundref="deprecated-inlines_8h" startline="405" endline="408">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_us</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

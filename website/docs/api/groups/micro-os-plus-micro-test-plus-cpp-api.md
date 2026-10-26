@@ -128,7 +128,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Overloaded operators for expressive test comparisons. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#details">More...</a></p>
+<p>Deprecated overloaded operators for test comparisons. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -142,7 +142,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Literal operators and wrappers for typed operands. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#details">More...</a></p>
+<p>Deprecated literal operators and wrappers for typed operands. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">

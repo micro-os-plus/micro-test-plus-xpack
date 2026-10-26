@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('reporter_8h.ht
 <code>#include &quot;<a class="el" href="extension_8h_source.html">extension.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="reflection_8h_source.html">reflection.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="runner-options_8h_source.html">runner-options.h</a>&quot;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;cstdio&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;string_view&gt;</code><br />
@@ -139,6 +140,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('reporter_8h.ht
 Classes</h2></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aindentation" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aindentation"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1indentation.html">micro_os_plus::micro_test_plus::detail::indentation</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterised stream manipulator for outputting indentation.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1indentation.html#details">More...</a><br /></td></tr>
+<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Areporter_3A_3Aopen_5Ftest_5Fcase" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Areporter_3A_3Aopen_5Ftest_5Fcase"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case.html">micro_os_plus::micro_test_plus::detail::reporter::open_test_case</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A test case that has begun and not yet ended.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case.html#details">More...</a><br /></td></tr>
+<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aoutput_5Froute" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aoutput_5Froute"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1output__route.html">micro_os_plus::micro_test_plus::detail::output_route</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destinations of a record.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1output__route.html#details">More...</a><br /></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Areporter" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Areporter"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html">micro_os_plus::micro_test_plus::detail::reporter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for the reporters that display test results, including operand values for failures.  <a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
@@ -150,6 +155,32 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the µTest++ testing framework. <br /></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html">micro_os_plus::micro_test_plus::detail</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:af25a23e4451135649a8207c3a0ea30b5" id="r_af25a23e4451135649a8207c3a0ea30b5"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5">micro_os_plus::micro_test_plus::detail::record_kind</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5acaf9b6b99962bf5c2264824231d7a40c">micro_os_plus::micro_test_plus::detail::info</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5abd97c2ef5f66e470bc30d4fd1c3b1f08">micro_os_plus::micro_test_plus::detail::suite_heading</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5a89dde41a0e1f6b1091218e741a26f257">micro_os_plus::micro_test_plus::detail::suite_result</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5a50bcbe154487d5fbab186979293ec8f1">micro_os_plus::micro_test_plus::detail::test_case_heading</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5a2e8ebf6e2498d36d386a89fe4f78c739">micro_os_plus::micro_test_plus::detail::test_case_result</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5ae52e279299e912838f689d4380c81f4a">micro_os_plus::micro_test_plus::detail::skipped</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5ad92bae248e3e6219914c8348b9b14a6e">micro_os_plus::micro_test_plus::detail::passed_check</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640">micro_os_plus::micro_test_plus::detail::failed_check</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e">micro_os_plus::micro_test_plus::detail::total</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa">micro_os_plus::micro_test_plus::detail::abort</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:af25a23e4451135649a8207c3a0ea30b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kinds of records written by the reporters.  <a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>

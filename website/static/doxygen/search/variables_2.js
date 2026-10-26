@@ -7,5 +7,8 @@ var searchData=
   ['colours_5f_4',['colours_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html#a566350d8ec85e4c0b5d8a27ef61f819f',1,'micro_os_plus::micro_test_plus::detail::expression_formatter::colours_'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a69616e251ebb3d22e481ada0831bec3c',1,'micro_os_plus::micro_test_plus::detail::reporter::colours_']]],
   ['colours_5fnone_5',['colours_none',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a48c790000ed3d766b705c6c5223d8767',1,'micro_os_plus::micro_test_plus::detail']]],
   ['colours_5fred_5fgreen_6',['colours_red_green',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ad59e204218aa41581652a072be0e8a8a',1,'micro_os_plus::micro_test_plus::detail']]],
-  ['condition_5fbegin_5f_7',['condition_begin_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap.html#acc89e5828b613327923fa1b18172d9c1',1,'micro_os_plus::micro_test_plus::detail::reporter_tap']]]
+  ['condition_5fbegin_5f_7',['condition_begin_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap.html#acc89e5828b613327923fa1b18172d9c1',1,'micro_os_plus::micro_test_plus::detail::reporter_tap']]],
+  ['console_8',['console',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1output__route.html#a5ffc75b90c3290f21a2126bba91a759a',1,'micro_os_plus::micro_test_plus::detail::output_route']]],
+  ['count_5f_9',['count_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html#a07aad5c8d860e3c487df8a0f6948d0a2',1,'micro_os_plus::micro_test_plus::detail::array_operand']]],
+  ['current_5fsuite_5f_10',['current_suite_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#ad0a2ebe9aedaecf71fc76993122e661f',1,'micro_os_plus::micro_test_plus::detail::reporter']]]
 ];

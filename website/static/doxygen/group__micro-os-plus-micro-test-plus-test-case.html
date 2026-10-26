@@ -140,14 +140,6 @@ Typedefs</h2></td></tr>
 <div class="line">  t.expect (mt::eq (compute_answer (), 42)) &lt;&lt; <span class="stringliteral">&quot;answer eq 42&quot;</span>;</div>
 <div class="line">  t.expect (mt::ne (compute_answer (), 43)) &lt;&lt; <span class="stringliteral">&quot;answer ne 43&quot;</span>;</div>
 <div class="line">});</div>
-<div class="line"> </div>
-<div class="line">ts.test (<span class="stringliteral">&quot;Check various conditions with operators&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
-<div class="line">  <span class="keyword">using namespace </span>mt::operators;</div>
-<div class="line">  <span class="keyword">using namespace </span>mt::literals;</div>
-<div class="line"> </div>
-<div class="line">  t.expect (compute_answer () == 42_i) &lt;&lt; <span class="stringliteral">&quot;answer == 42&quot;</span>;</div>
-<div class="line">  t.expect (compute_answer () != 43_i) &lt;&lt; <span class="stringliteral">&quot;answer != 43&quot;</span>;</div>
-<div class="line">});</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
 </div><!-- fragment -->  </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="ga1424c18b26d5fdaed11439c77e6bf561" name="ga1424c18b26d5fdaed11439c77e6bf561"></a>
@@ -161,7 +153,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The v5.0.1 name of the class passed to the test case bodies, kept for the functions and the lambdas that name it as the type of their first parameter (<span class="tt">void f (mt::subtest&amp; t)</span>); the lambdas with an <span class="tt">auto&amp;</span> parameter are not affected. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated</a></b></dt><dd>use <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html" title="A named, runnable test case that lives inside a suite.">test_case</a> (since 5.1.0)</dd></dl>
+<p>The v5.0.1 name of the class passed to the test case bodies, kept for the functions and the lambdas that name it as the type of their first parameter (<span class="tt">void f (mt::subtest&amp; t)</span>); the lambdas with an <span class="tt">auto&amp;</span> parameter are not affected. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000058">Deprecated</a></b></dt><dd>use <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html" title="A named, runnable test case that lives inside a suite.">test_case</a> (since 5.1.0)</dd></dl>
 
 </div>
 </div>

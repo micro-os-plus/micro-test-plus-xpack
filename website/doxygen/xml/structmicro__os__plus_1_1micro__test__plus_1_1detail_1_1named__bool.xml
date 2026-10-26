@@ -114,7 +114,7 @@ Returns the stored view of the name. </para>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="577" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/values-inlines.h" bodystart="261" bodyend="264"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" compoundref="values_8h" startline="586">name_</references>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ada5dc84fd655a188ac350568572dddb8" compoundref="values-inlines_8h" startline="241" endline="244">named_bool</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a46392700e7eabfa2e18655ac6b04c670" compoundref="expression-formatter_8cpp" startline="249" endline="253">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a46392700e7eabfa2e18655ac6b04c670" compoundref="expression-formatter_8cpp" startline="334" endline="338">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ac69d71afd275e3374ef0516c8d9a82d6" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>

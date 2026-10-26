@@ -126,7 +126,7 @@ Functions for verifying exceptions in test cases
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators">Operators</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Overloaded operators for expressive test comparisons
+Deprecated overloaded operators for test comparisons
 </td>
 </tr>
 
@@ -136,7 +136,7 @@ Overloaded operators for expressive test comparisons
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals">Literals and Wrappers</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Literal operators and wrappers for typed operands
+Deprecated literal operators and wrappers for typed operands
 </td>
 </tr>
 

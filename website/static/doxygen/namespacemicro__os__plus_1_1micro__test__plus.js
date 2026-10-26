@@ -43,7 +43,8 @@ var namespacemicro__os__plus_1_1micro__test__plus =
     [ "utility", "namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html", [
       [ "extract_file_name", "group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653", null ],
       [ "is_match", "group__micro-os-plus-micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731", null ],
-      [ "split", "group__micro-os-plus-micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125", null ]
+      [ "split", "group__micro-os-plus-micro-test-plus-utility-functions.html#gac17bb0b9be9a1ca01854c8bbbabc5def", null ],
+      [ "split", "group__micro-os-plus-micro-test-plus-utility-functions.html#ga15af76191aa8ac1c6d679c55cc8847ff", null ]
     ] ],
     [ "counters", "classmicro__os__plus_1_1micro__test__plus_1_1counters.html", "classmicro__os__plus_1_1micro__test__plus_1_1counters" ],
     [ "runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner" ],
@@ -122,10 +123,10 @@ var namespacemicro__os__plus_1_1micro__test__plus =
     [ "_and", "group__micro-os-plus-micro-test-plus-logical-functions.html#ga9998cd63972fac8b24a2f0138322e7c1", null ],
     [ "_not", "group__micro-os-plus-micro-test-plus-logical-functions.html#gaa465723bc4fe309f15d30a4e7207d40f", null ],
     [ "_or", "group__micro-os-plus-micro-test-plus-logical-functions.html#ga1c7ddbf53764ab67240f1cf0e0fb4b8d", null ],
+    [ "all_of", "group__micro-os-plus-micro-test-plus-logical-functions.html#gab9b9c26860ceafc1288ecb415f52aaaf", null ],
+    [ "any_of", "group__micro-os-plus-micro-test-plus-logical-functions.html#gae6395736f05626ba6dcf79ecc523486c", null ],
     [ "approx", "group__micro-os-plus-micro-test-plus-function-comparators.html#gacae776e46a799b81af859ba9bb74e7d0", null ],
     [ "approx", "group__micro-os-plus-micro-test-plus-literals.html#gafe47800a219b00fcccf0a1dc596dbe20", null ],
-    [ "both", "group__micro-os-plus-micro-test-plus-logical-functions.html#ga8c9c770da2ef632dec29c502651cb160", null ],
-    [ "either", "group__micro-os-plus-micro-test-plus-logical-functions.html#gab9fbb94dec947fa60052531743114fa9", null ],
     [ "eq", "group__micro-os-plus-micro-test-plus-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f", null ],
     [ "ge", "group__micro-os-plus-micro-test-plus-function-comparators.html#gab8da4228bc9a820546753b018a129a7e", null ],
     [ "gt", "group__micro-os-plus-micro-test-plus-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278", null ],

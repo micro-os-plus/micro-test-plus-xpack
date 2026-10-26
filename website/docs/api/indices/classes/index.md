@@ -24,6 +24,17 @@ The classes, structs, union and interfaces used by this project are:
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/array-operand">array_operand&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+An array operand of a comparator, other than a <span class="doxyComputerOutput">char</span> array
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/bound-callable">bound_callable&lt;...&gt;</a>
 </td>
@@ -509,10 +520,21 @@ Empty base struct for the framework expression types
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/reporter-human/open-test-case">open_test_case</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/reporter/open-test-case">open_test_case</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 A test case that has begun and not yet ended
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/output-route">output_route</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The destinations of a record
 </td>
 </tr>
 

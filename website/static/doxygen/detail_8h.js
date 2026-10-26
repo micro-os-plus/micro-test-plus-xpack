@@ -2,6 +2,7 @@ var detail_8h =
 [
     [ "micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op" ],
     [ "micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op" ],
+    [ "micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand" ],
     [ "micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op" ],
     [ "micro_os_plus::micro_test_plus::detail::c_string", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" ],
     [ "micro_os_plus::micro_test_plus::detail::callable_op", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op" ],
@@ -32,8 +33,10 @@ var detail_8h =
     [ "micro_os_plus::micro_test_plus::detail::as_operand", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b", null ],
     [ "micro_os_plus::micro_test_plus::detail::compare_op", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ab32427ede730747da86165a2965903a2", null ],
     [ "micro_os_plus::micro_test_plus::detail::differ_by_less_than", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a7ce90ae12eac430cf58becac530b92b2", null ],
+    [ "micro_os_plus::micro_test_plus::detail::operator<=>", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ade4fe4b187a8ded1bb42910536d86235", null ],
     [ "micro_os_plus::micro_test_plus::detail::operator<=>", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afa8a96f9fca4c7dceae1ee9e02a9861c", null ],
     [ "micro_os_plus::micro_test_plus::detail::operator<=>", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a3a06e7992caa3dfc9355a34369486c86", null ],
+    [ "micro_os_plus::micro_test_plus::detail::operator==", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ad7b514fb92021548630dbeb2cd8189bc", null ],
     [ "micro_os_plus::micro_test_plus::detail::operator==", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a3461b586a0b0e6146681ccda9dbb49b4", null ],
     [ "micro_os_plus::micro_test_plus::detail::operator==", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a81530e9e1a17d43a930a16a504af9912", null ],
     [ "micro_os_plus::micro_test_plus::detail::operator==", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a28646b3e1ddd2792546f303b6b65ad92", null ],
