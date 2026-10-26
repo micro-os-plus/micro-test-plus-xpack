@@ -93,7 +93,7 @@ micro_os_plus_micro_test_plus_dependency_compile_cpp_args = _local_compile_cpp_a
 foreach name : _local_include_directories
   message('+ -I ' + name)
 endforeach
-foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
+foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
   message('+ ' + name)
 endforeach
 message('> micro_os_plus_micro_test_plus_dependency')
