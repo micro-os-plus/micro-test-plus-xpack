@@ -53,6 +53,7 @@ _local_include_directories += [
 _local_sources += [
   'src/main.cpp',
   'src/miscellaneous.cpp',
+  'src/runner-options.cpp',
   'src/stopwatch.cpp',
   'src/support.cpp',
   'src/utility.cpp',

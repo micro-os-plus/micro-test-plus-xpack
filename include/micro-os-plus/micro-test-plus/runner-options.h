@@ -16,17 +16,18 @@
  * @brief C++ header file with declarations for the µTest++ runner options.
  *
  * @details
- * This header provides the `runner_options` structure, which holds the
+ * This header provides the `runner_options` class, which holds the
  * configuration of a test session (the reporter, the verbosity, the
  * output file, the use of colours, the filter, and the listing of the
- * test cases), together with
+ * test cases) and parses it from the command line, together with
  * the `reporter_kind`, `verbosity`, and `colour_mode` enumerations used
  * by its members.
  *
- * The options are usually parsed from the command line by
- * `runner::initialise (argc, argv)`; the applications without a command
- * line, such as the embedded ones without semihosting arguments, can set
- * them directly and pass them to `runner::initialise (options)`.
+ * The options are usually parsed from the command line by the
+ * constructor called by `runner::initialise (argc, argv)`; the
+ * applications without a command line, such as the embedded ones without
+ * semihosting arguments, can set them directly and pass them to
+ * `runner::initialise (options)`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the
@@ -53,8 +54,9 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include <span>
+#include <string>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 // ----------------------------------------------------------------------------
@@ -161,11 +163,12 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @brief The configuration of a test session.
+   * @brief The configuration of a test session, and its command-line
+   * parser.
    *
    * @details
-   * `runner::initialise (argc, argv)` parses the command-line options into
-   * this structure and passes it to `runner::initialise (options)`, which
+   * `runner::initialise (argc, argv)` constructs the options from the
+   * command line and passes them to `runner::initialise (options)`, which
    * creates the selected reporter and starts the session.
    *
    * The applications that do not have a command line, such as the
@@ -180,15 +183,140 @@ namespace micro_os_plus::micro_test_plus
    * auto& ts = tr.initialise (options, "Main");
    * @endcode
    *
-   * The structure only refers to the strings it uses; they must remain
-   * valid until `initialise()` returns, which copies what it keeps.
+   * The applications can also parse the command line themselves, and
+   * adjust the result before passing it to the runner:
+   *
+   * @code{.cpp}
+   * mt::runner_options options{ argc, argv };
+   * options.list_tests = true;
+   *
+   * auto& ts = tr.initialise (options, "Main");
+   * @endcode
+   *
+   * The configuration members are public, since any combination of their
+   * values is valid; only the results of the parsing (whether errors
+   * were found, and whether the reporter was unknown) are private, and
+   * are read by the runner.
+   *
+   * The options own their strings (the command line, the path of the
+   * output file, and the filter patterns), so they do not depend on the
+   * lifetime of the caller's strings; the runner keeps its own copy of
+   * them.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    *
    * @since 5.1.0
    */
-  struct runner_options
+  class runner_options
   {
+  public:
+    /**
+     * @brief Constructs the default options.
+     *
+     * @details
+     * The TAP reporter, the `normal` verbosity, no output file, automatic
+     * colours, no filter, and no command line; the test cases are run,
+     * not listed.
+     */
+    runner_options (void) = default;
+
+    /**
+     * @brief Constructs the options by parsing the command line.
+     *
+     * @details
+     * Starts from the defaults, and parses the µTest++ options
+     * (`--reporter`, `--silent`, `--quiet`, `--verbose`, `--output-file`,
+     * `--color`, `--use-colour`, `--filter`, and `--list-tests`). The
+     * other arguments are ignored, since the applications may define
+     * their own, except for those starting with `--`, which are reported
+     * as unknown options.
+     *
+     * A missing option argument, an unknown reporter name, an unknown
+     * colour mode, or an unknown option, is reported on `stderr`, the
+     * option is ignored, and `has_errors()` is set; `run()` then returns
+     * 2. The errors are not written in the report, since the reporter
+     * does not exist yet.
+     *
+     * The `argv[]` strings are copied, so they need not outlive the
+     * options.
+     *
+     * @param argc The argument count from main().
+     * @param argv The argument vector from main().
+     *
+     * @since 5.1.0
+     */
+    explicit runner_options (int argc, char* argv[]);
+
+    /**
+     * @brief Copy constructor.
+     *
+     * @details
+     * Copies all the members, including the strings and the results of
+     * the parsing, so the copy initialises a runner exactly as the
+     * original does; the copy is independent of the original.
+     *
+     * @param other The instance to copy.
+     *
+     * @since 5.1.0
+     */
+    runner_options (const runner_options& other) = default;
+
+    /**
+     * @brief Move constructor.
+     *
+     * @details
+     * Moves the strings and the vectors, and copies the other members;
+     * `other` is left valid, with unspecified strings.
+     *
+     * @param other The instance to move from.
+     *
+     * @since 5.1.0
+     */
+    runner_options (runner_options&& other) = default;
+
+    /**
+     * @brief Copy assignment operator.
+     *
+     * @details
+     * Replaces all the members with copies of those of `other`.
+     *
+     * Not defaulted: it copies `other` with the copy constructor, and
+     * moves the copy into this instance, since the copy assignment of the
+     * vectors of strings uses `std::copy`, which triggers
+     * `-Waggregate-return` in the standard library headers of GCC on some
+     * targets. If the copy fails, this instance is not changed.
+     *
+     * @param other The instance to copy.
+     * @return Reference to this instance.
+     *
+     * @since 5.1.0
+     */
+    runner_options&
+    operator= (const runner_options& other);
+
+    /**
+     * @brief Move assignment operator.
+     *
+     * @details
+     * Moves the strings and the vectors, and copies the other members.
+     *
+     * @param other The instance to move from.
+     * @return Reference to this instance.
+     *
+     * @since 5.1.0
+     */
+    runner_options&
+    operator= (runner_options&& other)
+        = default;
+
+    /**
+     * @brief Destructor.
+     *
+     * @details
+     * Releases the owned strings.
+     */
+    ~runner_options () = default;
+
     /**
      * @brief The reporter that displays the results.
      *
@@ -210,17 +338,16 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief Path of the optional output file, or `nullptr`.
+     * @brief Path of the optional output file.
      *
      * @details
      * Set by `--output-file=<path>` or `--output-file <path>`. When it
-     * is `nullptr` or empty, no file is written. The reporter opens the
-     * file, and keeps a copy of the path, when it is created by
-     * `initialise()`; if the file cannot be opened, the error is reported
+     * is empty (the default), no file is written. The reporter opens the
+     * file when it is created by `initialise()`; if the file cannot be opened, the error is reported
      * on `stderr`, the report is written only to the console, and
      * `runner::run()` returns 2.
      */
-    const char* output_file_path{ nullptr };
+    std::string output_file_path{};
 
     /**
      * @brief Whether the console output uses colours.
@@ -242,12 +369,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief The complete command line, including `argv[0]`, if any.
      *
      * @details
-     * A view of the `argv[]` array of `main()`, set when the options are
-     * parsed from the command line. When not empty, the reporters list it
+     * A copy of the `argv[]` strings of `main()`, set when the options
+     * are parsed from the command line. When not empty, the reporters list it
      * at the beginning of the report, and `initialise()` derives the
      * default name of the top suite from `arguments[0]`.
      */
-    std::span<char* const> arguments{};
+    std::vector<std::string> arguments{};
 
     /**
      * @brief The patterns that select the suites and the test cases to
@@ -276,7 +403,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @since 5.1.0
      */
-    std::vector<std::string_view> filter_patterns{};
+    std::vector<std::string> filter_patterns{};
 
     /**
      * @brief Whether the test cases are listed instead of run.
@@ -309,6 +436,73 @@ namespace micro_os_plus::micro_test_plus
      * @since 5.1.0
      */
     bool list_tests{ false };
+
+    /**
+     * @brief Checks whether errors were found while parsing the command
+     * line.
+     *
+     * @details
+     * The errors were already written on `stderr` by the constructor;
+     * when set, `runner::run()` returns 2. Never set for the default
+     * options.
+     *
+     * @return `true` if at least one error was found.
+     *
+     * @since 5.1.0
+     */
+    [[nodiscard]] bool
+    has_errors (void) const noexcept;
+
+    /**
+     * @brief Checks whether the command line selected an unknown reporter.
+     *
+     * @details
+     * When set, `runner::initialise()` does not proceed: no output file
+     * is created, nothing is reported, no test is run, and `run()`
+     * returns 2, even if `selected_reporter` was changed after the
+     * parsing.
+     *
+     * @return `true` if the reporter name was not recognised.
+     *
+     * @since 5.1.0
+     */
+    [[nodiscard]] bool
+    has_invalid_reporter (void) const noexcept;
+
+  private:
+    /**
+     * @brief Records and reports a command-line error.
+     *
+     * @details
+     * Writes `error: <text>` on `stderr`, and sets `has_errors_`.
+     *
+     * @param before The start of the message, without the `error:`
+     * prefix.
+     * @param value The variable part, usually an option or a value.
+     * @param after The end of the message, without the newline.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    add_error (std::string_view before, std::string_view value = {},
+               std::string_view after = {});
+
+    /**
+     * @brief Whether errors were found while parsing the command line.
+     *
+     * @details
+     * Set by `add_error()`; returned by `has_errors()`.
+     */
+    bool has_errors_{ false };
+
+    /**
+     * @brief Whether the reporter name was not recognised.
+     *
+     * @details
+     * Set by the parsing constructor; returned by
+     * `has_invalid_reporter()`.
+     */
+    bool has_invalid_reporter_{ false };
   };
 
   // --------------------------------------------------------------------------
@@ -321,6 +515,11 @@ namespace micro_os_plus::micro_test_plus
 // ----------------------------------------------------------------------------
 
 #endif // defined(__cplusplus)
+
+// ============================================================================
+// Templates, inlines & constexpr implementations.
+
+#include "inlines/runner-options-inlines.h"
 
 // ----------------------------------------------------------------------------
 

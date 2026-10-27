@@ -13,6 +13,7 @@
       ],
       "sourceFiles": [
         "src/runner.cpp",
+        "src/runner-options.cpp",
         "src/counters.cpp",
         "src/check-result.cpp",
         "src/expression-formatter.cpp",

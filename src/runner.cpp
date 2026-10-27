@@ -134,10 +134,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Parses the command-line options with `parse_options()`, and passes
-   * them to the overload taking the options, which creates the selected
-   * reporter (`--reporter=human` or `--reporter=tap`, the default) and
-   * starts the session. An option error is reported on `stderr`, the
+   * Parses the command-line options with the `runner_options`
+   * constructor, and passes them to the overload taking the options,
+   * which creates the selected reporter (`--reporter=human` or
+   * `--reporter=tap`, the default) and starts the session. An option error is reported on `stderr`, the
    * option is ignored, and `run()` will return 2.
    *
    * The options are not parsed if the runner is already initialised; the
@@ -177,17 +177,17 @@ namespace micro_os_plus::micro_test_plus
         return initialise (runner_options{}, top_suite_name);
       }
 
-    return initialise (parse_options (argc, argv), top_suite_name);
+    return initialise (runner_options{ argc, argv }, top_suite_name);
   }
 
   /**
    * @details
-   * Keeps a copy of the verbosity, creates the reporter selected by the
-   * options, keeps a copy of the filter patterns, starts the session
-   * timing, and emits the initial reporter notifications for the session
-   * and the top suite. While the test cases are listed, only the header
-   * of the list is written; the session and the top suite are not
-   * reported.
+   * Moves the options into the runner, which keeps them for the whole
+   * session, records whether errors were found while parsing them,
+   * creates the reporter selected by them, starts the session timing,
+   * and emits the initial reporter notifications for the session and the
+   * top suite. While the test cases are listed, only the header of the
+   * list is written; the session and the top suite are not reported.
    *
    * If the top suite name is not provided, here or by the deprecated
    * constructor, it is derived from the file name of
@@ -206,8 +206,7 @@ namespace micro_os_plus::micro_test_plus
    * returns the top suite, without other effects.
    */
   suite&
-  runner::initialise (const runner_options& options,
-                      const char* top_suite_name)
+  runner::initialise (runner_options options, const char* top_suite_name)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -225,6 +224,11 @@ namespace micro_os_plus::micro_test_plus
         return top_suite_;
       }
 
+    // Move the vectors, since their copy assignment uses std::copy, which
+    // triggers -Waggregate-return in the standard library headers on some
+    // targets.
+    options_ = std::move (options);
+
     if (top_suite_name != nullptr && strlen (top_suite_name) > 0)
       {
         // If provided by this call, use it, possibly override the
@@ -237,10 +241,10 @@ namespace micro_os_plus::micro_test_plus
         // If not provided by the constructor or by this call, try to extract a
         // name from argv[0], which is commonly the executable name. If that
         // fails, use a default name.
-        if (!options.arguments.empty () && options.arguments[0] != nullptr)
+        if (!options_.arguments.empty ())
           {
             std::string_view top_suite_name_view{ utility::extract_file_name (
-                options.arguments[0]) };
+                options_.arguments[0].c_str ()) };
 
             const auto dot_pos = top_suite_name_view.rfind ('.');
             if (dot_pos != std::string_view::npos)
@@ -257,17 +261,15 @@ namespace micro_os_plus::micro_test_plus
         top_suite_.name_ = top_suite_name_.c_str ();
       }
 
-    verbosity_ = options.verbosity_level;
-
     // With an unknown reporter, do not proceed: no output file is created,
     // nothing is reported, no test is run, and `run()` returns 2. A silent
     // reporter without output file is still created, since the suites and
     // the test cases refer to it.
-    if (has_invalid_reporter_)
+    if (options_.has_invalid_reporter ())
       {
         runner_options silent_options{};
         silent_options.verbosity_level = verbosity::silent;
-        verbosity_ = verbosity::silent;
+        options_.verbosity_level = verbosity::silent;
         reporter_ = std::make_unique<detail::reporter_tap> (silent_options);
         exit_code_ = 2;
         session_state_ = session_state::finished;
@@ -276,50 +278,31 @@ namespace micro_os_plus::micro_test_plus
 
     // Initialise and configure the reporter; it keeps its own copy of the
     // verbosity, taken from the same options.
-    if (options.selected_reporter == reporter_kind::human)
+    if (options_.selected_reporter == reporter_kind::human)
       {
-        reporter_ = std::make_unique<detail::reporter_human> (options);
+        reporter_ = std::make_unique<detail::reporter_human> (options_);
       }
     else
       {
-        reporter_ = std::make_unique<detail::reporter_tap> (options);
-      }
-
-    if (reporter_->has_output_file_error ())
-      {
-        has_option_errors_ = true;
-      }
-
-    // Copy the strings, not only the views, since the patterns are used
-    // by run(), after the caller's strings may have been destroyed. Copy
-    // them one by one, since the vector assignment uses std::copy, which
-    // triggers -Waggregate-return in the standard library headers on some
-    // targets.
-    filter_patterns_.reserve (options.filter_patterns.size ());
-    for (const std::string_view pattern : options.filter_patterns)
-      {
-        filter_patterns_.emplace_back (pattern);
+        reporter_ = std::make_unique<detail::reporter_tap> (options_);
       }
 
     // ------------------------------------------------------------------------
 
     // When listing, the session is not reported; only the header of the
     // list is written, and the test cases are listed as they are created.
-    list_tests_ = options.list_tests;
-    if (list_tests_)
+    if (options_.list_tests)
       {
-        reporter_->write_line (verbosity_ != verbosity::silent, "%s\n",
-                               filter_patterns_.empty ()
-                                   ? "All available test cases:"
-                                   : "Matching test cases:");
-        report_option_errors ();
+        reporter_->write_line (
+            options_.verbosity_level != verbosity::silent, "%s\n",
+            options_.filter_patterns.empty () ? "All available test cases:"
+                                              : "Matching test cases:");
         session_state_ = session_state::initialised;
         return top_suite_;
       }
 
     stopwatch_.start ();
     reporter_->begin_session (*this);
-    report_option_errors ();
 
     top_suite_.stopwatch_.start ();
     reporter_->begin_suite (top_suite_);
@@ -327,238 +310,6 @@ namespace micro_os_plus::micro_test_plus
     session_state_ = session_state::initialised;
 
     return top_suite_;
-  }
-
-  /**
-   * @details
-   * Scans the arguments after `argv[0]`, in order, for:
-   *
-   * - `--reporter=<name>` or `--reporter <name>`, with `tap` (the default)
-   *   or `human`;
-   * - `--verbose`, `--quiet`, and `--silent`;
-   * - `--output-file=<path>` or `--output-file <path>`;
-   * - `--color[=<when>]`, as in the GNU tools, with `always`, `never`, or
-   *   `auto` (the default), and their GNU synonyms (`yes` and `force`,
-   *   `no` and `none`, `tty` and `if-tty`); `--color` alone means
-   *   `always`;
-   * - `--use-colour=<mode>` or `--use-colour <mode>`, the Catch2 and
-   *   Boost UT alternative to `--color`, with `yes`, `no`, or `auto`, or
-   *   any of the `--color` values;
-   * - `--filter=<pattern>` or `--filter <pattern>`;
-   * - `--list-tests`, or its short form `--list`, as in Catch2 and
-   *   Boost UT, to list the test cases instead of running them.
-   *
-   * When an option is repeated, the last one takes effect, except
-   * `--filter`, whose patterns are all kept, in order, one per nesting
-   * level; `--color` and `--use-colour` set the same option. An option
-   * argument given separately is the next argument, whatever its content;
-   * `--color` accepts its value only after `=`.
-   * The other arguments are ignored. The whole command line is kept in the
-   * options, to be listed by the reporter.
-   *
-   * A missing option argument, an unknown reporter name, or an unknown
-   * colour mode, is reported on `stderr`, the option is ignored, and
-   * `has_option_errors_` is set, so that `run()` returns 2 (for an unknown
-   * reporter, `has_invalid_reporter_` is also set, to stop the session in
-   * `initialise()`); the parsing
-   * continues with the next argument.
-   */
-  void
-  runner::add_option_error (std::string_view before, std::string_view value,
-                            std::string_view after)
-  {
-    std::string text{ before };
-    text.append (value);
-    text.append (after);
-
-    fprintf (stderr, "error: %s\n", text.c_str ());
-    option_errors_.push_back (std::move (text));
-    has_option_errors_ = true;
-  }
-
-  /**
-   * @details
-   * Writes each error kept by `add_option_error()` as a comment line, to
-   * the console, unless silent, and to the output file, so that the
-   * consumers of the report see the errors too.
-   */
-  void
-  runner::report_option_errors (void)
-  {
-    for (const std::string& text : option_errors_)
-      {
-        reporter_->write_line (verbosity_ != verbosity::silent,
-                               "%serror: %s\n", reporter_->comment_prefix (),
-                               text.c_str ());
-      }
-    option_errors_.clear ();
-  }
-
-  /**
-   * @details
-   * Parses the options; see the description above.
-   */
-  runner_options
-  runner::parse_options (int argc, char* argv[])
-  {
-    runner_options opts{};
-
-    if (argc <= 0 || argv == nullptr)
-      {
-        return opts;
-      }
-
-    opts.arguments = { argv, static_cast<size_t> (argc) };
-
-    static constexpr std::string_view reporter_option{ "--reporter" };
-    static constexpr std::string_view output_file_option{ "--output-file" };
-    static constexpr std::string_view color_option{ "--color" };
-    static constexpr std::string_view use_colour_option{ "--use-colour" };
-    static constexpr std::string_view filter_option{ "--filter" };
-
-    // Get the value of an option given as `--option=<value>` or as
-    // `--option <value>`; the latter advances the index past the value.
-    // Return false if the argument is not this option, or if its value is
-    // missing, which is reported as an error.
-    auto get_value = [&] (std::string_view option, size_t& i,
-                          std::string_view& value) -> bool
-      {
-        const std::string_view argument{ opts.arguments[i] };
-        if (argument == option)
-          {
-            if (i + 1 >= opts.arguments.size ())
-              {
-                add_option_error ("", option, " option requires an argument");
-                return false;
-              }
-            value = opts.arguments[++i];
-            return true;
-          }
-        if (argument.starts_with (option)
-            && argument.substr (option.size ()).starts_with ('='))
-          {
-            value = argument.substr (option.size () + 1);
-            return true;
-          }
-        return false;
-      };
-
-    // Whether the argument is one of the options with a value, possibly
-    // with the value missing, which was already reported.
-    auto is_known_option = [&] (std::string_view argument) -> bool
-      {
-        for (const std::string_view option :
-             { reporter_option, output_file_option, use_colour_option,
-               filter_option })
-          {
-            if (argument == option
-                || (argument.starts_with (option)
-                    && argument.substr (option.size ()).starts_with ('=')))
-              {
-                return true;
-              }
-          }
-        return false;
-      };
-
-    // Set the colour mode from the value of `--color` or of
-    // `--use-colour`; both accept the values and the synonyms of the GNU
-    // tools, which include those of Catch2 and Boost UT (`yes`, `no`, and
-    // `auto`). An unknown mode is reported as an error.
-    auto set_colour_mode = [&] (std::string_view value)
-      {
-        if (value == "always" || value == "yes" || value == "force")
-          {
-            opts.colour = colour_mode::always;
-          }
-        else if (value == "never" || value == "no" || value == "none")
-          {
-            opts.colour = colour_mode::never;
-          }
-        else if (value == "auto" || value == "tty" || value == "if-tty")
-          {
-            opts.colour = colour_mode::automatic;
-          }
-        else
-          {
-            add_option_error ("unknown colour mode '", value, "'");
-          }
-      };
-
-    for (size_t i = 1; i < opts.arguments.size (); ++i)
-      {
-        const std::string_view argument{ opts.arguments[i] };
-        std::string_view value{};
-
-        if (argument == "--verbose")
-          {
-            opts.verbosity_level = verbosity::verbose;
-          }
-        else if (argument == "--quiet")
-          {
-            opts.verbosity_level = verbosity::quiet;
-          }
-        else if (argument == "--silent")
-          {
-            opts.verbosity_level = verbosity::silent;
-          }
-        else if (argument == "--list-tests" || argument == "--list")
-          {
-            opts.list_tests = true;
-          }
-        else if (get_value (reporter_option, i, value))
-          {
-            if (value == "human")
-              {
-                opts.selected_reporter = reporter_kind::human;
-              }
-            else if (value == "tap")
-              {
-                opts.selected_reporter = reporter_kind::tap;
-              }
-            else
-              {
-                add_option_error ("unknown reporter '", value, "'");
-                has_invalid_reporter_ = true;
-              }
-          }
-        else if (get_value (output_file_option, i, value))
-          {
-            // The value is a suffix of a null-terminated argv[] string,
-            // so it is null-terminated too. An empty path disables the
-            // output file.
-            opts.output_file_path = value.empty () ? nullptr : value.data ();
-          }
-        else if (get_value (use_colour_option, i, value))
-          {
-            set_colour_mode (value);
-          }
-        else if (argument == color_option)
-          {
-            // As in the GNU tools, the option alone means `always`, and
-            // the next argument is never taken as its value.
-            opts.colour = colour_mode::always;
-          }
-        else if (argument.starts_with (color_option)
-                 && argument.substr (color_option.size ()).starts_with ('='))
-          {
-            set_colour_mode (argument.substr (color_option.size () + 1));
-          }
-        else if (get_value (filter_option, i, value))
-          {
-            // The view refers to the argv[] string, which remains valid
-            // until the program ends.
-            opts.filter_patterns.push_back (value);
-          }
-        else if (argument.starts_with ("--") && !is_known_option (argument))
-          {
-            // The other arguments are left to the application, but a
-            // mistyped option must not silently disable the tests.
-            add_option_error ("unknown option '", argument, "'");
-          }
-      }
-
-    return opts;
   }
 
 #if defined(__GNUC__)
@@ -574,12 +325,12 @@ namespace micro_os_plus::micro_test_plus
   bool
   runner::is_selected (const char* name, size_t level) const
   {
-    if (level >= filter_patterns_.size ())
+    if (level >= options_.filter_patterns.size ())
       {
         return true;
       }
 
-    std::string_view alternatives{ filter_patterns_[level] };
+    std::string_view alternatives{ options_.filter_patterns[level] };
     while (true)
       {
         const size_t separator = alternatives.find ('|');
@@ -611,13 +362,13 @@ namespace micro_os_plus::micro_test_plus
       {
         listed_suite_ = &suite;
         ++listed_suites_count_;
-        reporter_->write_line (verbosity_ != verbosity::silent, "  %s\n",
-                               suite.name ());
+        reporter_->write_line (options_.verbosity_level != verbosity::silent,
+                               "  %s\n", suite.name ());
       }
 
     ++listed_test_cases_count_;
-    reporter_->write_line (verbosity_ != verbosity::silent, "    %s\n",
-                           test_case.name ());
+    reporter_->write_line (options_.verbosity_level != verbosity::silent,
+                           "    %s\n", test_case.name ());
   }
 
   // --------------------------------------------------------------------------
@@ -749,7 +500,7 @@ namespace micro_os_plus::micro_test_plus
         if (!is_selected (suite_ptr->name (), 0))
           {
             ++skipped_suites_count_;
-            if (!list_tests_)
+            if (!options_.list_tests)
               {
                 reporter_->skip_suite (*suite_ptr);
               }
@@ -827,19 +578,19 @@ namespace micro_os_plus::micro_test_plus
 
     // When listing, the suites run only to create their test cases, which
     // are listed, and the number of listed test cases ends the list.
-    if (list_tests_)
+    if (options_.list_tests)
       {
         run_suites ();
 
         const unsigned long test_cases = listed_test_cases_count_;
         const unsigned long suites = listed_suites_count_;
-        reporter_->write_line (verbosity_ != verbosity::silent,
+        reporter_->write_line (options_.verbosity_level != verbosity::silent,
                                "%lu test case%s in %lu test suite%s\n",
                                test_cases, (test_cases == 1) ? "" : "s",
                                suites, (suites == 1) ? "" : "s");
         reporter_->flush_streams ();
 
-        exit_code_ = has_option_errors_ ? 2 : 0;
+        exit_code_ = has_option_errors () ? 2 : 0;
         session_state_ = session_state::finished;
         return exit_code_;
       }
@@ -851,10 +602,12 @@ namespace micro_os_plus::micro_test_plus
     run_suites ();
 
     // A filter that selects no test case disables the tests; report it.
-    if (!filter_patterns_.empty () && totals_.executed_test_cases () == 0)
+    const bool selected_nothing = !options_.filter_patterns.empty ()
+                                  && totals_.executed_test_cases () == 0;
+    if (selected_nothing)
       {
-        add_option_error ("the filters selected no test case");
-        reporter_->write_line (verbosity_ != verbosity::silent,
+        fprintf (stderr, "error: the filters selected no test case\n");
+        reporter_->write_line (options_.verbosity_level != verbosity::silent,
                                "%serror: the filters selected no test case\n",
                                reporter_->comment_prefix ());
       }
@@ -862,7 +615,7 @@ namespace micro_os_plus::micro_test_plus
     stopwatch_.stop ();
     reporter_->end_session (*this);
 
-    if (has_option_errors_)
+    if (selected_nothing || has_option_errors ())
       {
         exit_code_ = 2;
       }

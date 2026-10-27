@@ -279,8 +279,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Parses the µTest++ options from the command line (`--reporter`,
      * `--silent`, `--quiet`, `--verbose`, `--output-file`,
-     * `--color`, `--use-colour`, `--filter`, and `--list-tests`) into a
-     * `runner_options` structure, and continues as the overload taking
+     * `--color`, `--use-colour`, `--filter`, and `--list-tests`) with the
+     * `runner_options` constructor, and continues as the overload taking
      * the options. The other arguments are ignored, since the
      * applications may define their own.
      *
@@ -314,8 +314,11 @@ namespace micro_os_plus::micro_test_plus
      * `stderr` and the report is written only to the console; the tests
      * are still run, but `run()` returns 2.
      *
-     * @param options The session options; the strings they refer to must
-     * remain valid until the call returns.
+     * The options are taken by value and moved into the runner, which
+     * keeps them for the whole session; pass a temporary, or use
+     * `std::move()`, to avoid a copy.
+     *
+     * @param options The session options.
      * @param top_suite_name The name given to the implicit top suite. Defaults
      * to an empty string.
      * @return Reference to the top-level test suite.
@@ -323,8 +326,7 @@ namespace micro_os_plus::micro_test_plus
      * @since 5.1.0
      */
     class suite&
-    initialise (const runner_options& options,
-                const char* top_suite_name = "");
+    initialise (runner_options options, const char* top_suite_name = "");
 
     /**
      * @brief Runs the registered suites, ends the session, and returns the
@@ -822,51 +824,6 @@ namespace micro_os_plus::micro_test_plus
     runner* started_next_ = nullptr;
 
     /**
-     * @brief Parses the command-line options of the test session.
-     *
-     * @details
-     * All the options are parsed here, once, and passed to the reporter;
-     * the arguments not recognised as options are ignored, since the
-     * applications may define their own, except for the options starting
-     * with `--`. A missing option argument, an unknown reporter name, an
-     * unknown colour mode, or an unknown `--` option, is reported on
-     * `stderr`, the option is ignored, and `has_option_errors_` is set.
-     *
-     * @param argc The argument count from main().
-     * @param argv The argument vector from main().
-     * @return The parsed options.
-     */
-    [[nodiscard]] runner_options
-    parse_options (int argc, char* argv[]);
-
-    /**
-     * @brief Records and reports a command-line error.
-     *
-     * @details
-     * Writes `error: <text>` on `stderr`, keeps the text, to be written
-     * by `report_option_errors()` through the reporter, and sets
-     * `has_option_errors_`.
-     *
-     * @param before The start of the message, without the `error:`
-     * prefix.
-     * @param value The variable part, usually an option or a value.
-     * @param after The end of the message, without the newline.
-     */
-    void
-    add_option_error (std::string_view before, std::string_view value = {},
-                      std::string_view after = {});
-
-    /**
-     * @brief Writes the recorded command-line errors through the reporter.
-     *
-     * @details
-     * The errors are written as comment lines, to the console and to the
-     * output file, so that they are not visible only on `stderr`.
-     */
-    void
-    report_option_errors (void);
-
-    /**
      * @brief Checks whether a suite or a test case is selected by the
      * filter pattern of its nesting level.
      *
@@ -886,6 +843,22 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] bool
     is_selected (const char* name, size_t level) const;
+
+    /**
+     * @brief Checks whether an option error was found by `initialise()`.
+     *
+     * @details
+     * Called by `run()`, which then returns 2. The errors are those found
+     * while parsing the options (see `runner_options::has_errors()`),
+     * and the output file that cannot be opened. The filters that select
+     * no test case are checked by `run()` itself.
+     *
+     * Valid only after `initialise()` created the reporter.
+     *
+     * @return `true` if an option error was found.
+     */
+    [[nodiscard]] bool
+    has_option_errors (void) const noexcept;
 
     /**
      * @brief Lists a test case, instead of running it.
@@ -954,8 +927,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Created by `initialise()`, as selected by the session options,
-     * either given by the caller or parsed from the command line by
-     * `parse_options()`. Used by the suites and the test cases,
+     * either given by the caller or parsed from the command line by the
+     * `runner_options` constructor. Used by the suites and the test cases,
      * through `detail::runnable_base`, which is a friend.
      */
     std::unique_ptr<detail::reporter> reporter_;
@@ -984,31 +957,21 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Set by `initialise()`, either from its argument or derived from
-     * `argv[0]`, as kept in the session options.
+     * `arguments[0]` of the session options.
      */
     std::string top_suite_name_;
 
     /**
-     * @brief The verbosity level of the console output.
+     * @brief The options of the test session.
      *
      * @details
-     * Copied by `initialise()` from `runner_options::verbosity_level`,
-     * before the reporter is created, which keeps its own constant copy;
-     * returned by `verbosity_level()`. `verbosity::normal` until then.
+     * Moved in by `initialise()`, and kept for the whole session: the
+     * verbosity is returned by `verbosity_level()`, the filter patterns
+     * are read by `is_selected()`, the listing of the test cases by
+     * `run()` and `is_listing()`, and the command line by the reporters,
+     * which are friends. The defaults until then.
      */
-    micro_test_plus::verbosity verbosity_ = verbosity::normal;
-
-    /**
-     * @brief The patterns that select the suites and the test cases to
-     * run, one per nesting level.
-     *
-     * @details
-     * Copied by `initialise()` from `runner_options::filter_patterns`,
-     * including the characters, so the caller's strings need not outlive
-     * the call, and read by `is_selected()`. Empty when everything must
-     * run.
-     */
-    std::vector<std::string> filter_patterns_;
+    runner_options options_{};
 
     /**
      * @brief The number of suites skipped by the filter.
@@ -1054,31 +1017,6 @@ namespace micro_os_plus::micro_test_plus
     int exit_code_ = 1;
 
     /**
-     * @brief Whether `initialise()` reported an option error.
-     *
-     * @details
-     * Set for a missing option argument, an unknown reporter name, an
-     * unknown colour mode, or an output file that cannot be opened;
-     * `run()` then returns 2.
-     */
-    bool has_option_errors_ = false;
-
-    /**
-     * @brief Whether the reporter name was not recognised.
-     *
-     * @details
-     * Set by `parse_options()`; `initialise()` then does not proceed,
-     * creates no output file, and `run()` returns 2 without running any
-     * test.
-     */
-    bool has_invalid_reporter_ = false;
-
-    /**
-     * @brief The command-line errors not yet written by the reporter.
-     */
-    std::vector<std::string> option_errors_;
-
-    /**
      * @brief Whether a suite was added after `run()` had started.
      *
      * @details
@@ -1118,17 +1056,6 @@ namespace micro_os_plus::micro_test_plus
      * reference), runs the new test case nested in it.
      */
     test_case* running_test_case_ = nullptr;
-
-    /**
-     * @brief Whether the test cases are listed instead of run.
-     *
-     * @details
-     * Copied by `initialise()` from `runner_options::list_tests`. When
-     * set, the suite bodies run, to create their test cases, but the test
-     * case bodies do not; the selected test cases are listed by
-     * `list_test_case()`, and `run()` writes their number.
-     */
-    bool list_tests_ = false;
 
     /**
      * @brief The suite whose name was listed last, if any.

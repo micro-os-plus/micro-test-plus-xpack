@@ -70,7 +70,6 @@
 #include <string_view>
 #include <string>
 #include <memory>
-#include <span>
 #include <vector>
 #include <charconv>
 
@@ -930,13 +929,14 @@ namespace micro_os_plus::micro_test_plus
        * @brief Writes the informational (non-result) lines to the console
        * and to the output file.
        *
-       * @par Parameters
-       *   None.
+       * @param arguments The command line of the session, listed when not
+       * empty; passed by `begin_session()` from the runner options, so
+       * that the reporter does not keep a copy.
        * @par Returns
        *   Nothing.
        */
       void
-      write_info (void);
+      write_info (const std::vector<std::string>& arguments);
 
       /**
        * @brief Clears the output buffer.
@@ -1318,11 +1318,20 @@ namespace micro_os_plus::micro_test_plus
       bool add_empty_line_{ true };
 
       /**
+       * @brief Whether the output file could not be opened.
+       *
+       * @details
+       * Set by the constructor, and returned by `has_output_file_error()`.
+       * Kept next to the other flags, so that the class does not end with
+       * padding, which the derived classes would report.
+       */
+      bool has_output_file_error_{ false };
+
+      /**
        * @brief Path of the optional output file.
        *
        * @details
-       * Copied by the constructor from the session options, so that the
-       * caller's string need not outlive `runner::initialise()`. Used to
+       * Copied by the constructor from the session options. Used to
        * name the file in the confirmation message displayed when the file
        * is closed (not displayed with the `silent` verbosity).
        */
@@ -1338,25 +1347,6 @@ namespace micro_os_plus::micro_test_plus
        * constructor and closed by the destructor.
        */
       FILE* output_file_{ nullptr };
-
-      /**
-       * @brief Whether the output file could not be opened.
-       *
-       * @details
-       * Set by the constructor, and returned by `has_output_file_error()`.
-       */
-      bool has_output_file_error_{ false };
-
-      /**
-       * @brief The command-line arguments passed to the test runner.
-       *
-       * @details
-       * A view of the `argv[]` array of `main()`, copied from the
-       * session options by the constructor, and listed by `write_info()`,
-       * which is called only by `begin_session()`, within
-       * `runner::initialise()`; it is not used afterwards.
-       */
-      std::span<char* const> arguments_{};
     };
 
     // ------------------------------------------------------------------------

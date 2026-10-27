@@ -301,6 +301,17 @@ auto& ts = tr.initialise(options, "Main");
 
 The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, `output_file_path` to `--output-file`, `colour` to `--color` (or `--use-colour`), `filter_patterns` to `--filter`, and `list_tests` to `--list-tests` (or `--list`).
 
+The `runner_options` constructor taking the main arguments parses the command line, as `initialise(argc, argv)` does; the application can use it to adjust the parsed options before initialising the runner:
+
+```cpp
+mt::runner_options options{ argc, argv };
+options.selected_reporter = mt::reporter_kind::human;
+
+auto& ts = tr.initialise(options, "Main");
+```
+
+The options own their strings (the command line, the output file path, and the filter patterns), and the runner keeps its own copy for the whole session, so the options and the strings they were built from need not outlive the call.
+
 #### Test result
 
 To run the registered suites, end the session, and return the test result as the process exit code, the runner provides the `run()` member function; the session runs only once, and later calls return the same result:
@@ -309,7 +320,7 @@ To run the registered suites, end the session, and return the test result as the
 return tr.run ();
 ```
 
-The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)). If the command-line options, or the `runner_options`, were not valid (an unknown reporter name, an unknown colour mode, a missing option argument, or an output file that cannot be opened), the error is reported on `stderr` when the runner is initialised, the option is ignored, and the tests are still run, but the result is 2.
+The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)). If the command-line options, or the `runner_options`, were not valid (an unknown reporter name, an unknown colour mode, a missing option argument, or an output file that cannot be opened), the error is reported on `stderr` when the options are parsed, or, for the output file, when the runner is initialised, the option is ignored, and the tests are still run, but the result is 2. With an unknown reporter name, no test is run.
 
 #### Aborting the test execution
 

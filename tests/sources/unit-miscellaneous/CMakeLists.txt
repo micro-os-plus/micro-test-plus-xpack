@@ -40,8 +40,8 @@ target_include_directories (
 
 target_sources (
   tests-unit-miscellaneous-interface
-  INTERFACE "src/main.cpp" "src/miscellaneous.cpp" "src/stopwatch.cpp"
-            "src/support.cpp" "src/utility.cpp"
+  INTERFACE "src/main.cpp" "src/miscellaneous.cpp" "src/runner-options.cpp"
+            "src/stopwatch.cpp" "src/support.cpp" "src/utility.cpp"
 )
 
 target_link_libraries (

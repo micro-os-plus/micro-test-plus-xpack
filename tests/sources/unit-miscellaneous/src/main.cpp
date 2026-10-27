@@ -14,7 +14,8 @@
 // The miscellaneous unit tests: the formatter and reporter output, the
 // messages, the runner options and filters, the test hierarchy, the abort
 // handler, the utility functions, and the stopwatch. The suites are in
-// `miscellaneous.cpp`, `utility.cpp`, and `stopwatch.cpp`.
+// `miscellaneous.cpp`, `runner-options.cpp`, `utility.cpp`, and
+// `stopwatch.cpp`.
 
 #include "unit-miscellaneous-test.h"
 

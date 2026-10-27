@@ -124,7 +124,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * visually separated.
    */
   void
-  reporter_human::begin_session ([[maybe_unused]] const runner& runner)
+  reporter_human::begin_session (const runner& runner)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -137,7 +137,7 @@ namespace micro_os_plus::micro_test_plus::detail
         write_console ("\n");
       }
 
-    write_info ();
+    write_info (runner.options_.arguments);
 
     write_line (to_console, "µTest++ human report\n");
 

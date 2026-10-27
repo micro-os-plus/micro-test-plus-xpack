@@ -141,13 +141,13 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Returns the flag kept by the owning runner, copied by
-     * `runner::initialise()` from `runner_options::list_tests`.
+     * Returns `runner_options::list_tests` of the session options kept
+     * by the owning runner.
      */
     [[nodiscard]] bool
     runnable_base::is_listing (void) const noexcept
     {
-      return runner_.list_tests_;
+      return runner_.options_.list_tests;
     }
 
     /**
@@ -210,7 +210,7 @@ namespace micro_os_plus::micro_test_plus
 
       // While the test cases are listed, the selected ones are listed and
       // the others ignored; none is run.
-      if (runner_.list_tests_)
+      if (runner_.options_.list_tests)
         {
           if (runner_.is_selected (suite.name (), 0)
               && runner_.is_selected (test_case.name (),

@@ -158,19 +158,19 @@ namespace micro_os_plus::micro_test_plus::detail
    * overhead.
    */
   reporter::reporter (const runner_options& opts)
-      : verbosity_{ opts.verbosity_level }, arguments_{ opts.arguments }
+      : verbosity_{ opts.verbosity_level }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
-    if (opts.output_file_path != nullptr && opts.output_file_path[0] != '\0')
+    if (!opts.output_file_path.empty ())
       {
-        output_file_ = fopen (opts.output_file_path, "w");
+        output_file_ = fopen (opts.output_file_path.c_str (), "w");
         if (output_file_ == nullptr)
           {
             fprintf (stderr, "error: Failed to open output file '%s'\n",
-                     opts.output_file_path);
+                     opts.output_file_path.c_str ());
             has_output_file_error_ = true;
           }
         else
@@ -487,11 +487,11 @@ namespace micro_os_plus::micro_test_plus::detail
    * information.
    */
   void
-  reporter::write_info (void)
+  reporter::write_info (const std::vector<std::string>& arguments)
   {
     const bool to_console = route (record_kind::info).console;
 
-    if (!arguments_.empty ())
+    if (!arguments.empty ())
       {
         std::string line;
         line.reserve (256);
@@ -499,12 +499,12 @@ namespace micro_os_plus::micro_test_plus::detail
         line.append ("Running: ");
 
         // Append only the file name part of argv[0].
-        line.append (utility::extract_file_name (arguments_[0]));
+        line.append (utility::extract_file_name (arguments[0].c_str ()));
 
-        for (const char* argument : arguments_.subspan (1))
+        for (size_t i = 1; i < arguments.size (); ++i)
           {
             line.append (" ");
-            line.append (argument);
+            line.append (arguments[i]);
           }
         line.append ("\n");
 

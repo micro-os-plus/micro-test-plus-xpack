@@ -95,7 +95,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
     ok 6 - Formatter standard types # { passed, 13 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
-        ok 2 - pointer 0x40081788
+        ok 2 - pointer 0x400879c4
         ok 3 - container {1, 2}
         ok 4 - standard types (1, a) nullopt 1
         ok 5 - custom type { 1, 2 } on
@@ -377,6 +377,83 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
     ok 44 - Test case and suite names # { passed, 7 checks }
     1..44
 not ok 2 - Miscellaneous suite # { FAILED, 178 checks passed, 8 failed, in 47 test cases }
+# Subtest: Runner options suite
+    # Subtest: Default options
+        ok 1 - the TAP reporter
+        ok 2 - the normal verbosity
+        ok 3 - no output file
+        ok 4 - automatic colours
+        ok 5 - no command line, no filter, no listing
+        ok 6 - no errors
+        ok 7 - an empty command line is accepted
+        1..7
+    ok 1 - Default options # { passed, 7 checks }
+    # Subtest: Command line without options
+        ok 1 - the command line is kept
+        ok 2 - the arguments without `--` are ignored
+        ok 3 - the defaults are kept
+        1..3
+    ok 2 - Command line without options # { passed, 3 checks }
+    # Subtest: Reporter, verbosity, and listing
+        ok 1 - --reporter=human
+        ok 2 - the last --reporter wins
+        ok 3 - --silent
+        ok 4 - --verbose
+        ok 5 - the last verbosity wins
+        ok 6 - --list-tests
+        ok 7 - --list
+        1..7
+    ok 3 - Reporter, verbosity, and listing # { passed, 7 checks }
+    # Subtest: Output file and filters
+        ok 1 - --output-file=<path>
+        ok 2 - --output-file <path>
+        ok 3 - an empty path disables the output file
+        ok 4 - all the --filter patterns are kept, in order
+        ok 5 - a separate value is taken whatever its content
+        1..5
+    ok 4 - Output file and filters # { passed, 5 checks }
+    # Subtest: Colours
+        ok 1 - --color
+        ok 2 - --color=always
+        ok 3 - --color=yes
+        ok 4 - --color=force
+        ok 5 - --color=never
+        ok 6 - --color=no
+        ok 7 - --color=none
+        ok 8 - --color=auto
+        ok 9 - --color=tty
+        ok 10 - --color=if-tty
+        ok 11 - --use-colour=yes
+        ok 12 - --use-colour=no
+        ok 13 - --use-colour=never
+        ok 14 - --use-colour <mode>
+        ok 15 - --color does not take a separate value
+        1..15
+    ok 5 - Colours # { passed, 15 checks }
+    # Subtest: Option errors
+        ok 1 - a missing option argument
+        ok 2 - the valid options are still applied
+        ok 3 - an unknown reporter
+        ok 4 - an unknown colour mode
+        ok 5 - an unknown option
+        1..5
+    ok 6 - Option errors # { passed, 5 checks }
+    # Subtest: Owned strings
+        ok 1 - the command line is copied
+        ok 2 - the output file path is copied
+        ok 3 - the filter patterns are copied
+        1..3
+    ok 7 - Owned strings # { passed, 3 checks }
+    # Subtest: Copies and moves
+        ok 1 - the copy has all the members
+        ok 2 - the copy is independent of the original
+        ok 3 - the copy assignment copies all the members
+        ok 4 - the move constructor moves all the members
+        ok 5 - the move assignment moves all the members
+        1..5
+    ok 8 - Copies and moves # { passed, 5 checks }
+    1..8
+ok 3 - Runner options suite # { passed, 50 checks in 8 test cases }
 # Subtest: Stopwatch suite
     # Subtest: stopwatch::start() and stop()
         ok 1 - fresh: has_elapsed false
@@ -414,7 +491,7 @@ not ok 2 - Miscellaneous suite # { FAILED, 178 checks passed, 8 failed, in 47 te
         1..7
     ok 5 - stopwatch::elapsed() # { passed, 7 checks }
     1..5
-ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases }
+ok 4 - Stopwatch suite # { passed, 20 checks in 5 test cases }
 # Subtest: Utility suite
     # Subtest: utility::extract_file_name()
         ok 1 - Unix path returns filename
@@ -477,6 +554,6 @@ ok 3 - Stopwatch suite # { passed, 20 checks in 5 test cases }
         1..5
     not ok 3 - utility::is_match() — failing # { FAILED, 0 checks passed, 5 failed }
     1..3
-not ok 4 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
-1..4
-# { total: 219 checks passed, 13 failed, in 55 test cases, 4 test suites }
+not ok 5 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
+1..5
+# { total: 269 checks passed, 13 failed, in 63 test cases, 5 test suites }

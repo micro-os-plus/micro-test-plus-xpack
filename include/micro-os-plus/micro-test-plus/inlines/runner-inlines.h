@@ -70,24 +70,34 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the level stored in `verbosity_`, which does not depend on
+   * Returns the level kept in `options_`, which does not depend on
    * the reporter, so the call is safe before `initialise()`.
    */
   inline auto
   runner::verbosity_level (void) const noexcept -> micro_test_plus::verbosity
   {
-    return verbosity_;
+    return options_.verbosity_level;
   }
 
   /**
    * @details
-   * Returns the flag copied by `initialise()` from
-   * `runner_options::list_tests`.
+   * Returns `runner_options::list_tests` of the session options.
    */
   inline bool
   runner::is_listing (void) const noexcept
   {
-    return list_tests_;
+    return options_.list_tests;
+  }
+
+  /**
+   * @details
+   * Combines the results kept by the options and by the reporter, so
+   * that the runner needs no flag of its own.
+   */
+  inline bool
+  runner::has_option_errors (void) const noexcept
+  {
+    return options_.has_errors () || reporter_->has_output_file_error ();
   }
 
   /**

@@ -52,6 +52,7 @@ _local_include_directories += [
 
 _local_sources += [
   'src/runner.cpp',
+  'src/runner-options.cpp',
   'src/counters.cpp',
   'src/check-result.cpp',
   'src/expression-formatter.cpp',
