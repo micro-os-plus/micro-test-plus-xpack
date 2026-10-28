@@ -48,10 +48,10 @@ export const FeatureList: FeatureItem[] = [
     description: (
       <>
         Results use the <b>TAP 14</b> format by default, so standard TAP
-        tools and CI pipelines can process them. Use
-        <code>--reporter=human</code> for readable console output, and
-        <code>--output-file</code> to also save the results to a file. The
-        overall outcome is returned as the process exit code.
+        tools and CI pipelines can process them. 
+        Use <code>--reporter=human</code> for readable console output, 
+        and <code>--output-file</code> to also save the results to a file. 
+        The overall outcome is returned as the process exit code.
       </>
     ),
   },
