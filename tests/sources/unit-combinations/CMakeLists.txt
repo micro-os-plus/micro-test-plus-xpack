@@ -19,7 +19,7 @@
 #
 # This creates an interface library that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC tests-unit-combinations)`
+# `target_link_libraries(your-target PUBLIC test-unit-combinations)`
 
 # -----------------------------------------------------------------------------
 
@@ -32,14 +32,14 @@ message (VERBOSE "Processing 'tests/sources/unit-combinations/'...")
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
-add_library (tests-unit-combinations-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-unit-combinations-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
-  tests-unit-combinations-interface INTERFACE "include"
+  test-unit-combinations-interface INTERFACE "include"
 )
 
 target_sources (
-  tests-unit-combinations-interface
+  test-unit-combinations-interface
   INTERFACE "src/main.cpp"
             "src/float-failed-combinations.cpp"
             "src/float-passed-combinations.cpp"
@@ -49,11 +49,11 @@ target_sources (
 )
 
 target_link_libraries (
-  tests-unit-combinations-interface
+  test-unit-combinations-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
-xpack_display_target_lists (tests-unit-combinations-interface)
+xpack_display_target_lists (test-unit-combinations-interface)
 
 # -----------------------------------------------------------------------------
 # Alias.
@@ -67,9 +67,9 @@ xpack_display_target_lists (tests-unit-combinations-interface)
 # read-only; properties must be set on the underlying target, not on the alias
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::unit-combinations ALIAS tests-unit-combinations-interface)
+add_library (test::unit-combinations ALIAS test-unit-combinations-interface)
 message (VERBOSE
-         "> tests::unit-combinations -> tests-unit-combinations-interface"
+         "> test::unit-combinations -> test-unit-combinations-interface"
 )
 
 # -----------------------------------------------------------------------------

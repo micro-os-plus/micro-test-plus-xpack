@@ -19,7 +19,7 @@
 #
 # This creates an interface library that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC tests-unit-exceptions)`
+# `target_link_libraries(your-target PUBLIC test-unit-exceptions)`
 
 # -----------------------------------------------------------------------------
 
@@ -32,21 +32,21 @@ message (VERBOSE "Processing 'tests/sources/unit-exceptions/'...")
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
-add_library (tests-unit-exceptions-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-unit-exceptions-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (tests-unit-exceptions-interface INTERFACE "include")
+target_include_directories (test-unit-exceptions-interface INTERFACE "include")
 
 target_sources (
-  tests-unit-exceptions-interface INTERFACE "src/main.cpp" "src/exceptions.cpp"
-                                            "src/support.cpp"
+  test-unit-exceptions-interface INTERFACE "src/main.cpp" "src/exceptions.cpp"
+                                           "src/support.cpp"
 )
 
 target_link_libraries (
-  tests-unit-exceptions-interface
+  test-unit-exceptions-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
-xpack_display_target_lists (tests-unit-exceptions-interface)
+xpack_display_target_lists (test-unit-exceptions-interface)
 
 # -----------------------------------------------------------------------------
 # Alias.
@@ -60,7 +60,7 @@ xpack_display_target_lists (tests-unit-exceptions-interface)
 # read-only; properties must be set on the underlying target, not on the alias
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::unit-exceptions ALIAS tests-unit-exceptions-interface)
-message (VERBOSE "> tests::unit-exceptions -> tests-unit-exceptions-interface")
+add_library (test::unit-exceptions ALIAS test-unit-exceptions-interface)
+message (VERBOSE "> test::unit-exceptions -> test-unit-exceptions-interface")
 
 # -----------------------------------------------------------------------------

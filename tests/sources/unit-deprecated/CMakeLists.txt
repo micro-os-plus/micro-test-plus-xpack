@@ -19,7 +19,7 @@
 #
 # This creates an interface library that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC tests-unit-deprecated)`
+# `target_link_libraries(your-target PUBLIC test-unit-deprecated)`
 
 # -----------------------------------------------------------------------------
 
@@ -32,25 +32,25 @@ message (VERBOSE "Processing 'tests/sources/unit-deprecated/'...")
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
-add_library (tests-unit-deprecated-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-unit-deprecated-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (tests-unit-deprecated-interface INTERFACE "include")
+target_include_directories (test-unit-deprecated-interface INTERFACE "include")
 
 target_sources (
-  tests-unit-deprecated-interface INTERFACE "src/main.cpp" "src/deprecated.cpp"
-                                            "src/support.cpp"
+  test-unit-deprecated-interface INTERFACE "src/main.cpp" "src/deprecated.cpp"
+                                           "src/support.cpp"
 )
 
 target_compile_definitions (
-  tests-unit-deprecated-interface
+  test-unit-deprecated-interface
   INTERFACE "MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED"
 )
 
 target_link_libraries (
-  tests-unit-deprecated-interface INTERFACE "micro-os-plus::micro-test-plus"
+  test-unit-deprecated-interface INTERFACE "micro-os-plus::micro-test-plus"
 )
 
-xpack_display_target_lists (tests-unit-deprecated-interface)
+xpack_display_target_lists (test-unit-deprecated-interface)
 
 # -----------------------------------------------------------------------------
 # Alias.
@@ -64,7 +64,7 @@ xpack_display_target_lists (tests-unit-deprecated-interface)
 # read-only; properties must be set on the underlying target, not on the alias
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::unit-deprecated ALIAS tests-unit-deprecated-interface)
-message (VERBOSE "> tests::unit-deprecated -> tests-unit-deprecated-interface")
+add_library (test::unit-deprecated ALIAS test-unit-deprecated-interface)
+message (VERBOSE "> test::unit-deprecated -> test-unit-deprecated-interface")
 
 # -----------------------------------------------------------------------------

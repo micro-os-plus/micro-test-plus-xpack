@@ -19,7 +19,7 @@
 #
 # This creates an interface library that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC tests-unit-miscellaneous)`
+# `target_link_libraries(your-target PUBLIC test-unit-miscellaneous)`
 
 # -----------------------------------------------------------------------------
 
@@ -32,24 +32,24 @@ message (VERBOSE "Processing 'tests/sources/unit-miscellaneous/'...")
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
-add_library (tests-unit-miscellaneous-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-unit-miscellaneous-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
-  tests-unit-miscellaneous-interface INTERFACE "include"
+  test-unit-miscellaneous-interface INTERFACE "include"
 )
 
 target_sources (
-  tests-unit-miscellaneous-interface
+  test-unit-miscellaneous-interface
   INTERFACE "src/main.cpp" "src/miscellaneous.cpp" "src/runner-options.cpp"
             "src/stopwatch.cpp" "src/support.cpp" "src/utility.cpp"
 )
 
 target_link_libraries (
-  tests-unit-miscellaneous-interface
+  test-unit-miscellaneous-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
-xpack_display_target_lists (tests-unit-miscellaneous-interface)
+xpack_display_target_lists (test-unit-miscellaneous-interface)
 
 # -----------------------------------------------------------------------------
 # Alias.
@@ -63,9 +63,9 @@ xpack_display_target_lists (tests-unit-miscellaneous-interface)
 # read-only; properties must be set on the underlying target, not on the alias
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::unit-miscellaneous ALIAS tests-unit-miscellaneous-interface)
+add_library (test::unit-miscellaneous ALIAS test-unit-miscellaneous-interface)
 message (VERBOSE
-         "> tests::unit-miscellaneous -> tests-unit-miscellaneous-interface"
+         "> test::unit-miscellaneous -> test-unit-miscellaneous-interface"
 )
 
 # -----------------------------------------------------------------------------

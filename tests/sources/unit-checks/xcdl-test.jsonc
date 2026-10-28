@@ -5,7 +5,7 @@
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
   "cdlComponents": [
     {
-      "id": "tests.unit-checks",
+      "id": "test.unit-checks",
       "display": "Checks Unit Test",
       "description": "The source code for a unit test to exercise the framework checks",
       "publicIncludeFolders": [

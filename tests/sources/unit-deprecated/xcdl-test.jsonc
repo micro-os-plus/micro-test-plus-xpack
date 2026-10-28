@@ -5,7 +5,7 @@
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
   "cdlComponents": [
     {
-      "id": "tests.unit-deprecated",
+      "id": "test.unit-deprecated",
       "display": "Deprecated Unit Test",
       "description": "The source code for a unit test to exercise the deprecated features of the test framework",
       "publicIncludeFolders": [

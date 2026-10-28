@@ -5,7 +5,7 @@
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
   "cdlComponents": [
     {
-      "id": "tests.sample",
+      "id": "test.sample",
       "display": "Sample Test",
       "description": "The source code for a sample test",
       "publicIncludeFolders": [],

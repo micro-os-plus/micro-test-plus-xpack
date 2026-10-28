@@ -27,90 +27,90 @@ tests = []
 if xpack_enable_empty_test
   tests += {
     'name': 'empty-test',
-    'dependency': tests_empty_dependency,
-    'compile_c_args': tests_empty_dependency_compile_c_args,
-    'compile_cpp_args': tests_empty_dependency_compile_cpp_args,
+    'dependency': test_empty_dependency,
+    'compile_c_args': test_empty_dependency_compile_c_args,
+    'compile_cpp_args': test_empty_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_minimal_test
   tests += {
     'name': 'minimal-test',
-    'dependency': tests_minimal_dependency,
-    'compile_c_args': tests_minimal_dependency_compile_c_args,
-    'compile_cpp_args': tests_minimal_dependency_compile_cpp_args,
+    'dependency': test_minimal_dependency,
+    'compile_c_args': test_minimal_dependency_compile_c_args,
+    'compile_cpp_args': test_minimal_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_suite_test
   tests += {
     'name': 'suite-test',
-    'dependency': tests_suite_dependency,
-    'compile_c_args': tests_suite_dependency_compile_c_args,
-    'compile_cpp_args': tests_suite_dependency_compile_cpp_args,
+    'dependency': test_suite_dependency,
+    'compile_c_args': test_suite_dependency_compile_c_args,
+    'compile_cpp_args': test_suite_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_sample_test
   tests += {
     'name': 'sample-test',
-    'dependency': tests_sample_dependency,
-    'compile_c_args': tests_sample_dependency_compile_c_args,
-    'compile_cpp_args': tests_sample_dependency_compile_cpp_args,
+    'dependency': test_sample_dependency,
+    'compile_c_args': test_sample_dependency_compile_c_args,
+    'compile_cpp_args': test_sample_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_unit_static_asserts_test
   tests += {
     'name': 'unit-static-asserts-test',
-    'dependency': tests_unit_static_asserts_dependency,
-    'compile_c_args': tests_unit_static_asserts_dependency_compile_c_args,
-    'compile_cpp_args': tests_unit_static_asserts_dependency_compile_cpp_args,
+    'dependency': test_unit_static_asserts_dependency,
+    'compile_c_args': test_unit_static_asserts_dependency_compile_c_args,
+    'compile_cpp_args': test_unit_static_asserts_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_unit_checks_test
   tests += {
     'name': 'unit-checks-test',
-    'dependency': tests_unit_checks_dependency,
-    'compile_c_args': tests_unit_checks_dependency_compile_c_args,
-    'compile_cpp_args': tests_unit_checks_dependency_compile_cpp_args,
+    'dependency': test_unit_checks_dependency,
+    'compile_c_args': test_unit_checks_dependency_compile_c_args,
+    'compile_cpp_args': test_unit_checks_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_unit_combinations_test
   tests += {
     'name': 'unit-combinations-test',
-    'dependency': tests_unit_combinations_dependency,
-    'compile_c_args': tests_unit_combinations_dependency_compile_c_args,
-    'compile_cpp_args': tests_unit_combinations_dependency_compile_cpp_args,
+    'dependency': test_unit_combinations_dependency,
+    'compile_c_args': test_unit_combinations_dependency_compile_c_args,
+    'compile_cpp_args': test_unit_combinations_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_unit_exceptions_test
   tests += {
     'name': 'unit-exceptions-test',
-    'dependency': tests_unit_exceptions_dependency,
-    'compile_c_args': tests_unit_exceptions_dependency_compile_c_args,
-    'compile_cpp_args': tests_unit_exceptions_dependency_compile_cpp_args,
+    'dependency': test_unit_exceptions_dependency,
+    'compile_c_args': test_unit_exceptions_dependency_compile_c_args,
+    'compile_cpp_args': test_unit_exceptions_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_unit_miscellaneous_test
   tests += {
     'name': 'unit-miscellaneous-test',
-    'dependency': tests_unit_miscellaneous_dependency,
-    'compile_c_args': tests_unit_miscellaneous_dependency_compile_c_args,
-    'compile_cpp_args': tests_unit_miscellaneous_dependency_compile_cpp_args,
+    'dependency': test_unit_miscellaneous_dependency,
+    'compile_c_args': test_unit_miscellaneous_dependency_compile_c_args,
+    'compile_cpp_args': test_unit_miscellaneous_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_unit_deprecated_test
   tests += {
     'name': 'unit-deprecated-test',
-    'dependency': tests_unit_deprecated_dependency,
-    'compile_c_args': tests_unit_deprecated_dependency_compile_c_args,
-    'compile_cpp_args': tests_unit_deprecated_dependency_compile_cpp_args,
+    'dependency': test_unit_deprecated_dependency,
+    'compile_c_args': test_unit_deprecated_dependency_compile_c_args,
+    'compile_cpp_args': test_unit_deprecated_dependency_compile_cpp_args,
   }
 endif
 

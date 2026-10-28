@@ -19,7 +19,7 @@
 #
 # This creates an interface library that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC tests-minimal)`
+# `target_link_libraries(your-target PUBLIC test-minimal)`
 
 # -----------------------------------------------------------------------------
 
@@ -31,16 +31,16 @@ message (VERBOSE "Processing 'tests/sources/minimal/'...")
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
-add_library (tests-minimal-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-minimal-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (tests-minimal-interface INTERFACE "src/main.cpp")
+target_sources (test-minimal-interface INTERFACE "src/main.cpp")
 
 target_link_libraries (
-  tests-minimal-interface
+  test-minimal-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
-xpack_display_target_lists (tests-minimal-interface)
+xpack_display_target_lists (test-minimal-interface)
 
 # -----------------------------------------------------------------------------
 # Alias.
@@ -54,7 +54,7 @@ xpack_display_target_lists (tests-minimal-interface)
 # read-only; properties must be set on the underlying target, not on the alias
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::minimal ALIAS tests-minimal-interface)
-message (VERBOSE "> tests::minimal -> tests-minimal-interface")
+add_library (test::minimal ALIAS test-minimal-interface)
+message (VERBOSE "> test::minimal -> test-minimal-interface")
 
 # -----------------------------------------------------------------------------

@@ -19,7 +19,7 @@
 #
 # This creates an interface library that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC tests-sample)`
+# `target_link_libraries(your-target PUBLIC test-sample)`
 
 # -----------------------------------------------------------------------------
 
@@ -31,16 +31,16 @@ message (VERBOSE "Processing 'tests/sources/sample/'...")
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
-add_library (tests-sample-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (tests-sample-interface INTERFACE "src/main.cpp")
+target_sources (test-sample-interface INTERFACE "src/main.cpp")
 
 target_link_libraries (
-  tests-sample-interface
+  test-sample-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
-xpack_display_target_lists (tests-sample-interface)
+xpack_display_target_lists (test-sample-interface)
 
 # -----------------------------------------------------------------------------
 # Alias.
@@ -54,7 +54,7 @@ xpack_display_target_lists (tests-sample-interface)
 # read-only; properties must be set on the underlying target, not on the alias
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::sample ALIAS tests-sample-interface)
-message (VERBOSE "> tests::sample -> tests-sample-interface")
+add_library (test::sample ALIAS test-sample-interface)
+message (VERBOSE "> test::sample -> test-sample-interface")
 
 # -----------------------------------------------------------------------------

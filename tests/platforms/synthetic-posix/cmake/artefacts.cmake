@@ -72,7 +72,7 @@ endfunction ()
 
 if (XPACK_ENABLE_EMPTY_TEST)
   add_native_test_executable (empty-test)
-  target_link_native_test_libraries (empty-test tests::empty)
+  target_link_native_test_libraries (empty-test test::empty)
 
   xpack_display_target_lists (empty-test)
   message (VERBOSE "A> empty-test")
@@ -207,7 +207,7 @@ endif ()
 
 if (XPACK_ENABLE_MINIMAL_TEST)
   add_native_test_executable (minimal-test)
-  target_link_native_test_libraries (minimal-test tests::minimal)
+  target_link_native_test_libraries (minimal-test test::minimal)
 
   # Only for this test, always define the trace macros, to check if the tracing
   # support compiles  correctly.
@@ -353,7 +353,7 @@ endif ()
 
 if (XPACK_ENABLE_SUITE_TEST)
   add_native_test_executable (suite-test)
-  target_link_native_test_libraries (suite-test tests::suite)
+  target_link_native_test_libraries (suite-test test::suite)
 
   xpack_display_target_lists (suite-test)
   message (VERBOSE "A> suite-test")
@@ -488,7 +488,7 @@ endif ()
 
 if (XPACK_ENABLE_SAMPLE_TEST)
   add_native_test_executable (sample-test)
-  target_link_native_test_libraries (sample-test tests::sample)
+  target_link_native_test_libraries (sample-test test::sample)
 
   xpack_display_target_lists (sample-test)
   message (VERBOSE "A> sample-test")
@@ -632,7 +632,7 @@ endif ()
 if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
   add_native_test_executable (unit-static-asserts-test)
   target_link_native_test_libraries (
-    unit-static-asserts-test tests::unit-static-asserts
+    unit-static-asserts-test test::unit-static-asserts
   )
 
   xpack_display_target_lists (unit-static-asserts-test)
@@ -648,7 +648,7 @@ endif ()
 
 if (XPACK_ENABLE_UNIT_CHECKS_TEST)
   add_native_test_executable (unit-checks-test)
-  target_link_native_test_libraries (unit-checks-test tests::unit-checks)
+  target_link_native_test_libraries (unit-checks-test test::unit-checks)
 
   if (XPACK_ENABLE_COVERAGE)
     add_compile_coverage_private_options (unit-checks-test)
@@ -903,7 +903,7 @@ endif ()
 if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
   add_native_test_executable (unit-combinations-test)
   target_link_native_test_libraries (
-    unit-combinations-test tests::unit-combinations
+    unit-combinations-test test::unit-combinations
   )
 
   xpack_display_target_lists (unit-combinations-test)
@@ -928,9 +928,7 @@ endif ()
 
 if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
   add_native_test_executable (unit-exceptions-test)
-  target_link_native_test_libraries (
-    unit-exceptions-test tests::unit-exceptions
-  )
+  target_link_native_test_libraries (unit-exceptions-test test::unit-exceptions)
 
   xpack_display_target_lists (unit-exceptions-test)
   message (VERBOSE "A> unit-exceptions-test")
@@ -955,7 +953,7 @@ endif ()
 if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
   add_native_test_executable (unit-miscellaneous-test)
   target_link_native_test_libraries (
-    unit-miscellaneous-test tests::unit-miscellaneous
+    unit-miscellaneous-test test::unit-miscellaneous
   )
 
   xpack_display_target_lists (unit-miscellaneous-test)
@@ -980,9 +978,7 @@ endif ()
 
 if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
   add_native_test_executable (unit-deprecated-test)
-  target_link_native_test_libraries (
-    unit-deprecated-test tests::unit-deprecated
-  )
+  target_link_native_test_libraries (unit-deprecated-test test::unit-deprecated)
 
   xpack_display_target_lists (unit-deprecated-test)
   message (VERBOSE "A> unit-deprecated-test")
