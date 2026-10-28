@@ -1935,6 +1935,15 @@ namespace micro_os_plus::micro_test_plus
    * before `main()` run first. Upon destruction, the suite removes
    * itself from the list.
    *
+   * The list is shared by all the runners, and each runner runs only the
+   * suites that refer to it, so several runners may each have their own
+   * static suites. A static suite constructed once its runner's `run()`
+   * has started, for example a local one, is rejected, since it would
+   * never run; the error is reported on `stderr`, and the exit code of
+   * the runner is not 0. The runner should outlive the static suites
+   * that refer to it; a suite left after its runner was destroyed is
+   * never run, but does not affect the other runners.
+   *
    * The body is stored in the callable inherited from `suite`, and is run
    * by `suite::run()`; the user callable receives a `suite&` reference,
    * as for the suites registered with `runner::add_suite()`, so the same

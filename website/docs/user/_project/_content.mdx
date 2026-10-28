@@ -1183,8 +1183,10 @@ Test suites are named sequences of test cases.
 #### Static test suites
 
 In the common use case, test suites are static instances of the `static_suite`
-class, which automatically register themselves with a static instance of the
-`runner`.
+class, which refer to a `runner` and are run by it. Each static suite inserts
+itself into a list of suites when it is constructed, before `main()`; the
+list does not depend on the runner object, so the suites may be constructed
+before the runner, in any order, and in any source file.
 
 The main program looks like this:
 
@@ -1193,7 +1195,7 @@ The main program looks like this:
 
 namespace mt = micro_os_plus::micro_test_plus;
 
-mt::runner sr;
+mt::runner sr; // static runner
 
 int
 main (int argc, char* argv[])
@@ -1235,9 +1237,11 @@ The implementation uses the C++ static constructors that are performed before th
 
 The names are compared byte by byte, as with `strcmp()`: the comparison is case-sensitive (`"Zeta"` runs before `"alpha"`), and numbers are not compared by value (`"Suite 10"` runs before `"Suite 2"`). To run the suites in a given order, start their names with zero-padded numbers (`"01 - Init"`, `"02 - Run"`), and use the same case.
 
+A `static_suite` may also be a local object, constructed in a function, but only before the `run()` of its runner has started; one constructed later would never run, so it is rejected, the error is reported on `stderr`, and the result is not 0. The runner should outlive the static suites that refer to it.
+
 #### Non-static test suites
 
-Static test suites are just a convenience, since they automatically register themselves with the runner, and not including the source file with the test suite in the build automatically disables the tests.
+Static test suites are just a convenience, since they are run automatically by their runner, and not including the source file with the test suite in the build automatically disables the tests.
 
 However they are not mandatory, test suites can be manually added to the
 runner.
@@ -1291,6 +1295,44 @@ returned, would never run; it is rejected, the error is reported on
 The suite name can be a string literal, a `const char*`, a
 `std::string`, or a `std::string_view`; it is copied, so the string
 need not outlive the call to `add_suite()`.
+
+#### Several runners
+
+A program may have several runners, each with its own static suites and
+suites added with `add_suite()`. All the suites are kept in a single list,
+shared by the runners, but each suite refers to its runner, and `run()`
+runs only the suites that refer to it; the suites of the other runners are
+skipped, so the runners do not interfere:
+
+```cpp
+mt::runner first_runner;
+mt::runner second_runner;
+
+static mt::static_suite a{ "A", first_runner, suite_a_function };
+static mt::static_suite b{ "B", second_runner, suite_b_function };
+
+int
+main (int argc, char* argv[])
+{
+  first_runner.initialise (argc, argv);
+  first_runner.add_suite ("C", suite_c_function);
+
+  second_runner.initialise (argc, argv);
+
+  int exit_code = first_runner.run ();   // Runs A and C.
+  exit_code += second_runner.run ();     // Runs B.
+
+  return exit_code;
+}
+```
+
+Each runner has its own session, with its own options, report, totals,
+and result. If the runners write to an output file, give each one a
+different file, since each session overwrites it.
+
+The list of suites is not protected by a lock; the runners must not run,
+and the suites must not be created or destroyed, concurrently from
+different threads.
 
 #### Example
 

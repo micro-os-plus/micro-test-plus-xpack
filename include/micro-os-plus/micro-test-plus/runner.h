@@ -145,6 +145,14 @@ namespace micro_os_plus::micro_test_plus
    * before `"Suite 2"`); zero-padded numeric prefixes (`"01 - Init"`) give
    * an explicit order.
    *
+   * Several runners may coexist, static or local, each with its own
+   * static suites and suites added with `add_suite()`. The list of suites
+   * is shared by all the runners; each suite refers to its runner, and
+   * `run()` runs only the suites that refer to this runner, skipping
+   * those of the other runners, so the runners do not interfere. The list
+   * is not protected by a lock: the runners must not run, and the suites
+   * must not be created or destroyed, concurrently from different threads.
+   *
    * The test runner provides member functions for initialising the test
    * environment (including the creation of the reporter selected by the
    * `runner_options` passed to `initialise()`), registering test suites,
