@@ -158,8 +158,8 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
 
   add_qemu_test (
     NAME "unit-checks-test-reporter-human"
-    COMMAND unit-checks-test one two --reporter=human --output-file
-            unit-checks-test.txt
+    COMMAND unit-checks-test one two --reporter=human
+            --output-file=unit-checks-test.txt
   )
   add_compare_files_test (
     NAME "unit-checks-test-reporter-human-compare"
@@ -184,8 +184,8 @@ if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
 
   add_qemu_test (
     NAME "unit-combinations-test"
-    COMMAND unit-combinations-test one two --output-file
-            unit-combinations-test.tap
+    COMMAND unit-combinations-test one two
+            --output-file=unit-combinations-test.tap
   )
   add_compare_files_test (
     NAME "unit-combinations-test-compare"

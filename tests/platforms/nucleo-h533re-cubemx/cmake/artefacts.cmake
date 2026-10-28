@@ -124,8 +124,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     empty-test
     one
     two
-    --output-file
-    empty-test.tap
+    --output-file=empty-test.tap
   )
 
   add_compare_files_test (
@@ -154,8 +153,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     minimal-test
     one
     two
-    --output-file
-    minimal-test.tap
+    --output-file=minimal-test.tap
   )
 
   add_compare_files_test (
@@ -184,8 +182,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     suite-test
     one
     two
-    --output-file
-    suite-test.tap
+    --output-file=suite-test.tap
   )
 
   add_compare_files_test (
@@ -214,8 +211,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     sample-test
     one
     two
-    --output-file
-    sample-test.tap
+    --output-file=sample-test.tap
   )
 
   add_compare_files_test (
@@ -261,8 +257,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
       unit-checks-test
       one
       two
-      --output-file
-      unit-checks-test.tap
+      --output-file=unit-checks-test.tap
     )
     add_compare_files_test (
       NAME "unit-checks-test-compare"
@@ -281,8 +276,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     two
     --reporter
     human
-    --output-file
-    unit-checks-test.txt
+    --output-file=unit-checks-test.txt
   )
   add_compare_files_test (
     NAME "unit-checks-test-reporter-human-compare"
@@ -314,8 +308,7 @@ if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
     two
     --reporter
     human
-    --output-file
-    unit-combinations-test.txt
+    --output-file=unit-combinations-test.txt
   )
   add_compare_files_test (
     NAME "unit-combinations-test-reporter-human-compare"
@@ -345,8 +338,7 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
     two
     --reporter
     human
-    --output-file
-    unit-exceptions-test.txt
+    --output-file=unit-exceptions-test.txt
   )
   add_compare_files_test (
     NAME "unit-exceptions-test-reporter-human-compare"
@@ -378,8 +370,7 @@ if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
     two
     --reporter
     human
-    --output-file
-    unit-miscellaneous-test.txt
+    --output-file=unit-miscellaneous-test.txt
   )
   add_compare_files_test (
     NAME "unit-miscellaneous-test-reporter-human-compare"
@@ -409,8 +400,7 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
     two
     --reporter
     human
-    --output-file
-    unit-deprecated-test.txt
+    --output-file=unit-deprecated-test.txt
   )
   add_compare_files_test (
     NAME "unit-deprecated-test-reporter-human-compare"

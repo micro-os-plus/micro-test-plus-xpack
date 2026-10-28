@@ -123,8 +123,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   message (VERBOSE "A> sample-test")
 
   add_qemu_test (
-    NAME "sample-test" COMMAND sample-test one two --output-file=
-                               sample-test-noexcept.tap
+    NAME "sample-test" COMMAND sample-test one two
+                               --output-file=sample-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "sample-test-compare"
@@ -161,8 +161,8 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
   message (VERBOSE "A> unit-checks-test")
 
   add_qemu_test (
-    NAME "unit-checks-test" COMMAND unit-checks-test one two --output-file=
-                                    unit-checks-test-noexcept.tap
+    NAME "unit-checks-test" COMMAND unit-checks-test one two
+                                    --output-file=unit-checks-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-checks-test-compare"
@@ -173,8 +173,8 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
 
   add_qemu_test (
     NAME "unit-checks-test-reporter-human"
-    COMMAND unit-checks-test one two --reporter=human --output-file
-            unit-checks-test-noexcept.txt
+    COMMAND unit-checks-test one two --reporter=human
+            --output-file=unit-checks-test-noexcept.txt
   )
   add_compare_files_test (
     NAME "unit-checks-test-reporter-human-compare"
@@ -199,8 +199,8 @@ if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
 
   add_qemu_test (
     NAME "unit-combinations-test"
-    COMMAND unit-combinations-test one two --output-file
-            unit-combinations-test-noexcept.tap
+    COMMAND unit-combinations-test one two
+            --output-file=unit-combinations-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-combinations-test-compare"
@@ -224,8 +224,8 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
 
   add_qemu_test (
     NAME "unit-exceptions-test"
-    COMMAND unit-exceptions-test one two --output-file
-            unit-exceptions-test-noexcept.tap
+    COMMAND unit-exceptions-test one two
+            --output-file=unit-exceptions-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-exceptions-test-compare"
@@ -251,8 +251,8 @@ if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
 
   add_qemu_test (
     NAME "unit-miscellaneous-test"
-    COMMAND unit-miscellaneous-test one two --output-file
-            unit-miscellaneous-test-noexcept.tap
+    COMMAND unit-miscellaneous-test one two
+            --output-file=unit-miscellaneous-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-miscellaneous-test-compare"
@@ -276,8 +276,8 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
 
   add_qemu_test (
     NAME "unit-deprecated-test"
-    COMMAND unit-deprecated-test one two --output-file
-            unit-deprecated-test-noexcept.tap
+    COMMAND unit-deprecated-test one two
+            --output-file=unit-deprecated-test-noexcept.tap
   )
   add_compare_files_test (
     NAME "unit-deprecated-test-compare"

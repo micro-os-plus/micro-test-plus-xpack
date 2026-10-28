@@ -81,8 +81,9 @@ if (XPACK_ENABLE_EMPTY_TEST)
   # TAP reporter
 
   # --verbose
-  add_test (NAME "empty-test-verbose" COMMAND empty-test one two --output-file=
-                                              empty-test-verbose.tap --verbose
+  add_test (NAME "empty-test-verbose"
+            COMMAND empty-test one two --output-file=empty-test-verbose.tap
+                    --verbose
   )
   message (VERBOSE "T> empty-test-verbose")
 
@@ -98,8 +99,8 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
 
   # default
-  add_test (NAME "empty-test" COMMAND empty-test one two --output-file=
-                                      empty-test.tap
+  add_test (NAME "empty-test" COMMAND empty-test one two
+                                      --output-file=empty-test.tap
   )
   message (VERBOSE "T> empty-test")
   add_compare_files_test (
@@ -131,8 +132,9 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
 
   # --silent
-  add_test (NAME "empty-test-silent" COMMAND empty-test one two --output-file=
-                                             empty-test-silent.tap --silent
+  add_test (NAME "empty-test-silent"
+            COMMAND empty-test one two --output-file=empty-test-silent.tap
+                    --silent
   )
   message (VERBOSE "T> empty-test-silent")
   add_compare_files_test (
@@ -243,8 +245,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   )
 
   # default
-  add_test (NAME "minimal-test" COMMAND minimal-test one two --output-file=
-                                        minimal-test.tap
+  add_test (NAME "minimal-test" COMMAND minimal-test one two
+                                        --output-file=minimal-test.tap
   )
   message (VERBOSE "T> minimal-test")
   add_compare_files_test (
@@ -381,8 +383,8 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # default
-  add_test (NAME "suite-test" COMMAND suite-test one two --output-file=
-                                      suite-test.tap
+  add_test (NAME "suite-test" COMMAND suite-test one two
+                                      --output-file=suite-test.tap
   )
   message (VERBOSE "T> suite-test")
   add_compare_files_test (
@@ -397,8 +399,9 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # --quiet
-  add_test (NAME "suite-test-quiet" COMMAND suite-test one two --output-file=
-                                            suite-test-quiet.tap --quiet
+  add_test (NAME "suite-test-quiet"
+            COMMAND suite-test one two --output-file=suite-test-quiet.tap
+                    --quiet
   )
   message (VERBOSE "T> suite-test-quiet")
   add_compare_files_test (
@@ -413,8 +416,9 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # --silent
-  add_test (NAME "suite-test-silent" COMMAND suite-test one two --output-file=
-                                             suite-test-silent.tap --silent
+  add_test (NAME "suite-test-silent"
+            COMMAND suite-test one two --output-file=suite-test-silent.tap
+                    --silent
   )
   message (VERBOSE "T> suite-test-silent")
   add_compare_files_test (
@@ -517,8 +521,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 
   # default
-  add_test (NAME "sample-test" COMMAND sample-test one two --output-file=
-                                       sample-test.tap
+  add_test (NAME "sample-test" COMMAND sample-test one two
+                                       --output-file=sample-test.tap
   )
   message (VERBOSE "T> sample-test")
   add_compare_files_test (
@@ -533,8 +537,9 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 
   # --quiet
-  add_test (NAME "sample-test-quiet" COMMAND sample-test one two --output-file=
-                                             sample-test-quiet.tap --quiet
+  add_test (NAME "sample-test-quiet"
+            COMMAND sample-test one two --output-file=sample-test-quiet.tap
+                    --quiet
   )
   # The console must show one line per suite, counted by the plan, which was
   # previously 1..0 (the exit code is checked by "sample-test").
