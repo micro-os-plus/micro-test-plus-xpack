@@ -1,8 +1,8 @@
 Running: unit-miscellaneous-test one two --reporter human --output-file unit-miscellaneous-test.txt
-Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Top suite
-✓ Top suite - passed (0 checks in 0 test cases), time: 0.042 ms
+✓ Top suite - passed (0 checks in 0 test cases)
 • Miscellaneous suite
     • Reporter stream operators
         ✓ const char*
@@ -42,7 +42,13 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ negative integral double
         ✓ double with exponent
         ✓ infinite double
-    ✓ Formatter number suffixes - passed (15 checks)
+        ✓ infinite float
+        ✓ negative infinite float
+        ✓ float NaN
+        ✓ double NaN
+        ✓ infinite long double
+        ✓ long double NaN
+    ✓ Formatter number suffixes - passed (21 checks)
     • Formatter characters
         ✓ letter
         ✓ space
@@ -82,34 +88,33 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Formatter standard types - passed (13 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x10e915c20
+        ✓ pointer 0x804a298
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
         ✓ wide characters u'x' U'x' L'x'
-        ✗ failed {3} FAILED (miscellaneous.cpp:743)
+        ✗ failed {3} FAILED (miscellaneous.cpp:851)
     ✗ Message types - FAILED (6 checks passed, 1 failed)
     • Lazy messages
         ✓ passed
         ✓ true
         ✓ not called after a success
-        ✗ failed and appended FAILED (miscellaneous.cpp:771)
+        ✗ failed and appended FAILED (miscellaneous.cpp:879)
         ✓ called after a failure
-        ✗ 42 FAILED (miscellaneous.cpp:782)
-        ✗ from a function FAILED (miscellaneous.cpp:787)
+        ✗ 42 FAILED (miscellaneous.cpp:890)
+        ✗ from a function FAILED (miscellaneous.cpp:895)
     ✗ Lazy messages - FAILED (4 checks passed, 3 failed)
     • TAP escapes # TODO in names \ messages
         ✓ message with # hash and \ backslash
-        ✓ a # b == a # b
+        ✓ "a # b" == "a # b"
         ✓ first line
 second line
         ✗ failed # TODO not a directive
-next line FAILED (miscellaneous.cpp:809)
+next line FAILED (miscellaneous.cpp:917)
     ✗ TAP escapes # TODO in names \ messages - FAILED (3 checks passed, 1 failed)
     • TAP condition values are quoted
-        ✗ FAILED (miscellaneous.cpp:820, key: "value" # not a comment == a\b)
-        ✗ FAILED (miscellaneous.cpp:824, line
-break	tab == x)
+        ✗ FAILED (miscellaneous.cpp:928, "key: \"value\" # not a comment" == "a\\b")
+        ✗ FAILED (miscellaneous.cpp:932, "line\nbreak\ttab" == "x")
     ✗ TAP condition values are quoted - FAILED (0 checks passed, 2 failed)
     • Runner options
         ✓ default verbosity before initialise()
@@ -120,17 +125,28 @@ break	tab == x)
         ✓ total_suites_count() counts the top suite
         ✓ default name without arguments
     ✓ Runner options - passed (7 checks)
+    • Optional top suite
+        ✓ without a top suite, only the added suites run
+        ✓ a session without suites fails
+        ✓ a top suite without test cases passes
+        ✓ a second add_top_suite() returns the same suite
+        ✓ the session passes
+        ✓ a top suite added after run() is rejected
+        ✓ without initialise(), the default options are used
+    ✓ Optional top suite - passed (7 checks)
     • Runner option errors
         ✓ valid options still applied
         ✓ unknown reporter
         ✓ unknown option
         ✓ missing argument
+        ✓ output file not opened
+    ✓ Runner option errors - passed (5 checks)
+    • Runner colour options
         ✓ valid colour modes
         ✓ --color alone keeps the next argument
         ✓ unknown colour mode
-        ✓ output file not opened
-    ✓ Runner option errors - passed (8 checks)
-    • Runner filter
+    ✓ Runner colour options - passed (3 checks)
+    • Runner filter of the suites
         ✓ suite filter passed
         ✓ matching suites run
         ✓ all their test cases run
@@ -140,13 +156,17 @@ break	tab == x)
         ✓ test cases matching the second pattern run
         ✓ nested test cases matching the third pattern run
         ✓ skipped suites and test cases counted
+    ✓ Runner filter of the suites - passed (9 checks)
+    • Runner filter of the top suite
         ✓ top suite filtered
         ✓ top suite test case matching the second pattern runs
         ✓ partial name does not match
+    ✓ Runner filter of the top suite - passed (3 checks)
+    • Runner filter patterns
         ✓ patterns copied by initialise()
         ✓ nothing skipped without patterns
         ✓ missing pattern
-    ✓ Runner filter - passed (15 checks)
+    ✓ Runner filter patterns - passed (3 checks)
     • List test cases
         ✓ listed, exit code 0
         ✓ no test case body run
@@ -238,7 +258,7 @@ break	tab == x)
         ✓ value 1 == 1
     ✓ Failed each value (1) - passed (1 check)
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1460, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1707, 2 == 1)
     ✗ Failed each value (2) - FAILED (0 checks passed, 1 failed)
     • Callable arguments
         ✓ reference parameter refers to a copy
@@ -287,7 +307,75 @@ break	tab == x)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (178 checks passed, 8 failed, in 47 test cases), time: 15.218 ms
+✗ Miscellaneous suite - FAILED (191 checks passed, 8 failed, in 51 test cases)
+• Runner options suite
+    • Default options
+        ✓ the TAP reporter
+        ✓ the normal verbosity
+        ✓ no output file
+        ✓ automatic colours
+        ✓ no command line, no filter, no listing
+        ✓ no errors
+        ✓ an empty command line is accepted
+    ✓ Default options - passed (7 checks)
+    • Command line without options
+        ✓ the command line is kept
+        ✓ the arguments without `--` are ignored
+        ✓ the defaults are kept
+    ✓ Command line without options - passed (3 checks)
+    • Reporter, verbosity, and listing
+        ✓ --reporter=human
+        ✓ the last --reporter wins
+        ✓ --silent
+        ✓ --verbose
+        ✓ the last verbosity wins
+        ✓ --list-tests
+        ✓ --list
+    ✓ Reporter, verbosity, and listing - passed (7 checks)
+    • Output file and filters
+        ✓ --output-file=<path>
+        ✓ --output-file <path>
+        ✓ an empty path disables the output file
+        ✓ all the --filter patterns are kept, in order
+        ✓ a separate value is taken whatever its content
+    ✓ Output file and filters - passed (5 checks)
+    • Colours
+        ✓ --color
+        ✓ --color=always
+        ✓ --color=yes
+        ✓ --color=force
+        ✓ --color=never
+        ✓ --color=no
+        ✓ --color=none
+        ✓ --color=auto
+        ✓ --color=tty
+        ✓ --color=if-tty
+        ✓ --use-colour=yes
+        ✓ --use-colour=no
+        ✓ --use-colour=never
+        ✓ --use-colour <mode>
+        ✓ --color does not take a separate value
+    ✓ Colours - passed (15 checks)
+    • Option errors
+        ✓ a missing option argument
+        ✓ the valid options are still applied
+        ✓ an unknown reporter
+        ✓ an unknown colour mode
+        ✓ an unknown option
+    ✓ Option errors - passed (5 checks)
+    • Owned strings
+        ✓ the command line is copied
+        ✓ the output file path is copied
+        ✓ the filter patterns are copied
+    ✓ Owned strings - passed (3 checks)
+    • Copies and moves
+        ✓ the copy has all the members
+        ✓ the copy is independent of the original
+        ✓ the copy assignment copies all the members
+        ✓ the move constructor moves all the members
+        ✓ the move assignment moves all the members
+    ✓ Copies and moves - passed (5 checks)
+✓ Runner options suite - passed (50 checks in 8 test cases)
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -319,7 +407,7 @@ break	tab == x)
         ✓ zero elapsed -> 0 µs
         ✓ no stop -> 0 µs
     ✓ stopwatch::elapsed() - passed (7 checks)
-✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.511 ms
+✓ Stopwatch suite - passed (20 checks in 5 test cases)
 • Utility suite
     • utility::extract_file_name()
         ✓ Unix path returns filename
@@ -353,5 +441,5 @@ break	tab == x)
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
-✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.313 ms
-✗ Total: 218 checks passed, 13 failed, in 55 test cases, 4 test suites, time: 16.599 ms
+✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
+✗ Total: 282 checks passed, 13 failed, in 67 test cases, 5 test suites
