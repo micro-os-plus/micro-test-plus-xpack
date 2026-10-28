@@ -824,8 +824,6 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
     // unquoted.
     ts.test ("Message types", [] (auto& t)
       {
-        using namespace literals;
-
         t.expect (true) << "numbers " << 1 << ' ' << 2u << ' ' << 3l << ' '
                         << 1.5f << ' ' << 2.0 << ' ' << true;
         local_counts.passed_checks++;

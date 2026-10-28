@@ -16,8 +16,11 @@
         "src/deprecated.cpp",
         "src/support.cpp"
       ],
+      "publicDefines": [
+        "MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED"
+      ],
       "dependencies": [
-        "micro-os-plus.micro-test-plus.static-library"
+        "micro-os-plus.micro-test-plus"
       ]
     }
   ]

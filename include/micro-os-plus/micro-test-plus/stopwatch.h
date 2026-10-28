@@ -253,6 +253,7 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] std::chrono::microseconds
       elapsed (void) const noexcept;
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
        * @brief Deprecated check of the start reading.
        *
@@ -387,6 +388,7 @@ namespace micro_os_plus::micro_test_plus
        */
       [[deprecated ("use stop() (since 5.1.0)")]] void
       timestamp_end (const timespec& ts) noexcept;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     private:
       /**

@@ -50,7 +50,8 @@
 
 // ============================================================================
 
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED) \
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
 // ----------------------------------------------------------------------------
 
@@ -106,6 +107,7 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
+#endif /* defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED) \
+          && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED) */
 
 // ----------------------------------------------------------------------------

@@ -79,7 +79,7 @@ _local_compile_cpp_args += micro_os_plus_diag_trace_dependency_compile_cpp_args
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 micro_os_plus_micro_test_plus_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),
-  compile_args: _local_compile_args,
+  compile_args: _local_compile_args + _local_compile_definitions,
   sources: files(_local_sources),
   dependencies: _local_dependencies,
   link_args: _local_link_args,

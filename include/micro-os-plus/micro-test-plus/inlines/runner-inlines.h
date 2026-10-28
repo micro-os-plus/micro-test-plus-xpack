@@ -100,6 +100,7 @@ namespace micro_os_plus::micro_test_plus
     return options_.has_errors () || reporter_->has_output_file_error ();
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Forwards to `verbosity_level()`.
@@ -110,6 +111,7 @@ namespace micro_os_plus::micro_test_plus
   {
     return verbosity_level ();
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -121,6 +123,7 @@ namespace micro_os_plus::micro_test_plus
     return totals_;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Returns a const reference to the `stopwatch` member.
@@ -154,6 +157,7 @@ namespace micro_os_plus::micro_test_plus
   {
     return *reporter_;
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   // --------------------------------------------------------------------------
 
@@ -184,6 +188,7 @@ namespace micro_os_plus::micro_test_plus
     register_suite (std::move (child_suite));
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Forwards the name, the callable, and the arguments to `add_suite()`.
@@ -197,6 +202,7 @@ namespace micro_os_plus::micro_test_plus
     add_suite (name, std::forward<Callable_T> (callable),
                std::forward<Args_T> (arguments)...);
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

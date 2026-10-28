@@ -35,6 +35,11 @@ add_library (tests-unit-static-asserts-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_sources (tests-unit-static-asserts-interface INTERFACE "src/main.cpp")
 
+target_compile_definitions (
+  tests-unit-static-asserts-interface
+  INTERFACE "MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED"
+)
+
 target_link_libraries (
   tests-unit-static-asserts-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"

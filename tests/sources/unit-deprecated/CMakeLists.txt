@@ -41,9 +41,13 @@ target_sources (
                                             "src/support.cpp"
 )
 
-target_link_libraries (
+target_compile_definitions (
   tests-unit-deprecated-interface
-  INTERFACE "micro-os-plus::micro-test-plus-static-library"
+  INTERFACE "MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED"
+)
+
+target_link_libraries (
+  tests-unit-deprecated-interface INTERFACE "micro-os-plus::micro-test-plus"
 )
 
 xpack_display_target_lists (tests-unit-deprecated-interface)

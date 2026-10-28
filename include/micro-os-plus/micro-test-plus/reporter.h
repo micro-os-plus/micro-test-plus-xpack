@@ -468,6 +468,7 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] bool
       has_output_file_error (void) const noexcept;
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
        * @brief Deprecated access to the verbosity level.
        *
@@ -484,6 +485,7 @@ namespace micro_os_plus::micro_test_plus
       [[deprecated ("use runner::verbosity_level() (since 5.1.0)"),
         nodiscard]] auto
       verbosity (void) const noexcept -> micro_test_plus::verbosity;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
       // ----------------------------------------------------------------------
 

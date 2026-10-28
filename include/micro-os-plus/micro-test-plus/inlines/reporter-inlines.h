@@ -104,6 +104,7 @@ namespace micro_os_plus::micro_test_plus::detail
     return *this;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Returns the level stored in `verbosity_`, set by the constructor.
@@ -114,6 +115,7 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     return verbosity_;
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus::detail

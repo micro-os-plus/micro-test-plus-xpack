@@ -60,6 +60,7 @@ namespace micro_os_plus::micro_test_plus
     passed_checks_ += count;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Forwards to `increment_passed_checks()`.
@@ -70,6 +71,7 @@ namespace micro_os_plus::micro_test_plus
   {
     increment_passed_checks (count);
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -91,6 +93,7 @@ namespace micro_os_plus::micro_test_plus
     executed_test_cases_ += count;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Forwards to `increment_executed_test_cases()`.
@@ -101,6 +104,7 @@ namespace micro_os_plus::micro_test_plus
   {
     increment_executed_test_cases (count);
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -132,6 +136,7 @@ namespace micro_os_plus::micro_test_plus
     return passed_checks_;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Forwards to `passed_checks()`.
@@ -142,6 +147,7 @@ namespace micro_os_plus::micro_test_plus
   {
     return passed_checks ();
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -173,6 +179,7 @@ namespace micro_os_plus::micro_test_plus
     return executed_test_cases_;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Forwards to `executed_test_cases()`.
@@ -183,6 +190,7 @@ namespace micro_os_plus::micro_test_plus
   {
     return executed_test_cases ();
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -217,6 +225,7 @@ namespace micro_os_plus::micro_test_plus
     return failed_checks_ == 0 && failed_test_cases_ == 0;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Forwards to `passed()`.
@@ -227,6 +236,7 @@ namespace micro_os_plus::micro_test_plus
   {
     return passed ();
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

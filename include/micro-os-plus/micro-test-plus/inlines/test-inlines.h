@@ -448,6 +448,7 @@ namespace micro_os_plus::micro_test_plus
                                  test_reporter ().writes_passed_checks () };
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Deprecated; the check is the same as that of `expect()`, for the
@@ -498,6 +499,7 @@ namespace micro_os_plus::micro_test_plus
   {
     return require (expr, sl);
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -816,6 +818,7 @@ namespace micro_os_plus::micro_test_plus
     detail::test_each_value (*this, name, values, callable);
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Returns a const reference to the `stopwatch` member.
@@ -837,6 +840,7 @@ namespace micro_os_plus::micro_test_plus
   {
     return stopwatch_;
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   // ==========================================================================
 
@@ -866,6 +870,7 @@ namespace micro_os_plus::micro_test_plus
     link_or_reject ();
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Delegates to `suite` with a lambda that holds a copy of the callable
@@ -896,6 +901,7 @@ namespace micro_os_plus::micro_test_plus
 
     link_or_reject ();
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

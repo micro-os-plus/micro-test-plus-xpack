@@ -48,6 +48,12 @@
           "description": "Display trace messages in constructors and destructors in the µTest++ Testing Framework when TRACE is enabled",
           "requires": "isEnabled('trace')"
           // "defaultDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED"
+        },
+        {
+          "id": "deprecated",
+          "display": "Enable deprecated features in µTest++",
+          "description": "Enable deprecated features in the µTest++ Testing Framework"
+          // "defaultDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED"
         }
       ],
       "cdlArtefacts": [

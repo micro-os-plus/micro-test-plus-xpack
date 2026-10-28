@@ -85,6 +85,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * The constructor initialises a new `runner` instance together with
@@ -99,6 +100,7 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, top_suite_.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -132,6 +134,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Initialises the runner with the command-line options, as
@@ -156,6 +159,7 @@ namespace micro_os_plus::micro_test_plus
 
     return add_top_suite (top_suite_name != nullptr ? top_suite_name : "");
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -435,7 +439,8 @@ namespace micro_os_plus::micro_test_plus
    * written when it differs from the previous one.
    */
   void
-  runner::list_test_case (const class suite& suite, const test_case& test_case)
+  runner::list_test_case (const micro_test_plus::suite& suite,
+                          const test_case& test_case)
   {
     if (&suite != listed_suite_)
       {
@@ -471,7 +476,7 @@ namespace micro_os_plus::micro_test_plus
    * exit code is updated, for the later calls of `run()`.
    */
   void
-  runner::register_suite (std::unique_ptr<class suite> suite)
+  runner::register_suite (std::unique_ptr<micro_test_plus::suite> suite)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite->name ());
@@ -513,7 +518,8 @@ namespace micro_os_plus::micro_test_plus
    * memory is allocated.
    */
   void
-  runner::link_static_suite (runner& test_runner, class suite& suite) noexcept
+  runner::link_static_suite (runner& test_runner,
+                             micro_test_plus::suite& suite) noexcept
   {
     for (const runner* started = started_first_; started != nullptr;
          started = started->started_next_)
@@ -565,8 +571,8 @@ namespace micro_os_plus::micro_test_plus
   {
     // The top suite, if added, has index 1.
     size_t own_index = has_top_suite_ ? 1 : 0;
-    for (class suite* suite_ptr = suite::first_; suite_ptr != nullptr;
-         suite_ptr = suite_ptr->next_)
+    for (micro_test_plus::suite* suite_ptr = suite::first_;
+         suite_ptr != nullptr; suite_ptr = suite_ptr->next_)
       {
         // Skip the suites run by other runners.
         if (&suite_ptr->test_runner () != this)
@@ -729,6 +735,7 @@ namespace micro_os_plus::micro_test_plus
     return exit_code_;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Kept for compatibility; it calls `run()`, so the first call runs the
@@ -740,6 +747,7 @@ namespace micro_os_plus::micro_test_plus
   {
     return run ();
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -834,6 +842,7 @@ namespace micro_os_plus::micro_test_plus
     return children_suites_.size ();
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Returns `added_suites_count()` plus one, for the top suite, as
@@ -845,6 +854,7 @@ namespace micro_os_plus::micro_test_plus
   {
     return added_suites_count () + 1;
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details
@@ -856,8 +866,8 @@ namespace micro_os_plus::micro_test_plus
   runner::static_suites_count (void) const noexcept
   {
     size_t count = 0;
-    for (const class suite* suite_ptr = suite::first_; suite_ptr != nullptr;
-         suite_ptr = suite_ptr->next_)
+    for (const micro_test_plus::suite* suite_ptr = suite::first_;
+         suite_ptr != nullptr; suite_ptr = suite_ptr->next_)
       {
         if (&suite_ptr->test_runner () == this)
           {

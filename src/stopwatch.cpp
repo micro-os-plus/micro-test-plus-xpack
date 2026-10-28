@@ -127,6 +127,7 @@ namespace micro_os_plus::micro_test_plus::detail
     return std::chrono::duration_cast<std::chrono::microseconds> (delta);
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Reads the system clock into `start_time_` only if `is_recorded()`
@@ -158,6 +159,7 @@ namespace micro_os_plus::micro_test_plus::detail
         read_clock (stop_time_);
       }
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus::detail

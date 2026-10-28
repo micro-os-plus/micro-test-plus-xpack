@@ -9,6 +9,9 @@
       "display": "Static Asserts Unit Test",
       "description": "The source code for a static asserts test of the whole test framework",
       "publicIncludeFolders": [],
+      "publicDefines": [
+        "MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED"
+      ],
       "sourceFiles": [
         "src/main.cpp"
       ],

@@ -17,7 +17,7 @@
 #
 # `subdir('sources/unit-checks')`
 #
-# This creates a dependency that can be linked to a target with:
+# This creates dependencies that can be linked to a target with:
 #
 # `dependencies: [tests_unit_checks_dependency],`
 
@@ -26,7 +26,6 @@
 
 # -----------------------------------------------------------------------------
 
-# The source code for a unit test to exercise the framework checks.
 message('Processing \'tests/sources/unit-checks/\'...')
 
 # -----------------------------------------------------------------------------
@@ -35,6 +34,10 @@ message('Processing \'tests/sources/unit-checks/\'...')
 # to retrieve their properties after creation. The `_local_*` variables
 # therefore serve a dual purpose: populating the dependency object and
 # iterating over its components for the `message()` calls at the end.
+
+# -----------------------------------------------------------------------------
+
+# The source code for a unit test to exercise the framework checks.
 
 _local_compile_args = [] # Common C/C++ args.
 _local_compile_c_args = [] # C only args.
@@ -62,6 +65,7 @@ _local_sources += [
 _local_dependencies += [
   micro_os_plus_micro_test_plus_dependency,
 ]
+
 # The dependencies' C/C++ args are lists; add them without brackets,
 # to concatenate their elements rather than nest the lists.
 _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
@@ -70,7 +74,7 @@ _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 tests_unit_checks_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),
-  compile_args: _local_compile_args,
+  compile_args: _local_compile_args + _local_compile_definitions,
   sources: files(_local_sources),
   dependencies: _local_dependencies,
   link_args: _local_link_args,
@@ -85,7 +89,7 @@ tests_unit_checks_dependency_compile_cpp_args = _local_compile_cpp_args
 foreach name : _local_include_directories
   message('+ -I ' + name)
 endforeach
-foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
+foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
   message('+ ' + name)
 endforeach
 message('> tests_unit_checks_dependency')

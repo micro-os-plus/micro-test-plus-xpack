@@ -53,6 +53,8 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 
@@ -724,6 +726,8 @@ namespace micro_os_plus::micro_test_plus::detail
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
+
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
 // ----------------------------------------------------------------------------
 
