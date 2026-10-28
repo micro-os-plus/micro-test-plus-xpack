@@ -20,10 +20,10 @@ export const FeatureList: FeatureItem[] = [
     description: (
       <>
         Checks are plain C++20 expressions, such
-        as <code>t.expect (mt::eq (a, 42))</code>. A failed check reports
-        the file, the line, and the actual values of both
-        operands, <b>without C macros</b>. Test suites are static objects
-        that register themselves, so a new suite needs no changes to
+        as <code>t.expect (mt::eq (a, 42))</code>, written <b>without C
+        macros</b>. A failed check reports the file, the line, and the
+        actual values of the operands. Test suites are static objects that
+        register themselves, so adding a new suite requires no changes to
         existing code.
       </>
     ),
@@ -34,11 +34,11 @@ export const FeatureList: FeatureItem[] = [
     description: (
       <>
         The framework does not use <code>iostream</code>, so
-        its <b>small footprint</b> fits microcontrollers with limited
-        memory. Results go to <code>stdout</code>, so <b>semihosting</b> or
+        its <b>small footprint</b> suits microcontrollers with limited
+        memory. Results are written to <code>stdout</code>, so <b>semihosting</b> or
         a serial port is sufficient. The same tests run on Cortex-M,
-        Cortex-A, and RISC-V devices, on QEMU, and on native POSIX and Windows 
-        hosts.
+        Cortex-A, and RISC-V devices, on QEMU, and on native POSIX, macOS,
+        and Windows hosts.
       </>
     ),
   },
@@ -48,10 +48,10 @@ export const FeatureList: FeatureItem[] = [
     description: (
       <>
         Results use the <b>TAP 14</b> format by default, so standard TAP
-        tools and CI pipelines can process them. Use <code>--reporter=human</code> for
-        console-friendly output, and <code>--output-file</code> to also
-        save the results to a file. The overall test result is returned as the
-        process exit code.
+        tools and CI pipelines can process them. Use
+        <code>--reporter=human</code> for readable console output, and
+        <code>--output-file</code> to also save the results to a file. The
+        overall outcome is returned as the process exit code.
       </>
     ),
   },
