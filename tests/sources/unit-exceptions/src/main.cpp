@@ -42,7 +42,8 @@ local_counts_t local_counts;
 int
 main (int argc, char* argv[])
 {
-  tr.initialise (argc, argv, "Top suite");
+  tr.initialise (argc, argv);
+  tr.add_top_suite ("Top suite");
 
   if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())
     {

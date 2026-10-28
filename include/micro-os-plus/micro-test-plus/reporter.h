@@ -553,7 +553,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Called by `suite::run()` before the suite body, for the suites
        * registered with `runner::add_suite()` and for the static suites, and
-       * by `runner::initialise()` for the top suite.
+       * by `runner::add_top_suite()` for the top suite.
        *
        * @param suite Reference to the test suite.
        * @par Returns

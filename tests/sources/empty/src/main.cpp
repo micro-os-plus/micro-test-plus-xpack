@@ -62,23 +62,27 @@ local_test_assert (const char* failedexpr, const char* file, int line)
 
 // ----------------------------------------------------------------------------
 
+// All the runners below get the same arguments; if they define an output
+// file, each session overwrites it, and only the last one is kept.
 int
 main (int argc, char* argv[])
 {
   {
     mt::runner tr;
-    tr.initialise (argc, argv, "Empty suite");
+    tr.initialise (argc, argv);
 
     int exit_code = tr.run ();
 
-    test_assert (exit_code == 0);
+    // error: no test suites.
+    test_assert (exit_code == 1);
   }
 
   // ---------------------------------------------------------------------------
 
   {
     mt::runner tr;
-    auto& ts = tr.initialise (argc, argv, "Suite with subtest");
+    tr.initialise (argc, argv);
+    auto& ts = tr.add_top_suite ("Suite with subtest");
 
     int xc = 0;
     ts.test ("Empty subtest", [&xc] (auto& t)
@@ -100,7 +104,8 @@ main (int argc, char* argv[])
 
   {
     mt::runner tr;
-    auto& ts = tr.initialise (argc, argv, "Suite with second subtest");
+    tr.initialise (argc, argv);
+    auto& ts = tr.add_top_suite ("Suite with second subtest");
 
     int xc = 0;
     ts.test ("First subtest", [&xc] (auto& t)
@@ -132,7 +137,8 @@ main (int argc, char* argv[])
         test_assert (y == 1);
       });
 
-    // The suites are delayed until run().
+    // The test cases of the top suite already ran, when `test()` was
+    // called; run() only completes the session.
     int exit_code = tr.run ();
     test_assert (exit_code == 0);
 
@@ -142,9 +148,11 @@ main (int argc, char* argv[])
 
   // ---------------------------------------------------------------------------
 
+  // Only the output of this test is compared with the expected output.
   {
     mt::runner tr;
-    auto& ts = tr.initialise (argc, argv, "Top suite with nested subtests");
+    tr.initialise (argc, argv);
+    auto& ts = tr.add_top_suite ("Top suite with nested subtests");
     // printf ("in test suite '%s'\n", ts.name ());
 
     int xc = 0;

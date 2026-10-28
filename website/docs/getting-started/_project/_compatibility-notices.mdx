@@ -259,7 +259,7 @@ node again and reported it twice, `abort()`, and the read-only
 `own_index()`, `children_subtests_count()`, and
 `current_subtest_index()`, used only for the TAP output. The
 `name (const char*)` setter of the top suite, which could not be
-reached, since `initialise()` returns a `suite&`, was removed. Call
+reached, since the top suite is returned as a `suite&`, was removed. Call
 `runner::abort()` to abort the test execution, and `totals()` to read
 the counters of a node; the name of a node is still returned by
 `name()`.
@@ -297,11 +297,36 @@ reason; it now returns the internal `detail::reporter`, on which the
 `runner.verbosity_level ()`.
 
 The runner can now be initialised without a command line, with a new
-`initialise (options, name)` overload taking a `runner_options`
-structure (the reporter, the verbosity, and the output file), so the
-applications without command-line arguments no longer need to build an
-`argv` array; `initialise (argc, argv, name)` parses the command line
-into the same structure.
+`initialise (options)` overload taking a `runner_options` object (the
+reporter, the verbosity, the output file, and the other options), so
+the applications without command-line arguments no longer need to build
+an `argv` array; the `runner_options` constructor taking the `main()`
+arguments parses the command line into the same object, which can be
+adjusted before being passed to `initialise()`.
+
+The initialisation of the runner no longer creates the top suite.
+`initialise (argc, argv, name)`, which parsed the command line and
+returned the top suite, is deprecated, in favour of
+`initialise (argc, argv)`, which returns nothing, followed by the new
+`add_top_suite (name)`, which adds the top suite and returns it.
+Replace `auto& ts = tr.initialise (argc, argv, "Main");` with
+`tr.initialise (argc, argv);` and
+`auto& ts = tr.add_top_suite ("Main");`.
+
+The name argument of the deprecated form no longer has a default
+value, so the call with two arguments now selects the new
+`initialise (argc, argv)`. This breaks the code that used the top suite
+returned by the two-argument form, usually together with the
+constructor taking the name, deprecated since 4.1.0:
+`auto& ts = tr.initialise (argc, argv);` no longer compiles, and must be
+replaced by `tr.initialise (argc, argv);` and
+`auto& ts = tr.add_top_suite ();`, which uses the name given to the
+constructor. The code that ignored the returned suite still compiles,
+but no longer adds the top suite, which could not have test cases. Both calls are now optional:
+without `initialise()`, the default options are used, and without
+`add_top_suite()`, there is no top suite, and `run()` runs only the
+suites added with `add_suite()` and the static suites. A session
+without any suite is now an error, and `run()` returns 1.
 
 The option errors (an unknown `--reporter` name, a missing option
 argument, or an output file that cannot be opened) no longer terminate
@@ -414,8 +439,9 @@ Tools that read the previous names must be updated.
 
 The runner no longer derives from the internal `detail::test_node`
 class, since it is not a node of the test tree: `runner::name()`, which
-always returned `"runner"`, was removed; the name shown in the reports
-is that of the top suite, returned by `initialise()`. The session
+always returned `"runner"`, was removed; the name shown at the
+beginning of the reports is that of the top suite, returned by
+`add_top_suite()`. The session
 totals are still available, via `runner::totals()`.
 
 The callable of a `static_suite` now receives a `suite&` reference, as
@@ -549,8 +575,8 @@ compiler warns where they are used: the runner constructor with the top
 suite name (deprecated in v4.1), `exit_code()`, `assume()`, and
 `static_runner`. They still work as before, but a build with `-Werror`
 now fails. Replace them with, respectively, the constructor without
-arguments followed by `initialise (argc, argv, name)`, `run()`,
-`require()`, and `runner`.
+arguments followed by `add_top_suite (name)`, `run()`, `require()`, and
+`runner`.
 
 The `mut()` helper, not used by the framework, was removed; code that
 used it must define its own equivalent: `mt::mut (x)` is

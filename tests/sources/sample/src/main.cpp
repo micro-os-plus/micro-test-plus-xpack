@@ -98,8 +98,11 @@ static mt::runner tr;
 int
 main (int argc, char* argv[])
 {
-  // There is a default test suite automatically defined in main().
-  auto& ts = tr.initialise (argc, argv, "Sample");
+  tr.initialise (argc, argv);
+
+  // The top suite, whose test cases are defined in main() and run
+  // immediately.
+  auto& ts = tr.add_top_suite ("Sample");
 
   // --------------------------------------------------------------------------
 

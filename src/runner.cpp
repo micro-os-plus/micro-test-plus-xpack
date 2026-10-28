@@ -91,7 +91,7 @@ namespace micro_os_plus::micro_test_plus
    * its top suite (`top_suite_`). If tracing is enabled, it outputs the
    * function signature for diagnostic purposes.
    */
-  // Deprecated since 4.1.0; use runner() and initialise().
+  // Deprecated since 4.1.0; use runner() and add_top_suite().
   runner::runner (const char* top_suite_name)
       : top_suite_{ top_suite_name, *this }
   {
@@ -134,20 +134,44 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Parses the command-line options with the `runner_options`
-   * constructor, and passes them to the overload taking the options,
-   * which creates the selected reporter (`--reporter=human` or
-   * `--reporter=tap`, the default) and starts the session. An option error is reported on `stderr`, the
-   * option is ignored, and `run()` will return 2.
+   * Initialises the runner with the command-line options, as
+   * `initialise (argc, argv)` does, and adds the top suite.
    *
-   * The options are not parsed if the runner is already initialised; the
-   * error is then reported by the other overload.
+   * If the runner is already initialised, or the test execution was
+   * aborted, the error is reported by `initialise()`, and the top suite
+   * is returned without being added.
+   */
+  // Deprecated since 5.1.0; use initialise (argc, argv) and
+  // add_top_suite().
+  suite&
+  runner::initialise (int argc, char* argv[], const char* top_suite_name)
+  {
+    bool is_first = !aborted_ && session_state_ == session_state::created;
+
+    initialise (argc, argv);
+    if (!is_first)
+      {
+        return top_suite_;
+      }
+
+    return add_top_suite (top_suite_name != nullptr ? top_suite_name : "");
+  }
+
+  /**
+   * @details
+   * Parses the command-line options with the `runner_options`
+   * constructor, and initialises the runner with them.
+   *
+   * The options are not parsed if the runner is already initialised, or
+   * the test execution was aborted, since an option error would change
+   * the exit code of the session; the error is reported by the
+   * overload taking the options.
    *
    * If tracing is enabled, the command-line arguments are
    * also logged for diagnostic purposes.
    */
-  suite&
-  runner::initialise (int argc, char* argv[], const char* top_suite_name)
+  void
+  runner::initialise (int argc, char* argv[])
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -169,30 +193,22 @@ namespace micro_os_plus::micro_test_plus
 #endif // !defined(MICRO_OS_PLUS_STARTUP_ENABLED)
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    if (session_state_ != session_state::created)
+    if (aborted_ || session_state_ != session_state::created)
       {
-        // Do not parse the options, since an option error would change
-        // the exit code of the running session; the other overload
-        // reports the error.
-        return initialise (runner_options{}, top_suite_name);
+        initialise (runner_options{});
+        return;
       }
 
-    return initialise (runner_options{ argc, argv }, top_suite_name);
+    initialise (runner_options{ argc, argv });
   }
 
   /**
    * @details
    * Moves the options into the runner, which keeps them for the whole
-   * session, records whether errors were found while parsing them,
-   * creates the reporter selected by them, starts the session timing,
-   * and emits the initial reporter notifications for the session and the
-   * top suite. While the test cases are listed, only the header of the
-   * list is written; the session and the top suite are not reported.
-   *
-   * If the top suite name is not provided, here or by the deprecated
-   * constructor, it is derived from the file name of
-   * `options.arguments[0]` (usually `argv[0]`), without the extension,
-   * or defaults to "default suite".
+   * session, creates the reporter selected by them, starts the session
+   * timing, and emits the initial reporter notification for the session.
+   * While the test cases are listed, only the header of the list is
+   * written; the session is not reported.
    *
    * If the output file cannot be opened, the reporter writes only to the
    * console, and `run()` will return 2.
@@ -202,11 +218,100 @@ namespace micro_os_plus::micro_test_plus
    * finished, so that no test is run, and `run()` returns 2.
    *
    * The runner is initialised only once; a later call, or a call after
-   * the test execution was aborted, reports an error on `stderr` and
-   * returns the top suite, without other effects.
+   * the test execution was aborted, reports an error on `stderr`, without
+   * other effects.
+   */
+  void
+  runner::initialise (runner_options options)
+  {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (aborted_)
+      {
+        fprintf (stderr, "error: test execution aborted\n");
+        return;
+      }
+
+    if (session_state_ != session_state::created)
+      {
+        fprintf (stderr, "error: test runner already initialised\n");
+        return;
+      }
+
+    // Move the vectors, since their copy assignment uses std::copy, which
+    // triggers -Waggregate-return in the standard library headers on some
+    // targets.
+    options_ = std::move (options);
+
+    // With an unknown reporter, do not proceed: no output file is created,
+    // nothing is reported, no test is run, and `run()` returns 2. A silent
+    // reporter without output file is still created, since the suites and
+    // the test cases refer to it.
+    if (options_.has_invalid_reporter ())
+      {
+        runner_options silent_options{};
+        silent_options.verbosity_level = verbosity::silent;
+        options_.verbosity_level = verbosity::silent;
+        reporter_ = std::make_unique<detail::reporter_tap> (silent_options);
+        exit_code_ = 2;
+        session_state_ = session_state::finished;
+        return;
+      }
+
+    // Initialise and configure the reporter; it keeps its own copy of the
+    // verbosity, taken from the same options.
+    if (options_.selected_reporter == reporter_kind::human)
+      {
+        reporter_ = std::make_unique<detail::reporter_human> (options_);
+      }
+    else
+      {
+        reporter_ = std::make_unique<detail::reporter_tap> (options_);
+      }
+
+    // ------------------------------------------------------------------------
+
+    // When listing, the session is not reported; only the header of the
+    // list is written, and the test cases are listed as they are created.
+    if (options_.list_tests)
+      {
+        reporter_->write_line (
+            options_.verbosity_level != verbosity::silent, "%s\n",
+            options_.filter_patterns.empty () ? "All available test cases:"
+                                              : "Matching test cases:");
+        session_state_ = session_state::initialised;
+        return;
+      }
+
+    stopwatch_.start ();
+    reporter_->begin_session (*this);
+
+    session_state_ = session_state::initialised;
+  }
+
+  /**
+   * @details
+   * Initialises the runner with the default options, if not yet done,
+   * names the top suite, marks it as part of the session, starts its
+   * timing, and emits the reporter notification for its beginning;
+   * while the test cases are listed, the top suite is not reported.
+   *
+   * If the name is empty, the name given to the deprecated constructor
+   * is kept; if there is none, the name is derived from the file name of
+   * `arguments[0]` (usually `argv[0]`), without the extension, or
+   * defaults to "default suite".
+   *
+   * After the test execution was aborted, the error is reported on
+   * `stderr`. With an unknown reporter, the session has already
+   * finished, and the top suite is returned without other effects. A
+   * second call, or a call once `run()` has started, is reported on
+   * `stderr`; the latter also sets `has_rejected_suites_`, so that the
+   * exit code is not 0.
    */
   suite&
-  runner::initialise (runner_options options, const char* top_suite_name)
+  runner::add_top_suite (std::string_view top_suite_name)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -218,18 +323,23 @@ namespace micro_os_plus::micro_test_plus
         return top_suite_;
       }
 
-    if (session_state_ != session_state::created)
+    if (session_state_ == session_state::created)
       {
-        fprintf (stderr, "error: test runner already initialised\n");
+        initialise (runner_options{});
+      }
+
+    if (options_.has_invalid_reporter ())
+      {
         return top_suite_;
       }
 
-    // Move the vectors, since their copy assignment uses std::copy, which
-    // triggers -Waggregate-return in the standard library headers on some
-    // targets.
-    options_ = std::move (options);
+    if (has_top_suite_)
+      {
+        fprintf (stderr, "error: top suite already added\n");
+        return top_suite_;
+      }
 
-    if (top_suite_name != nullptr && strlen (top_suite_name) > 0)
+    if (!top_suite_name.empty ())
       {
         // If provided by this call, use it, possibly override the
         // deprecated constructor.
@@ -261,53 +371,22 @@ namespace micro_os_plus::micro_test_plus
         top_suite_.name_ = top_suite_name_.c_str ();
       }
 
-    // With an unknown reporter, do not proceed: no output file is created,
-    // nothing is reported, no test is run, and `run()` returns 2. A silent
-    // reporter without output file is still created, since the suites and
-    // the test cases refer to it.
-    if (options_.has_invalid_reporter ())
+    // Named first, so that the rejection names it.
+    if (session_state_ != session_state::initialised)
       {
-        runner_options silent_options{};
-        silent_options.verbosity_level = verbosity::silent;
-        options_.verbosity_level = verbosity::silent;
-        reporter_ = std::make_unique<detail::reporter_tap> (silent_options);
-        exit_code_ = 2;
-        session_state_ = session_state::finished;
+        reject_suite (top_suite_.name ());
         return top_suite_;
       }
 
-    // Initialise and configure the reporter; it keeps its own copy of the
-    // verbosity, taken from the same options.
-    if (options_.selected_reporter == reporter_kind::human)
+    has_top_suite_ = true;
+
+    // When listing, the top suite is not reported; its test cases are
+    // listed as they are created.
+    if (!options_.list_tests)
       {
-        reporter_ = std::make_unique<detail::reporter_human> (options_);
+        top_suite_.stopwatch_.start ();
+        reporter_->begin_suite (top_suite_);
       }
-    else
-      {
-        reporter_ = std::make_unique<detail::reporter_tap> (options_);
-      }
-
-    // ------------------------------------------------------------------------
-
-    // When listing, the session is not reported; only the header of the
-    // list is written, and the test cases are listed as they are created.
-    if (options_.list_tests)
-      {
-        reporter_->write_line (
-            options_.verbosity_level != verbosity::silent, "%s\n",
-            options_.filter_patterns.empty () ? "All available test cases:"
-                                              : "Matching test cases:");
-        session_state_ = session_state::initialised;
-        return top_suite_;
-      }
-
-    stopwatch_.start ();
-    reporter_->begin_session (*this);
-
-    top_suite_.stopwatch_.start ();
-    reporter_->begin_suite (top_suite_);
-
-    session_state_ = session_state::initialised;
 
     return top_suite_;
   }
@@ -468,14 +547,14 @@ namespace micro_os_plus::micro_test_plus
    * comparing the numbers by value; the suites with the same name run in
    * the order of their insertion into the list.
    *
-   * Each suite is assigned a 1-based index, following the top suite, in
-   * the order of execution. If the first filter pattern selects it, it is
-   * executed via `suite::run()`, and its totals are accumulated into the
-   * runner totals; otherwise, it is reported as skipped and counted in
-   * `skipped_suites_count_`, keeping its index, so that the TAP plan
-   * remains complete; while the test cases are listed, the skipped suites
-   * are not reported. The executed test cases counter is not incremented;
-   * suites are not counted as test cases.
+   * Each suite is assigned a 1-based index, following the top suite, if
+   * added, in the order of execution. If the first filter pattern selects
+   * it, it is executed via `suite::run()`, and its totals are accumulated
+   * into the runner totals; otherwise, it is reported as skipped and
+   * counted in `skipped_suites_count_`, keeping its index, so that the TAP
+   * plan remains complete; while the test cases are listed, the skipped
+   * suites are not reported. The executed test cases counter is not
+   * incremented; suites are not counted as test cases.
    *
    * The next suite is read after the current one has run, since the
    * suites of the local runners created by the current suite are
@@ -484,8 +563,8 @@ namespace micro_os_plus::micro_test_plus
   void
   runner::run_suites (void)
   {
-    // The top suite has index 1.
-    size_t own_index = 1;
+    // The top suite, if added, has index 1.
+    size_t own_index = has_top_suite_ ? 1 : 0;
     for (class suite* suite_ptr = suite::first_; suite_ptr != nullptr;
          suite_ptr = suite_ptr->next_)
       {
@@ -518,14 +597,17 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Finalises the top suite by stopping its stopwatch and notifying
-   * the reporter, then accumulates its totals into the runner totals.
-   * Subsequently invokes `run_suites()` to execute, sorted by name, and
-   * accumulate the registered and the static child suites. Finally,
-   * stops the session stopwatch, notifies the reporter, and returns `0`
-   * if all checks passed or `1` otherwise, or if a suite was rejected by
-   * `register_suite()`; if `initialise()` reported an option error, `2`
-   * is returned, regardless of the checks.
+   * Initialises the runner with the default options, if not yet done.
+   * Finalises the top suite, if added, by stopping its stopwatch and
+   * notifying the reporter, then accumulates its totals into the runner
+   * totals. Subsequently invokes `run_suites()` to execute, sorted by
+   * name, and accumulate the registered and the static child suites.
+   * Finally, stops the session stopwatch, notifies the reporter, and
+   * returns `0` if all checks passed or `1` otherwise, or if a suite was
+   * rejected by `register_suite()` or `add_top_suite()`, or if there was
+   * no suite at all; if `initialise()` reported an option error, or if
+   * the filters selected no test case, `2` is returned, regardless of
+   * the checks.
    *
    * While the suites run, the session is in the `running` state, so that
    * the suites added by them are rejected.
@@ -536,10 +618,9 @@ namespace micro_os_plus::micro_test_plus
    * `2` after an option error.
    *
    * The result is stored, and the later calls return it without running
-   * anything again. If the runner was not initialised, if it is
-   * already running (a call from a suite or a test case), or if the test
-   * execution was aborted, an error is reported on `stderr` and `1` is
-   * returned.
+   * anything again. If the runner is already running (a call from a
+   * suite or a test case), or if the test execution was aborted, an error
+   * is reported on `stderr` and `1` is returned.
    */
   int
   runner::run (void)
@@ -566,10 +647,9 @@ namespace micro_os_plus::micro_test_plus
         return 1;
       }
 
-    if (session_state_ != session_state::initialised)
+    if (session_state_ == session_state::created)
       {
-        fprintf (stderr, "error: test runner not initialised\n");
-        return 1;
+        initialise (runner_options{});
       }
 
     session_state_ = session_state::running;
@@ -595,14 +675,28 @@ namespace micro_os_plus::micro_test_plus
         return exit_code_;
       }
 
-    top_suite_.stopwatch_.stop ();
-    reporter_->end_suite (top_suite_);
-    totals_ += top_suite_.totals ();
+    if (has_top_suite_)
+      {
+        top_suite_.stopwatch_.stop ();
+        reporter_->end_suite (top_suite_);
+        totals_ += top_suite_.totals ();
+      }
 
     run_suites ();
 
+    // A session without suites runs nothing; report it.
+    const bool has_no_suites = (total_suites_count () == 0);
+    if (has_no_suites)
+      {
+        fprintf (stderr, "error: no test suites\n");
+        reporter_->write_line (options_.verbosity_level != verbosity::silent,
+                               "%serror: no test suites\n",
+                               reporter_->comment_prefix ());
+      }
+
     // A filter that selects no test case disables the tests; report it.
-    const bool selected_nothing = !options_.filter_patterns.empty ()
+    const bool selected_nothing = !has_no_suites
+                                  && !options_.filter_patterns.empty ()
                                   && totals_.executed_test_cases () == 0;
     if (selected_nothing)
       {
@@ -621,7 +715,10 @@ namespace micro_os_plus::micro_test_plus
       }
     else
       {
-        exit_code_ = (totals_.passed () && !has_rejected_suites_) ? 0 : 1;
+        exit_code_
+            = (totals_.passed () && !has_rejected_suites_ && !has_no_suites)
+                  ? 0
+                  : 1;
       }
     session_state_ = session_state::finished;
 
@@ -772,13 +869,14 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns one, for the top suite, plus the count of the suites added
-   * with `add_suite()`, plus the count of the static suites.
+   * Returns one, if the top suite was added, plus the count of the
+   * suites added with `add_suite()`, plus the count of the static suites.
    */
   size_t
   runner::total_suites_count (void) const noexcept
   {
-    return 1 + added_suites_count () + static_suites_count ();
+    return (has_top_suite_ ? 1u : 0u) + added_suites_count ()
+           + static_suites_count ();
   }
 
   /**

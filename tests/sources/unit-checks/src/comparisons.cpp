@@ -102,7 +102,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Failed integer comparisons", [] (auto& t)
       {
@@ -137,7 +137,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Float comparisons", [] (auto& t)
       {
@@ -181,7 +181,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Failed float comparisons", [] (auto& t)
       {
@@ -207,7 +207,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     // The approximate comparator accepts the integers, the floating-point
     // values, and the wrappers, of mixed types and signedness.
@@ -251,7 +251,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Failed approximate comparisons", [] (auto& t)
       {
@@ -288,7 +288,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     // As all pointers, 'char*' are compared by address.
     // To compare by content, use string_value{}.
@@ -328,7 +328,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Failed string comparisons", [] (auto& t)
       {
@@ -366,7 +366,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     // The C strings (`char` arrays, string literals, and `char` pointers)
     // are compared by content, also with `std::string`; a null pointer is
@@ -409,7 +409,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     // The failed C string comparisons display the strings.
     ts.test ("Failed C string comparisons", [] (auto& t)
@@ -433,7 +433,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Pointer comparisons", [] (auto& t)
       {
@@ -490,7 +490,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Failed pointer comparisons", [] (auto& t)
       {
@@ -547,7 +547,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Null pointer comparisons", [] (auto& t)
       {
@@ -574,7 +574,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Failed null pointer comparisons", [] (auto& t)
       {
@@ -601,7 +601,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     ts.test ("Logical operations", [] (auto& t)
       {
@@ -671,7 +671,7 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // --------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     // The logical functions accept two or more operands; a chain of the
     // same operation is reported as a single group.

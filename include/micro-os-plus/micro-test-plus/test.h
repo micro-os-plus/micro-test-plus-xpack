@@ -628,7 +628,7 @@ namespace micro_os_plus::micro_test_plus
        * The position of this object within its parent, displayed by the
        * TAP reporter in the `ok`/`not ok` lines. Set directly by the
        * runner, which numbers the suites when it runs them, and by the
-       * top suite, which is always the first one.
+       * top suite, which, when added, is always the first one.
        */
       size_t own_index_;
 
@@ -1632,7 +1632,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Returns the internal stopwatch of the suite, started before its
      * body runs and stopped after it; for the top suite, it is started by
-     * `runner::initialise()` and stopped by `runner::run()`. In v5.0.1,
+     * `runner::add_top_suite()` and stopped by `runner::run()`. In v5.0.1,
      * the returned class was `detail::timestamps`, now a deprecated
      * alias; only its read-only members are kept. The timings are
      * internal; the elapsed times are shown by the reporters.
@@ -1794,15 +1794,15 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @brief The implicit top-level suite owned by every `runner` instance.
+   * @brief The optional top suite owned by every `runner` instance.
    *
    * @details
-   * `top_suite` is a thin specialisation of `suite` used as the implicit
-   * root context for the `runner`. It is created by the `runner` constructor
-   * and is available to user code via `runner::initialise()`, which returns
-   * a reference to it. Unlike regular `suite` objects, `top_suite` is not
-   * stored in the runner's child-suite vector; instead it is a direct member
-   * of `runner`.
+   * `top_suite` is a thin specialisation of `suite`, whose body is the
+   * code of `main()`. It is created by the `runner` constructor, but is
+   * part of the session only after `runner::add_top_suite()`, which
+   * returns a reference to it. Unlike the other suites, it is not in the
+   * list of suites, sorted by name; it is a direct member of `runner`,
+   * which runs it separately.
    *
    * The constructor is private; only the runner constructs its top
    * suite.

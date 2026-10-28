@@ -98,9 +98,12 @@ wrapper templates, and the concepts `has_value`, `container_like`, and
 - Test hierarchy (`test.h`, `src/test.cpp`), all deriving from the
   internal `detail::runnable_base` base (`suite` and `test_case` each store
   their body in a `std::function` taking a reference to their own class):
-  - `top_suite` — the implicit root suite owned by each `runner`,
-    returned by `runner::initialise()`; users do not construct it
-    directly.
+  - `top_suite` — the optional suite whose body is the code of `main()`,
+    owned by each `runner` and added to the session by
+    `runner::add_top_suite()`, which returns it; users do not construct
+    it directly. Both `runner::initialise()` and `add_top_suite()` are
+    optional; without the latter, only the suites added with
+    `add_suite()` and the static suites run.
   - `suite` — a named group of test cases; `static_suite` is the
     statically-allocated variant.
   - `test_case` — a named sequence of checks inside a suite; test cases

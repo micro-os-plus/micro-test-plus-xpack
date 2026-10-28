@@ -95,7 +95,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
     ok 6 - Formatter standard types # { passed, 13 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
-        ok 2 - pointer 0x400879c4
+        ok 2 - pointer 0x4008a4c4
         ok 3 - container {1, 2}
         ok 4 - standard types (1, a) nullopt 1
         ok 5 - custom type { 1, 2 } on
@@ -104,7 +104,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 776
+            lineNumber: 823
           ...
         1..7
     not ok 7 - Message types # { FAILED, 6 checks passed, 1 failed }
@@ -116,20 +116,20 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 804
+            lineNumber: 851
           ...
         ok 5 - called after a failure
         not ok 6 - 42
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 815
+            lineNumber: 862
           ...
         not ok 7 - from a function
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 820
+            lineNumber: 867
           ...
         1..7
     not ok 8 - Lazy messages # { FAILED, 4 checks passed, 3 failed }
@@ -141,7 +141,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           ---
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 842
+            lineNumber: 889
           ...
         1..4
     not ok 9 - TAP escapes \# TODO in names \\ messages # { FAILED, 3 checks passed, 1 failed }
@@ -151,14 +151,14 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           condition: "\"key: \\\"value\\\" # not a comment\" == \"a\\\\b\""
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 853
+            lineNumber: 900
           ...
         not ok 2
           ---
           condition: "\"line\\nbreak\\ttab\" == \"x\""
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 857
+            lineNumber: 904
           ...
         1..2
     not ok 10 - TAP condition values are quoted # { FAILED, 0 checks passed, 2 failed }
@@ -172,18 +172,31 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 7 - default name without arguments
         1..7
     ok 11 - Runner options # { passed, 7 checks }
+    # Subtest: Optional top suite
+        ok 1 - without a top suite, only the added suites run
+        ok 2 - a session without suites fails
+        ok 3 - a top suite without test cases passes
+        ok 4 - a second add_top_suite() returns the same suite
+        ok 5 - the session passes
+        ok 6 - a top suite added after run() is rejected
+        ok 7 - without initialise(), the default options are used
+        1..7
+    ok 12 - Optional top suite # { passed, 7 checks }
     # Subtest: Runner option errors
         ok 1 - valid options still applied
         ok 2 - unknown reporter
         ok 3 - unknown option
         ok 4 - missing argument
-        ok 5 - valid colour modes
-        ok 6 - --color alone keeps the next argument
-        ok 7 - unknown colour mode
-        ok 8 - output file not opened
-        1..8
-    ok 12 - Runner option errors # { passed, 8 checks }
-    # Subtest: Runner filter
+        ok 5 - output file not opened
+        1..5
+    ok 13 - Runner option errors # { passed, 5 checks }
+    # Subtest: Runner colour options
+        ok 1 - valid colour modes
+        ok 2 - --color alone keeps the next argument
+        ok 3 - unknown colour mode
+        1..3
+    ok 14 - Runner colour options # { passed, 3 checks }
+    # Subtest: Runner filter of the suites
         ok 1 - suite filter passed
         ok 2 - matching suites run
         ok 3 - all their test cases run
@@ -193,14 +206,20 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 7 - test cases matching the second pattern run
         ok 8 - nested test cases matching the third pattern run
         ok 9 - skipped suites and test cases counted
-        ok 10 - top suite filtered
-        ok 11 - top suite test case matching the second pattern runs
-        ok 12 - partial name does not match
-        ok 13 - patterns copied by initialise()
-        ok 14 - nothing skipped without patterns
-        ok 15 - missing pattern
-        1..15
-    ok 13 - Runner filter # { passed, 15 checks }
+        1..9
+    ok 15 - Runner filter of the suites # { passed, 9 checks }
+    # Subtest: Runner filter of the top suite
+        ok 1 - top suite filtered
+        ok 2 - top suite test case matching the second pattern runs
+        ok 3 - partial name does not match
+        1..3
+    ok 16 - Runner filter of the top suite # { passed, 3 checks }
+    # Subtest: Runner filter patterns
+        ok 1 - patterns copied by initialise()
+        ok 2 - nothing skipped without patterns
+        ok 3 - missing pattern
+        1..3
+    ok 17 - Runner filter patterns # { passed, 3 checks }
     # Subtest: List test cases
         ok 1 - listed, exit code 0
         ok 2 - no test case body run
@@ -210,7 +229,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 6 - matching test cases listed
         ok 7 - still no test case body run
         1..7
-    ok 14 - List test cases # { passed, 7 checks }
+    ok 18 - List test cases # { passed, 7 checks }
     # Subtest: Late suites
         ok 1 - suite added during run() rejected
         ok 2 - rejected suite neither run nor counted
@@ -220,7 +239,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 6 - static suites constructed during run() rejected
         ok 7 - static suite constructed after run() rejected
         1..7
-    ok 15 - Late suites # { passed, 7 checks }
+    ok 19 - Late suites # { passed, 7 checks }
     # Subtest: Test case started on the suite
         ok 1 - check before the test case
         # Subtest: test case started on the suite
@@ -229,79 +248,79 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 2 - test case started on the suite # { passed, 1 check }
         ok 3 - run nested
         1..3
-    ok 16 - Test case started on the suite # { passed, 2 checks }
+    ok 20 - Test case started on the suite # { passed, 2 checks }
     # Subtest: Each vector value (1)
         ok 1 - value 1 > 0
         1..1
-    ok 17 - Each vector value (1) # { passed, 1 check }
+    ok 21 - Each vector value (1) # { passed, 1 check }
     # Subtest: Each vector value (2)
         ok 1 - value 2 > 0
         1..1
-    ok 18 - Each vector value (2) # { passed, 1 check }
+    ok 22 - Each vector value (2) # { passed, 1 check }
     # Subtest: Each vector value (3)
         ok 1 - value 3 > 0
         1..1
-    ok 19 - Each vector value (3) # { passed, 1 check }
+    ok 23 - Each vector value (3) # { passed, 1 check }
     # Subtest: Each list value (alpha)
         ok 1 - string not null
         1..1
-    ok 20 - Each list value (alpha) # { passed, 1 check }
+    ok 24 - Each list value (alpha) # { passed, 1 check }
     # Subtest: Each list value (beta)
         ok 1 - string not null
         1..1
-    ok 21 - Each list value (beta) # { passed, 1 check }
+    ok 25 - Each list value (beta) # { passed, 1 check }
     # Subtest: Each array value (2)
         ok 1 - prime > 1
         1..1
-    ok 22 - Each array value (2) # { passed, 1 check }
+    ok 26 - Each array value (2) # { passed, 1 check }
     # Subtest: Each array value (3)
         ok 1 - prime > 1
         1..1
-    ok 23 - Each array value (3) # { passed, 1 check }
+    ok 27 - Each array value (3) # { passed, 1 check }
     # Subtest: Each tuple value (42)
         ok 1 - equal to itself
         1..1
-    ok 24 - Each tuple value (42) # { passed, 1 check }
+    ok 28 - Each tuple value (42) # { passed, 1 check }
     # Subtest: Each tuple value (1.5)
         ok 1 - equal to itself
         1..1
-    ok 25 - Each tuple value (1.5) # { passed, 1 check }
+    ok 29 - Each tuple value (1.5) # { passed, 1 check }
     # Subtest: Each tuple value (true)
         ok 1 - equal to itself
         1..1
-    ok 26 - Each tuple value (true) # { passed, 1 check }
+    ok 30 - Each tuple value (true) # { passed, 1 check }
     # Subtest: Each tuple value (x)
         ok 1 - equal to itself
         1..1
-    ok 27 - Each tuple value (x) # { passed, 1 check }
+    ok 31 - Each tuple value (x) # { passed, 1 check }
     # Subtest: Each unnamed value (#1)
         ok 1 - named by position
         1..1
-    ok 28 - Each unnamed value (\#1) # { passed, 1 check }
+    ok 32 - Each unnamed value (\#1) # { passed, 1 check }
     # Subtest: Each unnamed value (#2)
         ok 1 - named by position
         1..1
-    ok 29 - Each unnamed value (\#2) # { passed, 1 check }
+    ok 33 - Each unnamed value (\#2) # { passed, 1 check }
     # Subtest: Each move-only value (#1)
         ok 1 - owned pointer
         1..1
-    ok 30 - Each move-only value (\#1) # { passed, 1 check }
+    ok 34 - Each move-only value (\#1) # { passed, 1 check }
     # Subtest: Each move-only value (#2)
         ok 1 - owned pointer
         1..1
-    ok 31 - Each move-only value (\#2) # { passed, 1 check }
+    ok 35 - Each move-only value (\#2) # { passed, 1 check }
     # Subtest: Each uncopied callable (1)
         ok 1 - callable not copied
         1..1
-    ok 32 - Each uncopied callable (1) # { passed, 1 check }
+    ok 36 - Each uncopied callable (1) # { passed, 1 check }
     # Subtest: Each uncopied callable (2)
         ok 1 - callable not copied
         1..1
-    ok 33 - Each uncopied callable (2) # { passed, 1 check }
+    ok 37 - Each uncopied callable (2) # { passed, 1 check }
     # Subtest: Each uncopied callable (3)
         ok 1 - callable not copied
         1..1
-    ok 34 - Each uncopied callable (3) # { passed, 1 check }
+    ok 38 - Each uncopied callable (3) # { passed, 1 check }
     # Subtest: Nested test_each
         # Subtest: Each nested value (10)
             ok 1 - multiple of 10
@@ -312,21 +331,21 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
             1..1
         ok 2 - Each nested value (20) # { passed, 1 check }
         1..2
-    ok 35 - Nested test_each # { passed, 0 checks }
+    ok 39 - Nested test_each # { passed, 0 checks }
     # Subtest: Failed each value (1)
         ok 1 - value 1 == 1
         1..1
-    ok 36 - Failed each value (1) # { passed, 1 check }
+    ok 40 - Failed each value (1) # { passed, 1 check }
     # Subtest: Failed each value (2)
         not ok 1 - value 2 == 1
           ---
           condition: "2 == 1"
           at:
             fileName: miscellaneous.cpp
-            lineNumber: 1556
+            lineNumber: 1679
           ...
         1..1
-    not ok 37 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
+    not ok 41 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
     # Subtest: Callable arguments
         ok 1 - reference parameter refers to a copy
         ok 2 - std::ref() refers to the object
@@ -334,19 +353,19 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 4 - local session passed
         ok 5 - deferred suite received the copy
         1..5
-    ok 38 - Callable arguments # { passed, 5 checks }
+    ok 42 - Callable arguments # { passed, 5 checks }
     # Subtest: Test case lifetime
         ok 1 - test cases destroyed
         ok 2 - test cases counted
         ok 3 - local session passed
         1..3
-    ok 39 - Test case lifetime # { passed, 3 checks }
+    ok 43 - Test case lifetime # { passed, 3 checks }
     # Subtest: Test case bodies
         ok 1 - large body invoked
         ok 2 - large body not allocated
         ok 3 - local session passed
         1..3
-    ok 40 - Test case bodies # { passed, 3 checks }
+    ok 44 - Test case bodies # { passed, 3 checks }
     # Subtest: Formatting of passed checks
         ok 1 - passed check not formatted (human)
         ok 2 - failed check formatted (human)
@@ -355,16 +374,16 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 5 - failed check formatted (tap)
         ok 6 - both checks counted (tap)
         1..6
-    ok 41 - Formatting of passed checks # { passed, 6 checks }
+    ok 45 - Formatting of passed checks # { passed, 6 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - previous handler returned
         1..2
-    ok 42 - Abort handler # { passed, 2 checks }
+    ok 46 - Abort handler # { passed, 2 checks }
     # Subtest: Abort during the session
         ok 1 - skipped without exceptions
         1..1
-    ok 43 - Abort during the session # { passed, 1 check }
+    ok 47 - Abort during the session # { passed, 1 check }
     # Subtest: Test case and suite names
         ok 1 - temporary string name
         ok 2 - string name
@@ -374,9 +393,9 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 6 - string suite name copied
         ok 7 - string view suite name copied
         1..7
-    ok 44 - Test case and suite names # { passed, 7 checks }
-    1..44
-not ok 2 - Miscellaneous suite # { FAILED, 178 checks passed, 8 failed, in 47 test cases }
+    ok 48 - Test case and suite names # { passed, 7 checks }
+    1..48
+not ok 2 - Miscellaneous suite # { FAILED, 185 checks passed, 8 failed, in 51 test cases }
 # Subtest: Runner options suite
     # Subtest: Default options
         ok 1 - the TAP reporter
@@ -556,4 +575,4 @@ ok 4 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 5 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..5
-# { total: 269 checks passed, 13 failed, in 63 test cases, 5 test suites }
+# { total: 276 checks passed, 13 failed, in 67 test cases, 5 test suites }

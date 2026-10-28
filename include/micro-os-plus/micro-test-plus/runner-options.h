@@ -24,9 +24,10 @@
  * by its members.
  *
  * The options are usually parsed from the command line by the
- * constructor called by `runner::initialise (argc, argv)`; the
- * applications without a command line, such as the embedded ones without
- * semihosting arguments, can set them directly and pass them to
+ * constructor taking the `main()` arguments, called by
+ * `runner::initialise (argc, argv)`; the applications without a
+ * command line, such as the embedded ones without semihosting
+ * arguments, can set them directly and pass them to
  * `runner::initialise (options)`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
@@ -167,20 +168,24 @@ namespace micro_os_plus::micro_test_plus
    * parser.
    *
    * @details
-   * `runner::initialise (argc, argv)` constructs the options from the
-   * command line and passes them to `runner::initialise (options)`, which
-   * creates the selected reporter and starts the session.
+   * The options are usually constructed from the command line, by
+   * `runner::initialise (argc, argv)`, which creates the selected
+   * reporter and starts the session:
+   *
+   * @code{.cpp}
+   * tr.initialise (argc, argv);
+   * @endcode
    *
    * The applications that do not have a command line, such as the
    * embedded ones without semihosting arguments, can define the options
-   * directly, starting from the defaults, and call the second overload:
+   * directly, starting from the defaults:
    *
    * @code{.cpp}
    * mt::runner_options options{};
    * options.selected_reporter = mt::reporter_kind::human;
    * options.verbosity_level = mt::verbosity::verbose;
    *
-   * auto& ts = tr.initialise (options, "Main");
+   * tr.initialise (options);
    * @endcode
    *
    * The applications can also parse the command line themselves, and
@@ -190,7 +195,7 @@ namespace micro_os_plus::micro_test_plus
    * mt::runner_options options{ argc, argv };
    * options.list_tests = true;
    *
-   * auto& ts = tr.initialise (options, "Main");
+   * tr.initialise (options);
    * @endcode
    *
    * The configuration members are public, since any combination of their
@@ -343,9 +348,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Set by `--output-file=<path>` or `--output-file <path>`. When it
      * is empty (the default), no file is written. The reporter opens the
-     * file when it is created by `initialise()`; if the file cannot be opened, the error is reported
-     * on `stderr`, the report is written only to the console, and
-     * `runner::run()` returns 2.
+     * file when it is created by `initialise()`; if the file cannot be
+     * opened, the error is reported on `stderr`, the report is written
+     * only to the console, and `runner::run()` returns 2.
      */
     std::string output_file_path{};
 
@@ -370,9 +375,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * A copy of the `argv[]` strings of `main()`, set when the options
-     * are parsed from the command line. When not empty, the reporters list it
-     * at the beginning of the report, and `initialise()` derives the
-     * default name of the top suite from `arguments[0]`.
+     * are parsed from the command line. When not empty, the reporters
+     * list it at the beginning of the report, and
+     * `runner::add_top_suite()` derives the default name of the top suite
+     * from `arguments[0]`.
      */
     std::vector<std::string> arguments{};
 

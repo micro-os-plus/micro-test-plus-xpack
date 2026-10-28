@@ -140,7 +140,8 @@ local_counts_t local_counts;
 int
 main (int argc, char* argv[])
 {
-  auto& ts = tr.initialise (argc, argv, "Top suite");
+  tr.initialise (argc, argv);
+  auto& ts = tr.add_top_suite ("Top suite");
 
   if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())
     {
@@ -631,20 +632,22 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // The inner test should return failure.
-  // run() must be always called, otherwise the test suites
-  // are not executed.
+  // run() must always be called; otherwise the static suites are not
+  // run, and the session is not completed.
   int code = tr.run ();
   test_assert (code != 0);
 
   // The session runs only once; the later calls of run() return the same
-  // code without running the suites again, and a second initialise()
-  // changes nothing.
+  // code without running the suites again, and a second initialise() or
+  // add_top_suite() changes nothing.
   {
     const size_t executed_checks = tr.totals ().executed_checks ();
     const size_t executed_test_cases = tr.totals ().executed_test_cases ();
 
     test_assert (tr.run () == code);
-    test_assert (&tr.initialise (argc, argv) == &ts);
+    tr.initialise (argc, argv);
+    test_assert (&tr.add_top_suite () == &ts);
+    test_assert (tr.run () == code);
 
     test_assert (tr.totals ().executed_checks () == executed_checks);
     test_assert (tr.totals ().executed_test_cases () == executed_test_cases);

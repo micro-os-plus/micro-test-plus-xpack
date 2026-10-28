@@ -130,30 +130,50 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * The `runner` class is responsible for managing the registration and
    * execution of test suites within the µTest++ framework. It owns the
-   * implicit top suite, whose test cases are added after `initialise()`,
-   * and a collection of test suites added with `add_suite()`, which are
-   * run later, by `run()`. These suites and the `static_suite` objects
-   * that refer to the runner are kept in a single list, sorted by name,
-   * independent of the runner object, so the static suites may be
-   * constructed before it. `run()` runs the suites added with
-   * `add_suite()` and the static suites together, in a single order,
-   * sorted by name; for equal names, in the order of their creation, so
-   * the static suites constructed before `main()` run first. The names
-   * are compared byte by byte, as by `std::strcmp()`, not in the order of
-   * addition: the comparison is case-sensitive (`"Zeta"` before
-   * `"alpha"`) and does not compare numbers by value (`"Suite 10"` before
-   * `"Suite 2"`); zero-padded numeric prefixes (`"01 - Init"`) give an
-   * explicit order.
+   * optional top suite, returned by `add_top_suite()`, whose test cases
+   * run immediately, in `main()`, and a collection of test suites added
+   * with `add_suite()`, which are run later, by `run()`. These suites and
+   * the `static_suite` objects that refer to the runner are kept in a
+   * single list, sorted by name, independent of the runner object, so
+   * the static suites may be constructed before it. `run()` runs the
+   * suites added with `add_suite()` and the static suites together, in a
+   * single order, sorted by name; for equal names, in the order of their
+   * creation, so the static suites constructed before `main()` run first.
+   * The names are compared byte by byte, as by `std::strcmp()`, not in
+   * the order of addition: the comparison is case-sensitive (`"Zeta"`
+   * before `"alpha"`) and does not compare numbers by value (`"Suite 10"`
+   * before `"Suite 2"`); zero-padded numeric prefixes (`"01 - Init"`) give
+   * an explicit order.
    *
    * The test runner provides member functions for initialising the test
-   * environment (including the creation of the reporter selected on the
-   * command line, or by the `runner_options` passed to `initialise()`),
-   * registering test suites, and determining the overall test result via an
-   * exit code. It also offers an abort mechanism for terminating test
-   * execution in exceptional circumstances.
+   * environment (including the creation of the reporter selected by the
+   * `runner_options` passed to `initialise()`), registering test suites,
+   * and determining the overall test result via an exit code. It also
+   * offers an abort mechanism for terminating test execution in
+   * exceptional circumstances.
+   *
+   * Both `initialise()` and `add_top_suite()` are optional:
+   *
+   * @code{.cpp}
+   * int
+   * main (int argc, char* argv[])
+   * {
+   *   mt::runner tr;
+   *   tr.initialise (argc, argv);
+   *
+   *   auto& ts = tr.add_top_suite ("Main");
+   *   ts.test ("Check something", [] (auto& t) { t.expect (true); });
+   *
+   *   return tr.run ();
+   * }
+   * @endcode
+   *
+   * Without `initialise()`, the default options are used; without
+   * `add_top_suite()`, there is no top suite, and `run()` runs only the
+   * suites added with `add_suite()` and the static suites.
    *
    * The runner is not a node of the test tree: it has no name of its own
-   * (the name shown in the reports belongs to the top suite), and it owns
+   * (the names shown in the reports belong to the suites), and it owns
    * the session totals, which accumulate the totals of all the suites.
    *
    * All members are defined within the
@@ -205,7 +225,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Constructor for the runner class.
      *
      * @details
-     * The top suite name is set later, by `initialise()`.
+     * The session is configured later, by `initialise()`, and the top
+     * suite, if any, is added by `add_top_suite()`.
      *
      * @par Parameters
      *   None.
@@ -216,12 +237,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deprecated constructor for the runner class.
      *
      * @details
-     * Use the anonymous constructor, and pass the name to `initialise()`,
-     * which can also override the name given here.
+     * Use the anonymous constructor, and pass the name to
+     * `add_top_suite()`, which can also override the name given here.
      *
-     * @param top_suite_name The name given to the implicit top suite.
+     * @param top_suite_name The name given to the top suite.
      */
-    [[deprecated ("use runner() and initialise() (since 4.1.0)")]]
+    [[deprecated ("use runner() and add_top_suite() (since 4.1.0)")]]
     runner (const char* top_suite_name);
 
     /**
@@ -274,75 +295,147 @@ namespace micro_os_plus::micro_test_plus
     ~runner ();
 
     /**
-     * @brief Initialises the test runner with command-line arguments.
+     * @brief Deprecated initialisation with the command-line arguments,
+     * which also adds the top suite.
      *
      * @details
-     * Parses the µTest++ options from the command line (`--reporter`,
-     * `--silent`, `--quiet`, `--verbose`, `--output-file`,
-     * `--color`, `--use-colour`, `--filter`, and `--list-tests`) with the
-     * `runner_options` constructor, and continues as the overload taking
-     * the options. The other arguments are ignored, since the
-     * applications may define their own.
+     * Equivalent to `initialise (argc, argv)` followed by
+     * `add_top_suite (top_suite_name)`. Use the two calls; the top
+     * suite is now optional, and `initialise()` no longer returns it.
      *
-     * A missing option argument, an unknown reporter name, or an unknown
-     * colour mode, is reported on `stderr` and the option is ignored; the
-     * tests are still run, but `run()` returns 2.
+     * The name no longer has a default value, so that the call with two
+     * arguments selects the current `initialise (argc, argv)`, which
+     * returns nothing and does not add the top suite.
+     *
+     * If the runner is already initialised, or the test execution was
+     * aborted, the error is reported on `stderr`, as by `initialise()`,
+     * and the top suite is returned without other effects.
      *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
-     * @param top_suite_name The name given to the implicit top suite. Defaults
-     * to an empty string.
-     * @return Reference to the top-level test suite.
+     * @param top_suite_name The name given to the top suite; if empty, the
+     * name is chosen as by `add_top_suite()`.
+     * @return Reference to the top suite.
      */
-    class suite&
-    initialise (int argc, char* argv[], const char* top_suite_name = "");
+    [[deprecated ("use initialise (argc, argv) and add_top_suite() "
+                  "(since 5.1.0)")]] class suite&
+    initialise (int argc, char* argv[], const char* top_suite_name);
+
+    /**
+     * @brief Initialises the test runner with the command-line arguments.
+     *
+     * @details
+     * Parses the command-line options and initialises the runner with
+     * them; equivalent to `initialise (runner_options{ argc, argv })`.
+     *
+     * The call is optional; without it, the runner is initialised with the
+     * default options by the first call of `add_top_suite()` or `run()`.
+     * If used, it must therefore precede them; a later call, or a call
+     * after the test execution was aborted, reports an error on `stderr`,
+     * without other effects; the options are then not parsed, so their
+     * errors do not change the exit code.
+     *
+     * @param argc The argument count from main().
+     * @param argv The argument vector from main().
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 5.1.0
+     */
+    void
+    initialise (int argc, char* argv[]);
 
     /**
      * @brief Initialises the test runner with the given options.
      *
      * @details
-     * Creates the selected reporter, starts the session, and returns the
-     * top suite, without parsing a command line; intended for the
-     * applications that do not have one, such as the embedded ones
-     * without semihosting arguments.
+     * Creates the reporter selected by the options and starts the
+     * session. The options may be parsed from the command line, adjusted,
+     * and passed here:
      *
-     * If no name is given, here or by the deprecated constructor, the top
-     * suite is named after `options.arguments[0]`, when available, or
-     * "default suite".
+     * @code{.cpp}
+     * mt::runner_options options{ argc, argv };
+     * options.selected_reporter = mt::reporter_kind::tap;
+     * tr.initialise (std::move (options));
+     * @endcode
+     *
+     * The call is optional; without it, the runner is initialised with the
+     * default options by the first call of `add_top_suite()` or `run()`.
+     * If used, it must therefore precede them; a later call, or a call
+     * after the test execution was aborted, reports an error on `stderr`,
+     * without other effects.
      *
      * If the output file cannot be opened, the error is reported on
      * `stderr` and the report is written only to the console; the tests
-     * are still run, but `run()` returns 2.
+     * are still run, but `run()` returns 2. With an unknown reporter
+     * name, nothing is reported, no test is run, and `run()` returns 2.
      *
      * The options are taken by value and moved into the runner, which
      * keeps them for the whole session; pass a temporary, or use
      * `std::move()`, to avoid a copy.
      *
      * @param options The session options.
-     * @param top_suite_name The name given to the implicit top suite. Defaults
-     * to an empty string.
-     * @return Reference to the top-level test suite.
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 5.1.0
+     */
+    void
+    initialise (runner_options options);
+
+    /**
+     * @brief Adds the top suite and returns it.
+     *
+     * @details
+     * The top suite is the suite whose body is the code of `main()`: its
+     * test cases run immediately, when `test()` is called, before the
+     * suites added with `add_suite()` and the static suites, which run
+     * later, by `run()`. It is always the first suite in the report.
+     *
+     * The call is optional; without it, there is no top suite, and only
+     * the other suites are run and reported. If the runner is not yet
+     * initialised, it is initialised with the default options.
+     *
+     * If no name is given, here or by the deprecated constructor, the top
+     * suite is named after the file name of `runner_options::arguments[0]`,
+     * without the extension, when available, or "default suite".
+     *
+     * The top suite can be added only once, and before `run()`; a second
+     * call, or a call made once `run()` has started, is reported on
+     * `stderr`, and the existing top suite is returned. With an unknown
+     * reporter name, the top suite is returned, but nothing is reported.
+     *
+     * @param top_suite_name The name of the top suite, used in reports; a
+     * string literal, a `const char*`, a `std::string`, or a
+     * `std::string_view`. It is copied, so the string need not outlive the
+     * call, nor be null-terminated. Defaults to an empty string.
+     * @return Reference to the top suite.
      *
      * @since 5.1.0
      */
     class suite&
-    initialise (runner_options options, const char* top_suite_name = "");
+    add_top_suite (std::string_view top_suite_name = {});
 
     /**
      * @brief Runs the registered suites, ends the session, and returns the
      * exit code.
      *
      * @details
-     * Completes the top suite, runs the suites registered with `add_suite()`
-     * and the static suites that refer to this runner, together, sorted
-     * by name, and ends the session. When filter patterns are given, the
-     * suites whose names do not match the first pattern are reported as
-     * skipped, without being run.
+     * Completes the top suite, if any, runs the suites registered with
+     * `add_suite()` and the static suites that refer to this runner,
+     * together, sorted by name, and ends the session. If the runner is not
+     * yet initialised, it is initialised with the default options. When
+     * filter patterns are given, the suites whose names do not match the
+     * first pattern are reported as skipped, without being run.
      *
      * While the test cases are listed (see `is_listing()`), the suites
      * run only to create their test cases, which are listed, and the
      * number of listed test cases is written; the result of the checks
      * does not affect the exit code, since no check is evaluated.
+     *
+     * A session without any suite (no top suite, no suite added with
+     * `add_suite()`, and no static suite) is reported as an error, since
+     * a test program that runs nothing must not pass unnoticed.
      *
      * The session runs only once; later calls return the same exit code
      * without running anything again. A call made while the session runs,
@@ -353,10 +446,11 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return 0 if all checks passed, or if the test cases were listed;
-     * 1 if a check failed, if a suite was rejected by `add_suite()`, if
-     * the runner was not initialised or is running, or if the test
-     * execution was aborted; 2 if `initialise()` reported an option
-     * error, regardless of the checks.
+     * 1 if a check failed, if a suite was rejected by `add_suite()` or
+     * `add_top_suite()`, if there was no suite, if the runner is running,
+     * or if the test execution was aborted; 2 if `initialise()` reported
+     * an option error, or if the filters selected no test case,
+     * regardless of the checks.
      *
      * @since 5.1.0
      */
@@ -381,8 +475,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Adds a test suite to the runner, to be run by `run()`.
      *
      * @details
-     * Unlike the test cases added to the top suite, which run
-     * immediately, the suite is only stored; `run()` runs it later,
+     * Unlike the test cases added to the top suite (see
+     * `add_top_suite()`), which run immediately, the suite is only
+     * stored; `run()` runs it later,
      * together with the static suites that refer to this runner, sorted
      * by name.
      *
@@ -519,14 +614,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Returns the count of all the test suites.
      *
      * @details
-     * One, for the top suite, plus `added_suites_count()` plus
-     * `static_suites_count()`; this is the number of suites printed by
-     * the reporters.
+     * One, if the top suite was added by `add_top_suite()`, plus
+     * `added_suites_count()` plus `static_suites_count()`; this is the
+     * number of suites printed by the reporters.
      *
      * @par Parameters
      *   None.
      * @return The total number of test suites managed by this runner,
-     * including the top suite and the static suites.
+     * including the top suite, if any, and the static suites.
      */
     [[nodiscard]] size_t
     total_suites_count (void) const noexcept;
@@ -593,8 +688,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The count includes neither the top suite nor the static suites,
      * which are counted by `static_suites_count()`; add one for the top
-     * suite when needed, or use `total_suites_count()`, which counts all
-     * of them. The suites that `add_suite()` rejects, once `run()` has
+     * suite, if added, or use `total_suites_count()`, which counts all of
+     * them. The suites that `add_suite()` rejects, once `run()` has
      * started, are not counted.
      *
      * @par Parameters
@@ -666,10 +761,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The counters include the checks and the test cases of all the
-     * suites that were run, including the top suite; they are complete
-     * only after `run()` has returned. The totals are read-only; there is
-     * no non-const overload, so that the counters cannot be modified from
-     * the test code.
+     * suites that were run, including the top suite, if any; they are
+     * complete only after `run()` has returned. The totals are read-only;
+     * there is no non-const overload, so that the counters cannot be
+     * modified from the test code.
      *
      * @par Parameters
      *   None.
@@ -902,13 +997,23 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
   private:
     /**
-     * @brief The implicit top-level suite; always present and executed first.
+     * @brief The top suite, whose body is the code of `main()`.
      *
      * @details
-     * Its test cases are added directly, between `initialise()` and
-     * `run()`.
+     * Always constructed with the runner, but part of the session only
+     * after `add_top_suite()` (see `has_top_suite_`); its test cases are
+     * added directly, between `add_top_suite()` and `run()`.
      */
     class top_suite top_suite_;
+
+    /**
+     * @brief Whether the top suite was added to the session.
+     *
+     * @details
+     * Set by `add_top_suite()`. When not set, the top suite is neither
+     * run, nor reported, nor counted.
+     */
+    bool has_top_suite_ = false;
 
     /**
      * @brief Owning collection of dynamically registered child suites.
@@ -953,10 +1058,10 @@ namespace micro_os_plus::micro_test_plus
     counters totals_;
 
     /**
-     * @brief Owned storage for the implicit top-suite name.
+     * @brief Owned storage for the top suite name.
      *
      * @details
-     * Set by `initialise()`, either from its argument or derived from
+     * Set by `add_top_suite()`, either from its argument or derived from
      * `arguments[0]` of the session options.
      */
     std::string top_suite_name_;

@@ -75,7 +75,8 @@ main (int argc, char* argv[])
 
   {
     mt::runner lr;
-    auto& ts = lr.initialise (argc, argv, "Local suite");
+    lr.initialise (argc, argv);
+    auto& ts = lr.add_top_suite ("Local suite");
 
     ts.test ("Check various conditions 1.1", [] (auto& t)
       {
@@ -102,7 +103,8 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   {
-    auto& ts = sr.initialise (argc, argv, "Static top suite");
+    sr.initialise (argc, argv);
+    auto& ts = sr.add_top_suite ("Static top suite");
     ts.test ("Check various conditions 2.1", [] (auto& t)
       {
         t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
@@ -128,7 +130,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  // return the overall test result to the system.
+  // Return the overall test result to the system.
   return exit_code;
 }
 

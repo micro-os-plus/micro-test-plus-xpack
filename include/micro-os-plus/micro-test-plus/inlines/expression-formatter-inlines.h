@@ -241,9 +241,9 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Writes the count with `append_number()`, without a type suffix, then the unit selected from
-   * the period; the periods without a standard unit are written as
-   * the ratio, `[N/D]s`.
+   * Writes the count with `append_number()`, without a type suffix, then
+   * the unit selected from the period; the periods without a standard
+   * unit are written as the ratio, `[N/D]s`.
    */
   template <class Rep, class Period>
   expression_formatter&

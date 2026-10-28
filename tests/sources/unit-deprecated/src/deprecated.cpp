@@ -251,25 +251,65 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
     // ------------------------------------------------------------------------
 
     // The name given to the deprecated constructor is used when
-    // `initialise()` does not get one, and is replaced when it does.
+    // `add_top_suite()` does not get one, and is replaced when it does.
     ts.test ("runner (const char*)", [] (auto& t)
       {
         runner_options options{};
         options.verbosity_level = verbosity::silent;
 
         runner named_runner{ "Constructor name" };
-        auto& named_ts = named_runner.initialise (options);
+        named_runner.initialise (options);
+        auto& named_ts = named_runner.add_top_suite ();
 
         t.expect (eq (named_ts.name (), "Constructor name"))
             << "name given to the constructor";
         local_counts.passed_checks++;
 
         runner overridden_runner{ "Constructor name" };
-        auto& overridden_ts
-            = overridden_runner.initialise (options, "Initialise name");
+        overridden_runner.initialise (options);
+        auto& overridden_ts = overridden_runner.add_top_suite ("Top name");
 
-        t.expect (eq (overridden_ts.name (), "Initialise name"))
-            << "name given to initialise() replaces it";
+        t.expect (eq (overridden_ts.name (), "Top name"))
+            << "name given to add_top_suite() replaces it";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The deprecated `initialise()` with the command line and the name
+    // also adds the top suite, and returns it.
+    ts.test ("initialise (argc, argv, name)", [] (auto& t)
+      {
+        char arg_name[] = "local.elf";
+        char arg_silent[] = "--silent";
+        char* local_argv[] = { arg_name, arg_silent, nullptr };
+
+        runner local_runner;
+        auto& local_ts = local_runner.initialise (2, local_argv, "Local");
+        local_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        t.expect (eq (local_ts.name (), "Local")
+                  and local_runner.verbosity_level () == verbosity::silent)
+            << "the options are parsed and the top suite is added";
+        local_counts.passed_checks++;
+
+        t.expect (eq (local_runner.total_suites_count (), 1u))
+            << "the top suite is counted";
+        local_counts.passed_checks++;
+
+        t.expect (&local_runner.initialise (2, local_argv, "Other")
+                  == &local_ts)
+            << "a second call returns the same top suite";
+        local_counts.passed_checks++;
+
+        t.expect (eq (local_runner.run (), 0)) << "the session passes";
+        local_counts.passed_checks++;
+
+        runner unnamed_runner;
+        auto& unnamed_ts = unnamed_runner.initialise (2, local_argv, "");
+
+        t.expect (eq (unnamed_ts.name (), "local"))
+            << "the top suite is named after argv[0]";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -285,7 +325,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         options.verbosity_level = verbosity::silent;
 
         static_runner local_runner;
-        auto& local_ts = local_runner.initialise (options, "Static runner");
+        local_runner.initialise (options);
+        auto& local_ts = local_runner.add_top_suite ("Static runner");
         local_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
         t.expect (eq (local_runner.run (), 0)) << "static_runner session";
@@ -302,7 +343,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         options.verbosity_level = verbosity::silent;
 
         runner passed_runner;
-        auto& passed_ts = passed_runner.initialise (options, "Passed");
+        passed_runner.initialise (options);
+        auto& passed_ts = passed_runner.add_top_suite ("Passed");
         passed_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
         t.expect (eq (passed_runner.exit_code (), 0)) << "passed session";
@@ -315,7 +357,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         runner failed_runner;
-        auto& failed_ts = failed_runner.initialise (options, "Failed");
+        failed_runner.initialise (options);
+        auto& failed_ts = failed_runner.add_top_suite ("Failed");
         failed_ts.test ("Local test", [] (auto& lt) { lt.expect (false); });
 
         t.expect (eq (failed_runner.exit_code (), 1)) << "failed session";
@@ -332,7 +375,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         options.verbosity_level = verbosity::silent;
 
         runner local_runner;
-        auto& local_ts = local_runner.initialise (options, "Local");
+        local_runner.initialise (options);
+        auto& local_ts = local_runner.add_top_suite ("Local");
 
         t.expect (local_runner.verbosity () == verbosity::silent)
             << "verbosity()";
@@ -376,7 +420,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         options.verbosity_level = verbosity::silent;
 
         runner local_runner;
-        local_runner.initialise (options, "Local");
+        local_runner.initialise (options);
+        local_runner.add_top_suite ("Local");
 
         static_suite_function_ran = false;
         int original = 0;
@@ -421,7 +466,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         options.verbosity_level = verbosity::silent;
 
         runner local_runner;
-        auto& local_ts = local_runner.initialise (options, "Local");
+        local_runner.initialise (options);
+        auto& local_ts = local_runner.add_top_suite ("Local");
 
         // A function passed directly, as the v5.0.1 unit tests did.
         local_ts.test ("Function", subtest_function);
@@ -531,7 +577,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         options.verbosity_level = verbosity::silent;
 
         runner local_runner;
-        auto& local_ts = local_runner.initialise (options, "Local");
+        local_runner.initialise (options);
+        auto& local_ts = local_runner.add_top_suite ("Local");
         local_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
         const detail::stopwatch* added_timings = nullptr;
@@ -757,12 +804,14 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         options.selected_reporter = reporter_kind::human;
 
         runner human_runner;
-        human_runner.initialise (options, "Human");
+        human_runner.initialise (options);
+        human_runner.add_top_suite ("Human");
 
         options.selected_reporter = reporter_kind::tap;
 
         runner tap_runner;
-        tap_runner.initialise (options, "TAP");
+        tap_runner.initialise (options);
+        tap_runner.add_top_suite ("TAP");
 
         // The v5.0.1 expression.
         t.expect (human_runner.reporter ().verbosity () == verbosity::silent

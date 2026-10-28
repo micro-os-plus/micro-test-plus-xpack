@@ -131,8 +131,8 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             << "automatic colours";
         local_counts.passed_checks++;
 
-        t.expect (options.arguments.empty () and options.filter_patterns.empty ()
-                  and !options.list_tests)
+        t.expect (options.arguments.empty ()
+                  and options.filter_patterns.empty () and !options.list_tests)
             << "no command line, no filter, no listing";
         local_counts.passed_checks++;
 
@@ -212,21 +212,20 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
 
     ts.test ("Output file and filters", [] (auto& t)
       {
-        t.expect (eq (parse ({ "name", "--output-file=a.tap" })
-                          .output_file_path,
-                      "a.tap"))
+        t.expect (
+            eq (parse ({ "name", "--output-file=a.tap" }).output_file_path,
+                "a.tap"))
             << "--output-file=<path>";
         local_counts.passed_checks++;
 
-        t.expect (eq (parse ({ "name", "--output-file", "b.tap" })
-                          .output_file_path,
-                      "b.tap"))
+        t.expect (
+            eq (parse ({ "name", "--output-file", "b.tap" }).output_file_path,
+                "b.tap"))
             << "--output-file <path>";
         local_counts.passed_checks++;
 
-        t.expect (
-            parse ({ "name", "--output-file=a.tap", "--output-file=" })
-                .output_file_path.empty ())
+        t.expect (parse ({ "name", "--output-file=a.tap", "--output-file=" })
+                      .output_file_path.empty ())
             << "an empty path disables the output file";
         local_counts.passed_checks++;
 
@@ -362,8 +361,8 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
 
     ts.test ("Copies and moves", [] (auto& t)
       {
-        const runner_options original = parse (
-            { "name", "--reporter=junit", "--quiet", "--filter=A" });
+        const runner_options original
+            = parse ({ "name", "--reporter=junit", "--quiet", "--filter=A" });
 
         runner_options copy{ original };
 

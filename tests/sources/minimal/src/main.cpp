@@ -54,9 +54,11 @@ compute_condition (void)
 int
 main (int argc, char* argv[])
 {
-  // Name the default test suite.
   mt::runner tr;
-  auto& ts = tr.initialise (argc, argv);
+  tr.initialise (argc, argv);
+
+  // Without a name, the top suite is named after the program.
+  auto& ts = tr.add_top_suite ();
 
   // --------------------------------------------------------------------------
 

@@ -25,8 +25,8 @@
  * for the µTest++ framework. It provides `extract_file_name()`, which
  * strips the folder path from a file path returning only the base name,
  * and `is_match()`, which performs wildcard pattern matching with `*`
- * (any sequence of characters) and `?` (any single character) support, and the `split()` overload
- * for string views.
+ * (any sequence of characters) and `?` (any single character) support,
+ * and the `split()` overload for string views.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::utility` namespace.
